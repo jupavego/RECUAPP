@@ -9,15 +9,21 @@ Salida (public/data/mapa/):
   municipios.json        125 municipios: nombre, subregion, bbox, centro y contorno
   territorio/<id>.json   corregimientos y veredas de un municipio (carga por demanda)
 
+El contorno de cada municipio NO viene del archivo de municipios de Encuentrala (muy simplificado y
+desalineado con el mapa veredal): se calcula fusionando las veredas del propio municipio, asi los tres
+niveles (municipio, corregimiento, vereda) salen de la misma fuente y encajan. Requiere shapely.
+
 Los contornos van como "encoded polyline" con 4 decimales (~11 m). TIENE que
 coincidir con PRECISION en src/app/features/mapa/utils/polyline.ts.
 
 Uso:  python scripts/generar_mapa.py <carpeta recursos de Encuentrala>
 """
 import json
-import shutil
 import sys
 from pathlib import Path
+
+from shapely.geometry import Polygon
+from shapely.ops import unary_union
 
 PRECISION = 1e4
 SALIDA = Path(__file__).resolve().parent.parent / "public" / "data" / "mapa"
@@ -84,6 +90,48 @@ def encode_polyline(pts) -> str:
     return "".join(out)
 
 
+def decode_polyline(texto: str):
+    pts, i, lat, lon = [], 0, 0, 0
+    for _ in range(len(texto)):
+        if i >= len(texto):
+            break
+        for eje in (0, 1):
+            sh = res = 0
+            while True:
+                b = ord(texto[i]) - 63
+                i += 1
+                res |= (b & 0x1F) << sh
+                sh += 5
+                if b < 0x20:
+                    break
+            d = ~(res >> 1) if res & 1 else res >> 1
+            if eje == 0:
+                lat += d
+            else:
+                lon += d
+        pts.append((lat / PRECISION, lon / PRECISION))
+    return pts
+
+
+def contorno_de_veredas(veredas):
+    """Fusiona las veredas en un solo contorno. El cierre (buffer +/-) tapa las rendijas entre vecinas
+    que deja la simplificacion; los huecos grandes (zonas sin vereda en el mapa oficial) se respetan."""
+    figuras = []
+    for v in veredas:
+        for poli in v["g"]:
+            anillos = [decode_polyline(a) for a in poli]
+            figura = Polygon(anillos[0], anillos[1:]).buffer(0)
+            if not figura.is_empty:
+                figuras.append(figura)
+    union = unary_union(figuras).buffer(0.0003).buffer(-0.0003).simplify(0.0002)
+    partes = list(union.geoms) if union.geom_type == "MultiPolygon" else [union]
+    g = [[encode_polyline(list(p.exterior.coords))] + [encode_polyline(list(h.coords)) for h in p.interiors]
+         for p in partes if not p.is_empty]
+    x0, y0, x1, y1 = union.bounds
+    # shapely recibio (lat, lon) como (x, y); el formato publico es [oeste, sur, este, norte].
+    return g, [round(y0, 4), round(x0, 4), round(y1, 4), round(x1, 4)]
+
+
 def escribir(ruta: Path, datos) -> None:
     ruta.parent.mkdir(parents=True, exist_ok=True)
     ruta.write_text(json.dumps(datos, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
@@ -95,9 +143,6 @@ def main(recursos: Path) -> None:
     nombres = [m["nombre"] for m in cerc["municipios"]]
     assert nombres == vere["municipios"], "los dos JSON no listan los mismos municipios"
 
-    if SALIDA.exists():
-        shutil.rmtree(SALIDA)
-
     por_muni = {i: ([], []) for i in range(len(nombres))}
     for c in vere["corregimientos"]:
         por_muni[c["m"]][0].append(c)
@@ -107,16 +152,12 @@ def main(recursos: Path) -> None:
     municipios = []
     for i, m in enumerate(cerc["municipios"]):
         corrs, veredas = por_muni[i]
-        if m.get("poligono"):
-            g = [[encode_polyline(anillo)] for anillo in m["poligono"]]
-        else:
-            # Medellin no trae contorno municipal en la fuente: se arma con el de sus corregimientos.
-            g = [poly for c in corrs for poly in c["g"]]
+        g, bbox = contorno_de_veredas(veredas)
         municipios.append({
             "id": i,
             "n": bonito(m["nombre"]),
             "s": SUBREGIONES[m.get("subregion") or SUBREGION_POR_DEFECTO[m["nombre"]]],
-            "b": [round(x, 4) for x in m["bbox"]] if m.get("bbox") else None,
+            "b": bbox,
             "c": m["centro"],
             "g": g,
         })
