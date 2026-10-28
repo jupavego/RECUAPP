@@ -577,6 +577,14 @@ export class Mapa3dComponent implements AfterViewInit {
   private sol!: THREE.DirectionalLight;
   // sombras bajo demanda: el mapa solo se repinta cuando algo que proyecta sombra cambió
   private sombraTerreno?: THREE.Mesh;
+  // sombra de las nubes en una textura sobre todo el terreno, repintada cada dos cuadros
+  private rtNubes!: THREE.WebGLRenderTarget;
+  private pasoNubes!: { escena: THREE.Scene; camara: THREE.OrthographicCamera };
+  private cuadroNubes = 0;
+  // normales del terreno: solo se recalculan las de las veredas que se movieron
+  private capaTerreno!: Capa;
+  private filasTerreno = 0;
+  private piezasMovidas = new Set<number>();
   private claveSombra = '';
   private sombraSucia = true;
   // resolución dinámica: baja mientras la cámara se mueve y la máquina no da abasto
@@ -948,11 +956,15 @@ export class Mapa3dComponent implements AfterViewInit {
 
     const fino = malla(1);
     this.prepararVertices(fino.g, fino.pos);
+    this.capaTerreno = this.capas[this.capas.length - 1];
+    this.filasTerreno = fino.cx + 1;
+    this.crearTexturaNubes();
     const material = new THREE.MeshStandardMaterial({ map: this.texturaColor, roughness: 1, metalness: 0 });
     // Las caras casi verticales (el corte de una vereda levantada) se pintan de tierra con estratos en vez
     // de la foto estirada. La inclinación sale de las derivadas, así que no depende de normales desactualizadas.
     material.onBeforeCompile = shader => {
-      shader.uniforms['uNubes'] = { value: this.sombrasNubes };
+      shader.uniforms['uNubesTex'] = { value: this.rtNubes.texture };
+      shader.uniforms['uCaja'] = { value: new THREE.Vector4(-this.ancho / 2, -this.alto / 2, this.ancho, this.alto) };
       shader.uniforms['uResalte'] = { value: this.texturaResalte };
       shader.vertexShader = shader.vertexShader
         .replace('#include <common>', '#include <common>\nvarying vec3 vPos;')
@@ -961,27 +973,16 @@ export class Mapa3dComponent implements AfterViewInit {
         .replace('#include <common>', `#include <common>
           varying vec3 vPos;
           uniform sampler2D uResalte;
-          uniform vec4 uNubes[${NUBES}];
-          float hashN(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
-          float ruidoN(vec2 p) {
-            vec2 i = floor(p), f = fract(p);
-            f = f * f * (3.0 - 2.0 * f);
-            return mix(mix(hashN(i), hashN(i + vec2(1.0, 0.0)), f.x), mix(hashN(i + vec2(0.0, 1.0)), hashN(i + vec2(1.0, 1.0)), f.x), f.y);
-          }`)
+          uniform sampler2D uNubesTex;
+          uniform vec4 uCaja;`)
         .replace('#include <map_fragment>', `#include <map_fragment>
           float inclinacion = abs(normalize(cross(dFdx(vPos), dFdy(vPos))).y);
           float roca = 1.0 - smoothstep(0.30, 0.55, inclinacion);
           float estrato = 0.5 + 0.5 * sin(vPos.y * 0.11);
           vec3 tierra = mix(vec3(0.40, 0.28, 0.18), vec3(0.60, 0.46, 0.30), estrato);
           diffuseColor.rgb = mix(diffuseColor.rgb, tierra, roca);
-          // sombra de las nubes: manchas de borde difuso y irregular que viajan con cada nube
-          float despejado = 1.0;
-          for (int i = 0; i < ${NUBES}; i++) {
-            vec2 q = vPos.xz - uNubes[i].xy;
-            float d = length(q) / uNubes[i].z;
-            float r = ruidoN(q * 0.0007) * 0.6 + ruidoN(q * 0.0022) * 0.4;
-            despejado *= 1.0 - smoothstep(1.05, 0.2, d + (r - 0.5) * 0.7) * uNubes[i].w;
-          }
+          // sombra de las nubes: se calcula aparte en una textura que cubre todo el terreno (ver pintarNubes)
+          float despejado = texture2D(uNubesTex, (vPos.xz - uCaja.xy) / uCaja.zw).r;
           diffuseColor.rgb *= mix(vec3(${(1 - SOMBRA_NUBE).toFixed(2)}, ${(1 - SOMBRA_NUBE * 0.8).toFixed(2)}, ${(1 - SOMBRA_NUBE * 0.55).toFixed(2)}), vec3(1.0), despejado);`)
         // resalte de la vereda: se mezcla sin iluminar, ya codificado, y no se pinta sobre las paredes verticales
         // (ahí se vería la textura estirada); antes era una segunda pasada transparente sobre todo el terreno
@@ -3002,6 +3003,108 @@ export class Mapa3dComponent implements AfterViewInit {
     if (clave !== this.claveSombra) { this.claveSombra = clave; this.sombraSucia = true; }
   }
 
+  /**
+   * Las manchas de sombra de las nubes se evalúan una vez en una textura de 1024 px que cubre todo el terreno
+   * (unos 11 m por texel) en lugar de una vez por píxel de pantalla: el terreno solo la muestrea.
+   */
+  private crearTexturaNubes(): void {
+    const w = 1024, h = Math.round(w * this.alto / this.ancho);
+    this.rtNubes = new THREE.WebGLRenderTarget(w, h, { depthBuffer: false, colorSpace: THREE.NoColorSpace });
+    const material = new THREE.ShaderMaterial({
+      uniforms: {
+        uNubes: { value: this.sombrasNubes },
+        uCaja: { value: new THREE.Vector4(-this.ancho / 2, -this.alto / 2, this.ancho, this.alto) },
+      },
+      vertexShader: `varying vec2 vUv; void main() { vUv = uv; gl_Position = vec4(position.xy, 0.0, 1.0); }`,
+      fragmentShader: `
+        varying vec2 vUv;
+        uniform vec4 uNubes[${NUBES}];
+        uniform vec4 uCaja;
+        float hashN(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+        float ruidoN(vec2 p) {
+          vec2 i = floor(p), f = fract(p);
+          f = f * f * (3.0 - 2.0 * f);
+          return mix(mix(hashN(i), hashN(i + vec2(1.0, 0.0)), f.x), mix(hashN(i + vec2(0.0, 1.0)), hashN(i + vec2(1.0, 1.0)), f.x), f.y);
+        }
+        void main() {
+          vec2 xz = uCaja.xy + vUv * uCaja.zw;
+          float despejado = 1.0;
+          for (int i = 0; i < ${NUBES}; i++) {
+            vec2 q = xz - uNubes[i].xy;
+            float d = length(q) / uNubes[i].z;
+            float r = ruidoN(q * 0.0007) * 0.6 + ruidoN(q * 0.0022) * 0.4;
+            despejado *= 1.0 - smoothstep(1.05, 0.2, d + (r - 0.5) * 0.7) * uNubes[i].w;
+          }
+          gl_FragColor = vec4(vec3(despejado), 1.0);
+        }`,
+      depthTest: false, depthWrite: false,
+    });
+    const escena = new THREE.Scene();
+    const cuadro = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), material);
+    cuadro.frustumCulled = false;
+    escena.add(cuadro);
+    this.pasoNubes = { escena, camara: new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1) };
+  }
+
+  /** Repinta la textura de sombras de nubes (cada dos cuadros: las nubes se mueven despacio). */
+  private pintarNubes(): void {
+    if ((this.cuadroNubes++ & 1) && this.cuadroNubes > 2) return;
+    this.renderer.setRenderTarget(this.rtNubes);
+    this.renderer.render(this.pasoNubes.escena, this.pasoNubes.camara);
+    this.renderer.setRenderTarget(null);
+  }
+
+  /**
+   * Recalcula las normales solo de las veredas que se movieron y de los vértices que las rodean, con el mismo
+   * criterio de computeVertexNormals (suma de normales de las caras, ponderada por área).
+   */
+  private actualizarNormalesTerreno(): void {
+    const filas = this.filasTerreno;
+    const pos = this.capaTerreno.atributo.array as Float32Array;
+    const normal = this.terreno.geometry.getAttribute('normal') as THREE.BufferAttribute;
+    const total = pos.length / 3, columnas = total / filas;
+    const afectados = new Set<number>();
+    for (const id of this.piezasMovidas) {
+      for (const k of this.capaTerreno.porPieza[id]) {
+        const i = k % filas, j = Math.floor(k / filas);
+        for (let dj = -1; dj <= 1; dj++) {
+          for (let di = -1; di <= 1; di++) {
+            if (i + di >= 0 && i + di < filas && j + dj >= 0 && j + dj < columnas) afectados.add((j + dj) * filas + i + di);
+          }
+        }
+      }
+    }
+    this.piezasMovidas.clear();
+    const salida = normal.array as Float32Array;
+    let nx = 0, ny = 0, nz = 0;
+    // suma la normal de la cara (A, B, C), con el mismo orden de vértices que usa three.js
+    const cara = (a: number, b: number, c: number) => {
+      const ax = pos[a * 3] - pos[b * 3], ay = pos[a * 3 + 1] - pos[b * 3 + 1], az = pos[a * 3 + 2] - pos[b * 3 + 2];
+      const cx = pos[c * 3] - pos[b * 3], cy = pos[c * 3 + 1] - pos[b * 3 + 1], cz = pos[c * 3 + 2] - pos[b * 3 + 2];
+      nx += cy * az - cz * ay;
+      ny += cz * ax - cx * az;
+      nz += cx * ay - cy * ax;
+    };
+    for (const v of afectados) {
+      const i = v % filas, j = Math.floor(v / filas);
+      nx = ny = nz = 0;
+      // cada celda (ci, cj) tiene las caras (a, c, b) y (b, c, d), con a = (ci, cj), b = a + 1, c = a + filas, d = c + 1
+      for (let cj = j - 1; cj <= j; cj++) {
+        for (let ci = i - 1; ci <= i; ci++) {
+          if (ci < 0 || cj < 0 || ci >= filas - 1 || cj >= columnas - 1) continue;
+          const a = cj * filas + ci, b = a + 1, c = a + filas, d = c + 1;
+          if (v === a || v === c || v === b) cara(a, c, b);
+          if (v === b || v === c || v === d) cara(b, c, d);
+        }
+      }
+      const l = Math.hypot(nx, ny, nz) || 1;
+      salida[v * 3] = nx / l;
+      salida[v * 3 + 1] = ny / l;
+      salida[v * 3 + 2] = nz / l;
+    }
+    normal.needsUpdate = true;
+  }
+
   /** De lejos cada tesela de árboles usa la versión simple; de cerca, la completa. */
   private actualizarArboles(): void {
     const cam = this.camara.position;
@@ -3014,6 +3117,7 @@ export class Mapa3dComponent implements AfterViewInit {
 
   /** Repinta el mapa de sombras solo si hace falta; la malla fina del relieve se sustituye por la gruesa. */
   private renderizar(): void {
+    this.pintarNubes();
     const repintar = this.sombraSucia;
     this.sombraSucia = false;
     this.renderer.shadowMap.needsUpdate = repintar;
@@ -3567,6 +3671,7 @@ export class Mapa3dComponent implements AfterViewInit {
     this.controles?.dispose();
     this.renderer?.dispose();
     this.terreno?.geometry.dispose();
+    this.rtNubes?.dispose();
     this.texturasNubes.forEach(t => t.dispose());
     for (const n of this.nubes) for (const b of n.bocanadas) b.sprite.material.dispose();
     this.disco?.material.dispose();
@@ -3606,12 +3711,13 @@ export class Mapa3dComponent implements AfterViewInit {
       }
       cambio = true;
       this.normalesPendientes = true;
+      this.piezasMovidas.add(id);
     });
     if (cambio) {
       this.sombraSucia = true;
       for (const capa of this.capas) capa.atributo.needsUpdate = true;
     } else if (this.normalesPendientes) {
-      this.terreno.geometry.computeVertexNormals();
+      this.actualizarNormalesTerreno();
       this.normalesPendientes = false;
     }
   }
