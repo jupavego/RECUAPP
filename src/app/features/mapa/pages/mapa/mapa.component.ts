@@ -303,7 +303,7 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
         strokeColor: c.contorno, fillColor: c.relleno,
         strokeWeight: elegido ? 3 : 1.4,
         strokeOpacity: enSub ? 1 : 0.35,
-        fillOpacity: mid != null ? (elegido ? 0.25 : enSub ? 0.45 : 0.12) : (enSub ? OPACIDAD_MUNICIPIO : 0.2),
+        fillOpacity: mid != null ? (elegido ? 0.18 : enSub ? 0.32 : 0.08) : (enSub ? OPACIDAD_MUNICIPIO : 0.14),
         zIndex: elegido ? 2 : 1,
       });
     });
@@ -368,7 +368,7 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
         fillColor: elegida ? this.coloresVereda[idx].seleccionado : this.coloresVereda[idx].relleno,
         strokeWeight: elegida ? 3 : 1,
         strokeOpacity: enCorr ? 0.9 : 0.25,
-        fillOpacity: elegida ? 0.95 : enCorr ? OPACIDAD_SEGMENTO : 0.25,
+        fillOpacity: elegida ? 0.7 : enCorr ? OPACIDAD_SEGMENTO : 0.18,
         zIndex: elegida ? 5 : 3,
       });
     });

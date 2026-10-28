@@ -19,8 +19,8 @@ const PASTELES: Pastel[] = [0, 1, 2].flatMap(nivel =>
   [350, 16, 40, 58, 90, 140, 170, 195, 220, 255, 285, 320].map(h =>
     ({ h: h + nivel * 9, s: [70, 62, 56][nivel], l: [84, 77, 70][nivel] })));
 
-export const OPACIDAD_MUNICIPIO = 0.8;
-export const OPACIDAD_SEGMENTO = 0.85;
+export const OPACIDAD_MUNICIPIO = 0.56;
+export const OPACIDAD_SEGMENTO = 0.6;
 
 export interface ColorMunicipio {
   /** tono base, en grados */
