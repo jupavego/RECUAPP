@@ -8,4 +8,5 @@ export const environment = {
   supabaseAnonKey: 'sb_publishable_UQFcAbMVh6PZobTsqKn-Vg_8O6bXQjV',
   sentryDsn: '',          // vacío en desarrollo — Sentry solo activo en producción
   turnstileSiteKey: '',   // clave pública de Cloudflare Turnstile (vacío = sin captcha)
+  googleMapsApiKey: 'AIzaSyDbJTm65fipASI_Q93Y_qo3DGIqKhbIoco',   // Maps JavaScript API (clave de Comeren) — restringida a localhost:* en Google Cloud Console
 };
