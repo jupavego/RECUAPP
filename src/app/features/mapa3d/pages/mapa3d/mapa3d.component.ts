@@ -6,8 +6,11 @@ import {
 import { Observable, catchError, forkJoin, of } from 'rxjs';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { mergeGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
-import { MapaService, Municipio, Zona } from '../../../mapa/services/mapa.service';
+import { MapaService, Municipio, Punto, Zona } from '../../../mapa/services/mapa.service';
+import { CATEGORIA } from '../../../mapa/utils/puntos';
+import { Modelo, modelarEquipamiento } from '../../utils/equipamientos';
 import { coloresPorMunicipio, hex } from '../../../mapa/utils/paleta';
 import { Geometria, decodeGeometria } from '../../../mapa/utils/polyline';
 
@@ -89,13 +92,78 @@ const ANCHO_MIN_CAUCE = 6;
 /** Puentes: solo donde el cauce dibujado mide al menos esto (metros del modelo); tablero, barandas y su amarillo. */
 const ANCHO_MIN_PUENTE = 20;
 const COLOR_BARANDA = '#f6c312';
-/** Cuánto vira el agua del Río Medellín a su color propio, #B2A544 con ondas azules (0 = azul, 1 = pleno). */
+/** Cuánto vira el agua del Río Medellín a su color propio, #AF9447 con ondas azules (0 = azul, 1 = pleno). */
 const TINTE_MEDELLIN = 1.0;
 /** Bandada que cruza el Río Medellín de sur a norte: cuántos pájaros, velocidad (m/s del modelo), recorrido total y pausa entre pasadas. */
 const PAJAROS = 11;
+/** Fábricas: separación mínima entre dos (m). Humo: bocanadas por chimenea, segundos por ciclo, altura de subida, deriva (m/s), radio de la aureola y opacidad. */
+/** Etiquetas de los sectores del inventario de Corantioquia. */
+const SECTORES: Record<string, string> = {
+  BAT: 'Alimentos y bebidas', TXT: 'Textiles', PCE: 'Plásticos y caucho', QMC: 'Química', ASF: 'Asfaltos y mezclas',
+  MAD: 'Madera', MMC: 'Metalmecánica', PAP: 'Papel', CVL: 'Cerámica y arcilla', OTR: 'Otros',
+};
+/** Contaminantes que se muestran y su nombre. */
+const CONTAMINANTES: [string, string][] = [
+  ['MP', 'Material particulado'], ['PM10', 'PM10'], ['PM2.5', 'PM2.5'], ['SO2', 'SO₂'], ['NO2', 'NO₂'],
+  ['CO', 'CO'], ['COV', 'COV'], ['CH4', 'CH₄'], ['CO2', 'CO₂'],
+];
+const RADIO_FABRICA = 55;
+const INDUSTRIA_SEPARACION = 2 * RADIO_FABRICA + 6;
+const HUMO_BOCANADAS = 28;
+const HUMO_CICLO = 34;
+const HUMO_ALTURA = 140;
+const HUMO_DERIVA = 9;
+const HUMO_AUREOLA = 100;
+const HUMO_OPACIDAD = 0.7;
+/** Tráfico de la doble calzada: velocidad de los autos (m/s del modelo), metros entre autos por calzada y su paleta. */
+const TRAFICO_VELOCIDAD = [45, 80];
+const TRAFICO_ESPACIO = 150;
+/** Pueblo: radio (m) alrededor del centro de Girardota donde las vías forman una red, y metros de vía por auto. */
+const RADIO_PUEBLO = 2600;
+const TRAFICO_ESPACIO_PUEBLO = 170;
+const COLORES_AUTOS = ['#ff2d2d', '#ff8a00', '#ffd400', '#00d26a', '#00c2ff', '#2f6bff', '#e040fb', '#ff4fa3'];
 const VELOCIDAD_PAJAROS = 130;
 const RECORRIDO_PAJAROS = 6800;
 const PAUSA_PAJAROS = 14;
+/**
+ * Boeing 787-9 (62,5 m de largo, 59,8 m de envergadura: a escala real, el relieve es lo único que se exagera) que cruza el
+ * mapa de El Yarumo a La Holanda: altitud en metros sobre el nivel del mar (se lleva al relieve con la misma exageración, así
+ * conserva su holgura sobre las cumbres), velocidad (m/s), pausa entre pasadas y tramo (m) que sigue volando fuera del mapa.
+ */
+const ALTITUD_AVION = 2850;
+/** Ruta en S: cuánto se aparta (m) a cada lado de la recta, y cuánto se exagera la inclinación de las alas en los giros (1 = la física real). */
+const AMPLITUD_S_AVION = 2600;
+const BANDEO_AVION = 1.6;
+const VELOCIDAD_AVION = 110;
+const PAUSA_AVION = 30;
+const MARGEN_AVION = 3000;
+/** Hasta esta distancia a la cámara (m) el avión mide lo real; más allá se agranda en proporción, hasta ESCALA_MAX_AVION veces. */
+const DISTANCIA_REAL_AVION = 2500;
+/** El avión se dibuja un 25 % más grande que el real (1 = tamaño real). */
+const TAMANO_AVION = 1.25;
+const ESCALA_MAX_AVION = 5;
+/**
+ * Estela: una bocanada cada ESTELA_ESPACIO metros por motor (hasta ESTELA_PUFFS en total), que dura ESTELA_VIDA segundos,
+ * se ensancha unas 7 veces mientras se disipa y deriva con el viento (m/s). Opacidad máxima. La nube pequeña de la ruta
+ * (radio en m) se la traga: dentro de ella la estela casi no se distingue.
+ */
+const ESTELA_PUFFS = 440;
+const ESTELA_VIDA = 42;
+const ESTELA_ESPACIO = 26;
+const ESTELA_OPACIDAD = 0.34;
+const ESTELA_DERIVA = 5;
+const NUBE_AVION_RADIO = 480;
+/** Salida de los motores (m desde el centro del avión): x, y, z de cada uno. */
+const MOTORES_AVION: [number, number, number][] = [[0, 2.8, -9.8], [0, 2.8, 9.8]];
+/** Luces del avión (m desde su centro, nariz hacia +x): navegación roja a la izquierda y verde a la derecha, destellos blancos en las puntas de ala y la cola, y baliza roja. */
+const LUCES_AVION: { tipo: LuzAvion['tipo']; color: string; pos: [number, number, number]; tam: number }[] = [
+  { tipo: 'nav', color: '#ff3a2a', pos: [-12, 8.2, -29.9], tam: 3 },
+  { tipo: 'nav', color: '#2aff7a', pos: [-12, 8.2, 29.9], tam: 3 },
+  { tipo: 'destello', color: '#f4f8ff', pos: [-12, 8.2, -29.9], tam: 5 },
+  { tipo: 'destello', color: '#f4f8ff', pos: [-12, 8.2, 29.9], tam: 5 },
+  { tipo: 'destello', color: '#f4f8ff', pos: [-30.8, 7, 0], tam: 5 },
+  { tipo: 'baliza', color: '#ff3030', pos: [6, 8.5, 0], tam: 4 },
+];
 /** Distancia (píxeles) a la que el cursor "toca" un cauce: de lejos son líneas finísimas. */
 const TOLERANCIA_CAUCE_PX = 9;
 /** Opacidad del velo de color de las veredas sobre la imagen satelital. */
@@ -181,6 +249,53 @@ interface Bocanada {
   giro: number;
   /** giro propio de partida (rad); se pierde a medida que el viento alinea la bocanada */
   rot0: number;
+}
+
+interface Calzada { x: number[]; z: number[]; y: number[]; cum: number[]; largo: number; }
+interface Auto { calzada: number; s: number; i: number; v: number; carril: number; }
+/** Tramo de vía entre dos cruces de la red del pueblo; `unico` = solo se circula de `ini` a `fin`. */
+interface Arista extends Calzada { unico: boolean; vf: number; ini: string; fin: string; }
+interface AutoRed { arista: number; s: number; i: number; dir: 1 | -1; v: number; carril: number; }
+
+interface Industria {
+  n: string; ciiu: number | null; c: string; dir?: string; lat: number; lon: number;
+  fuentes?: number; combustibles?: string[]; equipos?: string[]; chimenea?: number | null; control?: string[];
+  /** emisiones anuales estimadas (Mg/año) y flujos medidos en chimenea (kg/h), por contaminante */
+  em?: Record<string, number>; kgh?: Record<string, number>;
+}
+
+interface FichaFabrica {
+  nombre: string; sector: string; direccion: string; resumen: string; combustibles: string; control: string;
+  emisiones: { k: string; v: string }[]; flujos: string;
+}
+interface Humo {
+  x: number; y: number; z: number;
+  fase: number;
+  puffs: { sprite: THREE.Sprite; theta: number; giro: number; tam: number; desv: number }[];
+}
+
+interface LuzAvion {
+  sprite: THREE.Sprite;
+  tipo: 'nav' | 'destello' | 'baliza';
+  tam: number;
+}
+
+interface PuffEstela {
+  sprite: THREE.Sprite;
+  /** segundos de vida; −1 = libre para reutilizarse */
+  edad: number;
+  x: number; y: number; z: number;
+  base: number;
+}
+
+interface Avion {
+  grupo: THREE.Group;
+  luces: LuzAvion[];
+  /** punto de la recta (x, z) y su dirección unitaria; el avión recorre t ∈ [t0, t1] desde ese punto */
+  x0: number; z0: number; dx: number; dz: number; t0: number; t1: number;
+  y: number;
+  /** la ruta en S: se aparta amp · sen(k · (t − t0)) a un lado de la recta, así que sale y llega sobre ella */
+  amp: number; k: number;
 }
 
 interface Pajaro {
@@ -270,6 +385,26 @@ const TIPOS_ZONA: Record<string, string> = {
         </button>
       </div>
       @if (panelAbierto()) {
+        @if (fabricaSeleccion(); as f) {
+          <div class="ficha fab">
+            <span class="tipo">Industria · {{ f.sector }}</span>
+            <strong>{{ f.nombre }}</strong>
+            @if (f.direccion) { <span class="dato">{{ f.direccion }}</span> }
+            <span class="dato">{{ f.resumen }}</span>
+            <span class="dato"><b>Combustibles:</b> {{ f.combustibles }}</span>
+            <span class="dato"><b>Control de emisiones:</b> {{ f.control }}</span>
+            @if (f.emisiones.length) {
+              <div class="emisiones">
+                <span class="tipo">Emisiones estimadas</span>
+                @for (e of f.emisiones; track e.k) { <div><span>{{ e.k }}</span><b>{{ e.v }}</b></div> }
+              </div>
+            } @else {
+              <span class="dato">Sin emisiones estimadas en el inventario.</span>
+            }
+            @if (f.flujos) { <span class="dato"><b>Medido en chimenea:</b> {{ f.flujos }}</span> }
+            <span class="dato fuente">Inventario de emisiones atmosféricas · Corantioquia 2021</span>
+          </div>
+        } @else {
         @if (rioSeleccion(); as r) {
           <div class="ficha">
             <span class="tipo">{{ r.detalle }}</span>
@@ -288,7 +423,8 @@ const TIPOS_ZONA: Record<string, string> = {
             <p>Pasa el cursor sobre una vereda o un río y haz clic para seleccionarlo.</p>
           }
         }
-        @if (hayPoblacion()) {
+        }
+        @if (hayPoblacion() && !fabricaSeleccion()) {
           <div class="anios" role="group" aria-label="Año de la población">
             <span>Año</span>
             @for (a of aniosPoblacion; track a) {
@@ -298,8 +434,8 @@ const TIPOS_ZONA: Record<string, string> = {
         }
         <button type="button" (click)="vistaGeneral()">Vista general</button>
         <p class="ayuda">Arrastra para desplazarte · rueda para acercar · rueda presionada para girar e inclinar · clic derecho para inclinar</p>
-      } @else if (rioSeleccion() || seleccion()) {
-        <p class="resumen">{{ rioSeleccion()?.nombre ?? seleccion()!.n }}</p>
+      } @else if (fabricaSeleccion() || rioSeleccion() || seleccion()) {
+        <p class="resumen">{{ fabricaSeleccion()?.nombre ?? rioSeleccion()?.nombre ?? seleccion()!.n }}</p>
       }
     </div>
 
@@ -321,7 +457,7 @@ const TIPOS_ZONA: Record<string, string> = {
     .rotulos ::ng-deep .rot { position: absolute; left: 0; top: 0; display: flex; align-items: center; gap: 4px;
       padding: 2px 8px 2px 5px; border-radius: 999px; white-space: nowrap; will-change: transform;
       transform-origin: 50% 100%;
-      background: rgba(255,255,255,.95); color: #243746; box-shadow: 0 2px 8px rgba(15,35,55,.35);
+      background: #ffffff; color: #243746; box-shadow: 0 2px 8px rgba(15,35,55,.35); z-index: 3;
       font: 800 10px/1.1 'Nunito', ui-rounded, 'SF Pro Rounded', system-ui, sans-serif; letter-spacing: .01em; }
     .rotulos ::ng-deep .rot i { flex: none; width: 7px; height: 7px; border-radius: 50%;
       border: 1.5px solid #fff; box-shadow: 0 0 0 1px rgba(36,55,70,.35); }
@@ -329,17 +465,21 @@ const TIPOS_ZONA: Record<string, string> = {
       margin-left: -3px; background: inherit; transform: rotate(45deg); border-radius: 0 0 2px 0; }
     .rotulos ::ng-deep .rot.cabecera { font-size: 11.5px; padding: 3px 9px 3px 6px; }
     .rotulos ::ng-deep .rot.activo { font-size: 12.5px; padding: 4px 11px 4px 7px; background: #fff7e0;
-      box-shadow: 0 0 0 2.5px #ffb81f, 0 6px 16px rgba(15,35,55,.4); z-index: 2; }
+      box-shadow: 0 0 0 2.5px #ffb81f, 0 6px 16px rgba(15,35,55,.4); z-index: 5; }
     .rotulos ::ng-deep .rot.activo i { width: 9px; height: 9px; }
-    .rotulos ::ng-deep .rot.agua { background: rgba(222,242,253,.95); color: #0b4f7a; font-style: italic; }
+    /* los nombres de ríos van debajo de los de veredas, y todos son sólidos: si se cruzan, queda encima la vereda */
+    .rotulos ::ng-deep .rot.agua { background: #def2fd; color: #0b4f7a; font-style: italic; z-index: 1; }
+    .rotulos ::ng-deep .rot.agua.activo { z-index: 1; }
     .rotulos ::ng-deep .rot.agua i { background: #2c88c8; }
+    .rotulos ::ng-deep .rot.fabrica { background: #fff7e0; z-index: 4; }
+    .rotulos ::ng-deep .rot.fabrica i { background: #6b7280; }
     .creditos { position: absolute; left: 16px; bottom: 8px; margin: 0; max-width: calc(100% - 90px); pointer-events: none;
       font: 600 10px/1.3 system-ui; color: rgba(255,255,255,.92); text-shadow: 0 1px 3px rgba(0,0,0,.7); }
-    .zoom { position: absolute; right: 16px; bottom: 16px; display: flex; flex-direction: column; gap: 6px; }
+    .zoom { position: absolute; z-index: 10; right: 16px; bottom: 16px; display: flex; flex-direction: column; gap: 6px; }
     .zoom button { width: 38px; height: 38px; padding: 0; border-radius: 12px; font: 700 1.3rem/1 system-ui;
       background: rgba(255,255,255,.9); color: #26425a; box-shadow: 0 3px 12px rgba(30,60,90,.25); }
     .zoom button:hover { background: #fff; }
-    .panel { position: absolute; top: 16px; left: 16px; width: 260px; padding: 14px 16px; border-radius: 16px;
+    .panel { position: absolute; z-index: 10; top: 16px; left: 16px; width: 260px; padding: 14px 16px; border-radius: 16px;
       background: rgba(255,255,255,.82); backdrop-filter: blur(8px); box-shadow: 0 6px 24px rgba(30,60,90,.2);
       font: .9rem system-ui; color: #26425a; }
     .panel .cabecera { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
@@ -357,6 +497,12 @@ const TIPOS_ZONA: Record<string, string> = {
     .ficha { display: flex; flex-direction: column; gap: 2px; margin-bottom: 10px; }
     .ficha .tipo { font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: #6b8294; }
     .ficha strong { font-size: 1.1rem; }
+    .ficha.fab { max-height: 46dvh; overflow: auto; padding-right: 4px; }
+    .ficha .emisiones { display: grid; gap: 1px; margin: 4px 0 2px; font-size: .78rem; }
+    .ficha .emisiones div { display: flex; justify-content: space-between; gap: 10px; }
+    .ficha .emisiones b { font-weight: 700; color: #26425a; }
+    .ficha .dato b { font-weight: 700; color: #26425a; }
+    .ficha .dato.fuente { font-size: .66rem; color: #8aa0b0; margin-top: 4px; }
     .ficha .dato { font-size: .78rem; color: #4d6a80; }
     .anios { display: flex; align-items: center; gap: 4px; margin-bottom: 10px; font-size: .78rem; color: #6b8294; }
     .anios span { margin-right: 2px; }
@@ -425,7 +571,44 @@ export class Mapa3dComponent implements AfterViewInit {
   private sol!: THREE.DirectionalLight;
   private nubes: Nube[] = [];
   private nieblas: Neblina[] = [];
+  private calzadas: Calzada[] = [];
+  private autos: Auto[] = [];
+  private fabricas: { x: number; z: number; lon: number; lat: number; n: string; datos: Industria }[] = [];
+  private mallaIndustrias: THREE.Mesh | null = null;
+  private inicioFabrica: number[] = [];
+  private anilloFabrica: THREE.Mesh | null = null;
+  private fabricaElegida = -1;
+  private fabricaHover = -1;
+  /** Puntos de interés (colegios, hospitales, canchas...) con el edificio que los representa. */
+  private equipamientos: { x: number; z: number; lon: number; lat: number; n: string; r: number; datos: { p: Punto; modelo: Modelo } }[] = [];
+  private mallaEquip: THREE.Mesh | null = null;
+  private geoEquip: THREE.BufferGeometry | null = null;
+  private matEquip: THREE.Material | null = null;
+  private inicioEquip: number[] = [];
+  private equipHover = -1;
+  private rotuloEquip: HTMLElement | null = null;
+  private tFabricaHover = 0;
+  private tEquipHover = 0;
+  private anilloHover: THREE.Mesh | null = null;
+  private rotuloFabrica: HTMLElement | null = null;
+  readonly fabricaSeleccion = signal<FichaFabrica | null>(null);
+  private humos: Humo[] = [];
+  private geoIndustrias: THREE.BufferGeometry | null = null;
+  private matIndustrias: THREE.Material | null = null;
+  private aristas: Arista[] = [];
+  private nodos = new Map<string, number[]>();
+  private autosRed: AutoRed[] = [];
+  private mallaAutos: THREE.InstancedMesh[] = [];
+  private geoAutos: THREE.BufferGeometry[] = [];
+  private matAutos: THREE.Material[] = [];
   private pajaros: Pajaro[] = [];
+  private avion: Avion | null = null;
+  private tiempoAvion = 0;
+  private brilloLuz: THREE.Texture | null = null;
+  private estela: PuffEstela[] = [];
+  private estelaSiguiente = 0;
+  private readonly estelaUltima = new THREE.Vector3();
+  private nubeAvion: { x: number; y: number; z: number; sprites: THREE.Sprite[] } | null = null;
   private bocas: { x: number; z: number; dx: number; dz: number }[] = [];
   private confluencias: { espuma: THREE.Mesh; fase: number; largo: number }[] = [];
   private texturasConfluencia: THREE.Texture[] = [];
@@ -435,6 +618,7 @@ export class Mapa3dComponent implements AfterViewInit {
   private geosPajaros: THREE.BufferGeometry[] = [];
   private materialesPajaros: THREE.Material[] = [];
   private readonly vientoVista = new THREE.Vector3();
+  private readonly posLuz = new THREE.Vector3();
   private disco: THREE.Sprite | null = null;
   private texturasNubes: THREE.Texture[] = [];
   /** por nube: x, z de su sombra sobre el terreno, radio y opacidad (el shader del terreno los lee) */
@@ -473,17 +657,23 @@ export class Mapa3dComponent implements AfterViewInit {
       vias: this.http.get<Compacto>(`data/mapa3d/vias-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
       edificios: this.http.get<Compacto>(`data/mapa3d/edificios-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
       cauces: this.http.get<Cauces>(`data/mapa3d/cauces-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
+      industrias: this.http.get<Industria[]>(`data/mapa3d/industrias-${ID_MUNICIPIO}.json`).pipe(catchError(() => of([] as Industria[]))),
       poblacion: this.http.get<PoblacionVeredas>(`data/mapa/poblacion/veredas-${CODIGO_DANE}.geojson`).pipe(catchError(() => of(null))),
+      puntos: this.mapa.puntos(ID_MUNICIPIO),
     }).subscribe({
-      next: ({ relieve, muni, terr, foto, vias, edificios, cauces, poblacion }) => {
+      next: ({ relieve, muni, terr, foto, vias, edificios, cauces, poblacion, industrias, puntos }) => {
         try {
           this.foto = foto;
           this.construir(relieve, muni.municipios, terr.v);
+          this.fabricas = this.ubicarIndustrias(industrias, vias);
+          this.equipamientos = this.ubicarEquipamientos(puntos, vias);
           if (vias?.v) this.construirVias(vias);
           if (cauces?.c) this.construirCauces(cauces);
           if (vias?.v && cauces?.c) this.construirPuentes(vias, cauces);
           if (cauces?.c) this.construirPajaros(cauces);
-          this.edificiosBase = edificios;
+          if (vias?.v) this.construirTrafico(vias);
+          this.construirIndustrias();
+          this.construirEquipamientos();          this.edificiosBase = this.sinIndustrias(edificios);
           this.poblacion = poblacion;
           this.hayPoblacion.set(!!(edificios?.e && poblacion));
           const dibujados = this.edificiosParaAnio(this.anio());
@@ -551,6 +741,7 @@ export class Mapa3dComponent implements AfterViewInit {
     this.construirLuces();
     this.construirNubes();
     this.construirNiebla();
+    this.construirAvion();
     this.posicionarCamara();
     this.crearRotulos();
     this.arrancar();
@@ -1378,6 +1569,7 @@ export class Mapa3dComponent implements AfterViewInit {
 
   /** Elige (o suelta, con null) un río: marca todos sus tramos, muestra su nombre y encuadra la cámara. */
   private seleccionarRio(clave: string | null, volar = true): void {
+    if (clave) this.seleccionarFabrica(-1, false);
     this.rioElegido = clave;
     const rio = clave ? this.rios.get(clave) : null;
     if (!rio) {
@@ -1824,6 +2016,511 @@ export class Mapa3dComponent implements AfterViewInit {
   }
 
   /**
+   * Tráfico: autos de colores que circulan por las vías principales y, en el pueblo, por todas sus calles.
+   *  - Doble calzada: tramos de vía principal con otro tramo paralelo en sentido contrario (OSM dibuja cada calzada en su
+   *    sentido de marcha). Fuera del pueblo los autos dan vueltas por cada calzada, uno cada ~150 m, en tres carriles.
+   *  - Pueblo: en un radio alrededor de Girardota las vías forman una red (se parten en los puntos que comparten). Cada
+   *    auto avanza por una arista y, al llegar a un cruce, elige por dónde seguir; en la doble calzada solo en su sentido,
+   *    y en las demás vías en ambos, por el carril derecho. Así entran desde la autopista y recorren las calles.
+   * Todo va en dos mallas instanciadas (carrocería de color y techo gris claro).
+   */
+  private construirTrafico(vias: Compacto): void {
+    type Muestra = { x: number; z: number; tx: number; tz: number; p: number };
+    const polis: [number, number][][] = [];
+    const locales: [number, number][][] = [];
+    for (const v of vias.v!) {
+      if (v[0] > 1) continue;
+      const l = this.desdeDeltas(v, vias.k, 1).map(q => [this.aX(q[0]), this.aZ(q[1])] as [number, number]);
+      if (l.length < 2) continue;
+      (v[0] === 0 ? polis : locales).push(l);
+    }
+    // muestras cada ~30 m con su tangente, agrupadas en celdas de 100 m
+    const celdas = new Map<number, Muestra[]>();
+    const porPoli: Muestra[][] = polis.map(() => []);
+    const clave = (x: number, z: number) => Math.floor(x / 100) * 100003 + Math.floor(z / 100);
+    polis.forEach((l, p) => {
+      for (let i = 1; i < l.length; i++) {
+        const dx = l[i][0] - l[i - 1][0], dz = l[i][1] - l[i - 1][1], largo = Math.hypot(dx, dz);
+        if (largo < 1e-6) continue;
+        const n = Math.max(1, Math.ceil(largo / 30));
+        for (let j = 0; j < n; j++) {
+          const m: Muestra = { x: l[i - 1][0] + dx * j / n, z: l[i - 1][1] + dz * j / n, tx: dx / largo, tz: dz / largo, p };
+          porPoli[p].push(m);
+          const k = clave(m.x, m.z);
+          (celdas.get(k) ?? celdas.set(k, []).get(k)!).push(m);
+        }
+      }
+    });
+    // doble calzada = la mayor parte del tramo tiene vecino a 6–80 m en sentido contrario
+    const dobles = new Set<number>();
+    porPoli.forEach((ms, p) => {
+      if (ms.length < 8) return;
+      let hits = 0;
+      for (const m of ms) {
+        const ci = Math.floor(m.x / 100), cj = Math.floor(m.z / 100);
+        let hay = false;
+        for (let di = -1; di <= 1 && !hay; di++) {
+          for (let dj = -1; dj <= 1 && !hay; dj++) {
+            for (const o of celdas.get((ci + di) * 100003 + cj + dj) ?? []) {
+              if (o.p === p) continue;
+              const d = Math.hypot(o.x - m.x, o.z - m.z);
+              if (d >= 6 && d <= 80 && m.tx * o.tx + m.tz * o.tz < -0.6) { hay = true; break; }
+            }
+          }
+        }
+        if (hay) hits++;
+      }
+      if (hits / ms.length > 0.5) dobles.add(p);
+    });
+
+    /** Una polilínea densificada (un punto cada ~15 m) con la altura de la vía en cada uno. */
+    const densificar = (l: [number, number][]) => {
+      const x: number[] = [], z: number[] = [], y: number[] = [], cum: number[] = [];
+      let recorrido = 0;
+      const agregar = (px: number, pz: number) => {
+        if (x.length) recorrido += Math.hypot(px - x[x.length - 1], pz - z[z.length - 1]);
+        x.push(px); z.push(pz); y.push(this.alturaXZ(px, pz) + 3); cum.push(recorrido);
+      };
+      agregar(l[0][0], l[0][1]);
+      for (let i = 1; i < l.length; i++) {
+        const n = Math.max(1, Math.ceil(Math.hypot(l[i][0] - l[i - 1][0], l[i][1] - l[i - 1][1]) / 15));
+        for (let j = 1; j <= n; j++) agregar(l[i - 1][0] + (l[i][0] - l[i - 1][0]) * j / n, l[i - 1][1] + (l[i][1] - l[i - 1][1]) * j / n);
+      }
+      return { x, z, y, cum, largo: recorrido };
+    };
+
+    // ── red del pueblo ──
+    const centro = this.centroDe('Girardota') ?? { x: 0, z: 0 };
+    const enPueblo = (l: [number, number][]) => l.some(q => Math.hypot(q[0] - centro.x, q[1] - centro.z) < RADIO_PUEBLO);
+    const red: { l: [number, number][]; unico: boolean; vf: number; poli: number }[] = [];
+    polis.forEach((l, p) => { if (enPueblo(l)) red.push({ l, unico: dobles.has(p), vf: 1, poli: p }); });
+    for (const l of locales) if (enPueblo(l)) red.push({ l, unico: false, vf: 0.55, poli: -1 });
+    const llave = (q: [number, number]) => `${Math.round(q[0])},${Math.round(q[1])}`;
+    const uso = new Map<string, number>();
+    for (const r of red) for (const q of r.l) uso.set(llave(q), (uso.get(llave(q)) ?? 0) + 1);
+    // cada vía se parte en los vértices que comparten con otra (los cruces) y en sus extremos
+    for (const r of red) {
+      let desde = 0;
+      for (let i = 1; i < r.l.length; i++) {
+        if (i < r.l.length - 1 && (uso.get(llave(r.l[i])) ?? 0) < 2) continue;
+        const tramo = r.l.slice(desde, i + 1);
+        desde = i;
+        if (tramo.length < 2) continue;
+        const d = densificar(tramo);
+        if (d.largo < 5) continue;
+        const idx = this.aristas.length;
+        const ini = llave(tramo[0]), fin = llave(tramo[tramo.length - 1]);
+        this.aristas.push({ ...d, unico: r.unico, vf: r.vf, ini, fin });
+        for (const k of new Set([ini, fin])) (this.nodos.get(k) ?? this.nodos.set(k, []).get(k)!).push(idx);
+      }
+    }
+
+    // ── autos ──
+    const rnd = mulberry32(900);
+    // fuera del pueblo, las calzadas dobles dan vueltas por su propio tramo
+    const enRed = new Set(red.filter(r => r.poli >= 0).map(r => r.poli));
+    for (const p of dobles) {
+      if (enRed.has(p)) continue;
+      const d = densificar(polis[p]);
+      if (d.largo < 150) continue;
+      this.calzadas.push(d);
+      const n = Math.max(1, Math.round(d.largo / TRAFICO_ESPACIO));
+      for (let a = 0; a < n; a++) {
+        this.autos.push({
+          calzada: this.calzadas.length - 1, s: rnd() * d.largo, i: 0,
+          v: TRAFICO_VELOCIDAD[0] + rnd() * (TRAFICO_VELOCIDAD[1] - TRAFICO_VELOCIDAD[0]),
+          carril: [-8, 0, 8][Math.floor(rnd() * 3)],
+        });
+      }
+    }
+    // en el pueblo, autos repartidos por las aristas según su largo
+    const total = this.aristas.reduce((t, e) => t + e.largo, 0);
+    const nRed = Math.round(total / TRAFICO_ESPACIO_PUEBLO);
+    const acumulado: number[] = [];
+    this.aristas.reduce((t, e, i) => (acumulado[i] = t + e.largo), 0);
+    for (let a = 0; a < nRed; a++) {
+      const q = rnd() * total;
+      const arista = Math.max(0, acumulado.findIndex(c => c >= q));
+      const e = this.aristas[arista];
+      this.autosRed.push({
+        arista, s: rnd() * e.largo, i: 0, dir: e.unico || rnd() < 0.5 ? 1 : -1,
+        v: TRAFICO_VELOCIDAD[0] + rnd() * (TRAFICO_VELOCIDAD[1] - TRAFICO_VELOCIDAD[0]), carril: [-8, 0, 8][Math.floor(rnd() * 3)],
+      });
+    }
+    const cuenta = this.autos.length + this.autosRed.length;
+    if (!cuenta) return;
+
+    // carrocería (toma el color de cada auto) y techo gris claro (igual en todos): dos mallas que comparten las matrices
+    const cuerpo = new THREE.BoxGeometry(15, 4, 6.5).translate(0, 2, 0);
+    const techo = new THREE.BoxGeometry(8, 3.2, 5.8).translate(-1, 5.6, 0);
+    this.geoAutos = [cuerpo, techo];
+    this.matAutos = [
+      new THREE.MeshStandardMaterial({ roughness: 0.4, metalness: 0.1 }),
+      new THREE.MeshStandardMaterial({ color: '#d3d8dd', roughness: 0.5, metalness: 0.1 }),
+    ];
+    const hacer = (g: THREE.BufferGeometry, m: THREE.Material) => {
+      const malla = new THREE.InstancedMesh(g, m, cuenta);
+      malla.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+      malla.frustumCulled = false;
+      this.escena.add(malla);
+      return malla;
+    };
+    const malla = hacer(cuerpo, this.matAutos[0]);
+    this.mallaAutos = [malla, hacer(techo, this.matAutos[1])];
+    const color = new THREE.Color();
+    for (let i = 0; i < cuenta; i++) malla.setColorAt(i, color.set(COLORES_AUTOS[Math.floor(rnd() * COLORES_AUTOS.length)]));
+    this.animarTrafico(0);
+  }
+
+  private animarTrafico(dt: number): void {
+    if (!this.mallaAutos.length) return;
+    const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), qz = new THREE.Quaternion();
+    const arriba = new THREE.Vector3(0, 1, 0), lateral = new THREE.Vector3(0, 0, 1);
+    const pos = new THREE.Vector3(), escala = new THREE.Vector3(1, 1, 1);
+    /** Coloca el auto n sobre la polilínea `c` a `s` metros, mirando en el sentido `dir`, a `carril` metros a su derecha. */
+    const colocar = (n: number, c: { x: number[]; z: number[]; y: number[]; cum: number[] }, indice: number, s: number, dir: number, carril: number): number => {
+      let i = indice;
+      while (i > 0 && s < c.cum[i]) i--;
+      while (i < c.cum.length - 2 && s > c.cum[i + 1]) i++;
+      const seg = c.cum[i + 1] - c.cum[i] || 1, t = Math.min(1, Math.max(0, (s - c.cum[i]) / seg));
+      const tx = dir * (c.x[i + 1] - c.x[i]) / seg, tz = dir * (c.z[i + 1] - c.z[i]) / seg;
+      const x = c.x[i] + (c.x[i + 1] - c.x[i]) * t - tz * carril, z = c.z[i] + (c.z[i + 1] - c.z[i]) * t + tx * carril;
+      let y = c.y[i] + (c.y[i + 1] - c.y[i]) * t;
+      // si la vereda se levanta, el auto sube con ella
+      const lon = this.lon0 + x / this.mLon, lat = this.lat0 - z / this.mLat, id = this.idEn(lon, lat);
+      if (id >= 0 && this.alzado[id] > 0.5) y += this.alzado[id] * this.pesoBorde(lon, lat, id);
+      q.setFromAxisAngle(arriba, Math.atan2(-tz, tx)).multiply(qz.setFromAxisAngle(lateral, Math.atan(dir * (c.y[i + 1] - c.y[i]) / seg)));
+      m4.compose(pos.set(x, y, z), q, escala);
+      for (const malla of this.mallaAutos) malla.setMatrixAt(n, m4);
+      return i;
+    };
+
+    this.autos.forEach((a, n) => {
+      const c = this.calzadas[a.calzada];
+      a.s += a.v * dt;
+      if (a.s >= c.largo) { a.s -= c.largo; a.i = 0; }
+      a.i = colocar(n, c, a.i, a.s, 1, a.carril);
+    });
+
+    const base = this.autos.length;
+    this.autosRed.forEach((a, k) => {
+      let e = this.aristas[a.arista];
+      a.s += a.dir * a.v * e.vf * dt;
+      if (a.s > e.largo || a.s < 0) {
+        // llegó a un cruce: elige entre las vías que salen de él (en la doble calzada, solo en su sentido)
+        const nodo = a.s > e.largo ? e.fin : e.ini;
+        const opciones: [number, 1 | -1][] = [];
+        for (const j of this.nodos.get(nodo) ?? []) {
+          if (j === a.arista) continue;
+          const o = this.aristas[j];
+          if (o.ini === nodo) opciones.push([j, 1]);
+          if (o.fin === nodo && !o.unico) opciones.push([j, -1]);
+        }
+        if (opciones.length) {
+          const [j, d] = opciones[Math.floor(Math.random() * opciones.length)];
+          a.arista = j;
+          a.dir = d;
+          a.s = d > 0 ? 0 : this.aristas[j].largo;
+          a.i = 0;
+          a.carril = [-8, 0, 8][Math.floor(Math.random() * 3)];
+        } else if (!e.unico) {
+          a.dir = a.dir > 0 ? -1 : 1;                       // calle sin salida: da la vuelta
+          a.s = Math.min(e.largo, Math.max(0, a.s));
+        } else {
+          a.arista = Math.floor(Math.random() * this.aristas.length);   // calzada que se acaba: reaparece en otra vía
+          a.dir = 1;
+          a.s = 0;
+          a.i = 0;
+        }
+        e = this.aristas[a.arista];
+      }
+      // en las vías de doble sentido va por el carril derecho; en la doble calzada, en el que le tocó
+      a.i = colocar(base + k, e, a.i, a.s, a.dir, e.unico ? a.carril : (e.vf < 1 ? 5 : 8));
+    });
+    for (const malla of this.mallaAutos) malla.instanceMatrix.needsUpdate = true;
+  }
+
+  /**
+   * Fábricas del inventario de emisiones de Corantioquia (insumos/ambiente/Base_Datos_Inventario-2021.xlsx, filtradas a
+   * Girardota en public/data/mapa3d/industrias-49.json). Se descartan las que caen fuera del mapa o sin coordenadas, y
+   * las que quedan a menos de INDUSTRIA_SEPARACION de otra ya puesta (varias comparten predio).
+   */
+  private ubicarIndustrias(lista: Industria[], vias: Compacto | null): { x: number; z: number; lon: number; lat: number; n: string; datos: Industria }[] {
+    const holgura = this.holguraVias(vias);
+    const intentos: [number, number][] = [[0, 0]];
+    for (const r of [25, 50, 75, 100, 130, 160]) for (let k = 0; k < 12; k++) intentos.push([Math.cos(k * Math.PI / 6) * r, Math.sin(k * Math.PI / 6) * r]);
+    const out: { x: number; z: number; lon: number; lat: number; n: string; datos: Industria }[] = [];
+    for (const f of lista) {
+      const x0 = this.aX(f.lon), z0 = this.aZ(f.lat);
+      for (const [dx, dz] of intentos) {
+        const x = x0 + dx, z = z0 + dz;
+        if (Math.abs(x) > this.ancho / 2 - 150 || Math.abs(z) > this.alto / 2 - 150) continue;
+        // sin pisar a otra fábrica ni una vía: se corre hasta encontrar un sitio libre cerca del punto del inventario
+        if (holgura(x, z) < RADIO_FABRICA || !out.every(o => Math.hypot(o.x - x, o.z - z) > INDUSTRIA_SEPARACION)) continue;
+        out.push({ x, z, lon: this.lon0 + x / this.mLon, lat: this.lat0 - z / this.mLat, n: f.n, datos: f });
+        break;
+      }
+    }
+    return out;
+  }
+
+  /**
+   * Puntos de interés de Girardota (colegios, salud, canchas, sitios arqueológicos...), cada uno con su edificio. Se corren
+   * hasta un sitio libre cerca de su coordenada: sin pisar una vía, una fábrica ni otro equipamiento.
+   */
+  private ubicarEquipamientos(lista: Punto[], vias: Compacto | null): typeof this.equipamientos {
+    const holgura = this.holguraVias(vias);
+    const intentos: [number, number][] = [[0, 0]];
+    for (const r of [15, 30, 50, 75, 100, 130, 160]) for (let k = 0; k < 12; k++) intentos.push([Math.cos(k * Math.PI / 6) * r, Math.sin(k * Math.PI / 6) * r]);
+    const out: typeof this.equipamientos = [];
+    const previos = (x: number, z: number, r: number) =>
+      this.fabricas.every(f => Math.hypot(f.x - x, f.z - z) > RADIO_FABRICA + r + 4) && out.every(o => Math.hypot(o.x - x, o.z - z) > o.r + r + 4);
+    lista.forEach((p, i) => {
+      if (p.lat == null || p.lng == null) return;
+      const modelo = modelarEquipamiento(p.c, p.t, p.n, mulberry32(9100 + i));
+      const x0 = this.aX(p.lng), z0 = this.aZ(p.lat);
+      for (const [dx, dz] of intentos) {
+        const x = x0 + dx, z = z0 + dz;
+        if (Math.abs(x) > this.ancho / 2 - 150 || Math.abs(z) > this.alto / 2 - 150) continue;
+        if (holgura(x, z) < modelo.radio * 0.7 || !previos(x, z, modelo.radio)) continue;
+        out.push({ x, z, lon: this.lon0 + x / this.mLon, lat: this.lat0 - z / this.mLat, n: p.n, r: modelo.radio, datos: { p, modelo } });
+        return;
+      }
+    });
+    return out;
+  }
+
+  /** Función (x, z) → distancia al borde de la vía más cercana (principales y locales; los senderos no cuentan). */
+  private holguraVias(vias: Compacto | null): (x: number, z: number) => number {
+    const REJ = 200;
+    const segs = new Map<number, number[][]>();
+    for (const v of vias?.v ?? []) {
+      if (v[0] > 1) continue;                      // principales y locales; los senderos no cuentan
+      const l = this.desdeDeltas(v, vias!.k, 1).map(q => [this.aX(q[0]), this.aZ(q[1])]);
+      for (let i = 1; i < l.length; i++) {
+        const sg = [l[i - 1][0], l[i - 1][1], l[i][0], l[i][1], ANCHO_VIA[v[0]] / 2];
+        const i0 = Math.floor(Math.min(sg[0], sg[2]) / REJ), i1 = Math.floor(Math.max(sg[0], sg[2]) / REJ);
+        const j0 = Math.floor(Math.min(sg[1], sg[3]) / REJ), j1 = Math.floor(Math.max(sg[1], sg[3]) / REJ);
+        for (let a = i0; a <= i1; a++) for (let c = j0; c <= j1; c++) (segs.get(a * 100003 + c) ?? segs.set(a * 100003 + c, []).get(a * 100003 + c)!).push(sg);
+      }
+    }
+    return (x: number, z: number) => {
+      let m = Infinity;
+      const ci = Math.floor(x / REJ), cj = Math.floor(z / REJ);
+      for (let di = -1; di <= 1; di++) {
+        for (let dj = -1; dj <= 1; dj++) {
+          for (const [ax, az, bx, bz, mitad] of segs.get((ci + di) * 100003 + cj + dj) ?? []) {
+            const sx = bx - ax, sz = bz - az, ll = sx * sx + sz * sz;
+            const t = ll > 0 ? Math.min(1, Math.max(0, ((x - ax) * sx + (z - az) * sz) / ll)) : 0;
+            m = Math.min(m, Math.hypot(x - ax - sx * t, z - az - sz * t) - mitad);
+          }
+        }
+      }
+      return m;
+    };
+  }
+
+  /** Quita los edificios de OpenStreetMap que quedarían debajo de una fábrica o de un equipamiento (dentro de su radio). */
+  private sinIndustrias(e: Compacto | null): Compacto | null {
+    if (!e?.e || !(this.fabricas.length || this.equipamientos.length)) return e;
+    const k = e.k;
+    return {
+      ...e,
+      e: e.e.filter(b => {
+        const q = this.desdeDeltas(b, k, 1);
+        const lon = q.reduce((m, p) => m + p[0], 0) / q.length, lat = q.reduce((m, p) => m + p[1], 0) / q.length;
+        const x = this.aX(lon), z = this.aZ(lat);
+        return this.fabricas.every(f => Math.hypot(f.x - x, f.z - z) > RADIO_FABRICA + 5)
+          && this.equipamientos.every(q => Math.hypot(q.x - x, q.z - z) > q.r + 3);
+      }),
+    };
+  }
+
+  /**
+   * Un edificio por punto de interés (insumos de la capa de puntos del mapa 2D), modelado según su categoría en
+   * utils/equipamientos.ts. Cada uno se asienta sobre una losa en la ladera, con una orientación fija por punto.
+   * Todo en una sola malla con color por vértice.
+   */
+  private construirEquipamientos(): void {
+    if (!this.equipamientos.length) return;
+    const rnd = mulberry32(5150);
+    const geos: THREE.BufferGeometry[] = [], ids: number[] = [], pesos: number[] = [];
+    const giro = new THREE.Matrix4();
+    const losaColor = new THREE.Color('#9aa0a6');
+
+    for (const q of this.equipamientos) {
+      this.inicioEquip.push(ids.length);
+      const { modelo } = q.datos;
+      const yaw = rnd() * Math.PI * 2, cos = Math.cos(yaw), sin = Math.sin(yaw);
+      const [lw, ld] = modelo.losa ?? [0, 0];
+      const alturas = [[0, 0], [1, 1], [-1, 1], [1, -1], [-1, -1]].map(([a, b]) =>
+        this.alturaXZ(q.x + a * (lw / 2) * cos + b * (ld / 2) * sin, q.z - a * (lw / 2) * sin + b * (ld / 2) * cos));
+      const base = (modelo.losa ? Math.max(...alturas) : alturas[0]) + 1, minimo = Math.min(...alturas);
+      const id = this.idEn(q.lon, q.lat), peso = id >= 0 ? this.pesoBorde(q.lon, q.lat, id) : 0;
+      giro.makeRotationY(yaw);
+      const poner = (g: THREE.BufferGeometry, color: THREE.Color) => {
+        const geo = g.index ? g.toNonIndexed() : g.clone();
+        geo.applyMatrix4(giro);
+        geo.translate(q.x, base, q.z);
+        const cnt = geo.getAttribute('position').count, col = new Float32Array(cnt * 3);
+        for (let i = 0; i < cnt; i++) { col[i * 3] = color.r; col[i * 3 + 1] = color.g; col[i * 3 + 2] = color.b; }
+        geo.setAttribute('color', new THREE.BufferAttribute(col, 3));
+        geo.deleteAttribute('uv');
+        geos.push(geo);
+        for (let i = 0; i < cnt; i++) { ids.push(id); pesos.push(peso); }
+      };
+      if (modelo.losa) {                                          // losa que se asienta en la ladera
+        const prof = base - minimo + 2;
+        poner(new THREE.BoxGeometry(lw, prof, ld).translate(0, -prof / 2, 0), losaColor);
+      }
+      for (const p of modelo.piezas) poner(p.g, new THREE.Color(p.color));
+    }
+
+    const geo = mergeGeometries(geos, false);
+    geos.forEach(g => g.dispose());
+    if (!geo) return;
+    this.geoEquip = geo;
+    this.matEquip = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.85, metalness: 0.05, side: THREE.DoubleSide });
+    const malla = new THREE.Mesh(geo, this.matEquip);
+    this.mallaEquip = malla;
+    malla.castShadow = true;
+    malla.receiveShadow = true;
+    this.escena.add(malla);
+    this.registrarCapa(geo.getAttribute('position') as THREE.BufferAttribute, ids, pesos);
+  }
+
+  /**
+   * Cada fábrica: losa de concreto que se asienta en la ladera, nave con techo en diente de sierra (cara inclinada de
+   * lámina y cara vertical vidriada), bloque de oficinas con franja de ventanas, portones, silos y una chimenea con
+   * bandas rojas y blancas. Todo en una sola malla con color por vértice. Sobre cada chimenea sale un penacho de humo.
+   */
+  private construirIndustrias(): void {
+    if (!this.fabricas.length) return;
+    const rnd = mulberry32(4242);
+    const geos: THREE.BufferGeometry[] = [], ids: number[] = [], pesos: number[] = [];
+    const paredes = ['#d9d2c3', '#cbbba3', '#bfd0dc', '#e1e4e7', '#d8c3b0'];
+    const lechos = new THREE.Matrix4();
+
+    this.fabricas.forEach((f, n) => {
+      this.inicioFabrica.push(ids.length);
+      const largo = 48 + rnd() * 20, fondo = 30 + rnd() * 10, alto = 13 + rnd() * 3;
+      const yaw = rnd() * Math.PI * 2, cos = Math.cos(yaw), sin = Math.sin(yaw);
+      const alturas = [[0, 0], [1, 1], [-1, 1], [1, -1], [-1, -1]].map(([a, b]) => this.alturaXZ(f.x + (a * (largo / 2 + 20)) * cos + (b * (fondo / 2 + 15)) * sin, f.z - (a * (largo / 2 + 20)) * sin + (b * (fondo / 2 + 15)) * cos));
+      const base = Math.max(...alturas) + 1, minimo = Math.min(...alturas);
+      const id = this.idEn(f.lon, f.lat), peso = id >= 0 ? this.pesoBorde(f.lon, f.lat, id) : 0;
+      const pared = paredes[Math.floor(rnd() * paredes.length)];
+      /** Pone una pieza (centrada en su origen) en (lx, ly, lz) locales de la fábrica, con su color. */
+      const poner = (g: THREE.BufferGeometry, color: string, lx: number, ly: number, lz: number) => {
+        const geo = g.index ? g.toNonIndexed() : g;
+        geo.translate(lx, ly, lz);
+        geo.applyMatrix4(lechos.makeRotationY(yaw));
+        geo.translate(f.x, base, f.z);
+        const c = new THREE.Color(color), cnt = geo.getAttribute('position').count, col = new Float32Array(cnt * 3);
+        for (let i = 0; i < cnt; i++) { col[i * 3] = c.r; col[i * 3 + 1] = c.g; col[i * 3 + 2] = c.b; }
+        geo.setAttribute('color', new THREE.BufferAttribute(col, 3));
+        geo.deleteAttribute('uv');
+        geos.push(geo);
+        for (let i = 0; i < cnt; i++) { ids.push(id); pesos.push(peso); }
+      };
+      const caja = (w: number, h: number, d: number) => new THREE.BoxGeometry(w, h, d);
+
+      const losa = base - minimo + 3;
+      poner(caja(largo + 14, losa, fondo + 12), '#9aa0a6', 0, -losa / 2, 0);                  // losa que se asienta en la ladera
+      poner(caja(largo, alto, fondo), pared, 0, alto / 2, 0);                                  // nave
+      // techo en diente de sierra: cada diente es un prisma de perfil trapecial con su cara vertical vidriada
+      const dientes = Math.max(3, Math.round(fondo / 9)), w = fondo / dientes, h = 6;
+      for (let k = 0; k < dientes; k++) {
+        const perfil = new THREE.Shape([new THREE.Vector2(0, 0), new THREE.Vector2(w, 0), new THREE.Vector2(w, h), new THREE.Vector2(0, h * 0.3)]);
+        const g = new THREE.ExtrudeGeometry(perfil, { depth: largo, bevelEnabled: false }).rotateY(Math.PI / 2);
+        const z0 = fondo / 2 - k * w;
+        poner(g, '#8e9aa4', -largo / 2, alto, z0);
+        poner(caja(largo - 3, h * 0.7, 0.5), '#8fc4e3', 0, alto + h * 0.5, z0 - w - 0.2);
+      }
+      // oficinas con franja de ventanas, y portones de carga
+      const of = { w: 18, h: alto + 6, d: 24 };
+      poner(caja(of.w, of.h, of.d), '#e9e5dc', largo / 2 + of.w / 2, of.h / 2, fondo / 2 - of.d / 2);
+      poner(caja(of.w + 0.4, 5, of.d + 0.4), '#7fb7d6', largo / 2 + of.w / 2, of.h - 6, fondo / 2 - of.d / 2);
+      poner(caja(of.w + 1.6, 1.2, of.d + 1.6), '#6b7280', largo / 2 + of.w / 2, of.h + 0.6, fondo / 2 - of.d / 2);
+      for (let k = 0; k < 3; k++) poner(caja(8, 8, 0.7), '#4b5563', -largo / 2 + 10 + k * 14, 4, fondo / 2 + 0.4);
+      // silos / tanques
+      const silos = 1 + Math.floor(rnd() * 2);
+      for (let k = 0; k < silos; k++) {
+        const sx = -largo / 2 + 8 + k * 11, sz = -fondo / 2 - 8, sh = 20 + rnd() * 6;
+        poner(new THREE.CylinderGeometry(4.2, 4.2, sh, 14), '#cfd4d9', sx, sh / 2, sz);
+        poner(new THREE.ConeGeometry(4.4, 4, 14), '#9aa3ab', sx, sh + 2, sz);
+      }
+      // chimenea cónica con bandas rojas y blancas, y su aro negro
+      const ch = 55 + rnd() * 30, cx = -largo / 2 - 7, cz = -fondo / 2 + 6, bandas = 6, seg = ch / bandas;
+      for (let k = 0; k < bandas; k++) {
+        const r0 = 4.4 - 2 * (k / bandas), r1 = 4.4 - 2 * ((k + 1) / bandas);
+        poner(new THREE.CylinderGeometry(r1, r0, seg, 14), k % 2 ? '#d8d8d8' : '#c4342d', cx, seg * (k + 0.5), cz);
+      }
+      poner(new THREE.CylinderGeometry(2.7, 2.4, 2, 14), '#2b2f36', cx, ch + 1, cz);
+      const hx = f.x + cx * cos + cz * sin, hz = f.z - cx * sin + cz * cos;
+      const fase = rnd();
+      const puffs: Humo['puffs'] = [];
+      for (let k = 0; k < HUMO_BOCANADAS; k++) {
+        const sprite = new THREE.Sprite(new THREE.SpriteMaterial({
+          map: this.texturasNubes[Math.floor(rnd() * 4)], color: '#8a8f96', transparent: true, depthWrite: false, opacity: 0,
+        }));
+        sprite.renderOrder = 8;
+        this.escena.add(sprite);
+        puffs.push({ sprite, theta: rnd() * Math.PI * 2, giro: (rnd() - 0.5) * 0.3, tam: 0.8 + rnd() * 0.5, desv: rnd() });
+      }
+      this.humos.push({ x: hx, y: base + ch + 2, z: hz, fase, puffs });
+    });
+
+    const geo = mergeGeometries(geos, false);
+    geos.forEach(g => g.dispose());
+    if (!geo) return;
+    this.geoIndustrias = geo;
+    this.matIndustrias = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.85, metalness: 0.05 });
+    const malla = new THREE.Mesh(geo, this.matIndustrias);
+    this.mallaIndustrias = malla;
+    malla.castShadow = true;
+    malla.receiveShadow = true;
+    this.escena.add(malla);
+    this.registrarCapa(geo.getAttribute('position') as THREE.BufferAttribute, ids, pesos);
+  }
+
+  /**
+   * Humo: cada bocanada nace oscura en la boca de la chimenea, sube y se desvía con el viento, y al llegar arriba se
+   * asienta: se abre en un anillo plano (aureola) que se aclara y se desvanece. Reutiliza las bocanadas de las nubes.
+   */
+  private animarHumo(): void {
+    if (!this.humos.length) return;
+    const t = performance.now() / 1000;
+    const { rumbo, fuerza } = this.vientoEn(t);
+    const dx = Math.cos(rumbo), dz = Math.sin(rumbo), cam = this.camara.position;
+    const suave = (a: number, b: number, v: number) => { const u = Math.min(1, Math.max(0, (v - a) / (b - a))); return u * u * (3 - 2 * u); };
+    for (const h of this.humos) {
+      const lejos = Math.hypot(h.x - cam.x, h.y - cam.y, h.z - cam.z) > 18000;
+      for (const p of h.puffs) p.sprite.visible = !lejos;
+      if (lejos) continue;
+      h.puffs.forEach((p, k) => {
+        const u = ((t / HUMO_CICLO + h.fase + k / h.puffs.length) % 1 + 1) % 1;
+        const subida = Math.min(1, u / 0.55), ease = 1 - (1 - subida) * (1 - subida);
+        const asiento = suave(0.45, 1, u);
+        const deriva = HUMO_DERIVA * (0.4 + fuerza) * u * HUMO_CICLO;
+        const radio = asiento * HUMO_AUREOLA * (0.7 + 0.5 * p.desv);
+        p.sprite.position.set(
+          h.x + dx * deriva + Math.cos(p.theta) * radio + Math.sin(t * 0.3 + p.theta) * 3,
+          h.y + HUMO_ALTURA * ease - 14 * asiento,
+          h.z + dz * deriva + Math.sin(p.theta) * radio * 0.8,
+        );
+        const tam = (24 + 52 * subida + 80 * asiento) * p.tam;
+        p.sprite.scale.set(tam * 1.25, tam * (0.9 - 0.45 * asiento), 1);
+        const m = p.sprite.material as THREE.SpriteMaterial;
+        m.rotation += p.giro * 0.016;
+        const claro = suave(0, 0.8, u);
+        m.color.setRGB(0.42 + 0.46 * claro, 0.44 + 0.46 * claro, 0.47 + 0.45 * claro);
+        const cerca = Math.min(1, Math.max(0, (Math.hypot(h.x - cam.x, h.y - cam.y, h.z - cam.z) - 250) / 900));
+        m.opacity = HUMO_OPACIDAD * suave(0, 0.03, u) * (1 - suave(0.6, 1, u)) * cerca;
+      });
+    }
+  }
+
+  /**
    * Bandada de pájaros pequeños en V suelta que cruza el Río Medellín de sur a norte, a la altura de Girardota: se toma
    * el vértice del río más cercano al casco urbano y se vuela en línea recta hacia el norte, siguiendo el relieve.
    * Cada pájaro son dos alas triangulares que aletean con su propio ritmo; entran y salen achicándose, y tras una
@@ -1918,6 +2615,201 @@ export class Mapa3dComponent implements AfterViewInit {
       p.der.rotation.z = -a;
       p.codoIzq.rotation.z = mano;
       p.codoDer.rotation.z = -mano;
+    }
+  }
+
+  /**
+   * Boeing 787 (public/data/mapa3d/boeing-787.glb, scripts/optimizar_avion.mjs) en línea recta de El Yarumo a La Holanda,
+   * prolongada hasta salir del mapa por ambos lados. Sus luces son sprites que se agrandan con la distancia a la cámara
+   * para seguir leyéndose desde lejos (de otro modo, a 9 km, una luz de 30 cm mide menos que un píxel).
+   */
+  private construirAvion(): void {
+    const desde = this.centroDe('El Yarumo'), hasta = this.centroDe('La Holanda');
+    if (!desde || !hasta) return;
+    const largo = Math.hypot(hasta.x - desde.x, hasta.z - desde.z);
+    if (largo < 1) return;
+    const dx = (hasta.x - desde.x) / largo, dz = (hasta.z - desde.z) / largo;
+    // tramo de la recta que cae dentro del mapa (se entra y se sale por el borde del recuadro), más el margen de cada lado
+    let t0 = -Infinity, t1 = Infinity;
+    for (const [o, d, mitad] of [[desde.x, dx, this.ancho / 2], [desde.z, dz, this.alto / 2]]) {
+      if (Math.abs(d) < 1e-9) continue;
+      const a = (-mitad - o) / d, b = (mitad - o) / d;
+      t0 = Math.max(t0, Math.min(a, b));
+      t1 = Math.min(t1, Math.max(a, b));
+    }
+    t0 -= MARGEN_AVION;
+    t1 += MARGEN_AVION;
+
+    const grupo = new THREE.Group();
+    grupo.visible = false;
+    grupo.rotation.order = 'YXZ';                              // primero el rumbo (y), luego la inclinación de las alas (x)
+    const y = (ALTITUD_AVION - this.relieve.min) * EXAGERACION;
+    this.brilloLuz = this.texturaBrillo();
+    const luces = LUCES_AVION.map(l => {
+      const sprite = new THREE.Sprite(new THREE.SpriteMaterial({
+        map: this.brilloLuz, color: l.color, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0,
+      }));
+      sprite.position.set(...l.pos);
+      sprite.renderOrder = 10;
+      grupo.add(sprite);
+      return { sprite, tipo: l.tipo, tam: l.tam };
+    });
+    this.escena.add(grupo);
+    this.avion = { grupo, luces, x0: desde.x, z0: desde.z, dx, dz, t0, t1, y, amp: AMPLITUD_S_AVION, k: 2 * Math.PI / (t1 - t0) };
+    // al abrir, el avión llega al centro del mapa en 20 s (t del punto de la recta más cercano al centro)
+    const tCentro = -(desde.x * dx + desde.z * dz);
+    this.tiempoAvion = (tCentro - t0) / VELOCIDAD_AVION - 20;
+
+    new GLTFLoader().load('data/mapa3d/boeing-787.glb', gltf => grupo.add(gltf.scene));
+    this.construirEstela(tCentro + 1800);
+  }
+
+  /** Reserva las bocanadas de la estela y levanta la nube pequeña que esta recorre en la ruta, en el punto tNube de la recta. */
+  private construirEstela(tNube: number): void {
+    const a = this.avion;
+    if (!a || !this.texturasNubes.length) return;
+    const rnd = mulberry32(8087);
+    for (let i = 0; i < ESTELA_PUFFS; i++) {
+      const sprite = new THREE.Sprite(new THREE.SpriteMaterial({
+        map: this.texturasNubes[i % this.texturasNubes.length], color: '#ffffff', transparent: true, depthWrite: false, opacity: 0,
+        rotation: rnd() * Math.PI * 2,
+      }));
+      sprite.visible = false;
+      sprite.renderOrder = 8;
+      this.escena.add(sprite);
+      this.estela.push({ sprite, edad: -1, x: 0, y: 0, z: 0, base: 9 + rnd() * 5 });
+    }
+
+    // la nube: un racimo de bocanadas centrado sobre la S, a la altura del avión
+    const lado = a.amp * Math.sin(a.k * (tNube - a.t0));
+    const cx = a.x0 + a.dx * tNube - a.dz * lado, cz = a.z0 + a.dz * tNube + a.dx * lado;
+    const sprites: THREE.Sprite[] = [];
+    for (let i = 0; i < 9; i++) {
+      const sprite = new THREE.Sprite(new THREE.SpriteMaterial({
+        map: this.texturasNubes[i % this.texturasNubes.length], color: '#f4f8fc', transparent: true, depthWrite: false,
+        opacity: 0.8 + rnd() * 0.15, rotation: rnd() * Math.PI * 2,
+      }));
+      const ang = rnd() * Math.PI * 2, r = Math.sqrt(rnd()) * NUBE_AVION_RADIO * 0.55;
+      sprite.position.set(cx + Math.cos(ang) * r, a.y + (rnd() - 0.5) * NUBE_AVION_RADIO * 0.5, cz + Math.sin(ang) * r);
+      const t = NUBE_AVION_RADIO * (0.9 + rnd() * 0.7);
+      sprite.scale.set(t, t * 0.75, 1);
+      sprite.renderOrder = 9;
+      this.escena.add(sprite);
+      sprites.push(sprite);
+    }
+    this.nubeAvion = { x: cx, y: a.y, z: cz, sprites };
+  }
+
+  /** Suelta una bocanada por motor cada ESTELA_ESPACIO metros recorridos. */
+  private emitirEstela(a: Avion): void {
+    const pos = a.grupo.position;
+    const recorrido = this.estelaUltima.distanceTo(pos);
+    if (recorrido < ESTELA_ESPACIO) return;
+    const salto = recorrido > 800;                              // el avión reapareció al inicio de la ruta: no hay tramo que rellenar
+    this.estelaUltima.copy(pos);
+    if (salto) return;
+    for (const m of MOTORES_AVION) {
+      const p = this.estela[this.estelaSiguiente];
+      this.estelaSiguiente = (this.estelaSiguiente + 1) % this.estela.length;
+      this.posLuz.set(...m);
+      a.grupo.localToWorld(this.posLuz);
+      p.edad = 0;
+      p.x = this.posLuz.x; p.y = this.posLuz.y; p.z = this.posLuz.z;
+    }
+  }
+
+  /** Las bocanadas de la estela envejecen: se ensanchan, se aclaran y derivan con el viento; la nube de la ruta las difumina. */
+  private animarEstela(dt: number): void {
+    if (!this.estela.length) return;
+    const cam = this.camara.position, nube = this.nubeAvion;
+    const { rumbo } = this.vientoEn(performance.now() / 1000);
+    const vx = Math.cos(rumbo) * ESTELA_DERIVA * dt, vz = Math.sin(rumbo) * ESTELA_DERIVA * dt;
+    for (const p of this.estela) {
+      if (p.edad < 0) continue;
+      p.edad += dt;
+      const u = p.edad / ESTELA_VIDA;
+      if (u >= 1) { p.edad = -1; p.sprite.visible = false; continue; }
+      p.x += vx;
+      p.z += vz;
+      // de lejos se agranda como el avión, para que la estela siga leyéndose
+      const d = Math.hypot(p.x - cam.x, p.y - cam.y, p.z - cam.z);
+      const f = TAMANO_AVION * Math.min(ESCALA_MAX_AVION, Math.max(1, d / DISTANCIA_REAL_AVION));
+      const tam = p.base * (1 + 6 * u) * f;
+      let op = ESTELA_OPACIDAD * (1 - u) ** 1.5 * Math.min(1, p.edad / 1.2);
+      if (nube) {
+        const k = Math.min(1, Math.max(0, (NUBE_AVION_RADIO * 1.1 - Math.hypot(p.x - nube.x, p.z - nube.z)) / (NUBE_AVION_RADIO * 0.7)));
+        op *= 1 - 0.92 * k * k * (3 - 2 * k);
+      }
+      p.sprite.visible = op > 0.004;
+      p.sprite.position.set(p.x, p.y, p.z);
+      p.sprite.scale.set(tam, tam, 1);
+      p.sprite.material.opacity = op;
+    }
+  }
+
+  /** Brillo suave y redondo, blanco: el sprite lo tiñe del color de cada luz. */
+  private texturaBrillo(): THREE.Texture {
+    const c = document.createElement('canvas');
+    c.width = c.height = 64;
+    const ctx = c.getContext('2d')!;
+    const g = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+    g.addColorStop(0, 'rgba(255,255,255,1)');
+    g.addColorStop(0.12, 'rgba(255,255,255,0.6)');
+    g.addColorStop(0.4, 'rgba(255,255,255,0.12)');
+    g.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, 64, 64);
+    return new THREE.CanvasTexture(c);
+  }
+
+  private animarAvion(dt: number): void {
+    const a = this.avion;
+    if (!a) return;
+    this.tiempoAvion += dt;
+    const duracion = (a.t1 - a.t0) / VELOCIDAD_AVION;
+    const fase = this.tiempoAvion % (duracion + PAUSA_AVION);
+    a.grupo.visible = fase < duracion;
+    if (!a.grupo.visible) return;
+    const t = a.t0 + fase * VELOCIDAD_AVION;
+    // posición y rumbo sobre la S (la normal a la recta es (−dz, dx)); el rumbo sigue la tangente
+    const lateral = (u: number) => a.amp * Math.sin(a.k * (u - a.t0));
+    const rumbo = (u: number) => {
+      const w = a.amp * a.k * Math.cos(a.k * (u - a.t0));
+      return Math.atan2(-(a.dz + a.dx * w), a.dx - a.dz * w);
+    };
+    const off = lateral(t);
+    a.grupo.position.set(a.x0 + a.dx * t - a.dz * off, a.y, a.z0 + a.dz * t + a.dx * off);
+    // en un viraje coordinado el avión se inclina atan(v·ω/g): a la izquierda (rumbo creciente) baja el ala izquierda (−z)
+    const paso = 40;
+    let giro = rumbo(t + paso) - rumbo(t - paso);
+    giro -= Math.round(giro / (2 * Math.PI)) * 2 * Math.PI;
+    const omega = giro / (2 * paso) * VELOCIDAD_AVION;
+    a.grupo.rotation.y = rumbo(t);
+    a.grupo.rotation.x = -Math.atan(VELOCIDAD_AVION * omega / 9.81) * BANDEO_AVION;
+    const p = this.camara.position;
+    // a escala real solo se ve de cerca: de lejos (a 9 km mide 2 px) crece con la distancia, hasta ESCALA_MAX_AVION
+    const escala = TAMANO_AVION * Math.min(ESCALA_MAX_AVION, Math.max(1, a.grupo.position.distanceTo(p) / DISTANCIA_REAL_AVION));
+    a.grupo.scale.setScalar(escala);
+    a.grupo.updateMatrixWorld();
+    this.emitirEstela(a);
+
+    // luces discretas: navegación fija, destello blanco doble cada 1,4 s y baliza roja cada 1,2 s (como en un avión real)
+    const s = performance.now() / 1000;
+    for (const l of a.luces) {
+      const d = l.sprite.getWorldPosition(this.posLuz).distanceTo(p);
+      // el destello sube y baja en una fracción de segundo, no se enciende de golpe
+      const pulso = (inicio: number, ancho: number, ciclo: number) => {
+        const u = ((s % ciclo) - inicio) / ancho;
+        return u > 0 && u < 1 ? Math.sin(u * Math.PI) : 0;
+      };
+      const encendida = l.tipo === 'nav' ? 0.55
+        : l.tipo === 'destello' ? Math.max(pulso(0, 0.12, 1.4), pulso(0.2, 0.12, 1.4))
+        : 0.9 * pulso(0, 0.35, 1.2);
+      l.sprite.material.opacity = encendida;
+      l.sprite.visible = encendida > 0.01;
+      // tamaño mínimo en pantalla: de lejos la luz sigue leyéndose como un punto que parpadea
+      const m = Math.max(l.tam, d * 0.008 * l.tam / 5);
+      l.sprite.scale.set(m / escala, m / escala, 1);
     }
   }
 
@@ -2072,6 +2964,10 @@ export class Mapa3dComponent implements AfterViewInit {
         this.animarNubes(dt);
         this.animarNiebla(dt);
         this.animarPajaros(dt);
+        this.animarAvion(dt);
+        this.animarEstela(dt);
+        this.animarTrafico(dt);
+        this.animarHumo();
         this.animarConfluencias();
         if (this.texturaRio) this.texturaRio.offset.y -= dt * VELOCIDAD_AGUA;   // la corriente avanza
         this.renderer.render(this.escena, this.camara);
@@ -2260,7 +3156,7 @@ export class Mapa3dComponent implements AfterViewInit {
   }
 
   /**
-   * Color propio del Río Medellín, #B2A544 (en lineal: 0.445, 0.376, 0.058), con las ondas de la corriente en azul. Cada
+   * Color propio del Río Medellín, #AF9447 (en lineal: 0.429, 0.296, 0.063), con las ondas de la corriente en azul. Cada
    * vértice de la cinta lleva un `tinte` 0–1; el shader mezcla la textura hacia ese color y sus hebras claras hacia el azul.
    */
   private teñirAgua(malla: THREE.Mesh, rangos: [number, number][]): void {
@@ -2299,7 +3195,7 @@ export class Mapa3dComponent implements AfterViewInit {
         .replace('#include <map_fragment>', `#include <map_fragment>
           // las hebras de la corriente son lo claro de la textura (mucho rojo); ahí el río va azul y en el resto, su color
           float onda = smoothstep(0.25, 0.7, diffuseColor.r);
-          vec3 medellin = mix(vec3(0.445, 0.376, 0.058), vec3(0.06, 0.36, 0.78), onda);
+          vec3 medellin = mix(vec3(0.429, 0.296, 0.063), vec3(0.06, 0.36, 0.78), onda);
           diffuseColor.rgb = mix(diffuseColor.rgb, medellin, vTinte * ${TINTE_MEDELLIN.toFixed(2)});`);
     };
     (malla.material as THREE.MeshBasicMaterial).needsUpdate = true;
@@ -2390,6 +3286,18 @@ export class Mapa3dComponent implements AfterViewInit {
       xm.fill();
       xm.stroke();
     }
+    for (const f of this.fabricas) {                          // ni árboles dentro de una fábrica
+      const [px, py] = aPx(f.lon, f.lat);
+      xm.beginPath();
+      xm.arc(px, py, (RADIO_FABRICA + 4) / (this.ancho / W), 0, Math.PI * 2);
+      xm.fill();
+    }
+    for (const q of this.equipamientos) {                     // ni dentro de un equipamiento
+      const [px, py] = aPx(q.lon, q.lat);
+      xm.beginPath();
+      xm.arc(px, py, (q.r + 3) / (this.ancho / W), 0, Math.PI * 2);
+      xm.fill();
+    }
     const urbano = xm.getImageData(0, 0, W, H).data;
 
     // colocación
@@ -2476,10 +3384,24 @@ export class Mapa3dComponent implements AfterViewInit {
     for (const n of this.nubes) for (const b of n.bocanadas) b.sprite.material.dispose();
     this.disco?.material.dispose();
     for (const n of this.nieblas) n.sprite.material.dispose();
+    this.geoIndustrias?.dispose();
+    this.matIndustrias?.dispose();
+    this.geoEquip?.dispose();
+    this.matEquip?.dispose();
+    for (const h of this.humos) for (const p of h.puffs) p.sprite.material.dispose();
+    this.geoAutos.forEach(g => g.dispose());
+    this.matAutos.forEach(m => m.dispose());
     this.texturasConfluencia.forEach(t => t.dispose());
     this.materialesConfluencia.forEach(m => m.dispose());
     this.geosPajaros.forEach(g => g.dispose());
     this.materialesPajaros.forEach(m => m.dispose());
+    this.avion?.grupo.traverse(o => {
+      if (o instanceof THREE.Mesh) { o.geometry.dispose(); (o.material as THREE.Material).dispose(); }
+      else if (o instanceof THREE.Sprite) o.material.dispose();
+    });
+    this.brilloLuz?.dispose();
+    for (const p of this.estela) p.sprite.material.dispose();
+    for (const s of this.nubeAvion?.sprites ?? []) s.material.dispose();
   }
 
   /** Acerca el levantamiento de cada vereda a su meta (hover o elegida) con una suave aceleración. */
@@ -2566,6 +3488,20 @@ export class Mapa3dComponent implements AfterViewInit {
       el.style.transform = `translate(${x - el.offsetWidth / 2}px, ${y - el.offsetHeight - 8 + dy}px) scale(${escala})`;
     }
     this.actualizarRotuloRio(w, h, Math.max(0.9, escala));
+    this.actualizarRotuloFabrica(w, h, Math.max(0.9, escala));
+    this.actualizarRotuloEquip(w, h, Math.max(0.9, escala));
+  }
+
+  private actualizarRotuloFabrica(w: number, h: number, escala: number): void {
+    const el = this.rotuloFabrica;
+    if (!el) return;
+    const f = this.fabricaHover >= 0 ? this.fabricas[this.fabricaHover] : null;
+    if (!f) { el.style.display = 'none'; return; }
+    const v = new THREE.Vector3(f.x, this.alturaXZ(f.x, f.z) + 130, f.z).project(this.camara);
+    const x = (v.x * 0.5 + 0.5) * w, y = (-v.y * 0.5 + 0.5) * h;
+    const visible = v.z < 1 && x > 0 && x < w && y > 0 && y < h;
+    el.style.display = visible ? '' : 'none';
+    if (visible) el.style.transform = `translate(${x - el.offsetWidth / 2}px, ${y - el.offsetHeight - 8}px) scale(${escala})`;
   }
 
   /** Nombre del río elegido: solo ese; los cauces no llevan rótulo mientras nadie los toca. */
@@ -2609,6 +3545,30 @@ export class Mapa3dComponent implements AfterViewInit {
       return;
     }
     if (ev.buttons) return;
+    // las fábricas van primero: son pequeñas y están sobre las veredas y los cauces
+    const ahora = performance.now();
+    if (ahora - this.tFabricaHover > 40) {
+      this.tFabricaHover = ahora;
+      const fab = this.fabricaBajoCursor(ev);
+      if (fab !== this.fabricaHover) this.marcarFabricaHover(fab);
+    }
+    if (this.fabricaHover >= 0) {
+      if (this.hover !== -1) { this.hover = -1; this.pintarResalte(); }
+      if (this.rioHover) { this.rioHover = null; this.pintarHalos(); }
+      this.lienzo.nativeElement.style.cursor = 'pointer';
+      return;
+    }
+    if (ahora - this.tEquipHover > 40) {
+      this.tEquipHover = ahora;
+      const eq = this.equipBajoCursor(ev);
+      if (eq !== this.equipHover) this.marcarEquipHover(eq);
+    }
+    if (this.equipHover >= 0) {
+      if (this.hover !== -1) { this.hover = -1; this.pintarResalte(); }
+      if (this.rioHover) { this.rioHover = null; this.pintarHalos(); }
+      this.lienzo.nativeElement.style.cursor = 'pointer';
+      return;
+    }
     // los cauces tienen prioridad sobre la vereda que los rodea
     const rio = this.rioBajoCursor(ev);
     if (rio !== this.rioHover) { this.rioHover = rio; this.pintarHalos(); }
@@ -2623,6 +3583,8 @@ export class Mapa3dComponent implements AfterViewInit {
   }
 
   alSalir(): void {
+    this.marcarFabricaHover(-1);
+    this.marcarEquipHover(-1);
     this.hover = -1;
     this.rioHover = null;
     this.pintarHalos();
@@ -2645,11 +3607,24 @@ export class Mapa3dComponent implements AfterViewInit {
     this.pulsado = null;
     this.lienzo.nativeElement.style.cursor = 'grab';
     if (!p || Math.hypot(ev.clientX - p.x, ev.clientY - p.y) > 5) return;
+    const fab = this.fabricaBajoCursor(ev);
+    if (fab >= 0) {                                      // clic en una fábrica: la elige; otro clic en la misma, la suelta
+      this.seleccionarFabrica(fab === this.fabricaElegida ? -1 : fab);
+      return;
+    }
+    const eq = this.equipBajoCursor(ev);
+    if (eq >= 0) {                                       // clic en un equipamiento: la cámara se acerca a él
+      const q = this.equipamientos[eq];
+      const objetivo = new THREE.Vector3(q.x, this.alturaXZ(q.x, q.z) + 10, q.z);
+      this.volarA(objetivo.clone().add(this.camara.position.clone().sub(this.controles.target).normalize().multiplyScalar(450)), objetivo);
+      return;
+    }
     const rio = this.rioBajoCursor(ev);
     if (rio) {                                           // clic en un cauce: lo elige; otro clic en el mismo, lo suelta
       this.seleccionarRio(rio === this.rioElegido ? null : rio);
       return;
     }
+    this.seleccionarFabrica(-1);
     const id = this.idBajoCursor(ev);
     // un clic en la zona ya elegida, o fuera de toda zona, la deselecciona y la baja
     if (id < 0 || id === this.elegida) {
@@ -2668,6 +3643,7 @@ export class Mapa3dComponent implements AfterViewInit {
   }
 
   private elegir(id: number): void {
+    this.seleccionarFabrica(-1, false);
     this.seleccionarRio(null, false);
     this.elegida = id;
     this.seleccion.set(this.piezas[id].zona);
@@ -2678,7 +3654,135 @@ export class Mapa3dComponent implements AfterViewInit {
     this.volarA(objetivo.clone().add(dir.multiplyScalar(5200)), objetivo);
   }
 
+  /** Fábrica bajo el cursor (índice) o -1: se lanza un rayo contra la malla de industrias y se ubica el vértice golpeado. */
+  private fabricaBajoCursor(ev: PointerEvent): number {
+    const malla = this.mallaIndustrias;
+    if (!malla) return -1;
+    const r = this.renderer.domElement.getBoundingClientRect();
+    this.raycaster.setFromCamera(new THREE.Vector2(((ev.clientX - r.left) / r.width) * 2 - 1, -((ev.clientY - r.top) / r.height) * 2 + 1), this.camara);
+    const hit = this.raycaster.intersectObject(malla)[0];
+    if (!hit || hit.faceIndex == null) return -1;
+    const v = hit.faceIndex * 3;
+    let i = this.inicioFabrica.length - 1;
+    while (i > 0 && this.inicioFabrica[i] > v) i--;
+    return i;
+  }
+
+  /** Equipamiento bajo el cursor (índice) o -1, igual que con las fábricas. */
+  private equipBajoCursor(ev: PointerEvent): number {
+    const malla = this.mallaEquip;
+    if (!malla) return -1;
+    const r = this.renderer.domElement.getBoundingClientRect();
+    this.raycaster.setFromCamera(new THREE.Vector2(((ev.clientX - r.left) / r.width) * 2 - 1, -((ev.clientY - r.top) / r.height) * 2 + 1), this.camara);
+    const hit = this.raycaster.intersectObject(malla)[0];
+    if (!hit || hit.faceIndex == null) return -1;
+    const v = hit.faceIndex * 3;
+    let i = this.inicioEquip.length - 1;
+    while (i > 0 && this.inicioEquip[i] > v) i--;
+    return i;
+  }
+
+  /** Cápsula con el nombre del lugar y el color de su categoría sobre el equipamiento señalado. */
+  private marcarEquipHover(i: number): void {
+    this.equipHover = i;
+    if (i < 0) {
+      if (this.rotuloEquip) this.rotuloEquip.style.display = 'none';
+      return;
+    }
+    if (!this.rotuloEquip) {
+      this.rotuloEquip = document.createElement('div');
+      this.rotuloEquip.className = 'rot fabrica';
+      this.rotuloEquip.append(document.createElement('i'), document.createElement('span'));
+      this.contenedorRotulos.nativeElement.appendChild(this.rotuloEquip);
+    }
+    const p = this.equipamientos[i].datos.p;
+    (this.rotuloEquip.firstElementChild as HTMLElement).style.background = CATEGORIA.get(p.c)?.color ?? '';
+    this.rotuloEquip.lastElementChild!.textContent = p.n;
+    this.rotuloEquip.style.display = '';
+  }
+
+  private actualizarRotuloEquip(w: number, h: number, escala: number): void {
+    const el = this.rotuloEquip;
+    const q = this.equipHover >= 0 ? this.equipamientos[this.equipHover] : null;
+    if (!el) return;
+    if (!q) { el.style.display = 'none'; return; }
+    const v = new THREE.Vector3(q.x, this.alturaXZ(q.x, q.z) + q.r * 0.9, q.z).project(this.camara);
+    const x = (v.x * 0.5 + 0.5) * w, y = (-v.y * 0.5 + 0.5) * h;
+    const visible = v.z < 1 && x > 0 && x < w && y > 0 && y < h;
+    el.style.display = visible ? '' : 'none';
+    if (visible) el.style.transform = `translate(${x - el.offsetWidth / 2}px, ${y - el.offsetHeight - 8}px) scale(${escala})`;
+  }
+
+  /** Marca la fábrica bajo el cursor: anillo claro a su alrededor y una cápsula con el nombre de la empresa. */
+  private marcarFabricaHover(i: number): void {
+    this.fabricaHover = i;
+    if (this.anilloHover) this.anilloHover.visible = false;
+    if (i < 0) {
+      if (this.rotuloFabrica) this.rotuloFabrica.style.display = 'none';
+      return;
+    }
+    if (!this.anilloHover) {
+      this.anilloHover = new THREE.Mesh(
+        new THREE.RingGeometry(RADIO_FABRICA - 3, RADIO_FABRICA, 48).rotateX(-Math.PI / 2),
+        new THREE.MeshBasicMaterial({ color: '#ffffff', transparent: true, opacity: 0.85, side: THREE.DoubleSide, depthWrite: false }),
+      );
+      this.anilloHover.renderOrder = 11;
+      this.escena.add(this.anilloHover);
+    }
+    const f = this.fabricas[i];
+    this.anilloHover.position.set(f.x, this.alturaXZ(f.x, f.z) + 5, f.z);
+    this.anilloHover.visible = true;
+    if (!this.rotuloFabrica) {
+      this.rotuloFabrica = document.createElement('div');
+      this.rotuloFabrica.className = 'rot fabrica';
+      this.rotuloFabrica.append(document.createElement('i'), document.createElement('span'));
+      this.contenedorRotulos.nativeElement.appendChild(this.rotuloFabrica);
+    }
+    this.rotuloFabrica.lastElementChild!.textContent = f.datos.n;
+    this.rotuloFabrica.style.display = '';
+  }
+
+  /** Elige (o suelta, con -1) una fábrica: muestra su ficha, la marca con un anillo y, si `volar`, encuadra la cámara. */
+  private seleccionarFabrica(i: number, volar = true): void {
+    this.fabricaElegida = i;
+    if (this.anilloFabrica) this.anilloFabrica.visible = false;
+    if (i < 0) { this.fabricaSeleccion.set(null); return; }
+    this.deseleccionar();
+    this.rioElegido = null;
+    this.rioSeleccion.set(null);
+    this.pintarHalos();
+    const f = this.fabricas[i], d = f.datos;
+    const num = (v: number) => (v >= 100 ? v.toFixed(0) : v >= 1 ? v.toFixed(1) : v.toFixed(2)).replace('.', ',');
+    const lista = (a?: string[]) => (a?.length ? a.join(', ') : '');
+    const emisiones = CONTAMINANTES.filter(([k]) => d.em?.[k]).map(([k, n]) => ({ k: n, v: `${num(d.em![k])} Mg/año` }));
+    const flujos = Object.entries(d.kgh ?? {}).map(([k, v]) => `${k} ${num(v)} kg/h`).join(' · ');
+    this.fabricaSeleccion.set({
+      nombre: d.n,
+      sector: SECTORES[d.c] ?? d.c,
+      direccion: (d.dir ?? '').replace(/\s+/g, ' ').trim(),
+      resumen: `${d.fuentes ?? 0} fuente${d.fuentes === 1 ? '' : 's'} fija${d.fuentes === 1 ? '' : 's'}${d.chimenea ? ` · chimenea hasta ${num(d.chimenea)} m` : ''}`,
+      combustibles: lista(d.combustibles) || 'sin dato',
+      control: lista(d.control) || 'sin sistema de control reportado',
+      emisiones, flujos,
+    });
+    if (!this.anilloFabrica) {
+      this.anilloFabrica = new THREE.Mesh(
+        new THREE.RingGeometry(RADIO_FABRICA - 4, RADIO_FABRICA, 48).rotateX(-Math.PI / 2),
+        new THREE.MeshBasicMaterial({ color: '#ffb81f', transparent: true, opacity: 0.9, side: THREE.DoubleSide, depthWrite: false }),
+      );
+      this.anilloFabrica.renderOrder = 12;
+      this.escena.add(this.anilloFabrica);
+    }
+    this.anilloFabrica.position.set(f.x, this.alturaXZ(f.x, f.z) + 6, f.z);
+    this.anilloFabrica.visible = true;
+    if (volar) {
+      const objetivo = new THREE.Vector3(f.x, this.alturaXZ(f.x, f.z) + 40, f.z);
+      this.volarA(objetivo.clone().add(this.camara.position.clone().sub(this.controles.target).normalize().multiplyScalar(1900)), objetivo);
+    }
+  }
+
   vistaGeneral(): void {
+    this.seleccionarFabrica(-1, false);
     this.seleccionarRio(null, false);
     this.elegida = -1;
     this.seleccion.set(null);
