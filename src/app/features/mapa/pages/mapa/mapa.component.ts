@@ -41,6 +41,10 @@ interface Estado {
   vi: number | null;
 }
 
+/** Los contornos de todas las zonas se dibujan 35 % más gruesos que su grosor base. */
+const FACTOR_GROSOR = 1.35;
+const grosor = (px: number): number => px * FACTOR_GROSOR;
+
 type Ruta = google.maps.LatLngLiteral[];
 
 /** Multipolígono con huecos -> rutas de Google (anillos sueltos; rellena par/impar). */
@@ -313,7 +317,7 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
     if (this.poligonosMunicipio.size || !this.mapa) return;
     data.municipios.forEach(m => {
       const paths = rutasDe(m);
-      const poli = new google.maps.Polygon({ paths, map: this.mapa, strokeWeight: 1.4 });
+      const poli = new google.maps.Polygon({ paths, map: this.mapa, strokeWeight: grosor(1.4) });
       this.rotular(poli, `${m.n} · ${m.s}`);
       poli.addListener('click', () => this.zone.run(() => this.onMunicipio(String(m.id))));
       this.poligonosMunicipio.set(m.id, poli);
@@ -328,7 +332,7 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
       const elegido = m.id === mid;
       this.poligonosMunicipio.get(m.id)?.setOptions({
         strokeColor: c.contorno, fillColor: c.relleno,
-        strokeWeight: elegido ? 3 : 1.4,
+        strokeWeight: grosor(elegido ? 3 : 1.4),
         strokeOpacity: enSub ? 1 : 0.35,
         fillOpacity: Math.min(1, op * (mid != null ? (elegido ? 0.3 : enSub ? 0.5 : 0.15) : (enSub ? 1 : 0.25))),
         zIndex: elegido ? 2 : 1,
@@ -354,8 +358,8 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
       const color = this.colores.get(id)!.contorno;
       const base = { map: this.mapa, clickable: false, fillOpacity: 0, strokeColor: color, zIndex: 3 };
       this.capaContexto.push(
-        new google.maps.Polygon({ ...base, paths: t.v.flatMap(rutasDe), strokeWeight: 0.8, strokeOpacity: 0.75 }),
-        new google.maps.Polygon({ ...base, paths: t.c.flatMap(rutasDe), strokeWeight: 2, strokeOpacity: 0.95 }),
+        new google.maps.Polygon({ ...base, paths: t.v.flatMap(rutasDe), strokeWeight: grosor(0.8), strokeOpacity: 0.75 }),
+        new google.maps.Polygon({ ...base, paths: t.c.flatMap(rutasDe), strokeWeight: grosor(2), strokeOpacity: 0.95 }),
       );
     });
   }
@@ -373,7 +377,7 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
         this.coloresVereda = coloresDeSegmentos(this.colores.get(mid)!.h, terr.v);
         terr.v.forEach((z, idx) => {
           const paths = rutasDe(z);
-          const poli = new google.maps.Polygon({ paths, map: this.mapa, strokeWeight: 1 });
+          const poli = new google.maps.Polygon({ paths, map: this.mapa, strokeWeight: grosor(1) });
           const corr = z.cr != null ? terr.c[z.cr]?.n : null;
           this.rotular(poli, corr && corr !== z.n ? `${z.n} · ${corr}` : z.n);
           poli.addListener('click', () => this.zone.run(() => {
@@ -401,7 +405,7 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
       this.poligonosVereda[idx]?.setOptions({
         strokeColor: c.contorno,
         fillColor: elegida ? this.coloresVereda[idx].seleccionado : this.coloresVereda[idx].relleno,
-        strokeWeight: elegida ? 3 : 1,
+        strokeWeight: grosor(elegida ? 3 : 1),
         strokeOpacity: enCorr ? 0.9 : 0.25,
         fillOpacity: Math.min(1, op * (elegida ? 1.3 : enCorr ? 1.05 : 0.3)),
         zIndex: elegida ? 5 : 3,
@@ -410,7 +414,7 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
     terr.c.forEach((_, idx) => {
       const elegido = idx === ci;
       this.poligonosCorr[idx]?.setOptions({
-        strokeColor: c.contorno, strokeWeight: elegido ? 3 : 2,
+        strokeColor: c.contorno, strokeWeight: grosor(elegido ? 3 : 2),
         strokeOpacity: ci == null || elegido ? 0.95 : 0.3,
       });
     });
