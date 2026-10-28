@@ -3,6 +3,7 @@ import {
   computed, effect, inject, signal, untracked,
 } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { forkJoin } from 'rxjs';
 import * as L from 'leaflet';
 import { MapaService, MunicipiosData, Municipio, Territorio } from '../../services/mapa.service';
 import { ColorMunicipio, OPACIDAD_RELLENO, TONO_SUBREGION, coloresPorMunicipio, colorSubregion } from '../../utils/paleta';
@@ -12,11 +13,15 @@ const TIPOS_ZONA: Record<string, string> = {
   CM: 'cabecera municipal', CO: 'centro poblado', CA: 'caserío', IN: 'inspección',
 };
 
+/** Corregimientos y veredas de un municipio, dibujados solo como contexto al filtrar por subregión. */
+interface ContextoSubregion { id: number; t: Territorio; }
+
 interface Estado {
   data: MunicipiosData;
   sub: string | null;
   mid: number | null;
   terr: Territorio | null;
+  ctx: ContextoSubregion[];
   ci: number | null;
   vi: number | null;
 }
@@ -41,6 +46,7 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
   readonly corrIdx = signal<number | null>(null);
   readonly verIdx = signal<number | null>(null);
   readonly territorio = signal<Territorio | null>(null);
+  readonly contexto = signal<ContextoSubregion[]>([]);
   readonly cargandoTerritorio = signal(false);
   readonly error = signal<string | null>(null);
   private readonly listo = signal(false);
@@ -102,6 +108,8 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
   private poligonosVereda: L.Polygon[] = [];
   private poligonosCorr: L.Polygon[] = [];
   private territorioPintado: Territorio | null = null;
+  private capaContexto?: L.LayerGroup;
+  private contextoPintado: ContextoSubregion[] = [];
   private encuadreClave = '';
   private ultimoEstado?: Estado;
 
@@ -116,7 +124,7 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
       if (!this.listo() || !data) return;
       const estado: Estado = {
         data, sub: this.subregion(), mid: this.muniId(),
-        terr: this.territorio(), ci: this.corrIdx(), vi: this.verIdx(),
+        terr: this.territorio(), ctx: this.contexto(), ci: this.corrIdx(), vi: this.verIdx(),
       };
       untracked(() => this.zone.runOutsideAngular(() => this.pintar(estado)));
     });
@@ -153,6 +161,7 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
     this.subregion.set(sub);
     const muni = this.municipio();
     if (muni && sub && muni.s !== sub) this.limpiarMunicipio();
+    this.cargarContexto();
   }
 
   onMunicipio(valor: string): void {
@@ -162,6 +171,7 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
     const muni = this.data()?.municipios[id];
     if (!muni) return;
     this.subregion.set(muni.s);
+    this.contexto.set([]);
     this.muniId.set(id);
     this.corrIdx.set(null);
     this.verIdx.set(null);
@@ -192,9 +202,25 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
   limpiar(): void {
     this.subregion.set(null);
     this.limpiarMunicipio();
+    this.cargarContexto();
+  }
+
+  /** Con solo una subregión filtrada se dibujan los corregimientos y veredas de todos sus municipios. */
+  private cargarContexto(): void {
+    const sub = this.subregion();
+    if (!sub || this.muniId() != null) { this.contexto.set([]); return; }
+    const ids = (this.data()?.municipios ?? []).filter(m => m.s === sub).map(m => m.id);
+    forkJoin(ids.map(id => this.api.territorio(id))).pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
+      next: ts => {
+        if (this.subregion() !== sub || this.muniId() != null) return; // el filtro cambió mientras cargaba
+        this.contexto.set(ts.map((t, i) => ({ id: ids[i], t })));
+      },
+      error: () => this.error.set('No se pudieron cargar los corregimientos y veredas de la subregión.'),
+    });
   }
 
   private limpiarMunicipio(): void {
+    this.contexto.set([]);
     this.muniId.set(null);
     this.corrIdx.set(null);
     this.verIdx.set(null);
@@ -208,6 +234,7 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
     this.ultimoEstado = e;
     this.crearMunicipios(e.data);
     this.estilarMunicipios(e);
+    this.pintarContexto(e);
     this.pintarTerritorio(e);
     this.encuadrar(e);
   }
@@ -236,6 +263,25 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
       });
       if (elegido) this.poligonosMunicipio.get(m.id)?.bringToFront();
     });
+  }
+
+  private pintarContexto({ ctx }: Estado): void {
+    if (ctx === this.contextoPintado) return;
+    this.contextoPintado = ctx;
+    this.capaContexto?.remove();
+    this.capaContexto = undefined;
+    if (!ctx.length) return;
+    const grupo = L.layerGroup();
+    ctx.forEach(({ id, t }) => {
+      const contorno = this.colores.get(id)!.contorno;
+      t.v.forEach(z => grupo.addLayer(L.polygon(decodeGeometria(z.g), {
+        renderer: this.lienzoCanvas, interactive: false, fill: false, color: contorno, weight: 0.8, opacity: 0.75,
+      })));
+      t.c.forEach(z => grupo.addLayer(L.polygon(decodeGeometria(z.g), {
+        renderer: this.lienzoCanvas, interactive: false, fill: false, color: contorno, weight: 1.8, opacity: 0.95, dashArray: '7 5',
+      })));
+    });
+    grupo.addTo(this.mapa!);
   }
 
   private pintarTerritorio(e: Estado): void {
@@ -281,7 +327,7 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
       const elegida = idx === vi;
       this.poligonosVereda[idx]?.setStyle({
         color: c.contorno, fillColor: c.relleno,
-        weight: elegida ? 3 : 0.8,
+        weight: elegida ? 3 : 1,
         opacity: enCorr ? 1 : 0.25,
         fillOpacity: elegida ? 0.65 : enCorr ? 0.35 : 0.05,
       });
