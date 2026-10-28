@@ -621,6 +621,8 @@ export class Mapa3dComponent implements AfterViewInit {
   private rotuloFabrica: HTMLElement | null = null;
   readonly fabricaSeleccion = signal<FichaFabrica | null>(null);
   private humos: Humo[] = [];
+  private miraTmp = new THREE.Vector3();
+  private medidasRotulos: ({ w: number; h: number } | undefined)[] = [];
   /** todas las bocanadas de humo de las chimeneas: una sola llamada de dibujo en vez de una por bocanada */
   private humoInst?: { malla: THREE.Mesh; pos: Float32Array; esc: Float32Array; rot: Float32Array; col: Float32Array; op: Float32Array; atributos: THREE.InstancedBufferAttribute[]; rotAcum: Float32Array };
   private geoIndustrias: THREE.BufferGeometry | null = null;
@@ -3811,7 +3813,7 @@ export class Mapa3dComponent implements AfterViewInit {
     const ocupados: { x0: number; y0: number; x1: number; y1: number }[] = [];
     const v = new THREE.Vector3();
     // vista casi a ras del mapa: los nombres quedarían sobre la pared frontal de la maqueta, así que se ocultan
-    const mira = this.camara.position.clone().sub(this.controles.target);
+    const mira = this.miraTmp.copy(this.camara.position).sub(this.controles.target);
     if (Math.acos(mira.y / mira.length()) > ANGULO_OCULTAR_NOMBRES) {
       for (const p of this.piezas) p.rotulo!.style.display = 'none';
       if (this.rotuloRio) this.rotuloRio.style.display = 'none';
@@ -3827,7 +3829,10 @@ export class Mapa3dComponent implements AfterViewInit {
       v.set(this.aX(lon), this.alturaEn(lon, lat) + this.alzado[id] + 60, this.aZ(lat)).project(this.camara);
       const x = (v.x * 0.5 + 0.5) * w, y = (-v.y * 0.5 + 0.5) * h;
       const activo = id === this.elegida || id === this.hover;
-      const ancho = (el.offsetWidth || p.zona.n.length * 6) * escala, alto = (el.offsetHeight || 16) * escala;
+      // el tamaño de cada rótulo se lee una sola vez: leerlo en cada cuadro, tras cambiar estilos, obliga al navegador a recalcular el diseño
+      let medida = this.medidasRotulos[id];
+      if (!medida && el.offsetWidth) this.medidasRotulos[id] = medida = { w: el.offsetWidth, h: el.offsetHeight };
+      const ancho = (medida?.w || p.zona.n.length * 6) * escala, alto = (medida?.h || 16) * escala;
       // el rótulo queda sobre el punto, con su colita apuntándolo
       const dentro = v.z < 1 && x > 0 && x < w && y > 0 && y < h;
       // si choca con otro rótulo, se prueba desplazarlo un poco hacia arriba o abajo antes de ocultarlo
@@ -3841,9 +3846,10 @@ export class Mapa3dComponent implements AfterViewInit {
       const visible = dentro && (libre || activo);
       el.style.display = visible ? '' : 'none';
       if (!visible) continue;
+      if (!medida && el.offsetWidth) this.medidasRotulos[id] = medida = { w: el.offsetWidth, h: el.offsetHeight };
       ocupados.push(caja);
       el.classList.toggle('activo', activo);
-      el.style.transform = `translate(${x - el.offsetWidth / 2}px, ${y - el.offsetHeight - 8 + dy}px) scale(${escala})`;
+      el.style.transform = `translate(${x - (activo ? el.offsetWidth : medida?.w ?? 0) / 2}px, ${y - (activo ? el.offsetHeight : medida?.h ?? 0) - 8 + dy}px) scale(${escala})`;
     }
     this.actualizarRotuloRio(w, h, Math.max(0.9, escala));
     this.actualizarRotuloFabrica(w, h, Math.max(0.9, escala));
