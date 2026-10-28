@@ -1,89 +1,89 @@
 <section class="mapa">
-  <aside class="mapa__panel" aria-label="Filtros del mapa">
-    <header>
+  <header class="mapa__barra" aria-label="Filtros del mapa">
+    <div class="mapa__titulo">
       <h1>Mapa de Antioquia</h1>
-      <p class="mapa__lead">
-        Croquis por subregión. Filtra hasta llegar a la vereda; por ahora el mapa no ubica puntos.
-      </p>
-    </header>
+      <p>Croquis por subregión; por ahora sin puntos.</p>
+    </div>
+
+    <div class="mapa__filtros">
+      <div class="campo">
+        <label for="f-subregion">Subregión</label>
+        <select id="f-subregion" (change)="onSubregion($any($event.target).value)" [disabled]="!data()">
+          <option value="" [selected]="!subregion()">Todas las subregiones</option>
+          @for (s of subregiones(); track s.nombre) {
+            <option [value]="s.nombre" [selected]="s.nombre === subregion()">{{ s.nombre }} ({{ s.n }})</option>
+          }
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="f-municipio">Municipio</label>
+        <select id="f-municipio" (change)="onMunicipio($any($event.target).value)" [disabled]="!data()">
+          <option value="" [selected]="muniId() == null">Todos los municipios</option>
+          @for (m of municipios(); track m.id) {
+            <option [value]="m.id" [selected]="m.id === muniId()">{{ m.n }}</option>
+          }
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="f-corregimiento">Corregimiento o cabecera</label>
+        <select id="f-corregimiento" (change)="onCorregimiento($any($event.target).value)"
+                [disabled]="!territorio()">
+          <option value="" [selected]="corrIdx() == null">
+            {{ cargandoTerritorio() ? 'Cargando…' : muniId() == null ? 'Elige un municipio' : 'Todos' }}
+          </option>
+          @for (c of corregimientos(); track c.idx) {
+            <option [value]="c.idx" [selected]="c.idx === corrIdx()">{{ c.n }}</option>
+          }
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="f-vereda">Vereda o zona</label>
+        <select id="f-vereda" (change)="onVereda($any($event.target).value)" [disabled]="!territorio()">
+          <option value="" [selected]="verIdx() == null">
+            {{ cargandoTerritorio() ? 'Cargando…' : muniId() == null ? 'Elige un municipio' : 'Todas (' + veredas().length + ')' }}
+          </option>
+          @for (v of veredas(); track v.idx) {
+            <option [value]="v.idx" [selected]="v.idx === verIdx()">{{ v.n }}</option>
+          }
+        </select>
+      </div>
+
+      <button type="button" class="mapa__limpiar" (click)="limpiar()" [disabled]="!hayFiltro()">
+        Quitar filtros
+      </button>
+    </div>
 
     @if (error(); as msg) {
       <p class="mapa__error" role="alert">{{ msg }}</p>
     }
 
-    <div class="campo">
-      <label for="f-subregion">Subregión</label>
-      <select id="f-subregion" (change)="onSubregion($any($event.target).value)" [disabled]="!data()">
-        <option value="" [selected]="!subregion()">Todas las subregiones</option>
+    <div class="mapa__fila">
+      <ul class="mapa__leyenda" aria-label="Subregiones">
         @for (s of subregiones(); track s.nombre) {
-          <option [value]="s.nombre" [selected]="s.nombre === subregion()">{{ s.nombre }} ({{ s.n }})</option>
+          <li>
+            <button type="button" [class.is-activa]="s.nombre === subregion()"
+                    (click)="onSubregion(s.nombre === subregion() ? '' : s.nombre)">
+              {{ s.nombre }}
+            </button>
+          </li>
         }
-      </select>
-    </div>
+      </ul>
 
-    <div class="campo">
-      <label for="f-municipio">Municipio</label>
-      <select id="f-municipio" (change)="onMunicipio($any($event.target).value)" [disabled]="!data()">
-        <option value="" [selected]="muniId() == null">Todos los municipios</option>
-        @for (m of municipios(); track m.id) {
-          <option [value]="m.id" [selected]="m.id === muniId()">{{ m.n }}</option>
-        }
-      </select>
-    </div>
-
-    <div class="campo">
-      <label for="f-corregimiento">Corregimiento o cabecera</label>
-      <select id="f-corregimiento" (change)="onCorregimiento($any($event.target).value)"
-              [disabled]="!territorio()">
-        <option value="" [selected]="corrIdx() == null">
-          {{ cargandoTerritorio() ? 'Cargando…' : muniId() == null ? 'Elige un municipio' : 'Todos' }}
-        </option>
-        @for (c of corregimientos(); track c.idx) {
-          <option [value]="c.idx" [selected]="c.idx === corrIdx()">{{ c.n }}</option>
-        }
-      </select>
-    </div>
-
-    <div class="campo">
-      <label for="f-vereda">Vereda o zona</label>
-      <select id="f-vereda" (change)="onVereda($any($event.target).value)" [disabled]="!territorio()">
-        <option value="" [selected]="verIdx() == null">
-          {{ cargandoTerritorio() ? 'Cargando…' : muniId() == null ? 'Elige un municipio' : 'Todas (' + veredas().length + ')' }}
-        </option>
-        @for (v of veredas(); track v.idx) {
-          <option [value]="v.idx" [selected]="v.idx === verIdx()">{{ v.n }}</option>
-        }
-      </select>
-    </div>
-
-    <button type="button" class="mapa__limpiar" (click)="limpiar()" [disabled]="!hayFiltro()">
-      Quitar filtros
-    </button>
-
-    @if (municipio(); as m) {
-      <dl class="mapa__resumen">
-        <div><dt>Municipio</dt><dd>{{ m.n }}</dd></div>
-        <div><dt>Subregión</dt><dd>{{ m.s }}</dd></div>
-        @if (territorio()) {
-          <div><dt>Corregimientos</dt><dd>{{ corregimientos().length }}</dd></div>
-          <div><dt>Veredas y zonas</dt><dd>{{ territorio()!.v.length }}</dd></div>
-        }
-        @if (nombreCorr(); as c) { <div><dt>Corregimiento</dt><dd>{{ c }}</dd></div> }
-        @if (nombreVereda(); as v) { <div><dt>Vereda</dt><dd>{{ v }}</dd></div> }
-      </dl>
-    }
-
-    <ul class="mapa__leyenda" aria-label="Subregiones">
-      @for (s of subregiones(); track s.nombre) {
-        <li>
-          <button type="button" [class.is-activa]="s.nombre === subregion()"
-                  (click)="onSubregion(s.nombre === subregion() ? '' : s.nombre)">
-            {{ s.nombre }}
-          </button>
-        </li>
+      @if (municipio(); as m) {
+        <p class="mapa__resumen">
+          <b>{{ m.n }}</b>
+          @if (territorio()) {
+            · {{ corregimientos().length }} corregimientos · {{ territorio()!.v.length }} veredas y zonas
+          }
+          @if (nombreCorr(); as c) { · <b>{{ c }}</b> }
+          @if (nombreVereda(); as v) { · <b>{{ v }}</b> }
+        </p>
       }
-    </ul>
-  </aside>
+    </div>
+  </header>
 
   <div class="mapa__mapa">
     <div class="mapa__lienzo" #lienzo role="img"
