@@ -9,8 +9,15 @@ export const SUBREGIONES = [
   'Oriente', 'Suroeste', 'Urabá', 'Valle de Aburrá',
 ];
 
-/** Tonos (grados HSL) disponibles para los municipios. */
-const TONOS = [350, 16, 40, 58, 90, 140, 170, 195, 220, 255, 285, 320];
+interface Pastel { h: number; s: number; l: number; }
+
+/**
+ * 36 pasteles: 12 tonos × 3 niveles de claridad (con un pequeño corrimiento de matiz por nivel).
+ * Hacen falta más de 23 porque ningún municipio puede repetir color dentro de su subregión.
+ */
+const PASTELES: Pastel[] = [0, 1, 2].flatMap(nivel =>
+  [350, 16, 40, 58, 90, 140, 170, 195, 220, 255, 285, 320].map(h =>
+    ({ h: h + nivel * 9, s: [70, 62, 56][nivel], l: [84, 77, 70][nivel] })));
 
 export const OPACIDAD_MUNICIPIO = 0.8;
 export const OPACIDAD_SEGMENTO = 0.85;
@@ -41,33 +48,41 @@ function distanciaTono(a: number, b: number): number {
 }
 
 /**
- * Un tono por municipio, coloreando como un grafo con los vecinos reales (`vec`): dos municipios
- * colindantes nunca comparten tono, y entre los tonos libres se elige el más distinto al de sus
- * vecinos ya coloreados para que tampoco se confundan por parecidos.
+ * Un color por municipio, con dos reglas: nunca repite el de otro municipio de su subregión ni el de
+ * un colindante (`vec`). Entre los colores libres se elige el de tono más distinto al de sus vecinos
+ * y, a igualdad, el menos usado en el departamento.
  */
 export function coloresPorMunicipio(municipios: Municipio[]): Map<number, ColorMunicipio> {
   const orden = [...municipios].sort((a, b) => b.vec.length - a.vec.length);
-  const tono = new Map<number, number>();
-  const uso = TONOS.map(() => 0);
+  const asignado = new Map<number, number>();
+  const usadosEnSubregion = new Map<string, Set<number>>();
+  const uso = PASTELES.map(() => 0);
 
   orden.forEach(m => {
-    const tonosVecinos = m.vec.map(v => tono.get(v)).filter((t): t is number => t !== undefined);
-    let mejor = -1, mejorDist = -1;
-    TONOS.forEach((h, i) => {
-      if (tonosVecinos.includes(i)) return;
-      // lejanía al vecino más parecido; a igualdad, el tono menos usado en el departamento
-      const dist = Math.min(180, ...tonosVecinos.map(t => distanciaTono(h, TONOS[t])));
+    const deSubregion = usadosEnSubregion.get(m.s) ?? new Set<number>();
+    const vecinos = m.vec.map(v => asignado.get(v)).filter((c): c is number => c !== undefined);
+
+    const candidatos = (estricto: boolean) => PASTELES.map((_, i) => i)
+      .filter(i => !vecinos.includes(i) && (!estricto || !deSubregion.has(i)));
+    let libres = candidatos(true);
+    if (!libres.length) libres = candidatos(false); // subregión con más municipios que colores: no debería pasar
+
+    let mejor = libres[0], mejorDist = -1;
+    libres.forEach(i => {
+      const dist = Math.min(180, ...vecinos.map(c => distanciaTono(PASTELES[i].h, PASTELES[c].h)));
       if (dist > mejorDist || (dist === mejorDist && uso[i] < uso[mejor])) { mejor = i; mejorDist = dist; }
     });
-    if (mejor < 0) mejor = m.id % TONOS.length; // más vecinos distintos que tonos: no debería pasar
-    tono.set(m.id, mejor);
+
+    asignado.set(m.id, mejor);
+    deSubregion.add(mejor);
+    usadosEnSubregion.set(m.s, deSubregion);
     uso[mejor]++;
   });
 
   const colores = new Map<number, ColorMunicipio>();
-  municipios.forEach(m => {
-    const h = TONOS[tono.get(m.id)!];
-    colores.set(m.id, { h, relleno: hex(h, 68, 80), contorno: hex(h, 38, 38) });
+  asignado.forEach((i, id) => {
+    const p = PASTELES[i];
+    colores.set(id, { h: p.h, relleno: hex(p.h, p.s, p.l), contorno: hex(p.h, 38, 34) });
   });
   return colores;
 }
