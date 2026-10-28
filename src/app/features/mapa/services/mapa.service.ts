@@ -11,6 +11,8 @@ export interface Municipio {
   /** [oeste, sur, este, norte] */
   b: [number, number, number, number] | null;
   c: [number, number];
+  /** ids de los municipios colindantes */
+  vec: number[];
   g: GeometriaCodificada;
 }
 

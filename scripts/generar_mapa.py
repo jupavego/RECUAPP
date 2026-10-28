@@ -129,7 +129,7 @@ def contorno_de_veredas(veredas):
          for p in partes if not p.is_empty]
     x0, y0, x1, y1 = union.bounds
     # shapely recibio (lat, lon) como (x, y); el formato publico es [oeste, sur, este, norte].
-    return g, [round(y0, 4), round(x0, 4), round(y1, 4), round(x1, 4)]
+    return g, union, [round(y0, 4), round(x0, 4), round(y1, 4), round(x1, 4)]
 
 
 def escribir(ruta: Path, datos) -> None:
@@ -150,9 +150,11 @@ def main(recursos: Path) -> None:
         por_muni[v["m"]][1].append(v)
 
     municipios = []
+    figuras = []
     for i, m in enumerate(cerc["municipios"]):
         corrs, veredas = por_muni[i]
-        g, bbox = contorno_de_veredas(veredas)
+        g, figura, bbox = contorno_de_veredas(veredas)
+        figuras.append(figura)
         municipios.append({
             "id": i,
             "n": bonito(m["nombre"]),
@@ -170,6 +172,14 @@ def main(recursos: Path) -> None:
             "v": [{"n": v["n"], "t": v.get("t", "VE"), "cr": idx_corr.get(v["cr"]) if v.get("cr") is not None else None,
                    "p": v["p"], "g": v["g"]} for v in veredas],
         })
+
+    # Vecinos reales (contornos que se tocan, con una tolerancia de ~90 m): la app los usa para repartir
+    # los colores sin repetir tono entre municipios colindantes.
+    for i, f in enumerate(figuras):
+        municipios[i]["vec"] = [j for j, o in enumerate(figuras)
+                                if j != i and f.bounds[0] <= o.bounds[2] + 0.001 and o.bounds[0] <= f.bounds[2] + 0.001
+                                and f.bounds[1] <= o.bounds[3] + 0.001 and o.bounds[1] <= f.bounds[3] + 0.001
+                                and f.buffer(0.0008).intersects(o)]
 
     escribir(SALIDA / "municipios.json", {
         "fuente": "Contornos municipales (Encuentrala) · Mapa Veredal Digital de Antioquia, DAP Gobernación de Antioquia",

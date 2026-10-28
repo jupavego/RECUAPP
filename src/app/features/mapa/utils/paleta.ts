@@ -10,7 +10,7 @@ export const SUBREGIONES = [
 ];
 
 /** Tonos (grados HSL) disponibles para los municipios. */
-const TONOS = [352, 18, 38, 52, 84, 130, 160, 184, 206, 232, 262, 292, 322];
+const TONOS = [350, 16, 40, 58, 90, 140, 170, 195, 220, 255, 285, 320];
 
 export const OPACIDAD_MUNICIPIO = 0.8;
 export const OPACIDAD_SEGMENTO = 0.85;
@@ -35,34 +35,33 @@ export function hex(h: number, s: number, l: number): string {
   return `#${canal(0)}${canal(8)}${canal(4)}`;
 }
 
-function seTocan(a: Municipio, b: Municipio): boolean {
-  if (!a.b || !b.b) return false;
-  return a.b[0] <= b.b[2] && b.b[0] <= a.b[2] && a.b[1] <= b.b[3] && b.b[1] <= a.b[3];
+function distanciaTono(a: number, b: number): number {
+  const d = Math.abs(a - b) % 360;
+  return Math.min(d, 360 - d);
 }
 
 /**
- * Un tono por municipio, coloreando como un grafo: vecinos (aproximados por la superposición de sus
- * cajas) nunca repiten tono mientras alcance la paleta, y entre los libres se reparte parejo.
+ * Un tono por municipio, coloreando como un grafo con los vecinos reales (`vec`): dos municipios
+ * colindantes nunca comparten tono, y entre los tonos libres se elige el más distinto al de sus
+ * vecinos ya coloreados para que tampoco se confundan por parecidos.
  */
 export function coloresPorMunicipio(municipios: Municipio[]): Map<number, ColorMunicipio> {
-  const vecinos = new Map<number, number[]>();
-  municipios.forEach(m => vecinos.set(
-    m.id, municipios.filter(o => o.id !== m.id && seTocan(m, o)).map(o => o.id)));
-
-  const orden = [...municipios].sort((a, b) => vecinos.get(b.id)!.length - vecinos.get(a.id)!.length);
+  const orden = [...municipios].sort((a, b) => b.vec.length - a.vec.length);
   const tono = new Map<number, number>();
   const uso = TONOS.map(() => 0);
 
   orden.forEach(m => {
-    const prohibidos = new Set(vecinos.get(m.id)!.map(v => tono.get(v)).filter(t => t !== undefined));
-    let elegido = -1;
-    TONOS.forEach((_, i) => {
-      if (prohibidos.has(i)) return;
-      if (elegido < 0 || uso[i] < uso[elegido]) elegido = i;
+    const tonosVecinos = m.vec.map(v => tono.get(v)).filter((t): t is number => t !== undefined);
+    let mejor = -1, mejorDist = -1;
+    TONOS.forEach((h, i) => {
+      if (tonosVecinos.includes(i)) return;
+      // lejanía al vecino más parecido; a igualdad, el tono menos usado en el departamento
+      const dist = Math.min(180, ...tonosVecinos.map(t => distanciaTono(h, TONOS[t])));
+      if (dist > mejorDist || (dist === mejorDist && uso[i] < uso[mejor])) { mejor = i; mejorDist = dist; }
     });
-    if (elegido < 0) elegido = m.id % TONOS.length; // más vecinos distintos que tonos: repite el menos malo
-    tono.set(m.id, elegido);
-    uso[elegido]++;
+    if (mejor < 0) mejor = m.id % TONOS.length; // más vecinos distintos que tonos: no debería pasar
+    tono.set(m.id, mejor);
+    uso[mejor]++;
   });
 
   const colores = new Map<number, ColorMunicipio>();
