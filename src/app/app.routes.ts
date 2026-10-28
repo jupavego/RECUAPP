@@ -11,6 +11,13 @@ export const routes: Routes = [
       import('./shared/pages/home/home.component').then(m => m.HomeComponent),
   },
 
+  // ── Mapa territorial (público) ───────────────────────────────────────────
+  {
+    path: 'mapa',
+    loadComponent: () =>
+      import('./features/mapa/pages/mapa/mapa.component').then(m => m.MapaComponent),
+  },
+
   // ── Área de usuario (cualquier rol logueado) ─────────────────────────────
   // Aquí viven las pantallas de tu app. 'items' es el CRUD de ejemplo.
   {

@@ -3,6 +3,7 @@
     <a routerLink="/" class="topbar__logo">{{ site.name }}</a>
 
     <nav class="topbar__nav">
+      <a routerLink="/mapa" routerLinkActive="is-active">Mapa</a>
       @if (session.isLoggedIn()) {
         <a routerLink="/app" routerLinkActive="is-active">Mi espacio</a>
         @if (session.isAdmin()) {
