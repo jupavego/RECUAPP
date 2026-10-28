@@ -73,3 +73,7 @@ __pycache__/
 # no son parte del proyecto ni deben compartirse vía el repo.
 /.claude/skills/
 /.claude/plugins/
+
+# Insumos demasiado pesados para git (shapefiles del DANE y geojson de potencialidades)
+/insumos/geografia/dane_cnpv2018/
+/insumos/geografia/_Potencialidades_Modelo_Plan.geojson

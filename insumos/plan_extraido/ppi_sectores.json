@@ -1,0 +1,189 @@
+{
+ "salud y proteccion social": {
+  "sector": "Salud Y Proteccion Social",
+  "linea": "Línea Estratégica: 1 Justicia e inclusión social y bienestar ciudadano",
+  "anios": [
+   37528194965,
+   41281014461,
+   44170685474,
+   47262633457
+  ],
+  "pagina": 253
+ },
+ "inclusion social y reconciliacion": {
+  "sector": "Inclusion Social Y Reconciliacion",
+  "linea": "Línea Estratégica: 1 Justicia e inclusión social y bienestar ciudadano",
+  "anios": [
+   4992117011,
+   5491328712,
+   5875721721,
+   6287022242
+  ],
+  "pagina": 253
+ },
+ "vivienda ciudad y territorio": {
+  "sector": "Vivienda, Ciudad Y Territorio",
+  "linea": "Línea Estratégica: 1 Justicia e inclusión social y bienestar ciudadano",
+  "anios": [
+   3617623685,
+   3979386054,
+   4257943077,
+   4555999093
+  ],
+  "pagina": 253
+ },
+ "educacion": {
+  "sector": "Educacion",
+  "linea": "Línea Estratégica: 1 Justicia e inclusión social y bienestar ciudadano",
+  "anios": [
+   4354639539,
+   4790103493,
+   5125410738,
+   5484189490
+  ],
+  "pagina": 253
+ },
+ "cultura": {
+  "sector": "Cultura",
+  "linea": "Línea Estratégica: 1 Justicia e inclusión social y bienestar ciudadano",
+  "anios": [
+   752051579,
+   827256737,
+   885164708,
+   947126238
+  ],
+  "pagina": 253
+ },
+ "deporte y recreacion": {
+  "sector": "Deporte Y Recreacion",
+  "linea": "Línea Estratégica: 1 Justicia e inclusión social y bienestar ciudadano",
+  "anios": [
+   2479797639,
+   2727777403,
+   2918721821,
+   3123032349
+  ],
+  "pagina": 253
+ },
+ "justicia y del derecho": {
+  "sector": "Justicia Y Del Derecho",
+  "linea": "Línea Estratégica: 2 Gobernanza y participación ciudadana",
+  "anios": [
+   700000000,
+   770000000,
+   823900000,
+   881573000
+  ],
+  "pagina": 253
+ },
+ "organismos de control": {
+  "sector": "Organismos De Control",
+  "linea": "Línea Estratégica: 2 Gobernanza y participación ciudadana",
+  "anios": [
+   200000000,
+   220000000,
+   235400000,
+   251878000
+  ],
+  "pagina": 254
+ },
+ "gobierno territorial": {
+  "sector": "Gobierno Territorial",
+  "linea": "Línea Estratégica: 2 Gobernanza y participación ciudadana",
+  "anios": [
+   5758475124,
+   6334322636,
+   6777725221,
+   7252165986
+  ],
+  "pagina": 254
+ },
+ "agricultura y desarrollo rural": {
+  "sector": "Agricultura Y Desarrollo Rural",
+  "linea": "Línea Estratégica: 3 Integración regional y desarrollo económico y sostenible",
+  "anios": [
+   1344685686,
+   1479154255,
+   1582695052,
+   1693483706
+  ],
+  "pagina": 254
+ },
+ "ambiente y desarrollo sostenible": {
+  "sector": "Ambiente Y Desarrollo Sostenible",
+  "linea": "Línea Estratégica: 3 Integración regional y desarrollo económico y sostenible",
+  "anios": [
+   1305398804,
+   1435938648,
+   1536454392,
+   1644006200
+  ],
+  "pagina": 254
+ },
+ "comercio industria y turismo": {
+  "sector": "Comercio, Industria Y Turismo",
+  "linea": "Línea Estratégica: 3 Integración regional y desarrollo económico y sostenible",
+  "anios": [
+   187247308,
+   205972039,
+   220390082,
+   235817387
+  ],
+  "pagina": 254
+ },
+ "trabajo": {
+  "sector": "Trabajo",
+  "linea": "Línea Estratégica: 3 Integración regional y desarrollo económico y sostenible",
+  "anios": [
+   120000000,
+   132000000,
+   141240000,
+   151126800
+  ],
+  "pagina": 254
+ },
+ "minas y energia": {
+  "sector": "Minas Y Energia",
+  "linea": "Línea Estratégica: 3 Integración regional y desarrollo económico y sostenible",
+  "anios": [
+   2715992836,
+   2987592120,
+   3196723568,
+   3420494218
+  ],
+  "pagina": 255
+ },
+ "transporte": {
+  "sector": "Transporte",
+  "linea": "Línea Estratégica: 3 Integración regional y desarrollo económico y sostenible",
+  "anios": [
+   5615960056,
+   6177556062,
+   6609984986,
+   7072683935
+  ],
+  "pagina": 255
+ },
+ "informacion estadistica": {
+  "sector": "Informacion Estadistica",
+  "linea": "Línea Estratégica: 4 Desarrollo del conocimiento, innovación y gobierno abierto",
+  "anios": [
+   50000000,
+   55000000,
+   58850000,
+   62969500
+  ],
+  "pagina": 255
+ },
+ "tecnologias de la informacion y las comunicaciones": {
+  "sector": "Tecnologias De La Informacion Y Las Comunicaciones",
+  "linea": "Línea Estratégica: 4 Desarrollo del conocimiento, innovación y gobierno abierto",
+  "anios": [
+   406755138,
+   447430652,
+   478750797,
+   512263353
+  ],
+  "pagina": 255
+ }
+}

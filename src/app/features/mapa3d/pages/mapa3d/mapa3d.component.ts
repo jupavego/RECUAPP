@@ -89,8 +89,8 @@ const ANCHO_MIN_CAUCE = 6;
 /** Puentes: solo donde el cauce dibujado mide al menos esto (metros del modelo); tablero, barandas y su amarillo. */
 const ANCHO_MIN_PUENTE = 20;
 const COLOR_BARANDA = '#f6c312';
-/** Cuánto vira a café el agua del Río Medellín (0 = azul, 1 = café pleno). */
-const TINTE_MEDELLIN = 0.9;
+/** Cuánto vira el agua del Río Medellín a su color propio, #B2A544 con ondas azules (0 = azul, 1 = pleno). */
+const TINTE_MEDELLIN = 1.0;
 /** Bandada que cruza el Río Medellín de sur a norte: cuántos pájaros, velocidad (m/s del modelo), recorrido total y pausa entre pasadas. */
 const PAJAROS = 11;
 const VELOCIDAD_PAJAROS = 130;
@@ -2260,8 +2260,8 @@ export class Mapa3dComponent implements AfterViewInit {
   }
 
   /**
-   * Tinte café para el Río Medellín (aguas turbias). Cada vértice de la cinta lleva un `tinte` 0–1; el shader mezcla el
-   * color de la textura hacia un café que conserva la luminosidad de la corriente (las hebras siguen más claras).
+   * Color propio del Río Medellín, #B2A544 (en lineal: 0.445, 0.376, 0.058), con las ondas de la corriente en azul. Cada
+   * vértice de la cinta lleva un `tinte` 0–1; el shader mezcla la textura hacia ese color y sus hebras claras hacia el azul.
    */
   private teñirAgua(malla: THREE.Mesh, rangos: [number, number][]): void {
     if (!rangos.length) return;
@@ -2297,8 +2297,10 @@ export class Mapa3dComponent implements AfterViewInit {
         .replace('#include <common>', `#include <common>
           varying float vTinte;`)
         .replace('#include <map_fragment>', `#include <map_fragment>
-          float luz = dot(diffuseColor.rgb, vec3(0.30, 0.59, 0.11));
-          diffuseColor.rgb = mix(diffuseColor.rgb, vec3(0.58, 0.34, 0.14) * (1.0 + 0.7 * luz), vTinte * ${TINTE_MEDELLIN.toFixed(2)});`);
+          // las hebras de la corriente son lo claro de la textura (mucho rojo); ahí el río va azul y en el resto, su color
+          float onda = smoothstep(0.25, 0.7, diffuseColor.r);
+          vec3 medellin = mix(vec3(0.445, 0.376, 0.058), vec3(0.06, 0.36, 0.78), onda);
+          diffuseColor.rgb = mix(diffuseColor.rgb, medellin, vTinte * ${TINTE_MEDELLIN.toFixed(2)});`);
     };
     (malla.material as THREE.MeshBasicMaterial).needsUpdate = true;
   }
