@@ -6,7 +6,10 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { forkJoin } from 'rxjs';
 import { GoogleMapsLoaderService } from '../../../../core/services/google-maps-loader.service';
 import { MapaService, MunicipiosData, Municipio, Territorio, Zona } from '../../services/mapa.service';
-import { ColorMunicipio, OPACIDAD_RELLENO, TONO_SUBREGION, coloresPorMunicipio, colorSubregion } from '../../utils/paleta';
+import {
+  ColorMunicipio, ColorSegmento, OPACIDAD_MUNICIPIO, OPACIDAD_SEGMENTO, SUBREGIONES,
+  coloresDeSegmentos, coloresPorMunicipio,
+} from '../../utils/paleta';
 import { decodeGeometria } from '../../utils/polyline';
 
 const TIPOS_ZONA: Record<string, string> = {
@@ -78,10 +81,9 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
   readonly subregiones = computed(() => {
     const cuenta = new Map<string, number>();
     this.data()?.municipios.forEach(m => cuenta.set(m.s, (cuenta.get(m.s) ?? 0) + 1));
-    return Object.keys(TONO_SUBREGION)
+    return SUBREGIONES
       .filter(n => cuenta.has(n))
-      .sort((a, b) => a.localeCompare(b, 'es'))
-      .map(nombre => ({ nombre, n: cuenta.get(nombre)!, color: colorSubregion(nombre) }));
+      .map(nombre => ({ nombre, n: cuenta.get(nombre)! }));
   });
 
   readonly municipios = computed(() => {
@@ -129,6 +131,7 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
   private limitesMunicipio = new Map<number, google.maps.LatLngBounds>();
   private poligonosVereda: google.maps.Polygon[] = [];
   private limitesVereda: google.maps.LatLngBounds[] = [];
+  private coloresVereda: ColorSegmento[] = [];
   private poligonosCorr: google.maps.Polygon[] = [];
   private limitesCorr: google.maps.LatLngBounds[] = [];
   private territorioPintado: Territorio | null = null;
@@ -300,7 +303,7 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
         strokeColor: c.contorno, fillColor: c.relleno,
         strokeWeight: elegido ? 3 : 1.4,
         strokeOpacity: enSub ? 1 : 0.35,
-        fillOpacity: mid != null ? (elegido ? 0.2 : enSub ? 0.25 : 0.06) : (enSub ? OPACIDAD_RELLENO : 0.08),
+        fillOpacity: mid != null ? (elegido ? 0.25 : enSub ? 0.45 : 0.12) : (enSub ? OPACIDAD_MUNICIPIO : 0.2),
         zIndex: elegido ? 2 : 1,
       });
     });
@@ -327,11 +330,12 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
 
     if (terr !== this.territorioPintado) {
       [...this.poligonosVereda, ...this.poligonosCorr].forEach(p => p.setMap(null));
-      this.poligonosVereda = []; this.limitesVereda = [];
+      this.poligonosVereda = []; this.limitesVereda = []; this.coloresVereda = [];
       this.poligonosCorr = []; this.limitesCorr = [];
       this.territorioPintado = terr;
 
       if (terr && mid != null) {
+        this.coloresVereda = coloresDeSegmentos(this.colores.get(mid)!.h, terr.v);
         terr.v.forEach((z, idx) => {
           const paths = rutasDe(z);
           const poli = new google.maps.Polygon({ paths, map: this.mapa, strokeWeight: 1 });
@@ -360,10 +364,11 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
       const enCorr = ci == null || z.cr === ci;
       const elegida = idx === vi;
       this.poligonosVereda[idx]?.setOptions({
-        strokeColor: c.contorno, fillColor: c.relleno,
+        strokeColor: c.contorno,
+        fillColor: elegida ? this.coloresVereda[idx].seleccionado : this.coloresVereda[idx].relleno,
         strokeWeight: elegida ? 3 : 1,
-        strokeOpacity: enCorr ? 1 : 0.25,
-        fillOpacity: elegida ? 0.65 : enCorr ? 0.35 : 0.05,
+        strokeOpacity: enCorr ? 0.9 : 0.25,
+        fillOpacity: elegida ? 0.95 : enCorr ? OPACIDAD_SEGMENTO : 0.25,
         zIndex: elegida ? 5 : 3,
       });
     });

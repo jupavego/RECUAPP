@@ -78,7 +78,7 @@
         <li>
           <button type="button" [class.is-activa]="s.nombre === subregion()"
                   (click)="onSubregion(s.nombre === subregion() ? '' : s.nombre)">
-            <i [style.background]="s.color"></i>{{ s.nombre }}
+            {{ s.nombre }}
           </button>
         </li>
       }
