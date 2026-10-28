@@ -48,7 +48,7 @@
   --dark-800: #1e293b;
   --dark-900: #0f172a;
 
-  // ── PALETA GLOBAL — Neutral (warm gray) ─────────────────────
+  // ── PALETA GLOBAL — Neutral (gris) ─────────────────────
   --neutral-0: #ffffff;
   --neutral-50: #fafafa;
   --neutral-100: #f4f4f5;
@@ -107,19 +107,7 @@
   --color-brand-border:      var(--primary-200);
   --color-brand-surface:     var(--primary-50);
 
-  // Acento (CTA, destacados)
-  --color-warm-primary:      var(--accent-500);
-  --color-warm-light:        var(--accent-400);
-  --color-warm-dark:         var(--accent-700);
-  --color-warm-border:       var(--accent-200);
-  --color-warm-surface:      var(--accent-50);
   --color-brand-accent:      var(--accent-500);
-
-  // Fondos oscuros (hero)
-  --color-hero-bg-deep:   var(--dark-900);
-  --color-hero-bg-mid:    var(--dark-800);
-  --color-hero-bg-light:  var(--dark-600);
-  --color-hero-gradient:  linear-gradient(160deg, var(--dark-900) 0%, var(--dark-800) 35%, var(--dark-600) 65%, var(--dark-400) 100%);
 
   // ================================================================
   // ALIAS SEMÁNTICOS — FONDOS

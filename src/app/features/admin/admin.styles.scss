@@ -1,7 +1,7 @@
-﻿// admin.styles.scss
-// Estilos exclusivos del feature admin.
-// Los componentes globales (btn-*, field-*, modal-*, spinner) vienen de styles.scss.
-// Cada componente importa con: @use '../../admin.styles' as *;
+﻿/* admin.styles.scss*/
+/* Estilos exclusivos del feature admin.*/
+/* Los componentes globales (btn-*, field-*, modal-*, spinner) vienen de styles.scss.*/
+/* Cada componente importa con: @use '../../admin.styles' as *;*/
 
 @use 'styles/breakpoints' as *;
 @use 'styles/shared-cards' as *;
@@ -28,12 +28,6 @@
   gap: 1rem;
 }
 
-.admin-page__header-actions {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
 .admin-page__title {
   font-size: 1.5rem;
   font-weight: 600;
@@ -42,17 +36,6 @@
   display: flex;
   align-items: center;
   gap: 0.625rem;
-}
-
-.admin-page__badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 2px 10px;
-  background: var(--color-background-warning);
-  color: var(--color-text-warning);
-  border-radius: var(--radius-full);
-  font-size: 0.75rem;
-  font-weight: 700;
 }
 
 .admin-loading {
@@ -69,10 +52,10 @@
   text-align: right;
 }
 
-// ── Stats grid ────────────────────────────────────────────────────────────────
+/* ── Stats grid ────────────────────────────────────────────────────────────────*/
 .stats-grid { @include stats-grid(180px); }
 
-// ── Hero del panel de admin ───────────────────────────────────────────────────
+/* ── Hero del panel de admin ───────────────────────────────────────────────────*/
 .admin-hero {
   border-radius: var(--radius-xl);
   overflow: hidden;
@@ -101,21 +84,6 @@
     gap: 0.9rem;
   }
 
-  &__icon-wrap {
-    width: 64px;
-    height: 64px;
-    border-radius: 14px;
-    border: 3px solid rgba(255, 255, 255, 0.8);
-    background: rgba(255, 255, 255, 0.15);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-
-    svg { width: 28px; height: 28px; stroke: #ffffff; }
-  }
-
   &__title {
     font-family: var(--font-heading);
     font-size: 1.3rem;
@@ -123,12 +91,6 @@
     color: #ffffff;
     margin: 0 0 0.15rem;
     line-height: 1.2;
-  }
-
-  &__subtitle {
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.8);
-    font-weight: 500;
   }
 
   &__badge {
@@ -146,7 +108,7 @@
   }
 }
 
-// ── Tarjetas de acceso rápido ─────────────────────────────────────────────────
+/* ── Tarjetas de acceso rápido ─────────────────────────────────────────────────*/
 .admin-actions {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -175,7 +137,7 @@
   }
 }
 
-// ── Filtros ───────────────────────────────────────────────────────────────────
+/* ── Filtros ───────────────────────────────────────────────────────────────────*/
 .admin-filters {
   display: flex;
   gap: 0.75rem;
@@ -211,9 +173,9 @@
   &:focus { outline: none; border-color: var(--color-border-info); }
 }
 
-// ── Tabla ─────────────────────────────────────────────────────────────────────
+/* ── Tabla ─────────────────────────────────────────────────────────────────────*/
 .admin-table-wrapper {
-  overflow-x: auto; // scroll horizontal en móvil
+  overflow-x: auto; /* scroll horizontal en móvil*/
   border: 1px solid var(--color-border-tertiary);
   border-radius: var(--radius-md);
 }
@@ -251,84 +213,11 @@
   }
 }
 
-// Fila inactiva (producto/cuenta desactivado)
-.row--inactive td { opacity: 0.55; }
+/* Fila inactiva (producto/cuenta desactivado)*/
 
-// ── Celdas especializadas ─────────────────────────────────────────────────────
-.account-cell {
-  display: flex;
-  align-items: center;
-  gap: 0.625rem;
+/* ── Celdas especializadas ─────────────────────────────────────────────────────*/
 
-  &__logo {
-    width: 32px;
-    height: 32px;
-    border-radius: 6px;
-    object-fit: cover;
-    border: 1px solid var(--color-border-tertiary);
-    flex-shrink: 0;
-  }
-}
-
-.product-cell {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-
-  &__img {
-    width: 44px;
-    height: 44px;
-    border-radius: var(--radius-sm);
-    object-fit: cover;
-    border: 1px solid var(--color-border-tertiary);
-    flex-shrink: 0;
-  }
-
-  &__no-img {
-    width: 44px;
-    height: 44px;
-    border-radius: var(--radius-sm);
-    background: var(--color-background-secondary);
-    border: 1px solid var(--color-border-tertiary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.75rem;
-    color: var(--color-text-tertiary);
-    flex-shrink: 0;
-  }
-
-  &__name {
-    display: block;
-    font-weight: 500;
-    color: var(--color-text-primary);
-    font-size: 0.9375rem;
-  }
-
-  &__desc {
-    display: block;
-    font-size: 0.8125rem;
-    color: var(--color-text-secondary);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 200px;
-  }
-
-  &__account {
-    display: block;
-    font-size: 0.9375rem;
-    color: var(--color-text-primary);
-  }
-
-  &__cat {
-    display: block;
-    font-size: 0.75rem;
-    color: var(--color-text-tertiary);
-  }
-}
-
-// ── Select de rol en tabla ────────────────────────────────────────────────────
+/* ── Select de rol en tabla ────────────────────────────────────────────────────*/
 .role-select {
   padding: 0.3rem 0.5rem;
   font-size: 0.8125rem;
@@ -339,7 +228,7 @@
   cursor: pointer;
 }
 
-// ── Badges de rol / estado ────────────────────────────────────────────────────
+/* ── Badges de rol / estado ────────────────────────────────────────────────────*/
 .badge {
   display: inline-block;
   padding: 2px 10px;
@@ -349,7 +238,6 @@
   white-space: nowrap;
 
   &--admin    { background: var(--color-background-info);      color: var(--color-text-info); }
-  &--business { background: var(--color-background-warning);   color: var(--color-text-warning); }
   &--client   { background: var(--color-background-secondary); color: var(--color-text-secondary); }
   &--success  { background: var(--color-background-success);   color: var(--color-text-success); }
   &--warning  { background: var(--color-background-warning);   color: var(--color-text-warning); }
@@ -357,207 +245,14 @@
   &--neutral  { background: var(--color-background-secondary); color: var(--color-text-secondary); }
 }
 
-// ── Botones de acción en tabla (aprobar, rechazar, suspender) ─────────────────
-.action-btns {
-  display: flex;
-  gap: 0.375rem;
-  flex-wrap: wrap;
-}
+/* ── Botones de acción en tabla (aprobar, rechazar, suspender) ─────────────────*/
 
-.btn-action {
-  padding: 0.3rem 0.75rem;
-  font-family: var(--font-heading);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  border-radius: 6px;
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: opacity var(--duration-fast);
+/* ── Reportes ──────────────────────────────────────────────────────────────────*/
 
-  &:disabled { opacity: 0.5; cursor: not-allowed; }
+/* ── Sección interna de página ────────────────────────────────────────────────*/
 
-  &--approve {
-    background: var(--color-background-success);
-    color: var(--color-text-success);
-    border-color: var(--color-border-success);
-  }
+/* ── Badge de conteo ───────────────────────────────────────────────────────────*/
 
-  &--reject {
-    background: var(--color-background-danger);
-    color: var(--color-text-danger);
-    border-color: var(--color-border-danger);
-  }
+/* ── Tabla de valoraciones (compartida: admin + business dashboard) ────────────*/
 
-  &--suspend {
-    background: var(--color-background-warning);
-    color: var(--color-text-warning);
-    border-color: var(--color-border-warning);
-  }
-}
-
-// ── Reportes ──────────────────────────────────────────────────────────────────
-.reports-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-
-.report-card {
-  display: flex;
-  gap: 1.25rem;
-  padding: 1.75rem;
-  border: 1px solid var(--color-border-tertiary);
-  border-radius: 14px;
-  background: var(--color-background-primary);
-
-  &__icon {
-    width: 48px;
-    height: 48px;
-    border-radius: var(--radius-md);
-    background: var(--color-background-secondary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-
-    svg { width: 22px; height: 22px; stroke: var(--color-brand-primary); }
-  }
-  &__body  { display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
-
-  &__title {
-    font-size: 1.0625rem;
-    font-weight: 600;
-    color: var(--color-text-primary);
-    margin: 0;
-  }
-
-  &__desc {
-    font-size: 0.875rem;
-    color: var(--color-text-secondary);
-    line-height: 1.6;
-    margin: 0;
-    flex: 1;
-  }
-}
-
-// ── Sección interna de página ────────────────────────────────────────────────
-.admin-page__section {
-  background: white;
-  border-radius: var(--radius-lg);
-  padding: 1.5rem;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.admin-page__section-header {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.admin-page__section-title {
-  margin: 0;
-  font-size: 1rem;
-  font-weight: 700;
-  font-family: var(--font-heading);
-  color: var(--color-text-primary);
-}
-
-.admin-page__loading {
-  display: flex;
-  justify-content: center;
-  padding: 1rem 0;
-}
-
-.admin-page__empty {
-  margin: 0;
-  color: var(--color-text-secondary);
-  font-size: 0.875rem;
-}
-
-// ── Badge de conteo ───────────────────────────────────────────────────────────
-.panel-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 24px;
-  height: 24px;
-  padding: 0 7px;
-  border-radius: var(--radius-full);
-  background: var(--color-brand-primary);
-  color: white;
-  font-size: 0.72rem;
-  font-weight: 700;
-  font-family: var(--font-heading);
-}
-
-// ── Tabla de valoraciones (compartida: admin + business dashboard) ────────────
-.ratings-table-wrap {
-  overflow-x: auto;
-  border-radius: var(--radius-md);
-  border: 1.5px solid #e2e8f0;
-}
-
-.ratings-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.85rem;
-
-  thead tr { background: #f8fafc; }
-
-  th {
-    padding: 0.65rem 1rem;
-    text-align: left;
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--color-text-secondary);
-    white-space: nowrap;
-    border-bottom: 1.5px solid #e2e8f0;
-  }
-
-  td {
-    padding: 0.7rem 1rem;
-    color: var(--color-text-primary);
-    border-bottom: 1px solid #f1f5f9;
-    vertical-align: middle;
-  }
-
-  tbody tr:last-child td { border-bottom: none; }
-  tbody tr:hover td { background: #f8fafc; }
-}
-
-.rating-pill {
-  display: inline-flex;
-  padding: 3px 10px;
-  border-radius: var(--radius-full);
-  font-size: 0.72rem;
-  font-weight: 800;
-  font-family: var(--font-heading);
-  color: white;
-
-  &--high { background: var(--green-600); }
-  &--mid  { background: #d97706; }
-  &--low  { background: var(--red-600); }
-}
-
-// Botón de exportar (exclusivo de admin)
-.btn-export {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1.25rem;
-  background: linear-gradient(135deg, var(--color-brand-primary) 0%, var(--color-brand-light) 100%);
-  color: #ffffff;
-  border: none;
-  border-radius: var(--radius-sm);
-  font-size: 0.875rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: opacity var(--duration-fast);
-
-  &:hover { opacity: 0.9; }
-}
+/* Botón de exportar (exclusivo de admin)*/

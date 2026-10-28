@@ -39,20 +39,3 @@
   color: #64748b;
   margin: 0;
 }
-
-.not-found__btn {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, var(--color-brand-primary) 0%, var(--color-brand-light) 100%);
-  color: #ffffff;
-  text-decoration: none;
-  border-radius: 10px;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 0.9375rem;
-  margin-top: 0.5rem;
-  transition: opacity var(--duration-fast);
-
-  &:hover { opacity: 0.88; }
-}

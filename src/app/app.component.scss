@@ -1,17 +1,3 @@
-@use 'styles/breakpoints' as *;
-
 :host {
   display: block;
-  // Header flotante: top:3px + altura píldora (~98px) + borde (2px) = ~103px
-  padding-top: 106px;
-
-  @include respond-to($bp-nav) {
-    // Móvil: sólo franja superior (~55px) + top:3px + borde (2px) = ~60px
-    padding-top: 64px;
-  }
-
-  // Páginas sin header (auth/*): sin padding, el layout ocupa todo el viewport
-  &.no-chrome {
-    padding-top: 0;
-  }
 }

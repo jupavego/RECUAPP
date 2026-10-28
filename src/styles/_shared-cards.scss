@@ -1,18 +1,18 @@
-// ─────────────────────────────────────────────────────────────────────────────
-// styles/_shared-cards.scss
-// Patrones de tarjeta compartidos entre admin y business.
-// Importar con: @use 'styles/shared-cards' as *;
-// ─────────────────────────────────────────────────────────────────────────────
+/* ─────────────────────────────────────────────────────────────────────────────*/
+/* styles/_shared-cards.scss*/
+/* Patrones de tarjeta compartidos entre admin y business.*/
+/* Importar con: @use 'styles/shared-cards' as *;*/
+/* ─────────────────────────────────────────────────────────────────────────────*/
 
-// ── Stats grid ────────────────────────────────────────────────────────────────
-// $min: ancho mínimo de columna antes de wrap (admin usa 180px, business 160px)
+/* ── Stats grid ────────────────────────────────────────────────────────────────*/
+/* $min: ancho mínimo de columna antes de wrap (admin usa 180px, business 160px)*/
 @mixin stats-grid($min: 160px) {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax($min, 1fr));
   gap: 1rem;
 }
 
-// ── Stat card ─────────────────────────────────────────────────────────────────
+/* ── Stat card ─────────────────────────────────────────────────────────────────*/
 .stat-card {
   background: var(--color-background-secondary);
   border: 1px solid var(--color-border-tertiary);
@@ -36,24 +36,14 @@
     color: var(--color-text-secondary);
   }
 
-  // Variante enlace interactivo (business dashboard)
-  &--link {
-    cursor: pointer;
-    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-
-    &:hover {
-      border-color: var(--color-brand-light);
-      box-shadow: 0 8px 24px rgba(var(--color-brand-primary-rgb), 0.1);
-      transform: translateY(-2px);
-    }
-  }
+  /* Variante enlace interactivo (business dashboard)*/
 
   &--success  &__value { color: var(--color-text-success); }
   &--warning  &__value { color: var(--color-text-warning); }
 }
 
-// ── Mixin: icono de tarjeta de acción rápida ──────────────────────────────────
-// Aplicar al elemento BEM de ícono (admin: &__icon, business: &__icon-wrap)
+/* ── Mixin: icono de tarjeta de acción rápida ──────────────────────────────────*/
+/* Aplicar al elemento BEM de ícono (admin: &__icon, business: &__icon-wrap)*/
 @mixin action-card-icon {
   width: 44px;
   height: 44px;
@@ -71,9 +61,9 @@
   &--green   { background: rgba(5, 150, 105, 0.1);  svg { stroke: #059669; } }
 }
 
-// ── Mixin: layout base de tarjeta de acción rápida ───────────────────────────
-// Genera el contenedor, hover base, __content y __arrow.
-// Cada feature añade su elemento de ícono y los tamaños de __label/__desc.
+/* ── Mixin: layout base de tarjeta de acción rápida ───────────────────────────*/
+/* Genera el contenedor, hover base, __content y __arrow.*/
+/* Cada feature añade su elemento de ícono y los tamaños de __label/__desc.*/
 @mixin action-card-base {
   display: flex;
   align-items: center;
