@@ -84,6 +84,12 @@ const FACTOR_VIVIENDAS = 1.15;
 const AREA_VIVIENDA: [number, number] = [30, 250];
 /** Los edificios son diminutos frente al municipio: se agrandan en vertical para que se lean. */
 const ESCALA_EDIFICIOS = 3.2;
+/** lado (m) de las teselas en que se parten edificios, árboles y terreno para descartar lo que no se ve */
+const TESELA = 1500;
+/** celdas (de unos 23 m) por lado de cada tesela del terreno */
+const TESELA_TERRENO = 64;
+/** de más lejos que esto los árboles se dibujan con una versión simple (a esa distancia miden ~3 píxeles) */
+const DISTANCIA_ARBOL_SIMPLE = 10000;
 /** Ancho dibujado de las vías por clase (principal, local, sendero), en metros del modelo. */
 const ANCHO_VIA = [34, 17, 8];
 /** Los cauces se dibujan a su ancho real × este factor (el Río Medellín: 30 m → 66 m), con un mínimo para que se lean. */
@@ -144,13 +150,13 @@ const TAMANO_AVION = 1.25;
 const ESCALA_MAX_AVION = 5;
 /**
  * Estela: una bocanada cada ESTELA_ESPACIO metros por motor (hasta ESTELA_PUFFS en total), que dura ESTELA_VIDA segundos,
- * se ensancha unas 7 veces mientras se disipa y deriva con el viento (m/s). Opacidad máxima. La nube pequeña de la ruta
+ * se ensancha unas 5 veces mientras se disipa y deriva con el viento (m/s). Opacidad máxima. La nube pequeña de la ruta
  * (radio en m) se la traga: dentro de ella la estela casi no se distingue.
  */
-const ESTELA_PUFFS = 440;
-const ESTELA_VIDA = 42;
+const ESTELA_PUFFS = 220;
+const ESTELA_VIDA = 16;
 const ESTELA_ESPACIO = 26;
-const ESTELA_OPACIDAD = 0.34;
+const ESTELA_OPACIDAD = 0.15;
 const ESTELA_DERIVA = 5;
 const NUBE_AVION_RADIO = 480;
 /** Salida de los motores (m desde el centro del avión): x, y, z de cada uno. */
@@ -569,6 +575,18 @@ export class Mapa3dComponent implements AfterViewInit {
   private elegida = -1;
   private pulsado: { x: number; y: number } | null = null;
   private sol!: THREE.DirectionalLight;
+  // sombras bajo demanda: el mapa solo se repinta cuando algo que proyecta sombra cambió
+  private sombraTerreno?: THREE.Mesh;
+  private claveSombra = '';
+  private sombraSucia = true;
+  // resolución dinámica: baja mientras la cámara se mueve y la máquina no da abasto
+  private ratioMax = 1;
+  private degradado = false;
+  private ultimoMovimiento = 0;
+  private promedioMs = 16;
+  private camaraAnterior = new THREE.Vector3();
+  private objetivoAnterior = new THREE.Vector3();
+  private perf: { el: HTMLElement; acumulado: number; cuadros: number; sombras: number; msActualizar: number; msRender: number } | null = null;
   private nubes: Nube[] = [];
   private nieblas: Neblina[] = [];
   private calzadas: Calzada[] = [];
@@ -623,14 +641,15 @@ export class Mapa3dComponent implements AfterViewInit {
   private texturasNubes: THREE.Texture[] = [];
   /** por nube: x, z de su sombra sobre el terreno, radio y opacidad (el shader del terreno los lee) */
   private readonly sombrasNubes = Array.from({ length: NUBES }, () => new THREE.Vector4(0, 0, 1, 0));
-  private mallaEdificios: THREE.Mesh | null = null;
+  private mallasEdificios: THREE.Mesh[] = [];
   // edificios dibujados según la población del año elegido
   private edificiosBase: Compacto | null = null;
   private poblacion: PoblacionVeredas | null = null;
-  private capaEdificios: Capa | null = null;
+  private capasEdificios: Capa[] = [];
   /** vereda (índice) → población y viviendas del año elegido */
   private datosPorVereda = new Map<number, { pob: number; viv: number }>();
-  private mallaArboles: THREE.InstancedMesh | null = null;
+  /** un grupo por tesela: con detalle completo y con la versión simple que se usa de lejos */
+  private teselasArboles: { cerca: THREE.InstancedMesh; lejos: THREE.InstancedMesh; centro: THREE.Vector3 }[] = [];
   private texturaRio: THREE.CanvasTexture | null = null;
   private readonly rios = new Map<string, Rio>();
   private aguaPos: THREE.BufferAttribute | null = null;
@@ -750,11 +769,14 @@ export class Mapa3dComponent implements AfterViewInit {
   private iniciarRender(): void {
     const el = this.lienzo.nativeElement;
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    this.ratioMax = Math.min(window.devicePixelRatio, 2);
+    this.renderer.setPixelRatio(this.ratioMax);
     this.renderer.setSize(el.clientWidth, el.clientHeight);
     this.renderer.shadowMap.enabled = true;
     this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    this.renderer.shadowMap.autoUpdate = false;
     el.appendChild(this.renderer.domElement);
+    if (new URLSearchParams(location.search).has('perf')) this.crearPanelPerf(el);
 
     this.escena.fog = new THREE.Fog('#dbeaf5', 26000, 56000);
 
@@ -881,7 +903,8 @@ export class Mapa3dComponent implements AfterViewInit {
     this.lienzoResalte.height = Math.round(ANCHO_RESALTE * this.alto / this.ancho);
     this.ctxResalte = this.lienzoResalte.getContext('2d')!;
     this.texturaResalte = new THREE.CanvasTexture(this.lienzoResalte);
-    this.texturaResalte.colorSpace = THREE.SRGBColorSpace;
+    // sin conversión de color: el shader del terreno la mezcla ya codificada, como lo hacía la capa transparente
+    this.texturaResalte.colorSpace = THREE.NoColorSpace;
   }
 
   /** La foto satelital tal cual, solo aclarada para que el terreno se vea más luminoso. */
@@ -930,12 +953,14 @@ export class Mapa3dComponent implements AfterViewInit {
     // de la foto estirada. La inclinación sale de las derivadas, así que no depende de normales desactualizadas.
     material.onBeforeCompile = shader => {
       shader.uniforms['uNubes'] = { value: this.sombrasNubes };
+      shader.uniforms['uResalte'] = { value: this.texturaResalte };
       shader.vertexShader = shader.vertexShader
         .replace('#include <common>', '#include <common>\nvarying vec3 vPos;')
         .replace('#include <begin_vertex>', '#include <begin_vertex>\nvPos = position;');
       shader.fragmentShader = shader.fragmentShader
         .replace('#include <common>', `#include <common>
           varying vec3 vPos;
+          uniform sampler2D uResalte;
           uniform vec4 uNubes[${NUBES}];
           float hashN(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
           float ruidoN(vec2 p) {
@@ -957,29 +982,59 @@ export class Mapa3dComponent implements AfterViewInit {
             float r = ruidoN(q * 0.0007) * 0.6 + ruidoN(q * 0.0022) * 0.4;
             despejado *= 1.0 - smoothstep(1.05, 0.2, d + (r - 0.5) * 0.7) * uNubes[i].w;
           }
-          diffuseColor.rgb *= mix(vec3(${(1 - SOMBRA_NUBE).toFixed(2)}, ${(1 - SOMBRA_NUBE * 0.8).toFixed(2)}, ${(1 - SOMBRA_NUBE * 0.55).toFixed(2)}), vec3(1.0), despejado);`);
+          diffuseColor.rgb *= mix(vec3(${(1 - SOMBRA_NUBE).toFixed(2)}, ${(1 - SOMBRA_NUBE * 0.8).toFixed(2)}, ${(1 - SOMBRA_NUBE * 0.55).toFixed(2)}), vec3(1.0), despejado);`)
+        // resalte de la vereda: se mezcla sin iluminar, ya codificado, y no se pinta sobre las paredes verticales
+        // (ahí se vería la textura estirada); antes era una segunda pasada transparente sobre todo el terreno
+        .replace('#include <colorspace_fragment>', `#include <colorspace_fragment>
+          if (inclinacion >= 0.55) {
+            vec4 resalte = texture2D(uResalte, vMapUv);
+            gl_FragColor.rgb = mix(gl_FragColor.rgb, resalte.rgb, resalte.a);
+          }`);
     };
+    // La malla completa queda fuera de la escena (de ella se recalculan las normales); lo que se dibuja son teselas
+    // de TESELA_TERRENO celdas que comparten sus vértices pero tienen su propio índice, para que la GPU descarte las que no se ven.
     this.terreno = new THREE.Mesh(fino.g, material);
-    this.terreno.receiveShadow = true;
-    this.terreno.castShadow = true;
-    this.escena.add(this.terreno);
+    const { cx, cy, pos } = fino;
+    const normal = fino.g.getAttribute('normal'), uv = fino.g.getAttribute('uv'), posicion = fino.g.getAttribute('position');
+    const filas = (cx + 1);
+    for (let j0 = 0; j0 < cy; j0 += TESELA_TERRENO) {
+      for (let i0 = 0; i0 < cx; i0 += TESELA_TERRENO) {
+        const i1 = Math.min(i0 + TESELA_TERRENO, cx), j1 = Math.min(j0 + TESELA_TERRENO, cy);
+        const idx = new Uint32Array((i1 - i0) * (j1 - j0) * 6);
+        let t = 0;
+        for (let j = j0; j < j1; j++) {
+          for (let i = i0; i < i1; i++) {
+            const a = j * filas + i, b = a + 1, c = a + filas, d = c + 1;
+            idx.set([a, c, b, b, c, d], t);
+            t += 6;
+          }
+        }
+        const g = new THREE.BufferGeometry();
+        g.setAttribute('position', posicion);
+        g.setAttribute('normal', normal);
+        g.setAttribute('uv', uv);
+        g.setIndex(new THREE.BufferAttribute(idx, 1));
+        // esfera de recorte a partir de la caja de la tesela, con holgura por si una vereda se levanta
+        const caja = new THREE.Box3();
+        for (let j = j0; j <= j1; j++) {
+          for (let i = i0; i <= i1; i++) caja.expandByPoint(new THREE.Vector3(pos[(j * filas + i) * 3], pos[(j * filas + i) * 3 + 1], pos[(j * filas + i) * 3 + 2]));
+        }
+        g.boundingSphere = caja.getBoundingSphere(new THREE.Sphere());
+        g.boundingSphere.radius += ALZA_ELEGIDA + 30;
+        const malla = new THREE.Mesh(g, material);
+        malla.receiveShadow = true;
+        this.escena.add(malla);
+      }
+    }
 
-    // resalte: misma geometría, capa transparente encima
-    const capaResalte = new THREE.MeshBasicMaterial({
-      map: this.texturaResalte, transparent: true, depthWrite: false,
-      polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2,
-    });
-    // el resalte no se pinta sobre las paredes verticales: ahí se vería la textura estirada
-    capaResalte.onBeforeCompile = shader => {
-      shader.vertexShader = shader.vertexShader
-        .replace('#include <common>', '#include <common>\nvarying vec3 vPos;')
-        .replace('#include <begin_vertex>', '#include <begin_vertex>\nvPos = position;');
-      shader.fragmentShader = shader.fragmentShader
-        .replace('#include <common>', '#include <common>\nvarying vec3 vPos;')
-        .replace('#include <map_fragment>', `#include <map_fragment>
-          if (abs(normalize(cross(dFdx(vPos), dFdy(vPos))).y) < 0.55) discard;`);
-    };
-    this.escena.add(new THREE.Mesh(fino.g, capaResalte));
+    // La sombra del relieve la proyecta una malla a la mitad de resolución (4 veces menos triángulos), un poco
+    // más baja para que no sombree la superficie fina. Solo está visible mientras se repinta el mapa de sombras.
+    this.sombraTerreno = new THREE.Mesh(malla(2).g, new THREE.MeshBasicMaterial({ colorWrite: false, depthWrite: false }));
+    this.sombraTerreno.position.y = -2;
+    this.sombraTerreno.castShadow = true;
+    this.sombraTerreno.frustumCulled = false;
+    this.sombraTerreno.visible = false;
+    this.escena.add(this.sombraTerreno);
 
     // malla gruesa fuera de la escena: sirve para elegir con el cursor sin recorrer 600 mil triángulos
     this.proxy = new THREE.Mesh(malla(8).g);
@@ -1673,26 +1728,28 @@ export class Mapa3dComponent implements AfterViewInit {
     this.anio.set(anio);
     const nuevos = this.edificiosParaAnio(anio);
     if (!nuevos?.e) return;
-    if (this.mallaEdificios) {
-      this.escena.remove(this.mallaEdificios);
-      this.mallaEdificios.geometry.dispose();
-      (this.mallaEdificios.material as THREE.Material).dispose();
-      this.capas = this.capas.filter(c => c !== this.capaEdificios);
+    if (this.mallasEdificios.length) {
+      for (const m of this.mallasEdificios) { this.escena.remove(m); m.geometry.dispose(); }
+      (this.mallasEdificios[0].material as THREE.Material).dispose();
+      this.capas = this.capas.filter(c => !this.capasEdificios.includes(c));
     }
     this.construirEdificios(nuevos);
-    // las veredas levantadas ya no están a ras de suelo: la malla nueva debe subir con ellas
-    const capa = this.capaEdificios!;
-    this.alzado.forEach((alto, id) => {
-      for (const k of capa.porPieza[id]) capa.atributo.setY(k, capa.base[k] + alto * capa.peso[k]);
-    });
-    capa.atributo.needsUpdate = true;
+    // las veredas levantadas ya no están a ras de suelo: las mallas nuevas deben subir con ellas
+    for (const capa of this.capasEdificios) {
+      this.alzado.forEach((alto, id) => {
+        for (const k of capa.porPieza[id]) capa.atributo.setY(k, capa.base[k] + alto * capa.peso[k]);
+      });
+      capa.atributo.needsUpdate = true;
+    }
   }
 
   /** Huellas extruidas. Las alturas casi nunca vienen en los datos: se estiman entre 4,5 y 8,5 m. */
   private construirEdificios(d: Compacto): void {
     const PAREDES = ['#f3e8d6', '#efe0c9', '#f6f0e6', '#ead7bd'].map(c => new THREE.Color(c));
     const TECHOS = ['#c8704f', '#b9825f', '#d6cfc0', '#a3a9ae', '#c98f6a'].map(c => new THREE.Color(c));
-    const pos: number[] = [], col: number[] = [], idx: number[] = [], ids: number[] = [], pesos: number[] = [];
+    // una malla por tesela: así la GPU descarta las que quedan fuera de cámara y solo proyectan sombra las del recuadro de la luz
+    type Tesela = { pos: number[]; col: number[]; idx: number[]; ids: number[]; pesos: number[] };
+    const teselas = new Map<number, Tesela>();
     d.e!.forEach((e, n) => {
       const ring = this.desdeDeltas(e, d.k, 1);
       if (ring.length < 3) return;
@@ -1704,6 +1761,10 @@ export class Mapa3dComponent implements AfterViewInit {
       const id = this.idEn(cLon, cLat);
       const peso = id >= 0 ? this.pesoBorde(cLon, cLat, id) : 0;
       const pared = PAREDES[n % PAREDES.length], tejado = TECHOS[(n * 7 + Math.floor(hash * 10)) % TECHOS.length];
+      const clave = this.claveTesela(this.aX(cLon), this.aZ(cLat));
+      let t = teselas.get(clave);
+      if (!t) teselas.set(clave, t = { pos: [], col: [], idx: [], ids: [], pesos: [] });
+      const { pos, col, idx, ids, pesos } = t;
       const poner = (x: number, y: number, z: number, c: THREE.Color) => {
         pos.push(x, y, z);
         col.push(c.r, c.g, c.b);
@@ -1722,18 +1783,35 @@ export class Mapa3dComponent implements AfterViewInit {
       const contorno = ring.map((_, i) => new THREE.Vector2(xs[i], zs[i]));
       for (const [a, b, c] of THREE.ShapeUtils.triangulateShape(contorno, [])) idx.push(base + a, base + b, base + c);
     });
-    const geo = new THREE.BufferGeometry();
-    geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
-    geo.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
-    geo.setIndex(new THREE.Uint32BufferAttribute(idx, 1));
-    geo.computeBoundingSphere();
-    this.mallaEdificios = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({
+    const material = new THREE.MeshStandardMaterial({
       vertexColors: true, flatShading: true, roughness: 1, side: THREE.DoubleSide,
-    }));
-    this.mallaEdificios.receiveShadow = true;
-    this.escena.add(this.mallaEdificios);
-    this.registrarCapa(geo.getAttribute('position') as THREE.BufferAttribute, ids, pesos);
-    this.capaEdificios = this.capas[this.capas.length - 1];
+    });
+    this.mallasEdificios = [];
+    this.capasEdificios = [];
+    for (const t of teselas.values()) {
+      const geo = new THREE.BufferGeometry();
+      geo.setAttribute('position', new THREE.Float32BufferAttribute(t.pos, 3));
+      geo.setAttribute('color', new THREE.Float32BufferAttribute(t.col, 3));
+      geo.setIndex(t.pos.length / 3 > 65535 ? new THREE.Uint32BufferAttribute(t.idx, 1) : new THREE.Uint16BufferAttribute(t.idx, 1));
+      this.acolchar(geo);
+      const malla = new THREE.Mesh(geo, material);
+      malla.receiveShadow = true;
+      this.escena.add(malla);
+      this.mallasEdificios.push(malla);
+      this.registrarCapa(geo.getAttribute('position') as THREE.BufferAttribute, t.ids, t.pesos);
+      this.capasEdificios.push(this.capas[this.capas.length - 1]);
+    }
+  }
+
+  /** Tesela (cuadrícula de TESELA metros) a la que pertenece un punto del modelo. */
+  private claveTesela(x: number, z: number): number {
+    return Math.floor((x + this.ancho / 2) / TESELA) + Math.floor((z + this.alto / 2) / TESELA) * 1000;
+  }
+
+  /** Esfera de recorte con holgura: al levantar una vereda los vértices suben hasta ALZA_ELEGIDA metros. */
+  private acolchar(geo: THREE.BufferGeometry): void {
+    geo.computeBoundingSphere();
+    geo.boundingSphere!.radius += ALZA_ELEGIDA + 30;
   }
 
   /** Costados de la "maqueta": una cortina que baja desde el borde del terreno. */
@@ -2677,7 +2755,7 @@ export class Mapa3dComponent implements AfterViewInit {
       sprite.visible = false;
       sprite.renderOrder = 8;
       this.escena.add(sprite);
-      this.estela.push({ sprite, edad: -1, x: 0, y: 0, z: 0, base: 9 + rnd() * 5 });
+      this.estela.push({ sprite, edad: -1, x: 0, y: 0, z: 0, base: 6 + rnd() * 3 });
     }
 
     // la nube: un racimo de bocanadas centrado sobre la S, a la altura del avión
@@ -2734,7 +2812,7 @@ export class Mapa3dComponent implements AfterViewInit {
       // de lejos se agranda como el avión, para que la estela siga leyéndose
       const d = Math.hypot(p.x - cam.x, p.y - cam.y, p.z - cam.z);
       const f = TAMANO_AVION * Math.min(ESCALA_MAX_AVION, Math.max(1, d / DISTANCIA_REAL_AVION));
-      const tam = p.base * (1 + 6 * u) * f;
+      const tam = p.base * (1 + 4 * u) * f;
       let op = ESTELA_OPACIDAD * (1 - u) ** 1.5 * Math.min(1, p.edad / 1.2);
       if (nube) {
         const k = Math.min(1, Math.max(0, (NUBE_AVION_RADIO * 1.1 - Math.hypot(p.x - nube.x, p.z - nube.z)) / (NUBE_AVION_RADIO * 0.7)));
@@ -2916,7 +2994,79 @@ export class Mapa3dComponent implements AfterViewInit {
     this.sol.shadow.normalBias = (mitad * 2 / 4096) * 4;
     // los árboles y edificios solo proyectan sombra cuando se ven de cerca (ahorra mucho trabajo a la GPU)
     const cerca = dist < DISTANCIA_SOMBRAS;
-    for (const m of [this.mallaEdificios, this.mallaArboles]) if (m) m.castShadow = cerca;
+    for (const m of this.mallasEdificios) m.castShadow = cerca;
+    for (const t of this.teselasArboles) t.cerca.castShadow = t.lejos.castShadow = cerca;
+    // el mapa de sombras solo se repinta si la luz se movió, cambió su alcance o algo que proyecta sombra se alzó
+    const t = this.controles.target;
+    const clave = `${t.x.toFixed(1)}|${t.y.toFixed(1)}|${t.z.toFixed(1)}|${mitad.toFixed(1)}|${cerca}`;
+    if (clave !== this.claveSombra) { this.claveSombra = clave; this.sombraSucia = true; }
+  }
+
+  /** De lejos cada tesela de árboles usa la versión simple; de cerca, la completa. */
+  private actualizarArboles(): void {
+    const cam = this.camara.position;
+    for (const t of this.teselasArboles) {
+      const lejos = cam.distanceTo(t.centro) > DISTANCIA_ARBOL_SIMPLE;
+      t.cerca.visible = !lejos;
+      t.lejos.visible = lejos;
+    }
+  }
+
+  /** Repinta el mapa de sombras solo si hace falta; la malla fina del relieve se sustituye por la gruesa. */
+  private renderizar(): void {
+    const repintar = this.sombraSucia;
+    this.sombraSucia = false;
+    this.renderer.shadowMap.needsUpdate = repintar;
+    if (this.sombraTerreno) this.sombraTerreno.visible = repintar;
+    this.renderer.render(this.escena, this.camara);
+    if (this.sombraTerreno) this.sombraTerreno.visible = false;
+    if (repintar && this.perf) this.perf.sombras++;
+  }
+
+  /**
+   * Resolución dinámica: si la máquina no da abasto mientras la cámara se mueve, baja la densidad de píxeles
+   * hasta que se detiene; en reposo siempre vuelve a la máxima, así la imagen quieta no pierde nitidez.
+   */
+  private ajustarResolucion(ahora: number, dt: number): void {
+    if (this.ratioMax <= 1.25) return;
+    this.promedioMs += (dt * 1000 - this.promedioMs) * 0.1;
+    const moviendo = this.camara.position.distanceToSquared(this.camaraAnterior) > 1e-3
+      || this.controles.target.distanceToSquared(this.objetivoAnterior) > 1e-3;
+    this.camaraAnterior.copy(this.camara.position);
+    this.objetivoAnterior.copy(this.controles.target);
+    if (moviendo) {
+      this.ultimoMovimiento = ahora;
+      if (!this.degradado && this.promedioMs > 20) {
+        this.degradado = true;
+        this.renderer.setPixelRatio(1.25);
+      }
+    } else if (this.degradado && ahora - this.ultimoMovimiento > 250) {
+      this.degradado = false;
+      this.renderer.setPixelRatio(this.ratioMax);
+    }
+  }
+
+  private crearPanelPerf(padre: HTMLElement): void {
+    const el = document.createElement('pre');
+    el.style.cssText = 'position:fixed;top:8px;left:8px;z-index:9999;margin:0;padding:6px 8px;font:11px/1.35 monospace;color:#9f9;background:rgba(0,0,0,.7);pointer-events:none;border-radius:4px';
+    padre.appendChild(el);
+    this.perf = { el, acumulado: 0, cuadros: 0, sombras: 0, msActualizar: 0, msRender: 0 };
+  }
+
+  private mostrarPerf(dt: number): void {
+    const p = this.perf!;
+    p.acumulado += dt;
+    p.cuadros++;
+    if (p.acumulado < 0.5) return;
+    const i = this.renderer.info;
+    p.el.textContent = [
+      `${(p.cuadros / p.acumulado).toFixed(0)} fps · ${(p.acumulado / p.cuadros * 1000).toFixed(1)} ms/cuadro`,
+      `CPU actualizar ${(p.msActualizar / p.cuadros).toFixed(2)} ms · render ${(p.msRender / p.cuadros).toFixed(2)} ms`,
+      `llamadas ${i.render.calls} · triángulos ${(i.render.triangles / 1000).toFixed(0)} k`,
+      `geometrías ${i.memory.geometries} · texturas ${i.memory.textures}`,
+      `ratio ${this.renderer.getPixelRatio()}${this.degradado ? ' (bajado)' : ''} · mapas de sombra ${(p.sombras / p.acumulado).toFixed(1)}/s`,
+    ].join('\n');
+    p.acumulado = p.cuadros = p.sombras = p.msActualizar = p.msRender = 0;
   }
 
   /** Centro (x, z del modelo) de una zona por su nombre, o null si no existe. */
@@ -2950,10 +3100,14 @@ export class Mapa3dComponent implements AfterViewInit {
   private arrancar(): void {
     this.zona.runOutsideAngular(() => {
       let anterior = performance.now();
+      const inicio = anterior;
       const bucle = (t: number) => {
         this.animacion = requestAnimationFrame(bucle);
+        // durante los primeros segundos la escena aún se completa (capas que llegan después): sombra siempre fresca
+        if (t - inicio < 4000) this.sombraSucia = true;
         const dt = Math.min(0.1, (t - anterior) / 1000);
         anterior = t;
+        const t0 = this.perf ? performance.now() : 0;
         if (this.vuelo) this.avanzarVuelo(t);
         this.aplicarGiroYZoom();
         this.controles.update();
@@ -2961,6 +3115,7 @@ export class Mapa3dComponent implements AfterViewInit {
         this.mantenerSobreElRelieve();
         this.animarAlzado();
         this.actualizarSombras();
+        this.actualizarArboles();
         this.animarNubes(dt);
         this.animarNiebla(dt);
         this.animarPajaros(dt);
@@ -2970,8 +3125,15 @@ export class Mapa3dComponent implements AfterViewInit {
         this.animarHumo();
         this.animarConfluencias();
         if (this.texturaRio) this.texturaRio.offset.y -= dt * VELOCIDAD_AGUA;   // la corriente avanza
-        this.renderer.render(this.escena, this.camara);
+        this.ajustarResolucion(t, dt);
+        const t1 = this.perf ? performance.now() : 0;
+        this.renderizar();
+        if (this.perf) {
+          this.perf.msActualizar += t1 - t0;
+          this.perf.msRender += performance.now() - t1;
+        }
         this.actualizarRotulos();
+        if (this.perf) this.mostrarPerf(dt);
       };
       this.animacion = requestAnimationFrame(bucle);
     });
@@ -3342,37 +3504,62 @@ export class Mapa3dComponent implements AfterViewInit {
       parte(new THREE.ConeGeometry(0.95, 1.15, 6), 0.35 + 0.575, '#4f9a45'),
       parte(new THREE.ConeGeometry(0.68, 0.95, 6), 0.98 + 0.475, '#5cae4d'),
     ])!;
-    const aZona = new Float32Array(lista.length), aPeso = new Float32Array(lista.length);
-    const malla = new THREE.InstancedMesh(arbol, new THREE.MeshStandardMaterial({
-      vertexColors: true, flatShading: true, roughness: 1,
-    }), lista.length);
-    const m4 = new THREE.Matrix4(), color = new THREE.Color();
-    lista.forEach((a, i) => {
-      m4.compose(new THREE.Vector3(a.x, a.y, a.z), new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), azar() * 6.28),
-        new THREE.Vector3(a.sxz, a.sy, a.sxz));
-      malla.setMatrixAt(i, m4);
-      // variación de verdes entre árboles
-      malla.setColorAt(i, color.setRGB(0.82 + a.tono * 0.3, 0.9 + a.tono * 0.2, 0.78 + (1 - a.tono) * 0.2));
-      aZona[i] = a.id >= 0 ? a.id : 31;
-      aPeso[i] = a.peso;
-    });
-    arbol.setAttribute('aZona', new THREE.InstancedBufferAttribute(aZona, 1));
-    arbol.setAttribute('aPeso', new THREE.InstancedBufferAttribute(aPeso, 1));
+    // versión simple para cuando se ve de lejos: un solo cono (de unos 3 píxeles no se distingue del dibujo completo)
+    const simple = parte(new THREE.ConeGeometry(0.85, 1.6, 5, 1, true), 0.35 + 0.8, '#57a249');
+    const material = new THREE.MeshStandardMaterial({ vertexColors: true, flatShading: true, roughness: 1 });
     // al levantar una vereda los árboles suben con ella: el desplazamiento se aplica en la GPU
-    (malla.material as THREE.MeshStandardMaterial).onBeforeCompile = shader => {
+    material.onBeforeCompile = shader => {
       shader.uniforms['uAlza'] = { value: this.alzadoGpu };
       shader.vertexShader = shader.vertexShader
-        .replace('#include <common>', '#include <common>\nattribute float aZona;\nattribute float aPeso;\nuniform float uAlza[32];')
+        .replace('#include <common>', `#include <common>
+          attribute float aZona;
+          attribute float aPeso;
+          uniform float uAlza[32];`)
         .replace('#include <project_vertex>', `vec4 mvPosition = vec4( transformed, 1.0 );
           mvPosition = instanceMatrix * mvPosition;
           mvPosition.y += uAlza[int(aZona + 0.5)] * aPeso;
           mvPosition = modelViewMatrix * mvPosition;
           gl_Position = projectionMatrix * mvPosition;`);
     };
-    malla.frustumCulled = false;
-    malla.receiveShadow = true;
-    this.mallaArboles = malla;
-    this.escena.add(malla);
+    // una malla instanciada por tesela (y por nivel de detalle): la GPU descarta las que no se ven
+    const porTesela = new Map<number, typeof lista>();
+    for (const a of lista) {
+      const clave = this.claveTesela(a.x, a.z);
+      if (!porTesela.has(clave)) porTesela.set(clave, []);
+      porTesela.get(clave)!.push(a);
+    }
+    const m4 = new THREE.Matrix4(), color = new THREE.Color();
+    const eje = new THREE.Vector3(0, 1, 0), q = new THREE.Quaternion(), p = new THREE.Vector3(), esc = new THREE.Vector3();
+    this.teselasArboles = [];
+    for (const grupo of porTesela.values()) {
+      const aZona = new Float32Array(grupo.length), aPeso = new Float32Array(grupo.length);
+      const cerca = new THREE.InstancedMesh(arbol.clone(), material, grupo.length);
+      grupo.forEach((a, i) => {
+        m4.compose(p.set(a.x, a.y, a.z), q.setFromAxisAngle(eje, azar() * 6.28), esc.set(a.sxz, a.sy, a.sxz));
+        cerca.setMatrixAt(i, m4);
+        // variación de verdes entre árboles
+        cerca.setColorAt(i, color.setRGB(0.82 + a.tono * 0.3, 0.9 + a.tono * 0.2, 0.78 + (1 - a.tono) * 0.2));
+        aZona[i] = a.id >= 0 ? a.id : 31;
+        aPeso[i] = a.peso;
+      });
+      const atributos = [new THREE.InstancedBufferAttribute(aZona, 1), new THREE.InstancedBufferAttribute(aPeso, 1)];
+      cerca.geometry.setAttribute('aZona', atributos[0]);
+      cerca.geometry.setAttribute('aPeso', atributos[1]);
+      // la versión simple comparte matrices, colores y atributos con la completa
+      const lejos = new THREE.InstancedMesh(simple.clone(), material, grupo.length);
+      lejos.instanceMatrix = cerca.instanceMatrix;
+      lejos.instanceColor = cerca.instanceColor;
+      lejos.geometry.setAttribute('aZona', atributos[0]);
+      lejos.geometry.setAttribute('aPeso', atributos[1]);
+      for (const m of [cerca, lejos]) {
+        m.receiveShadow = true;
+        m.computeBoundingSphere();
+        m.boundingSphere!.radius += ALZA_ELEGIDA + 30;
+        this.escena.add(m);
+      }
+      lejos.visible = false;
+      this.teselasArboles.push({ cerca, lejos, centro: cerca.boundingSphere!.center.clone() });
+    }
   }
 
   private liberar(): void {
@@ -3421,6 +3608,7 @@ export class Mapa3dComponent implements AfterViewInit {
       this.normalesPendientes = true;
     });
     if (cambio) {
+      this.sombraSucia = true;
       for (const capa of this.capas) capa.atributo.needsUpdate = true;
     } else if (this.normalesPendientes) {
       this.terreno.geometry.computeVertexNormals();
