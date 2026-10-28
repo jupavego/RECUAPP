@@ -7,7 +7,7 @@ import { forkJoin } from 'rxjs';
 import { GoogleMapsLoaderService } from '../../../../core/services/google-maps-loader.service';
 import { MapaService, MunicipiosData, Municipio, Territorio, Zona } from '../../services/mapa.service';
 import {
-  ColorMunicipio, ColorSegmento, OPACIDAD_MUNICIPIO, OPACIDAD_SEGMENTO, SUBREGIONES,
+  ColorMunicipio, ColorSegmento, SUBREGIONES,
   coloresDeSegmentos, coloresPorMunicipio,
 } from '../../utils/paleta';
 import { decodeGeometria } from '../../utils/polyline';
@@ -28,6 +28,10 @@ const ESTILO_BASE: google.maps.MapTypeStyle[] = [
 interface ContextoSubregion { id: number; t: Territorio; }
 
 interface Estado {
+  /** opacidad base de los rellenos, 0–1 */
+  op: number;
+  verV: boolean;
+  verC: boolean;
   data: MunicipiosData;
   sub: string | null;
   mid: number | null;
@@ -77,6 +81,13 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
   readonly cargandoTerritorio = signal(false);
   readonly error = signal<string | null>(null);
   private readonly listo = signal(false);
+
+  // ── Controles del mapa ─────────────────────────────────────────────────────
+  /** opacidad de los rellenos, en % (0 = solo contornos) */
+  readonly relleno = signal(20);
+  readonly verVeredas = signal(true);
+  readonly verCorregimientos = signal(true);
+  readonly tipoMapa = signal<'roadmap' | 'satellite' | 'terrain'>('roadmap');
 
   readonly subregiones = computed(() => {
     const cuenta = new Map<string, number>();
@@ -152,6 +163,7 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
       if (!this.listo() || !data) return;
       const estado: Estado = {
         data, sub: this.subregion(), mid: this.muniId(),
+        op: this.relleno() / 100, verV: this.verVeredas(), verC: this.verCorregimientos(),
         terr: this.territorio(), ctx: this.contexto(), ci: this.corrIdx(), vi: this.verIdx(),
       };
       untracked(() => this.zone.runOutsideAngular(() => this.pintar(estado)));
@@ -162,6 +174,7 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
     this.loader.load().then(() => this.zone.runOutsideAngular(() => {
       this.mapa = new google.maps.Map(this.lienzo.nativeElement, {
         center: { lat: 7.0, lng: -75.5 }, zoom: 7, minZoom: 6, maxZoom: 17,
+        zoomControl: true, fullscreenControl: true, scaleControl: true,
         mapTypeControl: false, streetViewControl: false, clickableIcons: false,
         gestureHandling: 'greedy', styles: ESTILO_BASE,
       });
@@ -227,6 +240,19 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
     this.verIdx.set(valor === '' ? null : Number(valor));
   }
 
+  onRelleno(valor: string): void { this.relleno.set(Number(valor)); }
+
+  onTipoMapa(tipo: 'roadmap' | 'satellite' | 'terrain'): void {
+    this.tipoMapa.set(tipo);
+    this.mapa?.setMapTypeId(tipo);
+  }
+
+  /** Vuelve a encuadrar lo que está filtrado (departamento, subregión, municipio o zona). */
+  centrar(): void {
+    const e = this.ultimoEstado;
+    if (e) this.zone.runOutsideAngular(() => this.encuadrar(e, true));
+  }
+
   limpiar(): void {
     this.subregion.set(null);
     this.limpiarMunicipio();
@@ -264,6 +290,7 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
     this.estilarMunicipios(e);
     this.pintarContexto(e);
     this.pintarTerritorio(e);
+    this.aplicarCapas(e);
     this.encuadrar(e);
   }
 
@@ -294,7 +321,7 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
     });
   }
 
-  private estilarMunicipios({ data, sub, mid }: Estado): void {
+  private estilarMunicipios({ data, sub, mid, op }: Estado): void {
     data.municipios.forEach(m => {
       const c = this.colores.get(m.id)!;
       const enSub = !sub || m.s === sub;
@@ -303,10 +330,18 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
         strokeColor: c.contorno, fillColor: c.relleno,
         strokeWeight: elegido ? 3 : 1.4,
         strokeOpacity: enSub ? 1 : 0.35,
-        fillOpacity: mid != null ? (elegido ? 0.06 : enSub ? 0.1 : 0.03) : (enSub ? OPACIDAD_MUNICIPIO : 0.05),
+        fillOpacity: Math.min(1, op * (mid != null ? (elegido ? 0.3 : enSub ? 0.5 : 0.15) : (enSub ? 1 : 0.25))),
         zIndex: elegido ? 2 : 1,
       });
     });
+  }
+
+  /** Muestra u oculta las capas de veredas y corregimientos según los interruptores. */
+  private aplicarCapas({ verV, verC }: Estado): void {
+    this.poligonosVereda.forEach(p => p.setVisible(verV));
+    this.poligonosCorr.forEach(p => p.setVisible(verC));
+    // el contexto de subregión alterna [veredas, corregimientos] por municipio
+    this.capaContexto.forEach((p, i) => p.setVisible(i % 2 === 0 ? verV : verC));
   }
 
   /** Corregimientos y veredas de toda la subregión: un polígono sin relleno por municipio y tipo. */
@@ -326,7 +361,7 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
   }
 
   private pintarTerritorio(e: Estado): void {
-    const { mid, terr, ci, vi } = e;
+    const { mid, terr, ci, vi, op } = e;
 
     if (terr !== this.territorioPintado) {
       [...this.poligonosVereda, ...this.poligonosCorr].forEach(p => p.setMap(null));
@@ -368,7 +403,7 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
         fillColor: elegida ? this.coloresVereda[idx].seleccionado : this.coloresVereda[idx].relleno,
         strokeWeight: elegida ? 3 : 1,
         strokeOpacity: enCorr ? 0.9 : 0.25,
-        fillOpacity: elegida ? 0.25 : enCorr ? OPACIDAD_SEGMENTO : 0.06,
+        fillOpacity: Math.min(1, op * (elegida ? 1.3 : enCorr ? 1.05 : 0.3)),
         zIndex: elegida ? 5 : 3,
       });
     });

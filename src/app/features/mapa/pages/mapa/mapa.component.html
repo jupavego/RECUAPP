@@ -89,5 +89,30 @@
     <div class="mapa__lienzo" #lienzo role="img"
          aria-label="Croquis de Antioquia por subregiones y municipios"></div>
     <div class="mapa__pista" #pista hidden></div>
+
+    <div class="mapa__controles" role="group" aria-label="Controles del mapa">
+      <div class="mapa__tipos" role="radiogroup" aria-label="Tipo de mapa">
+        @for (t of [['roadmap', 'Mapa'], ['terrain', 'Relieve'], ['satellite', 'Satélite']]; track t[0]) {
+          <button type="button" role="radio" [attr.aria-checked]="tipoMapa() === t[0]"
+                  [class.is-activa]="tipoMapa() === t[0]" (click)="onTipoMapa($any(t[0]))">{{ t[1] }}</button>
+        }
+      </div>
+
+      <label class="mapa__opcion">
+        <input type="checkbox" [checked]="verCorregimientos()" (change)="verCorregimientos.set($any($event.target).checked)">
+        Corregimientos
+      </label>
+      <label class="mapa__opcion">
+        <input type="checkbox" [checked]="verVeredas()" (change)="verVeredas.set($any($event.target).checked)">
+        Veredas
+      </label>
+
+      <label class="mapa__deslizador">
+        <span>Relleno <b>{{ relleno() }}%</b></span>
+        <input type="range" min="0" max="100" step="2" [value]="relleno()" (input)="onRelleno($any($event.target).value)">
+      </label>
+
+      <button type="button" class="mapa__centrar" (click)="centrar()">Centrar vista</button>
+    </div>
   </div>
 </section>
