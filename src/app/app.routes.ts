@@ -18,6 +18,13 @@ export const routes: Routes = [
       import('./features/mapa/pages/mapa/mapa.component').then(m => m.MapaComponent),
   },
 
+  // ── Mapa 3D (prueba de concepto) ─────────────────────────────────────────
+  {
+    path: 'mapa3d',
+    loadComponent: () =>
+      import('./features/mapa3d/pages/mapa3d/mapa3d.component').then(m => m.Mapa3dComponent),
+  },
+
   // ── Área de usuario (cualquier rol logueado) ─────────────────────────────
   // Aquí viven las pantallas de tu app. 'items' es el CRUD de ejemplo.
   {
