@@ -153,10 +153,10 @@ const ESCALA_MAX_AVION = 5;
  * se ensancha unas 5 veces mientras se disipa y deriva con el viento (m/s). Opacidad máxima. La nube pequeña de la ruta
  * (radio en m) se la traga: dentro de ella la estela casi no se distingue.
  */
-const ESTELA_PUFFS = 220;
-const ESTELA_VIDA = 16;
+const ESTELA_PUFFS = 320;
+const ESTELA_VIDA = 24;
 const ESTELA_ESPACIO = 26;
-const ESTELA_OPACIDAD = 0.15;
+const ESTELA_OPACIDAD = 0.3;
 const ESTELA_DERIVA = 5;
 const NUBE_AVION_RADIO = 480;
 /** Salida de los motores (m desde el centro del avión): x, y, z de cada uno. */
@@ -277,7 +277,9 @@ interface FichaFabrica {
 interface Humo {
   x: number; y: number; z: number;
   fase: number;
-  puffs: { sprite: THREE.Sprite; theta: number; giro: number; tam: number; desv: number }[];
+  /** índice de su primera bocanada en la malla instanciada del humo */
+  ini: number;
+  puffs: { tex: number; theta: number; giro: number; tam: number; desv: number }[];
 }
 
 interface LuzAvion {
@@ -619,6 +621,8 @@ export class Mapa3dComponent implements AfterViewInit {
   private rotuloFabrica: HTMLElement | null = null;
   readonly fabricaSeleccion = signal<FichaFabrica | null>(null);
   private humos: Humo[] = [];
+  /** todas las bocanadas de humo de las chimeneas: una sola llamada de dibujo en vez de una por bocanada */
+  private humoInst?: { malla: THREE.Mesh; pos: Float32Array; esc: Float32Array; rot: Float32Array; col: Float32Array; op: Float32Array; atributos: THREE.InstancedBufferAttribute[]; rotAcum: Float32Array };
   private geoIndustrias: THREE.BufferGeometry | null = null;
   private matIndustrias: THREE.Material | null = null;
   private aristas: Arista[] = [];
@@ -2539,15 +2543,11 @@ export class Mapa3dComponent implements AfterViewInit {
       const fase = rnd();
       const puffs: Humo['puffs'] = [];
       for (let k = 0; k < HUMO_BOCANADAS; k++) {
-        const sprite = new THREE.Sprite(new THREE.SpriteMaterial({
-          map: this.texturasNubes[Math.floor(rnd() * 4)], color: '#8a8f96', transparent: true, depthWrite: false, opacity: 0,
-        }));
-        sprite.renderOrder = 8;
-        this.escena.add(sprite);
-        puffs.push({ sprite, theta: rnd() * Math.PI * 2, giro: (rnd() - 0.5) * 0.3, tam: 0.8 + rnd() * 0.5, desv: rnd() });
+        puffs.push({ tex: Math.floor(rnd() * 4), theta: rnd() * Math.PI * 2, giro: (rnd() - 0.5) * 0.3, tam: 0.8 + rnd() * 0.5, desv: rnd() });
       }
-      this.humos.push({ x: hx, y: base + ch + 2, z: hz, fase, puffs });
+      this.humos.push({ x: hx, y: base + ch + 2, z: hz, fase, ini: this.humos.length * HUMO_BOCANADAS, puffs });
     });
+    this.crearHumo();
 
     const geo = mergeGeometries(geos, false);
     geos.forEach(g => g.dispose());
@@ -2567,36 +2567,91 @@ export class Mapa3dComponent implements AfterViewInit {
    * asienta: se abre en un anillo plano (aureola) que se aclara y se desvanece. Reutiliza las bocanadas de las nubes.
    */
   private animarHumo(): void {
-    if (!this.humos.length) return;
+    const h0 = this.humoInst;
+    if (!h0 || !this.humos.length) return;
     const t = performance.now() / 1000;
     const { rumbo, fuerza } = this.vientoEn(t);
     const dx = Math.cos(rumbo), dz = Math.sin(rumbo), cam = this.camara.position;
     const suave = (a: number, b: number, v: number) => { const u = Math.min(1, Math.max(0, (v - a) / (b - a))); return u * u * (3 - 2 * u); };
+    const { pos, esc, col, op, rotAcum } = h0;
     for (const h of this.humos) {
-      const lejos = Math.hypot(h.x - cam.x, h.y - cam.y, h.z - cam.z) > 18000;
-      for (const p of h.puffs) p.sprite.visible = !lejos;
-      if (lejos) continue;
+      const dist = Math.hypot(h.x - cam.x, h.y - cam.y, h.z - cam.z);
+      const lejos = dist > 18000;
+      const cerca = Math.min(1, Math.max(0, (dist - 250) / 900));
       h.puffs.forEach((p, k) => {
+        const n = h.ini + k;
+        if (lejos) { esc[n * 2] = esc[n * 2 + 1] = 0; return; }   // escala 0: no genera fragmentos
         const u = ((t / HUMO_CICLO + h.fase + k / h.puffs.length) % 1 + 1) % 1;
         const subida = Math.min(1, u / 0.55), ease = 1 - (1 - subida) * (1 - subida);
         const asiento = suave(0.45, 1, u);
         const deriva = HUMO_DERIVA * (0.4 + fuerza) * u * HUMO_CICLO;
         const radio = asiento * HUMO_AUREOLA * (0.7 + 0.5 * p.desv);
-        p.sprite.position.set(
-          h.x + dx * deriva + Math.cos(p.theta) * radio + Math.sin(t * 0.3 + p.theta) * 3,
-          h.y + HUMO_ALTURA * ease - 14 * asiento,
-          h.z + dz * deriva + Math.sin(p.theta) * radio * 0.8,
-        );
+        pos[n * 3] = h.x + dx * deriva + Math.cos(p.theta) * radio + Math.sin(t * 0.3 + p.theta) * 3;
+        pos[n * 3 + 1] = h.y + HUMO_ALTURA * ease - 14 * asiento;
+        pos[n * 3 + 2] = h.z + dz * deriva + Math.sin(p.theta) * radio * 0.8;
         const tam = (24 + 52 * subida + 80 * asiento) * p.tam;
-        p.sprite.scale.set(tam * 1.25, tam * (0.9 - 0.45 * asiento), 1);
-        const m = p.sprite.material as THREE.SpriteMaterial;
-        m.rotation += p.giro * 0.016;
+        esc[n * 2] = tam * 1.25;
+        esc[n * 2 + 1] = tam * (0.9 - 0.45 * asiento);
+        rotAcum[n] += p.giro * 0.016;
         const claro = suave(0, 0.8, u);
-        m.color.setRGB(0.42 + 0.46 * claro, 0.44 + 0.46 * claro, 0.47 + 0.45 * claro);
-        const cerca = Math.min(1, Math.max(0, (Math.hypot(h.x - cam.x, h.y - cam.y, h.z - cam.z) - 250) / 900));
-        m.opacity = HUMO_OPACIDAD * suave(0, 0.03, u) * (1 - suave(0.6, 1, u)) * cerca;
+        col[n * 3] = 0.42 + 0.46 * claro;
+        col[n * 3 + 1] = 0.44 + 0.46 * claro;
+        col[n * 3 + 2] = 0.47 + 0.45 * claro;
+        op[n] = HUMO_OPACIDAD * suave(0, 0.03, u) * (1 - suave(0.6, 1, u)) * cerca;
       });
     }
+    for (const a of h0.atributos) a.needsUpdate = true;
+  }
+
+  /**
+   * Las bocanadas de humo de todas las chimeneas son instancias de un solo cuadrado que mira a la cámara (como un
+   * sprite): cada una lleva su posición, tamaño, giro, color, opacidad y cuál de las 4 texturas de bocanada usa.
+   */
+  private crearHumo(): void {
+    const n = this.humos.length * HUMO_BOCANADAS;
+    if (!n) return;
+    const pos = new Float32Array(n * 3), esc = new Float32Array(n * 2), rot = new Float32Array(n);
+    const col = new Float32Array(n * 3), op = new Float32Array(n), tex = new Float32Array(n);
+    this.humos.forEach(h => h.puffs.forEach((p, k) => { tex[h.ini + k] = p.tex; }));
+    const geo = new THREE.InstancedBufferGeometry();
+    geo.copy(new THREE.PlaneGeometry(1, 1) as unknown as THREE.InstancedBufferGeometry);
+    geo.instanceCount = n;
+    const atributos = [
+      new THREE.InstancedBufferAttribute(pos, 3), new THREE.InstancedBufferAttribute(esc, 2), new THREE.InstancedBufferAttribute(rot, 1),
+      new THREE.InstancedBufferAttribute(col, 3), new THREE.InstancedBufferAttribute(op, 1),
+    ].map(a => a.setUsage(THREE.DynamicDrawUsage));
+    ['iPos', 'iEsc', 'iRot', 'iCol', 'iOp'].forEach((nombre, i) => geo.setAttribute(nombre, atributos[i]));
+    geo.setAttribute('iTex', new THREE.InstancedBufferAttribute(tex, 1));
+    const material = new THREE.ShaderMaterial({
+      uniforms: Object.fromEntries([0, 1, 2, 3].map(i => [`t${i}`, { value: this.texturasNubes[i] }])),
+      vertexShader: `
+        attribute vec3 iPos; attribute vec2 iEsc; attribute float iRot; attribute vec3 iCol; attribute float iOp; attribute float iTex;
+        varying vec2 vUv; varying vec3 vCol; varying float vOp; varying float vTex;
+        void main() {
+          vec4 mv = modelViewMatrix * vec4(iPos, 1.0);
+          vec2 q = position.xy * iEsc;
+          float c = cos(iRot), s = sin(iRot);
+          mv.xy += vec2(c * q.x - s * q.y, s * q.x + c * q.y);
+          gl_Position = projectionMatrix * mv;
+          vUv = uv; vCol = iCol; vOp = iOp; vTex = iTex;
+        }`,
+      fragmentShader: `
+        uniform sampler2D t0, t1, t2, t3;
+        varying vec2 vUv; varying vec3 vCol; varying float vOp; varying float vTex;
+        void main() {
+          // se leen las 4 y se elige una: leer dentro de una rama daría derivadas indefinidas (bordes mal filtrados)
+          vec4 a = texture2D(t0, vUv), b = texture2D(t1, vUv), c = texture2D(t2, vUv), d = texture2D(t3, vUv);
+          vec4 tx = a * step(vTex, 0.5) + b * step(0.5, vTex) * step(vTex, 1.5) + c * step(1.5, vTex) * step(vTex, 2.5) + d * step(2.5, vTex);
+          gl_FragColor = vec4(vCol * tx.rgb, tx.a * vOp);
+          #include <colorspace_fragment>
+        }`,
+      transparent: true, depthWrite: false,
+    });
+    const malla = new THREE.Mesh(geo, material);
+    malla.frustumCulled = false;
+    malla.renderOrder = 8;
+    this.escena.add(malla);
+    this.humoInst = { malla, pos, esc, rot, col, op, atributos, rotAcum: rot };
   }
 
   /**
@@ -2756,7 +2811,7 @@ export class Mapa3dComponent implements AfterViewInit {
       sprite.visible = false;
       sprite.renderOrder = 8;
       this.escena.add(sprite);
-      this.estela.push({ sprite, edad: -1, x: 0, y: 0, z: 0, base: 6 + rnd() * 3 });
+      this.estela.push({ sprite, edad: -1, x: 0, y: 0, z: 0, base: 8 + rnd() * 4 });
     }
 
     // la nube: un racimo de bocanadas centrado sobre la S, a la altura del avión
@@ -2814,7 +2869,7 @@ export class Mapa3dComponent implements AfterViewInit {
       const d = Math.hypot(p.x - cam.x, p.y - cam.y, p.z - cam.z);
       const f = TAMANO_AVION * Math.min(ESCALA_MAX_AVION, Math.max(1, d / DISTANCIA_REAL_AVION));
       const tam = p.base * (1 + 4 * u) * f;
-      let op = ESTELA_OPACIDAD * (1 - u) ** 1.5 * Math.min(1, p.edad / 1.2);
+      let op = ESTELA_OPACIDAD * (1 - u) * Math.min(1, p.edad / 1.2);
       if (nube) {
         const k = Math.min(1, Math.max(0, (NUBE_AVION_RADIO * 1.1 - Math.hypot(p.x - nube.x, p.z - nube.z)) / (NUBE_AVION_RADIO * 0.7)));
         op *= 1 - 0.92 * k * k * (3 - 2 * k);
@@ -3163,7 +3218,15 @@ export class Mapa3dComponent implements AfterViewInit {
     p.cuadros++;
     if (p.acumulado < 0.5) return;
     const i = this.renderer.info;
+    // objetos visibles por tipo: de dónde salen las llamadas de dibujo
+    const tipos: Record<string, number> = {};
+    this.escena.traverseVisible(o => {
+      const k = (o as THREE.Sprite).isSprite ? 'sprites' : (o as THREE.InstancedMesh).isInstancedMesh ? 'instanciadas'
+        : (o as THREE.Mesh).isMesh ? 'mallas' : (o as THREE.Line).isLine ? 'líneas' : '';
+      if (k) tipos[k] = (tipos[k] ?? 0) + 1;
+    });
     p.el.textContent = [
+      Object.entries(tipos).map(([k, v]) => `${k} ${v}`).join(' · '),
       `${(p.cuadros / p.acumulado).toFixed(0)} fps · ${(p.acumulado / p.cuadros * 1000).toFixed(1)} ms/cuadro`,
       `CPU actualizar ${(p.msActualizar / p.cuadros).toFixed(2)} ms · render ${(p.msRender / p.cuadros).toFixed(2)} ms`,
       `llamadas ${i.render.calls} · triángulos ${(i.render.triangles / 1000).toFixed(0)} k`,
@@ -3680,7 +3743,8 @@ export class Mapa3dComponent implements AfterViewInit {
     this.matIndustrias?.dispose();
     this.geoEquip?.dispose();
     this.matEquip?.dispose();
-    for (const h of this.humos) for (const p of h.puffs) p.sprite.material.dispose();
+    this.humoInst?.malla.geometry.dispose();
+    (this.humoInst?.malla.material as THREE.Material | undefined)?.dispose();
     this.geoAutos.forEach(g => g.dispose());
     this.matAutos.forEach(m => m.dispose());
     this.texturasConfluencia.forEach(t => t.dispose());
