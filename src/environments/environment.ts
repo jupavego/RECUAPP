@@ -4,8 +4,8 @@
 // NUNCA pongas aquí la service_role key.
 export const environment = {
   production: false,
-  supabaseUrl: 'https://TU-PROYECTO.supabase.co',
-  supabaseAnonKey: 'TU_ANON_KEY',
+  supabaseUrl: 'https://udppzdmtxxipvfchpksl.supabase.co',
+  supabaseAnonKey: 'sb_publishable_UQFcAbMVh6PZobTsqKn-Vg_8O6bXQjV',
   sentryDsn: '',          // vacío en desarrollo — Sentry solo activo en producción
   turnstileSiteKey: '',   // clave pública de Cloudflare Turnstile (vacío = sin captcha)
 };

@@ -82,7 +82,7 @@
 
   &__cover {
     height: 120px;
-    background: linear-gradient(135deg, var(--color-brand-primary) 0%, var(--color-brand-light) 60%, #9b8af5 100%);
+    background: linear-gradient(135deg, var(--color-brand-primary) 0%, var(--color-brand-light) 60%, #5eead4 100%);
   }
 
   &__body {
@@ -497,7 +497,7 @@
 .ratings-table-wrap {
   overflow-x: auto;
   border-radius: var(--radius-md);
-  border: 1.5px solid #ede9f8;
+  border: 1.5px solid #e2e8f0;
 }
 
 .ratings-table {
@@ -505,7 +505,7 @@
   border-collapse: collapse;
   font-size: 0.85rem;
 
-  thead tr { background: #f7f6fb; }
+  thead tr { background: #f8fafc; }
 
   th {
     padding: 0.65rem 1rem;
@@ -516,18 +516,18 @@
     letter-spacing: 0.06em;
     color: var(--color-text-secondary);
     white-space: nowrap;
-    border-bottom: 1.5px solid #ede9f8;
+    border-bottom: 1.5px solid #e2e8f0;
   }
 
   td {
     padding: 0.7rem 1rem;
     color: var(--color-text-primary);
-    border-bottom: 1px solid #f0edf8;
+    border-bottom: 1px solid #f1f5f9;
     vertical-align: middle;
   }
 
   tbody tr:last-child td { border-bottom: none; }
-  tbody tr:hover td { background: #faf9fd; }
+  tbody tr:hover td { background: #f8fafc; }
 }
 
 .rating-pill {

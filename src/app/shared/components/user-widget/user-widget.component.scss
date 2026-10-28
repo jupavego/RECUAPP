@@ -125,7 +125,7 @@
     right: 0;
     min-width: 210px;
     background: #ffffff;
-    color: #2c241d;
+    color: #1e293b;
     border-radius: 14px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
     padding: 0.4rem;
@@ -142,7 +142,7 @@
     font-family: var(--font-body);
     font-size: 0.875rem;
     font-weight: 600;
-    color: #2c241d;
+    color: #1e293b;
     text-decoration: none;
     cursor: pointer;
     border: none;
@@ -158,7 +158,7 @@
     }
 
     &:hover {
-      background: #f7f4ef;
+      background: #f4f4f5;
     }
 
     &--danger {

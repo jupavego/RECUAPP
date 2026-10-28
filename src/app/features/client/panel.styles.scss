@@ -208,7 +208,7 @@
 
   &:hover {
     border-color: var(--color-brand-light);
-    background: #ddd6ff;
+    background: #ccfbf1;
     box-shadow: 0 2px 8px rgba(var(--color-brand-primary-rgb), 0.15);
     svg { stroke: var(--color-brand-dark); }
   }
@@ -242,8 +242,8 @@
   cursor: default;
   opacity: 1;
   color: var(--color-text-primary);
-  background: #e8e7ef;
-  border: 1.5px solid #d0cedd;
+  background: #e2e8f0;
+  border: 1.5px solid #cbd5e1;
   border-radius: var(--radius-sm);
 
   &::placeholder { color: transparent; }

@@ -24,7 +24,7 @@ import { SITE } from '../../../data/site.data';
   styles: [`
     .home { max-width: 720px; margin: 0 auto; padding: 96px 16px; text-align: center; }
     .home h1 { font-size: 2.4rem; margin: 0 0 12px; }
-    .home p { color: var(--neutral-600, #7a6a5a); margin: 0 0 32px; }
+    .home p { color: var(--neutral-600, #64748b); margin: 0 0 32px; }
     .home__actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
   `],
 })

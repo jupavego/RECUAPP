@@ -1,6 +1,6 @@
 # Lienzo base — Angular 19 + Supabase
 
-Punto de partida para una app nueva: autenticación completa, roles, panel admin, un CRUD de ejemplo y una capa de seguridad ya montada. Se extrajo del proyecto *Come en Girardota* quitando todo lo del dominio.
+Punto de partida para una app nueva: autenticación completa, roles, panel admin, un CRUD de ejemplo y una capa de seguridad ya montada.
 
 ## Qué trae
 

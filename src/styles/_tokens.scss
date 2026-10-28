@@ -12,56 +12,56 @@
 
 :root {
 
-  // ── PALETA GLOBAL — Violet (color corporativo principal) ────
-  --violet-50:  #ede9ff;
-  --violet-100: #ddd6fe;
-  --violet-200: #c4b8f5;
-  --violet-300: #a48fe8;
-  --violet-400: #8b6fe0;
-  --violet-500: #7662ec;
-  --violet-600: #5e49d6;
-  --violet-700: #3d2bbf;
-  --violet-800: #2d1fa0;
-  --violet-900: #1e1480;
+  // ── PALETA GLOBAL — Primary — teal (color de marca principal) ────
+  --primary-50: #f0fdfa;
+  --primary-100: #ccfbf1;
+  --primary-200: #99f6e4;
+  --primary-300: #5eead4;
+  --primary-400: #2dd4bf;
+  --primary-500: #14b8a6;
+  --primary-600: #0d9488;
+  --primary-700: #0f766e;
+  --primary-800: #115e59;
+  --primary-900: #134e4a;
 
-  // ── PALETA GLOBAL — Orange ──────────────────────────────────
-  --orange-50:  #fff7ed;
-  --orange-100: #ffedd5;
-  --orange-200: #fed7aa;
-  --orange-300: #fdba74;
-  --orange-400: #fb923c;
-  --orange-500: #f97316;
-  --orange-600: #ea6c0a;
-  --orange-700: #dc5217;
-  --orange-800: #c2440e;
-  --orange-900: #9a3412;
+  // ── PALETA GLOBAL — Accent (cian) ──────────────────────────────────
+  --accent-50: #ecfeff;
+  --accent-100: #cffafe;
+  --accent-200: #a5f3fc;
+  --accent-300: #67e8f9;
+  --accent-400: #22d3ee;
+  --accent-500: #06b6d4;
+  --accent-600: #0891b2;
+  --accent-700: #0e7490;
+  --accent-800: #155e75;
+  --accent-900: #164e63;
 
-  // ── PALETA GLOBAL — Brown (fondos oscuros hero) ─────────────
-  --brown-50:  #fdf7f0;
-  --brown-100: #f5e6d3;
-  --brown-200: #e8c9a8;
-  --brown-300: #d4a070;
-  --brown-400: #c4622d;
-  --brown-500: #9c4518;
-  --brown-600: #7c3a0f;
-  --brown-700: #5c2a0a;
-  --brown-800: #3d1a00;
-  --brown-900: #1a0a00;
+  // ── PALETA GLOBAL — Dark — pizarra (fondos oscuros) ─────────────
+  --dark-50: #f8fafc;
+  --dark-100: #f1f5f9;
+  --dark-200: #e2e8f0;
+  --dark-300: #cbd5e1;
+  --dark-400: #94a3b8;
+  --dark-500: #64748b;
+  --dark-600: #475569;
+  --dark-700: #334155;
+  --dark-800: #1e293b;
+  --dark-900: #0f172a;
 
   // ── PALETA GLOBAL — Neutral (warm gray) ─────────────────────
-  --neutral-0:   #ffffff;
-  --neutral-50:  #faf9f7;
-  --neutral-100: #f5f2ef;
-  --neutral-200: #ede7de;
-  --neutral-300: #ddd4c8;
-  --neutral-400: #c4b5a5;
-  --neutral-500: #a09080;
-  --neutral-600: #7a6a5a;
-  --neutral-700: #5c4e42;
-  --neutral-800: #3d3028;
-  --neutral-900: #1c1410;
+  --neutral-0: #ffffff;
+  --neutral-50: #fafafa;
+  --neutral-100: #f4f4f5;
+  --neutral-200: #e4e4e7;
+  --neutral-300: #d4d4d8;
+  --neutral-400: #a1a1aa;
+  --neutral-500: #71717a;
+  --neutral-600: #52525b;
+  --neutral-700: #3f3f46;
+  --neutral-800: #27272a;
+  --neutral-900: #18181b;
 
-  // ── PALETA GLOBAL — Green (WhatsApp / éxito) ────────────────
+  // ── PALETA GLOBAL — Green (éxito) ────────────────
   --green-50:  #f0fdf4;
   --green-100: #dcfce7;
   --green-200: #bbf7d0;
@@ -70,8 +70,6 @@
   --green-600: #16a34a;
   --green-700: #128c7e;
   --green-800: #25d366;
-  --green-whatsapp-light: #25d366;
-  --green-whatsapp-dark:  #128c7e;
 
   // ── PALETA GLOBAL — Red (errores) ───────────────────────────
   --red-50:  #fef2f2;
@@ -100,41 +98,36 @@
   // ALIAS SEMÁNTICOS — MARCA
   // ================================================================
 
-  // Primario — Violet (color corporativo)
-  --color-brand-primary:     var(--violet-600);
-  --color-brand-primary-rgb: 94, 73, 214;
-  --color-brand-light:       var(--violet-500);
-  --color-brand-light-rgb:   118, 98, 236;
-  --color-brand-dark:        var(--violet-700);
-  --color-brand-border:      var(--violet-200);
-  --color-brand-surface:     var(--violet-50);
+  // Primario (color de marca)
+  --color-brand-primary:     var(--primary-600);
+  --color-brand-primary-rgb: 13, 148, 136;
+  --color-brand-light:       var(--primary-500);
+  --color-brand-light-rgb:   20, 184, 166;
+  --color-brand-dark:        var(--primary-700);
+  --color-brand-border:      var(--primary-200);
+  --color-brand-surface:     var(--primary-50);
 
-  // Warm — Orange (hero, CTA food, micrositio)
-  --color-warm-primary:      var(--orange-500);
-  --color-warm-light:        var(--orange-400);
-  --color-warm-dark:         var(--orange-700);
-  --color-warm-border:       var(--orange-200);
-  --color-warm-surface:      var(--orange-50);
-  --color-brand-accent:      var(--orange-500);
+  // Acento (CTA, destacados)
+  --color-warm-primary:      var(--accent-500);
+  --color-warm-light:        var(--accent-400);
+  --color-warm-dark:         var(--accent-700);
+  --color-warm-border:       var(--accent-200);
+  --color-warm-surface:      var(--accent-50);
+  --color-brand-accent:      var(--accent-500);
 
-  // Hero / micrositio — Brown oscuro
-  --color-hero-bg-deep:   var(--brown-900);
-  --color-hero-bg-mid:    var(--brown-800);
-  --color-hero-bg-light:  var(--brown-600);
-  --color-hero-gradient:  linear-gradient(160deg, var(--brown-900) 0%, var(--brown-800) 35%, var(--brown-600) 65%, var(--brown-400) 100%);
-
-  // WhatsApp CTA
-  --color-whatsapp:       var(--green-whatsapp-light);
-  --color-whatsapp-dark:  var(--green-whatsapp-dark);
-  --color-whatsapp-rgb:   37, 211, 102;
+  // Fondos oscuros (hero)
+  --color-hero-bg-deep:   var(--dark-900);
+  --color-hero-bg-mid:    var(--dark-800);
+  --color-hero-bg-light:  var(--dark-600);
+  --color-hero-gradient:  linear-gradient(160deg, var(--dark-900) 0%, var(--dark-800) 35%, var(--dark-600) 65%, var(--dark-400) 100%);
 
   // ================================================================
   // ALIAS SEMÁNTICOS — FONDOS
   // ================================================================
 
-  --color-page-bg:                  var(--brown-50);      // fondo global calido
+  --color-page-bg:                  var(--dark-50);      // fondo global calido
   --color-background-primary:       var(--neutral-0);
-  --color-background-secondary:     var(--brown-50);
+  --color-background-secondary:     var(--dark-50);
   --color-background-tertiary:      var(--neutral-100);
   --color-background-warning:       var(--amber-50);
   --color-background-success:       var(--green-100);
@@ -145,7 +138,7 @@
   // ALIAS SEMÁNTICOS — TEXTO
   // ================================================================
 
-  --color-text-primary:   var(--brown-900);
+  --color-text-primary:   var(--dark-900);
   --color-text-secondary: var(--neutral-700);
   --color-text-tertiary:  var(--neutral-500);
   --color-text-inverse:   var(--neutral-0);
@@ -169,8 +162,8 @@
   // TIPOGRAFÍA
   // ================================================================
 
-  --font-heading: 'Poppins', sans-serif;
-  --font-body:    'Manrope', sans-serif;
+  --font-heading: 'Inter', sans-serif;
+  --font-body:    'Inter', sans-serif;
 
   // Escala de tamaños (base 16px, ratio 1.25 Major Third)
   --text-xs:   0.75rem;    // 12px  — labels, captions
@@ -238,16 +231,16 @@
   // ELEVACIÓN (sombras)
   // ================================================================
 
-  --shadow-xs:  0 1px 3px rgba(28, 10, 0, .08);
-  --shadow-sm:  0 2px 8px rgba(28, 10, 0, .10);
-  --shadow-md:  0 4px 16px rgba(28, 10, 0, .12);
-  --shadow-lg:  0 8px 32px rgba(28, 10, 0, .16);
-  --shadow-xl:  0 16px 48px rgba(28, 10, 0, .20);
-  --shadow-2xl: 0 24px 64px rgba(28, 10, 0, .26);
+  --shadow-xs:  0 1px 3px rgba(15, 23, 42, .08);
+  --shadow-sm:  0 2px 8px rgba(15, 23, 42, .10);
+  --shadow-md:  0 4px 16px rgba(15, 23, 42, .12);
+  --shadow-lg:  0 8px 32px rgba(15, 23, 42, .16);
+  --shadow-xl:  0 16px 48px rgba(15, 23, 42, .20);
+  --shadow-2xl: 0 24px 64px rgba(15, 23, 42, .26);
 
   // Sombra de color para CTAs
-  --shadow-cta-orange: 0 8px 24px rgba(249, 115, 22, .38);
-  --shadow-cta-wa:     0 8px 24px rgba(37, 211, 102, .38);
+  --shadow-cta-accent: 0 8px 24px rgba(6, 182, 212, .38);
+  --shadow-cta-wa:     0 8px 24px rgba(16, 185, 129, .38);
 
   // Sombras de brand — botones y estados de foco
   --shadow-brand-sm:  0 2px 8px rgba(var(--color-brand-primary-rgb), 0.25);
@@ -281,7 +274,7 @@
   --z-gallery:   300;   // galería de fotos a pantalla completa
   --z-drawer:    400;   // panel lateral (wa-order)
   --z-modal:    1000;   // modal overlay global
-  --z-bubble:   9000;   // botón flotante WhatsApp arrastrable
+  --z-bubble:   9000;   // botón flotante
   --z-conflict: 9700;   // diálogo de conflicto de carrito
   --z-gate:     9800;   // auth-gate (máxima prioridad)
 

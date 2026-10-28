@@ -3,7 +3,7 @@
   top: 0;
   z-index: 100;
   background: var(--neutral-0, #fff);
-  border-bottom: 1px solid var(--neutral-200, #ede7de);
+  border-bottom: 1px solid var(--neutral-200, #e4e4e7);
 
   &__inner {
     max-width: 1200px;
@@ -19,7 +19,7 @@
   &__logo {
     font-weight: 800;
     font-size: 1.2rem;
-    color: var(--violet-700, #3d2bbf);
+    color: var(--primary-700, #0f766e);
     text-decoration: none;
   }
 
@@ -29,22 +29,22 @@
     gap: 16px;
 
     a {
-      color: var(--neutral-700, #5c4e42);
+      color: var(--neutral-700, #475569);
       text-decoration: none;
       font-weight: 600;
       font-size: .95rem;
 
       &:hover,
-      &.is-active { color: var(--violet-600, #5e49d6); }
+      &.is-active { color: var(--primary-600, #0d9488); }
     }
   }
 
   &__cta {
-    background: var(--violet-600, #5e49d6);
+    background: var(--primary-600, #0d9488);
     color: #fff !important;
     padding: 8px 16px;
     border-radius: 999px;
 
-    &:hover { background: var(--violet-700, #3d2bbf); }
+    &:hover { background: var(--primary-700, #0f766e); }
   }
 }

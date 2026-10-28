@@ -5,7 +5,7 @@
   right: 1rem;
   max-width: 600px;
   margin: 0 auto;
-  background: #1a0a00;
+  background: #0f172a;
   color: #fff;
   border-radius: 12px;
   padding: 1rem 1.25rem;
@@ -21,11 +21,11 @@
     font-size: 0.83rem;
     line-height: 1.55;
     margin: 0;
-    color: #e8ddd5;
+    color: #e2e8f0;
   }
 
   &__link {
-    color: #f5a86b;
+    color: #67e8f9;
     text-decoration: underline;
     text-underline-offset: 2px;
     white-space: nowrap;
@@ -35,7 +35,7 @@
 
   &__btn {
     flex-shrink: 0;
-    background: #c0510a;
+    background: #0f766e;
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -45,6 +45,6 @@
     cursor: pointer;
     transition: background 0.2s;
 
-    &:hover { background: #9a3e06; }
+    &:hover { background: #115e59; }
   }
 }
