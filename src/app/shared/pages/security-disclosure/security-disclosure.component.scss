@@ -1,0 +1,141 @@
+.disclosure {
+  min-height: 100vh;
+  padding: 3rem 1rem 4rem;
+  background: var(--color-bg, #fafaf8);
+
+  &__container {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  &__header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e5e0d8;
+  }
+
+  &__badge {
+    display: inline-block;
+    background: #fff3ec;
+    color: #c0510a;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.75rem;
+    border-radius: 99px;
+    border: 1px solid #f5c9a8;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1a0a00;
+    margin: 0 0 0.75rem;
+    line-height: 1.3;
+  }
+
+  &__subtitle {
+    font-size: 0.95rem;
+    color: #4a3728;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  &__section {
+    margin-bottom: 2rem;
+
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1a0a00;
+      margin: 0 0 0.75rem;
+    }
+
+    p, li {
+      font-size: 0.9rem;
+      color: #4a3728;
+      line-height: 1.7;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+      margin: 0.5rem 0;
+      li { margin-bottom: 0.3rem; }
+    }
+
+    a {
+      color: #c0510a;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      &:hover { color: #9a3e06; }
+    }
+
+    code {
+      background: #f0ebe4;
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.85em;
+      color: #3d2b1f;
+    }
+
+    &--highlight {
+      background: #fff8f3;
+      border: 1px solid #f5c9a8;
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+    }
+  }
+
+  &__sla {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+  }
+
+  &__sla-item {
+    flex: 1;
+    min-width: 120px;
+    background: #fff;
+    border: 1px solid #e5e0d8;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  &__sla-time {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #c0510a;
+  }
+
+  &__sla-label {
+    font-size: 0.78rem;
+    color: #6b5c4e;
+    line-height: 1.4;
+  }
+
+  &__footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e5e0d8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    a {
+      font-size: 0.85rem;
+      color: #c0510a;
+      text-decoration: none;
+      font-weight: 500;
+      &:hover { text-decoration: underline; }
+    }
+  }
+}

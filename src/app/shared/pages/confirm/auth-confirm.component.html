@@ -1,0 +1,19 @@
+<div class="confirm">
+  <div class="confirm__card">
+
+    @if (error()) {
+      <div class="confirm__icon confirm__icon--error">✕</div>
+      <h1 class="confirm__title">Link inválido</h1>
+      <p class="confirm__desc">{{ error() }}</p>
+      <a routerLink="/auth/login" class="btn-primary">Ir al inicio de sesión</a>
+
+    } @else {
+      <div class="confirm__icon confirm__icon--ok">✓</div>
+      <h1 class="confirm__title">¡Cuenta confirmada!</h1>
+      <p class="confirm__desc">
+        Tu correo fue verificado correctamente. Redirigiendo a tu panel...
+      </p>
+    }
+
+  </div>
+</div>

@@ -1,0 +1,95 @@
+# ============================================================
+# Security CI Pipeline — Lienzo base
+# ============================================================
+# Ejecuta tres jobs de seguridad en paralelo en cada push a
+# main o a la rama security, y en cada PR hacia main.
+#
+# Jobs:
+#   1. dependency-audit  — npm audit (vulnerabilidades en deps)
+#   2. sast-scan         — Semgrep (análisis estático de código)
+#   3. secrets-scan      — Gitleaks (detección de secrets en historial)
+# ============================================================
+
+name: Security CI
+
+on:
+  push:
+    branches:
+      - main
+      - security
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  security-events: write  # requerido para subir SARIF a GitHub Security
+
+jobs:
+  # ── Job 1: Dependency Vulnerability Audit ──────────────────
+  dependency-audit:
+    name: Dependency Audit (npm audit)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run npm audit
+        run: npm audit --audit-level=high --omit=dev
+        # --omit=dev: audita solo dependencias de producción.
+        # Las vulnerabilidades en devDependencies (Angular CLI, webpack, vite)
+        # no llegan al bundle desplegado en Vercel — no son riesgo real.
+
+  # ── Job 2: Static Application Security Testing (SAST) ──────
+  sast-scan:
+    name: SAST Scan (Semgrep)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Semgrep
+        uses: semgrep/semgrep-action@v1
+        with:
+          config: >-
+            p/angular
+            p/typescript
+            p/owasp-top-ten
+            p/jwt
+          generateSarif: '1'
+        env:
+          SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
+
+      - name: Upload SARIF to GitHub Security
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: semgrep.sarif
+
+  # ── Job 3: Secrets Detection ────────────────────────────────
+  secrets-scan:
+    name: Secrets Scan (Gitleaks)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # escanear historial completo, no solo el último commit
+
+      - name: Run Gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE }}

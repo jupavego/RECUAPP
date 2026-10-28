@@ -1,0 +1,221 @@
+<div class="panel">
+  <div class="panel-header">
+    <h1 class="panel-title">Mi perfil</h1>
+    <a routerLink="/app" class="btn-back">Volver</a>
+  </div>
+
+  <!-- ── Foto de perfil ─────────────────────────────────────────────────── -->
+  <section class="edit-section">
+    <div class="edit-section__header">
+      <h2 class="edit-section__title">Foto de perfil</h2>
+    </div>
+
+    <div class="avatar-row">
+      <div class="avatar-wrapper">
+        @if (avatarUrl()) {
+          <img class="avatar" [src]="avatarUrl()" alt="Foto de perfil" />
+        } @else {
+          <div class="avatar avatar--placeholder">
+            {{ session.profile()?.full_name?.charAt(0)?.toUpperCase() || '?' }}
+          </div>
+        }
+        @if (uploadingAvatar()) {
+          <div class="avatar-loading">
+            <span class="spinner spinner--sm"></span>
+          </div>
+        }
+      </div>
+
+      <div class="avatar-actions">
+        <label class="btn-upload">
+          {{ avatarUrl() ? 'Cambiar foto' : 'Subir foto' }}
+          <input
+            type="file"
+            accept="image/*"
+            hidden
+            (change)="onAvatarChange($event)"
+            [disabled]="uploadingAvatar()"
+          />
+        </label>
+        <p class="avatar-hint">JPG o PNG. Máximo 2MB.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Datos personales ───────────────────────────────────────────────── -->
+  <section class="edit-section" [class.edit-section--active]="isEditing('personal')">
+    <div class="edit-section__header">
+      <h2 class="edit-section__title">Datos personales</h2>
+      <button
+        type="button"
+        class="edit-section__toggle"
+        [class.edit-section__toggle--active]="isEditing('personal')"
+        (click)="toggleSection('personal')"
+        [attr.aria-label]="isEditing('personal') ? 'Cerrar edición' : 'Editar sección'">
+        @if (isEditing('personal')) {
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        } @else {
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/>
+            <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/>
+          </svg>
+        }
+      </button>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="onSaveProfile()" class="profile-form" novalidate>
+
+      <div class="field-row">
+        <div class="field-group">
+          <label class="field-label">Nombre completo <span class="required">*</span></label>
+          <input
+            formControlName="full_name"
+            type="text"
+            class="field-input"
+            [class.field-input--error]="fullName.invalid && fullName.touched"
+            placeholder="Tu nombre completo"
+            autocomplete="name"
+          />
+          @if (fullName.invalid && fullName.touched) {
+            <span class="field-error">
+              @if (fullName.errors?.['required'])  { El nombre es obligatorio }
+              @if (fullName.errors?.['minlength']) { Mínimo 3 caracteres }
+            </span>
+          }
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Teléfono</label>
+          <input
+            formControlName="phone"
+            type="tel"
+            class="field-input"
+            placeholder="3001234567"
+            autocomplete="tel"
+          />
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">Correo electrónico</label>
+        <input
+          type="email"
+          class="field-input field-input--readonly"
+          [value]="session.user()?.email ?? ''"
+          readonly
+        />
+        <span class="field-hint">El correo no se puede cambiar desde aquí.</span>
+      </div>
+
+      @if (isEditing('personal')) {
+        <div class="edit-section__actions">
+          @if (successMsg()) {
+            <div class="field-alert field-alert--success">{{ successMsg() }}</div>
+          }
+          @if (errorMsg()) {
+            <div class="field-alert field-alert--error">{{ errorMsg() }}</div>
+          }
+          <button type="submit" class="btn-primary" [disabled]="saving()">
+            @if (saving()) { <span class="btn-spinner"></span> Guardando... }
+            @else { Guardar cambios }
+          </button>
+        </div>
+      }
+
+    </form>
+  </section>
+
+  <!-- ── Cambiar contraseña ─────────────────────────────────────────────── -->
+  <section class="edit-section" [class.edit-section--active]="isEditing('password')">
+    <div class="edit-section__header">
+      <h2 class="edit-section__title">Cambiar contraseña</h2>
+      <button
+        type="button"
+        class="edit-section__toggle"
+        [class.edit-section__toggle--active]="isEditing('password')"
+        (click)="toggleSection('password')"
+        [attr.aria-label]="isEditing('password') ? 'Cerrar edición' : 'Editar sección'">
+        @if (isEditing('password')) {
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        } @else {
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/>
+            <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/>
+          </svg>
+        }
+      </button>
+    </div>
+
+    <form [formGroup]="passwordForm" (ngSubmit)="onChangePassword()" class="profile-form" novalidate>
+
+      <div class="field-row">
+        <div class="field-group">
+          <label class="field-label">Nueva contraseña</label>
+          <input
+            formControlName="newPassword"
+            type="password"
+            class="field-input"
+            [class.field-input--error]="newPassword.invalid && newPassword.touched"
+            placeholder="Mínimo 6 caracteres"
+            autocomplete="new-password"
+          />
+          @if (newPassword.invalid && newPassword.touched) {
+            <span class="field-error">
+              @if (newPassword.errors?.['required'])  { La contraseña es obligatoria }
+              @if (newPassword.errors?.['minlength']) { Mínimo 6 caracteres }
+            </span>
+          }
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Confirmar contraseña</label>
+          <input
+            formControlName="confirmPassword"
+            type="password"
+            class="field-input"
+            [class.field-input--error]="passwordMismatch && confirmPassword.touched"
+            placeholder="Repite la contraseña"
+            autocomplete="new-password"
+          />
+          @if (passwordMismatch && confirmPassword.touched) {
+            <span class="field-error">Las contraseñas no coinciden</span>
+          }
+        </div>
+      </div>
+
+      @if (isEditing('password')) {
+        <div class="edit-section__actions">
+          @if (successMsg()) {
+            <div class="field-alert field-alert--success">{{ successMsg() }}</div>
+          }
+          @if (errorMsg()) {
+            <div class="field-alert field-alert--error">{{ errorMsg() }}</div>
+          }
+          <button type="submit" class="btn-primary" [disabled]="saving()">
+            @if (saving()) { <span class="btn-spinner"></span> Guardando... }
+            @else { Actualizar contraseña }
+          </button>
+        </div>
+      }
+
+    </form>
+  </section>
+
+  <!-- ── Sesión ──────────────────────────────────────────────────────────── -->
+  <section class="edit-section profile-section--danger">
+    <div class="edit-section__header">
+      <h2 class="edit-section__title">Sesión</h2>
+    </div>
+    <p class="profile-danger__text">Cierra tu sesión en este dispositivo.</p>
+    <button class="btn-danger" (click)="logout()">Cerrar sesión</button>
+  </section>
+
+</div>

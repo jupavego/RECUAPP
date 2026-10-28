@@ -1,0 +1,297 @@
+// ============================================================
+// styles/_tokens.scss
+// Design tokens
+//
+// Jerarquía:
+//   1. Paleta global (valores crudos)
+//   2. Alias semánticos (roles)
+//   3. Tokens de componente (en cada componente si aplica)
+//
+// Uso: @use 'src/styles/tokens' as *;
+// ============================================================
+
+:root {
+
+  // ── PALETA GLOBAL — Violet (color corporativo principal) ────
+  --violet-50:  #ede9ff;
+  --violet-100: #ddd6fe;
+  --violet-200: #c4b8f5;
+  --violet-300: #a48fe8;
+  --violet-400: #8b6fe0;
+  --violet-500: #7662ec;
+  --violet-600: #5e49d6;
+  --violet-700: #3d2bbf;
+  --violet-800: #2d1fa0;
+  --violet-900: #1e1480;
+
+  // ── PALETA GLOBAL — Orange ──────────────────────────────────
+  --orange-50:  #fff7ed;
+  --orange-100: #ffedd5;
+  --orange-200: #fed7aa;
+  --orange-300: #fdba74;
+  --orange-400: #fb923c;
+  --orange-500: #f97316;
+  --orange-600: #ea6c0a;
+  --orange-700: #dc5217;
+  --orange-800: #c2440e;
+  --orange-900: #9a3412;
+
+  // ── PALETA GLOBAL — Brown (fondos oscuros hero) ─────────────
+  --brown-50:  #fdf7f0;
+  --brown-100: #f5e6d3;
+  --brown-200: #e8c9a8;
+  --brown-300: #d4a070;
+  --brown-400: #c4622d;
+  --brown-500: #9c4518;
+  --brown-600: #7c3a0f;
+  --brown-700: #5c2a0a;
+  --brown-800: #3d1a00;
+  --brown-900: #1a0a00;
+
+  // ── PALETA GLOBAL — Neutral (warm gray) ─────────────────────
+  --neutral-0:   #ffffff;
+  --neutral-50:  #faf9f7;
+  --neutral-100: #f5f2ef;
+  --neutral-200: #ede7de;
+  --neutral-300: #ddd4c8;
+  --neutral-400: #c4b5a5;
+  --neutral-500: #a09080;
+  --neutral-600: #7a6a5a;
+  --neutral-700: #5c4e42;
+  --neutral-800: #3d3028;
+  --neutral-900: #1c1410;
+
+  // ── PALETA GLOBAL — Green (WhatsApp / éxito) ────────────────
+  --green-50:  #f0fdf4;
+  --green-100: #dcfce7;
+  --green-200: #bbf7d0;
+  --green-400: #4ade80;
+  --green-500: #22c55e;
+  --green-600: #16a34a;
+  --green-700: #128c7e;
+  --green-800: #25d366;
+  --green-whatsapp-light: #25d366;
+  --green-whatsapp-dark:  #128c7e;
+
+  // ── PALETA GLOBAL — Red (errores) ───────────────────────────
+  --red-50:  #fef2f2;
+  --red-100: #fee2e2;
+  --red-500: #ef4444;
+  --red-600: #dc2626;
+  --red-700: #b91c1c;
+  --red-800: #991b1b;
+
+  // ── PALETA GLOBAL — Amber (advertencias) ────────────────────
+  --amber-50:  #fffbeb;
+  --amber-100: #fef3c7;
+  --amber-200: #fde68a;
+  --amber-500: #f59e0b;
+  --amber-700: #b45309;
+  --amber-900: #78350f;
+
+  // ── PALETA GLOBAL — Blue (info) ─────────────────────────────
+  --blue-50:  #eff6ff;
+  --blue-100: #dbeafe;
+  --blue-500: #3b82f6;
+  --blue-600: #2563eb;
+  --blue-700: #1d4ed8;
+
+  // ================================================================
+  // ALIAS SEMÁNTICOS — MARCA
+  // ================================================================
+
+  // Primario — Violet (color corporativo)
+  --color-brand-primary:     var(--violet-600);
+  --color-brand-primary-rgb: 94, 73, 214;
+  --color-brand-light:       var(--violet-500);
+  --color-brand-light-rgb:   118, 98, 236;
+  --color-brand-dark:        var(--violet-700);
+  --color-brand-border:      var(--violet-200);
+  --color-brand-surface:     var(--violet-50);
+
+  // Warm — Orange (hero, CTA food, micrositio)
+  --color-warm-primary:      var(--orange-500);
+  --color-warm-light:        var(--orange-400);
+  --color-warm-dark:         var(--orange-700);
+  --color-warm-border:       var(--orange-200);
+  --color-warm-surface:      var(--orange-50);
+  --color-brand-accent:      var(--orange-500);
+
+  // Hero / micrositio — Brown oscuro
+  --color-hero-bg-deep:   var(--brown-900);
+  --color-hero-bg-mid:    var(--brown-800);
+  --color-hero-bg-light:  var(--brown-600);
+  --color-hero-gradient:  linear-gradient(160deg, var(--brown-900) 0%, var(--brown-800) 35%, var(--brown-600) 65%, var(--brown-400) 100%);
+
+  // WhatsApp CTA
+  --color-whatsapp:       var(--green-whatsapp-light);
+  --color-whatsapp-dark:  var(--green-whatsapp-dark);
+  --color-whatsapp-rgb:   37, 211, 102;
+
+  // ================================================================
+  // ALIAS SEMÁNTICOS — FONDOS
+  // ================================================================
+
+  --color-page-bg:                  var(--brown-50);      // fondo global calido
+  --color-background-primary:       var(--neutral-0);
+  --color-background-secondary:     var(--brown-50);
+  --color-background-tertiary:      var(--neutral-100);
+  --color-background-warning:       var(--amber-50);
+  --color-background-success:       var(--green-100);
+  --color-background-danger:        var(--red-100);
+  --color-background-info:          var(--blue-100);
+
+  // ================================================================
+  // ALIAS SEMÁNTICOS — TEXTO
+  // ================================================================
+
+  --color-text-primary:   var(--brown-900);
+  --color-text-secondary: var(--neutral-700);
+  --color-text-tertiary:  var(--neutral-500);
+  --color-text-inverse:   var(--neutral-0);
+  --color-text-info:      var(--blue-600);
+  --color-text-warning:   var(--amber-700);
+  --color-text-success:   var(--green-600);
+  --color-text-danger:    var(--red-700);
+
+  // ================================================================
+  // ALIAS SEMÁNTICOS — BORDES
+  // ================================================================
+
+  --color-border-primary:  var(--neutral-300);
+  --color-border-tertiary: var(--neutral-200);
+  --color-border-warning:  var(--amber-200);
+  --color-border-info:     var(--blue-500);
+  --color-border-success:  var(--green-500);
+  --color-border-danger:   var(--red-500);
+
+  // ================================================================
+  // TIPOGRAFÍA
+  // ================================================================
+
+  --font-heading: 'Poppins', sans-serif;
+  --font-body:    'Manrope', sans-serif;
+
+  // Escala de tamaños (base 16px, ratio 1.25 Major Third)
+  --text-xs:   0.75rem;    // 12px  — labels, captions
+  --text-sm:   0.875rem;   // 14px  — cuerpo pequeño
+  --text-base: 1rem;       // 16px  — cuerpo
+  --text-md:   1.125rem;   // 18px  — cuerpo enfatizado
+  --text-lg:   1.25rem;    // 20px  — subheading
+  --text-xl:   1.5rem;     // 24px  — heading 3
+  --text-2xl:  2rem;       // 32px  — heading 2
+  --text-3xl:  2.5rem;     // 40px  — heading 1
+  --text-4xl:  3rem;       // 48px  — display mobile
+  --text-5xl:  3.75rem;    // 60px  — display desktop
+
+  // Pesos
+  --font-regular:   400;
+  --font-medium:    500;
+  --font-semibold:  600;
+  --font-bold:      700;
+  --font-extrabold: 800;
+
+  // Interlineado
+  --leading-tight:   1.15;
+  --leading-snug:    1.3;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.7;
+
+  // Tracking
+  --tracking-tight:  -0.03em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.04em;
+  --tracking-wider:  0.08em;
+  --tracking-widest: 0.15em;
+
+  // ================================================================
+  // ESPACIADO — base 4px
+  // ================================================================
+
+  --space-1:  0.25rem;   // 4px
+  --space-2:  0.5rem;    // 8px
+  --space-3:  0.75rem;   // 12px
+  --space-4:  1rem;      // 16px
+  --space-5:  1.25rem;   // 20px
+  --space-6:  1.5rem;    // 24px
+  --space-8:  2rem;      // 32px
+  --space-10: 2.5rem;    // 40px
+  --space-12: 3rem;      // 48px
+  --space-16: 4rem;      // 64px
+  --space-20: 5rem;      // 80px
+  --space-24: 6rem;      // 96px
+
+  // ================================================================
+  // BORDES
+  // ================================================================
+
+  --radius-xs:   4px;
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   16px;
+  --radius-xl:   20px;
+  --radius-2xl:  24px;
+  --radius-3xl:  28px;
+  --radius-full: 9999px;
+
+  // ================================================================
+  // ELEVACIÓN (sombras)
+  // ================================================================
+
+  --shadow-xs:  0 1px 3px rgba(28, 10, 0, .08);
+  --shadow-sm:  0 2px 8px rgba(28, 10, 0, .10);
+  --shadow-md:  0 4px 16px rgba(28, 10, 0, .12);
+  --shadow-lg:  0 8px 32px rgba(28, 10, 0, .16);
+  --shadow-xl:  0 16px 48px rgba(28, 10, 0, .20);
+  --shadow-2xl: 0 24px 64px rgba(28, 10, 0, .26);
+
+  // Sombra de color para CTAs
+  --shadow-cta-orange: 0 8px 24px rgba(249, 115, 22, .38);
+  --shadow-cta-wa:     0 8px 24px rgba(37, 211, 102, .38);
+
+  // Sombras de brand — botones y estados de foco
+  --shadow-brand-sm:  0 2px 8px rgba(var(--color-brand-primary-rgb), 0.25);
+  --shadow-brand-md:  0 4px 12px rgba(var(--color-brand-primary-rgb), 0.35);
+  --shadow-focus:     0 0 0 3px rgba(var(--color-brand-primary-rgb), 0.1);
+  --shadow-focus-info: 0 0 0 3px rgba(24, 95, 165, 0.1);
+
+  // ================================================================
+  // MOVIMIENTO / ANIMACIÓN
+  // ================================================================
+
+  --duration-instant: 80ms;
+  --duration-fast:    150ms;
+  --duration-normal:  200ms;
+  --duration-slow:    300ms;
+  --duration-slower:  600ms;
+
+  --ease-default:  cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-in:       cubic-bezier(0.4, 0, 1, 1);
+  --ease-out:      cubic-bezier(0, 0, 0.2, 1);
+  --ease-bounce:   cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-spring:   cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  // ================================================================
+  // Z-INDEX — capas globales de apilamiento
+  // Valores internos a componentes (1-10) se dejan como números crudos.
+  // ================================================================
+
+  --z-navbar:    100;   // topbar fijo
+  --z-dropdown:  200;   // dropdowns, popups flotantes
+  --z-gallery:   300;   // galería de fotos a pantalla completa
+  --z-drawer:    400;   // panel lateral (wa-order)
+  --z-modal:    1000;   // modal overlay global
+  --z-bubble:   9000;   // botón flotante WhatsApp arrastrable
+  --z-conflict: 9700;   // diálogo de conflicto de carrito
+  --z-gate:     9800;   // auth-gate (máxima prioridad)
+
+}
+
+// ── Media query reducción de movimiento ──────────────────────
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast:   0ms;
+    --duration-normal: 0ms;
+    --duration-slow:   0ms;
+  }
+}

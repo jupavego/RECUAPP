@@ -1,0 +1,86 @@
+<article class="privacy">
+  <div class="privacy__container">
+
+    <header class="privacy__header">
+      <h1 class="privacy__title">Política de Privacidad y Tratamiento de Datos</h1>
+      <p class="privacy__meta">
+        <strong>{{ site.name }}</strong> &mdash; Última actualización: {{ lastUpdated }}
+      </p>
+    </header>
+
+    <!-- PLANTILLA: revisa y adapta cada sección a tu aplicación antes de publicarla.
+         Esta base asume Colombia (Ley 1581 de 2012); cámbiala si operas en otro país. -->
+
+    <section class="privacy__section">
+      <h2>1. Responsable del tratamiento</h2>
+      <p>
+        <strong>{{ site.name }}</strong> es responsable del tratamiento de los datos personales
+        que recopila. Para consultas sobre privacidad puedes contactarnos en:
+        @if (site.contact.email) {
+          <a [href]="'mailto:' + site.contact.email">{{ site.contact.email }}</a>
+        } @else {
+          el correo indicado en la sección de contacto del sitio.
+        }
+      </p>
+    </section>
+
+    <section class="privacy__section">
+      <h2>2. Marco legal</h2>
+      <p>
+        Esta política se rige por la <strong>Ley 1581 de 2012</strong> (Protección de Datos
+        Personales de Colombia), el <strong>Decreto 1377 de 2013</strong> y las demás normas
+        concordantes emitidas por la Superintendencia de Industria y Comercio (SIC).
+      </p>
+    </section>
+
+    <section class="privacy__section">
+      <h2>3. Datos que recopilamos</h2>
+      <ul>
+        <li><strong>Cuenta:</strong> nombre, correo electrónico y contraseña (almacenada con hash, nunca en texto plano).</li>
+        <li><strong>Perfil (opcional):</strong> teléfono y foto de perfil.</li>
+        <li><strong>Contenido:</strong> los registros que creas dentro de la aplicación.</li>
+        <li><strong>Técnicos:</strong> registros de seguridad y errores, para proteger el servicio.</li>
+      </ul>
+    </section>
+
+    <section class="privacy__section">
+      <h2>4. Finalidad</h2>
+      <p>
+        Usamos tus datos para crear y mantener tu cuenta, prestarte el servicio, proteger la
+        seguridad de la plataforma y atender tus solicitudes.
+      </p>
+    </section>
+
+    <section class="privacy__section">
+      <h2>5. Tus derechos</h2>
+      <p>
+        Puedes conocer, actualizar, rectificar y solicitar la supresión de tus datos, así como
+        revocar la autorización otorgada, escribiéndonos al correo de contacto.
+      </p>
+    </section>
+
+    <section class="privacy__section">
+      <h2>6. Proveedores</h2>
+      <p>
+        La información se almacena en Supabase. Podemos usar Cloudflare Turnstile (verificación
+        anti-bots) y Sentry (reporte de errores) según la configuración del despliegue.
+      </p>
+    </section>
+
+    <section class="privacy__section">
+      <h2>7. Quejas</h2>
+      <p>
+        Si consideras que el tratamiento de tus datos vulnera la normativa vigente, puedes
+        presentar una queja ante la
+        <strong>Superintendencia de Industria y Comercio (SIC)</strong> de Colombia:
+        <a href="https://www.sic.gov.co" target="_blank" rel="noopener noreferrer">www.sic.gov.co</a>.
+      </p>
+    </section>
+
+    <div class="privacy__footer">
+      <p>© {{ year }} {{ site.name }}. Todos los derechos reservados.</p>
+      <a routerLink="/">← Volver al inicio</a>
+    </div>
+
+  </div>
+</article>

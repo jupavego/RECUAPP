@@ -1,0 +1,18 @@
+// ============================================================
+// styles/_breakpoints.scss
+// Variables de breakpoint y mixin respond-to
+// Importar con: @use 'src/styles/breakpoints' as *;
+// En feature styles: @use '../../styles/breakpoints' as *;
+// En component scss: @use '../../../../styles/breakpoints' as *;
+// ============================================================
+
+$bp-xs:      480px;   // móvil pequeño
+$bp-sm:      768px;   // tablet / móvil grande
+$bp-sidebar: 700px;   // auth-layout: sidebar colapsa a fila horizontal
+$bp-nav:     900px;   // topbar colapsa a hamburguesa
+$bp-md:      1024px;  // desktop pequeño
+$bp-lg:      1280px;  // desktop estándar
+
+@mixin respond-to($bp) {
+  @media (max-width: $bp) { @content; }
+}

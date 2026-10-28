@@ -1,0 +1,75 @@
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Environment files con secrets — nunca versionar
+# Las keys de producción se inyectan via variables de entorno del hosting
+.env
+.env.*
+!.env.example
+
+# Material de marca/campaña — vive fuera del repo
+/brand-campaign
+
+# Worktrees de Claude Code — repos git anidados, no deben trackearse como gitlinks
+/.claude/worktrees/
+
+# Permisos locales de Claude Code — se acumulan con trabajo de otros proyectos
+# hechos desde esta misma carpeta, no deben compartirse vía el repo.
+/.claude/settings.local.json
+
+# Lock de tareas programadas — estado efímero (sessionId/pid/timestamp) por
+# máquina, se reescribe en cada sesión, no debe versionarse.
+/.claude/scheduled_tasks.lock
+
+# Caché compilada de Python — artefacto de build, se regenera solo
+__pycache__/
+*.pyc
+
+# Estado local del Supabase CLI (supabase link) — project-ref, versiones,
+# URL del pooler. Se regenera con `supabase link`, no debe versionarse.
+/supabase/.temp/
+
+# Skills y plugins de Claude Code — herramientas locales del asistente,
+# no son parte del proyecto ni deben compartirse vía el repo.
+/.claude/skills/
+/.claude/plugins/

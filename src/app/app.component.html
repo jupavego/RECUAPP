@@ -1,0 +1,11 @@
+@if (showChrome()) {
+  <app-header />
+}
+
+<router-outlet />
+
+@if (showChrome()) {
+  <app-footer />
+}
+
+<app-consent-banner />

@@ -1,0 +1,51 @@
+@if (loading()) {
+  <div class="admin-loading"><span class="spinner"></span></div>
+} @else {
+  @if (stats(); as s) {
+
+    <div class="admin-page">
+
+      <div class="admin-hero">
+        <div class="admin-hero__cover"></div>
+        <div class="admin-hero__body">
+          <div class="admin-hero__identity">
+            <div>
+              <h1 class="admin-hero__title">Panel de administración</h1>
+            </div>
+          </div>
+          <div class="admin-hero__badge">Administrador</div>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-card__value">{{ s.totalUsers }}</span>
+          <span class="stat-card__label">Usuarios totales</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card__value">{{ s.totalAdmins }}</span>
+          <span class="stat-card__label">Administradores</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-card__value">{{ s.totalItems }}</span>
+          <span class="stat-card__label">Registros</span>
+        </div>
+      </div>
+
+      <div class="admin-actions">
+        <a routerLink="/admin/users" class="admin-action-card">
+          <span class="admin-action-card__icon admin-action-card__icon--purple">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </span>
+          <div class="admin-action-card__content">
+            <span class="admin-action-card__label">Gestionar usuarios</span>
+            <span class="admin-action-card__desc">{{ s.totalUsers }} usuarios registrados</span>
+          </div>
+          <span class="admin-action-card__arrow">→</span>
+        </a>
+      </div>
+
+    </div>
+
+  }
+}

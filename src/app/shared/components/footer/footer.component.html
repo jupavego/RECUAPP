@@ -1,0 +1,39 @@
+<footer class="footer">
+  <div class="footer__orb footer__orb--1" aria-hidden="true"></div>
+  <div class="footer__orb footer__orb--2" aria-hidden="true"></div>
+
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <p class="footer__eyebrow">{{ site.tagline }}</p>
+      <h3 class="footer__logo">{{ site.name }}</h3>
+      <p class="footer__tagline">{{ site.description }}</p>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__col-title">Explorar</h4>
+      <ul class="footer__links">
+        <li><a routerLink="/">Inicio</a></li>
+        <li><a routerLink="/auth/login">Ingresar</a></li>
+        <li><a routerLink="/auth/register">Crear cuenta</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4 class="footer__col-title">Legal</h4>
+      <ul class="footer__links">
+        <li><a routerLink="/privacidad">Privacidad</a></li>
+        <li><a routerLink="/security">Seguridad</a></li>
+        @if (site.contact.email) {
+          <li><a [href]="'mailto:' + site.contact.email">{{ site.contact.email }}</a></li>
+        }
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <span>© {{ year }} {{ site.name }}</span>
+    <a [href]="site.legal.developerUrl" target="_blank" rel="noopener noreferrer">
+      Desarrollado por {{ site.legal.developer }}
+    </a>
+  </div>
+</footer>

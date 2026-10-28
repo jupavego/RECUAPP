@@ -1,0 +1,139 @@
+﻿// client.styles.scss
+// Estilos exclusivos del feature client (perfil de usuario).
+// Los componentes globales (btn-*, field-*, spinner) vienen de styles.scss.
+// Cada componente importa con: @use '../../client.styles' as *;
+
+// ── Layout de página ──────────────────────────────────────────────────────────
+.profile-page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.profile-header {
+  margin-bottom: 2rem;
+}
+
+.profile-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+// ── Secciones del perfil ──────────────────────────────────────────────────────
+.profile-section {
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--color-border-tertiary);
+
+  &:last-child { border-bottom: none; }
+
+  &__title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin: 0 0 1.25rem;
+  }
+
+  &--danger &__title {
+    color: var(--color-text-danger);
+  }
+}
+
+// ── Avatar ────────────────────────────────────────────────────────────────────
+.avatar-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.avatar-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-border-tertiary);
+
+  &--placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-background-info);
+    color: var(--color-text-info);
+    font-size: 2rem;
+    font-weight: 600;
+  }
+}
+
+.avatar-loading {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.avatar-hint {
+  font-size: 0.8125rem;
+  color: var(--color-text-tertiary);
+  margin: 0;
+}
+
+// ── Form ──────────────────────────────────────────────────────────────────────
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0.5rem;
+}
+
+.field-hint {
+  font-size: 0.8125rem;
+  color: var(--color-text-tertiary);
+}
+
+// ── Zona de peligro ───────────────────────────────────────────────────────────
+.profile-danger__text {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  margin: 0 0 1rem;
+}
+
+// Botón de acción destructiva (eliminar cuenta, etc.)
+.btn-danger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.5rem;
+  background: transparent;
+  color: var(--color-text-danger);
+  border: 1px solid var(--color-border-danger);
+  border-radius: var(--radius-sm);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--duration-fast);
+
+  &:hover { background: var(--color-background-danger); }
+}

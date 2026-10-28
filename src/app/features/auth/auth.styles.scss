@@ -1,0 +1,263 @@
+﻿// auth.styles.scss
+// Estilos exclusivos del feature auth.
+// Los componentes globales (btn-primary--full, field-*, spinner) vienen de styles.scss.
+// Cada componente importa con: @use '../../auth.styles' as *;
+
+// ── Card ──────────────────────────────────────────────────────────────────────
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem 2rem;
+  box-shadow: 0 8px 32px rgba(var(--color-brand-primary-rgb), 0.08);
+}
+
+// ── Header ────────────────────────────────────────────────────────────────────
+.auth-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.auth-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 0.5rem;
+}
+
+.auth-subtitle {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+// ── Form ──────────────────────────────────────────────────────────────────────
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+// Fila label + enlace "¿Olvidaste tu contraseña?"
+.field-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// Enlace dentro del formulario (ej. recuperar contraseña)
+.field-link {
+  font-size: 0.8125rem;
+  color: var(--color-brand-primary);
+  text-decoration: none;
+  font-weight: 500;
+
+  &:hover { text-decoration: underline; }
+}
+
+// Wrapper para input con ícono a la derecha
+.field-input-wrapper {
+  position: relative;
+}
+
+// Botón ícono dentro del input (mostrar/ocultar contraseña)
+.field-icon-btn {
+  position: absolute;
+  right: 0.625rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-tertiary);
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+
+  &:hover { color: var(--color-text-secondary); }
+}
+
+// ── Selector de rol ───────────────────────────────────────────────────────────
+.role-selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.role-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 1rem 0.75rem;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-md);
+  background: var(--color-page-bg);
+  cursor: pointer;
+  transition: border-color var(--duration-fast), background var(--duration-fast);
+  text-align: center;
+
+  svg { color: var(--color-text-tertiary); transition: color var(--duration-fast); }
+
+  &__label {
+    font-family: var(--font-heading);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  &__desc {
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    line-height: 1.3;
+  }
+
+  &:hover { border-color: rgba(var(--color-brand-primary-rgb), 0.3); }
+
+  &--active {
+    border-color: var(--color-brand-primary);
+    background: rgba(var(--color-brand-primary-rgb), 0.06);
+    svg { color: var(--color-brand-primary); }
+  }
+}
+
+// ── Alertas de auth ───────────────────────────────────────────────────────────
+.auth-alert {
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  font-size: 0.875rem;
+
+  &--error {
+    background: var(--color-background-danger);
+    color: var(--color-text-danger);
+    border: 1px solid var(--color-border-danger);
+  }
+
+  &--success {
+    background: var(--color-background-success);
+    color: var(--color-text-success);
+    border: 1px solid var(--color-border-success);
+  }
+}
+
+// ── Footer del formulario ─────────────────────────────────────────────────────
+.auth-footer {
+  margin: 1.5rem 0 0;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.auth-link {
+  color: var(--color-brand-primary);
+  text-decoration: none;
+  font-weight: 600;
+
+  &:hover { text-decoration: underline; }
+}
+
+// ── Estado loading ────────────────────────────────────────────────────────────
+.auth-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 0;
+  color: var(--color-text-secondary);
+  font-size: 0.9375rem;
+
+  // Spinner morado en lugar del blanco
+  .spinner {
+    border-color: rgba(var(--color-brand-primary-rgb), 0.2);
+    border-top-color: var(--color-brand-primary);
+  }
+}
+
+// ── Divisor OAuth ─────────────────────────────────────────────────────────────
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-text-tertiary);
+  font-size: 0.8125rem;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--color-border-tertiary);
+  }
+}
+
+// ── Botón Google OAuth ────────────────────────────────────────────────────────
+.btn-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1.5px solid #dadce0;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #3c4043;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  cursor: pointer;
+  transition: background var(--duration-fast), border-color var(--duration-fast), box-shadow var(--duration-fast);
+
+  &:hover {
+    background: #f8f9fa;
+    border-color: #bdc1c6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  svg { flex-shrink: 0; }
+}
+
+// ── Estado éxito (confirm email, reset ok) ────────────────────────────────────
+.auth-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 1rem 0;
+
+  &__icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--color-background-success);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-success);
+  }
+
+  h2 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0;
+  }
+
+  p {
+    font-size: 0.9375rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+    line-height: 1.6;
+  }
+}

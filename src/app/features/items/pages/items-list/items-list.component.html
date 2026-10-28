@@ -1,0 +1,63 @@
+<div class="items">
+  <h1 class="items__title">Mis registros</h1>
+
+  <form [formGroup]="form" (ngSubmit)="save()" class="items__form" novalidate>
+    <h2>{{ editingId() ? 'Editar registro' : 'Nuevo registro' }}</h2>
+
+    <label>
+      Título
+      <input type="text" formControlName="title" maxlength="120" />
+      @if (form.controls.title.touched && form.controls.title.invalid) {
+        <small class="items__error">El título es obligatorio</small>
+      }
+    </label>
+
+    <label>
+      Descripción
+      <textarea formControlName="description" rows="3" maxlength="1000"></textarea>
+    </label>
+
+    <label class="items__check">
+      <input type="checkbox" formControlName="active" /> Activo
+    </label>
+
+    @if (error()) { <p class="items__error">{{ error() }}</p> }
+
+    <div class="items__actions">
+      <button type="submit" class="btn-primary" [disabled]="saving()">
+        {{ saving() ? 'Guardando…' : (editingId() ? 'Guardar cambios' : 'Crear') }}
+      </button>
+      @if (editingId()) {
+        <button type="button" class="btn-secondary" (click)="cancel()">Cancelar</button>
+      }
+    </div>
+  </form>
+
+  @if (loading()) {
+    <div class="items__loading"><span class="spinner"></span></div>
+  } @else {
+    <table class="items__table">
+      <thead>
+        <tr><th>Título</th><th>Estado</th><th>Creado</th><th></th></tr>
+      </thead>
+      <tbody>
+        @for (item of list(); track item.id) {
+          <tr>
+            <td>
+              <strong>{{ item.title }}</strong>
+              @if (item.description) { <div class="items__desc">{{ item.description }}</div> }
+            </td>
+            <td>{{ item.active ? 'Activo' : 'Inactivo' }}</td>
+            <td>{{ item.created_at | date:'dd/MM/yyyy' }}</td>
+            <td class="items__row-actions">
+              <button type="button" (click)="edit(item)">Editar</button>
+              <button type="button" class="is-danger" (click)="remove(item)">Eliminar</button>
+            </td>
+          </tr>
+        } @empty {
+          <tr><td colspan="4" class="items__empty">Aún no hay registros</td></tr>
+        }
+      </tbody>
+    </table>
+  }
+</div>

@@ -1,0 +1,50 @@
+.consent {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  background: #1a0a00;
+  color: #fff;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  z-index: 9999;
+  box-shadow: 0 4px 24px rgba(0,0,0,.35);
+
+  &__text {
+    flex: 1;
+    font-size: 0.83rem;
+    line-height: 1.55;
+    margin: 0;
+    color: #e8ddd5;
+  }
+
+  &__link {
+    color: #f5a86b;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    white-space: nowrap;
+
+    &:hover { color: #fff; }
+  }
+
+  &__btn {
+    flex-shrink: 0;
+    background: #c0510a;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover { background: #9a3e06; }
+  }
+}

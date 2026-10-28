@@ -1,0 +1,50 @@
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--neutral-0, #fff);
+  border-bottom: 1px solid var(--neutral-200, #ede7de);
+
+  &__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  &__logo {
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: var(--violet-700, #3d2bbf);
+    text-decoration: none;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    a {
+      color: var(--neutral-700, #5c4e42);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .95rem;
+
+      &:hover,
+      &.is-active { color: var(--violet-600, #5e49d6); }
+    }
+  }
+
+  &__cta {
+    background: var(--violet-600, #5e49d6);
+    color: #fff !important;
+    padding: 8px 16px;
+    border-radius: 999px;
+
+    &:hover { background: var(--violet-700, #3d2bbf); }
+  }
+}

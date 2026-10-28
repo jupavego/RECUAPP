@@ -1,0 +1,18 @@
+<header class="topbar">
+  <div class="topbar__inner">
+    <a routerLink="/" class="topbar__logo">{{ site.name }}</a>
+
+    <nav class="topbar__nav">
+      @if (session.isLoggedIn()) {
+        <a routerLink="/app" routerLinkActive="is-active">Mi espacio</a>
+        @if (session.isAdmin()) {
+          <a routerLink="/admin/dashboard" routerLinkActive="is-active">Admin</a>
+        }
+        <app-user-widget />
+      } @else {
+        <a routerLink="/auth/login">Ingresar</a>
+        <a routerLink="/auth/register" class="topbar__cta">Registrarse</a>
+      }
+    </nav>
+  </div>
+</header>

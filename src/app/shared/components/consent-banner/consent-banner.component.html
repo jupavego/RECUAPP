@@ -1,0 +1,10 @@
+@if (visible()) {
+  <div class="consent" role="dialog" aria-live="polite" aria-label="Aviso de privacidad">
+    <p class="consent__text">
+      Usamos datos personales para operar la plataforma, de acuerdo con la
+      <strong>Ley 1581 de 2012</strong> de Colombia.
+      <a routerLink="/privacidad" class="consent__link">Ver política de privacidad</a>
+    </p>
+    <button class="consent__btn" (click)="accept()">Entendido</button>
+  </div>
+}

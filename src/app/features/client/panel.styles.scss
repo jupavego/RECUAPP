@@ -1,0 +1,251 @@
+// panel.styles.scss
+// Estilos compartidos de páginas de panel (perfil, formularios editables).
+// Los componentes globales (btn-*, field-*, modal-*, spinner, status-badge) vienen de styles.scss.
+// Cada componente importa con: @use '../../panel.styles' as *;
+
+@use 'styles/shared-cards' as *;
+
+// ── Loading / panel ───────────────────────────────────────────────────────────
+.dashboard-loading,
+.panel-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+}
+
+// ── Panel layout — contenedor de página interior ──────────────────────────────
+.panel {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+}
+
+.panel-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.panel-form {
+  display: flex;
+  flex-direction: column;
+}
+
+// ── Imágenes — upload de logo y portada ───────────────────────────────────────
+.image-col {
+  display: flex;
+  flex-direction: column;
+
+  &__divider {
+    height: 1px;
+    background: var(--color-border-tertiary);
+    margin: 1.25rem 0;
+  }
+}
+
+.image-upload {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  // Layout horizontal: preview izquierda, meta derecha
+  &--row {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  &__preview {
+    position: relative;
+    background: var(--color-background-secondary);
+    border: 1px solid var(--color-border-tertiary);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    img { width: 100%; height: 100%; object-fit: cover; }
+
+    &--square { width: 120px; height: 120px; }
+    &--wide   { width: 260px; height: 140px; }
+  }
+
+  &__loading {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: inherit;
+    z-index: 2;
+  }
+
+  &__placeholder {
+    font-size: 0.8125rem;
+    color: var(--color-text-tertiary);
+  }
+
+  &__name {
+    font-family: var(--font-heading);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin: 0;
+  }
+
+  &__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  &__hint {
+    font-size: 0.72rem;
+    color: var(--color-text-tertiary);
+    font-family: var(--font-body);
+  }
+
+  &__pending {
+    font-size: 0.72rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--color-brand-light);
+  }
+}
+
+// ── Edit section — contenedor editable con lápiz ──────────────────────────────
+.edit-section {
+  border: 1.5px solid var(--color-brand-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  background: var(--color-background-primary);
+  transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+
+  &--active {
+    border-color: var(--color-brand-light);
+    background: var(--color-brand-surface);
+    box-shadow: 0 0 0 3px rgba(var(--color-brand-light-rgb), 0.1);
+
+    .edit-section__title { color: var(--color-brand-primary); }
+    .edit-section__header { border-bottom-color: var(--color-brand-border); }
+
+    .field-input:not([disabled]) {
+      background: #ffffff;
+      border-color: var(--color-brand-border);
+
+      &:focus {
+        border-color: var(--color-brand-light);
+        box-shadow: 0 0 0 3px rgba(var(--color-brand-light-rgb), 0.15);
+        outline: none;
+      }
+    }
+  }
+}
+
+.edit-section__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.125rem;
+  border-bottom: 1px solid var(--color-brand-border);
+  margin-bottom: 1.25rem;
+  transition: border-bottom-color 0.25s ease;
+}
+
+.edit-section__title {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+  transition: color 0.25s ease;
+}
+
+// Botón lápiz / cerrar
+.edit-section__toggle {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1.5px solid var(--color-brand-border);
+  background: var(--color-brand-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color var(--duration-normal), background var(--duration-normal), box-shadow var(--duration-normal);
+
+  svg {
+    width: 16px;
+    height: 16px;
+    stroke: var(--color-brand-primary);
+    transition: stroke var(--duration-normal);
+  }
+
+  &:hover {
+    border-color: var(--color-brand-light);
+    background: #ddd6ff;
+    box-shadow: 0 2px 8px rgba(var(--color-brand-primary-rgb), 0.15);
+    svg { stroke: var(--color-brand-dark); }
+  }
+
+  // Estado activo — X para cerrar
+  &--active {
+    border-color: var(--color-brand-light);
+    background: var(--color-brand-primary);
+    box-shadow: 0 2px 8px rgba(var(--color-brand-primary-rgb), 0.3);
+    svg { stroke: #ffffff; }
+
+    &:hover {
+      background: var(--color-brand-dark);
+      svg { stroke: #ffffff; }
+    }
+  }
+}
+
+.edit-section__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  padding-top: 1.125rem;
+  border-top: 1px solid var(--color-brand-border);
+}
+
+// ── Inputs deshabilitados (dentro de edit-section cerrada) ────────────────────
+.field-input[disabled] {
+  cursor: default;
+  opacity: 1;
+  color: var(--color-text-primary);
+  background: #e8e7ef;
+  border: 1.5px solid #d0cedd;
+  border-radius: var(--radius-sm);
+
+  &::placeholder { color: transparent; }
+}
+

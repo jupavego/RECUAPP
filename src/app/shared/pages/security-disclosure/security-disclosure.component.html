@@ -1,0 +1,103 @@
+<article class="disclosure">
+  <div class="disclosure__container">
+
+    <header class="disclosure__header">
+      <div class="disclosure__badge">Seguridad</div>
+      <h1 class="disclosure__title">Divulgación responsable de vulnerabilidades</h1>
+      <p class="disclosure__subtitle">
+        Si encontraste un problema de seguridad en <strong>{{ site.name }}</strong>,
+        queremos saberlo. Trabajamos contigo para resolverlo de forma responsable.
+      </p>
+    </header>
+
+    <section class="disclosure__section">
+      <h2>Cómo reportar</h2>
+      <p>
+        <strong>No publiques la vulnerabilidad en redes sociales ni como issue público</strong>
+        antes de que podamos resolverla. Eso protege a nuestros usuarios.
+      </p>
+      <p>Envíanos un reporte privado por alguno de estos canales:</p>
+      <ul>
+        @if (site.contact.email) {
+          <li>
+            <strong>Correo:</strong>
+            <a [href]="'mailto:' + site.contact.email + '?subject=Reporte%20de%20seguridad'">
+              {{ site.contact.email }}
+            </a>
+            — con asunto <em>"Reporte de seguridad"</em>
+          </li>
+        }
+        <li>
+          <strong>GitHub:</strong> Security Advisory privado en nuestro repositorio
+        </li>
+      </ul>
+    </section>
+
+    <section class="disclosure__section">
+      <h2>Qué incluir en tu reporte</h2>
+      <ul>
+        <li>Descripción clara de la vulnerabilidad</li>
+        <li>Pasos para reproducirla</li>
+        <li>Impacto potencial (qué datos o funciones afecta)</li>
+        <li>Capturas de pantalla o prueba de concepto si aplica</li>
+        <li>Tu nombre o alias si quieres crédito en el historial</li>
+      </ul>
+    </section>
+
+    <section class="disclosure__section">
+      <h2>Qué esperar de nuestra parte</h2>
+      <div class="disclosure__sla">
+        <div class="disclosure__sla-item">
+          <span class="disclosure__sla-time">24 h</span>
+          <span class="disclosure__sla-label">Acuse de recibo</span>
+        </div>
+        <div class="disclosure__sla-item">
+          <span class="disclosure__sla-time">7 días</span>
+          <span class="disclosure__sla-label">Evaluación inicial</span>
+        </div>
+        <div class="disclosure__sla-item">
+          <span class="disclosure__sla-time">30 días</span>
+          <span class="disclosure__sla-label">Resolución para issues críticos</span>
+        </div>
+      </div>
+      <p>
+        Te mantendremos informado del progreso. Si necesitamos más tiempo,
+        te lo comunicamos antes de que venza el plazo.
+      </p>
+    </section>
+
+    <section class="disclosure__section">
+      <h2>Qué está dentro del alcance</h2>
+      <ul>
+        <li>Aplicación web en producción (<code>tu-dominio.com</code>)</li>
+        <li>Flujos de autenticación (registro, login, recuperación de contraseña)</li>
+        <li>Panel de usuario y panel de administración</li>
+        <li>Formularios, carga de archivos y búsqueda</li>
+        <li>Políticas de acceso a datos (RLS)</li>
+      </ul>
+
+      <h2>Fuera del alcance</h2>
+      <ul>
+        <li>Infraestructura de Supabase — reportar a <a href="https://supabase.com/docs/support" target="_blank" rel="noopener noreferrer">Supabase Security</a></li>
+        <li>Google OAuth, Cloudflare Turnstile</li>
+        <li>Ataques de tipo DoS / DDoS</li>
+        <li>Ingeniería social o phishing</li>
+      </ul>
+    </section>
+
+    <section class="disclosure__section disclosure__section--highlight">
+      <h2>Safe Harbor</h2>
+      <p>
+        No emprenderemos acciones legales contra investigadores que actúen de buena fe,
+        sigan este proceso y no accedan ni modifiquen datos de otros usuarios sin permiso.
+        Tu investigación responsable es bienvenida y valorada.
+      </p>
+    </section>
+
+    <div class="disclosure__footer">
+      <a routerLink="/">← Volver al inicio</a>
+      <a routerLink="/privacidad">Política de privacidad</a>
+    </div>
+
+  </div>
+</article>

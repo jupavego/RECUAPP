@@ -1,0 +1,199 @@
+﻿// user-widget.component.scss
+// Estilos propios del widget — sin herencia del header gracias
+// al encapsulamiento de Angular (ViewEncapsulation.Emulated por defecto)
+@use 'styles/breakpoints' as *;
+
+:host {
+  display: flex;
+  align-items: center;
+}
+
+.user-widget {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  border-radius: 10px;
+  transition: background var(--duration-fast);
+  user-select: none;
+  z-index: var(--z-dropdown);
+
+
+
+
+  &:hover,
+  &--open {
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  // ── Avatar ──────────────────────────────────────────────────────────────
+  &__avatar {
+    position: relative;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      display: block;
+    }
+  }
+
+  &__initial {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #ffffff;
+    
+    
+  }
+
+  // Bolita verde de online
+  &__online {
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--green-500);
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+
+  // ── Info ────────────────────────────────────────────────────────────────
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    line-height: 1.2;
+
+  }
+
+  &__name {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #ffffff;
+
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__role {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.65);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  // ── Chevron ──────────────────────────────────────────────────────────────
+  &__chevron {
+    color: rgba(255, 255, 255, 0.65);
+    transition: transform var(--duration-normal);
+    flex-shrink: 0;
+  }
+
+  &--open &__chevron {
+    transform: rotate(180deg);
+  }
+
+  // ── Dropdown ─────────────────────────────────────────────────────────────
+  // Color base propio — no hereda el blanco del header
+  &__dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    min-width: 210px;
+    background: #ffffff;
+    color: #2c241d;
+    border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
+    padding: 0.4rem;
+    z-index: calc(var(--z-dropdown) + 1);
+    animation: dropdownIn 0.15s ease;
+  }
+
+  &__dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.65rem 0.875rem;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #2c241d;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    transition: background 0.12s;
+    white-space: nowrap;
+
+    svg {
+      flex-shrink: 0;
+      color: var(--color-brand-primary);
+    }
+
+    &:hover {
+      background: #f7f4ef;
+    }
+
+    &--danger {
+      color: #a32d2d;
+
+      svg { color: #e24b4a; }
+
+      &:hover { background: #fcebeb; }
+    }
+  }
+
+  &__dropdown-divider {
+    height: 1px;
+    background: rgba(0, 0, 0, 0.07);
+    margin: 0.3rem 0.5rem;
+  }
+}
+
+// ── Responsive ───────────────────────────────────────────────────────────────
+// En tablet/móvil se reduce el ancho máximo y el tamaño del texto
+// pero se mantiene visible la info y el chevron
+@include respond-to($bp-md) {
+  .user-widget {
+    &__name { max-width: 140px; font-size: 0.8125rem; }
+  }
+}
+
+@include respond-to($bp-sm) {
+  .user-widget {
+    &__name { max-width: 90px; font-size: 0.75rem; }
+    &__role { font-size: 0.625rem; }
+  }
+}
+
+@keyframes dropdownIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

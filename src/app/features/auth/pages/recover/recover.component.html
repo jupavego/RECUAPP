@@ -1,0 +1,61 @@
+<section class="auth-container">
+  <div class="auth-card">
+
+    @if (success()) {
+      <div class="auth-success">
+        <div class="auth-success__icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h2>Correo enviado</h2>
+        <p>Revisa tu bandeja de entrada en <strong>{{ email.value }}</strong> y sigue las instrucciones para restablecer tu contraseña.</p>
+        <a routerLink="/auth/login" class="btn-primary">Volver al inicio</a>
+      </div>
+    } @else {
+
+      <div class="auth-header">
+        <h1 class="auth-title">Recuperar contraseña</h1>
+        <p class="auth-subtitle">Te enviamos un enlace para restablecerla</p>
+      </div>
+
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="auth-form" novalidate>
+
+        <div class="field-group">
+          <label for="email" class="field-label">Correo electrónico</label>
+          <input
+            id="email"
+            type="email"
+            formControlName="email"
+            class="field-input"
+            [class.field-input--error]="email.invalid && email.touched"
+            placeholder="tu@correo.com"
+            autocomplete="email"
+          />
+          @if (email.invalid && email.touched) {
+            <span class="field-error">
+              @if (email.errors?.['required']) { El correo es obligatorio }
+              @if (email.errors?.['email'])    { Ingresa un correo válido }
+            </span>
+          }
+        </div>
+
+        @if (errorMessage()) {
+          <div class="auth-alert auth-alert--error">{{ errorMessage() }}</div>
+        }
+
+        <button type="submit" class="btn-primary" [disabled]="loading()">
+          @if (loading()) {
+            <span class="btn-spinner"></span> Enviando...
+          } @else {
+            Enviar enlace
+          }
+        </button>
+
+      </form>
+
+      <p class="auth-footer">
+        <a routerLink="/auth/login" class="auth-link">Volver al inicio de sesión</a>
+      </p>
+
+    }
+  </div>
+</section>

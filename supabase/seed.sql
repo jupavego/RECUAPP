@@ -1,0 +1,18 @@
+-- ============================================================
+-- seed.sql
+-- Datos iniciales. Ejecutar SOLO en desarrollo o en un proyecto nuevo.
+-- NUNCA incluyas credenciales en este archivo.
+-- ============================================================
+
+-- ── Crear el primer administrador ────────────────────────────
+-- 1. Regístrate desde la app (o Dashboard → Authentication → Users → Add user).
+-- 2. Ejecuta en el SQL Editor (auth.uid() es NULL ahí, así que el trigger
+--    protect_profile_role lo permite):
+--
+-- UPDATE public.profiles
+-- SET    role = 'admin'
+-- WHERE  id = (SELECT id FROM auth.users WHERE email = 'tu-correo@dominio.com');
+--
+-- 3. Cierra sesión y vuelve a entrar en la app.
+--
+-- Los demás admins los promueve un admin desde /admin/users.
