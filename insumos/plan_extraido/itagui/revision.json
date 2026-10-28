@@ -1,0 +1,864 @@
+[
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 38,
+  "valor": null,
+  "sugerencia": null,
+  "correccion": null,
+  "id": 1
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "1. DESARROLLO COMERCIAL Y EMPRESARIAL EN UN ENTORNO SEGURO Y PARTICIPATIVO",
+  "sector": null,
+  "correccion": null,
+  "id": 2
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "CONTROL TERRITORIAL Y JUSTICIA PARA TODOS",
+  "sector": "CONTROL TERRITORIAL Y JUSTICIA PARA TODOS",
+  "correccion": null,
+  "id": 3
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "SEGURIDAD CIUDADANA Y EFICIENCIA GUBERNAMENTAL",
+  "sector": "SEGURIDAD CIUDADANA Y EFICIENCIA GUBERNAMENTAL",
+  "correccion": null,
+  "id": 4
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "ITAGÜÍ: CIUDAD COMERCIAL, EMPRESARIAL, TURÍSTICA Y EM- PRENDEDORA",
+  "sector": "ITAGÜÍ: CIUDAD COMERCIAL, EMPRESARIAL, TURÍSTICA Y EM- PRENDEDORA",
+  "correccion": null,
+  "id": 5
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "PARTICIPACIÓN CIUDADANA GARANTE PARA UNA BUENA GES- TIÓN",
+  "sector": "PARTICIPACIÓN CIUDADANA GARANTE PARA UNA BUENA GES- TIÓN",
+  "correccion": null,
+  "id": 6
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "2. EQUIDAD SOCIAL Y GARANTÍA DE DERECHOS",
+  "sector": null,
+  "correccion": null,
+  "id": 7
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "EDUCACION PARA TODA LA VIDA",
+  "sector": "EDUCACION PARA TODA LA VIDA",
+  "correccion": null,
+  "id": 8
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "SALUD OPORTUNA Y PREVENTIVA PARA EL BIENESTAR",
+  "sector": "SALUD OPORTUNA Y PREVENTIVA PARA EL BIENESTAR",
+  "correccion": null,
+  "id": 9
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "DEPORTE Y ACTIVIDAD FÍSICA PARA TODOS",
+  "sector": "DEPORTE Y ACTIVIDAD FÍSICA PARA TODOS",
+  "correccion": null,
+  "id": 10
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "CULTURA SOMOS TODOS",
+  "sector": "CULTURA SOMOS TODOS",
+  "correccion": null,
+  "id": 11
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BIENESTAR SOCIAL A POBLACIONES",
+  "sector": "BIENESTAR SOCIAL A POBLACIONES",
+  "correccion": null,
+  "id": 12
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "ITAGÜÍ DIVERSA",
+  "sector": "ITAGÜÍ DIVERSA",
+  "correccion": null,
+  "id": 13
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "3. ORDENAMIENTO TERRITORIAL E INFRAESTRUCTURA",
+  "sector": null,
+  "correccion": null,
+  "id": 14
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "ITAGÜÍ: TERRITORIO HABITABLE PARA TODOS",
+  "sector": "ITAGÜÍ: TERRITORIO HABITABLE PARA TODOS",
+  "correccion": null,
+  "id": 15
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "MOVILIDAD Y TRANSPORTE PÚBLICO",
+  "sector": "MOVILIDAD Y TRANSPORTE PÚBLICO",
+  "correccion": null,
+  "id": 16
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "SOSTENIBILIDAD AMBIENTAL Y GESTIÓN DEL RIESGO",
+  "sector": "SOSTENIBILIDAD AMBIENTAL Y GESTIÓN DEL RIESGO",
+  "correccion": null,
+  "id": 17
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "4. GESTIÓN INSTITUCIONAL, TRANSPARENTE Y CON RESULTADOS",
+  "sector": null,
+  "correccion": null,
+  "id": 18
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "DIRECCIONAMIENTO ESTRATÉGICO Y PLANEACIÓN",
+  "sector": "DIRECCIONAMIENTO ESTRATÉGICO Y PLANEACIÓN",
+  "correccion": null,
+  "id": 19
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "GESTIÓN DEL TALENTO HUMANO, EL CONOCIMIENTO Y LA INNO- VACIÓN",
+  "sector": "GESTIÓN DEL TALENTO HUMANO, EL CONOCIMIENTO Y LA INNO- VACIÓN",
+  "correccion": null,
+  "id": 20
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "SEGUIMIENTO Y EVALUACIÓN DEL DESEMPEÑO",
+  "sector": "SEGUIMIENTO Y EVALUACIÓN DEL DESEMPEÑO",
+  "correccion": null,
+  "id": 21
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "GESTIÓN DE LA INFORMACIÓN Y LA COMUNICACIÓN",
+  "sector": "GESTIÓN DE LA INFORMACIÓN Y LA COMUNICACIÓN",
+  "correccion": null,
+  "id": 22
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "TOTAL INVERSIÓN",
+  "sector": null,
+  "correccion": null,
+  "id": 23
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "1. CONTROL TERRITORIAL Y JUSTICIA PARA TODOS",
+  "sector": null,
+  "correccion": null,
+  "id": 24
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "CONTROL TERRITORIAL Y CONVIVENCIA CIUDADANA",
+  "sector": null,
+  "correccion": null,
+  "id": 25
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "JUSTICIA, PAZ Y RECONCILIACIÓN",
+  "sector": null,
+  "correccion": null,
+  "id": 26
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "2. SEGURIDAD CIUDADANA Y EFICIENCIA GUBERNAMENTAL",
+  "sector": null,
+  "correccion": null,
+  "id": 27
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "IMPLEMENTACIÓN DE TECNOLOGÍA Y SISTEMAS DE VIGILANCIA",
+  "sector": null,
+  "correccion": null,
+  "id": 28
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "3. ITAGÜÍ: CIUDAD COMERCIAL, EMPRESARIAL, TURÍSTICA Y EMPRENDEDORA",
+  "sector": null,
+  "correccion": null,
+  "id": 29
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "EMPLEO PARA TODOS",
+  "sector": null,
+  "correccion": null,
+  "id": 30
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "FORMACIÓN PARA EL EMPLEO",
+  "sector": null,
+  "correccion": null,
+  "id": 31
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "ESTIMULANDO EL ESPÍRITU EMPRENDEDOR",
+  "sector": null,
+  "correccion": null,
+  "id": 32
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "VIVE ITAGÜÍ, DESCUBRE SU ENCANTO",
+  "sector": null,
+  "correccion": null,
+  "id": 33
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "4. PARTICIPACIÓN CIUDADANA GARANTE PARA UNA BUENA GESTIÓN",
+  "sector": null,
+  "correccion": null,
+  "id": 34
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "COMUNALES EN ACCIÓN",
+  "sector": null,
+  "correccion": null,
+  "id": 35
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "ACOMPAÑAMIENTO INSTITUCIONAL A LAS JUNTAS ADMINISTRA- DORAS LOCALES",
+  "sector": null,
+  "correccion": null,
+  "id": 36
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "PARTICIPACIÓN SOCIAL PARA TODOS",
+  "sector": null,
+  "correccion": null,
+  "id": 37
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "FORTALECIMIENTO DE LA PLANEACIÓN PARTICIPATIVA",
+  "sector": null,
+  "correccion": null,
+  "id": 38
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "5. EDUCACION PARA TODA LA VIDA",
+  "sector": null,
+  "correccion": null,
+  "id": 39
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "EN ITAGÜÍ, LA ESCUELA ES PARA TODOS.",
+  "sector": null,
+  "correccion": null,
+  "id": 40
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "LA EDUCACIÓN INICIAL PENSADA PARA TODOS.",
+  "sector": null,
+  "correccion": null,
+  "id": 41
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "EDUCACIÓN SUPERIOR PARA TODOS",
+  "sector": null,
+  "correccion": null,
+  "id": 42
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "6. SALUD OPORTUNA Y PREVENTIVA PARA EL BIENESTAR",
+  "sector": null,
+  "correccion": null,
+  "id": 43
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "TODOS POR TU SALUD MENTAL, UN COMPROMISO POR LA VIDA",
+  "sector": null,
+  "correccion": null,
+  "id": 44
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "TODOS POR UNA SEXUALIDAD SANA",
+  "sector": null,
+  "correccion": null,
+  "id": 45
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "ALIMENTACIÓN SALUDABLE, COMPROMISO DE TODOS",
+  "sector": null,
+  "correccion": null,
+  "id": 46
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "TODOS CONSTRUIMOS UN ENTORNO LABORAL SALUDABLE",
+  "sector": null,
+  "correccion": null,
+  "id": 47
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "TODOS POR EL MEJORAMIENTO DE LA SALUD AMBIENTAL.",
+  "sector": null,
+  "correccion": null,
+  "id": 48
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "TODOS PREPARADOS, SALVAMOS VIDAS",
+  "sector": null,
+  "correccion": null,
+  "id": 49
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "TODOS POR LA SALUD Y LA EQUIDAD",
+  "sector": null,
+  "correccion": null,
+  "id": 50
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "ASEGURAMIENTO EN SALUD PARA TODOS",
+  "sector": null,
+  "correccion": null,
+  "id": 51
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "7. DEPORTE Y ACTIVIDAD FÍSICA PARA TODOS",
+  "sector": null,
+  "correccion": null,
+  "id": 52
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "ACTIVIDAD FÍSICA Y RECREACIÓN",
+  "sector": null,
+  "correccion": null,
+  "id": 53
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "FOMENTO DEPORTIVO",
+  "sector": null,
+  "correccion": null,
+  "id": 54
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "POSICIONAMIENTO DEPORTIVO Y ALTOS LOGROS",
+  "sector": null,
+  "correccion": null,
+  "id": 55
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "8. CULTURA SOMOS TODOS",
+  "sector": null,
+  "correccion": null,
+  "id": 56
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "FOMENTO PARA LAS ARTES, LAS PRÁCTICAS Y LOS SABERES CULTURALES.",
+  "sector": null,
+  "correccion": null,
+  "id": 57
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "MEMORIA Y PATRIMONIO PARA LA IDENTIDAD ITAGÜISEÑA",
+  "sector": null,
+  "correccion": null,
+  "id": 58
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "9. BIENESTAR SOCIAL A POBLACIONES",
+  "sector": null,
+  "correccion": null,
+  "id": 59
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "EN ITAGÜÍ SOMOS FAMILIA",
+  "sector": null,
+  "correccion": null,
+  "id": 60
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "MUJERES SEGURAS EN UNA SOCIEDAD CON IGUALDAD",
+  "sector": null,
+  "correccion": null,
+  "id": 61
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "FORJANDO FUTUROS FELICES EN NIÑOS Y NIÑAS",
+  "sector": null,
+  "correccion": null,
+  "id": 62
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "JÓVENES POR Y PARA LA VIDA",
+  "sector": null,
+  "correccion": null,
+  "id": 63
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "CONSTRUYENDO CAPACIDADES PARA TODOS",
+  "sector": null,
+  "correccion": null,
+  "id": 64
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "10. ITAGÜÍ DIVERSA",
+  "sector": null,
+  "correccion": null,
+  "id": 65
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "PARTICIPACIÓN Y RESPETO POR TODAS LAS ETNÍAS",
+  "sector": null,
+  "correccion": null,
+  "id": 66
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "DIVERSIDAD SEXUAL, IDENTIDAD Y EXPRESIONES DE GÉNERO",
+  "sector": null,
+  "correccion": null,
+  "id": 67
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "POR UNA ALIANZA ESPIRITUAL",
+  "sector": null,
+  "correccion": null,
+  "id": 68
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "11. ITAGÜÍ: TERRITORIO HABITABLE PARA TODOS",
+  "sector": null,
+  "correccion": null,
+  "id": 69
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "VIVIENDA PROPIA Y MEJORAMIENTO DEL HABITAT",
+  "sector": null,
+  "correccion": null,
+  "id": 70
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "ESPACIO PÚBLICO PARA TODOS",
+  "sector": null,
+  "correccion": null,
+  "id": 71
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "EQUIPAMIENTOS COLECTIVOS",
+  "sector": null,
+  "correccion": null,
+  "id": 72
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "SERVICIOS PÚBLICOS DOMICILIARIOS",
+  "sector": null,
+  "correccion": null,
+  "id": 73
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "SERVICIOS PÚBLICOS NO DOMICILIARIOS",
+  "sector": null,
+  "correccion": null,
+  "id": 74
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "ITAGÜÍ,CIUDAD INTELIGENTE",
+  "sector": null,
+  "correccion": null,
+  "id": 75
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "12. MOVILIDAD Y TRANSPORTE PÚBLICO",
+  "sector": null,
+  "correccion": null,
+  "id": 76
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "INFRAESTRUCTURA VÍAL",
+  "sector": "INFRAESTRUCTURA VÍAL",
+  "correccion": null,
+  "id": 77
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "SEGURIDAD VIAL",
+  "sector": "SEGURIDAD VIAL",
+  "correccion": null,
+  "id": 78
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "13. SOSTENIBILIDAD AMBIENTAL Y GESTIÓN DEL RIESGO",
+  "sector": null,
+  "correccion": null,
+  "id": 79
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "PROTECCIÓN DEL RECURSO AGUA",
+  "sector": "PROTECCIÓN DEL RECURSO AGUA",
+  "correccion": null,
+  "id": 80
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "GESTIÓN INTEGRAL DE RESIDUOS SÓLIDOS",
+  "sector": "GESTIÓN INTEGRAL DE RESIDUOS SÓLIDOS",
+  "correccion": null,
+  "id": 81
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "PROTECCIÓN ANIMAL,POR SU BIENESTAR Y CUIDADO.",
+  "sector": "PROTECCIÓN ANIMAL,POR SU BIENESTAR Y CUIDADO.",
+  "correccion": null,
+  "id": 82
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "GESTIÓN INTEGRAL DEL RIESGO, PREVENCIÓN, CONOCIMIENTO Y MANEJO DE LOS DESASTRES NATURALES Y SANITARIOS",
+  "sector": "GESTIÓN INTEGRAL DEL RIESGO, PREVENCIÓN, CONOCIMIENTO Y MANEJO DE LOS DESASTRES NATURALES Y SANITARIOS",
+  "correccion": null,
+  "id": 83
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "4. GESTIÓN INSTITUCIONAL,TRANSPARENTE Y CON RESULTADOS",
+  "sector": null,
+  "correccion": null,
+  "id": 84
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "14. DIRECCIONAMIENTO ESTRATÉGICO Y PLANEACIÓN",
+  "sector": "14. DIRECCIONAMIENTO ESTRATÉGICO Y PLANEACIÓN",
+  "correccion": null,
+  "id": 85
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "PLANEACION INSTITUCIONAL",
+  "sector": "14. DIRECCIONAMIENTO ESTRATÉGICO Y PLANEACIÓN",
+  "correccion": null,
+  "id": 86
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "GESTIÓN FINANCIERA TERRITORIAL",
+  "sector": "14. DIRECCIONAMIENTO ESTRATÉGICO Y PLANEACIÓN",
+  "correccion": null,
+  "id": 87
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "15. GESTIÓN DEL TALENTO HUMANO, EL CONOCIMIENTO Y LA INNOVACIÓN",
+  "sector": "15. GESTIÓN DEL TALENTO HUMANO, EL CONOCIMIENTO Y LA INNOVACIÓN",
+  "correccion": null,
+  "id": 88
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "FORTALECIMIENTO DEL TALENTO HUMANO",
+  "sector": "15. GESTIÓN DEL TALENTO HUMANO, EL CONOCIMIENTO Y LA INNOVACIÓN",
+  "correccion": null,
+  "id": 89
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "GESTIÓN DEL CONOCIMIENTO",
+  "sector": "15. GESTIÓN DEL TALENTO HUMANO, EL CONOCIMIENTO Y LA INNOVACIÓN",
+  "correccion": null,
+  "id": 90
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "16. SEGUIMIENTO Y EVALUACIÓN DEL DESEMPEÑO",
+  "sector": "16. SEGUIMIENTO Y EVALUACIÓN DEL DESEMPEÑO",
+  "correccion": null,
+  "id": 91
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "FORTALECIMIENTO DEL CONTROL INTERNO",
+  "sector": "16. SEGUIMIENTO Y EVALUACIÓN DEL DESEMPEÑO",
+  "correccion": null,
+  "id": 92
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "SISTEMA INTEGRADO DE GESTIÓN",
+  "sector": "16. SEGUIMIENTO Y EVALUACIÓN DEL DESEMPEÑO",
+  "correccion": null,
+  "id": 93
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "17. GESTIÓN DE LA INFORMACIÓN Y LA COMUNICACIÓN",
+  "sector": "17. GESTIÓN DE LA INFORMACIÓN Y LA COMUNICACIÓN",
+  "correccion": null,
+  "id": 94
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "ITAGÜÍ: GOBIERNO INNOVADOR Y DIGITAL",
+  "sector": "17. GESTIÓN DE LA INFORMACIÓN Y LA COMUNICACIÓN",
+  "correccion": null,
+  "id": 95
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "FORTALECIMIENTO DE LA GESTIÓN ESTADÍSTICA",
+  "sector": "17. GESTIÓN DE LA INFORMACIÓN Y LA COMUNICACIÓN",
+  "correccion": null,
+  "id": 96
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "COMUNICACIÓN PÚBLICA PARA TODOS",
+  "sector": "17. GESTIÓN DE LA INFORMACIÓN Y LA COMUNICACIÓN",
+  "correccion": null,
+  "id": 97
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "ATENCIÓN AL CIUDADANO, GESTIÓN DOCUMENTAL Y ACCESO A LA INFORMACIÓN Y TRANSPARENCIA",
+  "sector": "17. GESTIÓN DE LA INFORMACIÓN Y LA COMUNICACIÓN",
+  "correccion": null,
+  "id": 98
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Asignación para Inversión Regional",
+  "sector": null,
+  "correccion": null,
+  "id": 99
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Departamentos",
+  "sector": null,
+  "correccion": null,
+  "id": 100
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Regiones",
+  "sector": null,
+  "correccion": null,
+  "id": 101
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Asignación para la Inver- sión Local",
+  "sector": null,
+  "correccion": null,
+  "id": 102
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Municipios máspobres",
+  "sector": null,
+  "correccion": null,
+  "id": 103
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Destinación para medio ambiente y desarrollo sostenible",
+  "sector": null,
+  "correccion": null,
+  "id": 104
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Resto de Inversión",
+  "sector": null,
+  "correccion": null,
+  "id": 105
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Comunidades Étnicas",
+  "sector": null,
+  "correccion": null,
+  "id": 106
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Comunidades Indígenas",
+  "sector": null,
+  "correccion": null,
+  "id": 107
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Comunidades NARP",
+  "sector": null,
+  "correccion": null,
+  "id": 108
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Comunidades Rrom",
+  "sector": null,
+  "correccion": null,
+  "id": 109
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Asignación para Ciencia, Tecnología e Innovación",
+  "sector": null,
+  "correccion": null,
+  "id": 110
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Asignación para Inversión en Ciencia, Tecnología e Innovación Ambiental",
+  "sector": null,
+  "correccion": null,
+  "id": 111
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Resto de inversión",
+  "sector": null,
+  "correccion": null,
+  "id": 112
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Asignación Ambiental",
+  "sector": null,
+  "correccion": null,
+  "id": 113
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Municipios Río Magdalena yCanal Duque",
+  "sector": null,
+  "correccion": null,
+  "id": 114
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Ahorro",
+  "sector": null,
+  "correccion": null,
+  "id": 115
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fondo de Ahorro y Estabili- zación (Ahorro)",
+  "sector": null,
+  "correccion": null,
+  "id": 116
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fondo Ahorro Pensional Territorial (FONPET) Otros",
+  "sector": null,
+  "correccion": null,
+  "id": 117
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Funcionamiento, operativi- dadyfiscalización",
+  "sector": null,
+  "correccion": null,
+  "id": 118
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Sistema de Seguimiento, Control y Evaluación (SSEC)",
+  "sector": null,
+  "correccion": null,
+  "id": 119
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Contraloría",
+  "sector": null,
+  "correccion": null,
+  "id": 120
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Procuraduría",
+  "sector": "Procuraduría",
+  "correccion": null,
+  "id": 121
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "DNP",
+  "sector": "DNP",
+  "correccion": null,
+  "id": 122
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Total",
+  "sector": null,
+  "correccion": null,
+  "id": 123
+ }
+]

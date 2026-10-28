@@ -1,0 +1,534 @@
+[
+ {
+  "pagina": 541,
+  "cabecera": "CONCEPTO INGRESOS CORRIENTES",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Ingresos tributarios",
+    "anios": [
+     3034398,
+     3269662,
+     3515096,
+     3752073
+    ],
+    "total": 13571229
+   },
+   {
+    "etiqueta": "Ingresos no tributarios",
+    "anios": [
+     3136470,
+     3223657,
+     3305031,
+     3401023
+    ],
+    "total": 13066182
+   },
+   {
+    "etiqueta": "Transferencias corrientes",
+    "anios": [
+     2508243,
+     2558109,
+     2633316,
+     2710789
+    ],
+    "total": 10410457
+   },
+   {
+    "etiqueta": "Resto de ingresos no tributarios",
+    "anios": [
+     628227,
+     665548,
+     671715,
+     690234
+    ],
+    "total": 2655724
+   },
+   {
+    "etiqueta": "RECURSOS DE CAPITAL",
+    "anios": [
+     3848280,
+     3225178,
+     3579693,
+     3450884
+    ],
+    "total": 14104035
+   },
+   {
+    "etiqueta": "Disposición de activos",
+    "anios": [
+     520,
+     843,
+     868,
+     894
+    ],
+    "total": 3126
+   },
+   {
+    "etiqueta": "Excedentes financieros",
+    "anios": [
+     2074095,
+     2556657,
+     2917068,
+     2837789
+    ],
+    "total": 10385608
+   },
+   {
+    "etiqueta": "Excedentes Aeropuerto",
+    "anios": [
+     3190,
+     3171,
+     3233,
+     3299
+    ],
+    "total": 12893
+   },
+   {
+    "etiqueta": "Excedentes EPM",
+    "anios": [
+     2070905,
+     2553487,
+     2913835,
+     2834490
+    ],
+    "total": 10372716
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 542,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Dividendos y utilidades por otras inversiones de capital",
+    "anios": [
+     10049,
+     10320,
+     10590,
+     10858
+    ],
+    "total": 41818
+   },
+   {
+    "etiqueta": "Rendimientos financieros",
+    "anios": [
+     166140,
+     141673,
+     146119,
+     150616
+    ],
+    "total": 604549
+   },
+   {
+    "etiqueta": "Recursos de crédito",
+    "anios": [
+     567359,
+     493697,
+     482400,
+     427400
+    ],
+    "total": 1970856
+   },
+   {
+    "etiqueta": "Transferencias de capital",
+    "anios": [
+     188,
+     194,
+     200,
+     206
+    ],
+    "total": 787
+   },
+   {
+    "etiqueta": "Recursos del balance",
+    "anios": [
+     1008770,
+     0,
+     0,
+     0
+    ],
+    "total": 1008770
+   },
+   {
+    "etiqueta": "Otros recursos de capital INGRESOS TOTALES",
+    "anios": [
+     21159,
+     21794,
+     22448,
+     23121
+    ],
+    "total": 88522
+   },
+   {
+    "etiqueta": "GASTOS DE FUNCIONAMIENTO",
+    "anios": [
+     1104315,
+     1198931,
+     1295731,
+     1388787
+    ],
+    "total": 4987765
+   },
+   {
+    "etiqueta": "Nivel Central",
+    "anios": [
+     971874,
+     1055774,
+     1142044,
+     1225644
+    ],
+    "total": 4395336
+   },
+   {
+    "etiqueta": "Organismos de control",
+    "anios": [
+     132441,
+     143157,
+     153688,
+     163143
+    ],
+    "total": 592429
+   },
+   {
+    "etiqueta": "DEUDA PÚBLICA",
+    "anios": [
+     804232,
+     830625,
+     819330,
+     986711
+    ],
+    "total": 3440898
+   },
+   {
+    "etiqueta": "Servicio de la deuda pública",
+    "anios": [
+     704232,
+     649863,
+     626124,
+     780195
+    ],
+    "total": 2760414
+   },
+   {
+    "etiqueta": "Externa",
+    "anios": [
+     134681,
+     132625,
+     130569,
+     128421
+    ],
+    "total": 526296
+   },
+   {
+    "etiqueta": "Interna",
+    "anios": [
+     569551,
+     517238,
+     495555,
+     651773
+    ],
+    "total": 2234117
+   },
+   {
+    "etiqueta": "Bonos pensionales",
+    "anios": [
+     100000,
+     180762,
+     193206,
+     206516
+    ],
+    "total": 680484
+   },
+   {
+    "etiqueta": "PLAN OPERATIVO DE INVERSIONES GASTOS TOTALES",
+    "anios": [
+     8110601,
+     7688942,
+     8284759,
+     8228481
+    ],
+    "total": 32312783
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 548,
+  "cabecera": "Concepto",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Nivel central",
+    "anios": [
+     971874,
+     1055774,
+     1142044,
+     1225644
+    ],
+    "total": 4395336
+   },
+   {
+    "etiqueta": "Organismos de control",
+    "anios": [
+     132441,
+     143157,
+     153688,
+     163143
+    ],
+    "total": 592429
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     1104315,
+     1198931,
+     1295731,
+     1388787
+    ],
+    "total": 4987765
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 549,
+  "cabecera": "Concepto",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Externa",
+    "anios": [
+     134681,
+     132625,
+     130569,
+     128421
+    ],
+    "total": 526296
+   },
+   {
+    "etiqueta": "Interna",
+    "anios": [
+     569551,
+     517238,
+     495555,
+     651773
+    ],
+    "total": 2234117
+   },
+   {
+    "etiqueta": "Bonos pensionales",
+    "anios": [
+     100000,
+     180762,
+     193206,
+     206516
+    ],
+    "total": 680484
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     804232,
+     830625,
+     819330,
+     986711
+    ],
+    "total": 3440898
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 567,
+  "cabecera": "Fuente del recurso",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Sistema General de Participa- ciones sin Fondo Local de Salud (FLS)",
+    "anios": [
+     1233342,
+     1262297,
+     1300017,
+     1338
+    ],
+    "total": 5134602
+   },
+   {
+    "etiqueta": "Fondo Local de Salud (FLS)",
+    "anios": [
+     1370174,
+     1397229,
+     1441792,
+     1487
+    ],
+    "total": 5697074
+   }
+  ],
+  "ncols": 7,
+  "financiero": true
+ },
+ {
+  "pagina": 568,
+  "cabecera": "",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Otros recursos destinados",
+    "anios": [
+     2470180,
+     1269858,
+     1427870,
+     1478
+    ],
+    "total": 6646222
+   },
+   {
+    "etiqueta": "Subtotal recursos destinados",
+    "anios": [
+     5073695,
+     3929384,
+     4169680,
+     4305
+    ],
+    "total": 17477899
+   },
+   {
+    "etiqueta": "Recursos de crédito",
+    "anios": [
+     567359,
+     493697,
+     482400,
+     427400
+    ],
+    "total": 1970856
+   },
+   {
+    "etiqueta": "Excedentes financieros de EPM",
+    "anios": [
+     2070905,
+     2553487,
+     2913835,
+     2834
+    ],
+    "total": 10372716
+   },
+   {
+    "etiqueta": "Otros recursos de inversión fle- xible",
+    "anios": [
+     398642,
+     712374,
+     718845,
+     661451
+    ],
+    "total": 2491313
+   },
+   {
+    "etiqueta": "Subtotal recursos de inver- sión flexible",
+    "anios": [
+     3036906,
+     3759558,
+     4115080,
+     3923
+    ],
+    "total": 14834885
+   },
+   {
+    "etiqueta": "Total Plan de Inversiones",
+    "anios": [
+     8110601,
+     7688942,
+     8284759,
+     8228
+    ],
+    "total": 32312783
+   }
+  ],
+  "ncols": 7,
+  "financiero": false
+ },
+ {
+  "pagina": 580,
+  "cabecera": "CONCEPTO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "INVERSIÓN",
+    "anios": [
+     11107678,
+     6850881,
+     6451569,
+     6433297
+    ],
+    "total": 30843425
+   },
+   {
+    "etiqueta": "Asignaciones directas",
+    "anios": [
+     11107678,
+     6850881,
+     6451569,
+     6433297
+    ],
+    "total": 30843425
+   },
+   {
+    "etiqueta": "20 % Asignaciones di- rectas",
+    "anios": [
+     8650081,
+     5335110,
+     5024146,
+     5009917
+    ],
+    "total": 24019254
+   },
+   {
+    "etiqueta": "5 % Asignaciones di- rectas anticipadas",
+    "anios": [
+     2457597,
+     1515772,
+     1427423,
+     1423380
+    ],
+    "total": 6824172
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 581,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Asignaciones Directas (20% del SGR) Asignaciones Directas Anticipadas (5% del SGR)",
+    "anios": [
+     360270500,
+     5335110,
+     5024146,
+     5009917
+    ],
+    "total": 375639673
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     383484246,
+     6850881,
+     6451569,
+     6433297
+    ],
+    "total": 403219993
+   }
+  ],
+  "ncols": 4,
+  "financiero": true
+ }
+]

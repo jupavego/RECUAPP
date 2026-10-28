@@ -1,0 +1,86 @@
+[
+ {
+  "nombre": "Personas en alta dependencia económica",
+  "unidad": "Porcentaje",
+  "linea_base": "5,6 (2023)",
+  "meta": "4,6",
+  "fuente": "Departamento Administrativo de Planeación",
+  "responsable": "Secretaría de Bienestar Social",
+  "tipo_acumulado": "",
+  "pagina": 548,
+  "linea": "s",
+  "sector": null
+ },
+ {
+  "nombre": "Puntaje global en pruebas Saber 11 de instituciones educativas oficiales urbanas",
+  "unidad": "Número",
+  "linea_base": "276 (2023)",
+  "meta": "276",
+  "fuente": "ICFES",
+  "responsable": "Secretaría de Educación",
+  "tipo_acumulado": "",
+  "pagina": 556,
+  "linea": "s",
+  "sector": null
+ },
+ {
+  "nombre": "Puntaje global en pruebas Saber 11 de instituciones educativas oficiales rurales",
+  "unidad": "Número",
+  "linea_base": "255 (2023)",
+  "meta": "255",
+  "fuente": "ICFES",
+  "responsable": "Secretaría de Educación",
+  "tipo_acumulado": "",
+  "pagina": 556,
+  "linea": "s",
+  "sector": null
+ },
+ {
+  "nombre": "Instituciones educativas oficiales que mejoran la categoría de clasificación en pruebas Saber 11",
+  "unidad": "Porcentaje",
+  "linea_base": "0 (2023)",
+  "meta": "14",
+  "fuente": "ICFES",
+  "responsable": "Secretaría de Educación",
+  "tipo_acumulado": "",
+  "pagina": 556,
+  "linea": "s",
+  "sector": null
+ },
+ {
+  "nombre": "Estudiantes de instituciones educativas oficiales con nivel de desempeño igual o",
+  "unidad": "Porcentaje",
+  "linea_base": "21,8 (2023)",
+  "meta": "24",
+  "fuente": "ICFES",
+  "responsable": "Secretaría de Educación",
+  "tipo_acumulado": "",
+  "pagina": 556,
+  "linea": "s",
+  "sector": null
+ },
+ {
+  "nombre": "Empleabilidad de los egresados del Centro de Formación para el Trabajo",
+  "unidad": "Porcentaje",
+  "linea_base": "75 (2023)",
+  "meta": "77",
+  "fuente": "Encuesta de empleabilidad de egresados (CEFIT)",
+  "responsable": "CEFIT",
+  "tipo_acumulado": "",
+  "pagina": 573,
+  "linea": "s",
+  "sector": null
+ },
+ {
+  "nombre": "Contravencion es al Código Nacional de Seguridad y Convivencia Ciudadana",
+  "unidad": "Número",
+  "linea_base": "5.965",
+  "meta": "5.000",
+  "fuente": "Secretaría de Gobierno",
+  "responsable": "Secretaría de Cultura",
+  "tipo_acumulado": "",
+  "pagina": 628,
+  "linea": "s",
+  "sector": null
+ }
+]

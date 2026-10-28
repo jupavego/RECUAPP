@@ -1,0 +1,269 @@
+[
+ {
+  "paginas": [
+   548,
+   549
+  ],
+  "cabecera": "Concepto",
+  "unidad": "millones",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   3817094,
+   4059112,
+   4230123,
+   4750995
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Nivel central",
+    "anios": [
+     971874,
+     1055774,
+     1142044,
+     1225644
+    ],
+    "total": 4395336,
+    "ruta": {
+     "linea": "Nivel central"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Organismos de control",
+    "anios": [
+     132441,
+     143157,
+     153688,
+     163143
+    ],
+    "total": 592429,
+    "ruta": {
+     "linea": "Organismos de control"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total",
+    "anios": [
+     1104315,
+     1198931,
+     1295731,
+     1388787
+    ],
+    "total": 4987765,
+    "ruta": {
+     "linea": "Total"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Externa",
+    "anios": [
+     134681,
+     132625,
+     130569,
+     128421
+    ],
+    "total": 526296,
+    "ruta": {
+     "linea": "Externa"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Interna",
+    "anios": [
+     569551,
+     517238,
+     495555,
+     651773
+    ],
+    "total": 2234117,
+    "ruta": {
+     "linea": "Interna"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Bonos pensionales",
+    "anios": [
+     100000,
+     180762,
+     193206,
+     206516
+    ],
+    "total": 680484,
+    "ruta": {
+     "linea": "Bonos pensionales"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total",
+    "anios": [
+     804232,
+     830625,
+     819330,
+     986711
+    ],
+    "total": 3440898,
+    "ruta": {
+     "linea": "Total"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   568
+  ],
+  "cabecera": "",
+  "unidad": "millones",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   21728288,
+   20407300,
+   22112469,
+   1109619
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Otros recursos destinados",
+    "anios": [
+     2470180,
+     1269858,
+     1427870,
+     1478
+    ],
+    "total": 6646222,
+    "ruta": {
+     "linea": "Otros recursos destinados"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Subtotal recursos destinados",
+    "anios": [
+     5073695,
+     3929384,
+     4169680,
+     4305
+    ],
+    "total": 17477899,
+    "ruta": {
+     "linea": "Subtotal recursos destinados"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Recursos de crédito",
+    "anios": [
+     567359,
+     493697,
+     482400,
+     427400
+    ],
+    "total": 1970856,
+    "ruta": {
+     "linea": "Recursos de crédito"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Excedentes financieros de EPM",
+    "anios": [
+     2070905,
+     2553487,
+     2913835,
+     2834
+    ],
+    "total": 10372716,
+    "ruta": {
+     "linea": "Excedentes financieros de EPM"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Otros recursos de inversión fle- xible",
+    "anios": [
+     398642,
+     712374,
+     718845,
+     661451
+    ],
+    "total": 2491313,
+    "ruta": {
+     "linea": "Otros recursos de inversión fle- xible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Subtotal recursos de inver- sión flexible",
+    "anios": [
+     3036906,
+     3759558,
+     4115080,
+     3923
+    ],
+    "total": 14834885,
+    "ruta": {
+     "linea": "Subtotal recursos de inver- sión flexible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total Plan de Inversiones",
+    "anios": [
+     8110601,
+     7688942,
+     8284759,
+     8228
+    ],
+    "total": 32312783,
+    "ruta": {
+     "linea": "Total Plan de Inversiones"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

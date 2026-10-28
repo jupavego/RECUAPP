@@ -1,0 +1,2261 @@
+[
+ {
+  "pagina": 181,
+  "cabecera": "FUENTES DE FINANCIACIÓN",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "RECURSOS PROPIOS",
+    "anios": [
+     212376,
+     215022,
+     219598,
+     223807
+    ],
+    "total": 870802
+   },
+   {
+    "etiqueta": "INGRESOS CORRIENTE DE LIBRE DESTINACIÓN",
+    "anios": [
+     212376,
+     215022,
+     219598,
+     223807
+    ],
+    "total": 870802
+   },
+   {
+    "etiqueta": "DESTINACIÓN ESPECIFICA",
+    "anios": [
+     188660,
+     200178,
+     206183,
+     212369
+    ],
+    "total": 807389
+   },
+   {
+    "etiqueta": "ETESA–COLJUEGOS",
+    "anios": [
+     3326,
+     4167,
+     4292,
+     4421
+    ],
+    "total": 16205
+   },
+   {
+    "etiqueta": "ESTAMPILLA PROCULTURA CULTURA (CSF)",
+    "anios": [
+     1238,
+     1433,
+     1476,
+     1521
+    ],
+    "total": 5668
+   },
+   {
+    "etiqueta": "ESTAMPILLA PROCULTURA SEGURIDAD SOCIAL (CSF)",
+    "anios": [
+     247,
+     260,
+     268,
+     276
+    ],
+    "total": 1052
+   },
+   {
+    "etiqueta": "SOBRETASA BOMBERIL (CSF)",
+    "anios": [
+     3316,
+     3495,
+     3600,
+     3708
+    ],
+    "total": 14118
+   },
+   {
+    "etiqueta": "CONTRIBUCION CONTRATOS (CSF)",
+    "anios": [
+     4385,
+     5747,
+     5920,
+     6097
+    ],
+    "total": 22149
+   },
+   {
+    "etiqueta": "MULTAS POR CONTRAVENCIONES (CSF)",
+    "anios": [
+     18220,
+     17212,
+     17728,
+     18260
+    ],
+    "total": 71420
+   },
+   {
+    "etiqueta": "FONDO SOLIDAR REDISTRIBUCION INGRESO (CSF)",
+    "anios": [
+     21941,
+     23104,
+     23797,
+     24511
+    ],
+    "total": 93352
+   },
+   {
+    "etiqueta": "FONDO DE LA VIVIENDA (CSF)",
+    "anios": [
+     845,
+     890,
+     916,
+     944
+    ],
+    "total": 3594
+   },
+   {
+    "etiqueta": "TRANSFERENCIAS SECTOR ELEC LEY 99/93 (CSF)",
+    "anios": [
+     78,
+     82,
+     85,
+     87
+    ],
+    "total": 333
+   },
+   {
+    "etiqueta": "COMPENSACION CPRA DE FAJAS (CSF)",
+    "anios": [
+     375,
+     395,
+     406,
+     419
+    ],
+    "total": 1594
+   },
+   {
+    "etiqueta": "SOBRETASA METROPOLITANA (CSF)",
+    "anios": [
+     26815,
+     28606,
+     29465,
+     30349
+    ],
+    "total": 115235
+   },
+   {
+    "etiqueta": "SOBRETASA AMBIENTAL (CSF)",
+    "anios": [
+     85,
+     89,
+     92,
+     95
+    ],
+    "total": 360
+   },
+   {
+    "etiqueta": "TRANSFERENCIAS INSTITUCIONES EDUCATIVAS (SSF)",
+    "anios": [
+     2413,
+     2541,
+     2618,
+     2696
+    ],
+    "total": 10268
+   },
+   {
+    "etiqueta": "ESTAMPILLA ADULTO MAYOR DOTACION Y FCNAMIENTO (CSF)",
+    "anios": [
+     1612,
+     1777,
+     1830,
+     1885
+    ],
+    "total": 7105
+   },
+   {
+    "etiqueta": "ESTAMPILLA ADULTO MAYOR CENTROS DE VIDA (CSF)",
+    "anios": [
+     3939,
+     4584,
+     4721,
+     4863
+    ],
+    "total": 18106
+   },
+   {
+    "etiqueta": "IMPUESTO AL TABACO LEY 1289 DE 2009 (CSF)",
+    "anios": [
+     262,
+     276,
+     285,
+     293
+    ],
+    "total": 1117
+   },
+   {
+    "etiqueta": "COMPENSACION EQUIPAMIENTO COMUNITARIO (CSF)",
+    "anios": [
+     1702,
+     1792,
+     1846,
+     1902
+    ],
+    "total": 7242
+   },
+   {
+    "etiqueta": "ALUMBRADO PUBLICO (CSF)",
+    "anios": [
+     15071,
+     16549,
+     17046,
+     17557
+    ],
+    "total": 66224
+   },
+   {
+    "etiqueta": "ESTAMPILLA PROCULTURA RED NACIONAL DE BIBLIOTECAS PUBLICAS (CSF)",
+    "anios": [
+     259,
+     272,
+     281,
+     289
+    ],
+    "total": 1101
+   },
+   {
+    "etiqueta": "CONCURSO ECONOMICO ESTRATIFICACION (CSF)",
+    "anios": [
+     642,
+     676,
+     696,
+     717
+    ],
+    "total": 2730
+   },
+   {
+    "etiqueta": "PROGRAMA DE ALIMENTACION ESCOLAR–PAE DEC. 1852/2015 (CSF)",
+    "anios": [
+     6020,
+     6339,
+     6529,
+     6725
+    ],
+    "total": 25614
+   },
+   {
+    "etiqueta": "ADRES SSF ADMINISTRADORA DE RECURSOS DEL SISTEMA GENERAL DE SEGURIDAD SOCIAL EN SALUD",
+    "anios": [
+     69757,
+     73454,
+     75657,
+     77927
+    ],
+    "total": 296795
+   },
+   {
+    "etiqueta": "MULTAS Y COMPARENDOS CODIGO NAL DE POLICIA (CSF)",
+    "anios": [
+     830,
+     874,
+     900,
+     927
+    ],
+    "total": 3531
+   },
+   {
+    "etiqueta": "INCENTIVO AL APROVECHAMIENTO Y TRATAMIENTO DE RESIDUOS SÓLIDOS (CSF)",
+    "anios": [
+     137,
+     145,
+     149,
+     153
+    ],
+    "total": 584
+   },
+   {
+    "etiqueta": "TASA PRO DEPORTE Y RECREACIÓN CSF",
+    "anios": [
+     3642,
+     3835,
+     3950,
+     4069
+    ],
+    "total": 15497
+   },
+   {
+    "etiqueta": "FONDO DE GESTION DE RIESGO DE DESATRES",
+    "anios": [
+     1500,
+     1580,
+     1627,
+     1676
+    ],
+    "total": 6382
+   },
+   {
+    "etiqueta": "VIOLENCIA INTRAFAMILIAR, LEY 2941996",
+    "anios": [
+     3,
+     3,
+     3,
+     3
+    ],
+    "total": 11
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 182,
+  "cabecera": "",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "SGP EDUCACIÓN",
+    "anios": [
+     130010,
+     136900,
+     141007,
+     145237
+    ],
+    "total": 553154
+   },
+   {
+    "etiqueta": "SGP EDUCACION PRESTACION SERVICIO (CSF/SSF)",
+    "anios": [
+     113256,
+     119259,
+     122836,
+     126521
+    ],
+    "total": 481872
+   },
+   {
+    "etiqueta": "SGP EDUCACION CALIDAD (CSF)",
+    "anios": [
+     1836,
+     1933,
+     1991,
+     2051
+    ],
+    "total": 7811
+   },
+   {
+    "etiqueta": "SGP EDUCACION APORTES PATRONALES (SSF)",
+    "anios": [
+     14918,
+     15708,
+     16180,
+     16665
+    ],
+    "total": 63471
+   },
+   {
+    "etiqueta": "SGP SALUD",
+    "anios": [
+     44194,
+     46536,
+     47932,
+     49370
+    ],
+    "total": 188032
+   },
+   {
+    "etiqueta": "SGP SALUD PPNA–OFERTA (CSF)",
+    "anios": [
+     1455,
+     1532,
+     1578,
+     1626
+    ],
+    "total": 6192
+   },
+   {
+    "etiqueta": "SGP SALUD REGIMEN SUBSIDIADO (SSF)",
+    "anios": [
+     39856,
+     41968,
+     43227,
+     44524
+    ],
+    "total": 169575
+   },
+   {
+    "etiqueta": "SGP SALUD PUBLICA COLECTIVA (CSF)",
+    "anios": [
+     2883,
+     3036,
+     3127,
+     3220
+    ],
+    "total": 12265
+   },
+   {
+    "etiqueta": "SGP AGUA POTABLE Y SANEAMIENTO BÁSICO",
+    "anios": [
+     7749,
+     7981,
+     8221,
+     8467
+    ],
+    "total": 32418
+   },
+   {
+    "etiqueta": "SGP PROPOSITO GENERAL AGUA POT Y SANEA BAS (CSF)",
+    "anios": [
+     7749,
+     7981,
+     8221,
+     8467
+    ],
+    "total": 32418
+   },
+   {
+    "etiqueta": "SGP PROPÓSITO GENERAL",
+    "anios": [
+     15444,
+     15907,
+     16384,
+     16876
+    ],
+    "total": 64611
+   },
+   {
+    "etiqueta": "SGP PROPOSITO GENERAL LIBRE INVERSION",
+    "anios": [
+     13041,
+     13433,
+     13836,
+     14251
+    ],
+    "total": 54560
+   },
+   {
+    "etiqueta": "SGP PROPOSITO GENERAL DEPORTES (CSF)",
+    "anios": [
+     1373,
+     1414,
+     1456,
+     1500
+    ],
+    "total": 5743
+   },
+   {
+    "etiqueta": "SGP PROPOSITO GENERAL CULTURA (CSF)",
+    "anios": [
+     1030,
+     1060,
+     1092,
+     1125
+    ],
+    "total": 4307
+   },
+   {
+    "etiqueta": "ASIGNACIONES ESPECIALES",
+    "anios": [
+     530,
+     546,
+     562,
+     579
+    ],
+    "total": 2217
+   },
+   {
+    "etiqueta": "SGP ALIMENTACION ESCOLAR",
+    "anios": [
+     530,
+     546,
+     562,
+     579
+    ],
+    "total": 2217
+   },
+   {
+    "etiqueta": "COFINANCIACIÓN",
+    "anios": [
+     31840,
+     36572,
+     33099,
+     33642
+    ],
+    "total": 135152
+   },
+   {
+    "etiqueta": "COFINANCIADOS (CSF)",
+    "anios": [
+     15000,
+     19000,
+     15000,
+     15000
+    ],
+    "total": 64000
+   },
+   {
+    "etiqueta": "SGP PROPOSITO GENERAL ATN PRIM INFANCIA (CSF)",
+    "anios": [
+     7003,
+     7213,
+     7429,
+     7652
+    ],
+    "total": 29297
+   },
+   {
+    "etiqueta": "COFINANCIADOS DE SALUD (CSF/SSF)",
+    "anios": [
+     9837,
+     10359,
+     10670,
+     10990
+    ],
+    "total": 41855
+   },
+   {
+    "etiqueta": "CRÉDITO",
+    "anios": [
+     70000,
+     30000,
+     20000,
+     30000
+    ],
+    "total": 150000
+   },
+   {
+    "etiqueta": "RECURSOS DEL CREDITO (CSF)",
+    "anios": [
+     70000,
+     30000,
+     20000,
+     30000
+    ],
+    "total": 150000
+   },
+   {
+    "etiqueta": "TOTAL INVERSIÓN",
+    "anios": [
+     700802,
+     689641,
+     692986,
+     720347
+    ],
+    "total": 2803776
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 182,
+  "cabecera": "DIMENSIONES",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "1. DESARROLLO COMERCIAL Y EMPRESARIAL EN UN ENTORNO SEGURO Y PARTICIPATIVO",
+    "anios": [
+     27374,
+     27876,
+     28424,
+     28966
+    ],
+    "total": 112640
+   },
+   {
+    "etiqueta": "2. EQUIDAD SOCIAL Y GARANTÍA DE DERECHOS",
+    "anios": [
+     366095,
+     375047,
+     387145,
+     398107
+    ],
+    "total": 1526394
+   },
+   {
+    "etiqueta": "3. ORDENAMIENTO TERRITORIAL E INFRAESTRUCTURA",
+    "anios": [
+     225881,
+     207011,
+     194856,
+     208581
+    ],
+    "total": 836330
+   },
+   {
+    "etiqueta": "4. GESTIÓN INSTITUCIONAL, TRANSPARENTE Y CON RESULTADOS",
+    "anios": [
+     81452,
+     70706,
+     82561,
+     84692
+    ],
+    "total": 328412
+   },
+   {
+    "etiqueta": "TOTAL INVERSIÓN",
+    "anios": [
+     700802,
+     689641,
+     692986,
+     720347
+    ],
+    "total": 2803776
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 186,
+  "cabecera": "LÍNEAS ESTRATÉGICAS",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "1. DESARROLLO COMERCIAL Y EMPRESARIAL EN UN ENTORNO SEGURO Y PARTICIPATIVO",
+    "anios": [
+     27374,
+     27876,
+     28424,
+     28966
+    ],
+    "total": 112640
+   },
+   {
+    "etiqueta": "CONTROL TERRITORIAL Y JUSTICIA PARA TODOS",
+    "anios": [
+     10473,
+     9019,
+     9045,
+     9071
+    ],
+    "total": 37609
+   },
+   {
+    "etiqueta": "SEGURIDAD CIUDADANA Y EFICIENCIA GUBERNAMENTAL",
+    "anios": [
+     9147,
+     10830,
+     11101,
+     11297
+    ],
+    "total": 42375
+   },
+   {
+    "etiqueta": "ITAGÜÍ: CIUDAD COMERCIAL, EMPRESARIAL, TURÍSTICA Y EM- PRENDEDORA",
+    "anios": [
+     1933,
+     1976,
+     2046,
+     2054
+    ],
+    "total": 8009
+   },
+   {
+    "etiqueta": "PARTICIPACIÓN CIUDADANA GARANTE PARA UNA BUENA GES- TIÓN",
+    "anios": [
+     5820,
+     6051,
+     6232,
+     6544
+    ],
+    "total": 24647
+   },
+   {
+    "etiqueta": "2. EQUIDAD SOCIAL Y GARANTÍA DE DERECHOS",
+    "anios": [
+     366095,
+     375047,
+     387145,
+     398107
+    ],
+    "total": 1526394
+   },
+   {
+    "etiqueta": "EDUCACION PARA TODA LA VIDA",
+    "anios": [
+     169066,
+     177159,
+     182597,
+     188113
+    ],
+    "total": 716934
+   },
+   {
+    "etiqueta": "SALUD OPORTUNA Y PREVENTIVA PARA EL BIENESTAR",
+    "anios": [
+     136269,
+     141504,
+     145873,
+     150065
+    ],
+    "total": 573711
+   },
+   {
+    "etiqueta": "DEPORTE Y ACTIVIDAD FÍSICA PARA TODOS",
+    "anios": [
+     19645,
+     16669,
+     17368,
+     17595
+    ],
+    "total": 71279
+   },
+   {
+    "etiqueta": "CULTURA SOMOS TODOS",
+    "anios": [
+     14645,
+     11783,
+     12292,
+     12430
+    ],
+    "total": 51150
+   },
+   {
+    "etiqueta": "BIENESTAR SOCIAL A POBLACIONES",
+    "anios": [
+     25313,
+     26727,
+     27675,
+     28546
+    ],
+    "total": 108261
+   },
+   {
+    "etiqueta": "ITAGÜÍ DIVERSA",
+    "anios": [
+     1156,
+     1205,
+     1341,
+     1357
+    ],
+    "total": 5059
+   },
+   {
+    "etiqueta": "3. ORDENAMIENTO TERRITORIAL E INFRAESTRUCTURA",
+    "anios": [
+     225881,
+     207012,
+     194856,
+     208582
+    ],
+    "total": 836330
+   },
+   {
+    "etiqueta": "ITAGÜÍ: TERRITORIO HABITABLE PARA TODOS",
+    "anios": [
+     115103,
+     98574,
+     95997,
+     91092
+    ],
+    "total": 400766
+   },
+   {
+    "etiqueta": "MOVILIDAD Y TRANSPORTE PÚBLICO",
+    "anios": [
+     89203,
+     87963,
+     80387,
+     97659
+    ],
+    "total": 355213
+   },
+   {
+    "etiqueta": "SOSTENIBILIDAD AMBIENTAL Y GESTIÓN DEL RIESGO",
+    "anios": [
+     21575,
+     20475,
+     18472,
+     19830
+    ],
+    "total": 80351
+   },
+   {
+    "etiqueta": "4. GESTIÓN INSTITUCIONAL, TRANSPARENTE Y CON RESULTADOS",
+    "anios": [
+     81452,
+     79707,
+     82561,
+     84693
+    ],
+    "total": 328412
+   },
+   {
+    "etiqueta": "DIRECCIONAMIENTO ESTRATÉGICO Y PLANEACIÓN",
+    "anios": [
+     59003,
+     59995,
+     61923,
+     63898
+    ],
+    "total": 244819
+   },
+   {
+    "etiqueta": "GESTIÓN DEL TALENTO HUMANO, EL CONOCIMIENTO Y LA INNO- VACIÓN",
+    "anios": [
+     3980,
+     3418,
+     3500,
+     3584
+    ],
+    "total": 14481
+   },
+   {
+    "etiqueta": "SEGUIMIENTO Y EVALUACIÓN DEL DESEMPEÑO",
+    "anios": [
+     4579,
+     3612,
+     3749,
+     3768
+    ],
+    "total": 15709
+   },
+   {
+    "etiqueta": "GESTIÓN DE LA INFORMACIÓN Y LA COMUNICACIÓN",
+    "anios": [
+     13890,
+     12681,
+     13390,
+     13443
+    ],
+    "total": 53403
+   },
+   {
+    "etiqueta": "TOTAL INVERSIÓN",
+    "anios": [
+     700802,
+     689641,
+     692986,
+     720347
+    ],
+    "total": 2803776
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 187,
+  "cabecera": "DIMENSIONES, LÍNEAS ESTRATÉGICAS Y PROGRAMAS",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "1. DESARROLLO COMERCIAL Y EMPRESARIAL EN UN ENTORNO SEGURO Y PARTICIPATIVO",
+    "anios": [
+     27374,
+     27876,
+     28424,
+     28966
+    ],
+    "total": 112640
+   },
+   {
+    "etiqueta": "1. CONTROL TERRITORIAL Y JUSTICIA PARA TODOS",
+    "anios": [
+     10473,
+     9019,
+     9045,
+     9071
+    ],
+    "total": 37609
+   },
+   {
+    "etiqueta": "CONTROL TERRITORIAL Y CONVIVENCIA CIUDADANA",
+    "anios": [
+     5424,
+     4752,
+     4777,
+     4804
+    ],
+    "total": 19757
+   },
+   {
+    "etiqueta": "JUSTICIA, PAZ Y RECONCILIACIÓN",
+    "anios": [
+     1597,
+     1350,
+     1350,
+     1350
+    ],
+    "total": 5647
+   },
+   {
+    "etiqueta": "ATENCIÓN Y RESTABLECIMIENTO INTEGRAL PARA EL FORTALECI- MIENTO DE NNA Y SUS GRUPOS POBLACIONALES",
+    "anios": [
+     2461,
+     2080,
+     2080,
+     2080
+    ],
+    "total": 8701
+   },
+   {
+    "etiqueta": "CENTRO DE DETENCIÓN PREVENTIVA Y ASISTENCIA FUNERARIA",
+    "anios": [
+     991,
+     838,
+     838,
+     838
+    ],
+    "total": 3503
+   },
+   {
+    "etiqueta": "2. SEGURIDAD CIUDADANA Y EFICIENCIA GUBERNAMENTAL",
+    "anios": [
+     9147,
+     10830,
+     11101,
+     11297
+    ],
+    "total": 42375
+   },
+   {
+    "etiqueta": "FORTALECIMIENTO DE LAS CAPACIDADES INSTITUCIONALES",
+    "anios": [
+     3951,
+     4842,
+     4494,
+     4456
+    ],
+    "total": 17742
+   },
+   {
+    "etiqueta": "IMPLEMENTACIÓN DE TECNOLOGÍA Y SISTEMAS DE VIGILANCIA",
+    "anios": [
+     600,
+     3895,
+     4400,
+     4600
+    ],
+    "total": 13495
+   },
+   {
+    "etiqueta": "PREVENCIÓN INTEGRAL DEL DELITO Y PROMOCIÓN DE ENTOR- NOS SEGUROS",
+    "anios": [
+     4596,
+     2093,
+     2207,
+     2242
+    ],
+    "total": 11138
+   },
+   {
+    "etiqueta": "3. ITAGÜÍ: CIUDAD COMERCIAL, EMPRESARIAL, TURÍSTICA Y EMPRENDEDORA",
+    "anios": [
+     1933,
+     1976,
+     2046,
+     2054
+    ],
+    "total": 8009
+   },
+   {
+    "etiqueta": "EMPLEO PARA TODOS",
+    "anios": [
+     262,
+     262,
+     262,
+     262
+    ],
+    "total": 1048
+   },
+   {
+    "etiqueta": "FORMACIÓN PARA EL EMPLEO",
+    "anios": [
+     94,
+     94,
+     94,
+     94
+    ],
+    "total": 376
+   },
+   {
+    "etiqueta": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
+    "anios": [
+     244,
+     344,
+     344,
+     294
+    ],
+    "total": 1226
+   },
+   {
+    "etiqueta": "ESTIMULANDO EL ESPÍRITU EMPRENDEDOR",
+    "anios": [
+     1050,
+     1027,
+     1148,
+     1205
+    ],
+    "total": 4431
+   },
+   {
+    "etiqueta": "VIVE ITAGÜÍ, DESCUBRE SU ENCANTO",
+    "anios": [
+     283,
+     248,
+     198,
+     198
+    ],
+    "total": 928
+   },
+   {
+    "etiqueta": "4. PARTICIPACIÓN CIUDADANA GARANTE PARA UNA BUENA GESTIÓN",
+    "anios": [
+     5820,
+     6051,
+     6232,
+     6544
+    ],
+    "total": 24647
+   },
+   {
+    "etiqueta": "COMUNALES EN ACCIÓN",
+    "anios": [
+     1099,
+     1036,
+     1024,
+     1071
+    ],
+    "total": 4229
+   },
+   {
+    "etiqueta": "ACOMPAÑAMIENTO INSTITUCIONAL A LAS JUNTAS ADMINISTRA- DORAS LOCALES",
+    "anios": [
+     1057,
+     1160,
+     1174,
+     1204
+    ],
+    "total": 4595
+   },
+   {
+    "etiqueta": "PARTICIPACIÓN SOCIAL PARA TODOS",
+    "anios": [
+     3491,
+     3674,
+     3842,
+     4075
+    ],
+    "total": 15081
+   },
+   {
+    "etiqueta": "FORTALECIMIENTO DE LA PLANEACIÓN PARTICIPATIVA",
+    "anios": [
+     174,
+     182,
+     193,
+     194
+    ],
+    "total": 743
+   },
+   {
+    "etiqueta": "2. EQUIDAD SOCIAL Y GARANTÍA DE DERECHOS",
+    "anios": [
+     366095,
+     375047,
+     387145,
+     398107
+    ],
+    "total": 1526394
+   },
+   {
+    "etiqueta": "5. EDUCACION PARA TODA LA VIDA",
+    "anios": [
+     169066,
+     177159,
+     182597,
+     188113
+    ],
+    "total": 716935
+   },
+   {
+    "etiqueta": "EN ITAGÜÍ, LA ESCUELA ES PARA TODOS.",
+    "anios": [
+     19748,
+     19340,
+     20005,
+     20639
+    ],
+    "total": 79731
+   },
+   {
+    "etiqueta": "TODOS EN UNA ESCUELA INCLUYENTE, INNOVADORA Y CON CALIDAD.",
+    "anios": [
+     5754,
+     8359,
+     8561,
+     8758
+    ],
+    "total": 31433
+   },
+   {
+    "etiqueta": "LA EDUCACIÓN INICIAL PENSADA PARA TODOS.",
+    "anios": [
+     86,
+     80,
+     83,
+     86
+    ],
+    "total": 334
+   },
+   {
+    "etiqueta": "EDUCACIÓN SUPERIOR PARA TODOS",
+    "anios": [
+     2345,
+     2176,
+     2256,
+     2335
+    ],
+    "total": 9111
+   },
+   {
+    "etiqueta": "EN ITAGÜÍ, DIGNIFICAMOS Y DESARROLLAMOS LA PROFESIÓN DOCENTE",
+    "anios": [
+     141133,
+     147205,
+     151692,
+     156296
+    ],
+    "total": 596326
+   },
+   {
+    "etiqueta": "6. SALUD OPORTUNA Y PREVENTIVA PARA EL BIENESTAR",
+    "anios": [
+     136269,
+     141504,
+     145873,
+     150065
+    ],
+    "total": 573711
+   },
+   {
+    "etiqueta": "TODOS POR TU SALUD MENTAL, UN COMPROMISO POR LA VIDA",
+    "anios": [
+     3702,
+     3100,
+     3234,
+     3266
+    ],
+    "total": 13302
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 188,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "TODOS POR UNA SEXUALIDAD SANA",
+    "anios": [
+     215,
+     201,
+     213,
+     217
+    ],
+    "total": 846
+   },
+   {
+    "etiqueta": "TODOS POR LA GESTIÓN DEL CUIDADO Y LA CALIDAD DE VIDA",
+    "anios": [
+     141,
+     149,
+     153,
+     158
+    ],
+    "total": 601
+   },
+   {
+    "etiqueta": "ALIMENTACIÓN SALUDABLE, COMPROMISO DE TODOS",
+    "anios": [
+     267,
+     224,
+     234,
+     236
+    ],
+    "total": 962
+   },
+   {
+    "etiqueta": "TODOS CONSTRUIMOS UN ENTORNO LABORAL SALUDABLE",
+    "anios": [
+     252,
+     281,
+     260,
+     296
+    ],
+    "total": 1090
+   },
+   {
+    "etiqueta": "TODOS POR EL MEJORAMIENTO DE LA SALUD AMBIENTAL.",
+    "anios": [
+     1148,
+     1048,
+     1088,
+     1107
+    ],
+    "total": 4392
+   },
+   {
+    "etiqueta": "TODOS PREPARADOS, SALVAMOS VIDAS",
+    "anios": [
+     885,
+     660,
+     692,
+     694
+    ],
+    "total": 2931
+   },
+   {
+    "etiqueta": "TODOS POR LA SALUD Y LA EQUIDAD",
+    "anios": [
+     1913,
+     1460,
+     1533,
+     1533
+    ],
+    "total": 6439
+   },
+   {
+    "etiqueta": "ASEGURAMIENTO EN SALUD PARA TODOS",
+    "anios": [
+     126769,
+     133417,
+     137470,
+     141538
+    ],
+    "total": 539195
+   },
+   {
+    "etiqueta": "TODOS UNIDOS POR UNA CIUDAD SIN ENFERMEDADES TRANS- MISIBLES",
+    "anios": [
+     976,
+     963,
+     995,
+     1019
+    ],
+    "total": 3952
+   },
+   {
+    "etiqueta": "7. DEPORTE Y ACTIVIDAD FÍSICA PARA TODOS",
+    "anios": [
+     19645,
+     16670,
+     17368,
+     17595
+    ],
+    "total": 71279
+   },
+   {
+    "etiqueta": "ACTIVIDAD FÍSICA Y RECREACIÓN",
+    "anios": [
+     4598,
+     4389,
+     4542,
+     4647
+    ],
+    "total": 18175
+   },
+   {
+    "etiqueta": "FOMENTO DEPORTIVO",
+    "anios": [
+     10443,
+     8615,
+     8992,
+     9086
+    ],
+    "total": 37136
+   },
+   {
+    "etiqueta": "POSICIONAMIENTO DEPORTIVO Y ALTOS LOGROS",
+    "anios": [
+     4605,
+     3666,
+     3835,
+     3862
+    ],
+    "total": 15967
+   },
+   {
+    "etiqueta": "8. CULTURA SOMOS TODOS",
+    "anios": [
+     14645,
+     11783,
+     12292,
+     12430
+    ],
+    "total": 51150
+   },
+   {
+    "etiqueta": "FOMENTO PARA LAS ARTES, LAS PRÁCTICAS Y LOS SABERES CULTURALES.",
+    "anios": [
+     10695,
+     9079,
+     9468,
+     9578
+    ],
+    "total": 38820
+   },
+   {
+    "etiqueta": "MEMORIA Y PATRIMONIO PARA LA IDENTIDAD ITAGÜISEÑA",
+    "anios": [
+     3220,
+     2088,
+     2183,
+     2200
+    ],
+    "total": 9691
+   },
+   {
+    "etiqueta": "PARTICIPACIÓN PARA LA CULTURA CIUDADANA Y EL DESARRO- LLO SOSTENIBLE",
+    "anios": [
+     730,
+     616,
+     641,
+     651
+    ],
+    "total": 2639
+   },
+   {
+    "etiqueta": "9. BIENESTAR SOCIAL A POBLACIONES",
+    "anios": [
+     25313,
+     26727,
+     27675,
+     28546
+    ],
+    "total": 108261
+   },
+   {
+    "etiqueta": "EN ITAGÜÍ SOMOS FAMILIA",
+    "anios": [
+     2010,
+     2336,
+     2498,
+     2560
+    ],
+    "total": 9403
+   },
+   {
+    "etiqueta": "MUJERES SEGURAS EN UNA SOCIEDAD CON IGUALDAD",
+    "anios": [
+     199,
+     557,
+     590,
+     619
+    ],
+    "total": 1966
+   },
+   {
+    "etiqueta": "FORJANDO FUTUROS FELICES EN NIÑOS Y NIÑAS",
+    "anios": [
+     11908,
+     10797,
+     11239,
+     11608
+    ],
+    "total": 45551
+   },
+   {
+    "etiqueta": "JÓVENES POR Y PARA LA VIDA",
+    "anios": [
+     684,
+     803,
+     879,
+     889
+    ],
+    "total": 3255
+   },
+   {
+    "etiqueta": "PERSONAS MAYORES EN FAMILIA, PROTEGIDOS Y AUTÓNOMOS",
+    "anios": [
+     6043,
+     8361,
+     8457,
+     8714
+    ],
+    "total": 31575
+   },
+   {
+    "etiqueta": "CONSTRUYENDO CAPACIDADES PARA TODOS",
+    "anios": [
+     2700,
+     2251,
+     2318,
+     2401
+    ],
+    "total": 9670
+   },
+   {
+    "etiqueta": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
+    "anios": [
+     1771,
+     1622,
+     1694,
+     1755
+    ],
+    "total": 6841
+   },
+   {
+    "etiqueta": "10. ITAGÜÍ DIVERSA",
+    "anios": [
+     1156,
+     1205,
+     1341,
+     1357
+    ],
+    "total": 5059
+   },
+   {
+    "etiqueta": "PARTICIPACIÓN Y RESPETO POR TODAS LAS ETNÍAS",
+    "anios": [
+     251,
+     273,
+     355,
+     359
+    ],
+    "total": 1238
+   },
+   {
+    "etiqueta": "DIVERSIDAD SEXUAL, IDENTIDAD Y EXPRESIONES DE GÉNERO",
+    "anios": [
+     447,
+     418,
+     493,
+     499
+    ],
+    "total": 1857
+   },
+   {
+    "etiqueta": "POR UNA ALIANZA ESPIRITUAL",
+    "anios": [
+     457,
+     514,
+     493,
+     499
+    ],
+    "total": 1964
+   },
+   {
+    "etiqueta": "3. ORDENAMIENTO TERRITORIAL E INFRAESTRUCTURA",
+    "anios": [
+     225881,
+     207012,
+     194856,
+     208582
+    ],
+    "total": 836330
+   },
+   {
+    "etiqueta": "11. ITAGÜÍ: TERRITORIO HABITABLE PARA TODOS",
+    "anios": [
+     115103,
+     98574,
+     95997,
+     91093
+    ],
+    "total": 400766
+   },
+   {
+    "etiqueta": "VIVIENDA PROPIA Y MEJORAMIENTO DEL HABITAT",
+    "anios": [
+     7590,
+     5793,
+     6070,
+     6100
+    ],
+    "total": 25553
+   },
+   {
+    "etiqueta": "ESPACIO PÚBLICO PARA TODOS",
+    "anios": [
+     16600,
+     13175,
+     7806,
+     2019
+    ],
+    "total": 39599
+   },
+   {
+    "etiqueta": "EQUIPAMIENTOS COLECTIVOS",
+    "anios": [
+     43624,
+     29264,
+     30348,
+     29732
+    ],
+    "total": 132968
+   },
+   {
+    "etiqueta": "SERVICIOS PÚBLICOS DOMICILIARIOS",
+    "anios": [
+     29768,
+     31167,
+     32102,
+     33065
+    ],
+    "total": 126102
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 189,
+  "cabecera": "",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "SERVICIOS PÚBLICOS NO DOMICILIARIOS",
+    "anios": [
+     16071,
+     17549,
+     18046,
+     18557
+    ],
+    "total": 70224
+   },
+   {
+    "etiqueta": "ITAGÜÍ,CIUDAD INTELIGENTE",
+    "anios": [
+     1450,
+     1625,
+     1624,
+     1621
+    ],
+    "total": 6321
+   },
+   {
+    "etiqueta": "12. MOVILIDAD Y TRANSPORTE PÚBLICO",
+    "anios": [
+     89203,
+     87963,
+     80387,
+     97659
+    ],
+    "total": 355213
+   },
+   {
+    "etiqueta": "INFRAESTRUCTURA VÍAL",
+    "anios": [
+     68035,
+     58797,
+     44968,
+     53256
+    ],
+    "total": 225057
+   },
+   {
+    "etiqueta": "TRANSPORTE PÚBLICO SEGURO,EFICIENTE Y SOSTENIBLE",
+    "anios": [
+     5370,
+     15668,
+     17935,
+     26582
+    ],
+    "total": 65556
+   },
+   {
+    "etiqueta": "SEGURIDAD VIAL",
+    "anios": [
+     15798,
+     13498,
+     17484,
+     17820
+    ],
+    "total": 64600
+   },
+   {
+    "etiqueta": "13. SOSTENIBILIDAD AMBIENTAL Y GESTIÓN DEL RIESGO",
+    "anios": [
+     21575,
+     20475,
+     18472,
+     19830
+    ],
+    "total": 80351
+   },
+   {
+    "etiqueta": "CONSTRUYENDO UN TERRITORIO RESILIENTE AL CAMBIO CLIMÁ- TICO",
+    "anios": [
+     18,
+     19,
+     19,
+     20
+    ],
+    "total": 75
+   },
+   {
+    "etiqueta": "PROTECCIÓN DEL RECURSO AGUA",
+    "anios": [
+     4450,
+     4645,
+     4854,
+     5121
+    ],
+    "total": 19070
+   },
+   {
+    "etiqueta": "SOSTENIBILIDAD AMBIENTAL: VALORANDO Y PROTEGIENDO LOS RECURSOS DEL SUELO,FLORA Y AIRE",
+    "anios": [
+     571,
+     600,
+     618,
+     636
+    ],
+    "total": 2424
+   },
+   {
+    "etiqueta": "GESTIÓN INTEGRAL DE RESIDUOS SÓLIDOS",
+    "anios": [
+     853,
+     896,
+     923,
+     951
+    ],
+    "total": 3623
+   },
+   {
+    "etiqueta": "EDUCAR PARA CONSERVAR: PROMOVIENDO LA CONCIENCIA AMBIENTAL",
+    "anios": [
+     136,
+     143,
+     147,
+     152
+    ],
+    "total": 579
+   },
+   {
+    "etiqueta": "PROTECCIÓN ANIMAL,POR SU BIENESTAR Y CUIDADO.",
+    "anios": [
+     284,
+     298,
+     307,
+     316
+    ],
+    "total": 1205
+   },
+   {
+    "etiqueta": "GESTIÓN INTEGRAL DEL RIESGO, PREVENCIÓN, CONOCIMIENTO Y MANEJO DE LOS DESASTRES NATURALES Y SANITARIOS",
+    "anios": [
+     15263,
+     13874,
+     11604,
+     12635
+    ],
+    "total": 53375
+   },
+   {
+    "etiqueta": "4. GESTIÓN INSTITUCIONAL,TRANSPARENTE Y CON RESULTADOS",
+    "anios": [
+     81452,
+     79707,
+     82561,
+     84693
+    ],
+    "total": 328412
+   },
+   {
+    "etiqueta": "14. DIRECCIONAMIENTO ESTRATÉGICO Y PLANEACIÓN",
+    "anios": [
+     59003,
+     59995,
+     61923,
+     63898
+    ],
+    "total": 244819
+   },
+   {
+    "etiqueta": "PLANEACION INSTITUCIONAL",
+    "anios": [
+     1652,
+     1452,
+     1562,
+     1562
+    ],
+    "total": 6228
+   },
+   {
+    "etiqueta": "GESTIÓN FINANCIERA TERRITORIAL",
+    "anios": [
+     52555,
+     55539,
+     57204,
+     59177
+    ],
+    "total": 224475
+   },
+   {
+    "etiqueta": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
+    "anios": [
+     4796,
+     3004,
+     3157,
+     3159
+    ],
+    "total": 14116
+   },
+   {
+    "etiqueta": "15. GESTIÓN DEL TALENTO HUMANO, EL CONOCIMIENTO Y LA INNOVACIÓN",
+    "anios": [
+     3980,
+     3418,
+     3500,
+     3584
+    ],
+    "total": 14481
+   },
+   {
+    "etiqueta": "FORTALECIMIENTO DEL TALENTO HUMANO",
+    "anios": [
+     3840,
+     3288,
+     3367,
+     3449
+    ],
+    "total": 13944
+   },
+   {
+    "etiqueta": "GESTIÓN DEL CONOCIMIENTO",
+    "anios": [
+     139,
+     130,
+     133,
+     135
+    ],
+    "total": 537
+   },
+   {
+    "etiqueta": "16. SEGUIMIENTO Y EVALUACIÓN DEL DESEMPEÑO",
+    "anios": [
+     4579,
+     3612,
+     3749,
+     3768
+    ],
+    "total": 15709
+   },
+   {
+    "etiqueta": "FORTALECIMIENTO DEL CONTROL INTERNO",
+    "anios": [
+     1079,
+     824,
+     863,
+     867
+    ],
+    "total": 3633
+   },
+   {
+    "etiqueta": "SISTEMA INTEGRADO DE GESTIÓN",
+    "anios": [
+     3500,
+     2789,
+     2886,
+     2901
+    ],
+    "total": 12076
+   },
+   {
+    "etiqueta": "17. GESTIÓN DE LA INFORMACIÓN Y LA COMUNICACIÓN",
+    "anios": [
+     13890,
+     12681,
+     13390,
+     13443
+    ],
+    "total": 53403
+   },
+   {
+    "etiqueta": "ITAGÜÍ: GOBIERNO INNOVADOR Y DIGITAL",
+    "anios": [
+     7132,
+     7614,
+     8099,
+     8102
+    ],
+    "total": 30947
+   },
+   {
+    "etiqueta": "FORTALECIMIENTO DE LA GESTIÓN ESTADÍSTICA",
+    "anios": [
+     1677,
+     1285,
+     1328,
+     1358
+    ],
+    "total": 5648
+   },
+   {
+    "etiqueta": "COMUNICACIÓN PÚBLICA PARA TODOS",
+    "anios": [
+     3210,
+     2354,
+     2467,
+     2479
+    ],
+    "total": 10509
+   },
+   {
+    "etiqueta": "ATENCIÓN AL CIUDADANO, GESTIÓN DOCUMENTAL Y ACCESO A LA INFORMACIÓN Y TRANSPARENCIA",
+    "anios": [
+     1871,
+     1428,
+     1496,
+     1504
+    ],
+    "total": 6299
+   },
+   {
+    "etiqueta": "TOTAL INVERSIÓN",
+    "anios": [
+     700802,
+     689641,
+     692986,
+     720347
+    ],
+    "total": 2803776
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 190,
+  "cabecera": "CONCEPTO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Inversión",
+    "anios": [
+     1052999,
+     649458,
+     611604,
+     609872
+    ],
+    "total": 2923933
+   },
+   {
+    "etiqueta": "Asignaciónpara lapaz",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignaciones Directas",
+    "anios": [
+     1052999,
+     649458,
+     611604,
+     609872
+    ],
+    "total": 2923933
+   },
+   {
+    "etiqueta": "20% Asignaciones Directas",
+    "anios": [
+     820021,
+     505764,
+     476285,
+     474936
+    ],
+    "total": 2277006
+   },
+   {
+    "etiqueta": "5% Asignaciones Directas Anticipadas",
+    "anios": [
+     232978,
+     143694,
+     135319,
+     134935
+    ],
+    "total": 646926
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 191,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Asignación para Inversión Regional",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Departamentos",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Regiones",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación para la Inver- sión Local",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Municipios máspobres",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Comunidades Étnicas",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Comunidades Indígenas",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Comunidades NARP",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Comunidades Rrom",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación para Ciencia, Tecnología e Innovación",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación para Inversión en Ciencia, Tecnología e Innovación Ambiental",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto de inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación Ambiental",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Municipios Río Magdalena yCanal Duque",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Ahorro",
+    "anios": [
+     709818177,
+     613983045,
+     569139724,
+     594460788
+    ],
+    "total": 2487401734
+   },
+   {
+    "etiqueta": "Fondo de Ahorro y Estabili- zación (Ahorro)",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Fondo Ahorro Pensional Territorial (FONPET) Otros",
+    "anios": [
+     709818177,
+     569139724,
+     569139724,
+     594460788
+    ],
+    "total": 2442558413
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 192,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Funcionamiento, operativi- dadyfiscalización",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Sistema de Seguimiento, Control y Evaluación (SSEC)",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Contraloría",
+    "anios": [
+     70401205851,
+     60858195556,
+     56382090798,
+     58862923139
+    ],
+    "total": 246504415344
+   },
+   {
+    "etiqueta": "Procuraduría",
+    "anios": [
+     14080241171,
+     12171639111,
+     11276418160,
+     11772584628
+    ],
+    "total": 49300883070
+   },
+   {
+    "etiqueta": "DNP",
+    "anios": [
+     56320964680,
+     48686556445,
+     45105672638,
+     47090338511
+    ],
+    "total": 197203532274
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     710871176,
+     614632503,
+     569751328,
+     595070660
+    ],
+    "total": 2490325667
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 192,
+  "cabecera": "CONCEPTO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Inversión",
+    "anios": [
+     1052999,
+     649458,
+     611604,
+     609872
+    ],
+    "total": 2923933
+   },
+   {
+    "etiqueta": "Asignaciones Directas",
+    "anios": [
+     1052999,
+     649458,
+     611604,
+     609872
+    ],
+    "total": 2923933
+   },
+   {
+    "etiqueta": "20% de Asignacio- nes Directas",
+    "anios": [
+     820021,
+     505764,
+     476285,
+     474936
+    ],
+    "total": 2277006
+   },
+   {
+    "etiqueta": "5% Asignaciones Directas Antici- padas",
+    "anios": [
+     232978,
+     143694,
+     135319,
+     134935
+    ],
+    "total": 646926
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ }
+]

@@ -1,0 +1,179 @@
+[
+ {
+  "pagina": 280,
+  "cabecera": "TOTAL GASTOS DE INVERSIÓN",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "SALUD Y PROTECCION SOCIAL",
+    "anios": [
+     30812,
+     33893,
+     37283,
+     41011
+    ],
+    "total": 142999
+   },
+   {
+    "etiqueta": "EDUCACIÓN PARA LA VIDA",
+    "anios": [
+     5206,
+     5727,
+     6300,
+     6930
+    ],
+    "total": 24163
+   },
+   {
+    "etiqueta": "ARTE, CULTURA Y PATRIMONIO",
+    "anios": [
+     401900,
+     0,
+     486299,
+     534928
+    ],
+    "total": 1423127
+   },
+   {
+    "etiqueta": "DEPORTE Y RECREACION",
+    "anios": [
+     2361,
+     2598,
+     2857,
+     3143
+    ],
+    "total": 10959
+   },
+   {
+    "etiqueta": "INCLUSION SOCIAL Y RECONCILIACION",
+    "anios": [
+     1075,
+     1183,
+     1301,
+     1432
+    ],
+    "total": 4991
+   },
+   {
+    "etiqueta": "VIVIENDA DIGNA Y PUEBLO MODERNO",
+    "anios": [
+     6474,
+     7122,
+     7834,
+     8617
+    ],
+    "total": 30047
+   },
+   {
+    "etiqueta": "INFRAESTRUCTURA SOCIAL Y SOSTENIBLE",
+    "anios": [
+     4747,
+     5222,
+     5744,
+     6318
+    ],
+    "total": 22031
+   },
+   {
+    "etiqueta": "TRANSFORMACIÓN PRODUCTIVA Y COMPETITIVIDAD TERRITORIAL",
+    "anios": [
+     277467,
+     305213,
+     335735,
+     369308
+    ],
+    "total": 1287723
+   },
+   {
+    "etiqueta": "TRANSPORTE Y CONECTIVIDAD VIAL",
+    "anios": [
+     476039,
+     523642,
+     576007,
+     633607
+    ],
+    "total": 2209295
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 281,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "AMBIENTE Y DESARROLLO SOSTENIBLE",
+    "anios": [
+     1839616,
+     2023,
+     2225,
+     2448
+    ],
+    "total": 1846312
+   },
+   {
+    "etiqueta": "GOBERNABILIDAD Y FORTALECIMIENTO INSTITUCIONAL",
+    "anios": [
+     2619,
+     2881,
+     3169,
+     3486
+    ],
+    "total": 12155
+   },
+   {
+    "etiqueta": "SEGURIDAD Y CONVIVENCIA CIUDADANA",
+    "anios": [
+     257824,
+     283606,
+     311967,
+     343163
+    ],
+    "total": 1196560
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 294,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "es Directas (20% del SGR)",
+    "anios": [
+     103846103,
+     66330365,
+     62464216,
+     62287311
+    ],
+    "total": 294927995
+   },
+   {
+    "etiqueta": "Asignación para la Inversión",
+    "anios": [
+     1404589,
+     1216747,
+     1127255,
+     1184437
+    ],
+    "total": 4933028
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     1508435,
+     1283077,
+     1189720,
+     1246725
+    ],
+    "total": 5227957
+   }
+  ],
+  "ncols": 4,
+  "financiero": true
+ }
+]

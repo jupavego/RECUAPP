@@ -1,0 +1,216 @@
+[
+ {
+  "paginas": [
+   280,
+   281
+  ],
+  "cabecera": "TOTAL GASTOS DE INVERSIÓN",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   3306140,
+   1173110,
+   1776721,
+   1954391
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "SALUD Y PROTECCION SOCIAL",
+    "anios": [
+     30812,
+     33893,
+     37283,
+     41011
+    ],
+    "total": 142999,
+    "ruta": {
+     "linea": "SALUD Y PROTECCION SOCIAL"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "EDUCACIÓN PARA LA VIDA",
+    "anios": [
+     5206,
+     5727,
+     6300,
+     6930
+    ],
+    "total": 24163,
+    "ruta": {
+     "linea": "EDUCACIÓN PARA LA VIDA"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "ARTE, CULTURA Y PATRIMONIO",
+    "anios": [
+     401900,
+     0,
+     486299,
+     534928
+    ],
+    "total": 1423127,
+    "ruta": {
+     "linea": "ARTE, CULTURA Y PATRIMONIO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "DEPORTE Y RECREACION",
+    "anios": [
+     2361,
+     2598,
+     2857,
+     3143
+    ],
+    "total": 10959,
+    "ruta": {
+     "linea": "DEPORTE Y RECREACION"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "INCLUSION SOCIAL Y RECONCILIACION",
+    "anios": [
+     1075,
+     1183,
+     1301,
+     1432
+    ],
+    "total": 4991,
+    "ruta": {
+     "linea": "INCLUSION SOCIAL Y RECONCILIACION"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "VIVIENDA DIGNA Y PUEBLO MODERNO",
+    "anios": [
+     6474,
+     7122,
+     7834,
+     8617
+    ],
+    "total": 30047,
+    "ruta": {
+     "linea": "VIVIENDA DIGNA Y PUEBLO MODERNO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "INFRAESTRUCTURA SOCIAL Y SOSTENIBLE",
+    "anios": [
+     4747,
+     5222,
+     5744,
+     6318
+    ],
+    "total": 22031,
+    "ruta": {
+     "linea": "INFRAESTRUCTURA SOCIAL Y SOSTENIBLE"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TRANSFORMACIÓN PRODUCTIVA Y COMPETITIVIDAD TERRITORIAL",
+    "anios": [
+     277467,
+     305213,
+     335735,
+     369308
+    ],
+    "total": 1287723,
+    "ruta": {
+     "linea": "TRANSFORMACIÓN PRODUCTIVA Y COMPETITIVIDAD TERRITORIAL"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TRANSPORTE Y CONECTIVIDAD VIAL",
+    "anios": [
+     476039,
+     523642,
+     576007,
+     633607
+    ],
+    "total": 2209295,
+    "ruta": {
+     "linea": "TRANSPORTE Y CONECTIVIDAD VIAL"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "AMBIENTE Y DESARROLLO SOSTENIBLE",
+    "anios": [
+     1839616,
+     2023,
+     2225,
+     2448
+    ],
+    "total": 1846312,
+    "ruta": {
+     "linea": "AMBIENTE Y DESARROLLO SOSTENIBLE"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "GOBERNABILIDAD Y FORTALECIMIENTO INSTITUCIONAL",
+    "anios": [
+     2619,
+     2881,
+     3169,
+     3486
+    ],
+    "total": 12155,
+    "ruta": {
+     "linea": "GOBERNABILIDAD Y FORTALECIMIENTO INSTITUCIONAL"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "SEGURIDAD Y CONVIVENCIA CIUDADANA",
+    "anios": [
+     257824,
+     283606,
+     311967,
+     343163
+    ],
+    "total": 1196560,
+    "ruta": {
+     "linea": "SEGURIDAD Y CONVIVENCIA CIUDADANA"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

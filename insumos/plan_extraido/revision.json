@@ -1,0 +1,101 @@
+[
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 198,
+  "valor": "Fortalecimiento del desempeño ambiental de los sectores productivos",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 1
+ },
+ {
+  "tipo": "sector_no_cuadra",
+  "valor": "Salud Y Proteccion Social",
+  "diferencia": [
+   8588237456,
+   9447061201,
+   10108355486,
+   10815940370
+  ],
+  "correccion": null,
+  "id": 2
+ },
+ {
+  "tipo": "sector_no_cuadra",
+  "valor": "Inclusion Social Y Reconciliacion",
+  "diferencia": [
+   790454228,
+   864499651,
+   1396914625,
+   1254398650
+  ],
+  "correccion": null,
+  "id": 3
+ },
+ {
+  "tipo": "sector_no_cuadra",
+  "valor": "Vivienda, Ciudad Y Territorio",
+  "diferencia": [
+   195123685,
+   -4158613946,
+   -1077056923,
+   -194000907
+  ],
+  "correccion": null,
+  "id": 4
+ },
+ {
+  "tipo": "sector_no_cuadra",
+  "valor": "Educacion",
+  "diferencia": [
+   -389360461,
+   -578676507,
+   -134583862,
+   8395268
+  ],
+  "correccion": null,
+  "id": 5
+ },
+ {
+  "tipo": "sector_no_cuadra",
+  "valor": "Cultura",
+  "diferencia": [
+   -88000000,
+   -147438453,
+   24140856,
+   -29169284
+  ],
+  "correccion": null,
+  "id": 6
+ },
+ {
+  "tipo": "sector_no_cuadra",
+  "valor": "Deporte Y Recreacion",
+  "diferencia": [
+   -690000000,
+   1022393929,
+   -1864544180,
+   1752272359
+  ],
+  "correccion": null,
+  "id": 7
+ },
+ {
+  "tipo": "sector_no_cuadra",
+  "valor": "Ambiente Y Desarrollo Sostenible",
+  "diferencia": [
+   0,
+   -36,
+   0,
+   0
+  ],
+  "correccion": null,
+  "id": 8
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fortalecimiento de la gestión y dirección del Sector Educación",
+  "sector": "Educación",
+  "correccion": null,
+  "id": 9
+ }
+]

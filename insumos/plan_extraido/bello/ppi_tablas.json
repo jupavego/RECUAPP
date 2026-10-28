@@ -1,0 +1,120 @@
+[
+ {
+  "pagina": 296,
+  "cabecera": "CONCEPTO",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "INGRESOS TOTALES",
+    "anios": [
+     752308,
+     827539,
+     910293,
+     1001322
+    ],
+    "total": 3491461
+   },
+   {
+    "etiqueta": "INGRESOS CORRIENTES",
+    "anios": [
+     737364,
+     811100,
+     892210,
+     981431
+    ],
+    "total": 3422106
+   },
+   {
+    "etiqueta": "TRIBUTARIOS",
+    "anios": [
+     243823,
+     268206,
+     295026,
+     324529
+    ],
+    "total": 1131584
+   },
+   {
+    "etiqueta": "NO TRIBUTARIOS",
+    "anios": [
+     61071,
+     67178,
+     73896,
+     81286
+    ],
+    "total": 283431
+   },
+   {
+    "etiqueta": "TRANSFERENCIAS",
+    "anios": [
+     432470,
+     475717,
+     523288,
+     575617
+    ],
+    "total": 2007092
+   },
+   {
+    "etiqueta": "INGRESOS DE CAPITAL",
+    "anios": [
+     14944,
+     16438,
+     18082,
+     19890
+    ],
+    "total": 69355
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 296,
+  "cabecera": "CONCEPTO",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "GASTOS TOTALES",
+    "anios": [
+     752308,
+     831783,
+     904870,
+     985709
+    ],
+    "total": 3474670
+   },
+   {
+    "etiqueta": "FUNCIONAMIENTO",
+    "anios": [
+     134505,
+     158257,
+     210743,
+     280450
+    ],
+    "total": 783955
+   },
+   {
+    "etiqueta": "SERVICIO DE LA DEUDA",
+    "anios": [
+     47719,
+     56735,
+     52318,
+     47901
+    ],
+    "total": 204673
+   },
+   {
+    "etiqueta": "INVERSIÓN",
+    "anios": [
+     570084,
+     616791,
+     641809,
+     657358
+    ],
+    "total": 2486042
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ }
+]

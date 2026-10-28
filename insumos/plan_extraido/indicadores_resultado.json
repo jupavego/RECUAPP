@@ -1,0 +1,90 @@
+[
+ {
+  "nombre": "Cobertura agua potable",
+  "unidad": "Porcentaje",
+  "linea_base": "90,16",
+  "meta": "93",
+  "responsable": "Infraestructura",
+  "tipo_acumulado": "",
+  "pagina": 112,
+  "linea": "s",
+  "sector": "Vivienda, ciudad y territorio"
+ },
+ {
+  "nombre": "Cobertura alcantarillado",
+  "unidad": "Porcentaje",
+  "linea_base": "70,84",
+  "meta": "71",
+  "responsable": "Infraestructura",
+  "tipo_acumulado": "",
+  "pagina": 112,
+  "linea": "s",
+  "sector": "Vivienda, ciudad y territorio"
+ },
+ {
+  "nombre": "Cobertura aseo",
+  "unidad": "Porcentaje",
+  "linea_base": "90,14",
+  "meta": "90,14",
+  "responsable": "Ambiente y Desarrollo Sostenible",
+  "tipo_acumulado": "",
+  "pagina": 112,
+  "linea": "s",
+  "sector": "Vivienda, ciudad y territorio"
+ },
+ {
+  "nombre": "Déficit cualitativo",
+  "unidad": "Porcentaje",
+  "linea_base": "44,57",
+  "meta": "44,4",
+  "responsable": "Infraestructura",
+  "tipo_acumulado": "",
+  "pagina": 112,
+  "linea": "s",
+  "sector": "Vivienda, ciudad y territorio"
+ },
+ {
+  "nombre": "Déficit cuantitativo",
+  "unidad": "Porcentaje",
+  "linea_base": "1,1",
+  "meta": "1",
+  "responsable": "Infraestructura",
+  "tipo_acumulado": "",
+  "pagina": 112,
+  "linea": "s",
+  "sector": "Vivienda, ciudad y territorio"
+ },
+ {
+  "nombre": "Cobertura en educacion basica y media",
+  "linea_base": "96",
+  "meta": "97",
+  "responsable": "Educación",
+  "unidad": "",
+  "tipo_acumulado": "",
+  "pagina": 125,
+  "linea": "s",
+  "sector": "Educación"
+ },
+ {
+  "nombre": "Formacion permanente de las personas residentes en el municipio de Girardota a traves de diversas modalidades de enseñanza y aprendizaje",
+  "linea_base": "0",
+  "meta": "2000",
+  "responsable": "Educación",
+  "unidad": "",
+  "tipo_acumulado": "",
+  "pagina": 125,
+  "linea": "s",
+  "sector": "Educación"
+ },
+ {
+  "nombre": "Creacion del modelo educativo Municipal",
+  "linea_base": "0",
+  "meta": "1",
+  "responsable": "Educación",
+  "unidad": "",
+  "tipo_acumulado": "",
+  "pagina": 125,
+  "linea": "s",
+  "sector": "Educación"
+ }
+]

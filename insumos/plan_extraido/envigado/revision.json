@@ -1,0 +1,950 @@
+[
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 488,
+  "valor": null,
+  "sugerencia": null,
+  "correccion": null,
+  "id": 1
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 546,
+  "valor": "Población LGBTIQ+ o personas con orientaciones sexuales, identidades y expresiones de género no hegemónicas",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 2
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 566,
+  "valor": "Educación terciaria",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 3
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 570,
+  "valor": "Generación y formalización del empleo",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 4
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 572,
+  "valor": "Formación para el trabajo y el desarrollo humano",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 5
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 574,
+  "valor": "Productividad y competitividad de las empresas",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 6
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 577,
+  "valor": "Desarrollo de estrategias para la promoción y el posicionamiento del sector turismo",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 7
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 579,
+  "valor": "Arte y cultura",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 8
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 581,
+  "valor": "Patrimonio",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 9
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 582,
+  "valor": "Sistema Municipal de Bibliotecas Públicas",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 10
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "ENVIGADO CON EQUIDAD Y CIERRE DE BRECHAS",
+  "sector": null,
+  "correccion": null,
+  "id": 11
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Salud integral",
+  "sector": null,
+  "correccion": null,
+  "id": 12
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Implementación del Centro Comunitario de Salud Mental",
+  "sector": "Gestión integral e integrada de la salud mental en los entornos para la vida",
+  "correccion": null,
+  "id": 13
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fortalecimiento de la salud mental",
+  "sector": "Gestión integral e integrada de la salud mental en los entornos para la vida",
+  "correccion": null,
+  "id": 14
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fortalecimiento de la seguridad alimentaria y nutricional",
+  "sector": "Seguridad alimentaria y nutricional para el desarrollo humano",
+  "correccion": null,
+  "id": 15
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Prestación del servicio de atención integral a las familias gestantes, lactantes, niños y niñas menores de dos años",
+  "sector": "Seguridad alimentaria y nutricional para el desarrollo humano",
+  "correccion": null,
+  "id": 16
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Implementación del Plan de Intervenciones Colectivas",
+  "sector": "Salud pública y vida saludable",
+  "correccion": null,
+  "id": 17
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Implementación del Plan Ampliado de Inmunización",
+  "sector": "Salud pública y vida saludable",
+  "correccion": null,
+  "id": 18
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Apoyo a las familias cuidadoras y personas dependientes de cuidado por enfermedad o discapacidad",
+  "sector": "Salud pública y vida saludable",
+  "correccion": null,
+  "id": 19
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fortalecimiento de la vigilancia epidemiológica",
+  "sector": "Salud pública y vida saludable",
+  "correccion": null,
+  "id": 20
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fortalecimiento de la gestión del aseguramiento en salud",
+  "sector": "Aseguramiento en salud",
+  "correccion": null,
+  "id": 21
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Protección social en salud",
+  "sector": "Aseguramiento en salud",
+  "correccion": null,
+  "id": 22
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Contribución al acceso a servicios en salud",
+  "sector": "Gestión de la prestación de servicios en salud",
+  "correccion": null,
+  "id": 23
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Control de factores de riesgo",
+  "sector": "Inspección, vigilancia y control en salud",
+  "correccion": null,
+  "id": 24
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fortalecimiento de la gestión y dirección del sector salud",
+  "sector": "Planeación estratégica en salud",
+  "correccion": null,
+  "id": 25
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Deporte, recreación y actividad física",
+  "sector": null,
+  "correccion": null,
+  "id": 26
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Formación e iniciación deportiva",
+  "sector": "Fusión de músculo y alma",
+  "correccion": null,
+  "id": 27
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Apoyo e incentivos para los deportistas",
+  "sector": "Fusión de músculo y alma",
+  "correccion": null,
+  "id": 28
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fortalecimiento del deporte asociado",
+  "sector": "Fusión de músculo y alma",
+  "correccion": null,
+  "id": 29
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fortalecimiento a la educación física",
+  "sector": "Fusión de músculo y alma",
+  "correccion": null,
+  "id": 30
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Generación de conocimiento deportivo, de actividad física y recreación",
+  "sector": "Fusión de músculo y alma",
+  "correccion": null,
+  "id": 31
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Aprovechamiento del tiempo libre a través de acciones descentralizadas",
+  "sector": "Fusión de músculo y alma",
+  "correccion": null,
+  "id": 32
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Generación de entornos saludables a través de actividad física y la recreación",
+  "sector": "Fusión de músculo y alma",
+  "correccion": null,
+  "id": 33
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Consolidación del Programa Sin Barreras",
+  "sector": "Fusión de músculo y alma",
+  "correccion": null,
+  "id": 34
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Inclusión social",
+  "sector": null,
+  "correccion": null,
+  "id": 35
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Desarrollo de capacidades para el fortalecimiento familiar",
+  "sector": "Protección integral a la familia",
+  "correccion": null,
+  "id": 36
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Implementación del proyecto Familia Vamos Adelante",
+  "sector": "Protección integral a la familia",
+  "correccion": null,
+  "id": 37
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Protección y desarrollo de los niños, niñas y adolescentes",
+  "sector": "Niños, niñas y adolescentes",
+  "correccion": null,
+  "id": 38
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Implementación del programa Envigado Joven",
+  "sector": "Jóvenes",
+  "correccion": null,
+  "id": 39
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Integración social para un envejecimiento activo",
+  "sector": "Personas mayores",
+  "correccion": null,
+  "id": 40
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Consolidación de la autonomía y de territorios libres de violencias para las mujeres",
+  "sector": "Mujeres empoderadas y ejerciendo su autonomía",
+  "correccion": null,
+  "id": 41
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Transformación de la participación y empoderamiento de las mujeres",
+  "sector": "Mujeres empoderadas y ejerciendo su autonomía",
+  "correccion": null,
+  "id": 42
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fortalecimiento de la autonomía económica de las mujeres y reconocimiento de los cuidados",
+  "sector": "Mujeres empoderadas y ejerciendo su autonomía",
+  "correccion": null,
+  "id": 43
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Desarrollo integral de las personas con discapacidad",
+  "sector": "Personas con discapacidad",
+  "correccion": null,
+  "id": 44
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fortalecimiento de la multiculturalidad (NARP, Indígenas y Rrom)",
+  "sector": "Grupos étnicos",
+  "correccion": null,
+  "id": 45
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Asistencia, atención y reparación integral a las víctimas del conflicto armado interno",
+  "sector": "Víctimas del conflicto armado",
+  "correccion": null,
+  "id": 46
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Atención integral de población en situación permanente de desprotección social y/o familiar",
+  "sector": "Habitantes de calle",
+  "correccion": null,
+  "id": 47
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Integración social de la población migrante",
+  "sector": "Migrantes",
+  "correccion": null,
+  "id": 48
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Población LGBTIQ+",
+  "sector": "Población LGBTIQ+",
+  "correccion": null,
+  "id": 49
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Compromiso con un Envigado de Colores",
+  "sector": "Población LGBTIQ+",
+  "correccion": null,
+  "id": 50
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Distribución de la riqueza",
+  "sector": "Distribución de la riqueza",
+  "correccion": null,
+  "id": 51
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Subsidios para cerrar brechas",
+  "sector": "Distribución de la riqueza",
+  "correccion": null,
+  "id": 52
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicios domiciliarios y vivienda digna",
+  "sector": null,
+  "correccion": null,
+  "id": 53
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Extensión del acceso a agua potable y saneamiento básico",
+  "sector": "Servicios domiciliarios",
+  "correccion": null,
+  "id": 54
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Protección social a través de la vivienda digna",
+  "sector": "Acceso a vivienda",
+  "correccion": null,
+  "id": 55
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "ENVIGADO CON OPORTUNIDADES Y PROSPERIDAD",
+  "sector": null,
+  "correccion": null,
+  "id": 56
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Educación para el cierre de brechas",
+  "sector": null,
+  "correccion": null,
+  "id": 57
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Desarrollo y atención integral a la primera infancia",
+  "sector": "Educación inicial: Tejiendo sueños",
+  "correccion": null,
+  "id": 58
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Compromiso con la calidad educativa",
+  "sector": "Calidad educativa",
+  "correccion": null,
+  "id": 59
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Desarrollo de habilidades socioemocionales, de convivencia y educación inclusiva",
+  "sector": "Calidad educativa",
+  "correccion": null,
+  "id": 60
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fortalecimiento de competencias comunicativas en segunda lengua",
+  "sector": "Calidad educativa",
+  "correccion": null,
+  "id": 61
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de transporte para garantizar la permanencia educativa",
+  "sector": "Cobertura educativa",
+  "correccion": null,
+  "id": 62
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Extensión de la cobertura y permanencia educativa",
+  "sector": "Cobertura educativa",
+  "correccion": null,
+  "id": 63
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Implementación del Programa de Alimentación Escolar",
+  "sector": "Cobertura educativa",
+  "correccion": null,
+  "id": 64
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Potenciación del talento humano del sector educación",
+  "sector": "Gestión del talento humano educativo y bienestar docente",
+  "correccion": null,
+  "id": 65
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fortalecimiento de la innovación educativa",
+  "sector": "Innovación educativa",
+  "correccion": null,
+  "id": 66
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Divulgación de la investigación en el sector educativo",
+  "sector": "Innovación educativa",
+  "correccion": null,
+  "id": 67
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Prestación del servicio de educación",
+  "sector": "Administración e inspección educativa",
+  "correccion": null,
+  "id": 68
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fortalecimiento de la inspección y vigilancia del sector educativo",
+  "sector": "Administración e inspección educativa",
+  "correccion": null,
+  "id": 69
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fortalecimiento de la gestión y dirección del sector educativo",
+  "sector": "Planeación estratégica educativa",
+  "correccion": null,
+  "id": 70
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "ENVIGADO SOSTENIBLE E INTELIGENTE",
+  "sector": null,
+  "correccion": null,
+  "id": 71
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Desarrollo urbano y rural",
+  "sector": null,
+  "correccion": null,
+  "id": 72
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Ordenamiento territorial para una nueva generación",
+  "sector": "Planificación, ordenamiento territorial y proyectos estratégicos",
+  "correccion": null,
+  "id": 73
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Consolidación del modelo territorial",
+  "sector": "Planificación, ordenamiento territorial y proyectos estratégicos",
+  "correccion": null,
+  "id": 74
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Asesoría para el direccionamiento estratégico",
+  "sector": "Planificación, ordenamiento territorial y proyectos estratégicos",
+  "correccion": null,
+  "id": 75
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fortalecimiento de la gestión urbanística",
+  "sector": "Planificación, ordenamiento territorial y proyectos estratégicos",
+  "correccion": null,
+  "id": 76
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Desarrollo urbanístico sostenible y equilibrado",
+  "sector": "Desarrollo urbano",
+  "correccion": null,
+  "id": 77
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fortalecimiento del sector agropecuario",
+  "sector": "Desarrollo rural",
+  "correccion": null,
+  "id": 78
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Infraestructura y movilidad",
+  "sector": null,
+  "correccion": null,
+  "id": 79
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Generación y gestión del espacio público",
+  "sector": "Espacio público",
+  "correccion": null,
+  "id": 80
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Mejoramiento y mantenimiento del espacio público existente",
+  "sector": "Espacio público",
+  "correccion": null,
+  "id": 81
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Mejoramiento de equipamientos colectivos para la accesibilidad universal",
+  "sector": "Equipamiento colectivo e infraestructura vial",
+  "correccion": null,
+  "id": 82
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Generación de infraestructura educativa y cultural",
+  "sector": "Equipamiento colectivo e infraestructura vial",
+  "correccion": null,
+  "id": 83
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Mejoramiento y mantenimiento de infraestructura educativa y cultural existente",
+  "sector": "Equipamiento colectivo e infraestructura vial",
+  "correccion": null,
+  "id": 84
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Generación de infraestructura deportiva y recreativa",
+  "sector": "Equipamiento colectivo e infraestructura vial",
+  "correccion": null,
+  "id": 85
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Mejoramiento y mantenimiento de infraestructura deportiva y recreativa existente",
+  "sector": "Equipamiento colectivo e infraestructura vial",
+  "correccion": null,
+  "id": 86
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Generación de infraestructura social e institucional",
+  "sector": "Equipamiento colectivo e infraestructura vial",
+  "correccion": null,
+  "id": 87
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Mejoramiento y mantenimiento de infraestructura social e institucional",
+  "sector": "Equipamiento colectivo e infraestructura vial",
+  "correccion": null,
+  "id": 88
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Generación de infraestructura vial y de transporte",
+  "sector": "Equipamiento colectivo e infraestructura vial",
+  "correccion": null,
+  "id": 89
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Mejoramiento y mantenimiento de infraestructura vial y de transporte existente",
+  "sector": "Equipamiento colectivo e infraestructura vial",
+  "correccion": null,
+  "id": 90
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Transformación de la movilidad",
+  "sector": "Movilidad para la gente",
+  "correccion": null,
+  "id": 91
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Compromiso por la seguridad vial",
+  "sector": "Movilidad para la gente",
+  "correccion": null,
+  "id": 92
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fortalecimiento de la gestión del transporte público",
+  "sector": "Movilidad para la gente",
+  "correccion": null,
+  "id": 93
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fortalecimiento de la gestión administrativa para la movilidad",
+  "sector": "Movilidad para la gente",
+  "correccion": null,
+  "id": 94
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Bienestar animal, ambiente y desarrollo sostenible",
+  "sector": null,
+  "correccion": null,
+  "id": 95
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Protección y control de los recursos naturales",
+  "sector": "Gestión ambiental y acción por el cambio climático",
+  "correccion": null,
+  "id": 96
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Implementación de estrategias para fomentar la construcción sostenible",
+  "sector": "Gestión ambiental y acción por el cambio climático",
+  "correccion": null,
+  "id": 97
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Compromiso con un desarrollo bajo en carbono y resiliente al cambio climático",
+  "sector": "Gestión ambiental y acción por el cambio climático",
+  "correccion": null,
+  "id": 98
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Consolidación del Sistema Local de Áreas Protegidas como modelo de conservación de la biodiversidad y sus ecosistemas",
+  "sector": "Ecosistemas y biodiversidad",
+  "correccion": null,
+  "id": 99
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fortalecimiento de la renaturalización de espacios públicos y de la resiliencia territorial",
+  "sector": "Ecosistemas y biodiversidad",
+  "correccion": null,
+  "id": 100
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Mantenimiento de la red hídrica y gestión de los espacios públicos naturales",
+  "sector": "Ecosistemas y biodiversidad",
+  "correccion": null,
+  "id": 101
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Protección y gestión en áreas de importancia ambiental",
+  "sector": "Ecosistemas y biodiversidad",
+  "correccion": null,
+  "id": 102
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de atención integral a la fauna silvestre y doméstica",
+  "sector": "Bienestar animal",
+  "correccion": null,
+  "id": 103
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fortalecimiento de la gestión integral del riesgo",
+  "sector": "Gestión del riesgo",
+  "correccion": null,
+  "id": 104
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "ENVIGADO SEGURO Y PACÍFICO",
+  "sector": null,
+  "correccion": null,
+  "id": 105
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Entornos seguros",
+  "sector": "Entornos seguros",
+  "correccion": null,
+  "id": 106
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fortalecimiento de la institucionalidad para la seguridad del territorio",
+  "sector": "Entornos seguros",
+  "correccion": null,
+  "id": 107
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Actualización de la infraestructura tecnológica para la seguridad del territorio",
+  "sector": "Entornos seguros",
+  "correccion": null,
+  "id": 108
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Expansión de las capacidades de los organismos de seguridad y justicia para la seguridad pública y ciudadana",
+  "sector": "Entornos seguros",
+  "correccion": null,
+  "id": 109
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Territorio de paz",
+  "sector": "Territorio de paz",
+  "correccion": null,
+  "id": 110
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fortalecimiento del tejido social",
+  "sector": "Territorio de paz",
+  "correccion": null,
+  "id": 111
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos",
+  "sector": "Territorio de paz",
+  "correccion": null,
+  "id": 112
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fortalecimiento de la cultura ciudadana",
+  "sector": "Territorio de paz",
+  "correccion": null,
+  "id": 113
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "ENVIGADO INNOVADOR E INTEGRADOR",
+  "sector": null,
+  "correccion": null,
+  "id": 114
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Gobernanza",
+  "sector": "Gobernanza",
+  "correccion": null,
+  "id": 115
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Formación para la participación incidente",
+  "sector": "Gobernanza",
+  "correccion": null,
+  "id": 116
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Compromiso con el reconocimiento del liderazgo",
+  "sector": "Gobernanza",
+  "correccion": null,
+  "id": 117
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Implementación del presupuesto participativo",
+  "sector": "Gobernanza",
+  "correccion": null,
+  "id": 118
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Implementación de la planeación participativa del desarrollo",
+  "sector": "Gobernanza",
+  "correccion": null,
+  "id": 119
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Implementación de la comunicación para la participación ciudadana",
+  "sector": "Gobernanza",
+  "correccion": null,
+  "id": 120
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fortalecimiento de los organismos comunales como actores clave del desarrollo",
+  "sector": "Gobernanza",
+  "correccion": null,
+  "id": 121
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fortalecimiento del control social",
+  "sector": "Gobernanza",
+  "correccion": null,
+  "id": 122
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fortalecimiento de la comunicación pública para la gobernanza",
+  "sector": "Gobernanza",
+  "correccion": null,
+  "id": 123
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Excelencia del servicio público",
+  "sector": "Excelencia del servicio público",
+  "correccion": null,
+  "id": 124
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fortalecimiento de la calidad institucional",
+  "sector": "Excelencia del servicio público",
+  "correccion": null,
+  "id": 125
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Dotación tecnológica del nuevo Centro Administrativo Municipal",
+  "sector": "Excelencia del servicio público",
+  "correccion": null,
+  "id": 126
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Apoyo logístico",
+  "sector": "Excelencia del servicio público",
+  "correccion": null,
+  "id": 127
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Integración institucional para la articulación administrativa",
+  "sector": "Excelencia del servicio público",
+  "correccion": null,
+  "id": 128
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fortalecimiento del equilibrio psicosocial, clima, cultura y cambio organizacional",
+  "sector": "Excelencia del servicio público",
+  "correccion": null,
+  "id": 129
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Formación y bienestar del talento humano",
+  "sector": "Excelencia del servicio público",
+  "correccion": null,
+  "id": 130
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Desarrollo y soporte tecnológico institucional",
+  "sector": "Excelencia del servicio público",
+  "correccion": null,
+  "id": 131
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Generación de estrategias para avanzar hacia una ciudad inteligente",
+  "sector": "Excelencia del servicio público",
+  "correccion": null,
+  "id": 132
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Desarrollo de capacidades para la ciencia, tecnología e innovación de las unidades productivas",
+  "sector": "Excelencia del servicio público",
+  "correccion": null,
+  "id": 133
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Investigación y estadísticas municipales",
+  "sector": "Excelencia del servicio público",
+  "correccion": null,
+  "id": 134
+ }
+]

@@ -1,0 +1,1148 @@
+[
+ {
+  "paginas": [
+   253,
+   254,
+   255
+  ],
+  "cabecera": "Líneas del plan de desarrollo territorial",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   72128939370,
+   79341833272,
+   84895761637,
+   90838464954
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea Estratégica: 1 Justicia e inclusión social y bienestar ciudadano",
+    "anios": [
+     37528194965,
+     41281014461,
+     44170685474,
+     47262633457
+    ],
+    "total": 170242528357,
+    "ruta": {
+     "linea": "Línea Estratégica: 1 Justicia e inclusión social y bienestar ciudadano"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea Estratégica: 1 Justicia e inclusión social y bienestar ciudadano",
+    "anios": [
+     4992117011,
+     5491328712,
+     5875721721,
+     6287022242
+    ],
+    "total": 22646189686,
+    "ruta": {
+     "linea": "Línea Estratégica: 1 Justicia e inclusión social y bienestar ciudadano"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea Estratégica: 1 Justicia e inclusión social y bienestar ciudadano",
+    "anios": [
+     3617623685,
+     3979386054,
+     4257943077,
+     4555999093
+    ],
+    "total": 16410951909,
+    "ruta": {
+     "linea": "Línea Estratégica: 1 Justicia e inclusión social y bienestar ciudadano"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea Estratégica: 1 Justicia e inclusión social y bienestar ciudadano",
+    "anios": [
+     4354639539,
+     4790103493,
+     5125410738,
+     5484189490
+    ],
+    "total": 19754343260,
+    "ruta": {
+     "linea": "Línea Estratégica: 1 Justicia e inclusión social y bienestar ciudadano"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea Estratégica: 1 Justicia e inclusión social y bienestar ciudadano",
+    "anios": [
+     752051579,
+     827256737,
+     885164708,
+     947126238
+    ],
+    "total": 3411599262,
+    "ruta": {
+     "linea": "Línea Estratégica: 1 Justicia e inclusión social y bienestar ciudadano"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea Estratégica: 1 Justicia e inclusión social y bienestar ciudadano",
+    "anios": [
+     2479797639,
+     2727777403,
+     2918721821,
+     3123032349
+    ],
+    "total": 11249329212,
+    "ruta": {
+     "linea": "Línea Estratégica: 1 Justicia e inclusión social y bienestar ciudadano"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea Estratégica: 2 Gobernanza y participación ciudadana",
+    "anios": [
+     700000000,
+     770000000,
+     823900000,
+     881573000
+    ],
+    "total": 3175473000,
+    "ruta": {
+     "linea": "Línea Estratégica: 2 Gobernanza y participación ciudadana"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea Estratégica: 2 Gobernanza y participación ciudadana",
+    "anios": [
+     200000000,
+     220000000,
+     235400000,
+     251878000
+    ],
+    "total": 907278000,
+    "ruta": {
+     "linea": "Línea Estratégica: 2 Gobernanza y participación ciudadana"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea Estratégica: 2 Gobernanza y participación ciudadana",
+    "anios": [
+     5758475124,
+     6334322636,
+     6777725221,
+     7252165986
+    ],
+    "total": 26122688967,
+    "ruta": {
+     "linea": "Línea Estratégica: 2 Gobernanza y participación ciudadana"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea Estratégica: 3 Integración regional y desarrollo económico y sostenible",
+    "anios": [
+     1344685686,
+     1479154255,
+     1582695052,
+     1693483706
+    ],
+    "total": 6100018699,
+    "ruta": {
+     "linea": "Línea Estratégica: 3 Integración regional y desarrollo económico y sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea Estratégica: 3 Integración regional y desarrollo económico y sostenible",
+    "anios": [
+     1305398804,
+     1435938648,
+     1536454392,
+     1644006200
+    ],
+    "total": 5921798044,
+    "ruta": {
+     "linea": "Línea Estratégica: 3 Integración regional y desarrollo económico y sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea Estratégica: 3 Integración regional y desarrollo económico y sostenible",
+    "anios": [
+     187247308,
+     205972039,
+     220390082,
+     235817387
+    ],
+    "total": 849426816,
+    "ruta": {
+     "linea": "Línea Estratégica: 3 Integración regional y desarrollo económico y sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea Estratégica: 3 Integración regional y desarrollo económico y sostenible",
+    "anios": [
+     120000000,
+     132000000,
+     141240000,
+     151126800
+    ],
+    "total": 544366800,
+    "ruta": {
+     "linea": "Línea Estratégica: 3 Integración regional y desarrollo económico y sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea Estratégica: 3 Integración regional y desarrollo económico y sostenible",
+    "anios": [
+     2715992836,
+     2987592120,
+     3196723568,
+     3420494218
+    ],
+    "total": 12320802742,
+    "ruta": {
+     "linea": "Línea Estratégica: 3 Integración regional y desarrollo económico y sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea Estratégica: 3 Integración regional y desarrollo económico y sostenible",
+    "anios": [
+     5615960056,
+     6177556062,
+     6609984986,
+     7072683935
+    ],
+    "total": 25476185039,
+    "ruta": {
+     "linea": "Línea Estratégica: 3 Integración regional y desarrollo económico y sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea Estratégica: 4 Desarrollo del conocimiento, innovación y gobierno abierto",
+    "anios": [
+     50000000,
+     55000000,
+     58850000,
+     62969500
+    ],
+    "total": 226819500,
+    "ruta": {
+     "linea": "Línea Estratégica: 4 Desarrollo del conocimiento, innovación y gobierno abierto"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea Estratégica: 4 Desarrollo del conocimiento, innovación y gobierno abierto",
+    "anios": [
+     406755138,
+     447430652,
+     478750797,
+     512263353
+    ],
+    "total": 1845199940,
+    "ruta": {
+     "linea": "Línea Estratégica: 4 Desarrollo del conocimiento, innovación y gobierno abierto"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   313,
+   314
+  ],
+  "cabecera": "Línea LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   44965314782,
+   52309920784,
+   54405170922,
+   53654088255
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
+    "anios": [
+     2018945474,
+     2220840021,
+     2376298823,
+     2542639740
+    ],
+    "total": 9158724058,
+    "ruta": {
+     "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
+    "anios": [
+     26680357307,
+     29348393038,
+     31402780550,
+     33600975189
+    ],
+    "total": 121032506084,
+    "ruta": {
+     "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
+    "anios": [
+     3994746383,
+     4394221021,
+     4201816493,
+     4730943647
+    ],
+    "total": 17321727544,
+    "ruta": {
+     "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
+    "anios": [
+     56916400,
+     62608040,
+     66990603,
+     71679945
+    ],
+    "total": 258194988,
+    "ruta": {
+     "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "CIUDADANO",
+    "anios": [
+     150000000,
+     170000000,
+     210000000,
+     230000000
+    ],
+    "total": 760000000,
+    "ruta": {
+     "linea": "CIUDADANO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
+    "anios": [
+     295000000,
+     980000000,
+     1016000000,
+     740000000
+    ],
+    "total": 3031000000,
+    "ruta": {
+     "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
+    "anios": [
+     445000000,
+     1150000000,
+     1086000000,
+     740000000
+    ],
+    "total": 3421000000,
+    "ruta": {
+     "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
+    "anios": [
+     2445500000,
+     5800000000,
+     2971000000,
+     2995000000
+    ],
+    "total": 14211500000,
+    "ruta": {
+     "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "CIUDADANO LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR",
+    "anios": [
+     85000000,
+     55000000,
+     70000000,
+     80000000
+    ],
+    "total": 290000000,
+    "ruta": {
+     "linea": "CIUDADANO LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "CIUDADANO",
+    "anios": [
+     40000000,
+     80000000,
+     100000000,
+     100000000
+    ],
+    "total": 320000000,
+    "ruta": {
+     "linea": "CIUDADANO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
+    "anios": [
+     3354000000,
+     3588780000,
+     3839994600,
+     4108794222
+    ],
+    "total": 14891568822,
+    "ruta": {
+     "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
+    "anios": [
+     210000000,
+     430000000,
+     320000000,
+     190000000
+    ],
+    "total": 1150000000,
+    "ruta": {
+     "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
+    "anios": [
+     180000000,
+     280000000,
+     0,
+     0
+    ],
+    "total": 460000000,
+    "ruta": {
+     "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
+    "anios": [
+     1000000000,
+     1070000000,
+     1100000000,
+     1177000000
+    ],
+    "total": 4347000000,
+    "ruta": {
+     "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
+    "anios": [
+     88000000,
+     170000000,
+     0,
+     55000000
+    ],
+    "total": 313000000,
+    "ruta": {
+     "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
+    "anios": [
+     503874558,
+     539145777,
+     576885981,
+     617268000
+    ],
+    "total": 2237174316,
+    "ruta": {
+     "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
+    "anios": [
+     248177021,
+     265549413,
+     284137871,
+     304027522
+    ],
+    "total": 1101891827,
+    "ruta": {
+     "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
+    "anios": [
+     1340000000,
+     550000000,
+     3547005684,
+     87000000
+    ],
+    "total": 5524005684,
+    "ruta": {
+     "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
+    "anios": [
+     1079797639,
+     1155383474,
+     1236260317,
+     1258759990
+    ],
+    "total": 4730201420,
+    "ruta": {
+     "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
+    "anios": [
+     750000000,
+     0,
+     0,
+     25000000
+    ],
+    "total": 775000000,
+    "ruta": {
+     "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   315
+  ],
+  "cabecera": "Línea Línea 2 Gobernanza y participación ciudadana",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   6108475124,
+   6719322637,
+   7189675221,
+   7692952486
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea 2 Gobernanza y participación ciudadana",
+    "anios": [
+     150000000,
+     165000000,
+     176550000,
+     188908500
+    ],
+    "total": 680458500,
+    "ruta": {
+     "linea": "Línea 2 Gobernanza y participación ciudadana"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea 2 Gobernanza y participación ciudadana",
+    "anios": [
+     20000000,
+     22000000,
+     23540000,
+     25187800
+    ],
+    "total": 90727800,
+    "ruta": {
+     "linea": "Línea 2 Gobernanza y participación ciudadana"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea 2 Gobernanza y participación ciudadana",
+    "anios": [
+     140000000,
+     154000000,
+     164780000,
+     176314600
+    ],
+    "total": 635094600,
+    "ruta": {
+     "linea": "Línea 2 Gobernanza y participación ciudadana"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea 2 Gobernanza y participación ciudadana",
+    "anios": [
+     40000000,
+     44000000,
+     47080000,
+     50375600
+    ],
+    "total": 181455600,
+    "ruta": {
+     "linea": "Línea 2 Gobernanza y participación ciudadana"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea 2 Gobernanza y participación ciudadana",
+    "anios": [
+     263500000,
+     289850000,
+     310139500,
+     331849265
+    ],
+    "total": 1195338765,
+    "ruta": {
+     "linea": "Línea 2 Gobernanza y participación ciudadana"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea 2 Gobernanza y participación ciudadana",
+    "anios": [
+     1152118466,
+     1267330313,
+     1356043434,
+     1450966475
+    ],
+    "total": 5226458688,
+    "ruta": {
+     "linea": "Línea 2 Gobernanza y participación ciudadana"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea 2 Gobernanza y participación ciudadana",
+    "anios": [
+     2648551858,
+     2913407044,
+     3117345537,
+     3335559724
+    ],
+    "total": 12014864163,
+    "ruta": {
+     "linea": "Línea 2 Gobernanza y participación ciudadana"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea 2 Gobernanza y participación ciudadana",
+    "anios": [
+     1694304800,
+     1863735280,
+     1994196750,
+     2133790522
+    ],
+    "total": 7686027352,
+    "ruta": {
+     "linea": "Línea 2 Gobernanza y participación ciudadana"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   316,
+   317
+  ],
+  "cabecera": "Línea LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   10368654740,
+   11405520215,
+   12203906629,
+   13058180093
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
+    "anios": [
+     60000000,
+     66000000,
+     70620000,
+     75563400
+    ],
+    "total": 272183400,
+    "ruta": {
+     "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
+    "anios": [
+     400000000,
+     440000000,
+     470800000,
+     503756000
+    ],
+    "total": 1814556000,
+    "ruta": {
+     "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
+    "anios": [
+     250000000,
+     275000000,
+     294250000,
+     314847500
+    ],
+    "total": 1134097500,
+    "ruta": {
+     "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
+    "anios": [
+     220000000,
+     242000000,
+     258940000,
+     277065800
+    ],
+    "total": 998005800,
+    "ruta": {
+     "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
+    "anios": [
+     300000000,
+     330000000,
+     353100000,
+     377817000
+    ],
+    "total": 1360917000,
+    "ruta": {
+     "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
+    "anios": [
+     67699402,
+     74469342,
+     79682196,
+     85259950
+    ],
+    "total": 307110890,
+    "ruta": {
+     "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
+    "anios": [
+     67699402,
+     74469342,
+     79682196,
+     85259950
+    ],
+    "total": 307110890,
+    "ruta": {
+     "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
+     "sector": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
+    "anios": [
+     120000000,
+     132000000,
+     141240000,
+     151126800
+    ],
+    "total": 544366800,
+    "ruta": {
+     "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
+    "anios": [
+     50000000,
+     55000000,
+     58850000,
+     62969500
+    ],
+    "total": 226819500,
+    "ruta": {
+     "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
+    "anios": [
+     57247308,
+     62972039,
+     67380082,
+     72096687
+    ],
+    "total": 259696116,
+    "ruta": {
+     "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
+    "anios": [
+     80000000,
+     88000000,
+     94160000,
+     100751200
+    ],
+    "total": 362911200,
+    "ruta": {
+     "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
+    "anios": [
+     2000000000,
+     2200000000,
+     2354000000,
+     2518780000
+    ],
+    "total": 9072780000,
+    "ruta": {
+     "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
+    "anios": [
+     50000000,
+     55000000,
+     58850000,
+     62969500
+    ],
+    "total": 226819500,
+    "ruta": {
+     "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
+    "anios": [
+     665992836,
+     732592120,
+     783873568,
+     838744718
+    ],
+    "total": 3021203242,
+    "ruta": {
+     "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
+    "anios": [
+     4800000000,
+     5280000000,
+     5649600000,
+     6045072000
+    ],
+    "total": 21774672000,
+    "ruta": {
+     "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
+    "anios": [
+     415960056,
+     457556062,
+     489584986,
+     523855935
+    ],
+    "total": 1886957039,
+    "ruta": {
+     "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
+    "anios": [
+     400000000,
+     440000000,
+     470800000,
+     503756000
+    ],
+    "total": 1814556000,
+    "ruta": {
+     "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 4 DESARROLLO DEL CONOCIMIENTO, INNOVACION Y GOBIERNO TERRITORIAL",
+    "anios": [
+     25000000,
+     27500000,
+     29425000,
+     31484750
+    ],
+    "total": 113409750,
+    "ruta": {
+     "linea": "LINEA 4 DESARROLLO DEL CONOCIMIENTO, INNOVACION Y GOBIERNO TERRITORIAL"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "LINEA 4 DESARROLLO DEL CONOCIMIENTO, INNOVACION Y GOBIERNO TERRITORIAL",
+    "anios": [
+     25000000,
+     27500000,
+     29425000,
+     31484750
+    ],
+    "total": 113409750,
+    "ruta": {
+     "linea": "LINEA 4 DESARROLLO DEL CONOCIMIENTO, INNOVACION Y GOBIERNO TERRITORIAL",
+     "sector": "LINEA 4 DESARROLLO DEL CONOCIMIENTO, INNOVACION Y GOBIERNO TERRITORIAL"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 4 DESARROLLO DEL CONOCIMIENTO, INNOVACION Y GOBIERNO TERRITORIAL",
+    "anios": [
+     356755138,
+     392430652,
+     419900797,
+     449293853
+    ],
+    "total": 1618380440,
+    "ruta": {
+     "linea": "LINEA 4 DESARROLLO DEL CONOCIMIENTO, INNOVACION Y GOBIERNO TERRITORIAL"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LINEA 4 DESARROLLO DEL CONOCIMIENTO, INNOVACION Y GOBIERNO TERRITORIAL",
+    "anios": [
+     50000000,
+     55000000,
+     58850000,
+     62969500
+    ],
+    "total": 226819500,
+    "ruta": {
+     "linea": "LINEA 4 DESARROLLO DEL CONOCIMIENTO, INNOVACION Y GOBIERNO TERRITORIAL"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

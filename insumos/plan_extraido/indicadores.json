@@ -1,159 +1,171 @@
 [
  {
   "nombre": "Auditorías y visitas inspectivas realizadas",
-  "unidad": "Número",
   "linea_base": "1032",
   "meta": "4328",
   "tipo_acumulado": "Incremento",
   "responsable": "Secretaría de Salud",
-  "linea": 1,
+  "unidad": "",
+  "linea": "s",
   "sector": "Salud y protección social",
   "programa": "Inspección, vigilancia y control",
   "coincidencia_ppi": 1.0,
-  "pagina": 92
+  "pagina": 92,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Establecimientos abiertos al público vigilados y controlados",
-  "unidad": "Número",
   "linea_base": "838",
   "meta": "838",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Secretaría de Salud",
-  "linea": 1,
+  "unidad": "",
+  "linea": "s",
   "sector": "Salud y protección social",
   "programa": "Inspección, vigilancia y control",
   "coincidencia_ppi": 1.0,
-  "pagina": 92
+  "pagina": 92,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Instituciones financiadas para la atención en salud a la población",
-  "unidad": "Número",
   "linea_base": "1",
-  "meta": "1",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Secretaría de Salud",
-  "linea": 1,
+  "unidad": "",
+  "meta": "",
+  "linea": "s",
   "sector": "Salud y protección social",
   "programa": "Aseguramiento y prestación integral de servicios de salud",
   "coincidencia_ppi": 1.0,
-  "pagina": 93
+  "pagina": 93,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Sistema de información implementado",
-  "unidad": "Número",
   "linea_base": "7",
-  "meta": "7",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Secretaría de Salud",
-  "linea": 1,
+  "unidad": "",
+  "meta": "",
+  "linea": "s",
   "sector": "Salud y protección social",
   "programa": "Aseguramiento y prestación integral de servicios de salud",
   "coincidencia_ppi": 1.0,
-  "pagina": 93
+  "pagina": 93,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Reportes de información entregados",
-  "unidad": "Número",
   "linea_base": "7",
-  "meta": "7",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Secretaría de Salud",
-  "linea": 1,
+  "unidad": "",
+  "meta": "",
+  "linea": "s",
   "sector": "Salud y protección social",
   "programa": "Aseguramiento y prestación integral de servicios de salud",
   "coincidencia_ppi": 1.0,
-  "pagina": 93
+  "pagina": 93,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Personas afiliadas al régimen subsidiado",
-  "unidad": "Número",
   "linea_base": "20557",
-  "meta": "20557",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Secretaría de Salud",
-  "linea": 1,
+  "unidad": "",
+  "meta": "",
+  "linea": "s",
   "sector": "Salud y protección social",
   "programa": "Aseguramiento y prestación integral de servicios de salud",
   "coincidencia_ppi": 1.0,
-  "pagina": 93
+  "pagina": 93,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Personas no afiliadas atendidas con servicios de salud diferente de población migrante",
-  "unidad": "Número",
   "linea_base": "7",
-  "meta": "7",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Secretaría de Salud",
-  "linea": 1,
+  "unidad": "",
+  "meta": "",
+  "linea": "s",
   "sector": "Salud y protección social",
   "programa": "Aseguramiento y prestación integral de servicios de salud",
   "coincidencia_ppi": 1.0,
-  "pagina": 93
+  "pagina": 93,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Personas migrantes no afiliadas atendidas con servicios de salud en urgencias",
-  "unidad": "Número",
   "linea_base": "669",
-  "meta": "380",
   "tipo_acumulado": "Flujo",
   "responsable": "Secretaría de Salud",
-  "linea": 1,
+  "unidad": "",
+  "meta": "",
+  "linea": "s",
   "sector": "Salud y protección social",
   "programa": "Aseguramiento y prestación integral de servicios de salud",
   "coincidencia_ppi": 1.0,
-  "pagina": 93
+  "pagina": 93,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Hospitales de primer nivel de atención construidos",
-  "unidad": "Número",
   "linea_base": "1",
-  "meta": "1",
   "tipo_acumulado": "Incremento",
   "responsable": "Secretaría de Salud",
-  "linea": 1,
+  "unidad": "",
+  "meta": "",
+  "linea": "s",
   "sector": "Salud y protección social",
   "programa": "Aseguramiento y prestación integral de servicios de salud",
   "coincidencia_ppi": 1.0,
-  "pagina": 93
+  "pagina": 93,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Hospitales de primer nivel de atención dotados",
-  "unidad": "Número",
   "linea_base": "1",
-  "meta": "1",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Secretaría de Salud",
-  "linea": 1,
+  "unidad": "",
+  "meta": "",
+  "linea": "s",
   "sector": "Salud y protección social",
   "programa": "Aseguramiento y prestación integral de servicios de salud",
   "coincidencia_ppi": 1.0,
-  "pagina": 93
+  "pagina": 93,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Reducir el índice de violencia intrafamiliar",
-  "unidad": "Porcentaje",
   "linea_base": "33,5",
   "meta": "31,2",
-  "tipo_acumulado": "",
   "responsable": "Gobierno y derechos humanos",
-  "linea": 1,
+  "unidad": "",
+  "tipo_acumulado": "",
+  "linea": "s",
   "sector": "Salud y protección social",
   "programa": "Aseguramiento y prestación integral de servicios de salud",
   "coincidencia_ppi": 1.0,
-  "pagina": 96
+  "pagina": 96,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Restablecimiento de derechos",
-  "unidad": "Número",
   "linea_base": "222",
   "meta": "222",
-  "tipo_acumulado": "",
   "responsable": "Gobierno y derechos humanos",
-  "linea": 1,
+  "unidad": "",
+  "tipo_acumulado": "",
+  "linea": "s",
   "sector": "Salud y protección social",
   "programa": "Aseguramiento y prestación integral de servicios de salud",
   "coincidencia_ppi": 1.0,
-  "pagina": 96
+  "pagina": 96,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Sedes construidadas para la primera infancia",
@@ -162,11 +174,12 @@
   "meta": "1",
   "tipo_acumulado": "Incremento",
   "responsable": "Subsecretaría de Protección Social",
-  "linea": 1,
+  "linea": "s",
   "sector": "Inclusión social y reconciliación",
   "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niños y adolescentes",
   "coincidencia_ppi": 1.0,
-  "pagina": 107
+  "pagina": 107,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Niños y niñas atendidos en Servicio integrales",
@@ -175,11 +188,12 @@
   "meta": "2000",
   "tipo_acumulado": "Incremento",
   "responsable": "Subsecretaría de Protección Social",
-  "linea": 1,
+  "linea": "s",
   "sector": "Inclusión social y reconciliación",
   "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niños y adolescentes",
   "coincidencia_ppi": 1.0,
-  "pagina": 107
+  "pagina": 107,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Documentos de lineamientos técnicos realizados",
@@ -188,11 +202,12 @@
   "meta": "1",
   "tipo_acumulado": "Incremento",
   "responsable": "Subsecretaría de Protección Social",
-  "linea": 1,
+  "linea": "s",
   "sector": "Inclusión social y reconciliación",
   "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niños y adolescentes",
   "coincidencia_ppi": 1.0,
-  "pagina": 107
+  "pagina": 107,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Agentes de la institucionalidad de infancia, adolescencia y juventud asistidos técnicamente",
@@ -201,11 +216,12 @@
   "meta": "90",
   "tipo_acumulado": "Incremento",
   "responsable": "Subsecretaría de Protección Social",
-  "linea": 1,
+  "linea": "s",
   "sector": "Inclusión social y reconciliación",
   "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niños y adolescentes",
   "coincidencia_ppi": 1.0,
-  "pagina": 107
+  "pagina": 107,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Campañas de promoción realizadas",
@@ -214,11 +230,12 @@
   "meta": "50",
   "tipo_acumulado": "Incremento",
   "responsable": "Subsecretaría de Protección Social",
-  "linea": 1,
+  "linea": "s",
   "sector": "Inclusión social y reconciliación",
   "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niños y adolescentes",
   "coincidencia_ppi": 1.0,
-  "pagina": 107
+  "pagina": 107,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Documentos de lineamientos técnicos realizados",
@@ -227,11 +244,12 @@
   "meta": "1",
   "tipo_acumulado": "Incremento",
   "responsable": "Subsecretaría de Protección Social",
-  "linea": 1,
+  "linea": "s",
   "sector": "Inclusión social y reconciliación",
   "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niños y adolescentes",
   "coincidencia_ppi": 1.0,
-  "pagina": 107
+  "pagina": 107,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Documentos de lineamientos técnicos realizados",
@@ -240,11 +258,12 @@
   "meta": "1",
   "tipo_acumulado": "Incremento",
   "responsable": "Subsecretaría de Protección Social",
-  "linea": 1,
+  "linea": "s",
   "sector": "Inclusión social y reconciliación",
   "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niños y adolescentes",
   "coincidencia_ppi": 1.0,
-  "pagina": 107
+  "pagina": 107,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Documentos de lineamientos técnicos realizados",
@@ -253,11 +272,12 @@
   "meta": "2",
   "tipo_acumulado": "Incremento",
   "responsable": "Subsecretaría de Protección Social",
-  "linea": 1,
+  "linea": "s",
   "sector": "Inclusión social y reconciliación",
   "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niños y adolescentes",
   "coincidencia_ppi": 1.0,
-  "pagina": 107
+  "pagina": 107,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Niños, niñas, adolescentes y jóvenes atendidos en los servicios de restablecimiento en la administración de justicia",
@@ -266,11 +286,12 @@
   "meta": "2",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Gobierno",
-  "linea": 1,
+  "linea": "s",
   "sector": "Inclusión social y reconciliación",
   "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niños y adolescentes",
   "coincidencia_ppi": 1.0,
-  "pagina": 107
+  "pagina": 107,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Adultos mayores atendidos con servicios integrales",
@@ -279,11 +300,12 @@
   "meta": "2850",
   "tipo_acumulado": "Capacidad",
   "responsable": "Subsecretaría de Protección Social",
-  "linea": 1,
+  "linea": "s",
   "sector": "Inclusión social y reconciliación",
   "programa": "Atención integral de población en situación permanente de desprotección social y/o familiar",
   "coincidencia_ppi": 1.0,
-  "pagina": 108
+  "pagina": 108,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Centros de día para el adulto mayor construidos",
@@ -292,11 +314,12 @@
   "meta": "1",
   "tipo_acumulado": "Incremento",
   "responsable": "Subsecretaría de Protección Social",
-  "linea": 1,
+  "linea": "s",
   "sector": "Inclusión social y reconciliación",
   "programa": "Atención integral de población en situación permanente de desprotección social y/o familiar",
   "coincidencia_ppi": 1.0,
-  "pagina": 108
+  "pagina": 108,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Personas con discapacidad atendidas con servicios integrales",
@@ -305,11 +328,12 @@
   "meta": "800",
   "tipo_acumulado": "Incremento",
   "responsable": "Subsecretaría de Protección Social",
-  "linea": 1,
+  "linea": "s",
   "sector": "Inclusión social y reconciliación",
   "programa": "Atención integral de población en situación permanente de desprotección social y/o familiar",
   "coincidencia_ppi": 1.0,
-  "pagina": 108
+  "pagina": 108,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Centros de atención integral para personas con discapacidad dotados",
@@ -318,11 +342,12 @@
   "meta": "1",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Subsecretaría de Protección Social",
-  "linea": 1,
+  "linea": "s",
   "sector": "Inclusión social y reconciliación",
   "programa": "Atención integral de población en situación permanente de desprotección social y/o familiar",
   "coincidencia_ppi": 1.0,
-  "pagina": 108
+  "pagina": 108,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Víctimas caracterizadas",
@@ -331,11 +356,12 @@
   "meta": "1",
   "tipo_acumulado": "Incremento",
   "responsable": "Gobierno",
-  "linea": 1,
+  "linea": "s",
   "sector": "Inclusión social y reconciliación",
   "programa": "Atención, asistencia y reparación integral a las víctimas",
   "coincidencia_ppi": 1.0,
-  "pagina": 109
+  "pagina": 109,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Solicitudes tramitadas",
@@ -344,11 +370,12 @@
   "meta": "8100",
   "tipo_acumulado": "Incremento",
   "responsable": "Gobierno",
-  "linea": 1,
+  "linea": "s",
   "sector": "Inclusión social y reconciliación",
   "programa": "Atención, asistencia y reparación integral a las víctimas",
   "coincidencia_ppi": 1.0,
-  "pagina": 109
+  "pagina": 109,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Hogares víctimas con atención humanitaria",
@@ -357,180 +384,124 @@
   "meta": "81",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Gobierno",
-  "linea": 1,
+  "linea": "s",
   "sector": "Inclusión social y reconciliación",
   "programa": "Atención, asistencia y reparación integral a las víctimas",
   "coincidencia_ppi": 1.0,
-  "pagina": 109
- },
- {
-  "nombre": "Cobertura agua potable",
-  "unidad": "Porcentaje",
-  "linea_base": "90,16",
-  "meta": "93",
-  "tipo_acumulado": "",
-  "responsable": "Infraestructura",
-  "linea": 1,
-  "sector": "Inclusión social y reconciliación",
-  "programa": "Atención, asistencia y reparación integral a las víctimas",
-  "coincidencia_ppi": 1.0,
-  "pagina": 112
- },
- {
-  "nombre": "Cobertura alcantarillado",
-  "unidad": "Porcentaje",
-  "linea_base": "70,84",
-  "meta": "71",
-  "tipo_acumulado": "",
-  "responsable": "Infraestructura",
-  "linea": 1,
-  "sector": "Inclusión social y reconciliación",
-  "programa": "Atención, asistencia y reparación integral a las víctimas",
-  "coincidencia_ppi": 1.0,
-  "pagina": 112
- },
- {
-  "nombre": "Cobertura aseo",
-  "unidad": "Porcentaje",
-  "linea_base": "90,14",
-  "meta": "90,14",
-  "tipo_acumulado": "",
-  "responsable": "Ambiente y Desarrollo Sostenible",
-  "linea": 1,
-  "sector": "Inclusión social y reconciliación",
-  "programa": "Atención, asistencia y reparación integral a las víctimas",
-  "coincidencia_ppi": 1.0,
-  "pagina": 112
- },
- {
-  "nombre": "Déficit cualitativo",
-  "unidad": "Porcentaje",
-  "linea_base": "44,57",
-  "meta": "44,4",
-  "tipo_acumulado": "",
-  "responsable": "Infraestructura",
-  "linea": 1,
-  "sector": "Inclusión social y reconciliación",
-  "programa": "Atención, asistencia y reparación integral a las víctimas",
-  "coincidencia_ppi": 1.0,
-  "pagina": 112
- },
- {
-  "nombre": "Déficit cuantitativo",
-  "unidad": "Porcentaje",
-  "linea_base": "1,1",
-  "meta": "1",
-  "tipo_acumulado": "",
-  "responsable": "Infraestructura",
-  "linea": 1,
-  "sector": "Inclusión social y reconciliación",
-  "programa": "Atención, asistencia y reparación integral a las víctimas",
-  "coincidencia_ppi": 1.0,
-  "pagina": 112
+  "pagina": 109,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Espacio público construido",
-  "unidad": "Metros cuadrados",
   "linea_base": "0",
   "meta": "300",
   "tipo_acumulado": "Incremento",
   "responsable": "Infraestructura",
-  "linea": 1,
+  "unidad": "",
+  "linea": "s",
   "sector": "Vivienda, ciudad y territorio",
   "programa": "Ordenamiento territorial y desarrollo urbano",
   "coincidencia_ppi": 1.0,
-  "pagina": 117
+  "pagina": 117,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Espacio público adecuado",
-  "unidad": "Metros cuadrados",
   "linea_base": "0",
   "meta": "1000",
   "tipo_acumulado": "Incremento",
   "responsable": "Infraestructura",
-  "linea": 1,
+  "unidad": "",
+  "linea": "s",
   "sector": "Vivienda, ciudad y territorio",
   "programa": "Ordenamiento territorial y desarrollo urbano",
   "coincidencia_ppi": 1.0,
-  "pagina": 117
+  "pagina": 117,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Plazas mantenidas",
-  "unidad": "Metros cuadrados",
   "linea_base": "0",
   "meta": "400",
   "tipo_acumulado": "Incremento",
   "responsable": "Infraestructura",
-  "linea": 1,
+  "unidad": "",
+  "linea": "s",
   "sector": "Vivienda, ciudad y territorio",
   "programa": "Ordenamiento territorial y desarrollo urbano",
   "coincidencia_ppi": 1.0,
-  "pagina": 117
+  "pagina": 117,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Documentos de planeación en Ordenamiento Territorial implementados",
-  "unidad": "Número",
   "linea_base": "0",
   "meta": "1",
   "tipo_acumulado": "Incremento",
   "responsable": "Planeación",
-  "linea": 1,
+  "unidad": "",
+  "linea": "s",
   "sector": "Vivienda, ciudad y territorio",
   "programa": "Ordenamiento territorial y desarrollo urbano",
   "coincidencia_ppi": 1.0,
-  "pagina": 117
+  "pagina": 117,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Documentos de planeación elaborados",
-  "unidad": "Número",
   "linea_base": "0",
   "meta": "1",
   "tipo_acumulado": "Incremento",
   "responsable": "Planeación",
-  "linea": 1,
+  "unidad": "",
+  "linea": "s",
   "sector": "Vivienda, ciudad y territorio",
   "programa": "Ordenamiento territorial y desarrollo urbano",
   "coincidencia_ppi": 1.0,
-  "pagina": 117
+  "pagina": 117,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Zonas verdes mantenidas",
-  "unidad": "Metros cuadrados",
   "linea_base": "53,912",
   "meta": "53,912",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Ambiente y Desarrollo Sostenible",
-  "linea": 1,
+  "unidad": "",
+  "linea": "s",
   "sector": "Vivienda, ciudad y territorio",
   "programa": "Ordenamiento territorial y desarrollo urbano",
   "coincidencia_ppi": 1.0,
-  "pagina": 117
+  "pagina": 117,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Zonas verdes adecuadas",
-  "unidad": "Metros cuadrados",
   "linea_base": "0",
   "meta": "2000",
   "tipo_acumulado": "Incremento",
   "responsable": "Ambiente y Desarrollo Sostenible",
-  "linea": 1,
+  "unidad": "",
+  "linea": "s",
   "sector": "Vivienda, ciudad y territorio",
   "programa": "Ordenamiento territorial y desarrollo urbano",
   "coincidencia_ppi": 1.0,
-  "pagina": 117
+  "pagina": 117,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Hogares beneficiados con mejoramiento de una vivienda",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "250",
   "tipo_acumulado": "Incremento",
   "responsable": "Infraestructura",
-  "linea": 1,
+  "unidad": "",
+  "meta": "",
+  "linea": "s",
   "sector": "Vivienda, ciudad y territorio",
   "programa": "Acceso a soluciones de vivienda",
   "coincidencia_ppi": 1.0,
-  "pagina": 118
+  "pagina": 118,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Documentos de planeación en políticas de Agua Potable y Saneamiento Básico elaborados",
@@ -539,11 +510,12 @@
   "meta": "2",
   "tipo_acumulado": "Incremento",
   "responsable": "Infraestructura",
-  "linea": 1,
+  "linea": "s",
   "sector": "Vivienda, ciudad y territorio",
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 1.0,
-  "pagina": 122
+  "pagina": 122,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Proyectos de acueducto, alcantarillado y aseo apoyados financieramente",
@@ -552,11 +524,12 @@
   "meta": "1",
   "tipo_acumulado": "Incremento",
   "responsable": "Infraestructura",
-  "linea": 1,
+  "linea": "s",
   "sector": "Vivienda, ciudad y territorio",
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 1.0,
-  "pagina": 122
+  "pagina": 122,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Acueductos construidos",
@@ -565,11 +538,12 @@
   "meta": "19",
   "tipo_acumulado": "Incremento",
   "responsable": "Infraestructura",
-  "linea": 1,
+  "linea": "s",
   "sector": "Vivienda, ciudad y territorio",
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 1.0,
-  "pagina": 122
+  "pagina": 122,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Red de alcantarillado construida",
@@ -578,11 +552,12 @@
   "meta": "21700",
   "tipo_acumulado": "Incremento",
   "responsable": "Infraestructura",
-  "linea": 1,
+  "linea": "s",
   "sector": "Vivienda, ciudad y territorio",
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 1.0,
-  "pagina": 122
+  "pagina": 122,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Unidades sanitarias con saneamiento básico construidas para vivienda Rural",
@@ -591,11 +566,12 @@
   "meta": "5500",
   "tipo_acumulado": "Incremento",
   "responsable": "Infraestructura",
-  "linea": 1,
+  "linea": "s",
   "sector": "Vivienda, ciudad y territorio",
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 1.0,
-  "pagina": 122
+  "pagina": 122,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Recursos entregados en subsidios al consumo",
@@ -604,11 +580,12 @@
   "meta": "4.569.658.860",
   "tipo_acumulado": "Incremento",
   "responsable": "Infraestructura",
-  "linea": 1,
+  "linea": "s",
   "sector": "Vivienda, ciudad y territorio",
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 1.0,
-  "pagina": 122
+  "pagina": 122,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Asistencias técnicas realizadas",
@@ -617,11 +594,12 @@
   "meta": "8",
   "tipo_acumulado": "Incremento",
   "responsable": "Infraestructura",
-  "linea": 1,
+  "linea": "s",
   "sector": "Vivienda, ciudad y territorio",
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 1.0,
-  "pagina": 122
+  "pagina": 122,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Acueductos optimizados",
@@ -630,11 +608,12 @@
   "meta": "2",
   "tipo_acumulado": "Incremento",
   "responsable": "Infraestructura",
-  "linea": 1,
+  "linea": "s",
   "sector": "Vivienda, ciudad y territorio",
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 1.0,
-  "pagina": 122
+  "pagina": 122,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Estudios o diseños realizados",
@@ -643,11 +622,12 @@
   "meta": "5",
   "tipo_acumulado": "Incremento",
   "responsable": "Infraestructura",
-  "linea": 1,
+  "linea": "s",
   "sector": "Vivienda, ciudad y territorio",
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 1.0,
-  "pagina": 122
+  "pagina": 122,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Plan Integral de gestión de residuo sólidos (PGIRS) actualizado",
@@ -656,11 +636,12 @@
   "meta": "1",
   "tipo_acumulado": "Mantenimiento Incremento",
   "responsable": "Ambiente y Desarrollo Sostenible",
-  "linea": 1,
+  "linea": "s",
   "sector": "Vivienda, ciudad y territorio",
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 1.0,
-  "pagina": 122
+  "pagina": 122,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Plan de Gestión Integral de Residuos Solidos implementado",
@@ -669,11 +650,12 @@
   "meta": "1",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Ambiente y Desarrollo Sostenible",
-  "linea": 1,
+  "linea": "s",
   "sector": "Vivienda, ciudad y territorio",
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 1.0,
-  "pagina": 122
+  "pagina": 122,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Residuos valorizados producidos",
@@ -682,271 +664,250 @@
   "meta": "3000",
   "tipo_acumulado": "Incremento",
   "responsable": "Ambiente y Desarrollo Sostenible",
-  "linea": 1,
+  "linea": "s",
   "sector": "Vivienda, ciudad y territorio",
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 1.0,
-  "pagina": 122
- },
- {
-  "nombre": "Cobertura en educacion basica y media",
-  "unidad": "Porcentaje",
-  "linea_base": "96",
-  "meta": "97",
-  "tipo_acumulado": "",
-  "responsable": "Educación",
-  "linea": 1,
-  "sector": "Vivienda, ciudad y territorio",
-  "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
-  "coincidencia_ppi": 1.0,
-  "pagina": 125
- },
- {
-  "nombre": "Formacion permanente de las personas residentes en el municipio de Girardota a traves de diversas modalidades de enseñanza y aprendizaje",
-  "unidad": "Número",
-  "linea_base": "0",
-  "meta": "2000",
-  "tipo_acumulado": "",
-  "responsable": "Educación",
-  "linea": 1,
-  "sector": "Vivienda, ciudad y territorio",
-  "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
-  "coincidencia_ppi": 1.0,
-  "pagina": 125
- },
- {
-  "nombre": "Creacion del modelo educativo Municipal",
-  "unidad": "Número",
-  "linea_base": "0",
-  "meta": "1",
-  "tipo_acumulado": "",
-  "responsable": "Educación",
-  "linea": 1,
-  "sector": "Vivienda, ciudad y territorio",
-  "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
-  "coincidencia_ppi": 1.0,
-  "pagina": 125
+  "pagina": 122,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Programas realizados",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "4",
   "tipo_acumulado": "Incremento",
   "responsable": "Educación",
-  "linea": 1,
+  "unidad": "",
+  "meta": "",
+  "linea": "s",
   "sector": "Educación",
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
   "coincidencia_ppi": 0.91,
-  "pagina": 128
+  "pagina": 128,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Entidades y organizaciones asistidas técnicamente",
-  "unidad": "Número",
   "linea_base": "28",
-  "meta": "28",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Educación",
-  "linea": 1,
+  "unidad": "",
+  "meta": "",
+  "linea": "s",
   "sector": "Educación",
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
   "coincidencia_ppi": 0.91,
-  "pagina": 128
+  "pagina": 128,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Establecimientos Educativos oficiales con acompañamiento en el marco de las estrategias de calidad educativa",
-  "unidad": "Número",
   "linea_base": "11",
-  "meta": "11",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Educación",
-  "linea": 1,
+  "unidad": "",
+  "meta": "",
+  "linea": "s",
   "sector": "Educación",
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
   "coincidencia_ppi": 0.91,
-  "pagina": 128
+  "pagina": 128,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Secretarías de educación y organizaciones de los grupos étnicos asistidos técnicamente para fortalecer la incorporación del enfoque étnico en la prestación del servicio educativo",
-  "unidad": "Número",
   "linea_base": "3",
-  "meta": "3",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Educación",
-  "linea": 1,
+  "unidad": "",
+  "meta": "",
+  "linea": "s",
   "sector": "Educación",
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
   "coincidencia_ppi": 0.91,
-  "pagina": 128
+  "pagina": 128,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Ambientes de aprendizaje en funcionamiento",
-  "unidad": "Número",
   "linea_base": "1",
-  "meta": "1",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Educación",
-  "linea": 1,
+  "unidad": "",
+  "meta": "",
+  "linea": "s",
   "sector": "Educación",
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
   "coincidencia_ppi": 0.91,
-  "pagina": 128
+  "pagina": 128,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Estudiantes beneficiados del programa de alimentación escolar",
-  "unidad": "Número",
   "linea_base": "2645",
-  "meta": "2832",
   "tipo_acumulado": "Incremento",
   "responsable": "Educación",
-  "linea": 1,
+  "unidad": "",
+  "meta": "",
+  "linea": "s",
   "sector": "Educación",
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
   "coincidencia_ppi": 0.91,
-  "pagina": 128
+  "pagina": 128,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Beneficiarios de transporte escolar",
-  "unidad": "Número",
   "linea_base": "1200",
-  "meta": "1260",
   "tipo_acumulado": "Incremento",
   "responsable": "Educación",
-  "linea": 1,
+  "unidad": "",
+  "meta": "",
+  "linea": "s",
   "sector": "Educación",
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
   "coincidencia_ppi": 0.91,
-  "pagina": 128
+  "pagina": 128,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Beneficiarios atendidos con modelos educativos flexibles",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "500",
   "tipo_acumulado": "Incremento",
   "responsable": "Educación",
-  "linea": 1,
+  "unidad": "",
+  "meta": "",
+  "linea": "s",
   "sector": "Educación",
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
   "coincidencia_ppi": 0.91,
-  "pagina": 128
+  "pagina": 128,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Estudiantes beneficiados con estrategias de promoción del bilingüismo",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "1000",
   "tipo_acumulado": "Incremento",
   "responsable": "Educación",
-  "linea": 1,
+  "unidad": "",
+  "meta": "",
+  "linea": "s",
   "sector": "Educación",
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
   "coincidencia_ppi": 0.91,
-  "pagina": 128
+  "pagina": 128,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Lineamientos curriculares para las especializadas de media técnicas desarrollados",
-  "unidad": "Número",
   "linea_base": "2",
-  "meta": "4",
   "tipo_acumulado": "Incremento",
   "responsable": "Educación",
-  "linea": 1,
+  "unidad": "",
+  "meta": "",
+  "linea": "s",
   "sector": "Educación",
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
   "coincidencia_ppi": 0.91,
-  "pagina": 128
+  "pagina": 128,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Docentes de educación preescolar, básica y media con dotación",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "60",
   "tipo_acumulado": "Incremento",
   "responsable": "Educación",
-  "linea": 1,
+  "unidad": "",
+  "meta": "",
+  "linea": "s",
   "sector": "Educación",
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
   "coincidencia_ppi": 0.91,
-  "pagina": 128
+  "pagina": 128,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Foros educativos territoriales realizados",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "4",
   "tipo_acumulado": "Incremento",
   "responsable": "Educación",
-  "linea": 1,
+  "unidad": "",
+  "meta": "",
+  "linea": "s",
   "sector": "Educación",
   "programa": "Calidad y fomento de la educación superior",
   "coincidencia_ppi": 1.0,
-  "pagina": 129
+  "pagina": 129,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Capacitaciones realizadas (Docente, directivos docentes y comunidad educativa)",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "4",
   "tipo_acumulado": "Incremento",
   "responsable": "Educación",
-  "linea": 1,
+  "unidad": "",
+  "meta": "",
+  "linea": "s",
   "sector": "Educación",
   "programa": "Calidad y fomento de la educación superior",
   "coincidencia_ppi": 1.0,
-  "pagina": 129
+  "pagina": 129,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Establecimientos educativos conectados a internet",
-  "unidad": "Número",
   "linea_base": "8",
-  "meta": "16",
   "tipo_acumulado": "Incremento",
   "responsable": "Educación",
-  "linea": 1,
+  "unidad": "",
+  "meta": "",
+  "linea": "s",
   "sector": "Educación",
   "programa": "Calidad y fomento de la educación superior",
   "coincidencia_ppi": 1.0,
-  "pagina": 129
+  "pagina": 129,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Sedes dotadas",
-  "unidad": "Número",
   "linea_base": "8 0",
-  "meta": "8",
   "tipo_acumulado": "Incremento",
   "responsable": "Educación",
-  "linea": 1,
+  "unidad": "",
+  "meta": "",
+  "linea": "s",
   "sector": "Educación",
   "programa": "Calidad y fomento de la educación superior",
   "coincidencia_ppi": 1.0,
-  "pagina": 129
+  "pagina": 129,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Sedes educativas mejoradas",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "18",
   "tipo_acumulado": "Incremento",
   "responsable": "Infraestructura",
-  "linea": 1,
+  "unidad": "",
+  "meta": "",
+  "linea": "s",
   "sector": "Educación",
   "programa": "Calidad y fomento de la educación superior",
   "coincidencia_ppi": 1.0,
-  "pagina": 129
+  "pagina": 129,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Sedes ampliadas",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "1",
   "tipo_acumulado": "Incremento",
   "responsable": "Infraestructura",
-  "linea": 1,
+  "unidad": "",
+  "meta": "",
+  "linea": "s",
   "sector": "Educación",
   "programa": "Calidad y fomento de la educación superior",
   "coincidencia_ppi": 1.0,
-  "pagina": 129
+  "pagina": 129,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Entidades o instituciones de educación acompañadas en el mejoramiento de la calidad y la pertinencia de la Educación para el Trabajo y Desarrollo Humano- ETDH",
@@ -955,11 +916,12 @@
   "meta": "7",
   "tipo_acumulado": "Incremento",
   "responsable": "Educación",
-  "linea": 1,
+  "linea": "s",
   "sector": "Educación",
   "programa": "Calidad y fomento de la educación superior",
   "coincidencia_ppi": 1.0,
-  "pagina": 130
+  "pagina": 130,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Beneficiarios de estrategias o programas de apoyo financiero para la permanencia en la educación superior",
@@ -968,11 +930,12 @@
   "meta": "120",
   "tipo_acumulado": "Incremento",
   "responsable": "Educación",
-  "linea": 1,
+  "linea": "s",
   "sector": "Educación",
   "programa": "Calidad y fomento de la educación superior",
   "coincidencia_ppi": 1.0,
-  "pagina": 130
+  "pagina": 130,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Infraestructura deportiva mantenida",
@@ -981,11 +944,12 @@
   "meta": "16",
   "tipo_acumulado": "Incremento",
   "responsable": "Infraestructura",
-  "linea": 1,
+  "linea": "s",
   "sector": "Deporte y Recreación",
   "programa": "Fomento a la recreación, la actividad sica y el deporte para desarrollar entornos de convivencia y paz",
   "coincidencia_ppi": 0.99,
-  "pagina": 140
+  "pagina": 140,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Parques adecuados",
@@ -994,11 +958,12 @@
   "meta": "6",
   "tipo_acumulado": "Incremento",
   "responsable": "Infraestructura",
-  "linea": 1,
+  "linea": "s",
   "sector": "Deporte y Recreación",
   "programa": "Fomento a la recreación, la actividad sica y el deporte para desarrollar entornos de convivencia y paz",
   "coincidencia_ppi": 0.99,
-  "pagina": 140
+  "pagina": 140,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Placa deportiva con cubierta y sin graderías construida",
@@ -1007,11 +972,12 @@
   "meta": "4",
   "tipo_acumulado": "Incremento",
   "responsable": "Infraestructura",
-  "linea": 1,
+  "linea": "s",
   "sector": "Deporte y Recreación",
   "programa": "Fomento a la recreación, la actividad sica y el deporte para desarrollar entornos de convivencia y paz",
   "coincidencia_ppi": 0.99,
-  "pagina": 140
+  "pagina": 140,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Personas que ecceden a servicios deportivos, recreativos y de actividad física",
@@ -1020,11 +986,12 @@
   "meta": "12000",
   "tipo_acumulado": "Capacidad",
   "responsable": "INDER",
-  "linea": 1,
+  "linea": "s",
   "sector": "Deporte y Recreación",
   "programa": "Fomento a la recreación, la actividad sica y el deporte para desarrollar entornos de convivencia y paz",
   "coincidencia_ppi": 0.99,
-  "pagina": 140
+  "pagina": 140,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Eventos recreativos comunitarios realizados",
@@ -1033,11 +1000,12 @@
   "meta": "500",
   "tipo_acumulado": "Incremento",
   "responsable": "INDER",
-  "linea": 1,
+  "linea": "s",
   "sector": "Deporte y Recreación",
   "programa": "Fomento a la recreación, la actividad sica y el deporte para desarrollar entornos de convivencia y paz",
   "coincidencia_ppi": 0.99,
-  "pagina": 140
+  "pagina": 140,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Instituciones educativas vinculadas al programa Supérate-Intercolegiados",
@@ -1046,11 +1014,12 @@
   "meta": "11",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "INDER",
-  "linea": 1,
+  "linea": "s",
   "sector": "Deporte y Recreación",
   "programa": "Fomento a la recreación, la actividad sica y el deporte para desarrollar entornos de convivencia y paz",
   "coincidencia_ppi": 0.99,
-  "pagina": 140
+  "pagina": 140,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Artículos deportivos entregados",
@@ -1059,11 +1028,12 @@
   "meta": "100",
   "tipo_acumulado": "Incremento",
   "responsable": "INDER",
-  "linea": 1,
+  "linea": "s",
   "sector": "Deporte y Recreación",
   "programa": "Fomento a la recreación, la actividad sica y el deporte para desarrollar entornos de convivencia y paz",
   "coincidencia_ppi": 0.99,
-  "pagina": 140
+  "pagina": 140,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Coliseo adecuado",
@@ -1072,11 +1042,12 @@
   "meta": "1",
   "tipo_acumulado": "Incremento",
   "responsable": "Infraestructura",
-  "linea": 1,
+  "linea": "s",
   "sector": "Deporte y Recreación",
   "programa": "Formación y preparación de deportistas",
   "coincidencia_ppi": 1.0,
-  "pagina": 141
+  "pagina": 141,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Estímulos entregados",
@@ -1085,11 +1056,12 @@
   "meta": "180",
   "tipo_acumulado": "Incremento",
   "responsable": "INDER",
-  "linea": 1,
+  "linea": "s",
   "sector": "Deporte y Recreación",
   "programa": "Formación y preparación de deportistas",
   "coincidencia_ppi": 1.0,
-  "pagina": 141
+  "pagina": 141,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Documentos de planeación realizados",
@@ -1098,11 +1070,12 @@
   "meta": "1",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "INDER",
-  "linea": 1,
+  "linea": "s",
   "sector": "Deporte y Recreación",
   "programa": "Formación y preparación de deportistas",
   "coincidencia_ppi": 1.0,
-  "pagina": 141
+  "pagina": 141,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Clubes deportivos apoyados",
@@ -1111,180 +1084,194 @@
   "meta": "38",
   "tipo_acumulado": "Incremento",
   "responsable": "INDER",
-  "linea": 1,
+  "linea": "s",
   "sector": "Deporte y Recreación",
   "programa": "Formación y preparación de deportistas",
   "coincidencia_ppi": 1.0,
-  "pagina": 141
+  "pagina": 141,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Informes de gestión desarrollados",
-  "unidad": "Número",
   "linea_base": "11",
-  "meta": "11",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Gobierno y Desarrollo Humanos Control interno",
+  "unidad": "",
+  "meta": "",
   "linea": 2,
   "sector": "Organismos de Control",
   "programa": "Fortalecimiento del control y la vigilancia de la gestión fiscal y resarcimiento al daño del patrimonio público",
   "coincidencia_ppi": 1.0,
-  "pagina": 152
+  "pagina": 152,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Instancias territoriales asistidas",
-  "unidad": "Número",
   "linea_base": "4",
   "meta": "4",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Derechos Humanos Infraestructura",
+  "unidad": "",
   "linea": 2,
-  "sector": "GOBIERNO TERRITORIAL",
+  "sector": "Gobierno Territorial",
   "programa": "Gestión del riesgo de desastres y emergencias",
   "coincidencia_ppi": 1.0,
-  "pagina": 162
+  "pagina": 162,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Cuerpos de bomberos disponibles para la prevención y control de incendios en la entidad territorial",
-  "unidad": "Número",
   "linea_base": "1",
   "meta": "1",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Gobierno y Derechos Humanos",
+  "unidad": "",
   "linea": 2,
-  "sector": "GOBIERNO TERRITORIAL",
+  "sector": "Gobierno Territorial",
   "programa": "Gestión del riesgo de desastres y emergencias",
   "coincidencia_ppi": 1.0,
-  "pagina": 162
+  "pagina": 162,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Emergencias y desastres atendidas",
-  "unidad": "Número",
   "linea_base": "8",
   "meta": "8",
   "tipo_acumulado": "Mantenimiento Incremento",
   "responsable": "Infraestructura",
+  "unidad": "",
   "linea": 2,
-  "sector": "GOBIERNO TERRITORIAL",
+  "sector": "Gobierno Territorial",
   "programa": "Gestión del riesgo de desastres y emergencias",
   "coincidencia_ppi": 1.0,
-  "pagina": 162
+  "pagina": 162,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Solicitudes tramitadas",
-  "unidad": "Número",
   "linea_base": "150",
   "meta": "250",
   "tipo_acumulado": "Incremento",
   "responsable": "Infraestructura",
+  "unidad": "",
   "linea": 2,
-  "sector": "GOBIERNO TERRITORIAL",
+  "sector": "Gobierno Territorial",
   "programa": "Gestión del riesgo de desastres y emergencias",
   "coincidencia_ppi": 1.0,
-  "pagina": 162
+  "pagina": 162,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Estudios de riesgo de desastres elaborados",
-  "unidad": "Número",
   "linea_base": "2",
   "meta": "3",
   "tipo_acumulado": "Incremento",
   "responsable": "Infraestructura",
+  "unidad": "",
   "linea": 2,
-  "sector": "GOBIERNO TERRITORIAL",
+  "sector": "Gobierno Territorial",
   "programa": "Gestión del riesgo de desastres y emergencias",
   "coincidencia_ppi": 1.0,
-  "pagina": 162
+  "pagina": 162,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Sistemas de Alerta Temprana implementados",
-  "unidad": "Número",
   "linea_base": "3",
   "meta": "6",
   "tipo_acumulado": "Incremento",
   "responsable": "Infraestructura",
+  "unidad": "",
   "linea": 2,
-  "sector": "GOBIERNO TERRITORIAL",
+  "sector": "Gobierno Territorial",
   "programa": "Gestión del riesgo de desastres y emergencias",
   "coincidencia_ppi": 1.0,
-  "pagina": 162
+  "pagina": 162,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Organismos de atención de emergencias fortalecidos",
-  "unidad": "Número",
   "linea_base": "1",
   "meta": "2",
   "tipo_acumulado": "Incremento",
   "responsable": "Infraestructura",
+  "unidad": "",
   "linea": 2,
-  "sector": "GOBIERNO TERRITORIAL",
+  "sector": "Gobierno Territorial",
   "programa": "Gestión del riesgo de desastres y emergencias",
   "coincidencia_ppi": 1.0,
-  "pagina": 162
+  "pagina": 162,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Obras de infraestructura para la reducción del riesgo de desastres realizadas",
-  "unidad": "Número",
   "linea_base": "10",
   "meta": "12",
   "tipo_acumulado": "Incremento",
   "responsable": "Infraestructura",
+  "unidad": "",
   "linea": 2,
-  "sector": "GOBIERNO TERRITORIAL",
+  "sector": "Gobierno Territorial",
   "programa": "Gestión del riesgo de desastres y emergencias",
   "coincidencia_ppi": 1.0,
-  "pagina": 162
+  "pagina": 162,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Hogares apoyados con ayudas humanitarias",
-  "unidad": "Número",
   "linea_base": "40",
   "meta": "60",
   "tipo_acumulado": "Incremento",
   "responsable": "Infraestructura",
+  "unidad": "",
   "linea": 2,
-  "sector": "GOBIERNO TERRITORIAL",
+  "sector": "Gobierno Territorial",
   "programa": "Gestión del riesgo de desastres y emergencias",
   "coincidencia_ppi": 1.0,
-  "pagina": 162
+  "pagina": 162,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Hogares apoyados",
-  "unidad": "Número",
   "linea_base": "50",
   "meta": "70",
   "tipo_acumulado": "Incremento",
   "responsable": "Infraestructura",
+  "unidad": "",
   "linea": 2,
-  "sector": "GOBIERNO TERRITORIAL",
+  "sector": "Gobierno Territorial",
   "programa": "Gestión del riesgo de desastres y emergencias",
   "coincidencia_ppi": 1.0,
-  "pagina": 162
+  "pagina": 162,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Documentos de investigación elaborados",
-  "unidad": "Número",
   "linea_base": "2",
   "meta": "3",
   "tipo_acumulado": "Incremento",
   "responsable": "Infraestructura",
+  "unidad": "",
   "linea": 2,
-  "sector": "GOBIERNO TERRITORIAL",
+  "sector": "Gobierno Territorial",
   "programa": "Gestión del riesgo de desastres y emergencias",
   "coincidencia_ppi": 1.0,
-  "pagina": 162
+  "pagina": 162,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Sistemas de información actualizados",
-  "unidad": "Número",
   "linea_base": "2",
   "meta": "2",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Planeación",
+  "unidad": "",
   "linea": 2,
-  "sector": "GOBIERNO TERRITORIAL",
+  "sector": "Gobierno Territorial",
   "programa": "Gestión del riesgo de desastres y emergencias",
   "coincidencia_ppi": 1.0,
-  "pagina": 162
+  "pagina": 162,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Casos atendidos",
@@ -1294,10 +1281,11 @@
   "tipo_acumulado": "Incremento",
   "responsable": "Gobierno y Derechos Humanos",
   "linea": 2,
-  "sector": "GOBIERNO TERRITORIAL",
+  "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
-  "pagina": 167
+  "pagina": 167,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Programas de educación informal realizados",
@@ -1307,10 +1295,11 @@
   "tipo_acumulado": "Incremento",
   "responsable": "Gobierno y Derechos Humanos",
   "linea": 2,
-  "sector": "GOBIERNO TERRITORIAL",
+  "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
-  "pagina": 167
+  "pagina": 167,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Diligencias de inspección realizadas",
@@ -1320,10 +1309,11 @@
   "tipo_acumulado": "Incremento",
   "responsable": "Gobierno y Derechos Humanos",
   "linea": 2,
-  "sector": "GOBIERNO TERRITORIAL",
+  "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
-  "pagina": 167
+  "pagina": 167,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Unidades policiales dotadas",
@@ -1333,10 +1323,11 @@
   "tipo_acumulado": "Incremento",
   "responsable": "Gobierno y Derechos Humanos",
   "linea": 2,
-  "sector": "GOBIERNO TERRITORIAL",
+  "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
-  "pagina": 167
+  "pagina": 167,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Cámaras de seguridad instaladas",
@@ -1346,10 +1337,11 @@
   "tipo_acumulado": "Incremento",
   "responsable": "Gobierno y Derechos Humanos",
   "linea": 2,
-  "sector": "GOBIERNO TERRITORIAL",
+  "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
-  "pagina": 167
+  "pagina": 167,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Miembros de la fuerza pública apoyados",
@@ -1359,10 +1351,11 @@
   "tipo_acumulado": "Incremento",
   "responsable": "Gobierno y Derechos Humanos",
   "linea": 2,
-  "sector": "GOBIERNO TERRITORIAL",
+  "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
-  "pagina": 167
+  "pagina": 167,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Inspecciones de policía adecuadas",
@@ -1372,10 +1365,11 @@
   "tipo_acumulado": "Incremento",
   "responsable": "Gobierno y Derechos Humanos",
   "linea": 2,
-  "sector": "GOBIERNO TERRITORIAL",
+  "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
-  "pagina": 167
+  "pagina": 167,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Cámaras de seguridad mantenidas",
@@ -1385,10 +1379,11 @@
   "tipo_acumulado": "Incremento",
   "responsable": "Gobierno y Derechos Humanos",
   "linea": 2,
-  "sector": "GOBIERNO TERRITORIAL",
+  "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
-  "pagina": 167
+  "pagina": 167,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Planes estratégicos elaborados",
@@ -1398,10 +1393,11 @@
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Gobierno y Derechos Humanos",
   "linea": 2,
-  "sector": "GOBIERNO TERRITORIAL",
+  "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
-  "pagina": 167
+  "pagina": 167,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Proyectos de convivencia y seguridad ciudadana apoyados financieramente",
@@ -1411,361 +1407,393 @@
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Gobierno y Derechos Humanos",
   "linea": 2,
-  "sector": "GOBIERNO TERRITORIAL",
+  "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
-  "pagina": 167
+  "pagina": 167,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Documentos normativos para la equidad de género para las mujeres formulado",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "1 2",
   "tipo_acumulado": "Incremento",
   "responsable": "Gobierno y Desarrollo Humanos",
+  "unidad": "",
+  "meta": "",
   "linea": 2,
   "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
-  "pagina": 168
+  "pagina": 168,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Rutas de atención implementadas",
-  "unidad": "Número",
   "linea_base": "3",
-  "meta": "6",
   "tipo_acumulado": "Incremento",
   "responsable": "Gobierno y Desarrollo Humanos",
+  "unidad": "",
+  "meta": "",
   "linea": 2,
   "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
-  "pagina": 168
+  "pagina": 168,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Sedes mantenidas",
-  "unidad": "Número",
   "linea_base": "1",
-  "meta": "3",
   "tipo_acumulado": "Incremento",
   "responsable": "Gobierno y Derechos Humanos",
+  "unidad": "",
+  "meta": "",
   "linea": 2,
   "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
-  "pagina": 168
+  "pagina": 168,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Metodologías aplicadas",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "1",
   "tipo_acumulado": "Incremento",
   "responsable": "Subsecretaria de participación ciudadana y economía solidaria (trabajo, turismoyempleo)",
+  "unidad": "",
+  "meta": "",
   "linea": 2,
   "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
-  "pagina": 175
+  "pagina": 175,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Proyectos asistidos técnicamente",
-  "unidad": "Número",
   "linea_base": "20",
-  "meta": "120",
   "tipo_acumulado": "Incremento",
   "responsable": "Subsecretaria de participación ciudadana y economía solidaria (trabajo, turismoyempleo)",
+  "unidad": "",
+  "meta": "",
   "linea": 2,
   "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
-  "pagina": 175
+  "pagina": 175,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Instancias formales y no formales de participación fortalecidas",
-  "unidad": "Número",
   "linea_base": "25",
-  "meta": "30",
+  "producto": "30",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Subsecretaria de participación ciudadana y economía solidaria (trabajo, turismoyempleo)",
+  "unidad": "",
+  "meta": "",
   "linea": 2,
   "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantia de los derechos humanos.",
   "coincidencia_ppi": 1.0,
-  "pagina": 176
+  "pagina": 176,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Servicio de asistencia técnica",
-  "unidad": "Número",
   "linea_base": "820",
-  "meta": "850",
+  "producto": "850",
   "tipo_acumulado": "Incremento",
   "responsable": "Subsecretaria de participación ciudadana y economía solidaria (trabajo, turismo y empleo)",
+  "unidad": "",
+  "meta": "",
   "linea": 2,
   "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantia de los derechos humanos.",
   "coincidencia_ppi": 1.0,
-  "pagina": 176
+  "pagina": 176,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Servicios de promoción a la participación ciudadana",
-  "unidad": "Número",
   "linea_base": "2",
-  "meta": "8",
+  "producto": "8",
   "tipo_acumulado": "Incremento",
   "responsable": "Subsecretaria de participación ciudadana y economía solidaria (trabajo, turismoyempleo)",
+  "unidad": "",
+  "meta": "",
   "linea": 2,
   "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantia de los derechos humanos.",
   "coincidencia_ppi": 1.0,
-  "pagina": 176
+  "pagina": 176,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Estrategias de fomento de participación para las mujeres",
-  "unidad": "Número",
   "linea_base": "510",
-  "meta": "700",
+  "producto": "700",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Subsecretaria de participación ciudadana y economía solidaria (trabajo, turismoyempleo)",
+  "unidad": "",
+  "meta": "",
   "linea": 2,
   "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantia de los derechos humanos.",
   "coincidencia_ppi": 1.0,
-  "pagina": 176
+  "pagina": 176,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Sistemas de información actualizados",
-  "unidad": "Número",
   "linea_base": "10",
-  "meta": "10",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Control Interno",
+  "unidad": "",
+  "meta": "",
   "linea": 2,
   "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
-  "pagina": 177
+  "pagina": 177,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Proyectos asisidos técnicamente",
-  "unidad": "Número",
   "linea_base": "2",
-  "meta": "2",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Hacienda",
+  "unidad": "",
+  "meta": "",
   "linea": 2,
   "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
-  "pagina": 177
+  "pagina": 177,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Campañas de gestión tributaria realizadas",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "16",
   "tipo_acumulado": "Incremento",
   "responsable": "Hacienda",
+  "unidad": "",
+  "meta": "",
   "linea": 2,
   "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
-  "pagina": 177
+  "pagina": 177,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Salones comunales adecuados",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "10",
   "tipo_acumulado": "Incremento",
   "responsable": "Infraestructura",
+  "unidad": "",
+  "meta": "",
   "linea": 2,
   "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
-  "pagina": 177
+  "pagina": 177,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Sedes mantenidas",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "3",
   "tipo_acumulado": "Incremento",
   "responsable": "Infraestructura",
+  "unidad": "",
+  "meta": "",
   "linea": 2,
   "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
-  "pagina": 177
+  "pagina": 177,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Boletines estadísticos producidos",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "4",
   "tipo_acumulado": "Incremento",
   "responsable": "Planeación",
+  "unidad": "",
+  "meta": "",
   "linea": 2,
   "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
-  "pagina": 177
+  "pagina": 177,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Documentos de planeación con seguimiento realizados",
-  "unidad": "Número",
   "linea_base": "2",
-  "meta": "2",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Planeación",
+  "unidad": "",
+  "meta": "",
   "linea": 2,
   "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
-  "pagina": 177
+  "pagina": 177,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Estudios de preinversión elaborados",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "10",
   "tipo_acumulado": "Incremento",
   "responsable": "Planeación",
+  "unidad": "",
+  "meta": "",
   "linea": 2,
   "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
-  "pagina": 177
+  "pagina": 177,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Sistema de Gestión implementado",
-  "unidad": "Número",
   "linea_base": "1",
-  "meta": "1",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Planeación",
+  "unidad": "",
+  "meta": "",
   "linea": 2,
   "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
-  "pagina": 177
+  "pagina": 177,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Hogares que realizaron la encuesta",
-  "unidad": "Número",
   "linea_base": "13376",
-  "meta": "14676",
   "tipo_acumulado": "Capacidad",
   "responsable": "Planeación",
+  "unidad": "",
+  "meta": "",
   "linea": 2,
   "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
-  "pagina": 177
+  "pagina": 177,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Documentos de lineamientos técnicos realizados",
-  "unidad": "Número",
   "linea_base": "526",
-  "meta": "600",
   "tipo_acumulado": "Incremento",
   "responsable": "Planeación",
+  "unidad": "",
+  "meta": "",
   "linea": 2,
   "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
-  "pagina": 177
+  "pagina": 177,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Índice de capacidad en la prestación de servicios de tecnología",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "30",
   "tipo_acumulado": "Capacidad",
   "responsable": "Servicios Administrativos",
+  "unidad": "",
+  "meta": "",
   "linea": 2,
   "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
-  "pagina": 177
+  "pagina": 177,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Documentos custodiados",
-  "unidad": "Número",
   "linea_base": "3017",
-  "meta": "3017",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Servicios Administrativos",
+  "unidad": "",
+  "meta": "",
   "linea": 2,
   "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
-  "pagina": 177
+  "pagina": 177,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Procesos implementados",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "2",
   "tipo_acumulado": "Incremento",
   "responsable": "Servicios Administrativos",
+  "unidad": "",
+  "meta": "",
   "linea": 2,
   "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
-  "pagina": 177
+  "pagina": 177,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Infraestructura para el bienestar animal construida y dotada",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "1",
   "tipo_acumulado": "Incremento",
   "responsable": "Agricultura y Desarrollo Rural",
+  "unidad": "",
+  "meta": "",
   "linea": 2,
-  "sector": "GOBIERNO TERRITORIAL",
+  "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
-  "pagina": 180
+  "pagina": 180,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Animales atendidos",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "2000",
   "tipo_acumulado": "Incremento",
   "responsable": "Agricultura y Desarrollo Rural",
+  "unidad": "",
+  "meta": "",
   "linea": 2,
-  "sector": "GOBIERNO TERRITORIAL",
+  "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
-  "pagina": 180
+  "pagina": 180,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Animales entregados en adopción",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "300",
   "tipo_acumulado": "Incremento",
   "responsable": "Agricultura y Desarrollo Rural",
+  "unidad": "",
+  "meta": "",
   "linea": 2,
-  "sector": "GOBIERNO TERRITORIAL",
+  "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
-  "pagina": 180
+  "pagina": 180,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Animales con identificación y registro oficial",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "1",
   "tipo_acumulado": "Incremento",
   "responsable": "Agricultura y Desarrollo Rural",
+  "unidad": "",
+  "meta": "",
   "linea": 2,
-  "sector": "GOBIERNO TERRITORIAL",
+  "sector": "Gobierno Territorial",
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
-  "pagina": 180
+  "pagina": 180,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Planes de Desarrollo Agropecuario y Rural elaborados",
@@ -1778,7 +1806,8 @@
   "sector": "Agricultura y desarrollo rural",
   "programa": "Inclusión productiva de pequeños productores rurales",
   "coincidencia_ppi": 1.0,
-  "pagina": 188
+  "pagina": 188,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Planes de Desarrollo Agropecuario y Rural acompañados",
@@ -1791,345 +1820,372 @@
   "sector": "Agricultura y desarrollo rural",
   "programa": "Inclusión productiva de pequeños productores rurales",
   "coincidencia_ppi": 1.0,
-  "pagina": 188
+  "pagina": 188,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Guías de movilización de animales expedidas",
-  "unidad": "Número",
   "linea_base": "4000",
-  "meta": "2800",
   "tipo_acumulado": "Incremento",
   "responsable": "Agricultura y Desarrollo Rural",
+  "unidad": "",
+  "meta": "",
   "linea": 3,
   "sector": "Agricultura y desarrollo rural",
   "programa": "Sanidad agropecuaria e inocuidad agroalimentaria",
   "coincidencia_ppi": 1.0,
-  "pagina": 189
+  "pagina": 189,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Documentos de investigación sobre el estado de poblaciones de fauna y flora elaborados",
-  "unidad": "Número",
   "linea_base": "0",
   "meta": "1",
   "tipo_acumulado": "Incremento",
   "responsable": "Agricultura y Desarrollo Rural",
+  "unidad": "",
   "linea": 3,
   "sector": "Ambiente y desarrollo sostenible",
   "programa": "Conservación de la biodiversidad y sus servicios ecosistémicos",
   "coincidencia_ppi": 1.0,
-  "pagina": 197
+  "pagina": 197,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Árboles intervenidos",
-  "unidad": "Número",
   "linea_base": "1859",
   "meta": "1859",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Ambiente y Desarrollo Sostenible",
+  "unidad": "",
   "linea": 3,
   "sector": "Ambiente y desarrollo sostenible",
   "programa": "Conservación de la biodiversidad y sus servicios ecosistémicos",
   "coincidencia_ppi": 1.0,
-  "pagina": 197
+  "pagina": 197,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Áreas de ecosistemas protegidas",
-  "unidad": "Hectáreas",
   "linea_base": "1",
   "meta": "1 400",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Ambiente y Desarrollo Sostenible",
+  "unidad": "",
   "linea": 3,
   "sector": "Ambiente y desarrollo sostenible",
   "programa": "Conservación de la biodiversidad y sus servicios ecosistémicos",
   "coincidencia_ppi": 1.0,
-  "pagina": 197
+  "pagina": 197,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Documentos de lineamientos técnicos realizados para la conservación de la biodiversidad",
-  "unidad": "Número",
   "linea_base": "0",
   "meta": "1",
   "tipo_acumulado": "Incremento",
   "responsable": "Ambiente y Desarrollo Sostenible",
+  "unidad": "",
   "linea": 3,
   "sector": "Ambiente y desarrollo sostenible",
   "programa": "Conservación de la biodiversidad y sus servicios ecosistémicos",
   "coincidencia_ppi": 1.0,
-  "pagina": 197
+  "pagina": 197,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Cartografía de áreas protegidas elaborada",
-  "unidad": "Número",
   "linea_base": "0",
   "meta": "1",
   "tipo_acumulado": "Incremento",
   "responsable": "Ambiente y Desarrollo Sostenible",
+  "unidad": "",
   "linea": 3,
   "sector": "Ambiente y desarrollo sostenible",
   "programa": "Conservación de la biodiversidad y sus servicios ecosistémicos",
   "coincidencia_ppi": 1.0,
-  "pagina": 197
+  "pagina": 197,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Áreas con esquemas de Pago por Servicios Ambientales implementados",
-  "unidad": "Hectáreas",
   "linea_base": "168",
   "meta": "180",
   "tipo_acumulado": "Incremento",
   "responsable": "Ambiente y Desarrollo Sostenible",
+  "unidad": "",
   "linea": 3,
   "sector": "Ambiente y desarrollo sostenible",
   "programa": "Conservación de la biodiversidad y sus servicios ecosistémicos",
   "coincidencia_ppi": 1.0,
-  "pagina": 197
+  "pagina": 197,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Documentos de lineamientos técnicos con el manejo de especies de fauna y flora elaborados",
-  "unidad": "Número",
   "linea_base": "0",
   "meta": "3",
   "tipo_acumulado": "Incremento",
   "responsable": "Ambiente y Desarrollo Sostenible",
+  "unidad": "",
   "linea": 3,
   "sector": "Ambiente y desarrollo sostenible",
   "programa": "Conservación de la biodiversidad y sus servicios ecosistémicos",
   "coincidencia_ppi": 1.0,
-  "pagina": 197
+  "pagina": 197,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Árboles nativos sembrados",
-  "unidad": "Número",
   "linea_base": "70,3",
   "meta": "85,3",
   "tipo_acumulado": "Incremento",
   "responsable": "Ambiente y Desarrollo Sostenible",
+  "unidad": "",
   "linea": 3,
   "sector": "Ambiente y desarrollo sostenible",
   "programa": "Conservación de la biodiversidad y sus servicios ecosistémicos",
   "coincidencia_ppi": 1.0,
-  "pagina": 197
+  "pagina": 197,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Áreas en proceso restauración en mantenimiento",
-  "unidad": "Hectáreas",
   "linea_base": "179,81",
   "meta": "210",
   "tipo_acumulado": "Incremento",
   "responsable": "Ambiente y Desarrollo Sostenible",
+  "unidad": "",
   "linea": 3,
   "sector": "Ambiente y desarrollo sostenible",
   "programa": "Conservación de la biodiversidad y sus servicios ecosistémicos",
   "coincidencia_ppi": 1.0,
-  "pagina": 197
+  "pagina": 197,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Documentos de lineamientos técnicos elaborados",
-  "unidad": "Número",
   "linea_base": "1",
-  "meta": "4",
   "tipo_acumulado": "Incremento",
   "responsable": "Ambiente y Desarrollo Sostenible",
+  "unidad": "",
+  "meta": "",
   "linea": 3,
   "sector": "Ambiente y desarrollo sostenible",
   "programa": "Fortalecimiento del desempeño ambiental de los sectores productivos",
   "coincidencia_ppi": 0.61,
-  "pagina": 198
+  "pagina": 198,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Campañas de educación ambiental y participación implementadas",
-  "unidad": "Número",
   "linea_base": "16",
-  "meta": "5",
   "tipo_acumulado": "Incremento",
   "responsable": "Ambiente y Desarrollo Sostenible",
+  "unidad": "",
+  "meta": "",
   "linea": 3,
   "sector": "Ambiente y desarrollo sostenible",
   "programa": "Fortalecimiento del desempeño ambiental de los sectores productivos",
   "coincidencia_ppi": 0.61,
-  "pagina": 198
+  "pagina": 198,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Estrategias educativo ambientales y de participación implementadas",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "8",
   "tipo_acumulado": "Incremento",
   "responsable": "Ambiente y Desarrollo Sostenible",
+  "unidad": "",
+  "meta": "",
   "linea": 3,
   "sector": "Ambiente y desarrollo sostenible",
   "programa": "Fortalecimiento del desempeño ambiental de los sectores productivos",
   "coincidencia_ppi": 0.61,
-  "pagina": 198
+  "pagina": 198,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Áreas para la protección hídrica",
-  "unidad": "Hectáreas",
   "linea_base": "13,82",
-  "meta": "28,82",
   "tipo_acumulado": "Incremento",
   "responsable": "Ambiente y Desarrollo Sostenible",
+  "unidad": "",
+  "meta": "",
   "linea": 3,
   "sector": "Ambiente y desarrollo sostenible",
   "programa": "Gestión del cambio climático para un desarrollo bajo en carbono y resiliente al clima",
   "coincidencia_ppi": 1.0,
-  "pagina": 200
+  "pagina": 200,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Documento de plan de ordenación y manejo de cuenca hifrográfica adoptado",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "1",
   "tipo_acumulado": "Incremento",
   "responsable": "Ambiente y Desarrollo Sostenible",
+  "unidad": "",
+  "meta": "",
   "linea": 3,
   "sector": "Ambiente y desarrollo sostenible",
   "programa": "Gestión del cambio climático para un desarrollo bajo en carbono y resiliente al clima",
   "coincidencia_ppi": 1.0,
-  "pagina": 200
+  "pagina": 200,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Documento de política pública elaborados",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "1",
   "tipo_acumulado": "Incremento",
   "responsable": "Subsecretaria de participación ciudadana y economía solidaria (trabajo, turismo y empleo)",
+  "unidad": "",
+  "meta": "",
   "linea": 3,
   "sector": "Comercio, industria y turismo",
   "programa": "Fortalecimiento de la gestión y dirección del Sector Comercio, Industriay Turismo",
   "coincidencia_ppi": 0.99,
-  "pagina": 209
+  "pagina": 209,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Documento de política pública elaborados",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "1",
   "tipo_acumulado": "Incremento",
   "responsable": "Subsecretaria de participación ciudadana y economía solidaria (trabajo, turismo y empleo)",
+  "unidad": "",
+  "meta": "",
   "linea": 3,
   "sector": "Comercio, industria y turismo",
   "programa": "Fortalecimiento de la gestión y dirección del Sector Comercio, Industriay Turismo",
   "coincidencia_ppi": 0.99,
-  "pagina": 209
+  "pagina": 209,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Eventos de formación realizados",
-  "unidad": "Porcentanje Número",
   "linea_base": "0",
-  "meta": "40% 40",
   "tipo_acumulado": "Flujo",
   "responsable": "Subsecretaria de participación ciudadana y economía solidaria (trabajo, turismo y empleo)",
+  "unidad": "",
+  "meta": "",
   "linea": 3,
   "sector": "Comercio, industria y turismo",
   "programa": "Fortalecimiento de la gestión y dirección del Sector Comercio, Industriay Turismo",
   "coincidencia_ppi": 0.99,
-  "pagina": 209
+  "pagina": 209,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Creación de programa REDESS que promueva la economia solidaria y popular en el municipio",
-  "unidad": "Número",
   "linea_base": "500",
   "meta": "700",
   "tipo_acumulado": "Incremento",
   "responsable": "Subsecretaria de participación ciudadana y economía solidaria (trabajo, turismo y empleo)",
+  "unidad": "",
   "linea": 3,
   "sector": "Trabajo",
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 1.0,
-  "pagina": 215
+  "pagina": 215,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Creación del programa de emprendimiento para Girardota",
-  "unidad": "Número",
   "linea_base": "80",
   "meta": "158",
   "tipo_acumulado": "Incremento",
   "responsable": "Subsecretaria de participación ciudadana y economía solidaria (trabajo, turismo y empleo)",
+  "unidad": "",
   "linea": 3,
   "sector": "Trabajo",
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 1.0,
-  "pagina": 215
+  "pagina": 215,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Eventos de formación realizados",
-  "unidad": "Número",
   "linea_base": "0",
   "meta": "4",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Subsecretaria de participación ciudadana y economía solidaria (trabajo, turismo y empleo)",
+  "unidad": "",
   "linea": 3,
   "sector": "Trabajo",
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 1.0,
-  "pagina": 215
+  "pagina": 215,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Personas colocadas laboralmente",
-  "unidad": "Número",
   "linea_base": "1000",
   "meta": "2000",
   "tipo_acumulado": "Incremento",
   "responsable": "Subsecretaria de participación ciudadana y economía solidaria (trabajo, turismo y empleo)",
+  "unidad": "",
   "linea": 3,
   "sector": "Trabajo",
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 1.0,
-  "pagina": 215
+  "pagina": 215,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Personas orientadas laboralmente",
-  "unidad": "Número",
   "linea_base": "1000",
   "meta": "2000",
   "tipo_acumulado": "Incremento",
   "responsable": "Subsecretaria de participación ciudadana y economía solidaria (trabajo, turismo y empleo)",
+  "unidad": "",
   "linea": 3,
   "sector": "Trabajo",
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 1.0,
-  "pagina": 215
+  "pagina": 215,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Eventos realizados",
-  "unidad": "Número",
   "linea_base": "4",
   "meta": "8",
   "tipo_acumulado": "Incremento",
   "responsable": "Subsecretaria de participación ciudadana y economía solidaria (trabajo, turismo y empleo)",
+  "unidad": "",
   "linea": 3,
   "sector": "Trabajo",
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 1.0,
-  "pagina": 215
+  "pagina": 215,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Capacitaciones realizadas",
-  "unidad": "Número",
   "linea_base": "0",
   "meta": "40",
   "tipo_acumulado": "Incremento",
   "responsable": "Subsecretaria de participación ciudadana y economía solidaria (trabajo, turismo y empleo)",
+  "unidad": "",
   "linea": 3,
   "sector": "Trabajo",
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 1.0,
-  "pagina": 215
+  "pagina": 215,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Ambiente de formación modernizados",
-  "unidad": "Número",
   "linea_base": "0",
   "meta": "1",
   "tipo_acumulado": "Incremento",
   "responsable": "Subsecretaria de participación ciudadana y economía solidaria (trabajo, turismo y empleo)",
+  "unidad": "",
   "linea": 3,
   "sector": "Trabajo",
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 1.0,
-  "pagina": 215
+  "pagina": 215,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Vía terciaria con mantenimiento de emergencia",
@@ -2142,7 +2198,8 @@
   "sector": "Transporte",
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 1.0,
-  "pagina": 229
+  "pagina": 229,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Vía urbana con mantenimiento",
@@ -2155,7 +2212,8 @@
   "sector": "Transporte",
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 1.0,
-  "pagina": 229
+  "pagina": 229,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Vías regionales o urbanas inventariadas",
@@ -2168,7 +2226,8 @@
   "sector": "Transporte",
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 1.0,
-  "pagina": 229
+  "pagina": 229,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Vía terciaria construida",
@@ -2181,7 +2240,8 @@
   "sector": "Transporte",
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 1.0,
-  "pagina": 229
+  "pagina": 229,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Vía terciaria mejorada",
@@ -2194,7 +2254,8 @@
   "sector": "Transporte",
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 1.0,
-  "pagina": 229
+  "pagina": 229,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Ciclo infraestructura urbana con mantenimiento",
@@ -2207,7 +2268,8 @@
   "sector": "Transporte",
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 1.0,
-  "pagina": 229
+  "pagina": 229,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Estudios de preinversión realizados",
@@ -2220,7 +2282,8 @@
   "sector": "Transporte",
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 1.0,
-  "pagina": 229
+  "pagina": 229,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Andén construido",
@@ -2233,7 +2296,8 @@
   "sector": "Transporte",
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 1.0,
-  "pagina": 229
+  "pagina": 229,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Andenes de la red urbana mejorados",
@@ -2246,215 +2310,232 @@
   "sector": "Transporte",
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 1.0,
-  "pagina": 229
+  "pagina": 229,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Actualizar el plan local de seguridad vial",
-  "unidad": "Número",
   "linea_base": "1",
-  "meta": "2",
   "tipo_acumulado": "Incremento",
   "responsable": "Secretaria De Transporte Y Tránsito",
+  "unidad": "",
+  "meta": "",
   "linea": 3,
   "sector": "Transporte",
   "programa": "Prestación de servicios de transporte público de pasajeros",
   "coincidencia_ppi": 1.0,
-  "pagina": 230
+  "pagina": 230,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Informes de seguridad vial",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "1",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Secretaria de transporte y transito",
+  "unidad": "",
+  "meta": "",
   "linea": 3,
   "sector": "Transporte",
   "programa": "Seguridad de transporte",
   "coincidencia_ppi": 1.0,
-  "pagina": 231
+  "pagina": 231,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Formular, implementar, realizar segimiento, controlar el plan de movilidad Segura y Sostenible",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "1",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Secretaria de transporte y transito",
+  "unidad": "",
+  "meta": "",
   "linea": 3,
   "sector": "Transporte",
   "programa": "Seguridad de transporte",
   "coincidencia_ppi": 1.0,
-  "pagina": 231
+  "pagina": 231,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Señalizar metros líneales de vías",
-  "unidad": "Metros lineales",
   "linea_base": "1000",
-  "meta": "3500",
   "tipo_acumulado": "Incremento",
   "responsable": "Secretaria de transporte y transito",
+  "unidad": "",
+  "meta": "",
   "linea": 3,
   "sector": "Transporte",
   "programa": "Seguridad de transporte",
   "coincidencia_ppi": 1.0,
-  "pagina": 231
+  "pagina": 231,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Realizar auditoria y seguimiento a la ejecución de los planes estratégicos de seguridad víal",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "8",
   "tipo_acumulado": "Incremento",
   "responsable": "Secretaria de transporte y transito",
+  "unidad": "",
+  "meta": "",
   "linea": 3,
   "sector": "Transporte",
   "programa": "Seguridad de transporte",
   "coincidencia_ppi": 1.0,
-  "pagina": 231
+  "pagina": 231,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Crear el observatorio de seguridad vial y movilidad",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "1",
   "tipo_acumulado": "Incremento",
   "responsable": "Secretaria de transporte y transito",
+  "unidad": "",
+  "meta": "",
   "linea": 3,
   "sector": "Transporte",
   "programa": "Seguridad de transporte",
   "coincidencia_ppi": 1.0,
-  "pagina": 231
+  "pagina": 231,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Personas capacitadas",
-  "unidad": "Número de personas",
   "linea_base": "0",
-  "meta": "8000",
   "tipo_acumulado": "Incremento",
   "responsable": "Secretaria de transporte y transito",
+  "unidad": "",
+  "meta": "",
   "linea": 3,
   "sector": "Transporte",
   "programa": "Seguridad de transporte",
   "coincidencia_ppi": 1.0,
-  "pagina": 231
+  "pagina": 231,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Operativos de control realizados",
-  "unidad": "Número de operativos de control",
   "linea_base": "0",
-  "meta": "200",
   "tipo_acumulado": "Incremento",
   "responsable": "Secretaria de transporte y transito",
+  "unidad": "",
+  "meta": "",
   "linea": 3,
   "sector": "Transporte",
   "programa": "Seguridad de transporte",
   "coincidencia_ppi": 1.0,
-  "pagina": 231
+  "pagina": 231,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Ejecutar mantenimiento preventivo y correctivo a las unidades de semaforización",
-  "unidad": "Número",
   "linea_base": "4",
-  "meta": "4",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Secretaria de transporte y transito",
+  "unidad": "",
+  "meta": "",
   "linea": 3,
   "sector": "Transporte",
   "programa": "Seguridad de transporte",
   "coincidencia_ppi": 1.0,
-  "pagina": 231
+  "pagina": 231,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Instalación y mantenimiento de señalización",
-  "unidad": "Número",
   "linea_base": "0",
-  "meta": "2",
   "tipo_acumulado": "Incremento",
   "responsable": "Secretaria de transporte y transito",
+  "unidad": "",
+  "meta": "",
   "linea": 3,
   "sector": "Transporte",
   "programa": "Seguridad de transporte",
   "coincidencia_ppi": 1.0,
-  "pagina": 231
+  "pagina": 231,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Documentos de seguimiento elaborados",
-  "unidad": "Número",
   "linea_base": "1",
   "meta": "1",
   "tipo_acumulado": "Incremento",
   "responsable": "Servicios Administrativos",
+  "unidad": "",
   "linea": 4,
   "sector": "Tecnologías de la información y las comunicaciones",
   "programa": "Fomento del desarrollo de aplicaciones, sotiware y contenidos para impulsar la apropiación de las Tecnologías de la Información y las Comunicaciones (TIC)",
   "coincidencia_ppi": 0.99,
-  "pagina": 243
+  "pagina": 243,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Documentos de lineamientos técnicos realizados",
   "unidad": "Numérico",
   "linea_base": "1",
   "meta": "1",
-  "tipo_acumulado": "",
   "responsable": "Mantenimiento Comunicaciones",
+  "tipo_acumulado": "",
   "linea": 4,
   "sector": "Tecnologías de la información y las comunicaciones",
   "programa": "Fomento del desarrollo de aplicaciones, sotiware y contenidos para impulsar la apropiación de las Tecnologías de la Información y las Comunicaciones (TIC)",
   "coincidencia_ppi": 0.99,
-  "pagina": 243
+  "pagina": 243,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Plan de comunicaciones realizados",
-  "unidad": "Número",
   "linea_base": "1",
-  "meta": "1",
   "tipo_acumulado": "Incremento",
   "responsable": "Alcaldía",
+  "unidad": "",
+  "meta": "",
   "linea": 4,
   "sector": "Tecnologías de la información y las comunicaciones",
   "programa": "Fomento del desarrollo de aplicaciones, sotiware y contenidos para impulsar la apropiación de las Tecnologías de la Información y las Comunicaciones (TIC)",
   "coincidencia_ppi": 0.99,
-  "pagina": 244
+  "pagina": 244,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Documento metodológico del modelo de acompañamiento para la implementación de la Estrategia de Gobierno digital elaborado",
-  "unidad": "Número",
   "linea_base": "1",
-  "meta": "1",
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Alcaldía",
+  "unidad": "",
+  "meta": "",
   "linea": 4,
   "sector": "Tecnologías de la información y las comunicaciones",
   "programa": "Fomento del desarrollo de aplicaciones, sotiware y contenidos para impulsar la apropiación de las Tecnologías de la Información y las Comunicaciones (TIC)",
   "coincidencia_ppi": 0.99,
-  "pagina": 244
+  "pagina": 244,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Productos digitales desarrollados",
-  "unidad": "",
   "linea_base": "0",
-  "meta": "2",
   "tipo_acumulado": "Incremento",
   "responsable": "Administrativos Servicios",
+  "unidad": "",
+  "meta": "",
   "linea": 4,
   "sector": "Tecnologías de la información y las comunicaciones",
   "programa": "Fomento del desarrollo de aplicaciones, sotiware y contenidos para impulsar la apropiación de las Tecnologías de la Información y las Comunicaciones (TIC)",
   "coincidencia_ppi": 0.99,
-  "pagina": 244
+  "pagina": 244,
+  "fuente_lectura": "texto"
  },
  {
   "nombre": "Ejercicios de participación ciudadana realizados",
-  "unidad": "Número",
   "linea_base": "40",
-  "meta": "160",
   "tipo_acumulado": "Incremento",
   "responsable": "Subsecretaria de participación ciudadana y economía solidaria (trabajo, turismo y empleo)",
+  "unidad": "",
+  "meta": "",
   "linea": 4,
   "sector": "Tecnologías de la información y las comunicaciones",
   "programa": "Fomento del desarrollo de aplicaciones, sotiware y contenidos para impulsar la apropiación de las Tecnologías de la Información y las Comunicaciones (TIC)",
   "coincidencia_ppi": 0.99,
-  "pagina": 244
+  "pagina": 244,
+  "fuente_lectura": "texto"
  },
  {
   "programa": "Salud pública",
@@ -2468,7 +2549,8 @@
   "fuente": "vision",
   "sector": "Salud y protección social",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Salud pública",
@@ -2482,7 +2564,8 @@
   "fuente": "vision",
   "sector": "Salud y protección social",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Salud pública",
@@ -2496,7 +2579,8 @@
   "fuente": "vision",
   "sector": "Salud y protección social",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Salud pública",
@@ -2510,7 +2594,8 @@
   "fuente": "vision",
   "sector": "Salud y protección social",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Salud pública",
@@ -2524,7 +2609,8 @@
   "fuente": "vision",
   "sector": "Salud y protección social",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Salud pública",
@@ -2538,7 +2624,8 @@
   "fuente": "vision",
   "sector": "Salud y protección social",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Salud pública",
@@ -2552,7 +2639,8 @@
   "fuente": "vision",
   "sector": "Salud y protección social",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Salud pública",
@@ -2566,7 +2654,8 @@
   "fuente": "vision",
   "sector": "Salud y protección social",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Salud pública",
@@ -2580,7 +2669,8 @@
   "fuente": "vision",
   "sector": "Salud y protección social",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Salud pública",
@@ -2594,7 +2684,8 @@
   "fuente": "vision",
   "sector": "Salud y protección social",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Salud pública",
@@ -2608,7 +2699,8 @@
   "fuente": "vision",
   "sector": "Salud y protección social",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Salud pública",
@@ -2622,7 +2714,8 @@
   "fuente": "vision",
   "sector": "Salud y protección social",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Promoción y acceso efectivo a procesos culturales y artisticos",
@@ -2636,7 +2729,8 @@
   "fuente": "vision",
   "sector": "Cultura",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Promoción y acceso efectivo a procesos culturales y artisticos",
@@ -2650,7 +2744,8 @@
   "fuente": "vision",
   "sector": "Cultura",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Promoción y acceso efectivo a procesos culturales y artisticos",
@@ -2664,7 +2759,8 @@
   "fuente": "vision",
   "sector": "Cultura",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Promoción y acceso efectivo a procesos culturales y artisticos",
@@ -2678,7 +2774,8 @@
   "fuente": "vision",
   "sector": "Cultura",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Promoción y acceso efectivo a procesos culturales y artisticos",
@@ -2692,7 +2789,8 @@
   "fuente": "vision",
   "sector": "Cultura",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Promoción y acceso efectivo a procesos culturales y artisticos",
@@ -2706,7 +2804,8 @@
   "fuente": "vision",
   "sector": "Cultura",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Promoción y acceso efectivo a procesos culturales y artisticos",
@@ -2720,7 +2819,8 @@
   "fuente": "vision",
   "sector": "Cultura",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Promoción y acceso efectivo a procesos culturales y artisticos",
@@ -2734,7 +2834,8 @@
   "fuente": "vision",
   "sector": "Cultura",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Promoción y acceso efectivo a procesos culturales y artisticos",
@@ -2748,7 +2849,8 @@
   "fuente": "vision",
   "sector": "Cultura",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Promoción y acceso efectivo a procesos culturales y artisticos",
@@ -2762,7 +2864,8 @@
   "fuente": "vision",
   "sector": "Cultura",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Promoción y acceso efectivo a procesos culturales y artisticos",
@@ -2776,7 +2879,8 @@
   "fuente": "vision",
   "sector": "Cultura",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Promoción y acceso efectivo a procesos culturales y artisticos",
@@ -2790,7 +2894,8 @@
   "fuente": "vision",
   "sector": "Cultura",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Promoción y acceso efectivo a procesos culturales y artisticos",
@@ -2804,7 +2909,8 @@
   "fuente": "vision",
   "sector": "Cultura",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Promoción y acceso efectivo a procesos culturales y artisticos",
@@ -2818,7 +2924,8 @@
   "fuente": "vision",
   "sector": "Cultura",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Gestión, protección y salvaguardia del patrimonio cultural colombiano",
@@ -2832,7 +2939,8 @@
   "fuente": "vision",
   "sector": "Cultura",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Gestión, protección y salvaguardia del patrimonio cultural colombiano",
@@ -2846,7 +2954,8 @@
   "fuente": "vision",
   "sector": "Cultura",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Gestión, protección y salvaguardia del patrimonio cultural colombiano",
@@ -2860,7 +2969,8 @@
   "fuente": "vision",
   "sector": "Cultura",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Gestión, protección y salvaguardia del patrimonio cultural colombiano",
@@ -2874,7 +2984,8 @@
   "fuente": "vision",
   "sector": "Cultura",
   "linea": "LINEA 1 JUSTICIA E INCLUSION SOCIAL Y BIENESTAR CIUDADANO",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Sistema penitenciario y carcelario en el marco de los derechos humanos",
@@ -2886,9 +2997,10 @@
   "tipo_acumulado": "Mantenimiento",
   "responsable": "Gobierno y Desarrollo Humanos",
   "fuente": "vision",
-  "sector": "JUSTICIA Y DEL DERECHO",
+  "sector": "Justicia y del derecho",
   "linea": "Línea Línea 2 Gobernanza y participación ciudadana",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Promoción al acceso a la justicia",
@@ -2902,7 +3014,8 @@
   "fuente": "vision",
   "sector": "Justicia y del derecho",
   "linea": "Línea 2 Gobernanza y participación ciudadana",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Lucha contra la corrupción",
@@ -2916,7 +3029,8 @@
   "fuente": "vision",
   "sector": "Organismos de Control",
   "linea": "Línea 2 Gobernanza y participación ciudadana",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Vigilancia de la gestión administrativa de los funcionarios del Estado",
@@ -2930,7 +3044,8 @@
   "fuente": "vision",
   "sector": "Organismos de Control",
   "linea": "Línea 2 Gobernanza y participación ciudadana",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Educación Ambiental",
@@ -2944,7 +3059,8 @@
   "fuente": "vision",
   "sector": "Ambiente y desarrollo sostenible",
   "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Educación Ambiental",
@@ -2958,7 +3074,8 @@
   "fuente": "vision",
   "sector": "Ambiente y desarrollo sostenible",
   "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Educación Ambiental",
@@ -2972,7 +3089,8 @@
   "fuente": "vision",
   "sector": "Ambiente y desarrollo sostenible",
   "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Gestión de la información y el conocimiento ambiental",
@@ -2986,7 +3104,8 @@
   "fuente": "vision",
   "sector": "Ambiente y desarrollo sostenible",
   "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Gestión integral de mares, costas y recursos acuáticos",
@@ -3000,7 +3119,8 @@
   "fuente": "vision",
   "sector": "Ambiente y desarrollo sostenible",
   "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Gestión integral del recurso hídrico",
@@ -3014,7 +3134,8 @@
   "fuente": "vision",
   "sector": "Ambiente y desarrollo sostenible",
   "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Gestión integral del recurso hídrico",
@@ -3028,7 +3149,8 @@
   "fuente": "vision",
   "sector": "Ambiente y desarrollo sostenible",
   "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Productividad y competitividad de las empresas colombianas",
@@ -3042,7 +3164,8 @@
   "fuente": "vision",
   "sector": "Comercio, industria y turismo",
   "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Productividad y competitividad de las empresas colombianas",
@@ -3056,7 +3179,8 @@
   "fuente": "vision",
   "sector": "Comercio, industria y turismo",
   "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Productividad y competitividad de las empresas colombianas",
@@ -3070,7 +3194,8 @@
   "fuente": "vision",
   "sector": "Comercio, industria y turismo",
   "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Productividad y competitividad de las empresas colombianas",
@@ -3084,7 +3209,8 @@
   "fuente": "vision",
   "sector": "Comercio, industria y turismo",
   "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Acceso al servicio público domiciliario degas combustible",
@@ -3098,7 +3224,8 @@
   "fuente": "vision",
   "sector": "Minas y energia",
   "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
-  "coincidencia_ppi": 0.99
+  "coincidencia_ppi": 0.99,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Consolidación productiva del sector de energía eléctrica",
@@ -3112,7 +3239,8 @@
   "fuente": "vision",
   "sector": "Minas y energia",
   "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Consolidación productiva del sector de energía eléctrica",
@@ -3126,7 +3254,8 @@
   "fuente": "vision",
   "sector": "Minas y energia",
   "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Gestión de la información en el sector minero energético",
@@ -3140,7 +3269,8 @@
   "fuente": "vision",
   "sector": "Minas y energia",
   "linea": "LINEA 3 INTEGRIDAD REGIONAL DESARROLLO ECONÒMICO Y SOSTENIBLE",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Generación de la información geográfica del territorio nacional",
@@ -3154,7 +3284,8 @@
   "fuente": "vision",
   "sector": "Información Estadística",
   "linea": "LINEA 4 DESARROLLO DEL CONOCIMIENTO, INNOVACION Y GOBIERNO TERRITORIAL",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Levantamiento y actualización de información estadística de calidad",
@@ -3168,7 +3299,8 @@
   "fuente": "vision",
   "sector": "Información Estadística",
   "linea": "LINEA 4 DESARROLLO DEL CONOCIMIENTO, INNOVACION Y GOBIERNO TERRITORIAL",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  },
  {
   "programa": "Facilitar el acceso y uso de las Tecnologías de la Información y las Comunicaciones (TIC) en todo el territorio nacional",
@@ -3182,6 +3314,7 @@
   "fuente": "vision",
   "sector": "Tecnologías de la información y las comunicaciones",
   "linea": "LINEA 4 DESARROLLO DEL CONOCIMIENTO, INNOVACION Y GOBIERNO TERRITORIAL",
-  "coincidencia_ppi": 1.0
+  "coincidencia_ppi": 1.0,
+  "fuente_lectura": "vision"
  }
 ]

@@ -1,0 +1,613 @@
+{
+ "sectores": {
+  "salud y proteccion social": [
+   37528194965,
+   41281014461,
+   44170685474,
+   47262633457
+  ],
+  "inclusion social y reconciliacion": [
+   4992117011,
+   5491328712,
+   5875721721,
+   6287022242
+  ],
+  "vivienda ciudad y territorio": [
+   3617623685,
+   3979386054,
+   4257943077,
+   4555999093
+  ],
+  "educacion": [
+   4354639539,
+   4790103493,
+   5125410738,
+   5484189490
+  ],
+  "cultura": [
+   752051579,
+   827256737,
+   885164708,
+   947126238
+  ],
+  "deporte y recreacion": [
+   2479797639,
+   2727777403,
+   2918721821,
+   3123032349
+  ],
+  "justicia y del derecho": [
+   700000000,
+   770000000,
+   823900000,
+   881573000
+  ],
+  "organismos de control": [
+   200000000,
+   220000000,
+   235400000,
+   251878000
+  ],
+  "gobierno territorial": [
+   5758475124,
+   6334322636,
+   6777725221,
+   7252165986
+  ],
+  "agricultura y desarrollo rural": [
+   1344685686,
+   1479154255,
+   1582695052,
+   1693483706
+  ],
+  "ambiente y desarrollo sostenible": [
+   1305398804,
+   1435938648,
+   1536454392,
+   1644006200
+  ],
+  "comercio industria y turismo": [
+   187247308,
+   205972039,
+   220390082,
+   235817387
+  ],
+  "trabajo": [
+   120000000,
+   132000000,
+   141240000,
+   151126800
+  ],
+  "minas y energia": [
+   2715992836,
+   2987592120,
+   3196723568,
+   3420494218
+  ],
+  "transporte": [
+   5615960056,
+   6177556062,
+   6609984986,
+   7072683935
+  ],
+  "informacion estadistica": [
+   50000000,
+   55000000,
+   58850000,
+   62969500
+  ],
+  "tecnologias de la informacion y las comunicaciones": [
+   406755138,
+   447430652,
+   478750797,
+   512263353
+  ]
+ },
+ "programas": {
+  "inspeccion vigilancia y control": [
+   240654728,
+   264720201,
+   283250615,
+   303078158
+  ],
+  "salud publica": [
+   2018945474,
+   2220840021,
+   2376298823,
+   2542639740
+  ],
+  "aseguramiento y prestacion integral de servicios de salud": [
+   26680357307,
+   29348393038,
+   31402780550,
+   33600975189
+  ],
+  "desarrollo integral de la primera infancia a la juventud y fortalecimiento de las capacidades de las familias de ninas ninos y adolescentes": [
+   3994746383,
+   4394221021,
+   4201816493,
+   4730943647
+  ],
+  "atencion integral de poblacion en situacion permanente de desproteccion social yo familiar": [
+   56916400,
+   62608040,
+   66990603,
+   71679945
+  ],
+  "atencion asistencia y reparacion integral a las victimas": [
+   150000000,
+   170000000,
+   210000000,
+   230000000
+  ],
+  "acceso a soluciones de vivienda": [
+   295000000,
+   980000000,
+   1016000000,
+   740000000
+  ],
+  "ordenamiento territorial y desarrollo urbano": [
+   85000000,
+   55000000,
+   70000000,
+   80000000
+  ],
+  "acceso de la poblacion a los servicios de agua potable y saneamiento basico": [
+   40000000,
+   80000000,
+   100000000,
+   100000000
+  ],
+  "calidad cobertura y fortalecimiento de la educacion inicial prescolar basica y media": [
+   210000000,
+   430000000,
+   320000000,
+   190000000
+  ],
+  "fortalecimiento de la gestion y direccion del sector educacion": [
+   180000000,
+   280000000,
+   0,
+   0
+  ],
+  "calidad y fomento de la educacion superior": [
+   1000000000,
+   1070000000,
+   1100000000,
+   1177000000
+  ],
+  "promocion y acceso efectivo a procesos culturales y artisticos": [
+   503874558,
+   539145777,
+   576885981,
+   617268000
+  ],
+  "gestion proteccion y salvaguardia del patrimonio cultural colombiano": [
+   248177021,
+   265549413,
+   284137871,
+   304027522
+  ],
+  "fomento a la recreacion la actividad sica y el deporte para desarrollar entornos de convivencia y paz": [
+   1079797639,
+   1155383474,
+   1236260317,
+   1258759990
+  ],
+  "formacion y preparacion de deportistas": [
+   750000000,
+   0,
+   0,
+   25000000
+  ],
+  "sistema penitenciario y carcelario en el marco de los derechos humanos": [
+   550000000,
+   605000000,
+   647350000,
+   692664500
+  ],
+  "promocion al acceso a la justicia": [
+   150000000,
+   165000000,
+   176550000,
+   188908500
+  ],
+  "lucha contra la corrupcion": [
+   20000000,
+   22000000,
+   23540000,
+   25187800
+  ],
+  "vigilancia de la gestion administrativa de los funcionarios del estado": [
+   140000000,
+   154000000,
+   164780000,
+   176314600
+  ],
+  "fortalecimiento del control y la vigilancia de la gestion fiscal y resarcimiento al dano del patrimonio publico": [
+   40000000,
+   44000000,
+   47080000,
+   50375600
+  ],
+  "gestion del riesgo de desastres y emergencias": [
+   263500000,
+   289850000,
+   310139500,
+   331849265
+  ],
+  "fortalecimiento del buen gobierno para el respeto y garantia de los derechos humanos": [
+   1152118466,
+   1267330313,
+   1356043434,
+   1450966475
+  ],
+  "fortalecimiento de la convivencia y la seguridad ciudadana": [
+   2648551858,
+   2913407044,
+   3117345537,
+   3335559724
+  ],
+  "fortalecimiento a la gestion y direccion de la administracion publica territorial": [
+   1694304800,
+   1863735280,
+   1994196750,
+   2133790522
+  ],
+  "inclusion productiva de pequenos productores rurales": [
+   1284685686,
+   1413154255,
+   1512075052,
+   1617920306
+  ],
+  "sanidad agropecuaria e inocuidad agroalimentaria": [
+   60000000,
+   66000000,
+   70620000,
+   75563400
+  ],
+  "conservacion de la biodiversidad y sus servicios ecosistemicos": [
+   220000000,
+   242000000,
+   258940000,
+   277065800
+  ],
+  "educacion ambiental": [
+   250000000,
+   275000000,
+   294250000,
+   314847500
+  ],
+  "gestion integral de mares costas y recursos acuaticos": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "gestion integral del recurso hidrico": [
+   300000000,
+   330000000,
+   353100000,
+   377817000
+  ],
+  "gestion de la informacion y el conocimiento ambiental": [
+   67699402,
+   74469342,
+   79682196,
+   85259950
+  ],
+  "gestion del cambio climatico para un desarrollo bajo en carbono y resiliente al clima": [
+   67699402,
+   74469342,
+   79682196,
+   85259950
+  ],
+  "generacion y formalizacion del empleo": [
+   120000000,
+   132000000,
+   141240000,
+   151126800
+  ],
+  "productividad y competitividad de las empresas colombianas": [
+   80000000,
+   88000000,
+   94160000,
+   100751200
+  ],
+  "fortalecimiento de la gestion y direccion del sector comercio industriay turismo": [
+   57247308,
+   62972039,
+   67380082,
+   72096687
+  ],
+  "consolidacion productiva del sector de energia electrica": [
+   2000000000,
+   2200000000,
+   2354000000,
+   2518780000
+  ],
+  "gestion de la informacion en el sector minero energetico": [
+   50000000,
+   55000000,
+   58850000,
+   62969500
+  ],
+  "acceso al servicio publico domiciliario degas combustible": [
+   665992836,
+   732592120,
+   783873568,
+   838744718
+  ],
+  "infraestructura red vial regional": [
+   4800000000,
+   5280000000,
+   5649600000,
+   6045072000
+  ],
+  "prestacion de servicios de transporte publico de pasajeros": [
+   415960056,
+   457556062,
+   489584986,
+   523855935
+  ],
+  "seguridad de transporte": [
+   400000000,
+   440000000,
+   470800000,
+   503756000
+  ],
+  "levantamiento y actualizacion de informacion estadistica de calidad": [
+   25000000,
+   27500000,
+   29425000,
+   31484750
+  ],
+  "generacion de la informacion geografica del territorio nacional": [
+   25000000,
+   27500000,
+   29425000,
+   31484750
+  ],
+  "facilitar el acceso y uso de las tecnologias de la informacion y las comunicaciones tic en todo el territorio nacional": [
+   356755138,
+   392430652,
+   419900797,
+   449293853
+  ],
+  "fomento del desarrollo de aplicaciones sotiware y contenidos para impulsar la apropiacion de las tecnologias de la informacion y las comunicaciones tic": [
+   50000000,
+   55000000,
+   58850000,
+   62969500
+  ]
+ },
+ "indicadores": [
+  "acceso a soluciones de vivienda|hogares beneficiados con mejoramiento de una vivienda",
+  "acceso al servicio publico domiciliario degas combustible|viviendas conectadas a la red local de gas combustible",
+  "acceso de la poblacion a los servicios de agua potable y saneamiento basico|acueductos construidos",
+  "acceso de la poblacion a los servicios de agua potable y saneamiento basico|acueductos optimizados",
+  "acceso de la poblacion a los servicios de agua potable y saneamiento basico|asistencias tecnicas realizadas",
+  "acceso de la poblacion a los servicios de agua potable y saneamiento basico|documentos de planeacion en politicas de agua potable y saneamiento basico elaborados",
+  "acceso de la poblacion a los servicios de agua potable y saneamiento basico|estudios o disenos realizados",
+  "acceso de la poblacion a los servicios de agua potable y saneamiento basico|plan de gestion integral de residuos solidos implementado",
+  "acceso de la poblacion a los servicios de agua potable y saneamiento basico|plan integral de gestion de residuo solidos pgirs actualizado",
+  "acceso de la poblacion a los servicios de agua potable y saneamiento basico|proyectos de acueducto alcantarillado y aseo apoyados financieramente",
+  "acceso de la poblacion a los servicios de agua potable y saneamiento basico|recursos entregados en subsidios al consumo",
+  "acceso de la poblacion a los servicios de agua potable y saneamiento basico|red de alcantarillado construida",
+  "acceso de la poblacion a los servicios de agua potable y saneamiento basico|residuos valorizados producidos",
+  "acceso de la poblacion a los servicios de agua potable y saneamiento basico|unidades sanitarias con saneamiento basico construidas para vivienda rural",
+  "aseguramiento y prestacion integral de servicios de salud|hospitales de primer nivel de atencion construidos",
+  "aseguramiento y prestacion integral de servicios de salud|hospitales de primer nivel de atencion dotados",
+  "aseguramiento y prestacion integral de servicios de salud|instituciones financiadas para la atencion en salud a la poblacion",
+  "aseguramiento y prestacion integral de servicios de salud|personas afiliadas al regimen subsidiado",
+  "aseguramiento y prestacion integral de servicios de salud|personas migrantes no afiliadas atendidas con servicios de salud en urgencias",
+  "aseguramiento y prestacion integral de servicios de salud|personas no afiliadas atendidas con servicios de salud diferente de poblacion migrante",
+  "aseguramiento y prestacion integral de servicios de salud|reducir el indice de violencia intrafamiliar",
+  "aseguramiento y prestacion integral de servicios de salud|reportes de informacion entregados",
+  "aseguramiento y prestacion integral de servicios de salud|restablecimiento de derechos",
+  "aseguramiento y prestacion integral de servicios de salud|sistema de informacion implementado",
+  "atencion asistencia y reparacion integral a las victimas|hogares victimas con atencion humanitaria",
+  "atencion asistencia y reparacion integral a las victimas|solicitudes tramitadas",
+  "atencion asistencia y reparacion integral a las victimas|victimas caracterizadas",
+  "atencion integral de poblacion en situacion permanente de desproteccion social yo familiar|adultos mayores atendidos con servicios integrales",
+  "atencion integral de poblacion en situacion permanente de desproteccion social yo familiar|centros de atencion integral para personas con discapacidad dotados",
+  "atencion integral de poblacion en situacion permanente de desproteccion social yo familiar|centros de dia para el adulto mayor construidos",
+  "atencion integral de poblacion en situacion permanente de desproteccion social yo familiar|personas con discapacidad atendidas con servicios integrales",
+  "calidad cobertura y fortalecimiento de la educacion inicial prescolar basica y media|ambientes de aprendizaje en funcionamiento",
+  "calidad cobertura y fortalecimiento de la educacion inicial prescolar basica y media|beneficiarios atendidos con modelos educativos flexibles",
+  "calidad cobertura y fortalecimiento de la educacion inicial prescolar basica y media|beneficiarios de transporte escolar",
+  "calidad cobertura y fortalecimiento de la educacion inicial prescolar basica y media|docentes de educacion preescolar basica y media con dotacion",
+  "calidad cobertura y fortalecimiento de la educacion inicial prescolar basica y media|entidades y organizaciones asistidas tecnicamente",
+  "calidad cobertura y fortalecimiento de la educacion inicial prescolar basica y media|establecimientos educativos oficiales con acompanamiento en el marco de las estrategias de calidad educativa",
+  "calidad cobertura y fortalecimiento de la educacion inicial prescolar basica y media|estudiantes beneficiados con estrategias de promocion del bilinguismo",
+  "calidad cobertura y fortalecimiento de la educacion inicial prescolar basica y media|estudiantes beneficiados del programa de alimentacion escolar",
+  "calidad cobertura y fortalecimiento de la educacion inicial prescolar basica y media|lineamientos curriculares para las especializadas de media tecnicas desarrollados",
+  "calidad cobertura y fortalecimiento de la educacion inicial prescolar basica y media|programas realizados",
+  "calidad cobertura y fortalecimiento de la educacion inicial prescolar basica y media|secretarias de educacion y organizaciones de los grupos etnicos asistidos tecnicamente para fortalecer la incorporacion del enfoque etnico en la prestacion del servicio educativo",
+  "calidad y fomento de la educacion superior|beneficiarios de estrategias o programas de apoyo financiero para la permanencia en la educacion superior",
+  "calidad y fomento de la educacion superior|capacitaciones realizadas docente directivos docentes y comunidad educativa",
+  "calidad y fomento de la educacion superior|entidades o instituciones de educacion acompanadas en el mejoramiento de la calidad y la pertinencia de la educacion para el trabajo y desarrollo humano etdh",
+  "calidad y fomento de la educacion superior|establecimientos educativos conectados a internet",
+  "calidad y fomento de la educacion superior|foros educativos territoriales realizados",
+  "calidad y fomento de la educacion superior|sedes ampliadas",
+  "calidad y fomento de la educacion superior|sedes dotadas",
+  "calidad y fomento de la educacion superior|sedes educativas mejoradas",
+  "conservacion de la biodiversidad y sus servicios ecosistemicos|arboles intervenidos",
+  "conservacion de la biodiversidad y sus servicios ecosistemicos|arboles nativos sembrados",
+  "conservacion de la biodiversidad y sus servicios ecosistemicos|areas con esquemas de pago por servicios ambientales implementados",
+  "conservacion de la biodiversidad y sus servicios ecosistemicos|areas de ecosistemas protegidas",
+  "conservacion de la biodiversidad y sus servicios ecosistemicos|areas en proceso restauracion en mantenimiento",
+  "conservacion de la biodiversidad y sus servicios ecosistemicos|cartografia de areas protegidas elaborada",
+  "conservacion de la biodiversidad y sus servicios ecosistemicos|documentos de investigacion sobre el estado de poblaciones de fauna y flora elaborados",
+  "conservacion de la biodiversidad y sus servicios ecosistemicos|documentos de lineamientos tecnicos con el manejo de especies de fauna y flora elaborados",
+  "conservacion de la biodiversidad y sus servicios ecosistemicos|documentos de lineamientos tecnicos realizados para la conservacion de la biodiversidad",
+  "consolidacion productiva del sector de energia electrica|redes de alumbrado publico ampliadas",
+  "consolidacion productiva del sector de energia electrica|redes de alumbrado publico con mantenimiento",
+  "desarrollo integral de la primera infancia a la juventud y fortalecimiento de las capacidades de las familias de ninas ninos y adolescentes|agentes de la institucionalidad de infancia adolescencia y juventud asistidos tecnicamente",
+  "desarrollo integral de la primera infancia a la juventud y fortalecimiento de las capacidades de las familias de ninas ninos y adolescentes|campanas de promocion realizadas",
+  "desarrollo integral de la primera infancia a la juventud y fortalecimiento de las capacidades de las familias de ninas ninos y adolescentes|documentos de lineamientos tecnicos realizados",
+  "desarrollo integral de la primera infancia a la juventud y fortalecimiento de las capacidades de las familias de ninas ninos y adolescentes|ninos ninas adolescentes y jovenes atendidos en los servicios de restablecimiento en la administracion de justicia",
+  "desarrollo integral de la primera infancia a la juventud y fortalecimiento de las capacidades de las familias de ninas ninos y adolescentes|ninos y ninas atendidos en servicio integrales",
+  "desarrollo integral de la primera infancia a la juventud y fortalecimiento de las capacidades de las familias de ninas ninos y adolescentes|sedes construidadas para la primera infancia",
+  "educacion ambiental|campanas de educacion ambiental y participacion implementadas",
+  "educacion ambiental|documentos de lineamientos tecnicos elaborados",
+  "educacion ambiental|estrategias educativo ambientales y de participacion implementadas",
+  "facilitar el acceso y uso de las tecnologias de la informacion y las comunicaciones tic en todo el territorio nacional|documentos de seguimiento elaborados",
+  "fomento a la recreacion la actividad sica y el deporte para desarrollar entornos de convivencia y paz|articulos deportivos entregados",
+  "fomento a la recreacion la actividad sica y el deporte para desarrollar entornos de convivencia y paz|eventos recreativos comunitarios realizados",
+  "fomento a la recreacion la actividad sica y el deporte para desarrollar entornos de convivencia y paz|infraestructura deportiva mantenida",
+  "fomento a la recreacion la actividad sica y el deporte para desarrollar entornos de convivencia y paz|instituciones educativas vinculadas al programa superateintercolegiados",
+  "fomento a la recreacion la actividad sica y el deporte para desarrollar entornos de convivencia y paz|parques adecuados",
+  "fomento a la recreacion la actividad sica y el deporte para desarrollar entornos de convivencia y paz|personas que ecceden a servicios deportivos recreativos y de actividad fisica",
+  "fomento a la recreacion la actividad sica y el deporte para desarrollar entornos de convivencia y paz|placa deportiva con cubierta y sin graderias construida",
+  "fomento del desarrollo de aplicaciones sotiware y contenidos para impulsar la apropiacion de las tecnologias de la informacion y las comunicaciones tic|documento metodologico del modelo de acompanamiento para la implementacion de la estrategia de gobierno digital elaborado",
+  "fomento del desarrollo de aplicaciones sotiware y contenidos para impulsar la apropiacion de las tecnologias de la informacion y las comunicaciones tic|documentos de lineamientos tecnicos realizados",
+  "fomento del desarrollo de aplicaciones sotiware y contenidos para impulsar la apropiacion de las tecnologias de la informacion y las comunicaciones tic|documentos de seguimiento elaborados",
+  "fomento del desarrollo de aplicaciones sotiware y contenidos para impulsar la apropiacion de las tecnologias de la informacion y las comunicaciones tic|ejercicios de participacion ciudadana realizados",
+  "fomento del desarrollo de aplicaciones sotiware y contenidos para impulsar la apropiacion de las tecnologias de la informacion y las comunicaciones tic|plan de comunicaciones realizados",
+  "fomento del desarrollo de aplicaciones sotiware y contenidos para impulsar la apropiacion de las tecnologias de la informacion y las comunicaciones tic|productos digitales desarrollados",
+  "formacion y preparacion de deportistas|clubes deportivos apoyados",
+  "formacion y preparacion de deportistas|coliseo adecuado",
+  "formacion y preparacion de deportistas|documentos de planeacion realizados",
+  "formacion y preparacion de deportistas|estimulos entregados",
+  "fortalecimiento a la gestion y direccion de la administracion publica territorial|boletines estadisticos producidos",
+  "fortalecimiento a la gestion y direccion de la administracion publica territorial|campanas de gestion tributaria realizadas",
+  "fortalecimiento a la gestion y direccion de la administracion publica territorial|documentos custodiados",
+  "fortalecimiento a la gestion y direccion de la administracion publica territorial|documentos de lineamientos tecnicos realizados",
+  "fortalecimiento a la gestion y direccion de la administracion publica territorial|documentos de planeacion con seguimiento realizados",
+  "fortalecimiento a la gestion y direccion de la administracion publica territorial|documentos normativos para la equidad de genero para las mujeres formulado",
+  "fortalecimiento a la gestion y direccion de la administracion publica territorial|estudios de preinversion elaborados",
+  "fortalecimiento a la gestion y direccion de la administracion publica territorial|hogares que realizaron la encuesta",
+  "fortalecimiento a la gestion y direccion de la administracion publica territorial|indice de capacidad en la prestacion de servicios de tecnologia",
+  "fortalecimiento a la gestion y direccion de la administracion publica territorial|metodologias aplicadas",
+  "fortalecimiento a la gestion y direccion de la administracion publica territorial|procesos implementados",
+  "fortalecimiento a la gestion y direccion de la administracion publica territorial|proyectos asisidos tecnicamente",
+  "fortalecimiento a la gestion y direccion de la administracion publica territorial|proyectos asistidos tecnicamente",
+  "fortalecimiento a la gestion y direccion de la administracion publica territorial|rutas de atencion implementadas",
+  "fortalecimiento a la gestion y direccion de la administracion publica territorial|salones comunales adecuados",
+  "fortalecimiento a la gestion y direccion de la administracion publica territorial|sedes mantenidas",
+  "fortalecimiento a la gestion y direccion de la administracion publica territorial|sistema de gestion implementado",
+  "fortalecimiento a la gestion y direccion de la administracion publica territorial|sistemas de informacion actualizados",
+  "fortalecimiento de la convivencia y la seguridad ciudadana|animales atendidos",
+  "fortalecimiento de la convivencia y la seguridad ciudadana|animales con identificacion y registro oficial",
+  "fortalecimiento de la convivencia y la seguridad ciudadana|animales entregados en adopcion",
+  "fortalecimiento de la convivencia y la seguridad ciudadana|camaras de seguridad instaladas",
+  "fortalecimiento de la convivencia y la seguridad ciudadana|camaras de seguridad mantenidas",
+  "fortalecimiento de la convivencia y la seguridad ciudadana|casos atendidos",
+  "fortalecimiento de la convivencia y la seguridad ciudadana|diligencias de inspeccion realizadas",
+  "fortalecimiento de la convivencia y la seguridad ciudadana|infraestructura para el bienestar animal construida y dotada",
+  "fortalecimiento de la convivencia y la seguridad ciudadana|inspecciones de policia adecuadas",
+  "fortalecimiento de la convivencia y la seguridad ciudadana|miembros de la fuerza publica apoyados",
+  "fortalecimiento de la convivencia y la seguridad ciudadana|planes estrategicos elaborados",
+  "fortalecimiento de la convivencia y la seguridad ciudadana|programas de educacion informal realizados",
+  "fortalecimiento de la convivencia y la seguridad ciudadana|proyectos de convivencia y seguridad ciudadana apoyados financieramente",
+  "fortalecimiento de la convivencia y la seguridad ciudadana|unidades policiales dotadas",
+  "fortalecimiento de la gestion y direccion del sector comercio industriay turismo|documento de politica publica elaborados",
+  "fortalecimiento de la gestion y direccion del sector comercio industriay turismo|eventos de formacion realizados",
+  "fortalecimiento del buen gobierno para el respeto y garantia de los derechos humanos|estrategias de fomento de participacion para las mujeres",
+  "fortalecimiento del buen gobierno para el respeto y garantia de los derechos humanos|instancias formales y no formales de participacion fortalecidas",
+  "fortalecimiento del buen gobierno para el respeto y garantia de los derechos humanos|servicio de asistencia tecnica",
+  "fortalecimiento del buen gobierno para el respeto y garantia de los derechos humanos|servicios de promocion a la participacion ciudadana",
+  "fortalecimiento del control y la vigilancia de la gestion fiscal y resarcimiento al dano del patrimonio publico|informes de gestion desarrollados",
+  "fortalecimiento del desempeno ambiental de los sectores productivos|campanas de educacion ambiental y participacion implementadas",
+  "fortalecimiento del desempeno ambiental de los sectores productivos|documentos de lineamientos tecnicos elaborados",
+  "fortalecimiento del desempeno ambiental de los sectores productivos|estrategias educativo ambientales y de participacion implementadas",
+  "generacion de la informacion geografica del territorio nacional|sistema de informacion catastral actualizado",
+  "generacion y formalizacion del empleo|ambiente de formacion modernizados",
+  "generacion y formalizacion del empleo|capacitaciones realizadas",
+  "generacion y formalizacion del empleo|creacion de programa redess que promueva la economia solidaria y popular en el municipio",
+  "generacion y formalizacion del empleo|creacion del programa de emprendimiento para girardota",
+  "generacion y formalizacion del empleo|eventos de formacion realizados",
+  "generacion y formalizacion del empleo|eventos realizados",
+  "generacion y formalizacion del empleo|personas colocadas laboralmente",
+  "generacion y formalizacion del empleo|personas orientadas laboralmente",
+  "gestion de la informacion en el sector minero energetico|informes de seguimiento a la informacion realizados",
+  "gestion de la informacion y el conocimiento ambiental|bases de datos de monitoreo ambiental actualizadas",
+  "gestion del cambio climatico para un desarrollo bajo en carbono y resiliente al clima|areas para la proteccion hidrica",
+  "gestion del cambio climatico para un desarrollo bajo en carbono y resiliente al clima|documento de plan de ordenacion y manejo de cuenca hifrografica adoptado",
+  "gestion del riesgo de desastres y emergencias|cuerpos de bomberos disponibles para la prevencion y control de incendios en la entidad territorial",
+  "gestion del riesgo de desastres y emergencias|documentos de investigacion elaborados",
+  "gestion del riesgo de desastres y emergencias|emergencias y desastres atendidas",
+  "gestion del riesgo de desastres y emergencias|estudios de riesgo de desastres elaborados",
+  "gestion del riesgo de desastres y emergencias|hogares apoyados",
+  "gestion del riesgo de desastres y emergencias|hogares apoyados con ayudas humanitarias",
+  "gestion del riesgo de desastres y emergencias|instancias territoriales asistidas",
+  "gestion del riesgo de desastres y emergencias|obras de infraestructura para la reduccion del riesgo de desastres realizadas",
+  "gestion del riesgo de desastres y emergencias|organismos de atencion de emergencias fortalecidos",
+  "gestion del riesgo de desastres y emergencias|sistemas de alerta temprana implementados",
+  "gestion del riesgo de desastres y emergencias|sistemas de informacion actualizados",
+  "gestion del riesgo de desastres y emergencias|solicitudes tramitadas",
+  "gestion integral de mares costas y recursos acuaticos|jornadas de control de especies invasoras y exoticas",
+  "gestion integral del recurso hidrico|areas para la proteccion hidrica",
+  "gestion integral del recurso hidrico|documento de plan de ordenacion y manejo de cuenca hidrografica adoptado",
+  "gestion proteccion y salvaguardia del patrimonio cultural colombiano|documentos tecnicos sobre gestion documental realizados",
+  "gestion proteccion y salvaguardia del patrimonio cultural colombiano|estimulos otorgados",
+  "gestion proteccion y salvaguardia del patrimonio cultural colombiano|eventos realizados",
+  "gestion proteccion y salvaguardia del patrimonio cultural colombiano|procesos de salvaguardia efectiva del patrimonio inmaterial realizados",
+  "inclusion productiva de pequenos productores rurales|planes de desarrollo agropecuario y rural acompanados",
+  "inclusion productiva de pequenos productores rurales|planes de desarrollo agropecuario y rural elaborados",
+  "infraestructura red vial regional|anden construido",
+  "infraestructura red vial regional|andenes de la red urbana mejorados",
+  "infraestructura red vial regional|ciclo infraestructura urbana con mantenimiento",
+  "infraestructura red vial regional|estudios de preinversion realizados",
+  "infraestructura red vial regional|via terciaria con mantenimiento de emergencia",
+  "infraestructura red vial regional|via terciaria construida",
+  "infraestructura red vial regional|via terciaria mejorada",
+  "infraestructura red vial regional|via urbana con mantenimiento",
+  "infraestructura red vial regional|vias regionales o urbanas inventariadas",
+  "inspeccion vigilancia y control|auditorias y visitas inspectivas realizadas",
+  "inspeccion vigilancia y control|establecimientos abiertos al publico vigilados y controlados",
+  "levantamiento y actualizacion de informacion estadistica de calidad|plan estadistico municipal elaborado",
+  "lucha contra la corrupcion|capacitaciones realizadas",
+  "ordenamiento territorial y desarrollo urbano|documentos de planeacion elaborados",
+  "ordenamiento territorial y desarrollo urbano|documentos de planeacion en ordenamiento territorial implementados",
+  "ordenamiento territorial y desarrollo urbano|espacio publico adecuado",
+  "ordenamiento territorial y desarrollo urbano|espacio publico construido",
+  "ordenamiento territorial y desarrollo urbano|plazas mantenidas",
+  "ordenamiento territorial y desarrollo urbano|zonas verdes adecuadas",
+  "ordenamiento territorial y desarrollo urbano|zonas verdes mantenidas",
+  "prestacion de servicios de transporte publico de pasajeros|actualizar el plan local de seguridad vial",
+  "productividad y competitividad de las empresas colombianas|empresas beneficiarias de programas de fortalecimiento empresarial",
+  "productividad y competitividad de las empresas colombianas|empresas intervenidas en temas de economia circular y sostenibilidad",
+  "productividad y competitividad de las empresas colombianas|proyectos de infraestructura turistica apoyados",
+  "promocion al acceso a la justicia|estrategias de acceso a la justicia desarrolladas",
+  "promocion y acceso efectivo a procesos culturales y artisticos|bibliotecas adecuadas",
+  "promocion y acceso efectivo a procesos culturales y artisticos|capacitaciones de educacion informal realizadas",
+  "promocion y acceso efectivo a procesos culturales y artisticos|casas de la cultura adecuadas",
+  "promocion y acceso efectivo a procesos culturales y artisticos|cupos de educacion formal ofertados",
+  "promocion y acceso efectivo a procesos culturales y artisticos|cursos realizados",
+  "promocion y acceso efectivo a procesos culturales y artisticos|documentos de planeacion realizados",
+  "promocion y acceso efectivo a procesos culturales y artisticos|documentos normativos realizados",
+  "promocion y acceso efectivo a procesos culturales y artisticos|encuentros realizados",
+  "promocion y acceso efectivo a procesos culturales y artisticos|estimulos otorgados",
+  "promocion y acceso efectivo a procesos culturales y artisticos|estudios y disenos elaborados",
+  "promocion y acceso efectivo a procesos culturales y artisticos|eventos de promocion de actividades culturales realizados",
+  "promocion y acceso efectivo a procesos culturales y artisticos|materiales de lectura disponibles en bibliotecas publicas y espacios no convencionales",
+  "promocion y acceso efectivo a procesos culturales y artisticos|procesos de formacion atendidos",
+  "promocion y acceso efectivo a procesos culturales y artisticos|usuarios atendidos",
+  "salud publica|campanas de gestion del riesgo en temas de salud sexual y reproductiva implementadas",
+  "salud publica|documentos de planeacion con seguimiento realizados",
+  "salud publica|documentos de planeacion integral en salud realizados",
+  "salud publica|estrategias de gestion del riesgo en temas de trastornos mentales implementadas",
+  "salud publica|estrategias de gestion del riesgo para abordar situaciones de salud relacionadas con condiciones ambientales implementadas",
+  "salud publica|estrategias de gestion del riesgo para enfermedades inmunoprevenibles implementadas",
+  "salud publica|estrategias de gestion territorial para atencion en salud pandemias a poblacion afectada por emergencias o desastres implementadas",
+  "salud publica|estrategias de promocion de la salud implementadas",
+  "salud publica|planes de intervenciones colectivas realizados",
+  "salud publica|sistemas de informacion actualizados",
+  "salud publica|sistemas de informacion del plan de intervenciones colectivas actualizados",
+  "salud publica|sistemas de informacion implementados",
+  "sanidad agropecuaria e inocuidad agroalimentaria|guias de movilizacion de animales expedidas",
+  "seguridad de transporte|crear el observatorio de seguridad vial y movilidad",
+  "seguridad de transporte|ejecutar mantenimiento preventivo y correctivo a las unidades de semaforizacion",
+  "seguridad de transporte|formular implementar realizar segimiento controlar el plan de movilidad segura y sostenible",
+  "seguridad de transporte|informes de seguridad vial",
+  "seguridad de transporte|instalacion y mantenimiento de senalizacion",
+  "seguridad de transporte|operativos de control realizados",
+  "seguridad de transporte|personas capacitadas",
+  "seguridad de transporte|realizar auditoria y seguimiento a la ejecucion de los planes estrategicos de seguridad vial",
+  "seguridad de transporte|senalizar metros lineales de vias",
+  "sistema penitenciario y carcelario en el marco de los derechos humanos|personas privadas de la libertad ppl que reciben servicio de resocializacion",
+  "vigilancia de la gestion administrativa de los funcionarios del estado|servidores o particulares con funciones publicas sujetos de investigacion sim"
+ ]
+}

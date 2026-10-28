@@ -1,0 +1,3067 @@
+[
+ {
+  "paginas": [
+   654,
+   655,
+   656,
+   657,
+   658
+  ],
+  "cabecera": "CUATRIENIO",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   2037843487579,
+   533430119150,
+   542254139656,
+   565171684849
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "ENVIGADO CON EQUIDAD Y CIERRE DE BRECHAS",
+    "anios": [
+     555024557145,
+     129226737256,
+     135222971294,
+     141628628642
+    ],
+    "total": 961102894337,
+    "ruta": {
+     "linea": "ENVIGADO CON EQUIDAD Y CIERRE DE BRECHAS"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Salud integral",
+    "anios": [
+     304619905167,
+     72370735132,
+     73425948397,
+     77132814421
+    ],
+    "total": 527549403117,
+    "ruta": {
+     "linea": "Salud integral"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Gestión integral e integrada de la salud mental en los entornos para la vida",
+    "anios": [
+     22210803789,
+     5635258873,
+     5033241791,
+     5509701028
+    ],
+    "total": 38389005481,
+    "ruta": {
+     "linea": "Salud integral",
+     "sector": "Gestión integral e integrada de la salud mental en los entornos para la vida"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Implementación del Centro Comunitario de Salud Mental",
+    "anios": [
+     6649974466,
+     2282354471,
+     1345046949,
+     1452686705
+    ],
+    "total": 11730062591,
+    "ruta": {
+     "linea": "Salud integral",
+     "sector": "Gestión integral e integrada de la salud mental en los entornos para la vida",
+     "programa": "Implementación del Centro Comunitario de Salud Mental"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Fortalecimiento de la salud mental",
+    "anios": [
+     15560829323,
+     3352904402,
+     3688194842,
+     4057014323
+    ],
+    "total": 26658942890,
+    "ruta": {
+     "linea": "Salud integral",
+     "sector": "Gestión integral e integrada de la salud mental en los entornos para la vida",
+     "programa": "Fortalecimiento de la salud mental"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Seguridad alimentaria y nutricional para el desarrollo humano",
+    "anios": [
+     19447368221,
+     4341284767,
+     5027128861,
+     5319841747
+    ],
+    "total": 34135623596,
+    "ruta": {
+     "linea": "Salud integral",
+     "sector": "Seguridad alimentaria y nutricional para el desarrollo humano"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Fortalecimiento de la seguridad alimentaria y nutricional",
+    "anios": [
+     17713268221,
+     3991284767,
+     4567128861,
+     4878841747
+    ],
+    "total": 31150523596,
+    "ruta": {
+     "linea": "Salud integral",
+     "sector": "Seguridad alimentaria y nutricional para el desarrollo humano",
+     "programa": "Fortalecimiento de la seguridad alimentaria y nutricional"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Prestación del servicio de atención integral a las familias gestantes, lactantes, niños y niñas menores de dos años",
+    "anios": [
+     1734100000,
+     350000000,
+     460000000,
+     441000000
+    ],
+    "total": 2985100000,
+    "ruta": {
+     "linea": "Salud integral",
+     "sector": "Seguridad alimentaria y nutricional para el desarrollo humano",
+     "programa": "Prestación del servicio de atención integral a las familias gestantes, lactantes, niños y niñas menores de dos años"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Salud pública y vida saludable",
+    "anios": [
+     24737627730,
+     5394824508,
+     5882420929,
+     6430038911
+    ],
+    "total": 42444912078,
+    "ruta": {
+     "linea": "Salud integral",
+     "sector": "Salud pública y vida saludable"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Implementación del Plan de Intervenciones Colectivas",
+    "anios": [
+     16589209424,
+     3643120755,
+     3952829634,
+     4304452597
+    ],
+    "total": 28489612410,
+    "ruta": {
+     "linea": "Salud integral",
+     "sector": "Salud pública y vida saludable",
+     "programa": "Implementación del Plan de Intervenciones Colectivas"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Implementación del Plan Ampliado de Inmunización",
+    "anios": [
+     3261489249,
+     702755710,
+     773031281,
+     850334408
+    ],
+    "total": 5587610648,
+    "ruta": {
+     "linea": "Salud integral",
+     "sector": "Salud pública y vida saludable",
+     "programa": "Implementación del Plan Ampliado de Inmunización"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Apoyo a las familias cuidadoras y personas dependientes de cuidado por enfermedad o discapacidad",
+    "anios": [
+     2406902889,
+     518617300,
+     570479030,
+     627526933
+    ],
+    "total": 4123526152,
+    "ruta": {
+     "linea": "Salud integral",
+     "sector": "Salud pública y vida saludable",
+     "programa": "Apoyo a las familias cuidadoras y personas dependientes de cuidado por enfermedad o discapacidad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Fortalecimiento de la vigilancia epidemiológica",
+    "anios": [
+     2480026168,
+     530330743,
+     586080984,
+     647724973
+    ],
+    "total": 4244162868,
+    "ruta": {
+     "linea": "Salud integral",
+     "sector": "Salud pública y vida saludable",
+     "programa": "Fortalecimiento de la vigilancia epidemiológica"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Aseguramiento en salud",
+    "anios": [
+     210479571431,
+     47075968850,
+     51245289352,
+     54269818288
+    ],
+    "total": 363070647921,
+    "ruta": {
+     "linea": "Salud integral",
+     "sector": "Aseguramiento en salud"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Fortalecimiento de la gestión del aseguramiento en salud",
+    "anios": [
+     1034898078,
+     222990321,
+     245289353,
+     269818288
+    ],
+    "total": 1772996040,
+    "ruta": {
+     "linea": "Salud integral",
+     "sector": "Aseguramiento en salud",
+     "programa": "Fortalecimiento de la gestión del aseguramiento en salud"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Protección social en salud",
+    "anios": [
+     209444673353,
+     46852978529,
+     50999999999,
+     54000000000
+    ],
+    "total": 361297651881,
+    "ruta": {
+     "linea": "Salud integral",
+     "sector": "Aseguramiento en salud",
+     "programa": "Protección social en salud"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Gestión de la prestación de servicios en salud",
+    "anios": [
+     19269358446,
+     8041194777,
+     4210216668,
+     3400930990
+    ],
+    "total": 34921700881,
+    "ruta": {
+     "linea": "Salud integral",
+     "sector": "Gestión de la prestación de servicios en salud"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Contribución al acceso a servicios en salud",
+    "anios": [
+     19269358446,
+     8041194777,
+     4210216668,
+     3400930990
+    ],
+    "total": 34921700881,
+    "ruta": {
+     "linea": "Salud integral",
+     "sector": "Gestión de la prestación de servicios en salud",
+     "programa": "Contribución al acceso a servicios en salud"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Inspección, vigilancia y control en salud",
+    "anios": [
+     4432901262,
+     952251103,
+     1049328888,
+     1156552996
+    ],
+    "total": 7591034249,
+    "ruta": {
+     "linea": "Salud integral",
+     "sector": "Inspección, vigilancia y control en salud"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Control de factores de riesgo",
+    "anios": [
+     4432901262,
+     952251103,
+     1049328888,
+     1156552996
+    ],
+    "total": 7591034249,
+    "ruta": {
+     "linea": "Salud integral",
+     "sector": "Inspección, vigilancia y control en salud",
+     "programa": "Control de factores de riesgo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Planeación estratégica en salud",
+    "anios": [
+     4042274288,
+     929952254,
+     978321908,
+     1045930461
+    ],
+    "total": 6996478911,
+    "ruta": {
+     "linea": "Salud integral",
+     "sector": "Planeación estratégica en salud"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Fortalecimiento de la gestión y dirección del sector salud",
+    "anios": [
+     4042274288,
+     929952254,
+     978321908,
+     1045930461
+    ],
+    "total": 6996478911,
+    "ruta": {
+     "linea": "Salud integral",
+     "sector": "Planeación estratégica en salud",
+     "programa": "Fortalecimiento de la gestión y dirección del sector salud"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Deporte, recreación y actividad física",
+    "anios": [
+     25098060715,
+     26587768380,
+     28187714419,
+     29906056470
+    ],
+    "total": 109779599984,
+    "ruta": {
+     "linea": "Deporte, recreación y actividad física"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Fusión de músculo y alma",
+    "anios": [
+     25098060715,
+     26587768380,
+     28187714419,
+     29906056470
+    ],
+    "total": 109779599984,
+    "ruta": {
+     "linea": "Deporte, recreación y actividad física",
+     "sector": "Fusión de músculo y alma"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Formación e iniciación deportiva",
+    "anios": [
+     13738528592,
+     14725779510,
+     15786086996,
+     16924857238
+    ],
+    "total": 61175252336,
+    "ruta": {
+     "linea": "Deporte, recreación y actividad física",
+     "sector": "Fusión de músculo y alma",
+     "programa": "Formación e iniciación deportiva"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Apoyo e incentivos para los deportistas",
+    "anios": [
+     2516765641,
+     2703006299,
+     2903028765,
+     3117852892
+    ],
+    "total": 11240653597,
+    "ruta": {
+     "linea": "Deporte, recreación y actividad física",
+     "sector": "Fusión de músculo y alma",
+     "programa": "Apoyo e incentivos para los deportistas"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Fortalecimiento del deporte asociado",
+    "anios": [
+     780266597,
+     838006325,
+     900018793,
+     966620183
+    ],
+    "total": 3484911898,
+    "ruta": {
+     "linea": "Deporte, recreación y actividad física",
+     "sector": "Fusión de músculo y alma",
+     "programa": "Fortalecimiento del deporte asociado"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Fortalecimiento a la educación física",
+    "anios": [
+     571247812,
+     613520150,
+     658920641,
+     707680768
+    ],
+    "total": 2551369371,
+    "ruta": {
+     "linea": "Deporte, recreación y actividad física",
+     "sector": "Fusión de músculo y alma",
+     "programa": "Fortalecimiento a la educación física"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Generación de conocimiento deportivo, de actividad física y recreación",
+    "anios": [
+     90000000,
+     96660000,
+     103812840,
+     111494990
+    ],
+    "total": 401967830,
+    "ruta": {
+     "linea": "Deporte, recreación y actividad física",
+     "sector": "Fusión de músculo y alma",
+     "programa": "Generación de conocimiento deportivo, de actividad física y recreación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Aprovechamiento del tiempo libre a través de acciones descentralizadas",
+    "anios": [
+     3174672550,
+     3174672545,
+     3174672545,
+     3174672550
+    ],
+    "total": 12698690190,
+    "ruta": {
+     "linea": "Deporte, recreación y actividad física",
+     "sector": "Fusión de músculo y alma",
+     "programa": "Aprovechamiento del tiempo libre a través de acciones descentralizadas"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Generación de entornos saludables a través de actividad física y la recreación",
+    "anios": [
+     3765561048,
+     3940989709,
+     4129400093,
+     4331752844
+    ],
+    "total": 16167703694,
+    "ruta": {
+     "linea": "Deporte, recreación y actividad física",
+     "sector": "Fusión de músculo y alma",
+     "programa": "Generación de entornos saludables a través de actividad física y la recreación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Consolidación del Programa Sin Barreras",
+    "anios": [
+     461018475,
+     495133842,
+     531773746,
+     571125005
+    ],
+    "total": 2059051068,
+    "ruta": {
+     "linea": "Deporte, recreación y actividad física",
+     "sector": "Fusión de músculo y alma",
+     "programa": "Consolidación del Programa Sin Barreras"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Inclusión social",
+    "anios": [
+     22003734756,
+     28016612625,
+     29065607404,
+     30055917847
+    ],
+    "total": 109141872632,
+    "ruta": {
+     "linea": "Inclusión social"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Protección integral a la familia",
+    "anios": [
+     733657072,
+     2461957640,
+     2760450569,
+     3101164086
+    ],
+    "total": 9057229367,
+    "ruta": {
+     "linea": "Inclusión social",
+     "sector": "Protección integral a la familia"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Desarrollo de capacidades para el fortalecimiento familiar",
+    "anios": [
+     604657072,
+     861957640,
+     1000450569,
+     1165164086
+    ],
+    "total": 3632229367,
+    "ruta": {
+     "linea": "Inclusión social",
+     "sector": "Protección integral a la familia",
+     "programa": "Desarrollo de capacidades para el fortalecimiento familiar"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Implementación del proyecto Familia Vamos Adelante",
+    "anios": [
+     129000000,
+     1600000000,
+     1760000000,
+     1936000000
+    ],
+    "total": 5425000000,
+    "ruta": {
+     "linea": "Inclusión social",
+     "sector": "Protección integral a la familia",
+     "programa": "Implementación del proyecto Familia Vamos Adelante"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Niños, niñas y adolescentes",
+    "anios": [
+     576003253,
+     1201500000,
+     1236695000,
+     1273639250
+    ],
+    "total": 4287837503,
+    "ruta": {
+     "linea": "Inclusión social",
+     "sector": "Niños, niñas y adolescentes"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Protección y desarrollo de los niños, niñas y adolescentes",
+    "anios": [
+     576003253,
+     1201500000,
+     1236695000,
+     1273639250
+    ],
+    "total": 4287837503,
+    "ruta": {
+     "linea": "Inclusión social",
+     "sector": "Niños, niñas y adolescentes",
+     "programa": "Protección y desarrollo de los niños, niñas y adolescentes"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Jóvenes",
+    "anios": [
+     2374132282,
+     2635000000,
+     2781950000,
+     2730308500
+    ],
+    "total": 10521390782,
+    "ruta": {
+     "linea": "Inclusión social",
+     "sector": "Jóvenes"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Implementación del programa Envigado Joven",
+    "anios": [
+     2374132282,
+     2635000000,
+     2781950000,
+     2730308500
+    ],
+    "total": 10521390782,
+    "ruta": {
+     "linea": "Inclusión social",
+     "sector": "Jóvenes",
+     "programa": "Implementación del programa Envigado Joven"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Personas mayores",
+    "anios": [
+     8904325764,
+     9102648069,
+     9297127510,
+     9497441335
+    ],
+    "total": 36801542678,
+    "ruta": {
+     "linea": "Inclusión social",
+     "sector": "Personas mayores"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Integración social para un envejecimiento activo",
+    "anios": [
+     8904325764,
+     9102648069,
+     9297127510,
+     9497441335
+    ],
+    "total": 36801542678,
+    "ruta": {
+     "linea": "Inclusión social",
+     "sector": "Personas mayores",
+     "programa": "Integración social para un envejecimiento activo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Mujeres empoderadas y ejerciendo su autonomía",
+    "anios": [
+     2019725000,
+     3661500000,
+     3865150000,
+     4153940000
+    ],
+    "total": 13700315000,
+    "ruta": {
+     "linea": "Inclusión social",
+     "sector": "Mujeres empoderadas y ejerciendo su autonomía"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Consolidación de la autonomía y de territorios libres de violencias para las mujeres",
+    "anios": [
+     795000000,
+     1562000000,
+     1672200000,
+     1896920000
+    ],
+    "total": 5926120000,
+    "ruta": {
+     "linea": "Inclusión social",
+     "sector": "Mujeres empoderadas y ejerciendo su autonomía",
+     "programa": "Consolidación de la autonomía y de territorios libres de violencias para las mujeres"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Transformación de la participación y empoderamiento de las mujeres",
+    "anios": [
+     846725000,
+     1481700000,
+     1525870000,
+     1640732000
+    ],
+    "total": 5495027000,
+    "ruta": {
+     "linea": "Inclusión social",
+     "sector": "Mujeres empoderadas y ejerciendo su autonomía",
+     "programa": "Transformación de la participación y empoderamiento de las mujeres"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Fortalecimiento de la autonomía económica de las mujeres y reconocimiento de los cuidados",
+    "anios": [
+     378000000,
+     617800000,
+     667080000,
+     616288000
+    ],
+    "total": 2279168000,
+    "ruta": {
+     "linea": "Inclusión social",
+     "sector": "Mujeres empoderadas y ejerciendo su autonomía",
+     "programa": "Fortalecimiento de la autonomía económica de las mujeres y reconocimiento de los cuidados"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Personas con discapacidad",
+    "anios": [
+     2270218093,
+     2917180614,
+     2917180614,
+     2917180614
+    ],
+    "total": 11021759935,
+    "ruta": {
+     "linea": "Inclusión social",
+     "sector": "Personas con discapacidad"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Desarrollo integral de las personas con discapacidad",
+    "anios": [
+     2270218093,
+     2917180614,
+     2917180614,
+     2917180614
+    ],
+    "total": 11021759935,
+    "ruta": {
+     "linea": "Inclusión social",
+     "sector": "Personas con discapacidad",
+     "programa": "Desarrollo integral de las personas con discapacidad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Grupos étnicos",
+    "anios": [
+     162173354,
+     417100000,
+     429613000,
+     442501390
+    ],
+    "total": 1451387744,
+    "ruta": {
+     "linea": "Inclusión social",
+     "sector": "Grupos étnicos"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Fortalecimiento de la multiculturalidad (NARP, Indígenas y Rrom)",
+    "anios": [
+     162173354,
+     417100000,
+     429613000,
+     442501390
+    ],
+    "total": 1451387744,
+    "ruta": {
+     "linea": "Inclusión social",
+     "sector": "Grupos étnicos",
+     "programa": "Fortalecimiento de la multiculturalidad (NARP, Indígenas y Rrom)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Víctimas del conflicto armado",
+    "anios": [
+     399273988,
+     418474361,
+     431028592,
+     443959450
+    ],
+    "total": 1692736391,
+    "ruta": {
+     "linea": "Inclusión social",
+     "sector": "Víctimas del conflicto armado"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Asistencia, atención y reparación integral a las víctimas del conflicto armado interno",
+    "anios": [
+     399273988,
+     418474361,
+     431028592,
+     443959450
+    ],
+    "total": 1692736391,
+    "ruta": {
+     "linea": "Inclusión social",
+     "sector": "Víctimas del conflicto armado",
+     "programa": "Asistencia, atención y reparación integral a las víctimas del conflicto armado interno"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Habitantes de calle",
+    "anios": [
+     771088041,
+     848458860,
+     873912626,
+     900130004
+    ],
+    "total": 3393589531,
+    "ruta": {
+     "linea": "Inclusión social",
+     "sector": "Habitantes de calle"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Atención integral de población en situación permanente de desprotección social y/o familiar",
+    "anios": [
+     771088041,
+     848458860,
+     873912626,
+     900130004
+    ],
+    "total": 3393589531,
+    "ruta": {
+     "linea": "Inclusión social",
+     "sector": "Habitantes de calle",
+     "programa": "Atención integral de población en situación permanente de desprotección social y/o familiar"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Migrantes",
+    "anios": [
+     50699900,
+     66555892,
+     72480363,
+     78353989
+    ],
+    "total": 268090144,
+    "ruta": {
+     "linea": "Inclusión social",
+     "sector": "Migrantes"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Integración social de la población migrante",
+    "anios": [
+     50699900,
+     66555892,
+     72480363,
+     78353989
+    ],
+    "total": 268090144,
+    "ruta": {
+     "linea": "Inclusión social",
+     "sector": "Migrantes",
+     "programa": "Integración social de la población migrante"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Población LGBTIQ+",
+    "anios": [
+     261050357,
+     300344818,
+     309355162,
+     318635816
+    ],
+    "total": 1189386153,
+    "ruta": {
+     "linea": "Inclusión social",
+     "sector": "Población LGBTIQ+"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Compromiso con un Envigado de Colores",
+    "anios": [
+     261050357,
+     300344818,
+     309355162,
+     318635816
+    ],
+    "total": 1189386153,
+    "ruta": {
+     "linea": "Inclusión social",
+     "sector": "Población LGBTIQ+",
+     "programa": "Compromiso con un Envigado de Colores"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Distribución de la riqueza",
+    "anios": [
+     3481387652,
+     3985892371,
+     4090663968,
+     4198663413
+    ],
+    "total": 15756607404,
+    "ruta": {
+     "linea": "Inclusión social",
+     "sector": "Distribución de la riqueza"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Subsidios para cerrar brechas",
+    "anios": [
+     3481387652,
+     3985892371,
+     4090663968,
+     4198663413
+    ],
+    "total": 15756607404,
+    "ruta": {
+     "linea": "Inclusión social",
+     "sector": "Distribución de la riqueza",
+     "programa": "Subsidios para cerrar brechas"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Servicios domiciliarios y vivienda digna",
+    "anios": [
+     31483179362,
+     9754206653,
+     7192641892,
+     7242492398
+    ],
+    "total": 55672520305,
+    "ruta": {
+     "linea": "Servicios domiciliarios y vivienda digna"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Servicios domiciliarios",
+    "anios": [
+     9532679362,
+     4396581653,
+     1661683558,
+     1711534065
+    ],
+    "total": 17302478638,
+    "ruta": {
+     "linea": "Servicios domiciliarios y vivienda digna",
+     "sector": "Servicios domiciliarios"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Extensión del acceso a agua potable y saneamiento básico",
+    "anios": [
+     9532679362,
+     4396581653,
+     1661683558,
+     1711534065
+    ],
+    "total": 17302478638,
+    "ruta": {
+     "linea": "Servicios domiciliarios y vivienda digna",
+     "sector": "Servicios domiciliarios",
+     "programa": "Extensión del acceso a agua potable y saneamiento básico"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Acceso a vivienda",
+    "anios": [
+     21950500000,
+     5357625000,
+     5530958334,
+     5530958333
+    ],
+    "total": 38370041667,
+    "ruta": {
+     "linea": "Servicios domiciliarios y vivienda digna",
+     "sector": "Acceso a vivienda"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Protección social a través de la vivienda digna",
+    "anios": [
+     21950500000,
+     5357625000,
+     5530958334,
+     5530958333
+    ],
+    "total": 38370041667,
+    "ruta": {
+     "linea": "Servicios domiciliarios y vivienda digna",
+     "sector": "Acceso a vivienda",
+     "programa": "Protección social a través de la vivienda digna"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "ENVIGADO CON OPORTUNIDADES Y PROSPERIDAD",
+    "anios": [
+     608903097192,
+     148148538938,
+     149385629509,
+     155588484131
+    ],
+    "total": 1062025749770,
+    "ruta": {
+     "linea": "ENVIGADO CON OPORTUNIDADES Y PROSPERIDAD"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Educación para el cierre de brechas",
+    "anios": [
+     490710953242,
+     119325520166,
+     119773626741,
+     123617290940
+    ],
+    "total": 853427391089,
+    "ruta": {
+     "linea": "Educación para el cierre de brechas"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Educación inicial: Tejiendo sueños",
+    "anios": [
+     49036025399,
+     13985633466,
+     11591746523,
+     11728549270
+    ],
+    "total": 86341954658,
+    "ruta": {
+     "linea": "Educación para el cierre de brechas",
+     "sector": "Educación inicial: Tejiendo sueños"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Desarrollo y atención integral a la primera infancia",
+    "anios": [
+     49036025399,
+     13985633466,
+     11591746523,
+     11728549270
+    ],
+    "total": 86341954658,
+    "ruta": {
+     "linea": "Educación para el cierre de brechas",
+     "sector": "Educación inicial: Tejiendo sueños",
+     "programa": "Desarrollo y atención integral a la primera infancia"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Calidad educativa",
+    "anios": [
+     30402447289,
+     6063694419,
+     7852181484,
+     8194166469
+    ],
+    "total": 52512489661,
+    "ruta": {
+     "linea": "Educación para el cierre de brechas",
+     "sector": "Calidad educativa"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Compromiso con la calidad educativa",
+    "anios": [
+     9485214712,
+     1923023035,
+     2460084725,
+     2546867267
+    ],
+    "total": 16415189739,
+    "ruta": {
+     "linea": "Educación para el cierre de brechas",
+     "sector": "Calidad educativa",
+     "programa": "Compromiso con la calidad educativa"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Desarrollo de habilidades socioemocionales, de convivencia y educación inclusiva",
+    "anios": [
+     12010431172,
+     2810916450,
+     2925801921,
+     3094791136
+    ],
+    "total": 20841940679,
+    "ruta": {
+     "linea": "Educación para el cierre de brechas",
+     "sector": "Calidad educativa",
+     "programa": "Desarrollo de habilidades socioemocionales, de convivencia y educación inclusiva"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Fortalecimiento de competencias comunicativas en segunda lengua",
+    "anios": [
+     8906801405,
+     1329754934,
+     2466294838,
+     2552508066
+    ],
+    "total": 15255359243,
+    "ruta": {
+     "linea": "Educación para el cierre de brechas",
+     "sector": "Calidad educativa",
+     "programa": "Fortalecimiento de competencias comunicativas en segunda lengua"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Cobertura educativa",
+    "anios": [
+     71948648272,
+     20778736050,
+     16348663381,
+     17156206954
+    ],
+    "total": 126232254657,
+    "ruta": {
+     "linea": "Educación para el cierre de brechas",
+     "sector": "Cobertura educativa"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Servicio de transporte para garantizar la permanencia educativa",
+    "anios": [
+     11949298432,
+     3000000000,
+     2981224279,
+     2989153398
+    ],
+    "total": 20919676109,
+    "ruta": {
+     "linea": "Educación para el cierre de brechas",
+     "sector": "Cobertura educativa",
+     "programa": "Servicio de transporte para garantizar la permanencia educativa"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Extensión de la cobertura y permanencia educativa",
+    "anios": [
+     5417249197,
+     1207000000,
+     1301874000,
+     1401746928
+    ],
+    "total": 9327870125,
+    "ruta": {
+     "linea": "Educación para el cierre de brechas",
+     "sector": "Cobertura educativa",
+     "programa": "Extensión de la cobertura y permanencia educativa"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Implementación del Programa de Alimentación Escolar",
+    "anios": [
+     54582100643,
+     16571736050,
+     12065565102,
+     12765306628
+    ],
+    "total": 95984708423,
+    "ruta": {
+     "linea": "Educación para el cierre de brechas",
+     "sector": "Cobertura educativa",
+     "programa": "Implementación del Programa de Alimentación Escolar"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Gestión del talento humano educativo y bienestar docente",
+    "anios": [
+     249387350838,
+     60211398783,
+     62357488587,
+     62820197750
+    ],
+    "total": 434776435958,
+    "ruta": {
+     "linea": "Educación para el cierre de brechas",
+     "sector": "Gestión del talento humano educativo y bienestar docente"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Potenciación del talento humano del sector educación",
+    "anios": [
+     249387350838,
+     60211398783,
+     62357488587,
+     62820197750
+    ],
+    "total": 434776435958,
+    "ruta": {
+     "linea": "Educación para el cierre de brechas",
+     "sector": "Gestión del talento humano educativo y bienestar docente",
+     "programa": "Potenciación del talento humano del sector educación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Innovación educativa",
+    "anios": [
+     13753240515,
+     3026571018,
+     4037317624,
+     3258091466
+    ],
+    "total": 24075220623,
+    "ruta": {
+     "linea": "Educación para el cierre de brechas",
+     "sector": "Innovación educativa"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Fortalecimiento de la innovación educativa",
+    "anios": [
+     13457009647,
+     2960355266,
+     3965672181,
+     3181287551
+    ],
+    "total": 23564324645,
+    "ruta": {
+     "linea": "Educación para el cierre de brechas",
+     "sector": "Innovación educativa",
+     "programa": "Fortalecimiento de la innovación educativa"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Divulgación de la investigación en el sector educativo",
+    "anios": [
+     296230868,
+     66215752,
+     71645443,
+     76803915
+    ],
+    "total": 510895978,
+    "ruta": {
+     "linea": "Educación para el cierre de brechas",
+     "sector": "Innovación educativa",
+     "programa": "Divulgación de la investigación en el sector educativo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Administración e inspección educativa",
+    "anios": [
+     72679155217,
+     14589486430,
+     16715729142,
+     19480503031
+    ],
+    "total": 123464873820,
+    "ruta": {
+     "linea": "Educación para el cierre de brechas",
+     "sector": "Administración e inspección educativa"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Prestación del servicio de educación",
+    "anios": [
+     71560724705,
+     14339486430,
+     16445229142,
+     19190527031
+    ],
+    "total": 121535967308,
+    "ruta": {
+     "linea": "Educación para el cierre de brechas",
+     "sector": "Administración e inspección educativa",
+     "programa": "Prestación del servicio de educación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Fortalecimiento de la inspección y vigilancia del sector educativo",
+    "anios": [
+     1118430512,
+     250000000,
+     270500000,
+     289976000
+    ],
+    "total": 1928906512,
+    "ruta": {
+     "linea": "Educación para el cierre de brechas",
+     "sector": "Administración e inspección educativa",
+     "programa": "Fortalecimiento de la inspección y vigilancia del sector educativo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Planeación estratégica educativa",
+    "anios": [
+     3504085712,
+     670000000,
+     870500000,
+     979576000
+    ],
+    "total": 6024161712,
+    "ruta": {
+     "linea": "Educación para el cierre de brechas",
+     "sector": "Planeación estratégica educativa"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Fortalecimiento de la gestión y dirección del sector educativo",
+    "anios": [
+     3504085712,
+     670000000,
+     870500000,
+     979576000
+    ],
+    "total": 6024161712,
+    "ruta": {
+     "linea": "Educación para el cierre de brechas",
+     "sector": "Planeación estratégica educativa",
+     "programa": "Fortalecimiento de la gestión y dirección del sector educativo"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   660,
+   661,
+   662,
+   663,
+   664
+  ],
+  "cabecera": "PLAN DE DESARROLLO MUNICIPAL 2024-2027",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   973002924957,
+   567319788798,
+   561442371011,
+   487282846779
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "ENVIGADO SOSTENIBLE E INTELIGENTE",
+    "anios": [
+     178369911719,
+     286643844138,
+     236311886465,
+     194577804039
+    ],
+    "total": 895903446361,
+    "ruta": {
+     "linea": "ENVIGADO SOSTENIBLE E INTELIGENTE"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Desarrollo urbano y rural",
+    "anios": [
+     16080023543,
+     34497887152,
+     16537144858,
+     14696295955
+    ],
+    "total": 81811351508,
+    "ruta": {
+     "linea": "Desarrollo urbano y rural"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Planificación, ordenamiento territorial y proyectos estratégicos",
+    "anios": [
+     15080023543,
+     29136823479,
+     11023996092,
+     10388606487
+    ],
+    "total": 65629449601,
+    "ruta": {
+     "linea": "Desarrollo urbano y rural",
+     "sector": "Planificación, ordenamiento territorial y proyectos estratégicos"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Ordenamiento territorial para una nueva generación",
+    "anios": [
+     2812109761,
+     6533510387,
+     1018476324,
+     1088486248
+    ],
+    "total": 11452582720,
+    "ruta": {
+     "linea": "Desarrollo urbano y rural",
+     "sector": "Planificación, ordenamiento territorial y proyectos estratégicos",
+     "programa": "Ordenamiento territorial para una nueva generación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Consolidación del modelo territorial",
+    "anios": [
+     10126567111,
+     20384794037,
+     7492774111,
+     6602493333
+    ],
+    "total": 44606628592,
+    "ruta": {
+     "linea": "Desarrollo urbano y rural",
+     "sector": "Planificación, ordenamiento territorial y proyectos estratégicos",
+     "programa": "Consolidación del modelo territorial"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Asesoría para el direccionamiento estratégico",
+    "anios": [
+     592872970,
+     418696589,
+     531146530,
+     515876067
+    ],
+    "total": 2058592156,
+    "ruta": {
+     "linea": "Desarrollo urbano y rural",
+     "sector": "Planificación, ordenamiento territorial y proyectos estratégicos",
+     "programa": "Asesoría para el direccionamiento estratégico"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Fortalecimiento de la gestión urbanística",
+    "anios": [
+     1548473701,
+     1799822466,
+     1981599127,
+     2181750839
+    ],
+    "total": 7511646133,
+    "ruta": {
+     "linea": "Desarrollo urbano y rural",
+     "sector": "Planificación, ordenamiento territorial y proyectos estratégicos",
+     "programa": "Fortalecimiento de la gestión urbanística"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Desarrollo urbano",
+    "anios": [
+     1000000000,
+     2500000000,
+     2500000000,
+     1000000000
+    ],
+    "total": 7000000000,
+    "ruta": {
+     "linea": "Desarrollo urbano y rural",
+     "sector": "Desarrollo urbano"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Desarrollo urbanístico sostenible y equilibrado",
+    "anios": [
+     1000000000,
+     2500000000,
+     2500000000,
+     1000000000
+    ],
+    "total": 7000000000,
+    "ruta": {
+     "linea": "Desarrollo urbano y rural",
+     "sector": "Desarrollo urbano",
+     "programa": "Desarrollo urbanístico sostenible y equilibrado"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Desarrollo rural",
+    "anios": [
+     0,
+     2861063673,
+     3013148766,
+     3307689468
+    ],
+    "total": 9181901907,
+    "ruta": {
+     "linea": "Desarrollo urbano y rural",
+     "sector": "Desarrollo rural"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Fortalecimiento del sector agropecuario",
+    "anios": [
+     0,
+     2861063673,
+     3013148766,
+     3307689468
+    ],
+    "total": 9181901907,
+    "ruta": {
+     "linea": "Desarrollo urbano y rural",
+     "sector": "Desarrollo rural",
+     "programa": "Fortalecimiento del sector agropecuario"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Infraestructura y movilidad",
+    "anios": [
+     696183960729,
+     137749282150,
+     219393309710,
+     190630563220
+    ],
+    "total": 1243957115809,
+    "ruta": {
+     "linea": "Infraestructura y movilidad"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Espacio público",
+    "anios": [
+     174366361156,
+     46015152311,
+     49744427166,
+     39637616366
+    ],
+    "total": 309763556999,
+    "ruta": {
+     "linea": "Infraestructura y movilidad",
+     "sector": "Espacio público"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Generación y gestión del espacio público",
+    "anios": [
+     34999194276,
+     12985735211,
+     17048285189,
+     4270906676
+    ],
+    "total": 69304121352,
+    "ruta": {
+     "linea": "Infraestructura y movilidad",
+     "sector": "Espacio público",
+     "programa": "Generación y gestión del espacio público"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Mejoramiento y mantenimiento del espacio público existente",
+    "anios": [
+     139367166880,
+     33029417100,
+     32696141977,
+     35366709690
+    ],
+    "total": 240459435647,
+    "ruta": {
+     "linea": "Infraestructura y movilidad",
+     "sector": "Espacio público",
+     "programa": "Mejoramiento y mantenimiento del espacio público existente"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Equipamiento colectivo e infraestructura vial",
+    "anios": [
+     389346275431,
+     62443382547,
+     136221582544,
+     115582931854
+    ],
+    "total": 703594172376,
+    "ruta": {
+     "linea": "Infraestructura y movilidad",
+     "sector": "Equipamiento colectivo e infraestructura vial"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Mejoramiento de equipamientos colectivos para la accesibilidad universal",
+    "anios": [
+     857120000,
+     214280000,
+     214280000,
+     214280000
+    ],
+    "total": 1499960000,
+    "ruta": {
+     "linea": "Infraestructura y movilidad",
+     "sector": "Equipamiento colectivo e infraestructura vial",
+     "programa": "Mejoramiento de equipamientos colectivos para la accesibilidad universal"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Generación de infraestructura educativa y cultural",
+    "anios": [
+     700000000,
+     600000000,
+     0,
+     50000000
+    ],
+    "total": 1350000000,
+    "ruta": {
+     "linea": "Infraestructura y movilidad",
+     "sector": "Equipamiento colectivo e infraestructura vial",
+     "programa": "Generación de infraestructura educativa y cultural"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Mejoramiento y mantenimiento de infraestructura educativa y cultural existente",
+    "anios": [
+     19576080307,
+     7006295538,
+     3941179744,
+     7431420385
+    ],
+    "total": 37954975974,
+    "ruta": {
+     "linea": "Infraestructura y movilidad",
+     "sector": "Equipamiento colectivo e infraestructura vial",
+     "programa": "Mejoramiento y mantenimiento de infraestructura educativa y cultural existente"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Generación de infraestructura deportiva y recreativa",
+    "anios": [
+     14985348960,
+     1418258560,
+     0,
+     13367090400
+    ],
+    "total": 29770697920,
+    "ruta": {
+     "linea": "Infraestructura y movilidad",
+     "sector": "Equipamiento colectivo e infraestructura vial",
+     "programa": "Generación de infraestructura deportiva y recreativa"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Mejoramiento y mantenimiento de infraestructura deportiva y recreativa existente",
+    "anios": [
+     13849228400,
+     2632138000,
+     3500000000,
+     4500000000
+    ],
+    "total": 24481366400,
+    "ruta": {
+     "linea": "Infraestructura y movilidad",
+     "sector": "Equipamiento colectivo e infraestructura vial",
+     "programa": "Mejoramiento y mantenimiento de infraestructura deportiva y recreativa existente"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Generación de infraestructura social e institucional",
+    "anios": [
+     121516556568,
+     18471480449,
+     77917237900,
+     18427838219
+    ],
+    "total": 236333113136,
+    "ruta": {
+     "linea": "Infraestructura y movilidad",
+     "sector": "Equipamiento colectivo e infraestructura vial",
+     "programa": "Generación de infraestructura social e institucional"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Mejoramiento y mantenimiento de infraestructura social e institucional",
+    "anios": [
+     3682130000,
+     2850000000,
+     32130000,
+     0
+    ],
+    "total": 6564260000,
+    "ruta": {
+     "linea": "Infraestructura y movilidad",
+     "sector": "Equipamiento colectivo e infraestructura vial",
+     "programa": "Mejoramiento y mantenimiento de infraestructura social e institucional"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Generación de infraestructura vial y de transporte",
+    "anios": [
+     123600798396,
+     16234732000,
+     29688551200,
+     38707691750
+    ],
+    "total": 208231773346,
+    "ruta": {
+     "linea": "Infraestructura y movilidad",
+     "sector": "Equipamiento colectivo e infraestructura vial",
+     "programa": "Generación de infraestructura vial y de transporte"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Mejoramiento y mantenimiento de infraestructura vial y de transporte existente",
+    "anios": [
+     90579012800,
+     13016198000,
+     20928203700,
+     32884611100
+    ],
+    "total": 157408025600,
+    "ruta": {
+     "linea": "Infraestructura y movilidad",
+     "sector": "Equipamiento colectivo e infraestructura vial",
+     "programa": "Mejoramiento y mantenimiento de infraestructura vial y de transporte existente"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Movilidad para la gente",
+    "anios": [
+     132471324142,
+     29290747292,
+     33427300000,
+     35410015000
+    ],
+    "total": 230599386434,
+    "ruta": {
+     "linea": "Infraestructura y movilidad",
+     "sector": "Movilidad para la gente"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Transformación de la movilidad",
+    "anios": [
+     19651106609,
+     3365739009,
+     6844000000,
+     5280220000
+    ],
+    "total": 35141065618,
+    "ruta": {
+     "linea": "Infraestructura y movilidad",
+     "sector": "Movilidad para la gente",
+     "programa": "Transformación de la movilidad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Compromiso por la seguridad vial",
+    "anios": [
+     87773308620,
+     14506224370,
+     21803300000,
+     24691295000
+    ],
+    "total": 148774127990,
+    "ruta": {
+     "linea": "Infraestructura y movilidad",
+     "sector": "Movilidad para la gente",
+     "programa": "Compromiso por la seguridad vial"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Fortalecimiento de la gestión del transporte público",
+    "anios": [
+     16691837572,
+     9963712572,
+     2780000000,
+     2988500000
+    ],
+    "total": 32424050144,
+    "ruta": {
+     "linea": "Infraestructura y movilidad",
+     "sector": "Movilidad para la gente",
+     "programa": "Fortalecimiento de la gestión del transporte público"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Fortalecimiento de la gestión administrativa para la movilidad",
+    "anios": [
+     8355071341,
+     1455071341,
+     2000000000,
+     2450000000
+    ],
+    "total": 14260142682,
+    "ruta": {
+     "linea": "Infraestructura y movilidad",
+     "sector": "Movilidad para la gente",
+     "programa": "Fortalecimiento de la gestión administrativa para la movilidad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Bienestar animal, ambiente y desarrollo sostenible",
+    "anios": [
+     24540606026,
+     32752647276,
+     29144178387,
+     31470702435
+    ],
+    "total": 117908134124,
+    "ruta": {
+     "linea": "Bienestar animal, ambiente y desarrollo sostenible"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Gestión ambiental y acción por el cambio climático",
+    "anios": [
+     7838425793,
+     10100432908,
+     10044497775,
+     10724819618
+    ],
+    "total": 38708176094,
+    "ruta": {
+     "linea": "Bienestar animal, ambiente y desarrollo sostenible",
+     "sector": "Gestión ambiental y acción por el cambio climático"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Protección y control de los recursos naturales",
+    "anios": [
+     7618425793,
+     9305969501,
+     9166444498,
+     9808070297
+    ],
+    "total": 35898910089,
+    "ruta": {
+     "linea": "Bienestar animal, ambiente y desarrollo sostenible",
+     "sector": "Gestión ambiental y acción por el cambio climático",
+     "programa": "Protección y control de los recursos naturales"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Implementación de estrategias para fomentar la construcción sostenible",
+    "anios": [
+     0,
+     201639915,
+     221803906,
+     193600000
+    ],
+    "total": 617043821,
+    "ruta": {
+     "linea": "Bienestar animal, ambiente y desarrollo sostenible",
+     "sector": "Gestión ambiental y acción por el cambio climático",
+     "programa": "Implementación de estrategias para fomentar la construcción sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Compromiso con un desarrollo bajo en carbono y resiliente al cambio climático",
+    "anios": [
+     220000000,
+     592823492,
+     656249371,
+     723149321
+    ],
+    "total": 2192222184,
+    "ruta": {
+     "linea": "Bienestar animal, ambiente y desarrollo sostenible",
+     "sector": "Gestión ambiental y acción por el cambio climático",
+     "programa": "Compromiso con un desarrollo bajo en carbono y resiliente al cambio climático"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Ecosistemas y biodiversidad",
+    "anios": [
+     5128048982,
+     9529543142,
+     5662653752,
+     5962447542
+    ],
+    "total": 26282693418,
+    "ruta": {
+     "linea": "Bienestar animal, ambiente y desarrollo sostenible",
+     "sector": "Ecosistemas y biodiversidad"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Consolidación del Sistema Local de Áreas Protegidas como modelo de conservación de la biodiversidad y sus ecosistemas",
+    "anios": [
+     381823026,
+     2515741301,
+     489216924,
+     520354278
+    ],
+    "total": 3907135529,
+    "ruta": {
+     "linea": "Bienestar animal, ambiente y desarrollo sostenible",
+     "sector": "Ecosistemas y biodiversidad",
+     "programa": "Consolidación del Sistema Local de Áreas Protegidas como modelo de conservación de la biodiversidad y sus ecosistemas"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Fortalecimiento de la renaturalización de espacios públicos y de la resiliencia territorial",
+    "anios": [
+     2102108887,
+     3552010851,
+     2759831719,
+     2646873456
+    ],
+    "total": 11060824913,
+    "ruta": {
+     "linea": "Bienestar animal, ambiente y desarrollo sostenible",
+     "sector": "Ecosistemas y biodiversidad",
+     "programa": "Fortalecimiento de la renaturalización de espacios públicos y de la resiliencia territorial"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Mantenimiento de la red hídrica y gestión de los espacios públicos naturales",
+    "anios": [
+     1845868138,
+     2468583216,
+     1502060713,
+     1617602534
+    ],
+    "total": 7434114601,
+    "ruta": {
+     "linea": "Bienestar animal, ambiente y desarrollo sostenible",
+     "sector": "Ecosistemas y biodiversidad",
+     "programa": "Mantenimiento de la red hídrica y gestión de los espacios públicos naturales"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Protección y gestión en áreas de importancia ambiental",
+    "anios": [
+     798248931,
+     993207774,
+     911544396,
+     1177617274
+    ],
+    "total": 3880618375,
+    "ruta": {
+     "linea": "Bienestar animal, ambiente y desarrollo sostenible",
+     "sector": "Ecosistemas y biodiversidad",
+     "programa": "Protección y gestión en áreas de importancia ambiental"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Bienestar animal",
+    "anios": [
+     2263619712,
+     2138089291,
+     2339540432,
+     2560148067
+    ],
+    "total": 9301397502,
+    "ruta": {
+     "linea": "Bienestar animal, ambiente y desarrollo sostenible",
+     "sector": "Bienestar animal"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Servicio de atención integral a la fauna silvestre y doméstica",
+    "anios": [
+     2263619712,
+     2138089291,
+     2339540432,
+     2560148067
+    ],
+    "total": 9301397502,
+    "ruta": {
+     "linea": "Bienestar animal, ambiente y desarrollo sostenible",
+     "sector": "Bienestar animal",
+     "programa": "Servicio de atención integral a la fauna silvestre y doméstica"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Gestión del riesgo",
+    "anios": [
+     9310511539,
+     10984581935,
+     11097486428,
+     12223287208
+    ],
+    "total": 43615867110,
+    "ruta": {
+     "linea": "Bienestar animal, ambiente y desarrollo sostenible",
+     "sector": "Gestión del riesgo"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Fortalecimiento de la gestión integral del riesgo",
+    "anios": [
+     9310511539,
+     10984581935,
+     11097486428,
+     12223287208
+    ],
+    "total": 43615867110,
+    "ruta": {
+     "linea": "Bienestar animal, ambiente y desarrollo sostenible",
+     "sector": "Gestión del riesgo",
+     "programa": "Fortalecimiento de la gestión integral del riesgo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "ENVIGADO SEGURO Y PACÍFICO",
+    "anios": [
+     26329234935,
+     28197981188,
+     28052170974,
+     28410031551
+    ],
+    "total": 110989418648,
+    "ruta": {
+     "linea": "ENVIGADO SEGURO Y PACÍFICO"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Entornos seguros",
+    "anios": [
+     16839370707,
+     16238995548,
+     16084280079,
+     15992934565
+    ],
+    "total": 65155580899,
+    "ruta": {
+     "linea": "ENVIGADO SEGURO Y PACÍFICO",
+     "sector": "Entornos seguros"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Seguridad ciudadana y prevención del delito",
+    "anios": [
+     16839370707,
+     16238995548,
+     16084280079,
+     15992934565
+    ],
+    "total": 65155580899,
+    "ruta": {
+     "linea": "ENVIGADO SEGURO Y PACÍFICO",
+     "sector": "Entornos seguros",
+     "programa": "Seguridad ciudadana y prevención del delito"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Fortalecimiento de la institucionalidad para la seguridad del territorio",
+    "anios": [
+     11470097449,
+     7973043320,
+     7570349284,
+     7223585846
+    ],
+    "total": 34237075899,
+    "ruta": {
+     "linea": "ENVIGADO SEGURO Y PACÍFICO",
+     "sector": "Entornos seguros",
+     "programa": "Seguridad ciudadana y prevención del delito",
+     "subprograma": "Fortalecimiento de la institucionalidad para la seguridad del territorio"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Actualización de la infraestructura tecnológica para la seguridad del territorio",
+    "anios": [
+     1556632510,
+     4701317612,
+     4612832717,
+     4498140834
+    ],
+    "total": 15368923673,
+    "ruta": {
+     "linea": "ENVIGADO SEGURO Y PACÍFICO",
+     "sector": "Entornos seguros",
+     "programa": "Seguridad ciudadana y prevención del delito",
+     "subprograma": "Actualización de la infraestructura tecnológica para la seguridad del territorio"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Expansión de las capacidades de los organismos de seguridad y justicia para la seguridad pública y ciudadana",
+    "anios": [
+     3812640748,
+     3564634616,
+     3901098078,
+     4271207885
+    ],
+    "total": 15549581327,
+    "ruta": {
+     "linea": "ENVIGADO SEGURO Y PACÍFICO",
+     "sector": "Entornos seguros",
+     "programa": "Seguridad ciudadana y prevención del delito",
+     "subprograma": "Expansión de las capacidades de los organismos de seguridad y justicia para la seguridad pública y ciudadana"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Territorio de paz",
+    "anios": [
+     9489864228,
+     11958985640,
+     11967890895,
+     12417096986
+    ],
+    "total": 45833837749,
+    "ruta": {
+     "linea": "ENVIGADO SEGURO Y PACÍFICO",
+     "sector": "Territorio de paz"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Sana convivencia",
+    "anios": [
+     8661036258,
+     11558985640,
+     11467890895,
+     11997096986
+    ],
+    "total": 43685009779,
+    "ruta": {
+     "linea": "ENVIGADO SEGURO Y PACÍFICO",
+     "sector": "Territorio de paz",
+     "programa": "Sana convivencia"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Fortalecimiento del tejido social",
+    "anios": [
+     6204941543,
+     8462281455,
+     8193014806,
+     8559658180
+    ],
+    "total": 31419895984,
+    "ruta": {
+     "linea": "ENVIGADO SEGURO Y PACÍFICO",
+     "sector": "Territorio de paz",
+     "programa": "Sana convivencia",
+     "subprograma": "Fortalecimiento del tejido social"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos",
+    "anios": [
+     2456094715,
+     3096704185,
+     3274876089,
+     3437438806
+    ],
+    "total": 12265113795,
+    "ruta": {
+     "linea": "ENVIGADO SEGURO Y PACÍFICO",
+     "sector": "Territorio de paz",
+     "programa": "Sana convivencia",
+     "subprograma": "Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Cultura ciudadana",
+    "anios": [
+     828827970,
+     400000000,
+     500000000,
+     420000000
+    ],
+    "total": 2148827970,
+    "ruta": {
+     "linea": "ENVIGADO SEGURO Y PACÍFICO",
+     "sector": "Territorio de paz",
+     "programa": "Cultura ciudadana"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Fortalecimiento de la cultura ciudadana",
+    "anios": [
+     828827970,
+     400000000,
+     500000000,
+     420000000
+    ],
+    "total": 2148827970,
+    "ruta": {
+     "linea": "ENVIGADO SEGURO Y PACÍFICO",
+     "sector": "Territorio de paz",
+     "programa": "Cultura ciudadana",
+     "subprograma": "Fortalecimiento de la cultura ciudadana"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "ENVIGADO INNOVADOR E INTEGRADOR",
+    "anios": [
+     31499188005,
+     47478146894,
+     32003680617,
+     27497449579
+    ],
+    "total": 138478465095,
+    "ruta": {
+     "linea": "ENVIGADO INNOVADOR E INTEGRADOR"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Gobernanza",
+    "anios": [
+     4026834945,
+     5989275142,
+     6525712078,
+     7177365775
+    ],
+    "total": 23719187940,
+    "ruta": {
+     "linea": "ENVIGADO INNOVADOR E INTEGRADOR",
+     "sector": "Gobernanza"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Participación ciudadana incidente",
+    "anios": [
+     1871861004,
+     3566456598,
+     3925005109,
+     4316993064
+    ],
+    "total": 13680315775,
+    "ruta": {
+     "linea": "ENVIGADO INNOVADOR E INTEGRADOR",
+     "sector": "Gobernanza",
+     "programa": "Participación ciudadana incidente"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Formación para la participación incidente",
+    "anios": [
+     220000000,
+     423575998,
+     478169358,
+     538527989
+    ],
+    "total": 1660273345,
+    "ruta": {
+     "linea": "ENVIGADO INNOVADOR E INTEGRADOR",
+     "sector": "Gobernanza",
+     "programa": "Participación ciudadana incidente",
+     "subprograma": "Formación para la participación incidente"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Compromiso con el reconocimiento del liderazgo",
+    "anios": [
+     20000000,
+     337200000,
+     389496000,
+     447440880
+    ],
+    "total": 1194136880,
+    "ruta": {
+     "linea": "ENVIGADO INNOVADOR E INTEGRADOR",
+     "sector": "Gobernanza",
+     "programa": "Participación ciudadana incidente",
+     "subprograma": "Compromiso con el reconocimiento del liderazgo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Implementación del presupuesto participativo",
+    "anios": [
+     1031675078,
+     1879861493,
+     2052071913,
+     2239359531
+    ],
+    "total": 7202968015,
+    "ruta": {
+     "linea": "ENVIGADO INNOVADOR E INTEGRADOR",
+     "sector": "Gobernanza",
+     "programa": "Participación ciudadana incidente",
+     "subprograma": "Implementación del presupuesto participativo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Implementación de la planeación participativa del desarrollo",
+    "anios": [
+     487605956,
+     403183255,
+     435437916,
+     470272950
+    ],
+    "total": 1796500077,
+    "ruta": {
+     "linea": "ENVIGADO INNOVADOR E INTEGRADOR",
+     "sector": "Gobernanza",
+     "programa": "Participación ciudadana incidente",
+     "subprograma": "Implementación de la planeación participativa del desarrollo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Implementación de la comunicación para la participación ciudadana",
+    "anios": [
+     52579970,
+     116394418,
+     125705972,
+     135762450
+    ],
+    "total": 430442810,
+    "ruta": {
+     "linea": "ENVIGADO INNOVADOR E INTEGRADOR",
+     "sector": "Gobernanza",
+     "programa": "Participación ciudadana incidente",
+     "subprograma": "Implementación de la comunicación para la participación ciudadana"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Fortalecimiento de los organismos comunales como actores clave del desarrollo",
+    "anios": [
+     60000000,
+     406241434,
+     444123950,
+     485629264
+    ],
+    "total": 1395994648,
+    "ruta": {
+     "linea": "ENVIGADO INNOVADOR E INTEGRADOR",
+     "sector": "Gobernanza",
+     "programa": "Participación ciudadana incidente",
+     "subprograma": "Fortalecimiento de los organismos comunales como actores clave del desarrollo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Transparencia, rendición de cuentas y acceso a la información",
+    "anios": [
+     2154973941,
+     2422818544,
+     2600706969,
+     2860372711
+    ],
+    "total": 10038872165,
+    "ruta": {
+     "linea": "ENVIGADO INNOVADOR E INTEGRADOR",
+     "sector": "Gobernanza",
+     "programa": "Transparencia, rendición de cuentas y acceso a la información"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Fortalecimiento del control social",
+    "anios": [
+     60000000,
+     118347209,
+     65788500,
+     71962395
+    ],
+    "total": 316098104,
+    "ruta": {
+     "linea": "ENVIGADO INNOVADOR E INTEGRADOR",
+     "sector": "Gobernanza",
+     "programa": "Transparencia, rendición de cuentas y acceso a la información",
+     "subprograma": "Fortalecimiento del control social"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Fortalecimiento de la comunicación pública para la gobernanza",
+    "anios": [
+     2094973941,
+     2304471335,
+     2534918469,
+     2788410316
+    ],
+    "total": 9722774061,
+    "ruta": {
+     "linea": "ENVIGADO INNOVADOR E INTEGRADOR",
+     "sector": "Gobernanza",
+     "programa": "Transparencia, rendición de cuentas y acceso a la información",
+     "subprograma": "Fortalecimiento de la comunicación pública para la gobernanza"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Excelencia del servicio público",
+    "anios": [
+     27472353060,
+     41488871752,
+     25477968539,
+     20320083804
+    ],
+    "total": 114759277155,
+    "ruta": {
+     "linea": "ENVIGADO INNOVADOR E INTEGRADOR",
+     "sector": "Excelencia del servicio público"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Desempeño administrativo",
+    "anios": [
+     2000000000,
+     13680650000,
+     3553177981,
+     1474170000
+    ],
+    "total": 20707997981,
+    "ruta": {
+     "linea": "ENVIGADO INNOVADOR E INTEGRADOR",
+     "sector": "Excelencia del servicio público",
+     "programa": "Desempeño administrativo"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Fortalecimiento de la calidad institucional",
+    "anios": [
+     630000000,
+     950000000,
+     1013000000,
+     1114800000
+    ],
+    "total": 3707800000,
+    "ruta": {
+     "linea": "ENVIGADO INNOVADOR E INTEGRADOR",
+     "sector": "Excelencia del servicio público",
+     "programa": "Desempeño administrativo",
+     "subprograma": "Fortalecimiento de la calidad institucional"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Dotación tecnológica del nuevo Centro Administrativo Municipal",
+    "anios": [
+     0,
+     11443650000,
+     2213477981,
+     0
+    ],
+    "total": 13657127981,
+    "ruta": {
+     "linea": "ENVIGADO INNOVADOR E INTEGRADOR",
+     "sector": "Excelencia del servicio público",
+     "programa": "Desempeño administrativo",
+     "subprograma": "Dotación tecnológica del nuevo Centro Administrativo Municipal"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Apoyo logístico",
+    "anios": [
+     870000000,
+     1287000000,
+     326700000,
+     359370000
+    ],
+    "total": 2843070000,
+    "ruta": {
+     "linea": "ENVIGADO INNOVADOR E INTEGRADOR",
+     "sector": "Excelencia del servicio público",
+     "programa": "Desempeño administrativo",
+     "subprograma": "Apoyo logístico"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Integración institucional para la articulación administrativa",
+    "anios": [
+     500000000,
+     0,
+     0,
+     0
+    ],
+    "total": 500000000,
+    "ruta": {
+     "linea": "ENVIGADO INNOVADOR E INTEGRADOR",
+     "sector": "Excelencia del servicio público",
+     "programa": "Desempeño administrativo",
+     "subprograma": "Integración institucional para la articulación administrativa"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Talento humano",
+    "anios": [
+     8467095563,
+     10231373058,
+     9200737564,
+     7672563321
+    ],
+    "total": 35571769506,
+    "ruta": {
+     "linea": "ENVIGADO INNOVADOR E INTEGRADOR",
+     "sector": "Excelencia del servicio público",
+     "programa": "Talento humano"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Fortalecimiento del equilibrio psicosocial, clima, cultura y cambio organizacional",
+    "anios": [
+     242496000,
+     672252000,
+     656350000,
+     778737000
+    ],
+    "total": 2349835000,
+    "ruta": {
+     "linea": "ENVIGADO INNOVADOR E INTEGRADOR",
+     "sector": "Excelencia del servicio público",
+     "programa": "Talento humano",
+     "subprograma": "Fortalecimiento del equilibrio psicosocial, clima, cultura y cambio organizacional"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Formación y bienestar del talento humano",
+    "anios": [
+     8224599563,
+     9559121058,
+     8544387564,
+     6893826321
+    ],
+    "total": 33221934506,
+    "ruta": {
+     "linea": "ENVIGADO INNOVADOR E INTEGRADOR",
+     "sector": "Excelencia del servicio público",
+     "programa": "Talento humano",
+     "subprograma": "Formación y bienestar del talento humano"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Innovación, gobierno abierto y digital",
+    "anios": [
+     8322200000,
+     5954420000,
+     5274862000,
+     4639348249
+    ],
+    "total": 24190830249,
+    "ruta": {
+     "linea": "ENVIGADO INNOVADOR E INTEGRADOR",
+     "sector": "Excelencia del servicio público",
+     "programa": "Innovación, gobierno abierto y digital"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Desarrollo y soporte tecnológico institucional",
+    "anios": [
+     4650000000,
+     3275000000,
+     4227500000,
+     3680250000
+    ],
+    "total": 15832750000,
+    "ruta": {
+     "linea": "ENVIGADO INNOVADOR E INTEGRADOR",
+     "sector": "Excelencia del servicio público",
+     "programa": "Innovación, gobierno abierto y digital",
+     "subprograma": "Desarrollo y soporte tecnológico institucional"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Generación de estrategias para avanzar hacia una ciudad inteligente",
+    "anios": [
+     3300000000,
+     2300000000,
+     660000000,
+     563000000
+    ],
+    "total": 6823000000,
+    "ruta": {
+     "linea": "ENVIGADO INNOVADOR E INTEGRADOR",
+     "sector": "Excelencia del servicio público",
+     "programa": "Innovación, gobierno abierto y digital",
+     "subprograma": "Generación de estrategias para avanzar hacia una ciudad inteligente"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Desarrollo de capacidades para la ciencia, tecnología e innovación de las unidades productivas",
+    "anios": [
+     372200000,
+     379420000,
+     387362000,
+     396098249
+    ],
+    "total": 1535080249,
+    "ruta": {
+     "linea": "ENVIGADO INNOVADOR E INTEGRADOR",
+     "sector": "Excelencia del servicio público",
+     "programa": "Innovación, gobierno abierto y digital",
+     "subprograma": "Desarrollo de capacidades para la ciencia, tecnología e innovación de las unidades productivas"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Información estadística de calidad",
+    "anios": [
+     8683057497,
+     11622428694,
+     7449190994,
+     6534002234
+    ],
+    "total": 34288679419,
+    "ruta": {
+     "linea": "ENVIGADO INNOVADOR E INTEGRADOR",
+     "sector": "Excelencia del servicio público",
+     "programa": "Información estadística de calidad"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Investigación y estadísticas municipales",
+    "anios": [
+     8683057497,
+     11622428694,
+     7449190994,
+     6534002234
+    ],
+    "total": 34288679419,
+    "ruta": {
+     "linea": "ENVIGADO INNOVADOR E INTEGRADOR",
+     "sector": "Excelencia del servicio público",
+     "programa": "Información estadística de calidad",
+     "subprograma": "Investigación y estadísticas municipales"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

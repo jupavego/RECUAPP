@@ -1,0 +1,309 @@
+[
+ {
+  "pagina": 348,
+  "cabecera": "Concepto",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Gastos de Funcionamiento",
+    "anios": [
+     20828377870,
+     23046788509,
+     25364829334,
+     28123230759
+    ],
+    "total": 97363226472
+   },
+   {
+    "etiqueta": "Nivel Central",
+    "anios": [
+     18520741,
+     20507891583,
+     22548777777,
+     24973968100
+    ],
+    "total": 68049158201
+   },
+   {
+    "etiqueta": "E.S.P Rio Aburrá",
+    "anios": [
+     295668000,
+     328191480,
+     367574458,
+     415359137
+    ],
+    "total": 1406793075
+   },
+   {
+    "etiqueta": "Indec",
+    "anios": [
+     325921506,
+     361772872,
+     405185616,
+     457859746
+    ],
+    "total": 1550739740
+   },
+   {
+    "etiqueta": "Casa De La Cultura",
+    "anios": [
+     114753364,
+     127376234,
+     142661382,
+     161207362
+    ],
+    "total": 545998342
+   },
+   {
+    "etiqueta": "Concejo",
+    "anios": [
+     1112514000,
+     1212310540,
+     1330274805,
+     1470334929
+    ],
+    "total": 5125434274
+   },
+   {
+    "etiqueta": "Personería",
+    "anios": [
+     458780000,
+     509245800,
+     570355296,
+     644501484
+    ],
+    "total": 2182882580
+   },
+   {
+    "etiqueta": "Deuda Pública",
+    "anios": [
+     5746512692,
+     5163399583,
+     4692834926,
+     3893486771
+    ],
+    "total": 19496233972
+   },
+   {
+    "etiqueta": "Principal Deuda Interna",
+    "anios": [
+     3535645823,
+     3343026759,
+     3259319201,
+     2830466238
+    ],
+    "total": 12968458021
+   },
+   {
+    "etiqueta": "Intereses De Deuda Interna",
+    "anios": [
+     2210866869,
+     1820372824,
+     1433515725,
+     1063020533
+    ],
+    "total": 6527775951
+   },
+   {
+    "etiqueta": "Plan Financiero",
+    "anios": [
+     64976038987,
+     89771807092,
+     81179790994,
+     72493131641
+    ],
+    "total": 308420768714
+   },
+   {
+    "etiqueta": "GASTOS TOTALES",
+    "anios": [
+     72493131641,
+     117981995183,
+     111237455253,
+     104509849
+    ],
+    "total": 301817091926
+   }
+  ],
+  "ncols": 3,
+  "financiero": true
+ },
+ {
+  "pagina": 349,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Ingresos Corrientes",
+    "anios": [
+     70494215752,
+     90846136291,
+     85652840545,
+     80472583862
+    ],
+    "total": 327465776450
+   },
+   {
+    "etiqueta": "Ingresos Tributarios",
+    "anios": [
+     31017454931,
+     39972299968,
+     37687249840,
+     35407936899
+    ],
+    "total": 144084941638
+   },
+   {
+    "etiqueta": "Impuestos Directos",
+    "anios": [
+     10514917222,
+     13550609689,
+     12775977696,
+     12003290609
+    ],
+    "total": 48844795216
+   },
+   {
+    "etiqueta": "Impuestos Indirectos",
+    "anios": [
+     20502537709,
+     26421690279,
+     24911272144,
+     23404646290
+    ],
+    "total": 95240146422
+   },
+   {
+    "etiqueta": "Impuestos No Tributarios",
+    "anios": [
+     39476760821,
+     50873836323,
+     47965590705,
+     45064646963
+    ],
+    "total": 183380834812
+   },
+   {
+    "etiqueta": "Contribuciones",
+    "anios": [
+     789535216,
+     1017476726,
+     959311814,
+     901292939
+    ],
+    "total": 3667616695
+   },
+   {
+    "etiqueta": "Tasas y derechos Administrativos",
+    "anios": [
+     592151412,
+     763107545,
+     719483861,
+     675969704
+    ],
+    "total": 2750712522
+   },
+   {
+    "etiqueta": "Multas. Sanciones e Intereses De Mora",
+    "anios": [
+     2368605649,
+     3052430179,
+     2877935442,
+     2703878818
+    ],
+    "total": 11002850088
+   },
+   {
+    "etiqueta": "Venta de Bienes y servicios",
+    "anios": [
+     592151412,
+     763107545,
+     719483861,
+     675969704
+    ],
+    "total": 2750712522
+   },
+   {
+    "etiqueta": "Transferencias Corrientes",
+    "anios": [
+     34739549523,
+     44768975964,
+     42209719821,
+     39656889327
+    ],
+    "total": 161375134635
+   },
+   {
+    "etiqueta": "Participación Y Derechos Por Monopolio",
+    "anios": [
+     394767608,
+     508738363,
+     479655907,
+     450646470
+    ],
+    "total": 1833808348
+   },
+   {
+    "etiqueta": "Recursos del Crédito",
+    "anios": [
+     0,
+     20000000000,
+     10000000000,
+     0
+    ],
+    "total": 30000000000
+   },
+   {
+    "etiqueta": "Otros Ingresos",
+    "anios": [
+     21056713796,
+     7135858892,
+     15584614708,
+     24037265309
+    ],
+    "total": 67814452705
+   },
+   {
+    "etiqueta": "INGRESOS TOTALES",
+    "anios": [
+     91550929549,
+     117981995183,
+     111237455253,
+     104509849171
+    ],
+    "total": 425280229156
+   }
+  ],
+  "ncols": 3,
+  "financiero": true
+ },
+ {
+  "pagina": 350,
+  "cabecera": "Ítem",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "ICLD",
+    "anios": [
+     39326441260,
+     41900323525,
+     44474205790,
+     47048088055
+    ],
+    "total": 172749058630
+   },
+   {
+    "etiqueta": "GASTOS DE FUNCIONAMIENTO",
+    "anios": [
+     20828377870,
+     23046788509,
+     25364829334,
+     28123230759
+    ],
+    "total": 97363226472
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ }
+]
