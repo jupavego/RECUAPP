@@ -5,12 +5,16 @@ import {
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { forkJoin } from 'rxjs';
 import { GoogleMapsLoaderService } from '../../../../core/services/google-maps-loader.service';
-import { MapaService, MunicipiosData, Municipio, Territorio, Zona } from '../../services/mapa.service';
+import { MapaService, MunicipiosData, Municipio, Punto, Territorio, Zona } from '../../services/mapa.service';
 import {
   ColorMunicipio, ColorSegmento, SUBREGIONES,
   coloresDeSegmentos, coloresPorMunicipio,
 } from '../../utils/paleta';
 import { decodeGeometria } from '../../utils/polyline';
+import { CATEGORIA, CATEGORIAS } from '../../utils/puntos';
+
+/** Municipio que se elige al abrir el mapa (mientras dure la etapa de pruebas). */
+const MUNICIPIO_INICIAL = 'Girardota';
 
 const TIPOS_ZONA: Record<string, string> = {
   CM: 'cabecera municipal', CO: 'centro poblado', CA: 'caserío', IN: 'inspección',
@@ -95,6 +99,23 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
   readonly verCorregimientos = signal(true);
   readonly tipoMapa = signal<'roadmap' | 'satellite' | 'terrain'>('roadmap');
 
+  // ── Puntos de interés (instituciones, cultura, justicia…) ─────────────────
+  readonly categorias = CATEGORIAS;
+  /** puntos del municipio elegido que ya tienen ubicación en el mapa */
+  readonly puntos = signal<Punto[]>([]);
+  readonly puntoSel = signal<Punto | null>(null);
+  readonly catsOcultas = signal<ReadonlySet<string>>(new Set(CATEGORIAS.filter(c => !c.visible).map(c => c.id)));
+
+  readonly cuentaPuntos = computed(() => {
+    const cuenta = new Map<string, number>();
+    this.puntos().forEach(p => cuenta.set(p.c, (cuenta.get(p.c) ?? 0) + 1));
+    return cuenta;
+  });
+  readonly categoriaSel = computed(() => {
+    const p = this.puntoSel();
+    return p ? CATEGORIA.get(p.c)! : null;
+  });
+
   readonly subregiones = computed(() => {
     const cuenta = new Map<string, number>();
     this.data()?.municipios.forEach(m => cuenta.set(m.s, (cuenta.get(m.s) ?? 0) + 1));
@@ -154,13 +175,21 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
   private territorioPintado: Territorio | null = null;
   private capaContexto: google.maps.Polygon[] = [];
   private contextoPintado: ContextoSubregion[] = [];
+  private marcadores = new Map<Punto, google.maps.Marker>();
+  private puntosPintados: Punto[] | null = null;
   private encuadreClave = '';
   private ultimoEstado?: Estado;
   private observador?: ResizeObserver;
 
   constructor() {
     this.api.municipios$.pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
-      next: d => { this.colores = coloresPorMunicipio(d.municipios); this.data.set(d); },
+      next: d => {
+        this.colores = coloresPorMunicipio(d.municipios);
+        this.data.set(d);
+        // En pruebas el mapa abre ya en Girardota, el único municipio con puntos de interés.
+        const inicial = d.municipios.find(m => m.n === MUNICIPIO_INICIAL);
+        if (inicial) this.onMunicipio(String(inicial.id));
+      },
       error: () => this.error.set('No se pudieron cargar los contornos del mapa.'),
     });
 
@@ -174,6 +203,14 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
       };
       untracked(() => this.zone.runOutsideAngular(() => this.pintar(estado)));
     });
+
+    effect(() => {
+      const puntos = this.puntos();
+      const ocultas = this.catsOcultas();
+      const sel = this.puntoSel();
+      if (!this.listo()) return;
+      untracked(() => this.zone.runOutsideAngular(() => this.pintarPuntos(puntos, ocultas, sel)));
+    });
   }
 
   ngAfterViewInit(): void {
@@ -184,6 +221,7 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
         mapTypeControl: false, streetViewControl: false, clickableIcons: false,
         gestureHandling: 'greedy', styles: ESTILO_BASE,
       });
+      this.mapa.addListener('click', () => this.zone.run(() => this.puntoSel.set(null)));
       // El contenedor puede cambiar de tamaño tras crear el mapa: se re-encuadra al medirse.
       this.observador = new ResizeObserver(() => {
         if (this.ultimoEstado) this.encuadrar(this.ultimoEstado, true);
@@ -224,6 +262,7 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
     this.verIdx.set(null);
     this.territorio.set(null);
     this.cargandoTerritorio.set(true);
+    this.cargarPuntos(id);
     this.api.territorio(id).pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
       next: t => {
         if (this.muniId() !== id) return; // se eligió otro municipio mientras cargaba
@@ -246,6 +285,20 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
     this.verIdx.set(valor === '' ? null : Number(valor));
   }
 
+  onCategoria(id: string, visible: boolean): void {
+    const ocultas = new Set(this.catsOcultas());
+    if (visible) ocultas.delete(id); else ocultas.add(id);
+    this.catsOcultas.set(ocultas);
+    if (this.puntoSel()?.c === id && !visible) this.puntoSel.set(null);
+  }
+
+  cerrarPunto(): void { this.puntoSel.set(null); }
+
+  /** Solo se enlazan direcciones web http(s); el dato viene de un Excel. */
+  webSegura(url: string | undefined): string | null {
+    return url && /^https?:\/\//i.test(url) ? url : null;
+  }
+
   onRelleno(valor: string): void { this.relleno.set(Number(valor)); }
 
   onTipoMapa(tipo: 'roadmap' | 'satellite' | 'terrain'): void {
@@ -265,6 +318,15 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
     this.cargarContexto();
   }
 
+  /** Carga los puntos del municipio; todos vienen ya como coordenadas. */
+  private cargarPuntos(id: number): void {
+    this.puntos.set([]);
+    this.puntoSel.set(null);
+    this.api.puntos(id).pipe(takeUntilDestroyed(this.destroyRef)).subscribe(lista => {
+      if (this.muniId() === id) this.puntos.set(lista);
+    });
+  }
+
   /** Con solo una subregión filtrada se dibujan los corregimientos y veredas de todos sus municipios. */
   private cargarContexto(): void {
     const sub = this.subregion();
@@ -280,6 +342,8 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
   }
 
   private limpiarMunicipio(): void {
+    this.puntos.set([]);
+    this.puntoSel.set(null);
     this.contexto.set([]);
     this.muniId.set(null);
     this.corrIdx.set(null);
@@ -363,6 +427,34 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
         new google.maps.Polygon({ ...base, paths: t.v.flatMap(rutasDe), strokeWeight: grosor(0.8, FACTOR_ZONAS), strokeOpacity: 0.75 }),
         new google.maps.Polygon({ ...base, paths: t.c.flatMap(rutasDe), strokeWeight: grosor(2, FACTOR_ZONAS), strokeOpacity: 0.95 }),
       );
+    });
+  }
+
+  /** Un marcador por punto, coloreado por categoría; el elegido se agranda. */
+  private pintarPuntos(puntos: Punto[], ocultas: ReadonlySet<string>, sel: Punto | null): void {
+    if (!this.mapa) return;
+    if (puntos !== this.puntosPintados) {
+      this.marcadores.forEach(m => m.setMap(null));
+      this.marcadores.clear();
+      this.puntosPintados = puntos;
+      puntos.forEach(p => {
+        const m = new google.maps.Marker({ position: { lat: p.lat!, lng: p.lng! }, map: this.mapa, title: p.n });
+        m.addListener('click', () => this.zone.run(() => this.puntoSel.set(p)));
+        this.marcadores.set(p, m);
+      });
+    }
+    this.marcadores.forEach((m, p) => {
+      const elegido = p === sel;
+      m.setVisible(!ocultas.has(p.c));
+      m.setZIndex(elegido ? 1000 : 100);
+      m.setIcon({
+        path: google.maps.SymbolPath.CIRCLE,
+        scale: elegido ? 10 : 6.5,
+        fillColor: CATEGORIA.get(p.c)!.color,
+        fillOpacity: p.a ? 0.8 : 1,
+        strokeColor: '#ffffff',
+        strokeWeight: elegido ? 3 : 2,
+      });
     });
   }
 

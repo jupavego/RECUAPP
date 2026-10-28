@@ -2,7 +2,7 @@
   <header class="mapa__barra" aria-label="Filtros del mapa">
     <div class="mapa__titulo">
       <h1>Mapa de Antioquia</h1>
-      <p>Croquis por subregión; por ahora sin puntos.</p>
+      <p>Croquis por subregión. Los puntos de interés solo están cargados para Girardota.</p>
     </div>
 
     <div class="mapa__filtros">
@@ -90,6 +90,30 @@
          aria-label="Croquis de Antioquia por subregiones y municipios"></div>
     <div class="mapa__pista" #pista hidden></div>
 
+    @if (puntoSel(); as p) {
+      <aside class="mapa__panel" aria-label="Información del punto">
+        <header>
+          <span class="mapa__etiqueta" [style.background]="categoriaSel()!.color">{{ categoriaSel()!.nombre }}</span>
+          <button type="button" class="mapa__cerrar" (click)="cerrarPunto()" aria-label="Cerrar panel">×</button>
+        </header>
+        <h2>{{ p.n }}</h2>
+        <p class="mapa__tipo">{{ p.t }}</p>
+        <dl>
+          @if (p.d) { <dt>Dirección o ubicación</dt><dd>{{ p.d }}</dd> }
+          @if (p.v) { <dt>Vereda o zona</dt><dd>{{ p.v }}</dd> }
+          @if (p.tel) { <dt>Teléfono</dt><dd>{{ p.tel }}</dd> }
+          @if (p.mail) { <dt>Correo</dt><dd>{{ p.mail }}</dd> }
+          @if (webSegura(p.web); as url) { <dt>Sitio web</dt><dd><a [href]="url" target="_blank" rel="noopener noreferrer">{{ url }}</a></dd> }
+          @if (p.x) { <dt>Detalle</dt><dd>{{ p.x }}</dd> }
+          @if (p.e) { <dt>Estado</dt><dd>{{ p.e }}</dd> }
+          @if (!p.a) { <dt>Coordenadas</dt><dd>{{ p.lat!.toFixed(5) }}, {{ p.lng!.toFixed(5) }}</dd> }
+          <dt>Fuente</dt><dd>{{ p.f }}</dd>
+        </dl>
+        @if (p.g) { <p class="mapa__aviso">Ubicación estimada a partir de la dirección (OpenStreetMap): puede variar unos cientos de metros.</p> }
+        @else if (p.a) { <p class="mapa__aviso">Ubicación aproximada: la fuente no trae coordenadas exactas.</p> }
+      </aside>
+    }
+
     <div class="mapa__controles" role="group" aria-label="Controles del mapa">
       <div class="mapa__tipos" role="radiogroup" aria-label="Tipo de mapa">
         @for (t of [['roadmap', 'Mapa'], ['terrain', 'Relieve'], ['satellite', 'Satélite']]; track t[0]) {
@@ -106,6 +130,22 @@
         <input type="checkbox" [checked]="verVeredas()" (change)="verVeredas.set($any($event.target).checked)">
         Veredas
       </label>
+
+      @if (puntos().length) {
+        <fieldset class="mapa__puntos">
+          <legend>Puntos de interés</legend>
+          @for (c of categorias; track c.id) {
+            @if (cuentaPuntos().get(c.id); as n) {
+              <label class="mapa__opcion">
+                <input type="checkbox" [checked]="!catsOcultas().has(c.id)"
+                       (change)="onCategoria(c.id, $any($event.target).checked)">
+                <span class="mapa__punto" [style.background]="c.color"></span>
+                {{ c.nombre }} <small>{{ n }}</small>
+              </label>
+            }
+          }
+        </fieldset>
+      }
 
       <label class="mapa__deslizador">
         <span>Relleno <b>{{ relleno() }}%</b></span>
