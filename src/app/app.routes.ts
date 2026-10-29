@@ -25,6 +25,12 @@ export const routes: Routes = [
       import('./features/mapa3d/pages/mapa3d/mapa3d.component').then(m => m.Mapa3dComponent),
   },
 
+  {
+    path: 'mapa3d/catalogo',
+    loadComponent: () =>
+      import('./features/mapa3d/pages/catalogo-edificios/catalogo-edificios.component').then(m => m.CatalogoEdificiosComponent),
+  },
+
   // ── Área de usuario (cualquier rol logueado) ─────────────────────────────
   // Aquí viven las pantallas de tu app. 'items' es el CRUD de ejemplo.
   {

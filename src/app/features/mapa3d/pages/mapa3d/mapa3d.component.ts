@@ -10,6 +10,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { mergeGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 import { MapaService, Municipio, Punto, Zona } from '../../../mapa/services/mapa.service';
 import { CATEGORIA } from '../../../mapa/utils/puntos';
+import { Aura, ItemAura, crearAuras, crearIcono } from '../../utils/aura';
 import { Modelo, modelarEquipamiento } from '../../utils/equipamientos';
 import { coloresPorMunicipio, hex } from '../../../mapa/utils/paleta';
 import { Geometria, decodeGeometria } from '../../../mapa/utils/polyline';
@@ -91,7 +92,7 @@ const TESELA_TERRENO = 64;
 /** de más lejos que esto los árboles se dibujan con una versión simple (a esa distancia miden ~3 píxeles) */
 const DISTANCIA_ARBOL_SIMPLE = 10000;
 /** Ancho dibujado de las vías por clase (principal, local, sendero), en metros del modelo. */
-const ANCHO_VIA = [34, 17, 8];
+const ANCHO_VIA = [34, 13, 6];
 /** Los cauces se dibujan a su ancho real × este factor (el Río Medellín: 30 m → 66 m), con un mínimo para que se lean. */
 const FACTOR_ANCHO_CAUCE = 2.2;
 const ANCHO_MIN_CAUCE = 6;
@@ -123,10 +124,10 @@ const HUMO_AUREOLA = 100;
 const HUMO_OPACIDAD = 0.7;
 /** Tráfico de la doble calzada: velocidad de los autos (m/s del modelo), metros entre autos por calzada y su paleta. */
 const TRAFICO_VELOCIDAD = [45, 80];
-const TRAFICO_ESPACIO = 150;
+const TRAFICO_ESPACIO = 200;
 /** Pueblo: radio (m) alrededor del centro de Girardota donde las vías forman una red, y metros de vía por auto. */
 const RADIO_PUEBLO = 2600;
-const TRAFICO_ESPACIO_PUEBLO = 170;
+const TRAFICO_ESPACIO_PUEBLO = 227;
 const COLORES_AUTOS = ['#ff2d2d', '#ff8a00', '#ffd400', '#00d26a', '#00c2ff', '#2f6bff', '#e040fb', '#ff4fa3'];
 const VELOCIDAD_PAJAROS = 130;
 const RECORRIDO_PAJAROS = 6800;
@@ -613,6 +614,9 @@ export class Mapa3dComponent implements AfterViewInit {
   private geoEquip: THREE.BufferGeometry | null = null;
   private matEquip: THREE.Material | null = null;
   private inicioEquip: number[] = [];
+  /** neón en el círculo de cada equipamiento y su icono flotante */
+  private auraEquip: Aura | null = null;
+  private iconosEquip: ReturnType<typeof crearIcono>[] = [];
   private equipHover = -1;
   private rotuloEquip: HTMLElement | null = null;
   private tFabricaHover = 0;
@@ -2103,7 +2107,7 @@ export class Mapa3dComponent implements AfterViewInit {
   /**
    * Tráfico: autos de colores que circulan por las vías principales y, en el pueblo, por todas sus calles.
    *  - Doble calzada: tramos de vía principal con otro tramo paralelo en sentido contrario (OSM dibuja cada calzada en su
-   *    sentido de marcha). Fuera del pueblo los autos dan vueltas por cada calzada, uno cada ~150 m, en tres carriles.
+   *    sentido de marcha). Fuera del pueblo los autos dan vueltas por cada calzada, uno cada ~200 m, en tres carriles.
    *  - Pueblo: en un radio alrededor de Girardota las vías forman una red (se parten en los puntos que comparten). Cada
    *    auto avanza por una arista y, al llegar a un cruce, elige por dónde seguir; en la doble calzada solo en su sentido,
    *    y en las demás vías en ambos, por el carril derecho. Así entran desde la autopista y recorren las calles.
@@ -2432,6 +2436,7 @@ export class Mapa3dComponent implements AfterViewInit {
     const geos: THREE.BufferGeometry[] = [], ids: number[] = [], pesos: number[] = [];
     const giro = new THREE.Matrix4();
     const losaColor = new THREE.Color('#9aa0a6');
+    const items: ItemAura[] = [];
 
     for (const q of this.equipamientos) {
       this.inicioEquip.push(ids.length);
@@ -2458,7 +2463,15 @@ export class Mapa3dComponent implements AfterViewInit {
         const prof = base - minimo + 2;
         poner(new THREE.BoxGeometry(lw, prof, ld).translate(0, -prof / 2, 0), losaColor);
       }
-      for (const p of modelo.piezas) poner(p.g, new THREE.Color(p.color));
+      let alto = 0;
+      for (const p of modelo.piezas) {
+        poner(p.g, new THREE.Color(p.color));
+        p.g.computeBoundingBox();
+        alto = Math.max(alto, p.g.boundingBox!.max.y);
+      }
+      const color = CATEGORIA.get(q.datos.p.c)?.color ?? '#ffffff';
+      items.push({ x: q.x, y: base, z: q.z, radio: q.r + 2, alto: alto * 1.15 + 4, color });
+      this.iconosEquip.push(crearIcono(q.datos.p.c, color, q.x, base + alto, q.z));
     }
 
     const geo = mergeGeometries(geos, false);
@@ -2472,6 +2485,15 @@ export class Mapa3dComponent implements AfterViewInit {
     malla.receiveShadow = true;
     this.escena.add(malla);
     this.registrarCapa(geo.getAttribute('position') as THREE.BufferAttribute, ids, pesos);
+    this.auraEquip = crearAuras(items);
+    this.escena.add(this.auraEquip.grupo);
+    for (const ic of this.iconosEquip) this.escena.add(ic.sprite);
+  }
+
+  /** El neón pulsa y los iconos flotan sin tapar su edificio. */
+  private animarAuras(t: number): void {
+    this.auraEquip?.animar(t);
+    for (const ic of this.iconosEquip) ic.animar(t, this.camara);
   }
 
   /**
@@ -3292,6 +3314,7 @@ export class Mapa3dComponent implements AfterViewInit {
         this.animarEstela(dt);
         this.animarTrafico(dt);
         this.animarHumo();
+        this.animarAuras(t / 1000);
         this.animarConfluencias();
         if (this.texturaRio) this.texturaRio.offset.y -= dt * VELOCIDAD_AGUA;   // la corriente avanza
         this.ajustarResolucion(t, dt);
@@ -3745,6 +3768,8 @@ export class Mapa3dComponent implements AfterViewInit {
     this.matIndustrias?.dispose();
     this.geoEquip?.dispose();
     this.matEquip?.dispose();
+    this.auraEquip?.dispose();
+    this.iconosEquip.forEach(ic => ic.dispose());
     this.humoInst?.malla.geometry.dispose();
     (this.humoInst?.malla.material as THREE.Material | undefined)?.dispose();
     this.geoAutos.forEach(g => g.dispose());
