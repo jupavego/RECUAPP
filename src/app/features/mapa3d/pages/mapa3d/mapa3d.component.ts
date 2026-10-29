@@ -2366,7 +2366,10 @@ export class Mapa3dComponent implements AfterViewInit {
   private ubicarEquipamientos(lista: Punto[], vias: Compacto | null): typeof this.equipamientos {
     const holgura = this.holguraVias(vias);
     const intentos: [number, number][] = [[0, 0]];
-    for (const r of [8, 15, 22, 30, 40, 50, 62, 75, 90, 105, 120, 140, 160]) for (let k = 0; k < 16; k++) intentos.push([Math.cos(k * Math.PI / 8) * r, Math.sin(k * Math.PI / 8) * r]);
+    for (let r = 5; r <= 160; r += 5) {                  // anillos cada 5 m, con un punto cada ~6 m: en las esquinas angostas el hueco útil es pequeño
+      const n = Math.max(8, Math.ceil(2 * Math.PI * r / 6));
+      for (let k = 0; k < n; k++) intentos.push([Math.cos(k * 2 * Math.PI / n) * r, Math.sin(k * 2 * Math.PI / n) * r]);
+    }
     const out: typeof this.equipamientos = [];
     const previos = (x: number, z: number, r: number, deporte: boolean) =>
       this.fabricas.every(f => Math.hypot(f.x - x, f.z - z) > RADIO_FABRICA + r + 4)
