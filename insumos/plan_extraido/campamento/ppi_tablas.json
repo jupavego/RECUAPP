@@ -1,0 +1,406 @@
+[
+ {
+  "pagina": 141,
+  "cabecera": "Líneas",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Línea Estratégica 1. Tejiendo movilidad social",
+    "anios": [
+     11534133854,
+     11763365404,
+     12405196174,
+     13022522161
+    ],
+    "total": 48725217592
+   },
+   {
+    "etiqueta": "Línea Estratégica 2. Potencializando el desarrollo",
+    "anios": [
+     425144378,
+     388065562,
+     445968840,
+     508267282
+    ],
+    "total": 1767446061
+   },
+   {
+    "etiqueta": "Línea Estratégica 3. Hábitat para la equidad",
+    "anios": [
+     6054103881,
+     1779990544,
+     1885777165,
+     2021095825
+    ],
+    "total": 11740967416
+   },
+   {
+    "etiqueta": "Línea Estratégica 4. Confianza institucional",
+    "anios": [
+     698962724,
+     580242438,
+     582754560,
+     611417288
+    ],
+    "total": 2473377011
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     18712344838,
+     14511663948,
+     15319696739,
+     16163302556
+    ],
+    "total": 64707008080
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 142,
+  "cabecera": "Programa",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "1.1.1 La educación es primero",
+    "anios": [
+     707441374,
+     743354349,
+     833934567,
+     872222473
+    ],
+    "total": 3156952763
+   },
+   {
+    "etiqueta": "1.1.2 La Cultura es primero",
+    "anios": [
+     205973343,
+     116954216,
+     122801926,
+     128942023
+    ],
+    "total": 574671508
+   },
+   {
+    "etiqueta": "1.2.1 La salud es primero",
+    "anios": [
+     10007319066,
+     10497567885,
+     11022446279,
+     11573568593
+    ],
+    "total": 43100901823
+   },
+   {
+    "etiqueta": "1.2.2 El Deporte es primero",
+    "anios": [
+     232831784,
+     138438954,
+     145360902,
+     152628947
+    ],
+    "total": 669260586
+   },
+   {
+    "etiqueta": "1.3.1 los Niños, Niñas y Adolescentes son primero",
+    "anios": [
+     15000000,
+     44650000,
+     47132500,
+     49964125
+    ],
+    "total": 156746625
+   },
+   {
+    "etiqueta": "1.3.2 La Juventud es primero",
+    "anios": [
+     28490186,
+     8800000,
+     9240000,
+     9702000
+    ],
+    "total": 56232186
+   },
+   {
+    "etiqueta": "1.3.3 Las Mujeres son primero",
+    "anios": [
+     0,
+     17600000,
+     18480000,
+     19404000
+    ],
+    "total": 55484000
+   },
+   {
+    "etiqueta": "1.3.4 El respeto a la diversidad es primero",
+    "anios": [
+     0,
+     8800000,
+     9240000,
+     9702000
+    ],
+    "total": 27742000
+   },
+   {
+    "etiqueta": "1.3.5 Nuestros adultos mayores son",
+    "anios": [
+     287292000,
+     132000000,
+     135800000,
+     138990000
+    ],
+    "total": 694082000
+   },
+   {
+    "etiqueta": "1.3.6 las personas con discapacidad son primero",
+    "anios": [
+     20000000,
+     24000000,
+     28000000,
+     33000000
+    ],
+    "total": 105000000
+   },
+   {
+    "etiqueta": "1.3.7 Restablecimient o de derechos de la población víctima Total línea",
+    "anios": [
+     29786102,
+     31200000,
+     32760000,
+     34398000
+    ],
+    "total": 128144102
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 143,
+  "cabecera": "Programa",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "2.1.1 El desarrollo agropecuario y turístico es primero",
+    "anios": [
+     225144378,
+     218065562,
+     245968840,
+     258267282
+    ],
+    "total": 947446061
+   },
+   {
+    "etiqueta": "2.2.1 La",
+    "anios": [
+     200000000,
+     170000000,
+     200000000,
+     250000000
+    ],
+    "total": 820000000
+   },
+   {
+    "etiqueta": "Total línea",
+    "anios": [
+     425144378,
+     388065562,
+     445968840,
+     508267282
+    ],
+    "total": 1767446061
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 143,
+  "cabecera": "Programa",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "3.1.1 El ambiente es primero",
+    "anios": [
+     122717231,
+     159641517,
+     168660686,
+     176004772
+    ],
+    "total": 627024206
+   },
+   {
+    "etiqueta": "3.2.1 servicios públicos son primero",
+    "anios": [
+     2631386650,
+     1582849028,
+     1661991479,
+     1745091053
+    ],
+    "total": 7621318210
+   },
+   {
+    "etiqueta": "3.2.2 La vivienda es primero",
+    "anios": [
+     3300000000,
+     37500000,
+     55125000,
+     100000000
+    ],
+    "total": 3492625000
+   },
+   {
+    "etiqueta": "Total línea",
+    "anios": [
+     6054103881,
+     1779990544,
+     1885777165,
+     2021095825
+    ],
+    "total": 11740967416
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 143,
+  "cabecera": "Programa",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "4.1.1 Buen Gobierno y participación ciudadana",
+    "anios": [
+     244236194,
+     222517019,
+     207142869,
+     217025013
+    ],
+    "total": 890921095
+   },
+   {
+    "etiqueta": "4.1.2 La seguridad es primero",
+    "anios": [
+     454726530,
+     357725420,
+     375611691,
+     394392275
+    ],
+    "total": 1582455916
+   },
+   {
+    "etiqueta": "Total línea",
+    "anios": [
+     698962724,
+     580242438,
+     582754560,
+     611417288
+    ],
+    "total": 2473377011
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 170,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "INVERSION",
+    "anios": [
+     1468908,
+     1269913,
+     1176512,
+     1235199
+    ],
+    "total": 5150532
+   },
+   {
+    "etiqueta": "Asignaciónpara la Paz",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignaciones Directas",
+    "anios": [
+     94914,
+     58540,
+     55128,
+     54972
+    ],
+    "total": 263554
+   },
+   {
+    "etiqueta": "20% Asignaciones Directas",
+    "anios": [
+     73914,
+     45588,
+     42931,
+     42809
+    ],
+    "total": 205242
+   },
+   {
+    "etiqueta": "5% Asignaciones Directas Anticipadas",
+    "anios": [
+     21000,
+     12952,
+     12197,
+     12163
+    ],
+    "total": 58312
+   },
+   {
+    "etiqueta": "Asignación para la Inversión Regional",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Departamentos",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Regiones",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación para la Inversión Local",
+    "anios": [
+     1468813,
+     1269855,
+     1176457,
+     1235144
+    ],
+    "total": 5150269
+   }
+  ],
+  "ncols": 3,
+  "financiero": true
+ }
+]

@@ -1,0 +1,138 @@
+[
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 18,
+  "valor": "Compromiso con el desarrollo institucional de para el ejercicio de la autoridad sanitaria, la salud pública, la inspección, vigilancia y control en salud",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 1
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 26,
+  "valor": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 2
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 62,
+  "valor": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 3
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Educación",
+  "sector": null,
+  "correccion": null,
+  "id": 4
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Calidad",
+  "sector": "Calidad",
+  "correccion": null,
+  "id": 5
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Matrícula Gratuidad",
+  "sector": "Calidad",
+  "correccion": null,
+  "id": 6
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Matrícula",
+  "sector": "Calidad",
+  "correccion": null,
+  "id": 7
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Salud",
+  "sector": null,
+  "correccion": null,
+  "id": 8
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Régimen",
+  "sector": "Régimen",
+  "correccion": null,
+  "id": 9
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Salud Pública",
+  "sector": "Salud Pública",
+  "correccion": null,
+  "id": 10
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Agua Potable",
+  "sector": null,
+  "correccion": null,
+  "id": 11
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Propósito General – Destinación",
+  "sector": null,
+  "correccion": null,
+  "id": 12
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Libre Destinación",
+  "sector": "Libre Destinación",
+  "correccion": null,
+  "id": 13
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Deporte",
+  "sector": "Deporte",
+  "correccion": null,
+  "id": 14
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Cultura",
+  "sector": "Cultura",
+  "correccion": null,
+  "id": 15
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Libre Inversión",
+  "sector": "Libre Inversión",
+  "correccion": null,
+  "id": 16
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fonpet(2)",
+  "sector": "Fonpet(2)",
+  "correccion": null,
+  "id": 17
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Alimentación Escolar",
+  "sector": null,
+  "correccion": null,
+  "id": 18
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "TOTAL, SGP",
+  "sector": null,
+  "correccion": null,
+  "id": 19
+ }
+]

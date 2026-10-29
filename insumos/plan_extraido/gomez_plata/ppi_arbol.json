@@ -1,0 +1,462 @@
+[
+ {
+  "paginas": [
+   81
+  ],
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   16368681843,
+   16859742298,
+   17365534565,
+   17886500604
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Educación",
+    "anios": [
+     177212938,
+     182529326,
+     188005205,
+     193645362
+    ],
+    "total": 741392832,
+    "ruta": {
+     "linea": "Educación"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Calidad",
+    "anios": [
+     177212938,
+     182529326,
+     188005205,
+     193645362
+    ],
+    "total": 741392832,
+    "ruta": {
+     "linea": "Educación",
+     "sector": "Calidad"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Matrícula Gratuidad",
+    "anios": [
+     86964448,
+     89573381,
+     92260582,
+     95028400
+    ],
+    "total": 363826812,
+    "ruta": {
+     "linea": "Educación",
+     "sector": "Calidad",
+     "programa": "Matrícula Gratuidad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Matrícula",
+    "anios": [
+     90248490,
+     92955944,
+     95744623,
+     98616961
+    ],
+    "total": 377566019,
+    "ruta": {
+     "linea": "Educación",
+     "sector": "Calidad",
+     "programa": "Matrícula"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Salud",
+    "anios": [
+     2795428903,
+     2879291770,
+     2965670523,
+     3054640638
+    ],
+    "total": 11695031835,
+    "ruta": {
+     "linea": "Salud"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Régimen",
+    "anios": [
+     2578001678,
+     2655341729,
+     2735001980,
+     2817052040
+    ],
+    "total": 10785397428,
+    "ruta": {
+     "linea": "Salud",
+     "sector": "Régimen"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Salud Pública",
+    "anios": [
+     217427224,
+     223950041,
+     230668542,
+     237588598
+    ],
+    "total": 909634406,
+    "ruta": {
+     "linea": "Salud",
+     "sector": "Salud Pública"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Agua Potable",
+    "anios": [
+     1239592577,
+     1276780354,
+     1315083765,
+     1354536278
+    ],
+    "total": 5185992976,
+    "ruta": {
+     "linea": "Agua Potable"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Propósito General – Destinación",
+    "anios": [
+     3933392469,
+     4051394243,
+     4172936070,
+     4298124153
+    ],
+    "total": 16455846937,
+    "ruta": {
+     "linea": "Propósito General – Destinación"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Libre Destinación",
+    "anios": [
+     1652024836,
+     1701585581,
+     1752633149,
+     1805212143
+    ],
+    "total": 6911455712,
+    "ruta": {
+     "linea": "Propósito General – Destinación",
+     "sector": "Libre Destinación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Deporte",
+    "anios": [
+     88894425,
+     91561257,
+     94308095,
+     97137338
+    ],
+    "total": 371901117,
+    "ruta": {
+     "linea": "Propósito General – Destinación",
+     "sector": "Deporte"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Cultura",
+    "anios": [
+     66670819,
+     68670944,
+     70731072,
+     72853004
+    ],
+    "total": 278925841,
+    "ruta": {
+     "linea": "Propósito General – Destinación",
+     "sector": "Cultura"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Libre Inversión",
+    "anios": [
+     2014684356,
+     2075124886,
+     2137378633,
+     2201499992
+    ],
+    "total": 8428687868,
+    "ruta": {
+     "linea": "Propósito General – Destinación",
+     "sector": "Libre Inversión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Fonpet(2)",
+    "anios": [
+     111118031,
+     114451572,
+     117885119,
+     121421673
+    ],
+    "total": 464876396,
+    "ruta": {
+     "linea": "Propósito General – Destinación",
+     "sector": "Fonpet(2)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Alimentación Escolar",
+    "anios": [
+     38714034,
+     39875455,
+     41071718,
+     42303870
+    ],
+    "total": 161965077,
+    "ruta": {
+     "linea": "Alimentación Escolar"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TOTAL, SGP",
+    "anios": [
+     8184340922,
+     8429871150,
+     8682767284,
+     8943250303
+    ],
+    "total": 34240229658,
+    "ruta": {
+     "linea": "TOTAL, SGP"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   86
+  ],
+  "cabecera": "DIMENSIONES",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   5205773810,
+   3668608614,
+   3609401354,
+   3562428079
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Compromiso Con Desarrollo Comunitario, La Seguridad Y El Buen Gobierno Territorial",
+    "anios": [
+     3441622635,
+     2019598681,
+     1762722572,
+     1785693614
+    ],
+    "total": 9009637501,
+    "ruta": {
+     "linea": "Compromiso Con Desarrollo Comunitario, La Seguridad Y El Buen Gobierno Territorial"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Compromiso Con El Desarrollo Económico, Agropecuario y Campesino",
+    "anios": [
+     660000000,
+     469000000,
+     481000000,
+     756057961
+    ],
+    "total": 2366057961,
+    "ruta": {
+     "linea": "Compromiso Con El Desarrollo Económico, Agropecuario y Campesino"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Compromiso Con La Acción Climática Y La Sostenibilidad Ambiental",
+    "anios": [
+     1104151175,
+     1180009933,
+     1365678782,
+     1020676504
+    ],
+    "total": 4670516394,
+    "ruta": {
+     "linea": "Compromiso Con La Acción Climática Y La Sostenibilidad Ambiental"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   87,
+   88
+  ],
+  "cabecera": "EJE ESTRATÉGICO",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   2921,
+   2519,
+   2595,
+   2837
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "para el Desarrollo",
+    "anios": [
+     10,
+     10,
+     10,
+     10
+    ],
+    "total": 40,
+    "ruta": {
+     "linea": "para el Desarrollo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Territorio.",
+    "anios": [
+     2518,
+     2112,
+     2149,
+     2230
+    ],
+    "total": 9009,
+    "ruta": {
+     "linea": "Territorio."
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Cultura y el Patrimonio.",
+    "anios": [
+     30,
+     30,
+     32,
+     32
+    ],
+    "total": 124,
+    "ruta": {
+     "linea": "Cultura y el Patrimonio."
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1,6 Compromiso con la Inclusión Social y la Atención integral de población en",
+    "anios": [
+     59,
+     64,
+     71,
+     210
+    ],
+    "total": 403,
+    "ruta": {
+     "linea": "1,6 Compromiso con la Inclusión Social y la Atención integral de población en"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "situación permanente de desprotección social y/o familiar",
+    "anios": [
+     304,
+     303,
+     333,
+     355
+    ],
+    "total": 1295,
+    "ruta": {
+     "linea": "situación permanente de desprotección social y/o familiar"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

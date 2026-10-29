@@ -1,0 +1,814 @@
+[
+ {
+  "pagina": 80,
+  "cabecera": "CUENTA",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "INGRESOS TOTALES",
+    "anios": [
+     20922,
+     21654,
+     22304,
+     22973
+    ],
+    "total": 87853
+   },
+   {
+    "etiqueta": "1. INGRESOS CORRIENTES",
+    "anios": [
+     6261,
+     6480,
+     6675,
+     6875
+    ],
+    "total": 26291
+   },
+   {
+    "etiqueta": "1.1 INGRESOS TRIBUTARIOS",
+    "anios": [
+     3474,
+     3596,
+     3703,
+     3815
+    ],
+    "total": 14588
+   },
+   {
+    "etiqueta": "1.1.1. PREDIAL",
+    "anios": [
+     767,
+     794,
+     818,
+     842
+    ],
+    "total": 3221
+   },
+   {
+    "etiqueta": "1.1.2. INDUSTRIA Y COMERCIO",
+    "anios": [
+     1204,
+     1246,
+     1284,
+     1322
+    ],
+    "total": 5056
+   },
+   {
+    "etiqueta": "1.1.3. OTROS",
+    "anios": [
+     1503,
+     1556,
+     1602,
+     1650
+    ],
+    "total": 6311
+   },
+   {
+    "etiqueta": "1.2. INGRESOS NO TRIBUTARIOS",
+    "anios": [
+     1070,
+     1107,
+     1141,
+     1175
+    ],
+    "total": 4493
+   },
+   {
+    "etiqueta": "1.3. TRANSFERENCIAS",
+    "anios": [
+     1717,
+     1777,
+     1830,
+     1885
+    ],
+    "total": 7209
+   },
+   {
+    "etiqueta": "1.3.1. DEL NIVEL NACIONAL",
+    "anios": [
+     1068,
+     1105,
+     1139,
+     1173
+    ],
+    "total": 4485
+   },
+   {
+    "etiqueta": "1.3.2. OTRAS TRANSFERENCIAS",
+    "anios": [
+     649,
+     672,
+     692,
+     713
+    ],
+    "total": 2726
+   },
+   {
+    "etiqueta": "2. INGRESOS DE CAPITAL",
+    "anios": [
+     14661,
+     15174,
+     15629,
+     16098
+    ],
+    "total": 61562
+   },
+   {
+    "etiqueta": "2.2. TRANSFERENCIAS NACIONALES (SGP, etc.)",
+    "anios": [
+     11308,
+     11704,
+     12055,
+     12417
+    ],
+    "total": 47484
+   },
+   {
+    "etiqueta": "2.4. OTROS",
+    "anios": [
+     3353,
+     3470,
+     3574,
+     3682
+    ],
+    "total": 14079
+   },
+   {
+    "etiqueta": "GASTOS TOTALES",
+    "anios": [
+     20324,
+     21030,
+     21620,
+     22453
+    ],
+    "total": 85427
+   },
+   {
+    "etiqueta": "3. GASTOS CORRIENTES",
+    "anios": [
+     4177,
+     4215,
+     4307,
+     4398
+    ],
+    "total": 17097
+   },
+   {
+    "etiqueta": "3.1. FUNCIONAMIENTO",
+    "anios": [
+     3591,
+     3771,
+     3959,
+     4157
+    ],
+    "total": 15478
+   },
+   {
+    "etiqueta": "3.1.1. SERVICIOS PERSONALES",
+    "anios": [
+     2549,
+     2676,
+     2810,
+     2951
+    ],
+    "total": 10986
+   },
+   {
+    "etiqueta": "3.1.2. GASTOS GENERALES",
+    "anios": [
+     668,
+     701,
+     736,
+     773
+    ],
+    "total": 2878
+   },
+   {
+    "etiqueta": "3.1.3. TRANSFERENCIAS PAGADAS",
+    "anios": [
+     374,
+     393,
+     412,
+     433
+    ],
+    "total": 1612
+   },
+   {
+    "etiqueta": "3.2. INTERESES DEUDA PÚBLICA",
+    "anios": [
+     586,
+     444,
+     348,
+     241
+    ],
+    "total": 1619
+   },
+   {
+    "etiqueta": "3.3. OTROS GASTOS CORRIENTES",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "DÉFICIT O AHORRO CORRIENTE(1 - 3)",
+    "anios": [
+     2084,
+     2266,
+     2367,
+     2477
+    ],
+    "total": 9194
+   },
+   {
+    "etiqueta": "4. GASTOS DE CAPITAL(INVERSIÓN)",
+    "anios": [
+     16147,
+     16815,
+     17313,
+     18055
+    ],
+    "total": 68330
+   },
+   {
+    "etiqueta": "4.1.1.1. FORMACIÓN BRUTAL DE",
+    "anios": [
+     2091,
+     2267,
+     2289,
+     2505
+    ],
+    "total": 9152
+   },
+   {
+    "etiqueta": "4.1.1.2. OTROS",
+    "anios": [
+     14056,
+     14548,
+     15024,
+     15550
+    ],
+    "total": 59178
+   },
+   {
+    "etiqueta": "DÉFICIT O SUPERÁVIT TOTAL (1 - 3 + 2 - 4)",
+    "anios": [
+     598,
+     625,
+     684,
+     520
+    ],
+    "total": 2427
+   },
+   {
+    "etiqueta": "5.1.1. DESEMBOLSOS(+)",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "5.1.2. AMORTIZACIONES(-)",
+    "anios": [
+     598,
+     625,
+     684,
+     520
+    ],
+    "total": 2427
+   },
+   {
+    "etiqueta": "5.2. RECURSOS BALANCE, VAR. DEPÓSITOS, OTROS",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "SALDO DE LA DEUDA",
+    "anios": [
+     3451,
+     2853,
+     2228,
+     1544
+    ],
+    "total": 10076
+   }
+  ],
+  "ncols": 4,
+  "financiero": true
+ },
+ {
+  "pagina": 81,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Educación",
+    "anios": [
+     177212938,
+     182529326,
+     188005205,
+     193645362
+    ],
+    "total": 741392832
+   },
+   {
+    "etiqueta": "Calidad",
+    "anios": [
+     177212938,
+     182529326,
+     188005205,
+     193645362
+    ],
+    "total": 741392832
+   },
+   {
+    "etiqueta": "Matrícula Gratuidad",
+    "anios": [
+     86964448,
+     89573381,
+     92260582,
+     95028400
+    ],
+    "total": 363826812
+   },
+   {
+    "etiqueta": "Matrícula",
+    "anios": [
+     90248490,
+     92955944,
+     95744623,
+     98616961
+    ],
+    "total": 377566019
+   },
+   {
+    "etiqueta": "Salud",
+    "anios": [
+     2795428903,
+     2879291770,
+     2965670523,
+     3054640638
+    ],
+    "total": 11695031835
+   },
+   {
+    "etiqueta": "Régimen",
+    "anios": [
+     2578001678,
+     2655341729,
+     2735001980,
+     2817052040
+    ],
+    "total": 10785397428
+   },
+   {
+    "etiqueta": "Salud Pública",
+    "anios": [
+     217427224,
+     223950041,
+     230668542,
+     237588598
+    ],
+    "total": 909634406
+   },
+   {
+    "etiqueta": "Agua Potable",
+    "anios": [
+     1239592577,
+     1276780354,
+     1315083765,
+     1354536278
+    ],
+    "total": 5185992976
+   },
+   {
+    "etiqueta": "Propósito General – Destinación",
+    "anios": [
+     3933392469,
+     4051394243,
+     4172936070,
+     4298124153
+    ],
+    "total": 16455846937
+   },
+   {
+    "etiqueta": "Libre Destinación",
+    "anios": [
+     1652024836,
+     1701585581,
+     1752633149,
+     1805212143
+    ],
+    "total": 6911455712
+   },
+   {
+    "etiqueta": "Deporte",
+    "anios": [
+     88894425,
+     91561257,
+     94308095,
+     97137338
+    ],
+    "total": 371901117
+   },
+   {
+    "etiqueta": "Cultura",
+    "anios": [
+     66670819,
+     68670944,
+     70731072,
+     72853004
+    ],
+    "total": 278925841
+   },
+   {
+    "etiqueta": "Libre Inversión",
+    "anios": [
+     2014684356,
+     2075124886,
+     2137378633,
+     2201499992
+    ],
+    "total": 8428687868
+   },
+   {
+    "etiqueta": "Fonpet(2)",
+    "anios": [
+     111118031,
+     114451572,
+     117885119,
+     121421673
+    ],
+    "total": 464876396
+   },
+   {
+    "etiqueta": "Alimentación Escolar",
+    "anios": [
+     38714034,
+     39875455,
+     41071718,
+     42303870
+    ],
+    "total": 161965077
+   },
+   {
+    "etiqueta": "TOTAL, SGP",
+    "anios": [
+     8184340922,
+     8429871150,
+     8682767284,
+     8943250303
+    ],
+    "total": 34240229658
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 81,
+  "cabecera": "CONCEPTO DE INGRESOS",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "TRIBUTARIOS",
+    "anios": [
+     3413216750,
+     3652141923,
+     3907791857,
+     4181337287
+    ],
+    "total": 15154487817
+   },
+   {
+    "etiqueta": "NO TRIBUTARIOS",
+    "anios": [
+     3976000000,
+     4254320000,
+     4552122400,
+     4870770968
+    ],
+    "total": 17653213368
+   },
+   {
+    "etiqueta": "OTRAS TRANSFERENCIAS DEL GOBIERNO NACIONAL",
+    "anios": [
+     8184340922,
+     8429871150,
+     8682767284,
+     8943250303
+    ],
+    "total": 34240229658
+   },
+   {
+    "etiqueta": "RECURSOS PARA SALUD ADRESS Y DPTO",
+    "anios": [
+     5892175244,
+     6068940501,
+     6251008716,
+     6438538978
+    ],
+    "total": 24650663440
+   },
+   {
+    "etiqueta": "RECURSOS DE CAPITAL",
+    "anios": [
+     239034419,
+     262937861,
+     289231647,
+     318154812
+    ],
+    "total": 1109358739
+   },
+   {
+    "etiqueta": "UNIDAD DE SERVICIOS PÚBLICOS",
+    "anios": [
+     756300467,
+     809241500,
+     865888405,
+     926500593
+    ],
+    "total": 3357930964
+   },
+   {
+    "etiqueta": "SISTEMA GENERAL DE REGALÍAS",
+    "anios": [
+     961921430,
+     820084193,
+     760356758,
+     797739202
+    ],
+    "total": 3340101583
+   },
+   {
+    "etiqueta": "TOTAL, INGRESOS",
+    "anios": [
+     23422989232,
+     24297537127,
+     25309167067,
+     26476292142
+    ],
+    "total": 99505985569
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 82,
+  "cabecera": "INVERSION",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "SERVICIOS DE LA DEUDA PÚBLICA",
+    "anios": [
+     1184421415,
+     1302863556,
+     1433149912,
+     1576464903
+    ],
+    "total": 5496899787
+   },
+   {
+    "etiqueta": "INVERSIÓN SGP",
+    "anios": [
+     17284167677,
+     17805551810,
+     18333996318,
+     18868234202
+    ],
+    "total": 72291950008
+   },
+   {
+    "etiqueta": "INVERSIÓN SGR",
+    "anios": [
+     961921430,
+     820084193,
+     760356758,
+     797739202
+    ],
+    "total": 3340101583
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 82,
+  "cabecera": "SUPERÁVIT PRIMARIO",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Ingresos Corrientes",
+    "anios": [
+     6261,
+     6480,
+     6675,
+     6875
+    ],
+    "total": 26291
+   },
+   {
+    "etiqueta": "Recursos de Capital",
+    "anios": [
+     14661,
+     15174,
+     15629,
+     16098
+    ],
+    "total": 61562
+   },
+   {
+    "etiqueta": "Gastos de Funcionamiento",
+    "anios": [
+     3591,
+     3771,
+     3959,
+     4157
+    ],
+    "total": 15478
+   },
+   {
+    "etiqueta": "Gastos de Inversión",
+    "anios": [
+     16147,
+     16815,
+     17313,
+     18055
+    ],
+    "total": 68330
+   },
+   {
+    "etiqueta": "Superávit Primario",
+    "anios": [
+     1184,
+     1069,
+     1032,
+     761
+    ],
+    "total": 4046
+   },
+   {
+    "etiqueta": "Servicio",
+    "anios": [
+     2024,
+     2025,
+     2026,
+     2027
+    ],
+    "total": 8102
+   },
+   {
+    "etiqueta": "Intereses",
+    "anios": [
+     586,
+     444,
+     348,
+     241
+    ],
+    "total": 1619
+   },
+   {
+    "etiqueta": "Amortización",
+    "anios": [
+     598,
+     625,
+     684,
+     520
+    ],
+    "total": 2427
+   },
+   {
+    "etiqueta": "Saldo",
+    "anios": [
+     3451,
+     2853,
+     2228,
+     1544
+    ],
+    "total": 10076
+   }
+  ],
+  "ncols": 3,
+  "financiero": true
+ },
+ {
+  "pagina": 86,
+  "cabecera": "DIMENSIONES",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Compromiso Con Desarrollo Comunitario, La Seguridad Y El Buen Gobierno Territorial",
+    "anios": [
+     3441622635,
+     2019598681,
+     1762722572,
+     1785693614
+    ],
+    "total": 9009637501
+   },
+   {
+    "etiqueta": "Compromiso Con El Desarrollo Económico, Agropecuario y Campesino",
+    "anios": [
+     660000000,
+     469000000,
+     481000000,
+     756057961
+    ],
+    "total": 2366057961
+   },
+   {
+    "etiqueta": "Compromiso Con La Acción Climática Y La Sostenibilidad Ambiental",
+    "anios": [
+     1104151175,
+     1180009933,
+     1365678782,
+     1020676504
+    ],
+    "total": 4670516394
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 87,
+  "cabecera": "EJE ESTRATÉGICO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "para el Desarrollo",
+    "anios": [
+     10,
+     10,
+     10,
+     10
+    ],
+    "total": 40
+   },
+   {
+    "etiqueta": "Territorio.",
+    "anios": [
+     2518,
+     2112,
+     2149,
+     2230
+    ],
+    "total": 9009
+   }
+  ],
+  "ncols": 8,
+  "financiero": false
+ },
+ {
+  "pagina": 88,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Cultura y el Patrimonio.",
+    "anios": [
+     30,
+     30,
+     32,
+     32
+    ],
+    "total": 124
+   },
+   {
+    "etiqueta": "1,6 Compromiso con la Inclusión Social y la Atención integral de población en",
+    "anios": [
+     59,
+     64,
+     71,
+     210
+    ],
+    "total": 403
+   },
+   {
+    "etiqueta": "situación permanente de desprotección social y/o familiar",
+    "anios": [
+     304,
+     303,
+     333,
+     355
+    ],
+    "total": 1295
+   }
+  ],
+  "ncols": 8,
+  "financiero": false
+ }
+]

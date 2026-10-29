@@ -1,0 +1,152 @@
+[
+ {
+  "paginas": [
+   522,
+   523
+  ],
+  "cabecera": "",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   282904,
+   5328979,
+   5303746,
+   3591380
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "INVERSION",
+    "anios": [
+     11608,
+     11809,
+     11947,
+     12106
+    ],
+    "total": 47471,
+    "ruta": {
+     "linea": "INVERSION"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "INVERSION SGR",
+    "anios": [
+     1333,
+     1154,
+     1069,
+     1123
+    ],
+    "total": 4679,
+    "ruta": {
+     "linea": "INVERSION SGR"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TOTAL, INVERSI ON",
+    "anios": [
+     12963,
+     13016,
+     13230,
+     52151
+    ],
+    "total": 91360,
+    "ruta": {
+     "linea": "TOTAL, INVERSI ON"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1707",
+    "anios": [
+     17000,
+     25000,
+     16000,
+     12000
+    ],
+    "total": 70000000,
+    "ruta": {
+     "linea": "1707"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1709",
+    "anios": [
+     62000,
+     74000,
+     71000,
+     70000
+    ],
+    "total": 277000,
+    "ruta": {
+     "linea": "1709"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Producti vidad y competiti vidad de las empresas colombia",
+    "anios": [
+     81000,
+     96000,
+     67000,
+     315000
+    ],
+    "total": 559000,
+    "ruta": {
+     "linea": "Producti vidad y competiti vidad de las empresas colombia"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4502",
+    "anios": [
+     92000,
+     108000,
+     123500,
+     129000
+    ],
+    "total": 452500,
+    "ruta": {
+     "linea": "4502"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3599",
+    "anios": [
+     5000,
+     5000000,
+     5000000,
+     3000000
+    ],
+    "total": 18000000,
+    "ruta": {
+     "linea": "3599"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

@@ -3,7 +3,7 @@ import argparse
 import json
 from pathlib import Path
 
-from . import conocimiento, evaluar, paginas, pipeline, vision
+from . import categorias, conocimiento, evaluar, muestra, paginas, pipeline, vision
 
 
 def main():
@@ -38,6 +38,22 @@ def main():
     p = sub.add_parser("comparar-vision", help="lectura manual vs lectura por API")
     p.add_argument("salida")
 
+    p = sub.add_parser("muestra", help="arma la pagina HTML de revision humana de una muestra de indicadores")
+    p.add_argument("--plan", nargs=3, action="append", metavar=("NOMBRE", "PDF", "SALIDA"), required=True)
+    p.add_argument("-n", type=int, default=20)
+    p.add_argument("-o", default="revision_muestra.html")
+    p.add_argument("--cobertura", nargs="*", default=[], help="carpetas de salida de todos los planes procesados (para la seccion de categorias)")
+
+    p = sub.add_parser("verificar", help="guarda en golden/ el JSON descargado de la pagina de revision")
+    p.add_argument("archivo")
+
+    p = sub.add_parser("evaluar-verificadas", help="mide una extraccion contra las filas revisadas a mano")
+    p.add_argument("salida")
+    p.add_argument("plan")
+
+    p = sub.add_parser("categorias", help="matriz de que campos y niveles trae cada plan (base para el esquema canonico)")
+    p.add_argument("carpetas", nargs="+")
+
     a = ap.parse_args()
     if a.cmd == "extraer":
         print(pipeline.procesar(a.pdf, a.salida, usar_vision_api=a.vision))
@@ -58,6 +74,17 @@ def main():
         print(evaluar.congelar(a.salida, a.nombre))
     elif a.cmd == "evaluar":
         print(json.dumps(evaluar.evaluar(a.salida, a.nombre), indent=1))
+    elif a.cmd == "muestra":
+        items = muestra.muestra([tuple(x) for x in a.plan], n=a.n)
+        carpetas = a.cobertura or [x[2] for x in a.plan]
+        muestra.escribe_html(items, a.o, muestra.propuesta_categorias(carpetas))
+        print(f"{len(items)} filas en {a.o}")
+    elif a.cmd == "verificar":
+        print(muestra.verificar(a.archivo))
+    elif a.cmd == "evaluar-verificadas":
+        print(json.dumps(muestra.evaluar_verificadas(a.salida, a.plan), indent=1))
+    elif a.cmd == "categorias":
+        print(categorias.matriz(a.carpetas)[0])
     elif a.cmd == "comparar-vision":
         print(json.dumps(evaluar.comparar_vision(a.salida), indent=1))
 

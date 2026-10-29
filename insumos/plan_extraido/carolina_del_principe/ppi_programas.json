@@ -1,0 +1,119 @@
+[
+ {
+  "pagina": 250,
+  "linea": "",
+  "sector": "Sector",
+  "programa": "Programa Presupuestal",
+  "anios": [
+   2024,
+   2025,
+   2026,
+   2027
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 250,
+  "linea": "",
+  "sector": "Educación",
+  "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
+  "anios": [
+   988626605,
+   1183452163,
+   1411545445,
+   1531174218
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 250,
+  "linea": "",
+  "sector": "Salud",
+  "programa": "Aseguramiento y prestación integral de servicios de salud",
+  "anios": [
+   2889022641,
+   2992834400,
+   2993919110,
+   3000568482
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 250,
+  "linea": "",
+  "sector": "Mujeres y equidad de genero",
+  "programa": "Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos",
+  "anios": [
+   31940625,
+   0,
+   0,
+   35000000
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 250,
+  "linea": "",
+  "sector": "Recreación, deportes y actividad física",
+  "programa": "Fomento a la recreación, la actividad física y eldeporte",
+  "anios": [
+   529138528,
+   348600973,
+   535600973,
+   578600973
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 251,
+  "linea": "",
+  "sector": "rmera infancia, infancia, adolescencia, juventud y familia",
+  "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niños y adolescentes",
+  "anios": [
+   371921615,
+   280000000,
+   364000000,
+   375000000
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 251,
+  "linea": "",
+  "sector": "Adulto mayor",
+  "programa": "Atención integral de población en situación permanente de desprotección social y/o familiar",
+  "anios": [
+   264286419,
+   379255975,
+   410255975,
+   423255975
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 251,
+  "linea": "",
+  "sector": "Población LGTBIQ+",
+  "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
+  "anios": [
+   11000000,
+   5000000,
+   15000000,
+   18000000
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 251,
+  "linea": "",
+  "sector": "Capacidades",
+  "programa": "Saludpública",
+  "anios": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "estado": "ok"
+ }
+]

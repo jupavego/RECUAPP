@@ -136,7 +136,7 @@ def procesar(pdf, salida, usar_vision_api=False):
             else:
                 sc, nombre_pp = 0, None
             ind.update(linea=(linea_arbol.get(nombre_pp) if nombre_pp else None) or t["linea"],
-                       sector=canon[nombre_pp] if nombre_pp and canon[nombre_pp] else t["sector"],
+                       sector=canon[nombre_pp] if nombre_pp and canon[nombre_pp] else (ind.get("sector") or t["sector"]),
                        programa=nombre_pp or cand_i, coincidencia_ppi=round(sc, 2) if canon else None,
                        pagina=t["n"], fuente_lectura="texto")
             indicadores.append(ind)

@@ -1,0 +1,321 @@
+[
+ {
+  "pagina": 157,
+  "cabecera": "Fuente de Financiación",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Adres Continuidad SSF",
+    "anios": [
+     3700,
+     3841,
+     3956,
+     4075
+    ],
+    "total": 15572
+   },
+   {
+    "etiqueta": "Aporte Departamental Régimen Subsidiado",
+    "anios": [
+     581,
+     612,
+     636,
+     655
+    ],
+    "total": 2484
+   },
+   {
+    "etiqueta": "Coljuegos 25%",
+    "anios": [
+     14,
+     18,
+     21,
+     27
+    ],
+    "total": 80
+   },
+   {
+    "etiqueta": "Coljuegos 75% SSF",
+    "anios": [
+     42,
+     54,
+     64,
+     81
+    ],
+    "total": 241
+   },
+   {
+    "etiqueta": "Contribución de obra",
+    "anios": [
+     159,
+     184,
+     231,
+     261
+    ],
+    "total": 835
+   },
+   {
+    "etiqueta": "Contribución del sector eléctrico 50% Ambiental y Agua Potable",
+    "anios": [
+     283,
+     328,
+     412,
+     465
+    ],
+    "total": 1488
+   },
+   {
+    "etiqueta": "Contribución del sector eléctrico 50% Libre Inversión",
+    "anios": [
+     283,
+     328,
+     412,
+     465
+    ],
+    "total": 1488
+   },
+   {
+    "etiqueta": "Estampilla para el bienestar del adulto mayor",
+    "anios": [
+     350,
+     500,
+     546,
+     593
+    ],
+    "total": 1989
+   },
+   {
+    "etiqueta": "Estampilla para la justificia familiar",
+    "anios": [
+     34,
+     48,
+     53,
+     57
+    ],
+    "total": 192
+   },
+   {
+    "etiqueta": "Estampilla pro cultura",
+    "anios": [
+     180,
+     258,
+     282,
+     306
+    ],
+    "total": 1026
+   },
+   {
+    "etiqueta": "Impuesto de alumbrado público",
+    "anios": [
+     69,
+     78,
+     76,
+     82
+    ],
+    "total": 305
+   },
+   {
+    "etiqueta": "Ingresos corrientes de libre destinación",
+    "anios": [
+     1956,
+     2273,
+     1915,
+     2026
+    ],
+    "total": 8170
+   },
+   {
+    "etiqueta": "Multas de policía",
+    "anios": [
+     10,
+     11,
+     14,
+     16
+    ],
+    "total": 51
+   },
+   {
+    "etiqueta": "Multas de transporte",
+    "anios": [
+     10,
+     11,
+     14,
+     16
+    ],
+    "total": 51
+   },
+   {
+    "etiqueta": "Otras Cofinanciaciones",
+    "anios": [
+     2111,
+     2901,
+     2868,
+     3562
+    ],
+    "total": 11442
+   },
+   {
+    "etiqueta": "Retiros FONPET Mesadas Pensionales",
+    "anios": [
+     190,
+     156,
+     132,
+     186
+    ],
+    "total": 664
+   },
+   {
+    "etiqueta": "SGP Agua potable y saneamiento básico",
+    "anios": [
+     1010,
+     1048,
+     1079,
+     1112
+    ],
+    "total": 4249
+   },
+   {
+    "etiqueta": "SGP Asignaciones especiales Alimentación escolar",
+    "anios": [
+     57,
+     59,
+     61,
+     63
+    ],
+    "total": 240
+   },
+   {
+    "etiqueta": "SGP Atención integral de la primera infancia",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "SGP Cultura",
+    "anios": [
+     130,
+     135,
+     139,
+     143
+    ],
+    "total": 547
+   },
+   {
+    "etiqueta": "6",
+    "anios": [
+     2358,
+     2447,
+     2521,
+     2596
+    ],
+    "total": 9922
+   },
+   {
+    "etiqueta": "SGP Deporte",
+    "anios": [
+     163,
+     169,
+     174,
+     179
+    ],
+    "total": 685
+   },
+   {
+    "etiqueta": "SGP Educación Gratuidad SSF",
+    "anios": [
+     93,
+     96,
+     99,
+     102
+    ],
+    "total": 390
+   },
+   {
+    "etiqueta": "SGP Educación Matrícula",
+    "anios": [
+     100,
+     104,
+     107,
+     110
+    ],
+    "total": 421
+   },
+   {
+    "etiqueta": "SGP Libre Inversión",
+    "anios": [
+     2963,
+     3075,
+     3168,
+     3263
+    ],
+    "total": 12469
+   },
+   {
+    "etiqueta": "SGP Salud Pública",
+    "anios": [
+     214,
+     222,
+     229,
+     236
+    ],
+    "total": 901
+   },
+   {
+    "etiqueta": "SGP Salud Régimen Subsidiado SSF",
+    "anios": [
+     1927,
+     2000,
+     2060,
+     2122
+    ],
+    "total": 8109
+   },
+   {
+    "etiqueta": "Sobretasa ambiental",
+    "anios": [
+     59,
+     66,
+     70,
+     74
+    ],
+    "total": 269
+   },
+   {
+    "etiqueta": "Sobretasa bomberil",
+    "anios": [
+     50,
+     57,
+     64,
+     68
+    ],
+    "total": 239
+   },
+   {
+    "etiqueta": "Tasa pro deporte",
+    "anios": [
+     65,
+     96,
+     169,
+     154
+    ],
+    "total": 484
+   },
+   {
+    "etiqueta": "Total general",
+    "anios": [
+     19157,
+     21178,
+     21572,
+     23097
+    ],
+    "total": 85004
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ }
+]

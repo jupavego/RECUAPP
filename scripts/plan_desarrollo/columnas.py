@@ -10,14 +10,19 @@ from .texto import limpia, norm
 # (campo, patron sobre el encabezado compacto: sin tildes, minusculas y sin espacios). El orden importa.
 REGLAS = [
     ("codigo", r"^codigo"),
+    ("ods", r"^ods|odsasociado|indicadorods|objetivosdedesarrollosostenible"),
+    ("pnd", r"plandedesarrollonacional|^pnd"),
+    ("pdd", r"plandedesarrollodepartamental|^pdd"),
     ("ano_base", r"^ano"),
-    ("linea_base", r"lineabase|^lbase"),
+    ("linea_base", r"lineabase|lineadebase|^lb"),
     ("meta_anual", r"^20\d\d$"),
     ("meta", r"^meta"),
     ("tipo_acumulado", r"acumul|orientacion|formadecalculo"),
     ("responsable", r"responsable|dependencia|lider"),
     ("fuente", r"^fuente"),
-    ("unidad", r"^unidad|medidoatraves"),  # "Medido a traves de" trae la unidad ("Numero de beneficiarios")
+    ("unidad", r"^unidad|^udemedida|^umedida|medidoatraves"),
+    ("sector", r"^sector"),
+    ("componente", r"^componente"),  # "Medido a traves de" trae la unidad ("Numero de beneficiarios")
     ("programa", r"^programa"),
     ("producto", r"^producto"),
     ("nombre", r"indicador|^nombre"),
@@ -58,14 +63,28 @@ def tipo_por_cabecera(celdas):
     return None
 
 
+def _une_filas(a, b):
+    """Une celda a celda dos filas de encabezado si la segunda es texto (no datos)."""
+    if len(a) != len(b) or any(re.search(r"\d{2,}", limpia(x)) for x in b) or not any(limpia(x) for x in b):
+        return None
+    return [f"{limpia(x)} {limpia(y)}".strip() for x, y in zip(a, b)]
+
+
 def clasifica(t):
     """Si la tabla es de indicadores: (fila_de_encabezado, columnas, tipo, titulo). Si no, None.
 
-    El encabezado puede ser la fila 0 o la 1 (la 0 trae entonces el titulo, p. ej. el programa).
+    El encabezado puede no ser la fila 0: la 1 deja un titulo arriba (p. ej. el programa) y a veces lineas de
+    texto suelto que el convertidor pego a la tabla (Gomez Plata), asi que se busca en las primeras filas.
     """
-    for hi in (0, 1):
-        if hi < len(t):
+    for hi in range(min(len(t), 6)):
+        if True:
             cols = mapea(t[hi])
+            junta = _une_filas(t[hi], t[hi + 1]) if hi + 1 < len(t) else None
+            cols2 = mapea(junta) if junta else None
+            if cols2 and len(cols2) > len(cols or {}):  # "Linea" / "base" repartidos en dos filas
+                t[hi + 1] = junta
+                hi += 1
+                cols = cols2
             if cols:
                 titulo = ""
                 if hi == 1:

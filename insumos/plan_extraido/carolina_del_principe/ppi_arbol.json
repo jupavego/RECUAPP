@@ -1,0 +1,87 @@
+[
+ {
+  "paginas": [
+   250
+  ],
+  "cabecera": "Código de la línea estratégica",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   4438728399,
+   4524887536,
+   4941065528,
+   5145343673
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Pensando en nuestra gente",
+    "anios": [
+     988626605,
+     1183452163,
+     1411545445,
+     1531174218
+    ],
+    "total": 5114798431,
+    "ruta": {
+     "linea": "Pensando en nuestra gente"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Pensando en nuestra gente",
+    "anios": [
+     2889022641,
+     2992834400,
+     2993919110,
+     3000568482
+    ],
+    "total": 11876344633,
+    "ruta": {
+     "linea": "Pensando en nuestra gente"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Pensando en nuestra gente",
+    "anios": [
+     31940625,
+     0,
+     0,
+     35000000
+    ],
+    "total": 66940625,
+    "ruta": {
+     "linea": "Pensando en nuestra gente"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Pensando en nuestra gente",
+    "anios": [
+     529138528,
+     348600973,
+     535600973,
+     578600973
+    ],
+    "total": 1991941447,
+    "ruta": {
+     "linea": "Pensando en nuestra gente"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

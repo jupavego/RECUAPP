@@ -1,0 +1,156 @@
+[
+ {
+  "nombre": "Tasa de delitos",
+  "unidad": "Porcentaje",
+  "linea_base": "ICV",
+  "meta": "6,5",
+  "tipo_acumulado": "",
+  "responsable": "",
+  "pagina": 173,
+  "linea": 1,
+  "sector": null
+ },
+ {
+  "nombre": "Gobierno abierto y transparencia",
+  "unidad": "Porcentaje",
+  "linea_base": "MINTIC",
+  "meta": "100",
+  "tipo_acumulado": "",
+  "responsable": "",
+  "pagina": 173,
+  "linea": 1,
+  "sector": null
+ },
+ {
+  "nombre": "Índice Municipal de Competitividad en Antioquia",
+  "unidad": "Puntos",
+  "linea_base": "ICV",
+  "meta": "35",
+  "tipo_acumulado": "",
+  "responsable": "",
+  "pagina": 173,
+  "linea": 1,
+  "sector": null
+ },
+ {
+  "nombre": "Tasa de empleo informal",
+  "unidad": "Porcentaje",
+  "linea_base": "ICV",
+  "meta": "65,5",
+  "tipo_acumulado": "",
+  "responsable": "",
+  "pagina": 186,
+  "linea": 2,
+  "sector": null
+ },
+ {
+  "nombre": "Área deforestada en la entidad territorial",
+  "unidad": "Hectáreas",
+  "linea_base": "Municipal",
+  "meta": "78",
+  "tipo_acumulado": "",
+  "responsable": "",
+  "pagina": 186,
+  "linea": 2,
+  "sector": null
+ },
+ {
+  "nombre": "Disminución de la tasa de desempleo en el municipio de Yarumal",
+  "unidad": "Porcentaje",
+  "linea_base": "Municipal",
+  "meta": "8,1",
+  "tipo_acumulado": "",
+  "responsable": "",
+  "pagina": 186,
+  "linea": 2,
+  "sector": null
+ },
+ {
+  "nombre": "Tasa por accidentes de transporte terrestre",
+  "unidad": "Porcentaje",
+  "linea_base": "ICV",
+  "meta": "1,92",
+  "tipo_acumulado": "",
+  "responsable": "",
+  "pagina": 186,
+  "linea": 2,
+  "sector": null
+ },
+ {
+  "nombre": "Déficit cualitativo de vivienda",
+  "unidad": "Numero",
+  "linea_base": "ICV",
+  "meta": "2.500",
+  "tipo_acumulado": "",
+  "responsable": "",
+  "pagina": 186,
+  "linea": 2,
+  "sector": null
+ },
+ {
+  "nombre": "Cobertura Neta por Nivel Educativo",
+  "unidad": "Porcentaje",
+  "linea_base": "ICV",
+  "meta": "86",
+  "tipo_acumulado": "",
+  "responsable": "",
+  "pagina": 209,
+  "linea": 3,
+  "sector": null
+ },
+ {
+  "nombre": "Índice de GINI en riesgos",
+  "unidad": "Puntos",
+  "linea_base": "ICV",
+  "meta": "0,4",
+  "tipo_acumulado": "",
+  "responsable": "",
+  "pagina": 209,
+  "linea": 3,
+  "sector": null
+ },
+ {
+  "nombre": "Porcentaje de personas que asisten a eventos culturales",
+  "unidad": "Porcentaje",
+  "linea_base": "ICV",
+  "meta": "5",
+  "tipo_acumulado": "",
+  "responsable": "",
+  "pagina": 209,
+  "linea": 3,
+  "sector": null
+ },
+ {
+  "nombre": "Porcentaje de hogares privadas por acceso a salud dada una necesidad",
+  "unidad": "Porcentaje",
+  "linea_base": "ICV",
+  "meta": "3",
+  "tipo_acumulado": "",
+  "responsable": "",
+  "pagina": 209,
+  "linea": 3,
+  "sector": null
+ },
+ {
+  "nombre": "Porcentaje de personas que practican actividades lúdicas, recreativas o deportivas",
+  "unidad": "Porcentaje",
+  "linea_base": "ICV",
+  "meta": "11",
+  "tipo_acumulado": "",
+  "responsable": "",
+  "pagina": 209,
+  "linea": 3,
+  "sector": null
+ },
+ {
+  "nombre": "Percepción de seguridad",
+  "unidad": "Porcentaje",
+  "linea_base": "ICV",
+  "meta": "80,18",
+  "tipo_acumulado": "",
+  "responsable": "",
+  "pagina": 209,
+  "linea": 3,
+  "sector": null
+ }
+]

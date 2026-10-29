@@ -1,0 +1,379 @@
+[
+ {
+  "pagina": 79,
+  "cabecera": "Variable",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "TRM promedio (USD/COP)",
+    "anios": [
+     4603,
+     4699,
+     4798,
+     4898
+    ],
+    "total": 18998
+   },
+   {
+    "etiqueta": "Producción de petróleo (KBPD)",
+    "anios": [
+     788,
+     793,
+     825,
+     824
+    ],
+    "total": 3230
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 92,
+  "cabecera": "Concepto",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Inversión 100%",
+    "anios": [
+     1744,
+     1515,
+     1403,
+     1477
+    ],
+    "total": 6139
+   },
+   {
+    "etiqueta": "Asignación para la Inversión Local",
+    "anios": [
+     1739,
+     1511,
+     1400,
+     1474
+    ],
+    "total": 6124
+   },
+   {
+    "etiqueta": "Municipios más pobres",
+    "anios": [
+     1739,
+     1511,
+     1400,
+     1474
+    ],
+    "total": 6124
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     1507,
+     1310,
+     1213,
+     1277
+    ],
+    "total": 5307
+   },
+   {
+    "etiqueta": "Inversión 80%",
+    "anios": [
+     1395,
+     1212,
+     1122,
+     1182
+    ],
+    "total": 4911
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ },
+ {
+  "pagina": 167,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Inversión",
+    "anios": [
+     1744890299,
+     1515026695,
+     1403648637,
+     1477499307
+    ],
+    "total": 6141064938
+   },
+   {
+    "etiqueta": "Asignación para la Paz",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignaciones Directas",
+    "anios": [
+     5330375,
+     3391696,
+     3194007,
+     3184961
+    ],
+    "total": 15101039
+   },
+   {
+    "etiqueta": "20% Asignaciones Directas",
+    "anios": [
+     4168943,
+     2652726,
+     2498108,
+     2491033
+    ],
+    "total": 11810810
+   },
+   {
+    "etiqueta": "5% Asignaciones Directas Anticipadas",
+    "anios": [
+     1161432,
+     738970,
+     695898,
+     693927
+    ],
+    "total": 3290227
+   },
+   {
+    "etiqueta": "Asignación para la Inversión Regional",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Departamentos",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Regiones",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación para la Inversión Local",
+    "anios": [
+     1739559924,
+     1511634999,
+     1400454630,
+     1474314346
+    ],
+    "total": 6125963899
+   },
+   {
+    "etiqueta": "Municipios más pobres",
+    "anios": [
+     1739559924,
+     1511634999,
+     1400454630,
+     1474314346
+    ],
+    "total": 6125963899
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     231941322,
+     201551333,
+     186727284,
+     196575246
+    ],
+    "total": 816795185
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     1507618601,
+     1310083466,
+     1213727346,
+     1277739100
+    ],
+    "total": 5309168513
+   },
+   {
+    "etiqueta": "Comunidades Étnicas",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación para Ciencia, Tecnología e Innovación",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación para Inversión en Ciencia, Tecnología e Innovación Ambiental",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto de inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación Ambiental",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Municipios Río Magdalena y Canal Dique",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "AHORRO",
+    "anios": [
+     381810488,
+     330187866,
+     306005158,
+     319573823
+    ],
+    "total": 1337577335
+   },
+   {
+    "etiqueta": "Fondo de Ahorro y Estabilización (Ahorro)",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Fondo Ahorro Pensional Territorial (FONPET)",
+    "anios": [
+     381810488,
+     330187866,
+     306005158,
+     319573823
+    ],
+    "total": 1337577335
+   },
+   {
+    "etiqueta": "OTROS",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Funcionamiento, operatividad y fiscalización",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Sistema de Seguimiento, Control y Evaluación (SSEC)",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Contraloría",
+    "anios": [
+     70401205851,
+     60858195556,
+     56382090798,
+     58862923139
+    ],
+    "total": 246504415344
+   },
+   {
+    "etiqueta": "Procuraduría",
+    "anios": [
+     14090241171,
+     12171639111,
+     11276418160,
+     11772584628
+    ],
+    "total": 49310883070
+   },
+   {
+    "etiqueta": "DNP",
+    "anios": [
+     56320964680,
+     48686556445,
+     45105672638,
+     47090338511
+    ],
+    "total": 197203532274
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     2126700787,
+     1845214561,
+     1709653795,
+     1797073130
+    ],
+    "total": 7478642273
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ }
+]

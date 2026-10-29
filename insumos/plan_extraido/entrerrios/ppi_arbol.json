@@ -1,0 +1,2569 @@
+[
+ {
+  "paginas": [
+   359,
+   360,
+   361,
+   362,
+   363,
+   364,
+   365,
+   366,
+   367
+  ],
+  "cabecera": "Código del programa presupuestal",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   30999177188,
+   32372801114,
+   40082738547,
+   51659281004
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4501",
+    "anios": [
+     47520000,
+     49340000,
+     50800000,
+     52340000
+    ],
+    "total": 200000000,
+    "ruta": {
+     "linea": "4501"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4501",
+    "anios": [
+     7128000,
+     7401000,
+     7620000,
+     7851000
+    ],
+    "total": 30000000,
+    "ruta": {
+     "linea": "4501"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4501",
+    "anios": [
+     606135538,
+     726086310,
+     827815591,
+     1258962559
+    ],
+    "total": 3418999998,
+    "ruta": {
+     "linea": "4501"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4501",
+    "anios": [
+     47520000,
+     49340000,
+     50800000,
+     52340000
+    ],
+    "total": 200000000,
+    "ruta": {
+     "linea": "4501"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1203",
+    "anios": [
+     15013048,
+     15594606,
+     16062381,
+     16542799
+    ],
+    "total": 63212834,
+    "ruta": {
+     "linea": "1203"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1203",
+    "anios": [
+     94346995,
+     97960453,
+     100859162,
+     103916703
+    ],
+    "total": 397083313,
+    "ruta": {
+     "linea": "1203"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1206",
+    "anios": [
+     22915200,
+     23654400,
+     24432000,
+     24998400
+    ],
+    "total": 96000000,
+    "ruta": {
+     "linea": "1206"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2409",
+    "anios": [
+     7161000,
+     7392000,
+     7635000,
+     7812000
+    ],
+    "total": 30000000,
+    "ruta": {
+     "linea": "2409"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2409",
+    "anios": [
+     12988926,
+     13482505,
+     13886981,
+     14303590
+    ],
+    "total": 54662002,
+    "ruta": {
+     "linea": "2409"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4502",
+    "anios": [
+     23870000,
+     24640000,
+     25450000,
+     26040000
+    ],
+    "total": 100000000,
+    "ruta": {
+     "linea": "4502"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4599",
+    "anios": [
+     35751129,
+     36972612,
+     38152590,
+     39123668
+    ],
+    "total": 149999999,
+    "ruta": {
+     "linea": "4599"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4599",
+    "anios": [
+     59675000,
+     61600000,
+     63625000,
+     65100000
+    ],
+    "total": 250000000,
+    "ruta": {
+     "linea": "4599"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4599",
+    "anios": [
+     34087771,
+     35246046,
+     36374227,
+     37291954
+    ],
+    "total": 142999998,
+    "ruta": {
+     "linea": "4599"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2503",
+    "anios": [
+     4774000,
+     4928000,
+     5090000,
+     5208000
+    ],
+    "total": 20000000,
+    "ruta": {
+     "linea": "2503"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "0401",
+    "anios": [
+     19096000,
+     19712000,
+     20360000,
+     20832000
+    ],
+    "total": 80000000,
+    "ruta": {
+     "linea": "0401"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "0406",
+    "anios": [
+     14322000,
+     14784000,
+     15270000,
+     15624000
+    ],
+    "total": 60000000,
+    "ruta": {
+     "linea": "0406"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4002",
+    "anios": [
+     28514710,
+     29598269,
+     30486217,
+     31400803
+    ],
+    "total": 119999999,
+    "ruta": {
+     "linea": "4002"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2201",
+    "anios": [
+     9548000,
+     9856000,
+     10180000,
+     10416000
+    ],
+    "total": 40000000,
+    "ruta": {
+     "linea": "2201"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2201",
+    "anios": [
+     118098424,
+     122586164,
+     126263749,
+     130051661
+    ],
+    "total": 496999998,
+    "ruta": {
+     "linea": "2201"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2201",
+    "anios": [
+     510954812,
+     575342356,
+     623421188,
+     826968356
+    ],
+    "total": 2536686712,
+    "ruta": {
+     "linea": "2201"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2201",
+    "anios": [
+     569613691,
+     588517811,
+     607589346,
+     622347026
+    ],
+    "total": 2388067874,
+    "ruta": {
+     "linea": "2201"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2201",
+    "anios": [
+     4752451,
+     4933044,
+     5081036,
+     511846105
+    ],
+    "total": 526612636,
+    "ruta": {
+     "linea": "2201"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2201",
+    "anios": [
+     26973100,
+     27843200,
+     28758500,
+     29425200
+    ],
+    "total": 113000000,
+    "ruta": {
+     "linea": "2201"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2201",
+    "anios": [
+     16709000,
+     17248000,
+     17815000,
+     18228000
+    ],
+    "total": 70000000,
+    "ruta": {
+     "linea": "2201"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2201",
+    "anios": [
+     4774000,
+     4928000,
+     5090000,
+     5208000
+    ],
+    "total": 20000000,
+    "ruta": {
+     "linea": "2201"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2201",
+    "anios": [
+     14257355,
+     14799134,
+     15243108,
+     15700401
+    ],
+    "total": 59999998,
+    "ruta": {
+     "linea": "2201"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2201",
+    "anios": [
+     4752451,
+     4933044,
+     5081036,
+     5233467
+    ],
+    "total": 19999998,
+    "ruta": {
+     "linea": "2201"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2201",
+    "anios": [
+     19096000,
+     19712000,
+     20360000,
+     20832000
+    ],
+    "total": 80000000,
+    "ruta": {
+     "linea": "2201"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2201",
+    "anios": [
+     51559200,
+     53222400,
+     54972000,
+     56246400
+    ],
+    "total": 216000000,
+    "ruta": {
+     "linea": "2201"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2201",
+    "anios": [
+     9548000,
+     9856000,
+     10180000,
+     10416000
+    ],
+    "total": 40000000,
+    "ruta": {
+     "linea": "2201"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2201",
+    "anios": [
+     28644000,
+     29568000,
+     30540000,
+     31248000
+    ],
+    "total": 120000000,
+    "ruta": {
+     "linea": "2201"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2202",
+    "anios": [
+     38192000,
+     39424000,
+     40720000,
+     41664000
+    ],
+    "total": 160000000,
+    "ruta": {
+     "linea": "2202"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2202",
+    "anios": [
+     9548000,
+     9856000,
+     10180000,
+     10416000
+    ],
+    "total": 40000000,
+    "ruta": {
+     "linea": "2202"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1905",
+    "anios": [
+     14257355,
+     14799134,
+     15243108,
+     15700401
+    ],
+    "total": 59999998,
+    "ruta": {
+     "linea": "1905"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1905",
+    "anios": [
+     40015915,
+     41536520,
+     42782616,
+     44066094
+    ],
+    "total": 168401145,
+    "ruta": {
+     "linea": "1905"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1905",
+    "anios": [
+     21386032,
+     22198701,
+     22864662,
+     23550602
+    ],
+    "total": 89999997,
+    "ruta": {
+     "linea": "1905"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1905",
+    "anios": [
+     14257355,
+     14799134,
+     15243108,
+     15700401
+    ],
+    "total": 59999998,
+    "ruta": {
+     "linea": "1905"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1905",
+    "anios": [
+     28514710,
+     29598269,
+     30486217,
+     31400803
+    ],
+    "total": 119999999,
+    "ruta": {
+     "linea": "1905"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "1905",
+    "anios": [
+     28514710,
+     29598269,
+     30486217,
+     31400803
+    ],
+    "total": 119999999,
+    "ruta": {
+     "linea": "1905",
+     "sector": "1905"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1905",
+    "anios": [
+     21386032,
+     22198701,
+     22864662,
+     23550602
+    ],
+    "total": 89999997,
+    "ruta": {
+     "linea": "1905"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "1905",
+    "anios": [
+     21386032,
+     22198701,
+     22864662,
+     23550602
+    ],
+    "total": 89999997,
+    "ruta": {
+     "linea": "1905",
+     "sector": "1905"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1905",
+    "anios": [
+     14257355,
+     14799134,
+     15243108,
+     15700401
+    ],
+    "total": 59999998,
+    "ruta": {
+     "linea": "1905"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1905",
+    "anios": [
+     45961363,
+     59655184,
+     71196684,
+     123186766
+    ],
+    "total": 299999997,
+    "ruta": {
+     "linea": "1905"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1905",
+    "anios": [
+     2376225,
+     2466522,
+     2540518,
+     2616733
+    ],
+    "total": 9999998,
+    "ruta": {
+     "linea": "1905"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1903",
+    "anios": [
+     21940860,
+     22774613,
+     23457851,
+     24161587
+    ],
+    "total": 92334911,
+    "ruta": {
+     "linea": "1903"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1906",
+    "anios": [
+     4499062145,
+     4669858293,
+     4809865393,
+     4954161355
+    ],
+    "total": 18932947186,
+    "ruta": {
+     "linea": "1906"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1906",
+    "anios": [
+     7128677,
+     7399567,
+     7621554,
+     7850200
+    ],
+    "total": 29999998,
+    "ruta": {
+     "linea": "1906"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1906",
+    "anios": [
+     202739294,
+     210443387,
+     216756689,
+     223259390
+    ],
+    "total": 853198760,
+    "ruta": {
+     "linea": "1906"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3301",
+    "anios": [
+     14981925,
+     25869419,
+     54715341,
+     93065670
+    ],
+    "total": 188632355,
+    "ruta": {
+     "linea": "3301"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3301",
+    "anios": [
+     2382718,
+     0,
+     0,
+     14801119
+    ],
+    "total": 17183837,
+    "ruta": {
+     "linea": "3301"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3301",
+    "anios": [
+     104373946,
+     147070322,
+     257732269,
+     403882320
+    ],
+    "total": 913058857,
+    "ruta": {
+     "linea": "3301"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3301",
+    "anios": [
+     2382718,
+     4114260,
+     8701901,
+     14801119
+    ],
+    "total": 29999998,
+    "ruta": {
+     "linea": "3301"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3301",
+    "anios": [
+     14981925,
+     25869419,
+     54715341,
+     93065670
+    ],
+    "total": 188632355,
+    "ruta": {
+     "linea": "3301"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3301",
+    "anios": [
+     107342758,
+     144022954,
+     237032688,
+     360128469
+    ],
+    "total": 848526869,
+    "ruta": {
+     "linea": "3301"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3301",
+    "anios": [
+     3516453,
+     3674865,
+     3812355,
+     3940878
+    ],
+    "total": 14944551,
+    "ruta": {
+     "linea": "3301"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3302",
+    "anios": [
+     7942394,
+     13714200,
+     29006338,
+     49337066
+    ],
+    "total": 99999998,
+    "ruta": {
+     "linea": "3302"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3302",
+    "anios": [
+     3176957,
+     5485680,
+     11602535,
+     19734826
+    ],
+    "total": 39999998,
+    "ruta": {
+     "linea": "3302"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4301",
+    "anios": [
+     54142151,
+     86627442,
+     146183810,
+     254468113
+    ],
+    "total": 541421516,
+    "ruta": {
+     "linea": "4301"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4301",
+    "anios": [
+     10676308,
+     17082092,
+     28826031,
+     50178647
+    ],
+    "total": 106763078,
+    "ruta": {
+     "linea": "4301"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4301",
+    "anios": [
+     180008115,
+     243048424,
+     355539876,
+     558106073
+    ],
+    "total": 1336702488,
+    "ruta": {
+     "linea": "4301"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4301",
+    "anios": [
+     45200000,
+     72320000,
+     122040000,
+     212440000
+    ],
+    "total": 452000000,
+    "ruta": {
+     "linea": "4301"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4301",
+    "anios": [
+     40600000,
+     64960000,
+     109620000,
+     190820000
+    ],
+    "total": 406000000,
+    "ruta": {
+     "linea": "4301"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4301",
+    "anios": [
+     20000000,
+     32000000,
+     54000000,
+     94000000
+    ],
+    "total": 200000000,
+    "ruta": {
+     "linea": "4301"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4102",
+    "anios": [
+     14693429,
+     25371271,
+     53661727,
+     91273572
+    ],
+    "total": 184999999,
+    "ruta": {
+     "linea": "4102"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4103",
+    "anios": [
+     14693429,
+     25234129,
+     53371663,
+     90780201
+    ],
+    "total": 184079422,
+    "ruta": {
+     "linea": "4103"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4501",
+    "anios": [
+     15884788,
+     27428401,
+     58012677,
+     98674132
+    ],
+    "total": 199999998,
+    "ruta": {
+     "linea": "4501"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3604",
+    "anios": [
+     4747528,
+     8197598,
+     17338401,
+     29490996
+    ],
+    "total": 59774523,
+    "ruta": {
+     "linea": "3604"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4102",
+    "anios": [
+     7161000,
+     7392000,
+     7635000,
+     7812000
+    ],
+    "total": 30000000,
+    "ruta": {
+     "linea": "4102"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4102",
+    "anios": [
+     13367200,
+     13798400,
+     14252000,
+     14582400
+    ],
+    "total": 56000000,
+    "ruta": {
+     "linea": "4102"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4102",
+    "anios": [
+     14400000,
+     15000000,
+     15000000,
+     15600000
+    ],
+    "total": 60000000,
+    "ruta": {
+     "linea": "4102"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4502",
+    "anios": [
+     7161000,
+     7392000,
+     7635000,
+     7812000
+    ],
+    "total": 30000000,
+    "ruta": {
+     "linea": "4502"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4502",
+    "anios": [
+     9548000,
+     9856000,
+     10180000,
+     10416000
+    ],
+    "total": 40000000,
+    "ruta": {
+     "linea": "4502"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "4501",
+    "anios": [
+     9548000,
+     9856000,
+     10180000,
+     10416000
+    ],
+    "total": 40000000,
+    "ruta": {
+     "linea": "4502",
+     "sector": "4501"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "4502",
+    "anios": [
+     9548000,
+     9856000,
+     10180000,
+     10416000
+    ],
+    "total": 40000000,
+    "ruta": {
+     "linea": "4502",
+     "sector": "4501",
+     "programa": "4502"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4502",
+    "anios": [
+     14322000,
+     14784000,
+     15270000,
+     15624000
+    ],
+    "total": 60000000,
+    "ruta": {
+     "linea": "4502"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4104",
+    "anios": [
+     242453274,
+     418646154,
+     885461179,
+     1506086539
+    ],
+    "total": 3052647146,
+    "ruta": {
+     "linea": "4104"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4104",
+    "anios": [
+     57185239,
+     98742244,
+     208845640,
+     355226875
+    ],
+    "total": 719999998,
+    "ruta": {
+     "linea": "4104"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4101",
+    "anios": [
+     9548000,
+     9856000,
+     10180000,
+     10416000
+    ],
+    "total": 40000000,
+    "ruta": {
+     "linea": "4101"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4101",
+    "anios": [
+     19200000,
+     20000000,
+     20000000,
+     20800000
+    ],
+    "total": 80000000,
+    "ruta": {
+     "linea": "4101"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4103",
+    "anios": [
+     9600000,
+     10000000,
+     10000000,
+     10400000
+    ],
+    "total": 40000000,
+    "ruta": {
+     "linea": "4103"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4502",
+    "anios": [
+     30076200,
+     31046400,
+     32067000,
+     32810400
+    ],
+    "total": 126000000,
+    "ruta": {
+     "linea": "4502"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4502",
+    "anios": [
+     28644000,
+     29568000,
+     30540000,
+     31248000
+    ],
+    "total": 120000000,
+    "ruta": {
+     "linea": "4502"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4502",
+    "anios": [
+     90706000,
+     93632000,
+     96710000,
+     98952000
+    ],
+    "total": 380000000,
+    "ruta": {
+     "linea": "4502"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1702",
+    "anios": [
+     19096000,
+     19712000,
+     20360000,
+     20832000
+    ],
+    "total": 80000000,
+    "ruta": {
+     "linea": "1702"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1702",
+    "anios": [
+     23870000,
+     24640000,
+     25450000,
+     26040000
+    ],
+    "total": 100000000,
+    "ruta": {
+     "linea": "1702"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1702",
+    "anios": [
+     11935000,
+     12320000,
+     12725000,
+     13020000
+    ],
+    "total": 50000000,
+    "ruta": {
+     "linea": "1702"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "1702",
+    "anios": [
+     11935000,
+     12320000,
+     12725000,
+     13020000
+    ],
+    "total": 50000000,
+    "ruta": {
+     "linea": "1702",
+     "sector": "1702"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1702",
+    "anios": [
+     28644000,
+     29568000,
+     30540000,
+     31248000
+    ],
+    "total": 120000000,
+    "ruta": {
+     "linea": "1702"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1702",
+    "anios": [
+     21483000,
+     22176000,
+     22905000,
+     23436000
+    ],
+    "total": 90000000,
+    "ruta": {
+     "linea": "1702"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1702",
+    "anios": [
+     16709000,
+     17248000,
+     17815000,
+     18228000
+    ],
+    "total": 70000000,
+    "ruta": {
+     "linea": "1702"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1702",
+    "anios": [
+     9548000,
+     9856000,
+     10180000,
+     10416000
+    ],
+    "total": 40000000,
+    "ruta": {
+     "linea": "1702"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1708",
+    "anios": [
+     16709000,
+     17248000,
+     17815000,
+     18228000
+    ],
+    "total": 70000000,
+    "ruta": {
+     "linea": "1708"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4501",
+    "anios": [
+     38192000,
+     39424000,
+     40720000,
+     41664000
+    ],
+    "total": 160000000,
+    "ruta": {
+     "linea": "4501"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3202",
+    "anios": [
+     190593000,
+     199179000,
+     206631000,
+     213597000
+    ],
+    "total": 810000000,
+    "ruta": {
+     "linea": "3202"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3202",
+    "anios": [
+     336877873,
+     333970000,
+     336690000,
+     349470000
+    ],
+    "total": 1357007873,
+    "ruta": {
+     "linea": "3202"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3202",
+    "anios": [
+     129415000,
+     135245000,
+     140305000,
+     145035000
+    ],
+    "total": 550000000,
+    "ruta": {
+     "linea": "3202"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3202",
+    "anios": [
+     117650000,
+     122950000,
+     127550000,
+     131850000
+    ],
+    "total": 500000000,
+    "ruta": {
+     "linea": "3202"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3202",
+    "anios": [
+     155298000,
+     162294000,
+     168366000,
+     174042000
+    ],
+    "total": 660000000,
+    "ruta": {
+     "linea": "3202"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3203",
+    "anios": [
+     351422072,
+     365818184,
+     378960299,
+     390480385
+    ],
+    "total": 1486680940,
+    "ruta": {
+     "linea": "3203"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3206",
+    "anios": [
+     47060000,
+     49180000,
+     51020000,
+     52740000
+    ],
+    "total": 200000000,
+    "ruta": {
+     "linea": "3206"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3206",
+    "anios": [
+     9412000,
+     9836000,
+     10204000,
+     10548000
+    ],
+    "total": 40000000,
+    "ruta": {
+     "linea": "3206"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "3208",
+    "anios": [
+     9412000,
+     9836000,
+     10204000,
+     10548000
+    ],
+    "total": 40000000,
+    "ruta": {
+     "linea": "3206",
+     "sector": "3208"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3208",
+    "anios": [
+     18824000,
+     19672000,
+     20408000,
+     21096000
+    ],
+    "total": 80000000,
+    "ruta": {
+     "linea": "3208"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4003",
+    "anios": [
+     28236000,
+     29508000,
+     30612000,
+     31644000
+    ],
+    "total": 120000000,
+    "ruta": {
+     "linea": "4003"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4003",
+    "anios": [
+     35295000,
+     36885000,
+     38265000,
+     39555000
+    ],
+    "total": 150000000,
+    "ruta": {
+     "linea": "4003"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "4503",
+    "anios": [
+     35805000,
+     36960000,
+     38175000,
+     39060000
+    ],
+    "total": 150000000,
+    "ruta": {
+     "linea": "4003",
+     "sector": "4503"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4503",
+    "anios": [
+     405159233,
+     482387905,
+     548542894,
+     825590909
+    ],
+    "total": 2261680941,
+    "ruta": {
+     "linea": "4503"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4503",
+    "anios": [
+     99846048,
+     105267359,
+     109237296,
+     112524233
+    ],
+    "total": 426874936,
+    "ruta": {
+     "linea": "4503"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2102",
+    "anios": [
+     3529500,
+     3688500,
+     3826500,
+     3955500
+    ],
+    "total": 15000000,
+    "ruta": {
+     "linea": "2102"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2102",
+    "anios": [
+     35805000,
+     36960000,
+     38175000,
+     39060000
+    ],
+    "total": 150000000,
+    "ruta": {
+     "linea": "2102"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3502",
+    "anios": [
+     9548000,
+     9856000,
+     10180000,
+     10416000
+    ],
+    "total": 40000000,
+    "ruta": {
+     "linea": "3502"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "3502",
+    "anios": [
+     9548000,
+     9856000,
+     10180000,
+     10416000
+    ],
+    "total": 40000000,
+    "ruta": {
+     "linea": "3502",
+     "sector": "3502"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3202",
+    "anios": [
+     188240000,
+     196720000,
+     204080000,
+     210960000
+    ],
+    "total": 800000000,
+    "ruta": {
+     "linea": "3202"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3502",
+    "anios": [
+     16709000,
+     17248000,
+     17815000,
+     18228000
+    ],
+    "total": 70000000,
+    "ruta": {
+     "linea": "3502"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3502",
+    "anios": [
+     9548000,
+     9856000,
+     10180000,
+     10416000
+    ],
+    "total": 40000000,
+    "ruta": {
+     "linea": "3502"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3602",
+    "anios": [
+     14322000,
+     14784000,
+     15270000,
+     15624000
+    ],
+    "total": 60000000,
+    "ruta": {
+     "linea": "3602"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3906",
+    "anios": [
+     11935000,
+     12320000,
+     12725000,
+     13020000
+    ],
+    "total": 50000000,
+    "ruta": {
+     "linea": "3906"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "3906",
+    "anios": [
+     11935000,
+     12320000,
+     12725000,
+     13020000
+    ],
+    "total": 50000000,
+    "ruta": {
+     "linea": "3906",
+     "sector": "3906"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4001",
+    "anios": [
+     619385479,
+     669064036,
+     726049750,
+     1085500733
+    ],
+    "total": 3099999998,
+    "ruta": {
+     "linea": "4001"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4001",
+    "anios": [
+     964086364,
+     538390863,
+     592251195,
+     845271576
+    ],
+    "total": 2939999998,
+    "ruta": {
+     "linea": "4001"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4001",
+    "anios": [
+     17186400,
+     17740800,
+     18324000,
+     18748800
+    ],
+    "total": 72000000,
+    "ruta": {
+     "linea": "4001"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2201",
+    "anios": [
+     1291312732,
+     1628444439,
+     1912800432,
+     3167442395
+    ],
+    "total": 7999999998,
+    "ruta": {
+     "linea": "2201"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2201",
+    "anios": [
+     138763000,
+     170585406,
+     197448706,
+     313202886
+    ],
+    "total": 819999998,
+    "ruta": {
+     "linea": "2201"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2201",
+    "anios": [
+     80105818,
+     99212246,
+     115336912,
+     185345021
+    ],
+    "total": 479999997,
+    "ruta": {
+     "linea": "2201"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1906",
+    "anios": [
+     11935000,
+     12320000,
+     12725000,
+     13020000
+    ],
+    "total": 50000000,
+    "ruta": {
+     "linea": "1906"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3301",
+    "anios": [
+     121580909,
+     151854394,
+     177396260,
+     289168435
+    ],
+    "total": 739999998,
+    "ruta": {
+     "linea": "3301"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4302",
+    "anios": [
+     4800000,
+     5000000,
+     5000000,
+     5200000
+    ],
+    "total": 20000000,
+    "ruta": {
+     "linea": "4302"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4301",
+    "anios": [
+     72000000,
+     75000000,
+     75000000,
+     78000000
+    ],
+    "total": 300000000,
+    "ruta": {
+     "linea": "4301"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4301",
+    "anios": [
+     340326319,
+     434747763,
+     514505678,
+     870420237
+    ],
+    "total": 2159999997,
+    "ruta": {
+     "linea": "4301"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4301",
+    "anios": [
+     35805000,
+     36960000,
+     38175000,
+     39060000
+    ],
+    "total": 150000000,
+    "ruta": {
+     "linea": "4301"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4301",
+    "anios": [
+     9600000,
+     10000000,
+     10000000,
+     10400000
+    ],
+    "total": 40000000,
+    "ruta": {
+     "linea": "4301"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4302",
+    "anios": [
+     267206654,
+     318394454,
+     362258542,
+     546140347
+    ],
+    "total": 1493999997,
+    "ruta": {
+     "linea": "4302"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4301",
+    "anios": [
+     892663640,
+     1134023206,
+     1334075867,
+     2239237285
+    ],
+    "total": 5599999998,
+    "ruta": {
+     "linea": "4301"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4502",
+    "anios": [
+     23870000,
+     24640000,
+     25450000,
+     26040000
+    ],
+    "total": 100000000,
+    "ruta": {
+     "linea": "4502"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4502",
+    "anios": [
+     4774000,
+     4928000,
+     5090000,
+     5208000
+    ],
+    "total": 20000000,
+    "ruta": {
+     "linea": "4502"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3502",
+    "anios": [
+     11935000,
+     12320000,
+     12725000,
+     13020000
+    ],
+    "total": 50000000,
+    "ruta": {
+     "linea": "3502"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4599",
+    "anios": [
+     414792320,
+     405759571,
+     399718111,
+     415294317
+    ],
+    "total": 1635564319,
+    "ruta": {
+     "linea": "4599"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4002",
+    "anios": [
+     797196847,
+     965983610,
+     1107243188,
+     940845635
+    ],
+    "total": 3811269280,
+    "ruta": {
+     "linea": "4002"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4002",
+    "anios": [
+     100132273,
+     124015308,
+     144171141,
+     231681277
+    ],
+    "total": 599999999,
+    "ruta": {
+     "linea": "4002"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4002",
+    "anios": [
+     9633975,
+     9944748,
+     10271665,
+     10509790
+    ],
+    "total": 40360178,
+    "ruta": {
+     "linea": "4002"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2402",
+    "anios": [
+     500000000,
+     0,
+     0,
+     0
+    ],
+    "total": 500000000,
+    "ruta": {
+     "linea": "2402"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2402",
+    "anios": [
+     6304289017,
+     7491323883,
+     8723661357,
+     12802024261
+    ],
+    "total": 35321298518,
+    "ruta": {
+     "linea": "2402"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2402",
+    "anios": [
+     66640909,
+     77270123,
+     99964456,
+     121124510
+    ],
+    "total": 364999998,
+    "ruta": {
+     "linea": "2402"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2402",
+    "anios": [
+     135336734,
+     166205368,
+     3192443522,
+     306014374
+    ],
+    "total": 3799999998,
+    "ruta": {
+     "linea": "2402"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2402",
+    "anios": [
+     240000000,
+     250000000,
+     250000000,
+     260000000
+    ],
+    "total": 1000000000,
+    "ruta": {
+     "linea": "2402"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2402",
+    "anios": [
+     2000000000,
+     0,
+     0,
+     0
+    ],
+    "total": 2000000000,
+    "ruta": {
+     "linea": "2402"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2409",
+    "anios": [
+     52879572,
+     55082888,
+     55082888,
+     57286203
+    ],
+    "total": 220331551,
+    "ruta": {
+     "linea": "2409"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2402",
+    "anios": [
+     201204546,
+     248850616,
+     287322282,
+     462622554
+    ],
+    "total": 1199999998,
+    "ruta": {
+     "linea": "2402"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4003",
+    "anios": [
+     57600000,
+     60000000,
+     60000000,
+     62400000
+    ],
+    "total": 240000000,
+    "ruta": {
+     "linea": "4003"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4003",
+    "anios": [
+     2643942777,
+     3431684400,
+     4095613018,
+     7086359804
+    ],
+    "total": 17257599999,
+    "ruta": {
+     "linea": "4003"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4003",
+    "anios": [
+     254400000,
+     265000000,
+     265000000,
+     275600000
+    ],
+    "total": 1060000000,
+    "ruta": {
+     "linea": "4003"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4003",
+    "anios": [
+     318426527,
+     331694299,
+     331694299,
+     344962071
+    ],
+    "total": 1326777196,
+    "ruta": {
+     "linea": "4003"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4003",
+    "anios": [
+     328031438,
+     341573323,
+     342914272,
+     356166222
+    ],
+    "total": 1368685255,
+    "ruta": {
+     "linea": "4003"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4003",
+    "anios": [
+     168878360,
+     177611404,
+     182951981,
+     188813748
+    ],
+    "total": 718255493,
+    "ruta": {
+     "linea": "4003"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4003",
+    "anios": [
+     11765000,
+     12295000,
+     12755000,
+     13185000
+    ],
+    "total": 50000000,
+    "ruta": {
+     "linea": "4003"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2102",
+    "anios": [
+     269557278,
+     284375831,
+     297716982,
+     309386984
+    ],
+    "total": 1161037075,
+    "ruta": {
+     "linea": "2102"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2102",
+    "anios": [
+     60000000,
+     60000000,
+     60000000,
+     60000000
+    ],
+    "total": 240000000,
+    "ruta": {
+     "linea": "2102"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2102",
+    "anios": [
+     90000000,
+     90000000,
+     90000000,
+     90000000
+    ],
+    "total": 360000000,
+    "ruta": {
+     "linea": "2102"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

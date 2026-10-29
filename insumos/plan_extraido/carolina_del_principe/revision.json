@@ -1,0 +1,296 @@
+[
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 106,
+  "valor": "Fortalecimiento a la gestión y dirección de la administración pública territorial.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 1
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 112,
+  "valor": "Promoción y acceso efectivo a procesos culturales y artísticos.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 2
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 114,
+  "valor": "Gestión, protección y salvaguardia del patrimonio cultural colombiano.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 3
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 126,
+  "valor": "Inclusión social y productiva para la población en situación de vulnerabilidad.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 4
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 135,
+  "valor": "Fortalecimiento del desempeño ambiental de los sectores productivos.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 5
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 136,
+  "valor": "Conservación de la biodiversidad y sus servicios ecosistémicos.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 6
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 137,
+  "valor": "Ordenamiento territorial y desarrollo urbano.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 7
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 140,
+  "valor": "Acceso de la población a los servicios de agua potable y saneamiento básico",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 8
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 143,
+  "valor": "Generación y formalización del empleo",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 9
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 145,
+  "valor": "Atención, asistencia y reparación integral a las víctimas",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 10
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 147,
+  "valor": "Inclusión social y productiva para la población en situación de vulnerabilidad",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 11
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 151,
+  "valor": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 12
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 152,
+  "valor": "Ordenamiento territorial y desarrollo urbano",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 13
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 153,
+  "valor": "Generación de la información geográfica del territorio nacional",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 14
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 155,
+  "valor": "Ordenamiento ambiental territorial",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 15
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 156,
+  "valor": "Gestión del riesgo de desastres y emergencias",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 16
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 161,
+  "valor": "Conservación de la biodiversidad y sus servicios ecosistémicos",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 17
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 163,
+  "valor": "Gestión integral del recurso hídrico",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 18
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 165,
+  "valor": "Gestión del cambio climático para un desarrollo bajo en carbono y resiliente al clima",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 19
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 171,
+  "valor": "Productividad y competitividad de las empresas colombianas",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 20
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 180,
+  "valor": "Inclusión productiva de pequeños productores rurales",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 21
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 188,
+  "valor": "Servicios financieros y gestión del riesgo para las actividades agropecuarias y rurales",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 22
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 189,
+  "valor": "Ordenamiento social y uso productivo del territorio rural",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 23
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 190,
+  "valor": "Ciencia, tecnología e innovación agropecuaria",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 24
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 192,
+  "valor": "Acceso a soluciones de vivienda",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 25
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 198,
+  "valor": "Infraestructura red vial regional",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 26
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 200,
+  "valor": "Seguridad de transporte",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 27
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 207,
+  "valor": "Fomento a vocaciones y formación, generación, uso y apropiación social del conocimiento de la ciencia, tecnología e innovación.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 28
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 220,
+  "valor": "Productividad y competitividad de las empresas colombianas.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 29
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 224,
+  "valor": "Consolidación productiva del sector de energía eléctrica.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 30
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 227,
+  "valor": "Facilitar el acceso y uso de las tecnologías de la información y las comunicaciones en todo el territorio nacional.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 31
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 231,
+  "valor": "Promoción de los métodos de resolución de conflictos",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 32
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 243,
+  "valor": "Formación para el trabajo",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 33
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 248,
+  "valor": "Seguridad de Transporte",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 34
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 436,
+  "valor": "Gestión y Vigilancia de los Riesgos Sanitarios y Ambientales",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 35
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Programa Presupuestal",
+  "sector": "Sector",
+  "correccion": null,
+  "id": 36
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niños y adolescentes",
+  "sector": "rmera infancia, infancia, adolescencia, juventud y familia",
+  "correccion": null,
+  "id": 37
+ }
+]

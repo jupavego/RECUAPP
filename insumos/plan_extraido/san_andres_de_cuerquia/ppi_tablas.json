@@ -1,0 +1,277 @@
+[
+ {
+  "pagina": 515,
+  "cabecera": "Nombre de Concepto (Cifras expresadas en millones de pesos)",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "INGRESOS TOTALES (sin financiación)",
+    "anios": [
+     13200,
+     18677,
+     19611,
+     20592
+    ],
+    "total": 72080
+   },
+   {
+    "etiqueta": "INGRESOS CORRIENTES",
+    "anios": [
+     13200,
+     18677,
+     19611,
+     20592
+    ],
+    "total": 72080
+   },
+   {
+    "etiqueta": "TRIBUTARIOS",
+    "anios": [
+     1437,
+     1509,
+     1584,
+     1664
+    ],
+    "total": 6194
+   },
+   {
+    "etiqueta": "Impuesto sobre vehículos automotores",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Impuesto predial unificado",
+    "anios": [
+     320,
+     336,
+     353,
+     370
+    ],
+    "total": 1379
+   },
+   {
+    "etiqueta": "Impuesto deindustria y comercio",
+    "anios": [
+     520,
+     546,
+     573,
+     602
+    ],
+    "total": 2241
+   },
+   {
+    "etiqueta": "Impuesto de registro",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Impuesto al consumo de licores, vinos, aperitivos y similares",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 521,
+  "cabecera": "CONCEPTO DE INGRESOS",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "INGRESOS TOTALES",
+    "anios": [
+     14905749826,
+     15466508173,
+     16004950119,
+     16610327025
+    ],
+    "total": 62987535143
+   },
+   {
+    "etiqueta": "TRIBUTARIOS",
+    "anios": [
+     1437000000,
+     1508850000,
+     1584292500,
+     1663507125
+    ],
+    "total": 6193649625
+   },
+   {
+    "etiqueta": "NO TRIBUTARIOS",
+    "anios": [
+     4242292614,
+     4454407245,
+     4677127607,
+     4910983987
+    ],
+    "total": 18284811453
+   },
+   {
+    "etiqueta": "DEL GOBIERNO NACONAL",
+    "anios": [
+     9226457212,
+     9503250928,
+     9743530012,
+     10035835912
+    ],
+    "total": 38509074065
+   },
+   {
+    "etiqueta": "DE REGALIAS",
+    "anios": [
+     1333279284,
+     1154076523,
+     1069194489,
+     1123441688
+    ],
+    "total": 4679991983
+   }
+  ],
+  "ncols": 4,
+  "financiero": true
+ },
+ {
+  "pagina": 521,
+  "cabecera": "CUERQUIA GASTOS E INVERSION",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "FUNCIONAMIENTO",
+    "anios": [
+     191838,
+     211022,
+     232124,
+     255337
+    ],
+    "total": 890323
+   },
+   {
+    "etiqueta": "PUBLICA",
+    "anios": [
+     605014,
+     695767,
+     800132,
+     920152
+    ],
+    "total": 3021
+   }
+  ],
+  "ncols": 1,
+  "financiero": true
+ },
+ {
+  "pagina": 522,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "INVERSION",
+    "anios": [
+     11608,
+     11809,
+     11947,
+     12106
+    ],
+    "total": 47471
+   },
+   {
+    "etiqueta": "INVERSION SGR",
+    "anios": [
+     1333,
+     1154,
+     1069,
+     1123
+    ],
+    "total": 4679
+   },
+   {
+    "etiqueta": "TOTAL, INVERSI ON",
+    "anios": [
+     12963,
+     13016,
+     13230,
+     52151
+    ],
+    "total": 91360
+   }
+  ],
+  "ncols": 1,
+  "financiero": false
+ },
+ {
+  "pagina": 523,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "1707",
+    "anios": [
+     17000,
+     25000,
+     16000,
+     12000
+    ],
+    "total": 70000000
+   },
+   {
+    "etiqueta": "1709",
+    "anios": [
+     62000,
+     74000,
+     71000,
+     70000
+    ],
+    "total": 277000
+   },
+   {
+    "etiqueta": "Producti vidad y competiti vidad de las empresas colombia",
+    "anios": [
+     81000,
+     96000,
+     67000,
+     315000
+    ],
+    "total": 559000
+   },
+   {
+    "etiqueta": "4502",
+    "anios": [
+     92000,
+     108000,
+     123500,
+     129000
+    ],
+    "total": 452500
+   },
+   {
+    "etiqueta": "3599",
+    "anios": [
+     5000,
+     5000000,
+     5000000,
+     3000000
+    ],
+    "total": 18000000
+   }
+  ],
+  "ncols": 1,
+  "financiero": false
+ }
+]

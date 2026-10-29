@@ -34,6 +34,22 @@ las sumas**: una fila es padre de las siguientes cuando estas suman su valor. Sa
 ruta de cada fila). Si el plan no trae el anexo de Girardota, los nombres del PPI sirven para cruzar los
 indicadores y heredar su línea y sector. Un padre cuyos hijos no suman exacto queda sin hijos (no se adivina).
 
+## Revisión humana de una muestra (la verdad con que se mide)
+```bash
+python -m plan_desarrollo muestra --plan itagui "<pdf>" insumos/plan_extraido/itagui [--plan ...] -n 20 -o insumos/plan_extraido/revision_muestra.html
+```
+Abrir el HTML, marcar cada fila como correcta/incorrecta comparando con la página del PDF (hay enlace) y descargar
+`muestra_revisada.json`. Luego `python -m plan_desarrollo verificar muestra_revisada.json` lo guarda en `golden/`, y
+`evaluar-verificadas <salida> <plan>` dice cuántas filas correctas siguen saliendo iguales y cuántas incorrectas
+siguen saliendo tras un cambio de código.
+
+### Definir las categorías con datos
+`python -m plan_desarrollo categorias <carpetas...>` mide, por plan, qué campos existen y con qué cobertura (20 planes
+hasta ahora). La página de revisión (`muestra ... --cobertura <todas las carpetas>`) muestra esa evidencia y deja marcar
+cada categoría como obligatoria / recomendada / opcional / descartar, además de decisiones generales (nivel del PPI,
+indicadores de resultado, alineación ODS/PND/PDD, nombres de niveles). `verificar` guarda las decisiones en
+`conocimiento/categorias.json`. Las cifras no distinguen "el plan no lo trae" de "el parser no lo leyó".
+
 ## Qué es automático
 - Conversión por página con caché, detección de rangos por contenido, parseo de tablas con texto.
 - Reparación de ligaduras/glifos perdidos con el vocabulario del propio plan.

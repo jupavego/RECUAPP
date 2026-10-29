@@ -1,0 +1,430 @@
+[
+ {
+  "pagina": 250,
+  "cabecera": "Código de la línea estratégica",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Pensando en nuestra gente",
+    "anios": [
+     988626605,
+     1183452163,
+     1411545445,
+     1531174218
+    ],
+    "total": 5114798431
+   },
+   {
+    "etiqueta": "Pensando en nuestra gente",
+    "anios": [
+     2889022641,
+     2992834400,
+     2993919110,
+     3000568482
+    ],
+    "total": 11876344633
+   },
+   {
+    "etiqueta": "Pensando en nuestra gente",
+    "anios": [
+     31940625,
+     0,
+     0,
+     35000000
+    ],
+    "total": 66940625
+   },
+   {
+    "etiqueta": "Pensando en nuestra gente",
+    "anios": [
+     529138528,
+     348600973,
+     535600973,
+     578600973
+    ],
+    "total": 1991941447
+   }
+  ],
+  "ncols": 7,
+  "financiero": false
+ },
+ {
+  "pagina": 270,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "INVERSION",
+    "anios": [
+     460079977,
+     399541021,
+     370154881,
+     390147157
+    ],
+    "total": 1619923036
+   },
+   {
+    "etiqueta": "Asignaciónpara la Paz",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignaciones Directas",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "20% Asignaciones Directas",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "5% Asignaciones Directas Anticipadas",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignaciónpara la Inversión Regional",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Departamentos",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Regiones",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignaciónpara la Inversión Local",
+    "anios": [
+     460079977,
+     399541021,
+     370154881,
+     390147157
+    ],
+    "total": 1619923036
+   },
+   {
+    "etiqueta": "Municipios máspobres",
+    "anios": [
+     460079977,
+     399541021,
+     370154881,
+     390147157
+    ],
+    "total": 1619923036
+   },
+   {
+    "etiqueta": "Destinaciónpara medio ambienteydesarrollo sostenible",
+    "anios": [
+     61343997,
+     53272136,
+     49353984,
+     52019621
+    ],
+    "total": 215989738
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     398735980,
+     346268885,
+     320800897,
+     338127536
+    ],
+    "total": 1403933298
+   },
+   {
+    "etiqueta": "Comunidades Étnicas",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Comunidades Indígenas",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Destinaciónpara medio ambienteydesarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Comunidades NARP",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Destinaciónpara medio ambienteydesarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Comunidades Rrom",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Destinaciónpara medio ambienteydesarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignaciónpara Ciencia,Tecnología e Innovación",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignaciónpara Inversión en Ciencia,Tecnología e Innovación Ambiental",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto de inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación Ambiental",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Municipios Río MagdalenayCanal Dique",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "AHORRO",
+    "anios": [
+     20674717,
+     17875221,
+     16568054,
+     17305932
+    ],
+    "total": 72423924
+   },
+   {
+    "etiqueta": "Fondo de AhorroyEstabilización(Ahorro)",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Fondo Ahorro Pensional Territorial(FONPET)",
+    "anios": [
+     20674717,
+     17875221,
+     16568054,
+     17305932
+    ],
+    "total": 72423924
+   },
+   {
+    "etiqueta": "OTROS",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Funcionamiento,operatividadyfiscalización",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Sistema de Seguimiento,ControlyEvaluación(SSEC)",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Contraloría",
+    "anios": [
+     70401205851,
+     60858195556,
+     56382090798,
+     58862923139
+    ],
+    "total": 246504415344
+   },
+   {
+    "etiqueta": "Procuraduría",
+    "anios": [
+     14080241171,
+     12171639111,
+     11276418160,
+     11772584628
+    ],
+    "total": 49300883070
+   },
+   {
+    "etiqueta": "DNP",
+    "anios": [
+     56320964680,
+     48686556445,
+     45105672638,
+     47090338511
+    ],
+    "total": 197203532274
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     480754694,
+     417416242,
+     386722935,
+     407453089
+    ],
+    "total": 1692346960
+   }
+  ],
+  "ncols": 1,
+  "financiero": true
+ }
+]

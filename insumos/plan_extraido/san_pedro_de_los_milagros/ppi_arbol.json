@@ -1,0 +1,103 @@
+[
+ {
+  "paginas": [
+   318
+  ],
+  "cabecera": "Concepto",
+  "unidad": "millones",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   35712,
+   36786,
+   37888,
+   39026
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Predial",
+    "anios": [
+     5171,
+     5327,
+     5486,
+     5651
+    ],
+    "total": 21635,
+    "ruta": {
+     "linea": "Predial"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Industria Y Comercio",
+    "anios": [
+     9021,
+     9292,
+     9571,
+     9858
+    ],
+    "total": 37742,
+    "ruta": {
+     "linea": "Industria Y Comercio"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Sobretasas A La Gasolina",
+    "anios": [
+     1369,
+     1410,
+     1452,
+     1496
+    ],
+    "total": 5727,
+    "ruta": {
+     "linea": "Sobretasas A La Gasolina"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Otros",
+    "anios": [
+     2295,
+     2364,
+     2435,
+     2508
+    ],
+    "total": 9602,
+    "ruta": {
+     "linea": "Otros"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total",
+    "anios": [
+     17856,
+     18393,
+     18944,
+     19513
+    ],
+    "total": 74706,
+    "ruta": {
+     "linea": "Total"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

@@ -1,0 +1,194 @@
+[
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 48,
+  "valor": "Infraestructura red vial regional",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 1
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 62,
+  "valor": "Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 2
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 89,
+  "valor": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niños y adolescentes",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 3
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 99,
+  "valor": "\"Avanzando hacia la Igualdad de Género y la Diversidad\"",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 4
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 115,
+  "valor": "Fomento del desarrollo de aplicaciones, software y contenidos para impulsar la apropiación de las Tecnologías de la Información y las Comunicaciones (TIC)",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 5
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 117,
+  "valor": "Consolidación de una institucionalidad habilitante para la Ciencia Tecnología e Innovación (CTI).",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 6
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 126,
+  "valor": "Gestión, Protección Y Salvaguardia Del Patrimonio Cultural Colombiano",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 7
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 187,
+  "valor": "Seguridad de transporte",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 8
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 198,
+  "valor": "4502 Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 9
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 204,
+  "valor": "4599 Fortalecimiento A La Gestión Y Dirección De La Administración Pública Territorial.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 10
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "1.1 Aseguramiento y prestación integral de servicios de salud- Infraestructurapara la Salud",
+  "sector": null,
+  "correccion": null,
+  "id": 11
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "1.2 Acceso al servicio público domiciliario degas combustible",
+  "sector": null,
+  "correccion": null,
+  "id": 12
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "1.3 Calidad, cobertura y fortalecimiento de la educación inicial- Infraestructura Educativa",
+  "sector": null,
+  "correccion": null,
+  "id": 13
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "1.4 Infraestructura red vial regional - Infraestructura para el Transporte",
+  "sector": null,
+  "correccion": null,
+  "id": 14
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "1.6 Ordenamiento territorial y desarrollo urbano- Infraestructura de espacio publico",
+  "sector": null,
+  "correccion": null,
+  "id": 15
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Subtotal",
+  "sector": null,
+  "correccion": null,
+  "id": 16
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "2.2.4. Atención integral de la población en situación de permanente de desprotección socialy/ familiar",
+  "sector": null,
+  "correccion": null,
+  "id": 17
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "2.3.3.: Acceso a la alfabetización de lapoblación iletrada.",
+  "sector": "2.3.3.: Acceso a la alfabetización de lapoblación iletrada.",
+  "correccion": null,
+  "id": 18
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "2.3.5. Consolidación de una institucionalidad habilitantepara",
+  "sector": null,
+  "correccion": null,
+  "id": 19
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "3.2 Ambiente",
+  "sector": null,
+  "correccion": null,
+  "id": 20
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "3.2.4 Gestión Integral del recurso Hídrico",
+  "sector": null,
+  "correccion": null,
+  "id": 21
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "3.2.5 Ordenamiento Territorial y Desarrollo Urbano",
+  "sector": null,
+  "correccion": null,
+  "id": 22
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "3.3.1. Productividad y competitividad de las empresas Briceñitas",
+  "sector": null,
+  "correccion": null,
+  "id": 23
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "SUBTOTAL",
+  "sector": null,
+  "correccion": null,
+  "id": 24
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "4.3.3. Vías para la vida",
+  "sector": null,
+  "correccion": null,
+  "id": 25
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "4.3.2 Fortalecimiento del buen gobiernopara el respetoy",
+  "sector": null,
+  "correccion": null,
+  "id": 26
+ }
+]

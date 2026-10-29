@@ -1,10 +1,10 @@
 # Reporte de extraccion
 - Capitulo estrategico detectado: paginas 483-672
-- Indicadores de producto: 547 {'texto': 547} (sin cruce claro con el PPI: 90)
+- Indicadores de producto: 567 {'texto': 567} (sin cruce claro con el PPI: 94)
 - Programas en el PPI: 170; con indicadores: 46
 - Sectores del resumen PPI: 0; cuadran con la suma de programas: 0
 - Filas del Anexo a revisar a mano: 0
-- Paginas-imagen candidatas sin leer: 74 [483, 484, 485, 486, 487, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 509, 510, 511, 512, 536, 547, 550, 553, 567, 571, 575, 584, 586, 592, 601, 606, 615, 617, 618, 620, 621, 622, 627, 641, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 667, 668, 669, 670, 671]
+- Paginas-imagen candidatas sin leer: 73 [483, 484, 485, 486, 487, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 509, 510, 511, 512, 536, 547, 550, 553, 567, 575, 584, 586, 592, 601, 606, 615, 617, 618, 620, 621, 622, 627, 641, 645, 646, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 667, 668, 669, 670, 671]
 
 ## Programas del PPI sin indicadores extraidos
 - ENVIGADO CON EQUIDAD Y CIERRE DE BRECHAS (None)

@@ -1,0 +1,339 @@
+[
+ {
+  "pagina": 161,
+  "cabecera": "NOMBRE DE CONCEPTO",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Tributarios",
+    "anios": [
+     3879,
+     4461,
+     5130,
+     5899
+    ],
+    "total": 19369
+   },
+   {
+    "etiqueta": "Impuestopredial unificado",
+    "anios": [
+     1402,
+     1612,
+     1854,
+     2132
+    ],
+    "total": 7000
+   },
+   {
+    "etiqueta": "Impuesto de industriaycomercio",
+    "anios": [
+     906,
+     1042,
+     1198,
+     1378
+    ],
+    "total": 4524
+   },
+   {
+    "etiqueta": "Sobretasa a lagasolina",
+    "anios": [
+     550,
+     633,
+     727,
+     836
+    ],
+    "total": 2746
+   },
+   {
+    "etiqueta": "Estampillas",
+    "anios": [
+     370,
+     426,
+     489,
+     563
+    ],
+    "total": 1848
+   },
+   {
+    "etiqueta": "Impuesto de alumbradopúblico",
+    "anios": [
+     200,
+     230,
+     265,
+     304
+    ],
+    "total": 999
+   },
+   {
+    "etiqueta": "Resto ingresos tributarios",
+    "anios": [
+     451,
+     519,
+     596,
+     686
+    ],
+    "total": 2252
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 163,
+  "cabecera": "NOMBRE DECONCEPTO",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "No Tributarios",
+    "anios": [
+     24649,
+     27958,
+     32911,
+     35129
+    ],
+    "total": 120647
+   },
+   {
+    "etiqueta": "Contribuciones",
+    "anios": [
+     2055,
+     2363,
+     2718,
+     3125
+    ],
+    "total": 10261
+   },
+   {
+    "etiqueta": "Multas,sanciones e intereses de mora",
+    "anios": [
+     211,
+     243,
+     279,
+     321
+    ],
+    "total": 1054
+   },
+   {
+    "etiqueta": "Venta de bienesyservicios",
+    "anios": [
+     75,
+     86,
+     99,
+     114
+    ],
+    "total": 374
+   },
+   {
+    "etiqueta": "Participaciónyderechospor monopolio",
+    "anios": [
+     170,
+     196,
+     225,
+     259
+    ],
+    "total": 850
+   },
+   {
+    "etiqueta": "SGP Educación",
+    "anios": [
+     283,
+     325,
+     374,
+     430
+    ],
+    "total": 1412
+   },
+   {
+    "etiqueta": "SGP Salud",
+    "anios": [
+     4184,
+     4811,
+     5533,
+     6363
+    ],
+    "total": 20891
+   },
+   {
+    "etiqueta": "SGP Aguapotableysaneamiento básico",
+    "anios": [
+     996,
+     1146,
+     1317,
+     1515
+    ],
+    "total": 4974
+   },
+   {
+    "etiqueta": "SGP De libre destinación municipios categorías 4, 5y6",
+    "anios": [
+     1643,
+     1889,
+     2173,
+     2499
+    ],
+    "total": 8204
+   },
+   {
+    "etiqueta": "SGP Propósitogeneral",
+    "anios": [
+     1920,
+     2208,
+     2539,
+     2920
+    ],
+    "total": 9587
+   },
+   {
+    "etiqueta": "SGP Asignaciones especiales",
+    "anios": [
+     76,
+     87,
+     101,
+     116
+    ],
+    "total": 380
+   },
+   {
+    "etiqueta": "Participación en impuestos",
+    "anios": [
+     36,
+     41,
+     48,
+     55
+    ],
+    "total": 180
+   },
+   {
+    "etiqueta": "A entidades territoriales distintas de participacionesycompensaciones",
+    "anios": [
+     5197,
+     6205,
+     7020,
+     7086
+    ],
+    "total": 25508
+   },
+   {
+    "etiqueta": "Resto transferencias corrientes",
+    "anios": [
+     7601,
+     8082,
+     10184,
+     10002
+    ],
+    "total": 35869
+   },
+   {
+    "etiqueta": "Rendimientos financieros",
+    "anios": [
+     36,
+     37,
+     38,
+     39
+    ],
+    "total": 150
+   },
+   {
+    "etiqueta": "Recuperación de cartera",
+    "anios": [
+     3,
+     3,
+     4,
+     5
+    ],
+    "total": 15
+   },
+   {
+    "etiqueta": "Retiros del FONPET",
+    "anios": [
+     133,
+     200,
+     220,
+     235
+    ],
+    "total": 788
+   },
+   {
+    "etiqueta": "Resto recursos de capital",
+    "anios": [
+     30,
+     35,
+     40,
+     46
+    ],
+    "total": 151
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 166,
+  "cabecera": "FUENTE DE FINANCIACIÓN (VALORES EN MILLONES DE PESOS)",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "RECURSOS PROPIOS",
+    "anios": [
+     2871,
+     3297,
+     3332,
+     3484
+    ],
+    "total": 12984
+   },
+   {
+    "etiqueta": "SISTEMA GENERAL DE PARTICIPACIONES",
+    "anios": [
+     7459,
+     8578,
+     9864,
+     11394
+    ],
+    "total": 37295
+   },
+   {
+    "etiqueta": "TRANSFERENCIAS DEL SECTOR ELECTRICO",
+    "anios": [
+     1015,
+     1857,
+     2044,
+     2169
+    ],
+    "total": 7085
+   },
+   {
+    "etiqueta": "SISTEMA GENERAL DE REGALIAS",
+    "anios": [
+     1437,
+     1242,
+     1151,
+     1207
+    ],
+    "total": 5037
+   },
+   {
+    "etiqueta": "OTROS RECURSOS",
+    "anios": [
+     9425,
+     11179,
+     13605,
+     15564
+    ],
+    "total": 49773
+   },
+   {
+    "etiqueta": "TOTAL RECURSOS PARA INVERTIR",
+    "anios": [
+     22207,
+     26153,
+     29996,
+     33818
+    ],
+    "total": 112174
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ }
+]

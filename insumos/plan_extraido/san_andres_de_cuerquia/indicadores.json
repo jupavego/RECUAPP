@@ -1,0 +1,47 @@
+[
+ {
+  "nombre": "bienesta",
+  "meta": "NIO %",
+  "unidad": "MEDI",
+  "responsable": "RESPONSA",
+  "ods": "O.",
+  "linea_base": "",
+  "tipo_acumulado": "",
+  "linea": 2,
+  "sector": null,
+  "programa": "Autoridad Sanitaria Eficiente",
+  "coincidencia_ppi": null,
+  "pagina": 239,
+  "fuente_lectura": "texto"
+ },
+ {
+  "nombre": "bienestar",
+  "meta": "cuatrieni",
+  "unidad": "de",
+  "responsable": "Responsable",
+  "ods": "Asociado",
+  "linea_base": "",
+  "tipo_acumulado": "",
+  "linea": 3,
+  "sector": null,
+  "programa": "s aparte de deficientes tienen en muchos casos a presentar poca capacidad en cobertura",
+  "coincidencia_ppi": null,
+  "pagina": 399,
+  "fuente_lectura": "texto"
+ },
+ {
+  "nombre": "bienestar",
+  "meta": "cuatrieni",
+  "unidad": "de",
+  "responsable": "Responsable",
+  "ods": "Asociad",
+  "linea_base": "",
+  "tipo_acumulado": "",
+  "linea": 5,
+  "sector": null,
+  "programa": "Gestión Integral de Residuos Sólidos",
+  "coincidencia_ppi": null,
+  "pagina": 472,
+  "fuente_lectura": "texto"
+ }
+]

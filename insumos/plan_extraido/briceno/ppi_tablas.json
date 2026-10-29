@@ -1,0 +1,713 @@
+[
+ {
+  "pagina": 223,
+  "cabecera": "Líneas Estratégicas",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Línea Estrategia 1 Llegó El Momento De La Infraestructura Física",
+    "anios": [
+     6662758,
+     22972426,
+     19542954,
+     10713484
+    ],
+    "total": 59891622
+   },
+   {
+    "etiqueta": "Línea Estrategia 1I Bienestar Inclusión Y Equidad Social",
+    "anios": [
+     11991752,
+     13641522,
+     15321727,
+     14983074
+    ],
+    "total": 55938075
+   },
+   {
+    "etiqueta": "Línea Estrategia III Llegó El Momento Del Campo Y La Sostenibilidad Ambiental",
+    "anios": [
+     1831000,
+     2867000,
+     3499349,
+     3073065
+    ],
+    "total": 11270414
+   },
+   {
+    "etiqueta": "Línea Estrategia IV Llegó El Momento Para El Fortalecimiento Del Tejido Social Para La Paz.",
+    "anios": [
+     1053444,
+     2009308,
+     942217,
+     1215921
+    ],
+    "total": 5220890
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     21538954,
+     41490256,
+     39306247,
+     29985544
+    ],
+    "total": 132321001
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 223,
+  "cabecera": "Líneas Estratégicas",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Propios",
+    "anios": [
+     3694764,
+     5004122,
+     4118809,
+     4124169
+    ],
+    "total": 16941864
+   },
+   {
+    "etiqueta": "Sistema General de Participación SGP",
+    "anios": [
+     6384310,
+     6553661,
+     6715449,
+     7033880
+    ],
+    "total": 26687300
+   },
+   {
+    "etiqueta": "Transferencias del Sector Eléctrico",
+    "anios": [
+     1000000,
+     1035000,
+     1075225,
+     1108718
+    ],
+    "total": 4218943
+   }
+  ],
+  "ncols": 3,
+  "financiero": true
+ },
+ {
+  "pagina": 224,
+  "cabecera": "Línea Estrategia 1 Llegó El Momento De La Infraestructura Física",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "1.1 Aseguramiento y prestación integral de servicios de salud- Infraestructurapara la Salud",
+    "anios": [
+     100000,
+     8075200,
+     1197800,
+     0
+    ],
+    "total": 9373000
+   },
+   {
+    "etiqueta": "1.2 Acceso al servicio público domiciliario degas combustible",
+    "anios": [
+     30000,
+     0,
+     0,
+     0
+    ],
+    "total": 30000
+   },
+   {
+    "etiqueta": "1.3 Calidad, cobertura y fortalecimiento de la educación inicial- Infraestructura Educativa",
+    "anios": [
+     70000,
+     490000,
+     500000,
+     40000
+    ],
+    "total": 1100000
+   },
+   {
+    "etiqueta": "1.4 Infraestructura red vial regional - Infraestructura para el Transporte",
+    "anios": [
+     3612581,
+     2826217,
+     5680000,
+     3615762
+    ],
+    "total": 15734560
+   },
+   {
+    "etiqueta": "1.5 Acceso a soluciones de vivienda",
+    "anios": [
+     200000,
+     2242742,
+     5465768,
+     2514141
+    ],
+    "total": 10422651
+   },
+   {
+    "etiqueta": "1.6 Ordenamiento territorial y desarrollo urbano- Infraestructura de espacio publico",
+    "anios": [
+     149504,
+     2420496,
+     0,
+     0
+    ],
+    "total": 2570000
+   },
+   {
+    "etiqueta": "1.7 Acceso de la población a los servicios de agua potable y saneamiento básico",
+    "anios": [
+     2400673,
+     5839771,
+     4780206,
+     3884835
+    ],
+    "total": 16905485
+   },
+   {
+    "etiqueta": "1.8 Promoción y acceso efectivo a procesos culturales y artísticos- Infraestructura cultural",
+    "anios": [
+     50000,
+     78000,
+     368984,
+     0
+    ],
+    "total": 496984
+   },
+   {
+    "etiqueta": "1.9 Fomento a la recreación, la actividad física y el deporte- Infraestructura Deportiva",
+    "anios": [
+     50000,
+     1000000,
+     1550196,
+     658746
+    ],
+    "total": 3258942
+   },
+   {
+    "etiqueta": "Subtotal",
+    "anios": [
+     6662758,
+     22972426,
+     19542954,
+     10713484
+    ],
+    "total": 59891622
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 225,
+  "cabecera": "Línea Estrategia 1I Bienestar Inclusión Y Equidad Social",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "2.2.1 Aseguramiento y prestación integral de servicios de salud",
+    "anios": [
+     9361909,
+     9689575,
+     10028710,
+     10379714
+    ],
+    "total": 39459908
+   },
+   {
+    "etiqueta": "2.1.2: Inspección, Vigilancia Y Control",
+    "anios": [
+     17681,
+     18300,
+     18941,
+     19604
+    ],
+    "total": 74526
+   },
+   {
+    "etiqueta": "2.1.3 Salud Pública",
+    "anios": [
+     478683,
+     540187,
+     602093,
+     364416
+    ],
+    "total": 1985379
+   },
+   {
+    "etiqueta": "2.2.1. Desarrollo Integral de Niños, Niñas, Adolescentes y sus Familias",
+    "anios": [
+     120000,
+     227500,
+     225125,
+     132881
+    ],
+    "total": 705506
+   },
+   {
+    "etiqueta": "2.2.2. Fomento a la recreación, la actividad física y el deporte para desarrollar entornos de ii",
+    "anios": [
+     313726,
+     424706,
+     466767,
+     341050
+    ],
+    "total": 1546249
+   },
+   {
+    "etiqueta": "2.2.3. Atención, asistencia y reparación integral a las víctimas",
+    "anios": [
+     110000,
+     72000,
+     144100,
+     46305
+    ],
+    "total": 372405
+   },
+   {
+    "etiqueta": "2.2.4. Atención integral de la población en situación de permanente de desprotección socialy/ familiar",
+    "anios": [
+     375834,
+     1389288,
+     2403229,
+     2042672
+    ],
+    "total": 6211023
+   },
+   {
+    "etiqueta": "2.3.1. Calidad, cobertura y fortalecimiento de la educación inicial,prescolar, básicaymedia",
+    "anios": [
+     851398,
+     916231,
+     978838,
+     1091947
+    ],
+    "total": 3838414
+   },
+   {
+    "etiqueta": "2.3.2. Calidad, y fomento de la educación superior",
+    "anios": [
+     4000,
+     2000,
+     2000,
+     2000
+    ],
+    "total": 10000
+   },
+   {
+    "etiqueta": "2.3.3.: Acceso a la alfabetización de lapoblación iletrada.",
+    "anios": [
+     4000,
+     2000,
+     2000,
+     2000
+    ],
+    "total": 10000
+   },
+   {
+    "etiqueta": "2.3.4 Facilitar el acceso y uso de las Tecnologías de la Información y las Comunicaciones en todo el territorio nacional",
+    "anios": [
+     50000,
+     36250,
+     77562,
+     28940
+    ],
+    "total": 192752
+   },
+   {
+    "etiqueta": "2.3.5. Consolidación de una institucionalidad habilitantepara",
+    "anios": [
+     25000,
+     36250,
+     77562,
+     28940
+    ],
+    "total": 167752
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 226,
+  "cabecera": "Línea Estrategia III Llegó El Momento Del Campo Y La Sostenibilidad Ambiental",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "3.1.1: Inclusión productiva de pequeñosproductores rurales",
+    "anios": [
+     415000,
+     1215750,
+     1136537,
+     667364
+    ],
+    "total": 3434651
+   },
+   {
+    "etiqueta": "3.1.2 Sanidad Agropecuaria e Inocuidad Agroalimentaria",
+    "anios": [
+     110000,
+     310500,
+     231025,
+     261576
+    ],
+    "total": 913101
+   },
+   {
+    "etiqueta": "\"3.1.3 Infraestructura productiva ycomercialización",
+    "anios": [
+     120000,
+     121000,
+     792050,
+     673152
+    ],
+    "total": 1706202
+   },
+   {
+    "etiqueta": "3.1.4: Productividad Y Competitividad De Las Empresas locales",
+    "anios": [
+     120000,
+     121000,
+     142050,
+     173152
+    ],
+    "total": 556202
+   },
+   {
+    "etiqueta": "3.1.5. Ordenamiento social y uso productivo del territorio rural",
+    "anios": [
+     120000,
+     121000,
+     142050,
+     173152
+    ],
+    "total": 556202
+   },
+   {
+    "etiqueta": "3.1.6 Ciencia, tecnología e innovación agropecuaria",
+    "anios": [
+     115000,
+     115750,
+     136537,
+     167364
+    ],
+    "total": 534651
+   },
+   {
+    "etiqueta": "3.2 Ambiente",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "3.2.1 Conservación de la biodiversidad y sus servicios ecosistémicos",
+    "anios": [
+     206000,
+     210000,
+     215000,
+     220000
+    ],
+    "total": 851000
+   },
+   {
+    "etiqueta": "3.2.2. Gestión del Cambio climático para un desarrollo bajo en carbonoyresiliente al clima",
+    "anios": [
+     275000,
+     137000,
+     234100,
+     218305
+    ],
+    "total": 864405
+   },
+   {
+    "etiqueta": "3.2.3. Gestión de la información yel conocimiento ambiental",
+    "anios": [
+     85000,
+     200000,
+     150000,
+     200000
+    ],
+    "total": 635000
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 227,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "3.2.4 Gestión Integral del recurso Hídrico",
+    "anios": [
+     125000,
+     130000,
+     140000,
+     135000
+    ],
+    "total": 530000
+   },
+   {
+    "etiqueta": "3.2.5 Ordenamiento Territorial y Desarrollo Urbano",
+    "anios": [
+     35000,
+     60000,
+     40000,
+     49000
+    ],
+    "total": 184000
+   },
+   {
+    "etiqueta": "3.2.6 Ordenamiento Ambiental Territorial",
+    "anios": [
+     0,
+     70000,
+     85000,
+     75000
+    ],
+    "total": 230000
+   },
+   {
+    "etiqueta": "3.3.1. Productividad y competitividad de las empresas Briceñitas",
+    "anios": [
+     50000,
+     55000,
+     55000,
+     60000
+    ],
+    "total": 220000
+   },
+   {
+    "etiqueta": "SUBTOTAL",
+    "anios": [
+     1831000,
+     2867000,
+     3499349,
+     3073065
+    ],
+    "total": 11270414
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 227,
+  "cabecera": "Línea Estrategia IV Llegó El Momento Para El Fortalecimiento Del Tejido Social Para La Paz.",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "4.1.1 Levantamiento y actualización de información estadística de calidad",
+    "anios": [
+     0,
+     500000,
+     0,
+     0
+    ],
+    "total": 500000
+   },
+   {
+    "etiqueta": "4.1.2 Generación de la información geográfica del territorio municipal",
+    "anios": [
+     0,
+     500000,
+     0,
+     0
+    ],
+    "total": 500000
+   },
+   {
+    "etiqueta": "4.1.3. Gestión del riesgo de desastresyemergencias",
+    "anios": [
+     0,
+     10000,
+     10000,
+     10000
+    ],
+    "total": 30000
+   },
+   {
+    "etiqueta": "4.2.1 Promoción al acceso a la justicia",
+    "anios": [
+     120665,
+     124698,
+     138933,
+     143379
+    ],
+    "total": 527675
+   },
+   {
+    "etiqueta": "2.4.2 Promoción de los métodos de resolución de conflictos",
+    "anios": [
+     20000,
+     5000,
+     5000,
+     20000
+    ],
+    "total": 50000
+   },
+   {
+    "etiqueta": "4.2.2 Justicia Transicional",
+    "anios": [
+     20000,
+     50000,
+     5000,
+     20000
+    ],
+    "total": 95000
+   },
+   {
+    "etiqueta": "4.3.3. Vías para la vida",
+    "anios": [
+     20000,
+     5000,
+     5000,
+     20000
+    ],
+    "total": 50000
+   },
+   {
+    "etiqueta": "4.3.1 Fortalecimiento de la convivencia y la seguridad ciudadana",
+    "anios": [
+     342944,
+     440646,
+     458392,
+     476872
+    ],
+    "total": 1718854
+   },
+   {
+    "etiqueta": "4.3.2 Fortalecimiento del buen gobiernopara el respetoy",
+    "anios": [
+     50000,
+     50000,
+     95000,
+     200000
+    ],
+    "total": 395000
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 228,
+  "cabecera": "Total Programas",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Línea Estrategia 1 Llegó El Momento De La Infraestructura Física",
+    "anios": [
+     6662758,
+     22972426,
+     19542954,
+     10713484
+    ],
+    "total": 59891622
+   },
+   {
+    "etiqueta": "Línea Estrategia 1I Bienestar Inclusión Y Equidad Social",
+    "anios": [
+     11991752,
+     13641522,
+     15321727,
+     14983074
+    ],
+    "total": 55938075
+   },
+   {
+    "etiqueta": "Línea Estrategia III Llegó El Momento Del Campo Y La Sostenibilidad Ambiental",
+    "anios": [
+     1831000,
+     2867000,
+     3499349,
+     3073065
+    ],
+    "total": 11270414
+   },
+   {
+    "etiqueta": "Línea Estrategia IV Llegó El Momento Para El Fortalecimiento Del Tejido Social Para La Paz.",
+    "anios": [
+     1053444,
+     2009308,
+     942217,
+     1215921
+    ],
+    "total": 5220890
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     21538954,
+     41490256,
+     39306247,
+     29985544
+    ],
+    "total": 132321001
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 238,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Asignaciones Directas",
+    "anios": [
+     316426350,
+     202062299,
+     190284844,
+     186745935
+    ],
+    "total": 895519428
+   },
+   {
+    "etiqueta": "Asignación para la Inversión Local",
+    "anios": [
+     1429691601,
+     1236838106,
+     1145868979,
+     1203256780
+    ],
+    "total": 5015655466
+   },
+   {
+    "etiqueta": "Des. Sostenible Briceño – Antioquia",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     2762580789,
+     1438900405,
+     1336153822,
+     1393002715
+    ],
+    "total": 6930637731
+   }
+  ],
+  "ncols": 2,
+  "financiero": true
+ }
+]

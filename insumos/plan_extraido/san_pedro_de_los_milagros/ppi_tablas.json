@@ -1,0 +1,256 @@
+[
+ {
+  "pagina": 318,
+  "cabecera": "Concepto",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Predial",
+    "anios": [
+     5171,
+     5327,
+     5486,
+     5651
+    ],
+    "total": 21635
+   },
+   {
+    "etiqueta": "Industria Y Comercio",
+    "anios": [
+     9021,
+     9292,
+     9571,
+     9858
+    ],
+    "total": 37742
+   },
+   {
+    "etiqueta": "Sobretasas A La Gasolina",
+    "anios": [
+     1369,
+     1410,
+     1452,
+     1496
+    ],
+    "total": 5727
+   },
+   {
+    "etiqueta": "Otros",
+    "anios": [
+     2295,
+     2364,
+     2435,
+     2508
+    ],
+    "total": 9602
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     17856,
+     18393,
+     18944,
+     19513
+    ],
+    "total": 74706
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ },
+ {
+  "pagina": 319,
+  "cabecera": "Concepto",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "SGP-libre destinación",
+    "anios": [
+     1796,
+     1850,
+     1906,
+     1963
+    ],
+    "total": 7515
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     1796,
+     1850,
+     1906,
+     1963
+    ],
+    "total": 7515
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 319,
+  "cabecera": "Concepto",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "SGP",
+    "anios": [
+     703,
+     724,
+     746,
+     768
+    ],
+    "total": 2941
+   },
+   {
+    "etiqueta": "Total SGP",
+    "anios": [
+     9826,
+     10121,
+     10424,
+     10737
+    ],
+    "total": 41108
+   },
+   {
+    "etiqueta": "Ingresos propios",
+    "anios": [
+     17857,
+     18393,
+     18945,
+     19513
+    ],
+    "total": 74708
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 320,
+  "cabecera": "i",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Estampillas",
+    "anios": [
+     576,
+     593,
+     611,
+     629
+    ],
+    "total": 2409
+   },
+   {
+    "etiqueta": "Otros propios específicos",
+    "anios": [
+     8448,
+     8702,
+     8963,
+     9232
+    ],
+    "total": 35345
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 321,
+  "cabecera": "Concepto",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Funcionamiento",
+    "anios": [
+     15664,
+     16133,
+     16617,
+     17116
+    ],
+    "total": 65530
+   },
+   {
+    "etiqueta": "Servicio de la Deuda",
+    "anios": [
+     3302,
+     2937,
+     2116,
+     2000
+    ],
+    "total": 10355
+   },
+   {
+    "etiqueta": "Inversión",
+    "anios": [
+     30696,
+     31617,
+     32565,
+     33542
+    ],
+    "total": 128420
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     49662,
+     50687,
+     51298,
+     52658
+    ],
+    "total": 204305
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 337,
+  "cabecera": "Concepto de gasto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Asignaciones directas anticipadas (5% del SGR)",
+    "anios": [
+     162632,
+     53502,
+     50384,
+     50241
+    ],
+    "total": 316759
+   },
+   {
+    "etiqueta": "(20% del SGR)",
+    "anios": [
+     2268765,
+     188314,
+     177338,
+     176835
+    ],
+    "total": 2811252
+   },
+   {
+    "etiqueta": "Asignación para la inversión local según NBI y cuarta, quinta, y",
+    "anios": [
+     355151366,
+     725149891,
+     671815302,
+     706616714
+    ],
+    "total": 2458733273
+   },
+   {
+    "etiqueta": "Asignación Para La Inversión Local -",
+    "anios": [
+     392025343,
+     111561522,
+     103352200,
+     108710264
+    ],
+    "total": 715649329
+   }
+  ],
+  "ncols": 8,
+  "financiero": true
+ }
+]

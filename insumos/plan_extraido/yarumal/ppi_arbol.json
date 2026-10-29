@@ -1,0 +1,157 @@
+[
+ {
+  "paginas": [
+   79
+  ],
+  "cabecera": "Variable",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   5391,
+   5492,
+   5623,
+   5722
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TRM promedio (USD/COP)",
+    "anios": [
+     4603,
+     4699,
+     4798,
+     4898
+    ],
+    "total": 18998,
+    "ruta": {
+     "linea": "TRM promedio (USD/COP)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Producción de petróleo (KBPD)",
+    "anios": [
+     788,
+     793,
+     825,
+     824
+    ],
+    "total": 3230,
+    "ruta": {
+     "linea": "Producción de petróleo (KBPD)"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   92
+  ],
+  "cabecera": "Concepto",
+  "unidad": "millones",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   6385,
+   5548,
+   5138,
+   5410
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Inversión 100%",
+    "anios": [
+     1744,
+     1515,
+     1403,
+     1477
+    ],
+    "total": 6139,
+    "ruta": {
+     "linea": "Inversión 100%"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Asignación para la Inversión Local",
+    "anios": [
+     1739,
+     1511,
+     1400,
+     1474
+    ],
+    "total": 6124,
+    "ruta": {
+     "linea": "Asignación para la Inversión Local"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Municipios más pobres",
+    "anios": [
+     1739,
+     1511,
+     1400,
+     1474
+    ],
+    "total": 6124,
+    "ruta": {
+     "linea": "Asignación para la Inversión Local",
+     "sector": "Municipios más pobres"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     1507,
+     1310,
+     1213,
+     1277
+    ],
+    "total": 5307,
+    "ruta": {
+     "linea": "Resto de Inversión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Inversión 80%",
+    "anios": [
+     1395,
+     1212,
+     1122,
+     1182
+    ],
+    "total": 4911,
+    "ruta": {
+     "linea": "Inversión 80%"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

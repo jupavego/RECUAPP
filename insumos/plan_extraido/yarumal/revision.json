@@ -1,0 +1,93 @@
+[
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 174,
+  "valor": null,
+  "sugerencia": null,
+  "correccion": null,
+  "id": 1
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 185,
+  "valor": "enseñanza-aprendizaje y contribuir al mejoramiento de la calidad educativa.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 2
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 195,
+  "valor": "adición, establecer la CTI+E en colaboración con el CUEES como incubadora de ideas para el desarrollo de nuevos productos y servicios.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 3
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 200,
+  "valor": "eficiente y reestructurar el Fondo Rotatorio para optimizar su funcionamiento.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 4
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 220,
+  "valor": "promedio de 20 sedes mejoradas en el periodo",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 5
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 225,
+  "valor": "escenarios comunitarios protectores de derechos",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 6
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 231,
+  "valor": "procedimientos e intervenciones integrales.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 7
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Inversión 100%",
+  "sector": null,
+  "correccion": null,
+  "id": 8
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Asignación para la Inversión Local",
+  "sector": null,
+  "correccion": null,
+  "id": 9
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Municipios más pobres",
+  "sector": "Municipios más pobres",
+  "correccion": null,
+  "id": 10
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Resto de Inversión",
+  "sector": null,
+  "correccion": null,
+  "id": 11
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Inversión 80%",
+  "sector": null,
+  "correccion": null,
+  "id": 12
+ }
+]
