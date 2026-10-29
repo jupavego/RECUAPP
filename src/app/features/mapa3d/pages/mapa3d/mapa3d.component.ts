@@ -1,6 +1,6 @@
 import { DecimalPipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import {
   AfterViewInit, Component, DestroyRef, ElementRef, NgZone, ViewChild, inject, signal,
 } from '@angular/core';
@@ -708,6 +708,7 @@ export class Mapa3dComponent implements AfterViewInit {
 
   private readonly http = inject(HttpClient);
   private readonly ruta = inject(ActivatedRoute);
+  private readonly enrutador = inject(Router);
   private readonly mapa = inject(MapaService);
   private readonly zona = inject(NgZone);
   private readonly destroyRef = inject(DestroyRef);
@@ -4614,6 +4615,8 @@ export class Mapa3dComponent implements AfterViewInit {
   private abrirPuntoDeLaRuta(): void {
     const q = this.ruta.snapshot.queryParamMap, nombre = q.get('punto');
     if (!nombre) return;
+    // el punto se abre una sola vez: la dirección queda limpia para que recargar la página muestre la vista normal
+    this.enrutador.navigate([], { queryParams: {}, replaceUrl: true });
     const lat = Number(q.get('lat')), lng = Number(q.get('lng'));
     let mejor = -1, dMejor = Infinity;
     this.equipamientos.forEach((e, i) => {
