@@ -163,6 +163,8 @@ export interface Icono {
   x: number; cima: number; z: number;
   /** a qué edificio pertenece (para el clic) */
   ref?: { tipo: 'equip' | 'fabrica'; i: number };
+  /** zona (vereda) en que cae el edificio; -1 si ninguna */
+  zona?: number;
   /** pone el sprite sobre su edificio con el tamaño `tam` (m); `visible` false lo esconde */
   animar(t: number, camara: THREE.Camera, tam: number, visible: boolean): void;
   dispose(): void;
@@ -206,7 +208,7 @@ const CELDA_PANTALLA = 0.15;
  * Los iconos se mantienen legibles al alejar (tamaño constante en pantalla) y, cuando varios del mismo tipo caen en la
  * misma celda de la pantalla, se funden en uno solo con la cantidad; al acercarse se separan solos.
  */
-export function crearAgrupador(iconos: Icono[], escena: THREE.Object3D) {
+export function crearAgrupador(iconos: Icono[], escena: THREE.Object3D, visible: (ic: Icono) => boolean = () => true) {
   const texturas = new Map<string, THREE.CanvasTexture>();
   const grupos: THREE.Sprite[] = [];
   const miembros: Icono[][] = [];
@@ -230,7 +232,12 @@ export function crearAgrupador(iconos: Icono[], escena: THREE.Object3D) {
       const cam = camara.position, v = new THREE.Vector3();
       const celdas = new Map<string, Icono[]>();
       const clave = new Map<Icono, string>();
-      for (const ic of iconos) {
+      const activos = iconos.filter(ic => {
+        const ok = visible(ic);
+        if (!ok) ic.sprite.visible = false;
+        return ok;
+      });
+      for (const ic of activos) {
         v.set(ic.x, ic.cima, ic.z).project(camara);
         const k = `${ic.cat}|${Math.floor(v.x / CELDA_PANTALLA)}|${Math.floor(v.y / CELDA_PANTALLA)}`;
         clave.set(ic, k);
@@ -238,7 +245,7 @@ export function crearAgrupador(iconos: Icono[], escena: THREE.Object3D) {
         g ? g.push(ic) : celdas.set(k, [ic]);
       }
       let usados = 0;
-      for (const ic of iconos) {
+      for (const ic of activos) {
         const solo = celdas.get(clave.get(ic)!)!.length === 1;
         ic.animar(t, camara, tamanoIcono(Math.hypot(cam.x - ic.x, cam.y - ic.cima, cam.z - ic.z)), solo);
       }

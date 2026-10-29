@@ -3,7 +3,11 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { CATEGORIAS } from '../../../mapa/utils/puntos';
 import { VARIANTES, Variante, modelarEquipamiento } from '../../utils/equipamientos';
-import { Aura, crearAura, crearIcono, tamanoIcono } from '../../utils/aura';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { Aura, CategoriaIcono, COLOR_INDUSTRIA, crearAura, crearIcono, tamanoIcono } from '../../utils/aura';
+
+/** Lo que no es un punto de interés ni una fábrica no lleva neón ni icono. */
+const SIN_AURA: string[] = ['vivienda', 'vehiculos', 'vias', 'agua', 'naturaleza'];
 
 /** Catálogo de los edificios que representan los puntos de interés en el mapa 3D, uno a la vez y a escala real. */
 @Component({
@@ -63,9 +67,15 @@ export class CatalogoEdificiosComponent implements AfterViewInit {
   private readonly destroyRef = inject(DestroyRef);
 
   readonly total = VARIANTES.length;
-  readonly grupos = CATEGORIAS
-    .map(c => ({ ...c, items: VARIANTES.filter(v => v.categoria === c.id) }))
-    .filter(g => g.items.length);
+  readonly grupos = [
+    ...CATEGORIAS.map(c => ({ id: c.id as string, nombre: c.nombre, color: c.color })),
+    { id: 'industria', nombre: 'Industria', color: COLOR_INDUSTRIA },
+    { id: 'vivienda', nombre: 'Viviendas', color: '#c8704f' },
+    { id: 'vehiculos', nombre: 'Vehículos', color: '#ff2d2d' },
+    { id: 'vias', nombre: 'Vías', color: '#55585d' },
+    { id: 'agua', nombre: 'Ríos y quebradas', color: '#4db3e6' },
+    { id: 'naturaleza', nombre: 'Árboles y aves', color: '#4f9a45' },
+  ].map(c => ({ ...c, items: VARIANTES.filter(v => v.categoria === c.id) })).filter(g => g.items.length);
   readonly actual = signal<Variante>(VARIANTES[0]);
   readonly girando = signal(true);
   readonly medida = signal('');
@@ -142,7 +152,7 @@ export class CatalogoEdificiosComponent implements AfterViewInit {
   }
 
   categoriaDe(v: Variante): string {
-    return CATEGORIAS.find(c => c.id === v.categoria)?.nombre ?? '';
+    return this.grupos.find(g => g.id === v.categoria)?.nombre ?? '';
   }
 
   elegir(v: Variante): void {
@@ -203,15 +213,29 @@ export class CatalogoEdificiosComponent implements AfterViewInit {
     const caja = new THREE.Box3();
     for (const p of m.piezas) { p.g.computeBoundingBox(); caja.union(p.g.boundingBox!); }
     const tam = caja.getSize(new THREE.Vector3());
-    if (this.conAura()) {
-      const color = CATEGORIAS.find(c => c.id === v.categoria)!.color;
+    if (this.conAura() && !SIN_AURA.includes(v.categoria)) {
+      const color = this.grupos.find(g => g.id === v.categoria)!.color;
       this.aura = crearAura(r, tam.y * 1.15 + 4, color);
       grupo.add(this.aura.grupo);
-      this.icono = crearIcono(v.categoria, color, 0, tam.y, 0);
+      this.icono = crearIcono(v.categoria as CategoriaIcono, color, 0, tam.y, 0);
       grupo.add(this.icono.sprite);
     }
     this.escena.add(grupo);
     this.modelo = grupo;
+    this.encuadrar(tam);
+    if (v.nombre === 'Avión') {
+      // el Boeing 787 es un modelo .glb: se carga aparte y se deja en el aire, sobre la plataforma
+      new GLTFLoader().load('data/mapa3d/boeing-787.glb', gltf => {
+        if (this.modelo !== grupo) return;
+        const caja = new THREE.Box3().setFromObject(gltf.scene);
+        gltf.scene.position.y = 8 - caja.min.y;
+        grupo.add(gltf.scene);
+        this.encuadrar(caja.getSize(new THREE.Vector3()).setY(caja.getSize(new THREE.Vector3()).y + 8));
+      });
+    }
+  }
+
+  private encuadrar(tam: THREE.Vector3): void {
     this.medida.set(`${Math.round(tam.x)} × ${Math.round(tam.z)} m, ${Math.round(tam.y)} m de alto`);
     const d = Math.max(tam.x, tam.z, tam.y * 1.4, 18) * 1.7 + 14;
     this.controles.target.set(0, Math.min(tam.y * 0.35, 14), 0);

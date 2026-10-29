@@ -80,7 +80,7 @@
   font-family: var(--font-heading);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #06b6d4;
+  color: #d4e6a5; /* wasabi pastel */
   margin: 0 0 1.1rem;
 }
 
@@ -118,6 +118,17 @@
   color: rgba(255,255,255,0.45);
 
   p { margin: 0; }
+
+  a {
+    color: #d4e6a5; /* wasabi pastel */
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transition: color var(--duration-normal);
+    &:hover { color: #ffffff; text-decoration: underline; }
+  }
 }
 
 

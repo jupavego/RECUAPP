@@ -64,6 +64,17 @@ const DISTANCIA_SOMBRAS = 9000;
 const VELOCIDAD_AGUA = 0.6;
 /** Separación media entre árboles, en metros. */
 const PASO_ARBOLES = 38;
+/** Altitud (m) desde la que el pino empieza a aparecer entre las demás especies, y a partir de la cual es el único árbol. */
+const PINO_DESDE = 1900, PINO_TOTAL = 2100;
+/** Cantidad de guayacanes amarillos en todo el territorio. */
+const GUAYACANES = 62;
+/** Especies de zona baja: nombre en el catálogo, altura (m) con que se siembra, color de la copa en la versión lejana. */
+const ESPECIES_BAJAS: { nombre: string; alto: number; copa: string }[] = [
+  { nombre: 'Samán', alto: 17, copa: '#3f8a3c' },
+  { nombre: 'Yarumo', alto: 17, copa: '#86b56f' },
+  { nombre: 'Ceiba', alto: 30, copa: '#4f9a45' },
+  { nombre: 'Guayacán', alto: 17, copa: '#f2c316' },
+];
 /** Margen (radianes) respecto de mirar justo desde arriba; y la cámara nunca baja del nivel horizontal del mapa. */
 const LIMITE_POLAR = 0.03;
 /** Inclinación (radianes desde la vertical) a partir de la cual se ocultan los nombres: ~77°. */
@@ -262,6 +273,7 @@ interface Capa {
 
 /** public/data/mapa/poblacion/veredas-<DANE>.geojson (scripts/generar_poblacion_veredas.py): solo se usan las propiedades. */
 interface PoblacionVeredas {
+  metadata?: { fuente?: string; tipo?: string };
   features: { properties: { nombre: string; viv2018: number } & Record<string, number | string> }[];
 }
 
@@ -299,6 +311,20 @@ interface FichaPin {
   mapa2d: { punto: string; lat: number; lng: number; desde: '3d' } | null;
   /** la coordenada es aproximada (centro de la vereda o estimada de la dirección) */
   aproximada: boolean;
+}
+
+/** Proyección de población de una vereda en todos los años, para el panel de la zona elegida. */
+interface ProyeccionVereda {
+  nombre: string; tipo: string;
+  anios: { anio: number; pob: number; viv: number; alto: number; actual: boolean }[];
+  variacion: string; fuente: string;
+  infra: InfraZona;
+}
+
+/** Infraestructura que cae dentro de una zona, agrupada por categoría (incluye las industrias). */
+interface InfraZona {
+  total: number;
+  grupos: { id: string; nombre: string; color: string; glifo: string; items: { n: string; ref: { tipo: 'equip' | 'fabrica'; i: number } }[] }[];
 }
 
 interface FichaFabrica {
@@ -478,9 +504,61 @@ const TIPOS_ZONA: Record<string, string> = {
       }
     </div>
 
+    @if (!pinFicha() && seleccion(); as z) {
+      @if (proyeccion(z); as pr) {
+        <aside class="pin-panel zona-panel" aria-label="Proyección de población de la vereda">
+          <button type="button" class="cerrar" (click)="cerrarZona()" aria-label="Cerrar detalle">×</button>
+          <div class="pin-cab">
+            <div><span class="tipo">{{ pr.tipo }} · proyección de población</span><strong>{{ pr.nombre }}</strong></div>
+          </div>
+          <div class="barras" role="group" aria-label="Población por año">
+            @for (a of pr.anios; track a.anio) {
+              <button type="button" class="barra" [class.activa]="a.actual" [attr.aria-pressed]="a.actual" (click)="cambiarAnio(a.anio)">
+                <b>{{ a.pob | number:'1.0-0' }}</b>
+                <i [style.height.%]="a.alto"></i>
+                <span>{{ a.anio }}</span>
+              </button>
+            }
+          </div>
+          <table>
+            <thead><tr><th>Año</th><th>Personas</th><th>Viviendas</th></tr></thead>
+            <tbody>
+              @for (a of pr.anios; track a.anio) {
+                <tr [class.activa]="a.actual"><td>{{ a.anio }}</td><td>{{ a.pob | number:'1.0-0' }}</td><td>{{ a.viv | number:'1.0-0' }}</td></tr>
+              }
+            </tbody>
+          </table>
+          <p class="variacion">{{ pr.variacion }}</p>
+
+          <h3>Infraestructura en la zona <small>{{ pr.infra.total }}</small></h3>
+          @if (pr.infra.grupos.length) {
+            @for (g of pr.infra.grupos; track g.id; let primero = $first) {
+              <details class="infra" [open]="primero">
+                <summary><span class="medalla" [style.background]="g.color">{{ g.glifo }}</span>{{ g.nombre }}<b>{{ g.items.length }}</b></summary>
+                <ul>
+                  @for (it of g.items; track it.ref.tipo + it.ref.i) {
+                    <li><button type="button" (click)="irAPin(it.ref)" title="Ir a este lugar en el mapa">{{ it.n }} <span aria-hidden="true">→</span></button></li>
+                  }
+                </ul>
+              </details>
+            }
+          } @else {
+            <p class="vacio">No hay infraestructura registrada en esta zona.</p>
+          }
+
+          <h3>Proyectos y responsables</h3>
+          <p class="vacio">Próximamente: aquí aparecerán los proyectos de la zona con su responsable.</p>
+          <p class="pin-fuente">Estimación: {{ pr.fuente }}</p>
+        </aside>
+      }
+    }
+
     @if (pinFicha(); as p) {
       <aside class="pin-panel" [style.--c]="p.color" aria-label="Detalle del lugar">
         <button type="button" class="cerrar" (click)="cerrarPin()" aria-label="Cerrar detalle">×</button>
+        @if (seleccion(); as z) {
+          <button type="button" class="volver-zona" (click)="cerrarPin()">← Volver a {{ z.n }}</button>
+        }
         <div class="pin-cab">
           <span class="pin-glifo">{{ p.glifo }}</span>
           <div><span class="tipo">{{ p.categoria }}</span><strong>{{ p.titulo }}</strong></div>
@@ -571,6 +649,38 @@ const TIPOS_ZONA: Record<string, string> = {
     .pin-mapa { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; padding: 8px 14px; border-radius: 10px;
       background: #26425a; color: #fff; font-weight: 600; font-size: .85rem; text-decoration: none; }
     .pin-mapa:hover { background: #35597a; }
+    .zona-panel .barras { display: flex; align-items: flex-end; gap: 8px; height: 130px; margin: 4px 0 12px; }
+    .zona-panel .barra { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 3px;
+      height: 100%; padding: 0; background: none; color: #26425a; font: inherit; cursor: pointer; }
+    .zona-panel .barra b { font-size: .74rem; font-weight: 700; }
+    .zona-panel .barra i { display: block; width: 100%; min-height: 3px; border-radius: 6px 6px 0 0; background: #9db8cc; transition: height .3s, background .2s; }
+    .zona-panel .barra span { font-size: .72rem; color: #6b8294; }
+    .zona-panel .barra:hover i { background: #7fa2bd; }
+    .zona-panel .barra.activa i { background: #26425a; }
+    .zona-panel .barra.activa span { color: #26425a; font-weight: 700; }
+    .zona-panel table { width: 100%; border-collapse: collapse; font-size: .82rem; }
+    .zona-panel th { text-align: right; font-size: .68rem; text-transform: uppercase; letter-spacing: .05em; color: #6b8294; font-weight: 600; padding: 2px 0; }
+    .zona-panel th:first-child, .zona-panel td:first-child { text-align: left; }
+    .zona-panel td { text-align: right; padding: 3px 0; border-top: 1px solid rgba(38,66,90,.1); }
+    .zona-panel tr.activa td { font-weight: 700; color: #26425a; }
+    .zona-panel .variacion { margin: 10px 0 0; font-size: .82rem; }
+    .zona-panel h3 { display: flex; justify-content: space-between; align-items: baseline; margin: 16px 0 6px; padding-top: 12px;
+      border-top: 1px solid rgba(38,66,90,.12); font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: #6b8294; }
+    .zona-panel h3 small { font-size: .8rem; font-weight: 700; color: #26425a; letter-spacing: 0; }
+    .zona-panel .vacio { margin: 0; font-size: .8rem; color: #6b8294; }
+    .zona-panel details.infra { margin-bottom: 2px; }
+    .zona-panel summary { display: flex; align-items: center; gap: 8px; padding: 4px 0; font-size: .86rem; cursor: pointer; list-style: none; }
+    .zona-panel summary::-webkit-details-marker { display: none; }
+    .zona-panel summary b { margin-left: auto; font-weight: 700; }
+    .zona-panel .medalla { flex: none; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-size: .8rem; box-shadow: 0 0 0 2px #fff; }
+    .zona-panel details ul { margin: 0 0 6px 32px; padding: 0; list-style: none; display: grid; gap: 1px; }
+    .zona-panel details li button { display: block; width: 100%; padding: 3px 6px; border-radius: 6px; background: none; color: #26425a;
+      text-align: left; font: inherit; font-size: .8rem; }
+    .zona-panel details li button span { opacity: .45; margin-left: 2px; }
+    .zona-panel details li button:hover span { opacity: 1; }
+    .pin-panel .volver-zona { display: block; margin: 0 0 10px; padding: 0; background: none; color: #35597a; font-size: .8rem; font-weight: 600; }
+    .pin-panel .volver-zona:hover { text-decoration: underline; background: none; }
+    .zona-panel details li button:hover { background: rgba(38,66,90,.1); }
     .pin-fuente { margin: 12px 0 0; font-size: .72rem; color: #6b8294; }
     .ficha { display: flex; flex-direction: column; gap: 2px; margin-bottom: 10px; }
     .ficha .tipo { font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: #6b8294; }
@@ -698,6 +808,8 @@ export class Mapa3dComponent implements AfterViewInit {
   /** neón en el círculo de cada equipamiento y su icono flotante */
   private auraEquip: Aura | null = null;
   private iconosEquip: Icono[] = [];
+  /** con una zona elegida solo se ven los pines de esa zona */
+  private readonly pinVisible = (ic: Icono): boolean => this.elegida < 0 || ic.zona === this.elegida;
   private auraIndustrias: Aura | null = null;
   private agrupadorIconos: ReturnType<typeof crearAgrupador> | null = null;
   private equipHover = -1;
@@ -743,6 +855,9 @@ export class Mapa3dComponent implements AfterViewInit {
   /** por nube: x, z de su sombra sobre el terreno, radio y opacidad (el shader del terreno los lee) */
   private readonly sombrasNubes = Array.from({ length: NUBES }, () => new THREE.Vector4(0, 0, 1, 0));
   private mallasEdificios: THREE.Mesh[] = [];
+  /** Cajas de las viviendas por tesela y círculos de los equipamientos: la cámara no los atraviesa. */
+  private cajasViv = new Map<number, { x0: number; x1: number; z0: number; z1: number; top: number; id: number }[]>();
+  private cajasEquip: { x: number; z: number; r: number; top: number; id: number }[] = [];
   // edificios dibujados según la población del año elegido
   private edificiosBase: Compacto | null = null;
   private poblacion: PoblacionVeredas | null = null;
@@ -888,7 +1003,7 @@ export class Mapa3dComponent implements AfterViewInit {
     this.controles.enableDamping = true;
     this.controles.dampingFactor = 0.08;
     this.controles.maxPolarAngle = Math.PI / 2 - LIMITE_POLAR;
-    this.controles.minDistance = 1500;
+    this.controles.minDistance = 35;   // casi a escala de primera persona; el plano cercano se ajusta en ajustarPlanoCercano()
     this.controles.maxDistance = 32000;
     // como en un mapa: la manito arrastra y desplaza; el clic derecho inclina y gira
     this.controles.screenSpacePanning = false;
@@ -1846,6 +1961,7 @@ export class Mapa3dComponent implements AfterViewInit {
     // una malla por tesela: así la GPU descarta las que quedan fuera de cámara y solo proyectan sombra las del recuadro de la luz
     type Tesela = { pos: number[]; col: number[]; idx: number[]; ids: number[]; pesos: number[] };
     const teselas = new Map<number, Tesela>();
+    this.cajasViv.clear();
     d.e!.forEach((e, n) => {
       const ring = this.desdeDeltas(e, d.k, 1);
       if (ring.length < 3) return;
@@ -1860,6 +1976,9 @@ export class Mapa3dComponent implements AfterViewInit {
       const clave = this.claveTesela(this.aX(cLon), this.aZ(cLat));
       let t = teselas.get(clave);
       if (!t) teselas.set(clave, t = { pos: [], col: [], idx: [], ids: [], pesos: [] });
+      (this.cajasViv.get(clave) ?? this.cajasViv.set(clave, []).get(clave)!).push({
+        x0: Math.min(...xs), x1: Math.max(...xs), z0: Math.min(...zs), z1: Math.max(...zs), top: techo, id,
+      });
       const { pos, col, idx, ids, pesos } = t;
       const poner = (x: number, y: number, z: number, c: THREE.Color) => {
         pos.push(x, y, z);
@@ -2558,10 +2677,12 @@ export class Mapa3dComponent implements AfterViewInit {
         p.g.computeBoundingBox();
         alto = Math.max(alto, p.g.boundingBox!.max.y);
       }
+      this.cajasEquip.push({ x: q.x, z: q.z, r: q.r, top: base + alto, id });
       const color = CATEGORIA.get(q.datos.p.c)?.color ?? '#ffffff';
       items.push({ x: q.x, y: base, z: q.z, radio: q.r + 2, alto: alto * 1.15 + 4, color });
       const icono = crearIcono(q.datos.p.c, color, q.x, base + alto, q.z);
       icono.ref = { tipo: 'equip', i: items.length - 1 };
+      icono.zona = this.idEn(q.datos.p.lng ?? q.lon, q.datos.p.lat ?? q.lat);
       this.iconosEquip.push(icono);
     }
 
@@ -2580,7 +2701,7 @@ export class Mapa3dComponent implements AfterViewInit {
     this.auraEquip.resaltar(-1);
     this.escena.add(this.auraEquip.grupo);
     for (const ic of this.iconosEquip) this.escena.add(ic.sprite);
-    this.agrupadorIconos ??= crearAgrupador(this.iconosEquip, this.escena);
+    this.agrupadorIconos ??= crearAgrupador(this.iconosEquip, this.escena, this.pinVisible);
   }
 
   /** El neón pulsa y los iconos flotan sin tapar su edificio. */
@@ -2668,10 +2789,11 @@ export class Mapa3dComponent implements AfterViewInit {
       itemsAura.push({ x: f.x, y: base, z: f.z, radio: RADIO_FABRICA * 0.95, alto: alto + 22, color: COLOR_INDUSTRIA });
       const icono = crearIcono('industria', COLOR_INDUSTRIA, f.x, base + ch * 0.6, f.z);
       icono.ref = { tipo: 'fabrica', i: n };
+      icono.zona = this.idEn(f.datos.lon, f.datos.lat);
       this.iconosEquip.push(icono);
       this.escena.add(icono.sprite);
     });
-    this.agrupadorIconos ??= crearAgrupador(this.iconosEquip, this.escena);
+    this.agrupadorIconos ??= crearAgrupador(this.iconosEquip, this.escena, this.pinVisible);
     this.crearHumo();
 
     const geo = mergeGeometries(geos, false);
@@ -3408,6 +3530,7 @@ export class Mapa3dComponent implements AfterViewInit {
         this.controles.update();
         this.limitarDesplazamiento();
         this.mantenerSobreElRelieve();
+        this.ajustarPlanoCercano();
         this.animarAlzado();
         this.actualizarSombras();
         this.actualizarArboles();
@@ -3480,13 +3603,57 @@ export class Mapa3dComponent implements AfterViewInit {
   private mantenerSobreElRelieve(): void {
     const p = this.camara.position;
     let techo = -Infinity;
-    for (const [cx, cz] of [[0, 0], [400, 0], [-400, 0], [0, 400], [0, -400]]) {
+    // el radio de muestreo y el margen se achican al acercarse, hasta casi la altura de una persona
+    const dist = p.distanceTo(this.controles.target);
+    const k = Math.min(1, dist / 6000);
+    const radio = 400 * k, margen = 12 + (MARGEN_CAMARA_RELIEVE - 12) * k;
+    for (const [cx, cz] of [[0, 0], [radio, 0], [-radio, 0], [0, radio], [0, -radio]]) {
       techo = Math.max(techo, this.alturaEn(this.lon0 + (p.x + cx) / this.mLon, this.lat0 - (p.z + cz) / this.mLat));
     }
-    const minimo = techo + MARGEN_CAMARA_RELIEVE;
-    if (p.y >= minimo) return;
-    p.y = minimo;
-    this.camara.lookAt(this.controles.target);
+    const minimo = techo + margen;
+    let cambio = false;
+    if (p.y < minimo) { p.y = minimo; cambio = true; }
+    if (this.evitarEdificios(p)) cambio = true;
+    if (cambio) this.camara.lookAt(this.controles.target);
+  }
+
+  /** El plano cercano baja con la distancia al punto de mira para poder acercarse mucho sin perder precisión de profundidad de lejos. */
+  private ajustarPlanoCercano(): void {
+    const near = Math.min(200, Math.max(1.5, this.camara.position.distanceTo(this.controles.target) / 25));
+    if (Math.abs(near - this.camara.near) / near < 0.05) return;
+    this.camara.near = near;
+    this.camara.updateProjectionMatrix();
+  }
+
+  /** Si la cámara quedó dentro de un edificio (o más baja que su techo sobre él), la saca por el lado más cercano. */
+  private evitarEdificios(p: THREE.Vector3): boolean {
+    if (p.distanceTo(this.controles.target) > 3000) return false;
+    const m = 6;
+    let movido = false;
+    const cx = Math.floor((p.x + this.ancho / 2) / TESELA), cz = Math.floor((p.z + this.alto / 2) / TESELA);
+    for (let a = -1; a <= 1; a++) {
+      for (let b = -1; b <= 1; b++) {
+        for (const c of this.cajasViv.get(cx + a + (cz + b) * 1000) ?? []) {
+          const top = c.top + (this.alzado[c.id] ?? 0) + m;
+          if (p.y >= top || p.x < c.x0 - m || p.x > c.x1 + m || p.z < c.z0 - m || p.z > c.z1 + m) continue;
+          const dx0 = p.x - (c.x0 - m), dx1 = c.x1 + m - p.x, dz0 = p.z - (c.z0 - m), dz1 = c.z1 + m - p.z;
+          const mn = Math.min(dx0, dx1, dz0, dz1);
+          if (mn === dx0) p.x = c.x0 - m; else if (mn === dx1) p.x = c.x1 + m;
+          else if (mn === dz0) p.z = c.z0 - m; else p.z = c.z1 + m;
+          movido = true;
+        }
+      }
+    }
+    for (const e of this.cajasEquip) {
+      const top = e.top + (this.alzado[e.id] ?? 0) + m, rr = e.r + m;
+      const dx = p.x - e.x, dz = p.z - e.z, d = Math.hypot(dx, dz);
+      if (p.y >= top || d >= rr) continue;
+      const f = d < 1e-3 ? 1 : rr / d;
+      p.x = e.x + (d < 1e-3 ? rr : dx * f);
+      p.z = e.z + (d < 1e-3 ? 0 : dz * f);
+      movido = true;
+    }
+    return movido;
   }
 
   private limitarDesplazamiento(): void {
@@ -3807,7 +3974,7 @@ export class Mapa3dComponent implements AfterViewInit {
       t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
       return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
     };
-    const lista: { x: number; y: number; z: number; sxz: number; sy: number; tono: number; id: number; peso: number }[] = [];
+    const lista: { x: number; y: number; z: number; sxz: number; sy: number; tono: number; id: number; peso: number; elev: number; especie: number }[] = [];
     for (let zm = -this.alto / 2; zm < this.alto / 2; zm += PASO_ARBOLES) {
       for (let xm2 = -this.ancho / 2; xm2 < this.ancho / 2; xm2 += PASO_ARBOLES) {
         const x = xm2 + (azar() - 0.5) * PASO_ARBOLES * 0.9, z = zm + (azar() - 0.5) * PASO_ARBOLES * 0.9;
@@ -3824,10 +3991,26 @@ export class Mapa3dComponent implements AfterViewInit {
         lista.push({
           x, z, y: this.alturaEn(lon, lat) - 1, sxz: 10 + azar() * 6, sy: 17 + azar() * 9, tono: azar(),
           id, peso: id >= 0 ? this.pesoBorde(lon, lat, id) : 0,
+          elev: this.alturaEn(lon, lat) / EXAGERACION + this.relieve.min, especie: 0,
         });
       }
     }
     if (!lista.length) return;
+
+    // biomas por altitud: el pino (especie 0) manda en lo alto y se va entremezclando hacia abajo; en las zonas bajas se
+    // revuelven samán (1), yarumo (2) y ceiba (3), y entre ellos van exactamente GUAYACANES guayacanes amarillos (4)
+    const bajos: number[] = [];
+    lista.forEach((a, i) => {
+      const pino = a.elev >= PINO_TOTAL || (a.elev > PINO_DESDE && azar() < (a.elev - PINO_DESDE) / (PINO_TOTAL - PINO_DESDE));
+      if (pino) return;
+      a.especie = 1 + Math.floor(azar() * 3);
+      if (a.elev < PINO_DESDE) bajos.push(i);
+    });
+    for (let k = bajos.length - 1; k > 0; k--) {                 // se sortean sin repetir con un barajado parcial
+      const j = Math.floor(azar() * (k + 1));
+      [bajos[k], bajos[j]] = [bajos[j], bajos[k]];
+    }
+    bajos.slice(0, GUAYACANES).forEach(i => lista[i].especie = 4);
 
     // árbol de dibujo animado: tronco y dos conos de copa, de altura unitaria ~1,9
     const parte = (g: THREE.BufferGeometry, y: number, color: string) => {
@@ -3858,10 +4041,41 @@ export class Mapa3dComponent implements AfterViewInit {
           mvPosition = modelViewMatrix * mvPosition;
           gl_Position = projectionMatrix * mvPosition;`);
     };
-    // una malla instanciada por tesela (y por nivel de detalle): la GPU descarta las que no se ven
+    // especies de zona baja: se arman con los mismos modelos del catálogo, ya a su altura de siembra (en metros)
+    const materialBajas = material.clone();
+    materialBajas.side = THREE.DoubleSide;                           // las copas son medias esferas abiertas por debajo
+    materialBajas.onBeforeCompile = material.onBeforeCompile;
+    const especies: { cerca: THREE.BufferGeometry; lejos: THREE.BufferGeometry; material: THREE.Material }[] = [
+      { cerca: arbol, lejos: simple, material },
+    ];
+    for (const e of ESPECIES_BAJAS) {
+      const m = modelarEquipamiento('naturaleza', 'Vegetación', e.nombre, () => 0.5);
+      const partes = m.piezas.map(({ g, color }) => {
+        const geo = g.index ? g.toNonIndexed() : g.clone();
+        geo.deleteAttribute('uv');
+        const c = new THREE.Color(color), cnt = geo.getAttribute('position').count;
+        geo.setAttribute('color', new THREE.Float32BufferAttribute(Array.from({ length: cnt }, () => [c.r, c.g, c.b]).flat(), 3));
+        g.dispose();
+        return geo;
+      });
+      const completo = mergeGeometries(partes)!;
+      partes.forEach(g => g.dispose());
+      completo.computeBoundingBox();
+      const caja = completo.boundingBox!, escala = e.alto / caja.max.y;
+      completo.scale(escala, escala, escala);
+      // versión lejana: una elipsoide baja con el color de la copa, sobre la parte alta del árbol
+      const al = e.alto, ancho = (caja.max.x - caja.min.x) * escala;
+      const copa = new THREE.SphereGeometry(0.5, 6, 4).scale(ancho * 0.9, al * 0.5, ancho * 0.9).translate(0, al * 0.65, 0).toNonIndexed();
+      copa.deleteAttribute('uv');
+      const cc = new THREE.Color(e.copa), n3 = copa.getAttribute('position').count;
+      copa.setAttribute('color', new THREE.Float32BufferAttribute(Array.from({ length: n3 }, () => [cc.r, cc.g, cc.b]).flat(), 3));
+      especies.push({ cerca: completo, lejos: copa, material: materialBajas });
+    }
+
+    // una malla instanciada por tesela, por especie y por nivel de detalle: la GPU descarta las que no se ven
     const porTesela = new Map<number, typeof lista>();
     for (const a of lista) {
-      const clave = this.claveTesela(a.x, a.z);
+      const clave = this.claveTesela(a.x, a.z) * 8 + a.especie;
       if (!porTesela.has(clave)) porTesela.set(clave, []);
       porTesela.get(clave)!.push(a);
     }
@@ -3869,13 +4083,16 @@ export class Mapa3dComponent implements AfterViewInit {
     const eje = new THREE.Vector3(0, 1, 0), q = new THREE.Quaternion(), p = new THREE.Vector3(), esc = new THREE.Vector3();
     this.teselasArboles = [];
     for (const grupo of porTesela.values()) {
+      const sp = especies[grupo[0].especie];
       const aZona = new Float32Array(grupo.length), aPeso = new Float32Array(grupo.length);
-      const cerca = new THREE.InstancedMesh(arbol.clone(), material, grupo.length);
+      const cerca = new THREE.InstancedMesh(sp.cerca.clone(), sp.material, grupo.length);
       grupo.forEach((a, i) => {
-        m4.compose(p.set(a.x, a.y, a.z), q.setFromAxisAngle(eje, azar() * 6.28), esc.set(a.sxz, a.sy, a.sxz));
+        // el pino conserva su escala; las demás especies se escalan parejo (con la variación de tamaño del pino)
+        if (a.especie === 0) esc.set(a.sxz, a.sy, a.sxz); else esc.setScalar(a.sy / 21);
+        m4.compose(p.set(a.x, a.y, a.z), q.setFromAxisAngle(eje, azar() * 6.28), esc);
         cerca.setMatrixAt(i, m4);
-        // variación de verdes entre árboles
-        cerca.setColorAt(i, color.setRGB(0.82 + a.tono * 0.3, 0.9 + a.tono * 0.2, 0.78 + (1 - a.tono) * 0.2));
+        // variación de verdes entre árboles (el guayacán se queda amarillo: sin tinte)
+        cerca.setColorAt(i, a.especie === 4 ? color.setRGB(1, 1, 1) : color.setRGB(0.82 + a.tono * 0.3, 0.9 + a.tono * 0.2, 0.78 + (1 - a.tono) * 0.2));
         aZona[i] = a.id >= 0 ? a.id : 31;
         aPeso[i] = a.peso;
       });
@@ -3883,7 +4100,7 @@ export class Mapa3dComponent implements AfterViewInit {
       cerca.geometry.setAttribute('aZona', atributos[0]);
       cerca.geometry.setAttribute('aPeso', atributos[1]);
       // la versión simple comparte matrices, colores y atributos con la completa
-      const lejos = new THREE.InstancedMesh(simple.clone(), material, grupo.length);
+      const lejos = new THREE.InstancedMesh(sp.lejos.clone(), sp.material, grupo.length);
       lejos.instanceMatrix = cerca.instanceMatrix;
       lejos.instanceColor = cerca.instanceColor;
       lejos.geometry.setAttribute('aZona', atributos[0]);
@@ -4409,6 +4626,69 @@ export class Mapa3dComponent implements AfterViewInit {
     const e = this.equipamientos[mejor];
     const objetivo = new THREE.Vector3(e.x, this.alturaXZ(e.x, e.z) + 10, e.z);
     this.volarA(objetivo.clone().add(this.camara.position.clone().sub(this.controles.target).normalize().multiplyScalar(450)), objetivo);
+  }
+
+  private infraPorZona = new Map<number, InfraZona>();
+
+  /** Equipamientos e industrias cuya coordenada original cae dentro de la zona `id`, por categoría. */
+  private infraDe(id: number): InfraZona {
+    const guardada = this.infraPorZona.get(id);
+    if (guardada) return guardada;
+    const grupos = new Map<string, InfraZona['grupos'][number]>();
+    const poner = (clave: string, nombre: string, color: string, glifo: string, n: string, ref: { tipo: 'equip' | 'fabrica'; i: number }) => {
+      const g = grupos.get(clave) ?? grupos.set(clave, { id: clave, nombre, color, glifo, items: [] }).get(clave)!;
+      g.items.push({ n, ref });
+    };
+    this.equipamientos.forEach((e, i) => {
+      const p = e.datos.p;
+      if (this.idEn(p.lng ?? e.lon, p.lat ?? e.lat) !== id) return;
+      const cat = CATEGORIA.get(p.c);
+      poner(p.c, cat?.nombre ?? p.c, cat?.color ?? '#64748b', GLIFO[p.c], p.n, { tipo: 'equip', i });
+    });
+    this.fabricas.forEach((f, i) => {
+      if (this.idEn(f.datos.lon, f.datos.lat) === id) poner('industria', 'Industrias', COLOR_INDUSTRIA, GLIFO.industria, f.n, { tipo: 'fabrica', i });
+    });
+    const lista = [...grupos.values()].sort((a, b) => b.items.length - a.items.length || a.nombre.localeCompare(b.nombre, 'es'));
+    lista.forEach(g => g.items.sort((a, b) => a.n.localeCompare(b.n, 'es')));
+    const infra = { total: lista.reduce((t, g) => t + g.items.length, 0), grupos: lista };
+    this.infraPorZona.set(id, infra);
+    return infra;
+  }
+
+  /** Abre el panel de un pin desde la lista de la zona y acerca la cámara a él. */
+  irAPin(ref: { tipo: 'equip' | 'fabrica'; i: number }): void {
+    this.abrirPin(ref);
+    const q = ref.tipo === 'fabrica' ? this.fabricas[ref.i] : this.equipamientos[ref.i];
+    const objetivo = new THREE.Vector3(q.x, this.alturaXZ(q.x, q.z) + 10, q.z);
+    this.volarA(objetivo.clone().add(this.camara.position.clone().sub(this.controles.target).normalize().multiplyScalar(ref.tipo === 'fabrica' ? 1200 : 450)), objetivo);
+  }
+
+  cerrarZona(): void { this.deseleccionar(); }
+
+  /** Población y viviendas de una vereda en todos los años del estudio; null si la zona no tiene datos. */
+  proyeccion(z: Zona): ProyeccionVereda | null {
+    this.anio();
+    const datos = this.poblacion;
+    if (!datos || z.t !== 'VE') return null;
+    const norma = (t: string) => t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
+    const f = datos.features.find(x => norma(x.properties.nombre) === norma(z.n));
+    if (!f) return null;
+    const p = f.properties, base = Number(p['pob2018']);
+    if (!(base > 0)) return null;
+    const serie = ANIOS_POBLACION.map(anio => ({ anio, pob: Number(p[`pob${anio}`]) })).filter(a => Number.isFinite(a.pob));
+    const maximo = Math.max(...serie.map(a => a.pob));
+    const primero = serie[0], ultimo = serie[serie.length - 1];
+    const cambio = (ultimo.pob - primero.pob) / primero.pob * 100;
+    const pct = `${cambio >= 0 ? '+' : '−'}${Math.abs(cambio).toFixed(1).replace('.', ',')} %`;
+    return {
+      nombre: z.n, tipo: this.tipoDe(z),
+      anios: serie.map(a => ({
+        ...a, viv: Math.round(p.viv2018 * a.pob / base), alto: maximo > 0 ? Math.max(4, a.pob / maximo * 78) : 4, actual: a.anio === this.anio(),
+      })),
+      variacion: `Variación ${primero.anio}–${ultimo.anio}: ${pct} (${ultimo.pob - primero.pob >= 0 ? '+' : '−'}${Math.abs(ultimo.pob - primero.pob).toLocaleString('es-CO')} personas)`,
+      fuente: datos.metadata?.fuente ?? 'DANE, Censo 2018 y proyecciones',
+      infra: this.infraDe(this.piezas.findIndex(q => q.zona === z)),
+    };
   }
 
   cerrarPin(): void { this.pinFicha.set(null); }
