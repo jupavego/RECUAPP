@@ -128,6 +128,8 @@ const TRAFICO_ESPACIO = 200;
 /** Pueblo: radio (m) alrededor del centro de Girardota donde las vías forman una red, y metros de vía por auto. */
 const RADIO_PUEBLO = 2600;
 const TRAFICO_ESPACIO_PUEBLO = 227;
+/** Dos equipamientos pueden acercarse hasta esta fracción de la suma de sus radios (1 = sin tocarse), para que queden junto a su coordenada. */
+const SOLAPE_EQUIPAMIENTOS = 0.75;
 const COLORES_AUTOS = ['#ff2d2d', '#ff8a00', '#ffd400', '#00d26a', '#00c2ff', '#2f6bff', '#e040fb', '#ff4fa3'];
 const VELOCIDAD_PAJAROS = 130;
 const RECORRIDO_PAJAROS = 6800;
@@ -2363,7 +2365,7 @@ export class Mapa3dComponent implements AfterViewInit {
     for (const r of [8, 15, 22, 30, 40, 50, 62, 75, 90, 105, 120, 140, 160]) for (let k = 0; k < 16; k++) intentos.push([Math.cos(k * Math.PI / 8) * r, Math.sin(k * Math.PI / 8) * r]);
     const out: typeof this.equipamientos = [];
     const previos = (x: number, z: number, r: number) =>
-      this.fabricas.every(f => Math.hypot(f.x - x, f.z - z) > RADIO_FABRICA + r + 4) && out.every(o => Math.hypot(o.x - x, o.z - z) > o.r + r + 4);
+      this.fabricas.every(f => Math.hypot(f.x - x, f.z - z) > RADIO_FABRICA + r + 4) && out.every(o => Math.hypot(o.x - x, o.z - z) > (o.r + r) * SOLAPE_EQUIPAMIENTOS);
     lista.forEach((p, i) => {
       if (p.lat == null || p.lng == null) return;
       const modelo = modelarEquipamiento(p.c, p.t, p.n, mulberry32(9100 + i));
