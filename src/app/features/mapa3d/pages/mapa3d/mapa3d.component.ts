@@ -130,6 +130,10 @@ const RADIO_PUEBLO = 2600;
 const TRAFICO_ESPACIO_PUEBLO = 227;
 /** Dos equipamientos pueden acercarse hasta esta fracción de la suma de sus radios (1 = sin tocarse), para que queden junto a su coordenada. */
 const SOLAPE_EQUIPAMIENTOS = 0.75;
+/** Las canchas y placas de una misma manzana están pegadas: entre ellas pueden acercarse más. */
+const SOLAPE_DEPORTE = 0.4;
+/** Las canchas y placas están pegadas a la calle en las manzanas angostas: piden menos holgura a las vías (fracción de su radio) que el resto. */
+const HOLGURA_DEPORTE = 0.3;
 const COLORES_AUTOS = ['#ff2d2d', '#ff8a00', '#ffd400', '#00d26a', '#00c2ff', '#2f6bff', '#e040fb', '#ff4fa3'];
 const VELOCIDAD_PAJAROS = 130;
 const RECORRIDO_PAJAROS = 6800;
@@ -2364,8 +2368,9 @@ export class Mapa3dComponent implements AfterViewInit {
     const intentos: [number, number][] = [[0, 0]];
     for (const r of [8, 15, 22, 30, 40, 50, 62, 75, 90, 105, 120, 140, 160]) for (let k = 0; k < 16; k++) intentos.push([Math.cos(k * Math.PI / 8) * r, Math.sin(k * Math.PI / 8) * r]);
     const out: typeof this.equipamientos = [];
-    const previos = (x: number, z: number, r: number) =>
-      this.fabricas.every(f => Math.hypot(f.x - x, f.z - z) > RADIO_FABRICA + r + 4) && out.every(o => Math.hypot(o.x - x, o.z - z) > (o.r + r) * SOLAPE_EQUIPAMIENTOS);
+    const previos = (x: number, z: number, r: number, deporte: boolean) =>
+      this.fabricas.every(f => Math.hypot(f.x - x, f.z - z) > RADIO_FABRICA + r + 4)
+      && out.every(o => Math.hypot(o.x - x, o.z - z) > (o.r + r) * (deporte && o.datos.p.c === 'deporte' ? SOLAPE_DEPORTE : SOLAPE_EQUIPAMIENTOS));
     lista.forEach((p, i) => {
       if (p.lat == null || p.lng == null) return;
       const modelo = modelarEquipamiento(p.c, p.t, p.n, mulberry32(9100 + i));
@@ -2373,7 +2378,7 @@ export class Mapa3dComponent implements AfterViewInit {
       for (const [dx, dz] of intentos) {
         const x = x0 + dx, z = z0 + dz;
         if (Math.abs(x) > this.ancho / 2 - 150 || Math.abs(z) > this.alto / 2 - 150) continue;
-        if (holgura(x, z) < modelo.radio * 0.7 || !previos(x, z, modelo.radio)) continue;
+        if (holgura(x, z) < modelo.radio * (p.c === 'deporte' ? HOLGURA_DEPORTE : 0.7) || !previos(x, z, modelo.radio, p.c === 'deporte')) continue;
         out.push({ x, z, lon: this.lon0 + x / this.mLon, lat: this.lat0 - z / this.mLat, n: p.n, r: modelo.radio, datos: { p, modelo } });
         return;
       }

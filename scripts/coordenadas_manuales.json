@@ -1,5 +1,23 @@
 {
-  "Cuerpo de Bomberos Voluntarios del Municipio de Girardota": [6.380079, -75.45016],
-  "COLEGIO NUESTRA SEÑORA DEL ROSARIO (P)": [6.376, -75.445],
-  "Personería Municipal de Girardota": [6.377223, -75.445759, true]
+  "Cuerpo de Bomberos Voluntarios del Municipio de Girardota": [
+    6.380079,
+    -75.45016
+  ],
+  "COLEGIO NUESTRA SEÑORA DEL ROSARIO (P)": [
+    6.376,
+    -75.445
+  ],
+  "Personería Municipal de Girardota": [
+    6.377223,
+    -75.445759,
+    true
+  ],
+  "Cancha sintetica Aurelio Mejia": [
+    6.37878,
+    -75.44341
+  ],
+  "Placa barrio El Paraiso": [
+    6.372996,
+    -75.436967
+  ]
 }

@@ -312,6 +312,12 @@ for p in puntos:
     else:
         p["x"] = BICN
 
+# Las coordenadas manuales también corrigen puntos que ya traían coordenadas de su fuente (p. ej. un escenario de Mindeporte mal ubicado).
+_manuales_previos = json.loads((RAIZ / "scripts" / "coordenadas_manuales.json").read_text(encoding="utf-8"))
+for p in puntos:
+    if "lat" in p and p["n"] in _manuales_previos:
+        p["lat"], p["lng"] = _manuales_previos[p["n"]][:2]
+
 # ── Vereda o zona donde cae cada punto con coordenadas exactas ─────────────────
 PRECISION_POLY = 1e-4
 
