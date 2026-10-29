@@ -111,6 +111,9 @@
         </dl>
         @if (p.g) { <p class="mapa__aviso">Ubicación estimada a partir de la dirección (OpenStreetMap): puede variar unos cientos de metros.</p> }
         @else if (p.a) { <p class="mapa__aviso">Ubicación aproximada: la fuente no trae coordenadas exactas.</p> }
+        @if (desde3d(); as o) {
+          <a class="mapa__volver" routerLink="/mapa3d" [queryParams]="{ punto: p.n, lat: p.lat, lng: p.lng }">← Volver al mapa 3D</a>
+        }
       </aside>
     }
 

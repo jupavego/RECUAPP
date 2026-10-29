@@ -1,5 +1,6 @@
 import { DecimalPipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import {
   AfterViewInit, Component, DestroyRef, ElementRef, NgZone, ViewChild, inject, signal,
 } from '@angular/core';
@@ -10,7 +11,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { mergeGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 import { MapaService, Municipio, Punto, Zona } from '../../../mapa/services/mapa.service';
 import { CATEGORIA } from '../../../mapa/utils/puntos';
-import { Aura, COLOR_INDUSTRIA, Icono, ItemAura, crearAgrupador, crearAuras, crearIcono } from '../../utils/aura';
+import { Aura, COLOR_INDUSTRIA, GLIFO, Icono, ItemAura, crearAgrupador, crearAuras, crearIcono } from '../../utils/aura';
 import { Modelo, modelarEquipamiento } from '../../utils/equipamientos';
 import { coloresPorMunicipio, hex } from '../../../mapa/utils/paleta';
 import { Geometria, decodeGeometria } from '../../../mapa/utils/polyline';
@@ -25,7 +26,7 @@ const ANCHO_RESALTE = 1024;
 /** Separación entre los valores de rojo del mapa de identificadores (tolera el suavizado de bordes). */
 const SALTO_ID = 8;
 /** Contorno de las veredas sobre la textura: grosor en píxeles (antes 2), opacidad y puntos redondos. */
-const CONTORNO_ZONA_GROSOR = 9.6;
+const CONTORNO_ZONA_GROSOR = 4.8;
 const CONTORNO_ZONA_OPACIDAD = 0.85;
 /** Dirección del sol respecto del punto de mira (metros). */
 const SOL_DIRECCION = new THREE.Vector3(-9000, 11000, 7000);
@@ -101,6 +102,19 @@ const ANCHO_MIN_PUENTE = 20;
 const COLOR_BARANDA = '#f6c312';
 /** Cuánto vira el agua del Río Medellín a su color propio, #AF9447 con ondas azules (0 = azul, 1 = pleno). */
 const TINTE_MEDELLIN = 1.0;
+/**
+ * Colores del Río Medellín según el caudal y el clima. El color general va pasando, despacio y al azar, entre los tres
+ * primeros; los dos últimos son vertimientos locales que tiñen solo el tramo junto a una industria cercana al río.
+ */
+const COLORES_MEDELLIN = ['#A0683B', '#4A3324', '#5B7A51'];   // terracota (caudal ordinario), café lodoso (lluvias), verde oliva (tramo alto)
+const COLOR_VERTIMIENTO_TEXTIL = '#1E3F8A';                   // azul añil
+const COLOR_VERTIMIENTO_COLORANTE = '#9B2242';                // rojo carmín
+/** Segundos que tarda el río en pasar de un color al siguiente, y que se queda en cada uno. */
+const CAMBIO_COLOR_RIO = 40;
+const REPOSO_COLOR_RIO = 25;
+/** Una industria tiñe el río si queda a menos de esto (m) de su cauce; la mancha se extiende este alcance a lo largo del río. */
+const ALCANCE_CERCA_RIO = 260;
+const ALCANCE_MANCHA = 230;
 /** Bandada que cruza el Río Medellín de sur a norte: cuántos pájaros, velocidad (m/s del modelo), recorrido total y pausa entre pasadas. */
 const PAJAROS = 11;
 /** Fábricas: separación mínima entre dos (m). Humo: bocanadas por chimenea, segundos por ciclo, altura de subida, deriva (m/s), radio de la aureola y opacidad. */
@@ -276,6 +290,17 @@ interface Industria {
   em?: Record<string, number>; kgh?: Record<string, number>;
 }
 
+/** Panel lateral derecho de un pin: datos en forma de tooltip, que se irán ampliando. */
+interface FichaPin {
+  color: string; glifo: string; categoria: string; titulo: string;
+  filas: { k: string; v: string }[];
+  fuente: string;
+  /** parámetros para abrir este punto en el mapa 2D (solo los equipamientos están allí) */
+  mapa2d: { punto: string; lat: number; lng: number; desde: '3d' } | null;
+  /** la coordenada es aproximada (centro de la vereda o estimada de la dirección) */
+  aproximada: boolean;
+}
+
 interface FichaFabrica {
   nombre: string; sector: string; direccion: string; resumen: string; combustibles: string; control: string;
   emisiones: { k: string; v: string }[]; flujos: string;
@@ -379,7 +404,7 @@ const TIPOS_ZONA: Record<string, string> = {
 @Component({
   selector: 'app-mapa3d',
   standalone: true,
-  imports: [DecimalPipe],
+  imports: [DecimalPipe, RouterLink],
   template: `
     <div #lienzo class="lienzo"
          (pointermove)="alMover($event)" (mousedown)="alRatonAbajo($event)" (pointerdown)="alPulsar($event)" (pointerup)="alSoltar($event)"
@@ -453,6 +478,27 @@ const TIPOS_ZONA: Record<string, string> = {
       }
     </div>
 
+    @if (pinFicha(); as p) {
+      <aside class="pin-panel" [style.--c]="p.color" aria-label="Detalle del lugar">
+        <button type="button" class="cerrar" (click)="cerrarPin()" aria-label="Cerrar detalle">×</button>
+        <div class="pin-cab">
+          <span class="pin-glifo">{{ p.glifo }}</span>
+          <div><span class="tipo">{{ p.categoria }}</span><strong>{{ p.titulo }}</strong></div>
+        </div>
+        <dl>
+          @for (f of p.filas; track f.k) { <div><dt>{{ f.k }}</dt><dd>{{ f.v }}</dd></div> }
+        </dl>
+        @if (p.mapa2d; as q) {
+          <a class="pin-mapa" routerLink="/mapa" [queryParams]="q">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.500a2.5 2.5 0 0 1 0 5z" fill="currentColor"/></svg>
+            Ver en el mapa 2D
+          </a>
+        }
+        @if (p.aproximada) { <p class="pin-fuente">La ubicación de este punto es aproximada.</p> }
+        <p class="pin-fuente">{{ p.fuente }}</p>
+      </aside>
+    }
+
     <p class="creditos">Datos: © colaboradores de OpenStreetMap · Overture Maps · IGAC (drenajes 1:100.000) · Sentinel-2 © EOX</p>
 
     <div class="zoom">
@@ -508,6 +554,24 @@ const TIPOS_ZONA: Record<string, string> = {
     .panel h1 small { display: block; font-weight: 500; font-size: .75rem; color: #6b8294; }
     .panel p { margin: 0 0 10px; }
     .panel .ayuda { font-size: .72rem; color: #6b8294; margin: 10px 0 0; }
+    .pin-panel { position: absolute; z-index: 10; top: 16px; right: 16px; width: 300px; max-height: calc(100% - 96px); overflow: auto;
+      padding: 16px 18px; border-radius: 16px; background: rgba(255,255,255,.9); backdrop-filter: blur(8px);
+      box-shadow: 0 6px 24px rgba(30,60,90,.22); border-top: 5px solid var(--c); font: .9rem system-ui; color: #26425a; }
+    .pin-panel .cerrar { position: absolute; top: 8px; right: 8px; width: 28px; height: 28px; padding: 0; border-radius: 50%;
+      background: rgba(38,66,90,.1); color: #26425a; font-size: 1.2rem; line-height: 1; }
+    .pin-panel .cerrar:hover { background: rgba(38,66,90,.2); }
+    .pin-cab { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; padding-right: 26px; }
+    .pin-glifo { flex: none; width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; font-size: 1.5rem;
+      background: var(--c); box-shadow: 0 0 0 3px #fff, 0 0 0 4px rgba(36,55,70,.2); }
+    .pin-cab .tipo { display: block; font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: #6b8294; }
+    .pin-cab strong { font-size: 1.05rem; line-height: 1.2; }
+    .pin-panel dl { margin: 0; display: grid; gap: 8px; }
+    .pin-panel dt { font-size: .7rem; text-transform: uppercase; letter-spacing: .05em; color: #6b8294; }
+    .pin-panel dd { margin: 1px 0 0; font-size: .86rem; overflow-wrap: anywhere; }
+    .pin-mapa { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; padding: 8px 14px; border-radius: 10px;
+      background: #26425a; color: #fff; font-weight: 600; font-size: .85rem; text-decoration: none; }
+    .pin-mapa:hover { background: #35597a; }
+    .pin-fuente { margin: 12px 0 0; font-size: .72rem; color: #6b8294; }
     .ficha { display: flex; flex-direction: column; gap: 2px; margin-bottom: 10px; }
     .ficha .tipo { font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: #6b8294; }
     .ficha strong { font-size: 1.1rem; }
@@ -533,6 +597,7 @@ export class Mapa3dComponent implements AfterViewInit {
   @ViewChild('rotulos', { static: true }) private contenedorRotulos!: ElementRef<HTMLDivElement>;
 
   private readonly http = inject(HttpClient);
+  private readonly ruta = inject(ActivatedRoute);
   private readonly mapa = inject(MapaService);
   private readonly zona = inject(NgZone);
   private readonly destroyRef = inject(DestroyRef);
@@ -540,6 +605,7 @@ export class Mapa3dComponent implements AfterViewInit {
   readonly cargando = signal(true);
   readonly error = signal('');
   readonly seleccion = signal<Zona | null>(null);
+  readonly pinFicha = signal<FichaPin | null>(null);
   readonly anio = signal(ANIO_INICIAL);
   readonly hayPoblacion = signal(false);
   readonly aniosPoblacion = ANIOS_POBLACION;
@@ -574,6 +640,14 @@ export class Mapa3dComponent implements AfterViewInit {
   private ctxResalte!: CanvasRenderingContext2D;
   private texturaResalte!: THREE.CanvasTexture;
   private hover = -1;
+  /** color vivo del Río Medellín (lineal): el shader del agua lo lee cada cuadro */
+  private readonly uniformsRio = {
+    uRio: { value: new THREE.Color(COLORES_MEDELLIN[0]) },
+    uAnil: { value: new THREE.Color(COLOR_VERTIMIENTO_TEXTIL) },
+    uCarmin: { value: new THREE.Color(COLOR_VERTIMIENTO_COLORANTE) },
+    uT: { value: 0 },
+  };
+  private colorRio = { de: 0, a: 0, t: 0 };
   private bordeClaves = '';
   private bordesHover = new Map<number, THREE.Group>();
   // levantamiento de las veredas
@@ -719,12 +793,14 @@ export class Mapa3dComponent implements AfterViewInit {
           if (cauces?.c) this.construirPajaros(cauces);
           if (vias?.v) this.construirTrafico(vias);
           this.construirIndustrias();
-          this.construirEquipamientos();          this.edificiosBase = this.sinIndustrias(edificios);
+          this.construirEquipamientos();
+          this.edificiosBase = this.sinIndustrias(edificios);
           this.poblacion = poblacion;
           this.hayPoblacion.set(!!(edificios?.e && poblacion));
           const dibujados = this.edificiosParaAnio(this.anio());
           if (dibujados?.e) this.construirEdificios(dibujados);
           this.construirVegetacion(vias, dibujados, cauces);
+          this.abrirPuntoDeLaRuta();
         } catch (e) {
           console.error(e);
           this.error.set('No se pudo iniciar la vista 3D en este navegador.');
@@ -2484,7 +2560,9 @@ export class Mapa3dComponent implements AfterViewInit {
       }
       const color = CATEGORIA.get(q.datos.p.c)?.color ?? '#ffffff';
       items.push({ x: q.x, y: base, z: q.z, radio: q.r + 2, alto: alto * 1.15 + 4, color });
-      this.iconosEquip.push(crearIcono(q.datos.p.c, color, q.x, base + alto, q.z));
+      const icono = crearIcono(q.datos.p.c, color, q.x, base + alto, q.z);
+      icono.ref = { tipo: 'equip', i: items.length - 1 };
+      this.iconosEquip.push(icono);
     }
 
     const geo = mergeGeometries(geos, false);
@@ -2589,6 +2667,7 @@ export class Mapa3dComponent implements AfterViewInit {
       this.humos.push({ x: hx, y: base + ch + 2, z: hz, fase, ini: this.humos.length * HUMO_BOCANADAS, puffs });
       itemsAura.push({ x: f.x, y: base, z: f.z, radio: RADIO_FABRICA * 0.95, alto: alto + 22, color: COLOR_INDUSTRIA });
       const icono = crearIcono('industria', COLOR_INDUSTRIA, f.x, base + ch * 0.6, f.z);
+      icono.ref = { tipo: 'fabrica', i: n };
       this.iconosEquip.push(icono);
       this.escena.add(icono.sprite);
     });
@@ -3341,6 +3420,7 @@ export class Mapa3dComponent implements AfterViewInit {
         this.animarHumo();
         this.animarAuras(t / 1000);
         this.animarConfluencias();
+        this.animarColorRio(dt);
         if (this.texturaRio) this.texturaRio.offset.y -= dt * VELOCIDAD_AGUA;   // la corriente avanza
         this.ajustarResolucion(t, dt);
         const t1 = this.perf ? performance.now() : 0;
@@ -3527,6 +3607,20 @@ export class Mapa3dComponent implements AfterViewInit {
   }
 
   /** La espuma titila y se estira apenas río abajo; comparten material, así que pulsan juntas. */
+  /** El color del Río Medellín pasa despacio de uno de sus tonos al siguiente (elegido al azar), con un reposo entre cambios. */
+  private animarColorRio(dt: number): void {
+    const c = this.colorRio, u = this.uniformsRio;
+    u.uT.value += dt;
+    c.t += dt / (CAMBIO_COLOR_RIO + REPOSO_COLOR_RIO);
+    if (c.t >= 1) {
+      c.t = 0;
+      c.de = c.a;
+      c.a = (c.a + 1 + Math.floor(Math.random() * (COLORES_MEDELLIN.length - 1))) % COLORES_MEDELLIN.length;
+    }
+    const k = Math.min(1, c.t * (CAMBIO_COLOR_RIO + REPOSO_COLOR_RIO) / CAMBIO_COLOR_RIO);
+    u.uRio.value.set(COLORES_MEDELLIN[c.de]).lerp(new THREE.Color(COLORES_MEDELLIN[c.a]), k * k * (3 - 2 * k));
+  }
+
   private animarConfluencias(): void {
     if (!this.confluencias.length) return;
     const t = performance.now() / 1000;
@@ -3561,20 +3655,46 @@ export class Mapa3dComponent implements AfterViewInit {
       }
     }
     malla.geometry.setAttribute('tinte', new THREE.BufferAttribute(tinte, 1));
+    // vertimientos: cada industria a menos de ALCANCE_CERCA_RIO del Medellín deja una mancha (azul añil o rojo carmín) en
+    // el tramo vecino, que aparece y se disipa sola. Por vértice: peso, tipo (0 añil · 1 carmín) y fase.
+    const mancha = new Float32Array(n * 3);
+    const rnd = mulberry32(8128);
+    for (const f of this.fabricas) {
+      let cerca = Infinity;
+      for (let i = 0; i < n; i++) if (esMedellin[i]) cerca = Math.min(cerca, Math.hypot(pos.getX(i) - f.x, pos.getZ(i) - f.z));
+      const tipo = rnd() < 0.6 ? 0 : 1, fase = rnd() * Math.PI * 2;
+      if (cerca > ALCANCE_CERCA_RIO) continue;
+      for (let i = 0; i < n; i++) {
+        if (!esMedellin[i]) continue;
+        const peso = Math.pow(Math.max(0, 1 - Math.hypot(pos.getX(i) - f.x, pos.getZ(i) - f.z) / (cerca + ALCANCE_MANCHA)), 1.3);
+        if (peso > mancha[i * 3]) { mancha[i * 3] = peso; mancha[i * 3 + 1] = tipo; mancha[i * 3 + 2] = fase; }
+      }
+    }
+    malla.geometry.setAttribute('mancha', new THREE.BufferAttribute(mancha, 3));
     (malla.material as THREE.MeshBasicMaterial).onBeforeCompile = shader => {
+      Object.assign(shader.uniforms, this.uniformsRio);
       shader.vertexShader = shader.vertexShader
         .replace('#include <common>', `#include <common>
           attribute float tinte;
-          varying float vTinte;`)
+          attribute vec3 mancha;
+          varying float vTinte;
+          varying vec3 vMancha;`)
         .replace('#include <begin_vertex>', `#include <begin_vertex>
-          vTinte = tinte;`);
+          vTinte = tinte;
+          vMancha = mancha;`);
       shader.fragmentShader = shader.fragmentShader
         .replace('#include <common>', `#include <common>
-          varying float vTinte;`)
+          varying float vTinte;
+          varying vec3 vMancha;
+          uniform vec3 uRio, uAnil, uCarmin;
+          uniform float uT;`)
         .replace('#include <map_fragment>', `#include <map_fragment>
           // las hebras de la corriente son lo claro de la textura (mucho rojo); ahí el río va azul y en el resto, su color
           float onda = smoothstep(0.25, 0.7, diffuseColor.r);
-          vec3 medellin = mix(vec3(0.429, 0.296, 0.063), vec3(0.06, 0.36, 0.78), onda);
+          vec3 medellin = mix(uRio, vec3(0.06, 0.36, 0.78), onda * 0.7);
+          float activa = smoothstep(-0.15, 0.6, sin(uT * 0.05 + vMancha.z));
+          vec3 tinta = mix(uAnil, uCarmin, vMancha.y) * (0.85 + 0.3 * onda);
+          medellin = mix(medellin, tinta, clamp(vMancha.x * 1.4, 0.0, 1.0) * activa * 0.92);
           diffuseColor.rgb = mix(diffuseColor.rgb, medellin, vTinte * ${TINTE_MEDELLIN.toFixed(2)});`);
     };
     (malla.material as THREE.MeshBasicMaterial).needsUpdate = true;
@@ -3992,6 +4112,12 @@ export class Mapa3dComponent implements AfterViewInit {
     return id < this.piezas.length ? id : -1;
   }
 
+  /** Los pines flotan sobre la escena y no se pueden "tocar" con el rayo: se buscan en pantalla y tienen prioridad sobre lo que haya detrás. */
+  private pinBajoCursor(ev: PointerEvent) {
+    const r = this.renderer.domElement.getBoundingClientRect();
+    return this.agrupadorIconos?.bajoCursor(this.camara, ev.clientX - r.left, ev.clientY - r.top, r.width, r.height) ?? null;
+  }
+
   alMover(ev: PointerEvent): void {
     if (ev.buttons & 4) {                      // rueda presionada: gira el mapa en horizontal
       this.vuelo = null;
@@ -4000,6 +4126,17 @@ export class Mapa3dComponent implements AfterViewInit {
       return;
     }
     if (ev.buttons) return;
+    const pin = this.pinBajoCursor(ev);
+    if (pin) {                                           // un pin tapa todo lo que tenga detrás (ríos, veredas, edificios)
+      const ref = pin.icono?.ref;
+      const fab = ref?.tipo === 'fabrica' ? ref.i : -1, eq = ref?.tipo === 'equip' ? ref.i : -1;
+      if (fab !== this.fabricaHover) this.marcarFabricaHover(fab);
+      if (eq !== this.equipHover) this.marcarEquipHover(eq);
+      if (this.hover !== -1) { this.hover = -1; this.pintarResalte(); }
+      if (this.rioHover) { this.rioHover = null; this.pintarHalos(); }
+      this.lienzo.nativeElement.style.cursor = 'pointer';
+      return;
+    }
     // las fábricas van primero: son pequeñas y están sobre las veredas y los cauces
     const ahora = performance.now();
     if (ahora - this.tFabricaHover > 40) {
@@ -4062,12 +4199,29 @@ export class Mapa3dComponent implements AfterViewInit {
     this.pulsado = null;
     this.lienzo.nativeElement.style.cursor = 'grab';
     if (!p || Math.hypot(ev.clientX - p.x, ev.clientY - p.y) > 5) return;
-    const fab = this.fabricaBajoCursor(ev);
+    const pin = this.pinBajoCursor(ev);
+    if (pin?.grupo) {                                    // clic en un grupo: la cámara se acerca para separarlo
+      const objetivo = new THREE.Vector3(pin.x, this.alturaXZ(pin.x, pin.z) + 10, pin.z);
+      const dir = this.camara.position.clone().sub(this.controles.target).normalize();
+      const dist = Math.max(450, this.camara.position.distanceTo(objetivo) * 0.45);
+      this.volarA(objetivo.clone().add(dir.multiplyScalar(dist)), objetivo);
+      return;
+    }
+    if (pin?.icono?.ref) {                               // clic en un pin: se abre su panel y la cámara se acerca
+      const ref = pin.icono.ref;
+      this.abrirPin(ref);
+      const q = ref.tipo === 'fabrica' ? this.fabricas[ref.i] : this.equipamientos[ref.i];
+      const objetivo = new THREE.Vector3(q.x, this.alturaXZ(q.x, q.z) + 10, q.z);
+      this.volarA(objetivo.clone().add(this.camara.position.clone().sub(this.controles.target).normalize().multiplyScalar(ref.tipo === 'fabrica' ? 1200 : 450)), objetivo);
+      return;
+    }
+    const ref = pin?.icono?.ref;
+    const fab = ref ? (ref.tipo === 'fabrica' ? ref.i : -1) : this.fabricaBajoCursor(ev);
     if (fab >= 0) {                                      // clic en una fábrica: la elige; otro clic en la misma, la suelta
       this.seleccionarFabrica(fab === this.fabricaElegida ? -1 : fab);
       return;
     }
-    const eq = this.equipBajoCursor(ev);
+    const eq = ref ? (ref.tipo === 'equip' ? ref.i : -1) : this.equipBajoCursor(ev);
     if (eq >= 0) {                                       // clic en un equipamiento: la cámara se acerca a él
       const q = this.equipamientos[eq];
       const objetivo = new THREE.Vector3(q.x, this.alturaXZ(q.x, q.z) + 10, q.z);
@@ -4239,7 +4393,53 @@ export class Mapa3dComponent implements AfterViewInit {
     }
   }
 
+  /** Al volver del mapa 2D (?punto=…&lat=…&lng=…) se abre el panel de ese punto y la cámara se acerca a él. */
+  private abrirPuntoDeLaRuta(): void {
+    const q = this.ruta.snapshot.queryParamMap, nombre = q.get('punto');
+    if (!nombre) return;
+    const lat = Number(q.get('lat')), lng = Number(q.get('lng'));
+    let mejor = -1, dMejor = Infinity;
+    this.equipamientos.forEach((e, i) => {
+      if (e.n !== nombre) return;
+      const d = Math.hypot(((e.datos.p.lat ?? e.lat) - lat) * this.mLat, ((e.datos.p.lng ?? e.lon) - lng) * this.mLon);
+      if (d < dMejor) { dMejor = d; mejor = i; }
+    });
+    if (mejor < 0) return;
+    this.abrirPin({ tipo: 'equip', i: mejor });
+    const e = this.equipamientos[mejor];
+    const objetivo = new THREE.Vector3(e.x, this.alturaXZ(e.x, e.z) + 10, e.z);
+    this.volarA(objetivo.clone().add(this.camara.position.clone().sub(this.controles.target).normalize().multiplyScalar(450)), objetivo);
+  }
+
+  cerrarPin(): void { this.pinFicha.set(null); }
+
+  /** Abre el panel lateral derecho con los datos del pin (equipamiento o industria). */
+  private abrirPin(ref: { tipo: 'equip' | 'fabrica'; i: number }): void {
+    if (ref.tipo === 'fabrica') {
+      const d = this.fabricas[ref.i].datos;
+      const num = (v: number) => (v >= 100 ? v.toFixed(0) : v >= 1 ? v.toFixed(1) : v.toFixed(2)).replace('.', ',');
+      const filas = [
+        { k: 'Sector', v: SECTORES[d.c] ?? d.c },
+        { k: 'Dirección', v: (d.dir ?? '').replace(/\s+/g, ' ').trim() },
+        { k: 'Fuentes fijas', v: `${d.fuentes ?? 0}${d.chimenea ? ` · chimenea hasta ${num(d.chimenea)} m` : ''}` },
+        { k: 'Combustibles', v: d.combustibles?.join(', ') ?? '' },
+        { k: 'Control de emisiones', v: d.control?.join(', ') ?? '' },
+      ].filter(f => f.v);
+      this.pinFicha.set({ color: COLOR_INDUSTRIA, glifo: GLIFO.industria, categoria: 'Industria', titulo: d.n, filas, fuente: 'Inventario de emisiones atmosféricas · Corantioquia 2021', mapa2d: null, aproximada: false });
+      return;
+    }
+    const q = this.equipamientos[ref.i], p = q.datos.p, cat = CATEGORIA.get(p.c);
+    const filas = [
+      { k: 'Tipo', v: p.t }, { k: 'Dirección', v: p.d ?? '' }, { k: 'Vereda o zona', v: p.v ?? '' },
+      { k: 'Teléfono', v: p.tel ?? '' }, { k: 'Correo', v: p.mail ?? '' }, { k: 'Web', v: p.web ?? '' },
+      { k: 'Detalle', v: p.x ?? '' }, { k: 'Estado del dato', v: p.e ?? '' },
+      { k: 'Ubicación', v: p.a ? 'Aproximada (centro de la vereda)' : p.g ? 'Estimada a partir de la dirección' : '' },
+    ].filter(f => f.v);
+    this.pinFicha.set({ color: cat?.color ?? '#64748b', glifo: GLIFO[p.c], categoria: cat?.nombre ?? p.c, titulo: p.n, filas, fuente: p.f, mapa2d: { punto: p.n, lat: p.lat ?? q.lat, lng: p.lng ?? q.lon, desde: '3d' }, aproximada: !!p.a || !!p.g });
+  }
+
   vistaGeneral(): void {
+    this.cerrarPin();
     this.seleccionarFabrica(-1, false);
     this.seleccionarRio(null, false);
     this.elegida = -1;

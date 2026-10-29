@@ -6,7 +6,7 @@ import { CategoriaPunto } from '../../mapa/services/mapa.service';
 export type CategoriaIcono = CategoriaPunto | 'industria';
 export const COLOR_INDUSTRIA = '#f97316';
 
-const GLIFO: Record<CategoriaIcono, string> = {
+export const GLIFO: Record<CategoriaIcono, string> = {
   educacion: '🎓', cultura: '🎭', salud: '🏥', turismo: '🧭', deporte: '⚽', justicia: '🛡️', patrimonio: '🏺', industria: '🏭',
 };
 
@@ -161,6 +161,8 @@ export interface Icono {
   sprite: THREE.Sprite;
   cat: CategoriaIcono; color: string;
   x: number; cima: number; z: number;
+  /** a qué edificio pertenece (para el clic) */
+  ref?: { tipo: 'equip' | 'fabrica'; i: number };
   /** pone el sprite sobre su edificio con el tamaño `tam` (m); `visible` false lo esconde */
   animar(t: number, camara: THREE.Camera, tam: number, visible: boolean): void;
   dispose(): void;
@@ -185,7 +187,7 @@ function colocar(sprite: THREE.Sprite, x: number, cima: number, z: number, tam: 
 /** Icono flotante sobre un edificio: sprite con el medallón de su tipo. */
 export function crearIcono(cat: CategoriaIcono, color: string, x: number, cima: number, z: number): Icono {
   const tex = texturaIcono(cat, color);
-  const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthWrite: false }));
+  const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthWrite: false, depthTest: false }));
   sprite.renderOrder = 12;
   return {
     sprite, cat, color, x, cima, z,
@@ -207,6 +209,7 @@ const CELDA_PANTALLA = 0.15;
 export function crearAgrupador(iconos: Icono[], escena: THREE.Object3D) {
   const texturas = new Map<string, THREE.CanvasTexture>();
   const grupos: THREE.Sprite[] = [];
+  const miembros: Icono[][] = [];
   const textura = (cat: CategoriaIcono, color: string, n: number) => {
     const k = `${cat}|${n}`;
     let t = texturas.get(k);
@@ -215,7 +218,7 @@ export function crearAgrupador(iconos: Icono[], escena: THREE.Object3D) {
   };
   const sprite = (i: number) => {
     if (!grupos[i]) {
-      const s = new THREE.Sprite(new THREE.SpriteMaterial({ transparent: true, depthWrite: false }));
+      const s = new THREE.Sprite(new THREE.SpriteMaterial({ transparent: true, depthWrite: false, depthTest: false }));
       s.renderOrder = 12;
       escena.add(s);
       grupos[i] = s;
@@ -249,9 +252,30 @@ export function crearAgrupador(iconos: Icono[], escena: THREE.Object3D) {
         mat.map = textura(g[0].cat, g[0].color, g.length);
         mat.needsUpdate = true;
         s.visible = true;
+        miembros[usados - 1] = g;
         colocar(s, x, cima, z, tamanoIcono(Math.hypot(cam.x - x, cam.y - cima, cam.z - z)) * 1.15, t, cam);
       }
       for (let i = usados; i < grupos.length; i++) grupos[i].visible = false;
+    },
+    /** Pin bajo el puntero (px, py dentro de un lienzo w×h): un icono suelto o un grupo; el más cercano a la cámara gana. */
+    bajoCursor(camara: THREE.Camera, px: number, py: number, w: number, h: number): { icono?: Icono; grupo?: Icono[]; x: number; z: number } | null {
+      const p = new THREE.Vector3(), q = new THREE.Vector3();
+      let mejor: { icono?: Icono; grupo?: Icono[]; x: number; z: number } | null = null, zMejor = Infinity;
+      const probar = (s: THREE.Sprite, r: { icono?: Icono; grupo?: Icono[]; x: number; z: number }) => {
+        if (!s.visible) return;
+        p.copy(s.position).project(camara);
+        if (p.z > 1) return;
+        q.copy(s.position).add(new THREE.Vector3().setFromMatrixColumn(camara.matrixWorld, 1).multiplyScalar(s.scale.y / 2)).project(camara);
+        const rad = Math.max(10, Math.abs(q.y - p.y) * h / 2);
+        const sx = (p.x * 0.5 + 0.5) * w, sy = (-p.y * 0.5 + 0.5) * h;
+        if (Math.hypot(px - sx, py - sy) <= rad && p.z < zMejor) { zMejor = p.z; mejor = r; }
+      };
+      for (const ic of iconos) probar(ic.sprite, { icono: ic, x: ic.x, z: ic.z });
+      grupos.forEach((s, i) => {
+        const g = miembros[i];
+        if (g) probar(s, { grupo: g, x: g.reduce((a, c) => a + c.x, 0) / g.length, z: g.reduce((a, c) => a + c.z, 0) / g.length });
+      });
+      return mejor;
     },
     dispose(): void {
       for (const s of grupos) { escena.remove(s); s.material.dispose(); }

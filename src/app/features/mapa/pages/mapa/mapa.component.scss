@@ -319,3 +319,17 @@
     height: auto;
   }
 }
+
+a.mapa__volver {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: #26425a;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+
+  &:hover { background: #35597a; color: #fff; text-decoration: none; }
+}

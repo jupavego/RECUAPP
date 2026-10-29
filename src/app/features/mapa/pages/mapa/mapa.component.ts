@@ -3,6 +3,7 @@ import {
   computed, effect, inject, signal, untracked,
 } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { forkJoin } from 'rxjs';
 import { GoogleMapsLoaderService } from '../../../../core/services/google-maps-loader.service';
 import { MapaService, MunicipiosData, Municipio, Punto, Territorio, Zona } from '../../services/mapa.service';
@@ -68,6 +69,7 @@ function limitesDe(rutas: Ruta[]): google.maps.LatLngBounds {
 @Component({
   selector: 'app-mapa',
   standalone: true,
+  imports: [RouterLink],
   templateUrl: './mapa.component.html',
   styleUrl: './mapa.component.scss',
 })
@@ -76,6 +78,10 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
   private readonly api = inject(MapaService);
   private readonly loader = inject(GoogleMapsLoaderService);
   private readonly destroyRef = inject(DestroyRef);
+  private readonly ruta = inject(ActivatedRoute);
+  /** Punto con el que se llegó desde el mapa 3D (?punto=…&lat=…&lng=…&desde=3d): se elige al cargar y permite volver. */
+  private punto3dUsado = false;
+  readonly desde3d = signal<{ punto: string; lat: number; lng: number } | null>(null);
 
   @ViewChild('lienzo', { static: true }) private lienzo!: ElementRef<HTMLDivElement>;
   @ViewChild('pista', { static: true }) private pista!: ElementRef<HTMLDivElement>;
@@ -182,6 +188,10 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
   private observador?: ResizeObserver;
 
   constructor() {
+    const q = this.ruta.snapshot.queryParamMap;
+    if (q.get('desde') === '3d' && q.get('punto')) {
+      this.desde3d.set({ punto: q.get('punto')!, lat: Number(q.get('lat')), lng: Number(q.get('lng')) });
+    }
     this.api.municipios$.pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
       next: d => {
         this.colores = coloresPorMunicipio(d.municipios);
@@ -323,8 +333,31 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
     this.puntos.set([]);
     this.puntoSel.set(null);
     this.api.puntos(id).pipe(takeUntilDestroyed(this.destroyRef)).subscribe(lista => {
-      if (this.muniId() === id) this.puntos.set(lista);
+      if (this.muniId() !== id) return;
+      this.puntos.set(lista);
+      this.elegirPuntoDe3d(lista);
     });
+  }
+
+  /** Si se llegó desde el 3D, elige el punto (mismo nombre y la coordenada más cercana) y centra el mapa en él. */
+  private elegirPuntoDe3d(lista: Punto[]): void {
+    const o = this.desde3d();
+    if (!o) return;
+    this.desde3d.set({ ...o });                       // se consume una vez: un cambio de municipio no vuelve a elegirlo
+    let mejor: Punto | null = null, dMejor = Infinity;
+    for (const p of lista) {
+      if (p.n !== o.punto || p.lat == null || p.lng == null) continue;
+      const d = Math.hypot(p.lat - o.lat, p.lng - o.lng);
+      if (d < dMejor) { dMejor = d; mejor = p; }
+    }
+    if (!mejor) return;
+    this.puntoSel.set(mejor);
+    const centrar = () => this.zone.runOutsideAngular(() => {
+      this.mapa?.setZoom(17);
+      this.mapa?.panTo({ lat: mejor!.lat!, lng: mejor!.lng! });
+    });
+    setTimeout(centrar, 900);
+    setTimeout(centrar, 2200);                        // por si el encuadre del municipio llega después
   }
 
   /** Con solo una subregión filtrada se dibujan los corregimientos y veredas de todos sus municipios. */
