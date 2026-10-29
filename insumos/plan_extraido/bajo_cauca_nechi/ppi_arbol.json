@@ -1,0 +1,689 @@
+[
+ {
+  "paginas": [
+   167,
+   167,
+   168
+  ],
+  "cabecera": "SECTOR",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   47698617311,
+   49129575830,
+   50603463105,
+   52121566997
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Educación",
+    "anios": [
+     2307802702,
+     2377036783,
+     2448347887,
+     2521798323
+    ],
+    "total": 9654985695,
+    "ruta": {
+     "linea": "Educación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Educación",
+    "anios": [
+     200000000,
+     206000000,
+     212180000,
+     218545400
+    ],
+    "total": 836725400,
+    "ruta": {
+     "linea": "Educación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Cultura",
+    "anios": [
+     305698189,
+     314869135,
+     324315209,
+     334044665
+    ],
+    "total": 1278927198,
+    "ruta": {
+     "linea": "Cultura"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Cultura",
+    "anios": [
+     200000000,
+     206000000,
+     212180000,
+     218545400
+    ],
+    "total": 836725400,
+    "ruta": {
+     "linea": "Cultura"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Deporte y recreación",
+    "anios": [
+     407597584,
+     419825512,
+     432420277,
+     445392885
+    ],
+    "total": 1705236258,
+    "ruta": {
+     "linea": "Deporte y recreación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Deporte y recreación",
+    "anios": [
+     160000000,
+     164800000,
+     169744000,
+     174836320
+    ],
+    "total": 669380320,
+    "ruta": {
+     "linea": "Deporte y recreación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Salud y protección social",
+    "anios": [
+     35101678104,
+     36154728447,
+     37239370300,
+     38356551409
+    ],
+    "total": 146852328260,
+    "ruta": {
+     "linea": "Salud y protección social"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Salud y protección social",
+    "anios": [
+     783329202,
+     806829078,
+     831033950,
+     855964969
+    ],
+    "total": 3277157199,
+    "ruta": {
+     "linea": "Salud y protección social"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Salud y protección social",
+    "anios": [
+     90713327,
+     93434726,
+     96237768,
+     99124901
+    ],
+    "total": 379510722,
+    "ruta": {
+     "linea": "Salud y protección social"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Inclusión social y reconciliación",
+    "anios": [
+     260000000,
+     267800000,
+     275834000,
+     284109020
+    ],
+    "total": 1087743020,
+    "ruta": {
+     "linea": "Inclusión social y reconciliación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Inclusión social y reconciliación",
+    "anios": [
+     400000000,
+     412000000,
+     424360000,
+     437090800
+    ],
+    "total": 1673450800,
+    "ruta": {
+     "linea": "Inclusión social y reconciliación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Inclusión social y reconciliación",
+    "anios": [
+     387000000,
+     398610000,
+     410568300,
+     422885349
+    ],
+    "total": 1619063649,
+    "ruta": {
+     "linea": "Inclusión social y reconciliación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Gobierno territorial",
+    "anios": [
+     500000000,
+     515000000,
+     530450000,
+     546363500
+    ],
+    "total": 2091813500,
+    "ruta": {
+     "linea": "Gobierno territorial"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Gobierno territorial",
+    "anios": [
+     233370567,
+     240371684,
+     247582835,
+     255010320
+    ],
+    "total": 976335406,
+    "ruta": {
+     "linea": "Gobierno territorial"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Gobierno territorial",
+    "anios": [
+     150000000,
+     154500000,
+     159135000,
+     163909050
+    ],
+    "total": 627544050,
+    "ruta": {
+     "linea": "Gobierno territorial"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Gobierno territorial",
+    "anios": [
+     190000000,
+     195700000,
+     201571000,
+     207618130
+    ],
+    "total": 794889130,
+    "ruta": {
+     "linea": "Gobierno territorial"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Vivienda, ciudad y territorio",
+    "anios": [
+     659000000,
+     678770000,
+     699133100,
+     720107093
+    ],
+    "total": 2757010193,
+    "ruta": {
+     "linea": "Vivienda, ciudad y territorio"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Vivienda, ciudad y territorio",
+    "anios": [
+     2808005625,
+     2892245794,
+     2979013168,
+     3068383563
+    ],
+    "total": 11747648150,
+    "ruta": {
+     "linea": "Vivienda, ciudad y territorio"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Información estadística",
+    "anios": [
+     120000000,
+     123600000,
+     127308000,
+     131127240
+    ],
+    "total": 502035240,
+    "ruta": {
+     "linea": "Información estadística"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Transporte",
+    "anios": [
+     710000000,
+     731300000,
+     753239000,
+     775836170
+    ],
+    "total": 2970375170,
+    "ruta": {
+     "linea": "Transporte"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Transporte",
+    "anios": [
+     230000000,
+     236900000,
+     244007000,
+     251327210
+    ],
+    "total": 962234210,
+    "ruta": {
+     "linea": "Transporte"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Transporte",
+    "anios": [
+     145000000,
+     149350000,
+     153830500,
+     158445415
+    ],
+    "total": 606625915,
+    "ruta": {
+     "linea": "Transporte"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Tecnologías de la información y las comunicaciones",
+    "anios": [
+     79691560,
+     82082307,
+     84544776,
+     87081119
+    ],
+    "total": 333399762,
+    "ruta": {
+     "linea": "Tecnologías de la información y las comunicaciones"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Ambiente y desarrollo sostenible",
+    "anios": [
+     150000000,
+     154500000,
+     159135000,
+     163909050
+    ],
+    "total": 627544050,
+    "ruta": {
+     "linea": "Ambiente y desarrollo sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Agricultura y desarrollorural",
+    "anios": [
+     265730451,
+     273702364,
+     281913435,
+     290370838
+    ],
+    "total": 1111717088,
+    "ruta": {
+     "linea": "Agricultura y desarrollorural"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Agricultura y desarrollorural",
+    "anios": [
+     174000000,
+     179220000,
+     184596600,
+     190134498
+    ],
+    "total": 727951098,
+    "ruta": {
+     "linea": "Agricultura y desarrollorural"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Agricultura y desarrollo rural",
+    "anios": [
+     400000000,
+     412000000,
+     424360000,
+     437090800
+    ],
+    "total": 1673450800,
+    "ruta": {
+     "linea": "Agricultura y desarrollo rural"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Comercio, industria y turismo",
+    "anios": [
+     280000000,
+     288400000,
+     297052000,
+     305963560
+    ],
+    "total": 1171415560,
+    "ruta": {
+     "linea": "Comercio, industria y turismo"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   168
+  ],
+  "cabecera": "LineaEstrategica 3 SECTOR",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector"
+  ],
+  "total_raices": [
+   1279000000,
+   1317370000,
+   1356891100,
+   1397597833
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Ambiente y desarrollo sostenible",
+    "anios": [
+     220000000,
+     226600000,
+     233398000,
+     240399940
+    ],
+    "total": 920397940,
+    "ruta": {
+     "linea": "Ambiente y desarrollo sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Ambiente y desarrollo sostenible",
+    "anios": [
+     196000000,
+     201880000,
+     207936400,
+     214174492
+    ],
+    "total": 819990892,
+    "ruta": {
+     "linea": "Ambiente y desarrollo sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Ambiente y desarrollo sostenible",
+    "anios": [
+     110000000,
+     113300000,
+     116699000,
+     120199970
+    ],
+    "total": 460198970,
+    "ruta": {
+     "linea": "Ambiente y desarrollo sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Ambiente y desarrollo sostenible",
+    "anios": [
+     107000000,
+     110210000,
+     113516300,
+     116921789
+    ],
+    "total": 447648089,
+    "ruta": {
+     "linea": "Ambiente y desarrollo sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Ambiente y desarrollo sostenible",
+    "anios": [
+     95000000,
+     97850000,
+     100785500,
+     103809065
+    ],
+    "total": 397444565,
+    "ruta": {
+     "linea": "Ambiente y desarrollo sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Ambiente y desarrollo sostenible",
+    "anios": [
+     76000000,
+     78280000,
+     80628400,
+     83047252
+    ],
+    "total": 317955652,
+    "ruta": {
+     "linea": "Ambiente y desarrollo sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Minas y energía",
+    "anios": [
+     80000000,
+     82400000,
+     84872000,
+     87418160
+    ],
+    "total": 334690160,
+    "ruta": {
+     "linea": "Minas y energía"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Minas y energía",
+    "anios": [
+     45000000,
+     46350000,
+     47740500,
+     49172715
+    ],
+    "total": 188263215,
+    "ruta": {
+     "linea": "Minas y energía"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Minas y energía",
+    "anios": [
+     350000000,
+     360500000,
+     371315000,
+     382454450
+    ],
+    "total": 1464269450,
+    "ruta": {
+     "linea": "Minas y energía"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   168
+  ],
+  "cabecera": "SECTOR",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   630000000,
+   648900000,
+   668367000,
+   688418010
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Gobierno territorial",
+    "anios": [
+     400000000,
+     412000000,
+     424360000,
+     437090800
+    ],
+    "total": 1673450800,
+    "ruta": {
+     "linea": "Gobierno territorial"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Justicia y del derecho",
+    "anios": [
+     230000000,
+     236900000,
+     244007000,
+     251327210
+    ],
+    "total": 962234210,
+    "ruta": {
+     "linea": "Justicia y del derecho"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

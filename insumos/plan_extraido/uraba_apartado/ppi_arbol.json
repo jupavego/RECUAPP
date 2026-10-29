@@ -1,0 +1,339 @@
+[
+ {
+  "paginas": [
+   233
+  ],
+  "cabecera": "Iniciativa",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   1387188209,
+   1865952149,
+   1304108825,
+   1826895159
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Construcción de acueductos rurales para el acceso al agua potable en las comunidades rurales.",
+    "anios": [
+     36864076,
+     6839767,
+     12327470,
+     12292557
+    ],
+    "total": 74574569,
+    "ruta": {
+     "linea": "Construcción de acueductos rurales para el acceso al agua potable en las comunidades rurales."
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Construcción de pavimento rural en los corregimientos del municipio de Apartadó para la integración vial y la productividad.",
+    "anios": [
+     0,
+     0,
+     430593785,
+     1000000000
+    ],
+    "total": 1430593785,
+    "ruta": {
+     "linea": "Construcción de pavimento rural en los corregimientos del municipio de Apartadó para la integración vial y la productividad."
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Pavimentación de vías urbanas para el mejoramiento de la movilidad urbana.",
+    "anios": [
+     1350324133,
+     1859112382,
+     430593785,
+     0
+    ],
+    "total": 3640030301,
+    "ruta": {
+     "linea": "Pavimentación de vías urbanas para el mejoramiento de la movilidad urbana."
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Construcción de parques para el sano disfrute e integración familiar.",
+    "anios": [
+     0,
+     0,
+     430593785,
+     814602602
+    ],
+    "total": 1245196387,
+    "ruta": {
+     "linea": "Construcción de parques para el sano disfrute e integración familiar."
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   248
+  ],
+  "cabecera": "Asignación",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   6436600951,
+   7092607449,
+   6571156779,
+   6922294092
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Saldo Sin comprometer",
+    "anios": [
+     174598791,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Saldo Sin comprometer"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Disponible Capítulo SGR",
+    "anios": [
+     174598791,
+     286017289,
+     264980790,
+     279169631
+    ],
+    "total": 1004766502,
+    "ruta": {
+     "linea": "Disponible Capítulo SGR"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Asignación Inversión Local (Resto Inversión)",
+    "anios": [
+     2671505432,
+     2323890477,
+     2152968926,
+     2268253253
+    ],
+    "total": 9416618089,
+    "ruta": {
+     "linea": "Asignación Inversión Local (Resto Inversión)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Bloqueo",
+    "anios": [
+     534301086,
+     464778095,
+     430593785,
+     453650650
+    ],
+    "total": 1883323617,
+    "ruta": {
+     "linea": "Bloqueo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Disponible Capítulo SGR",
+    "anios": [
+     1316634954,
+     1859112382,
+     1722375140,
+     1814602602
+    ],
+    "total": 6712725079,
+    "ruta": {
+     "linea": "Disponible Capítulo SGR"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Comunidades Étnicas",
+    "anios": [
+     3174896,
+     589070,
+     554736,
+     553165
+    ],
+    "total": 4871868,
+    "ruta": {
+     "linea": "Comunidades Étnicas"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Bloqueo",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Comunidades Étnicas",
+     "sector": "Bloqueo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Recursos Capítulo SGR",
+    "anios": [
+     3174896,
+     589070,
+     554736,
+     553165
+    ],
+    "total": 4871868,
+    "ruta": {
+     "linea": "Comunidades Étnicas",
+     "sector": "Recursos Capítulo SGR"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total disponible Inversión Regalías",
+    "anios": [
+     1561787001,
+     2158220136,
+     1999683402,
+     2106064791
+    ],
+    "total": 7825755332,
+    "ruta": {
+     "linea": "Total disponible Inversión Regalías"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   251
+  ],
+  "cabecera": "Línea/ Capítulo",
+  "unidad": "millones",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   266086,
+   387967,
+   518241,
+   570269
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Apartadó Socialmente Unidos por la Vida",
+    "anios": [
+     221315,
+     298636,
+     382353,
+     464433
+    ],
+    "total": 1366738,
+    "ruta": {
+     "linea": "Apartadó Socialmente Unidos por la Vida"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Apartadó Unidos por el Crecimiento Económico",
+    "anios": [
+     28096,
+     76626,
+     108215,
+     82737
+    ],
+    "total": 295676,
+    "ruta": {
+     "linea": "Apartadó Unidos por el Crecimiento Económico"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Apartadó Unidos por el Medio Ambiente",
+    "anios": [
+     1714,
+     3119,
+     10839,
+     9785
+    ],
+    "total": 25458,
+    "ruta": {
+     "linea": "Apartadó Unidos por el Medio Ambiente"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Apartadó Unidos por la Gestión Institucional",
+    "anios": [
+     14961,
+     9586,
+     16834,
+     13314
+    ],
+    "total": 54696,
+    "ruta": {
+     "linea": "Apartadó Unidos por la Gestión Institucional"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

@@ -1,0 +1,88 @@
+[
+ {
+  "paginas": [
+   268,
+   269
+  ],
+  "cabecera": "Descripción",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   396481311,
+   50564071,
+   2367502099,
+   1134679584
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Sistema General de participación",
+    "anios": [
+     431045,
+     1226802,
+     1288143020,
+     1352550
+    ],
+    "total": 4298541473,
+    "ruta": {
+     "linea": "Sistema General de participación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Educación",
+    "anios": [
+     45989979,
+     48289477,
+     50703951,
+     53239149
+    ],
+    "total": 198222558,
+    "ruta": {
+     "linea": "Educación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Salud",
+    "anios": [
+     349498331,
+     366973,
+     313794840,
+     329484582
+    ],
+    "total": 1359751000,
+    "ruta": {
+     "linea": "Salud"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Agua potable y saneamiento Básico",
+    "anios": [
+     561956,
+     680819,
+     714860288,
+     750603303
+    ],
+    "total": 2708239561,
+    "ruta": {
+     "linea": "Agua potable y saneamiento Básico"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

@@ -1,0 +1,856 @@
+[
+ {
+  "pagina": 315,
+  "cabecera": "Descripción",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "INGRESOS TOTALES",
+    "anios": [
+     327299,
+     343664,
+     360847,
+     378890
+    ],
+    "total": 1410700
+   },
+   {
+    "etiqueta": "INGRESOS CORRIENTES",
+    "anios": [
+     317831,
+     333722,
+     350408,
+     367929
+    ],
+    "total": 1369890
+   },
+   {
+    "etiqueta": "TRIBUTARIOS",
+    "anios": [
+     34772,
+     36511,
+     38336,
+     40253
+    ],
+    "total": 149872
+   },
+   {
+    "etiqueta": "NO TRIBUTARIOS",
+    "anios": [
+     5038,
+     5290,
+     5555,
+     5832
+    ],
+    "total": 21715
+   },
+   {
+    "etiqueta": "TRANSFERENCIAS",
+    "anios": [
+     278020,
+     291921,
+     306517,
+     321843
+    ],
+    "total": 1198301
+   },
+   {
+    "etiqueta": "Transferencias Para Funcionamiento",
+    "anios": [
+     3770,
+     3958,
+     4156,
+     4364
+    ],
+    "total": 16248
+   },
+   {
+    "etiqueta": "Del Nivel Nacional",
+    "anios": [
+     3498,
+     3672,
+     3856,
+     4049
+    ],
+    "total": 15075
+   },
+   {
+    "etiqueta": "Sistema General de Participaciones - Propósito General - Libre dest. - categorías 4,5y6",
+    "anios": [
+     3498,
+     3672,
+     3856,
+     4049
+    ],
+    "total": 15075
+   },
+   {
+    "etiqueta": "Del Nivel Departamental",
+    "anios": [
+     272,
+     286,
+     300,
+     315
+    ],
+    "total": 1173
+   },
+   {
+    "etiqueta": "Transferencias Para Inversión",
+    "anios": [
+     274251,
+     287963,
+     302361,
+     317480
+    ],
+    "total": 1182055
+   },
+   {
+    "etiqueta": "Del Nivel Nacional",
+    "anios": [
+     244083,
+     256288,
+     269102,
+     282557
+    ],
+    "total": 1052030
+   },
+   {
+    "etiqueta": "Sistema General de Participaciones",
+    "anios": [
+     197148,
+     207006,
+     217356,
+     228224
+    ],
+    "total": 849734
+   },
+   {
+    "etiqueta": "Sistema General de Participaciones - Educación",
+    "anios": [
+     135795,
+     142585,
+     149714,
+     157200
+    ],
+    "total": 585294
+   },
+   {
+    "etiqueta": "Sistema General de Participaciones - Salud",
+    "anios": [
+     45638,
+     47920,
+     50316,
+     52832
+    ],
+    "total": 196706
+   },
+   {
+    "etiqueta": "Sistema General de Participaciones - Agua Potable y Saneamiento Básico",
+    "anios": [
+     8862,
+     9305,
+     9771,
+     10259
+    ],
+    "total": 38197
+   },
+   {
+    "etiqueta": "Sistema General de Participaciones - Propósito General - Forzosa Inversión",
+    "anios": [
+     4342,
+     4559,
+     4787,
+     5027
+    ],
+    "total": 18715
+   },
+   {
+    "etiqueta": "Otras del Sistema General de Participaciones",
+    "anios": [
+     2511,
+     2636,
+     2768,
+     2906
+    ],
+    "total": 10821
+   },
+   {
+    "etiqueta": "FOSYGA y ETESA",
+    "anios": [
+     46935,
+     49282,
+     51746,
+     54333
+    ],
+    "total": 202296
+   },
+   {
+    "etiqueta": "Otras Transferencias de la Nación",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Del Nivel Departamental",
+    "anios": [
+     30167,
+     31676,
+     33260,
+     34922
+    ],
+    "total": 130025
+   },
+   {
+    "etiqueta": "GASTOS TOTALES",
+    "anios": [
+     326734,
+     342326,
+     359239,
+     377172
+    ],
+    "total": 1405471
+   },
+   {
+    "etiqueta": "GASTOS CORRIENTES",
+    "anios": [
+     306662,
+     321783,
+     337669,
+     354523
+    ],
+    "total": 1320637
+   },
+   {
+    "etiqueta": "FUNCIONAMIENTO",
+    "anios": [
+     30596,
+     32126,
+     33732,
+     35419
+    ],
+    "total": 131873
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 317,
+  "cabecera": "CONCEPTO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "EDUCACIÓN",
+    "anios": [
+     169831,
+     176624,
+     183689,
+     191037
+    ],
+    "total": 721181
+   },
+   {
+    "etiqueta": "Prestación de Servicios",
+    "anios": [
+     163593,
+     170137,
+     176942,
+     184020
+    ],
+    "total": 694692
+   },
+   {
+    "etiqueta": "CALIDAD",
+    "anios": [
+     6238,
+     6488,
+     6747,
+     7017
+    ],
+    "total": 26489
+   },
+   {
+    "etiqueta": "Matrícula Gratuidad",
+    "anios": [
+     2776,
+     2887,
+     3003,
+     3123
+    ],
+    "total": 11788
+   },
+   {
+    "etiqueta": "Matrícula Oficial",
+    "anios": [
+     3462,
+     3600,
+     3744,
+     3894
+    ],
+    "total": 14701
+   },
+   {
+    "etiqueta": "ASIGNACIONES ESPECIALES",
+    "anios": [
+     14864,
+     15459,
+     16077,
+     16720
+    ],
+    "total": 63119
+   },
+   {
+    "etiqueta": "Aportes Nación Alimentación Escolar",
+    "anios": [
+     12626,
+     13131,
+     13656,
+     14203
+    ],
+    "total": 53616
+   },
+   {
+    "etiqueta": "SGP - Alimentación Escolar",
+    "anios": [
+     2238,
+     2328,
+     2421,
+     2517
+    ],
+    "total": 9504
+   },
+   {
+    "etiqueta": "SGP SALUD",
+    "anios": [
+     46881,
+     48756,
+     50706,
+     52735
+    ],
+    "total": 199078
+   },
+   {
+    "etiqueta": "Régimen Subsidiado SGP",
+    "anios": [
+     44707,
+     46495,
+     48355,
+     50289
+    ],
+    "total": 189847
+   },
+   {
+    "etiqueta": "Salud Publica SGP",
+    "anios": [
+     2174,
+     2261,
+     2351,
+     2445
+    ],
+    "total": 9232
+   },
+   {
+    "etiqueta": "AGUA POTABLE",
+    "anios": [
+     6739,
+     7009,
+     7289,
+     7580
+    ],
+    "total": 28617
+   },
+   {
+    "etiqueta": "PROPÓSITO GENERAL - DESTINACIÓN",
+    "anios": [
+     4623,
+     4808,
+     5000,
+     5200
+    ],
+    "total": 19631
+   },
+   {
+    "etiqueta": "Libre Destinación",
+    "anios": [
+     1514,
+     1575,
+     1638,
+     1703
+    ],
+    "total": 6429
+   },
+   {
+    "etiqueta": "Deporte",
+    "anios": [
+     396,
+     412,
+     428,
+     445
+    ],
+    "total": 1682
+   },
+   {
+    "etiqueta": "Cultura",
+    "anios": [
+     297,
+     309,
+     321,
+     334
+    ],
+    "total": 1261
+   },
+   {
+    "etiqueta": "Libre Inversión",
+    "anios": [
+     2416,
+     2513,
+     2613,
+     2718
+    ],
+    "total": 10259
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 318,
+  "cabecera": "CONCEPTO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Transfierencias Nal y Dptal Salud",
+    "anios": [
+     84226,
+     87595,
+     91099,
+     94743
+    ],
+    "total": 357663
+   },
+   {
+    "etiqueta": "Régimen subsidiado ADRES",
+    "anios": [
+     67650,
+     70356,
+     73170,
+     76097
+    ],
+    "total": 287273
+   },
+   {
+    "etiqueta": "Régimen Subsidado Coljuegos 75%",
+    "anios": [
+     1781,
+     1852,
+     1926,
+     2003
+    ],
+    "total": 7563
+   },
+   {
+    "etiqueta": "Régimen Subsidiado Departamento",
+    "anios": [
+     14363,
+     14938,
+     15535,
+     16156
+    ],
+    "total": 60992
+   },
+   {
+    "etiqueta": "Régimen subsidiado Fonpet",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Salud pública -Coljuego 25%",
+    "anios": [
+     432,
+     449,
+     467,
+     486
+    ],
+    "total": 1834
+   },
+   {
+    "etiqueta": "TOTAL OTRAS FUENTES",
+    "anios": [
+     20477,
+     21105,
+     21756,
+     22432
+    ],
+    "total": 85771
+   },
+   {
+    "etiqueta": "Ingresos corrientes de libre destinación",
+    "anios": [
+     14112,
+     14676,
+     15264,
+     15874
+    ],
+    "total": 59926
+   },
+   {
+    "etiqueta": "Estampilla pro-anciano",
+    "anios": [
+     932,
+     941,
+     951,
+     960
+    ],
+    "total": 3784
+   },
+   {
+    "etiqueta": "Estampilla procultura",
+    "anios": [
+     410,
+     414,
+     418,
+     422
+    ],
+    "total": 1665
+   },
+   {
+    "etiqueta": "Estampilla prodeporte",
+    "anios": [
+     400,
+     404,
+     408,
+     412
+    ],
+    "total": 1624
+   },
+   {
+    "etiqueta": "Fondo de bomberos",
+    "anios": [
+     100,
+     101,
+     102,
+     103
+    ],
+    "total": 406
+   },
+   {
+    "etiqueta": "Fondo de prevención del riesgo",
+    "anios": [
+     310,
+     313,
+     316,
+     319
+    ],
+    "total": 1259
+   },
+   {
+    "etiqueta": "Fondo de seguridad",
+    "anios": [
+     1250,
+     1263,
+     1275,
+     1288
+    ],
+    "total": 5076
+   },
+   {
+    "etiqueta": "Otra fuente",
+    "anios": [
+     2718,
+     2745,
+     2773,
+     2800
+    ],
+    "total": 11036
+   },
+   {
+    "etiqueta": "Otra fuente ( Tránsito y transporte)",
+    "anios": [
+     245,
+     247,
+     250,
+     252
+    ],
+    "total": 995
+   }
+  ],
+  "ncols": 7,
+  "financiero": true
+ },
+ {
+  "pagina": 319,
+  "cabecera": "CONCEPTO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "REGALIAS",
+    "anios": [
+     5162,
+     3919,
+     2148,
+     1855
+    ],
+    "total": 13084
+   },
+   {
+    "etiqueta": "Asignaciones Directas",
+    "anios": [
+     623,
+     389,
+     400,
+     410
+    ],
+    "total": 1822
+   },
+   {
+    "etiqueta": "20% Asignaciones Directas",
+    "anios": [
+     297,
+     9,
+     8,
+     7
+    ],
+    "total": 321
+   },
+   {
+    "etiqueta": "5% Asignaciones Directas Anticipadas",
+    "anios": [
+     326,
+     380,
+     392,
+     403
+    ],
+    "total": 1501
+   },
+   {
+    "etiqueta": "Asignación para la Inversión Local",
+    "anios": [
+     4539,
+     3530,
+     1748,
+     1445
+    ],
+    "total": 11262
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     4117,
+     530,
+     499,
+     500
+    ],
+    "total": 5646
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     422,
+     3000,
+     1249,
+     945
+    ],
+    "total": 5616
+   },
+   {
+    "etiqueta": "TOTAL RECURSOS PARA INVERTIR",
+    "anios": [
+     352803,
+     365274,
+     377765,
+     392301
+    ],
+    "total": 1488144
+   }
+  ],
+  "ncols": 7,
+  "financiero": true
+ },
+ {
+  "pagina": 324,
+  "cabecera": "Sectores Estratégicos PDT",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Turbo Territorio",
+    "anios": [
+     1679,
+     1746,
+     1816,
+     1888
+    ],
+    "total": 7129
+   },
+   {
+    "etiqueta": ", Sostenible",
+    "anios": [
+     2406,
+     2502,
+     2602,
+     2706
+    ],
+    "total": 10216
+   },
+   {
+    "etiqueta": "nraesrucura a Sostenible",
+    "anios": [
+     6528,
+     6789,
+     7060,
+     7343
+    ],
+    "total": 27720
+   }
+  ],
+  "ncols": 8,
+  "financiero": false
+ },
+ {
+  "pagina": 328,
+  "cabecera": "PROYECCIONES",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "EJES ESTRAGICOS",
+    "anios": [
+     350432,
+     364449,
+     379027,
+     394188
+    ],
+    "total": 1488096
+   },
+   {
+    "etiqueta": "Capítulo 1 Cohesión Social desde la diversidad",
+    "anios": [
+     322318,
+     335211,
+     348619,
+     362564
+    ],
+    "total": 1368711
+   },
+   {
+    "etiqueta": "Esperanza desde la Inclusión Social",
+    "anios": [
+     3732,
+     3881,
+     4037,
+     4198
+    ],
+    "total": 15847
+   },
+   {
+    "etiqueta": "Esperanza desde la Educación",
+    "anios": [
+     184687,
+     192074,
+     199757,
+     207747
+    ],
+    "total": 784266
+   },
+   {
+    "etiqueta": "Esperanza desde la Salud y Protección Social",
+    "anios": [
+     132539,
+     137840,
+     143354,
+     149088
+    ],
+    "total": 562822
+   },
+   {
+    "etiqueta": "Capítulo 2 Agua limpias, Ordenamiento Territorial y Justicia Ambiental",
+    "anios": [
+     19587,
+     20370,
+     21185,
+     22032
+    ],
+    "total": 83175
+   },
+   {
+    "etiqueta": "Turbo, Territorio Sostenible",
+    "anios": [
+     12134,
+     12619,
+     13124,
+     13649
+    ],
+    "total": 51526
+   },
+   {
+    "etiqueta": "Movilidad e Infraestructura Vial Sostenible",
+    "anios": [
+     7453,
+     7751,
+     8061,
+     8383
+    ],
+    "total": 31648
+   },
+   {
+    "etiqueta": "Capítulo 3 Gobernanza, Turbo Proyecto Región",
+    "anios": [
+     4627,
+     4812,
+     5004,
+     5204
+    ],
+    "total": 19648
+   },
+   {
+    "etiqueta": "Turbo, confía en su Gobierno",
+    "anios": [
+     1687,
+     1754,
+     1824,
+     1897
+    ],
+    "total": 7163
+   },
+   {
+    "etiqueta": "Turbo, Territorio Seguro para la Construcción de Paz",
+    "anios": [
+     2940,
+     3057,
+     3179,
+     3307
+    ],
+    "total": 12484
+   },
+   {
+    "etiqueta": "Capítulo 4 Economías Fuertes, Turismo y Puertos",
+    "anios": [
+     3900,
+     4056,
+     4218,
+     4386
+    ],
+    "total": 16561
+   },
+   {
+    "etiqueta": "Desarrollo Económico Sostenible",
+    "anios": [
+     3300,
+     3432,
+     3569,
+     3712
+    ],
+    "total": 14013
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ }
+]

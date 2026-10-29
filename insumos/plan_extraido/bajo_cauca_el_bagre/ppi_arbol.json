@@ -1,0 +1,356 @@
+[
+ {
+  "paginas": [
+   246
+  ],
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   149915213733,
+   154412670144,
+   159045050249,
+   163816401756
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Educación",
+    "anios": [
+     2031167243,
+     2092102260,
+     2154865328,
+     2219511288
+    ],
+    "total": 8497646119,
+    "ruta": {
+     "linea": "Educación"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Prestación de Servicios",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Educación",
+     "sector": "Prestación de Servicios"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Calidad",
+    "anios": [
+     2031167243,
+     2092102260,
+     2154865328,
+     2219511288
+    ],
+    "total": 8497646119,
+    "ruta": {
+     "linea": "Educación",
+     "sector": "Calidad"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Matrícula Gratuidad",
+    "anios": [
+     743543003,
+     765849293,
+     788824772,
+     812489515
+    ],
+    "total": 3110706583,
+    "ruta": {
+     "linea": "Educación",
+     "sector": "Calidad",
+     "programa": "Matrícula Gratuidad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Matrícula Oficial",
+    "anios": [
+     1287624240,
+     1326252967,
+     1366040556,
+     1407021773
+    ],
+    "total": 5386939536,
+    "ruta": {
+     "linea": "Educación",
+     "sector": "Calidad",
+     "programa": "Matrícula Oficial"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Asignaciones especiales",
+    "anios": [
+     806053900,
+     830235517,
+     855142583,
+     880796860
+    ],
+    "total": 3372228859,
+    "ruta": {
+     "linea": "Asignaciones especiales"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Crecimiento de la Economía",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Asignaciones especiales",
+     "sector": "Crecimiento de la Economía"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "SGP - Alimentación Escolar",
+    "anios": [
+     806053900,
+     830235517,
+     855142583,
+     880796860
+    ],
+    "total": 3372228859,
+    "ruta": {
+     "linea": "Asignaciones especiales",
+     "sector": "SGP - Alimentación Escolar"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Salud",
+    "anios": [
+     52032522307,
+     53593497976,
+     55201302915,
+     56857342003
+    ],
+    "total": 217684665202,
+    "ruta": {
+     "linea": "Salud"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total, Régimen Subsidiado",
+    "anios": [
+     50974685879,
+     52503926455,
+     54079044249,
+     55701415576
+    ],
+    "total": 213259072158,
+    "ruta": {
+     "linea": "Total, Régimen Subsidiado"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Régimen Subsidiado SGP",
+    "anios": [
+     19087845128,
+     19660480482,
+     20250294896,
+     20857803743
+    ],
+    "total": 79856424249,
+    "ruta": {
+     "linea": "Régimen Subsidiado SGP"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Régimen subsidiado ADRES",
+    "anios": [
+     24982939276,
+     25732427454,
+     26504400278,
+     27299532286
+    ],
+    "total": 104519299294,
+    "ruta": {
+     "linea": "Régimen subsidiado ADRES"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   253
+  ],
+  "cabecera": "EL BAGRE",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   18049980719,
+   17327882529,
+   16206389013,
+   16532910736
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "AD 20%",
+    "anios": [
+     4802935871,
+     3834927413,
+     3611403847,
+     3601175943
+    ],
+    "total": 15850443074,
+    "ruta": {
+     "linea": "AD 20%"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "AD ANTICIPADAS 5%",
+    "anios": [
+     1334721482,
+     1065714833,
+     1003598304,
+     1000756000
+    ],
+    "total": 4404790618,
+    "ruta": {
+     "linea": "AD ANTICIPADAS 5%"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TOTAL",
+    "anios": [
+     4957245223,
+     4900642246,
+     4615002150,
+     4601931943
+    ],
+    "total": 19074821562,
+    "ruta": {
+     "linea": "TOTAL"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "COMUNIDADES ETNICAS 4,5%",
+    "anios": [
+     223076035,
+     220528901,
+     207675097,
+     207086937
+    ],
+    "total": 858366970,
+    "ruta": {
+     "linea": "COMUNIDADES ETNICAS 4,5%"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "AIL SEGÚN NBI Y 4,5,6 CAT",
+    "anios": [
+     2970000930,
+     3223265795,
+     2986195418,
+     3142041138
+    ],
+    "total": 12321503282,
+    "ruta": {
+     "linea": "AIL SEGÚN NBI Y 4,5,6 CAT"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "AIL AMBIENTE Y DLLO SOSTENIBLE 2%",
+    "anios": [
+     396000124,
+     429768773,
+     398159389,
+     418938818
+    ],
+    "total": 1642867104,
+    "ruta": {
+     "linea": "AIL AMBIENTE Y DLLO SOSTENIBLE 2%"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TOTAL, AIL",
+    "anios": [
+     3366001054,
+     3653034568,
+     3384354808,
+     3560979957
+    ],
+    "total": 13964370386,
+    "ruta": {
+     "linea": "TOTAL, AIL"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

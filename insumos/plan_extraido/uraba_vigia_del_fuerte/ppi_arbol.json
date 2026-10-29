@@ -1,0 +1,506 @@
+[
+ {
+  "paginas": [
+   196
+  ],
+  "cabecera": "",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   106716,
+   109922,
+   113223,
+   116622
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Transferencias de capital",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Transferencias de capital"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Recuperación de cartera",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Recuperación de cartera"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Retiros del FONPET",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Retiros del FONPET"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Resto recursos de capital",
+    "anios": [
+     286,
+     295,
+     304,
+     313
+    ],
+    "total": 1198,
+    "ruta": {
+     "linea": "Resto recursos de capital"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "GASTOS DE CAPITAL",
+    "anios": [
+     14326,
+     14756,
+     15199,
+     15655
+    ],
+    "total": 59936,
+    "ruta": {
+     "linea": "GASTOS DE CAPITAL"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "FORMACIÓN BRUTA DE CAPITAL",
+    "anios": [
+     14326,
+     14756,
+     15199,
+     15655
+    ],
+    "total": 59936,
+    "ruta": {
+     "linea": "GASTOS DE CAPITAL",
+     "sector": "FORMACIÓN BRUTA DE CAPITAL"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Educación",
+    "anios": [
+     483,
+     498,
+     512,
+     528
+    ],
+    "total": 2021,
+    "ruta": {
+     "linea": "GASTOS DE CAPITAL",
+     "sector": "FORMACIÓN BRUTA DE CAPITAL",
+     "programa": "Educación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Salud y protección social",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "GASTOS DE CAPITAL",
+     "sector": "FORMACIÓN BRUTA DE CAPITAL",
+     "programa": "Salud y protección social"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Vivienda, ciudad y territorio",
+    "anios": [
+     3368,
+     3469,
+     3573,
+     3680
+    ],
+    "total": 14090,
+    "ruta": {
+     "linea": "GASTOS DE CAPITAL",
+     "sector": "FORMACIÓN BRUTA DE CAPITAL",
+     "programa": "Vivienda, ciudad y territorio"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Gobierno territorial",
+    "anios": [
+     3206,
+     3303,
+     3402,
+     3504
+    ],
+    "total": 13415,
+    "ruta": {
+     "linea": "GASTOS DE CAPITAL",
+     "sector": "FORMACIÓN BRUTA DE CAPITAL",
+     "programa": "Gobierno territorial"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Transporte",
+    "anios": [
+     2974,
+     3063,
+     3155,
+     3249
+    ],
+    "total": 12441,
+    "ruta": {
+     "linea": "GASTOS DE CAPITAL",
+     "sector": "FORMACIÓN BRUTA DE CAPITAL",
+     "programa": "Transporte"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Inclusión social y reconciliación",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "GASTOS DE CAPITAL",
+     "sector": "FORMACIÓN BRUTA DE CAPITAL",
+     "programa": "Inclusión social y reconciliación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Deporte y recreación",
+    "anios": [
+     2039,
+     2101,
+     2164,
+     2229
+    ],
+    "total": 8533,
+    "ruta": {
+     "linea": "GASTOS DE CAPITAL",
+     "sector": "FORMACIÓN BRUTA DE CAPITAL",
+     "programa": "Deporte y recreación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Resto de sectores",
+    "anios": [
+     2256,
+     2323,
+     2393,
+     2465
+    ],
+    "total": 9437,
+    "ruta": {
+     "linea": "GASTOS DE CAPITAL",
+     "sector": "FORMACIÓN BRUTA DE CAPITAL",
+     "programa": "Resto de sectores"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Disminución de pasivos",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Disminución de pasivos"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "DÉFICIT O SUPERÁVIT DE CAPITAL",
+    "anios": [
+     13925,
+     14342,
+     14773,
+     15216
+    ],
+    "total": 58256,
+    "ruta": {
+     "linea": "DÉFICIT O SUPERÁVIT DE CAPITAL"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "DÉFICIT O SUPERÁVIT TOTAL",
+    "anios": [
+     2343,
+     2414,
+     2486,
+     2561
+    ],
+    "total": 9804,
+    "ruta": {
+     "linea": "DÉFICIT O SUPERÁVIT TOTAL"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "FINANCIACIÓN",
+    "anios": [
+     7479,
+     7704,
+     7936,
+     8175
+    ],
+    "total": 31294,
+    "ruta": {
+     "linea": "FINANCIACIÓN"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Desembolsos",
+    "anios": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "total": 6,
+    "ruta": {
+     "linea": "Desembolsos"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Amortizaciones - Principal",
+    "anios": [
+     600,
+     619,
+     637,
+     656
+    ],
+    "total": 2512,
+    "ruta": {
+     "linea": "Amortizaciones - Principal"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Externo",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Externo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Desembolsos",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Desembolsos"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Amortizaciones - Principal",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Amortizaciones - Principal"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Recursos del balance",
+    "anios": [
+     8079,
+     8322,
+     8571,
+     8828
+    ],
+    "total": 33800,
+    "ruta": {
+     "linea": "Recursos del balance"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Disposición de activos",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Disposición de activos"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "DÉFICIT O SUPERÁVIT PRIMARIO",
+    "anios": [
+     10951,
+     11279,
+     11618,
+     11966
+    ],
+    "total": 45814,
+    "ruta": {
+     "linea": "DÉFICIT O SUPERÁVIT PRIMARIO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "INGRESOS TOTALES(incluye financiación)",
+    "anios": [
+     48727,
+     50190,
+     51697,
+     53249
+    ],
+    "total": 203863,
+    "ruta": {
+     "linea": "INGRESOS TOTALES(incluye financiación)"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "GASTOS TOTALES(incluye financiación)",
+    "anios": [
+     38905,
+     40072,
+     41274,
+     42513
+    ],
+    "total": 162764,
+    "ruta": {
+     "linea": "INGRESOS TOTALES(incluye financiación)",
+     "sector": "GASTOS TOTALES(incluye financiación)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "DÉFICIT O SUPERÁVIT PRESUPUESTAL",
+    "anios": [
+     9822,
+     10118,
+     10422,
+     10736
+    ],
+    "total": 41098,
+    "ruta": {
+     "linea": "INGRESOS TOTALES(incluye financiación)",
+     "sector": "DÉFICIT O SUPERÁVIT PRESUPUESTAL"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

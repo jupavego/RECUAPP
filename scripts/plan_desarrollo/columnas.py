@@ -17,16 +17,21 @@ REGLAS = [
     ("linea_base", r"lineabase|lineadebase|^lb"),
     ("meta_anual", r"^20\d\d$"),
     ("meta", r"^meta|valoresperado|^mc$"),
-    ("tipo_acumulado", r"acumul|orientacion|formadecalculo|tipomedida|^tm$"),
+    ("tipo_acumulado", r"acumul|orientacion|formadecalculo|tipomedida|^tm$|^tipo$"),
     ("responsable", r"responsable|dependencia|lider"),
     ("fuente", r"^fuente"),
     ("unidad", r"^unidad|^udemedida|^umedida|^medicion|medidoatraves"),
     ("sector", r"^sector"),
     ("componente", r"^componente"),  # "Medido a traves de" trae la unidad ("Numero de beneficiarios")
-    ("programa", r"^programa"),
+    ("programa", r"^(nombredel)?programa"),
+    ("linea", r"^lineaestrategica"),
     ("nombre", r"^descripciondelasmetas"),  # La Union: la meta de resultado se describe, sin nombre de indicador
     ("descripcion", r"^descripcion"),
     ("producto", r"^producto"),
+    # Columna de contexto en tablas que ademas traen el indicador de producto (Heliconia, Peque, Carepa);
+    # si es la unica, mapea() la vuelve el nombre.
+    ("indicador_resultado", r"^indicadorde(resultado|bienestar)|^indicadoresde(resultado|bienestar)"),
+    ("nombre", r"^nombredelproducto"),  # Buritica: el producto del catalogo DNP es el indicador
     ("nombre", r"indicador|^nombre"),
 ]
 
@@ -66,6 +71,13 @@ def mapea(celdas):
         der, _ = _mapea(celdas, desde=alt)
         cols = {**izq, **der}
         usados = set(cols.values())
+    if "indicador_resultado" in usados and "nombre" not in usados:
+        cols = {j: ("nombre" if c == "indicador_resultado" else c) for j, c in cols.items()}
+        usados = set(cols.values())
+    if "nombre" not in usados and "producto" in usados and {"linea_base", "meta"} & usados:
+        # Santa Fe de Antioquia: sin columna de indicador, el producto es el nombre del indicador
+        cols = {j: ("nombre" if c == "producto" else c) for j, c in cols.items()}
+        usados = set(cols.values())
     if "nombre" in usados and ({"linea_base", "meta"} & usados):
         return cols
     return None
@@ -76,9 +88,16 @@ def tipo_por_cabecera(celdas):
     k = "".join(compacto(c) for c in celdas)  # sin separador: el titulo puede venir partido entre columnas
     if re.search(r"indicadoresde?producto|indicadordeproducto", k):
         return "producto"
-    if re.search(r"indicadoresde?resultado|indicadorderesultado|metasderesultado", k):
-        return "resultado"
+    if re.search(r"indicadoresde?(resultado|bienestar)|indicadorde(resultado|bienestar)|metasde(resultado|bienestar)", k):
+        # con una columna aparte de indicador de producto, la tabla es de producto (el de resultado es contexto)
+        return "producto" if hibrida(celdas) else "resultado"
     return None
+
+
+def hibrida(celdas):
+    """Tabla con 'Indicador de resultado/bienestar' como contexto y un indicador de producto propio."""
+    cols, usados = _mapea(celdas)
+    return "indicador_resultado" in usados and "nombre" in usados
 
 
 def _une_filas(a, b):

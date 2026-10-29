@@ -1,0 +1,41 @@
+[
+ {
+  "pagina": 241,
+  "cabecera": "LÍNEA",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Línea 2.",
+    "anios": [
+     23,
+     24,
+     24,
+     25
+    ],
+    "total": 96
+   },
+   {
+    "etiqueta": "Bienestar Para el Desarrollo",
+    "anios": [
+     1000,
+     1000,
+     1000,
+     1000
+    ],
+    "total": 4000
+   },
+   {
+    "etiqueta": "Social",
+    "anios": [
+     77519,
+     79069,
+     80651,
+     82264
+    ],
+    "total": 319503
+   }
+  ],
+  "ncols": 7,
+  "financiero": false
+ }
+]

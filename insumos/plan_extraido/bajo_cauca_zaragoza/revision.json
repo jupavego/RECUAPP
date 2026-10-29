@@ -1,0 +1,201 @@
+[
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 48,
+  "valor": "Inspección, vigilancia y control",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 1
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 67,
+  "valor": "Acceso a Servicios Públicos Domiciliarios",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 2
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 81,
+  "valor": "Atención integral a la primera infancia, infancia, adolescencia y Familia.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 3
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 91,
+  "valor": "Infraestructura red vial regional",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 4
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 92,
+  "valor": "Seguridad de transporte",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 5
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 95,
+  "valor": "Inclusión productiva de pequeños productores rurales",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 6
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 96,
+  "valor": "Infraestructura productiva y comercialización",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 7
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 101,
+  "valor": "Minería Sustentable Para el Desarrollo Económico de Zaragoza.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 8
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 104,
+  "valor": "Productividad y competitividad de las empresas colombianas",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 9
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 105,
+  "valor": "Derechos fundamentales del trabajo y fortalecimiento del diálogo social",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 10
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 107,
+  "valor": "s 3905: Fortalecimiento de la gobernanza e institucionalidad multinivel del sector de CTeI",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 11
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 120,
+  "valor": "Fortalecimiento de la convivencia y la seguridad ciudadana.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 12
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 121,
+  "valor": "Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 13
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 123,
+  "valor": "Fortalecimiento a la gestión y dirección de la administración pública territorial.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 14
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 125,
+  "valor": "Generación de la información geográfica del territorio nacional",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 15
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 128,
+  "valor": "Acceso a las justicia.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 16
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 129,
+  "valor": "Sistema penitenciario y carcelario en el marco de los derechos humanos",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 17
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "EJE 1. DESARROLLO SOCIAL INCLUYENTE",
+  "sector": null,
+  "correccion": null,
+  "id": 18
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "1906. Aseguramiento y prestación integral de servicios de salud",
+  "sector": null,
+  "correccion": null,
+  "id": 19
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "4003. Acceso de la población a los servicios de agua potable y saneamiento básico",
+  "sector": null,
+  "correccion": null,
+  "id": 20
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "4102. Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niñosyadolescentes",
+  "sector": null,
+  "correccion": null,
+  "id": 21
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "4301. Fomento a la recreación,la actividad físicayel deporte",
+  "sector": null,
+  "correccion": null,
+  "id": 22
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "EJE 4. MEDIO AMBIENTE Y GESTIÓN DEL RIESGO",
+  "sector": null,
+  "correccion": null,
+  "id": 23
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "3201. Fortalecimiento del desempeño ambiental de los sectores productivos",
+  "sector": null,
+  "correccion": null,
+  "id": 24
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "3204. Gestión de la informaciónyel conocimiento ambiental",
+  "sector": null,
+  "correccion": null,
+  "id": 25
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "EJE 5. INCLUSION ESPECIAL",
+  "sector": null,
+  "correccion": null,
+  "id": 26
+ }
+]

@@ -1,14 +1,14 @@
 """Lineas, sectores, programas e indicadores de producto (capitulo estrategico del plan)."""
 import re
 
-from . import columnas
+from . import columnas, tarjetas
 from .texto import filas_tabla, limpia, norm
 
 ARTICULO = re.compile(r"^ART[IÍ�]CULO\s*\d+\s*[°º.:\-–]*\s*", re.I)
 CODIGO = re.compile(r"^[\d.]+\s*[:.\-–]\s*")  # "1.1.1:" delante del nombre de un programa
 RE_LINEA = re.compile(r"^(?:L[ií�]nea estrat[eé�]gica|Eje estrat[eé�]gico|Dimensi[oó�]n|Pilar|Reto)\s*(\d+)?\s*[:.\-–]?\s*(.*)", re.I)
 RE_SECTOR = re.compile(r"^Sector\s+(?!es\b|de inversi)(.+)$", re.I)
-RE_PROG = re.compile(r"^(?:[\d.]+\s+)?Programa\s*(?:[\d.]+\s*)?[:.\-–]?\s*(.+)$", re.I)
+RE_PROG = re.compile(r"^(?:([\d.]+)\s+)?Programa\s*(?:[\d.]+\s*)?[:.\-–]?\s*(.+)$", re.I)
 RE_CAPT = re.compile(r"Indicadores de producto programa\s+(.+?)\.?\s*Fuente", re.I)
 RE_RESP = re.compile(r"^Responsables?\s*:\s*(.+)$", re.I)
 RE_ETIQUETA = re.compile(r"^(.{3,45}?)\s*[:.]\s*$")
@@ -37,10 +37,13 @@ def recorre_estructura(paginas):
                 continue
             m = RE_PROG.match(s)
             if m:
-                nombre = CODIGO.sub("", m.group(1).strip())
+                nombre = CODIGO.sub("", m.group(2).strip())
                 if not re.search("[A-Za-záéíóúñ]", nombre):  # "Programa 1.1.1": el nombre va en la linea siguiente
                     nombre = next((limpia(x.lstrip("# ")) for x in lineas[k + 1:] if x.strip()
                                    and not x.startswith("|")), "")[:150]
+                num = (m.group(1) or "").rstrip(".")
+                if num.count(".") == 1:  # "1.1 PROGRAMA: ..." (nivel programa de un numero 1.1.7)
+                    ev.append((n, "programa_num", (num, nombre), s))
                 ev.append((n, "programa", nombre, s))
                 continue
             m = RE_RESP.match(s)
@@ -60,6 +63,8 @@ def recorre_estructura(paginas):
                 ev.append((n, "tipo", m.group(1).lower(), s))
         for t in filas_tabla(md):
             ev.append((n, "tabla", t, ""))
+        for t in tarjetas.lee(md):
+            ev.append((n, "tarjeta", t, ""))
     return ev
 
 
@@ -106,6 +111,7 @@ def tablas_de_indicadores(paginas):
     tipo_ctx = None  # el titulo "Indicadores de resultado" vale solo para la tabla que le sigue
     tablas, captions = [], []
     ficha = None  # indicador en formato ficha (campo: valor), no tabla
+    programas_num = {}  # "1.1" -> nombre, para las tarjetas cuyo numero (1.1.7) apunta a su programa
 
     def cierra():
         nonlocal ficha
@@ -128,8 +134,18 @@ def tablas_de_indicadores(paginas):
             elif ficha and valor and campo not in ficha["rec"]:
                 ficha["rec"][campo] = valor
             continue
-        if tipo in ("linea", "sector", "programa", "tabla"):
+        if tipo in ("linea", "sector", "programa", "tabla", "tarjeta"):
             cierra()
+        if tipo == "programa_num":
+            programas_num[val[0]] = val[1]
+            continue
+        if tipo == "tarjeta":
+            pn = programas_num.get(val["numero"].rsplit(".", 1)[0])
+            if pn:
+                programa, linea = pn, int(val["numero"].split(".")[0])
+            tablas.append(dict(n=n, linea=linea, sector=sector, cand=programa or caption, tipo="producto",
+                               formato="tarjeta", ind=[dict(val, responsable=val.get("responsable") or responsable or "")]))
+            continue
         if tipo == "linea":
             linea = val
         elif tipo == "sector":

@@ -1,0 +1,468 @@
+[
+ {
+  "paginas": [
+   166
+  ],
+  "cabecera": "Líneas",
+  "unidad": "millones",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   77672,
+   84305,
+   87916,
+   92363
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea Estratégica 1. Del Lado de la calidad de vida",
+    "anios": [
+     35784,
+     37579,
+     39268,
+     41367
+    ],
+    "total": 153997,
+    "ruta": {
+     "linea": "Línea Estratégica 1. Del Lado de la calidad de vida"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea Estratégica 3 Del lado de la planificación, Armónica y Vivible",
+    "anios": [
+     2703,
+     4085,
+     4165,
+     4425
+    ],
+    "total": 15379,
+    "ruta": {
+     "linea": "Línea Estratégica 3 Del lado de la planificación, Armónica y Vivible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TOTAL",
+    "anios": [
+     39185,
+     42641,
+     44483,
+     46571
+    ],
+    "total": 172950,
+    "ruta": {
+     "linea": "TOTAL"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   167,
+   168,
+   168,
+   169
+  ],
+  "cabecera": "Progra",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   40283477510,
+   42193907938,
+   43958136716,
+   45897823386
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Del lado calidad edu",
+    "anios": [
+     2517400748,
+     2650701661,
+     2556888814,
+     2659139876
+    ],
+    "total": 10384184323,
+    "ruta": {
+     "linea": "Del lado calidad edu"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Del lado cultura cac",
+    "anios": [
+     390471937,
+     409995534,
+     422255466,
+     435045874
+    ],
+    "total": 1657768811,
+    "ruta": {
+     "linea": "Del lado cultura cac"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Del lado promoción salud fí mental",
+    "anios": [
+     32664895469,
+     32644895469,
+     34230940242,
+     36011487255
+    ],
+    "total": 133973794841,
+    "ruta": {
+     "linea": "Del lado promoción salud fí mental"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Del lad Deporte, recreación Aprovecha del Tiempo",
+    "anios": [
+     693630023,
+     728311525,
+     753740862,
+     780331187
+    ],
+    "total": 2956013597,
+    "ruta": {
+     "linea": "Del lad Deporte, recreación Aprovecha del Tiempo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Del lado equidad de",
+    "anios": [
+     114000000,
+     90623449,
+     110000000,
+     200000000
+    ],
+    "total": 514623744,
+    "ruta": {
+     "linea": "Del lado equidad de"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Del lado promoción defensa derechos Infancia, Adolescenc Juventud",
+    "anios": [
+     145000063,
+     121000000,
+     171331000,
+     167000000
+    ],
+    "total": 604331563,
+    "ruta": {
+     "linea": "Del lado promoción defensa derechos Infancia, Adolescenc Juventud"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Del lado protección nuestros mayores",
+    "anios": [
+     682609571,
+     716740049,
+     752577080,
+     790205904
+    ],
+    "total": 2942132604,
+    "ruta": {
+     "linea": "Del lado protección nuestros mayores"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Del lado inclusión población",
+    "anios": [
+     20000000,
+     45000000,
+     50340884,
+     75272200
+    ],
+    "total": 190613084,
+    "ruta": {
+     "linea": "Del lado inclusión población"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Formación para el empleo",
+    "anios": [
+     45000000,
+     45000000,
+     115000000,
+     44344829
+    ],
+    "total": 249344829,
+    "ruta": {
+     "linea": "Formación para el empleo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Del lado del desarrollo",
+    "anios": [
+     80000000,
+     90983699,
+     101564000,
+     39000000
+    ],
+    "total": 311547699,
+    "ruta": {
+     "linea": "Del lado del desarrollo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Del lado del Desarrollo rural y Agropecuario",
+    "anios": [
+     131600000,
+     200000000,
+     324000000,
+     190000000
+    ],
+    "total": 845600000,
+    "ruta": {
+     "linea": "Del lado del Desarrollo rural y Agropecuario"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Del lado",
+    "anios": [
+     482060000,
+     550000000,
+     549659705,
+     566845181
+    ],
+    "total": 2148564886,
+    "ruta": {
+     "linea": "Del lado"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Del lado Servicios",
+    "anios": [
+     1875955088,
+     3278342909,
+     3311126338,
+     3344237601
+    ],
+    "total": 11809661936,
+    "ruta": {
+     "linea": "Del lado Servicios"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Del lado gobierno e transparent",
+    "anios": [
+     101651142,
+     141000000,
+     96000000,
+     85603007
+    ],
+    "total": 424254149,
+    "ruta": {
+     "linea": "Del lado gobierno e transparent"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Del lado seguridad convivencia",
+    "anios": [
+     339203469,
+     481313643,
+     412712325,
+     509310472
+    ],
+    "total": 1742539909,
+    "ruta": {
+     "linea": "Del lado seguridad convivencia"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   195
+  ],
+  "cabecera": "ASIGNACIONES SGR CÁCERES",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   4563690088,
+   7357234267,
+   6833319961,
+   7113368902
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "AD 20%",
+    "anios": [
+     341908287,
+     431416415,
+     406270767,
+     405120163
+    ],
+    "total": 1584715632,
+    "ruta": {
+     "linea": "AD 20%"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "AD ANTICIPADAS 5%",
+    "anios": [
+     216142096,
+     119890368,
+     112902407,
+     112582655
+    ],
+    "total": 561517525,
+    "ruta": {
+     "linea": "AD ANTICIPADAS 5%"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TOTAL,AD",
+    "anios": [
+     558050383,
+     551306783,
+     519173174,
+     517702817
+    ],
+    "total": 2146233157,
+    "ruta": {
+     "linea": "TOTAL,AD"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "COMUNIDADES ÉTNICAS 4,5%",
+    "anios": [
+     25112267,
+     24808805,
+     23362793,
+     23296627
+    ],
+    "total": 96580492,
+    "ruta": {
+     "linea": "COMUNIDADES ÉTNICAS 4,5%"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "AIL SEGÚN NBI Y 4,5,6 CAT",
+    "anios": [
+     1328444579,
+     2699585155,
+     2501031355,
+     2623688877
+    ],
+    "total": 9152749966,
+    "ruta": {
+     "linea": "AIL SEGÚN NBI Y 4,5,6 CAT"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "AIL AMBIENTE Y DLLO SOSTENIBLE 2%",
+    "anios": [
+     213610563,
+     415320793,
+     384774055,
+     403644443
+    ],
+    "total": 1417349853,
+    "ruta": {
+     "linea": "AIL AMBIENTE Y DLLO SOSTENIBLE 2%"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TOTAL,AIL",
+    "anios": [
+     1880421913,
+     3114905948,
+     2885805410,
+     3027333320
+    ],
+    "total": 10908466591,
+    "ruta": {
+     "linea": "TOTAL,AIL"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

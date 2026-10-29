@@ -1,0 +1,236 @@
+[
+ {
+  "paginas": [
+   196
+  ],
+  "cabecera": "CONCEPTOS",
+  "unidad": "millones",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   174005,
+   179225,
+   184602,
+   190140
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "CORRIENTES",
+    "anios": [
+     87807,
+     90441,
+     93154,
+     95949
+    ],
+    "total": 367351,
+    "ruta": {
+     "linea": "CORRIENTES"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "RECURSOS DE CAPITAL",
+    "anios": [
+     129,
+     133,
+     137,
+     141
+    ],
+    "total": 540,
+    "ruta": {
+     "linea": "RECURSOS DE CAPITAL"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "FUNCIONAMIENTO",
+    "anios": [
+     11211,
+     11547,
+     11894,
+     12251
+    ],
+    "total": 46903,
+    "ruta": {
+     "linea": "FUNCIONAMIENTO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "INVERSION",
+    "anios": [
+     74858,
+     77104,
+     79417,
+     81799
+    ],
+    "total": 313178,
+    "ruta": {
+     "linea": "INVERSION"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   198
+  ],
+  "cabecera": "",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   6668,
+   6751,
+   6836,
+   6922
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "5. Intereses de la vigencia (5.1- 5.2+5.3)",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "5. Intereses de la vigencia (5.1- 5.2+5.3)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "SOLVENCIA = Intereses / Ahorro operacional = (5/3) - Sin cobertura de",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "SOLVENCIA = Intereses / Ahorro operacional = (5/3) - Sin cobertura de"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "SEMÁFORO: Estado actual de la entidad",
+    "anios": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "total": 4,
+    "ruta": {
+     "linea": "SEMÁFORO: Estado actual de la entidad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "SOLVENCIA = Intereses / Ahorro operacional = (9/3) - Con cobertura de riesgo SOSTENIBILIDAD = Saldo deuda / Ingresos corrientes = (18/1) Con cobertura de",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "SOLVENCIA = Intereses / Ahorro operacional = (9/3) - Con cobertura de riesgo SOSTENIBILIDAD = Saldo deuda / Ingresos corrientes = (18/1) Con cobertura de"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "DATOS PARA ESTABLECER CUBERTURAS DE RIESGO LEY 819 DE 2003",
+    "anios": [
+     2024,
+     2025,
+     2026,
+     2027
+    ],
+    "total": 8102,
+    "ruta": {
+     "linea": "DATOS PARA ESTABLECER CUBERTURAS DE RIESGO LEY 819 DE 2003"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "7. PORCENTAJE DE COBERTURA EN TASA DE INTERES",
+    "anios": [
+     741,
+     741,
+     741,
+     741
+    ],
+    "total": 2964,
+    "ruta": {
+     "linea": "7. PORCENTAJE DE COBERTURA EN TASA DE INTERES"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "8. TASA DE INTERES CON COBERTURA DE RIESGO 9. INTERESES PROYECTADOS CON COBERTURA DE RIESGO",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "8. TASA DE INTERES CON COBERTURA DE RIESGO 9. INTERESES PROYECTADOS CON COBERTURA DE RIESGO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "10. TASA REPRESENTATIVA",
+    "anios": [
+     3902,
+     3984,
+     4068,
+     4153
+    ],
+    "total": 16107,
+    "ruta": {
+     "linea": "10. TASA REPRESENTATIVA"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

@@ -1,0 +1,584 @@
+[
+ {
+  "paginas": [
+   175
+  ],
+  "cabecera": "EJE ESTRATÉGICO // PROGRAMA DE INVERSION",
+  "unidad": "pesos",
+  "niveles": [
+   "eje",
+   "programa"
+  ],
+  "total_raices": [
+   69859,
+   77339,
+   90809,
+   93380
+  ],
+  "registros": [
+   {
+    "nivel": "eje",
+    "profundidad": 0,
+    "etiqueta": "EJE 1. DESARROLLO SOCIAL INCLUYENTE",
+    "anios": [
+     34982,
+     38729,
+     45471,
+     46764
+    ],
+    "total": 165946,
+    "ruta": {
+     "eje": "EJE 1. DESARROLLO SOCIAL INCLUYENTE"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "eje",
+    "profundidad": 0,
+    "etiqueta": "1905. Salud Pública",
+    "anios": [
+     700,
+     700,
+     700,
+     700
+    ],
+    "total": 2800,
+    "ruta": {
+     "eje": "1905. Salud Pública"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "eje",
+    "profundidad": 0,
+    "etiqueta": "1906. Aseguramiento y prestación integral de servicios de salud",
+    "anios": [
+     28283,
+     29415,
+     30591,
+     31815
+    ],
+    "total": 120104,
+    "ruta": {
+     "eje": "1906. Aseguramiento y prestación integral de servicios de salud"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "eje",
+    "profundidad": 0,
+    "etiqueta": "2201. Calidad, cobertura y fortalecimiento de la educación inicial, prescolar,básicaymedia",
+    "anios": [
+     1200,
+     2000,
+     4000,
+     4000
+    ],
+    "total": 11200,
+    "ruta": {
+     "eje": "2201. Calidad, cobertura y fortalecimiento de la educación inicial, prescolar,básicaymedia"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "eje",
+    "profundidad": 0,
+    "etiqueta": "2202. Calidadyfomento de la educación superior",
+    "anios": [
+     100,
+     100,
+     100,
+     100
+    ],
+    "total": 400,
+    "ruta": {
+     "eje": "2202. Calidadyfomento de la educación superior"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "eje",
+    "profundidad": 0,
+    "etiqueta": "3301. Promoción y acceso efectivo a procesos culturales y artísticos",
+    "anios": [
+     600,
+     600,
+     600,
+     600
+    ],
+    "total": 2400,
+    "ruta": {
+     "eje": "3301. Promoción y acceso efectivo a procesos culturales y artísticos"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "eje",
+    "profundidad": 0,
+    "etiqueta": "3302. Gestión, protección y salvaguardia del patrimonio cultural colombiano",
+    "anios": [
+     100,
+     100,
+     100,
+     100
+    ],
+    "total": 400,
+    "ruta": {
+     "eje": "3302. Gestión, protección y salvaguardia del patrimonio cultural colombiano"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "eje",
+    "profundidad": 0,
+    "etiqueta": "4001. Acceso a soluciones de vivienda",
+    "anios": [
+     250,
+     500,
+     500,
+     500
+    ],
+    "total": 1750,
+    "ruta": {
+     "eje": "4001. Acceso a soluciones de vivienda"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "eje",
+    "profundidad": 0,
+    "etiqueta": "4003. Acceso de la población a los servicios de agua potable y saneamiento básico",
+    "anios": [
+     1000,
+     2500,
+     6000,
+     6000
+    ],
+    "total": 15500,
+    "ruta": {
+     "eje": "4003. Acceso de la población a los servicios de agua potable y saneamiento básico"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "eje",
+    "profundidad": 0,
+    "etiqueta": "4101. Atención,asistenciayreparación integral a las víctimas",
+    "anios": [
+     100,
+     100,
+     100,
+     100
+    ],
+    "total": 400,
+    "ruta": {
+     "eje": "4101. Atención,asistenciayreparación integral a las víctimas"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 1,
+    "etiqueta": "4102. Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niñosyadolescentes",
+    "anios": [
+     100,
+     100,
+     100,
+     100
+    ],
+    "total": 400,
+    "ruta": {
+     "eje": "4101. Atención,asistenciayreparación integral a las víctimas",
+     "programa": "4102. Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niñosyadolescentes"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "eje",
+    "profundidad": 0,
+    "etiqueta": "4103. Inclusión social y productiva para la población en situación de vulnerabilidad",
+    "anios": [
+     60,
+     61,
+     62,
+     64
+    ],
+    "total": 247,
+    "ruta": {
+     "eje": "4103. Inclusión social y productiva para la población en situación de vulnerabilidad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "eje",
+    "profundidad": 0,
+    "etiqueta": "4104. Atención integral de población en situación permanente de desprotección socialy/o familiar",
+    "anios": [
+     1195,
+     1219,
+     1244,
+     1269
+    ],
+    "total": 4927,
+    "ruta": {
+     "eje": "4104. Atención integral de población en situación permanente de desprotección socialy/o familiar"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "eje",
+    "profundidad": 0,
+    "etiqueta": "4301. Fomento a la recreación,la actividad físicayel deporte",
+    "anios": [
+     610,
+     622,
+     635,
+     647
+    ],
+    "total": 2515,
+    "ruta": {
+     "eje": "4301. Fomento a la recreación,la actividad físicayel deporte"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "eje",
+    "profundidad": 0,
+    "etiqueta": "4302. Formacióny preparación de deportistas",
+    "anios": [
+     679,
+     693,
+     706,
+     721
+    ],
+    "total": 2798,
+    "ruta": {
+     "eje": "4302. Formacióny preparación de deportistas"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   177
+  ],
+  "cabecera": "EJE ESTRATÉGICO // PROGRAMA DE INVERSION",
+  "unidad": "pesos",
+  "niveles": [
+   "eje",
+   "programa"
+  ],
+  "total_raices": [
+   1295,
+   3930,
+   2480,
+   2480
+  ],
+  "registros": [
+   {
+    "nivel": "eje",
+    "profundidad": 0,
+    "etiqueta": "EJE 4. MEDIO AMBIENTE Y GESTIÓN DEL RIESGO",
+    "anios": [
+     1290,
+     3930,
+     1980,
+     1980
+    ],
+    "total": 9180,
+    "ruta": {
+     "eje": "EJE 4. MEDIO AMBIENTE Y GESTIÓN DEL RIESGO"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 1,
+    "etiqueta": "3201. Fortalecimiento del desempeño ambiental de los sectores productivos",
+    "anios": [
+     30,
+     30,
+     30,
+     30
+    ],
+    "total": 120,
+    "ruta": {
+     "eje": "EJE 4. MEDIO AMBIENTE Y GESTIÓN DEL RIESGO",
+     "programa": "3201. Fortalecimiento del desempeño ambiental de los sectores productivos"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 1,
+    "etiqueta": "3202. Conservación de la biodiversidad y sus servicios ecosistémicos",
+    "anios": [
+     20,
+     50,
+     50,
+     50
+    ],
+    "total": 170,
+    "ruta": {
+     "eje": "EJE 4. MEDIO AMBIENTE Y GESTIÓN DEL RIESGO",
+     "programa": "3202. Conservación de la biodiversidad y sus servicios ecosistémicos"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 1,
+    "etiqueta": "3203. Gestión integral del recurso hídrico",
+    "anios": [
+     150,
+     150,
+     150,
+     150
+    ],
+    "total": 600,
+    "ruta": {
+     "eje": "EJE 4. MEDIO AMBIENTE Y GESTIÓN DEL RIESGO",
+     "programa": "3203. Gestión integral del recurso hídrico"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 1,
+    "etiqueta": "3204. Gestión de la informaciónyel conocimiento ambiental",
+    "anios": [
+     10,
+     20,
+     20,
+     20
+    ],
+    "total": 70,
+    "ruta": {
+     "eje": "EJE 4. MEDIO AMBIENTE Y GESTIÓN DEL RIESGO",
+     "programa": "3204. Gestión de la informaciónyel conocimiento ambiental"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 1,
+    "etiqueta": "3205. Ordenamiento ambiental territorial",
+    "anios": [
+     70,
+     70,
+     70,
+     70
+    ],
+    "total": 280,
+    "ruta": {
+     "eje": "EJE 4. MEDIO AMBIENTE Y GESTIÓN DEL RIESGO",
+     "programa": "3205. Ordenamiento ambiental territorial"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 1,
+    "etiqueta": "3206. Gestión del cambio climático para un desarrollo bajo en carbonoyresiliente al clima",
+    "anios": [
+     60,
+     60,
+     60,
+     60
+    ],
+    "total": 240,
+    "ruta": {
+     "eje": "EJE 4. MEDIO AMBIENTE Y GESTIÓN DEL RIESGO",
+     "programa": "3206. Gestión del cambio climático para un desarrollo bajo en carbonoyresiliente al clima"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 1,
+    "etiqueta": "3208. Educación ambiental",
+    "anios": [
+     50,
+     50,
+     50,
+     50
+    ],
+    "total": 200,
+    "ruta": {
+     "eje": "EJE 4. MEDIO AMBIENTE Y GESTIÓN DEL RIESGO",
+     "programa": "3208. Educación ambiental"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 1,
+    "etiqueta": "4002. Ordenamiento territorialydesarrollo urbano",
+    "anios": [
+     400,
+     2000,
+     50,
+     50
+    ],
+    "total": 2500,
+    "ruta": {
+     "eje": "EJE 4. MEDIO AMBIENTE Y GESTIÓN DEL RIESGO",
+     "programa": "4002. Ordenamiento territorialydesarrollo urbano"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 1,
+    "etiqueta": "4503. Gestión del riesgo de desastresyemergencias",
+    "anios": [
+     500,
+     1500,
+     1500,
+     1500
+    ],
+    "total": 5000,
+    "ruta": {
+     "eje": "EJE 4. MEDIO AMBIENTE Y GESTIÓN DEL RIESGO",
+     "programa": "4503. Gestión del riesgo de desastresyemergencias"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "eje",
+    "profundidad": 0,
+    "etiqueta": "EJE 5. INCLUSION ESPECIAL",
+    "anios": [
+     5,
+     0,
+     500,
+     500
+    ],
+    "total": 500,
+    "ruta": {
+     "eje": "EJE 5. INCLUSION ESPECIAL"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   184,
+   184
+  ],
+  "cabecera": "Beneficiario",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   596238270,
+   118976314,
+   112041630,
+   111724315
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "PUEBLOS Y COMUNIDADES INDÍGENAS",
+    "anios": [
+     51630047,
+     11202521,
+     10549568,
+     10521036
+    ],
+    "total": 83903172,
+    "ruta": {
+     "linea": "PUEBLOS Y COMUNIDADES INDÍGENAS"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "COMUNIDADES NEGRAS, AFROCOLOMBIANAS, RAIZALES Y PALENQUERAS",
+    "anios": [
+     181607009,
+     35349085,
+     33288719,
+     33193096
+    ],
+    "total": 283437910,
+    "ruta": {
+     "linea": "COMUNIDADES NEGRAS, AFROCOLOMBIANAS, RAIZALES Y PALENQUERAS"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total",
+    "anios": [
+     233237057,
+     46551606,
+     43838287,
+     43714132
+    ],
+    "total": 367341083,
+    "ruta": {
+     "linea": "Total"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "PUEBLOS Y COMUNIDADES INDÍGENAS",
+    "anios": [
+     14359976,
+     3113147,
+     2931693,
+     2923764
+    ],
+    "total": 23328581,
+    "ruta": {
+     "linea": "PUEBLOS Y COMUNIDADES INDÍGENAS"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "COMUNIDADES NEGRAS, AFROCOLOMBIANAS, RAIZALES Y PALENQUERAS",
+    "anios": [
+     50522102,
+     9823404,
+     9250835,
+     9224261
+    ],
+    "total": 78820604,
+    "ruta": {
+     "linea": "COMUNIDADES NEGRAS, AFROCOLOMBIANAS, RAIZALES Y PALENQUERAS"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total",
+    "anios": [
+     64882079,
+     12936551,
+     12182528,
+     12148026
+    ],
+    "total": 102149186,
+    "ruta": {
+     "linea": "Total"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

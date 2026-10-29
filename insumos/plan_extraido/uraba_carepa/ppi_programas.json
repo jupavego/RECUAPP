@@ -1,0 +1,34 @@
+[
+ {
+  "pagina": 199,
+  "linea": "",
+  "sector": "Info indicad Resultado",
+  "programa": "rmación ores de B prioriza",
+  "anios": [],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 199,
+  "linea": "",
+  "sector": "Nombre del Indi ca- dor de Bienestar / Resultado prioriza- do (medible)",
+  "programa": "Línea Base (LB) del indi cador de Bienestar/ Resultado",
+  "anios": [
+   0,
+   2024,
+   2027
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 199,
+  "linea": "",
+  "sector": "140010046 - Pobreza - Índice de Ne cesidades Básicas Insatisfechas - NBI - en el á rea rural",
+  "programa": "33,9381",
+  "anios": [
+   2402,
+   2402114,
+   240211400
+  ],
+  "estado": "revisar"
+ }
+]

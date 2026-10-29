@@ -1,0 +1,400 @@
+[
+ {
+  "pagina": 276,
+  "cabecera": "ción",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Adres Continuidad SSF",
+    "anios": [
+     38933329178,
+     40412795687,
+     41625179557,
+     42873934944
+    ],
+    "total": 163845239366
+   },
+   {
+    "etiqueta": "Aporte Departamental Régi- men Subsidiado",
+    "anios": [
+     7385256823,
+     7784060691,
+     8079854998,
+     8322250648
+    ],
+    "total": 31571423160
+   },
+   {
+    "etiqueta": "Coljuegos 25%",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Coljuegos 75% SSF",
+    "anios": [
+     684683910,
+     710701898,
+     732022955,
+     753983644
+    ],
+    "total": 2881392407
+   },
+   {
+    "etiqueta": "Contraprestación de las zo- nas de uso público - Munici- pios Portuarios Marítimos",
+    "anios": [
+     466304598,
+     483688817,
+     541521931,
+     572389115
+    ],
+    "total": 2063904461
+   },
+   {
+    "etiqueta": "Contribución de obra",
+    "anios": [
+     1476631229,
+     1531681254,
+     1714819450,
+     1812565532
+    ],
+    "total": 6535697465
+   },
+   {
+    "etiqueta": "Estampilla para el bienestar del adulto mayor",
+    "anios": [
+     1127507789,
+     1186620485,
+     1426948175,
+     1548565781
+    ],
+    "total": 5289642230
+   },
+   {
+    "etiqueta": "Estampilla pro cultura",
+    "anios": [
+     555339657,
+     584454866,
+     702825220,
+     762726429
+    ],
+    "total": 2605346172
+   },
+   {
+    "etiqueta": "Impuesto de alumbrado pú- blico",
+    "anios": [
+     736948525,
+     773795951,
+     812485749,
+     853110036
+    ],
+    "total": 3176340261
+   },
+   {
+    "etiqueta": "1% Ley 99 de 1993 Com- pra de tierras",
+    "anios": [
+     135209993,
+     143321865,
+     152820700,
+     168806577
+    ],
+    "total": 600159135
+   },
+   {
+    "etiqueta": "1% Fondo de Fomento a la eduación superior",
+    "anios": [
+     135209993,
+     143321865,
+     152820700,
+     168806577
+    ],
+    "total": 600159135
+   },
+   {
+    "etiqueta": "1% Fondo de Gestión del Riesgo",
+    "anios": [
+     135209993,
+     143321865,
+     152820700,
+     168806577
+    ],
+    "total": 600159135
+   },
+   {
+    "etiqueta": "Ingresos corrientes de libre destinación otros sec- tores",
+    "anios": [
+     2420262619,
+     2619881713,
+     3166582178,
+     4357309313
+    ],
+    "total": 12564035823
+   },
+   {
+    "etiqueta": "Multas de policía",
+    "anios": [
+     21372294,
+     22169070,
+     24819755,
+     26234501
+    ],
+    "total": 94595620
+   },
+   {
+    "etiqueta": "Multas de transporte",
+    "anios": [
+     174864224,
+     181383306,
+     203070724,
+     214645918
+    ],
+    "total": 773964172
+   },
+   {
+    "etiqueta": "Retiros FONPET Mesadas Pensionales",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "SGP Agua potable y sanea- miento básico",
+    "anios": [
+     4998745104,
+     5129525640,
+     5040118990,
+     5220651740
+    ],
+    "total": 20389041474
+   },
+   {
+    "etiqueta": "SGP Asignaciones especia- les Alimentación escolar",
+    "anios": [
+     1787478319,
+     1855402495,
+     1911064570,
+     1968396507
+    ],
+    "total": 7522341891
+   },
+   {
+    "etiqueta": "SGP Asignaciones especia- les Resguardos Indígenas",
+    "anios": [
+     342708058,
+     355730965,
+     366402894,
+     377394980
+    ],
+    "total": 1442236897
+   },
+   {
+    "etiqueta": "SGP Atención integral de la primera infancia",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "SGP Cultura",
+    "anios": [
+     295573217,
+     306805000,
+     316009150,
+     325489424
+    ],
+    "total": 1243876791
+   },
+   {
+    "etiqueta": "SGP De libre destinación mu- nicipios categorías 4, 5 y 6",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "SGP Deporte",
+    "anios": [
+     394097623,
+     409073332,
+     421345532,
+     433985898
+    ],
+    "total": 1658502385
+   },
+   {
+    "etiqueta": "SGP Educación Gratuidad SSF",
+    "anios": [
+     2032885556,
+     2110135207,
+     2173439263,
+     2238642441
+    ],
+    "total": 8555102467
+   },
+   {
+    "etiqueta": "SGP Educación Matrícula",
+    "anios": [
+     2174408705,
+     2257036235,
+     2324747322,
+     2394489742
+    ],
+    "total": 9150682004
+   },
+   {
+    "etiqueta": "SGP Libre Inversión",
+    "anios": [
+     1725346540,
+     1571375782,
+     981538822,
+     1041518732
+    ],
+    "total": 5319779876
+   },
+   {
+    "etiqueta": "SGP Salud Pública",
+    "anios": [
+     1093252403,
+     1134795994,
+     1168839874,
+     1203905070
+    ],
+    "total": 4600793341
+   },
+   {
+    "etiqueta": "SGP Salud Régimen Subsi- diado SSF",
+    "anios": [
+     27193324388,
+     28226670715,
+     29073470836,
+     29945674961
+    ],
+    "total": 114439140900
+   },
+   {
+    "etiqueta": "SGP Subsidio a la Oferta",
+    "anios": [
+     777505838,
+     807051060,
+     831262592,
+     856200469
+    ],
+    "total": 3272019959
+   },
+   {
+    "etiqueta": "Sobretasa ambiental",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Sobretasa bomberil",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Tasa pro deporte",
+    "anios": [
+     561348221,
+     743455356,
+     755914517,
+     988015507
+    ],
+    "total": 3048733601
+   },
+   {
+    "etiqueta": "medio ambiente y desarrollo sostenible",
+    "anios": [
+     609391947,
+     526864826,
+     488114052,
+     512251183
+    ],
+    "total": 2136622008
+   }
+  ],
+  "ncols": 4,
+  "financiero": true
+ },
+ {
+  "pagina": 277,
+  "cabecera": "neas sra- tégicas",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "1. FORTALECI- MIENTO DE LA COMPETITIVI- DAD EN MEDIO DE LA ADAPTA- CIÓN DEL CAM-",
+    "anios": [
+     12086763986,
+     19769205499,
+     21506172260,
+     32846814839
+    ],
+    "total": 86208956584
+   },
+   {
+    "etiqueta": "2. INCLUSIÓN SOCIAL PARA EL FORTALE- CIMIENTO DEL B I E N E S T A R INDIVIDUAL Y COLECTIVO, Y LA ATENCIÓN DEL FENÓME- NO MIGRATO- RIO",
+    "anios": [
+     92309614282,
+     96491682389,
+     107908252272,
+     98964320597
+    ],
+    "total": 395673869540
+   },
+   {
+    "etiqueta": "3. PARTICIPA- CIÓN CIUDA- DANA DESDE LA DIVERSI- DAD, LA PLU- R I C U L T U - RALIDAD, Y MULTIETNICI- DAD",
+    "anios": [
+     1686403523,
+     1793850325,
+     2627639206,
+     1918800034
+    ],
+    "total": 8026693088
+   },
+   {
+    "etiqueta": "4. DESARRO- LLO PRODUC- TIVO PARA LA COMPETITIVI- DAD",
+    "anios": [
+     5489396618,
+     1012322228,
+     2938060785,
+     3881518732
+    ],
+    "total": 13321298363
+   },
+   {
+    "etiqueta": "Total general",
+    "anios": [
+     111572178410,
+     119067060442,
+     134980124524,
+     137611454203
+    ],
+    "total": 503230817579
+   }
+  ],
+  "ncols": 3,
+  "financiero": false
+ }
+]

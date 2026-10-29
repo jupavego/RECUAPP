@@ -1,0 +1,1157 @@
+[
+ {
+  "pagina": 194,
+  "cabecera": "Nombre de Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "INGRESOS TOTALES(sin financiación)",
+    "anios": [
+     40648,
+     41867,
+     43123,
+     44417
+    ],
+    "total": 170055
+   },
+   {
+    "etiqueta": "INGRESOS CORRIENTES",
+    "anios": [
+     40246,
+     41454,
+     42697,
+     43978
+    ],
+    "total": 168375
+   },
+   {
+    "etiqueta": "TRIBUTARIOS",
+    "anios": [
+     1930,
+     1988,
+     2048,
+     2109
+    ],
+    "total": 8075
+   },
+   {
+    "etiqueta": "Impuesto sobre vehículos automotores",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Impuesto predial unificado",
+    "anios": [
+     19,
+     19,
+     20,
+     20
+    ],
+    "total": 78
+   },
+   {
+    "etiqueta": "Impuesto de industria y comercio",
+    "anios": [
+     380,
+     391,
+     403,
+     415
+    ],
+    "total": 1589
+   },
+   {
+    "etiqueta": "Impuesto de registro",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Impuesto al consumo de licores, vinos, aperitivos y similares",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Impuesto al consumo de cervezas, sifones, refajos y mezclas",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Impuesto al consumo de cigarrillos y tabaco",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Sobretasa a la gasolina",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Estampillas",
+    "anios": [
+     1449,
+     1493,
+     1537,
+     1584
+    ],
+    "total": 6063
+   },
+   {
+    "etiqueta": "Impuesto Único al Consumo a favor del Departamento Archipiélago de San Andrés, Providencia y Santa Catalina",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Impuesto de alumbrado público",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto ingresos tributarios",
+    "anios": [
+     82,
+     85,
+     87,
+     90
+    ],
+    "total": 344
+   },
+   {
+    "etiqueta": "NO TRIBUTARIOS",
+    "anios": [
+     1214,
+     1251,
+     1288,
+     1327
+    ],
+    "total": 5080
+   },
+   {
+    "etiqueta": "Contribuciones",
+    "anios": [
+     596,
+     614,
+     633,
+     652
+    ],
+    "total": 2495
+   },
+   {
+    "etiqueta": "Tasas y derechos administrativos",
+    "anios": [
+     494,
+     509,
+     525,
+     540
+    ],
+    "total": 2068
+   },
+   {
+    "etiqueta": "Multas, sanciones e intereses de mora",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Venta de bienes y servicios",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Participación y derechos por monopolio",
+    "anios": [
+     124,
+     127,
+     131,
+     135
+    ],
+    "total": 517
+   },
+   {
+    "etiqueta": "TRANSFERENCIAS CORRIENTES",
+    "anios": [
+     37102,
+     38215,
+     39361,
+     40542
+    ],
+    "total": 155220
+   },
+   {
+    "etiqueta": "Sistema General de Participaciones",
+    "anios": [
+     18241,
+     18789,
+     19352,
+     19933
+    ],
+    "total": 76315
+   },
+   {
+    "etiqueta": "Educación",
+    "anios": [
+     587,
+     605,
+     623,
+     642
+    ],
+    "total": 2457
+   },
+   {
+    "etiqueta": "Salud",
+    "anios": [
+     3955,
+     4074,
+     4196,
+     4322
+    ],
+    "total": 16547
+   },
+   {
+    "etiqueta": "Agua potable y saneamiento básico",
+    "anios": [
+     2463,
+     2537,
+     2613,
+     2691
+    ],
+    "total": 10304
+   },
+   {
+    "etiqueta": "Propósito general",
+    "anios": [
+     10873,
+     11199,
+     11535,
+     11881
+    ],
+    "total": 45488
+   },
+   {
+    "etiqueta": "De libre destinación municipios categorías 4, 5 y 6",
+    "anios": [
+     4693,
+     4833,
+     4978,
+     5128
+    ],
+    "total": 19632
+   },
+   {
+    "etiqueta": "Distintos de libre de destinación",
+    "anios": [
+     6180,
+     6365,
+     6556,
+     6753
+    ],
+    "total": 25854
+   },
+   {
+    "etiqueta": "Asignaciones especiales",
+    "anios": [
+     364,
+     374,
+     386,
+     397
+    ],
+    "total": 1521
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 195,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Atención integral de la primera infancia",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Participación en impuestos",
+    "anios": [
+     11,
+     12,
+     12,
+     12
+    ],
+    "total": 47
+   },
+   {
+    "etiqueta": "Participación en contribuciones",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto participaciones",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Compensaciones de ingresos tributarios y no tributarios",
+    "anios": [
+     2269,
+     2337,
+     2407,
+     2479
+    ],
+    "total": 9492
+   },
+   {
+    "etiqueta": "A entidades territoriales distintas de participaciones y compensaciones",
+    "anios": [
+     11832,
+     12187,
+     12552,
+     12929
+    ],
+    "total": 49500
+   },
+   {
+    "etiqueta": "Resto transferencias corrientes",
+    "anios": [
+     4748,
+     4891,
+     5037,
+     5189
+    ],
+    "total": 19865
+   },
+   {
+    "etiqueta": "GASTOS TOTALES",
+    "anios": [
+     38305,
+     39454,
+     40637,
+     41857
+    ],
+    "total": 160253
+   },
+   {
+    "etiqueta": "GASTOS CORRIENTES",
+    "anios": [
+     23978,
+     24698,
+     25439,
+     26202
+    ],
+    "total": 100317
+   },
+   {
+    "etiqueta": "FUNCIONAMIENTO",
+    "anios": [
+     4731,
+     4873,
+     5019,
+     5169
+    ],
+    "total": 19792
+   },
+   {
+    "etiqueta": "Gastos de personal",
+    "anios": [
+     1198,
+     1234,
+     1271,
+     1309
+    ],
+    "total": 5012
+   },
+   {
+    "etiqueta": "Adquisición de bienes y servicios",
+    "anios": [
+     2781,
+     2864,
+     2950,
+     3039
+    ],
+    "total": 11634
+   },
+   {
+    "etiqueta": "Transferencias corrientes",
+    "anios": [
+     478,
+     492,
+     507,
+     522
+    ],
+    "total": 1999
+   },
+   {
+    "etiqueta": "Sentencias y conciliaciones",
+    "anios": [
+     179,
+     185,
+     190,
+     196
+    ],
+    "total": 750
+   },
+   {
+    "etiqueta": "Otras transferencias corrientes",
+    "anios": [
+     299,
+     308,
+     317,
+     326
+    ],
+    "total": 1250
+   },
+   {
+    "etiqueta": "Transferencias de capital",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Gastos de comercialización y producción",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Adquisición de activos financieros",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Disminución de pasivos",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Gastos por tributos, tasas, contribuciones, multas, sanciones e intereses demora",
+    "anios": [
+     274,
+     282,
+     291,
+     299
+    ],
+    "total": 1146
+   },
+   {
+    "etiqueta": "GASTOS ORGANISMOS DE CONTROL",
+    "anios": [
+     357,
+     368,
+     379,
+     391
+    ],
+    "total": 1495
+   },
+   {
+    "etiqueta": "Gastos de personal",
+    "anios": [
+     357,
+     368,
+     379,
+     391
+    ],
+    "total": 1495
+   },
+   {
+    "etiqueta": "Resto gastos de órganos de control",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "PAGO DE BONOS PENSIONALES y CUOTAS PARTES DE BONO PENSIONAL",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "APORTES AL FONDO DE CONTINGENCIAS DE LAS ENTIDADES ESTATALES",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "GASTOS OPERATIVOS EN SECTORES SOCIALES",
+    "anios": [
+     18362,
+     18913,
+     19480,
+     20064
+    ],
+    "total": 76819
+   },
+   {
+    "etiqueta": "Educación",
+    "anios": [
+     1644,
+     1693,
+     1744,
+     1796
+    ],
+    "total": 6877
+   },
+   {
+    "etiqueta": "Salud y protección social",
+    "anios": [
+     10066,
+     10368,
+     10679,
+     11000
+    ],
+    "total": 42113
+   },
+   {
+    "etiqueta": "Vivienda, ciudad y territorio",
+    "anios": [
+     508,
+     523,
+     539,
+     555
+    ],
+    "total": 2125
+   },
+   {
+    "etiqueta": "Gobierno territorial",
+    "anios": [
+     1990,
+     2050,
+     2111,
+     2174
+    ],
+    "total": 8325
+   },
+   {
+    "etiqueta": "Transporte",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Inclusión social y reconciliación",
+    "anios": [
+     2157,
+     2222,
+     2288,
+     2357
+    ],
+    "total": 9024
+   },
+   {
+    "etiqueta": "Deporte, recreación y cultura",
+    "anios": [
+     1342,
+     1382,
+     1424,
+     1467
+    ],
+    "total": 5615
+   },
+   {
+    "etiqueta": "Resto de sectores",
+    "anios": [
+     655,
+     675,
+     695,
+     716
+    ],
+    "total": 2741
+   },
+   {
+    "etiqueta": "INTERESES Y COMISIONES DE LA DEUDA",
+    "anios": [
+     528,
+     544,
+     561,
+     577
+    ],
+    "total": 2210
+   },
+   {
+    "etiqueta": "Interna",
+    "anios": [
+     528,
+     544,
+     561,
+     577
+    ],
+    "total": 2210
+   },
+   {
+    "etiqueta": "Externa",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "DÉFICIT O AHORRO CORRIENTE",
+    "anios": [
+     16268,
+     16756,
+     17259,
+     17776
+    ],
+    "total": 68059
+   },
+   {
+    "etiqueta": "INGRESOS DE CAPITAL",
+    "anios": [
+     402,
+     414,
+     426,
+     439
+    ],
+    "total": 1681
+   },
+   {
+    "etiqueta": "Excedentes financieros, dividendos y utilidades",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Rendimientos financieros",
+    "anios": [
+     115,
+     119,
+     122,
+     126
+    ],
+    "total": 482
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 196,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Transferencias de capital",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Recuperación de cartera",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Retiros del FONPET",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto recursos de capital",
+    "anios": [
+     286,
+     295,
+     304,
+     313
+    ],
+    "total": 1198
+   },
+   {
+    "etiqueta": "GASTOS DE CAPITAL",
+    "anios": [
+     14326,
+     14756,
+     15199,
+     15655
+    ],
+    "total": 59936
+   },
+   {
+    "etiqueta": "FORMACIÓN BRUTA DE CAPITAL",
+    "anios": [
+     14326,
+     14756,
+     15199,
+     15655
+    ],
+    "total": 59936
+   },
+   {
+    "etiqueta": "Educación",
+    "anios": [
+     483,
+     498,
+     512,
+     528
+    ],
+    "total": 2021
+   },
+   {
+    "etiqueta": "Salud y protección social",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Vivienda, ciudad y territorio",
+    "anios": [
+     3368,
+     3469,
+     3573,
+     3680
+    ],
+    "total": 14090
+   },
+   {
+    "etiqueta": "Gobierno territorial",
+    "anios": [
+     3206,
+     3303,
+     3402,
+     3504
+    ],
+    "total": 13415
+   },
+   {
+    "etiqueta": "Transporte",
+    "anios": [
+     2974,
+     3063,
+     3155,
+     3249
+    ],
+    "total": 12441
+   },
+   {
+    "etiqueta": "Inclusión social y reconciliación",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Deporte y recreación",
+    "anios": [
+     2039,
+     2101,
+     2164,
+     2229
+    ],
+    "total": 8533
+   },
+   {
+    "etiqueta": "Resto de sectores",
+    "anios": [
+     2256,
+     2323,
+     2393,
+     2465
+    ],
+    "total": 9437
+   },
+   {
+    "etiqueta": "Disminución de pasivos",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "DÉFICIT O SUPERÁVIT DE CAPITAL",
+    "anios": [
+     13925,
+     14342,
+     14773,
+     15216
+    ],
+    "total": 58256
+   },
+   {
+    "etiqueta": "DÉFICIT O SUPERÁVIT TOTAL",
+    "anios": [
+     2343,
+     2414,
+     2486,
+     2561
+    ],
+    "total": 9804
+   },
+   {
+    "etiqueta": "FINANCIACIÓN",
+    "anios": [
+     7479,
+     7704,
+     7936,
+     8175
+    ],
+    "total": 31294
+   },
+   {
+    "etiqueta": "Desembolsos",
+    "anios": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "total": 6
+   },
+   {
+    "etiqueta": "Amortizaciones - Principal",
+    "anios": [
+     600,
+     619,
+     637,
+     656
+    ],
+    "total": 2512
+   },
+   {
+    "etiqueta": "Externo",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Desembolsos",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Amortizaciones - Principal",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Recursos del balance",
+    "anios": [
+     8079,
+     8322,
+     8571,
+     8828
+    ],
+    "total": 33800
+   },
+   {
+    "etiqueta": "Disposición de activos",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "DÉFICIT O SUPERÁVIT PRIMARIO",
+    "anios": [
+     10951,
+     11279,
+     11618,
+     11966
+    ],
+    "total": 45814
+   },
+   {
+    "etiqueta": "INGRESOS TOTALES(incluye financiación)",
+    "anios": [
+     48727,
+     50190,
+     51697,
+     53249
+    ],
+    "total": 203863
+   },
+   {
+    "etiqueta": "GASTOS TOTALES(incluye financiación)",
+    "anios": [
+     38905,
+     40072,
+     41274,
+     42513
+    ],
+    "total": 162764
+   },
+   {
+    "etiqueta": "DÉFICIT O SUPERÁVIT PRESUPUESTAL",
+    "anios": [
+     9822,
+     10118,
+     10422,
+     10736
+    ],
+    "total": 41098
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 214,
+  "cabecera": "DESCRIPCION",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "INGRESOS TOTALES",
+    "anios": [
+     24730,
+     32149,
+     41794,
+     54332
+    ],
+    "total": 153005
+   },
+   {
+    "etiqueta": "INGRESOS CORRIENTES",
+    "anios": [
+     24730,
+     32149,
+     41794,
+     54332
+    ],
+    "total": 153005
+   },
+   {
+    "etiqueta": "INGRESOS PROPIOS",
+    "anios": [
+     2640,
+     3432,
+     4462,
+     5800
+    ],
+    "total": 16334
+   },
+   {
+    "etiqueta": "SISTEMA GENERAL DE PARTICIPACIONES LIBRE DESTINACION",
+    "anios": [
+     459,
+     597,
+     776,
+     1008
+    ],
+    "total": 2840
+   },
+   {
+    "etiqueta": "SISTEMA GENERAL DE PARTICIPACIONES INVERSION",
+    "anios": [
+     22059,
+     28677,
+     37280,
+     48464
+    ],
+    "total": 136480
+   },
+   {
+    "etiqueta": "SISTEMA GENERAL DE REGALIAS",
+    "anios": [
+     1710,
+     2563,
+     2374,
+     2493
+    ],
+    "total": 9140
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 258,
+  "cabecera": "CONCEPTO ASIGNACION SGR",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Asignación para la inversión local según NBI y cuarta, quinta, y sexta categoría",
+    "anios": [
+     1453967704,
+     2221305215,
+     2057928783,
+     2160922225
+    ],
+    "total": 8984807768
+   },
+   {
+    "etiqueta": "Asignación para la inversión local – ambiente y desarrollo sostenible",
+    "anios": [
+     251750297,
+     341739264,
+     316604428,
+     332449573
+    ],
+    "total": 1410341076
+   },
+   {
+    "etiqueta": "Directas 20%",
+    "anios": [
+     4325795,
+     922362,
+     868601,
+     866141
+    ],
+    "total": 7566033
+   },
+   {
+    "etiqueta": "Directas anticipadas 5%",
+    "anios": [
+     700626,
+     256322,
+     241382,
+     240698
+    ],
+    "total": 1601079
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     1710744422,
+     2563044479,
+     2374533211,
+     2493371798
+    ],
+    "total": 10404315957
+   }
+  ],
+  "ncols": 7,
+  "financiero": true
+ }
+]

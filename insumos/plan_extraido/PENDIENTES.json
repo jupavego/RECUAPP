@@ -1,0 +1,16 @@
+{
+  "caracoli": "255 paginas con texto pero sin tablas de indicadores (casi no menciona linea base): parece un plan sin matriz de metas o con ella como imagen",
+  "giraldo": "el PDF tiene 4 paginas, todas imagen: no es el plan completo; pedir el documento con texto",
+  "olaya": "203 paginas de diagnostico; sin matriz de indicadores extraible (23 paginas-imagen)",
+  "montebello": "formato 'tarjeta' ya leido (74 indicadores de producto); los de resultado vienen en tablas de una columna con el valor pegado y no se leen",
+  "san_roque": "tablas-imagen; requiere OCR/vision (omitido por costo)",
+  "alejandria": "tablas-imagen; requiere OCR/vision (omitido por costo)",
+  "san_jose_de_la_montana": "otro formato sin identificar",
+  "la_union": "indicadores en texto corrido, no en tabla",
+  "puerto_triunfo": "tabla de 'metas de producto' con encabezado de indicador de resultado y el producto como frase; se leen 9 filas",
+  "titiribi": "solo 5 paginas con tablas de producto y sin linea base: el plan es esparso, 28 puede ser lo que hay",
+  "turbo": "251 de 379 paginas son imagen (casi escaneado); se leyeron 0 indicadores. Pedir version con texto",
+  "caucasia": "las 5 paginas de la matriz de indicadores son imagen (228-232): se leen solo 12",
+  "la_ceja": "la version 1 trae 14 indicadores y la version 2 trae 130: la primera parece incompleta",
+  "santa_fe_de_antioquia": "el producto hace de nombre del indicador (no hay columna de indicador); los de resultado vienen en una celda unica y no se leen"
+}

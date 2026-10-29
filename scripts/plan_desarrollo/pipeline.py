@@ -135,7 +135,7 @@ def procesar(pdf, salida, usar_vision_api=False):
                 sc, nombre_pp = conocimiento.resuelve("programa", cand_i, nombres, UMBRAL, alias)
             else:
                 sc, nombre_pp = 0, None
-            ind.update(linea=(linea_arbol.get(nombre_pp) if nombre_pp else None) or t["linea"],
+            ind.update(linea=(linea_arbol.get(nombre_pp) if nombre_pp else None) or t["linea"] or ind.get("linea"),
                        sector=canon[nombre_pp] if nombre_pp and canon[nombre_pp] else (ind.get("sector") or t["sector"]),
                        programa=nombre_pp or cand_i, coincidencia_ppi=round(sc, 2) if canon else None,
                        pagina=t["n"], fuente_lectura="texto", formato=t.get("formato"))

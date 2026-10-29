@@ -1,6 +1,6 @@
 # Reporte de extraccion
 - Capitulo estrategico detectado: paginas 75-267
-- Indicadores de producto: 0 {} (sin cruce claro con el PPI: 0)
+- Indicadores de producto: 60 {'texto': 60} (sin cruce claro con el PPI: 60)
 - Programas en el PPI: 5; con indicadores: 0
 - Sectores del resumen PPI: 0; cuadran con la suma de programas: 0
 - Filas del Anexo a revisar a mano: 0

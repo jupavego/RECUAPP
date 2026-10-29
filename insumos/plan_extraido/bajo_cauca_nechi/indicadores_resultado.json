@@ -1,0 +1,80 @@
+[
+ {
+  "nombre": "Línea 1. EJE SOCIAL: VÍNCULOS HUMANOS, COMUNIDAD EN ARMONÍA.",
+  "unidad": "Tasa cien mil Menores de 5 años",
+  "linea_base": "0",
+  "ano_base": "2023",
+  "fuente": "SSSA",
+  "meta": "0",
+  "tipo_acumulado": "",
+  "responsable": "",
+  "pagina": 310,
+  "linea": null,
+  "sector": "Salud y Protección Social"
+ },
+ {
+  "nombre": "Línea 1. EJE SOCIAL: VÍNCULOS HUMANOS, COMUNIDAD EN ARMONÍA.",
+  "unidad": "Tasa cien mil hbtes.",
+  "linea_base": "21,85",
+  "ano_base": "2022",
+  "fuente": "SSSA",
+  "meta": "19.66",
+  "tipo_acumulado": "",
+  "responsable": "",
+  "pagina": 310,
+  "linea": null,
+  "sector": "Salud y Protección Social"
+ },
+ {
+  "nombre": "Línea 1. EJE SOCIAL: VÍNCULOS HUMANOS, COMUNIDAD EN ARMONÍA.",
+  "unidad": "Porcentaje",
+  "linea_base": "8.6",
+  "ano_base": "2023",
+  "fuente": "SSSA",
+  "meta": "7.74",
+  "tipo_acumulado": "",
+  "responsable": "",
+  "pagina": 310,
+  "linea": null,
+  "sector": "Salud y Protección Social"
+ },
+ {
+  "nombre": "Línea 1. EJE SOCIAL: VÍNCULOS HUMANOS, COMUNIDAD EN ARMONÍA.",
+  "unidad": "Tasa x cien mil Nacidos vivos",
+  "linea_base": "0",
+  "ano_base": "2023",
+  "fuente": "SSSA",
+  "meta": "0",
+  "tipo_acumulado": "",
+  "responsable": "",
+  "pagina": 310,
+  "linea": null,
+  "sector": "Salud y Protección Social"
+ },
+ {
+  "nombre": "Línea 1. EJE SOCIAL: VÍNCULOS HUMANOS, COMUNIDAD EN ARMONÍA.",
+  "unidad": "Tasa x cien mil habitantes",
+  "linea_base": "51",
+  "ano_base": "2022",
+  "fuente": "SSSA",
+  "meta": "45,9",
+  "tipo_acumulado": "",
+  "responsable": "",
+  "pagina": 310,
+  "linea": null,
+  "sector": "Salud y Protección Social"
+ },
+ {
+  "nombre": "Línea 1. EJE SOCIAL: VÍNCULOS HUMANOS, COMUNIDAD EN ARMONÍA.",
+  "unidad": "Tasa x cien mil hbtes.",
+  "linea_base": "23,89",
+  "ano_base": "2022",
+  "fuente": "SSSA",
+  "meta": "21.50",
+  "tipo_acumulado": "",
+  "responsable": "",
+  "pagina": 310,
+  "linea": null,
+  "sector": "Salud y Protección Social"
+ }
+]

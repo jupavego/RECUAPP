@@ -1,0 +1,505 @@
+[
+ {
+  "paginas": [
+   290,
+   291
+  ],
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   49579468382,
+   51066852434,
+   52598858006,
+   54176823746
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Educación",
+    "anios": [
+     1006267768,
+     1036455801,
+     1067549475,
+     1099575959
+    ],
+    "total": 4209849003,
+    "ruta": {
+     "linea": "Educación"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Calidad",
+    "anios": [
+     1006267768,
+     1036455801,
+     1067549475,
+     1099575959
+    ],
+    "total": 4209849003,
+    "ruta": {
+     "linea": "Educación",
+     "sector": "Calidad"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Matrícula Gratuidad",
+    "anios": [
+     532576111,
+     548553394,
+     565009996,
+     581960296
+    ],
+    "total": 2228099798,
+    "ruta": {
+     "linea": "Educación",
+     "sector": "Calidad",
+     "programa": "Matrícula Gratuidad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Matrícula Oficial",
+    "anios": [
+     473691657,
+     487902407,
+     502539479,
+     517615663
+    ],
+    "total": 1981749206,
+    "ruta": {
+     "linea": "Educación",
+     "sector": "Calidad",
+     "programa": "Matrícula Oficial"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Salud",
+    "anios": [
+     14847755420,
+     15293188083,
+     15751983725,
+     16224543237
+    ],
+    "total": 62117470466,
+    "ruta": {
+     "linea": "Salud"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Régimen Subsidiado",
+    "anios": [
+     14178200014,
+     14603546015,
+     15041652395,
+     15492901967
+    ],
+    "total": 59316300391,
+    "ruta": {
+     "linea": "Salud",
+     "sector": "Régimen Subsidiado"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Salud Pública",
+    "anios": [
+     669555406,
+     689642068,
+     710331330,
+     731641270
+    ],
+    "total": 2801170075,
+    "ruta": {
+     "linea": "Salud",
+     "sector": "Salud Pública"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Agua Potable",
+    "anios": [
+     2806231780,
+     2890418734,
+     2977131296,
+     3066445235
+    ],
+    "total": 11740227044,
+    "ruta": {
+     "linea": "Agua Potable"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Propósito General - Destinación",
+    "anios": [
+     4910110719,
+     5057414040,
+     5209136462,
+     5365410555
+    ],
+    "total": 20542071776,
+    "ruta": {
+     "linea": "Propósito General - Destinación"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Libre Destinación",
+    "anios": [
+     2189221340,
+     2254897980,
+     2322544919,
+     2392221267
+    ],
+    "total": 9158885506,
+    "ruta": {
+     "linea": "Propósito General - Destinación",
+     "sector": "Libre Destinación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Deporte",
+    "anios": [
+     241856834,
+     249112539,
+     256585915,
+     264283492
+    ],
+    "total": 1011838780,
+    "ruta": {
+     "linea": "Propósito General - Destinación",
+     "sector": "Deporte"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Cultura",
+    "anios": [
+     181392625,
+     186834404,
+     192439436,
+     198212619
+    ],
+    "total": 758879084,
+    "ruta": {
+     "linea": "Propósito General - Destinación",
+     "sector": "Cultura"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Libre Inversión",
+    "anios": [
+     2297639920,
+     2366569118,
+     2437566191,
+     2510693177
+    ],
+    "total": 9612468406,
+    "ruta": {
+     "linea": "Propósito General - Destinación",
+     "sector": "Libre Inversión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Alimentación Escolar",
+    "anios": [
+     223027741,
+     229718573,
+     236610130,
+     243708434
+    ],
+    "total": 933064878,
+    "ruta": {
+     "linea": "Alimentación Escolar"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Ribereños",
+    "anios": [
+     985771105,
+     1015344238,
+     1045804565,
+     1077178702
+    ],
+    "total": 4124098611,
+    "ruta": {
+     "linea": "Ribereños"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Resguardos Indígenas",
+    "anios": [
+     10569658,
+     10886748,
+     11213350,
+     11549750
+    ],
+    "total": 44219506,
+    "ruta": {
+     "linea": "Resguardos Indígenas"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Primera Infancia",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Primera Infancia"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TOTAL SGP",
+    "anios": [
+     24789734191,
+     25533426217,
+     26299429003,
+     27088411874
+    ],
+    "total": 103711001285,
+    "ruta": {
+     "linea": "TOTAL SGP"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   295,
+   296
+  ],
+  "cabecera": "LÍNEA ESTRATÉGICA",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   120006622002,
+   100723126464,
+   103863548094,
+   107123119964
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "cerca a nuestra",
+    "anios": [
+     1319555406,
+     1389642068,
+     1495331330,
+     1261641270
+    ],
+    "total": 5466170074,
+    "ruta": {
+     "linea": "cerca a nuestra"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Gente",
+    "anios": [
+     36700567738,
+     37808404771,
+     38953176913,
+     40127872221
+    ],
+    "total": 153590021643,
+    "ruta": {
+     "linea": "Gente"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea 2. Inversión",
+    "anios": [
+     120000000,
+     122000000,
+     124000000,
+     126000000
+    ],
+    "total": 492000000,
+    "ruta": {
+     "linea": "Línea 2. Inversión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "desarrollo de nuestra",
+    "anios": [
+     180000000,
+     192000000,
+     199000000,
+     206000000
+    ],
+    "total": 777000000,
+    "ruta": {
+     "linea": "desarrollo de nuestra"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea 3. Un",
+    "anios": [
+     849770868,
+     1367805342,
+     1387526053,
+     1440121430
+    ],
+    "total": 5045223693,
+    "ruta": {
+     "linea": "Línea 3. Un"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "mejor territorio",
+    "anios": [
+     112000000,
+     119000000,
+     128000000,
+     133000000
+    ],
+    "total": 492000000,
+    "ruta": {
+     "linea": "mejor territorio"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "para nuestra gente",
+    "anios": [
+     50000000,
+     310737793,
+     54000000,
+     54000000
+    ],
+    "total": 468737793,
+    "ruta": {
+     "linea": "para nuestra gente"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea 4.",
+    "anios": [
+     416000000,
+     420000000,
+     449455550,
+     480928328
+    ],
+    "total": 1766383878,
+    "ruta": {
+     "linea": "Línea 4."
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "para nuestra gente",
+    "anios": [
+     195000000,
+     220000000,
+     350000000,
+     360750000
+    ],
+    "total": 1125750000,
+    "ruta": {
+     "linea": "para nuestra gente"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TO",
+    "anios": [
+     80063727990,
+     58773536490,
+     60723058248,
+     62932806715
+    ],
+    "total": 262493129443,
+    "ruta": {
+     "linea": "TO"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

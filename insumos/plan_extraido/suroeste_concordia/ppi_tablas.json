@@ -1,0 +1,1183 @@
+[
+ {
+  "pagina": 266,
+  "cabecera": "CONCEPTO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "TOTAL INGRESOS",
+    "anios": [
+     43901374211,
+     44554561986,
+     43441535727,
+     45536339522
+    ],
+    "total": 177433811446
+   },
+   {
+    "etiqueta": "Tributarios",
+    "anios": [
+     3222767560,
+     3600044317,
+     3960048749,
+     4356053624
+    ],
+    "total": 15138914250
+   },
+   {
+    "etiqueta": "Ingresos No tributarios",
+    "anios": [
+     2075008375,
+     2241413456,
+     2442153763,
+     2660420343
+    ],
+    "total": 9418995938
+   },
+   {
+    "etiqueta": "SGP",
+    "anios": [
+     19840672349,
+     17758740351,
+     18494070931,
+     19228622738
+    ],
+    "total": 75322106369
+   },
+   {
+    "etiqueta": "Salud - Régimen Subsidiado",
+    "anios": [
+     7338253064,
+     7661136199,
+     7990565055,
+     8305393319
+    ],
+    "total": 31295347637
+   },
+   {
+    "etiqueta": "Propósito General Libre Inversión",
+    "anios": [
+     3389121060,
+     3524685902,
+     3665673338,
+     3812300271
+    ],
+    "total": 14391780571
+   },
+   {
+    "etiqueta": "Propósito General Libre destinación Municipio Categorías 4, 5 y 6",
+    "anios": [
+     2690038985,
+     2797640544,
+     2909546166,
+     3025928012
+    ],
+    "total": 11423153706
+   },
+   {
+    "etiqueta": "Agua Potable y saneamiento Básico",
+    "anios": [
+     5102499844,
+     2399136773,
+     2495102244,
+     2594906334
+    ],
+    "total": 12591645196
+   },
+   {
+    "etiqueta": "Salud Pública",
+    "anios": [
+     328475051,
+     342927953,
+     357673855,
+     371766205
+    ],
+    "total": 1400843064
+   },
+   {
+    "etiqueta": "Salud - Subsidio a la oferta",
+    "anios": [
+     309314703,
+     322924550,
+     336810305,
+     350080631
+    ],
+    "total": 1319130189
+   },
+   {
+    "etiqueta": "Educación - Calidad por matricula oficial",
+    "anios": [
+     196242887,
+     204092602,
+     212256307,
+     220746559
+    ],
+    "total": 833338355
+   },
+   {
+    "etiqueta": "Educación - Calidad por gratuidad",
+    "anios": [
+     176338000,
+     183391520,
+     190727181,
+     198356268
+    ],
+    "total": 748812969
+   },
+   {
+    "etiqueta": "Asignación Especial PAE",
+    "anios": [
+     120400195,
+     125216202,
+     130224850,
+     135433844
+    ],
+    "total": 511275092
+   },
+   {
+    "etiqueta": "Propósito General Deporte y Recreación",
+    "anios": [
+     108564893,
+     112907489,
+     117423788,
+     122120740
+    ],
+    "total": 461016910
+   },
+   {
+    "etiqueta": "Propósito General - Cultura",
+    "anios": [
+     81423669,
+     84680616,
+     88067841,
+     91590554
+    ],
+    "total": 345762680
+   },
+   {
+    "etiqueta": "Otras transferencias corrientes de obras Entidades con",
+    "anios": [
+     3529315017,
+     3684604877,
+     3843042887,
+     3994458777
+    ],
+    "total": 15051421558
+   },
+   {
+    "etiqueta": "Sistema General Seguridad social en Salud - Otros recursos Administrados por ADRES",
+    "anios": [
+     12179706790,
+     12715613889,
+     13262385286,
+     13784923266
+    ],
+    "total": 51942629231
+   },
+   {
+    "etiqueta": "SGR",
+    "anios": [
+     2726224120,
+     1554145096,
+     1439834111,
+     1511860774
+    ],
+    "total": 7232064100
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     713397400,
+     201018212,
+     186233373,
+     195584176
+    ],
+    "total": 1296233161
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     1959015967,
+     1306618375,
+     1210516927,
+     1271297146
+    ],
+    "total": 5747448415
+   },
+   {
+    "etiqueta": "Fondo Ahorro Pensional Territorial(FONPET)",
+    "anios": [
+     53810753,
+     46508509,
+     43083811,
+     44979452
+    ],
+    "total": 188382524
+   },
+   {
+    "etiqueta": "Recursos de capital",
+    "anios": [
+     0,
+     3000000000,
+     0,
+     0
+    ],
+    "total": 3000000000
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 269,
+  "cabecera": "Concepto",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     713397400,
+     201018212,
+     186233373,
+     195584176
+    ],
+    "total": 1296233161
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     1959015967,
+     1306618375,
+     1210516927,
+     1271297146
+    ],
+    "total": 5747448415
+   },
+   {
+    "etiqueta": "Fondo Ahorro Pensional Territorial (FONPET)",
+    "anios": [
+     53810753,
+     46508509,
+     43083811,
+     44979452
+    ],
+    "total": 188382525
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     2726224120,
+     1554145096,
+     1439834111,
+     1511860774
+    ],
+    "total": 7232064101
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ },
+ {
+  "pagina": 276,
+  "cabecera": "CONCEPTO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "TOTAL INGRESOS",
+    "anios": [
+     43901374211,
+     44554561986,
+     43441535727,
+     45536339522
+    ],
+    "total": 177433811446
+   },
+   {
+    "etiqueta": "Tributarios",
+    "anios": [
+     3222767560,
+     3600044317,
+     3960048749,
+     4356053624
+    ],
+    "total": 15138914250
+   },
+   {
+    "etiqueta": "Ingresos Corrientes de Libre destinación",
+    "anios": [
+     3128902000,
+     3496792201,
+     3846471421,
+     4231118563
+    ],
+    "total": 14703284186
+   },
+   {
+    "etiqueta": "Ingresos Corrientes de destinación específica por acto administrativo",
+    "anios": [
+     93865560,
+     103252116,
+     113577328,
+     124935060
+    ],
+    "total": 435630064
+   },
+   {
+    "etiqueta": "Ingresos No tributarios",
+    "anios": [
+     2075008375,
+     2241413456,
+     2442153763,
+     2660420343
+    ],
+    "total": 9418995938
+   },
+   {
+    "etiqueta": "Sobretasa - Participación ambiental-CAR",
+    "anios": [
+     264215191,
+     271562500,
+     298718750,
+     328590625
+    ],
+    "total": 1163087066
+   },
+   {
+    "etiqueta": "Impuesto - Sobretasa por Alumbrado Público",
+    "anios": [
+     293230269,
+     322553296,
+     354808625,
+     390289488
+    ],
+    "total": 1360881678
+   },
+   {
+    "etiqueta": "Sobretasa Bomberil",
+    "anios": [
+     83245030,
+     91569533,
+     100726486,
+     110799135
+    ],
+    "total": 386340184
+   },
+   {
+    "etiqueta": "Tasa Pro deporte y Recreación",
+    "anios": [
+     90219203,
+     99241123,
+     109165235,
+     120081759
+    ],
+    "total": 418707319
+   },
+   {
+    "etiqueta": "Estampilla Pro Adulto Mayor",
+    "anios": [
+     416176825,
+     457794508,
+     503573958,
+     553931354
+    ],
+    "total": 1931476645
+   },
+   {
+    "etiqueta": "Estampilla Pro Cultura",
+    "anios": [
+     138690740,
+     152559814,
+     167815795,
+     184597375
+    ],
+    "total": 643663724
+   },
+   {
+    "etiqueta": "Estampilla Justicia Familiar",
+    "anios": [
+     17627223,
+     19389945,
+     21328940,
+     23461834
+    ],
+    "total": 81807942
+   },
+   {
+    "etiqueta": "Contribución sobre Contratos de obra Pública",
+    "anios": [
+     175899814,
+     193489795,
+     212838775,
+     234122652
+    ],
+    "total": 816351036
+   },
+   {
+    "etiqueta": "Contribución del Sector Eléctrico",
+    "anios": [
+     83332219,
+     91665441,
+     100831985,
+     110915183
+    ],
+    "total": 386744828
+   },
+   {
+    "etiqueta": "Multas código Nacional de Policía y Convivencia",
+    "anios": [
+     50835227,
+     55918750,
+     61510625,
+     67661687
+    ],
+    "total": 235926289
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 277,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Otras Multas, sanciones e intereses de mora con destinación específica legal",
+    "anios": [
+     68294737,
+     75124211,
+     82636632,
+     90900295
+    ],
+    "total": 316955874
+   },
+   {
+    "etiqueta": "Derechos por Explotación Juegos de suerte y azar",
+    "anios": [
+     393241898,
+     410544542,
+     428197957,
+     445068957
+    ],
+    "total": 1677053354
+   },
+   {
+    "etiqueta": "SGP",
+    "anios": [
+     19840672349,
+     17758740351,
+     18494070931,
+     19228622738
+    ],
+    "total": 75322106369
+   },
+   {
+    "etiqueta": "Salud - Régimen Subsidiado",
+    "anios": [
+     7338253064,
+     7661136199,
+     7990565055,
+     8305393319
+    ],
+    "total": 31295347637
+   },
+   {
+    "etiqueta": "Propósito General Libre Inversión",
+    "anios": [
+     3389121060,
+     3524685902,
+     3665673338,
+     3812300271
+    ],
+    "total": 14391780571
+   },
+   {
+    "etiqueta": "Propósito General Libre destinación Municipio Categorías 4, 5 y 6",
+    "anios": [
+     2690038985,
+     2797640544,
+     2909546166,
+     3025928012
+    ],
+    "total": 11423153706
+   },
+   {
+    "etiqueta": "Agua Potable y saneamiento Básico",
+    "anios": [
+     5102499844,
+     2399136773,
+     2495102244,
+     2594906334
+    ],
+    "total": 12591645196
+   },
+   {
+    "etiqueta": "Salud Pública",
+    "anios": [
+     328475051,
+     342927953,
+     357673855,
+     371766205
+    ],
+    "total": 1400843064
+   },
+   {
+    "etiqueta": "Salud - Subsidio a la oferta",
+    "anios": [
+     309314703,
+     322924550,
+     336810305,
+     350080631
+    ],
+    "total": 1319130189
+   },
+   {
+    "etiqueta": "Educación - Calidad por matricula oficial",
+    "anios": [
+     196242887,
+     204092602,
+     212256307,
+     220746559
+    ],
+    "total": 833338355
+   },
+   {
+    "etiqueta": "Educación - Calidad por gratuidad",
+    "anios": [
+     176338000,
+     183391520,
+     190727181,
+     198356268
+    ],
+    "total": 748812969
+   },
+   {
+    "etiqueta": "Asignación Especial PAE",
+    "anios": [
+     120400195,
+     125216202,
+     130224850,
+     135433844
+    ],
+    "total": 511275092
+   },
+   {
+    "etiqueta": "Propósito General Deporte y Recreación",
+    "anios": [
+     108564893,
+     112907489,
+     117423788,
+     122120740
+    ],
+    "total": 461016910
+   },
+   {
+    "etiqueta": "Propósito General - Cultura",
+    "anios": [
+     81423669,
+     84680616,
+     88067841,
+     91590554
+    ],
+    "total": 345762680
+   },
+   {
+    "etiqueta": "Otras transferencias corrientes de obras Entidades con Destinación específica legal del Gobierno General",
+    "anios": [
+     3529315017,
+     3684604877,
+     3843042887,
+     3994458777
+    ],
+    "total": 15051421558
+   },
+   {
+    "etiqueta": "Sistema General Seguridad social en Salud - Otros recursos Administrados por ADRES",
+    "anios": [
+     12179706790,
+     12715613889,
+     13262385286,
+     13784923266
+    ],
+    "total": 51942629231
+   },
+   {
+    "etiqueta": "SGR",
+    "anios": [
+     2726224120,
+     1554145096,
+     1439834111,
+     1511860774
+    ],
+    "total": 7232064100
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     713397400,
+     201018212,
+     186233373,
+     195584176
+    ],
+    "total": 1296233161
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     1959015967,
+     1306618375,
+     1210516927,
+     1271297146
+    ],
+    "total": 5747448415
+   },
+   {
+    "etiqueta": "Fondo Ahorro Pensional Territorial(FONPET)",
+    "anios": [
+     53810753,
+     46508509,
+     43083811,
+     44979452
+    ],
+    "total": 188382524
+   },
+   {
+    "etiqueta": "Recursos de capital",
+    "anios": [
+     0,
+     3000000000,
+     0,
+     0
+    ],
+    "total": 3000000000
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 278,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "TOTAL GASTOS",
+    "anios": [
+     6393016994,
+     7022806569,
+     7441133332,
+     7973709049
+    ],
+    "total": 28830665944
+   },
+   {
+    "etiqueta": "Gastos de funcionamiento",
+    "anios": [
+     5136300664,
+     5649930731,
+     6214923804,
+     6836416184
+    ],
+    "total": 23837571383
+   },
+   {
+    "etiqueta": "Administración Central",
+    "anios": [
+     4750793218,
+     5225872540,
+     5748459794,
+     6323305773
+    ],
+    "total": 22048431324
+   },
+   {
+    "etiqueta": "Concejo",
+    "anios": [
+     196851781,
+     216536959,
+     238190655,
+     262009721
+    ],
+    "total": 913589116
+   },
+   {
+    "etiqueta": "Personería",
+    "anios": [
+     188655666,
+     207521232,
+     228273355,
+     251100691
+    ],
+    "total": 875550944
+   },
+   {
+    "etiqueta": "Servicio de la deuda Pública",
+    "anios": [
+     1256716329,
+     1372875839,
+     1226209528,
+     1137292865
+    ],
+    "total": 4993094561
+   },
+   {
+    "etiqueta": "Servicio de la Deuda Pública financiera",
+    "anios": [
+     1206716329,
+     1322875839,
+     1176209528,
+     1087292865
+    ],
+    "total": 4793094561
+   },
+   {
+    "etiqueta": "Fondo de contingencias",
+    "anios": [
+     50000000,
+     50000000,
+     50000000,
+     50000000
+    ],
+    "total": 200000000
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 278,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "TOTAL TRANSFERENCIA",
+    "anios": [
+     401270974,
+     401316039,
+     425047591,
+     456815107
+    ],
+    "total": 1684449710
+   },
+   {
+    "etiqueta": "Sobretasa - Participación ambiental -CAR",
+    "anios": [
+     264215191,
+     271562500,
+     298718750,
+     328590625
+    ],
+    "total": 1163087066
+   },
+   {
+    "etiqueta": "Sobretasa Bomberil",
+    "anios": [
+     83245030,
+     83245030,
+     83245030,
+     83245030
+    ],
+    "total": 332980120
+   },
+   {
+    "etiqueta": "Fondo Ahorro Pensional Territorial(FONPET)",
+    "anios": [
+     53810753,
+     46508509,
+     43083811,
+     44979452
+    ],
+    "total": 188382524
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 279,
+  "cabecera": "CONCEPTO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "TOTAL INGRESOS",
+    "anios": [
+     37107086244,
+     37122114874,
+     35557873348,
+     37078261261
+    ],
+    "total": 146865335727
+   },
+   {
+    "etiqueta": "Tributarios",
+    "anios": [
+     93865560,
+     103252116,
+     113577328,
+     124935060
+    ],
+    "total": 435630064
+   },
+   {
+    "etiqueta": "Ingresos Corrientes de destinación específica por acto administrativo",
+    "anios": [
+     93865560,
+     103252116,
+     113577328,
+     124935060
+    ],
+    "total": 435630064
+   },
+   {
+    "etiqueta": "Ingresos No tributarios",
+    "anios": [
+     1727548154,
+     1878281423,
+     2042708527,
+     2221030583
+    ],
+    "total": 7869568688
+   },
+   {
+    "etiqueta": "Impuesto - Sobretasa por Alumbrado Público",
+    "anios": [
+     293230269,
+     322553296,
+     354808625,
+     390289488
+    ],
+    "total": 1360881678
+   },
+   {
+    "etiqueta": "Tasa Pro deporte y Recreación",
+    "anios": [
+     90219203,
+     99241123,
+     109165235,
+     120081759
+    ],
+    "total": 418707319
+   },
+   {
+    "etiqueta": "Estampilla Pro Adulto Mayor",
+    "anios": [
+     416176825,
+     457794508,
+     503573958,
+     553931354
+    ],
+    "total": 1931476645
+   },
+   {
+    "etiqueta": "Estampilla Pro Cultura",
+    "anios": [
+     138690740,
+     152559814,
+     167815795,
+     184597375
+    ],
+    "total": 643663724
+   },
+   {
+    "etiqueta": "Estampilla Justicia Familiar",
+    "anios": [
+     17627223,
+     19389945,
+     21328940,
+     23461834
+    ],
+    "total": 81807942
+   },
+   {
+    "etiqueta": "Contribución sobre Contratos de obra Pública",
+    "anios": [
+     175899814,
+     193489795,
+     212838775,
+     234122652
+    ],
+    "total": 816351036
+   },
+   {
+    "etiqueta": "Contribución del Sector Eléctrico",
+    "anios": [
+     83332219,
+     91665441,
+     100831985,
+     110915183
+    ],
+    "total": 386744828
+   },
+   {
+    "etiqueta": "Multas código Nacional de Policía y Convivencia",
+    "anios": [
+     50835227,
+     55918750,
+     61510625,
+     67661687
+    ],
+    "total": 235926289
+   },
+   {
+    "etiqueta": "Otras Multas, sanciones e intereses de mora con destinación específica legal",
+    "anios": [
+     68294737,
+     75124211,
+     82636632,
+     90900295
+    ],
+    "total": 316955874
+   },
+   {
+    "etiqueta": "Derechos por Explotación Juegos de suerte y azar",
+    "anios": [
+     393241898,
+     410544542,
+     428197957,
+     445068957
+    ],
+    "total": 1677053354
+   },
+   {
+    "etiqueta": "SGP",
+    "anios": [
+     16576557356,
+     14232725982,
+     14899409020,
+     15486032252
+    ],
+    "total": 61194724610
+   },
+   {
+    "etiqueta": "Salud - Régimen Subsidiado",
+    "anios": [
+     7338253064,
+     7661136199,
+     7990565055,
+     8305393319
+    ],
+    "total": 31295347637
+   },
+   {
+    "etiqueta": "Propósito General Libre Inversión",
+    "anios": [
+     2132404730,
+     2151810063,
+     2439463810,
+     2675007407
+    ],
+    "total": 9398686010
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 280,
+  "cabecera": "",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Propósito General Libre destinación Municipio Categorías 4, 5 y 6",
+    "anios": [
+     682640320,
+     644502014,
+     541093783,
+     420630391
+    ],
+    "total": 2288866508
+   },
+   {
+    "etiqueta": "Agua Potable y saneamiento Básico",
+    "anios": [
+     5102499844,
+     2399136773,
+     2495102244,
+     2594906334
+    ],
+    "total": 12591645196
+   },
+   {
+    "etiqueta": "Salud Pública",
+    "anios": [
+     328475051,
+     342927953,
+     357673855,
+     371766205
+    ],
+    "total": 1400843064
+   },
+   {
+    "etiqueta": "Salud - Subsidio a la oferta",
+    "anios": [
+     309314703,
+     322924550,
+     336810305,
+     350080631
+    ],
+    "total": 1319130189
+   },
+   {
+    "etiqueta": "Educación - Calidad por matricula oficial",
+    "anios": [
+     196242887,
+     204092602,
+     212256307,
+     220746559
+    ],
+    "total": 833338355
+   },
+   {
+    "etiqueta": "Educación - Calidad por gratuidad",
+    "anios": [
+     176338000,
+     183391520,
+     190727181,
+     198356268
+    ],
+    "total": 748812969
+   },
+   {
+    "etiqueta": "Asignación Especial PAE",
+    "anios": [
+     120400195,
+     125216202,
+     130224850,
+     135433844
+    ],
+    "total": 511275092
+   },
+   {
+    "etiqueta": "Propósito General Deporte y Recreación",
+    "anios": [
+     108564893,
+     112907489,
+     117423788,
+     122120740
+    ],
+    "total": 461016910
+   },
+   {
+    "etiqueta": "Propósito General - Cultura",
+    "anios": [
+     81423669,
+     84680616,
+     88067841,
+     91590554
+    ],
+    "total": 345762680
+   },
+   {
+    "etiqueta": "Otras transferencias corrientes de obras Entidades con Destinación específica legal del Gobierno General",
+    "anios": [
+     3529315017,
+     3684604877,
+     3843042887,
+     3994458777
+    ],
+    "total": 15051421558
+   },
+   {
+    "etiqueta": "Sistema General Seguridad social en Salud - Otros recursos Administrados por ADRES",
+    "anios": [
+     12179706790,
+     12715613889,
+     13262385286,
+     13784923266
+    ],
+    "total": 51942629231
+   },
+   {
+    "etiqueta": "SGR",
+    "anios": [
+     2672413367,
+     1507636587,
+     1396750300,
+     1466881322
+    ],
+    "total": 7043681576
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     713397400,
+     201018212,
+     186233373,
+     195584176
+    ],
+    "total": 1296233161
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     1959015967,
+     1306618375,
+     1210516927,
+     1271297146
+    ],
+    "total": 5747448415
+   },
+   {
+    "etiqueta": "Recursos de capital",
+    "anios": [
+     0,
+     3000000000,
+     0,
+     0
+    ],
+    "total": 3000000000
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 284,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     713397400,
+     201018212,
+     186233373,
+     195584176
+    ],
+    "total": 1296233161
+   },
+   {
+    "etiqueta": "Resto deInversión",
+    "anios": [
+     1959015967,
+     1306618375,
+     1210516927,
+     1271297146
+    ],
+    "total": 5747448415
+   },
+   {
+    "etiqueta": "Fondo Ahorro Pensional Territorial(FONPET)",
+    "anios": [
+     53810753,
+     46508509,
+     43083811,
+     44979452
+    ],
+    "total": 188382525
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     2726224120,
+     1554145096,
+     1439834111,
+     1511860774
+    ],
+    "total": 7232064101
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ }
+]

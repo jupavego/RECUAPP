@@ -1,0 +1,306 @@
+[
+ {
+  "pagina": 263,
+  "cabecera": "Año",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "ICLD",
+    "anios": [
+     3500454,
+     3706126,
+     3929442,
+     4166464
+    ],
+    "total": 15302486
+   },
+   {
+    "etiqueta": "Gastos Funcionamiento",
+    "anios": [
+     4101394,
+     4436068,
+     4613510,
+     4798051
+    ],
+    "total": 17949023
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 263,
+  "cabecera": "Año",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "ICLD",
+    "anios": [
+     3500454,
+     3706126,
+     3929442,
+     4166464
+    ],
+    "total": 15302486
+   },
+   {
+    "etiqueta": "Gastos Funcionamiento",
+    "anios": [
+     4101394,
+     2964901,
+     3143554,
+     3333171
+    ],
+    "total": 13543020
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 265,
+  "cabecera": "CCPET05 - FUENTES DE FINANCIACIÓN",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "1.2.1.0.00 - INGRESOS CORRIENTES DE LIBRE DESTINACION",
+    "anios": [
+     2414761519,
+     2566148361,
+     2732466248,
+     2909638713
+    ],
+    "total": 10623014841
+   },
+   {
+    "etiqueta": "1.2.3.1.01 - SOBRETASA - PARTICIPACION AMBIENTAL - CORPORACIONES AUTONOMAS REGIONALES",
+    "anios": [
+     302819498,
+     317960473,
+     333858497,
+     350551421
+    ],
+    "total": 1305189889
+   },
+   {
+    "etiqueta": "1.2.3.1.05 - IMPUESTO - SOBRETASA POR EL ALUMBRADO PUBLICO",
+    "anios": [
+     202320717,
+     212436753,
+     223058591,
+     234211520
+    ],
+    "total": 872027581
+   },
+   {
+    "etiqueta": "1.2.3.1.14 - SOBRETASA BOMBERIL",
+    "anios": [
+     29881369,
+     31375438,
+     32944210,
+     34591420
+    ],
+    "total": 128792437
+   },
+   {
+    "etiqueta": "1.2.3.1.18 - TASA PRODEPORTE Y RECREACION",
+    "anios": [
+     21546589,
+     22623919,
+     23755114,
+     24942870
+    ],
+    "total": 92868492
+   },
+   {
+    "etiqueta": "1.2.3.1.19 - ESTAMPILLAS",
+    "anios": [
+     505651616,
+     530934197,
+     557480907,
+     585354952
+    ],
+    "total": 2179421672
+   },
+   {
+    "etiqueta": "1.2.3.2.06 - CONTRIBUCION SOBRE CONTRATOS DE OBRA PUBLICA",
+    "anios": [
+     178673356,
+     187607024,
+     196987375,
+     206836744
+    ],
+    "total": 770104499
+   },
+   {
+    "etiqueta": "1.2.3.2.07 - CONTRIBUCION DEL SECTOR ELECTRICO",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 268,
+  "cabecera": "Descripción",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Sistema General de participación",
+    "anios": [
+     431045,
+     1226802,
+     1288143020,
+     1352550
+    ],
+    "total": 4298541473
+   },
+   {
+    "etiqueta": "Educación",
+    "anios": [
+     45989979,
+     48289477,
+     50703951,
+     53239149
+    ],
+    "total": 198222558
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 269,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Salud",
+    "anios": [
+     349498331,
+     366973,
+     313794840,
+     329484582
+    ],
+    "total": 1359751000
+   },
+   {
+    "etiqueta": "Agua potable y saneamiento Básico",
+    "anios": [
+     561956,
+     680819,
+     714860288,
+     750603303
+    ],
+    "total": 2708239561
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 269,
+  "cabecera": "CCPET05 - FUENTES DE FINANCIACIÓN",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "1.2.1.0.00 - INGRESOS CORRIENTES DE LIBRE DESTINACION",
+    "anios": [
+     3010186615,
+     3255817843,
+     3386050557,
+     3521492579
+    ],
+    "total": 13173547594
+   },
+   {
+    "etiqueta": "1.2.3.1.01 - SOBRETASA - PARTICIPACION AMBIENTAL - CORPORACIONES AUTONOMAS REGIONALES",
+    "anios": [
+     287773399,
+     311255708,
+     323705936,
+     336654174
+    ],
+    "total": 1259389217
+   },
+   {
+    "etiqueta": "1.2.3.1.05 - IMPUESTO - SOBRETASA POR EL ALUMBRADO PUBLICO",
+    "anios": [
+     168543650,
+     182296812,
+     189588684,
+     197172232
+    ],
+    "total": 737601378
+   },
+   {
+    "etiqueta": "1.2.3.1.14 - SOBRETASA BOMBERIL",
+    "anios": [
+     17521620,
+     18951385,
+     19709440,
+     20497818
+    ],
+    "total": 76680263
+   },
+   {
+    "etiqueta": "1.2.3.1.19-ESTAMPILLAS",
+    "anios": [
+     5857028,
+     6334962,
+     6588360,
+     6851895
+    ],
+    "total": 25632245
+   },
+   {
+    "etiqueta": "1.2.3.2.06 - CONTRIBUCION SOBRE CONTRATOS DE OBRA PUBLICA",
+    "anios": [
+     30023111,
+     32472997,
+     33771917,
+     35122793
+    ],
+    "total": 131390818
+   },
+   {
+    "etiqueta": "1.2.4.3.04 - SGP-PROPOSITO GENERAL-LIBRE DESTINACION MUNICIPIOS CATEGORIAS 4, 5 Y 6",
+    "anios": [
+     456684855,
+     493950339,
+     513708352,
+     534256686
+    ],
+    "total": 1998600232
+   },
+   {
+    "etiqueta": "1.3.1.1.10 - RETIROS FONPET",
+    "anios": [
+     124803708,
+     134987690,
+     140387198,
+     146002686
+    ],
+    "total": 546181282
+   },
+   {
+    "etiqueta": "Total general",
+    "anios": [
+     4101393986,
+     4436067735,
+     4613510445,
+     4798050862
+    ],
+    "total": 17949023028
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ }
+]

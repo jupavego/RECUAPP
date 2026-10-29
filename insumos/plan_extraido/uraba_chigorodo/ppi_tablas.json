@@ -1,0 +1,189 @@
+[
+ {
+  "pagina": 196,
+  "cabecera": "CONCEPTOS",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "CORRIENTES",
+    "anios": [
+     87807,
+     90441,
+     93154,
+     95949
+    ],
+    "total": 367351
+   },
+   {
+    "etiqueta": "RECURSOS DE CAPITAL",
+    "anios": [
+     129,
+     133,
+     137,
+     141
+    ],
+    "total": 540
+   },
+   {
+    "etiqueta": "FUNCIONAMIENTO",
+    "anios": [
+     11211,
+     11547,
+     11894,
+     12251
+    ],
+    "total": 46903
+   },
+   {
+    "etiqueta": "INVERSION",
+    "anios": [
+     74858,
+     77104,
+     79417,
+     81799
+    ],
+    "total": 313178
+   }
+  ],
+  "ncols": 10,
+  "financiero": false
+ },
+ {
+  "pagina": 197,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": ". ao neo e la deuda con nuevo crédito (4.1-4.2-4.3+4.4)",
+    "anios": [
+     4475,
+     4475,
+     4475,
+     4475
+    ],
+    "total": 17900
+   },
+   {
+    "etiqueta": "deuda antes de amortizaciones (4.1.1- 4.1.2+4.1.3+4.1.4)",
+    "anios": [
+     4475,
+     4475,
+     4475,
+     4475
+    ],
+    "total": 17900
+   },
+   {
+    "etiqueta": "4.1.1 Saldo de la deuda a 31 de diciembre de la",
+    "anios": [
+     4475,
+     4475,
+     4475,
+     4475
+    ],
+    "total": 17900
+   },
+   {
+    "etiqueta": "4.2 Amortizaciones de la vigencia (4.2.1-",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   }
+  ],
+  "ncols": 13,
+  "financiero": true
+ },
+ {
+  "pagina": 198,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "5. Intereses de la vigencia (5.1- 5.2+5.3)",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "SOLVENCIA = Intereses / Ahorro operacional = (5/3) - Sin cobertura de",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "SEMÁFORO: Estado actual de la entidad",
+    "anios": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "total": 4
+   },
+   {
+    "etiqueta": "SOLVENCIA = Intereses / Ahorro operacional = (9/3) - Con cobertura de riesgo SOSTENIBILIDAD = Saldo deuda / Ingresos corrientes = (18/1) Con cobertura de",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "DATOS PARA ESTABLECER CUBERTURAS DE RIESGO LEY 819 DE 2003",
+    "anios": [
+     2024,
+     2025,
+     2026,
+     2027
+    ],
+    "total": 8102
+   },
+   {
+    "etiqueta": "7. PORCENTAJE DE COBERTURA EN TASA DE INTERES",
+    "anios": [
+     741,
+     741,
+     741,
+     741
+    ],
+    "total": 2964
+   },
+   {
+    "etiqueta": "8. TASA DE INTERES CON COBERTURA DE RIESGO 9. INTERESES PROYECTADOS CON COBERTURA DE RIESGO",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "10. TASA REPRESENTATIVA",
+    "anios": [
+     3902,
+     3984,
+     4068,
+     4153
+    ],
+    "total": 16107
+   }
+  ],
+  "ncols": 13,
+  "financiero": false
+ }
+]

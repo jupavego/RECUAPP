@@ -1,0 +1,103 @@
+[
+ {
+  "paginas": [
+   277
+  ],
+  "cabecera": "neas sra- tégicas",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   223144356819,
+   238134120883,
+   269960249047,
+   275222908405
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1. FORTALECI- MIENTO DE LA COMPETITIVI- DAD EN MEDIO DE LA ADAPTA- CIÓN DEL CAM-",
+    "anios": [
+     12086763986,
+     19769205499,
+     21506172260,
+     32846814839
+    ],
+    "total": 86208956584,
+    "ruta": {
+     "linea": "1. FORTALECI- MIENTO DE LA COMPETITIVI- DAD EN MEDIO DE LA ADAPTA- CIÓN DEL CAM-"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2. INCLUSIÓN SOCIAL PARA EL FORTALE- CIMIENTO DEL B I E N E S T A R INDIVIDUAL Y COLECTIVO, Y LA ATENCIÓN DEL FENÓME- NO MIGRATO- RIO",
+    "anios": [
+     92309614282,
+     96491682389,
+     107908252272,
+     98964320597
+    ],
+    "total": 395673869540,
+    "ruta": {
+     "linea": "2. INCLUSIÓN SOCIAL PARA EL FORTALE- CIMIENTO DEL B I E N E S T A R INDIVIDUAL Y COLECTIVO, Y LA ATENCIÓN DEL FENÓME- NO MIGRATO- RIO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3. PARTICIPA- CIÓN CIUDA- DANA DESDE LA DIVERSI- DAD, LA PLU- R I C U L T U - RALIDAD, Y MULTIETNICI- DAD",
+    "anios": [
+     1686403523,
+     1793850325,
+     2627639206,
+     1918800034
+    ],
+    "total": 8026693088,
+    "ruta": {
+     "linea": "3. PARTICIPA- CIÓN CIUDA- DANA DESDE LA DIVERSI- DAD, LA PLU- R I C U L T U - RALIDAD, Y MULTIETNICI- DAD"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4. DESARRO- LLO PRODUC- TIVO PARA LA COMPETITIVI- DAD",
+    "anios": [
+     5489396618,
+     1012322228,
+     2938060785,
+     3881518732
+    ],
+    "total": 13321298363,
+    "ruta": {
+     "linea": "4. DESARRO- LLO PRODUC- TIVO PARA LA COMPETITIVI- DAD"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total general",
+    "anios": [
+     111572178410,
+     119067060442,
+     134980124524,
+     137611454203
+    ],
+    "total": 503230817579,
+    "ruta": {
+     "linea": "Total general"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

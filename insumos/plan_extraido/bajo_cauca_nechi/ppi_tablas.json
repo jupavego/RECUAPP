@@ -1,0 +1,1003 @@
+[
+ {
+  "pagina": 166,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Educación",
+    "anios": [
+     1809568655,
+     1863855715,
+     1919771386,
+     1977364528
+    ],
+    "total": 7570560283
+   },
+   {
+    "etiqueta": "Prestación de Servicios",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Calidad",
+    "anios": [
+     1809568655,
+     1863855715,
+     1919771386,
+     1977364528
+    ],
+    "total": 7570560283
+   },
+   {
+    "etiqueta": "Matrícula Gratuidad",
+    "anios": [
+     861510350,
+     887355661,
+     913976330,
+     941395620
+    ],
+    "total": 3604237961
+   },
+   {
+    "etiqueta": "Matrícula Oficial",
+    "anios": [
+     948058305,
+     976500054,
+     1005795056,
+     1035968907
+    ],
+    "total": 3966322322
+   },
+   {
+    "etiqueta": "Asignaciones especiales",
+    "anios": [
+     698234047,
+     719181068,
+     740756500,
+     762979195
+    ],
+    "total": 2921150811
+   },
+   {
+    "etiqueta": "Crecimiento de la Economia",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "SGP - Alimentacion Escolar",
+    "anios": [
+     698234047,
+     719181068,
+     740756500,
+     762979195
+    ],
+    "total": 2921150811
+   },
+   {
+    "etiqueta": "Salud",
+    "anios": [
+     35975720632,
+     37054992251,
+     38166642018,
+     39311641279
+    ],
+    "total": 150508996180
+   },
+   {
+    "etiqueta": "Total Regimen Subsidiado",
+    "anios": [
+     35101678104,
+     36154728447,
+     37239370300,
+     38356551409
+    ],
+    "total": 146852328259
+   },
+   {
+    "etiqueta": "Regimen Subsidiado SGP",
+    "anios": [
+     12704283821,
+     13085412336,
+     13477974706,
+     13882313947
+    ],
+    "total": 53149984809
+   },
+   {
+    "etiqueta": "Regimen subsidiado ADRES",
+    "anios": [
+     18260988603,
+     18808818261,
+     19373082809,
+     19954275293
+    ],
+    "total": 76397164966
+   },
+   {
+    "etiqueta": "Derechos por la explotación juegos de suerteyazar",
+    "anios": [
+     272139980,
+     280304179,
+     288713304,
+     297374703
+    ],
+    "total": 1138532166
+   },
+   {
+    "etiqueta": "Recursos departamentales para Aseguramiento del Régimen Subsidiado",
+    "anios": [
+     3864265700,
+     3980193671,
+     4099599481,
+     4222587466
+    ],
+    "total": 16166646318
+   },
+   {
+    "etiqueta": "Salud Publica",
+    "anios": [
+     874042529,
+     900263804,
+     927271718,
+     955089870
+    ],
+    "total": 3656667921
+   },
+   {
+    "etiqueta": "Salud Publica SGP",
+    "anios": [
+     783329202,
+     806829078,
+     831033950,
+     855964969
+    ],
+    "total": 3277157199
+   },
+   {
+    "etiqueta": "Saludpublica -Coljuego 25%",
+    "anios": [
+     90713327,
+     93434726,
+     96237768,
+     99124901
+    ],
+    "total": 379510722
+   },
+   {
+    "etiqueta": "Agua Potable",
+    "anios": [
+     2808005625,
+     2892245794,
+     2979013168,
+     3068383563
+    ],
+    "total": 11747648149
+   },
+   {
+    "etiqueta": "Propósito General - Destinación",
+    "anios": [
+     5341717784,
+     5501969317,
+     5667028397,
+     5837039248
+    ],
+    "total": 22347754746
+   },
+   {
+    "etiqueta": "Libre Destinación",
+    "anios": [
+     1844730451,
+     1900072364,
+     1957074535,
+     2015786771
+    ],
+    "total": 7717664120
+   },
+   {
+    "etiqueta": "Deporte",
+    "anios": [
+     407597584,
+     419825512,
+     432420277,
+     445392885
+    ],
+    "total": 1705236258
+   },
+   {
+    "etiqueta": "Cultura",
+    "anios": [
+     305698189,
+     314869135,
+     324315209,
+     334044665
+    ],
+    "total": 1278927197
+   },
+   {
+    "etiqueta": "Libre Inversión",
+    "anios": [
+     2783691560,
+     2867202307,
+     2953218376,
+     3041814927
+    ],
+    "total": 11645927170
+   },
+   {
+    "etiqueta": "TOTAL OTRAS FUENTES",
+    "anios": [
+     2974370567,
+     3063601684,
+     3155509735,
+     3250175027
+    ],
+    "total": 12443657014
+   },
+   {
+    "etiqueta": "Ingresos corrientes de libre destinacion",
+    "anios": [
+     654370567,
+     674001684,
+     694221735,
+     715048387
+    ],
+    "total": 2737642374
+   },
+   {
+    "etiqueta": "Sobretasa ambiental",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Impuesto de alumbradopublico",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Sobretasa bomberil",
+    "anios": [
+     10000000,
+     10300000,
+     10609000,
+     10927270
+    ],
+    "total": 41836270
+   },
+   {
+    "etiqueta": "Tasaprodeporteyrecreacion",
+    "anios": [
+     160000000,
+     164800000,
+     169744000,
+     174836320
+    ],
+    "total": 669380320
+   },
+   {
+    "etiqueta": "Estampilla para el bienestar del adultomayor",
+    "anios": [
+     400000000,
+     412000000,
+     424360000,
+     437090800
+    ],
+    "total": 1673450800
+   },
+   {
+    "etiqueta": "Estampilla pro hospitales de antioquia",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Estampillapro cultura",
+    "anios": [
+     200000000,
+     206000000,
+     212180000,
+     218545400
+    ],
+    "total": 836725400
+   },
+   {
+    "etiqueta": "Estampillapara lajusticia famliar",
+    "anios": [
+     150000000,
+     154500000,
+     159135000,
+     163909050
+    ],
+    "total": 627544050
+   },
+   {
+    "etiqueta": "Contribucion especial sobre contratos de obraspublicas",
+    "anios": [
+     500000000,
+     515000000,
+     530450000,
+     546363500
+    ],
+    "total": 2091813500
+   },
+   {
+    "etiqueta": "Impuesto al oro",
+    "anios": [
+     900000000,
+     927000000,
+     954810000,
+     983454300
+    ],
+    "total": 3765264300
+   },
+   {
+    "etiqueta": "TOTAL RECURSOS PARA INVERTIR",
+    "anios": [
+     49607617310,
+     51095845829,
+     52628721204,
+     54207582840
+    ],
+    "total": 207539767184
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 167,
+  "cabecera": "SECTOR",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Educación",
+    "anios": [
+     2307802702,
+     2377036783,
+     2448347887,
+     2521798323
+    ],
+    "total": 9654985695
+   },
+   {
+    "etiqueta": "Educación",
+    "anios": [
+     200000000,
+     206000000,
+     212180000,
+     218545400
+    ],
+    "total": 836725400
+   },
+   {
+    "etiqueta": "Cultura",
+    "anios": [
+     305698189,
+     314869135,
+     324315209,
+     334044665
+    ],
+    "total": 1278927198
+   },
+   {
+    "etiqueta": "Cultura",
+    "anios": [
+     200000000,
+     206000000,
+     212180000,
+     218545400
+    ],
+    "total": 836725400
+   },
+   {
+    "etiqueta": "Deporte y recreación",
+    "anios": [
+     407597584,
+     419825512,
+     432420277,
+     445392885
+    ],
+    "total": 1705236258
+   },
+   {
+    "etiqueta": "Deporte y recreación",
+    "anios": [
+     160000000,
+     164800000,
+     169744000,
+     174836320
+    ],
+    "total": 669380320
+   },
+   {
+    "etiqueta": "Salud y protección social",
+    "anios": [
+     35101678104,
+     36154728447,
+     37239370300,
+     38356551409
+    ],
+    "total": 146852328260
+   },
+   {
+    "etiqueta": "Salud y protección social",
+    "anios": [
+     783329202,
+     806829078,
+     831033950,
+     855964969
+    ],
+    "total": 3277157199
+   },
+   {
+    "etiqueta": "Salud y protección social",
+    "anios": [
+     90713327,
+     93434726,
+     96237768,
+     99124901
+    ],
+    "total": 379510722
+   },
+   {
+    "etiqueta": "Inclusión social y reconciliación",
+    "anios": [
+     260000000,
+     267800000,
+     275834000,
+     284109020
+    ],
+    "total": 1087743020
+   },
+   {
+    "etiqueta": "Inclusión social y reconciliación",
+    "anios": [
+     400000000,
+     412000000,
+     424360000,
+     437090800
+    ],
+    "total": 1673450800
+   },
+   {
+    "etiqueta": "Inclusión social y reconciliación",
+    "anios": [
+     387000000,
+     398610000,
+     410568300,
+     422885349
+    ],
+    "total": 1619063649
+   },
+   {
+    "etiqueta": "Gobierno territorial",
+    "anios": [
+     500000000,
+     515000000,
+     530450000,
+     546363500
+    ],
+    "total": 2091813500
+   },
+   {
+    "etiqueta": "Gobierno territorial",
+    "anios": [
+     233370567,
+     240371684,
+     247582835,
+     255010320
+    ],
+    "total": 976335406
+   },
+   {
+    "etiqueta": "Gobierno territorial",
+    "anios": [
+     150000000,
+     154500000,
+     159135000,
+     163909050
+    ],
+    "total": 627544050
+   },
+   {
+    "etiqueta": "Gobierno territorial",
+    "anios": [
+     190000000,
+     195700000,
+     201571000,
+     207618130
+    ],
+    "total": 794889130
+   },
+   {
+    "etiqueta": "Vivienda, ciudad y territorio",
+    "anios": [
+     659000000,
+     678770000,
+     699133100,
+     720107093
+    ],
+    "total": 2757010193
+   },
+   {
+    "etiqueta": "Vivienda, ciudad y territorio",
+    "anios": [
+     2808005625,
+     2892245794,
+     2979013168,
+     3068383563
+    ],
+    "total": 11747648150
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 167,
+  "cabecera": "SECTOR",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Información estadística",
+    "anios": [
+     120000000,
+     123600000,
+     127308000,
+     131127240
+    ],
+    "total": 502035240
+   },
+   {
+    "etiqueta": "Transporte",
+    "anios": [
+     710000000,
+     731300000,
+     753239000,
+     775836170
+    ],
+    "total": 2970375170
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 168,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Transporte",
+    "anios": [
+     230000000,
+     236900000,
+     244007000,
+     251327210
+    ],
+    "total": 962234210
+   },
+   {
+    "etiqueta": "Transporte",
+    "anios": [
+     145000000,
+     149350000,
+     153830500,
+     158445415
+    ],
+    "total": 606625915
+   },
+   {
+    "etiqueta": "Tecnologías de la información y las comunicaciones",
+    "anios": [
+     79691560,
+     82082307,
+     84544776,
+     87081119
+    ],
+    "total": 333399762
+   },
+   {
+    "etiqueta": "Ambiente y desarrollo sostenible",
+    "anios": [
+     150000000,
+     154500000,
+     159135000,
+     163909050
+    ],
+    "total": 627544050
+   },
+   {
+    "etiqueta": "Agricultura y desarrollorural",
+    "anios": [
+     265730451,
+     273702364,
+     281913435,
+     290370838
+    ],
+    "total": 1111717088
+   },
+   {
+    "etiqueta": "Agricultura y desarrollorural",
+    "anios": [
+     174000000,
+     179220000,
+     184596600,
+     190134498
+    ],
+    "total": 727951098
+   },
+   {
+    "etiqueta": "Agricultura y desarrollo rural",
+    "anios": [
+     400000000,
+     412000000,
+     424360000,
+     437090800
+    ],
+    "total": 1673450800
+   },
+   {
+    "etiqueta": "Comercio, industria y turismo",
+    "anios": [
+     280000000,
+     288400000,
+     297052000,
+     305963560
+    ],
+    "total": 1171415560
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 168,
+  "cabecera": "LineaEstrategica 3 SECTOR",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Ambiente y desarrollo sostenible",
+    "anios": [
+     220000000,
+     226600000,
+     233398000,
+     240399940
+    ],
+    "total": 920397940
+   },
+   {
+    "etiqueta": "Ambiente y desarrollo sostenible",
+    "anios": [
+     196000000,
+     201880000,
+     207936400,
+     214174492
+    ],
+    "total": 819990892
+   },
+   {
+    "etiqueta": "Ambiente y desarrollo sostenible",
+    "anios": [
+     110000000,
+     113300000,
+     116699000,
+     120199970
+    ],
+    "total": 460198970
+   },
+   {
+    "etiqueta": "Ambiente y desarrollo sostenible",
+    "anios": [
+     107000000,
+     110210000,
+     113516300,
+     116921789
+    ],
+    "total": 447648089
+   },
+   {
+    "etiqueta": "Ambiente y desarrollo sostenible",
+    "anios": [
+     95000000,
+     97850000,
+     100785500,
+     103809065
+    ],
+    "total": 397444565
+   },
+   {
+    "etiqueta": "Ambiente y desarrollo sostenible",
+    "anios": [
+     76000000,
+     78280000,
+     80628400,
+     83047252
+    ],
+    "total": 317955652
+   },
+   {
+    "etiqueta": "Minas y energía",
+    "anios": [
+     80000000,
+     82400000,
+     84872000,
+     87418160
+    ],
+    "total": 334690160
+   },
+   {
+    "etiqueta": "Minas y energía",
+    "anios": [
+     45000000,
+     46350000,
+     47740500,
+     49172715
+    ],
+    "total": 188263215
+   },
+   {
+    "etiqueta": "Minas y energía",
+    "anios": [
+     350000000,
+     360500000,
+     371315000,
+     382454450
+    ],
+    "total": 1464269450
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 168,
+  "cabecera": "SECTOR",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Gobierno territorial",
+    "anios": [
+     400000000,
+     412000000,
+     424360000,
+     437090800
+    ],
+    "total": 1673450800
+   },
+   {
+    "etiqueta": "Justicia y del derecho",
+    "anios": [
+     230000000,
+     236900000,
+     244007000,
+     251327210
+    ],
+    "total": 962234210
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ },
+ {
+  "pagina": 172,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "INVERSION",
+    "anios": [
+     3087785238,
+     3764554095,
+     3496859082,
+     3645614130
+    ],
+    "total": 13994812546
+   },
+   {
+    "etiqueta": "Asignaciones Directas",
+    "anios": [
+     608844502,
+     601892575,
+     566810509,
+     565205238
+    ],
+    "total": 2342752824
+   },
+   {
+    "etiqueta": "Directas",
+    "anios": [
+     476442547,
+     471002415,
+     443549447,
+     442293265
+    ],
+    "total": 1833287674
+   },
+   {
+    "etiqueta": "5% Asignaciones Directas Anticipadas",
+    "anios": [
+     132401956,
+     130890159,
+     123261062,
+     122911973
+    ],
+    "total": 509465149
+   },
+   {
+    "etiqueta": "Asignación para la Inversión Local",
+    "anios": [
+     2478940736,
+     3162661521,
+     2930048573,
+     3080408892
+    ],
+    "total": 11652059722
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     330525431,
+     421688203,
+     390673143,
+     410721186
+    ],
+    "total": 1553607963
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     2148415305,
+     2740973318,
+     2539375430,
+     2669687707
+    ],
+    "total": 10098451759
+   },
+   {
+    "etiqueta": "Comunidades Étnicas",
+    "anios": [
+     27398003,
+     27085166,
+     25506473,
+     25434236
+    ],
+    "total": 105423877
+   },
+   {
+    "etiqueta": "Educación superior artículo 40 de la ley 2056 de 2020",
+    "anios": [
+     30442225,
+     30094629,
+     28340525,
+     28260262
+    ],
+    "total": 117137641
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 173,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Asignaciones Directas",
+    "anios": [
+     608844502,
+     601892575,
+     566810509,
+     565205238
+    ],
+    "total": 2342752824
+   },
+   {
+    "etiqueta": "20% Asignaciones Directas",
+    "anios": [
+     476442547,
+     471002415,
+     443549447,
+     442293265
+    ],
+    "total": 1833287674
+   },
+   {
+    "etiqueta": "5% Asignaciones Directas Anticipadas",
+    "anios": [
+     132401956,
+     130890159,
+     123261062,
+     122911973
+    ],
+    "total": 509465149
+   },
+   {
+    "etiqueta": "Educación superior artículo 40 de la ley 2056 de 2020",
+    "anios": [
+     30442225,
+     30094629,
+     28340525,
+     28260262
+    ],
+    "total": 117137641
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 174,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Asignaciones Directas",
+    "anios": [
+     608844502,
+     601892575,
+     566810509,
+     565205238
+    ],
+    "total": 2342752824
+   },
+   {
+    "etiqueta": "20% Asignaciones Directas",
+    "anios": [
+     476442547,
+     471002415,
+     443549447,
+     442293265
+    ],
+    "total": 1833287674
+   },
+   {
+    "etiqueta": "5% Asignaciones Directas Anticipadas",
+    "anios": [
+     132401956,
+     130890159,
+     123261062,
+     122911973
+    ],
+    "total": 509465149
+   },
+   {
+    "etiqueta": "Comunidades Étnicas",
+    "anios": [
+     27398003,
+     27085166,
+     25506473,
+     25434236
+    ],
+    "total": 105423877
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ }
+]

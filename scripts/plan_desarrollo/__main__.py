@@ -3,7 +3,7 @@ import argparse
 import json
 from pathlib import Path
 
-from . import categorias, conocimiento, evaluar, muestra, paginas, pipeline, vision
+from . import categorias, conocimiento, evaluar, muestra, paginas, pipeline, resumen, vision
 
 
 def main():
@@ -54,6 +54,9 @@ def main():
     p = sub.add_parser("categorias", help="matriz de que campos y niveles trae cada plan (base para el esquema canonico)")
     p.add_argument("carpetas", nargs="+")
 
+    p = sub.add_parser("resumen", help="regenera RESUMEN.md de la carpeta de salidas (estado por plan + cobertura de categorias)")
+    p.add_argument("salidas")
+
     a = ap.parse_args()
     if a.cmd == "extraer":
         print(pipeline.procesar(a.pdf, a.salida, usar_vision_api=a.vision))
@@ -85,6 +88,8 @@ def main():
         print(json.dumps(muestra.evaluar_verificadas(a.salida, a.plan), indent=1))
     elif a.cmd == "categorias":
         print(categorias.matriz(a.carpetas)[0])
+    elif a.cmd == "resumen":
+        print(resumen.escribe(a.salidas))
     elif a.cmd == "comparar-vision":
         print(json.dumps(evaluar.comparar_vision(a.salida), indent=1))
 

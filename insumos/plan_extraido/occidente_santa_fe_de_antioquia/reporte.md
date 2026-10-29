@@ -1,32 +1,27 @@
 # Reporte de extraccion
-- Capitulo estrategico detectado: paginas 54-116
-- Indicadores de producto: 2 {'texto': 2} (sin cruce claro con el PPI: 2)
-- Programas en el PPI: 20; con indicadores: 0
+- Capitulo estrategico detectado: paginas 54-118
+- Indicadores de producto: 84 {'texto': 84} (sin cruce claro con el PPI: 61)
+- Programas en el PPI: 20; con indicadores: 5
 - Sectores del resumen PPI: 0; cuadran con la suma de programas: 0
 - Filas del Anexo a revisar a mano: 10
-- Paginas-imagen candidatas sin leer: 12 [54, 55, 61, 63, 64, 66, 70, 81, 90, 98, 110, 114]
+- Paginas-imagen candidatas sin leer: 11 [54, 55, 61, 63, 64, 66, 70, 81, 98, 110, 114]
 
 ## Programas del PPI sin indicadores extraidos
 - Sector Plan (Línea estratégica)
 - 3.000.000.000 (Ordenamiento territorial y planeación)
-- Seguridad vial para el municipio de Santa Fe de Antioquia (Transporte y Movilidad)
 - Medio Ambiente (RENUEVA CON INFRAESTRUCT)
-- Gestión de Riesgo y Prevención de Desastres (Gestión del riesgo de desastres y emergencias)
 - 2.786.487.401 (Agua potable y saneamiento básico en la zona urbana y rural del municipio de Santa Fe de Antioquia)
 - 2.645.669.561 RATEGICA 1 (Implementación de Servicios Públicos Alternativos TOTAL, LINEA EST)
 - 1.049.595.298 (Fortalecimiento de estrategias para la permanencia escolar)
 - Construcción, adecuación, dotación o mantenimiento de infraestructura cultural (Cultura)
-- Fortalecimiento de la red pública de salud del municipio (Salud)
 - 112.000.000 (Empoderamiento y transversalización de la equidad de género, la diversidad sexual y las identidades de género)
 - 88.000.000 (Políticas públicas fortalecidas)
 - 65.000.000 (Salud para la zona rural)
 - 235.000.000 (Educación para la zona rural,)
 - Construcción PTAR (Vivienda, ciudad y territorio)
 - Santa Fe de Antioquia por un (SE RENUEVA CON DESARROLLO)
-- Gestión empresarial sostenible (turismo sostenible)
 - 130.000.000 (Proyectos productivos agropecuarios)
 - 72.000.000 (Desarrollo Ambiental sustentable)
-- Desarrollo político, seguridad, convivencia pacífica y participación ciudadana (Asociación e Integración)
 
 ## Sectores que no cuadran
 

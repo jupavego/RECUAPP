@@ -1,0 +1,844 @@
+[
+ {
+  "paginas": [
+   5,
+   6
+  ],
+  "cabecera": "Estrate- gia muni- cipal",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   17040,
+   17030,
+   17020,
+   17010
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Vigilancia y salud pública",
+    "anios": [
+     600,
+     600,
+     600,
+     600
+    ],
+    "total": 2400,
+    "ruta": {
+     "linea": "Vigilancia y salud pública"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Política de Salud Mental",
+    "anios": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "total": 1,
+    "ruta": {
+     "linea": "Política de Salud Mental"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Mecanis- mos de participa- ción en salud",
+    "anios": [
+     8,
+     8,
+     8,
+     8
+    ],
+    "total": 8,
+    "ruta": {
+     "linea": "Mecanis- mos de participa- ción en salud"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Programa Nos Cui- damos",
+    "anios": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "total": 4,
+    "ruta": {
+     "linea": "Programa Nos Cui- damos"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Sede de Atención en Salud",
+    "anios": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "total": 1,
+    "ruta": {
+     "linea": "Programa Nos Cui- damos",
+     "sector": "Sede de Atención en Salud"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Dotación E.S.E. Hospital",
+    "anios": [
+     0,
+     1,
+     0,
+     0
+    ],
+    "total": 1,
+    "ruta": {
+     "linea": "Programa Nos Cui- damos",
+     "sector": "Dotación E.S.E. Hospital"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "SGP Salud",
+    "anios": [
+     15830,
+     15830,
+     15830,
+     15830
+    ],
+    "total": 15830,
+    "ruta": {
+     "linea": "SGP Salud"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Población pobre no a昀椀liada",
+    "anios": [
+     600,
+     590,
+     580,
+     570
+    ],
+    "total": 570,
+    "ruta": {
+     "linea": "Población pobre no a昀椀liada"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   26
+  ],
+  "cabecera": "Estrategia municipal",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   5,
+   5,
+   6,
+   5
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "grupos orga- nizados con proyectos de Ciencia, Tecnología e Innovación",
+    "anios": [
+     5,
+     5,
+     5,
+     5
+    ],
+    "total": 20,
+    "ruta": {
+     "linea": "grupos orga- nizados con proyectos de Ciencia, Tecnología e Innovación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Laboratorio de Innova- ción - Centro Cultural",
+    "anios": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "total": 1,
+    "ruta": {
+     "linea": "Laboratorio de Innova- ción - Centro Cultural"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   149
+  ],
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   1820350000,
+   1911651040,
+   1972703744,
+   2036494608
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Medios institucio- nales",
+    "anios": [
+     2000000,
+     35670960,
+     36741089,
+     37843321
+    ],
+    "total": 112255370,
+    "ruta": {
+     "linea": "Medios institucio- nales"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Expedi- ción du- plicados facturas",
+    "anios": [
+     2000000,
+     2200000,
+     2200000,
+     2200000
+    ],
+    "total": 8600000,
+    "ruta": {
+     "linea": "Expedi- ción du- plicados facturas"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Carna- vales, concursos y eventos culturales",
+    "anios": [
+     20000000,
+     20000000,
+     20000000,
+     20000000
+    ],
+    "total": 80000000,
+    "ruta": {
+     "linea": "Carna- vales, concursos y eventos culturales"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Hilos",
+    "anios": [
+     142350000,
+     155560080,
+     169996055,
+     185771689
+    ],
+    "total": 653677824,
+    "ruta": {
+     "linea": "Hilos"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Arrenda- miento de bienes inmuebles",
+    "anios": [
+     214000000,
+     220420000,
+     227032600,
+     233843578
+    ],
+    "total": 895296178,
+    "ruta": {
+     "linea": "Arrenda- miento de bienes inmuebles"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Curso vial y servicio de par- queadero y grúa",
+    "anios": [
+     240000000,
+     241800000,
+     243654000,
+     245563620
+    ],
+    "total": 971017620,
+    "ruta": {
+     "linea": "Curso vial y servicio de par- queadero y grúa"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Transfe- rencias para funciona- miento",
+    "anios": [
+     1200000000,
+     1236000000,
+     1273080000,
+     1311272400
+    ],
+    "total": 5020352400,
+    "ruta": {
+     "linea": "Transfe- rencias para funciona- miento"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Partici- pación vehículos automo- tores",
+    "anios": [
+     1200000000,
+     1236000000,
+     1273080000,
+     1311272400
+    ],
+    "total": 5020352400,
+    "ruta": {
+     "linea": "Transfe- rencias para funciona- miento",
+     "sector": "Partici- pación vehículos automo- tores"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   153
+  ],
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   15208970,
+   105034880918,
+   89717615,
+   200074442
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Saldo de la deu la vigencia diciembre de 2",
+    "anios": [
+     7104485,
+     30057440459,
+     44858808,
+     150037221
+    ],
+    "total": 30259440973,
+    "ruta": {
+     "linea": "Saldo de la deu la vigencia diciembre de 2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "+ nuevos créd",
+    "anios": [
+     0,
+     22460000000,
+     0,
+     0
+    ],
+    "total": 22460000000,
+    "ruta": {
+     "linea": "+ nuevos créd"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "- amortizacio",
+    "anios": [
+     664026,
+     7658632452,
+     6708770,
+     40158930
+    ],
+    "total": 7706164178,
+    "ruta": {
+     "linea": "- amortizacio"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Saldo de la de con nuevo cré SDNC",
+    "anios": [
+     7440459,
+     44858808007,
+     38150037,
+     9878291
+    ],
+    "total": 44914276794,
+    "ruta": {
+     "linea": "Saldo de la de con nuevo cré SDNC"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   156
+  ],
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   1445490,
+   1488854,
+   1533519,
+   1579525
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "ADRES régimen subsi- diado continui- dad (sin situa- ción de fondos) y tasa de vigilancia",
+    "anios": [
+     11450,
+     11793,
+     12147,
+     12511
+    ],
+    "total": 47903,
+    "ruta": {
+     "linea": "ADRES régimen subsi- diado continui- dad (sin situa- ción de fondos) y tasa de vigilancia"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Transfe- rencias Coljue- gos",
+    "anios": [
+     638565,
+     657722,
+     677453,
+     697777
+    ],
+    "total": 2671,
+    "ruta": {
+     "linea": "Transfe- rencias Coljue- gos"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Coljue- gos 75 % para inversión en salud",
+    "anios": [
+     638565,
+     657722,
+     677453,
+     697777
+    ],
+    "total": 2671,
+    "ruta": {
+     "linea": "Transfe- rencias Coljue- gos",
+     "sector": "Coljue- gos 75 % para inversión en salud"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Aportes gobierno departa- mental",
+    "anios": [
+     2195,
+     2261,
+     2329,
+     2399
+    ],
+    "total": 9186,
+    "ruta": {
+     "linea": "Aportes gobierno departa- mental"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Régimen subsi- diado esfuerzo propio depar- tamento (SSF)",
+    "anios": [
+     2195,
+     2261,
+     2329,
+     2399
+    ],
+    "total": 9186,
+    "ruta": {
+     "linea": "Aportes gobierno departa- mental",
+     "sector": "Régimen subsi- diado esfuerzo propio depar- tamento (SSF)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Otros ingresos fondo local de salud",
+    "anios": [
+     244000,
+     251320,
+     258859,
+     266625
+    ],
+    "total": 1020,
+    "ruta": {
+     "linea": "Otros ingresos fondo local de salud"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Coljue- gos 25 %",
+    "anios": [
+     244000,
+     251320,
+     258859,
+     266625
+    ],
+    "total": 1020,
+    "ruta": {
+     "linea": "Otros ingresos fondo local de salud",
+     "sector": "Coljue- gos 25 %"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Transfe- rencias de Ley 99 (sector eléctrico)",
+    "anios": [
+     1454,
+     1498,
+     1543,
+     1589
+    ],
+    "total": 6087,
+    "ruta": {
+     "linea": "Transfe- rencias de Ley 99 (sector eléctrico)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "ISAGEN",
+    "anios": [
+     547826,
+     564260,
+     581188,
+     598624
+    ],
+    "total": 2291,
+    "ruta": {
+     "linea": "ISAGEN"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   157
+  ],
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   907141,
+   934354,
+   962384,
+   991256
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Empresas Públicas de Mede- llín",
+    "anios": [
+     698301,
+     719250,
+     740827,
+     763052
+    ],
+    "total": 2921,
+    "ruta": {
+     "linea": "Empresas Públicas de Mede- llín"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Hi- droeléc- trica",
+    "anios": [
+     63343,
+     65243,
+     67200,
+     69216
+    ],
+    "total": 3485,
+    "ruta": {
+     "linea": "Hi- droeléc- trica"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Trans- ferencia sector eléctrico (solo el 10 % au- torizado para libre destina- ción)",
+    "anios": [
+     145497,
+     149861,
+     154357,
+     158988
+    ],
+    "total": 608705,
+    "ruta": {
+     "linea": "Trans- ferencia sector eléctrico (solo el 10 % au- torizado para libre destina- ción)"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   158
+  ],
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   2372770,
+   4139762,
+   2080113,
+   2083680
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Estam- pilla para la justicia familiar (2 %)",
+    "anios": [
+     400000,
+     580000,
+     580000,
+     580000
+    ],
+    "total": 2140,
+    "ruta": {
+     "linea": "Estam- pilla para la justicia familiar (2 %)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Sobre- tasa bomberil",
+    "anios": [
+     608653,
+     862145,
+     1059,
+     1263
+    ],
+    "total": 3794,
+    "ruta": {
+     "linea": "Sobre- tasa bomberil"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Contri- bución sobre contratos de obras públicas (5 %)",
+    "anios": [
+     750000,
+     1200000,
+     1200,
+     1200
+    ],
+    "total": 4350,
+    "ruta": {
+     "linea": "Contri- bución sobre contratos de obras públicas (5 %)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Tasa pro deporte y recrea- ción (2,5 %)",
+    "anios": [
+     500000,
+     725000,
+     725000,
+     725000
+    ],
+    "total": 2675,
+    "ruta": {
+     "linea": "Tasa pro deporte y recrea- ción (2,5 %)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Contri- bución por valo- rización",
+    "anios": [
+     10000,
+     68000,
+     65000,
+     65000
+    ],
+    "total": 208000,
+    "ruta": {
+     "linea": "Contri- bución por valo- rización"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Partici- pación en la plusvalía",
+    "anios": [
+     2518,
+     600000,
+     600000,
+     600000
+    ],
+    "total": 4318,
+    "ruta": {
+     "linea": "Partici- pación en la plusvalía"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Compen- sación FOMEP",
+    "anios": [
+     4599,
+     4917,
+     5373,
+     5872
+    ],
+    "total": 20763,
+    "ruta": {
+     "linea": "Compen- sación FOMEP"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Intereses morato- rios de tránsito",
+    "anios": [
+     90000,
+     92700,
+     95481,
+     98345
+    ],
+    "total": 376526,
+    "ruta": {
+     "linea": "Intereses morato- rios de tránsito"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Interés mora- torio contribu- ción por valoriza- ción",
+    "anios": [
+     7000,
+     7000,
+     7000,
+     7000
+    ],
+    "total": 28000,
+    "ruta": {
+     "linea": "Interés mora- torio contribu- ción por valoriza- ción"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

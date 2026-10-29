@@ -1,0 +1,811 @@
+[
+ {
+  "pagina": 249,
+  "cabecera": "OBJETIVO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Reducir el riesgo por inundaciones causados por las crecientes del río magdalena en sectores urbanos del municipio de Puerto Berrío",
+    "anios": [
+     669547030,
+     456904907,
+     470612054,
+     484730416
+    ],
+    "total": 2081794407
+   },
+   {
+    "etiqueta": "Garantizar ingresos básicos para los pescadores artesanales en épocas de veda con el ánimo de reducir la presión pesquera sobre el río magdalena y la seguridad alimentaria de esta población que subsiste a partir los recursos del río",
+    "anios": [
+     356245032,
+     406137695,
+     418321826,
+     430871481
+    ],
+    "total": 1611576034
+   }
+  ],
+  "ncols": 7,
+  "financiero": true
+ },
+ {
+  "pagina": 282,
+  "cabecera": "CONCEPTO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "INVERSIÓN",
+    "anios": [
+     4787779113,
+     2405463951,
+     2240325952,
+     2319541769
+    ],
+    "total": 11753110785
+   },
+   {
+    "etiqueta": "Asignaciones Directas",
+    "anios": [
+     1157323984,
+     771990062,
+     726993651,
+     724934723
+    ],
+    "total": 3381242419
+   },
+   {
+    "etiqueta": "Asignación para la Inversión Local",
+    "anios": [
+     2946925223,
+     1633473889,
+     1513332301,
+     1594607047
+    ],
+    "total": 7688338460
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     258737793,
+     217796519,
+     201777640,
+     212614273
+    ],
+    "total": 890926224
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     2688187430,
+     1415677371,
+     1311554661,
+     1381992774
+    ],
+    "total": 6797412235
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 290,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Educación",
+    "anios": [
+     1006267768,
+     1036455801,
+     1067549475,
+     1099575959
+    ],
+    "total": 4209849003
+   },
+   {
+    "etiqueta": "Calidad",
+    "anios": [
+     1006267768,
+     1036455801,
+     1067549475,
+     1099575959
+    ],
+    "total": 4209849003
+   },
+   {
+    "etiqueta": "Matrícula Gratuidad",
+    "anios": [
+     532576111,
+     548553394,
+     565009996,
+     581960296
+    ],
+    "total": 2228099798
+   },
+   {
+    "etiqueta": "Matrícula Oficial",
+    "anios": [
+     473691657,
+     487902407,
+     502539479,
+     517615663
+    ],
+    "total": 1981749206
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 291,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Salud",
+    "anios": [
+     14847755420,
+     15293188083,
+     15751983725,
+     16224543237
+    ],
+    "total": 62117470466
+   },
+   {
+    "etiqueta": "Régimen Subsidiado",
+    "anios": [
+     14178200014,
+     14603546015,
+     15041652395,
+     15492901967
+    ],
+    "total": 59316300391
+   },
+   {
+    "etiqueta": "Salud Pública",
+    "anios": [
+     669555406,
+     689642068,
+     710331330,
+     731641270
+    ],
+    "total": 2801170075
+   },
+   {
+    "etiqueta": "Agua Potable",
+    "anios": [
+     2806231780,
+     2890418734,
+     2977131296,
+     3066445235
+    ],
+    "total": 11740227044
+   },
+   {
+    "etiqueta": "Propósito General - Destinación",
+    "anios": [
+     4910110719,
+     5057414040,
+     5209136462,
+     5365410555
+    ],
+    "total": 20542071776
+   },
+   {
+    "etiqueta": "Libre Destinación",
+    "anios": [
+     2189221340,
+     2254897980,
+     2322544919,
+     2392221267
+    ],
+    "total": 9158885506
+   },
+   {
+    "etiqueta": "Deporte",
+    "anios": [
+     241856834,
+     249112539,
+     256585915,
+     264283492
+    ],
+    "total": 1011838780
+   },
+   {
+    "etiqueta": "Cultura",
+    "anios": [
+     181392625,
+     186834404,
+     192439436,
+     198212619
+    ],
+    "total": 758879084
+   },
+   {
+    "etiqueta": "Libre Inversión",
+    "anios": [
+     2297639920,
+     2366569118,
+     2437566191,
+     2510693177
+    ],
+    "total": 9612468406
+   },
+   {
+    "etiqueta": "Alimentación Escolar",
+    "anios": [
+     223027741,
+     229718573,
+     236610130,
+     243708434
+    ],
+    "total": 933064878
+   },
+   {
+    "etiqueta": "Ribereños",
+    "anios": [
+     985771105,
+     1015344238,
+     1045804565,
+     1077178702
+    ],
+    "total": 4124098611
+   },
+   {
+    "etiqueta": "Resguardos Indígenas",
+    "anios": [
+     10569658,
+     10886748,
+     11213350,
+     11549750
+    ],
+    "total": 44219506
+   },
+   {
+    "etiqueta": "Primera Infancia",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "TOTAL SGP",
+    "anios": [
+     24789734191,
+     25533426217,
+     26299429003,
+     27088411874
+    ],
+    "total": 103711001285
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 291,
+  "cabecera": "CONCEPTO DE INGRESOS",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "INGRESOS TOTALES",
+    "anios": [
+     69786695438,
+     73287785231,
+     76964282164,
+     80824967174
+    ],
+    "total": 300863730008
+   },
+   {
+    "etiqueta": "TRIBUTARIOS",
+    "anios": [
+     21136393770,
+     22193213459,
+     23302874131,
+     24468017838
+    ],
+    "total": 91100499198
+   },
+   {
+    "etiqueta": "NO TRIBUTARIOS",
+    "anios": [
+     48650301668,
+     51094571773,
+     53661408033,
+     56356949336
+    ],
+    "total": 209763230810
+   },
+   {
+    "etiqueta": "TRANSFERENCIAS DEL GOBIERNO NACONAL",
+    "anios": [
+     24789734191,
+     25533426217,
+     26299429003,
+     27088411874
+    ],
+    "total": 103711001285
+   },
+   {
+    "etiqueta": "RECURSOS PARA SALUD ADRESSY DPTO",
+    "anios": [
+     22416367724,
+     23088858756,
+     23781524518,
+     24494970254
+    ],
+    "total": 93781721252
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 292,
+  "cabecera": "CONCEPTO DE INGRESOS",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "OTROS NO TRIBUTARIOS",
+    "anios": [
+     1444199753,
+     2472286800,
+     3580454511,
+     4773567209
+    ],
+    "total": 12270508273
+   },
+   {
+    "etiqueta": "TOTAL, NO TRIBUTARIOS",
+    "anios": [
+     48650301668,
+     51094571773,
+     53661408033,
+     56356949336
+    ],
+    "total": 209763230810
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 292,
+  "cabecera": "SGR",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "REGALIAS DIRECTAS",
+    "anios": [
+     1208761745,
+     771990062,
+     726993651,
+     724934723
+    ],
+    "total": 3432680180
+   },
+   {
+    "etiqueta": "REGALÍAS AMBIENTAL Y DLLO SOSTENIBLE",
+    "anios": [
+     250339714,
+     217796519,
+     201777640,
+     212614273
+    ],
+    "total": 882528146
+   },
+   {
+    "etiqueta": "RESTO DE INVERSION",
+    "anios": [
+     1627208140,
+     1415677371,
+     1311554661,
+     1381992774
+    ],
+    "total": 5736432945
+   },
+   {
+    "etiqueta": "TOTAL, REGALÍAS",
+    "anios": [
+     3086309599,
+     2405463951,
+     2240325952,
+     2319541769
+    ],
+    "total": 10051641271
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 292,
+  "cabecera": "GASTOS E INVERSION",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "FUNCIONAMIENTO",
+    "anios": [
+     193905600,
+     213296160,
+     234625776,
+     258088354
+    ],
+    "total": 899915890
+   },
+   {
+    "etiqueta": "SERVICIOS DE LA DEUDA PÚBLICA",
+    "anios": [
+     3273553710,
+     3724586767,
+     4013274781,
+     4345265999
+    ],
+    "total": 15356681257
+   },
+   {
+    "etiqueta": "TRANSFERENCIA SOBRETASA AMBIENTAL",
+    "anios": [
+     868597364,
+     912027232,
+     957628594,
+     1005510024
+    ],
+    "total": 3743763214
+   },
+   {
+    "etiqueta": "TRANSFERENCIA RESGUARDOS INDÍGENAS SGP",
+    "anios": [
+     10569658,
+     10886748,
+     11213350,
+     11549750
+    ],
+    "total": 44219506
+   },
+   {
+    "etiqueta": "INVERSIÓN",
+    "anios": [
+     54477418391,
+     56368072538,
+     58482732298,
+     60613264946
+    ],
+    "total": 229941488174
+   },
+   {
+    "etiqueta": "INVERSIÓN SGR",
+    "anios": [
+     3086309599,
+     2405463951,
+     2240325952,
+     2319541769
+    ],
+    "total": 10051641271
+   }
+  ],
+  "ncols": 7,
+  "financiero": true
+ },
+ {
+  "pagina": 293,
+  "cabecera": "ICDE ESPECÍFICA",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "ESTAMPILLA PROCULTURA",
+    "anios": [
+     156440470,
+     164262493,
+     172475618,
+     181099399
+    ],
+    "total": 674277980
+   },
+   {
+    "etiqueta": "ESTAMPILLA ADULTO MAYOR",
+    "anios": [
+     605045205,
+     635297465,
+     667062338,
+     700415455
+    ],
+    "total": 2607820464
+   },
+   {
+    "etiqueta": "TASA PRODEPORTE",
+    "anios": [
+     385217513,
+     404478388,
+     424702308,
+     445937423
+    ],
+    "total": 1660335633
+   },
+   {
+    "etiqueta": "ESTAMPILLA PROJUSTICIA",
+    "anios": [
+     125392342,
+     131661959,
+     138245057,
+     145157309
+    ],
+    "total": 540456668
+   },
+   {
+    "etiqueta": "TSE ELÉCTRICO",
+    "anios": [
+     92348783,
+     96966222,
+     101814533,
+     106905259
+    ],
+    "total": 398034798
+   },
+   {
+    "etiqueta": "FONDO DE SEGURIDAD",
+    "anios": [
+     389083724,
+     408537910,
+     428964805,
+     450413046
+    ],
+    "total": 1676999485
+   },
+   {
+    "etiqueta": "OLEODUCTOS",
+    "anios": [
+     5200000000,
+     5300000000,
+     5615000000,
+     5945750000
+    ],
+    "total": 22060750000
+   },
+   {
+    "etiqueta": "ICDE",
+    "anios": [
+     6953528037,
+     7141204438,
+     7548264660,
+     7975677893
+    ],
+    "total": 29618675030
+   },
+   {
+    "etiqueta": "INVERSION REGALIAS",
+    "anios": [
+     3086309599,
+     2405463951,
+     2240325951,
+     2319541769
+    ],
+    "total": 10051641271
+   },
+   {
+    "etiqueta": "RECURSOS PARA SALUD ADRESS Y DPTO",
+    "anios": [
+     22416367724,
+     23088858755,
+     23781524518,
+     24494970253
+    ],
+    "total": 93781721252
+   },
+   {
+    "etiqueta": "SGP EDUCACION",
+    "anios": [
+     1006267768,
+     1036455801,
+     1067549475,
+     1099575959
+    ],
+    "total": 4209849003
+   },
+   {
+    "etiqueta": "SGP DEPORTE",
+    "anios": [
+     241856833,
+     249112538,
+     256585915,
+     264283492
+    ],
+    "total": 1011838780
+   },
+   {
+    "etiqueta": "SGP CULTURA",
+    "anios": [
+     181392625,
+     186834403,
+     192439436,
+     198212619
+    ],
+    "total": 758879084
+   },
+   {
+    "etiqueta": "SGP ALIMENTACIÓN ESCOLAR",
+    "anios": [
+     223027740,
+     229718573,
+     236610130,
+     243708434
+    ],
+    "total": 933064878
+   },
+   {
+    "etiqueta": "SALUD SGP",
+    "anios": [
+     14847755420,
+     15293188082,
+     15751983725,
+     16224543237
+    ],
+    "total": 62117470465
+   },
+   {
+    "etiqueta": "SGP AGUA POTABLE",
+    "anios": [
+     2806231780,
+     2890418733,
+     2977131295,
+     3066445234
+    ],
+    "total": 11740227044
+   },
+   {
+    "etiqueta": "SGP Ribereños",
+    "anios": [
+     985771105,
+     1015344238,
+     1045804565,
+     1077178702
+    ],
+    "total": 4124098610
+   },
+   {
+    "etiqueta": "A DISTRIBUIR SGP LIBRE INVERSION",
+    "anios": [
+     1181960346,
+     1083537607,
+     962079954,
+     813884004
+    ],
+    "total": 4041461912
+   },
+   {
+    "etiqueta": "LIBRE DESTINACION SGP Y RECURSOS PROPIOS",
+    "anios": [
+     3633259010,
+     4153399364,
+     4662758621,
+     5154785114
+    ],
+    "total": 17604202111
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 295,
+  "cabecera": "LÍNEA ESTRATÉGICA",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "cerca a nuestra",
+    "anios": [
+     1319555406,
+     1389642068,
+     1495331330,
+     1261641270
+    ],
+    "total": 5466170074
+   },
+   {
+    "etiqueta": "Gente",
+    "anios": [
+     36700567738,
+     37808404771,
+     38953176913,
+     40127872221
+    ],
+    "total": 153590021643
+   },
+   {
+    "etiqueta": "Línea 2. Inversión",
+    "anios": [
+     120000000,
+     122000000,
+     124000000,
+     126000000
+    ],
+    "total": 492000000
+   },
+   {
+    "etiqueta": "desarrollo de nuestra",
+    "anios": [
+     180000000,
+     192000000,
+     199000000,
+     206000000
+    ],
+    "total": 777000000
+   }
+  ],
+  "ncols": 7,
+  "financiero": false
+ },
+ {
+  "pagina": 296,
+  "cabecera": "LÍNEA ESTRATÉGICA",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Línea 3. Un",
+    "anios": [
+     849770868,
+     1367805342,
+     1387526053,
+     1440121430
+    ],
+    "total": 5045223693
+   },
+   {
+    "etiqueta": "mejor territorio",
+    "anios": [
+     112000000,
+     119000000,
+     128000000,
+     133000000
+    ],
+    "total": 492000000
+   },
+   {
+    "etiqueta": "para nuestra gente",
+    "anios": [
+     50000000,
+     310737793,
+     54000000,
+     54000000
+    ],
+    "total": 468737793
+   },
+   {
+    "etiqueta": "Línea 4.",
+    "anios": [
+     416000000,
+     420000000,
+     449455550,
+     480928328
+    ],
+    "total": 1766383878
+   },
+   {
+    "etiqueta": "para nuestra gente",
+    "anios": [
+     195000000,
+     220000000,
+     350000000,
+     360750000
+    ],
+    "total": 1125750000
+   },
+   {
+    "etiqueta": "TO",
+    "anios": [
+     80063727990,
+     58773536490,
+     60723058248,
+     62932806715
+    ],
+    "total": 262493129443
+   }
+  ],
+  "ncols": 7,
+  "financiero": false
+ }
+]

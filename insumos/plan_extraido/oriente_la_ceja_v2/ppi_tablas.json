@@ -1,0 +1,1930 @@
+[
+ {
+  "pagina": 5,
+  "cabecera": "Estrate- gia muni- cipal",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Vigilancia y salud pública",
+    "anios": [
+     600,
+     600,
+     600,
+     600
+    ],
+    "total": 2400
+   },
+   {
+    "etiqueta": "Política de Salud Mental",
+    "anios": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "total": 1
+   }
+  ],
+  "ncols": 9,
+  "financiero": false
+ },
+ {
+  "pagina": 6,
+  "cabecera": "Estrate- gia muni- cipal",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Mecanis- mos de participa- ción en salud",
+    "anios": [
+     8,
+     8,
+     8,
+     8
+    ],
+    "total": 8
+   },
+   {
+    "etiqueta": "Programa Nos Cui- damos",
+    "anios": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "total": 4
+   },
+   {
+    "etiqueta": "Sede de Atención en Salud",
+    "anios": [
+     0,
+     0,
+     0,
+     1
+    ],
+    "total": 1
+   },
+   {
+    "etiqueta": "Dotación E.S.E. Hospital",
+    "anios": [
+     0,
+     1,
+     0,
+     0
+    ],
+    "total": 1
+   },
+   {
+    "etiqueta": "SGP Salud",
+    "anios": [
+     15830,
+     15830,
+     15830,
+     15830
+    ],
+    "total": 15830
+   },
+   {
+    "etiqueta": "Población pobre no a昀椀liada",
+    "anios": [
+     600,
+     590,
+     580,
+     570
+    ],
+    "total": 570
+   }
+  ],
+  "ncols": 9,
+  "financiero": false
+ },
+ {
+  "pagina": 26,
+  "cabecera": "Estrategia municipal",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "grupos orga- nizados con proyectos de Ciencia, Tecnología e Innovación",
+    "anios": [
+     5,
+     5,
+     5,
+     5
+    ],
+    "total": 20
+   },
+   {
+    "etiqueta": "Laboratorio de Innova- ción - Centro Cultural",
+    "anios": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "total": 1
+   }
+  ],
+  "ncols": 9,
+  "financiero": false
+ },
+ {
+  "pagina": 144,
+  "cabecera": "unconameno (categoría segunda)",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Concejo Municipal",
+    "anios": [
+     1834434038,
+     2189079510,
+     2398001868,
+     2617756476
+    ],
+    "total": 9039271893
+   },
+   {
+    "etiqueta": "Personería Municipal",
+    "anios": [
+     1166827860,
+     1603360812,
+     1861561597,
+     2134203121
+    ],
+    "total": 6765953390
+   },
+   {
+    "etiqueta": "Administración Central",
+    "anios": [
+     21851844918,
+     25431882685,
+     26587907026,
+     27838825453
+    ],
+    "total": 101710460082
+   },
+   {
+    "etiqueta": "Fondo Local de Salud",
+    "anios": [
+     630883000,
+     757059600,
+     794912580,
+     834658209
+    ],
+    "total": 3017513389
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     25483,
+     29981,
+     31642,
+     33425
+    ],
+    "total": 120533
+   },
+   {
+    "etiqueta": "ambiental (Cornare)",
+    "anios": [
+     5555,
+     6912,
+     8463,
+     10062
+    ],
+    "total": 30993
+   },
+   {
+    "etiqueta": "20 % estampilla FONPET (pago pasivo pensional)",
+    "anios": [
+     94000000,
+     119200000,
+     120436000,
+     121709080
+    ],
+    "total": 455345080
+   },
+   {
+    "etiqueta": "Pasivo pensional, bonos y cuotaspartes",
+    "anios": [
+     17000000,
+     17510000,
+     18035300,
+     18576359
+    ],
+    "total": 71121659
+   },
+   {
+    "etiqueta": "Transferencias Policía - multas",
+    "anios": [
+     40500000,
+     42525000,
+     44651250,
+     46883813
+    ],
+    "total": 174560063
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     612000,
+     260393,
+     108704,
+     674991
+    ],
+    "total": 656088
+   }
+  ],
+  "ncols": 1,
+  "financiero": true
+ },
+ {
+  "pagina": 146,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Tributarios",
+    "anios": [
+     58385,
+     70551,
+     82292,
+     94663
+    ],
+    "total": 305893
+   },
+   {
+    "etiqueta": "Impuesto predial uni昀椀cado vigencia actual",
+    "anios": [
+     25468755000,
+     34732817650,
+     43244802180,
+     52012146245
+    ],
+    "total": 155458521074
+   },
+   {
+    "etiqueta": "Impuesto predial uni昀椀cado vigencias anteriores",
+    "anios": [
+     2671619286,
+     2751767865,
+     2834320901,
+     2919350528
+    ],
+    "total": 11177058579
+   },
+   {
+    "etiqueta": "Impuesto de industria y comercio vigencia actual",
+    "anios": [
+     15992202000,
+     17751344220,
+     19703992084,
+     21871431213
+    ],
+    "total": 75318969518
+   },
+   {
+    "etiqueta": "Impuesto de industria y comercio vigencias anteriores",
+    "anios": [
+     726586000,
+     806510460,
+     895226611,
+     993701538
+    ],
+    "total": 3422024608
+   }
+  ],
+  "ncols": 4,
+  "financiero": true
+ },
+ {
+  "pagina": 147,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Concepto",
+    "anios": [
+     2024,
+     2025,
+     2026,
+     2027
+    ],
+    "total": 8102
+   },
+   {
+    "etiqueta": "Avisos y tableros vigencia actual",
+    "anios": [
+     918000000,
+     1147500000,
+     1434375000,
+     1792968750
+    ],
+    "total": 5292843750
+   },
+   {
+    "etiqueta": "Avisos y tableros vigencias anteriores",
+    "anios": [
+     60000000,
+     75000000,
+     93750000,
+     117187500
+    ],
+    "total": 345937500
+   },
+   {
+    "etiqueta": "Impuesto de deli- neación urbana",
+    "anios": [
+     6022500000,
+     6581388000,
+     7192140806,
+     7859571473
+    ],
+    "total": 27655600279
+   },
+   {
+    "etiqueta": "Impuesto de urba- nismo",
+    "anios": [
+     657000000,
+     717969600,
+     784597179,
+     857407797
+    ],
+    "total": 3016974576
+   },
+   {
+    "etiqueta": "Sobre- tasa a la gasolina",
+    "anios": [
+     4517182000,
+     4652697460,
+     4792278384,
+     4936046735
+    ],
+    "total": 18898204579
+   },
+   {
+    "etiqueta": "Impuesto sobre teléfonos",
+    "anios": [
+     966928459,
+     937920060,
+     908782987,
+     882489497
+    ],
+    "total": 3696121003
+   },
+   {
+    "etiqueta": "Publici- dad visual exterior vigencia actual",
+    "anios": [
+     344600000,
+     354938000,
+     365586140,
+     376553724
+    ],
+    "total": 1441677864
+   },
+   {
+    "etiqueta": "Publici- dad visual exterior vigencia anterior",
+    "anios": [
+     40500000,
+     41715000,
+     42966450,
+     44255444
+    ],
+    "total": 169436894
+   },
+   {
+    "etiqueta": "No tributarios",
+    "anios": [
+     2694944000,
+     2949689460,
+     3206840064,
+     3506961327
+    ],
+    "total": 12358434851
+   },
+   {
+    "etiqueta": "Licencias de con- ducción",
+    "anios": [
+     215832000,
+     222306960,
+     228976169,
+     235845454
+    ],
+    "total": 902960583
+   },
+   {
+    "etiqueta": "Matrí- culas de tránsito",
+    "anios": [
+     441082000,
+     454314460,
+     467943894,
+     481982211
+    ],
+    "total": 1845322564
+   }
+  ],
+  "ncols": 4,
+  "financiero": true
+ },
+ {
+  "pagina": 148,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Sector transpor- te público",
+    "anios": [
+     17180000,
+     17695400,
+     18226262,
+     18773050
+    ],
+    "total": 71874712
+   },
+   {
+    "etiqueta": "Multas y sanciones de im- puestos",
+    "anios": [
+     219000000,
+     284700000,
+     370110000,
+     481143000
+    ],
+    "total": 1354953000
+   },
+   {
+    "etiqueta": "Interés moratorio impuesto predial uni昀椀cado",
+    "anios": [
+     721000000,
+     814730000,
+     920644900,
+     1040328737
+    ],
+    "total": 3496703637
+   },
+   {
+    "etiqueta": "Interés moratorio impuesto de in- dustria y comercio",
+    "anios": [
+     216000000,
+     222480000,
+     229154400,
+     236029032
+    ],
+    "total": 903663432
+   },
+   {
+    "etiqueta": "Intereses morato- rios de avisos y tableros",
+    "anios": [
+     30000000,
+     30900000,
+     31827000,
+     32781810
+    ],
+    "total": 125508810
+   },
+   {
+    "etiqueta": "Expedi- ción de certi昀椀- cados (avalúos, industria y comer- cio)",
+    "anios": [
+     75000000,
+     77250000,
+     79567500,
+     81954525
+    ],
+    "total": 313772025
+   },
+   {
+    "etiqueta": "Expedi- ción de certi昀椀- cados de planea- ción",
+    "anios": [
+     109500000,
+     119661600,
+     130766196,
+     142901300
+    ],
+    "total": 502829096
+   },
+   {
+    "etiqueta": "Decla- raciones extrajui- cio y otras declara- ciones",
+    "anios": [
+     30000000,
+     30000000,
+     30000000,
+     30000000
+    ],
+    "total": 120000000
+   }
+  ],
+  "ncols": 4,
+  "financiero": true
+ },
+ {
+  "pagina": 149,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Medios institucio- nales",
+    "anios": [
+     2000000,
+     35670960,
+     36741089,
+     37843321
+    ],
+    "total": 112255370
+   },
+   {
+    "etiqueta": "Expedi- ción du- plicados facturas",
+    "anios": [
+     2000000,
+     2200000,
+     2200000,
+     2200000
+    ],
+    "total": 8600000
+   },
+   {
+    "etiqueta": "Carna- vales, concursos y eventos culturales",
+    "anios": [
+     20000000,
+     20000000,
+     20000000,
+     20000000
+    ],
+    "total": 80000000
+   },
+   {
+    "etiqueta": "Hilos",
+    "anios": [
+     142350000,
+     155560080,
+     169996055,
+     185771689
+    ],
+    "total": 653677824
+   },
+   {
+    "etiqueta": "Arrenda- miento de bienes inmuebles",
+    "anios": [
+     214000000,
+     220420000,
+     227032600,
+     233843578
+    ],
+    "total": 895296178
+   },
+   {
+    "etiqueta": "Curso vial y servicio de par- queadero y grúa",
+    "anios": [
+     240000000,
+     241800000,
+     243654000,
+     245563620
+    ],
+    "total": 971017620
+   },
+   {
+    "etiqueta": "Transfe- rencias para funciona- miento",
+    "anios": [
+     1200000000,
+     1236000000,
+     1273080000,
+     1311272400
+    ],
+    "total": 5020352400
+   },
+   {
+    "etiqueta": "Partici- pación vehículos automo- tores",
+    "anios": [
+     1200000000,
+     1236000000,
+     1273080000,
+     1311272400
+    ],
+    "total": 5020352400
+   }
+  ],
+  "ncols": 4,
+  "financiero": false
+ },
+ {
+  "pagina": 150,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Total ICLD (pesos)",
+    "anios": [
+     62280816745,
+     74737257775,
+     86772738785,
+     99481344170
+    ],
+    "total": 323272157475
+   },
+   {
+    "etiqueta": "(-) 1 % Ley 99",
+    "anios": [
+     622808167,
+     747372578,
+     867727388,
+     994813442
+    ],
+    "total": 3232721575
+   },
+   {
+    "etiqueta": "(-) 1.5 % presu- puesto participa- tivo",
+    "anios": [
+     564450,
+     1109848278,
+     1288575171,
+     1477297961
+    ],
+    "total": 4800591538
+   },
+   {
+    "etiqueta": "ICLD para cálculo Ley 617 de 2000",
+    "anios": [
+     60862444127,
+     72880036919,
+     84616436226,
+     97009232768
+    ],
+    "total": 315368150040
+   },
+   {
+    "etiqueta": "Servicio de la deuda pública",
+    "anios": [
+     2024,
+     2025,
+     2026,
+     2027
+    ],
+    "total": 8102
+   },
+   {
+    "etiqueta": "Servicio de la deuda pública (actual)",
+    "anios": [
+     14247730504,
+     12325000000,
+     10160000000,
+     8515000000
+    ],
+    "total": 45247730504
+   },
+   {
+    "etiqueta": "Nuevo servicio deuda pública",
+    "anios": [
+     0,
+     1348000000,
+     1469000000,
+     5582000000
+    ],
+    "total": 8399000000
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     14247,
+     13673,
+     11629,
+     14097
+    ],
+    "total": 53646
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 152,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "+ ingresos tributarios",
+    "anios": [
+     66327180745,
+     79534335555,
+     91461458978,
+     104023199909
+    ],
+    "total": 341346175187
+   },
+   {
+    "etiqueta": "+ ingresos no tributarios especí昀椀cos",
+    "anios": [
+     14174903000,
+     13441112230,
+     14258080798,
+     15166563547
+    ],
+    "total": 57040659575
+   },
+   {
+    "etiqueta": "+ transferencias SGP libre inversión",
+    "anios": [
+     5083393801,
+     5235895615,
+     5392972483,
+     5554761658
+    ],
+    "total": 21267023557
+   },
+   {
+    "etiqueta": "+ recursos del balance especí昀椀cos, reintegros y rendimientos 昀椀nancieros",
+    "anios": [
+     5029645762,
+     350000000,
+     350000000,
+     350000000
+    ],
+    "total": 6079645762
+   },
+   {
+    "etiqueta": "= ingresos corrientes",
+    "anios": [
+     90615123308,
+     98561343400,
+     111462512259,
+     125094525114
+    ],
+    "total": 425733504081
+   },
+   {
+    "etiqueta": "- ingresos que 昀椀nancian reservas",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "= total ingresos corrientes",
+    "anios": [
+     90615123308,
+     98561343400,
+     111462512259,
+     125094525114
+    ],
+    "total": 425733504081
+   },
+   {
+    "etiqueta": "- gastos de funcionamiento (Concejo, Persone- ría, Alcaldía, salarios por inversión)",
+    "anios": [
+     27332045265,
+     31921840829,
+     33679864204,
+     35564798448
+    ],
+    "total": 128498548746
+   },
+   {
+    "etiqueta": "Total gastos",
+    "anios": [
+     27332045265,
+     31921840829,
+     33679864204,
+     35564798448
+    ],
+    "total": 128498548746
+   },
+   {
+    "etiqueta": "Ahorro operacional",
+    "anios": [
+     63283,
+     66639,
+     77782,
+     89529
+    ],
+    "total": 297233
+   },
+   {
+    "etiqueta": "Intereses de la vigencia",
+    "anios": [
+     5882729904,
+     4666000000,
+     3451000000,
+     2275000000
+    ],
+    "total": 16274729904
+   },
+   {
+    "etiqueta": "Intereses crédito solicitado",
+    "anios": [
+     0,
+     1348000000,
+     1469000000,
+     1082000000
+    ],
+    "total": 3899000000
+   },
+   {
+    "etiqueta": "Total intereses",
+    "anios": [
+     5882729904,
+     6014000000,
+     4920000000,
+     3357000000
+    ],
+    "total": 20173729904
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 153,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Saldo de la deu la vigencia diciembre de 2",
+    "anios": [
+     7104485,
+     30057440459,
+     44858808,
+     150037221
+    ],
+    "total": 30259440973
+   },
+   {
+    "etiqueta": "+ nuevos créd",
+    "anios": [
+     0,
+     22460000000,
+     0,
+     0
+    ],
+    "total": 22460000000
+   },
+   {
+    "etiqueta": "- amortizacio",
+    "anios": [
+     664026,
+     7658632452,
+     6708770,
+     40158930
+    ],
+    "total": 7706164178
+   },
+   {
+    "etiqueta": "Saldo de la de con nuevo cré SDNC",
+    "anios": [
+     7440459,
+     44858808007,
+     38150037,
+     9878291
+    ],
+    "total": 44914276794
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ },
+ {
+  "pagina": 154,
+  "cabecera": "Fuentes de financiación Plan de Desarrollo Municipal (2024- 2027)",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Transferen- cias sector eléctrico de Ley 99",
+    "anios": [
+     1454,
+     1498,
+     1543,
+     1589
+    ],
+    "total": 6084
+   },
+   {
+    "etiqueta": "Rendimientos 昀椀nancieros",
+    "anios": [
+     300000000,
+     300000000,
+     300000000,
+     300000000
+    ],
+    "total": 1200000000
+   },
+   {
+    "etiqueta": "Recursos propios con destinación especí昀椀ca",
+    "anios": [
+     17474,
+     17703,
+     18567,
+     19489
+    ],
+    "total": 73233
+   },
+   {
+    "etiqueta": "Ingresos corrientes de libre destina- ción",
+    "anios": [
+     22549,
+     31082,
+     43501,
+     51958
+    ],
+    "total": 149090
+   },
+   {
+    "etiqueta": "Superávit 昀椀scal al cierre de dic. 2023",
+    "anios": [
+     16307,
+     0,
+     0,
+     0
+    ],
+    "total": 2023
+   },
+   {
+    "etiqueta": "Co昀椀nan- ciación de- partamento Programa de Alimentación Escolar",
+    "anios": [
+     598983528,
+     0,
+     0,
+     0
+    ],
+    "total": 598983528
+   },
+   {
+    "etiqueta": "Recursos del crédito",
+    "anios": [
+     0,
+     22460,
+     0,
+     0
+    ],
+    "total": 22460
+   },
+   {
+    "etiqueta": "Recursos de co昀椀nancia- ción",
+    "anios": [
+     2000,
+     63530,
+     25920,
+     5000
+    ],
+    "total": 96450
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     93349,
+     170220,
+     124486,
+     114031
+    ],
+    "total": 502086
+   }
+  ],
+  "ncols": 7,
+  "financiero": true
+ },
+ {
+  "pagina": 154,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Sistema General de Participa- ciones",
+    "anios": [
+     18135,
+     18680,
+     19240,
+     19817
+    ],
+    "total": 75874
+   },
+   {
+    "etiqueta": "SGP edu- cación - calidad",
+    "anios": [
+     557630,
+     574359,
+     591590,
+     609338
+    ],
+    "total": 2332
+   }
+  ],
+  "ncols": 9,
+  "financiero": true
+ },
+ {
+  "pagina": 155,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "SGP ca- lidad por gratuidad (sin situa- ción de fondos)",
+    "anios": [
+     541206,
+     557443,
+     574166,
+     591391
+    ],
+    "total": 2264
+   },
+   {
+    "etiqueta": "SGP alimen- tación escolar",
+    "anios": [
+     159240,
+     164017,
+     168938,
+     174006
+    ],
+    "total": 666202
+   },
+   {
+    "etiqueta": "SGP agua potable y sanea- miento básico",
+    "anios": [
+     2289,
+     2358,
+     2428,
+     2501
+    ],
+    "total": 9577
+   },
+   {
+    "etiqueta": "SGP deporte",
+    "anios": [
+     535094,
+     551146,
+     567681,
+     584711
+    ],
+    "total": 2238
+   },
+   {
+    "etiqueta": "SGP cultura",
+    "anios": [
+     401320,
+     413360,
+     425760,
+     438533
+    ],
+    "total": 1678
+   },
+   {
+    "etiqueta": "SGP libre inversión - forzosa inversión",
+    "anios": [
+     5083,
+     5235,
+     5392,
+     5554
+    ],
+    "total": 21267
+   },
+   {
+    "etiqueta": "SGP salud - régimen subsi- diado continui- dad (sin situación de fon- dos)",
+    "anios": [
+     7155,
+     7370,
+     7591,
+     7819
+    ],
+    "total": 29936
+   },
+   {
+    "etiqueta": "SGP sub- sidio a la oferta presta- ción de servicios",
+    "anios": [
+     494052,
+     508874,
+     524140,
+     539864
+    ],
+    "total": 2066
+   },
+   {
+    "etiqueta": "SGP salud pública",
+    "anios": [
+     919134,
+     946708,
+     975109,
+     1004
+    ],
+    "total": 3845
+   },
+   {
+    "etiqueta": "Transfe- rencias ADRES",
+    "anios": [
+     11450,
+     11793,
+     12147,
+     12511
+    ],
+    "total": 47903
+   }
+  ],
+  "ncols": 8,
+  "financiero": true
+ },
+ {
+  "pagina": 156,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "ADRES régimen subsi- diado continui- dad (sin situa- ción de fondos) y tasa de vigilancia",
+    "anios": [
+     11450,
+     11793,
+     12147,
+     12511
+    ],
+    "total": 47903
+   },
+   {
+    "etiqueta": "Transfe- rencias Coljue- gos",
+    "anios": [
+     638565,
+     657722,
+     677453,
+     697777
+    ],
+    "total": 2671
+   },
+   {
+    "etiqueta": "Coljue- gos 75 % para inversión en salud",
+    "anios": [
+     638565,
+     657722,
+     677453,
+     697777
+    ],
+    "total": 2671
+   },
+   {
+    "etiqueta": "Aportes gobierno departa- mental",
+    "anios": [
+     2195,
+     2261,
+     2329,
+     2399
+    ],
+    "total": 9186
+   },
+   {
+    "etiqueta": "Régimen subsi- diado esfuerzo propio depar- tamento (SSF)",
+    "anios": [
+     2195,
+     2261,
+     2329,
+     2399
+    ],
+    "total": 9186
+   },
+   {
+    "etiqueta": "Otros ingresos fondo local de salud",
+    "anios": [
+     244000,
+     251320,
+     258859,
+     266625
+    ],
+    "total": 1020
+   },
+   {
+    "etiqueta": "Coljue- gos 25 %",
+    "anios": [
+     244000,
+     251320,
+     258859,
+     266625
+    ],
+    "total": 1020
+   },
+   {
+    "etiqueta": "Transfe- rencias de Ley 99 (sector eléctrico)",
+    "anios": [
+     1454,
+     1498,
+     1543,
+     1589
+    ],
+    "total": 6087
+   },
+   {
+    "etiqueta": "ISAGEN",
+    "anios": [
+     547826,
+     564260,
+     581188,
+     598624
+    ],
+    "total": 2291
+   }
+  ],
+  "ncols": 8,
+  "financiero": false
+ },
+ {
+  "pagina": 157,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Empresas Públicas de Mede- llín",
+    "anios": [
+     698301,
+     719250,
+     740827,
+     763052
+    ],
+    "total": 2921
+   },
+   {
+    "etiqueta": "Hi- droeléc- trica",
+    "anios": [
+     63343,
+     65243,
+     67200,
+     69216
+    ],
+    "total": 3485
+   },
+   {
+    "etiqueta": "Trans- ferencia sector eléctrico (solo el 10 % au- torizado para libre destina- ción)",
+    "anios": [
+     145497,
+     149861,
+     154357,
+     158988
+    ],
+    "total": 608705
+   }
+  ],
+  "ncols": 9,
+  "financiero": false
+ },
+ {
+  "pagina": 158,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Estam- pilla para la justicia familiar (2 %)",
+    "anios": [
+     400000,
+     580000,
+     580000,
+     580000
+    ],
+    "total": 2140
+   },
+   {
+    "etiqueta": "Sobre- tasa bomberil",
+    "anios": [
+     608653,
+     862145,
+     1059,
+     1263
+    ],
+    "total": 3794
+   },
+   {
+    "etiqueta": "Contri- bución sobre contratos de obras públicas (5 %)",
+    "anios": [
+     750000,
+     1200000,
+     1200,
+     1200
+    ],
+    "total": 4350
+   },
+   {
+    "etiqueta": "Tasa pro deporte y recrea- ción (2,5 %)",
+    "anios": [
+     500000,
+     725000,
+     725000,
+     725000
+    ],
+    "total": 2675
+   },
+   {
+    "etiqueta": "Contri- bución por valo- rización",
+    "anios": [
+     10000,
+     68000,
+     65000,
+     65000
+    ],
+    "total": 208000
+   },
+   {
+    "etiqueta": "Partici- pación en la plusvalía",
+    "anios": [
+     2518,
+     600000,
+     600000,
+     600000
+    ],
+    "total": 4318
+   },
+   {
+    "etiqueta": "Compen- sación FOMEP",
+    "anios": [
+     4599,
+     4917,
+     5373,
+     5872
+    ],
+    "total": 20763
+   },
+   {
+    "etiqueta": "Intereses morato- rios de tránsito",
+    "anios": [
+     90000,
+     92700,
+     95481,
+     98345
+    ],
+    "total": 376526
+   },
+   {
+    "etiqueta": "Interés mora- torio contribu- ción por valoriza- ción",
+    "anios": [
+     7000,
+     7000,
+     7000,
+     7000
+    ],
+    "total": 28000
+   }
+  ],
+  "ncols": 8,
+  "financiero": false
+ },
+ {
+  "pagina": 159,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Contra- vencio- nes y multas de tránsito y trans- porte",
+    "anios": [
+     465000,
+     478950,
+     493318,
+     508118
+    ],
+    "total": 1945
+   },
+   {
+    "etiqueta": "Cartera del trán- sito",
+    "anios": [
+     235492,
+     242556,
+     249833,
+     257328
+    ],
+    "total": 985210
+   },
+   {
+    "etiqueta": "Impuesto de alum- brado público",
+    "anios": [
+     6015,
+     6195,
+     6381,
+     6573
+    ],
+    "total": 25165
+   },
+   {
+    "etiqueta": "Multas Código de Policía y Convi- vencia",
+    "anios": [
+     49500,
+     51975,
+     54573,
+     57302
+    ],
+    "total": 213351
+   },
+   {
+    "etiqueta": "Recupe- raciones",
+    "anios": [
+     50000,
+     50000,
+     50000,
+     50000
+    ],
+    "total": 200000
+   },
+   {
+    "etiqueta": "Convenio Comfama progra- ma de rehabi- litación física",
+    "anios": [
+     150000,
+     150000,
+     150000,
+     150000
+    ],
+    "total": 600000
+   },
+   {
+    "etiqueta": "Concepto",
+    "anios": [
+     2024,
+     2025,
+     2026,
+     2027
+    ],
+    "total": 8102
+   },
+   {
+    "etiqueta": "Tributarios",
+    "anios": [
+     58385,
+     70551,
+     82292,
+     94663
+    ],
+    "total": 305893
+   },
+   {
+    "etiqueta": "Impuesto predial uni昀椀cado vigencia actual",
+    "anios": [
+     25468,
+     34732,
+     43244,
+     52012
+    ],
+    "total": 155458
+   },
+   {
+    "etiqueta": "Impuesto predial uni昀椀cado vigencias anteriores",
+    "anios": [
+     2671,
+     2751,
+     2834,
+     2919
+    ],
+    "total": 11177
+   }
+  ],
+  "ncols": 8,
+  "financiero": true
+ },
+ {
+  "pagina": 160,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Impuesto de industria y comercio vigencia actual",
+    "anios": [
+     15992,
+     17751,
+     19703,
+     21871
+    ],
+    "total": 75318
+   },
+   {
+    "etiqueta": "Impuesto de industria y comercio vigencias anteriores",
+    "anios": [
+     726586,
+     806510,
+     895226,
+     993701
+    ],
+    "total": 3422
+   },
+   {
+    "etiqueta": "Avisos y tableros vigencia actual",
+    "anios": [
+     918000,
+     1147,
+     1434,
+     1792
+    ],
+    "total": 5292
+   },
+   {
+    "etiqueta": "Avisos y tableros vigencias anteriores",
+    "anios": [
+     60000,
+     75000,
+     93750,
+     117187
+    ],
+    "total": 345937
+   },
+   {
+    "etiqueta": "Impuesto de delineación urbana",
+    "anios": [
+     6022,
+     6581,
+     7192,
+     7859
+    ],
+    "total": 27655
+   },
+   {
+    "etiqueta": "Impuesto de urbanismo",
+    "anios": [
+     657000,
+     717969,
+     784597,
+     857407
+    ],
+    "total": 3016
+   },
+   {
+    "etiqueta": "Sobretasa a la gasolina",
+    "anios": [
+     4517,
+     4652,
+     4792,
+     4936
+    ],
+    "total": 18898
+   },
+   {
+    "etiqueta": "Impuesto sobre teléfonos",
+    "anios": [
+     966928,
+     937920,
+     908782,
+     882489
+    ],
+    "total": 3696
+   },
+   {
+    "etiqueta": "Publicidad visual exterior vigencia actual",
+    "anios": [
+     344600,
+     354938,
+     365586,
+     376553
+    ],
+    "total": 1441
+   },
+   {
+    "etiqueta": "Publicidad visual exterior vigencia anterior",
+    "anios": [
+     40500,
+     41715,
+     42966,
+     44255
+    ],
+    "total": 169436
+   }
+  ],
+  "ncols": 8,
+  "financiero": true
+ },
+ {
+  "pagina": 162,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Medios institucio- nales",
+    "anios": [
+     2000,
+     35670,
+     36741,
+     37843
+    ],
+    "total": 112255
+   },
+   {
+    "etiqueta": "Expedición duplicados facturas",
+    "anios": [
+     2000,
+     2200,
+     2200,
+     2200
+    ],
+    "total": 8600
+   },
+   {
+    "etiqueta": "Carnavales, concursos y eventos culturales",
+    "anios": [
+     20000,
+     20000,
+     20000,
+     20000
+    ],
+    "total": 80000
+   },
+   {
+    "etiqueta": "Hilos",
+    "anios": [
+     142350,
+     155560,
+     169996,
+     185771
+    ],
+    "total": 653677
+   },
+   {
+    "etiqueta": "Arrenda- miento de bienes inmuebles",
+    "anios": [
+     214000,
+     220420,
+     227032,
+     233843
+    ],
+    "total": 895296
+   },
+   {
+    "etiqueta": "Curso vial y servicio de par- queadero y grúa",
+    "anios": [
+     240000,
+     241800,
+     243654,
+     245563
+    ],
+    "total": 971017
+   },
+   {
+    "etiqueta": "Transfe- rencias para funciona- miento",
+    "anios": [
+     1200,
+     1236,
+     1273,
+     1311
+    ],
+    "total": 5020
+   },
+   {
+    "etiqueta": "Partici- pación vehículos automo- tores",
+    "anios": [
+     1200,
+     1236,
+     1273,
+     1311
+    ],
+    "total": 5020
+   },
+   {
+    "etiqueta": "Total ICLD (pesos)",
+    "anios": [
+     62280,
+     74737,
+     86772,
+     99481
+    ],
+    "total": 323272
+   },
+   {
+    "etiqueta": "( - ) gastos de funcio- namiento",
+    "anios": [
+     25483,
+     29981,
+     31642,
+     33425
+    ],
+    "total": 120533
+   },
+   {
+    "etiqueta": "( - ) ser- vicio de la deuda",
+    "anios": [
+     14247,
+     13673,
+     11629,
+     14097
+    ],
+    "total": 53646
+   },
+   {
+    "etiqueta": "Ingresos corrientes de libre destina- ción para 昀椀nanciar la inversión",
+    "anios": [
+     22549,
+     31082,
+     43501,
+     51958
+    ],
+    "total": 149092
+   }
+  ],
+  "ncols": 9,
+  "financiero": true
+ },
+ {
+  "pagina": 163,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Superávit 昀椀scal inversión (existencia en caja y bancos a dic. 2023)",
+    "anios": [
+     16307196212,
+     0,
+     0,
+     0
+    ],
+    "total": 16307196212
+   },
+   {
+    "etiqueta": "ECB rentas propias",
+    "anios": [
+     1298277747,
+     0,
+     0,
+     0
+    ],
+    "total": 1298277747
+   },
+   {
+    "etiqueta": "ECB sobretasa bomberil",
+    "anios": [
+     16573033,
+     0,
+     0,
+     0
+    ],
+    "total": 16573033
+   },
+   {
+    "etiqueta": "ECB co昀椀nanciación nacional y otros",
+    "anios": [
+     10905228315,
+     0,
+     0,
+     0
+    ],
+    "total": 10905228315
+   },
+   {
+    "etiqueta": "ECB sgp proposito general",
+    "anios": [
+     44139725,
+     0,
+     0,
+     0
+    ],
+    "total": 44139725
+   },
+   {
+    "etiqueta": "ECB SGP educación por calidad",
+    "anios": [
+     419511,
+     0,
+     0,
+     0
+    ],
+    "total": 419511
+   },
+   {
+    "etiqueta": "E.C.B SGP agua potable y saneamiento básico",
+    "anios": [
+     488944794,
+     0,
+     0,
+     0
+    ],
+    "total": 488944794
+   },
+   {
+    "etiqueta": "ECB sector eléctrico Ley 99",
+    "anios": [
+     626883734,
+     0,
+     0,
+     0
+    ],
+    "total": 626883734
+   },
+   {
+    "etiqueta": "ECB SGP alimentación escolar",
+    "anios": [
+     213662,
+     0,
+     0,
+     0
+    ],
+    "total": 213662
+   },
+   {
+    "etiqueta": "ECB fondo de segu- ridad",
+    "anios": [
+     1145808228,
+     0,
+     0,
+     0
+    ],
+    "total": 1145808228
+   },
+   {
+    "etiqueta": "ECB compensación FOMEP",
+    "anios": [
+     136154098,
+     0,
+     0,
+     0
+    ],
+    "total": 136154098
+   },
+   {
+    "etiqueta": "ECB estampilla pro- cultura",
+    "anios": [
+     156005656,
+     0,
+     0,
+     0
+    ],
+    "total": 156005656
+   },
+   {
+    "etiqueta": "ECB tasa pro depor- te y recreación",
+    "anios": [
+     225441113,
+     0,
+     0,
+     0
+    ],
+    "total": 225441113
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 164,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "ECB estampilla adulto mayor",
+    "anios": [
+     917406545,
+     0,
+     0,
+     0
+    ],
+    "total": 917406545
+   },
+   {
+    "etiqueta": "ECB fondo local de salud",
+    "anios": [
+     64602412,
+     0,
+     0,
+     0
+    ],
+    "total": 64602412
+   },
+   {
+    "etiqueta": "ECB estampilla justicia familiar",
+    "anios": [
+     173668642,
+     0,
+     0,
+     0
+    ],
+    "total": 173668642
+   },
+   {
+    "etiqueta": "ECB alumbrado público",
+    "anios": [
+     107428997,
+     0,
+     0,
+     0
+    ],
+    "total": 107428997
+   },
+   {
+    "etiqueta": "Co昀椀nanciación gobierno departamental",
+    "anios": [
+     598983528,
+     0,
+     0,
+     0
+    ],
+    "total": 598983528
+   },
+   {
+    "etiqueta": "Recursos del crédito interno",
+    "anios": [
+     0,
+     22460,
+     0,
+     0
+    ],
+    "total": 22460
+   },
+   {
+    "etiqueta": "Recursos de contratos de empréstitos internos",
+    "anios": [
+     0,
+     22460,
+     0,
+     0
+    ],
+    "total": 22460
+   },
+   {
+    "etiqueta": "(Co昀椀nanciación) Transferencias de otras entidades de gobierno general (co昀椀nanciación)",
+    "anios": [
+     2598,
+     63530,
+     25920,
+     5000
+    ],
+    "total": 97049
+   }
+  ],
+  "ncols": 4,
+  "financiero": true
+ }
+]

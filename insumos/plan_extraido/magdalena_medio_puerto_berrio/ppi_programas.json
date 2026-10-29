@@ -1,0 +1,442 @@
+[
+ {
+  "pagina": 295,
+  "linea": "",
+  "sector": "SECTOR",
+  "programa": "PROGRAMAS",
+  "anios": [
+   2024,
+   2025,
+   2026,
+   2027
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 295,
+  "linea": "",
+  "sector": "SECTOR",
+  "programa": "1905-Salud Pública",
+  "anios": [
+   1319555406,
+   1389642068,
+   1495331330,
+   1261641270
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 295,
+  "linea": "",
+  "sector": "SALUD",
+  "programa": "1906-Aseguramiento y prestación integral de servicios de salud",
+  "anios": [
+   36700567738,
+   37808404771,
+   38953176913,
+   40127872221
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 295,
+  "linea": "Línea 2. Inversión",
+  "sector": "SALUD",
+  "programa": "1704-Ordenamiento social y uso productivo del territorio rural",
+  "anios": [
+   120000000,
+   122000000,
+   124000000,
+   126000000
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 295,
+  "linea": "Línea 2. Inversión",
+  "sector": "AGRICULTURA Y DESARROLLO",
+  "programa": "1707-Sanidad agropecuaria e inocuidad agroalimentaria",
+  "anios": [
+   180000000,
+   192000000,
+   199000000,
+   206000000
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 296,
+  "linea": "Línea 2. Inversión",
+  "sector": "SECTOR",
+  "programa": "PROGRAMAS",
+  "anios": [
+   2024,
+   2025,
+   2026,
+   2027
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 296,
+  "linea": "Línea 3. Un",
+  "sector": "SECTOR",
+  "programa": "3202-Conservación de la biodiversidad y sus servicios ecosistémicos",
+  "anios": [
+   849770868,
+   1367805342,
+   1387526053,
+   1440121430
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 296,
+  "linea": "Línea 3. Un",
+  "sector": "AMBIENTE Y",
+  "programa": "3203-Gestión integral del recurso hídrico",
+  "anios": [
+   112000000,
+   119000000,
+   128000000,
+   133000000
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 296,
+  "linea": "Línea 3. Un",
+  "sector": "DESARROLLO SOSTENIBLE",
+  "programa": "3206-Gestión del cambio climático para un desarrollo bajo en carbono y resiliente al clima",
+  "anios": [
+   50000000,
+   310737793,
+   54000000,
+   54000000
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 296,
+  "linea": "Línea 4.",
+  "sector": "DESARROLLO SOSTENIBLE",
+  "programa": "4599-Fortalecimiento a la gestión y dirección de la administración pública territorial",
+  "anios": [
+   416000000,
+   420000000,
+   449455550,
+   480928328
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 296,
+  "linea": "Línea 4.",
+  "sector": "JUSTICIA Y DEL DERECHO",
+  "programa": "carcelario en el marco de los derechos humanos",
+  "anios": [
+   195000000,
+   220000000,
+   350000000,
+   360750000
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 297,
+  "linea": "Línea 4.",
+  "sector": "SECTOR",
+  "programa": "PROGRAMAS",
+  "anios": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 297,
+  "linea": "Línea 4.",
+  "sector": "SECTOR",
+  "programa": "4104-Atención integral de población en situación permanente de desprotección social y/o familiar",
+  "anios": [
+   70000000,
+   328000000
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 297,
+  "linea": "Línea 1. Mas",
+  "sector": "SECTOR",
+  "programa": "1905-Salud Pública",
+  "anios": [
+   100000000,
+   669555406,
+   150000000,
+   400000000
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 297,
+  "linea": "Línea 1. Mas",
+  "sector": "1906- Aseguramiento y prestación integral de servicios de salud",
+  "programa": "$ 56.000.000",
+  "anios": [
+   14178200014,
+   22416367724,
+   50000000
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 299,
+  "linea": "Línea 1. Mas",
+  "sector": "SECTOR",
+  "programa": "PROGRAMAS",
+  "anios": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 299,
+  "linea": "Línea 1. Mas",
+  "sector": "3602-Generación y formalización del empleo",
+  "programa": "$ 80.000.000",
+  "anios": [
+   376620089,
+   168426483,
+   21000000000,
+   440000000
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 299,
+  "linea": "Línea 1. Mas",
+  "sector": "VIVI",
+  "programa": "4003-Acceso de la población a los servicios de agua potable y saneamiento básico",
+  "anios": [
+   183360190,
+   92348783,
+   315324102,
+   258737793
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 299,
+  "linea": "Línea 3. Un mejor territo",
+  "sector": "NIBLE",
+  "programa": "3202- Conservación de la biodiversidad y sus servicios ecosistémicos",
+  "anios": [
+   100000000,
+   12000000
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 302,
+  "linea": "Línea 3. Un mejor territo",
+  "sector": "SECTOR",
+  "programa": "PROGRAMAS",
+  "anios": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 302,
+  "linea": "Línea 3. Un mejor territo",
+  "sector": "4102-Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niños y adolescentes",
+  "programa": "$ 90.000.000",
+  "anios": [
+   131661959
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 302,
+  "linea": "Línea 3. Un mejor territo",
+  "sector": "4103-Inclusión social y productiva para la población en situación de vulnerabilidad",
+  "programa": "$ 95.000.000",
+  "anios": [
+   635297465
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 302,
+  "linea": "Línea 3. Un mejor territo",
+  "sector": "4103-Inclusión social y productiva para la población en situación de vulnerabilidad",
+  "programa": "4104-Atención integral de población en situación permanente de desprotección social y/o familiar",
+  "anios": [
+   80000000,
+   350000000
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 302,
+  "linea": "Línea 3. Un mejor territo",
+  "sector": "4103-Inclusión social y productiva para la población en situación de vulnerabilidad",
+  "programa": "1905-Salud Pública",
+  "anios": [
+   100000000,
+   689642068,
+   600000000
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 302,
+  "linea": "Línea 3. Un mejor territo",
+  "sector": "SALUD",
+  "programa": "1906- Aseguramiento y prestación integral de servicios de salud",
+  "anios": [
+   56000000,
+   14603546015,
+   23088858756,
+   60000000
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 302,
+  "linea": "Línea 3. Un mejor territo",
+  "sector": "2201-Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
+  "programa": "$ 25.000.000",
+  "anios": [],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 302,
+  "linea": "Línea 3. Un mejor territo",
+  "sector": "2202-Calidad y fomento de la educación superior",
+  "programa": "$ 40.000.000",
+  "anios": [
+   164262494,
+   186834404,
+   400000000
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 307,
+  "linea": "Línea 3. Un mejor territo",
+  "sector": "SECTOR",
+  "programa": "PROGRAMAS",
+  "anios": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 307,
+  "linea": "Línea 3. Un mejor territo",
+  "sector": "SECTOR",
+  "programa": "4104-Atención integral de población en situación permanente de desprotección social y/o familiar",
+  "anios": [
+   90000000,
+   360000000
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 307,
+  "linea": "Línea 3. Un mejor territo",
+  "sector": "SECTOR",
+  "programa": "1905-Salud Pública",
+  "anios": [
+   120000000,
+   710331330,
+   665000000
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 307,
+  "linea": "Línea 3. Un mejor territo",
+  "sector": "SALUD",
+  "programa": "1906- Aseguramiento y prestación integral de servicios de salud",
+  "anios": [
+   60000000,
+   15041652395,
+   23781524518,
+   70000000
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 307,
+  "linea": "Línea 3. Un mejor territo",
+  "sector": "2202-Calidad y fomento de la educación superior",
+  "programa": "$ 42.000.000",
+  "anios": [
+   172475618,
+   192439436,
+   300000000
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 312,
+  "linea": "Línea 3. Un mejor territo",
+  "sector": "SECTOR",
+  "programa": "PROGRAMAS",
+  "anios": [
+   0,
+   0,
+   0,
+   0
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 312,
+  "linea": "Línea 3. Un mejor territo",
+  "sector": "SECTOR",
+  "programa": "4104-Atención integral de población en situación permanente de desprotección social y/o familiar",
+  "anios": [
+   95000000,
+   370000000
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 312,
+  "linea": "Línea 1. Mas cer",
+  "sector": "SECTOR",
+  "programa": "1905-Salud Pública",
+  "anios": [
+   130000000,
+   731641270,
+   400000000
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 312,
+  "linea": "Línea 1. Mas cer",
+  "sector": "1906-Aseguramiento y prestación integral de servicios de salud",
+  "programa": "$ 60.000.000",
+  "anios": [
+   15492901967,
+   24494970254,
+   80000000
+  ],
+  "estado": "revisar"
+ }
+]

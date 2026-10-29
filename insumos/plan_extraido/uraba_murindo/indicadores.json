@@ -1,0 +1,18 @@
+[
+ {
+  "nombre": "Sector",
+  "descripcion": "producto",
+  "unidad": "de",
+  "linea_base": "2023",
+  "meta": "2024 - 2027",
+  "tipo_acumulado": "",
+  "responsable": "",
+  "linea": 4,
+  "sector": null,
+  "programa": "Desarrollo Estratégico y Transformador",
+  "coincidencia_ppi": null,
+  "pagina": 123,
+  "fuente_lectura": "texto",
+  "formato": "tabla"
+ }
+]

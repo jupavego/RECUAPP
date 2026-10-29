@@ -1,0 +1,611 @@
+[
+ {
+  "paginas": [
+   317
+  ],
+  "cabecera": "CONCEPTO",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   242938,
+   252656,
+   262761,
+   273272
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "EDUCACIÓN",
+    "anios": [
+     169831,
+     176624,
+     183689,
+     191037
+    ],
+    "total": 721181,
+    "ruta": {
+     "linea": "EDUCACIÓN"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Prestación de Servicios",
+    "anios": [
+     163593,
+     170137,
+     176942,
+     184020
+    ],
+    "total": 694692,
+    "ruta": {
+     "linea": "EDUCACIÓN",
+     "sector": "Prestación de Servicios"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "CALIDAD",
+    "anios": [
+     6238,
+     6488,
+     6747,
+     7017
+    ],
+    "total": 26489,
+    "ruta": {
+     "linea": "EDUCACIÓN",
+     "sector": "CALIDAD"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Matrícula Gratuidad",
+    "anios": [
+     2776,
+     2887,
+     3003,
+     3123
+    ],
+    "total": 11788,
+    "ruta": {
+     "linea": "EDUCACIÓN",
+     "sector": "CALIDAD",
+     "programa": "Matrícula Gratuidad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Matrícula Oficial",
+    "anios": [
+     3462,
+     3600,
+     3744,
+     3894
+    ],
+    "total": 14701,
+    "ruta": {
+     "linea": "EDUCACIÓN",
+     "sector": "CALIDAD",
+     "programa": "Matrícula Oficial"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "ASIGNACIONES ESPECIALES",
+    "anios": [
+     14864,
+     15459,
+     16077,
+     16720
+    ],
+    "total": 63119,
+    "ruta": {
+     "linea": "ASIGNACIONES ESPECIALES"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Aportes Nación Alimentación Escolar",
+    "anios": [
+     12626,
+     13131,
+     13656,
+     14203
+    ],
+    "total": 53616,
+    "ruta": {
+     "linea": "ASIGNACIONES ESPECIALES",
+     "sector": "Aportes Nación Alimentación Escolar"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "SGP - Alimentación Escolar",
+    "anios": [
+     2238,
+     2328,
+     2421,
+     2517
+    ],
+    "total": 9504,
+    "ruta": {
+     "linea": "ASIGNACIONES ESPECIALES",
+     "sector": "SGP - Alimentación Escolar"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "SGP SALUD",
+    "anios": [
+     46881,
+     48756,
+     50706,
+     52735
+    ],
+    "total": 199078,
+    "ruta": {
+     "linea": "SGP SALUD"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Régimen Subsidiado SGP",
+    "anios": [
+     44707,
+     46495,
+     48355,
+     50289
+    ],
+    "total": 189847,
+    "ruta": {
+     "linea": "SGP SALUD",
+     "sector": "Régimen Subsidiado SGP"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Salud Publica SGP",
+    "anios": [
+     2174,
+     2261,
+     2351,
+     2445
+    ],
+    "total": 9232,
+    "ruta": {
+     "linea": "SGP SALUD",
+     "sector": "Salud Publica SGP"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "AGUA POTABLE",
+    "anios": [
+     6739,
+     7009,
+     7289,
+     7580
+    ],
+    "total": 28617,
+    "ruta": {
+     "linea": "AGUA POTABLE"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "PROPÓSITO GENERAL - DESTINACIÓN",
+    "anios": [
+     4623,
+     4808,
+     5000,
+     5200
+    ],
+    "total": 19631,
+    "ruta": {
+     "linea": "PROPÓSITO GENERAL - DESTINACIÓN"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Libre Destinación",
+    "anios": [
+     1514,
+     1575,
+     1638,
+     1703
+    ],
+    "total": 6429,
+    "ruta": {
+     "linea": "PROPÓSITO GENERAL - DESTINACIÓN",
+     "sector": "Libre Destinación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Deporte",
+    "anios": [
+     396,
+     412,
+     428,
+     445
+    ],
+    "total": 1682,
+    "ruta": {
+     "linea": "PROPÓSITO GENERAL - DESTINACIÓN",
+     "sector": "Deporte"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Cultura",
+    "anios": [
+     297,
+     309,
+     321,
+     334
+    ],
+    "total": 1261,
+    "ruta": {
+     "linea": "PROPÓSITO GENERAL - DESTINACIÓN",
+     "sector": "Cultura"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Libre Inversión",
+    "anios": [
+     2416,
+     2513,
+     2613,
+     2718
+    ],
+    "total": 10259,
+    "ruta": {
+     "linea": "PROPÓSITO GENERAL - DESTINACIÓN",
+     "sector": "Libre Inversión"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   324
+  ],
+  "cabecera": "Sectores Estratégicos PDT",
+  "unidad": "millones",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   10613,
+   11037,
+   11478,
+   11937
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Turbo Territorio",
+    "anios": [
+     1679,
+     1746,
+     1816,
+     1888
+    ],
+    "total": 7129,
+    "ruta": {
+     "linea": "Turbo Territorio"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": ", Sostenible",
+    "anios": [
+     2406,
+     2502,
+     2602,
+     2706
+    ],
+    "total": 10216,
+    "ruta": {
+     "linea": ", Sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "nraesrucura a Sostenible",
+    "anios": [
+     6528,
+     6789,
+     7060,
+     7343
+    ],
+    "total": 27720,
+    "ruta": {
+     "linea": "nraesrucura a Sostenible"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   328
+  ],
+  "cabecera": "PROYECCIONES",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   1025122,
+   1066125,
+   1108770,
+   1153119
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "EJES ESTRAGICOS",
+    "anios": [
+     350432,
+     364449,
+     379027,
+     394188
+    ],
+    "total": 1488096,
+    "ruta": {
+     "linea": "EJES ESTRAGICOS"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Capítulo 1 Cohesión Social desde la diversidad",
+    "anios": [
+     322318,
+     335211,
+     348619,
+     362564
+    ],
+    "total": 1368711,
+    "ruta": {
+     "linea": "Capítulo 1 Cohesión Social desde la diversidad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Esperanza desde la Inclusión Social",
+    "anios": [
+     3732,
+     3881,
+     4037,
+     4198
+    ],
+    "total": 15847,
+    "ruta": {
+     "linea": "Esperanza desde la Inclusión Social"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Esperanza desde la Educación",
+    "anios": [
+     184687,
+     192074,
+     199757,
+     207747
+    ],
+    "total": 784266,
+    "ruta": {
+     "linea": "Esperanza desde la Educación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Esperanza desde la Salud y Protección Social",
+    "anios": [
+     132539,
+     137840,
+     143354,
+     149088
+    ],
+    "total": 562822,
+    "ruta": {
+     "linea": "Esperanza desde la Salud y Protección Social"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Capítulo 2 Agua limpias, Ordenamiento Territorial y Justicia Ambiental",
+    "anios": [
+     19587,
+     20370,
+     21185,
+     22032
+    ],
+    "total": 83175,
+    "ruta": {
+     "linea": "Capítulo 2 Agua limpias, Ordenamiento Territorial y Justicia Ambiental"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Turbo, Territorio Sostenible",
+    "anios": [
+     12134,
+     12619,
+     13124,
+     13649
+    ],
+    "total": 51526,
+    "ruta": {
+     "linea": "Capítulo 2 Agua limpias, Ordenamiento Territorial y Justicia Ambiental",
+     "sector": "Turbo, Territorio Sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Movilidad e Infraestructura Vial Sostenible",
+    "anios": [
+     7453,
+     7751,
+     8061,
+     8383
+    ],
+    "total": 31648,
+    "ruta": {
+     "linea": "Capítulo 2 Agua limpias, Ordenamiento Territorial y Justicia Ambiental",
+     "sector": "Movilidad e Infraestructura Vial Sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Capítulo 3 Gobernanza, Turbo Proyecto Región",
+    "anios": [
+     4627,
+     4812,
+     5004,
+     5204
+    ],
+    "total": 19648,
+    "ruta": {
+     "linea": "Capítulo 3 Gobernanza, Turbo Proyecto Región"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Turbo, confía en su Gobierno",
+    "anios": [
+     1687,
+     1754,
+     1824,
+     1897
+    ],
+    "total": 7163,
+    "ruta": {
+     "linea": "Capítulo 3 Gobernanza, Turbo Proyecto Región",
+     "sector": "Turbo, confía en su Gobierno"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Turbo, Territorio Seguro para la Construcción de Paz",
+    "anios": [
+     2940,
+     3057,
+     3179,
+     3307
+    ],
+    "total": 12484,
+    "ruta": {
+     "linea": "Capítulo 3 Gobernanza, Turbo Proyecto Región",
+     "sector": "Turbo, Territorio Seguro para la Construcción de Paz"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Capítulo 4 Economías Fuertes, Turismo y Puertos",
+    "anios": [
+     3900,
+     4056,
+     4218,
+     4386
+    ],
+    "total": 16561,
+    "ruta": {
+     "linea": "Capítulo 4 Economías Fuertes, Turismo y Puertos"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Desarrollo Económico Sostenible",
+    "anios": [
+     3300,
+     3432,
+     3569,
+     3712
+    ],
+    "total": 14013,
+    "ruta": {
+     "linea": "Desarrollo Económico Sostenible"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

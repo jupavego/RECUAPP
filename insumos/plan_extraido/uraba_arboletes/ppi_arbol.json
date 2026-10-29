@@ -1,0 +1,527 @@
+[
+ {
+  "paginas": [
+   427
+  ],
+  "cabecera": "Línea estratégica",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   93744924791,
+   157407627262,
+   187646675450,
+   150862933232
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1. Uniendo Pasiones por la transformación humana y social de Arboletes 2. Generando mejores ingresos, impulsados por el turismo y el emprendimiento",
+    "anios": [
+     32764245974,
+     58927638190,
+     66289573340,
+     59686359986
+    ],
+    "total": 217667817491,
+    "ruta": {
+     "linea": "1. Uniendo Pasiones por la transformación humana y social de Arboletes 2. Generando mejores ingresos, impulsados por el turismo y el emprendimiento"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3. Ciencia, Tecnología e innovación, el campo despensa de alimentos para el mundo",
+    "anios": [
+     4328544639,
+     8386046296,
+     6484614190,
+     2918147205
+    ],
+    "total": 22117352330,
+    "ruta": {
+     "linea": "3. Ciencia, Tecnología e innovación, el campo despensa de alimentos para el mundo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4. Arboletes Vivo: Preservando Nuestro Hogar, el Agua y la Biodiversidad para Nuestro Bienestar",
+    "anios": [
+     4304251425,
+     9132405185,
+     16563890784,
+     7733753496
+    ],
+    "total": 37734300890,
+    "ruta": {
+     "linea": "4. Arboletes Vivo: Preservando Nuestro Hogar, el Agua y la Biodiversidad para Nuestro Bienestar"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "5. Ciudadanía empoderada para el Cambio. Institucionalidad, democracia, justicia, paz, seguridad y convivencia",
+    "anios": [
+     4873506737,
+     1467349455,
+     1724271463,
+     1708677448
+    ],
+    "total": 9773805104,
+    "ruta": {
+     "linea": "5. Ciudadanía empoderada para el Cambio. Institucionalidad, democracia, justicia, paz, seguridad y convivencia"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Valor Total Plan de Desarrollopor año",
+    "anios": [
+     47474376016,
+     79494188136,
+     96584325673,
+     78815995097
+    ],
+    "total": 302368884923,
+    "ruta": {
+     "linea": "Valor Total Plan de Desarrollopor año"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   430,
+   431,
+   432,
+   433
+  ],
+  "cabecera": "Componente",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   47474376016,
+   75854956138,
+   96481525672,
+   78698439983
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Componente 1.1 Educación y TIC para el desarrollo integral",
+    "anios": [
+     3435758693,
+     4710297858,
+     4759362555,
+     4865199892
+    ],
+    "total": 17770618998,
+    "ruta": {
+     "linea": "Componente 1.1 Educación y TIC para el desarrollo integral"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Componente 1.2 Actividad física recreación y Deporte",
+    "anios": [
+     855455169,
+     3685767636,
+     3622151786,
+     3796511253
+    ],
+    "total": 11959885844,
+    "ruta": {
+     "linea": "Componente 1.2 Actividad física recreación y Deporte"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Comunitario",
+    "anios": [
+     27010287112,
+     48240756011,
+     55835328690,
+     48825388550
+    ],
+    "total": 179911760363,
+    "ruta": {
+     "linea": "Comunitario"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Componente 1.4 Familia y Grupos Poblacionales",
+    "anios": [
+     1406345000,
+     2234416686,
+     2016330309,
+     2142860290
+    ],
+    "total": 7799952285,
+    "ruta": {
+     "linea": "Componente 1.4 Familia y Grupos Poblacionales"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Componente 1.5 Economía del Cuidado",
+    "anios": [
+     56400000,
+     56400000,
+     56400000,
+     56400000
+    ],
+    "total": 225600000,
+    "ruta": {
+     "linea": "Componente 1.5 Economía del Cuidado"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Saberes",
+    "anios": [
+     827013101,
+     982461851,
+     1018487066,
+     6055812055
+    ],
+    "total": 8883774073,
+    "ruta": {
+     "linea": "Saberes"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Componente 2.2 Industrias Creativas y Culturales",
+    "anios": [
+     220414140,
+     289545159,
+     331288828,
+     399368905
+    ],
+    "total": 1240617032,
+    "ruta": {
+     "linea": "Componente 2.2 Industrias Creativas y Culturales"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Componente 2.4 Emprendimiento , Negocios Verdes y Economía circular",
+    "anios": [
+     156400000,
+     182510000,
+     269400000,
+     244200000
+    ],
+    "total": 852510000,
+    "ruta": {
+     "linea": "Componente 2.4 Emprendimiento , Negocios Verdes y Economía circular"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Componente 2.5 Arboletes con marcapropia",
+    "anios": [
+     0,
+     137000000,
+     3800000000,
+     0
+    ],
+    "total": 3937000000,
+    "ruta": {
+     "linea": "Componente 2.5 Arboletes con marcapropia"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Seguridad Alimentaria",
+    "anios": [
+     60000000,
+     130000000,
+     130000000,
+     130000000
+    ],
+    "total": 450000000,
+    "ruta": {
+     "linea": "Seguridad Alimentaria"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "agrícolas",
+    "anios": [
+     0,
+     0,
+     0,
+     70000000
+    ],
+    "total": 3640000000,
+    "ruta": {
+     "linea": "agrícolas"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Componente 3.3 Vocación marino-costera",
+    "anios": [
+     80000000,
+     90000000,
+     90000000,
+     50000000
+    ],
+    "total": 310000000,
+    "ruta": {
+     "linea": "Componente 3.3 Vocación marino-costera"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Componente 3.4 Ciencia, tecnología e innovación para el desarrollo local",
+    "anios": [
+     40000000,
+     196400000,
+     36400000,
+     36400000
+    ],
+    "total": 309200000,
+    "ruta": {
+     "linea": "Componente 3.4 Ciencia, tecnología e innovación para el desarrollo local"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Componente 3.5 Desarrollo asociativo y productivo",
+    "anios": [
+     155055714,
+     199646296,
+     268214190,
+     169242905
+    ],
+    "total": 792159105,
+    "ruta": {
+     "linea": "Componente 3.5 Desarrollo asociativo y productivo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Componente 3.6 Transporte, movilidad y logística para el desarrollo",
+    "anios": [
+     3993488925,
+     4200000000,
+     5960000000,
+     2462504300
+    ],
+    "total": 16615993225,
+    "ruta": {
+     "linea": "Componente 3.6 Transporte, movilidad y logística para el desarrollo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Componente 4.1 Ordenamiento Territorial y gobernanza del agua",
+    "anios": [
+     322297918,
+     412623148,
+     342186995,
+     344621452
+    ],
+    "total": 1421729513,
+    "ruta": {
+     "linea": "Componente 4.1 Ordenamiento Territorial y gobernanza del agua"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Componente 4.2 Agua para la vida yel cambio",
+    "anios": [
+     3110553507,
+     5771429841,
+     5977580736,
+     5469898158
+    ],
+    "total": 20329462242,
+    "ruta": {
+     "linea": "Componente 4.2 Agua para la vida yel cambio"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Componente 4.3 Vivienda y Hábitat",
+    "anios": [
+     630000000,
+     2257700000,
+     9574547760,
+     1260204273
+    ],
+    "total": 13722452033,
+    "ruta": {
+     "linea": "Componente 4.3 Vivienda y Hábitat"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Componente 4.4 Sostenibilidad Ambiental: Gestión de residuos sólidos",
+    "anios": [
+     60000000,
+     90000000,
+     90000000,
+     90000000
+    ],
+    "total": 330000000,
+    "ruta": {
+     "linea": "Componente 4.4 Sostenibilidad Ambiental: Gestión de residuos sólidos"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Componente 4.5 Cambio climático, Gestión del riesgo y prevención de desastres",
+    "anios": [
+     181400000,
+     520652196,
+     579575293,
+     521150500
+    ],
+    "total": 1802777989,
+    "ruta": {
+     "linea": "Componente 4.5 Cambio climático, Gestión del riesgo y prevención de desastres"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Componente 5.1 Gobierno y participación Comunal",
+    "anios": [
+     3511459395,
+     264492000,
+     425616760,
+     426775262
+    ],
+    "total": 4628343417,
+    "ruta": {
+     "linea": "Componente 5.1 Gobierno y participación Comunal"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Componente 5.2 Seguridad,",
+    "anios": [
+     767180547,
+     871017963,
+     688154502,
+     705805137
+    ],
+    "total": 3032158149,
+    "ruta": {
+     "linea": "Componente 5.2 Seguridad,"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Componente 5.3 Fortalecimiento Institucional",
+    "anios": [
+     594866795,
+     281839492,
+     560500201,
+     576097048
+    ],
+    "total": 2013303538,
+    "ruta": {
+     "linea": "Componente 5.3 Fortalecimiento Institucional"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Cooperación internacional",
+    "anios": [
+     0,
+     50000000,
+     50000000,
+     0
+    ],
+    "total": 100000000,
+    "ruta": {
+     "linea": "Cooperación internacional"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Totalgeneral",
+    "anios": [
+     0,
+     1,
+     1,
+     3
+    ],
+    "total": 5,
+    "ruta": {
+     "linea": "Totalgeneral"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

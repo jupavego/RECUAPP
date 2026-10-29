@@ -1,0 +1,823 @@
+[
+ {
+  "paginas": [
+   284
+  ],
+  "cabecera": "Descripción",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   75441,
+   79077,
+   82901,
+   86923
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Sentencias y Conciliaciones",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Sentencias y Conciliaciones"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Otras Transferencias",
+    "anios": [
+     207,
+     217,
+     228,
+     239
+    ],
+    "total": 891,
+    "ruta": {
+     "linea": "Otras Transferencias"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Déficit Fiscal de Vigencias Anteriores por Funcionamiento",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Déficit Fiscal de Vigencias Anteriores por Funcionamiento"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "GASTOS OPERATIVOS EN SECTORES SOCIALES (Remuneración al Trabajo, Prestaciones, y Subsidios en Sectores de Inversión)",
+    "anios": [
+     52369,
+     54987,
+     57737,
+     60623
+    ],
+    "total": 225716,
+    "ruta": {
+     "linea": "GASTOS OPERATIVOS EN SECTORES SOCIALES (Remuneración al Trabajo, Prestaciones, y Subsidios en Sectores de Inversión)"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Educación",
+    "anios": [
+     2224,
+     2335,
+     2452,
+     2574
+    ],
+    "total": 9585,
+    "ruta": {
+     "linea": "GASTOS OPERATIVOS EN SECTORES SOCIALES (Remuneración al Trabajo, Prestaciones, y Subsidios en Sectores de Inversión)",
+     "sector": "Educación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Salud",
+    "anios": [
+     38888,
+     40832,
+     42874,
+     45017
+    ],
+    "total": 167611,
+    "ruta": {
+     "linea": "GASTOS OPERATIVOS EN SECTORES SOCIALES (Remuneración al Trabajo, Prestaciones, y Subsidios en Sectores de Inversión)",
+     "sector": "Salud"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Agua Potable y Saneamiento Básico",
+    "anios": [
+     2022,
+     2123,
+     2230,
+     2341
+    ],
+    "total": 8716,
+    "ruta": {
+     "linea": "GASTOS OPERATIVOS EN SECTORES SOCIALES (Remuneración al Trabajo, Prestaciones, y Subsidios en Sectores de Inversión)",
+     "sector": "Agua Potable y Saneamiento Básico"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Vivienda",
+    "anios": [
+     53,
+     55,
+     58,
+     61
+    ],
+    "total": 227,
+    "ruta": {
+     "linea": "GASTOS OPERATIVOS EN SECTORES SOCIALES (Remuneración al Trabajo, Prestaciones, y Subsidios en Sectores de Inversión)",
+     "sector": "Vivienda"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Otros Sectores",
+    "anios": [
+     9182,
+     9641,
+     10123,
+     10630
+    ],
+    "total": 39576,
+    "ruta": {
+     "linea": "GASTOS OPERATIVOS EN SECTORES SOCIALES (Remuneración al Trabajo, Prestaciones, y Subsidios en Sectores de Inversión)",
+     "sector": "Otros Sectores"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "INTERESES Y COMISIONES DE LA DEUDA",
+    "anios": [
+     1267,
+     1331,
+     1397,
+     1467
+    ],
+    "total": 5462,
+    "ruta": {
+     "linea": "INTERESES Y COMISIONES DE LA DEUDA"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Interna",
+    "anios": [
+     1267,
+     1331,
+     1397,
+     1467
+    ],
+    "total": 5462,
+    "ruta": {
+     "linea": "INTERESES Y COMISIONES DE LA DEUDA",
+     "sector": "Interna"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "DÉFICIT O AHORRO CORRIENTE",
+    "anios": [
+     2406,
+     2526,
+     2653,
+     2785
+    ],
+    "total": 10370,
+    "ruta": {
+     "linea": "DÉFICIT O AHORRO CORRIENTE"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "INGRESOS DE CAPITAL",
+    "anios": [
+     7712,
+     8098,
+     8502,
+     8928
+    ],
+    "total": 33240,
+    "ruta": {
+     "linea": "INGRESOS DE CAPITAL"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Cofinanciación",
+    "anios": [
+     1899,
+     1993,
+     2093,
+     2198
+    ],
+    "total": 8183,
+    "ruta": {
+     "linea": "INGRESOS DE CAPITAL",
+     "sector": "Cofinanciación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Rendimientos Financieros",
+    "anios": [
+     96,
+     101,
+     106,
+     111
+    ],
+    "total": 414,
+    "ruta": {
+     "linea": "INGRESOS DE CAPITAL",
+     "sector": "Rendimientos Financieros"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Desahorros y Retiros FONPET",
+    "anios": [
+     1332,
+     1398,
+     1468,
+     1542
+    ],
+    "total": 5740,
+    "ruta": {
+     "linea": "INGRESOS DE CAPITAL",
+     "sector": "Desahorros y Retiros FONPET"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Propósito General",
+    "anios": [
+     1332,
+     1398,
+     1468,
+     1542
+    ],
+    "total": 5740,
+    "ruta": {
+     "linea": "INGRESOS DE CAPITAL",
+     "sector": "Desahorros y Retiros FONPET",
+     "programa": "Propósito General"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Otros Desahorros y Retiros (Cuotas partes, Bonos y Devoluciones)",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "INGRESOS DE CAPITAL",
+     "sector": "Otros Desahorros y Retiros (Cuotas partes, Bonos y Devoluciones)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Otros Recursos de Capital (Donaciones, Aprovechamientos y Otros)",
+    "anios": [
+     4386,
+     4605,
+     4835,
+     5077
+    ],
+    "total": 18903,
+    "ruta": {
+     "linea": "INGRESOS DE CAPITAL",
+     "sector": "Otros Recursos de Capital (Donaciones, Aprovechamientos y Otros)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "GASTOS DE CAPITAL",
+    "anios": [
+     7913,
+     8308,
+     8724,
+     9160
+    ],
+    "total": 34105,
+    "ruta": {
+     "linea": "GASTOS DE CAPITAL"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Formación Bruta de Capital (Construcción, Reparación, Mantenimiento, Preinversión, Otros)",
+    "anios": [
+     7913,
+     8308,
+     8724,
+     9160
+    ],
+    "total": 34105,
+    "ruta": {
+     "linea": "GASTOS DE CAPITAL",
+     "sector": "Formación Bruta de Capital (Construcción, Reparación, Mantenimiento, Preinversión, Otros)"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Educación",
+    "anios": [
+     54,
+     57,
+     60,
+     63
+    ],
+    "total": 234,
+    "ruta": {
+     "linea": "GASTOS DE CAPITAL",
+     "sector": "Formación Bruta de Capital (Construcción, Reparación, Mantenimiento, Preinversión, Otros)",
+     "programa": "Educación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Agua Potable",
+    "anios": [
+     1473,
+     1547,
+     1624,
+     1705
+    ],
+    "total": 6349,
+    "ruta": {
+     "linea": "GASTOS DE CAPITAL",
+     "sector": "Formación Bruta de Capital (Construcción, Reparación, Mantenimiento, Preinversión, Otros)",
+     "programa": "Agua Potable"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Vivienda",
+    "anios": [
+     676,
+     710,
+     745,
+     782
+    ],
+    "total": 2913,
+    "ruta": {
+     "linea": "GASTOS DE CAPITAL",
+     "sector": "Formación Bruta de Capital (Construcción, Reparación, Mantenimiento, Preinversión, Otros)",
+     "programa": "Vivienda"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Vías",
+    "anios": [
+     4208,
+     4419,
+     4640,
+     4872
+    ],
+    "total": 18139,
+    "ruta": {
+     "linea": "GASTOS DE CAPITAL",
+     "sector": "Formación Bruta de Capital (Construcción, Reparación, Mantenimiento, Preinversión, Otros)",
+     "programa": "Vías"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Otros Sectores",
+    "anios": [
+     1502,
+     1577,
+     1656,
+     1738
+    ],
+    "total": 6473,
+    "ruta": {
+     "linea": "GASTOS DE CAPITAL",
+     "sector": "Formación Bruta de Capital (Construcción, Reparación, Mantenimiento, Preinversión, Otros)",
+     "programa": "Otros Sectores"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Déficit Fiscal de Vigencias Anteriores por Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Déficit Fiscal de Vigencias Anteriores por Inversión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "DÉFICIT O SUPERÁVIT TOTAL",
+    "anios": [
+     2205,
+     2316,
+     2431,
+     2553
+    ],
+    "total": 9505,
+    "ruta": {
+     "linea": "DÉFICIT O SUPERÁVIT TOTAL"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "FINANCIACIÓN",
+    "anios": [
+     1362,
+     1294,
+     1229,
+     1168
+    ],
+    "total": 5053,
+    "ruta": {
+     "linea": "FINANCIACIÓN"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "RECURSOS DEL CRÉDITO",
+    "anios": [
+     1362,
+     1294,
+     1229,
+     1168
+    ],
+    "total": 5053,
+    "ruta": {
+     "linea": "FINANCIACIÓN",
+     "sector": "RECURSOS DEL CRÉDITO"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Interno",
+    "anios": [
+     1362,
+     1294,
+     1229,
+     1168
+    ],
+    "total": 5053,
+    "ruta": {
+     "linea": "FINANCIACIÓN",
+     "sector": "RECURSOS DEL CRÉDITO",
+     "programa": "Interno"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Desembolsos",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "FINANCIACIÓN",
+     "sector": "RECURSOS DEL CRÉDITO",
+     "programa": "Interno",
+     "subprograma": "Desembolsos"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Amortizaciones",
+    "anios": [
+     1362,
+     1294,
+     1229,
+     1168
+    ],
+    "total": 5053,
+    "ruta": {
+     "linea": "FINANCIACIÓN",
+     "sector": "RECURSOS DEL CRÉDITO",
+     "programa": "Interno",
+     "subprograma": "Amortizaciones"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Recursos del Balance (Superávit Fiscal, Cancelación de Reservas)",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Recursos del Balance (Superávit Fiscal, Cancelación de Reservas)"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   298
+  ],
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   5645765356,
+   109198360855,
+   113020303483,
+   116976014106
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Educación",
+    "anios": [
+     4413642251,
+     4568119730,
+     4728003920,
+     4893484058
+    ],
+    "total": 18505527002,
+    "ruta": {
+     "linea": "Educación"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Calidad",
+    "anios": [
+     4413642251,
+     4568119730,
+     4728003920,
+     4893484058
+    ],
+    "total": 18505527002,
+    "ruta": {
+     "linea": "Educación",
+     "sector": "Calidad"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Matrícula Gratuidad",
+    "anios": [
+     1972406463,
+     2041440689,
+     2112891113,
+     2186842302
+    ],
+    "total": 8313580568,
+    "ruta": {
+     "linea": "Educación",
+     "sector": "Calidad",
+     "programa": "Matrícula Gratuidad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Matrícula Oficial",
+    "anios": [
+     2441235788,
+     2526679041,
+     2615112807,
+     2706641755
+    ],
+    "total": 10191946434,
+    "ruta": {
+     "linea": "Educación",
+     "sector": "Calidad",
+     "programa": "Matrícula Oficial"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Asignaciones especiales",
+    "anios": [
+     1132163248,
+     1171788962,
+     1212801575,
+     1255249630
+    ],
+    "total": 4772003415,
+    "ruta": {
+     "linea": "Asignaciones especiales"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "SGP - Alimentación Escolar",
+    "anios": [
+     1132163248,
+     1171788962,
+     1212801575,
+     1255249630
+    ],
+    "total": 4772003415,
+    "ruta": {
+     "linea": "Asignaciones especiales",
+     "sector": "SGP - Alimentación Escolar"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Salud",
+    "anios": [
+     50919655,
+     52701843093,
+     54546407601,
+     56455531867
+    ],
+    "total": 207258038117,
+    "ruta": {
+     "linea": "Salud"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total Regimen Subsidiado",
+    "anios": [
+     49040202,
+     50756609070,
+     52533090387,
+     54371748551
+    ],
+    "total": 199782862789,
+    "ruta": {
+     "linea": "Total Regimen Subsidiado"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Regimen Subsidiado SGP",
+    "anios": [
+     16892271312,
+     17483500808,
+     18095423336,
+     18728763153
+    ],
+    "total": 69272204594,
+    "ruta": {
+     "linea": "Total Regimen Subsidiado",
+     "sector": "Regimen Subsidiado SGP"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Regimen subsidiado ADRES",
+    "anios": [
+     391966411,
+     405685235,
+     419884219,
+     434580166
+    ],
+    "total": 1652116031,
+    "ruta": {
+     "linea": "Total Regimen Subsidiado",
+     "sector": "Regimen subsidiado ADRES"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Derechos por la explotación juegos de suerte y azar",
+    "anios": [
+     27154835584,
+     28105254829,
+     29088938748,
+     30107051604
+    ],
+    "total": 109465047561,
+    "ruta": {
+     "linea": "Total Regimen Subsidiado",
+     "sector": "Derechos por la explotación juegos de suerte y azar"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Recursos departamentales para Aseguramiento del Régimen Subsidiado",
+    "anios": [
+     4601128693,
+     4762168198,
+     4928844085,
+     5101353628
+    ],
+    "total": 19393494603,
+    "ruta": {
+     "linea": "Total Regimen Subsidiado",
+     "sector": "Recursos departamentales para Aseguramiento del Régimen Subsidiado"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

@@ -1,0 +1,510 @@
+[
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 27,
+  "valor": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 1
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 27,
+  "valor": "Calidad y fomento de la educación superior",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 2
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 50,
+  "valor": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niños y adolescentes",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 3
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 55,
+  "valor": "I : 4301 Fomento a la recreación, la actividad física y el deporte.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 4
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 57,
+  "valor": "Promoción y acceso efectivo a procesos culturales y artísticos",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 5
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 57,
+  "valor": "Promoción y acceso efectivo a procesos",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 6
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 58,
+  "valor": "Memorias, saberes y territorios bio culturales",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 7
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 58,
+  "valor": "Formación artística y cultural",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 8
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 58,
+  "valor": "Cultura de paz",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 9
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 74,
+  "valor": "Salud Pública",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 10
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 77,
+  "valor": "Inspección, vigilancia y control",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 11
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 77,
+  "valor": "Aseguramiento y prestación integral de servicios de salud",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 12
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 77,
+  "valor": "Gobernabilidad y gobernanza del sistema de salud.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 13
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 78,
+  "valor": "MIGRANTES.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 14
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 81,
+  "valor": "PROGRAMA DE ATENCIÓN INTEGRAL A PERSONAS CON DISCAPACIDAD",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 15
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 83,
+  "valor": "I: 4104 Atención integral de población en situación permanente de desprotección social y/o familiar",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 16
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 84,
+  "valor": "Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 17
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 86,
+  "valor": "POBLACIÓN DIVERSA.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 18
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 89,
+  "valor": "4502 Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 19
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 90,
+  "valor": "REINTEGRACIÓN SOCIAL",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 20
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 92,
+  "valor": "JUSTICIA, SEGURIDAD Y CONVIVENCIA",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 21
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 100,
+  "valor": "Promoción al acceso a la justicia",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 22
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 100,
+  "valor": "Promoción de los métodos de resolución de conflictos",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 23
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 101,
+  "valor": "Fortalecimiento de la convivencia y la seguridad ciudadana",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 24
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 103,
+  "valor": "Justicia Transicional",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 25
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 104,
+  "valor": "Atención, asistencia y reparación integral a las víctimas",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 26
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 104,
+  "valor": "Atención, Asistencia y reparación Integral a las victimas",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 27
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 109,
+  "valor": "I: 4502 Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos, 1905 Salud pública.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 28
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 113,
+  "valor": "COMUNIDADES RELIGIOSAS",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 29
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 121,
+  "valor": "I: 3502 Productividad y competitividad de las empresas colombianas, 4599 Fortalecimiento a la gestión y dirección de la administración pública territorial.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 30
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 122,
+  "valor": "TURISMO",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 31
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 124,
+  "valor": "I: 3502 Productividad y competitividad de las empresas colombianas.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 32
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 127,
+  "valor": "AGRICULTURA Y DESARROLLO RURAL",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 33
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 139,
+  "valor": "Conservación de la biodiversidad y sus servicios ecosistémicos",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 34
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 141,
+  "valor": "3205 Ordenamiento ambiental territorial.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 35
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 152,
+  "valor": "2104 Consolidación productiva del sector minero.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 36
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 154,
+  "valor": "2102 Consolidación productiva del sector de energía eléctrica. Indicador de Resultado: 80030003 Medición de desempeño municipal - Acceso a servicios públicos.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 37
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 158,
+  "valor": "I: 4502 Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos, 4503 Gestión del riesgo de desastres y emergencias.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 38
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 160,
+  "valor": "I: 4503 Gestión del riesgo de desastres y emergencias.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 39
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 165,
+  "valor": "I: 2402 Infraestructura red vial regional.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 40
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 165,
+  "valor": "Vías",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 41
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 167,
+  "valor": "2409 Seguridad de transporte.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 42
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 167,
+  "valor": "Seguridad de transporte",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 43
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 172,
+  "valor": "I: 4001 Acceso a soluciones de vivienda, 4002 Ordenamiento territorial y desarrollo urbano, 2102 Consolidación productiva del sector de energía eléctrica.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 44
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 174,
+  "valor": "I: 4002 Ordenamiento territorial y desarrollo urbano.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 45
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 178,
+  "valor": "FORTALECIMIENTO JUNTAS DE ACCIÓN COMUNAL -J.A.C.-",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 46
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 180,
+  "valor": "COMUNIDADES AFRO E INDÍGENAS",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 47
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 189,
+  "valor": "S DE DESARROLLO CON ENFOQUE TERRITORIAL Y LA PAZ TOTAL E INTEGRAL",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 48
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 223,
+  "valor": "I: 4502 Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos, 4599 Fortalecimiento a la gestión y dirección de la administración.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 49
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 224,
+  "valor": "SERVICIO AL CIUDADANO",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 50
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 226,
+  "valor": "PARTICIPACIÓN CIUDADANA EN LA GESTIÓN PÚBLICA",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 51
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 228,
+  "valor": "I: 4501 Fortalecimiento de la convivencia y la seguridad ciudadana, 4502 Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 52
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 230,
+  "valor": "I: 4599 Fortalecimiento a la gestión y dirección de la administración pública territorial.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 53
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Educación",
+  "sector": null,
+  "correccion": null,
+  "id": 54
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Prestación de Servicios",
+  "sector": "Prestación de Servicios",
+  "correccion": null,
+  "id": 55
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Calidad",
+  "sector": "Calidad",
+  "correccion": null,
+  "id": 56
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Matrícula Gratuidad",
+  "sector": "Calidad",
+  "correccion": null,
+  "id": 57
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Matrícula Oficial",
+  "sector": "Calidad",
+  "correccion": null,
+  "id": 58
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Asignaciones especiales",
+  "sector": null,
+  "correccion": null,
+  "id": 59
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Crecimiento de la Economía",
+  "sector": "Crecimiento de la Economía",
+  "correccion": null,
+  "id": 60
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "SGP - Alimentación Escolar",
+  "sector": "SGP - Alimentación Escolar",
+  "correccion": null,
+  "id": 61
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Salud",
+  "sector": null,
+  "correccion": null,
+  "id": 62
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Total, Régimen Subsidiado",
+  "sector": null,
+  "correccion": null,
+  "id": 63
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Régimen Subsidiado SGP",
+  "sector": null,
+  "correccion": null,
+  "id": 64
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Régimen subsidiado ADRES",
+  "sector": null,
+  "correccion": null,
+  "id": 65
+ }
+]

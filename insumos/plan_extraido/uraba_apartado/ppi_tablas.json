@@ -1,0 +1,1497 @@
+[
+ {
+  "pagina": 233,
+  "cabecera": "Iniciativa",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Construcción de acueductos rurales para el acceso al agua potable en las comunidades rurales.",
+    "anios": [
+     36864076,
+     6839767,
+     12327470,
+     12292557
+    ],
+    "total": 74574569
+   },
+   {
+    "etiqueta": "Construcción de pavimento rural en los corregimientos del municipio de Apartadó para la integración vial y la productividad.",
+    "anios": [
+     0,
+     0,
+     430593785,
+     1000000000
+    ],
+    "total": 1430593785
+   },
+   {
+    "etiqueta": "Pavimentación de vías urbanas para el mejoramiento de la movilidad urbana.",
+    "anios": [
+     1350324133,
+     1859112382,
+     430593785,
+     0
+    ],
+    "total": 3640030301
+   },
+   {
+    "etiqueta": "Construcción de parques para el sano disfrute e integración familiar.",
+    "anios": [
+     0,
+     0,
+     430593785,
+     814602602
+    ],
+    "total": 1245196387
+   }
+  ],
+  "ncols": 21,
+  "financiero": false
+ },
+ {
+  "pagina": 234,
+  "cabecera": "Iniciativa",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Restauración de ecosistemas estratégicos del municipio para protección de las fuentes abastecedoras de acueductos",
+    "anios": [
+     0,
+     186017289,
+     0,
+     109169631
+    ],
+    "total": 295186920
+   },
+   {
+    "etiqueta": "Construcción de escenarios deportivos para la integración familiar y protección de la vida.",
+    "anios": [
+     0,
+     0,
+     430593785,
+     0
+    ],
+    "total": 430593785
+   },
+   {
+    "etiqueta": "Reforestación de zonas de interés ambiental en la cuenca hidrográfica de los ríos León y Apartadó.",
+    "anios": [
+     174598791,
+     100000000,
+     264980790,
+     170000000
+    ],
+    "total": 709579581
+   }
+  ],
+  "ncols": 15,
+  "financiero": true
+ },
+ {
+  "pagina": 245,
+  "cabecera": "Fuente Ingresos",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Recursos Propios",
+    "anios": [
+     72257635267,
+     74371935705,
+     76520580097,
+     78733683824
+    ],
+    "total": 301883834893
+   },
+   {
+    "etiqueta": "Sistema General de Participaciones",
+    "anios": [
+     125529886752,
+     129266566910,
+     133114617061,
+     137077360045
+    ],
+    "total": 524988430768
+   },
+   {
+    "etiqueta": "Transferencias de Salud",
+    "anios": [
+     58671234000,
+     60431371020,
+     62244312151,
+     64111641515
+    ],
+    "total": 245458558686
+   },
+   {
+    "etiqueta": "Régimen Subsidiado ADRES",
+    "anios": [
+     47741318000,
+     49173557540,
+     50648764266,
+     52168227194
+    ],
+    "total": 199731867000
+   },
+   {
+    "etiqueta": "RégimenSubsidiado Coljuegos",
+    "anios": [
+     1171463000,
+     1206606890,
+     1242805097,
+     1280089250
+    ],
+    "total": 4900964237
+   },
+   {
+    "etiqueta": "RégimenSubsidiadoDepartamento",
+    "anios": [
+     9758453000,
+     10051206590,
+     10352742788,
+     10663325071
+    ],
+    "total": 40825727449
+   },
+   {
+    "etiqueta": "Regalías",
+    "anios": [
+     1561787001,
+     2158220136,
+     1999683402,
+     2106064791
+    ],
+    "total": 7825755332
+   },
+   {
+    "etiqueta": "Asignaciones Directas",
+    "anios": [
+     33689179,
+     6250697,
+     5886367,
+     5869696
+    ],
+    "total": 51695940
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 246,
+  "cabecera": "Fuente Ingresos",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Asignación Inversión Local (Ambiente y Dllo sostenible)",
+    "anios": [
+     174598791,
+     286017289,
+     264980790,
+     279169631
+    ],
+    "total": 1004766502
+   },
+   {
+    "etiqueta": "Asignación Inversión Local (Resto Inversión)",
+    "anios": [
+     1316634954,
+     1859112382,
+     1722375140,
+     1814602602
+    ],
+    "total": 6712725079
+   },
+   {
+    "etiqueta": "Comunidades Étnicas",
+    "anios": [
+     36864076,
+     6839767,
+     6441103,
+     6422861
+    ],
+    "total": 56567809
+   },
+   {
+    "etiqueta": "Recursos de la Nación",
+    "anios": [
+     9367860000,
+     9635065260,
+     9910286678,
+     10193764738
+    ],
+    "total": 39106976676
+   },
+   {
+    "etiqueta": "Ministerio de Educación Nacional - Alimentación Escolar",
+    "anios": [
+     8906842000,
+     9160897358,
+     9422574378,
+     9692101708
+    ],
+    "total": 37182415445
+   },
+   {
+    "etiqueta": "COLJUEGOS - Funcionamiento",
+    "anios": [
+     461018000,
+     474167901,
+     487712299,
+     501663029
+    ],
+    "total": 1924561230
+   },
+   {
+    "etiqueta": "Total Ingresos 2024 - 2027",
+    "anios": [
+     267388403020,
+     275863159031,
+     283789479389,
+     292222514913
+    ],
+    "total": 1119263556355
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 246,
+  "cabecera": "Ítem",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Ingresospropios",
+    "anios": [
+     72257635267,
+     74371935705,
+     76520580097,
+     78733683824
+    ],
+    "total": 301883834893
+   },
+   {
+    "etiqueta": "Ingresos Tributarios",
+    "anios": [
+     47837673000,
+     49272803190,
+     50750987285,
+     52273516905
+    ],
+    "total": 200134980380
+   },
+   {
+    "etiqueta": "Impuestos Directos",
+    "anios": [
+     11381786000,
+     11723239580,
+     12074936767,
+     12437184870
+    ],
+    "total": 47617147217
+   },
+   {
+    "etiqueta": "Impuestos Indirectos",
+    "anios": [
+     36455887000,
+     37549563610,
+     38676050518,
+     39836332035
+    ],
+    "total": 152517833163
+   },
+   {
+    "etiqueta": "Ingresos No Tributarios",
+    "anios": [
+     24419962267,
+     25099132515,
+     25769592812,
+     26460166919
+    ],
+    "total": 101748854513
+   },
+   {
+    "etiqueta": "Contribuciones",
+    "anios": [
+     2837519000,
+     2869215950,
+     2872778751,
+     2876448436
+    ],
+    "total": 11455962137
+   },
+   {
+    "etiqueta": "TasasyDerechos Administrativos",
+    "anios": [
+     2747356000,
+     2829776680,
+     2914669980,
+     3002110080
+    ],
+    "total": 11493912740
+   },
+   {
+    "etiqueta": "Multas, Sanciones e Intereses de Mora",
+    "anios": [
+     6027138000,
+     6207952140,
+     6394190704,
+     6586016425
+    ],
+    "total": 25215297269
+   },
+   {
+    "etiqueta": "Venta de BienesyServicios",
+    "anios": [
+     9751000,
+     10043530,
+     10344836,
+     10655181
+    ],
+    "total": 40794547
+   },
+   {
+    "etiqueta": "Otrasparticipaciones",
+    "anios": [
+     1524728000,
+     1570469840,
+     1617583935,
+     1666111453
+    ],
+    "total": 6378893228
+   },
+   {
+    "etiqueta": "Transferencias corrientes a otras entidades",
+    "anios": [
+     11273470267,
+     11611674375,
+     11960024606,
+     12318825344
+    ],
+    "total": 47163994592
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 247,
+  "cabecera": "Sistema General de Participaciones",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Total Sistema General de Participaciones",
+    "anios": [
+     125529886752,
+     129266566910,
+     133114617061,
+     137077360045
+    ],
+    "total": 524988430768
+   },
+   {
+    "etiqueta": "SGP Educación Calidad Matricula Oficial",
+    "anios": [
+     1597684000,
+     1645614520,
+     1694982956,
+     1745832444
+    ],
+    "total": 6684113920
+   },
+   {
+    "etiqueta": "SGP Educación Prestación de Servicios",
+    "anios": [
+     81499256424,
+     83944234117,
+     86462561140,
+     89056437975
+    ],
+    "total": 340962489656
+   },
+   {
+    "etiqueta": "SGPSaludRégimenSubsidiado",
+    "anios": [
+     28002255328,
+     28842322988,
+     29707592677,
+     30598820458
+    ],
+    "total": 117150991451
+   },
+   {
+    "etiqueta": "SGPSaludPública",
+    "anios": [
+     2120318000,
+     2183927540,
+     2249445366,
+     2316928727
+    ],
+    "total": 8870619633
+   },
+   {
+    "etiqueta": "SGP AguaPotable y SaneamientoBásico",
+    "anios": [
+     5632055000,
+     5801016650,
+     5975047150,
+     6154298564
+    ],
+    "total": 23562417364
+   },
+   {
+    "etiqueta": "SGP Deporte yRecreación",
+    "anios": [
+     389553000,
+     399291825,
+     409274121,
+     419505974
+    ],
+    "total": 1617624920
+   },
+   {
+    "etiqueta": "SGP Cultura",
+    "anios": [
+     519403000,
+     532388075,
+     545697777,
+     559340221
+    ],
+    "total": 2156829073
+   },
+   {
+    "etiqueta": "SGP PropósitoLibreInversión",
+    "anios": [
+     4934333000,
+     5057691325,
+     5184133608,
+     5313736948
+    ],
+    "total": 20489894881
+   },
+   {
+    "etiqueta": "SGP Alimentación Escolar",
+    "anios": [
+     835029000,
+     860079870,
+     885882266,
+     912458734
+    ],
+    "total": 3493449870
+   },
+   {
+    "etiqueta": "Total Sistema General de Participaciones",
+    "anios": [
+     125529886752,
+     129266566910,
+     133114617061,
+     137077360045
+    ],
+    "total": 524988430768
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 247,
+  "cabecera": "Asignación",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Asignaciones Directas",
+    "anios": [
+     25639448,
+     16363081,
+     15409338,
+     15365697
+    ],
+    "total": 72777565
+   },
+   {
+    "etiqueta": "AsignacionesDirectas-acumulado",
+    "anios": [
+     80898313,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Bloqueo",
+    "anios": [
+     10345048,
+     3272616,
+     3081867,
+     3073139
+    ],
+    "total": 19772671
+   },
+   {
+    "etiqueta": "Saldo conbloqueo",
+    "anios": [
+     70553256,
+     13090464,
+     12327470,
+     12292557
+    ],
+    "total": 53004893
+   },
+   {
+    "etiqueta": "Disponible Capítulo SGR",
+    "anios": [
+     67378359,
+     12501394,
+     11772734,
+     11739392
+    ],
+    "total": 103391880
+   },
+   {
+    "etiqueta": "Asignación Inversión Local (Ambiente y Dllo sostenible)",
+    "anios": [
+     411000836,
+     357521611,
+     331225988,
+     348962038
+    ],
+    "total": 1448710475
+   },
+   {
+    "etiqueta": "Bloqueo",
+    "anios": [
+     82200167,
+     71504322,
+     66245197,
+     69792407
+    ],
+    "total": 289742095
+   },
+   {
+    "etiqueta": "Saldo con bloqueo",
+    "anios": [
+     328800668,
+     286017289,
+     264980790,
+     279169631
+    ],
+    "total": 0
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 248,
+  "cabecera": "Asignación",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Saldo Sin comprometer",
+    "anios": [
+     174598791,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Disponible Capítulo SGR",
+    "anios": [
+     174598791,
+     286017289,
+     264980790,
+     279169631
+    ],
+    "total": 1004766502
+   },
+   {
+    "etiqueta": "Asignación Inversión Local (Resto Inversión)",
+    "anios": [
+     2671505432,
+     2323890477,
+     2152968926,
+     2268253253
+    ],
+    "total": 9416618089
+   },
+   {
+    "etiqueta": "Bloqueo",
+    "anios": [
+     534301086,
+     464778095,
+     430593785,
+     453650650
+    ],
+    "total": 1883323617
+   },
+   {
+    "etiqueta": "Disponible Capítulo SGR",
+    "anios": [
+     1316634954,
+     1859112382,
+     1722375140,
+     1814602602
+    ],
+    "total": 6712725079
+   },
+   {
+    "etiqueta": "Comunidades Étnicas",
+    "anios": [
+     3174896,
+     589070,
+     554736,
+     553165
+    ],
+    "total": 4871868
+   },
+   {
+    "etiqueta": "Bloqueo",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Recursos Capítulo SGR",
+    "anios": [
+     3174896,
+     589070,
+     554736,
+     553165
+    ],
+    "total": 4871868
+   },
+   {
+    "etiqueta": "Total disponible Inversión Regalías",
+    "anios": [
+     1561787001,
+     2158220136,
+     1999683402,
+     2106064791
+    ],
+    "total": 7825755332
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 248,
+  "cabecera": "Fuente depago",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Recursos Propios Libre Destinación ICLD",
+    "anios": [
+     12554089300,
+     13438498080,
+     11801413022,
+     9801413022
+    ],
+    "total": 47595413424
+   },
+   {
+    "etiqueta": "Recursos Propios Destinación Especial ICDE",
+    "anios": [
+     941264000,
+     969501920,
+     969501920,
+     969501920
+    ],
+    "total": 3849769760
+   },
+   {
+    "etiqueta": "Sistema General de Participaciones",
+    "anios": [
+     2500000000,
+     2000000000,
+     2000000000,
+     2000000000
+    ],
+    "total": 8500000000
+   },
+   {
+    "etiqueta": "Transferencias de Salud",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Regalías",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Recursos de la Nación",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Total Pago Deuda Pública",
+    "anios": [
+     15995353300,
+     16408000000,
+     14770914942,
+     12770914942
+    ],
+    "total": 59945183184
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 249,
+  "cabecera": "Fuente depago",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Recursos Propios Libre Destinación ICLD",
+    "anios": [
+     29820956537,
+     32280499051,
+     35577631275,
+     39296995458
+    ],
+    "total": 136976082321
+   },
+   {
+    "etiqueta": "Recursos Propios Destinación Especial ICDE",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Sistema General de Participaciones",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Transferencias de Salud",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Regalías",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Recursos de la Nación",
+    "anios": [
+     461018000,
+     461018000,
+     461018000,
+     461018000
+    ],
+    "total": 1844072000
+   },
+   {
+    "etiqueta": "Total Pago Funcionamiento",
+    "anios": [
+     30281974537,
+     32741517051,
+     36038649275,
+     39758013458
+    ],
+    "total": 138820154321
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 249,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Ingresos Tributarios",
+    "anios": [
+     215456790500,
+     136976082321,
+     47595413424,
+     0
+    ],
+    "total": 30885294753
+   },
+   {
+    "etiqueta": "Ingresos No Tributarios",
+    "anios": [
+     86427044393,
+     0,
+     3849769760,
+     10111960405
+    ],
+    "total": 72465314228
+   },
+   {
+    "etiqueta": "Sistema General de Participaciones",
+    "anios": [
+     524988430768,
+     0,
+     8500000000,
+     0
+    ],
+    "total": 516488430768
+   },
+   {
+    "etiqueta": "Transferencias de Salud",
+    "anios": [
+     245458558686,
+     0,
+     0,
+     0
+    ],
+    "total": 245458558686
+   },
+   {
+    "etiqueta": "Regalías",
+    "anios": [
+     7825755332,
+     0,
+     0,
+     0
+    ],
+    "total": 7825755332
+   },
+   {
+    "etiqueta": "Recursos de la Nación",
+    "anios": [
+     39106976676,
+     1844072000,
+     0,
+     0
+    ],
+    "total": 37262904676
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     1119263556355,
+     138820154321,
+     59945183184,
+     10111960405
+    ],
+    "total": 910386258444
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 249,
+  "cabecera": "Ítem",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Recursos Propios Libre Destinación ICLD",
+    "anios": [
+     9124954163,
+     7326002868,
+     7257305703,
+     7177032019
+    ],
+    "total": 30885294753
+   },
+   {
+    "etiqueta": "Vivienda",
+    "anios": [
+     204089300,
+     1172323958,
+     1207493677,
+     1243718487
+    ],
+    "total": 3827625422
+   },
+   {
+    "etiqueta": "Fondo Forestal",
+    "anios": [
+     515000000,
+     530450000,
+     546363500,
+     562754405
+    ],
+    "total": 2154567905
+   },
+   {
+    "etiqueta": "Compra de Predios",
+    "anios": [
+     515000000,
+     530450000,
+     546363500,
+     562754405
+    ],
+    "total": 2154567905
+   },
+   {
+    "etiqueta": "Presupuesto Participativo",
+    "anios": [
+     1762234423,
+     2014142330,
+     1848450930,
+     1646132595
+    ],
+    "total": 7270960278
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 250,
+  "cabecera": "Ítem",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Licencias de Construcción – Gestión del Riesgo",
+    "anios": [
+     112086800,
+     115449404,
+     118912886,
+     122480273
+    ],
+    "total": 468929363
+   },
+   {
+    "etiqueta": "Disponible Inversión Propios Libre Destinación",
+    "anios": [
+     6016543640,
+     2963187176,
+     2989721210,
+     3039191854
+    ],
+    "total": 15008643880
+   },
+   {
+    "etiqueta": "Recursos Propios Destinación Especial ICDE",
+    "anios": [
+     17402269000,
+     17868708450,
+     18349441082,
+     18844895696
+    ],
+    "total": 72465314228
+   },
+   {
+    "etiqueta": "Contribución de Valorización",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Contribución sobre Contratos de Obra Pública",
+    "anios": [
+     1780954000,
+     1780954000,
+     1780954000,
+     1780954000
+    ],
+    "total": 7123816000
+   },
+   {
+    "etiqueta": "Contribución de Plusvalía",
+    "anios": [
+     115301000,
+     118760030,
+     122322831,
+     125992516
+    ],
+    "total": 482376377
+   },
+   {
+    "etiqueta": "Estampilla para el bienestar del adulto mayor",
+    "anios": [
+     800000000,
+     824000000,
+     848720000,
+     874181600
+    ],
+    "total": 3346901600
+   },
+   {
+    "etiqueta": "Centro Día",
+    "anios": [
+     560000000,
+     576800000,
+     594104000,
+     611927120
+    ],
+    "total": 2342831120
+   },
+   {
+    "etiqueta": "Proyectos Adulto Mayor",
+    "anios": [
+     240000000,
+     247200000,
+     254616000,
+     262254480
+    ],
+    "total": 1004070480
+   },
+   {
+    "etiqueta": "Estampilla PRO - Cultura",
+    "anios": [
+     1548046000,
+     1594487380,
+     1642322000,
+     1691591661
+    ],
+    "total": 6476447041
+   },
+   {
+    "etiqueta": "10% Seguridad Social Gestor",
+    "anios": [
+     154804600,
+     159448738,
+     164232200,
+     169159166
+    ],
+    "total": 647644704
+   },
+   {
+    "etiqueta": "10% Bibliotecas",
+    "anios": [
+     154804600,
+     159448738,
+     164232200,
+     169159166
+    ],
+    "total": 647644704
+   },
+   {
+    "etiqueta": "Proyectos Culturales",
+    "anios": [
+     1238436800,
+     1275589904,
+     1313857600,
+     1353273329
+    ],
+    "total": 5181157633
+   },
+   {
+    "etiqueta": "Licencias de Funcionamiento Instituciones Educativas",
+    "anios": [
+     84916000,
+     87463480,
+     90087384,
+     92790006
+    ],
+    "total": 355256870
+   },
+   {
+    "etiqueta": "Tasa Pro-DeporteyRecreación",
+    "anios": [
+     1637052000,
+     1686163560,
+     1736748467,
+     1788850921
+    ],
+    "total": 6848814948
+   },
+   {
+    "etiqueta": "Transferencias Autoridad Ambiental",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Sobretasa Bomberil",
+    "anios": [
+     1166609000,
+     1201607270,
+     1237655488,
+     1274785153
+    ],
+    "total": 4880656911
+   },
+   {
+    "etiqueta": "Multas de TránsitoyTransporte",
+    "anios": [
+     1150023000,
+     1182323690,
+     1215893401,
+     1250770203
+    ],
+    "total": 4799010294
+   },
+   {
+    "etiqueta": "Transferencias Otros",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Proyectos Movilidad",
+    "anios": [
+     1150023000,
+     1182323690,
+     1215893401,
+     1250770203
+    ],
+    "total": 4799010294
+   },
+   {
+    "etiqueta": "Alumbrado Público",
+    "anios": [
+     9119368000,
+     9392949040,
+     9674737511,
+     9964979636
+    ],
+    "total": 38152034187
+   },
+   {
+    "etiqueta": "Sistema General de Participaciones",
+    "anios": [
+     123029886752,
+     127266566910,
+     131114617061,
+     135077360045
+    ],
+    "total": 516488430768
+   },
+   {
+    "etiqueta": "SGP Educación Calidad Matricula Oficial",
+    "anios": [
+     1597684000,
+     1645614520,
+     1694982956,
+     1745832444
+    ],
+    "total": 6684113920
+   },
+   {
+    "etiqueta": "SGP Educación Prestación de Servicios",
+    "anios": [
+     81499256424,
+     83944234117,
+     86462561140,
+     89056437975
+    ],
+    "total": 340962489656
+   },
+   {
+    "etiqueta": "SGP Salud Régimen Subsidiado",
+    "anios": [
+     28002255328,
+     28842322988,
+     29707592677,
+     30598820458
+    ],
+    "total": 117150991451
+   },
+   {
+    "etiqueta": "SGP Salud Pública",
+    "anios": [
+     2120318000,
+     2183927540,
+     2249445366,
+     2316928727
+    ],
+    "total": 8870619633
+   },
+   {
+    "etiqueta": "SGP Agua Potable y Saneamiento Básico",
+    "anios": [
+     5632055000,
+     5801016650,
+     5975047150,
+     6154298564
+    ],
+    "total": 23562417364
+   },
+   {
+    "etiqueta": "Subsidios",
+    "anios": [
+     5068849500,
+     5220914985,
+     5377542435,
+     5538868708
+    ],
+    "total": 21206175628
+   },
+   {
+    "etiqueta": "Proyectos Agua Potable",
+    "anios": [
+     563205500,
+     580101665,
+     597504715,
+     615429856
+    ],
+    "total": 2356241736
+   },
+   {
+    "etiqueta": "SGP DeporteyRecreación",
+    "anios": [
+     389553000,
+     399291825,
+     409274121,
+     419505974
+    ],
+    "total": 1617624920
+   },
+   {
+    "etiqueta": "SGP Cultura",
+    "anios": [
+     519403000,
+     532388075,
+     545697777,
+     559340221
+    ],
+    "total": 2156829073
+   },
+   {
+    "etiqueta": "SGP Propósito Libre Inversión",
+    "anios": [
+     2434333000,
+     3057691325,
+     3184133608,
+     3313736948
+    ],
+    "total": 11989894881
+   },
+   {
+    "etiqueta": "SGP Alimentación Escolar",
+    "anios": [
+     835029000,
+     860079870,
+     885882266,
+     912458734
+    ],
+    "total": 3493449870
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 251,
+  "cabecera": "Ítem",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Transferencias de Salud",
+    "anios": [
+     58671234000,
+     60431371020,
+     62244312151,
+     64111641515
+    ],
+    "total": 245458558686
+   },
+   {
+    "etiqueta": "Régimen subsidiado ADRES",
+    "anios": [
+     47741318000,
+     49173557540,
+     50648764266,
+     52168227194
+    ],
+    "total": 199731867000
+   },
+   {
+    "etiqueta": "Régimen Subsidiado Coljuegos",
+    "anios": [
+     1171463000,
+     1206606890,
+     1242805097,
+     1280089250
+    ],
+    "total": 4900964237
+   },
+   {
+    "etiqueta": "Régimen Subsidiado Departamento",
+    "anios": [
+     9758453000,
+     10051206590,
+     10352742788,
+     10663325071
+    ],
+    "total": 40825727449
+   },
+   {
+    "etiqueta": "Regalías",
+    "anios": [
+     1561787001,
+     2158220136,
+     1999683402,
+     2106064791
+    ],
+    "total": 7825755332
+   },
+   {
+    "etiqueta": "Asignaciones Directas",
+    "anios": [
+     33689179,
+     6250697,
+     5886367,
+     5869696
+    ],
+    "total": 51695940
+   },
+   {
+    "etiqueta": "Asignación Inversión Local (Ambiente y Dllo sostenible)",
+    "anios": [
+     174598791,
+     286017289,
+     264980790,
+     279169631
+    ],
+    "total": 1004766502
+   },
+   {
+    "etiqueta": "Asignación Inversión Local (Resto Inversión)",
+    "anios": [
+     1316634954,
+     1859112382,
+     1722375140,
+     1814602602
+    ],
+    "total": 6712725079
+   },
+   {
+    "etiqueta": "Comunidades Étnicas",
+    "anios": [
+     36864076,
+     6839767,
+     6441103,
+     6422861
+    ],
+    "total": 56567809
+   },
+   {
+    "etiqueta": "Recursos de la Nación",
+    "anios": [
+     8906842000,
+     9174047260,
+     9449268678,
+     9732746738
+    ],
+    "total": 37262904676
+   },
+   {
+    "etiqueta": "Ministerio de Educación Nacional - Alimentación Escolar",
+    "anios": [
+     8906842000,
+     9174047260,
+     9449268678,
+     9732746738
+    ],
+    "total": 37262904676
+   },
+   {
+    "etiqueta": "Total Ingresos",
+    "anios": [
+     218696972916,
+     224224916645,
+     230414628077,
+     237049740805
+    ],
+    "total": 910386258444
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 251,
+  "cabecera": "Línea/ Capítulo",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Apartadó Socialmente Unidos por la Vida",
+    "anios": [
+     221315,
+     298636,
+     382353,
+     464433
+    ],
+    "total": 1366738
+   },
+   {
+    "etiqueta": "Apartadó Unidos por el Crecimiento Económico",
+    "anios": [
+     28096,
+     76626,
+     108215,
+     82737
+    ],
+    "total": 295676
+   },
+   {
+    "etiqueta": "Apartadó Unidos por el Medio Ambiente",
+    "anios": [
+     1714,
+     3119,
+     10839,
+     9785
+    ],
+    "total": 25458
+   },
+   {
+    "etiqueta": "Apartadó Unidos por la Gestión Institucional",
+    "anios": [
+     14961,
+     9586,
+     16834,
+     13314
+    ],
+    "total": 54696
+   }
+  ],
+  "ncols": 7,
+  "financiero": false
+ }
+]

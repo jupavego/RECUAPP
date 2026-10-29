@@ -1,0 +1,90 @@
+[
+ {
+  "pagina": 168,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "ASIGNACIONES DIRECTAS (20% DEL SGR)",
+    "anios": [
+     194267891,
+     34374182,
+     32370639,
+     32278962
+    ],
+    "total": 293291674
+   },
+   {
+    "etiqueta": "ASIGNACIÓN PARA LA INVERSIÓN LOCAL - AMBIENTE Y DESARROLLO SOSTENIBLE",
+    "anios": [
+     132420938,
+     106208493,
+     98396885,
+     103415428
+    ],
+    "total": 440441744
+   },
+   {
+    "etiqueta": "ASIGNACIÓN PARA LA INVERSIÓN LOCAL SEGÚN NBI Y CUARTA, QUINTA, Y SEXTA CATEGORÍA",
+    "anios": [
+     3481457450,
+     690355204,
+     639579755,
+     672200279
+    ],
+    "total": 5483592688
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     3808146279,
+     830937879,
+     770347280,
+     807894668
+    ],
+    "total": 6217326106
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 182,
+  "cabecera": "Fuente/vigencia",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "ICDE",
+    "anios": [
+     1478,
+     1523,
+     1568,
+     1615
+    ],
+    "total": 6184
+   },
+   {
+    "etiqueta": "SGP Salud Y SSSS",
+    "anios": [
+     10396,
+     10708,
+     11029,
+     11360
+    ],
+    "total": 43493
+   },
+   {
+    "etiqueta": "SGP Libre Inversión",
+    "anios": [
+     1439,
+     1482,
+     1527,
+     1573
+    ],
+    "total": 6021
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ }
+]

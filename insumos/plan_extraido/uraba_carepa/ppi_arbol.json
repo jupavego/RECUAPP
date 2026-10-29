@@ -1,0 +1,392 @@
+[
+ {
+  "paginas": [
+   168,
+   169,
+   170,
+   171,
+   172
+  ],
+  "cabecera": "COMPONENTE",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   44991064346,
+   86848952461,
+   106652902421,
+   68962278985
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Eje estratégico 1. Carepa segura y territorio de paz.",
+    "anios": [
+     3900392238,
+     4410963667,
+     4217963667,
+     4423568428
+    ],
+    "total": 16952888001,
+    "ruta": {
+     "linea": "Eje estratégico 1. Carepa segura y territorio de paz."
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Componente Componente 1. Justicia y del derecho",
+    "anios": [
+     2047000000,
+     1777000000,
+     1777000000,
+     1777000000
+    ],
+    "total": 7378000000,
+    "ruta": {
+     "linea": "Eje estratégico 1. Carepa segura y territorio de paz.",
+     "sector": "Componente Componente 1. Justicia y del derecho"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Componente 2. Transporte – seguridad vial.",
+    "anios": [
+     320857143,
+     990857143,
+     870857143,
+     245428571
+    ],
+    "total": 2428000000,
+    "ruta": {
+     "linea": "Eje estratégico 1. Carepa segura y territorio de paz.",
+     "sector": "Componente 2. Transporte – seguridad vial."
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Componente 3. Organismos de control.",
+    "anios": [
+     80266667,
+     80266667,
+     80266667,
+     3600000
+    ],
+    "total": 244400001,
+    "ruta": {
+     "linea": "Eje estratégico 1. Carepa segura y territorio de paz.",
+     "sector": "Componente 3. Organismos de control."
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Componente 4. Inclusión social y reconciliación – victimas",
+    "anios": [
+     277271428,
+     307842857,
+     289842857,
+     343542857
+    ],
+    "total": 1218500000,
+    "ruta": {
+     "linea": "Eje estratégico 1. Carepa segura y territorio de paz.",
+     "sector": "Componente 4. Inclusión social y reconciliación – victimas"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Componente 5. Gobierno territorial - convivencia y la seguridad ciudadana.",
+    "anios": [
+     1174997000,
+     1254997000,
+     1199997000,
+     2053997000
+    ],
+    "total": 5683988000,
+    "ruta": {
+     "linea": "Eje estratégico 1. Carepa segura y territorio de paz.",
+     "sector": "Componente 5. Gobierno territorial - convivencia y la seguridad ciudadana."
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Eje estratégico 2. Nuestro compromiso social es el pueblo.",
+    "anios": [
+     18862254902,
+     32387954942,
+     28404904902,
+     18218404902
+    ],
+    "total": 98053519647,
+    "ruta": {
+     "linea": "Eje estratégico 2. Nuestro compromiso social es el pueblo."
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Componente 1. Salud para el pueblo.",
+    "anios": [
+     5456190204,
+     15936190244,
+     12335190204,
+     5421190204
+    ],
+    "total": 39328760855,
+    "ruta": {
+     "linea": "Eje estratégico 2. Nuestro compromiso social es el pueblo.",
+     "sector": "Componente 1. Salud para el pueblo."
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Componentes 2. Educación para todos.",
+    "anios": [
+     6995914066,
+     9922614066,
+     6935564066,
+     6915564066
+    ],
+    "total": 30769656264,
+    "ruta": {
+     "linea": "Eje estratégico 2. Nuestro compromiso social es el pueblo.",
+     "sector": "Componentes 2. Educación para todos."
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Componente 3. Cultura.",
+    "anios": [
+     1341000000,
+     845000000,
+     845000000,
+     795000000
+    ],
+    "total": 3826000000,
+    "ruta": {
+     "linea": "Eje estratégico 2. Nuestro compromiso social es el pueblo.",
+     "sector": "Componente 3. Cultura."
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Componente 4. Inclusión social y reconciliación – victimas",
+    "anios": [
+     3508865518,
+     3693865518,
+     6598865518,
+     3526365518
+    ],
+    "total": 17327962072,
+    "ruta": {
+     "linea": "Eje estratégico 2. Nuestro compromiso social es el pueblo.",
+     "sector": "Componente 4. Inclusión social y reconciliación – victimas"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Componente 4. Sector inclusión social y reconciliación – población vulnerable.",
+    "anios": [
+     1560285114,
+     1990285114,
+     1690285114,
+     1560285114
+    ],
+    "total": 6801140456,
+    "ruta": {
+     "linea": "Eje estratégico 2. Nuestro compromiso social es el pueblo.",
+     "sector": "Componente 4. Sector inclusión social y reconciliación – población vulnerable."
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Eje estratégico 3. Construyendo futuro ¡siempre con el pueblo!",
+    "anios": [
+     4759888889,
+     13599111111,
+     13678111111,
+     8902388889
+    ],
+    "total": 40939500000,
+    "ruta": {
+     "linea": "Eje estratégico 3. Construyendo futuro ¡siempre con el pueblo!"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Componente 1 Agricultura y desarrollo rural para los campesinos.",
+    "anios": [
+     481000000,
+     1441000000,
+     4841000000,
+     1333500000
+    ],
+    "total": 8096500000,
+    "ruta": {
+     "linea": "Componente 1 Agricultura y desarrollo rural para los campesinos."
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Eje estratégico 4. Carepa ecológica y ambiental mente sostenible",
+    "anios": [
+     13319278217,
+     29801672641,
+     42338672641,
+     33246166666
+    ],
+    "total": 118705790167,
+    "ruta": {
+     "linea": "Eje estratégico 4. Carepa ecológica y ambiental mente sostenible"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Componente 1. Ambiente y desarrollo sostenible",
+    "anios": [
+     807000440,
+     2371394863,
+     2466394863,
+     177000000
+    ],
+    "total": 5821790167,
+    "ruta": {
+     "linea": "Eje estratégico 4. Carepa ecológica y ambiental mente sostenible",
+     "sector": "Componente 1. Ambiente y desarrollo sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Componente 2. Vivienda, ciudad y territorio – Vivienda y Agua potable.",
+    "anios": [
+     11952500000,
+     19902500000,
+     18222500000,
+     32652500000
+    ],
+    "total": 82730000000,
+    "ruta": {
+     "linea": "Eje estratégico 4. Carepa ecológica y ambiental mente sostenible",
+     "sector": "Componente 2. Vivienda, ciudad y territorio – Vivienda y Agua potable."
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Componente 3. Gobierno territorial – Bienestar animal y gestión del riesgo. Bienestar animal y gestión del riesgo.",
+    "anios": [
+     559777777,
+     7527777777,
+     21649777777,
+     416666666
+    ],
+    "total": 30154000000,
+    "ruta": {
+     "linea": "Eje estratégico 4. Carepa ecológica y ambiental mente sostenible",
+     "sector": "Componente 3. Gobierno territorial – Bienestar animal y gestión del riesgo. Bienestar animal y gestión del riesgo."
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Eje estratégico 5. Gobernando con el pueblo",
+    "anios": [
+     1834125050,
+     2604125050,
+     9091125050,
+     1419125050
+    ],
+    "total": 14948500000,
+    "ruta": {
+     "linea": "Eje estratégico 5. Gobernando con el pueblo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Componente 2. Tecnologías de la información y las comunicaciones",
+    "anios": [
+     398000000,
+     492000000,
+     336000000,
+     276000000
+    ],
+    "total": 1502000000,
+    "ruta": {
+     "linea": "Componente 2. Tecnologías de la información y las comunicaciones"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Componente 3. Organismos de control",
+    "anios": [
+     45125010,
+     51125010,
+     45125010,
+     45125010
+    ],
+    "total": 186500040,
+    "ruta": {
+     "linea": "Componente 3. Organismos de control"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Componente 4. Gobierno territorial – Fortalecimiento institucional.",
+    "anios": [
+     1391000040,
+     2061000040,
+     3700000040,
+     1098000040
+    ],
+    "total": 8250000000,
+    "ruta": {
+     "linea": "Componente 4. Gobierno territorial – Fortalecimiento institucional."
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]
