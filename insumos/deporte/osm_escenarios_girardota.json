@@ -1,0 +1,128 @@
+[
+ {
+  "id": "w318882308",
+  "t": "Cancha de fútbol",
+  "n": "Cancha deportiva Ernesto Rua",
+  "lat": 6.408208,
+  "lng": -75.428626
+ },
+ {
+  "id": "w392616384",
+  "t": "Cancha de fútbol",
+  "n": "Cancha ciudadela de la Luz",
+  "lat": 6.344855,
+  "lng": -75.504056
+ },
+ {
+  "id": "w447203327",
+  "t": "Piscina",
+  "n": "Piscina del inder",
+  "lat": 6.374117,
+  "lng": -75.451651
+ },
+ {
+  "id": "w447203347",
+  "t": "Cancha deportiva",
+  "n": null,
+  "lat": 6.375368,
+  "lng": -75.453356
+ },
+ {
+  "id": "w529293022",
+  "t": "Placa polideportiva",
+  "n": "Cancha",
+  "lat": 6.305146,
+  "lng": -75.410285
+ },
+ {
+  "id": "w543654036",
+  "t": "Cancha de fútbol",
+  "n": null,
+  "lat": 6.37713,
+  "lng": -75.485641
+ },
+ {
+  "id": "w543654037",
+  "t": "Cancha de fútbol",
+  "n": null,
+  "lat": 6.375553,
+  "lng": -75.485625
+ },
+ {
+  "id": "w558401231",
+  "t": "Placa polideportiva",
+  "n": null,
+  "lat": 6.356118,
+  "lng": -75.495862
+ },
+ {
+  "id": "w558401332",
+  "t": "Placa polideportiva",
+  "n": "Placa Polideportiva",
+  "lat": 6.348843,
+  "lng": -75.495065
+ },
+ {
+  "id": "w558401333",
+  "t": "Cancha de fútbol",
+  "n": "Cancha",
+  "lat": 6.354599,
+  "lng": -75.495728
+ },
+ {
+  "id": "w599936734",
+  "t": "Cancha deportiva",
+  "n": null,
+  "lat": 6.405588,
+  "lng": -75.419921
+ },
+ {
+  "id": "w599966540",
+  "t": "Cancha deportiva",
+  "n": null,
+  "lat": 6.405589,
+  "lng": -75.419518
+ },
+ {
+  "id": "w599972193",
+  "t": "Cancha deportiva",
+  "n": null,
+  "lat": 6.406336,
+  "lng": -75.423236
+ },
+ {
+  "id": "w638760665",
+  "t": "Cancha deportiva",
+  "n": null,
+  "lat": 6.396432,
+  "lng": -75.439622
+ },
+ {
+  "id": "w689822307",
+  "t": "Cancha de fútbol",
+  "n": "Cancha Sintética",
+  "lat": 6.350397,
+  "lng": -75.504124
+ },
+ {
+  "id": "w690108759",
+  "t": "Cancha de fútbol",
+  "n": "Cancha Barrio Fátima",
+  "lat": 6.347414,
+  "lng": -75.50318
+ },
+ {
+  "id": "w1094006732",
+  "t": "Piscina",
+  "n": "Piscina de confama",
+  "lat": 6.379616,
+  "lng": -75.446197
+ },
+ {
+  "id": "w1096140733",
+  "t": "Placa polideportiva",
+  "n": "Placa polideportiva del Paraiso",
+  "lat": 6.372996,
+  "lng": -75.436967
+ }
+]

@@ -27,6 +27,8 @@ CLASES = {
     'residential': 1, 'unclassified': 1, 'service': 1, 'living_street': 1,
     'track': 2, 'footway': 2, 'path': 2, 'steps': 2, 'bridleway': 2, 'cycleway': 2, 'pedestrian': 2,
 }
+# vías de OSM que no son calle (circulación interna de la cancha junto a la quebrada La Ferrería, en Girardota)
+IDS_EXCLUIDOS = {1082917732, 1082917733, 1175551339, 1175551340}
 SERVICIO_DESCARTADO = {'parking_aisle', 'driveway', 'drive-through', 'emergency_access'}
 
 relieve = json.loads((RAIZ / f'public/data/mapa3d/relieve-{MUNICIPIO}.json').read_text(encoding='utf-8'))
@@ -136,7 +138,7 @@ for e in elementos:
     clase = CLASES.get(tags.get('highway'))
     if clase is None or len(e.get('geometry', [])) < 2:
         continue
-    if not es_real(tags):
+    if e.get('id') in IDS_EXCLUIDOS or not es_real(tags):
         descartadas += 1
         continue
     for tramo in recortar([(g['lon'], g['lat']) for g in e['geometry']]):

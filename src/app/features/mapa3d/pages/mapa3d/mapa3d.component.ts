@@ -2360,7 +2360,7 @@ export class Mapa3dComponent implements AfterViewInit {
   private ubicarEquipamientos(lista: Punto[], vias: Compacto | null): typeof this.equipamientos {
     const holgura = this.holguraVias(vias);
     const intentos: [number, number][] = [[0, 0]];
-    for (const r of [15, 30, 50, 75, 100, 130, 160]) for (let k = 0; k < 12; k++) intentos.push([Math.cos(k * Math.PI / 6) * r, Math.sin(k * Math.PI / 6) * r]);
+    for (const r of [8, 15, 22, 30, 40, 50, 62, 75, 90, 105, 120, 140, 160]) for (let k = 0; k < 16; k++) intentos.push([Math.cos(k * Math.PI / 8) * r, Math.sin(k * Math.PI / 8) * r]);
     const out: typeof this.equipamientos = [];
     const previos = (x: number, z: number, r: number) =>
       this.fabricas.every(f => Math.hypot(f.x - x, f.z - z) > RADIO_FABRICA + r + 4) && out.every(o => Math.hypot(o.x - x, o.z - z) > o.r + r + 4);

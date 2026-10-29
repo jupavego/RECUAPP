@@ -137,6 +137,12 @@ for r in hoja("deporte/Consolidado_Escenarios_Mindeporte_20261028.xlsx").iter_ro
             x=f"Aforo: {int(float(r[5]))} espectadores" if str(r[5]).replace(".", "").isdigit() and float(r[5]) > 0 else None,
             e="Responsable: " + limpio(r[8]) if limpio(r[8]) else None)
 
+# Canchas y piscinas públicas de OpenStreetMap que el consolidado de Mindeporte no trae (insumos/deporte/osm_escenarios_girardota.json,
+# bajado con Overpass y filtrado: sin acceso privado y a más de 60 m de un escenario oficial). Solo se conservan las que caen dentro del municipio.
+FUENTE_OSM = "OpenStreetMap · colaboradores (ODbL), sin verificar por Mindeporte"
+for o in json.loads((INSUMOS / "deporte" / "osm_escenarios_girardota.json").read_text(encoding="utf-8")):
+    agregar(c="deporte", t=o["t"] + " (OSM)", n=o["n"] or o["t"], lat=o["lat"], lng=o["lng"], f=FUENTE_OSM)
+
 # ── Justicia (el Excel no trae coordenadas: se geocodifican en la app) ─────────
 for r in hoja("justicia/Directorio_Personerias_Defensoria_Antioquia_125_municipios.xlsx", 0).iter_rows(min_row=5, values_only=True):
     if r[1] and norm(r[1]) == "girardota":
@@ -343,6 +349,8 @@ for p in puntos:
         if geom.buffer(0.0002).contains(pt):
             p["v"] = "Cabecera municipal" if z.get("t") == "CM" else ("Vereda " + z["n"])
             break
+
+puntos[:] = [p for p in puntos if p.get("f") != FUENTE_OSM or "v" in p]  # las de OSM fuera de las veredas del municipio se descartan
 
 # ── Direcciones -> coordenadas ─────────────────────────────────────────────────
 CACHE = RAIZ / "scripts" / "geocache.json"
