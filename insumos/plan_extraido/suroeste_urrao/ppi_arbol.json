@@ -1,0 +1,332 @@
+[
+ {
+  "paginas": [
+   148
+  ],
+  "cabecera": "Líneas",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   77723662557,
+   136627671569,
+   134255971438,
+   131105380712
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.Trabajando por nuestra gente",
+    "anios": [
+     32724510432,
+     36112014938,
+     36278164873,
+     36238369510
+    ],
+    "total": 141353059752,
+    "ruta": {
+     "linea": "1.Trabajando por nuestra gente"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2. Trabajando por nuestra infraestructura y servicios",
+    "anios": [
+     4302763767,
+     28177763767,
+     26877763767,
+     26282763767
+    ],
+    "total": 85641055069,
+    "ruta": {
+     "linea": "2. Trabajando por nuestra infraestructura y servicios"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3.Trabajando por la competitividad y productividad",
+    "anios": [
+     391256684,
+     830756684,
+     623756684,
+     469256684
+    ],
+    "total": 2315026737,
+    "ruta": {
+     "linea": "3.Trabajando por la competitividad y productividad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4. Trabajando por un gobierno partitipativo",
+    "anios": [
+     790800395,
+     2056800395,
+     1903300395,
+     1450300395
+    ],
+    "total": 6201201580,
+    "ruta": {
+     "linea": "4. Trabajando por un gobierno partitipativo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "5. Trabajando por medio Ambiente",
+    "anios": [
+     652500000,
+     1136500000,
+     1445000000,
+     1112000000
+    ],
+    "total": 4346000000,
+    "ruta": {
+     "linea": "5. Trabajando por medio Ambiente"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TOTAL",
+    "anios": [
+     38861831279,
+     68313835785,
+     67127985719,
+     65552690356
+    ],
+    "total": 239856343138,
+    "ruta": {
+     "linea": "TOTAL"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   149
+  ],
+  "cabecera": "LINEAS",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   41684906673,
+   85734911179,
+   86337061114,
+   83634765751
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.Trabajando por",
+    "anios": [
+     247000000,
+     247000000,
+     247000000,
+     247000000
+    ],
+    "total": 988000000,
+    "ruta": {
+     "linea": "1.Trabajando por"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "nuestra gente",
+    "anios": [
+     412500000,
+     412500000,
+     687500000,
+     687500000
+    ],
+    "total": 2200000000,
+    "ruta": {
+     "linea": "nuestra gente"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2. Trabajando por",
+    "anios": [
+     502775000,
+     4802775000,
+     11357775000,
+     9307775000
+    ],
+    "total": 25971100000,
+    "ruta": {
+     "linea": "2. Trabajando por"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "nuestra infraestructura y servicios Públicos",
+    "anios": [
+     385000000,
+     9485000000,
+     4365000000,
+     5925000000
+    ],
+    "total": 20160000000,
+    "ruta": {
+     "linea": "nuestra infraestructura y servicios Públicos"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3Tbd l",
+    "anios": [
+     20000000,
+     132500000,
+     175000000,
+     22500000
+    ],
+    "total": 350000000,
+    "ruta": {
+     "linea": "3Tbd l"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": ".raajano por a cometitividad",
+    "anios": [
+     60000000,
+     280000000,
+     70000000,
+     220000000
+    ],
+    "total": 630000000,
+    "ruta": {
+     "linea": ".raajano por a cometitividad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "p y productividad",
+    "anios": [
+     27000000,
+     29000000,
+     17000000,
+     15000000
+    ],
+    "total": 88000000,
+    "ruta": {
+     "linea": "p y productividad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4. Trabajando por un",
+    "anios": [
+     75750000,
+     422750000,
+     390750000,
+     90750000
+    ],
+    "total": 980000000,
+    "ruta": {
+     "linea": "4. Trabajando por un"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "gobierno partitipativo",
+    "anios": [
+     440550395,
+     473050395,
+     454050395,
+     454550395
+    ],
+    "total": 1822201580,
+    "ruta": {
+     "linea": "gobierno partitipativo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "5. Trabajando por medio",
+    "anios": [
+     637000000,
+     1089000000,
+     1406000000,
+     1078000000
+    ],
+    "total": 4210000000,
+    "ruta": {
+     "linea": "5. Trabajando por medio"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Ambiente",
+    "anios": [
+     15500000,
+     47500000,
+     39000000,
+     34000000
+    ],
+    "total": 136000000,
+    "ruta": {
+     "linea": "Ambiente"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TOTAL",
+    "anios": [
+     38861831278,
+     68313835784,
+     67127985719,
+     65552690356
+    ],
+    "total": 239856343138,
+    "ruta": {
+     "linea": "TOTAL"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

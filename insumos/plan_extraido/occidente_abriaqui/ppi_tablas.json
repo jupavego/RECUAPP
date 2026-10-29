@@ -1,0 +1,250 @@
+[
+ {
+  "pagina": 92,
+  "cabecera": "Renta",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Educación",
+    "anios": [
+     56135129,
+     58941886,
+     61888980,
+     64983429
+    ],
+    "total": 241949424
+   },
+   {
+    "etiqueta": "Salud",
+    "anios": [
+     833413546,
+     875084224,
+     918838435,
+     964780357
+    ],
+    "total": 3592116562
+   },
+   {
+    "etiqueta": "Agua Potable",
+    "anios": [
+     348219176,
+     365630134,
+     383911641,
+     403107223
+    ],
+    "total": 1500868174
+   },
+   {
+    "etiqueta": "Deporte",
+    "anios": [
+     46154078,
+     48461782,
+     50884871,
+     53429115
+    ],
+    "total": 198929846
+   },
+   {
+    "etiqueta": "Cultura",
+    "anios": [
+     34615559,
+     36346337,
+     38163654,
+     40071836
+    ],
+    "total": 149197386
+   },
+   {
+    "etiqueta": "Libre Inversión",
+    "anios": [
+     569014955,
+     581903962,
+     593881246,
+     604745602
+    ],
+    "total": 2349545765
+   },
+   {
+    "etiqueta": "Alimentación Escolar",
+    "anios": [
+     8929939,
+     9376436,
+     9845258,
+     10337521
+    ],
+    "total": 38489154
+   },
+   {
+    "etiqueta": "Ingresos Corrientes de Libre Destinación",
+    "anios": [
+     94518928,
+     99244875,
+     104207119,
+     109417474
+    ],
+    "total": 407388396
+   },
+   {
+    "etiqueta": "Pro Cultura",
+    "anios": [
+     63048048,
+     66200450,
+     69510473,
+     72985997
+    ],
+    "total": 271744968
+   },
+   {
+    "etiqueta": "Pro Adulto Mayor",
+    "anios": [
+     132482784,
+     139106923,
+     146062269,
+     153365383
+    ],
+    "total": 571017359
+   },
+   {
+    "etiqueta": "Bomberil",
+    "anios": [
+     3943828,
+     4141019,
+     4348070,
+     4565474
+    ],
+    "total": 16998391
+   },
+   {
+    "etiqueta": "Contribución Obra Publica",
+    "anios": [
+     87603551,
+     91983729,
+     96582915,
+     101412061
+    ],
+    "total": 377582256
+   },
+   {
+    "etiqueta": "Contribución Sector Eléctrico",
+    "anios": [
+     392973336,
+     412622003,
+     433253103,
+     454915758
+    ],
+    "total": 1693764200
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ },
+ {
+  "pagina": 147,
+  "cabecera": "CONCEPTO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "INVERSIÓN",
+    "anios": [
+     607589274,
+     518085091,
+     480298117,
+     503200460
+    ],
+    "total": 2109172942
+   },
+   {
+    "etiqueta": "Asignaciones Directas",
+    "anios": [
+     32621520,
+     20837448,
+     19622911,
+     19567337
+    ],
+    "total": 92649216
+   },
+   {
+    "etiqueta": "20% Asignaciones Directas",
+    "anios": [
+     25527503,
+     16306047,
+     15355628,
+     15312139
+    ],
+    "total": 72501317
+   },
+   {
+    "etiqueta": "5% Asignaciones Directas Anticipadas",
+    "anios": [
+     7094017,
+     4531402,
+     4267283,
+     4255198
+    ],
+    "total": 20147900
+   },
+   {
+    "etiqueta": "Asignaciónpara la Inversión Local",
+    "anios": [
+     574967754,
+     497247642,
+     460675205,
+     483633122
+    ],
+    "total": 2016523723
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     76662367,
+     66299686,
+     61423361,
+     64484416
+    ],
+    "total": 268869830
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     498305387,
+     430947957,
+     399251844,
+     419148706
+    ],
+    "total": 1747653894
+   },
+   {
+    "etiqueta": "AHORRO",
+    "anios": [
+     13602314,
+     11757619,
+     10891456,
+     11370274
+    ],
+    "total": 47621663
+   },
+   {
+    "etiqueta": "Fondo Ahorro Pensional Territorial (FONPET)",
+    "anios": [
+     13602314,
+     11757619,
+     10891456,
+     11370274
+    ],
+    "total": 47621663
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     621191588,
+     529842709,
+     491189572,
+     514570734
+    ],
+    "total": 2156794603
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ }
+]

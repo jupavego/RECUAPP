@@ -1,0 +1,58 @@
+[
+ {
+  "nombre": "Creación y fortalecimiento del sistema de participación para la transparencia",
+  "unidad": "Número",
+  "linea_base": "0",
+  "meta": "1",
+  "tipo_acumulado": "Mantenimi ento",
+  "responsable": "Secretaría de Planeación, Secretaría de Bienestar Social y Salud y Secretaría General y de",
+  "pagina": 42,
+  "linea": null,
+  "sector": null
+ },
+ {
+  "nombre": "Creación de veedurías, comités, instancias ciudadanas e instrumentos y estrategias para el control y vigilancia administrativa",
+  "unidad": "Número",
+  "linea_base": "0",
+  "meta": "1",
+  "tipo_acumulado": "Mantenimi ento",
+  "responsable": "Secretaría de Planeación, Secretaría de Bienestar Social y Salud y Secretaría General y de Gobierno.",
+  "pagina": 42,
+  "linea": null,
+  "sector": null
+ },
+ {
+  "nombre": "Fortalecimiento de la convivencia ciudadana, articulando entidades por competencia e implementando estrategias pedagógicasy",
+  "unidad": "Porcentaje",
+  "linea_base": "0",
+  "meta": "1",
+  "tipo_acumulado": "Mantenimiento",
+  "responsable": "Secretaría General y de Gobierno.",
+  "pagina": 47,
+  "linea": null,
+  "sector": null
+ },
+ {
+  "nombre": "Justicia cercana al ciudadano, mediante el fortalecimiento de la fuerza pública y las dependencias del municipio que tienen competencia en temas de seguridad, convivencia y paz.",
+  "unidad": "Porcentaje",
+  "linea_base": "0",
+  "meta": "1",
+  "tipo_acumulado": "Mantenimiento",
+  "responsable": "Secretaría General y de Gobierno.",
+  "pagina": 48,
+  "linea": null,
+  "sector": null
+ },
+ {
+  "nombre": "beneficiada con programas, proyectos o intervenciones del",
+  "unidad": "Porcentaj e",
+  "linea_base": "0",
+  "meta": "100%",
+  "tipo_acumulado": "Acumulado",
+  "responsable": "Secretaría General y de Gobierno",
+  "programa_sub": "Población víctima del conflicto",
+  "pagina": 53,
+  "linea": null,
+  "sector": null
+ }
+]

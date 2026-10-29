@@ -1,0 +1,239 @@
+[
+ {
+  "pagina": 215,
+  "cabecera": "DIMENSIONES",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "HELICONIA TERRITORIO DE TOOS CON RESPONSABILIDAD SOCIAL",
+    "anios": [
+     3676,
+     4269,
+     4440,
+     4283
+    ],
+    "total": 16668
+   },
+   {
+    "etiqueta": "HELICONIA TERRITORIO DE TODOS ORDENADO Y PROTEGIENDO LOS ECOSISTEMAS",
+    "anios": [
+     4288,
+     4981,
+     5180,
+     4997
+    ],
+    "total": 19446
+   },
+   {
+    "etiqueta": "HELICONIA TERRITORIO DE TODOS PRODUCTIVO, RESILIENTE Y COMPETITIVO",
+    "anios": [
+     1838,
+     2135,
+     2220,
+     2142
+    ],
+    "total": 8335
+   },
+   {
+    "etiqueta": "HELICONIA TERRITORIO DE TODOSCON GOBERNANZA Y GASTO PUBLICO EFICIENTE",
+    "anios": [
+     2450,
+     2846,
+     2960,
+     2856
+    ],
+    "total": 11112
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     12252,
+     14231,
+     14800,
+     14278
+    ],
+    "total": 55561
+   }
+  ],
+  "ncols": 4,
+  "financiero": false
+ },
+ {
+  "pagina": 215,
+  "cabecera": "FUENTES",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Ingresos Corrientes de Libre Destinación - ICLD",
+    "anios": [
+     1410,
+     1474,
+     1585,
+     1448
+    ],
+    "total": 5917
+   },
+   {
+    "etiqueta": "Ingresos Corrientes de Destinación Específica - ICDE",
+    "anios": [
+     1031,
+     1061,
+     1090,
+     1115
+    ],
+    "total": 4297
+   },
+   {
+    "etiqueta": "SGP Educación",
+    "anios": [
+     70,
+     74,
+     78,
+     81
+    ],
+    "total": 303
+   },
+   {
+    "etiqueta": "SGP Salud",
+    "anios": [
+     386,
+     405,
+     425,
+     450
+    ],
+    "total": 1666
+   },
+   {
+    "etiqueta": "SGP Agua Potabley Saneamiento Básico",
+    "anios": [
+     780,
+     819,
+     859,
+     901
+    ],
+    "total": 3359
+   },
+   {
+    "etiqueta": "SGP Propósito General",
+    "anios": [
+     867,
+     892,
+     967,
+     982
+    ],
+    "total": 3708
+   },
+   {
+    "etiqueta": "SGP Asignaciones Especiales",
+    "anios": [
+     25,
+     26,
+     27,
+     28
+    ],
+    "total": 106
+   },
+   {
+    "etiqueta": "Cofinanciación",
+    "anios": [
+     7006,
+     7581,
+     7523,
+     7405
+    ],
+    "total": 29515
+   },
+   {
+    "etiqueta": "Crédito",
+    "anios": [
+     0,
+     0,
+     1000,
+     500
+    ],
+    "total": 1500
+   },
+   {
+    "etiqueta": "Otros",
+    "anios": [
+     677,
+     1899,
+     1246,
+     1368
+    ],
+    "total": 5190
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     12252,
+     14231,
+     14800,
+     14278
+    ],
+    "total": 55561
+   }
+  ],
+  "ncols": 3,
+  "financiero": true
+ },
+ {
+  "pagina": 221,
+  "cabecera": "CONCEPTO DE GASTO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "ASIGNACIÓN DIRECTA",
+    "anios": [
+     255636,
+     157669,
+     148479,
+     148058
+    ],
+    "total": 709842
+   },
+   {
+    "etiqueta": "5% Anticipadas",
+    "anios": [
+     72629,
+     44796,
+     42185,
+     42065
+    ],
+    "total": 201675
+   },
+   {
+    "etiqueta": "INVERSION LOCAL AMBIENTE",
+    "anios": [
+     680867830,
+     589835192,
+     546452964,
+     574268771
+    ],
+    "total": 2391424757
+   },
+   {
+    "etiqueta": "INVERSION LOCAL NBI",
+    "anios": [
+     104748897,
+     90743879,
+     84069687,
+     88349042
+    ],
+    "total": 367911505
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     785947016,
+     680783561,
+     630715341,
+     662809963
+    ],
+    "total": 2760247779
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ }
+]

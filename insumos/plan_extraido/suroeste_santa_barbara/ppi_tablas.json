@@ -1,0 +1,526 @@
+[
+ {
+  "pagina": 220,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "1.1-Educación",
+    "anios": [
+     352541967,
+     363118226,
+     374011773,
+     385232126
+    ],
+    "total": 1474904092
+   },
+   {
+    "etiqueta": "1.1.2-Calidad",
+    "anios": [
+     352541967,
+     363118226,
+     374011773,
+     385232126
+    ],
+    "total": 1474904092
+   },
+   {
+    "etiqueta": "1.1.2.1 - Calidad (Gratuidad)",
+    "anios": [
+     197094569,
+     203007406,
+     209097628,
+     215370557
+    ],
+    "total": 824570160
+   },
+   {
+    "etiqueta": "1.1.2.2 - Calidad (Matrícula)",
+    "anios": [
+     155447398,
+     160110820,
+     164914145,
+     169861569
+    ],
+    "total": 650333932
+   },
+   {
+    "etiqueta": "1.2-Salud",
+    "anios": [
+     4513322852,
+     4648722538,
+     4788184214,
+     4931829740
+    ],
+    "total": 18882059344
+   },
+   {
+    "etiqueta": "Departamento",
+    "anios": [
+     19843642737,
+     20438952019,
+     21052120580,
+     21683684197
+    ],
+    "total": 83018399533
+   },
+   {
+    "etiqueta": "1.2.2-Salud Pública",
+    "anios": [
+     251540610,
+     259086828,
+     266859433,
+     274865216
+    ],
+    "total": 1052352087
+   },
+   {
+    "etiqueta": "1.2.3-Subsidio a la Oferta",
+    "anios": [
+     184059657,
+     189581447,
+     195268890,
+     201126957
+    ],
+    "total": 770036951
+   },
+   {
+    "etiqueta": "1.3-Agua Potable",
+    "anios": [
+     768997922,
+     792067860,
+     815829895,
+     840304792
+    ],
+    "total": 3217200469
+   },
+   {
+    "etiqueta": "1.3.C1 - Déficit de Coberturas",
+    "anios": [
+     394413007,
+     406245397,
+     418432759,
+     430985742
+    ],
+    "total": 1650076905
+   },
+   {
+    "etiqueta": "1.3.C2 - Población Atendida",
+    "anios": [
+     382174953,
+     393640201,
+     405449407,
+     417612890
+    ],
+    "total": 1598877451
+   },
+   {
+    "etiqueta": "1.3.C3 - Ampliación de Coberturas",
+    "anios": [
+     27559062,
+     28385833,
+     29237408,
+     30114531
+    ],
+    "total": 115296834
+   },
+   {
+    "etiqueta": "1.3.C4-Pobreza",
+    "anios": [
+     133856999,
+     137872709,
+     142008890,
+     146269157
+    ],
+    "total": 560007755
+   },
+   {
+    "etiqueta": "1.3.C5-Eficiencia",
+    "anios": [
+     180538411,
+     185954564,
+     191533200,
+     197279196
+    ],
+    "total": 755305371
+   },
+   {
+    "etiqueta": "1.4 - Propósito General",
+    "anios": [
+     1193423290,
+     1229225989,
+     1266102769,
+     1304085852
+    ],
+    "total": 4992837900
+   },
+   {
+    "etiqueta": "1.4.1-Libre Destinación",
+    "anios": [
+     501237782,
+     516274915,
+     531763163,
+     547716058
+    ],
+    "total": 2096991918
+   },
+   {
+    "etiqueta": "1.4.2-Deporte",
+    "anios": [
+     73833121,
+     76048114,
+     78329558,
+     80679445
+    ],
+    "total": 308890238
+   },
+   {
+    "etiqueta": "1.4.3-Cultura",
+    "anios": [
+     55374841,
+     57036086,
+     58747169,
+     60509584
+    ],
+    "total": 231667680
+   },
+   {
+    "etiqueta": "1.4.4-Libre Inversión",
+    "anios": [
+     526060987,
+     541842816,
+     558098101,
+     574841044
+    ],
+    "total": 2200842948
+   },
+   {
+    "etiqueta": "1.4.5-Fonpet",
+    "anios": [
+     92291401,
+     95060143,
+     97911947,
+     100849306
+    ],
+    "total": 386112797
+   },
+   {
+    "etiqueta": "1.4.C - Propósito General-Criterios",
+    "anios": [
+     1093971349,
+     1126790490,
+     1160594205,
+     1195412031
+    ],
+    "total": 4576768075
+   },
+   {
+    "etiqueta": "Propósito General",
+    "anios": [
+     1591231054,
+     0,
+     0,
+     0
+    ],
+    "total": 1591231054
+   },
+   {
+    "etiqueta": "1.4.C2.1-Población",
+    "anios": [
+     804912148,
+     829059512,
+     853931298,
+     879549237
+    ],
+    "total": 3367452195
+   },
+   {
+    "etiqueta": "1.4.C2.2-Pobreza",
+    "anios": [
+     592982402,
+     610771874,
+     629095030,
+     647967881
+    ],
+    "total": 2480817187
+   },
+   {
+    "etiqueta": "1.4.C2.3-Esfuerzo Fiscal",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "1.4.C2.4 - Eficiencia Administrativa",
+    "anios": [
+     193336504,
+     199136599,
+     205110697,
+     211264018
+    ],
+    "total": 808847818
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ },
+ {
+  "pagina": 230,
+  "cabecera": "Líneas",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Pilar Estratégico 1",
+    "anios": [
+     3177280078,
+     9172065197,
+     949727153,
+     978218968
+    ],
+    "total": 14277291398
+   },
+   {
+    "etiqueta": "Pilar Estratégico 2",
+    "anios": [
+     23208204754,
+     27359450897,
+     23030234424,
+     24931141457
+    ],
+    "total": 98529031533
+   },
+   {
+    "etiqueta": "Pilar Estratégico 3",
+    "anios": [
+     2137889652,
+     11101067859,
+     2583099895,
+     1168122892
+    ],
+    "total": 16990180299
+   },
+   {
+    "etiqueta": "Pilar Estratégico 4",
+    "anios": [
+     210000000,
+     216300000,
+     222789000,
+     229472670
+    ],
+    "total": 878561670
+   },
+   {
+    "etiqueta": "Pilar Estratégico 5",
+    "anios": [
+     3212000000,
+     16642360000,
+     1073630800,
+     1105839724
+    ],
+    "total": 22033830524
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     31945374485,
+     64491243955,
+     27859481273,
+     28412795711
+    ],
+    "total": 152708895425
+   }
+  ],
+  "ncols": 1,
+  "financiero": false
+ },
+ {
+  "pagina": 231,
+  "cabecera": "Códi",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Gestión de la producción agrícola y desarrollo rural Municipal",
+    "anios": [
+     1,
+     436262549,
+     1354290283,
+     364918991
+    ],
+    "total": 2155471824
+   },
+   {
+    "etiqueta": "Productividad, competitividad, empleo y turismo del territorio para un buen desarrollo económico y del emprendimiento",
+    "anios": [
+     2,
+     2741017528,
+     7817774914,
+     584808161
+    ],
+    "total": 11143600605
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 232,
+  "cabecera": "Programa",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Educación la llave del futuro",
+    "anios": [
+     468813446,
+     482877849,
+     497364185,
+     512285110
+    ],
+    "total": 1961340590
+   },
+   {
+    "etiqueta": "Cultura que construye sueños",
+    "anios": [
+     95374840,
+     2598236086,
+     101183168,
+     104218663
+    ],
+    "total": 2899012757
+   },
+   {
+    "etiqueta": "Salud de calidad para los Santa Barbareños",
+    "anios": [
+     20175183347,
+     20780438847,
+     21403852012,
+     23255967573
+    ],
+    "total": 85615441779
+   },
+   {
+    "etiqueta": "Deporte que sana el espíritu y la mente",
+    "anios": [
+     1173833120,
+     2679048114,
+     184419557,
+     189952144
+    ],
+    "total": 4227252935
+   },
+   {
+    "etiqueta": "Equidad de género y mujer que se reconoce y participa",
+    "anios": [
+     55000000,
+     56650000,
+     58349500,
+     60099985
+    ],
+    "total": 230099485
+   },
+   {
+    "etiqueta": "Por una vejez digna y dorada",
+    "anios": [
+     580000000,
+     82400000,
+     84872000,
+     87418160
+    ],
+    "total": 834690160
+   },
+   {
+    "etiqueta": "Victimas que se recuerdan y dignifican",
+    "anios": [
+     50000000,
+     51500000,
+     53045000,
+     54636350
+    ],
+    "total": 209181350
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 234,
+  "cabecera": "Códi",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Gestión ambiental para la protección de los recursos naturales, bienestar animal y mitigación del cambio climático con agricultura regenerativa",
+    "anios": [
+     17,
+     448891730,
+     5082400000,
+     373872000
+    ],
+    "total": 5905163747
+   },
+   {
+    "etiqueta": "Conocimiento, reducción y manejo del riesgo Municipal",
+    "anios": [
+     18,
+     870000000,
+     2675100000,
+     180353000
+    ],
+    "total": 3725453018
+   },
+   {
+    "etiqueta": "Gestión eficiente del agua potable y el saneamiento básico Municipal",
+    "anios": [
+     19,
+     818997922,
+     3343567859,
+     2028874895
+    ],
+    "total": 6191440695
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ },
+ {
+  "pagina": 235,
+  "cabecera": "Código",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Seguridad y convivencia un deber en el territorio para vivir tranquilo",
+    "anios": [
+     20,
+     130000000,
+     133900000,
+     137917000
+    ],
+    "total": 401817020
+   },
+   {
+    "etiqueta": "Seguridad vial y reglamentación del transporte Municipal",
+    "anios": [
+     21,
+     20000000,
+     20600000,
+     21218000
+    ],
+    "total": 61818021
+   },
+   {
+    "etiqueta": "Cualificación de la gestión pública institucional",
+    "anios": [
+     22,
+     60000000,
+     61800000,
+     63654000
+    ],
+    "total": 185454022
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ }
+]

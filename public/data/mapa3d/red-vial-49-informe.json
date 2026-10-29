@@ -1,0 +1,87 @@
+{
+ "igac_tramos": 41,
+ "igac_km": 104.8,
+ "km_por_estado_y_fuente": {
+  "afirmada|igac": 3.1,
+  "afirmada|igac+osm": 61.1,
+  "pavimentada|igac": 0.3,
+  "pavimentada|igac+osm": 26.7,
+  "sin_dato|igac": 2.9,
+  "sin_dato|igac+osm": 6.2,
+  "sin_pavimentar|igac": 1.4,
+  "sin_pavimentar|igac+osm": 2.9
+ },
+ "osm_km_no_oficial": 333.1,
+ "osm_tramos_no_oficial": 1288,
+ "igac_sin_par_en_osm": [
+  {
+   "id": "igac-0",
+   "tipo": "Camino / sendero",
+   "estado": "sin_dato",
+   "m": 735,
+   "cobertura": 0.66
+  },
+  {
+   "id": "igac-2",
+   "tipo": "Camino / sendero",
+   "estado": "sin_dato",
+   "m": 165,
+   "cobertura": 0.36
+  },
+  {
+   "id": "igac-4",
+   "tipo": "Camino / sendero",
+   "estado": "sin_dato",
+   "m": 625,
+   "cobertura": 0.31
+  },
+  {
+   "id": "igac-6",
+   "tipo": "Camino / sendero",
+   "estado": "sin_dato",
+   "m": 1424,
+   "cobertura": 0.12
+  },
+  {
+   "id": "igac-10",
+   "tipo": "Carretera terciaria",
+   "estado": "sin_pavimentar",
+   "m": 1443,
+   "cobertura": 0.69
+  },
+  {
+   "id": "igac-22",
+   "tipo": "Carretera secundaria",
+   "estado": "afirmada",
+   "m": 3106,
+   "cobertura": 0.15
+  },
+  {
+   "id": "igac-37",
+   "tipo": "Autopista/doble calzada",
+   "estado": "pavimentada",
+   "m": 342,
+   "cobertura": 0.66
+  }
+ ],
+ "discrepancia_jerarquia": [
+  {
+   "id": "igac-3",
+   "tipo": "Camino / sendero",
+   "osm": [
+    "local",
+    "principal",
+    "sendero"
+   ]
+  },
+  {
+   "id": "igac-5",
+   "tipo": "Camino / sendero",
+   "osm": [
+    "local",
+    "principal",
+    "sendero"
+   ]
+  }
+ ]
+}

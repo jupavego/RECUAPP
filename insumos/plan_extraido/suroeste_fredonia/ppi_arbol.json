@@ -1,0 +1,87 @@
+[
+ {
+  "paginas": [
+   124
+  ],
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   2343839815,
+   2350772993,
+   2178036006,
+   2286574268
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "ASIGNACIONES DIRECTAS (20% DELSGR)",
+    "anios": [
+     22912156,
+     5299177,
+     4990308,
+     4976174
+    ],
+    "total": 38177815,
+    "ruta": {
+     "linea": "ASIGNACIONES DIRECTAS (20% DELSGR)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LOCAL - AMBIENTE Y DESARROLLO SOSTENIBLE",
+    "anios": [
+     153097637,
+     156011643,
+     144537026,
+     151774795
+    ],
+    "total": 605421101,
+    "ruta": {
+     "linea": "LOCAL - AMBIENTE Y DESARROLLO SOSTENIBLE"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LOCAL SEGÚN NBI Y CUARTA, QUINTA, Y SEXTA CATEGORÍA",
+    "anios": [
+     995910114,
+     1014075677,
+     939490669,
+     986536165
+    ],
+    "total": 3936012625,
+    "ruta": {
+     "linea": "LOCAL SEGÚN NBI Y CUARTA, QUINTA, Y SEXTA CATEGORÍA"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TOTAL",
+    "anios": [
+     1171919908,
+     1175386496,
+     1089018003,
+     1143287134
+    ],
+    "total": 4579611541,
+    "ruta": {
+     "linea": "TOTAL"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

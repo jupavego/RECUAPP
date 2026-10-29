@@ -1,0 +1,383 @@
+[
+ {
+  "paginas": [
+   135
+  ],
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   8165595615,
+   8737187309,
+   9348790419,
+   10003205750
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Educación",
+    "anios": [
+     130564451,
+     139703963,
+     149483240,
+     159947067
+    ],
+    "total": 579698720,
+    "ruta": {
+     "linea": "Educación"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Prestación de Servicios",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Educación",
+     "sector": "Prestación de Servicios"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Calidad",
+    "anios": [
+     130564451,
+     139703963,
+     149483240,
+     159947067
+    ],
+    "total": 579698720,
+    "ruta": {
+     "linea": "Educación",
+     "sector": "Calidad"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Matrícula Gratuidad",
+    "anios": [
+     67733312,
+     72474644,
+     77547869,
+     82976220
+    ],
+    "total": 300732044,
+    "ruta": {
+     "linea": "Educación",
+     "sector": "Calidad",
+     "programa": "Matrícula Gratuidad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Matrícula Oficial",
+    "anios": [
+     62831139,
+     67229319,
+     71935371,
+     76970847
+    ],
+    "total": 278966676,
+    "ruta": {
+     "linea": "Educación",
+     "sector": "Calidad",
+     "programa": "Matrícula Oficial"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Asignaciones especiales",
+    "anios": [
+     21807198,
+     23333702,
+     24967061,
+     26714755
+    ],
+    "total": 96822716,
+    "ruta": {
+     "linea": "Asignaciones especiales"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Crecimiento de la Economía",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Asignaciones especiales",
+     "sector": "Crecimiento de la Economía"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "SGP - Alimentación Escolar",
+    "anios": [
+     21807198,
+     23333702,
+     24967061,
+     26714755
+    ],
+    "total": 96822716,
+    "ruta": {
+     "linea": "Asignaciones especiales",
+     "sector": "SGP - Alimentación Escolar"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Salud",
+    "anios": [
+     4590224864,
+     4911540604,
+     5255348447,
+     5623222838
+    ],
+    "total": 20380336753,
+    "ruta": {
+     "linea": "Salud"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Total, Régimen Subsidiado",
+    "anios": [
+     4450002037,
+     4761502180,
+     5094807332,
+     5451443845
+    ],
+    "total": 19757755394,
+    "ruta": {
+     "linea": "Salud",
+     "sector": "Total, Régimen Subsidiado"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Régimen Subsidiado SGP",
+    "anios": [
+     1026333165,
+     1098176487,
+     1175048841,
+     1257302259
+    ],
+    "total": 4556860752,
+    "ruta": {
+     "linea": "Salud",
+     "sector": "Total, Régimen Subsidiado",
+     "programa": "Régimen Subsidiado SGP"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Régimen subsidiado ADRES",
+    "anios": [
+     2823678434,
+     3021335924,
+     3232829439,
+     3459127500
+    ],
+    "total": 12536971297,
+    "ruta": {
+     "linea": "Salud",
+     "sector": "Total, Régimen Subsidiado",
+     "programa": "Régimen subsidiado ADRES"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Subsidio a la oferta",
+    "anios": [
+     163744113,
+     175206201,
+     187470635,
+     200593579
+    ],
+    "total": 727014528,
+    "ruta": {
+     "linea": "Salud",
+     "sector": "Total, Régimen Subsidiado",
+     "programa": "Subsidio a la oferta"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Derechos por la explotación juegos de suerte y azar",
+    "anios": [
+     66968641,
+     71656446,
+     76672397,
+     82039465
+    ],
+    "total": 297336949,
+    "ruta": {
+     "linea": "Salud",
+     "sector": "Total, Régimen Subsidiado",
+     "programa": "Derechos por la explotación juegos de suerte y azar"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Recursos departamental es para Aseguramiento del Régimen Subsidiado",
+    "anios": [
+     369277684,
+     395127122,
+     422786020,
+     452381042
+    ],
+    "total": 1639571868,
+    "ruta": {
+     "linea": "Salud",
+     "sector": "Total, Régimen Subsidiado",
+     "programa": "Recursos departamental es para Aseguramiento del Régimen Subsidiado"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Salud Pública",
+    "anios": [
+     140222827,
+     150038425,
+     160541115,
+     171778993
+    ],
+    "total": 622581359,
+    "ruta": {
+     "linea": "Salud",
+     "sector": "Salud Pública"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Salud Pública SGP",
+    "anios": [
+     128722827,
+     137733425,
+     147374765,
+     157690998
+    ],
+    "total": 571522015,
+    "ruta": {
+     "linea": "Salud",
+     "sector": "Salud Pública",
+     "programa": "Salud Pública SGP"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Coljuego 25%",
+    "anios": [
+     11500000,
+     12305000,
+     13166350,
+     14087995
+    ],
+    "total": 51059345,
+    "ruta": {
+     "linea": "Salud",
+     "sector": "Salud Pública",
+     "programa": "Coljuego 25%"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Agua Potable",
+    "anios": [
+     484444744,
+     518355876,
+     554640787,
+     593465643
+    ],
+    "total": 2150907050,
+    "ruta": {
+     "linea": "Agua Potable"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Propósito General - Destinación",
+    "anios": [
+     2054484679,
+     2198298607,
+     2352179509,
+     2516832075
+    ],
+    "total": 9121794869,
+    "ruta": {
+     "linea": "Propósito General - Destinación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Libre Destinación",
+    "anios": [
+     884069679,
+     945954557,
+     1012171375,
+     1083023372
+    ],
+    "total": 3925218983,
+    "ruta": {
+     "linea": "Libre Destinación"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

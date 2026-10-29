@@ -1,0 +1,334 @@
+[
+ {
+  "paginas": [
+   197
+  ],
+  "cabecera": "DESCRIPCION",
+  "unidad": "millones",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   12548587462,
+   13478437794,
+   14477190034,
+   15549949817
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Gastos de funcionamientos totales",
+    "anios": [
+     6002158114,
+     6446918031,
+     6924634657,
+     7437750085
+    ],
+    "total": 26811460887,
+    "ruta": {
+     "linea": "Gastos de funcionamientos totales"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Concejo",
+    "anios": [
+     349271234,
+     375152233,
+     402951014,
+     432809684
+    ],
+    "total": 1560184165,
+    "ruta": {
+     "linea": "Concejo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Personería",
+    "anios": [
+     195000000,
+     209449500,
+     224969707,
+     241639963
+    ],
+    "total": 871059170,
+    "ruta": {
+     "linea": "Personería"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total concejo y personería",
+    "anios": [
+     544271234,
+     584601733,
+     627920721,
+     674449647
+    ],
+    "total": 2431243335,
+    "ruta": {
+     "linea": "Total concejo y personería"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Administración central",
+    "anios": [
+     5457886880,
+     5862316297,
+     6296713935,
+     6763300438
+    ],
+    "total": 24380217550,
+    "ruta": {
+     "linea": "Administración central"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Servicios personales",
+    "anios": [
+     4066271063,
+     4367581748,
+     4691219556,
+     5038838925
+    ],
+    "total": 18163911292,
+    "ruta": {
+     "linea": "Administración central",
+     "sector": "Servicios personales"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Gastos generales",
+    "anios": [
+     1391615817,
+     1494734549,
+     1605494379,
+     1724461512
+    ],
+    "total": 6216306257,
+    "ruta": {
+     "linea": "Administración central",
+     "sector": "Gastos generales"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   198
+  ],
+  "cabecera": "Detalle",
+  "unidad": "millones",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   25719141901,
+   27624930315,
+   29671937652,
+   31868037094
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Predial",
+    "anios": [
+     5597390397,
+     6012157026,
+     6457657862,
+     6935524543
+    ],
+    "total": 25002729828,
+    "ruta": {
+     "linea": "Predial"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Industria y comercio",
+    "anios": [
+     1078657485,
+     1158586004,
+     1244437227,
+     1336525582
+    ],
+    "total": 4818206298,
+    "ruta": {
+     "linea": "Industria y comercio"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Avisos y tableros",
+    "anios": [
+     94827314,
+     101854018,
+     109401400,
+     117497104
+    ],
+    "total": 423579836,
+    "ruta": {
+     "linea": "Avisos y tableros"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Delineación urbana",
+    "anios": [
+     2519654519,
+     2706360918,
+     2906902262,
+     3122013030
+    ],
+    "total": 11254930729,
+    "ruta": {
+     "linea": "Delineación urbana"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Sobretasa a la gasolina",
+    "anios": [
+     706570907,
+     758927811,
+     815164362,
+     875486524
+    ],
+    "total": 3156149604,
+    "ruta": {
+     "linea": "Sobretasa a la gasolina"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Plaza de mercado",
+    "anios": [
+     2187942,
+     2350068,
+     2524208,
+     2711000
+    ],
+    "total": 9773218,
+    "ruta": {
+     "linea": "Plaza de mercado"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Venta de bienes y servicios",
+    "anios": [
+     158064575,
+     169777160,
+     182357648,
+     195852114
+    ],
+    "total": 706051497,
+    "ruta": {
+     "linea": "Venta de bienes y servicios"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Intereses moratorios",
+    "anios": [
+     1015222482,
+     1090450468,
+     1171252848,
+     1257925559
+    ],
+    "total": 4534851357,
+    "ruta": {
+     "linea": "Intereses moratorios"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "SGP libre destinación",
+    "anios": [
+     1629793625,
+     1750561333,
+     1880277928,
+     2019606522
+    ],
+    "total": 7280239408,
+    "ruta": {
+     "linea": "SGP libre destinación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Impuesto de vehículos automotores",
+    "anios": [
+     57201705,
+     61440351,
+     65993081,
+     70876569
+    ],
+    "total": 255511706,
+    "ruta": {
+     "linea": "Impuesto de vehículos automotores"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TOTALES",
+    "anios": [
+     12859570950,
+     13812465158,
+     14835968826,
+     15934018547
+    ],
+    "total": 57442023481,
+    "ruta": {
+     "linea": "TOTALES"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

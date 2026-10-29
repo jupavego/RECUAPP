@@ -1,0 +1,500 @@
+[
+ {
+  "pagina": 181,
+  "cabecera": "FUENTES DE FINANCIACIÓN",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "SGP Régimen Subsidiado SSF",
+    "anios": [
+     9141099274,
+     9415332252,
+     9697792220,
+     9988725986
+    ],
+    "total": 38242949732
+   },
+   {
+    "etiqueta": "SGP Salud Publica",
+    "anios": [
+     508698711,
+     523959672,
+     539678462,
+     555868816
+    ],
+    "total": 2128205662
+   },
+   {
+    "etiqueta": "Salud Oferta",
+    "anios": [
+     447627544,
+     461056370,
+     474888061,
+     489134703
+    ],
+    "total": 1872706679
+   },
+   {
+    "etiqueta": "Coljuegos 75% SSF",
+    "anios": [
+     243740336,
+     251052546,
+     258584122,
+     266341646
+    ],
+    "total": 1019718649
+   },
+   {
+    "etiqueta": "Adres SSF",
+    "anios": [
+     19224129993,
+     19800853893,
+     20394879510,
+     21006725895
+    ],
+    "total": 80426589290
+   },
+   {
+    "etiqueta": "Aporte DPTAL SSF",
+    "anios": [
+     3205205617,
+     3301361786,
+     3400402639,
+     3502414718
+    ],
+    "total": 13409384760
+   },
+   {
+    "etiqueta": "Total, por Vigencia",
+    "anios": [
+     32770501475,
+     33753616519,
+     34766225014,
+     35809211765
+    ],
+    "total": 137099554772
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 181,
+  "cabecera": "FUENTES DE FINANCIACIÓN",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "SGP Matricula",
+    "anios": [
+     671050473,
+     691181987,
+     711917447,
+     733274970
+    ],
+    "total": 2807424877
+   },
+   {
+    "etiqueta": "SGP Gratuidad SSF",
+    "anios": [
+     375383435,
+     386644938,
+     398244286,
+     410191615
+    ],
+    "total": 1570464274
+   },
+   {
+    "etiqueta": "SGP Alimentación Escolar",
+    "anios": [
+     466306810,
+     480296014,
+     494704895,
+     509546042
+    ],
+    "total": 1950853761
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 182,
+  "cabecera": "FUENTES DE FINANCIACIÓN",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "SGP Cultura",
+    "anios": [
+     210796218,
+     217120105,
+     223633708,
+     230342719
+    ],
+    "total": 881892749
+   },
+   {
+    "etiqueta": "Estampilla Procultura",
+    "anios": [
+     218725510,
+     225287275,
+     232045894,
+     239007270
+    ],
+    "total": 915065949
+   },
+   {
+    "etiqueta": "Total, por Vigencia",
+    "anios": [
+     429521728,
+     442407380,
+     455679601,
+     469349989
+    ],
+    "total": 1796958698
+   }
+  ],
+  "ncols": 1,
+  "financiero": true
+ },
+ {
+  "pagina": 183,
+  "cabecera": "FUENTES DE FINANCIACIÓN",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Estampilla pro-adulto Mayor",
+    "anios": [
+     853812473,
+     879426847,
+     905809653,
+     932983942
+    ],
+    "total": 3572032915
+   },
+   {
+    "etiqueta": "Libre inversión",
+    "anios": [
+     94982243,
+     101631000,
+     108745170,
+     116357332
+    ],
+    "total": 421715746
+   },
+   {
+    "etiqueta": "Total, por Vigencia",
+    "anios": [
+     948794716,
+     981057847,
+     1014554823,
+     1049341274
+    ],
+    "total": 3993748661
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 183,
+  "cabecera": "FUENTES DE FINANCIACIÓN",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "SGP Deporte",
+    "anios": [
+     281061624,
+     289493473,
+     298178277,
+     307123625
+    ],
+    "total": 1175856999
+   },
+   {
+    "etiqueta": "Contribución Predeporte",
+    "anios": [
+     382709850,
+     394191146,
+     406016880,
+     418197386
+    ],
+    "total": 1601115262
+   },
+   {
+    "etiqueta": "Impuesto al Cigarrillo",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 184,
+  "cabecera": "FUENTES DE FINANCIACIÓN",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Código de Policía",
+    "anios": [
+     773978,
+     797197,
+     821113,
+     845747
+    ],
+    "total": 3238036
+   },
+   {
+    "etiqueta": "Total, por Vigencia",
+    "anios": [
+     773978,
+     797197,
+     821113,
+     845747
+    ],
+    "total": 3238036
+   }
+  ],
+  "ncols": 3,
+  "financiero": false
+ },
+ {
+  "pagina": 185,
+  "cabecera": "FUENTES DE FINANCIACIÓN",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Sobretasa Bomberil",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Contribución obra publica",
+    "anios": [
+     406865291,
+     419071250,
+     431643387,
+     444592689
+    ],
+    "total": 1702172617
+   },
+   {
+    "etiqueta": "1% Gestión de Riesgo",
+    "anios": [
+     99639712,
+     102628903,
+     105707770,
+     108879003
+    ],
+    "total": 416855389
+   },
+   {
+    "etiqueta": "Total, por Vigencia",
+    "anios": [
+     506505003,
+     521700153,
+     537351158,
+     553471692
+    ],
+    "total": 2119028006
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 186,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Libre inversión",
+    "anios": [
+     33295492,
+     34294357,
+     35323187,
+     36382883
+    ],
+    "total": 139295919
+   },
+   {
+    "etiqueta": "Total, por Vigencia",
+    "anios": [
+     33295492,
+     34294357,
+     35323187,
+     36382883
+    ],
+    "total": 139295919
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 186,
+  "cabecera": "FUENTES DE FINANCIACIÓN",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "SGP Agua Potable y San. Básico",
+    "anios": [
+     1143651524,
+     933872201,
+     1045456238,
+     1179979766
+    ],
+    "total": 4302959729
+   },
+   {
+    "etiqueta": "SGP APSB PDA",
+    "anios": [
+     130217886,
+     134124423,
+     138148155,
+     142292600
+    ],
+    "total": 544783064
+   },
+   {
+    "etiqueta": "AGP APSB Subsidios",
+    "anios": [
+     675646148,
+     695915532,
+     716792998,
+     738296788
+    ],
+    "total": 2826651467
+   },
+   {
+    "etiqueta": "Total, por Vigencia",
+    "anios": [
+     1949515558,
+     1763912156,
+     1900397392,
+     2060569155
+    ],
+    "total": 7674394260
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 187,
+  "cabecera": "FUENTES DE FINANCIACIÓN",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Alumbrado Publico",
+    "anios": [
+     239023005,
+     246193695,
+     253579506,
+     261186891
+    ],
+    "total": 999983097
+   },
+   {
+    "etiqueta": "Total, por Vigencia",
+    "anios": [
+     239023005,
+     246193695,
+     253579506,
+     261186891
+    ],
+    "total": 999983097
+   }
+  ],
+  "ncols": 3,
+  "financiero": true
+ },
+ {
+  "pagina": 187,
+  "cabecera": "FUENTES DE FINANCIACIÓN",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "SGR",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "1% ICLD Protección Recursos Hídricos",
+    "anios": [
+     99639712,
+     102628903,
+     105707770,
+     108879003
+    ],
+    "total": 416855389
+   }
+  ],
+  "ncols": 3,
+  "financiero": true
+ },
+ {
+  "pagina": 188,
+  "cabecera": "FUENTES DE FINANCIACIÓN",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "SGP",
+    "anios": [
+     4074644449,
+     3846910106,
+     4267451310,
+     4756556226
+    ],
+    "total": 16945562091
+   },
+   {
+    "etiqueta": "SGR",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Recursos Propios",
+    "anios": [
+     3647005770,
+     3411429828,
+     3418077418,
+     3259452833
+    ],
+    "total": 13735965849
+   },
+   {
+    "etiqueta": "Total, Recursos Libre Inversión",
+    "anios": [
+     7721652243,
+     7258341959,
+     7685530755,
+     8016011086
+    ],
+    "total": 30681527940
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ }
+]

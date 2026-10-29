@@ -1,0 +1,298 @@
+[
+ {
+  "pagina": 129,
+  "linea": "",
+  "sector": "Línea estratégica",
+  "programa": "Sector Plan",
+  "anios": [
+   2024,
+   2025,
+   2026,
+   2027
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 129,
+  "linea": "",
+  "sector": "Ordenamiento territorial y planeación",
+  "programa": "3.000.000.000",
+  "anios": [
+   15160000000,
+   160000000,
+   160000000,
+   18480000000
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 129,
+  "linea": "LÍNEA 1: SANTA FE ANTIOQUIA SE",
+  "sector": "Transporte y Movilidad",
+  "programa": "Seguridad vial para el municipio de Santa Fe de Antioquia",
+  "anios": [
+   1647400557,
+   1154641766,
+   1088126498,
+   988464607,
+   4878633428
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 129,
+  "linea": "LÍNEA 1: SANTA FE ANTIOQUIA SE",
+  "sector": "RENUEVA CON INFRAESTRUCT",
+  "programa": "Medio Ambiente",
+  "anios": [
+   95000000,
+   60000000,
+   190000000,
+   190000000,
+   535000000
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 129,
+  "linea": "LÍNEA 1: SANTA FE ANTIOQUIA SE",
+  "sector": "Gestión del riesgo de desastres y emergencias",
+  "programa": "Gestión de Riesgo y Prevención de Desastres",
+  "anios": [
+   268648257,
+   428648257,
+   218648257,
+   268648257,
+   1184593028
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 129,
+  "linea": "LÍNEA 1: SANTA FE ANTIOQUIA SE",
+  "sector": "Agua potable y saneamiento básico en la zona urbana y rural del municipio de Santa Fe de Antioquia",
+  "programa": "2.786.487.401",
+  "anios": [
+   2858546897,
+   1657888773,
+   3319604324,
+   10622527395
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 129,
+  "linea": "LÍNEA 1: SANTA FE ANTIOQUIA SE",
+  "sector": "Implementación de Servicios Públicos Alternativos TOTAL, LINEA EST",
+  "programa": "2.645.669.561 RATEGICA 1",
+  "anios": [
+   2730669562,
+   4730669562,
+   2030669561,
+   12137678246,
+   99660766832
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 130,
+  "linea": "LÍNEA 1: SANTA FE ANTIOQUIA SE",
+  "sector": "Línea estratégica",
+  "programa": "Sector Plan",
+  "anios": [
+   2024,
+   2025,
+   2026,
+   2027
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 130,
+  "linea": "LÍNEA 1: SANTA FE ANTIOQUIA SE",
+  "sector": "Fortalecimiento de estrategias para la permanencia escolar",
+  "programa": "1.049.595.298",
+  "anios": [
+   2022179110,
+   4095666274,
+   2505238445,
+   9672679127
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 130,
+  "linea": "LÍNEA 2: SANTA FE ANTIOQUIA SE RENUEVA",
+  "sector": "Cultura",
+  "programa": "Construcción, adecuación, dotación o mantenimiento de infraestructura cultural",
+  "anios": [
+   343000000,
+   492000000,
+   312000000,
+   912000000,
+   2059000000
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 130,
+  "linea": "LÍNEA 2: SANTA FE ANTIOQUIA SE RENUEVA",
+  "sector": "Salud",
+  "programa": "Fortalecimiento de la red pública de salud del municipio",
+  "anios": [
+   18135234169,
+   13226697853,
+   18552700085,
+   18891742406,
+   68806374513
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 130,
+  "linea": "LÍNEA 2: SANTA FE ANTIOQUIA SE RENUEVA",
+  "sector": "Empoderamiento y transversalización de la equidad de género, la diversidad sexual y las identidades de género",
+  "programa": "112.000.000",
+  "anios": [
+   73000000,
+   73000000,
+   73000000,
+   331000000
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 130,
+  "linea": "LÍNEA 2: SANTA FE ANTIOQUIA SE RENUEVA",
+  "sector": "Políticas públicas fortalecidas",
+  "programa": "88.000.000",
+  "anios": [
+   74000000,
+   74000000,
+   74000000,
+   310000000
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 132,
+  "linea": "LÍNEA 2: SANTA FE ANTIOQUIA SE RENUEVA",
+  "sector": "Línea estratégica",
+  "programa": "Sector Plan",
+  "anios": [
+   2024,
+   2025,
+   2026,
+   2027
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 132,
+  "linea": "LÍNEA 2: SANTA FE ANTIOQUIA SE RENUEVA",
+  "sector": "Salud para la zona rural",
+  "programa": "65.000.000",
+  "anios": [
+   415000000,
+   65000000,
+   65000000,
+   610000000
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 132,
+  "linea": "LÍNEA 2: SANTA FE ANTIOQUIA SE RENUEVA",
+  "sector": "Educación para la zona rural,",
+  "programa": "235.000.000",
+  "anios": [
+   152665930,
+   448000000,
+   40000000,
+   875665930
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 132,
+  "linea": "LÍNEA 2: SANTA FE ANTIOQUIA SE RENUEVA",
+  "sector": "Vivienda, ciudad y territorio",
+  "programa": "Construcción PTAR",
+  "anios": [
+   120000000,
+   3170000000,
+   600000000,
+   990000000,
+   4880000000
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 132,
+  "linea": "LÍNEA 2: SANTA FE ANTIOQUIA SE RENUEVA",
+  "sector": "SE RENUEVA CON DESARROLLO",
+  "programa": "Santa Fe de Antioquia por un",
+  "anios": [
+   115000000,
+   650000000,
+   446452567,
+   180000000,
+   1391452567
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 132,
+  "linea": "LÍNEA 2: SANTA FE ANTIOQUIA SE RENUEVA",
+  "sector": "turismo sostenible",
+  "programa": "Gestión empresarial sostenible",
+  "anios": [
+   80000000,
+   55000000,
+   185000000,
+   55000000,
+   375000000
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 132,
+  "linea": "LÍNEA 2: SANTA FE ANTIOQUIA SE RENUEVA",
+  "sector": "Proyectos productivos agropecuarios",
+  "programa": "130.000.000",
+  "anios": [
+   4680000000,
+   1080000000,
+   380000000,
+   6270000000
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 132,
+  "linea": "LÍNEA 2: SANTA FE ANTIOQUIA SE RENUEVA",
+  "sector": "Desarrollo Ambiental sustentable",
+  "programa": "72.000.000",
+  "anios": [
+   72000000,
+   72000000,
+   72000000,
+   288000000
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 132,
+  "linea": "LÍNEA 2: SANTA FE ANTIOQUIA SE RENUEVA",
+  "sector": "Asociación e Integración",
+  "programa": "Desarrollo político, seguridad, convivencia pacífica y participación ciudadana",
+  "anios": [
+   600914569,
+   600914568,
+   600914569,
+   1049225238,
+   2851968944
+  ],
+  "estado": "revisar"
+ }
+]

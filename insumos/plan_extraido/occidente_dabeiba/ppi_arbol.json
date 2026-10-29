@@ -1,0 +1,175 @@
+[
+ {
+  "paginas": [
+   184
+  ],
+  "cabecera": "FUENTES DE FINANCIACIÓN",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   773978,
+   797197,
+   821113,
+   845747
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Código de Policía",
+    "anios": [
+     773978,
+     797197,
+     821113,
+     845747
+    ],
+    "total": 3238036,
+    "ruta": {
+     "linea": "Código de Policía"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Total, por Vigencia",
+    "anios": [
+     773978,
+     797197,
+     821113,
+     845747
+    ],
+    "total": 3238036,
+    "ruta": {
+     "linea": "Código de Policía",
+     "sector": "Total, por Vigencia"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   185,
+   186
+  ],
+  "cabecera": "FUENTES DE FINANCIACIÓN",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   1046305498,
+   1077694663,
+   1110025502,
+   1143326267
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Sobretasa Bomberil",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Sobretasa Bomberil"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Contribución obra publica",
+    "anios": [
+     406865291,
+     419071250,
+     431643387,
+     444592689
+    ],
+    "total": 1702172617,
+    "ruta": {
+     "linea": "Contribución obra publica"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1% Gestión de Riesgo",
+    "anios": [
+     99639712,
+     102628903,
+     105707770,
+     108879003
+    ],
+    "total": 416855389,
+    "ruta": {
+     "linea": "1% Gestión de Riesgo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total, por Vigencia",
+    "anios": [
+     506505003,
+     521700153,
+     537351158,
+     553471692
+    ],
+    "total": 2119028006,
+    "ruta": {
+     "linea": "Total, por Vigencia"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Libre inversión",
+    "anios": [
+     33295492,
+     34294357,
+     35323187,
+     36382883
+    ],
+    "total": 139295919,
+    "ruta": {
+     "linea": "Libre inversión"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Total, por Vigencia",
+    "anios": [
+     33295492,
+     34294357,
+     35323187,
+     36382883
+    ],
+    "total": 139295919,
+    "ruta": {
+     "linea": "Libre inversión",
+     "sector": "Total, por Vigencia"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

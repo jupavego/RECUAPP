@@ -1,0 +1,61 @@
+[
+ {
+  "pagina": 69,
+  "cabecera": "Grados CINE",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Transición niños de 5",
+    "anios": [
+     50,
+     51,
+     48,
+     47
+    ],
+    "total": 196
+   },
+   {
+    "etiqueta": "Primaria niños de 6 a 10 años",
+    "anios": [
+     246,
+     246,
+     246,
+     240
+    ],
+    "total": 978
+   },
+   {
+    "etiqueta": "Secundaria niños de 11 a 14 años",
+    "anios": [
+     196,
+     193,
+     192,
+     187
+    ],
+    "total": 768
+   },
+   {
+    "etiqueta": "Media niños de 15 a 16 años",
+    "anios": [
+     89,
+     89,
+     87,
+     87
+    ],
+    "total": 352
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     581,
+     579,
+     573,
+     561
+    ],
+    "total": 2294
+   }
+  ],
+  "ncols": 10,
+  "financiero": false
+ }
+]

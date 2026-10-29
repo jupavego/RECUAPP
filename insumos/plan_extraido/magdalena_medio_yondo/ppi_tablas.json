@@ -1,0 +1,445 @@
+[
+ {
+  "pagina": 120,
+  "cabecera": "Fuente",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "CONTRIBUCIÓN ESPECIAL SOBRE CONTRATOS DE OBRAS PÚBLICAS",
+    "anios": [
+     1287,
+     1615,
+     1574,
+     1508
+    ],
+    "total": 5985
+   },
+   {
+    "etiqueta": "ESTAMPILLA PARA EL BIENESTAR DEL ADULTO MAYOR",
+    "anios": [
+     1955,
+     2382,
+     2350,
+     2415
+    ],
+    "total": 9104
+   },
+   {
+    "etiqueta": "ICLD",
+    "anios": [
+     1856,
+     2820,
+     2919,
+     3021
+    ],
+    "total": 10618
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 121,
+  "cabecera": "Fuente RECURSOS ADRES - COFINANCIACIÓN UPC RÉGIMEN SUBSIDIADO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "RECURSOS DEPARTAMENTALES PARA ASEGURAMIENTO DEL RÉGIMEN SUBSIDIADO",
+    "anios": [
+     1451,
+     1229,
+     1272,
+     1316
+    ],
+    "total": 5270
+   },
+   {
+    "etiqueta": "SGP AGUA POTABLE Y SANEAMIENTO BÁSICO",
+    "anios": [
+     1977,
+     2047,
+     2118,
+     2193
+    ],
+    "total": 8337
+   },
+   {
+    "etiqueta": "SGP MUNICIPIOS DE LA RIBERA DEL RIO MAGDALENA",
+    "anios": [
+     1608,
+     1664,
+     1723,
+     1783
+    ],
+    "total": 6780
+   },
+   {
+    "etiqueta": "SGP PROPÓSITO GENERAL LIBRE DESTINACIÓN MUNICIPIOS CATEGORIAS 4, 5 Y 6",
+    "anios": [
+     2075,
+     2094,
+     2168,
+     2243
+    ],
+    "total": 8582
+   },
+   {
+    "etiqueta": "SGP PROPÓSITO GENERAL LIBRE INVERSIÓN",
+    "anios": [
+     3189,
+     3301,
+     3416,
+     3536
+    ],
+    "total": 13443
+   },
+   {
+    "etiqueta": "SGP REGIMEN SUBSIDIADO",
+    "anios": [
+     5149,
+     5329,
+     5515,
+     5708
+    ],
+    "total": 21703
+   },
+   {
+    "etiqueta": "SGR Asignaciones Directas 20%",
+    "anios": [
+     9642,
+     15228,
+     13943,
+     14109
+    ],
+    "total": 52923
+   },
+   {
+    "etiqueta": "SGR Asignaciones Directas anticipadas 5%",
+    "anios": [
+     4302,
+     8922,
+     7785,
+     7819
+    ],
+    "total": 28829
+   },
+   {
+    "etiqueta": "SGR Incentivo a la Producción",
+    "anios": [
+     2110,
+     2184,
+     2260,
+     2339
+    ],
+    "total": 8895
+   },
+   {
+    "etiqueta": "SGR OCAD PAZ",
+    "anios": [
+     11813,
+     12226,
+     12654,
+     13097
+    ],
+    "total": 49792
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 122,
+  "cabecera": "Fuente",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "RECURSOS DE GESTIÓN",
+    "anios": [
+     15958,
+     32437,
+     46724,
+     10317
+    ],
+    "total": 105437
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     78307,
+     106713,
+     122111,
+     85163
+    ],
+    "total": 392296
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 122,
+  "cabecera": "CONCEPTO",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "GASTOS DEL MUNICIPIO DE YONDO ANTIOQUIA",
+    "anios": [
+     88543,
+     117323,
+     133093,
+     96385
+    ],
+    "total": 435344
+   },
+   {
+    "etiqueta": "GASTO DE FUNCIONAMIENTO",
+    "anios": [
+     10235,
+     10610,
+     10981,
+     11222
+    ],
+    "total": 43049
+   },
+   {
+    "etiqueta": "Gasto De Funcionamiento Alcaldía Municipal",
+    "anios": [
+     9564,
+     9916,
+     9976,
+     9919
+    ],
+    "total": 39376
+   },
+   {
+    "etiqueta": "GASTOS DE INVERSIÓN",
+    "anios": [
+     78307,
+     106713,
+     122111,
+     85163
+    ],
+    "total": 392296
+   }
+  ],
+  "ncols": 3,
+  "financiero": true
+ },
+ {
+  "pagina": 122,
+  "cabecera": "Línea estratégica",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "ORGANIZANDO EL TERRITORIO PARA AVANZAR",
+    "anios": [
+     33299,
+     39112,
+     41640,
+     39113
+    ],
+    "total": 153165
+   },
+   {
+    "etiqueta": "YONDO AVANZA CON FORTALECIMIENTO INSTITUCIONAL",
+    "anios": [
+     4267,
+     26306,
+     4440,
+     4646
+    ],
+    "total": 39660
+   },
+   {
+    "etiqueta": "YONDÓ AVANZA CON INCLUSIÓN SOCIAL",
+    "anios": [
+     33791,
+     36595,
+     71734,
+     34881
+    ],
+    "total": 177003
+   },
+   {
+    "etiqueta": "YONDÓ AVANZA CON PRODUCTIVIDAD Y COMPETITIVIDAD",
+    "anios": [
+     6900,
+     4639,
+     4235,
+     6463
+    ],
+    "total": 22238
+   },
+   {
+    "etiqueta": "Total general",
+    "anios": [
+     78307,
+     106713,
+     122111,
+     85163
+    ],
+    "total": 392296
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 145,
+  "cabecera": "FUENTE",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "SGR ASIGNACIONES DIRECTAS ANTICIPADAS 5%",
+    "anios": [
+     4302,
+     8922,
+     7785,
+     7819
+    ],
+    "total": 28829
+   },
+   {
+    "etiqueta": "SGR ASIGNACIONES DIRECTAS 20%",
+    "anios": [
+     5561,
+     11005,
+     9572,
+     9585
+    ],
+    "total": 35724
+   },
+   {
+    "etiqueta": "RENDIMIENTOS FINANCIEROS ASIGNACIONES DIRECTAS (1)",
+    "anios": [
+     4080,
+     4223,
+     4371,
+     4524
+    ],
+    "total": 17199
+   },
+   {
+    "etiqueta": "SGR ASIGNACION PARA LA PAZ",
+    "anios": [
+     11813,
+     12226,
+     12654,
+     13097
+    ],
+    "total": 49792
+   },
+   {
+    "etiqueta": "INCENTIVO A LA PRODUCCIÓN MINERIA",
+    "anios": [
+     2110,
+     2184,
+     2260,
+     2339
+    ],
+    "total": 8895
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     28748,
+     40598,
+     38531,
+     39350
+    ],
+    "total": 147229
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 146,
+  "cabecera": "Línea estratégica",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "AVANZAR",
+    "anios": [
+     11013,
+     9526,
+     5694,
+     2348
+    ],
+    "total": 28583
+   },
+   {
+    "etiqueta": "Total ORGANIZAND AV",
+    "anios": [
+     16033,
+     26106,
+     19795,
+     22824
+    ],
+    "total": 84809
+   },
+   {
+    "etiqueta": "YONDÓ AVANZA CON INCLUSIÓN",
+    "anios": [
+     3924,
+     4054,
+     3946,
+     4071
+    ],
+    "total": 15997
+   },
+   {
+    "etiqueta": "SOCIAL",
+    "anios": [
+     3508,
+     1178,
+     3262,
+     1076
+    ],
+    "total": 9025
+   },
+   {
+    "etiqueta": "Total YONDÓ AVA S",
+    "anios": [
+     11023,
+     10952,
+     13829,
+     8807
+    ],
+    "total": 44612
+   },
+   {
+    "etiqueta": "YONDÓ AVANZA CON PRODUCTIVIDAD Y COMPETITIVIDAD",
+    "anios": [
+     1691,
+     3540,
+     3506,
+     5718
+    ],
+    "total": 14456
+   },
+   {
+    "etiqueta": "Total YOND PRODUCTIVIDAD",
+    "anios": [
+     1691,
+     3540,
+     3506,
+     5718
+    ],
+    "total": 14456
+   },
+   {
+    "etiqueta": "Total general",
+    "anios": [
+     28748,
+     40598,
+     38531,
+     39350
+    ],
+    "total": 147229
+   }
+  ],
+  "ncols": 7,
+  "financiero": false
+ }
+]

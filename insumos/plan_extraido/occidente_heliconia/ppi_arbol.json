@@ -1,0 +1,206 @@
+[
+ {
+  "paginas": [
+   215
+  ],
+  "cabecera": "DIMENSIONES",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   20216,
+   23481,
+   24420,
+   23558
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "HELICONIA TERRITORIO DE TOOS CON RESPONSABILIDAD SOCIAL",
+    "anios": [
+     3676,
+     4269,
+     4440,
+     4283
+    ],
+    "total": 16668,
+    "ruta": {
+     "linea": "HELICONIA TERRITORIO DE TOOS CON RESPONSABILIDAD SOCIAL"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "HELICONIA TERRITORIO DE TODOS ORDENADO Y PROTEGIENDO LOS ECOSISTEMAS",
+    "anios": [
+     4288,
+     4981,
+     5180,
+     4997
+    ],
+    "total": 19446,
+    "ruta": {
+     "linea": "HELICONIA TERRITORIO DE TODOS ORDENADO Y PROTEGIENDO LOS ECOSISTEMAS"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "HELICONIA TERRITORIO DE TODOS PRODUCTIVO, RESILIENTE Y COMPETITIVO",
+    "anios": [
+     1838,
+     2135,
+     2220,
+     2142
+    ],
+    "total": 8335,
+    "ruta": {
+     "linea": "HELICONIA TERRITORIO DE TODOS ORDENADO Y PROTEGIENDO LOS ECOSISTEMAS",
+     "sector": "HELICONIA TERRITORIO DE TODOS PRODUCTIVO, RESILIENTE Y COMPETITIVO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "HELICONIA TERRITORIO DE TODOSCON GOBERNANZA Y GASTO PUBLICO EFICIENTE",
+    "anios": [
+     2450,
+     2846,
+     2960,
+     2856
+    ],
+    "total": 11112,
+    "ruta": {
+     "linea": "HELICONIA TERRITORIO DE TODOS ORDENADO Y PROTEGIENDO LOS ECOSISTEMAS",
+     "sector": "HELICONIA TERRITORIO DE TODOSCON GOBERNANZA Y GASTO PUBLICO EFICIENTE"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TOTAL",
+    "anios": [
+     12252,
+     14231,
+     14800,
+     14278
+    ],
+    "total": 55561,
+    "ruta": {
+     "linea": "TOTAL"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   221
+  ],
+  "cabecera": "CONCEPTO DE GASTO",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   1571892008,
+   1361565097,
+   1261428656,
+   1325617899
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "ASIGNACIÓN DIRECTA",
+    "anios": [
+     255636,
+     157669,
+     148479,
+     148058
+    ],
+    "total": 709842,
+    "ruta": {
+     "linea": "ASIGNACIÓN DIRECTA"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "5% Anticipadas",
+    "anios": [
+     72629,
+     44796,
+     42185,
+     42065
+    ],
+    "total": 201675,
+    "ruta": {
+     "linea": "5% Anticipadas"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "INVERSION LOCAL AMBIENTE",
+    "anios": [
+     680867830,
+     589835192,
+     546452964,
+     574268771
+    ],
+    "total": 2391424757,
+    "ruta": {
+     "linea": "INVERSION LOCAL AMBIENTE"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "INVERSION LOCAL NBI",
+    "anios": [
+     104748897,
+     90743879,
+     84069687,
+     88349042
+    ],
+    "total": 367911505,
+    "ruta": {
+     "linea": "INVERSION LOCAL NBI"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TOTAL",
+    "anios": [
+     785947016,
+     680783561,
+     630715341,
+     662809963
+    ],
+    "total": 2760247779,
+    "ruta": {
+     "linea": "TOTAL"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

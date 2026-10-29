@@ -1,0 +1,2718 @@
+[
+ {
+  "paginas": [
+   133
+  ],
+  "cabecera": "Código de Concepto",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   42362,
+   45467,
+   49222,
+   53907
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF1 I",
+    "anios": [
+     42342,
+     45446,
+     49201,
+     53885
+    ],
+    "total": 190874,
+    "ruta": {
+     "linea": "BF1 I"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF1.1",
+    "anios": [
+     42289,
+     45393,
+     49146,
+     53828
+    ],
+    "total": 190656,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "BF1.1.1 BF1.1.1.01",
+    "anios": [
+     12687,
+     14310,
+     16509,
+     19559
+    ],
+    "total": 63065,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.1 BF1.1.1.01"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.1.02",
+    "anios": [
+     2197,
+     3296,
+     4944,
+     7416
+    ],
+    "total": 17853,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.1 BF1.1.1.01",
+     "subprograma": "BF1.1.1.02"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.1.03",
+    "anios": [
+     3307,
+     3472,
+     3646,
+     3828
+    ],
+    "total": 14253,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.1 BF1.1.1.01",
+     "subprograma": "BF1.1.1.03"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.1.04",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.1 BF1.1.1.01",
+     "subprograma": "BF1.1.1.04"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.1.05",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.1 BF1.1.1.01",
+     "subprograma": "BF1.1.1.05"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.1.06",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.1 BF1.1.1.01",
+     "subprograma": "BF1.1.1.06"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.1.07",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.1 BF1.1.1.01",
+     "subprograma": "BF1.1.1.07"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.1.08",
+    "anios": [
+     1558,
+     1636,
+     1718,
+     1804
+    ],
+    "total": 6716,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.1 BF1.1.1.01",
+     "subprograma": "BF1.1.1.08"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.1.09",
+    "anios": [
+     1272,
+     1336,
+     1402,
+     1472
+    ],
+    "total": 5482,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.1 BF1.1.1.01",
+     "subprograma": "BF1.1.1.09"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.1.11 A",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.1 BF1.1.1.01",
+     "subprograma": "BF1.1.1.11 A"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.1.12",
+    "anios": [
+     2300,
+     2415,
+     2536,
+     2663
+    ],
+    "total": 9914,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.1 BF1.1.1.01",
+     "subprograma": "BF1.1.1.12"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.1.13",
+    "anios": [
+     2052,
+     2155,
+     2263,
+     2376
+    ],
+    "total": 8846,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.1 BF1.1.1.01",
+     "subprograma": "BF1.1.1.13"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "BF1.1.2",
+    "anios": [
+     1926,
+     2022,
+     2123,
+     2229
+    ],
+    "total": 8300,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.2"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.2.1",
+    "anios": [
+     630,
+     662,
+     695,
+     730
+    ],
+    "total": 2717,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.2",
+     "subprograma": "BF1.1.2.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.2.2",
+    "anios": [
+     10,
+     11,
+     11,
+     12
+    ],
+    "total": 44,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.2",
+     "subprograma": "BF1.1.2.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.2.3",
+    "anios": [
+     325,
+     341,
+     358,
+     376
+    ],
+    "total": 1400,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.2",
+     "subprograma": "BF1.1.2.3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.2.4",
+    "anios": [
+     683,
+     718,
+     753,
+     791
+    ],
+    "total": 2945,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.2",
+     "subprograma": "BF1.1.2.4"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.2.5",
+    "anios": [
+     277,
+     290,
+     305,
+     320
+    ],
+    "total": 1192,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.2",
+     "subprograma": "BF1.1.2.5"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "BF1.1.3",
+    "anios": [
+     27677,
+     29061,
+     30514,
+     32039
+    ],
+    "total": 119291,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.3"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.3.1",
+    "anios": [
+     11243,
+     11805,
+     12395,
+     13015
+    ],
+    "total": 48458,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.3",
+     "subprograma": "BF1.1.3.1"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 4,
+    "etiqueta": "BF1.1.3.1.1.1.1",
+    "anios": [
+     631,
+     662,
+     695,
+     730
+    ],
+    "total": 2718,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.3",
+     "subprograma": "BF1.1.3.1.1.1.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 4,
+    "etiqueta": "BF1.1.3.1.1.1.2",
+    "anios": [
+     4864,
+     5108,
+     5363,
+     5631
+    ],
+    "total": 20966,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.3",
+     "subprograma": "BF1.1.3.1.1.1.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 4,
+    "etiqueta": "BF1.1.3.1.1.1.3",
+    "anios": [
+     1423,
+     1494,
+     1569,
+     1648
+    ],
+    "total": 6134,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.3",
+     "subprograma": "BF1.1.3.1.1.1.3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 4,
+    "etiqueta": "BF1.1.3.1.1.1.4",
+    "anios": [
+     3843,
+     4035,
+     4237,
+     4448
+    ],
+    "total": 16563,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.3",
+     "subprograma": "BF1.1.3.1.1.1.4"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 5,
+    "etiqueta": "BF1.1.3.1.1.1.4.1",
+    "anios": [
+     1648,
+     1731,
+     1817,
+     1908
+    ],
+    "total": 7104,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.3",
+     "subprograma": "BF1.1.3.1.1.1.4.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 5,
+    "etiqueta": "BF1.1.3.1.1.1.4.2",
+    "anios": [
+     2195,
+     2304,
+     2420,
+     2541
+    ],
+    "total": 9460,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.3",
+     "subprograma": "BF1.1.3.1.1.1.4.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 4,
+    "etiqueta": "BF1.1.3.1.1.1.5",
+    "anios": [
+     482,
+     506,
+     531,
+     558
+    ],
+    "total": 2077,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.3",
+     "subprograma": "BF1.1.3.1.1.1.5"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.3.1.1.1.6",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.3",
+     "subprograma": "BF1.1.3.1.1.1.6"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.3.2",
+    "anios": [
+     77,
+     81,
+     85,
+     89
+    ],
+    "total": 332,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.3",
+     "subprograma": "BF1.1.3.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.3.3",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.3",
+     "subprograma": "BF1.1.3.3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.3.4",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.3",
+     "subprograma": "BF1.1.3.4"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.3.5",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.3",
+     "subprograma": "BF1.1.3.5"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.3.6 c",
+    "anios": [
+     9577,
+     10056,
+     10559,
+     11087
+    ],
+    "total": 41279,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.3",
+     "subprograma": "BF1.1.3.6 c"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.3.7",
+    "anios": [
+     6780,
+     7119,
+     7474,
+     7848
+    ],
+    "total": 29221,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF1.1",
+     "programa": "BF1.1.3",
+     "subprograma": "BF1.1.3.7"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF4 I",
+    "anios": [
+     52,
+     54,
+     55,
+     57
+    ],
+    "total": 218,
+    "ruta": {
+     "linea": "BF1 I",
+     "sector": "BF4 I"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF4.1",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF4.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF4.2",
+    "anios": [
+     20,
+     21,
+     21,
+     22
+    ],
+    "total": 84,
+    "ruta": {
+     "linea": "BF4.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF4.3",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF4.3"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   137,
+   138
+  ],
+  "cabecera": "Código de Concepto",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   55283,
+   54735,
+   56684,
+   56963
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.1",
+    "anios": [
+     5857,
+     6235,
+     6642,
+     7081
+    ],
+    "total": 25815,
+    "ruta": {
+     "linea": "BF2.1.1"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.1.1",
+    "anios": [
+     3379,
+     3684,
+     4015,
+     4376
+    ],
+    "total": 15454,
+    "ruta": {
+     "linea": "BF2.1.1",
+     "sector": "BF2.1.1.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.1.2",
+    "anios": [
+     2076,
+     2139,
+     2203,
+     2269
+    ],
+    "total": 8687,
+    "ruta": {
+     "linea": "BF2.1.1",
+     "sector": "BF2.1.1.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.1.3",
+    "anios": [
+     369,
+     379,
+     389,
+     400
+    ],
+    "total": 1537,
+    "ruta": {
+     "linea": "BF2.1.1",
+     "sector": "BF2.1.1.3"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "BF2.1.1.3. 1",
+    "anios": [
+     31,
+     31,
+     31,
+     31
+    ],
+    "total": 124,
+    "ruta": {
+     "linea": "BF2.1.1",
+     "sector": "BF2.1.1.3",
+     "programa": "BF2.1.1.3. 1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "BF2.1.1.3. 2",
+    "anios": [
+     338,
+     348,
+     358,
+     369
+    ],
+    "total": 1413,
+    "ruta": {
+     "linea": "BF2.1.1",
+     "sector": "BF2.1.1.3",
+     "programa": "BF2.1.1.3. 2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.1.4",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF2.1.1",
+     "sector": "BF2.1.1.4"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.1.5",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF2.1.1",
+     "sector": "BF2.1.1.5"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.1.6",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF2.1.1",
+     "sector": "BF2.1.1.6"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.1.7",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF2.1.1",
+     "sector": "BF2.1.1.7"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.1.8",
+    "anios": [
+     33,
+     34,
+     35,
+     36
+    ],
+    "total": 138,
+    "ruta": {
+     "linea": "BF2.1.1",
+     "sector": "BF2.1.1.8"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.2",
+    "anios": [
+     472,
+     511,
+     553,
+     599
+    ],
+    "total": 2135,
+    "ruta": {
+     "linea": "BF2.1.2"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.2.3. 1",
+    "anios": [
+     411,
+     448,
+     488,
+     532
+    ],
+    "total": 1879,
+    "ruta": {
+     "linea": "BF2.1.2",
+     "sector": "BF2.1.2.3. 1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.2.3. 2",
+    "anios": [
+     61,
+     63,
+     65,
+     67
+    ],
+    "total": 256,
+    "ruta": {
+     "linea": "BF2.1.2",
+     "sector": "BF2.1.2.3. 2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.3",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF2.1.3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.4",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF2.1.4"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.5.1",
+    "anios": [
+     2036,
+     2097,
+     2160,
+     2224
+    ],
+    "total": 8517,
+    "ruta": {
+     "linea": "BF2.1.5.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.5.2",
+    "anios": [
+     12810,
+     13194,
+     13590,
+     13998
+    ],
+    "total": 53592,
+    "ruta": {
+     "linea": "BF2.1.5.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.5.3",
+    "anios": [
+     4380,
+     4512,
+     4647,
+     4786
+    ],
+    "total": 18325,
+    "ruta": {
+     "linea": "BF2.1.5.3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.5.4",
+    "anios": [
+     2982,
+     3071,
+     3163,
+     3258
+    ],
+    "total": 12474,
+    "ruta": {
+     "linea": "BF2.1.5.4"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.5.5",
+    "anios": [
+     3719,
+     3830,
+     3945,
+     4063
+    ],
+    "total": 15557,
+    "ruta": {
+     "linea": "BF2.1.5.5"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.5.6",
+    "anios": [
+     2931,
+     3019,
+     3110,
+     3203
+    ],
+    "total": 12263,
+    "ruta": {
+     "linea": "BF2.1.5.6"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.5.7",
+    "anios": [
+     2212,
+     2279,
+     2347,
+     2417
+    ],
+    "total": 9255,
+    "ruta": {
+     "linea": "BF2.1.5.7"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.5.8",
+    "anios": [
+     3664,
+     3774,
+     3888,
+     4004
+    ],
+    "total": 15330,
+    "ruta": {
+     "linea": "BF2.1.5.8"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.6",
+    "anios": [
+     1772,
+     1261,
+     990,
+     787
+    ],
+    "total": 4810,
+    "ruta": {
+     "linea": "BF2.1.6"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.6.1",
+    "anios": [
+     1772,
+     1261,
+     990,
+     787
+    ],
+    "total": 4810,
+    "ruta": {
+     "linea": "BF2.1.6",
+     "sector": "BF2.1.6.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF5",
+    "anios": [
+     1059,
+     1091,
+     1123,
+     1157
+    ],
+    "total": 4430,
+    "ruta": {
+     "linea": "BF5"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF5.1",
+    "anios": [
+     1059,
+     1091,
+     1123,
+     1157
+    ],
+    "total": 4430,
+    "ruta": {
+     "linea": "BF5",
+     "sector": "BF5.1"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "BF5.1.1",
+    "anios": [
+     3,
+     3,
+     4,
+     4
+    ],
+    "total": 14,
+    "ruta": {
+     "linea": "BF5",
+     "sector": "BF5.1",
+     "programa": "BF5.1.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "BF5.1.2",
+    "anios": [
+     48,
+     50,
+     51,
+     53
+    ],
+    "total": 202,
+    "ruta": {
+     "linea": "BF5",
+     "sector": "BF5.1",
+     "programa": "BF5.1.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "BF5.1.3",
+    "anios": [
+     693,
+     713,
+     735,
+     757
+    ],
+    "total": 2898,
+    "ruta": {
+     "linea": "BF5",
+     "sector": "BF5.1",
+     "programa": "BF5.1.3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "BF5.1.4",
+    "anios": [
+     315,
+     324,
+     334,
+     344
+    ],
+    "total": 1317,
+    "ruta": {
+     "linea": "BF5",
+     "sector": "BF5.1",
+     "programa": "BF5.1.4"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF5.1.5",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF5.1.5"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF5.1.6",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF5.1.6"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF5.1.7",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF5.1.7"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF5.1.8",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF5.1.8"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF5.2",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF5.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF8",
+    "anios": [
+     6611,
+     6003,
+     6462,
+     5988
+    ],
+    "total": 25064,
+    "ruta": {
+     "linea": "BF8"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF8.1",
+    "anios": [
+     3139,
+     2429,
+     2782,
+     2199
+    ],
+    "total": 10549,
+    "ruta": {
+     "linea": "BF8.1"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF8.1.1",
+    "anios": [
+     3139,
+     2429,
+     2782,
+     2199
+    ],
+    "total": 10549,
+    "ruta": {
+     "linea": "BF8.1",
+     "sector": "BF8.1.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF8.1.1.2",
+    "anios": [
+     1639,
+     1429,
+     1282,
+     1199
+    ],
+    "total": 5549,
+    "ruta": {
+     "linea": "BF8.1.1.2"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   142,
+   143,
+   144
+  ],
+  "cabecera": "Código de Concepto BF1",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   73616,
+   77925,
+   83812,
+   81020
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF1.1.1.02",
+    "anios": [
+     2197,
+     3296,
+     4944,
+     7416
+    ],
+    "total": 17853,
+    "ruta": {
+     "linea": "BF1.1.1.02"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF1.1.1.03",
+    "anios": [
+     3307,
+     3472,
+     3646,
+     3828
+    ],
+    "total": 14253,
+    "ruta": {
+     "linea": "BF1.1.1.03"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF1.1.1.04",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF1.1.1.04"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF1.1.1.05",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF1.1.1.05"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF1.1.1.06",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF1.1.1.06"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF1.1.1.07",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF1.1.1.07"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF1.1.1.08",
+    "anios": [
+     1558,
+     1636,
+     1718,
+     1804
+    ],
+    "total": 6716,
+    "ruta": {
+     "linea": "BF1.1.1.08"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF1.1.1.09",
+    "anios": [
+     1272,
+     1336,
+     1402,
+     1472
+    ],
+    "total": 5482,
+    "ruta": {
+     "linea": "BF1.1.1.09"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF1.1.1.11",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF1.1.1.11"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF1.1.1.12",
+    "anios": [
+     2300,
+     2415,
+     2536,
+     2663
+    ],
+    "total": 9914,
+    "ruta": {
+     "linea": "BF1.1.1.12"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF1.1.1.13",
+    "anios": [
+     2052,
+     2155,
+     2263,
+     2376
+    ],
+    "total": 8846,
+    "ruta": {
+     "linea": "BF1.1.1.13"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF1.1.2.1",
+    "anios": [
+     630,
+     662,
+     695,
+     730
+    ],
+    "total": 2717,
+    "ruta": {
+     "linea": "BF1.1.2.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF1.1.2.2",
+    "anios": [
+     10,
+     11,
+     11,
+     12
+    ],
+    "total": 44,
+    "ruta": {
+     "linea": "BF1.1.2.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF1.1.2.3",
+    "anios": [
+     325,
+     341,
+     358,
+     376
+    ],
+    "total": 1400,
+    "ruta": {
+     "linea": "BF1.1.2.3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF1.1.2.4",
+    "anios": [
+     683,
+     718,
+     753,
+     791
+    ],
+    "total": 2945,
+    "ruta": {
+     "linea": "BF1.1.2.4"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF1.1.2.5",
+    "anios": [
+     277,
+     290,
+     305,
+     320
+    ],
+    "total": 1192,
+    "ruta": {
+     "linea": "BF1.1.2.5"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF1.1.3.1.1. 1.1",
+    "anios": [
+     631,
+     662,
+     695,
+     730
+    ],
+    "total": 2718,
+    "ruta": {
+     "linea": "BF1.1.3.1.1. 1.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF1.1.3.1.1. 1.2",
+    "anios": [
+     4864,
+     5108,
+     5363,
+     5631
+    ],
+    "total": 20966,
+    "ruta": {
+     "linea": "BF1.1.3.1.1. 1.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF1.1.3.1.1. 1.3",
+    "anios": [
+     1423,
+     1494,
+     1569,
+     1648
+    ],
+    "total": 6134,
+    "ruta": {
+     "linea": "BF1.1.3.1.1. 1.3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF1.1.3.1.1. 1.4",
+    "anios": [
+     3843,
+     4035,
+     4237,
+     4448
+    ],
+    "total": 16563,
+    "ruta": {
+     "linea": "BF1.1.3.1.1. 1.4"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF1.1.3.1.1. 1.4.1",
+    "anios": [
+     1648,
+     1731,
+     1817,
+     1908
+    ],
+    "total": 7104,
+    "ruta": {
+     "linea": "BF1.1.3.1.1. 1.4",
+     "sector": "BF1.1.3.1.1. 1.4.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF1.1.3.1.1. 1.4.2 BF1.1.3.1.1. 1.5",
+    "anios": [
+     2195,
+     2304,
+     2420,
+     2541
+    ],
+    "total": 9460,
+    "ruta": {
+     "linea": "BF1.1.3.1.1. 1.4",
+     "sector": "BF1.1.3.1.1. 1.4.2 BF1.1.3.1.1. 1.5"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF1.1.3.1.1. 1.6",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF1.1.3.1.1. 1.6"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF1.1.3.2",
+    "anios": [
+     77,
+     81,
+     85,
+     89
+    ],
+    "total": 332,
+    "ruta": {
+     "linea": "BF1.1.3.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF1.1.3.3",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF1.1.3.3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF1.1.3.4",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF1.1.3.4"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF1.1.3.5",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF1.1.3.5"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF1.1.3.7",
+    "anios": [
+     6780,
+     7119,
+     7474,
+     7848
+    ],
+    "total": 29221,
+    "ruta": {
+     "linea": "BF1.1.3.7"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.1.1",
+    "anios": [
+     3379,
+     3684,
+     4015,
+     4376
+    ],
+    "total": 15454,
+    "ruta": {
+     "linea": "BF2.1.1.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.1.2",
+    "anios": [
+     2076,
+     2139,
+     2203,
+     2269
+    ],
+    "total": 8687,
+    "ruta": {
+     "linea": "BF2.1.1.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.1.3",
+    "anios": [
+     369,
+     379,
+     389,
+     400
+    ],
+    "total": 1537,
+    "ruta": {
+     "linea": "BF2.1.1.3"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.1.3.1",
+    "anios": [
+     31,
+     31,
+     31,
+     31
+    ],
+    "total": 124,
+    "ruta": {
+     "linea": "BF2.1.1.3",
+     "sector": "BF2.1.1.3.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.1.3.2",
+    "anios": [
+     338,
+     348,
+     358,
+     369
+    ],
+    "total": 1413,
+    "ruta": {
+     "linea": "BF2.1.1.3",
+     "sector": "BF2.1.1.3.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.1.4",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF2.1.1.4"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.1.5",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF2.1.1.5"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.1.6",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF2.1.1.6"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.1.7",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF2.1.1.7"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.1.8",
+    "anios": [
+     33,
+     34,
+     35,
+     36
+    ],
+    "total": 138,
+    "ruta": {
+     "linea": "BF2.1.1.8"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.2",
+    "anios": [
+     472,
+     511,
+     553,
+     599
+    ],
+    "total": 2135,
+    "ruta": {
+     "linea": "BF2.1.2"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.2.3.1",
+    "anios": [
+     411,
+     448,
+     488,
+     532
+    ],
+    "total": 1879,
+    "ruta": {
+     "linea": "BF2.1.2",
+     "sector": "BF2.1.2.3.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.2.3.2",
+    "anios": [
+     61,
+     63,
+     65,
+     67
+    ],
+    "total": 256,
+    "ruta": {
+     "linea": "BF2.1.2",
+     "sector": "BF2.1.2.3.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.3",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF2.1.3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.4",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF2.1.4"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.5.1",
+    "anios": [
+     2036,
+     2097,
+     2160,
+     2224
+    ],
+    "total": 8517,
+    "ruta": {
+     "linea": "BF2.1.5.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.5.3",
+    "anios": [
+     4380,
+     4512,
+     4647,
+     4786
+    ],
+    "total": 18325,
+    "ruta": {
+     "linea": "BF2.1.5.3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.5.4",
+    "anios": [
+     2982,
+     3071,
+     3163,
+     3258
+    ],
+    "total": 12474,
+    "ruta": {
+     "linea": "BF2.1.5.4"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.5.5",
+    "anios": [
+     3719,
+     3830,
+     3945,
+     4063
+    ],
+    "total": 15557,
+    "ruta": {
+     "linea": "BF2.1.5.5"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.5.6",
+    "anios": [
+     2931,
+     3019,
+     3110,
+     3203
+    ],
+    "total": 12263,
+    "ruta": {
+     "linea": "BF2.1.5.6"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.5.7",
+    "anios": [
+     2212,
+     2279,
+     2347,
+     2417
+    ],
+    "total": 9255,
+    "ruta": {
+     "linea": "BF2.1.5.7"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.5.8",
+    "anios": [
+     3664,
+     3774,
+     3888,
+     4004
+    ],
+    "total": 15330,
+    "ruta": {
+     "linea": "BF2.1.5.8"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.6.1 BF2.1.6.2",
+    "anios": [
+     1772,
+     1261,
+     0,
+     0
+    ],
+    "total": 3033,
+    "ruta": {
+     "linea": "BF2.1.6.1 BF2.1.6.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF4",
+    "anios": [
+     52,
+     54,
+     55,
+     57
+    ],
+    "total": 218,
+    "ruta": {
+     "linea": "BF4"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF4.1",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF4",
+     "sector": "BF4.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF4.2",
+    "anios": [
+     20,
+     21,
+     21,
+     22
+    ],
+    "total": 84,
+    "ruta": {
+     "linea": "BF4",
+     "sector": "BF4.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF4.3",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF4",
+     "sector": "BF4.3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF4.4",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF4",
+     "sector": "BF4.4"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF4.5",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF4",
+     "sector": "BF4.5"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF4.6",
+    "anios": [
+     32,
+     33,
+     34,
+     35
+    ],
+    "total": 134,
+    "ruta": {
+     "linea": "BF4",
+     "sector": "BF4.6"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF5.1.1",
+    "anios": [
+     3,
+     3,
+     4,
+     4
+    ],
+    "total": 14,
+    "ruta": {
+     "linea": "BF5.1.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF5.1.2",
+    "anios": [
+     48,
+     50,
+     51,
+     53
+    ],
+    "total": 202,
+    "ruta": {
+     "linea": "BF5.1.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF5.1.3",
+    "anios": [
+     693,
+     713,
+     735,
+     757
+    ],
+    "total": 2898,
+    "ruta": {
+     "linea": "BF5.1.3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF5.1.4",
+    "anios": [
+     315,
+     324,
+     334,
+     344
+    ],
+    "total": 1317,
+    "ruta": {
+     "linea": "BF5.1.4"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF5.1.5",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF5.1.5"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF5.1.6",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF5.1.6"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF5.1.7",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF5.1.7"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF5.1.8",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF5.1.8"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF5.2",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF5.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF6",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF6"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF8.1.1.1",
+    "anios": [
+     1500,
+     1000,
+     1500,
+     1000
+    ],
+    "total": 5000,
+    "ruta": {
+     "linea": "BF8.1.1.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF8.1.1.2",
+    "anios": [
+     1639,
+     1429,
+     1282,
+     1199
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF8.1.1.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF8.1.2",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF8.1.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF8.1.2.1",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF8.1.2.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF8.1.2.2",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF8.1.2.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF8.2",
+    "anios": [
+     3421,
+     3523,
+     3629,
+     3738
+    ],
+    "total": 14311,
+    "ruta": {
+     "linea": "BF8.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF8.3",
+    "anios": [
+     51,
+     51,
+     51,
+     51
+    ],
+    "total": 204,
+    "ruta": {
+     "linea": "BF8.3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF9.1",
+    "anios": [
+     3640,
+     5357,
+     7662,
+     0
+    ],
+    "total": 16659,
+    "ruta": {
+     "linea": "BF9.1"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

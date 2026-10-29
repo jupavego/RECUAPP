@@ -1,0 +1,103 @@
+[
+ {
+  "paginas": [
+   206
+  ],
+  "cabecera": "2024",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   3745149574,
+   4013302140,
+   4300654429,
+   4608581141
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.607.517.112",
+    "anios": [
+     1607517112,
+     1722615337,
+     1845954595,
+     1978124944
+    ],
+    "total": 7154211988,
+    "ruta": {
+     "linea": "1.607.517.112"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "65.819.318",
+    "anios": [
+     65819318,
+     70531981,
+     75582071,
+     80993747
+    ],
+    "total": 292927117,
+    "ruta": {
+     "linea": "65.819.318"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "49.364.489",
+    "anios": [
+     49364489,
+     52898987,
+     56686554,
+     60745311
+    ],
+    "total": 219695341,
+    "ruta": {
+     "linea": "49.364.489"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2.022.446.631",
+    "anios": [
+     2022446631,
+     2167253810,
+     2322429183,
+     2488715112
+    ],
+    "total": 9000844736,
+    "ruta": {
+     "linea": "2.022.446.631"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2024",
+    "anios": [
+     2024,
+     2025,
+     2026,
+     2027
+    ],
+    "total": 8102,
+    "ruta": {
+     "linea": "2024"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

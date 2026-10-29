@@ -1,0 +1,499 @@
+[
+ {
+  "pagina": 146,
+  "linea": "",
+  "sector": "TRANSPORTE",
+  "programa": "$11.013,96",
+  "anios": [
+   9526,
+   5694,
+   2348,
+   28583
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 146,
+  "linea": "",
+  "sector": "EL TERRITORIO PARA ANZAR",
+  "programa": "$16.033,82",
+  "anios": [
+   26106,
+   19795,
+   22824,
+   84809
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 146,
+  "linea": "",
+  "sector": "EDUCACIÓN",
+  "programa": "$3.924,92",
+  "anios": [
+   4054,
+   3946,
+   4071,
+   15997
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 146,
+  "linea": "",
+  "sector": "INCLUSIÓN SOCIAL Y RECONCILIACIÓN",
+  "programa": "$3.508,35",
+  "anios": [
+   1178,
+   3262,
+   1076,
+   9025
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 146,
+  "linea": "",
+  "sector": "NZA CON INCLUSIÓN OCIAL",
+  "programa": "$11.023,27",
+  "anios": [
+   10952,
+   13829,
+   8807,
+   44612
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 146,
+  "linea": "",
+  "sector": "AGRICULTURA Y DESARROLLO RURAL",
+  "programa": "$1.691,67",
+  "anios": [
+   3540,
+   3506,
+   5718,
+   14456
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 146,
+  "linea": "",
+  "sector": "Ó AVANZA CON Y COMPETITIVIDAD",
+  "programa": "$1.691,67",
+  "anios": [
+   3540,
+   3506,
+   5718,
+   14456
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 146,
+  "linea": "",
+  "sector": "Ó AVANZA CON Y COMPETITIVIDAD",
+  "programa": "$28.748,75",
+  "anios": [
+   40598,
+   38531,
+   39350,
+   147229
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 146,
+  "linea": "",
+  "sector": "Programa presupuestal",
+  "programa": "Indicador de producto",
+  "anios": [
+   2024,
+   2025,
+   2026,
+   2027
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 146,
+  "linea": "",
+  "sector": "Conservación de la biodiversidad y sus servicios ecosistémicos",
+  "programa": "Sedimentos removidos",
+  "anios": [
+   4200,
+   3800,
+   4548,
+   2400,
+   14948
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 146,
+  "linea": "",
+  "sector": "NTE Y DESARROLLO SOST",
+  "programa": "ENIBLE",
+  "anios": [
+   4200,
+   3800,
+   4548,
+   2400,
+   14948
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 146,
+  "linea": "",
+  "sector": "Levantamiento y actualización de información estadística de calidad",
+  "programa": "Área geográfica actualizada catastralmente con enfoque multipropósito",
+  "anios": [
+   3146,
+   3146
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 146,
+  "linea": "",
+  "sector": "Infraestructura red vial",
+  "programa": "Puente construido en vía terciaria existente",
+  "anios": [
+   1250,
+   1250
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 146,
+  "linea": "",
+  "sector": "regional",
+  "programa": "Vía terciaria con mantenimiento rutinario",
+  "anios": [
+   1550,
+   1120,
+   3510
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 146,
+  "linea": "",
+  "sector": "regional",
+  "programa": "Vía terciaria mejorada",
+  "anios": [
+   2851,
+   3346,
+   2514,
+   1928,
+   10640
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 146,
+  "linea": "",
+  "sector": "regional",
+  "programa": "Vía urbana mejorada",
+  "anios": [
+   2110,
+   2809,
+   2760,
+   7680
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 146,
+  "linea": "",
+  "sector": "Acceso a soluciones de vivienda",
+  "programa": "Vivienda de Interés Social construidas",
+  "anios": [
+   8148,
+   8148
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 146,
+  "linea": "",
+  "sector": "Acceso a soluciones de vivienda",
+  "programa": "Acueductos construidos",
+  "anios": [
+   2500,
+   2500,
+   5000
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 146,
+  "linea": "",
+  "sector": "Acceso a soluciones de vivienda",
+  "programa": "Acueductos optimizados",
+  "anios": [
+   1580,
+   2383,
+   2440,
+   6403
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 146,
+  "linea": "",
+  "sector": "Acceso a soluciones de vivienda",
+  "programa": "Alcantarillados construidos",
+  "anios": [
+   1500,
+   1500
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 146,
+  "linea": "",
+  "sector": "Estudios o diseños realizados",
+  "programa": "$819,86",
+  "anios": [],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 146,
+  "linea": "",
+  "sector": "sco",
+  "programa": "Usuarios conectados a la red de servicio de acueducto",
+  "anios": [
+   1200,
+   1800,
+   2260,
+   5260
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 147,
+  "linea": "",
+  "sector": "Sector",
+  "programa": "Programa presupuestal",
+  "anios": [
+   2024,
+   2025,
+   2026,
+   2027
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 147,
+  "linea": "",
+  "sector": "Promoción y acceso efectivo a procesos",
+  "programa": "Estudios y diseños elaborados",
+  "anios": [],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 147,
+  "linea": "",
+  "sector": "Infraestructura cultural inter- venida",
+  "programa": "$490,00",
+  "anios": [
+   1570
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 147,
+  "linea": "",
+  "sector": "Infraestructura cultural inter- venida",
+  "programa": "$490,00",
+  "anios": [
+   2320,
+   1120,
+   3930
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 147,
+  "linea": "",
+  "sector": "Fomento a la rec- reación, la actividad física y el deporte",
+  "programa": "Infraestructura deportiva man- tenida",
+  "anios": [
+   2300
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 147,
+  "linea": "",
+  "sector": "Fomento a la rec- reación, la actividad física y el deporte",
+  "programa": "Parque recreo-de- portivo construido y dotado",
+  "anios": [
+   1300,
+   1300
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 147,
+  "linea": "",
+  "sector": "Fomento a la rec- reación, la actividad física y el deporte",
+  "programa": "Formación y prepa- ración de deortistas",
+  "anios": [
+   1800,
+   1800
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 147,
+  "linea": "",
+  "sector": "Calidad, cobertura y fortalecimiento de la educación inicial",
+  "programa": "Beneficiarios de transporte escolar",
+  "anios": [
+   1670,
+   1728,
+   1788,
+   1851,
+   7038
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 147,
+  "linea": "",
+  "sector": "Estudiantes beneficiados del programa de alimentación escolar",
+  "programa": "$2.254,92",
+  "anios": [
+   2025,
+   2157,
+   2220,
+   8658
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 147,
+  "linea": "",
+  "sector": "Estudiantes beneficiados del programa de alimentación escolar",
+  "programa": "$3.924,92",
+  "anios": [
+   4054,
+   3946,
+   4071,
+   15997
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 147,
+  "linea": "",
+  "sector": "buen gobierno para el respeto y garantía de los derechos humanos",
+  "programa": "Salones comu- nales adecuados",
+  "anios": [],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 147,
+  "linea": "",
+  "sector": "Sector",
+  "programa": "Programa presupuestal",
+  "anios": [
+   2024,
+   2025,
+   2026,
+   2027
+  ],
+  "estado": "ok"
+ },
+ {
+  "pagina": 147,
+  "linea": "",
+  "sector": "Atención, asistencia y reparación integral a las víctimas",
+  "programa": "Planes de pre- vención, protec- ción y atención para comunidades Negras, Afroco- lombianas Raizales y Palenqueras acompañados en su implementación",
+  "anios": [
+   3508,
+   1178,
+   1062,
+   1076,
+   6825
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 147,
+  "linea": "",
+  "sector": "Total INCLU",
+  "programa": "SIÓN SOCIAL Y RECONCIL",
+  "anios": [
+   3508,
+   1178,
+   3262,
+   1076,
+   9025
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 147,
+  "linea": "",
+  "sector": "Aseguramiento y prestación integral de servicios de salud",
+  "programa": "Hospitales de primer nivel de atención adec- uados",
+  "anios": [
+   1200,
+   1400,
+   2600
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 147,
+  "linea": "",
+  "sector": "Recursos genéti- cos Conservados y mantenidos en los bancos",
+  "programa": "$625,00",
+  "anios": [],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 147,
+  "linea": "",
+  "sector": "AGRICULTURA Y DE- SARROLLO RURAL",
+  "programa": "pquo pouco res rurales",
+  "anios": [
+   1066,
+   2100,
+   2066,
+   1566,
+   6800
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 147,
+  "linea": "",
+  "sector": "AGRICULTURA Y DE- SARROLLO RURAL",
+  "programa": "Infraestructura produc-",
+  "anios": [
+   2000,
+   2000
+  ],
+  "estado": "revisar"
+ },
+ {
+  "pagina": 147,
+  "linea": "",
+  "sector": "ONDÓ AVANZA CON PR",
+  "programa": "ODUCTIVIDAD Y COMPET",
+  "anios": [
+   1691,
+   3540,
+   3506,
+   5718,
+   14456
+  ],
+  "estado": "revisar"
+ }
+]

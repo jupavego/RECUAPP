@@ -1,0 +1,239 @@
+[
+ {
+  "pagina": 71,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "INVERSION",
+    "anios": [
+     1435640690,
+     1203123189,
+     1116008402,
+     1163690277
+    ],
+    "total": 4918462558
+   },
+   {
+    "etiqueta": "Asignaciónpara la Paz",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignaciones Directas",
+    "anios": [
+     144218207,
+     90059159,
+     84809948,
+     84569756
+    ],
+    "total": 403657070
+   },
+   {
+    "etiqueta": "20%Asignaciones Directas",
+    "anios": [
+     93868050,
+     58617270,
+     55200689,
+     55044354
+    ],
+    "total": 262730363
+   },
+   {
+    "etiqueta": "5%Asignaciones Directas Anticipadas",
+    "anios": [
+     50350157,
+     31441889,
+     29609259,
+     29525402
+    ],
+    "total": 140926707
+   },
+   {
+    "etiqueta": "Asignaciónpara la Inversión Regional",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Departamentos",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Regiones",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignaciónpara la Inversión Local",
+    "anios": [
+     1291422483,
+     1113064030,
+     1031198455,
+     1079120521
+    ],
+    "total": 4514805489
+   },
+   {
+    "etiqueta": "Municipios máspobres",
+    "anios": [
+     1291422483,
+     1113064030,
+     1031198455,
+     1079120521
+    ],
+    "total": 4514805489
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     172189664,
+     148408537,
+     137493127,
+     143882736
+    ],
+    "total": 601974064
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     1119232819,
+     964655493,
+     893705327,
+     935237785
+    ],
+    "total": 3912831424
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 73,
+  "cabecera": "Concepto/Vigencia",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "1. Ingresos totales",
+    "anios": [
+     11074060000,
+     11287691800,
+     11656457554,
+     11297664993526
+    ],
+    "total": 11331683202880
+   },
+   {
+    "etiqueta": "1.1. Ingresos Corrientes",
+    "anios": [
+     9639060000,
+     9780941800,
+     10074370054,
+     9636473118526
+    ],
+    "total": 9665967490380
+   },
+   {
+    "etiqueta": "1.1.1. Tributarios",
+    "anios": [
+     505000000,
+     520150000,
+     535754500,
+     551827135
+    ],
+    "total": 2112731635
+   },
+   {
+    "etiqueta": "1.1.2. No Tributarios",
+    "anios": [
+     316000000,
+     178190000,
+     183535700,
+     189041771
+    ],
+    "total": 866767471
+   },
+   {
+    "etiqueta": "1.1.3. SGP",
+    "anios": [
+     8818060000,
+     9082601800,
+     9355079854,
+     9635732249620
+    ],
+    "total": 9662987991274
+   },
+   {
+    "etiqueta": "1.3. Regalías",
+    "anios": [
+     1435000000,
+     1506750000,
+     1582087500,
+     1661191875000
+    ],
+    "total": 1665715712500
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 74,
+  "cabecera": "Concepto/Vigencia",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "1. Gastos totales",
+    "anios": [
+     11716000000,
+     11745500000,
+     12248775000,
+     12861213750
+    ],
+    "total": 48571488750
+   },
+   {
+    "etiqueta": "1.1. Funcionamiento",
+    "anios": [
+     1696000000,
+     1780800000,
+     1869840000,
+     1963332000
+    ],
+    "total": 7309972000
+   },
+   {
+    "etiqueta": "1.3. Inversión",
+    "anios": [
+     9684000000,
+     9924700000,
+     10378935000,
+     10897881750
+    ],
+    "total": 40885516750
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ }
+]

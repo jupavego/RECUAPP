@@ -1,0 +1,41 @@
+[
+ {
+  "pagina": 153,
+  "cabecera": "CONCEPTO DE GASTO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "ASIGNACIONES DIRECTAS ANTICIPADAS (5% DEL SGR)",
+    "anios": [
+     526912,
+     208349,
+     196205,
+     195650
+    ],
+    "total": 1127116
+   },
+   {
+    "etiqueta": "ASIGNACIONES DIRECTAS (20% DEL SGR)",
+    "anios": [
+     5303944,
+     749736,
+     706037,
+     704037
+    ],
+    "total": 7463754
+   },
+   {
+    "etiqueta": "ASIGNACIÓN PARA LA INVERSIÓN LOCAL SEGÚN NBI Y CUARTA, QUINTA,Y",
+    "anios": [
+     1558455230,
+     915150433,
+     847841352,
+     891198530
+    ],
+    "total": 4212645545
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ }
+]

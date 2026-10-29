@@ -1,0 +1,170 @@
+[
+ {
+  "pagina": 230,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "INVERSION",
+    "anios": [
+     751307714,
+     645083521,
+     597912680,
+     627977767
+    ],
+    "total": 2622281682
+   },
+   {
+    "etiqueta": "Asignaciónpara la Paz",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignaciones Directas",
+    "anios": [
+     28194240,
+     18009462,
+     16959758,
+     16911726
+    ],
+    "total": 80075186
+   },
+   {
+    "etiqueta": "20% Asignaciones Directas",
+    "anios": [
+     22062999,
+     14093047,
+     13271616,
+     13234029
+    ],
+    "total": 62661691
+   },
+   {
+    "etiqueta": "5% Asignaciones Directas Anticipadas",
+    "anios": [
+     6131241,
+     3916415,
+     3688142,
+     3677697
+    ],
+    "total": 17413495
+   },
+   {
+    "etiqueta": "Asignaciónpara la Inversión Local",
+    "anios": [
+     723113474,
+     627074059,
+     580952922,
+     611066041
+    ],
+    "total": 2542206496
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     96415130,
+     83609875,
+     77460390,
+     81475472
+    ],
+    "total": 338960867
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     626698344,
+     543464185,
+     503492532,
+     529590569
+    ],
+    "total": 2203245630
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     751307714,
+     645083521,
+     597912680,
+     627977767
+    ],
+    "total": 2622281682
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 231,
+  "cabecera": "Código Fondo",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "ADAN",
+    "anios": [
+     15451644,
+     3916415,
+     3688142,
+     3677697
+    ],
+    "total": 26733898
+   },
+   {
+    "etiqueta": "ADIR",
+    "anios": [
+     21456106,
+     14093047,
+     13271616,
+     13234029
+    ],
+    "total": 62054798
+   },
+   {
+    "etiqueta": "AIL",
+    "anios": [
+     266230835,
+     543464185,
+     503492532,
+     529590569
+    ],
+    "total": 1842778121
+   },
+   {
+    "etiqueta": "AILA",
+    "anios": [
+     40958470,
+     83609875,
+     77460390,
+     81475472
+    ],
+    "total": 283504207
+   },
+   {
+    "etiqueta": "DLAD",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     345578161,
+     673772121,
+     624495171,
+     655740677
+    ],
+    "total": 2299586130
+   }
+  ],
+  "ncols": 9,
+  "financiero": false
+ }
+]

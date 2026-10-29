@@ -1,0 +1,7029 @@
+[
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 57,
+  "valor": "de Danza",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 1
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 127,
+  "valor": "CALIDAD Y FOMENTO DE LA EDUCACIÓN SUPERIOR",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 2
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 130,
+  "valor": "SALUD PÚBLICA",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 3
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 132,
+  "valor": "INSPECCIÓN, VIGILANCIA Y CONTROL",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 4
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 141,
+  "valor": "DESARROLLO INTEGRAL DE LA PRIMERA INFANCIA A LA JUVENTUD, Y FORTALECIMIENTO DE LAS CAPACIDADES DE LAS FAMILIAS DE NIÑAS, NIÑOS Y ADOLESCENTES.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 5
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 146,
+  "valor": "ATENCIÓN INTEGRAL DE POBLACIÓN EN SITUACIÓN PERMANENTE DE DESPROTECCION SOCIAL Y/O FAMILIAR",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 6
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 150,
+  "valor": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 7
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 161,
+  "valor": "PRODUCTIVIDAD Y COMPETITIVIDAD DE LAS EMPRESAS COLOMBIANAS",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 8
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 163,
+  "valor": "GENERACIÓN Y FORMALIZACIÓN DEL EMPLEO",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 9
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 171,
+  "valor": "CONSOLIDACIÓN PRODUCTIVA DEL SECTOR DE ENERGÍA ELÉCTRICA",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 10
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 174,
+  "valor": "SISTEMA PENITENCIARIO Y CARCELARIO EN EL MARCO DE LOS DERECHOS HUMANOS",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 11
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 175,
+  "valor": "LEVANTAMIENTO Y ACTUALIZACIÓN DE INFORMACIÓN ESTADÍSTICA DE CALIDAD",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 12
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 186,
+  "valor": "FOMENTO DEL DESARROLLO DE APLICACIONES, SOFTWARE Y CONTENIDOS PARA IMPULSAR LA APROPIACIÓN DE LAS TECNOLOGÍAS DE LA INFORMACIÓN Y LAS COMUNICACIONES (TIC)",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 13
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 223,
+  "valor": "PROGRAMA 2201 – CALIDAD, COBERTURA Y",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 14
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 223,
+  "valor": "FORTALECIMIENTO DE LA EDUCACIÓN",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 15
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 223,
+  "valor": "INICIAL, PRESCOLAR,",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 16
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 223,
+  "valor": "BÁSICA Y MEDIA",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 17
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 223,
+  "valor": "PROGRAMA 2202 – CALIDAD Y FOMENTO DE LA EDUCACIÓN",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 18
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 225,
+  "valor": "9.1.2.2 PROGRAMA 1905 – SALUD PÚBLICA",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 19
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 225,
+  "valor": "PROGRAMA 1903 – INSPECCIÓN,",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 20
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 225,
+  "valor": "VIGILANCIA Y CONTROL",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 21
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 226,
+  "valor": "PROGRAMA 3301 – PROMOCIÓN Y ACCESO EFECTIVO",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 22
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 226,
+  "valor": "A LOS PROCESOS CULTURALES",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 23
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 226,
+  "valor": "PROGRAMA 3302 – GESTIÓN,",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 24
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 226,
+  "valor": "PROTECCIÓN Y SALVAGUARDIA DEL PATRIMONIO",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 25
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 226,
+  "valor": "CULTURAL COLOMBIANO",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 26
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 226,
+  "valor": "PROGRAMA 4301 –",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 27
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 227,
+  "valor": "EL DEPORTE",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 28
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 227,
+  "valor": "PROGRAMA 4302 – FORMACIÓN Y",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 29
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 227,
+  "valor": "PREPARACIÓN DE",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 30
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 227,
+  "valor": "DEPORTISTAS",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 31
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 227,
+  "valor": "PROGRAMA 4101 –",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 32
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 228,
+  "valor": "PROGRAMA 4102 – DESARROLLO INTEGRAL DE LA PRIMERA INFANCIA",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 33
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 228,
+  "valor": "A LA JUVENTUD, Y FORTALECIMIENTO DE LAS CAPACIDADES DE LAS FAMILIAS DE NIÑAS, NIÑOS Y ADOLESCENTES.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 34
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 228,
+  "valor": "PROGRAMA 4103 - INCLUSIÓN SOCIAL",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 35
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 228,
+  "valor": "Y PRODUCTIVA PARA LA POBLACIÓN EN SITUACIÓN DE VULNERABILIDAD",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 36
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 230,
+  "valor": "PROGRAMA 1709 –",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 37
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 230,
+  "valor": "INFRAESTRUCTUR A PRODUCTIVA Y COMERCIALIZACIO N",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 38
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 230,
+  "valor": "PROGRAMA 1707 – SANIDAD AGROPECUARIA E",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 39
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 230,
+  "valor": "PROGRAMA 3201 – FORTALECIMIENTO DEL DESEMPEÑO",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 40
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 230,
+  "valor": "AMBIENTAL DE LOS SECTORES PRODUCTIVOS",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 41
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 231,
+  "valor": "PROGRAMA 3202 –",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 42
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 231,
+  "valor": "ECOSISTÉMICOS",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 43
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 231,
+  "valor": "PROGRAMA 3203 –",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 44
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 232,
+  "valor": "PROGRAMA 3206 – GESTIÓN DEL CAMBIO CLIMÁTICO",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 45
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 232,
+  "valor": "PARA UN DESARROLLO BAJO EN CARBONO Y RESILIENTE AL CLIMA",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 46
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 232,
+  "valor": "PROGRAMA 3207 – EDUCACIÓN AMBIENTAL",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 47
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 232,
+  "valor": "PROGRAMA 3502 - PRODUCTIVIDAD Y COMPETITIVIDAD",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 48
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 233,
+  "valor": "DE LAS EMPRESAS COLOMBIANAS",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 49
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 233,
+  "valor": "PROGRAMA 3602 – GENERACIÓN Y",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 50
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 233,
+  "valor": "FORMALIZACIÓN DEL EMPLEO",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 51
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 233,
+  "valor": "PROGRAMA 4001 – ACCESO A",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 52
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 233,
+  "valor": "SOLUCIONES DE VIVIENDA",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 53
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 233,
+  "valor": "PROGRAMA 4002 –",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 54
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 233,
+  "valor": "ORDENAMIENTO",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 55
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 234,
+  "valor": "URBANO",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 56
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 234,
+  "valor": "PROGRAMA 4003 –",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 57
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 234,
+  "valor": "PROGRAMA 2402 – INFRAESTRUCTUR",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 58
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 234,
+  "valor": "A RED VIAL",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 59
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 235,
+  "valor": "PROGRAMA 2102 – CONSOLIDACIÓN",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 60
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 235,
+  "valor": "PRODUCTIVA DEL SECTOR DE ENERGÍA ELÉCTRICA",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 61
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 235,
+  "valor": "PROGRAMA 1203 – PROMOCIÓN DE LOS MÉTODOS DE",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 62
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 235,
+  "valor": "RESOLUCIÓN DE CONFLICTOS",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 63
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 236,
+  "valor": "PROGRAMA 1206 – SISTEMA PENITENCIARIO Y CARCELARIO EN EL MARCO DE LOS DERECHOS HUMANOS",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 64
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 236,
+  "valor": "PROGRAMA 0401 – LEVANTAMIENTO Y ACTUALIZACIÓN DE INFORMACIÓN",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 65
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 236,
+  "valor": "ESTADÍSTICA DE CALIDAD",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 66
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 236,
+  "valor": "PROGRAMA 0406 – GENERACIÓN DE",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 67
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 236,
+  "valor": "LA INFORMACIÓN GEOGRÁFICA DEL",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 68
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 236,
+  "valor": "PROGRAMA 4501 – FORTALECIMIENTO",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 69
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 236,
+  "valor": "DE LA CONVIVIENCIA Y LA SEGURIDAD",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 70
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 236,
+  "valor": "CIUDADANA",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 71
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 236,
+  "valor": "PROGRAMA 402",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 72
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 236,
+  "valor": "5 - FORTALECIMIENTO DEL BUEN",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 73
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 236,
+  "valor": "GOBIERNO PARA EL RESPETO Y",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 74
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 237,
+  "valor": "GARANTÍA DE LOS DERECHOS HUMANOS",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 75
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 237,
+  "valor": "PROGRAMA 4503 – GESTIÓN DEL",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 76
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 238,
+  "valor": "PROGRAMA 4599 – FORTALECIMIENTO",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 77
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 238,
+  "valor": "A LA GESTIÓN Y DIRECCIÓN DE LA",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 78
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 238,
+  "valor": "ADMINISTRACIÓN PÚBLICA TERRITORIAL",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 79
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 238,
+  "valor": "PROGRAMA 2301 – FOMENTO DEL",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 80
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 238,
+  "valor": "DESARROLLO DE APLICACIONES, SOFTWARE Y CONTENIDOS PARA IMPULSAR LA APROPIACIÓN DE",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 81
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 238,
+  "valor": "LAS TECNOLOGÍAS DE LA INFORMACIÓN Y LAS COMUNICACIONES (TIC)",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 82
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 202,
+  "valor": "CALIDAD, COBERTURA Y FORTALECIMIENTO DE LA EDUCACIÓN INICIAL, PRESCOLAR, BÁSICA Y MEDIA / 2.680.182.065",
+  "anios": [
+   893394022,
+   1399499299,
+   0,
+   3329640000,
+   0,
+   0,
+   500000000,
+   8802715387
+  ],
+  "correccion": null,
+  "id": 83
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 202,
+  "valor": "- / 44.669.701",
+  "anios": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   44669701
+  ],
+  "correccion": null,
+  "id": 84
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 202,
+  "valor": "- / 44.669.701",
+  "anios": [
+   178678804,
+   0,
+   0,
+   0,
+   0,
+   0,
+   223348505
+  ],
+  "correccion": null,
+  "id": 85
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 202,
+  "valor": "2.202.005.393 / 446.697.011",
+  "anios": [
+   228384719,
+   1000000000,
+   1103705000,
+   1341920965,
+   0,
+   1500000000,
+   7822713088
+  ],
+  "correccion": null,
+  "id": 86
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 202,
+  "valor": "VIVE LA CULTURA / GESTIÓN, PROTECCIÓN Y SALVAGUARDIA DEL PATRIMONIO CULTURAL COLOMBIANO",
+  "anios": [
+   89339402,
+   89339402,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   178678804
+  ],
+  "correccion": null,
+  "id": 87
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 202,
+  "valor": "VIVE EL DEPORTE Y RECREACIÓN / FOMENTO A LA RECREACIÓN, LA ACTIVIDAD FÍSICA Y EL DEPORTE",
+  "anios": [
+   893394022,
+   0,
+   304512957,
+   0,
+   1100000000,
+   1341920965,
+   0,
+   0,
+   3639827943
+  ],
+  "correccion": null,
+  "id": 88
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 202,
+  "valor": "VIVE EL DEPORTE Y RECREACIÓN / FORMACIÓN Y PREPARACIÓN DE DEPORTISTAS",
+  "anios": [
+   446697011,
+   893394022,
+   0,
+   0,
+   1037050000,
+   0,
+   0,
+   0,
+   2377141033
+  ],
+  "correccion": null,
+  "id": 89
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 202,
+  "valor": "VIVE EL DEPORTE Y RECREACIÓN / ATENCIÓN, ASISTENCIA Y REPARACIÓN INTEGRAL DE VICTIMAS",
+  "anios": [
+   0,
+   268018207,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   268018207
+  ],
+  "correccion": null,
+  "id": 90
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 202,
+  "valor": "446.697.011 / 714.715.217",
+  "anios": [
+   0,
+   0,
+   446697011,
+   0,
+   0,
+   0,
+   1608109239
+  ],
+  "correccion": null,
+  "id": 91
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 203,
+  "valor": "223.348.505 / 223.348.505",
+  "anios": [
+   0,
+   0,
+   2233485055,
+   2701771954,
+   0,
+   0,
+   5381954020
+  ],
+  "correccion": null,
+  "id": 92
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 203,
+  "valor": "536.036.413 / 223.348.505",
+  "anios": [
+   0,
+   0,
+   268018207,
+   0,
+   0,
+   0,
+   1027403125
+  ],
+  "correccion": null,
+  "id": 93
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 203,
+  "valor": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION / 89.339.402",
+  "anios": [
+   357357609,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   446697011
+  ],
+  "correccion": null,
+  "id": 94
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 203,
+  "valor": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION / INOCUIDAD AGROALIMENTARIA",
+  "anios": [
+   0,
+   89339402,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   89339402
+  ],
+  "correccion": null,
+  "id": 95
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 203,
+  "valor": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION / FORTALECIMIENTO DEL DESEMPEÑO AMBIENTAL DE LOS SECTORES",
+  "anios": [
+   22334851
+  ],
+  "correccion": null,
+  "id": 96
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 203,
+  "valor": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION / PRODUCTIVOS",
+  "anios": [
+   0,
+   22334851,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "correccion": null,
+  "id": 97
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 203,
+  "valor": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION / CONSERVACIÓN DE LA BIODIVERSIDAD Y SUS",
+  "anios": [
+   1021880483
+  ],
+  "correccion": null,
+  "id": 98
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 203,
+  "valor": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION / SERVICIOSECOSISTÉMICOS",
+  "anios": [
+   491366712,
+   0,
+   0,
+   0,
+   0,
+   0,
+   530513771,
+   0
+  ],
+  "correccion": null,
+  "id": 99
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 203,
+  "valor": "VIVE NUESTRO AMBIENTE Y DESARROLLO / GESTIÓN INTEGRAL DEL RECURSOHÍDRICO",
+  "anios": [
+   357357609,
+   0,
+   0,
+   0,
+   893394022,
+   0,
+   0,
+   0,
+   1250751631
+  ],
+  "correccion": null,
+  "id": 100
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 203,
+  "valor": "SOSTENIBLE / ORDENAMIENTO TERRITORIAL AMBIENTAL",
+  "anios": [
+   0,
+   223348505,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   223348505
+  ],
+  "correccion": null,
+  "id": 101
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 203,
+  "valor": "SOSTENIBLE / GESTIÓN DEL CAMBIO CLIMÁTICO PARA UN DESARROLLO BAJO EN CARBONO Y RESILIENTE AL",
+  "anios": [
+   268018207
+  ],
+  "correccion": null,
+  "id": 102
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 203,
+  "valor": "SOSTENIBLE / EDUCACIÓN AMBIENTAL",
+  "anios": [
+   89339402,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   89339402
+  ],
+  "correccion": null,
+  "id": 103
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 203,
+  "valor": "PRODUCTIVIDAD Y COMPETITIVIDAD DE LAS EMPRESAS COLOMBIANAS / 134.009.103",
+  "anios": [
+   223348505,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   357357609
+  ],
+  "correccion": null,
+  "id": 104
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 203,
+  "valor": "670.045.516 / 446.697.011",
+  "anios": [
+   0,
+   0,
+   446697011,
+   0,
+   0,
+   0,
+   1563439538
+  ],
+  "correccion": null,
+  "id": 105
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 203,
+  "valor": "VIVIENDA, CIUDAD Y TERRITORIO / TERRITORIAL Y DESARROLLO URBANO",
+  "anios": [
+   0,
+   178678804,
+   0,
+   0,
+   0,
+   0,
+   400000000,
+   0,
+   578678804
+  ],
+  "correccion": null,
+  "id": 106
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 204,
+  "valor": "VIVIENDA, CIUDAD Y TERRITORIO / ACCESO DE LA POBLACIÓN A LOS SERVICIOS DE AGUA POTABLE Y SANEAMIENTO BÁSICO",
+  "anios": [
+   45444966,
+   2859937,
+   5484732325,
+   0,
+   2233485055,
+   0,
+   0,
+   0,
+   7766522283
+  ],
+  "correccion": null,
+  "id": 107
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 204,
+  "valor": "TRANSPORTE / INFRAESTRUCTURA RED VIAL REGIONAL",
+  "anios": [
+   2789161302,
+   446697011,
+   0,
+   0,
+   2233485055,
+   0,
+   3052951084,
+   1000000000,
+   9522294451
+  ],
+  "correccion": null,
+  "id": 108
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 204,
+  "valor": "TRANSPORTE / SEGURIDAD DEL TRANSPORTE",
+  "anios": [
+   89339402,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   89339402
+  ],
+  "correccion": null,
+  "id": 109
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 204,
+  "valor": "CONSOLIDACIÓN PRODUCTIVA DEL SECTOR DE ENERGÍA ELÉCTRICA / 357.357.609",
+  "anios": [
+   0,
+   0,
+   0,
+   0,
+   324158551,
+   0,
+   0,
+   681516160
+  ],
+  "correccion": null,
+  "id": 110
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 204,
+  "valor": "- / 670.045.516",
+  "anios": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   670045516
+  ],
+  "correccion": null,
+  "id": 111
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 204,
+  "valor": "SISTEMA PENITENCIARIO Y CARCELARIO EN EL MARCO DE LOS DERECHOS HUMANOS / 1.786.788.044",
+  "anios": [
+   446697011,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   2233485055
+  ],
+  "correccion": null,
+  "id": 112
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 204,
+  "valor": "LEVANTAMIENTO Y ACTUALIZACIÓN DE INFORMACIÓN ESTADÍSTICA DECALIDAD A / 208.729.220",
+  "anios": [
+   89339402,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   298068622
+  ],
+  "correccion": null,
+  "id": 113
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 204,
+  "valor": "LEVANTAMIENTO Y ACTUALIZACIÓN DE INFORMACIÓN ESTADÍSTICA DECALIDAD A / GENERACIÓN DE LA INFORMACIÓN GEOGRÁFICA",
+  "anios": [
+   223348505
+  ],
+  "correccion": null,
+  "id": 114
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 204,
+  "valor": "LEVANTAMIENTO Y ACTUALIZACIÓN DE INFORMACIÓN ESTADÍSTICA DECALIDAD A / DEL TERRITORIONACIONAL",
+  "anios": [
+   0,
+   223348505,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "correccion": null,
+  "id": 115
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 204,
+  "valor": "LEVANTAMIENTO Y ACTUALIZACIÓN DE INFORMACIÓN ESTADÍSTICA DECALIDAD A / FORTALECIMIENTO DE LA CONVIVIENCIA Y LA SEGURIDADCIUDADANA",
+  "anios": [
+   612795177,
+   268018207,
+   0,
+   0,
+   0,
+   787743581,
+   0,
+   0,
+   1668556964
+  ],
+  "correccion": null,
+  "id": 116
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 204,
+  "valor": "LEVANTAMIENTO Y ACTUALIZACIÓN DE INFORMACIÓN ESTADÍSTICA DECALIDAD A / FORTALECIMIENTO DEL BUEN GOBIERNO PARA EL RESPETO Y GARANTÍA DE",
+  "anios": [
+   357357609
+  ],
+  "correccion": null,
+  "id": 117
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 204,
+  "valor": "GOBIERNO TERRITORIAL / LOSDERECHOSHUMANOS",
+  "anios": [
+   0,
+   357357609,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0
+  ],
+  "correccion": null,
+  "id": 118
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 204,
+  "valor": "GOBIERNO TERRITORIAL / GESTIÓN DEL RIESGO DE DESASTRES Y EMERGENCIAS",
+  "anios": [
+   1017947703,
+   0,
+   0,
+   0,
+   1116742527,
+   1606649058,
+   0,
+   0,
+   3741339288
+  ],
+  "correccion": null,
+  "id": 119
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 204,
+  "valor": "GOBIERNO TERRITORIAL / FORTALECIMIENTO A LA GESTIÓN Y DIRECCIÓN DE LA ADMINISTRACIÓN PÚBLICA TERRITORIAL",
+  "anios": [
+   1568316692,
+   202230234,
+   0,
+   0,
+   0,
+   0,
+   0,
+   2000000000,
+   3770546926
+  ],
+  "correccion": null,
+  "id": 120
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 206,
+  "valor": "CALIDAD, COBERTURA Y FORTALECIMIENTO DE LA EDUCACIÓN INICIAL, PRESCOLAR, BÁSICA Y MEDIA / 10.000.000",
+  "anios": [
+   10000000
+  ],
+  "correccion": null,
+  "id": 121
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 206,
+  "valor": "CALIDAD, COBERTURA Y FORTALECIMIENTO DE LA EDUCACIÓN INICIAL, PRESCOLAR, BÁSICA Y MEDIA / 10.000.000",
+  "anios": [
+   40000000,
+   50000000
+  ],
+  "correccion": null,
+  "id": 122
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 206,
+  "valor": "VIVE LA CULTURA / GESTIÓN, PROTECCIÓN Y SALVAGUARDIA DEL PATRIMONIO CULTURAL COLOMBIANO",
+  "anios": [
+   20000000,
+   20000000,
+   40000000
+  ],
+  "correccion": null,
+  "id": 123
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 206,
+  "valor": "VIVE EL DEPORTE Y RECREACIÓN / FOMENTO A LA RECREACIÓN, LA ACTIVIDAD FÍSICA Y EL DEPORTE",
+  "anios": [
+   200000000,
+   68169911,
+   500000000,
+   300409659,
+   1068579570
+  ],
+  "correccion": null,
+  "id": 124
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 206,
+  "valor": "VIVE EL DEPORTE Y RECREACIÓN / FORMACIÓN Y PREPARACIÓN DE DEPORTISTAS",
+  "anios": [
+   100000000,
+   200000000,
+   300000000
+  ],
+  "correccion": null,
+  "id": 125
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 206,
+  "valor": "VIVE EL DEPORTE Y RECREACIÓN / ATENCIÓN, ASISTENCIA Y REPARACIÓN INTEGRAL DE VICTIMAS",
+  "anios": [
+   60000000,
+   60000000
+  ],
+  "correccion": null,
+  "id": 126
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 206,
+  "valor": "100.000.000 / 160.000.000",
+  "anios": [
+   100000000,
+   360000000
+  ],
+  "correccion": null,
+  "id": 127
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 207,
+  "valor": "50.000.000 / 50.000.000",
+  "anios": [
+   500000000,
+   604833229,
+   1204833229
+  ],
+  "correccion": null,
+  "id": 128
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 207,
+  "valor": "120.000.000 / 50.000.000",
+  "anios": [
+   60000000,
+   230000000
+  ],
+  "correccion": null,
+  "id": 129
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 207,
+  "valor": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION / 20.000.000",
+  "anios": [
+   80000000,
+   100000000
+  ],
+  "correccion": null,
+  "id": 130
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 207,
+  "valor": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION / SANIDAD AGROPECUARIA E INOCUIDAD AGROALIMENTARIA",
+  "anios": [
+   20000000,
+   20000000
+  ],
+  "correccion": null,
+  "id": 131
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 207,
+  "valor": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION / FORTALECIMIENTO DEL DESEMPEÑO AMBIENTAL DE LOS SECTORES",
+  "anios": [
+   5000000
+  ],
+  "correccion": null,
+  "id": 132
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 207,
+  "valor": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION / CONSERVACIÓN DE LA BIODIVERSIDAD Y SUS SERVICIOS ECOSISTÉMICOS",
+  "anios": [
+   110000000,
+   151056530,
+   261056530
+  ],
+  "correccion": null,
+  "id": 133
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 207,
+  "valor": "DESARROLLO / RECURSOHÍDRICO",
+  "anios": [
+   80000000,
+   200000000,
+   280000000
+  ],
+  "correccion": null,
+  "id": 134
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 207,
+  "valor": "SOSTENIBLE / ORDENAMIENTO TERRITORIAL AMBIENTAL",
+  "anios": [
+   50000000,
+   50000000
+  ],
+  "correccion": null,
+  "id": 135
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 207,
+  "valor": "SOSTENIBLE / GESTIÓN DEL CAMBIO CLIMÁTICO PARA UN DESARROLLO BAJO EN CARBONO Y RESILIENTE AL",
+  "anios": [
+   60000000
+  ],
+  "correccion": null,
+  "id": 136
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 207,
+  "valor": "SOSTENIBLE / EDUCACIÓN AMBIENTAL",
+  "anios": [
+   20000000,
+   20000000
+  ],
+  "correccion": null,
+  "id": 137
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 207,
+  "valor": "PRODUCTIVIDAD Y COMPETITIVIDAD DE LAS EMPRESAS COLOMBIANAS / 30.000.000",
+  "anios": [
+   50000000,
+   80000000
+  ],
+  "correccion": null,
+  "id": 138
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 207,
+  "valor": "150.000.000 / 100.000.000",
+  "anios": [
+   100000000,
+   350000000
+  ],
+  "correccion": null,
+  "id": 139
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 207,
+  "valor": "VIVIENDA, CIUDAD Y TERRITORIO / ORDENAMIENTO TERRITORIAL Y DESARROLLO URBANO",
+  "anios": [
+   40000000,
+   400000000,
+   440000000
+  ],
+  "correccion": null,
+  "id": 140
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 207,
+  "valor": "VIVIENDA, CIUDAD Y TERRITORIO / ACCESO DE LA POBLACIÓN A LOS SERVICIOS DE AGUA POTABLE Y SANEAMIENTO BÁSICO",
+  "anios": [
+   10173555,
+   640241,
+   1186913962,
+   500000000,
+   1697727758
+  ],
+  "correccion": null,
+  "id": 141
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 208,
+  "valor": "PROGRAMA / RECURSOS PROPIO",
+  "anios": [],
+  "correccion": null,
+  "id": 142
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 208,
+  "valor": "SEGURIDAD DEL TRANSPORTE / 20.000.000",
+  "anios": [
+   20000000
+  ],
+  "correccion": null,
+  "id": 143
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 208,
+  "valor": "CONSOLIDACIÓN PRODUCTIVA DEL SECTOR DE ENERGÍA ELÉCTRICA / 80.000.000",
+  "anios": [
+   72567880,
+   152567880
+  ],
+  "correccion": null,
+  "id": 144
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 208,
+  "valor": "CONSOLIDACIÓN PRODUCTIVA DEL SECTOR DE ENERGÍA ELÉCTRICA / 150.000.000",
+  "anios": [
+   150000000
+  ],
+  "correccion": null,
+  "id": 145
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 208,
+  "valor": "SISTEMA PENITENCIARIO Y CARCELARIO EN EL MARCO DE LOS DERECHOS HUMANOS / 400.000.000",
+  "anios": [
+   100000000,
+   500000000
+  ],
+  "correccion": null,
+  "id": 146
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 208,
+  "valor": "SEGURIDADCIUDADANA / 128.626.555",
+  "anios": [
+   60000000,
+   176348523
+  ],
+  "correccion": null,
+  "id": 147
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 208,
+  "valor": "GESTIÓN DEL RIESGO DE DESASTRES Y EMERGENCIAS / 211.000.000",
+  "anios": [
+   250000000,
+   359673116,
+   820673116
+  ],
+  "correccion": null,
+  "id": 148
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 208,
+  "valor": "FOMENTO DEL DESARROLLO DE APLICACIONES, SOFTWARE Y CONTENIDOS PARA IMPULSAR LA APROPIACIÓN DE LAS TECNOLOGÍAS DE LA INFORMACIÓN Y LAS COMUNICACIONES(TIC) VERSIÓN / 30.000.000 3.879.800.110",
+  "anios": [
+   35000000,
+   1950640241,
+   6125022776,
+   6700000000,
+   3290000000,
+   1814242066,
+   1134584745,
+   0,
+   65000000,
+   24894289938
+  ],
+  "correccion": null,
+  "id": 149
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 209,
+  "valor": "CALIDAD, COBERTURA Y FORTALECIMIENTO DE LA EDUCACIÓN INICIAL, PRESCOLAR,BÁSICA Y MEDIA / 644.460.000",
+  "anios": [
+   214820000,
+   336514944,
+   0,
+   2000000000,
+   0,
+   500000000,
+   3695794944
+  ],
+  "correccion": null,
+  "id": 150
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 209,
+  "valor": "- / 10.741.000",
+  "anios": [
+   0,
+   0,
+   0,
+   0,
+   10741000
+  ],
+  "correccion": null,
+  "id": 151
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 209,
+  "valor": "- / 10.741.000",
+  "anios": [
+   42964000,
+   0,
+   0,
+   0,
+   53705000
+  ],
+  "correccion": null,
+  "id": 152
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 209,
+  "valor": "429.640.000 / 107.410.000",
+  "anios": [
+   54915977,
+   0,
+   53705000,
+   322670014,
+   968340991
+  ],
+  "correccion": null,
+  "id": 153
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 209,
+  "valor": "VIVE LA CULTURA / GESTIÓN, PROTECCIÓN Y SALVAGUARDIA DEL PATRIMONIO CULTURAL COLOMBIANO",
+  "anios": [
+   21482000,
+   21482000,
+   0,
+   0,
+   0,
+   0,
+   42964000
+  ],
+  "correccion": null,
+  "id": 154
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 209,
+  "valor": "VIVE EL DEPORTE Y RECREACIÓN / FOMENTO A LA RECREACIÓN, LA ACTIVIDAD FÍSICA Y EL DEPORTE",
+  "anios": [
+   214820000,
+   0,
+   73221302,
+   0,
+   600000000,
+   322670014,
+   1210711316
+  ],
+  "correccion": null,
+  "id": 155
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 209,
+  "valor": "VIVE EL DEPORTE Y RECREACIÓN / FORMACIÓN Y PREPARACIÓN DE DEPORTISTAS",
+  "anios": [
+   107410000,
+   214820000,
+   0,
+   0,
+   0,
+   0,
+   322230000
+  ],
+  "correccion": null,
+  "id": 156
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 209,
+  "valor": "VIVE EL DEPORTE Y RECREACIÓN / ATENCIÓN, ASISTENCIA Y REPARACIÓN INTEGRAL DE VICTIMAS",
+  "anios": [
+   0,
+   64446000,
+   0,
+   0,
+   0,
+   0,
+   64446000
+  ],
+  "correccion": null,
+  "id": 157
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 209,
+  "valor": "107.410.000 / 171.856.000",
+  "anios": [
+   0,
+   0,
+   107410000,
+   0,
+   386676000
+  ],
+  "correccion": null,
+  "id": 158
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 209,
+  "valor": "53.705.000 / 53.705.000",
+  "anios": [
+   0,
+   0,
+   537050000,
+   649651371,
+   1294111371
+  ],
+  "correccion": null,
+  "id": 159
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 209,
+  "valor": "128.892.000 / 53.705.000",
+  "anios": [
+   0,
+   0,
+   64446000,
+   0,
+   247043000
+  ],
+  "correccion": null,
+  "id": 160
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 210,
+  "valor": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION / 21.482.000",
+  "anios": [
+   85928000,
+   0,
+   0,
+   0,
+   0,
+   107410000
+  ],
+  "correccion": null,
+  "id": 161
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 210,
+  "valor": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION / SANIDAD AGROPECUARIA E INOCUIDAD AGROALIMENTARIA",
+  "anios": [
+   0,
+   21482000,
+   0,
+   0,
+   0,
+   0,
+   21482000
+  ],
+  "correccion": null,
+  "id": 162
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 210,
+  "valor": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION / FORTALECIMIENTO DEL DESEMPEÑO AMBIENTAL DE LOS SECTORES",
+  "anios": [
+   5370500
+  ],
+  "correccion": null,
+  "id": 163
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 210,
+  "valor": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION / PRODUCTIVOS",
+  "anios": [
+   0,
+   5370500,
+   0,
+   0,
+   0,
+   0
+  ],
+  "correccion": null,
+  "id": 164
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 210,
+  "valor": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION / CONSERVACIÓN DE LA BIODIVERSIDAD Y SUS SERVICIOSECOSISTÉMICOS",
+  "anios": [
+   118151000,
+   0,
+   0,
+   0,
+   0,
+   0,
+   130845025,
+   248996025
+  ],
+  "correccion": null,
+  "id": 165
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 210,
+  "valor": "VIVE NUESTRO AMBIENTE Y DESARROLLO / GESTIÓN INTEGRAL DEL RECURSOHÍDRICO",
+  "anios": [
+   85928000,
+   0,
+   0,
+   0,
+   214820000,
+   0,
+   300748000
+  ],
+  "correccion": null,
+  "id": 166
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 210,
+  "valor": "SOSTENIBLE / ORDENAMIENTO TERRITORIAL AMBIENTAL",
+  "anios": [
+   0,
+   53705000,
+   0,
+   0,
+   0,
+   0,
+   53705000
+  ],
+  "correccion": null,
+  "id": 167
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 210,
+  "valor": "SOSTENIBLE / GESTIÓN DEL CAMBIO CLIMÁTICO PARA UN DESARROLLO BAJO EN CARBONO Y RESILIENTE AL",
+  "anios": [
+   64446000
+  ],
+  "correccion": null,
+  "id": 168
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 210,
+  "valor": "SOSTENIBLE / EDUCACIÓN AMBIENTAL",
+  "anios": [
+   21482000,
+   0,
+   0,
+   0,
+   0,
+   0,
+   21482000
+  ],
+  "correccion": null,
+  "id": 169
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 210,
+  "valor": "PRODUCTIVIDAD Y COMPETITIVIDAD DE LAS EMPRESAS COLOMBIANAS / 32.223.000",
+  "anios": [
+   53705000,
+   0,
+   0,
+   0,
+   0,
+   85928000
+  ],
+  "correccion": null,
+  "id": 170
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 210,
+  "valor": "161.115.000 / 107.410.000",
+  "anios": [
+   0,
+   0,
+   107410000,
+   0,
+   375935000
+  ],
+  "correccion": null,
+  "id": 171
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 210,
+  "valor": "VIVIENDA, CIUDAD Y TERRITORIO / ORDENAMIENTO TERRITORIAL Y DESARROLLO URBANO",
+  "anios": [
+   0,
+   42964000,
+   0,
+   0,
+   0,
+   0,
+   42964000
+  ],
+  "correccion": null,
+  "id": 172
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 210,
+  "valor": "VIVIENDA, CIUDAD Y TERRITORIO / ACCESO DE LA POBLACIÓN A LOS SERVICIOS DE AGUA POTABLE Y SANEAMIENTO BÁSICO",
+  "anios": [
+   10927415,
+   687683,
+   1331504616,
+   0,
+   537050000,
+   0,
+   1880169714
+  ],
+  "correccion": null,
+  "id": 173
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 210,
+  "valor": "TRANSPORTE / INFRAESTRUCTURA RED VIAL REGIONAL",
+  "anios": [
+   537050000,
+   107410000,
+   0,
+   0,
+   537050000,
+   0,
+   851516977,
+   2033026977
+  ],
+  "correccion": null,
+  "id": 174
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 210,
+  "valor": "TRANSPORTE / TRANSPORTE",
+  "anios": [
+   21482000,
+   0,
+   0,
+   0,
+   0,
+   0,
+   21482000
+  ],
+  "correccion": null,
+  "id": 175
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 210,
+  "valor": "CONSOLIDACIÓN PRODUCTIVA DEL SECTOR DE ENERGÍA ELÉCTRICA / 85.928.000",
+  "anios": [
+   0,
+   0,
+   0,
+   0,
+   77945160,
+   163873160
+  ],
+  "correccion": null,
+  "id": 176
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 211,
+  "valor": "PROGRAMA / RECURSOS PROPIO",
+  "anios": [],
+  "correccion": null,
+  "id": 177
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 211,
+  "valor": "- / 161.115.000",
+  "anios": [
+   0,
+   0,
+   0,
+   0,
+   161115000
+  ],
+  "correccion": null,
+  "id": 178
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 211,
+  "valor": "SISTEMA PENITENCIARIO Y CARCELARIO EN EL MARCO DE LOS DERECHOS HUMANOS / 429.640.000",
+  "anios": [
+   107410000,
+   0,
+   0,
+   0,
+   0,
+   537050000
+  ],
+  "correccion": null,
+  "id": 179
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 211,
+  "valor": "LEVANTAMIENTO Y ACTUALIZACIÓN DE INFORMACIÓN ESTADÍSTICA DECALIDAD A / 64.666.279",
+  "anios": [
+   21482000,
+   0,
+   0,
+   0,
+   0,
+   86148279
+  ],
+  "correccion": null,
+  "id": 180
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 211,
+  "valor": "FORTALECIMIENTO DE LA CONVIVIENCIA Y LA SEGURIDADCIUDADANA / 150.000.000",
+  "anios": [
+   64446000,
+   0,
+   0,
+   0,
+   189415949,
+   403861949
+  ],
+  "correccion": null,
+  "id": 181
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 211,
+  "valor": "GESTIÓN DEL RIESGO DE DESASTRES Y EMERGENCIAS / 250.000.000",
+  "anios": [
+   0,
+   0,
+   0,
+   268525000,
+   386324894,
+   904849894
+  ],
+  "correccion": null,
+  "id": 182
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 211,
+  "valor": "FORTALECIMIENTO A LA GESTIÓN Y DIRECCIÓN DE LA ADMINISTRACIÓN PÚBLICA TERRITORIAL / 537.050.000",
+  "anios": [
+   32090406,
+   0,
+   0,
+   0,
+   0,
+   1000000000,
+   1569140406
+  ],
+  "correccion": null,
+  "id": 183
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 211,
+  "valor": "FOMENTO DEL DESARROLLO DE APLICACIONES, SOFTWARE Y CONTENIDOS PARA IMPULSAR LA APROPIACIÓN DE LAS TECNOLOGÍAS DE LA INFORMACIÓN Y LAS COMUNICACIONES(TIC) VERSIÓN / 32.223.000 4.267.166.694",
+  "anios": [
+   37593500,
+   2127273089,
+   0,
+   6635527294,
+   0,
+   7196470000,
+   0,
+   5059689000,
+   0,
+   1948677402,
+   982362002,
+   1500000000,
+   69816500,
+   29717165480
+  ],
+  "correccion": null,
+  "id": 184
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 212,
+  "valor": "CALIDAD, COBERTURA Y FORTALECIMIENTO DE LA EDUCACIÓN INICIAL, PRESCOLAR,BÁSICA Y MEDIA / 692.214.486",
+  "anios": [
+   230738162,
+   361450702,
+   0,
+   400000000,
+   0,
+   1684403350
+  ],
+  "correccion": null,
+  "id": 185
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 212,
+  "valor": "- / 11.536.908",
+  "anios": [
+   0,
+   0,
+   0,
+   0,
+   11536908
+  ],
+  "correccion": null,
+  "id": 186
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 212,
+  "valor": "- / 11.536.908",
+  "anios": [
+   46147632,
+   0,
+   0,
+   0,
+   57684541
+  ],
+  "correccion": null,
+  "id": 187
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 212,
+  "valor": "461.476.324 / 115.369.081",
+  "anios": [
+   58985251,
+   1000000000,
+   1000000000,
+   346579862,
+   1500000000,
+   4482410518
+  ],
+  "correccion": null,
+  "id": 188
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 212,
+  "valor": "VIVE LA CULTURA / GESTIÓN, PROTECCIÓN Y SALVAGUARDIA DEL PATRIMONIO CULTURAL COLOMBIANO",
+  "anios": [
+   23073816,
+   23073816,
+   0,
+   0,
+   0,
+   0,
+   46147632
+  ],
+  "correccion": null,
+  "id": 189
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 212,
+  "valor": "VIVE EL DEPORTE Y RECREACIÓN / FOMENTO A LA RECREACIÓN, LA ACTIVIDAD FÍSICA Y EL DEPORTE",
+  "anios": [
+   230738162,
+   0,
+   78647000,
+   0,
+   346579862,
+   655965025
+  ],
+  "correccion": null,
+  "id": 190
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 212,
+  "valor": "VIVE EL DEPORTE Y RECREACIÓN / FORMACIÓN Y PREPARACIÓN DE DEPORTISTAS",
+  "anios": [
+   115369081,
+   230738162,
+   0,
+   0,
+   500000000,
+   0,
+   846107243
+  ],
+  "correccion": null,
+  "id": 191
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 212,
+  "valor": "VIVE EL DEPORTE Y RECREACIÓN / ATENCIÓN, ASISTENCIA Y REPARACIÓN INTEGRAL DE VICTIMAS",
+  "anios": [
+   0,
+   69221449,
+   0,
+   0,
+   0,
+   0,
+   69221449
+  ],
+  "correccion": null,
+  "id": 192
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 212,
+  "valor": "115.369.081 / 184.590.530",
+  "anios": [
+   0,
+   0,
+   115369081,
+   0,
+   415328692
+  ],
+  "correccion": null,
+  "id": 193
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 212,
+  "valor": "57.684.541 / 57.684.541",
+  "anios": [
+   0,
+   0,
+   576845405,
+   697790538,
+   1390005024
+  ],
+  "correccion": null,
+  "id": 194
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 212,
+  "valor": "138.442.897 / 57.684.541",
+  "anios": [
+   0,
+   0,
+   69221449,
+   0,
+   265348886
+  ],
+  "correccion": null,
+  "id": 195
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 213,
+  "valor": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION / 23.073.816",
+  "anios": [
+   92295265,
+   0,
+   0,
+   0,
+   0,
+   115369081
+  ],
+  "correccion": null,
+  "id": 196
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 213,
+  "valor": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION / SANIDAD AGROPECUARIA E INOCUIDAD AGROALIMENTARIA",
+  "anios": [
+   0,
+   23073816,
+   0,
+   0,
+   0,
+   0,
+   23073816
+  ],
+  "correccion": null,
+  "id": 197
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 213,
+  "valor": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION / FORTALECIMIENTO DEL DESEMPEÑO AMBIENTAL DE LOS SECTORES",
+  "anios": [
+   5768454
+  ],
+  "correccion": null,
+  "id": 198
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 213,
+  "valor": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION / PRODUCTIVOS",
+  "anios": [
+   0,
+   5768454,
+   0,
+   0,
+   0,
+   0
+  ],
+  "correccion": null,
+  "id": 199
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 213,
+  "valor": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION / CONSERVACIÓN DE LA BIODIVERSIDAD Y SUS SERVICIOSECOSISTÉMICOS",
+  "anios": [
+   126905989,
+   0,
+   0,
+   0,
+   0,
+   0,
+   121221407,
+   248127396
+  ],
+  "correccion": null,
+  "id": 200
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 213,
+  "valor": "VIVE NUESTRO AMBIENTE Y DESARROLLO / GESTIÓN INTEGRAL DEL RECURSOHÍDRICO",
+  "anios": [
+   92295265,
+   0,
+   0,
+   0,
+   230738162,
+   0,
+   323033427
+  ],
+  "correccion": null,
+  "id": 201
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 213,
+  "valor": "SOSTENIBLE / ORDENAMIENTO TERRITORIAL AMBIENTAL",
+  "anios": [
+   0,
+   57684541,
+   0,
+   0,
+   0,
+   0,
+   57684541
+  ],
+  "correccion": null,
+  "id": 202
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 213,
+  "valor": "SOSTENIBLE / GESTIÓN DEL CAMBIO CLIMÁTICO PARA UN DESARROLLO BAJO EN CARBONO Y RESILIENTE AL",
+  "anios": [
+   69221449
+  ],
+  "correccion": null,
+  "id": 203
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 213,
+  "valor": "SOSTENIBLE / EDUCACIÓN AMBIENTAL",
+  "anios": [
+   23073816,
+   0,
+   0,
+   0,
+   0,
+   0,
+   23073816
+  ],
+  "correccion": null,
+  "id": 204
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 213,
+  "valor": "PRODUCTIVIDAD Y COMPETITIVIDAD DE LAS EMPRESAS COLOMBIANAS / 34.610.724",
+  "anios": [
+   57684541,
+   0,
+   0,
+   0,
+   0,
+   92295265
+  ],
+  "correccion": null,
+  "id": 205
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 213,
+  "valor": "173.053.622 / 115.369.081",
+  "anios": [
+   0,
+   0,
+   115369081,
+   0,
+   403791784
+  ],
+  "correccion": null,
+  "id": 206
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 213,
+  "valor": "VIVIENDA, CIUDAD Y TERRITORIO / ORDENAMIENTO TERRITORIAL Y DESARROLLO URBANO",
+  "anios": [
+   0,
+   46147632,
+   0,
+   0,
+   0,
+   0,
+   46147632
+  ],
+  "correccion": null,
+  "id": 207
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 213,
+  "valor": "VIVIENDA, CIUDAD Y TERRITORIO / ACCESO DE LA POBLACIÓN A LOS SERVICIOS DE AGUA POTABLE Y SANEAMIENTO BÁSICO",
+  "anios": [
+   11737137,
+   738640,
+   1430169108,
+   0,
+   576845405,
+   0,
+   2019490290
+  ],
+  "correccion": null,
+  "id": 208
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 213,
+  "valor": "TRANSPORTE / INFRAESTRUCTURA RED VIAL REGIONAL",
+  "anios": [
+   1002111302,
+   115369081,
+   0,
+   0,
+   576845405,
+   0,
+   788903755,
+   2483229543
+  ],
+  "correccion": null,
+  "id": 209
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 213,
+  "valor": "TRANSPORTE / TRANSPORTE",
+  "anios": [
+   23073816,
+   0,
+   0,
+   0,
+   0,
+   0,
+   23073816
+  ],
+  "correccion": null,
+  "id": 210
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 213,
+  "valor": "CONSOLIDACIÓN PRODUCTIVA DEL SECTOR DE ENERGÍA ELÉCTRICA / 92.295.265",
+  "anios": [
+   0,
+   0,
+   0,
+   0,
+   83720896,
+   176016161
+  ],
+  "correccion": null,
+  "id": 211
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 214,
+  "valor": "PROGRAMA / RECURSOS PROPIO",
+  "anios": [],
+  "correccion": null,
+  "id": 212
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 214,
+  "valor": "- / 173.053.622",
+  "anios": [
+   0,
+   0,
+   0,
+   0,
+   173053622
+  ],
+  "correccion": null,
+  "id": 213
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 214,
+  "valor": "SISTEMA PENITENCIARIO Y CARCELARIO EN EL MARCO DE LOS DERECHOS HUMANOS / 461.476.324",
+  "anios": [
+   115369081,
+   0,
+   0,
+   0,
+   0,
+   576845405
+  ],
+  "correccion": null,
+  "id": 214
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 214,
+  "valor": "LEVANTAMIENTO Y ACTUALIZACIÓN DE INFORMACIÓN ESTADÍSTICA DECALIDAD A / 69.458.050",
+  "anios": [
+   23073816,
+   0,
+   0,
+   0,
+   0,
+   92531866
+  ],
+  "correccion": null,
+  "id": 215
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 214,
+  "valor": "FORTALECIMIENTO DE LA CONVIVIENCIA Y LA SEGURIDADCIUDADANA / 161.115.000",
+  "anios": [
+   69221449,
+   0,
+   0,
+   0,
+   203451670,
+   433788119
+  ],
+  "correccion": null,
+  "id": 216
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 214,
+  "valor": "GESTIÓN DEL RIESGO DE DESASTRES Y EMERGENCIAS / 268.525.000",
+  "anios": [
+   0,
+   0,
+   0,
+   288422703,
+   414951569,
+   971899271
+  ],
+  "correccion": null,
+  "id": 217
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 214,
+  "valor": "FORTALECIMIENTO A LA GESTIÓN Y DIRECCIÓN DE LA ADMINISTRACIÓN PÚBLICA TERRITORIAL / 251.452.903",
+  "anios": [
+   66558711,
+   0,
+   0,
+   0,
+   0,
+   1000000000,
+   1318011614
+  ],
+  "correccion": null,
+  "id": 218
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 214,
+  "valor": "COMUNICACIONES(TIC) VERSIÓN / 34.610.724 4.683.237.141",
+  "anios": [
+   40379178,
+   2316994431,
+   0,
+   7127219867,
+   0,
+   8729728427,
+   0,
+   4484267414,
+   0,
+   2093074397,
+   910125,
+   2500000000,
+   32844646839
+  ],
+  "correccion": null,
+  "id": 219
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 215,
+  "valor": "CALIDAD, COBERTURA Y FORTALECIMIENTO DE LA EDUCACIÓN INICIAL, PRESCOLAR,BÁSICA Y MEDIA / 743.507.579",
+  "anios": [
+   247835860,
+   388234199,
+   0,
+   429640000,
+   0,
+   1809217638
+  ],
+  "correccion": null,
+  "id": 220
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 215,
+  "valor": "- / 12.391.793",
+  "anios": [
+   0,
+   0,
+   0,
+   0,
+   12391793
+  ],
+  "correccion": null,
+  "id": 221
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 215,
+  "valor": "- / 12.391.793",
+  "anios": [
+   49567172,
+   0,
+   0,
+   0,
+   61958965
+  ],
+  "correccion": null,
+  "id": 222
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 215,
+  "valor": "910.889.069 / 123.917.930",
+  "anios": [
+   63356058,
+   372261430,
+   1470424487
+  ],
+  "correccion": null,
+  "id": 223
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 215,
+  "valor": "VIVE LA CULTURA / GESTIÓN, PROTECCIÓN Y SALVAGUARDIA DEL PATRIMONIO CULTURAL COLOMBIANO",
+  "anios": [
+   24783586,
+   24783586,
+   0,
+   0,
+   0,
+   0,
+   49567172
+  ],
+  "correccion": null,
+  "id": 224
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 215,
+  "valor": "VIVE EL DEPORTE Y RECREACIÓN / FOMENTO A LA RECREACIÓN, LA ACTIVIDAD FÍSICA Y EL DEPORTE",
+  "anios": [
+   247835860,
+   0,
+   84474743,
+   0,
+   0,
+   372261430,
+   704572033
+  ],
+  "correccion": null,
+  "id": 225
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 215,
+  "valor": "VIVE EL DEPORTE Y RECREACIÓN / FORMACIÓN Y PREPARACIÓN DE DEPORTISTAS",
+  "anios": [
+   123917930,
+   247835860,
+   0,
+   0,
+   537050000,
+   0,
+   908803790
+  ],
+  "correccion": null,
+  "id": 226
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 215,
+  "valor": "VIVE EL DEPORTE Y RECREACIÓN / ATENCIÓN, ASISTENCIA Y REPARACIÓN INTEGRAL DE VICTIMAS",
+  "anios": [
+   0,
+   74350758,
+   0,
+   0,
+   0,
+   0,
+   74350758
+  ],
+  "correccion": null,
+  "id": 227
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 215,
+  "valor": "123.917.930 / 198.268.688",
+  "anios": [
+   0,
+   0,
+   123917930,
+   0,
+   446104548
+  ],
+  "correccion": null,
+  "id": 228
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 215,
+  "valor": "61.958.965 / 61.958.965",
+  "anios": [
+   0,
+   0,
+   619589650,
+   749496816,
+   1493004395
+  ],
+  "correccion": null,
+  "id": 229
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 215,
+  "valor": "148.701.516 / 61.958.965",
+  "anios": [
+   0,
+   0,
+   74350758,
+   0,
+   285011239
+  ],
+  "correccion": null,
+  "id": 230
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 216,
+  "valor": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION / 24.783.586",
+  "anios": [
+   99134344,
+   0,
+   0,
+   0,
+   0,
+   123917930
+  ],
+  "correccion": null,
+  "id": 231
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 216,
+  "valor": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION / SANIDAD AGROPECUARIA E INOCUIDAD AGROALIMENTARIA",
+  "anios": [
+   0,
+   24783586,
+   0,
+   0,
+   0,
+   0,
+   24783586
+  ],
+  "correccion": null,
+  "id": 232
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 216,
+  "valor": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION / FORTALECIMIENTO DEL DESEMPEÑO AMBIENTAL DE LOS SECTORES PRODUCTIVOS",
+  "anios": [
+   0,
+   6195896,
+   0,
+   0,
+   0,
+   0,
+   6195896
+  ],
+  "correccion": null,
+  "id": 233
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 216,
+  "valor": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION / CONSERVACIÓN DE LA BIODIVERSIDAD Y SUS SERVICIOSECOSISTÉMICOS",
+  "anios": [
+   136309723,
+   0,
+   0,
+   0,
+   0,
+   0,
+   127390809,
+   263700532
+  ],
+  "correccion": null,
+  "id": 234
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 216,
+  "valor": "VIVE NUESTRO AMBIENTE Y DESARROLLO / GESTIÓN INTEGRAL DEL RECURSOHÍDRICO",
+  "anios": [
+   99134344,
+   0,
+   0,
+   0,
+   247835860,
+   0,
+   346970204
+  ],
+  "correccion": null,
+  "id": 235
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 216,
+  "valor": "SOSTENIBLE / ORDENAMIENTO TERRITORIAL AMBIENTAL",
+  "anios": [
+   0,
+   61958965,
+   0,
+   0,
+   0,
+   0,
+   61958965
+  ],
+  "correccion": null,
+  "id": 236
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 216,
+  "valor": "SOSTENIBLE / GESTIÓN DEL CAMBIO CLIMÁTICO PARA UN DESARROLLO BAJO EN CARBONO Y RESILIENTE AL",
+  "anios": [
+   74350758
+  ],
+  "correccion": null,
+  "id": 237
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 216,
+  "valor": "SOSTENIBLE / EDUCACIÓN AMBIENTAL",
+  "anios": [
+   24783586,
+   0,
+   0,
+   0,
+   0,
+   0,
+   24783586
+  ],
+  "correccion": null,
+  "id": 238
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 216,
+  "valor": "PRODUCTIVIDAD Y COMPETITIVIDAD DE LAS EMPRESAS COLOMBIANAS / 37.175.379",
+  "anios": [
+   61958965,
+   0,
+   0,
+   0,
+   0,
+   99134344
+  ],
+  "correccion": null,
+  "id": 239
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 216,
+  "valor": "185.876.895 / 123.917.930",
+  "anios": [
+   0,
+   0,
+   123917930,
+   0,
+   433712755
+  ],
+  "correccion": null,
+  "id": 240
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 216,
+  "valor": "VIVIENDA, CIUDAD Y TERRITORIO / ORDENAMIENTO TERRITORIAL Y DESARROLLO URBANO",
+  "anios": [
+   0,
+   49567172,
+   0,
+   0,
+   0,
+   0,
+   49567172
+  ],
+  "correccion": null,
+  "id": 241
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 216,
+  "valor": "VIVIENDA, CIUDAD Y TERRITORIO / ACCESO DE LA POBLACIÓN A LOS SERVICIOS DE AGUA POTABLE Y SANEAMIENTO BÁSICO",
+  "anios": [
+   12606859,
+   793373,
+   1536144639,
+   0,
+   619589650,
+   0,
+   2169134521
+  ],
+  "correccion": null,
+  "id": 242
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 216,
+  "valor": "TRANSPORTE / INFRAESTRUCTURA RED VIAL REGIONAL",
+  "anios": [
+   750000000,
+   123917930,
+   0,
+   0,
+   619589650,
+   0,
+   829002137,
+   1000000000,
+   3322509716
+  ],
+  "correccion": null,
+  "id": 243
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 216,
+  "valor": "TRANSPORTE / TRANSPORTE",
+  "anios": [
+   24783586,
+   0,
+   0,
+   0,
+   0,
+   0,
+   24783586
+  ],
+  "correccion": null,
+  "id": 244
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 216,
+  "valor": "CONSOLIDACIÓN PRODUCTIVA DEL SECTOR DE ENERGÍA ELÉCTRICA / 99.134.344",
+  "anios": [
+   0,
+   0,
+   0,
+   0,
+   89924615,
+   189058959
+  ],
+  "correccion": null,
+  "id": 245
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 217,
+  "valor": "PROGRAMA / RECURSOS PROPIO",
+  "anios": [],
+  "correccion": null,
+  "id": 246
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 217,
+  "valor": "- / 185.876.895",
+  "anios": [
+   0,
+   0,
+   0,
+   0,
+   185876895
+  ],
+  "correccion": null,
+  "id": 247
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 217,
+  "valor": "SISTEMA PENITENCIARIO Y CARCELARIO EN EL MARCO DE LOS DERECHOS HUMANOS / 495.671.720",
+  "anios": [
+   123917930,
+   0,
+   0,
+   0,
+   0,
+   619589650
+  ],
+  "correccion": null,
+  "id": 248
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 217,
+  "valor": "LEVANTAMIENTO Y ACTUALIZACIÓN DE INFORMACIÓN ESTADÍSTICA DECALIDAD A / 74.604.891",
+  "anios": [
+   24783586,
+   0,
+   0,
+   0,
+   0,
+   99388477
+  ],
+  "correccion": null,
+  "id": 249
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 217,
+  "valor": "FORTALECIMIENTO DE LA CONVIVIENCIA Y LA SEGURIDADCIUDADANA / 173.053.622",
+  "anios": [
+   74350758,
+   0,
+   0,
+   0,
+   218527439,
+   465931819
+  ],
+  "correccion": null,
+  "id": 250
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 217,
+  "valor": "GESTIÓN DEL RIESGO DE DESASTRES Y EMERGENCIAS / 288.422.703",
+  "anios": [
+   0,
+   0,
+   0,
+   309794825,
+   445699480,
+   1043917007
+  ],
+  "correccion": null,
+  "id": 251
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 217,
+  "valor": "FORTALECIMIENTO A LA GESTIÓN Y DIRECCIÓN DE LA ADMINISTRACIÓN PÚBLICA TERRITORIAL / 279.813.789",
+  "anios": [
+   103581117,
+   0,
+   0,
+   0,
+   0,
+   383394906
+  ],
+  "correccion": null,
+  "id": 252
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 217,
+  "valor": "COMUNICACIONES(TIC) VERSIÓN / 37.175.379 5.128.842.839",
+  "anios": [
+   43371275,
+   2520774123,
+   0,
+   7655346859,
+   0,
+   8302501303,
+   0,
+   3742451630,
+   0,
+   2248171209,
+   956392946,
+   1000000000,
+   31554480910
+  ],
+  "correccion": null,
+  "id": 253
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 218,
+  "valor": "6.981.663.410 / 3.886.263.995",
+  "anios": [
+   22058384472,
+   30928699730,
+   9250577065,
+   5385613884,
+   0,
+   2000000000,
+   80491202556
+  ],
+  "correccion": null,
+  "id": 254
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 218,
+  "valor": "1.697.448.641 / 1.541.104.688",
+  "anios": [
+   0,
+   0,
+   1295421332,
+   0,
+   530513771,
+   0,
+   5064488432
+  ],
+  "correccion": null,
+  "id": 255
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 218,
+  "valor": "3.951.348.795 / 1.074.932.764",
+  "anios": [
+   5484732325,
+   0,
+   4913667120,
+   324158551,
+   3452951084,
+   1000000000,
+   20201790639
+  ],
+  "correccion": null,
+  "id": 256
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 218,
+  "valor": "5.328.585.938 / 2.413.380.438",
+  "anios": [
+   0,
+   0,
+   1116742527,
+   2394392639,
+   0,
+   2000000000,
+   13253101542
+  ],
+  "correccion": null,
+  "id": 257
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 218,
+  "valor": "17.959.046.784 / 8.915.681.884",
+  "anios": [
+   27543116797,
+   30928699730,
+   16576408044,
+   8104165074,
+   3983464855,
+   5000000000,
+   119010583168
+  ],
+  "correccion": null,
+  "id": 258
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 223,
+  "valor": "PROGRAMA / CODIGO PRODUCTO",
+  "anios": [
+   2027,
+   2024,
+   2025,
+   2026,
+   2027
+  ],
+  "correccion": null,
+  "id": 259
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 223,
+  "valor": "Servicio de monitoreo seguimiento a la gestió del sector educativo / 220101501",
+  "anios": [],
+  "correccion": null,
+  "id": 260
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 223,
+  "valor": "Servicio de apoyo a permanencia co alimentación escolar / la n 220102800",
+  "anios": [
+   1494,
+   1494,
+   1494,
+   1494,
+   1494,
+   1494
+  ],
+  "correccion": null,
+  "id": 261
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 223,
+  "valor": "Servicio de apoyo a permanencia co transporte escolar / la n 220102900",
+  "anios": [],
+  "correccion": null,
+  "id": 262
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 223,
+  "valor": "Servicio educativos d promoción del bilingüismo / 220103400",
+  "anios": [
+   0,
+   0
+  ],
+  "correccion": null,
+  "id": 263
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 223,
+  "valor": "Servicio de educació informal / 220104900",
+  "anios": [],
+  "correccion": null,
+  "id": 264
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 223,
+  "valor": "2201050 / Servicio de accesibilidad contenidos web para fine pedagógicos",
+  "anios": [
+   220105001
+  ],
+  "correccion": null,
+  "id": 265
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 223,
+  "valor": "2201051 / Infraestructura educativ construida",
+  "anios": [
+   220105100,
+   0,
+   0,
+   0,
+   0
+  ],
+  "correccion": null,
+  "id": 266
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 223,
+  "valor": "2201052 / Infraestructura educativ mejorada",
+  "anios": [
+   220105200,
+   0,
+   0
+  ],
+  "correccion": null,
+  "id": 267
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 223,
+  "valor": "BÁSICA Y MEDIA / 2201049",
+  "anios": [
+   220104902
+  ],
+  "correccion": null,
+  "id": 268
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 223,
+  "valor": "Infraestructura educativ dotada / 220106903",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 269
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 223,
+  "valor": "Servicio de educació informal / 220104907",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 270
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 223,
+  "valor": "Servicio de apoyo para implementación de estrategia educativa d sistema d responsabilidad pen adolescente / la la el e al 220107700",
+  "anios": [],
+  "correccion": null,
+  "id": 271
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 223,
+  "valor": "Servicio educativo / 220107100",
+  "anios": [],
+  "correccion": null,
+  "id": 272
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 223,
+  "valor": "2202007 / Servicio de apoy financiero para el acces a la educación superior terciaria",
+  "anios": [
+   220200723,
+   0
+  ],
+  "correccion": null,
+  "id": 273
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 224,
+  "valor": "CODIGO PRODUCTO / PRODUCTO",
+  "anios": [
+   2027,
+   2024,
+   2025,
+   2026,
+   2027
+  ],
+  "correccion": null,
+  "id": 274
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 224,
+  "valor": "para la educación superior o terciaria / 220202400",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 275
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 224,
+  "valor": "Servicio de atención en salud a lapoblación / 190600401",
+  "anios": [
+   12116,
+   12116,
+   12116,
+   12116,
+   12116,
+   12116
+  ],
+  "correccion": null,
+  "id": 276
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 224,
+  "valor": "1906044 / régimen subsidiado del Sistema General de Seguridad Social",
+  "anios": [
+   190604400,
+   8618,
+   8700,
+   8620,
+   8640,
+   8670,
+   8700
+  ],
+  "correccion": null,
+  "id": 277
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 224,
+  "valor": "1906026 / Servicio de apoyo para la dotación hospitalaria",
+  "anios": [
+   190602600,
+   0
+  ],
+  "correccion": null,
+  "id": 278
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 224,
+  "valor": "1906035 / Servicio de apoyo financiero para la atención en salud a la población",
+  "anios": [
+   190603501
+  ],
+  "correccion": null,
+  "id": 279
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 224,
+  "valor": "Servicio de gestión del riesgo en temas de consumo de sustancias psicoactivas / 190502000",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 280
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 224,
+  "valor": "Servicio de gestión del riesgo en temas de salud sexual y reproductiva / 190502100",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 281
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 224,
+  "valor": "Servicio de gestión del riesgo en temas de trastornos mentales / 190502200",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 282
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 224,
+  "valor": "Servicio de gestión del riesgo para abordar condiciones crónicas prevalentes / 190502300",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 283
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 224,
+  "valor": "Servicio de gestión del riesgo para abordar situaciones de salud relacionadas con condiciones ambientales / 190502400",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 284
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 224,
+  "valor": "Servicio de gestión del riesgo para abordar situaciones prevalentes de origen laboral / 190502500",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 285
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 225,
+  "valor": "Servicio de gestión del riesgo para abordar situaciones prevalentes de origen laboral / CODIGO",
+  "anios": [],
+  "correccion": null,
+  "id": 286
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 225,
+  "valor": "PROGRAMA / PRODUCTO",
+  "anios": [
+   2027,
+   2024,
+   2025,
+   2026,
+   2027
+  ],
+  "correccion": null,
+  "id": 287
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 225,
+  "valor": "9.1.2.2 PROGRAMA 1905 – SALUD PÚBLICA / 1905026",
+  "anios": [
+   190502600,
+   0
+  ],
+  "correccion": null,
+  "id": 288
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 225,
+  "valor": "Servicio de gestión del riesgo para enfermedades inmunoprevenibles / 190502700",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 289
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 225,
+  "valor": "Servicio de gestión del riesgo para temas de consumo, aprovechamiento biológico, calidad e inocuidad de los alimentos / 190502800",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 290
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 225,
+  "valor": "Servicio de suministro de insumos para el manejo de eventos de interés en salud pública / 190502900",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 291
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 225,
+  "valor": "Servicio de promoción de la participación social en salud / 190504901",
+  "anios": [
+   0,
+   5000,
+   1250,
+   1250,
+   1250,
+   1250
+  ],
+  "correccion": null,
+  "id": 292
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 225,
+  "valor": "Servicio de asistencia técnica / 190505004",
+  "anios": [],
+  "correccion": null,
+  "id": 293
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 225,
+  "valor": "Servicio de promoción de la salud / 190505401",
+  "anios": [
+   0,
+   5000,
+   1250,
+   1250,
+   1250,
+   1250
+  ],
+  "correccion": null,
+  "id": 294
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 225,
+  "valor": "Servicio de información de vigilancia epidemiológica / 190303100",
+  "anios": [],
+  "correccion": null,
+  "id": 295
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 225,
+  "valor": "1903023 / Servicio de asistencia técnica en inspección, vigilanciaycontrol",
+  "anios": [
+   190302300
+  ],
+  "correccion": null,
+  "id": 296
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 225,
+  "valor": "1903025 / Servicio de implementación de estrategias para el fortalecimiento del control social en salud",
+  "anios": [
+   190302500
+  ],
+  "correccion": null,
+  "id": 297
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 226,
+  "valor": "Servicio de asistencia técnica para la viabilización de proyectos de infraestructura / 330106300",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 298
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 226,
+  "valor": "Servicios bibliotecarios / 330108500",
+  "anios": [
+   1200,
+   1200,
+   1200,
+   1200,
+   1200,
+   1200
+  ],
+  "correccion": null,
+  "id": 299
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 226,
+  "valor": "3301128 / Servicio de apoyo financiero para creadores y gestores culturales",
+  "anios": [
+   330112800,
+   0,
+   0
+  ],
+  "correccion": null,
+  "id": 300
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 226,
+  "valor": "3301053 / Servicio de promoción de actividades culturales",
+  "anios": [
+   330105301
+  ],
+  "correccion": null,
+  "id": 301
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 226,
+  "valor": "3302002 / Documentos de lineamientos técnicos",
+  "anios": [
+   330200202,
+   0,
+   0,
+   0,
+   0
+  ],
+  "correccion": null,
+  "id": 302
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 226,
+  "valor": "3302006 / Servicios de preservación del patrimonio bibliográfico ydocumental",
+  "anios": [
+   330200600,
+   0,
+   0,
+   0,
+   0
+  ],
+  "correccion": null,
+  "id": 303
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 226,
+  "valor": "3302059 / Servicio de apoyo financiero a la investigación en Antropología, Arqueología, Historia y Patrimonio",
+  "anios": [
+   330205901,
+   0,
+   0,
+   0,
+   0
+  ],
+  "correccion": null,
+  "id": 304
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 226,
+  "valor": "Servicio de organización de eventos deportivos comunitarios / 430103201",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 305
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 226,
+  "valor": "Servicio de educación informal en recreación / 430103501",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 306
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 226,
+  "valor": "4301037 / Servicio de promoción de la actividad física, la recreaciónyel deporte",
+  "anios": [
+   430103705
+  ],
+  "correccion": null,
+  "id": 307
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 227,
+  "valor": "PROGRAMA PROGRAMA 4301 / CODIGO PRODUCTO",
+  "anios": [
+   2027,
+   2024,
+   2025,
+   2026,
+   2027
+  ],
+  "correccion": null,
+  "id": 308
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 227,
+  "valor": "4301038 / Servicio de organización de eventos recreativos comunitarios",
+  "anios": [
+   430103801,
+   0
+  ],
+  "correccion": null,
+  "id": 309
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 227,
+  "valor": "EL DEPORTE / 4301037",
+  "anios": [
+   430103703,
+   0,
+   2000
+  ],
+  "correccion": null,
+  "id": 310
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 227,
+  "valor": "Servicio de mantenimiento a la infraestructura deportiva / 430100400",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 311
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 227,
+  "valor": "4302022 / Piscinas mantenidas",
+  "anios": [
+   430202200,
+   0
+  ],
+  "correccion": null,
+  "id": 312
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 227,
+  "valor": "4301021 / Placa deportiva adecuada",
+  "anios": [
+   430102100,
+   0,
+   0
+  ],
+  "correccion": null,
+  "id": 313
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 227,
+  "valor": "4302039 / Centros de recreación construidos",
+  "anios": [
+   430203902,
+   0,
+   0,
+   0,
+   0
+  ],
+  "correccion": null,
+  "id": 314
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 227,
+  "valor": "Servicio de asistencia técnica para la participación de las víctimas / 410103800",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 315
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 227,
+  "valor": "4101038 / Servicio de asistencia técnica para la participación de las víctimas",
+  "anios": [
+   410103801
+  ],
+  "correccion": null,
+  "id": 316
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 227,
+  "valor": "4101076 / Servicio de apoyo para el mejoramiento de condiciones de habitabilidad para población víctima de desplazamiento forzado",
+  "anios": [
+   410107601,
+   0
+  ],
+  "correccion": null,
+  "id": 317
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 227,
+  "valor": "Servicios de satisfacción y garantías de no repetición a víctimas del conflicto armado / 410109201",
+  "anios": [],
+  "correccion": null,
+  "id": 318
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 227,
+  "valor": "Servicio de apoyo para la seguridad alimentaria / 410104200",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 319
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 227,
+  "valor": "Servicio de atención integral a la primera infancia / 410200100",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 320
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 230,
+  "valor": "PROGRAMA / CODIGO PRODUCTO",
+  "anios": [
+   2027,
+   2024,
+   2025,
+   2026,
+   2027
+  ],
+  "correccion": null,
+  "id": 321
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 230,
+  "valor": "Servicio de apoyo en la formulación y estructuración de proyectos / 170202500",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 322
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 230,
+  "valor": "Servicio de apoyo en la formulación y estructuración de proyectos / 1709105",
+  "anios": [
+   170910500
+  ],
+  "correccion": null,
+  "id": 323
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 230,
+  "valor": "PROGRAMA 1709 – / 1709112",
+  "anios": [
+   170911200
+  ],
+  "correccion": null,
+  "id": 324
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 230,
+  "valor": "1709106 / Servicio de apoyo a la comercialización de las cadenas agrícolas, forestales, pecuarias, pesquerasyacuícolas",
+  "anios": [
+   170910601,
+   0
+  ],
+  "correccion": null,
+  "id": 325
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 230,
+  "valor": "1707042 / Servicios de vacunación para especies animales de interés agropecuario",
+  "anios": [
+   170704200,
+   0,
+   2000
+  ],
+  "correccion": null,
+  "id": 326
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 230,
+  "valor": "1707043 / Servicios de control de parásitos para especies de interés agropecuario",
+  "anios": [
+   170704300,
+   0
+  ],
+  "correccion": null,
+  "id": 327
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 230,
+  "valor": "3201009 / Servicio de seguimiento y evaluación de los programas de recolección de residuospos consumo",
+  "anios": [
+   320100901,
+   0
+  ],
+  "correccion": null,
+  "id": 328
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 230,
+  "valor": "3201010 / Servicio de divulgación de la incorporación de consideraciones ambientales en la planificación sectorial",
+  "anios": [
+   320101001,
+   0
+  ],
+  "correccion": null,
+  "id": 329
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 230,
+  "valor": "Servicio de restauración de ecosistemas / 320200500",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 330
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 230,
+  "valor": "Servicio de reforestación de ecosistemas / 320200600",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 331
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 230,
+  "valor": "Servicio de educación informal en el marco de la conservación de la biodiversidad y los Servicio ecosistémicos / 320201402",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 332
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 231,
+  "valor": "3202037 / Servicio de recuperación de cuerpos de agua lénticosylóticos",
+  "anios": [
+   320203701,
+   0,
+   0
+  ],
+  "correccion": null,
+  "id": 333
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 231,
+  "valor": "3202041 / Servicio de establecimiento de especies vegetales",
+  "anios": [
+   320204100,
+   0,
+   15000,
+   2000,
+   3000,
+   5000,
+   5000
+  ],
+  "correccion": null,
+  "id": 334
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 231,
+  "valor": "3202043 / Servicio apoyo financiero para la implementación de esquemas de pago por Servicio ambientales",
+  "anios": [
+   320204300
+  ],
+  "correccion": null,
+  "id": 335
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 231,
+  "valor": "Servicio de administración y manejo de áreas protegidas locales no vinculadas al Sistema Nacional de Áreas Protegidas / 320204700",
+  "anios": [],
+  "correccion": null,
+  "id": 336
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 231,
+  "valor": "Servicio de asistencia técnica / 320205700",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 337
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 231,
+  "valor": "Servicio de caracterización de la calidad del agua / 320300901",
+  "anios": [
+   0,
+   0
+  ],
+  "correccion": null,
+  "id": 338
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 231,
+  "valor": "3203009 / Servicio de caracterización de la calidad del agua",
+  "anios": [
+   320300902,
+   0,
+   0
+  ],
+  "correccion": null,
+  "id": 339
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 231,
+  "valor": "SECTOR 32 - VIVE NUESTRO AMBIENTE Y DESARROLLO SOSTENIBLE / GESTIÓN INTEGRAL DEL RECURSO HÍDRICO",
+  "anios": [
+   3203034,
+   320303400,
+   0
+  ],
+  "correccion": null,
+  "id": 340
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 231,
+  "valor": "3205006 / Servicio de divulgación y socialización ambiental en el marco del ordenamiento ambiental territorial",
+  "anios": [
+   320500600,
+   0
+  ],
+  "correccion": null,
+  "id": 341
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 231,
+  "valor": "Servicio de recuperación de cuerpos de agua lénticosylóticos / 320502601",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 342
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 232,
+  "valor": "Servicio de recuperación de cuerpos de agua lénticosylóticos / CODIGO",
+  "anios": [],
+  "correccion": null,
+  "id": 343
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 232,
+  "valor": "PROGRAMA / PRODUCTO",
+  "anios": [
+   2027,
+   2024,
+   2025,
+   2026,
+   2027
+  ],
+  "correccion": null,
+  "id": 344
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 232,
+  "valor": "3206004 / Servicio de educación informal en gestión del cambio climático para un desarrollo bajo en carbono y resiliente al clima",
+  "anios": [
+   320600400,
+   0
+  ],
+  "correccion": null,
+  "id": 345
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 232,
+  "valor": "Servicio de asistencia técnica para la implementación de las estrategias educativo ambientales y de participación / 320800600",
+  "anios": [],
+  "correccion": null,
+  "id": 346
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 232,
+  "valor": "3208007 / Servicio de apoyo técnico a proyectos de educación ambiental y participación con enfoque diferencial",
+  "anios": [
+   320800700,
+   0,
+   0,
+   0,
+   0
+  ],
+  "correccion": null,
+  "id": 347
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 232,
+  "valor": "Servicio de divulgación de la información de la política nacional de educación ambiental y participación / 320800802",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 348
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 232,
+  "valor": "Servicio de asistencia técnica / 320801500",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 349
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 232,
+  "valor": "Servicio de apoyo para la formación de capital humano pertinente para el desarrollo empresarial de los territorios / 350201100",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 350
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 232,
+  "valor": "Servicio de asistencia técnica para emprendedores y/o empresas en edad temprana / 350201700",
+  "anios": [
+   0,
+   0
+  ],
+  "correccion": null,
+  "id": 351
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 232,
+  "valor": "PROGRAMA 3502 - PRODUCTIVIDAD Y COMPETITIVIDAD / 3502019",
+  "anios": [
+   350201900,
+   0
+  ],
+  "correccion": null,
+  "id": 352
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 233,
+  "valor": "PROGRAMA / CODIGO PRODUCTO",
+  "anios": [
+   2027,
+   2024,
+   2025,
+   2026,
+   2027
+  ],
+  "correccion": null,
+  "id": 353
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 233,
+  "valor": "DE LAS EMPRESAS COLOMBIANAS / 3502019",
+  "anios": [
+   350201901,
+   0
+  ],
+  "correccion": null,
+  "id": 354
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 233,
+  "valor": "Servicio de asistencia técnica para la actividad artesanal / 350202400",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 355
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 233,
+  "valor": "Servicio de asistencia técnica a los entes territoriales para el desarrollo turístico / 350203900",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 356
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 233,
+  "valor": "Servicio de promoción turística / 350204600",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 357
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 233,
+  "valor": "Servicio de gestión para el emprendimiento solidario / 360200300",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 358
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 233,
+  "valor": "PROGRAMA 3602 – GENERACIÓN Y / 3602011",
+  "anios": [
+   360201100,
+   0
+  ],
+  "correccion": null,
+  "id": 359
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 233,
+  "valor": "FORMALIZACIÓN DEL EMPLEO / 3602013",
+  "anios": [
+   360201306,
+   0
+  ],
+  "correccion": null,
+  "id": 360
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 233,
+  "valor": "Servicio de asesoría técnica para el emprendimiento / 360203201",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 361
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 233,
+  "valor": "Servicio de registro de inserción laboral / 360203700",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 362
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 233,
+  "valor": "4001030 / Estudios de pre inversión e inversión",
+  "anios": [
+   400103000,
+   0,
+   0,
+   0,
+   0
+  ],
+  "correccion": null,
+  "id": 363
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 233,
+  "valor": "Vivienda de Interés Prioritario mejoradas / 400104100",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 364
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 233,
+  "valor": "Servicio de asistencia técnica / 400105100",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 365
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 233,
+  "valor": "4002022 / Parques mantenidos",
+  "anios": [
+   400202200
+  ],
+  "correccion": null,
+  "id": 366
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 234,
+  "valor": "4002020 / Espacio público adecuado",
+  "anios": [
+   400202000,
+   0,
+   1000
+  ],
+  "correccion": null,
+  "id": 367
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 234,
+  "valor": "Estudios de pre inversión e inversión / 4003008",
+  "anios": [
+   400300801,
+   0
+  ],
+  "correccion": null,
+  "id": 368
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 234,
+  "valor": "Estudios de pre inversión e inversión / 4003017",
+  "anios": [
+   400301700,
+   0
+  ],
+  "correccion": null,
+  "id": 369
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 234,
+  "valor": "4003022 / Servicios de implementación del Plan de Gestión Integral de Residuos Sólidos PGIRS",
+  "anios": [
+   400302200
+  ],
+  "correccion": null,
+  "id": 370
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 234,
+  "valor": "4003026 / Servicios de apoyo financiero para la ejecución de proyectos de acueductos y de manejo de aguas residuales",
+  "anios": [
+   400302600,
+   0,
+   0
+  ],
+  "correccion": null,
+  "id": 371
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 234,
+  "valor": "Placa huella construida / 240204200",
+  "anios": [
+   0,
+   6000,
+   2000,
+   2000,
+   1000,
+   1000
+  ],
+  "correccion": null,
+  "id": 372
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 234,
+  "valor": "Vía secundaria mejorada / 240200600",
+  "anios": [],
+  "correccion": null,
+  "id": 373
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 234,
+  "valor": "2402056 / Caminos ancestrales con mantenimiento",
+  "anios": [
+   240205600
+  ],
+  "correccion": null,
+  "id": 374
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 234,
+  "valor": "2402114 / Vía urbana mejorada",
+  "anios": [
+   240211400,
+   0
+  ],
+  "correccion": null,
+  "id": 375
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 235,
+  "valor": "PROGRAMA / CODIGO PRODUCTO",
+  "anios": [
+   2027,
+   2024,
+   2025,
+   2026,
+   2027
+  ],
+  "correccion": null,
+  "id": 376
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 235,
+  "valor": "2402118 / Estudios de preinversió para la red vial regional",
+  "anios": [
+   240211807,
+   0
+  ],
+  "correccion": null,
+  "id": 377
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 235,
+  "valor": "Andén construido / 240212100",
+  "anios": [
+   0,
+   1000
+  ],
+  "correccion": null,
+  "id": 378
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 235,
+  "valor": "Andén construido / 2402112",
+  "anios": [
+   240211207
+  ],
+  "correccion": null,
+  "id": 379
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 235,
+  "valor": "Andén construido / 2409002",
+  "anios": [
+   240900200,
+   0
+  ],
+  "correccion": null,
+  "id": 380
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 235,
+  "valor": "2409013 / Infraestructura d transporte para seguridad vial",
+  "anios": [
+   240901307,
+   0,
+   1000
+  ],
+  "correccion": null,
+  "id": 381
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 235,
+  "valor": "Servicio de educació informal en seguridad via / 240902202",
+  "anios": [],
+  "correccion": null,
+  "id": 382
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 235,
+  "valor": "Servicio de asistenc técnica en temas d seguridad de transporte / ia e 240900700",
+  "anios": [],
+  "correccion": null,
+  "id": 383
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 235,
+  "valor": "Redes de alumbrad público mejoradas / 210201300",
+  "anios": [
+   0,
+   2000
+  ],
+  "correccion": null,
+  "id": 384
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 235,
+  "valor": "2102011 / Redes de alumbrad público con mantenimient",
+  "anios": [
+   210201100,
+   4000,
+   4000,
+   1000,
+   1000,
+   1000,
+   1000
+  ],
+  "correccion": null,
+  "id": 385
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 235,
+  "valor": "Servicio de alumbrad público / 210206900",
+  "anios": [],
+  "correccion": null,
+  "id": 386
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 235,
+  "valor": "1203007 / Servicio de captura d información para conciliación, arbitraje amigable composición",
+  "anios": [
+   120300700
+  ],
+  "correccion": null,
+  "id": 387
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 235,
+  "valor": "RESOLUCIÓN DE CONFLICTOS / 1203009",
+  "anios": [
+   120300900,
+   0
+  ],
+  "correccion": null,
+  "id": 388
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 236,
+  "valor": "RESOLUCIÓN DE CONFLICTOS / CODIGO",
+  "anios": [],
+  "correccion": null,
+  "id": 389
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 236,
+  "valor": "PROGRAMA / PRODUCTO",
+  "anios": [
+   2027,
+   2024,
+   2025,
+   2026,
+   2027
+  ],
+  "correccion": null,
+  "id": 390
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 236,
+  "valor": "PROGRAMA 1206 – SISTEMA PENITENCIARIO Y CARCELARIO EN EL MARCO DE LOS DERECHOS HUMANOS / 1206007",
+  "anios": [
+   120600700
+  ],
+  "correccion": null,
+  "id": 391
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 236,
+  "valor": "Servicio de estratificación socioeconómica / 40110500",
+  "anios": [
+   0,
+   3767,
+   3767,
+   3767,
+   3767,
+   3767
+  ],
+  "correccion": null,
+  "id": 392
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 236,
+  "valor": "0401001 / Bases de datos de la temática de Demografía y Población",
+  "anios": [
+   40100100
+  ],
+  "correccion": null,
+  "id": 393
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 236,
+  "valor": "ESTADÍSTICA DE CALIDAD / 0401005",
+  "anios": [
+   40100500
+  ],
+  "correccion": null,
+  "id": 394
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 236,
+  "valor": "0406003 / Servicio de conservación catastral",
+  "anios": [
+   40600300,
+   0,
+   3000,
+   1000,
+   1000
+  ],
+  "correccion": null,
+  "id": 395
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 236,
+  "valor": "0406004 / Servicio de información catastral actualizado",
+  "anios": [
+   40600402,
+   0,
+   0,
+   0,
+   0
+  ],
+  "correccion": null,
+  "id": 396
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 236,
+  "valor": "Servicio de asistencia técnica / 450100100",
+  "anios": [],
+  "correccion": null,
+  "id": 397
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 236,
+  "valor": "4501028 / Servicio de vigilancia a través de cámaras de seguridad",
+  "anios": [
+   450102800
+  ],
+  "correccion": null,
+  "id": 398
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 236,
+  "valor": "4501028 / Servicio de vigilancia a través de cámaras de seguridad",
+  "anios": [
+   450102801
+  ],
+  "correccion": null,
+  "id": 399
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 236,
+  "valor": "4501029 / Servicio de apoyo financiero para proyectos de convivencia y seguridad ciudadana",
+  "anios": [
+   450102900
+  ],
+  "correccion": null,
+  "id": 400
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 236,
+  "valor": "Servicio de promoción a la participación ciudadana / 450200100",
+  "anios": [],
+  "correccion": null,
+  "id": 401
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 236,
+  "valor": "4502001 / Servicio de promoción a la participación ciudadana",
+  "anios": [
+   450200101
+  ],
+  "correccion": null,
+  "id": 402
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 236,
+  "valor": "4502002 / Salón comunal construido ydotado",
+  "anios": [
+   450200200,
+   0,
+   0
+  ],
+  "correccion": null,
+  "id": 403
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 236,
+  "valor": "4502003 / Salón comunal adecuado",
+  "anios": [
+   450200300,
+   0
+  ],
+  "correccion": null,
+  "id": 404
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 237,
+  "valor": "SECTOR / PROGRAMA RESPETO Y",
+  "anios": [
+   2027,
+   2024,
+   2025,
+   2026,
+   2027
+  ],
+  "correccion": null,
+  "id": 405
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 237,
+  "valor": "4502022 / Servicio de asistencia técnica",
+  "anios": [
+   450202200,
+   0
+  ],
+  "correccion": null,
+  "id": 406
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 237,
+  "valor": "Servicio de integración de la ofertapública / 450203301",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 407
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 237,
+  "valor": "Servicio de asistencia técnica / 450202201",
+  "anios": [],
+  "correccion": null,
+  "id": 408
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 237,
+  "valor": "Servicio de educación informal / 450300200",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 409
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 237,
+  "valor": "Servicio de asistencia técnica / 450300300",
+  "anios": [],
+  "correccion": null,
+  "id": 410
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 237,
+  "valor": "Servicio de atención a emergenciasydesastres / 450300400",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 411
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 237,
+  "valor": "PROGRAMA 4503 – GESTIÓN DEL / 4503023",
+  "anios": [
+   450302302,
+   0,
+   0,
+   0,
+   0
+  ],
+  "correccion": null,
+  "id": 412
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 237,
+  "valor": "RIESGO DE DESASTRES Y EMERGENCIAS / 4503028",
+  "anios": [
+   450302800,
+   0
+  ],
+  "correccion": null,
+  "id": 413
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 237,
+  "valor": "Servicios de apoyo para atención de población afectada por situaciones de emergencia, desastre o declaratorias de calamidadpública / 450302804",
+  "anios": [
+   0
+  ],
+  "correccion": null,
+  "id": 414
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 237,
+  "valor": "Servicio de atención a emergenciasydesastres / 450300401",
+  "anios": [],
+  "correccion": null,
+  "id": 415
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 237,
+  "valor": "Servicio prevención y control de incendios / 450303500",
+  "anios": [],
+  "correccion": null,
+  "id": 416
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 238,
+  "valor": "PROGRAMA / CODIGO PRODUCTO",
+  "anios": [
+   2027,
+   2024,
+   2025,
+   2026,
+   2027
+  ],
+  "correccion": null,
+  "id": 417
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 238,
+  "valor": "Documentos d evaluación / 459900100",
+  "anios": [],
+  "correccion": null,
+  "id": 418
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 238,
+  "valor": "Servicio de saneamient fiscalyfinanciero / 459900200",
+  "anios": [],
+  "correccion": null,
+  "id": 419
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 238,
+  "valor": "Sedes mantenidas / 459901600",
+  "anios": [],
+  "correccion": null,
+  "id": 420
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 238,
+  "valor": "Servicio de gestió documental / 459901700",
+  "anios": [],
+  "correccion": null,
+  "id": 421
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 238,
+  "valor": "4599019 / Documentos d planeación",
+  "anios": [
+   459901902
+  ],
+  "correccion": null,
+  "id": 422
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 238,
+  "valor": "4599023 / Servicio d Implementación Sistema de Gestión",
+  "anios": [
+   459902300
+  ],
+  "correccion": null,
+  "id": 423
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 238,
+  "valor": "4599031 / Servicio de asistenc técnica",
+  "anios": [
+   459903101
+  ],
+  "correccion": null,
+  "id": 424
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 238,
+  "valor": "Servicio de informació para el registr administrativo de SISBEN / 459903300",
+  "anios": [
+   14000,
+   14000,
+   14000,
+   14000,
+   14000
+  ],
+  "correccion": null,
+  "id": 425
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 238,
+  "valor": "Servicio de saneamient fiscal y financiero / 459900201",
+  "anios": [],
+  "correccion": null,
+  "id": 426
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 238,
+  "valor": "Sedes dotadas / 459903400",
+  "anios": [],
+  "correccion": null,
+  "id": 427
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 238,
+  "valor": "Servicio de apoy financiero para fortalecimiento del talent humano / el o 459903800",
+  "anios": [],
+  "correccion": null,
+  "id": 428
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 238,
+  "valor": "2302002 / Contenidos digitales",
+  "anios": [
+   230200200,
+   0,
+   4000,
+   1000,
+   1000,
+   1000,
+   1000
+  ],
+  "correccion": null,
+  "id": 429
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 238,
+  "valor": "DESARROLLO DE APLICACIONES, SOFTWARE Y CONTENIDOS PARA IMPULSAR LA APROPIACIÓN DE / 2302024",
+  "anios": [
+   230202401
+  ],
+  "correccion": null,
+  "id": 430
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 238,
+  "valor": "LAS TECNOLOGÍAS DE LA INFORMACIÓN Y LAS COMUNICACIONES (TIC) / 2302002",
+  "anios": [
+   230200202
+  ],
+  "correccion": null,
+  "id": 431
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "2.680.182.065",
+  "sector": "CALIDAD, COBERTURA Y FORTALECIMIENTO DE LA EDUCACIÓN INICIAL, PRESCOLAR, BÁSICA Y MEDIA",
+  "correccion": null,
+  "id": 432
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "44.669.701",
+  "sector": "-",
+  "correccion": null,
+  "id": 433
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "446.697.011",
+  "sector": "2.202.005.393",
+  "correccion": null,
+  "id": 434
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "714.715.217",
+  "sector": "446.697.011",
+  "correccion": null,
+  "id": 435
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "223.348.505",
+  "sector": "223.348.505",
+  "correccion": null,
+  "id": 436
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "89.339.402",
+  "sector": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION",
+  "correccion": null,
+  "id": 437
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "FORTALECIMIENTO DEL DESEMPEÑO AMBIENTAL DE LOS SECTORES",
+  "sector": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION",
+  "correccion": null,
+  "id": 438
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "PRODUCTIVOS",
+  "sector": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION",
+  "correccion": null,
+  "id": 439
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "SERVICIOSECOSISTÉMICOS",
+  "sector": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION",
+  "correccion": null,
+  "id": 440
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "GESTIÓN INTEGRAL DEL RECURSOHÍDRICO",
+  "sector": "VIVE NUESTRO AMBIENTE Y DESARROLLO",
+  "correccion": null,
+  "id": 441
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "GESTIÓN DEL CAMBIO CLIMÁTICO PARA UN DESARROLLO BAJO EN CARBONO Y RESILIENTE AL",
+  "sector": "SOSTENIBLE",
+  "correccion": null,
+  "id": 442
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "134.009.103",
+  "sector": "PRODUCTIVIDAD Y COMPETITIVIDAD DE LAS EMPRESAS COLOMBIANAS",
+  "correccion": null,
+  "id": 443
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "INFRAESTRUCTURA RED VIAL REGIONAL",
+  "sector": "TRANSPORTE",
+  "correccion": null,
+  "id": 444
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "357.357.609",
+  "sector": "CONSOLIDACIÓN PRODUCTIVA DEL SECTOR DE ENERGÍA ELÉCTRICA",
+  "correccion": null,
+  "id": 445
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "670.045.516",
+  "sector": "-",
+  "correccion": null,
+  "id": 446
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "1.786.788.044",
+  "sector": "SISTEMA PENITENCIARIO Y CARCELARIO EN EL MARCO DE LOS DERECHOS HUMANOS",
+  "correccion": null,
+  "id": 447
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "208.729.220",
+  "sector": "LEVANTAMIENTO Y ACTUALIZACIÓN DE INFORMACIÓN ESTADÍSTICA DECALIDAD A",
+  "correccion": null,
+  "id": 448
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "FORTALECIMIENTO DEL BUEN GOBIERNO PARA EL RESPETO Y GARANTÍA DE",
+  "sector": "LEVANTAMIENTO Y ACTUALIZACIÓN DE INFORMACIÓN ESTADÍSTICA DECALIDAD A",
+  "correccion": null,
+  "id": 449
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "LOSDERECHOSHUMANOS",
+  "sector": "GOBIERNO TERRITORIAL",
+  "correccion": null,
+  "id": 450
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "600.000.000",
+  "sector": "CALIDAD, COBERTURA Y FORTALECIMIENTO DE LA EDUCACIÓN INICIAL, PRESCOLAR, BÁSICA Y MEDIA",
+  "correccion": null,
+  "id": 451
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "10.000.000",
+  "sector": "CALIDAD, COBERTURA Y FORTALECIMIENTO DE LA EDUCACIÓN INICIAL, PRESCOLAR, BÁSICA Y MEDIA",
+  "correccion": null,
+  "id": 452
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "100.000.000",
+  "sector": "400.000.000",
+  "correccion": null,
+  "id": 453
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "160.000.000",
+  "sector": "100.000.000",
+  "correccion": null,
+  "id": 454
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "50.000.000",
+  "sector": "50.000.000",
+  "correccion": null,
+  "id": 455
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "20.000.000",
+  "sector": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION",
+  "correccion": null,
+  "id": 456
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "SANIDAD AGROPECUARIA E INOCUIDAD AGROALIMENTARIA",
+  "sector": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION",
+  "correccion": null,
+  "id": 457
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "RECURSOHÍDRICO",
+  "sector": "DESARROLLO",
+  "correccion": null,
+  "id": 458
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "30.000.000",
+  "sector": "PRODUCTIVIDAD Y COMPETITIVIDAD DE LAS EMPRESAS COLOMBIANAS",
+  "correccion": null,
+  "id": 459
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "ORDENAMIENTO TERRITORIAL Y DESARROLLO URBANO",
+  "sector": "VIVIENDA, CIUDAD Y TERRITORIO",
+  "correccion": null,
+  "id": 460
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "RECURSOS PROPIO",
+  "sector": "PROGRAMA",
+  "correccion": null,
+  "id": 461
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "500.000.000",
+  "sector": "INFRAESTRUCTURA RED VIAL REGIONAL",
+  "correccion": null,
+  "id": 462
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "80.000.000",
+  "sector": "CONSOLIDACIÓN PRODUCTIVA DEL SECTOR DE ENERGÍA ELÉCTRICA",
+  "correccion": null,
+  "id": 463
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "150.000.000",
+  "sector": "CONSOLIDACIÓN PRODUCTIVA DEL SECTOR DE ENERGÍA ELÉCTRICA",
+  "correccion": null,
+  "id": 464
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "400.000.000",
+  "sector": "SISTEMA PENITENCIARIO Y CARCELARIO EN EL MARCO DE LOS DERECHOS HUMANOS",
+  "correccion": null,
+  "id": 465
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "128.626.555",
+  "sector": "SEGURIDADCIUDADANA",
+  "correccion": null,
+  "id": 466
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "211.000.000",
+  "sector": "GESTIÓN DEL RIESGO DE DESASTRES Y EMERGENCIAS",
+  "correccion": null,
+  "id": 467
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "30.000.000 3.879.800.110",
+  "sector": "FOMENTO DEL DESARROLLO DE APLICACIONES, SOFTWARE Y CONTENIDOS PARA IMPULSAR LA APROPIACIÓN DE LAS TECNOLOGÍAS DE LA INFORMACIÓN Y LAS COMUNICACIONES(TIC) VERSIÓN",
+  "correccion": null,
+  "id": 468
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "644.460.000",
+  "sector": "CALIDAD, COBERTURA Y FORTALECIMIENTO DE LA EDUCACIÓN INICIAL, PRESCOLAR,BÁSICA Y MEDIA",
+  "correccion": null,
+  "id": 469
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "10.741.000",
+  "sector": "-",
+  "correccion": null,
+  "id": 470
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "107.410.000",
+  "sector": "429.640.000",
+  "correccion": null,
+  "id": 471
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "171.856.000",
+  "sector": "107.410.000",
+  "correccion": null,
+  "id": 472
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "53.705.000",
+  "sector": "53.705.000",
+  "correccion": null,
+  "id": 473
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "21.482.000",
+  "sector": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION",
+  "correccion": null,
+  "id": 474
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "CONSERVACIÓN DE LA BIODIVERSIDAD Y SUS SERVICIOSECOSISTÉMICOS",
+  "sector": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION",
+  "correccion": null,
+  "id": 475
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "32.223.000",
+  "sector": "PRODUCTIVIDAD Y COMPETITIVIDAD DE LAS EMPRESAS COLOMBIANAS",
+  "correccion": null,
+  "id": 476
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "TRANSPORTE",
+  "sector": "TRANSPORTE",
+  "correccion": null,
+  "id": 477
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "85.928.000",
+  "sector": "CONSOLIDACIÓN PRODUCTIVA DEL SECTOR DE ENERGÍA ELÉCTRICA",
+  "correccion": null,
+  "id": 478
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "161.115.000",
+  "sector": "-",
+  "correccion": null,
+  "id": 479
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "429.640.000",
+  "sector": "SISTEMA PENITENCIARIO Y CARCELARIO EN EL MARCO DE LOS DERECHOS HUMANOS",
+  "correccion": null,
+  "id": 480
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "64.666.279",
+  "sector": "LEVANTAMIENTO Y ACTUALIZACIÓN DE INFORMACIÓN ESTADÍSTICA DECALIDAD A",
+  "correccion": null,
+  "id": 481
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "250.000.000",
+  "sector": "GESTIÓN DEL RIESGO DE DESASTRES Y EMERGENCIAS",
+  "correccion": null,
+  "id": 482
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "537.050.000",
+  "sector": "FORTALECIMIENTO A LA GESTIÓN Y DIRECCIÓN DE LA ADMINISTRACIÓN PÚBLICA TERRITORIAL",
+  "correccion": null,
+  "id": 483
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "32.223.000 4.267.166.694",
+  "sector": "FOMENTO DEL DESARROLLO DE APLICACIONES, SOFTWARE Y CONTENIDOS PARA IMPULSAR LA APROPIACIÓN DE LAS TECNOLOGÍAS DE LA INFORMACIÓN Y LAS COMUNICACIONES(TIC) VERSIÓN",
+  "correccion": null,
+  "id": 484
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "692.214.486",
+  "sector": "CALIDAD, COBERTURA Y FORTALECIMIENTO DE LA EDUCACIÓN INICIAL, PRESCOLAR,BÁSICA Y MEDIA",
+  "correccion": null,
+  "id": 485
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "11.536.908",
+  "sector": "-",
+  "correccion": null,
+  "id": 486
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "115.369.081",
+  "sector": "461.476.324",
+  "correccion": null,
+  "id": 487
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "184.590.530",
+  "sector": "115.369.081",
+  "correccion": null,
+  "id": 488
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "57.684.541",
+  "sector": "57.684.541",
+  "correccion": null,
+  "id": 489
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "23.073.816",
+  "sector": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION",
+  "correccion": null,
+  "id": 490
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "34.610.724",
+  "sector": "PRODUCTIVIDAD Y COMPETITIVIDAD DE LAS EMPRESAS COLOMBIANAS",
+  "correccion": null,
+  "id": 491
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "92.295.265",
+  "sector": "CONSOLIDACIÓN PRODUCTIVA DEL SECTOR DE ENERGÍA ELÉCTRICA",
+  "correccion": null,
+  "id": 492
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "173.053.622",
+  "sector": "-",
+  "correccion": null,
+  "id": 493
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "461.476.324",
+  "sector": "SISTEMA PENITENCIARIO Y CARCELARIO EN EL MARCO DE LOS DERECHOS HUMANOS",
+  "correccion": null,
+  "id": 494
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "69.458.050",
+  "sector": "LEVANTAMIENTO Y ACTUALIZACIÓN DE INFORMACIÓN ESTADÍSTICA DECALIDAD A",
+  "correccion": null,
+  "id": 495
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "268.525.000",
+  "sector": "GESTIÓN DEL RIESGO DE DESASTRES Y EMERGENCIAS",
+  "correccion": null,
+  "id": 496
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "251.452.903",
+  "sector": "FORTALECIMIENTO A LA GESTIÓN Y DIRECCIÓN DE LA ADMINISTRACIÓN PÚBLICA TERRITORIAL",
+  "correccion": null,
+  "id": 497
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "34.610.724 4.683.237.141",
+  "sector": "COMUNICACIONES(TIC) VERSIÓN",
+  "correccion": null,
+  "id": 498
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "743.507.579",
+  "sector": "CALIDAD, COBERTURA Y FORTALECIMIENTO DE LA EDUCACIÓN INICIAL, PRESCOLAR,BÁSICA Y MEDIA",
+  "correccion": null,
+  "id": 499
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "12.391.793",
+  "sector": "-",
+  "correccion": null,
+  "id": 500
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "123.917.930",
+  "sector": "910.889.069",
+  "correccion": null,
+  "id": 501
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "198.268.688",
+  "sector": "123.917.930",
+  "correccion": null,
+  "id": 502
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "61.958.965",
+  "sector": "61.958.965",
+  "correccion": null,
+  "id": 503
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "24.783.586",
+  "sector": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACION",
+  "correccion": null,
+  "id": 504
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "37.175.379",
+  "sector": "PRODUCTIVIDAD Y COMPETITIVIDAD DE LAS EMPRESAS COLOMBIANAS",
+  "correccion": null,
+  "id": 505
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "99.134.344",
+  "sector": "CONSOLIDACIÓN PRODUCTIVA DEL SECTOR DE ENERGÍA ELÉCTRICA",
+  "correccion": null,
+  "id": 506
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "185.876.895",
+  "sector": "-",
+  "correccion": null,
+  "id": 507
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "495.671.720",
+  "sector": "SISTEMA PENITENCIARIO Y CARCELARIO EN EL MARCO DE LOS DERECHOS HUMANOS",
+  "correccion": null,
+  "id": 508
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "74.604.891",
+  "sector": "LEVANTAMIENTO Y ACTUALIZACIÓN DE INFORMACIÓN ESTADÍSTICA DECALIDAD A",
+  "correccion": null,
+  "id": 509
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "288.422.703",
+  "sector": "GESTIÓN DEL RIESGO DE DESASTRES Y EMERGENCIAS",
+  "correccion": null,
+  "id": 510
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "279.813.789",
+  "sector": "FORTALECIMIENTO A LA GESTIÓN Y DIRECCIÓN DE LA ADMINISTRACIÓN PÚBLICA TERRITORIAL",
+  "correccion": null,
+  "id": 511
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "37.175.379 5.128.842.839",
+  "sector": "COMUNICACIONES(TIC) VERSIÓN",
+  "correccion": null,
+  "id": 512
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "3.886.263.995",
+  "sector": "6.981.663.410",
+  "correccion": null,
+  "id": 513
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "1.541.104.688",
+  "sector": "1.697.448.641",
+  "correccion": null,
+  "id": 514
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "1.074.932.764",
+  "sector": "3.951.348.795",
+  "correccion": null,
+  "id": 515
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "2.413.380.438",
+  "sector": "5.328.585.938",
+  "correccion": null,
+  "id": 516
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "8.915.681.884",
+  "sector": "17.959.046.784",
+  "correccion": null,
+  "id": 517
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "CODIGO PRODUCTO",
+  "sector": "PROGRAMA",
+  "correccion": null,
+  "id": 518
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "220101501",
+  "sector": "Servicio de monitoreo seguimiento a la gestió del sector educativo",
+  "correccion": null,
+  "id": 519
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "la n 220102800",
+  "sector": "Servicio de apoyo a permanencia co alimentación escolar",
+  "correccion": null,
+  "id": 520
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "la n 220102900",
+  "sector": "Servicio de apoyo a permanencia co transporte escolar",
+  "correccion": null,
+  "id": 521
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "220103400",
+  "sector": "Servicio educativos d promoción del bilingüismo",
+  "correccion": null,
+  "id": 522
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "220104900",
+  "sector": "Servicio de educació informal",
+  "correccion": null,
+  "id": 523
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de accesibilidad contenidos web para fine pedagógicos",
+  "sector": "2201050",
+  "correccion": null,
+  "id": 524
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Infraestructura educativ construida",
+  "sector": "2201051",
+  "correccion": null,
+  "id": 525
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Infraestructura educativ mejorada",
+  "sector": "2201052",
+  "correccion": null,
+  "id": 526
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "2201049",
+  "sector": "BÁSICA Y MEDIA",
+  "correccion": null,
+  "id": 527
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "220104903",
+  "sector": "Servicio de educació informal",
+  "correccion": null,
+  "id": 528
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "220106903",
+  "sector": "Infraestructura educativ dotada",
+  "correccion": null,
+  "id": 529
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "220104907",
+  "sector": "Servicio de educació informal",
+  "correccion": null,
+  "id": 530
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "la la el e al 220107700",
+  "sector": "Servicio de apoyo para implementación de estrategia educativa d sistema d responsabilidad pen adolescente",
+  "correccion": null,
+  "id": 531
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "220107100",
+  "sector": "Servicio educativo",
+  "correccion": null,
+  "id": 532
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de apoy financiero para el acces a la educación superior terciaria",
+  "sector": "2202007",
+  "correccion": null,
+  "id": 533
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "PRODUCTO",
+  "sector": "CODIGO PRODUCTO",
+  "correccion": null,
+  "id": 534
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "220202400",
+  "sector": "para la educación superior o terciaria",
+  "correccion": null,
+  "id": 535
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "190600401",
+  "sector": "Servicio de atención en salud a lapoblación",
+  "correccion": null,
+  "id": 536
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "régimen subsidiado del Sistema General de Seguridad Social",
+  "sector": "1906044",
+  "correccion": null,
+  "id": 537
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de apoyo para la dotación hospitalaria",
+  "sector": "1906026",
+  "correccion": null,
+  "id": 538
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de apoyo financiero para la atención en salud a la población",
+  "sector": "1906035",
+  "correccion": null,
+  "id": 539
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "190501700",
+  "sector": "Morgues construidas y dotadas",
+  "correccion": null,
+  "id": 540
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "190502000",
+  "sector": "Servicio de gestión del riesgo en temas de consumo de sustancias psicoactivas",
+  "correccion": null,
+  "id": 541
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "190502100",
+  "sector": "Servicio de gestión del riesgo en temas de salud sexual y reproductiva",
+  "correccion": null,
+  "id": 542
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "190502200",
+  "sector": "Servicio de gestión del riesgo en temas de trastornos mentales",
+  "correccion": null,
+  "id": 543
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "190502300",
+  "sector": "Servicio de gestión del riesgo para abordar condiciones crónicas prevalentes",
+  "correccion": null,
+  "id": 544
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "190502400",
+  "sector": "Servicio de gestión del riesgo para abordar situaciones de salud relacionadas con condiciones ambientales",
+  "correccion": null,
+  "id": 545
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "190502500",
+  "sector": "Servicio de gestión del riesgo para abordar situaciones prevalentes de origen laboral",
+  "correccion": null,
+  "id": 546
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "CODIGO",
+  "sector": "Servicio de gestión del riesgo para abordar situaciones prevalentes de origen laboral",
+  "correccion": null,
+  "id": 547
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "1905026",
+  "sector": "9.1.2.2 PROGRAMA 1905 – SALUD PÚBLICA",
+  "correccion": null,
+  "id": 548
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "190502700",
+  "sector": "Servicio de gestión del riesgo para enfermedades inmunoprevenibles",
+  "correccion": null,
+  "id": 549
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "190502800",
+  "sector": "Servicio de gestión del riesgo para temas de consumo, aprovechamiento biológico, calidad e inocuidad de los alimentos",
+  "correccion": null,
+  "id": 550
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "190502900",
+  "sector": "Servicio de suministro de insumos para el manejo de eventos de interés en salud pública",
+  "correccion": null,
+  "id": 551
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "190504901",
+  "sector": "Servicio de promoción de la participación social en salud",
+  "correccion": null,
+  "id": 552
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "190505004",
+  "sector": "Servicio de asistencia técnica",
+  "correccion": null,
+  "id": 553
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "190505401",
+  "sector": "Servicio de promoción de la salud",
+  "correccion": null,
+  "id": 554
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "190303100",
+  "sector": "Servicio de información de vigilancia epidemiológica",
+  "correccion": null,
+  "id": 555
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de asistencia técnica en inspección, vigilanciaycontrol",
+  "sector": "1903023",
+  "correccion": null,
+  "id": 556
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de implementación de estrategias para el fortalecimiento del control social en salud",
+  "sector": "1903025",
+  "correccion": null,
+  "id": 557
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "330107800",
+  "sector": "Casas de la cultura construidasydotadas",
+  "correccion": null,
+  "id": 558
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "330109000",
+  "sector": "Centros culturales adecuados",
+  "correccion": null,
+  "id": 559
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "330106300",
+  "sector": "Servicio de asistencia técnica para la viabilización de proyectos de infraestructura",
+  "correccion": null,
+  "id": 560
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "330108500",
+  "sector": "Servicios bibliotecarios",
+  "correccion": null,
+  "id": 561
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de apoyo financiero para creadores y gestores culturales",
+  "sector": "3301128",
+  "correccion": null,
+  "id": 562
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de promoción de actividades culturales",
+  "sector": "3301053",
+  "correccion": null,
+  "id": 563
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "330107004",
+  "sector": "Documentos de lineamientos técnicos",
+  "correccion": null,
+  "id": 564
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "330201900",
+  "sector": "Servicio de educación informal a Vigías de Patrimonio",
+  "correccion": null,
+  "id": 565
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Documentos de lineamientos técnicos",
+  "sector": "3302002",
+  "correccion": null,
+  "id": 566
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicios de preservación del patrimonio bibliográfico ydocumental",
+  "sector": "3302006",
+  "correccion": null,
+  "id": 567
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de apoyo financiero a la investigación en Antropología, Arqueología, Historia y Patrimonio",
+  "sector": "3302059",
+  "correccion": null,
+  "id": 568
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "430103201",
+  "sector": "Servicio de organización de eventos deportivos comunitarios",
+  "correccion": null,
+  "id": 569
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "430103501",
+  "sector": "Servicio de educación informal en recreación",
+  "correccion": null,
+  "id": 570
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de promoción de la actividad física, la recreaciónyel deporte",
+  "sector": "4301037",
+  "correccion": null,
+  "id": 571
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de organización de eventos recreativos comunitarios",
+  "sector": "4301038",
+  "correccion": null,
+  "id": 572
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "4301037",
+  "sector": "EL DEPORTE",
+  "correccion": null,
+  "id": 573
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "430100400",
+  "sector": "Servicio de mantenimiento a la infraestructura deportiva",
+  "correccion": null,
+  "id": 574
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "430201409",
+  "sector": "Pistas construidas",
+  "correccion": null,
+  "id": 575
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Piscinas mantenidas",
+  "sector": "4302022",
+  "correccion": null,
+  "id": 576
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Placa deportiva adecuada",
+  "sector": "4301021",
+  "correccion": null,
+  "id": 577
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Centros de recreación construidos",
+  "sector": "4302039",
+  "correccion": null,
+  "id": 578
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "410103800",
+  "sector": "Servicio de asistencia técnica para la participación de las víctimas",
+  "correccion": null,
+  "id": 579
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de asistencia técnica para la participación de las víctimas",
+  "sector": "4101038",
+  "correccion": null,
+  "id": 580
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de apoyo para el mejoramiento de condiciones de habitabilidad para población víctima de desplazamiento forzado",
+  "sector": "4101076",
+  "correccion": null,
+  "id": 581
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "410109201",
+  "sector": "Servicios de satisfacción y garantías de no repetición a víctimas del conflicto armado",
+  "correccion": null,
+  "id": 582
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "410104200",
+  "sector": "Servicio de apoyo para la seguridad alimentaria",
+  "correccion": null,
+  "id": 583
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "410200100",
+  "sector": "Servicio de atención integral a la primera infancia",
+  "correccion": null,
+  "id": 584
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "410200600",
+  "sector": "Edificaciones de atención a la primera infancia dotadas",
+  "correccion": null,
+  "id": 585
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "170202500",
+  "sector": "Servicio de apoyo en la formulación y estructuración de proyectos",
+  "correccion": null,
+  "id": 586
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "1709105",
+  "sector": "Servicio de apoyo en la formulación y estructuración de proyectos",
+  "correccion": null,
+  "id": 587
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "1709112",
+  "sector": "PROGRAMA 1709 –",
+  "correccion": null,
+  "id": 588
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de apoyo a la comercialización de las cadenas agrícolas, forestales, pecuarias, pesquerasyacuícolas",
+  "sector": "1709106",
+  "correccion": null,
+  "id": 589
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "170901600",
+  "sector": "Centros de acopio construidos",
+  "correccion": null,
+  "id": 590
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "170903700",
+  "sector": "Infraestructura de pos cosecha construida",
+  "correccion": null,
+  "id": 591
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicios de vacunación para especies animales de interés agropecuario",
+  "sector": "1707042",
+  "correccion": null,
+  "id": 592
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicios de control de parásitos para especies de interés agropecuario",
+  "sector": "1707043",
+  "correccion": null,
+  "id": 593
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de seguimiento y evaluación de los programas de recolección de residuospos consumo",
+  "sector": "3201009",
+  "correccion": null,
+  "id": 594
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de divulgación de la incorporación de consideraciones ambientales en la planificación sectorial",
+  "sector": "3201010",
+  "correccion": null,
+  "id": 595
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "320200500",
+  "sector": "Servicio de restauración de ecosistemas",
+  "correccion": null,
+  "id": 596
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "320200600",
+  "sector": "Servicio de reforestación de ecosistemas",
+  "correccion": null,
+  "id": 597
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "320201402",
+  "sector": "Servicio de educación informal en el marco de la conservación de la biodiversidad y los Servicio ecosistémicos",
+  "correccion": null,
+  "id": 598
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de recuperación de cuerpos de agua lénticosylóticos",
+  "sector": "3202037",
+  "correccion": null,
+  "id": 599
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de establecimiento de especies vegetales",
+  "sector": "3202041",
+  "correccion": null,
+  "id": 600
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio apoyo financiero para la implementación de esquemas de pago por Servicio ambientales",
+  "sector": "3202043",
+  "correccion": null,
+  "id": 601
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "320204700",
+  "sector": "Servicio de administración y manejo de áreas protegidas locales no vinculadas al Sistema Nacional de Áreas Protegidas",
+  "correccion": null,
+  "id": 602
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "320205700",
+  "sector": "Servicio de asistencia técnica",
+  "correccion": null,
+  "id": 603
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "320300901",
+  "sector": "Servicio de caracterización de la calidad del agua",
+  "correccion": null,
+  "id": 604
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de caracterización de la calidad del agua",
+  "sector": "3203009",
+  "correccion": null,
+  "id": 605
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de divulgación y socialización ambiental en el marco del ordenamiento ambiental territorial",
+  "sector": "3205006",
+  "correccion": null,
+  "id": 606
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "320502601",
+  "sector": "Servicio de recuperación de cuerpos de agua lénticosylóticos",
+  "correccion": null,
+  "id": 607
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de apoyo técnico para la implementación de acciones de mitigación y adaptación al cambio climático",
+  "sector": "3206003",
+  "correccion": null,
+  "id": 608
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de educación informal en gestión del cambio climático para un desarrollo bajo en carbono y resiliente al clima",
+  "sector": "3206004",
+  "correccion": null,
+  "id": 609
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "320601600",
+  "sector": "Estufa ecoeficiente fija",
+  "correccion": null,
+  "id": 610
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "320800600",
+  "sector": "Servicio de asistencia técnica para la implementación de las estrategias educativo ambientales y de participación",
+  "correccion": null,
+  "id": 611
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de apoyo técnico a proyectos de educación ambiental y participación con enfoque diferencial",
+  "sector": "3208007",
+  "correccion": null,
+  "id": 612
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "320800802",
+  "sector": "Servicio de divulgación de la información de la política nacional de educación ambiental y participación",
+  "correccion": null,
+  "id": 613
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "320801500",
+  "sector": "Servicio de asistencia técnica",
+  "correccion": null,
+  "id": 614
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "350201100",
+  "sector": "Servicio de apoyo para la formación de capital humano pertinente para el desarrollo empresarial de los territorios",
+  "correccion": null,
+  "id": 615
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "350201700",
+  "sector": "Servicio de asistencia técnica para emprendedores y/o empresas en edad temprana",
+  "correccion": null,
+  "id": 616
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "3502019",
+  "sector": "PROGRAMA 3502 - PRODUCTIVIDAD Y COMPETITIVIDAD",
+  "correccion": null,
+  "id": 617
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "350202400",
+  "sector": "Servicio de asistencia técnica para la actividad artesanal",
+  "correccion": null,
+  "id": 618
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "350203900",
+  "sector": "Servicio de asistencia técnica a los entes territoriales para el desarrollo turístico",
+  "correccion": null,
+  "id": 619
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "350204600",
+  "sector": "Servicio de promoción turística",
+  "correccion": null,
+  "id": 620
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "360200300",
+  "sector": "Servicio de gestión para el emprendimiento solidario",
+  "correccion": null,
+  "id": 621
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "3602011",
+  "sector": "PROGRAMA 3602 – GENERACIÓN Y",
+  "correccion": null,
+  "id": 622
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "3602013",
+  "sector": "FORMALIZACIÓN DEL EMPLEO",
+  "correccion": null,
+  "id": 623
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "360203201",
+  "sector": "Servicio de asesoría técnica para el emprendimiento",
+  "correccion": null,
+  "id": 624
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "360203700",
+  "sector": "Servicio de registro de inserción laboral",
+  "correccion": null,
+  "id": 625
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "400100101",
+  "sector": "Servicio de asistencia técnica y jurídica en saneamiento y titulación depredios",
+  "correccion": null,
+  "id": 626
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Estudios de pre inversión e inversión",
+  "sector": "4001030",
+  "correccion": null,
+  "id": 627
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Vivienda de Interés Prioritario construidas",
+  "sector": "4001039",
+  "correccion": null,
+  "id": 628
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "400104100",
+  "sector": "Vivienda de Interés Prioritario mejoradas",
+  "correccion": null,
+  "id": 629
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "400105100",
+  "sector": "Servicio de asistencia técnica",
+  "correccion": null,
+  "id": 630
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "400201600",
+  "sector": "Documentos de planeación",
+  "correccion": null,
+  "id": 631
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "400202100",
+  "sector": "Parques construidos",
+  "correccion": null,
+  "id": 632
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Parques mantenidos",
+  "sector": "4002022",
+  "correccion": null,
+  "id": 633
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Zonas verdes adecuadas",
+  "sector": "4002025",
+  "correccion": null,
+  "id": 634
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Espacio público construido",
+  "sector": "4002019",
+  "correccion": null,
+  "id": 635
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Espacio público adecuado",
+  "sector": "4002020",
+  "correccion": null,
+  "id": 636
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "400203401",
+  "sector": "Estudios de pre inversión e inversión",
+  "correccion": null,
+  "id": 637
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "4003008",
+  "sector": "Estudios de pre inversión e inversión",
+  "correccion": null,
+  "id": 638
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "4003017",
+  "sector": "Estudios de pre inversión e inversión",
+  "correccion": null,
+  "id": 639
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "400301802",
+  "sector": "Alcantarillados construidos",
+  "correccion": null,
+  "id": 640
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicios de implementación del Plan de Gestión Integral de Residuos Sólidos PGIRS",
+  "sector": "4003022",
+  "correccion": null,
+  "id": 641
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicios de apoyo financiero para la ejecución de proyectos de acueductos y de manejo de aguas residuales",
+  "sector": "4003026",
+  "correccion": null,
+  "id": 642
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "400305301",
+  "sector": "Soluciones alternativas para acceso al agua para consumo humano",
+  "correccion": null,
+  "id": 643
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "240204100",
+  "sector": "Vía terciaria mejorada",
+  "correccion": null,
+  "id": 644
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "240204200",
+  "sector": "Placa huella construida",
+  "correccion": null,
+  "id": 645
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "240200600",
+  "sector": "Vía secundaria mejorada",
+  "correccion": null,
+  "id": 646
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "240204600",
+  "sector": "Puente de la red vial terciaria rehabilitado",
+  "correccion": null,
+  "id": 647
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Caminos ancestrales con mantenimiento",
+  "sector": "2402056",
+  "correccion": null,
+  "id": 648
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Vía urbana mejorada",
+  "sector": "2402114",
+  "correccion": null,
+  "id": 649
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Estudios de preinversió para la red vial regional",
+  "sector": "2402118",
+  "correccion": null,
+  "id": 650
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "240212100",
+  "sector": "Andén construido",
+  "correccion": null,
+  "id": 651
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "2402112",
+  "sector": "Andén construido",
+  "correccion": null,
+  "id": 652
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "2409002",
+  "sector": "Andén construido",
+  "correccion": null,
+  "id": 653
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Infraestructura d transporte para seguridad vial",
+  "sector": "2409013",
+  "correccion": null,
+  "id": 654
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "240902202",
+  "sector": "Servicio de educació informal en seguridad via",
+  "correccion": null,
+  "id": 655
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "ia e 240900700",
+  "sector": "Servicio de asistenc técnica en temas d seguridad de transporte",
+  "correccion": null,
+  "id": 656
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "210201300",
+  "sector": "Redes de alumbrad público mejoradas",
+  "correccion": null,
+  "id": 657
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Redes de alumbrad público con mantenimient",
+  "sector": "2102011",
+  "correccion": null,
+  "id": 658
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "2102062",
+  "sector": "PRODUCTIVA DEL SECTOR DE ENERGÍA ELÉCTRICA",
+  "correccion": null,
+  "id": 659
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "210206900",
+  "sector": "Servicio de alumbrad público",
+  "correccion": null,
+  "id": 660
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de captura d información para conciliación, arbitraje amigable composición",
+  "sector": "1203007",
+  "correccion": null,
+  "id": 661
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "1203009",
+  "sector": "RESOLUCIÓN DE CONFLICTOS",
+  "correccion": null,
+  "id": 662
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "1206007",
+  "sector": "PROGRAMA 1206 – SISTEMA PENITENCIARIO Y CARCELARIO EN EL MARCO DE LOS DERECHOS HUMANOS",
+  "correccion": null,
+  "id": 663
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "40110500",
+  "sector": "Servicio de estratificación socioeconómica",
+  "correccion": null,
+  "id": 664
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Bases de datos de la temática de Demografía y Población",
+  "sector": "0401001",
+  "correccion": null,
+  "id": 665
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0401005",
+  "sector": "ESTADÍSTICA DE CALIDAD",
+  "correccion": null,
+  "id": 666
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de conservación catastral",
+  "sector": "0406003",
+  "correccion": null,
+  "id": 667
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de información catastral actualizado",
+  "sector": "0406004",
+  "correccion": null,
+  "id": 668
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de actualización catastral con enfoque multipropósito",
+  "sector": "0406016",
+  "correccion": null,
+  "id": 669
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "450100100",
+  "sector": "Servicio de asistencia técnica",
+  "correccion": null,
+  "id": 670
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de vigilancia a través de cámaras de seguridad",
+  "sector": "4501028",
+  "correccion": null,
+  "id": 671
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de apoyo financiero para proyectos de convivencia y seguridad ciudadana",
+  "sector": "4501029",
+  "correccion": null,
+  "id": 672
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "450200100",
+  "sector": "Servicio de promoción a la participación ciudadana",
+  "correccion": null,
+  "id": 673
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de promoción a la participación ciudadana",
+  "sector": "4502001",
+  "correccion": null,
+  "id": 674
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Salón comunal construido ydotado",
+  "sector": "4502002",
+  "correccion": null,
+  "id": 675
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Salón comunal adecuado",
+  "sector": "4502003",
+  "correccion": null,
+  "id": 676
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "PROGRAMA RESPETO Y",
+  "sector": "SECTOR",
+  "correccion": null,
+  "id": 677
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de asistencia técnica",
+  "sector": "4502022",
+  "correccion": null,
+  "id": 678
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "450203301",
+  "sector": "Servicio de integración de la ofertapública",
+  "correccion": null,
+  "id": 679
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "450202201",
+  "sector": "Servicio de asistencia técnica",
+  "correccion": null,
+  "id": 680
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "450300200",
+  "sector": "Servicio de educación informal",
+  "correccion": null,
+  "id": 681
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "450300300",
+  "sector": "Servicio de asistencia técnica",
+  "correccion": null,
+  "id": 682
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "450300400",
+  "sector": "Servicio de atención a emergenciasydesastres",
+  "correccion": null,
+  "id": 683
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "4503023",
+  "sector": "PROGRAMA 4503 – GESTIÓN DEL",
+  "correccion": null,
+  "id": 684
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "4503028",
+  "sector": "RIESGO DE DESASTRES Y EMERGENCIAS",
+  "correccion": null,
+  "id": 685
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "450302804",
+  "sector": "Servicios de apoyo para atención de población afectada por situaciones de emergencia, desastre o declaratorias de calamidadpública",
+  "correccion": null,
+  "id": 686
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "450300401",
+  "sector": "Servicio de atención a emergenciasydesastres",
+  "correccion": null,
+  "id": 687
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "450303500",
+  "sector": "Servicio prevención y control de incendios",
+  "correccion": null,
+  "id": 688
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "459900100",
+  "sector": "Documentos d evaluación",
+  "correccion": null,
+  "id": 689
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "459900200",
+  "sector": "Servicio de saneamient fiscalyfinanciero",
+  "correccion": null,
+  "id": 690
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "459900600",
+  "sector": "Estudios de preinversión",
+  "correccion": null,
+  "id": 691
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "459901000",
+  "sector": "Sedes ampliadas",
+  "correccion": null,
+  "id": 692
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "459901600",
+  "sector": "Sedes mantenidas",
+  "correccion": null,
+  "id": 693
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "459901700",
+  "sector": "Servicio de gestió documental",
+  "correccion": null,
+  "id": 694
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Documentos d planeación",
+  "sector": "4599019",
+  "correccion": null,
+  "id": 695
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio d Implementación Sistema de Gestión",
+  "sector": "4599023",
+  "correccion": null,
+  "id": 696
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Servicio de asistenc técnica",
+  "sector": "4599031",
+  "correccion": null,
+  "id": 697
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "459903300",
+  "sector": "Servicio de informació para el registr administrativo de SISBEN",
+  "correccion": null,
+  "id": 698
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "459900201",
+  "sector": "Servicio de saneamient fiscal y financiero",
+  "correccion": null,
+  "id": 699
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "459903400",
+  "sector": "Sedes dotadas",
+  "correccion": null,
+  "id": 700
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "el o 459903800",
+  "sector": "Servicio de apoy financiero para fortalecimiento del talent humano",
+  "correccion": null,
+  "id": 701
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Contenidos digitales",
+  "sector": "2302002",
+  "correccion": null,
+  "id": 702
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "2302024",
+  "sector": "DESARROLLO DE APLICACIONES, SOFTWARE Y CONTENIDOS PARA IMPULSAR LA APROPIACIÓN DE",
+  "correccion": null,
+  "id": 703
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "2302002",
+  "sector": "LAS TECNOLOGÍAS DE LA INFORMACIÓN Y LAS COMUNICACIONES (TIC)",
+  "correccion": null,
+  "id": 704
+ }
+]

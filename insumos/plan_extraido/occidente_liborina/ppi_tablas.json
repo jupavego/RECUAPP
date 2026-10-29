@@ -1,0 +1,476 @@
+[
+ {
+  "pagina": 282,
+  "cabecera": "Programa",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Programa 1",
+    "anios": [
+     7636368,
+     8883120,
+     8883120,
+     8883120
+    ],
+    "total": 34285728
+   },
+   {
+    "etiqueta": "Programa 2",
+    "anios": [
+     220962710,
+     234035359,
+     224035359,
+     225032820
+    ],
+    "total": 904066248
+   },
+   {
+    "etiqueta": "Programa 3",
+    "anios": [
+     10593420,
+     10939167,
+     10939167,
+     10834972
+    ],
+    "total": 43306726
+   },
+   {
+    "etiqueta": "Programa 4",
+    "anios": [
+     305166020,
+     360166020,
+     470166020,
+     350166020
+    ],
+    "total": 1485664080
+   },
+   {
+    "etiqueta": "Programa 5",
+    "anios": [
+     353492208,
+     280697160,
+     420697160,
+     550697160
+    ],
+    "total": 1605583688
+   },
+   {
+    "etiqueta": "Programa 6",
+    "anios": [
+     0,
+     0,
+     0,
+     60000000
+    ],
+    "total": 60000000
+   },
+   {
+    "etiqueta": "Programa 7",
+    "anios": [
+     234600000,
+     239400000,
+     319400000,
+     230400000
+    ],
+    "total": 1023800000
+   },
+   {
+    "etiqueta": "Programa 8",
+    "anios": [
+     8000000,
+     68000000,
+     8000000,
+     68000000
+    ],
+    "total": 152000000
+   },
+   {
+    "etiqueta": "Programa 9",
+    "anios": [
+     84915000,
+     84915000,
+     84915000,
+     84915000
+    ],
+    "total": 339660000
+   },
+   {
+    "etiqueta": "Programa 10",
+    "anios": [
+     1203000000,
+     213000000,
+     4000000,
+     3000000
+    ],
+    "total": 1423000000
+   },
+   {
+    "etiqueta": "Programa 11",
+    "anios": [
+     97949650,
+     104915230,
+     112563710,
+     120963380
+    ],
+    "total": 436391970
+   },
+   {
+    "etiqueta": "Programa",
+    "anios": [
+     2024,
+     2025,
+     2026,
+     2027
+    ],
+    "total": 8102
+   },
+   {
+    "etiqueta": "Programa 1",
+    "anios": [
+     276000000,
+     339000000,
+     279000000,
+     179000000
+    ],
+    "total": 1073000000
+   },
+   {
+    "etiqueta": "Programa 2",
+    "anios": [
+     157129100,
+     157129100,
+     157129000,
+     157129000
+    ],
+    "total": 628516200
+   },
+   {
+    "etiqueta": "Programa 3",
+    "anios": [
+     136254000,
+     136254000,
+     136254000,
+     136254000
+    ],
+    "total": 545016000
+   },
+   {
+    "etiqueta": "Programa 4",
+    "anios": [
+     15500000,
+     16000000,
+     16500000,
+     16500000
+    ],
+    "total": 64500000
+   },
+   {
+    "etiqueta": "Programa 5",
+    "anios": [
+     142090828,
+     1788090827,
+     6312090828,
+     3973090827
+    ],
+    "total": 12215363310
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ },
+ {
+  "pagina": 283,
+  "cabecera": "",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Programa 6",
+    "anios": [
+     20000000,
+     23500000,
+     520500000,
+     23500000
+    ],
+    "total": 587500000
+   },
+   {
+    "etiqueta": "Programa 7",
+    "anios": [
+     352999998,
+     352999998,
+     352999998,
+     302999998
+    ],
+    "total": 1361999992
+   },
+   {
+    "etiqueta": "Programa 8",
+    "anios": [
+     30000000,
+     30000000,
+     30000000,
+     30000000
+    ],
+    "total": 120000000
+   },
+   {
+    "etiqueta": "Programa 9",
+    "anios": [
+     2500000,
+     2500000,
+     2500000,
+     2500000
+    ],
+    "total": 10000000
+   },
+   {
+    "etiqueta": "Programa 10",
+    "anios": [
+     750000,
+     750000,
+     750000,
+     750000
+    ],
+    "total": 3000000
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ },
+ {
+  "pagina": 283,
+  "cabecera": "Programa",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Programa 1",
+    "anios": [
+     212600000,
+     194400000,
+     71671617,
+     191800000
+    ],
+    "total": 670471617
+   },
+   {
+    "etiqueta": "Programa 2",
+    "anios": [
+     178985374,
+     75947594,
+     320000000,
+     199354565
+    ],
+    "total": 774287533
+   },
+   {
+    "etiqueta": "Programa 3",
+    "anios": [
+     5000000,
+     5000000,
+     5000000,
+     5000000
+    ],
+    "total": 20000000
+   },
+   {
+    "etiqueta": "Programa 4",
+    "anios": [
+     30000000,
+     30000000,
+     130000000,
+     0
+    ],
+    "total": 190000000
+   },
+   {
+    "etiqueta": "Programa 5",
+    "anios": [
+     439500000,
+     1444500000,
+     1226315510,
+     406650000
+    ],
+    "total": 3516965510
+   },
+   {
+    "etiqueta": "Programa 6",
+    "anios": [
+     50000000,
+     62000000,
+     0,
+     2732000000
+    ],
+    "total": 2844000000
+   },
+   {
+    "etiqueta": "Programa 7",
+    "anios": [
+     328486600,
+     1279180800,
+     1509875000,
+     4011210000
+    ],
+    "total": 7128752400
+   },
+   {
+    "etiqueta": "Programa 8",
+    "anios": [
+     21000000,
+     42000000,
+     35000000,
+     35000000
+    ],
+    "total": 133000000
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ },
+ {
+  "pagina": 283,
+  "cabecera": "Programa",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Programa 1",
+    "anios": [
+     1265460597,
+     19000000,
+     19000000,
+     19000000
+    ],
+    "total": 1322460597
+   },
+   {
+    "etiqueta": "Programa 2",
+    "anios": [
+     89000000,
+     69000000,
+     89000000,
+     89000000
+    ],
+    "total": 336000000
+   },
+   {
+    "etiqueta": "Programa 3",
+    "anios": [
+     35000000,
+     38500000,
+     42000000,
+     45500000
+    ],
+    "total": 161000000
+   },
+   {
+    "etiqueta": "Programa 4",
+    "anios": [
+     342100000,
+     345400000,
+     278700000,
+     278700000
+    ],
+    "total": 1244900000
+   }
+  ],
+  "ncols": 4,
+  "financiero": false
+ },
+ {
+  "pagina": 283,
+  "cabecera": "Programa",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Programa 1",
+    "anios": [
+     17500000,
+     17500000,
+     17500000,
+     17500000
+    ],
+    "total": 70000000
+   },
+   {
+    "etiqueta": "Programa 2",
+    "anios": [
+     8000000,
+     8000000,
+     8000000,
+     8000000
+    ],
+    "total": 32000000
+   },
+   {
+    "etiqueta": "Programa 3",
+    "anios": [
+     7500000,
+     7500000,
+     7500000,
+     7500000
+    ],
+    "total": 30000000
+   }
+  ],
+  "ncols": 4,
+  "financiero": false
+ },
+ {
+  "pagina": 284,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Línea Estratégica 2",
+    "anios": [
+     1133,
+     2846,
+     7807,
+     4821
+    ],
+    "total": 16607
+   },
+   {
+    "etiqueta": "Línea Estratégica 3",
+    "anios": [
+     1265,
+     3146,
+     3297,
+     7595
+    ],
+    "total": 15303
+   },
+   {
+    "etiqueta": "Línea Estratégica 4",
+    "anios": [
+     1731,
+     0,
+     0,
+     0
+    ],
+    "total": 1731
+   },
+   {
+    "etiqueta": "Línea Estratégica 5",
+    "anios": [
+     33000,
+     33000,
+     33000,
+     33000
+    ],
+    "total": 132000
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     17272,
+     16184,
+     24159,
+     25418
+    ],
+    "total": 83033
+   }
+  ],
+  "ncols": 4,
+  "financiero": false
+ }
+]

@@ -1,0 +1,812 @@
+[
+ {
+  "paginas": [
+   220
+  ],
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   33751303056,
+   33124874160,
+   34118620386,
+   35142179000
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.1-Educación",
+    "anios": [
+     352541967,
+     363118226,
+     374011773,
+     385232126
+    ],
+    "total": 1474904092,
+    "ruta": {
+     "linea": "1.1-Educación"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "1.1.2-Calidad",
+    "anios": [
+     352541967,
+     363118226,
+     374011773,
+     385232126
+    ],
+    "total": 1474904092,
+    "ruta": {
+     "linea": "1.1-Educación",
+     "sector": "1.1.2-Calidad"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "1.1.2.1 - Calidad (Gratuidad)",
+    "anios": [
+     197094569,
+     203007406,
+     209097628,
+     215370557
+    ],
+    "total": 824570160,
+    "ruta": {
+     "linea": "1.1-Educación",
+     "sector": "1.1.2-Calidad",
+     "programa": "1.1.2.1 - Calidad (Gratuidad)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "1.1.2.2 - Calidad (Matrícula)",
+    "anios": [
+     155447398,
+     160110820,
+     164914145,
+     169861569
+    ],
+    "total": 650333932,
+    "ruta": {
+     "linea": "1.1-Educación",
+     "sector": "1.1.2-Calidad",
+     "programa": "1.1.2.2 - Calidad (Matrícula)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.2-Salud",
+    "anios": [
+     4513322852,
+     4648722538,
+     4788184214,
+     4931829740
+    ],
+    "total": 18882059344,
+    "ruta": {
+     "linea": "1.2-Salud"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Departamento",
+    "anios": [
+     19843642737,
+     20438952019,
+     21052120580,
+     21683684197
+    ],
+    "total": 83018399533,
+    "ruta": {
+     "linea": "Departamento"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.2.2-Salud Pública",
+    "anios": [
+     251540610,
+     259086828,
+     266859433,
+     274865216
+    ],
+    "total": 1052352087,
+    "ruta": {
+     "linea": "1.2.2-Salud Pública"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.2.3-Subsidio a la Oferta",
+    "anios": [
+     184059657,
+     189581447,
+     195268890,
+     201126957
+    ],
+    "total": 770036951,
+    "ruta": {
+     "linea": "1.2.3-Subsidio a la Oferta"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.3-Agua Potable",
+    "anios": [
+     768997922,
+     792067860,
+     815829895,
+     840304792
+    ],
+    "total": 3217200469,
+    "ruta": {
+     "linea": "1.3-Agua Potable"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.3.C1 - Déficit de Coberturas",
+    "anios": [
+     394413007,
+     406245397,
+     418432759,
+     430985742
+    ],
+    "total": 1650076905,
+    "ruta": {
+     "linea": "1.3.C1 - Déficit de Coberturas"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.3.C2 - Población Atendida",
+    "anios": [
+     382174953,
+     393640201,
+     405449407,
+     417612890
+    ],
+    "total": 1598877451,
+    "ruta": {
+     "linea": "1.3.C2 - Población Atendida"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.3.C3 - Ampliación de Coberturas",
+    "anios": [
+     27559062,
+     28385833,
+     29237408,
+     30114531
+    ],
+    "total": 115296834,
+    "ruta": {
+     "linea": "1.3.C3 - Ampliación de Coberturas"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.3.C4-Pobreza",
+    "anios": [
+     133856999,
+     137872709,
+     142008890,
+     146269157
+    ],
+    "total": 560007755,
+    "ruta": {
+     "linea": "1.3.C4-Pobreza"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.3.C5-Eficiencia",
+    "anios": [
+     180538411,
+     185954564,
+     191533200,
+     197279196
+    ],
+    "total": 755305371,
+    "ruta": {
+     "linea": "1.3.C5-Eficiencia"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.4 - Propósito General",
+    "anios": [
+     1193423290,
+     1229225989,
+     1266102769,
+     1304085852
+    ],
+    "total": 4992837900,
+    "ruta": {
+     "linea": "1.4 - Propósito General"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.4.1-Libre Destinación",
+    "anios": [
+     501237782,
+     516274915,
+     531763163,
+     547716058
+    ],
+    "total": 2096991918,
+    "ruta": {
+     "linea": "1.4.1-Libre Destinación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.4.2-Deporte",
+    "anios": [
+     73833121,
+     76048114,
+     78329558,
+     80679445
+    ],
+    "total": 308890238,
+    "ruta": {
+     "linea": "1.4.2-Deporte"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.4.3-Cultura",
+    "anios": [
+     55374841,
+     57036086,
+     58747169,
+     60509584
+    ],
+    "total": 231667680,
+    "ruta": {
+     "linea": "1.4.3-Cultura"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.4.4-Libre Inversión",
+    "anios": [
+     526060987,
+     541842816,
+     558098101,
+     574841044
+    ],
+    "total": 2200842948,
+    "ruta": {
+     "linea": "1.4.4-Libre Inversión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.4.5-Fonpet",
+    "anios": [
+     92291401,
+     95060143,
+     97911947,
+     100849306
+    ],
+    "total": 386112797,
+    "ruta": {
+     "linea": "1.4.5-Fonpet"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.4.C - Propósito General-Criterios",
+    "anios": [
+     1093971349,
+     1126790490,
+     1160594205,
+     1195412031
+    ],
+    "total": 4576768075,
+    "ruta": {
+     "linea": "1.4.C - Propósito General-Criterios"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Propósito General",
+    "anios": [
+     1591231054,
+     0,
+     0,
+     0
+    ],
+    "total": 1591231054,
+    "ruta": {
+     "linea": "Propósito General"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.4.C2.1-Población",
+    "anios": [
+     804912148,
+     829059512,
+     853931298,
+     879549237
+    ],
+    "total": 3367452195,
+    "ruta": {
+     "linea": "1.4.C2.1-Población"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.4.C2.2-Pobreza",
+    "anios": [
+     592982402,
+     610771874,
+     629095030,
+     647967881
+    ],
+    "total": 2480817187,
+    "ruta": {
+     "linea": "1.4.C2.2-Pobreza"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.4.C2.3-Esfuerzo Fiscal",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "1.4.C2.3-Esfuerzo Fiscal"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.4.C2.4 - Eficiencia Administrativa",
+    "anios": [
+     193336504,
+     199136599,
+     205110697,
+     211264018
+    ],
+    "total": 808847818,
+    "ruta": {
+     "linea": "1.4.C2.4 - Eficiencia Administrativa"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   230
+  ],
+  "cabecera": "Líneas",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   63890748969,
+   128982487908,
+   55718962545,
+   56825591422
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Pilar Estratégico 1",
+    "anios": [
+     3177280078,
+     9172065197,
+     949727153,
+     978218968
+    ],
+    "total": 14277291398,
+    "ruta": {
+     "linea": "Pilar Estratégico 1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Pilar Estratégico 2",
+    "anios": [
+     23208204754,
+     27359450897,
+     23030234424,
+     24931141457
+    ],
+    "total": 98529031533,
+    "ruta": {
+     "linea": "Pilar Estratégico 2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Pilar Estratégico 3",
+    "anios": [
+     2137889652,
+     11101067859,
+     2583099895,
+     1168122892
+    ],
+    "total": 16990180299,
+    "ruta": {
+     "linea": "Pilar Estratégico 3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Pilar Estratégico 4",
+    "anios": [
+     210000000,
+     216300000,
+     222789000,
+     229472670
+    ],
+    "total": 878561670,
+    "ruta": {
+     "linea": "Pilar Estratégico 4"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Pilar Estratégico 5",
+    "anios": [
+     3212000000,
+     16642360000,
+     1073630800,
+     1105839724
+    ],
+    "total": 22033830524,
+    "ruta": {
+     "linea": "Pilar Estratégico 5"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TOTAL",
+    "anios": [
+     31945374485,
+     64491243955,
+     27859481273,
+     28412795711
+    ],
+    "total": 152708895425,
+    "ruta": {
+     "linea": "TOTAL"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   232
+  ],
+  "cabecera": "Programa",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   22598204753,
+   26731150896,
+   22383085422,
+   24264577985
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Educación la llave del futuro",
+    "anios": [
+     468813446,
+     482877849,
+     497364185,
+     512285110
+    ],
+    "total": 1961340590,
+    "ruta": {
+     "linea": "Educación la llave del futuro"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Cultura que construye sueños",
+    "anios": [
+     95374840,
+     2598236086,
+     101183168,
+     104218663
+    ],
+    "total": 2899012757,
+    "ruta": {
+     "linea": "Cultura que construye sueños"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Salud de calidad para los Santa Barbareños",
+    "anios": [
+     20175183347,
+     20780438847,
+     21403852012,
+     23255967573
+    ],
+    "total": 85615441779,
+    "ruta": {
+     "linea": "Salud de calidad para los Santa Barbareños"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Deporte que sana el espíritu y la mente",
+    "anios": [
+     1173833120,
+     2679048114,
+     184419557,
+     189952144
+    ],
+    "total": 4227252935,
+    "ruta": {
+     "linea": "Deporte que sana el espíritu y la mente"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Equidad de género y mujer que se reconoce y participa",
+    "anios": [
+     55000000,
+     56650000,
+     58349500,
+     60099985
+    ],
+    "total": 230099485,
+    "ruta": {
+     "linea": "Equidad de género y mujer que se reconoce y participa"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Por una vejez digna y dorada",
+    "anios": [
+     580000000,
+     82400000,
+     84872000,
+     87418160
+    ],
+    "total": 834690160,
+    "ruta": {
+     "linea": "Por una vejez digna y dorada"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Victimas que se recuerdan y dignifican",
+    "anios": [
+     50000000,
+     51500000,
+     53045000,
+     54636350
+    ],
+    "total": 209181350,
+    "ruta": {
+     "linea": "Victimas que se recuerdan y dignifican"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   234,
+   235
+  ],
+  "cabecera": "Códi",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   117,
+   2347889652,
+   11317367859,
+   2805888895
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Gestión ambiental para la protección de los recursos naturales, bienestar animal y mitigación del cambio climático con agricultura regenerativa",
+    "anios": [
+     17,
+     448891730,
+     5082400000,
+     373872000
+    ],
+    "total": 5905163747,
+    "ruta": {
+     "linea": "Gestión ambiental para la protección de los recursos naturales, bienestar animal y mitigación del cambio climático con agricultura regenerativa"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Conocimiento, reducción y manejo del riesgo Municipal",
+    "anios": [
+     18,
+     870000000,
+     2675100000,
+     180353000
+    ],
+    "total": 3725453018,
+    "ruta": {
+     "linea": "Conocimiento, reducción y manejo del riesgo Municipal"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Gestión eficiente del agua potable y el saneamiento básico Municipal",
+    "anios": [
+     19,
+     818997922,
+     3343567859,
+     2028874895
+    ],
+    "total": 6191440695,
+    "ruta": {
+     "linea": "Gestión eficiente del agua potable y el saneamiento básico Municipal"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Seguridad y convivencia un deber en el territorio para vivir tranquilo",
+    "anios": [
+     20,
+     130000000,
+     133900000,
+     137917000
+    ],
+    "total": 401817020,
+    "ruta": {
+     "linea": "Seguridad y convivencia un deber en el territorio para vivir tranquilo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Seguridad vial y reglamentación del transporte Municipal",
+    "anios": [
+     21,
+     20000000,
+     20600000,
+     21218000
+    ],
+    "total": 61818021,
+    "ruta": {
+     "linea": "Seguridad vial y reglamentación del transporte Municipal"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Cualificación de la gestión pública institucional",
+    "anios": [
+     22,
+     60000000,
+     61800000,
+     63654000
+    ],
+    "total": 185454022,
+    "ruta": {
+     "linea": "Cualificación de la gestión pública institucional"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

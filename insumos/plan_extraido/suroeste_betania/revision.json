@@ -1,0 +1,106 @@
+[
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 123,
+  "valor": "EDUCACIÓN",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 1
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 123,
+  "valor": "Proyectos, políticas y programas para la construcción de paz.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 2
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 135,
+  "valor": "TURISMO Actualización del Plan de Desarrollo Turístico del municipio con la finalidad de potenciar otros espacios turísticos en el territorio, así como el desarrollo de un turismo responsable, sostenible, ecológico y de tarifas ajustadas.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 3
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 135,
+  "valor": "Incentivar la creación de la corporación Betaneña de turismo que permita integrar los diferentes prestadores del servicio turístico local.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 4
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 135,
+  "valor": "Capacitación a operadores turísticos en atención al cliente, mesa y bar, acorde a la normativa turística nacional.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 5
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 143,
+  "valor": "TRANSPARENCIA",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 6
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "INVERSION",
+  "sector": null,
+  "correccion": null,
+  "id": 7
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Asignación para la Inversión Local",
+  "sector": "Asignación para la Inversión Local",
+  "correccion": null,
+  "id": 8
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Municipios más pobres",
+  "sector": "Asignación para la Inversión Local",
+  "correccion": null,
+  "id": 9
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Destinación para medio ambiente y desarrollo sostenible",
+  "sector": "Asignación para la Inversión Local",
+  "correccion": null,
+  "id": 10
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Resto de Inversión",
+  "sector": "Asignación para la Inversión Local",
+  "correccion": null,
+  "id": 11
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "AHORRO",
+  "sector": null,
+  "correccion": null,
+  "id": 12
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Territorial(FONPET)",
+  "sector": "Territorial(FONPET)",
+  "correccion": null,
+  "id": 13
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Total",
+  "sector": null,
+  "correccion": null,
+  "id": 14
+ }
+]

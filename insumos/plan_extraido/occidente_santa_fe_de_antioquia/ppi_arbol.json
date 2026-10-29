@@ -1,0 +1,119 @@
+[
+ {
+  "paginas": [
+   128
+  ],
+  "cabecera": "Líneas",
+  "unidad": "millones",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   82488638542,
+   177697080906,
+   104190056844,
+   84101086846
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea 1",
+    "anios": [
+     15090789460,
+     54880090165,
+     20132916773,
+     9556970433
+    ],
+    "total": 99660766832,
+    "ruta": {
+     "linea": "Línea 1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea 2",
+    "anios": [
+     23858181858,
+     21548436406,
+     27812311129,
+     28319914368
+    ],
+    "total": 101538843761,
+    "ruta": {
+     "linea": "Línea 2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea 3",
+    "anios": [
+     817000000,
+     9194665930,
+     2896452567,
+     1782000000
+    ],
+    "total": 14690118497,
+    "ruta": {
+     "linea": "Línea 3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea 4",
+    "anios": [
+     600914569,
+     600914568,
+     600914569,
+     1049225238
+    ],
+    "total": 2851968944,
+    "ruta": {
+     "linea": "Línea 4"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea 5",
+    "anios": [
+     877433384,
+     2624433384,
+     652433384,
+     1342433384
+    ],
+    "total": 5496733536,
+    "ruta": {
+     "linea": "Línea 5"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TOTAL",
+    "anios": [
+     41244319271,
+     88848540453,
+     52095028422,
+     42050543423
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "TOTAL"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

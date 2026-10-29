@@ -1,0 +1,119 @@
+[
+ {
+  "paginas": [
+   231
+  ],
+  "cabecera": "Código Fondo",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   689675216,
+   1318855643,
+   1222407851,
+   1283718444
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "ADAN",
+    "anios": [
+     15451644,
+     3916415,
+     3688142,
+     3677697
+    ],
+    "total": 26733898,
+    "ruta": {
+     "linea": "ADAN"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "ADIR",
+    "anios": [
+     21456106,
+     14093047,
+     13271616,
+     13234029
+    ],
+    "total": 62054798,
+    "ruta": {
+     "linea": "ADIR"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "AIL",
+    "anios": [
+     266230835,
+     543464185,
+     503492532,
+     529590569
+    ],
+    "total": 1842778121,
+    "ruta": {
+     "linea": "AIL"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "AILA",
+    "anios": [
+     40958470,
+     83609875,
+     77460390,
+     81475472
+    ],
+    "total": 283504207,
+    "ruta": {
+     "linea": "AILA"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "DLAD",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "DLAD"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TOTAL",
+    "anios": [
+     345578161,
+     673772121,
+     624495171,
+     655740677
+    ],
+    "total": 2299586130,
+    "ruta": {
+     "linea": "TOTAL"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

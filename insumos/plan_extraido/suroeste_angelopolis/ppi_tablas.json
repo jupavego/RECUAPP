@@ -1,0 +1,459 @@
+[
+ {
+  "pagina": 135,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Educación",
+    "anios": [
+     130564451,
+     139703963,
+     149483240,
+     159947067
+    ],
+    "total": 579698720
+   },
+   {
+    "etiqueta": "Prestación de Servicios",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Calidad",
+    "anios": [
+     130564451,
+     139703963,
+     149483240,
+     159947067
+    ],
+    "total": 579698720
+   },
+   {
+    "etiqueta": "Matrícula Gratuidad",
+    "anios": [
+     67733312,
+     72474644,
+     77547869,
+     82976220
+    ],
+    "total": 300732044
+   },
+   {
+    "etiqueta": "Matrícula Oficial",
+    "anios": [
+     62831139,
+     67229319,
+     71935371,
+     76970847
+    ],
+    "total": 278966676
+   },
+   {
+    "etiqueta": "Asignaciones especiales",
+    "anios": [
+     21807198,
+     23333702,
+     24967061,
+     26714755
+    ],
+    "total": 96822716
+   },
+   {
+    "etiqueta": "Crecimiento de la Economía",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "SGP - Alimentación Escolar",
+    "anios": [
+     21807198,
+     23333702,
+     24967061,
+     26714755
+    ],
+    "total": 96822716
+   },
+   {
+    "etiqueta": "Salud",
+    "anios": [
+     4590224864,
+     4911540604,
+     5255348447,
+     5623222838
+    ],
+    "total": 20380336753
+   },
+   {
+    "etiqueta": "Total, Régimen Subsidiado",
+    "anios": [
+     4450002037,
+     4761502180,
+     5094807332,
+     5451443845
+    ],
+    "total": 19757755394
+   },
+   {
+    "etiqueta": "Régimen Subsidiado SGP",
+    "anios": [
+     1026333165,
+     1098176487,
+     1175048841,
+     1257302259
+    ],
+    "total": 4556860752
+   },
+   {
+    "etiqueta": "Régimen subsidiado ADRES",
+    "anios": [
+     2823678434,
+     3021335924,
+     3232829439,
+     3459127500
+    ],
+    "total": 12536971297
+   },
+   {
+    "etiqueta": "Subsidio a la oferta",
+    "anios": [
+     163744113,
+     175206201,
+     187470635,
+     200593579
+    ],
+    "total": 727014528
+   },
+   {
+    "etiqueta": "Derechos por la explotación juegos de suerte y azar",
+    "anios": [
+     66968641,
+     71656446,
+     76672397,
+     82039465
+    ],
+    "total": 297336949
+   },
+   {
+    "etiqueta": "Recursos departamental es para Aseguramiento del Régimen Subsidiado",
+    "anios": [
+     369277684,
+     395127122,
+     422786020,
+     452381042
+    ],
+    "total": 1639571868
+   },
+   {
+    "etiqueta": "Salud Pública",
+    "anios": [
+     140222827,
+     150038425,
+     160541115,
+     171778993
+    ],
+    "total": 622581359
+   },
+   {
+    "etiqueta": "Salud Pública SGP",
+    "anios": [
+     128722827,
+     137733425,
+     147374765,
+     157690998
+    ],
+    "total": 571522015
+   },
+   {
+    "etiqueta": "Coljuego 25%",
+    "anios": [
+     11500000,
+     12305000,
+     13166350,
+     14087995
+    ],
+    "total": 51059345
+   },
+   {
+    "etiqueta": "Agua Potable",
+    "anios": [
+     484444744,
+     518355876,
+     554640787,
+     593465643
+    ],
+    "total": 2150907050
+   },
+   {
+    "etiqueta": "Propósito General - Destinación",
+    "anios": [
+     2054484679,
+     2198298607,
+     2352179509,
+     2516832075
+    ],
+    "total": 9121794869
+   },
+   {
+    "etiqueta": "Libre Destinación",
+    "anios": [
+     884069679,
+     945954557,
+     1012171375,
+     1083023372
+    ],
+    "total": 3925218983
+   }
+  ],
+  "ncols": 11,
+  "financiero": false
+ },
+ {
+  "pagina": 136,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Deporte",
+    "anios": [
+     60403000,
+     64631210,
+     69155395,
+     73996272
+    ],
+    "total": 268185877
+   },
+   {
+    "etiqueta": "Cultura",
+    "anios": [
+     40269000,
+     43087830,
+     46103978,
+     49331257
+    ],
+    "total": 178792065
+   },
+   {
+    "etiqueta": "Libre Inversión",
+    "anios": [
+     1069743000,
+     1144625010,
+     1224748761,
+     1310481174
+    ],
+    "total": 4749597945
+   },
+   {
+    "etiqueta": "TOTAL OTRAS FUENTES",
+    "anios": [
+     2121433600,
+     2269933952,
+     2428829329,
+     2598847382
+    ],
+    "total": 9419044262
+   },
+   {
+    "etiqueta": "Ingresos corrientes de libre destinación",
+    "anios": [
+     1369433600,
+     1465293952,
+     1567864529,
+     1677615046
+    ],
+    "total": 6080207126
+   },
+   {
+    "etiqueta": "Sobretasa ambiental - Urbano",
+    "anios": [
+     30000000,
+     32100000,
+     34347000,
+     336751290
+    ],
+    "total": 133198290
+   },
+   {
+    "etiqueta": "Sobretasa ambiental - Rural",
+    "anios": [
+     30000000,
+     32100000,
+     34347000,
+     336751290
+    ],
+    "total": 133198290
+   },
+   {
+    "etiqueta": "Intereses de mora Ambiental",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Impuesto de alumbrado público",
+    "anios": [
+     95000000,
+     101650000,
+     108650000,
+     116379085
+    ],
+    "total": 421794585
+   },
+   {
+    "etiqueta": "Sobretasa bomberil",
+    "anios": [
+     14000000,
+     14980000,
+     16028600,
+     17150602
+    ],
+    "total": 62159202
+   },
+   {
+    "etiqueta": "Gestión del Riesgo",
+    "anios": [
+     22000000,
+     23540000,
+     25187800,
+     26950946
+    ],
+    "total": 97678746
+   },
+   {
+    "etiqueta": "Tasa prodeporte y recreación",
+    "anios": [
+     120000000,
+     128400000,
+     137388000,
+     147005160
+    ],
+    "total": 532793160
+   },
+   {
+    "etiqueta": "Estampilla para el bienestar del adulto mayor",
+    "anios": [
+     200000000,
+     214000000,
+     228980000,
+     245008600
+    ],
+    "total": 887988600
+   },
+   {
+    "etiqueta": "Estampilla pro cultura",
+    "anios": [
+     60000000,
+     64200000,
+     68694000,
+     73502580
+    ],
+    "total": 266396580
+   },
+   {
+    "etiqueta": "Contribución especial sobre contratos de obras públicas",
+    "anios": [
+     180000000,
+     192600000,
+     206082000,
+     220507740
+    ],
+    "total": 799189740
+   },
+   {
+    "etiqueta": "Multas código nacional de Seguridad y Convivencia Ciudadana - Multas especiales",
+    "anios": [
+     1000000,
+     1070000,
+     1144900,
+     1225043
+    ],
+    "total": 4439943
+   },
+   {
+    "etiqueta": "TOTAL RECURSOS PARA INVERTIR",
+    "anios": [
+     9402959536,
+     10061166704,
+     10765448373,
+     11519029759
+    ],
+    "total": 41748604371
+   }
+  ],
+  "ncols": 11,
+  "financiero": true
+ },
+ {
+  "pagina": 161,
+  "cabecera": "AÑO DE PROGRAMA- CIÓN",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "TOTAL PROYECTADO INICIATIVA",
+    "anios": [
+     4245565000,
+     229779000,
+     683722732,
+     929675100
+    ],
+    "total": 6088741832
+   },
+   {
+    "etiqueta": "OTRAS FUENTES DE INVERSIÓN",
+    "anios": [
+     4035051000,
+     145654000,
+     312000000,
+     645000000
+    ],
+    "total": 5137705000
+   },
+   {
+    "etiqueta": "ASIGNACIÓN PARA LA INVERSIÓN LOCAL – AMBIENTE Y DESARROLLO SOSTENIBLE",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "ASIGNACIÓN PARA LA INVERSIÓN LOCAL – NBI MUNICIPIOS CT 4, 5 Y 6",
+    "anios": [
+     210514000,
+     84125000,
+     371722732,
+     284675100
+    ],
+    "total": 951036832
+   },
+   {
+    "etiqueta": "SIGNACIONES DIRECTAS",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   }
+  ],
+  "ncols": 11,
+  "financiero": true
+ }
+]

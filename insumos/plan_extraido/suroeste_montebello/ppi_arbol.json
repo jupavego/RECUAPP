@@ -1,0 +1,810 @@
+[
+ {
+  "paginas": [
+   253
+  ],
+  "cabecera": "CONCEPTO",
+  "unidad": "millones",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   1948,
+   1084,
+   932,
+   756
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Actualización Catastral Rural",
+    "anios": [
+     71,
+     58,
+     28,
+     0
+    ],
+    "total": 157,
+    "ruta": {
+     "linea": "Actualización Catastral Rural"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Construcción Centro Vida para el Adulto Mayor",
+    "anios": [
+     97,
+     86,
+     77,
+     68
+    ],
+    "total": 328,
+    "ruta": {
+     "linea": "Construcción Centro Vida para el Adulto Mayor"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Construcción de Viviendas en Sitio Propio",
+    "anios": [
+     185,
+     153,
+     137,
+     122
+    ],
+    "total": 597,
+    "ruta": {
+     "linea": "Construcción de Viviendas en Sitio Propio"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Mejoramiento de Vías Rurales - Vereda El Socorro",
+    "anios": [
+     263,
+     245,
+     224,
+     188
+    ],
+    "total": 920,
+    "ruta": {
+     "linea": "Mejoramiento de Vías Rurales - Vereda El Socorro"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Construcción Morgue Municipal",
+    "anios": [
+     14,
+     0,
+     0,
+     0
+    ],
+    "total": 14,
+    "ruta": {
+     "linea": "Construcción Morgue Municipal"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Crédito de Tesorería",
+    "anios": [
+     344,
+     0,
+     0,
+     0
+    ],
+    "total": 344,
+    "ruta": {
+     "linea": "Crédito de Tesorería"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Valores Totales",
+    "anios": [
+     974,
+     542,
+     466,
+     378
+    ],
+    "total": 2360,
+    "ruta": {
+     "linea": "Valores Totales"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   265
+  ],
+  "cabecera": "LÍNEA ESTRATÉGICA",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   13943262655,
+   14700452315,
+   15039088148,
+   14990926479
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LÍNEA ESTRATÉGICA 1: Yo creo en el Buen GobiernoyFortalecimiento Institucional",
+    "anios": [
+     289905000,
+     312002150,
+     330448715,
+     334339036
+    ],
+    "total": 1266694900,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 1: Yo creo en el Buen GobiernoyFortalecimiento Institucional"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LÍNEA ESTRATÉGICA 2: Yo creo en el bienestar social",
+    "anios": [
+     9957623558,
+     10249585011,
+     10553276323,
+     10871841011
+    ],
+    "total": 41632325902,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 2: Yo creo en el bienestar social"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LÍNEA ESTRATÉGICA 3: Yo creo en el Desarrollo Económico",
+    "anios": [
+     271441455,
+     528584699,
+     536820440,
+     309001130
+    ],
+    "total": 1645847723,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 3: Yo creo en el Desarrollo Económico"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LÍNEA ESTRATÉGICA 4: Yo creo en el Desarrollo Territorial",
+    "anios": [
+     3223692642,
+     3407232455,
+     3406578970,
+     3257422691
+    ],
+    "total": 13294926759,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 4: Yo creo en el Desarrollo Territorial"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LÍNEA ESTRATÉGICA 5: Yo creo en la seguridadyconvivencia ciudadana",
+    "anios": [
+     200600000,
+     203048000,
+     211963700,
+     218322611
+    ],
+    "total": 833934311,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 5: Yo creo en la seguridadyconvivencia ciudadana"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   266,
+   266
+  ],
+  "cabecera": "LÍNEA Y PROGRAMAS",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "programa"
+  ],
+  "total_raices": [
+   10540283558,
+   10876524811,
+   11217197318,
+   11533933355
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LÍNEA ESTRATÉGICA 1: Yo creo en el Buen GobiernoyFortalecimiento Institucional",
+    "anios": [
+     289905000,
+     312002150,
+     330448715,
+     334339036
+    ],
+    "total": 1266694900,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 1: Yo creo en el Buen GobiernoyFortalecimiento Institucional"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Cimientos del buen gobierno para creer",
+    "anios": [
+     220605000,
+     240623150,
+     256928345,
+     250879963
+    ],
+    "total": 969036458,
+    "ruta": {
+     "linea": "Cimientos del buen gobierno para creer"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Yo creo en las TICs: Navegando hacia el Futuro",
+    "anios": [
+     33300000,
+     34299000,
+     35327970,
+     34420901
+    ],
+    "total": 137347871,
+    "ruta": {
+     "linea": "Yo creo en las TICs: Navegando hacia el Futuro"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Yo creo en el desarrollo comunitario",
+    "anios": [
+     36000000,
+     37080000,
+     38192400,
+     39338172
+    ],
+    "total": 150610572,
+    "ruta": {
+     "linea": "Yo creo en el desarrollo comunitario"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LÍNEA ESTRATÉGICA 2: Yo creo en el bienestar social",
+    "anios": [
+     9957623558,
+     10249585011,
+     10553276323,
+     10871841011
+    ],
+    "total": 41632325903,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 2: Yo creo en el bienestar social"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 1,
+    "etiqueta": "La educación, pilar fundamental para creer",
+    "anios": [
+     413886109,
+     426265438,
+     439051943,
+     454189900
+    ],
+    "total": 1733393390,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 2: Yo creo en el bienestar social",
+     "programa": "La educación, pilar fundamental para creer"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 1,
+    "etiqueta": "Yo creo en la cultura",
+    "anios": [
+     225934000,
+     226982020,
+     233791481,
+     240805225
+    ],
+    "total": 927512726,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 2: Yo creo en el bienestar social",
+     "programa": "Yo creo en la cultura"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 1,
+    "etiqueta": "La salud una apuesta para creer con inclusión social",
+    "anios": [
+     8754803449,
+     9017447552,
+     9287970979,
+     9566610108
+    ],
+    "total": 36626832088,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 2: Yo creo en el bienestar social",
+     "programa": "La salud una apuesta para creer con inclusión social"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 1,
+    "etiqueta": "El deporte y la recreación… un estilo de vida para creer.",
+    "anios": [
+     181000000,
+     189430000,
+     195112900,
+     200966287
+    ],
+    "total": 766509187,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 2: Yo creo en el bienestar social",
+     "programa": "El deporte y la recreación… un estilo de vida para creer."
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 1,
+    "etiqueta": "Adulto mayor, yo creo en la experiencia",
+    "anios": [
+     265000000,
+     268950000,
+     274194240,
+     282420067
+    ],
+    "total": 1090564307,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 2: Yo creo en el bienestar social",
+     "programa": "Adulto mayor, yo creo en la experiencia"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 1,
+    "etiqueta": "Juventud, una generación para creer",
+    "anios": [
+     8550000,
+     8806500,
+     9070695,
+     9342816
+    ],
+    "total": 35770011,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 2: Yo creo en el bienestar social",
+     "programa": "Juventud, una generación para creer"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 1,
+    "etiqueta": "Infancia y adolescencia, las bases para creer",
+    "anios": [
+     29800000,
+     30694000,
+     30644300,
+     31563629
+    ],
+    "total": 122701929,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 2: Yo creo en el bienestar social",
+     "programa": "Infancia y adolescencia, las bases para creer"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 1,
+    "etiqueta": "Con equidad de género, crearemos más",
+    "anios": [
+     11400000,
+     11742000,
+     12094260,
+     12457088
+    ],
+    "total": 47693348,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 2: Yo creo en el bienestar social",
+     "programa": "Con equidad de género, crearemos más"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 1,
+    "etiqueta": "Atención integral a la población en situación de discapacidad.",
+    "anios": [
+     26400000,
+     27192000,
+     28007760,
+     28847993
+    ],
+    "total": 110447753,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 2: Yo creo en el bienestar social",
+     "programa": "Atención integral a la población en situación de discapacidad."
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 1,
+    "etiqueta": "Creó en el bienestar y la protección animal",
+    "anios": [
+     38000000,
+     39140000,
+     40314200,
+     41523626
+    ],
+    "total": 158977826,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 2: Yo creo en el bienestar social",
+     "programa": "Creó en el bienestar y la protección animal"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Programa grupos poblacionales, creemos en la diversidad de género.",
+    "anios": [
+     2850000,
+     2935500,
+     3023565,
+     3114272
+    ],
+    "total": 11923337,
+    "ruta": {
+     "linea": "Programa grupos poblacionales, creemos en la diversidad de género."
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   267
+  ],
+  "cabecera": "LNEA Y PROGRAMAS",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   3695738145,
+   4138869204,
+   4155367162,
+   3784750486
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LÍNEA ESTRATÉGICA 3: Yo creo en el Desarrollo Económico",
+    "anios": [
+     271441455,
+     528584699,
+     536820440,
+     309001130
+    ],
+    "total": 1645847723,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 3: Yo creo en el Desarrollo Económico"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Creer en Nuestro Territorio: Turismo para el Desarrollo Sostenible",
+    "anios": [
+     116441455,
+     119934699,
+     123410940,
+     140689345
+    ],
+    "total": 500476438,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 3: Yo creo en el Desarrollo Económico",
+     "sector": "Creer en Nuestro Territorio: Turismo para el Desarrollo Sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Para creer sembremos el futuro: desarrollo rural sostenible",
+    "anios": [
+     155000000,
+     408650000,
+     413409500,
+     168311785
+    ],
+    "total": 1145375285,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 3: Yo creo en el Desarrollo Económico",
+     "sector": "Para creer sembremos el futuro: desarrollo rural sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LNEA Y PROGRAMAS",
+    "anios": [
+     2024,
+     2025,
+     2026,
+     2027
+    ],
+    "total": 8102,
+    "ruta": {
+     "linea": "LNEA Y PROGRAMAS"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LÍNEA ESTRATÉGICA 4: Yo creo en el Desarrollo Territorial",
+    "anios": [
+     3223692642,
+     3407232455,
+     3406578970,
+     3257422691
+    ],
+    "total": 13294926759,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 4: Yo creo en el Desarrollo Territorial"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Construyendo Viviendas … Yo creo en una vida digna",
+    "anios": [
+     456800000,
+     631635562,
+     609586120,
+     369961704
+    ],
+    "total": 2067583386,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 4: Yo creo en el Desarrollo Territorial",
+     "sector": "Construyendo Viviendas … Yo creo en una vida digna"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Caminos de Desarrollo Para Creer",
+    "anios": [
+     925072973,
+     766050341,
+     742200559,
+     778222807
+    ],
+    "total": 3211546680,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 4: Yo creo en el Desarrollo Territorial",
+     "sector": "Caminos de Desarrollo Para Creer"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Equipamiento social para crear.",
+    "anios": [
+     60000000,
+     61800000,
+     63654000,
+     65563620
+    ],
+    "total": 251017620,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 4: Yo creo en el Desarrollo Territorial",
+     "sector": "Equipamiento social para crear."
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "El agua fuente de vida, juntos conservemos nuestra riqueza ambiental.",
+    "anios": [
+     1491935429,
+     1649165785,
+     1686000101,
+     1728970224
+    ],
+    "total": 6556071539,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 4: Yo creo en el Desarrollo Territorial",
+     "sector": "El agua fuente de vida, juntos conservemos nuestra riqueza ambiental."
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Alumbrar para creer: iluminando caminos hacia el progreso",
+    "anios": [
+     30000000,
+     30900000,
+     31827000,
+     32781810
+    ],
+    "total": 125508810,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 4: Yo creo en el Desarrollo Territorial",
+     "sector": "Alumbrar para creer: iluminando caminos hacia el progreso"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Montebello Verde: Un Compromiso con el Medio Ambiente",
+    "anios": [
+     186984240,
+     192593767,
+     198371580,
+     204322728
+    ],
+    "total": 782272315,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 4: Yo creo en el Desarrollo Territorial",
+     "sector": "Montebello Verde: Un Compromiso con el Medio Ambiente"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Gestión del Riesgo de Desastres",
+    "anios": [
+     72900000,
+     75087000,
+     75339610,
+     77599798
+    ],
+    "total": 300926408,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 4: Yo creo en el Desarrollo Territorial",
+     "sector": "Gestión del Riesgo de Desastres"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LÍNEA Y PROGRAMAS",
+    "anios": [
+     2024,
+     2025,
+     2026,
+     2027
+    ],
+    "total": 8102,
+    "ruta": {
+     "linea": "LÍNEA Y PROGRAMAS"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "LÍNEA ESTRATÉGICA 5: Yo creo en la seguridadyconvivencia ciudadana",
+    "anios": [
+     200600000,
+     203048000,
+     211963700,
+     218322611
+    ],
+    "total": 833934311,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 5: Yo creo en la seguridadyconvivencia ciudadana"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Yo creo en la seguridad",
+    "anios": [
+     171400000,
+     172972000,
+     180985420,
+     186414983
+    ],
+    "total": 711772403,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 5: Yo creo en la seguridadyconvivencia ciudadana",
+     "sector": "Yo creo en la seguridad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Yo creo en los Derechos Humanos y la construcción de paz",
+    "anios": [
+     29200000,
+     30076000,
+     30978280,
+     31907628
+    ],
+    "total": 122161908,
+    "ruta": {
+     "linea": "LÍNEA ESTRATÉGICA 5: Yo creo en la seguridadyconvivencia ciudadana",
+     "sector": "Yo creo en los Derechos Humanos y la construcción de paz"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

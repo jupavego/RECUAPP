@@ -1,0 +1,855 @@
+[
+ {
+  "paginas": [
+   155
+  ],
+  "cabecera": "SISTEMA GENERAL PARTICIPACIONES",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   20822,
+   21792,
+   22808,
+   23870
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.1 Educación Calidad",
+    "anios": [
+     266,
+     279,
+     293,
+     308
+    ],
+    "total": 1146,
+    "ruta": {
+     "linea": "1.1 Educación Calidad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2.1 - Régimen Subsidiado",
+    "anios": [
+     4655,
+     4887,
+     5132,
+     5388
+    ],
+    "total": 20062,
+    "ruta": {
+     "linea": "2.1 - Régimen Subsidiado"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2.2 - Salud Pública - No incluye eficiencia",
+    "anios": [
+     303,
+     318,
+     334,
+     350
+    ],
+    "total": 1305,
+    "ruta": {
+     "linea": "2.2 - Salud Pública - No incluye eficiencia"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2.3 - Subsidio a la Oferta",
+    "anios": [
+     264,
+     277,
+     291,
+     305
+    ],
+    "total": 1137,
+    "ruta": {
+     "linea": "2.3 - Subsidio a la Oferta"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3 - Agua Potable y Saneamiento Básico",
+    "anios": [
+     1209,
+     1270,
+     1333,
+     1400
+    ],
+    "total": 5212,
+    "ruta": {
+     "linea": "3 - Agua Potable y Saneamiento Básico"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4 - Propósito General",
+    "anios": [
+     3604,
+     3749,
+     3900,
+     4057
+    ],
+    "total": 15311,
+    "ruta": {
+     "linea": "4 - Propósito General"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "4.1 Libre inversión",
+    "anios": [
+     3327,
+     3460,
+     3598,
+     3742
+    ],
+    "total": 14127,
+    "ruta": {
+     "linea": "4 - Propósito General",
+     "sector": "4.1 Libre inversión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "4.2 Libre Destinación",
+    "anios": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "total": 6,
+    "ruta": {
+     "linea": "4 - Propósito General",
+     "sector": "4.2 Libre Destinación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "4.3. Cultura",
+    "anios": [
+     119,
+     124,
+     129,
+     134
+    ],
+    "total": 505,
+    "ruta": {
+     "linea": "4 - Propósito General",
+     "sector": "4.3. Cultura"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "4.4 Deportes",
+    "anios": [
+     159,
+     165,
+     172,
+     178
+    ],
+    "total": 674,
+    "ruta": {
+     "linea": "4 - Propósito General",
+     "sector": "4.4 Deportes"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "5 - Alimentación Escolar -",
+    "anios": [
+     110,
+     116,
+     121,
+     127
+    ],
+    "total": 474,
+    "ruta": {
+     "linea": "5 - Alimentación Escolar -"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total SGP",
+    "anios": [
+     10411,
+     10896,
+     11404,
+     11935
+    ],
+    "total": 44647,
+    "ruta": {
+     "linea": "Total SGP"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   162,
+   163
+  ],
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   74197241703,
+   64086926272,
+   59375724538,
+   61997780299
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "INVERSION",
+    "anios": [
+     1848384062,
+     1571471129,
+     1457076396,
+     1525942397
+    ],
+    "total": 6402873984,
+    "ruta": {
+     "linea": "INVERSION"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Asignación para la Paz",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "INVERSION",
+     "sector": "Asignación para la Paz"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Asignaciones Directas",
+    "anios": [
+     121702136,
+     77738928,
+     73207817,
+     73000484
+    ],
+    "total": 345649365,
+    "ruta": {
+     "linea": "INVERSION",
+     "sector": "Asignaciones Directas"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "20% Asignaciones Directas",
+    "anios": [
+     95236264,
+     60833485,
+     57287729,
+     57125483
+    ],
+    "total": 270482961,
+    "ruta": {
+     "linea": "INVERSION",
+     "sector": "Asignaciones Directas",
+     "programa": "20% Asignaciones Directas"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "5% Asignaciones Directas Anticipadas",
+    "anios": [
+     26465872,
+     16905443,
+     15920088,
+     15875001
+    ],
+    "total": 75166404,
+    "ruta": {
+     "linea": "INVERSION",
+     "sector": "Asignaciones Directas",
+     "programa": "5% Asignaciones Directas Anticipadas"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Asignación para la Inversión Regional",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "INVERSION",
+     "sector": "Asignación para la Inversión Regional"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Departamentos",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "INVERSION",
+     "sector": "Departamentos"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Regiones",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "INVERSION",
+     "sector": "Regiones"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Asignación para la Inversión Local",
+    "anios": [
+     1726681926,
+     1493732202,
+     1383868579,
+     1452941913
+    ],
+    "total": 6057224620,
+    "ruta": {
+     "linea": "INVERSION",
+     "sector": "Asignación para la Inversión Local"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Municipios más pobres",
+    "anios": [
+     1726681926,
+     1493732202,
+     1383868579,
+     1452941913
+    ],
+    "total": 6057224620,
+    "ruta": {
+     "linea": "INVERSION",
+     "sector": "Asignación para la Inversión Local",
+     "programa": "Municipios más pobres"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     230224257,
+     199164294,
+     184515811,
+     193725588
+    ],
+    "total": 807629950,
+    "ruta": {
+     "linea": "INVERSION",
+     "sector": "Asignación para la Inversión Local",
+     "programa": "Municipios más pobres",
+     "subprograma": "Destinación para medio ambiente y desarrollo sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     1496457669,
+     1294567908,
+     1199352769,
+     1259216325
+    ],
+    "total": 5249594671,
+    "ruta": {
+     "linea": "INVERSION",
+     "sector": "Asignación para la Inversión Local",
+     "programa": "Municipios más pobres",
+     "subprograma": "Resto de Inversión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Comunidades Étnicas",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Comunidades Étnicas"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Comunidades Indígenas",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Comunidades Indígenas"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Destinación para medio ambiente y desarrollo sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Resto de Inversión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Comunidades NARP",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Comunidades NARP"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Destinación para medio ambiente y desarrollo sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Resto de Inversión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Comunidades Rrom",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Comunidades Rrom"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Destinación para medio ambiente y desarrollo sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Resto de Inversión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Innovación",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Innovación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Tecnología e Innovación Ambiental",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Tecnología e Innovación Ambiental"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Resto de inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Resto de inversión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Asignación Ambiental",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Asignación Ambiental"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Municipios Río Magdalena y Canal Dique",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Municipios Río Magdalena y Canal Dique"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "AHORRO",
+    "anios": [
+     49633864,
+     42894229,
+     39740474,
+     41486183
+    ],
+    "total": 173754750,
+    "ruta": {
+     "linea": "AHORRO"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Fondo de Ahorro y Estabilización (Ahorro)",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "AHORRO",
+     "sector": "Fondo de Ahorro y Estabilización (Ahorro)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Fondo Ahorro Pensional Territorial(FONPET)",
+    "anios": [
+     49633864,
+     42894229,
+     39740474,
+     41486183
+    ],
+    "total": 173754750,
+    "ruta": {
+     "linea": "AHORRO",
+     "sector": "Fondo Ahorro Pensional Territorial(FONPET)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "OTROS",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "OTROS"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Funcionamiento, operatividad y fiscalización",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Funcionamiento, operatividad y fiscalización"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Sistema de Seguimiento, Control y Evaluación (SSEC)",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Sistema de Seguimiento, Control y Evaluación (SSEC)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Contraloría",
+    "anios": [
+     70401205851,
+     60858195556,
+     56382090798,
+     58862923139
+    ],
+    "total": 246504415344,
+    "ruta": {
+     "linea": "Contraloría"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Procuraduría",
+    "anios": [
+     14080241171,
+     12171639111,
+     11276418160,
+     11772584628
+    ],
+    "total": 49300883070,
+    "ruta": {
+     "linea": "Contraloría",
+     "sector": "Procuraduría"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "DNP",
+    "anios": [
+     56320964680,
+     48686556445,
+     45105672638,
+     47090338511
+    ],
+    "total": 197203532274,
+    "ruta": {
+     "linea": "Contraloría",
+     "sector": "DNP"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total",
+    "anios": [
+     1898017926,
+     1614365358,
+     1496816870,
+     1567428580
+    ],
+    "total": 6576628734,
+    "ruta": {
+     "linea": "Total"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

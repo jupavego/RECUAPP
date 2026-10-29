@@ -1,0 +1,51 @@
+[
+ {
+  "pagina": 273,
+  "cabecera": "Nombre Fondo",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "ASIGNACIONES DIRECTAS ANTICIPADAS",
+    "anios": [
+     1062541878,
+     1596041783,
+     1503014480,
+     1498757774
+    ],
+    "total": 6669403570
+   },
+   {
+    "etiqueta": "ASIGNACIONES DIRECTAS",
+    "anios": [
+     7913529148,
+     5743090177,
+     5408346945,
+     5393029896
+    ],
+    "total": 28088885869
+   },
+   {
+    "etiqueta": "ASIGNACION PARA LA INVERSION LOCAL",
+    "anios": [
+     625077228,
+     1236832199,
+     1145863506,
+     1202158560
+    ],
+    "total": 4817816931
+   },
+   {
+    "etiqueta": "ASIGNACION PARA LA INVERSION LOCAL - AMBIENTE Y DESARROLLO SOSTENIBLE",
+    "anios": [
+     101167934,
+     190281877,
+     176286693,
+     184947471
+    ],
+    "total": 746204812
+   }
+  ],
+  "ncols": 7,
+  "financiero": true
+ }
+]

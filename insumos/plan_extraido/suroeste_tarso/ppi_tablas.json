@@ -1,0 +1,617 @@
+[
+ {
+  "pagina": 206,
+  "cabecera": "2024",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "1.607.517.112",
+    "anios": [
+     1607517112,
+     1722615337,
+     1845954595,
+     1978124944
+    ],
+    "total": 7154211988
+   },
+   {
+    "etiqueta": "65.819.318",
+    "anios": [
+     65819318,
+     70531981,
+     75582071,
+     80993747
+    ],
+    "total": 292927117
+   },
+   {
+    "etiqueta": "49.364.489",
+    "anios": [
+     49364489,
+     52898987,
+     56686554,
+     60745311
+    ],
+    "total": 219695341
+   },
+   {
+    "etiqueta": "2.022.446.631",
+    "anios": [
+     2022446631,
+     2167253810,
+     2322429183,
+     2488715112
+    ],
+    "total": 9000844736
+   },
+   {
+    "etiqueta": "2024",
+    "anios": [
+     2024,
+     2025,
+     2026,
+     2027
+    ],
+    "total": 8102
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ },
+ {
+  "pagina": 207,
+  "cabecera": "INGRESOS PDM 2024",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "1.276.351.577",
+    "anios": [
+     1276351577,
+     1367738349,
+     1465668,
+     1570610274
+    ],
+    "total": 5680368615
+   },
+   {
+    "etiqueta": "INGRESOS PDM 2024",
+    "anios": [
+     2024,
+     2025,
+     2026,
+     2027
+    ],
+    "total": 2024
+   },
+   {
+    "etiqueta": "38.979.323",
+    "anios": [
+     38979323,
+     41770243,
+     44760992,
+     47965879
+    ],
+    "total": 173476436
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 208,
+  "cabecera": "Fuente de financiación",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Estampilla del adulto mayor",
+    "anios": [
+     239294048,
+     202102144,
+     253832251,
+     263148864
+    ],
+    "total": 958377307
+   },
+   {
+    "etiqueta": "Estampillaprocultura",
+    "anios": [
+     65317942,
+     85646339,
+     58091156,
+     60658214
+    ],
+    "total": 269713651
+   },
+   {
+    "etiqueta": "ICDL- ingresos corrientes de libre destinación",
+    "anios": [
+     568537954,
+     721440182,
+     437567282,
+     346915112
+    ],
+    "total": 2074460530
+   },
+   {
+    "etiqueta": "Otros - Corresponde a otras entidades gubernamentales o no",
+    "anios": [
+     1641784744,
+     7537686348,
+     6271215589,
+     6513616294
+    ],
+    "total": 21964302975
+   },
+   {
+    "etiqueta": "Saneamiento",
+    "anios": [
+     1185500000,
+     1367250000,
+     1465587500,
+     1369500000
+    ],
+    "total": 5387837500
+   },
+   {
+    "etiqueta": "SGP PG- Cultura",
+    "anios": [
+     39388909,
+     48975322,
+     36724088,
+     38560292
+    ],
+    "total": 163648611
+   },
+   {
+    "etiqueta": "SGP PG- Deporte",
+    "anios": [
+     19500000,
+     64902037,
+     67172139,
+     69555746
+    ],
+    "total": 221129922
+   },
+   {
+    "etiqueta": "SGP PG- Libre destinación",
+    "anios": [
+     534667803,
+     1547082657,
+     1320118169,
+     1313426191
+    ],
+    "total": 4715294820
+   },
+   {
+    "etiqueta": "SGP PG- Libre inversión",
+    "anios": [
+     949036039,
+     2160528733,
+     2167197774,
+     2167276517
+    ],
+    "total": 7444039063
+   },
+   {
+    "etiqueta": "SGP S -Sistema general de participaciones- Salud",
+    "anios": [
+     255074004,
+     285204690,
+     264207167,
+     270507511
+    ],
+    "total": 1074993372
+   },
+   {
+    "etiqueta": "SGR - Sistema General de Regalías",
+    "anios": [
+     2523728389,
+     848449686,
+     786046989,
+     826429123
+    ],
+    "total": 4984654187
+   },
+   {
+    "etiqueta": "Total general",
+    "anios": [
+     8021829833,
+     14993677575,
+     13210351651,
+     13565804358
+    ],
+    "total": 49791663417
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 222,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "INVERSION",
+    "anios": [
+     977890871,
+     848449687,
+     786046990,
+     826429123
+    ],
+    "total": 3438816671
+   },
+   {
+    "etiqueta": "Asignación para la Paz",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignaciones Directas",
+    "anios": [
+     59636,
+     36781,
+     34637,
+     34539
+    ],
+    "total": 165593
+   },
+   {
+    "etiqueta": "20% Asignaciones Directas",
+    "anios": [
+     46441,
+     28643,
+     26974,
+     26897
+    ],
+    "total": 128955
+   },
+   {
+    "etiqueta": "5% Asignaciones Directas Anticipadas",
+    "anios": [
+     13195,
+     8138,
+     7664,
+     7642
+    ],
+    "total": 36639
+   },
+   {
+    "etiqueta": "Asignación para la Inversión Regional",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Departamentos",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Regiones",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación para la Inversión Local",
+    "anios": [
+     977831235,
+     848412906,
+     786012353,
+     826394583
+    ],
+    "total": 3438651077
+   },
+   {
+    "etiqueta": "Municipios más pobres",
+    "anios": [
+     977831235,
+     848412906,
+     786012353,
+     826394583
+    ],
+    "total": 3438651077
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     130377498,
+     113121721,
+     104801647,
+     110185944
+    ],
+    "total": 458486810
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     847453737,
+     735291185,
+     681210706,
+     716208639
+    ],
+    "total": 2980164267
+   },
+   {
+    "etiqueta": "Comunidades Étnicas",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Comunidades Indígenas",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Comunidades NARP",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Comunidades Rrom",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 223,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación para Ciencia, Tecnología e Innovación",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación para Inversión en Ciencia, Tecnología e Innovación Ambiental",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto de inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación Ambiental",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Municipios Río Magdalena y Canal Dique",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "AHORRO",
+    "anios": [
+     41490985,
+     35875788,
+     33243275,
+     34708969
+    ],
+    "total": 145319017
+   },
+   {
+    "etiqueta": "Fondo de Ahorro y Estabilización (Ahorro)",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Fondo Ahorro Pensional Territorial(FONPET)",
+    "anios": [
+     41490985,
+     35875788,
+     33243275,
+     34708969
+    ],
+    "total": 145319017
+   },
+   {
+    "etiqueta": "OTROS",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Funcionamiento, operatividad y fiscalización",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Sistema de Seguimiento, Control y Evaluación (SSEC)",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Contraloría",
+    "anios": [
+     70401205851,
+     60858195556,
+     56382090798,
+     58862923139
+    ],
+    "total": 246504415344
+   },
+   {
+    "etiqueta": "Procuraduría",
+    "anios": [
+     14080241171,
+     12171639111,
+     11276418160,
+     11772584628
+    ],
+    "total": 49300883070
+   },
+   {
+    "etiqueta": "DNP",
+    "anios": [
+     56320964680,
+     48686556445,
+     45105672638,
+     47090338511
+    ],
+    "total": 197203532274
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     1019381856,
+     884325475,
+     819290266,
+     861138091
+    ],
+    "total": 3584135688
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ }
+]

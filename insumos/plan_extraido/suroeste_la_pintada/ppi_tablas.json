@@ -1,0 +1,737 @@
+[
+ {
+  "pagina": 290,
+  "cabecera": "Fuente de financiación",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "1.2.1.0.00 - INGRESOS CORRIENTES DE LIBRE DESTINACION",
+    "anios": [
+     4280000000,
+     4693191200,
+     5146271878,
+     5643092965
+    ],
+    "total": 19762556044
+   },
+   {
+    "etiqueta": "1.2.3.1.03 - IMPUESTO SOBRE VEHICULOS AUTOMOTORES CON DESTINACION ESPECIFICA LEGAL",
+    "anios": [
+     32280055,
+     35396371,
+     38813537,
+     42560596
+    ],
+    "total": 149050560
+   },
+   {
+    "etiqueta": "1.2.4.3.04 - SGP-PROPOSITO GENERAL-LIBRE DESTINACION MUNICIPIOS CATEGORIAS 4, 5 Y 6",
+    "anios": [
+     1665895536,
+     1826721091,
+     2021047680,
+     2257914468
+    ],
+    "total": 7771578776
+   },
+   {
+    "etiqueta": "1.2.3.2.24 - MULTAS CODIGO NACIONAL DE POLICIA Y CONVIVENCIA",
+    "anios": [
+     142174946,
+     155900515,
+     170951151,
+     187454775
+    ],
+    "total": 656481390
+   },
+   {
+    "etiqueta": "1.2.3.1.14 - SOBRETASA BOMBERIL",
+    "anios": [
+     25000000,
+     27413500,
+     30059999,
+     32961991
+    ],
+    "total": 115435490
+   },
+   {
+    "etiqueta": "1.2.3.2.25 - OTRAS MULTAS, SANCIONES E INTERESES DE MORA CON DESTINACION ESPECIFICA LEGAL",
+    "anios": [
+     148325000,
+     162644295,
+     178345975,
+     195563496
+    ],
+    "total": 684878767
+   },
+   {
+    "etiqueta": "INVERSION",
+    "anios": [
+     1665895536,
+     1826721091,
+     2021047680,
+     2257914468
+    ],
+    "total": 7771578776
+   },
+   {
+    "etiqueta": "1.2.4.6.00 - SGP-AGUA POTABLE Y SANEAMIENTO BASICO",
+    "anios": [
+     1196953674,
+     1312507581,
+     1452132138,
+     1622322024
+    ],
+    "total": 5583915418
+   },
+   {
+    "etiqueta": "1.2.2.0.00 - INGRESOS CORRIENTES DE DESTINACION ESPECIFICA POR ACTO ADMINISTRATIVO",
+    "anios": [
+     89325000,
+     97948435,
+     107404377,
+     117773196
+    ],
+    "total": 412451009
+   },
+   {
+    "etiqueta": "1.2.3.1.19 - ESTAMPILLAS PARA EL BIENESTAR DEL ADULTO MAYOR",
+    "anios": [
+     252157558,
+     276500848,
+     303194240,
+     332464612
+    ],
+    "total": 1164317259
+   },
+   {
+    "etiqueta": "1.2.3.1.19 - ESTAMPILLAS PRO CULTURA",
+    "anios": [
+     131468026,
+     144159949,
+     158077150,
+     173337918
+    ],
+    "total": 607043044
+   },
+   {
+    "etiqueta": "1.2.3.1.05 - IMPUESTO - SOBRETASA POR EL ALUMBRADO PUBLICO",
+    "anios": [
+     33480000,
+     36712159,
+     40256351,
+     44142699
+    ],
+    "total": 154591209
+   },
+   {
+    "etiqueta": "1.2.4.1.03 - SGP-EDUCACION-CALIDAD POR MATRICULA OFICIAL",
+    "anios": [
+     203745158,
+     223414715,
+     247181572,
+     276151253
+    ],
+    "total": 950492699
+   },
+   {
+    "etiqueta": "1.2.3.4.02 - ICLD LEY 99 - DESTINO AMBIENTAL",
+    "anios": [
+     153000000,
+     167770620,
+     183967195,
+     201727388
+    ],
+    "total": 706465204
+   },
+   {
+    "etiqueta": "1.2.3.1.15 - SOBRETASA FONDO DE SEGURIDAD",
+    "anios": [
+     220089209,
+     241336622,
+     264635259,
+     290183147
+    ],
+    "total": 1016244239
+   },
+   {
+    "etiqueta": "1.2.4.4.01 - SGP-ASIGNACION ESPECIAL-PROGRAMAS DE ALIMENTACION ESCOLAR",
+    "anios": [
+     35968312,
+     39440692,
+     43636393,
+     48750579
+    ],
+    "total": 167795977
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 291,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "1.2.3.1.18 - TASA PRODEPORTE Y RECREACION",
+    "anios": [
+     96845086,
+     106194510,
+     116446529,
+     127688276
+    ],
+    "total": 447174403
+   },
+   {
+    "etiqueta": "1.2.3.2.28 - DERECHOS POR LA EXPLOTACION JUEGOS DE SUERTE Y AZAR",
+    "anios": [
+     136695666,
+     149892265,
+     165837804,
+     185273995
+    ],
+    "total": 637699732
+   },
+   {
+    "etiqueta": "1.2.4.2.02 - SGP-SALUD-SALUD PUBLICA",
+    "anios": [
+     259410290,
+     284453759,
+     314713950,
+     351598425
+    ],
+    "total": 1210176425
+   },
+   {
+    "etiqueta": "1.2.4.3.02 - SGP-PROPOSITO GENERAL-CULTURA",
+    "anios": [
+     53976882,
+     59187810,
+     65484209,
+     73158958
+    ],
+    "total": 251807860
+   },
+   {
+    "etiqueta": "1.2.4.3.01 - SGP-PROPOSITO GENERAL-DEPORTE Y RECREACION",
+    "anios": [
+     71969178,
+     78917082,
+     87312281,
+     97545281
+    ],
+    "total": 335743823
+   },
+   {
+    "etiqueta": "SISTEMA GENERAL DE REGLIAS AMBIENTAL",
+    "anios": [
+     128186102,
+     111539785,
+     103336062,
+     108936231
+    ],
+    "total": 451998180
+   },
+   {
+    "etiqueta": "SISTEMA GENERAL DE REGALIAS LIBRE",
+    "anios": [
+     833209661,
+     725008603,
+     671684405,
+     708085503
+    ],
+    "total": 2937988172
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 291,
+  "cabecera": "Fuente de financiación",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "1.2.1.0.00-Ingresos Corrientes De Libre Destinación",
+    "anios": [
+     4152032057,
+     4279766818,
+     4222953171,
+     4217321057
+    ],
+    "total": 16872073103
+   },
+   {
+    "etiqueta": "Por Acto Administrativo",
+    "anios": [
+     52800000,
+     57475000,
+     62676499,
+     68758047
+    ],
+    "total": 241709546
+   },
+   {
+    "etiqueta": "1.2.3.1.14-Sobretasa Bomberil",
+    "anios": [
+     0,
+     19800000,
+     21904740,
+     24471976
+    ],
+    "total": 66176716
+   },
+   {
+    "etiqueta": "1.2.3.1.15-Sobretasa Fondo De Seguridad",
+    "anios": [
+     203225000,
+     218457250,
+     214631423,
+     208854716
+    ],
+    "total": 845168389
+   },
+   {
+    "etiqueta": "1.2.3.1.18-Tasa Prodeporte Y Recreación",
+    "anios": [
+     79200000,
+     86328000,
+     95504666,
+     95504666
+    ],
+    "total": 356537332
+   },
+   {
+    "etiqueta": "1.2.3.1.19-Estampillas Para El Bienestar Del Adulto Mayor",
+    "anios": [
+     246180000,
+     252056200,
+     249885894,
+     245122681
+    ],
+    "total": 993244775
+   },
+   {
+    "etiqueta": "1.2.3.1.19-Estampillas Pro Cultura",
+    "anios": [
+     0,
+     35970000,
+     39793611,
+     0
+    ],
+    "total": 75763611
+   },
+   {
+    "etiqueta": "1.2.3.2.24 - Multas Código Nacional De Policía Y Convivencia",
+    "anios": [
+     30800000,
+     35200000,
+     38941760,
+     43505734
+    ],
+    "total": 148447494
+   },
+   {
+    "etiqueta": "1.2.3.2.25 - Otras Multas, Sanciones E Intereses De Mora Con Destinación Especifica Legal",
+    "anios": [
+     138472400,
+     120959916,
+     119778769,
+     96768989
+    ],
+    "total": 475980074
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 297,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "INVERSION",
+    "anios": [
+     986491133,
+     852562190,
+     790100885,
+     832059442
+    ],
+    "total": 3461213650
+   },
+   {
+    "etiqueta": "Asignación para la Paz",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignaciones Directas",
+    "anios": [
+     25095370,
+     16013802,
+     15080418,
+     15037708
+    ],
+    "total": 71227298
+   },
+   {
+    "etiqueta": "20% Asignaciones Directas",
+    "anios": [
+     19635230,
+     12529649,
+     11799343,
+     11765926
+    ],
+    "total": 55730148
+   },
+   {
+    "etiqueta": "5% Asignaciones Directas Anticipadas",
+    "anios": [
+     5460140,
+     3484153,
+     3281075,
+     3271782
+    ],
+    "total": 15497150
+   },
+   {
+    "etiqueta": "Asignación para la Inversión Regional",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Departamentos",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Regiones",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación para la Inversión Local",
+    "anios": [
+     961395763,
+     836548388,
+     775020467,
+     817021734
+    ],
+    "total": 3389986352
+   },
+   {
+    "etiqueta": "Municipios más pobres",
+    "anios": [
+     961395763,
+     836548388,
+     775020467,
+     817021734
+    ],
+    "total": 3389986352
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     128186102,
+     111539785,
+     103336062,
+     108936231
+    ],
+    "total": 451998180
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     833209661,
+     725008603,
+     671684405,
+     708085503
+    ],
+    "total": 2937988172
+   },
+   {
+    "etiqueta": "Comunidades Étnicas",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Comunidades Indígenas",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Comunidades NARP",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Comunidades Rrom",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación para Ciencia, Tecnología e Innovación",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación para Inversión en Ciencia, Tecnología e Innovación Ambiental",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 298,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Resto de inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación Ambiental",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Municipios Río Magdalena y Canal Dique",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "AHORRO",
+    "anios": [
+     265844,
+     229941,
+     213116,
+     222627
+    ],
+    "total": 931528
+   },
+   {
+    "etiqueta": "Fondo de Ahorro y Estabilización (Ahorro)",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Fondo Ahorro Pensional Territorial (FONPET)",
+    "anios": [
+     265844,
+     229941,
+     213116,
+     222627
+    ],
+    "total": 931528
+   },
+   {
+    "etiqueta": "OTROS",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Funcionamiento, operatividad y fiscalización",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Sistema de Seguimiento, Control y Evaluación (SSEC)",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Contraloría",
+    "anios": [
+     70401205851,
+     60858195556,
+     56382090798,
+     58862923139
+    ],
+    "total": 246504415344
+   },
+   {
+    "etiqueta": "Procuraduría",
+    "anios": [
+     14080241171,
+     12171639111,
+     11276418160,
+     11772584628
+    ],
+    "total": 49300883070
+   },
+   {
+    "etiqueta": "DNP",
+    "anios": [
+     56320964680,
+     48686556445,
+     45105672638,
+     47090338511
+    ],
+    "total": 197203532274
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     986756977,
+     852792131,
+     790314001,
+     832282069
+    ],
+    "total": 3462145178
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ }
+]

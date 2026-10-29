@@ -1,0 +1,1378 @@
+[
+ {
+  "pagina": 150,
+  "cabecera": "Concepto de Ingresos",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "1.1.01 Tributarios",
+    "anios": [
+     8759,
+     9109,
+     9474,
+     9853
+    ],
+    "total": 37195
+   },
+   {
+    "etiqueta": "1.1.02 No Tributarios",
+    "anios": [
+     19116,
+     19875,
+     20665,
+     21486
+    ],
+    "total": 81143
+   }
+  ],
+  "ncols": 7,
+  "financiero": true
+ },
+ {
+  "pagina": 150,
+  "cabecera": "CONCEPTO",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "PREDIAL",
+    "anios": [
+     245,
+     252,
+     260,
+     267
+    ],
+    "total": 1024
+   },
+   {
+    "etiqueta": "INDUSTRIA Y COMERCIO",
+    "anios": [
+     899,
+     926,
+     954,
+     982
+    ],
+    "total": 3761
+   },
+   {
+    "etiqueta": "SOBRETASAS A LA GASOLINA",
+    "anios": [
+     456,
+     470,
+     484,
+     499
+    ],
+    "total": 1909
+   },
+   {
+    "etiqueta": "SGP - LIBRE DESTINACION",
+    "anios": [
+     2334,
+     2404,
+     2476,
+     2550
+    ],
+    "total": 9763
+   },
+   {
+    "etiqueta": "OTROS",
+    "anios": [
+     331,
+     341,
+     351,
+     361
+    ],
+    "total": 1383
+   },
+   {
+    "etiqueta": "TOTAL ICLD",
+    "anios": [
+     4264,
+     4392,
+     4524,
+     4660
+    ],
+    "total": 17841
+   }
+  ],
+  "ncols": 7,
+  "financiero": true
+ },
+ {
+  "pagina": 151,
+  "cabecera": "A2023",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "EDUCACION CALIDAD",
+    "anios": [
+     494,
+     520,
+     536,
+     552
+    ],
+    "total": 568
+   },
+   {
+    "etiqueta": "AGUA POTABLE",
+    "anios": [
+     1619,
+     1704,
+     1755,
+     1808
+    ],
+    "total": 1862
+   },
+   {
+    "etiqueta": "OTROS SECTORES",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "SALUD",
+    "anios": [
+     6505,
+     6847,
+     7052,
+     7264
+    ],
+    "total": 7482
+   },
+   {
+    "etiqueta": "TOTAL SGP",
+    "anios": [
+     11652,
+     12265,
+     12633,
+     13012
+    ],
+    "total": 13403
+   },
+   {
+    "etiqueta": "INGRESOS CORRIENTES DE LIBRE DESTINACIÓN",
+    "anios": [
+     1834,
+     1931,
+     1989,
+     2048
+    ],
+    "total": 2110
+   },
+   {
+    "etiqueta": "IMPUESTO TRANSPORTE DE HIDROCARBUROS",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "OTROS PROPIOS ESPECÍFICOS",
+    "anios": [
+     4198,
+     4419,
+     4552,
+     4688
+    ],
+    "total": 4829
+   },
+   {
+    "etiqueta": "TOTAL INGRESOS PROPIOS",
+    "anios": [
+     6669,
+     7020,
+     7230,
+     7447
+    ],
+    "total": 7671
+   },
+   {
+    "etiqueta": "TOTAL PRESUPUESTO",
+    "anios": [
+     30109,
+     31694,
+     32644,
+     33624
+    ],
+    "total": 34632
+   }
+  ],
+  "ncols": 8,
+  "financiero": true
+ },
+ {
+  "pagina": 152,
+  "cabecera": "CONCEPTO",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Funcionamiento",
+    "anios": [
+     3791,
+     3904,
+     4021,
+     4142
+    ],
+    "total": 15858
+   },
+   {
+    "etiqueta": "Servicio de la deuda",
+    "anios": [
+     1616,
+     1467,
+     1319,
+     792
+    ],
+    "total": 5194
+   },
+   {
+    "etiqueta": "Inversión",
+    "anios": [
+     26287,
+     27076,
+     27888,
+     28725
+    ],
+    "total": 109977
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     31694,
+     32448,
+     33229,
+     33659
+    ],
+    "total": 131029
+   }
+  ],
+  "ncols": 7,
+  "financiero": true
+ },
+ {
+  "pagina": 152,
+  "cabecera": "CONCEPTO",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "INGRESOS CORRIENTES DE LIBRE DESTINACIÓN",
+    "anios": [
+     4264,
+     4392,
+     4524,
+     4660
+    ],
+    "total": 17840
+   },
+   {
+    "etiqueta": "GASTOS FUNCIONAMIENTO ADMINISTRACION CENTRAL",
+    "anios": [
+     2713,
+     2794,
+     2878,
+     2965
+    ],
+    "total": 11350
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 154,
+  "cabecera": "Concepto",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Saldo neto de la deuda con nuevo crédito",
+    "anios": [
+     2596,
+     1609,
+     623,
+     35
+    ],
+    "total": 4863
+   },
+   {
+    "etiqueta": "Saldo de la deuda a 31 de diciembre de la vigencia anterior",
+    "anios": [
+     3583,
+     2596,
+     1609,
+     623
+    ],
+    "total": 8411
+   },
+   {
+    "etiqueta": "Valor de los créditos contratados en la vigencia y no desembolsados",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Valor del nuevo crédito a contratar - proyección de desembolsos",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Amortizaciones de la vigencia",
+    "anios": [
+     987,
+     987,
+     987,
+     588
+    ],
+    "total": 3549
+   },
+   {
+    "etiqueta": "Amortizaciones de deuda para la vigencia",
+    "anios": [
+     987,
+     987,
+     987,
+     588
+    ],
+    "total": 3549
+   },
+   {
+    "etiqueta": "Amortizaciones del Nuevo Crédito",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Intereses de la vigencia(5.1-5.2+5.3)",
+    "anios": [
+     485,
+     332,
+     179,
+     47
+    ],
+    "total": 1043
+   },
+   {
+    "etiqueta": "Intereses de la deuda vigente",
+    "anios": [
+     485,
+     332,
+     179,
+     47
+    ],
+    "total": 1043
+   },
+   {
+    "etiqueta": "Intereses del Nuevo Crédito",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 154,
+  "cabecera": "Concepto",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "INGRESOS CORRIENTES",
+    "anios": [
+     31341,
+     32282,
+     33250,
+     34247
+    ],
+    "total": 131120
+   },
+   {
+    "etiqueta": "RECURSOS DE CAPITAL",
+    "anios": [
+     352,
+     363,
+     374,
+     385
+    ],
+    "total": 1474
+   },
+   {
+    "etiqueta": "GASTOS DE FUNCIONAMIENTO",
+    "anios": [
+     3791,
+     3904,
+     4021,
+     4142
+    ],
+    "total": 15858
+   },
+   {
+    "etiqueta": "GASTOS DE INVERSIÓN",
+    "anios": [
+     26432,
+     27225,
+     28042,
+     28883
+    ],
+    "total": 110582
+   },
+   {
+    "etiqueta": "SUPERÁVIT O DÉFICIT PRIMARIO",
+    "anios": [
+     1471,
+     1515,
+     1561,
+     1608
+    ],
+    "total": 6155
+   }
+  ],
+  "ncols": 1,
+  "financiero": true
+ },
+ {
+  "pagina": 154,
+  "cabecera": "CONCEPTO",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "1. INGRESOS CORRIENTES LEY 358 DE 1997",
+    "anios": [
+     31341,
+     32282,
+     33250,
+     34247
+    ],
+    "total": 131120
+   },
+   {
+    "etiqueta": "2. GASTOS DE FUNCIONAMIENTO",
+    "anios": [
+     3791,
+     3904,
+     4021,
+     4142
+    ],
+    "total": 15858
+   },
+   {
+    "etiqueta": "3. AHORRO OPERACIONAL",
+    "anios": [
+     27551,
+     28377,
+     29229,
+     30105
+    ],
+    "total": 115262
+   },
+   {
+    "etiqueta": "4. SALDO NETO DE LA DEUDA CON NUEVO CREDITO",
+    "anios": [
+     2596,
+     1609,
+     623,
+     35
+    ],
+    "total": 4863
+   },
+   {
+    "etiqueta": "5. INTERESES DE LA VIGENCIA",
+    "anios": [
+     485,
+     332,
+     179,
+     47
+    ],
+    "total": 1043
+   },
+   {
+    "etiqueta": "SEMÁFORO: Estado actual de la entidad",
+    "anios": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "total": 4
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 155,
+  "cabecera": "INGRESO CORIENTES LIBRE DESTINACION",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Ingresos corrientes de libre destinación",
+    "anios": [
+     4264,
+     4392,
+     4524,
+     4660
+    ],
+    "total": 17841
+   },
+   {
+    "etiqueta": "Gastos funcionamiento administración central",
+    "anios": [
+     3144,
+     3238,
+     3335,
+     3435
+    ],
+    "total": 13152
+   },
+   {
+    "etiqueta": "ICLD Disponibles para inversión",
+    "anios": [
+     1121,
+     1154,
+     1189,
+     1225
+    ],
+    "total": 4689
+   }
+  ],
+  "ncols": 7,
+  "financiero": true
+ },
+ {
+  "pagina": 155,
+  "cabecera": "SISTEMA GENERAL PARTICIPACIONES",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "1.1 Educación Calidad",
+    "anios": [
+     266,
+     279,
+     293,
+     308
+    ],
+    "total": 1146
+   },
+   {
+    "etiqueta": "2.1 - Régimen Subsidiado",
+    "anios": [
+     4655,
+     4887,
+     5132,
+     5388
+    ],
+    "total": 20062
+   },
+   {
+    "etiqueta": "2.2 - Salud Pública - No incluye eficiencia",
+    "anios": [
+     303,
+     318,
+     334,
+     350
+    ],
+    "total": 1305
+   },
+   {
+    "etiqueta": "2.3 - Subsidio a la Oferta",
+    "anios": [
+     264,
+     277,
+     291,
+     305
+    ],
+    "total": 1137
+   },
+   {
+    "etiqueta": "3 - Agua Potable y Saneamiento Básico",
+    "anios": [
+     1209,
+     1270,
+     1333,
+     1400
+    ],
+    "total": 5212
+   },
+   {
+    "etiqueta": "4 - Propósito General",
+    "anios": [
+     3604,
+     3749,
+     3900,
+     4057
+    ],
+    "total": 15311
+   },
+   {
+    "etiqueta": "4.1 Libre inversión",
+    "anios": [
+     3327,
+     3460,
+     3598,
+     3742
+    ],
+    "total": 14127
+   },
+   {
+    "etiqueta": "4.2 Libre Destinación",
+    "anios": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "total": 6
+   },
+   {
+    "etiqueta": "4.3. Cultura",
+    "anios": [
+     119,
+     124,
+     129,
+     134
+    ],
+    "total": 505
+   },
+   {
+    "etiqueta": "4.4 Deportes",
+    "anios": [
+     159,
+     165,
+     172,
+     178
+    ],
+    "total": 674
+   },
+   {
+    "etiqueta": "5 - Alimentación Escolar -",
+    "anios": [
+     110,
+     116,
+     121,
+     127
+    ],
+    "total": 474
+   },
+   {
+    "etiqueta": "Total SGP",
+    "anios": [
+     10411,
+     10896,
+     11404,
+     11935
+    ],
+    "total": 44647
+   }
+  ],
+  "ncols": 7,
+  "financiero": false
+ },
+ {
+  "pagina": 155,
+  "cabecera": "OTROS INGRESOS",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "INGRESOS CORRIENTES DE LIBRE DESTINACIÓN",
+    "anios": [
+     500,
+     500,
+     500,
+     500
+    ],
+    "total": 2000
+   },
+   {
+    "etiqueta": "ESTAMPILLAS",
+    "anios": [
+     637,
+     670,
+     690,
+     711
+    ],
+    "total": 2708
+   },
+   {
+    "etiqueta": "OTROS PROPIOS ESPECÍFICOS",
+    "anios": [
+     4198,
+     4419,
+     4552,
+     4688
+    ],
+    "total": 17857
+   },
+   {
+    "etiqueta": "OTROS INGRESOS CORRIENTES",
+    "anios": [
+     5335,
+     5589,
+     5742,
+     5899
+    ],
+    "total": 22565
+   }
+  ],
+  "ncols": 7,
+  "financiero": true
+ },
+ {
+  "pagina": 159,
+  "cabecera": "INGRESO CORIENTES LIBRE DESTINACION",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Ingresos corrientes de libre destinación",
+    "anios": [
+     4264,
+     4392,
+     4524,
+     4660
+    ],
+    "total": 17841
+   },
+   {
+    "etiqueta": "Gastos funcionamiento administración central",
+    "anios": [
+     3144,
+     3238,
+     3335,
+     3435
+    ],
+    "total": 13152
+   },
+   {
+    "etiqueta": "ICLD Disponibles para inversión",
+    "anios": [
+     1121,
+     1154,
+     1189,
+     1225
+    ],
+    "total": 4689
+   },
+   {
+    "etiqueta": "SISTEMA GENERAL PARTICIPACIONES",
+    "anios": [
+     2024,
+     2025,
+     2026,
+     2027
+    ],
+    "total": 8102
+   },
+   {
+    "etiqueta": "1.1 Educación Calidad",
+    "anios": [
+     266,
+     279,
+     293,
+     308
+    ],
+    "total": 1146
+   },
+   {
+    "etiqueta": "2.1-Régimen Subsidiado",
+    "anios": [
+     4655,
+     4887,
+     5132,
+     5388
+    ],
+    "total": 20062
+   },
+   {
+    "etiqueta": "2.2-Salud Pública-No incluye eficiencia",
+    "anios": [
+     303,
+     318,
+     334,
+     350
+    ],
+    "total": 1305
+   },
+   {
+    "etiqueta": "2.3-Subsidio a la Oferta",
+    "anios": [
+     264,
+     277,
+     291,
+     305
+    ],
+    "total": 1137
+   },
+   {
+    "etiqueta": "3-Agua Potable y Saneamiento Básico",
+    "anios": [
+     1209,
+     1270,
+     1333,
+     1400
+    ],
+    "total": 5212
+   },
+   {
+    "etiqueta": "4-Propósito General",
+    "anios": [
+     3604,
+     3749,
+     3900,
+     4057
+    ],
+    "total": 15311
+   },
+   {
+    "etiqueta": "4.1 Libre inversión",
+    "anios": [
+     3327,
+     3460,
+     3598,
+     3742
+    ],
+    "total": 14127
+   },
+   {
+    "etiqueta": "4.2 Libre Destinación",
+    "anios": [
+     0,
+     1,
+     2,
+     3
+    ],
+    "total": 6
+   },
+   {
+    "etiqueta": "4.3. Cultura",
+    "anios": [
+     119,
+     124,
+     129,
+     134
+    ],
+    "total": 505
+   },
+   {
+    "etiqueta": "4.4 Deportes",
+    "anios": [
+     159,
+     165,
+     172,
+     178
+    ],
+    "total": 674
+   },
+   {
+    "etiqueta": "5-Alimentación Escolar-",
+    "anios": [
+     110,
+     116,
+     121,
+     127
+    ],
+    "total": 474
+   },
+   {
+    "etiqueta": "TOTAL SGP",
+    "anios": [
+     10411,
+     10896,
+     11404,
+     11935
+    ],
+    "total": 44647
+   },
+   {
+    "etiqueta": "OTROS INGRESOS",
+    "anios": [
+     2024,
+     2025,
+     2026,
+     2027
+    ],
+    "total": 8102
+   },
+   {
+    "etiqueta": "INGRESOS CORRIENTES DE LIBRE DESTINACIÓN",
+    "anios": [
+     500,
+     500,
+     500,
+     500
+    ],
+    "total": 2000
+   },
+   {
+    "etiqueta": "ESTAMPILLAS",
+    "anios": [
+     637,
+     670,
+     690,
+     711
+    ],
+    "total": 2708
+   },
+   {
+    "etiqueta": "OTROS PROPIOS ESPECÍFICOS",
+    "anios": [
+     4198,
+     4419,
+     4552,
+     4688
+    ],
+    "total": 17857
+   },
+   {
+    "etiqueta": "OTROS INGRESOS DESTINACION ESPECIFICA",
+    "anios": [
+     5335,
+     5589,
+     5742,
+     5899
+    ],
+    "total": 22565
+   },
+   {
+    "etiqueta": "TOTALES RECURSOS DISPONIBLES",
+    "anios": [
+     16867,
+     17640,
+     18335,
+     19059
+    ],
+    "total": 71901
+   },
+   {
+    "etiqueta": "TOTAL PPI Inversiones proyectadas",
+    "anios": [
+     23160,
+     26095,
+     31451,
+     32081
+    ],
+    "total": 112786
+   },
+   {
+    "etiqueta": "NECESIDAD DE RECURSOS DE GESTION",
+    "anios": [
+     6293,
+     8455,
+     13116,
+     13022
+    ],
+    "total": 40885
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 162,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "INVERSION",
+    "anios": [
+     1848384062,
+     1571471129,
+     1457076396,
+     1525942397
+    ],
+    "total": 6402873984
+   },
+   {
+    "etiqueta": "Asignación para la Paz",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignaciones Directas",
+    "anios": [
+     121702136,
+     77738928,
+     73207817,
+     73000484
+    ],
+    "total": 345649365
+   },
+   {
+    "etiqueta": "20% Asignaciones Directas",
+    "anios": [
+     95236264,
+     60833485,
+     57287729,
+     57125483
+    ],
+    "total": 270482961
+   },
+   {
+    "etiqueta": "5% Asignaciones Directas Anticipadas",
+    "anios": [
+     26465872,
+     16905443,
+     15920088,
+     15875001
+    ],
+    "total": 75166404
+   },
+   {
+    "etiqueta": "Asignación para la Inversión Regional",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Departamentos",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Regiones",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación para la Inversión Local",
+    "anios": [
+     1726681926,
+     1493732202,
+     1383868579,
+     1452941913
+    ],
+    "total": 6057224620
+   },
+   {
+    "etiqueta": "Municipios más pobres",
+    "anios": [
+     1726681926,
+     1493732202,
+     1383868579,
+     1452941913
+    ],
+    "total": 6057224620
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     230224257,
+     199164294,
+     184515811,
+     193725588
+    ],
+    "total": 807629950
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     1496457669,
+     1294567908,
+     1199352769,
+     1259216325
+    ],
+    "total": 5249594671
+   },
+   {
+    "etiqueta": "Comunidades Étnicas",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Comunidades Indígenas",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Comunidades NARP",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Comunidades Rrom",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ },
+ {
+  "pagina": 163,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Innovación",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Tecnología e Innovación Ambiental",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto de inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación Ambiental",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Municipios Río Magdalena y Canal Dique",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "AHORRO",
+    "anios": [
+     49633864,
+     42894229,
+     39740474,
+     41486183
+    ],
+    "total": 173754750
+   },
+   {
+    "etiqueta": "Fondo de Ahorro y Estabilización (Ahorro)",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Fondo Ahorro Pensional Territorial(FONPET)",
+    "anios": [
+     49633864,
+     42894229,
+     39740474,
+     41486183
+    ],
+    "total": 173754750
+   },
+   {
+    "etiqueta": "OTROS",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Funcionamiento, operatividad y fiscalización",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Sistema de Seguimiento, Control y Evaluación (SSEC)",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Contraloría",
+    "anios": [
+     70401205851,
+     60858195556,
+     56382090798,
+     58862923139
+    ],
+    "total": 246504415344
+   },
+   {
+    "etiqueta": "Procuraduría",
+    "anios": [
+     14080241171,
+     12171639111,
+     11276418160,
+     11772584628
+    ],
+    "total": 49300883070
+   },
+   {
+    "etiqueta": "DNP",
+    "anios": [
+     56320964680,
+     48686556445,
+     45105672638,
+     47090338511
+    ],
+    "total": 197203532274
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     1898017926,
+     1614365358,
+     1496816870,
+     1567428580
+    ],
+    "total": 6576628734
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ }
+]

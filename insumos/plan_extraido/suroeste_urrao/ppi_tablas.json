@@ -1,0 +1,288 @@
+[
+ {
+  "pagina": 139,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "ASIGNACIONES DIRECTAS (20% DEL SGR)",
+    "anios": [
+     234010508,
+     38905954,
+     36638271,
+     36534508
+    ],
+    "total": 346089240
+   },
+   {
+    "etiqueta": "ASIGNACIÓN PARA LA INVERSIÓN LOCAL - AMBIENTE Y DESARROLLO SOSTENIBLE",
+    "anios": [
+     441297758,
+     274136871,
+     253974174,
+     267062448
+    ],
+    "total": 1236471251
+   },
+   {
+    "etiqueta": "ASIGNACIÓN PARA LA INVERSIÓN LOCAL SEGÚN NBI Y CUARTA, QUINTA, Y SEXTA CATEGORÍA",
+    "anios": [
+     9105241094,
+     1781889661,
+     1650832131,
+     1735905
+    ],
+    "total": 14273868
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 145,
+  "cabecera": "FUENTE DE FINANCIACIÓN",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Asignaciones directas (20% del SGR)",
+    "anios": [
+     234010508,
+     38905954,
+     36638271,
+     36534508
+    ],
+    "total": 346089241
+   },
+   {
+    "etiqueta": "Asignación para la inversión",
+    "anios": [
+     441297758,
+     274136871,
+     253974174,
+     267062448
+    ],
+    "total": 1236471251
+   },
+   {
+    "etiqueta": "Asignación para la inversión local según NBI y cuarta, quinta, y sexta categoría",
+    "anios": [
+     9105241094,
+     1781889661,
+     1650832131,
+     1735905910
+    ],
+    "total": 14273868796
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     9780549359,
+     2094932486,
+     1941444577,
+     2039502865
+    ],
+    "total": 15856429287
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 148,
+  "cabecera": "Líneas",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "1.Trabajando por nuestra gente",
+    "anios": [
+     32724510432,
+     36112014938,
+     36278164873,
+     36238369510
+    ],
+    "total": 141353059752
+   },
+   {
+    "etiqueta": "2. Trabajando por nuestra infraestructura y servicios",
+    "anios": [
+     4302763767,
+     28177763767,
+     26877763767,
+     26282763767
+    ],
+    "total": 85641055069
+   },
+   {
+    "etiqueta": "3.Trabajando por la competitividad y productividad",
+    "anios": [
+     391256684,
+     830756684,
+     623756684,
+     469256684
+    ],
+    "total": 2315026737
+   },
+   {
+    "etiqueta": "4. Trabajando por un gobierno partitipativo",
+    "anios": [
+     790800395,
+     2056800395,
+     1903300395,
+     1450300395
+    ],
+    "total": 6201201580
+   },
+   {
+    "etiqueta": "5. Trabajando por medio Ambiente",
+    "anios": [
+     652500000,
+     1136500000,
+     1445000000,
+     1112000000
+    ],
+    "total": 4346000000
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     38861831279,
+     68313835785,
+     67127985719,
+     65552690356
+    ],
+    "total": 239856343138
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 149,
+  "cabecera": "LINEAS",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "1.Trabajando por",
+    "anios": [
+     247000000,
+     247000000,
+     247000000,
+     247000000
+    ],
+    "total": 988000000
+   },
+   {
+    "etiqueta": "nuestra gente",
+    "anios": [
+     412500000,
+     412500000,
+     687500000,
+     687500000
+    ],
+    "total": 2200000000
+   },
+   {
+    "etiqueta": "2. Trabajando por",
+    "anios": [
+     502775000,
+     4802775000,
+     11357775000,
+     9307775000
+    ],
+    "total": 25971100000
+   },
+   {
+    "etiqueta": "nuestra infraestructura y servicios Públicos",
+    "anios": [
+     385000000,
+     9485000000,
+     4365000000,
+     5925000000
+    ],
+    "total": 20160000000
+   },
+   {
+    "etiqueta": "3Tbd l",
+    "anios": [
+     20000000,
+     132500000,
+     175000000,
+     22500000
+    ],
+    "total": 350000000
+   },
+   {
+    "etiqueta": ".raajano por a cometitividad",
+    "anios": [
+     60000000,
+     280000000,
+     70000000,
+     220000000
+    ],
+    "total": 630000000
+   },
+   {
+    "etiqueta": "p y productividad",
+    "anios": [
+     27000000,
+     29000000,
+     17000000,
+     15000000
+    ],
+    "total": 88000000
+   },
+   {
+    "etiqueta": "4. Trabajando por un",
+    "anios": [
+     75750000,
+     422750000,
+     390750000,
+     90750000
+    ],
+    "total": 980000000
+   },
+   {
+    "etiqueta": "gobierno partitipativo",
+    "anios": [
+     440550395,
+     473050395,
+     454050395,
+     454550395
+    ],
+    "total": 1822201580
+   },
+   {
+    "etiqueta": "5. Trabajando por medio",
+    "anios": [
+     637000000,
+     1089000000,
+     1406000000,
+     1078000000
+    ],
+    "total": 4210000000
+   },
+   {
+    "etiqueta": "Ambiente",
+    "anios": [
+     15500000,
+     47500000,
+     39000000,
+     34000000
+    ],
+    "total": 136000000
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     38861831278,
+     68313835784,
+     67127985719,
+     65552690356
+    ],
+    "total": 239856343138
+   }
+  ],
+  "ncols": 7,
+  "financiero": false
+ }
+]

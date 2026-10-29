@@ -1,0 +1,33 @@
+[
+ {
+  "nombre": "Política pública ciudad saludable deporte, recreación y actividad física implementada.",
+  "linea_base": "0",
+  "meta": "1",
+  "unidad": "",
+  "tipo_acumulado": "",
+  "responsable": "",
+  "linea": null,
+  "sector": null,
+  "programa": null,
+  "coincidencia_ppi": 0,
+  "pagina": 59,
+  "fuente_lectura": "texto",
+  "formato": "tabla"
+ },
+ {
+  "nombre": "Déficit cuantitativo de vivienda (Censo)",
+  "linea_base": "45%",
+  "meta": "41%",
+  "programa_sub": "Déficit cualitativo de vivienda (Censo)",
+  "unidad": "",
+  "tipo_acumulado": "",
+  "responsable": "",
+  "linea": null,
+  "sector": "2: Vivienda para los santafereños.",
+  "programa": "s 2: Vivienda para todos y todas.",
+  "coincidencia_ppi": 0.37,
+  "pagina": 73,
+  "fuente_lectura": "texto",
+  "formato": "tabla"
+ }
+]

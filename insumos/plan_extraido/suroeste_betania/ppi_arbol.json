@@ -1,0 +1,391 @@
+[
+ {
+  "paginas": [
+   158
+  ],
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   2492700720,
+   2157874002,
+   1999148998,
+   2098948108
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "INVERSION",
+    "anios": [
+     1192895542,
+     1032724882,
+     956768231,
+     1004782838
+    ],
+    "total": 4187171493,
+    "ruta": {
+     "linea": "INVERSION"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Asignación para la Inversión Local",
+    "anios": [
+     1192895542,
+     1032724882,
+     956768231,
+     1004782838
+    ],
+    "total": 4187171493,
+    "ruta": {
+     "linea": "INVERSION",
+     "sector": "Asignación para la Inversión Local"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Municipios más pobres",
+    "anios": [
+     1192895542,
+     1032724882,
+     956768231,
+     1004782838
+    ],
+    "total": 4187171493,
+    "ruta": {
+     "linea": "INVERSION",
+     "sector": "Asignación para la Inversión Local",
+     "programa": "Municipios más pobres"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     159052739,
+     137696651,
+     127569097,
+     133971045
+    ],
+    "total": 558289532,
+    "ruta": {
+     "linea": "INVERSION",
+     "sector": "Asignación para la Inversión Local",
+     "programa": "Municipios más pobres",
+     "subprograma": "Destinación para medio ambiente y desarrollo sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     1033842803,
+     895028231,
+     829199133,
+     870811793
+    ],
+    "total": 3628881960,
+    "ruta": {
+     "linea": "INVERSION",
+     "sector": "Asignación para la Inversión Local",
+     "programa": "Municipios más pobres",
+     "subprograma": "Resto de Inversión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "AHORRO",
+    "anios": [
+     53454818,
+     46212119,
+     42806268,
+     44691216
+    ],
+    "total": 187164421,
+    "ruta": {
+     "linea": "AHORRO"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Territorial(FONPET)",
+    "anios": [
+     53454818,
+     46212119,
+     42806268,
+     44691216
+    ],
+    "total": 187164421,
+    "ruta": {
+     "linea": "AHORRO",
+     "sector": "Territorial(FONPET)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total",
+    "anios": [
+     1246350360,
+     1078937001,
+     999574499,
+     1049474054
+    ],
+    "total": 4374335914,
+    "ruta": {
+     "linea": "Total"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   164,
+   165
+  ],
+  "cabecera": "SECTOR",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   941821795,
+   1170421533,
+   1084337327,
+   1138753882
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "DEPORTE Y RECREACIÓN",
+    "anios": [
+     20000000,
+     40000000,
+     40000000,
+     30000000
+    ],
+    "total": 130000000,
+    "ruta": {
+     "linea": "DEPORTE Y RECREACIÓN"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "CULTURA",
+    "anios": [
+     10000000,
+     50000000,
+     40000000,
+     70000000
+    ],
+    "total": 170000000,
+    "ruta": {
+     "linea": "CULTURA"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "GOBIERNO TERRITORIAL",
+    "anios": [
+     10000000,
+     20000000,
+     25000000,
+     30000000
+    ],
+    "total": 85000000,
+    "ruta": {
+     "linea": "GOBIERNO TERRITORIAL"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "JUSTICIA Y DEL DERECHO",
+    "anios": [
+     10000000,
+     30000000,
+     30000000,
+     30000000
+    ],
+    "total": 100000000,
+    "ruta": {
+     "linea": "JUSTICIA Y DEL DERECHO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "AGRICULTURA Y DESARROLLO RURAL",
+    "anios": [
+     230000000,
+     255000000,
+     280000000,
+     300000000
+    ],
+    "total": 1065000000,
+    "ruta": {
+     "linea": "AGRICULTURA Y DESARROLLO RURAL"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "AMBIENTE Y DESARROLLO SOSTENIBLE",
+    "anios": [
+     91821795,
+     137696651,
+     127569097,
+     133971045
+    ],
+    "total": 491058588,
+    "ruta": {
+     "linea": "AMBIENTE Y DESARROLLO SOSTENIBLE"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "INCLUSION SOCIAL Y RECONCILIACION",
+    "anios": [
+     20000000,
+     40000000,
+     50000000,
+     20000000
+    ],
+    "total": 130000000,
+    "ruta": {
+     "linea": "INCLUSION SOCIAL Y RECONCILIACION"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "EDUCACION",
+    "anios": [
+     50000000,
+     50000000,
+     40000000,
+     44782837
+    ],
+    "total": 184782837,
+    "ruta": {
+     "linea": "EDUCACION"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "COMERCIO, INDUSTRIA Y TURISMO",
+    "anios": [
+     40000000,
+     50000000,
+     30000000,
+     50000000
+    ],
+    "total": 170000000,
+    "ruta": {
+     "linea": "COMERCIO, INDUSTRIA Y TURISMO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "GOBIERNO TERRITORIAL",
+    "anios": [
+     30000000,
+     60000000,
+     31768230,
+     50000000
+    ],
+    "total": 171768230,
+    "ruta": {
+     "linea": "GOBIERNO TERRITORIAL"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TRANSPORTE",
+    "anios": [
+     230000000,
+     247724882,
+     240000000,
+     240000000
+    ],
+    "total": 957724882,
+    "ruta": {
+     "linea": "TRANSPORTE"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "SALUD Y PROTECCION SOCIAL",
+    "anios": [
+     40000000,
+     50000000,
+     50000000,
+     40000000
+    ],
+    "total": 180000000,
+    "ruta": {
+     "linea": "SALUD Y PROTECCION SOCIAL"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "VIVIENDA, CIUDAD YTERRITORIO",
+    "anios": [
+     160000000,
+     140000000,
+     100000000,
+     100000000
+    ],
+    "total": 500000000,
+    "ruta": {
+     "linea": "VIVIENDA, CIUDAD YTERRITORIO"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

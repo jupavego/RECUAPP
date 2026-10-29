@@ -1,0 +1,37 @@
+[
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "HELICONIA TERRITORIO DE TOOS CON RESPONSABILIDAD SOCIAL",
+  "sector": null,
+  "correccion": null,
+  "id": 1
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "HELICONIA TERRITORIO DE TODOS ORDENADO Y PROTEGIENDO LOS ECOSISTEMAS",
+  "sector": null,
+  "correccion": null,
+  "id": 2
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "HELICONIA TERRITORIO DE TODOS PRODUCTIVO, RESILIENTE Y COMPETITIVO",
+  "sector": "HELICONIA TERRITORIO DE TODOS PRODUCTIVO, RESILIENTE Y COMPETITIVO",
+  "correccion": null,
+  "id": 3
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "HELICONIA TERRITORIO DE TODOSCON GOBERNANZA Y GASTO PUBLICO EFICIENTE",
+  "sector": "HELICONIA TERRITORIO DE TODOSCON GOBERNANZA Y GASTO PUBLICO EFICIENTE",
+  "correccion": null,
+  "id": 4
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "TOTAL",
+  "sector": null,
+  "correccion": null,
+  "id": 5
+ }
+]

@@ -1,0 +1,306 @@
+[
+ {
+  "paginas": [
+   122
+  ],
+  "cabecera": "Fuente",
+  "unidad": "millones",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   94265,
+   139150,
+   168835,
+   95480
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "RECURSOS DE GESTIÓN",
+    "anios": [
+     15958,
+     32437,
+     46724,
+     10317
+    ],
+    "total": 105437,
+    "ruta": {
+     "linea": "RECURSOS DE GESTIÓN"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TOTAL",
+    "anios": [
+     78307,
+     106713,
+     122111,
+     85163
+    ],
+    "total": 392296,
+    "ruta": {
+     "linea": "TOTAL"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   122
+  ],
+  "cabecera": "Línea estratégica",
+  "unidad": "millones",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   156564,
+   213365,
+   244160,
+   170266
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "ORGANIZANDO EL TERRITORIO PARA AVANZAR",
+    "anios": [
+     33299,
+     39112,
+     41640,
+     39113
+    ],
+    "total": 153165,
+    "ruta": {
+     "linea": "ORGANIZANDO EL TERRITORIO PARA AVANZAR"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "YONDO AVANZA CON FORTALECIMIENTO INSTITUCIONAL",
+    "anios": [
+     4267,
+     26306,
+     4440,
+     4646
+    ],
+    "total": 39660,
+    "ruta": {
+     "linea": "YONDO AVANZA CON FORTALECIMIENTO INSTITUCIONAL"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "YONDÓ AVANZA CON INCLUSIÓN SOCIAL",
+    "anios": [
+     33791,
+     36595,
+     71734,
+     34881
+    ],
+    "total": 177003,
+    "ruta": {
+     "linea": "YONDÓ AVANZA CON INCLUSIÓN SOCIAL"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "YONDÓ AVANZA CON PRODUCTIVIDAD Y COMPETITIVIDAD",
+    "anios": [
+     6900,
+     4639,
+     4235,
+     6463
+    ],
+    "total": 22238,
+    "ruta": {
+     "linea": "YONDÓ AVANZA CON PRODUCTIVIDAD Y COMPETITIVIDAD"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total general",
+    "anios": [
+     78307,
+     106713,
+     122111,
+     85163
+    ],
+    "total": 392296,
+    "ruta": {
+     "linea": "Total general"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   146
+  ],
+  "cabecera": "Línea estratégica",
+  "unidad": "millones",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   75940,
+   95954,
+   88563,
+   84194
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "AVANZAR",
+    "anios": [
+     11013,
+     9526,
+     5694,
+     2348
+    ],
+    "total": 28583,
+    "ruta": {
+     "linea": "AVANZAR"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total ORGANIZAND AV",
+    "anios": [
+     16033,
+     26106,
+     19795,
+     22824
+    ],
+    "total": 84809,
+    "ruta": {
+     "linea": "Total ORGANIZAND AV"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "YONDÓ AVANZA CON INCLUSIÓN",
+    "anios": [
+     3924,
+     4054,
+     3946,
+     4071
+    ],
+    "total": 15997,
+    "ruta": {
+     "linea": "YONDÓ AVANZA CON INCLUSIÓN"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "SOCIAL",
+    "anios": [
+     3508,
+     1178,
+     3262,
+     1076
+    ],
+    "total": 9025,
+    "ruta": {
+     "linea": "SOCIAL"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total YONDÓ AVA S",
+    "anios": [
+     11023,
+     10952,
+     13829,
+     8807
+    ],
+    "total": 44612,
+    "ruta": {
+     "linea": "Total YONDÓ AVA S"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "YONDÓ AVANZA CON PRODUCTIVIDAD Y COMPETITIVIDAD",
+    "anios": [
+     1691,
+     3540,
+     3506,
+     5718
+    ],
+    "total": 14456,
+    "ruta": {
+     "linea": "YONDÓ AVANZA CON PRODUCTIVIDAD Y COMPETITIVIDAD"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Total YOND PRODUCTIVIDAD",
+    "anios": [
+     1691,
+     3540,
+     3506,
+     5718
+    ],
+    "total": 14456,
+    "ruta": {
+     "linea": "YONDÓ AVANZA CON PRODUCTIVIDAD Y COMPETITIVIDAD",
+     "sector": "Total YOND PRODUCTIVIDAD"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total general",
+    "anios": [
+     28748,
+     40598,
+     38531,
+     39350
+    ],
+    "total": 147229,
+    "ruta": {
+     "linea": "Total general"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

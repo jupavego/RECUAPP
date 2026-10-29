@@ -1,0 +1,211 @@
+[
+ {
+  "pagina": 120,
+  "cabecera": "Sector/ año",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Vivienda",
+    "anios": [
+     436356000,
+     476849837,
+     521101502,
+     569459721
+    ],
+    "total": 2003767060
+   },
+   {
+    "etiqueta": "Transporte",
+    "anios": [
+     1054000000,
+     1151811200,
+     1258699279,
+     1375506572
+    ],
+    "total": 4840017051
+   },
+   {
+    "etiqueta": "Promoción del Desarrollo",
+    "anios": [
+     74834000,
+     81778595,
+     89367649,
+     97660967
+    ],
+    "total": 343641211
+   },
+   {
+    "etiqueta": "Atención de desastres",
+    "anios": [
+     192882000,
+     210781450,
+     230341968,
+     251717703
+    ],
+    "total": 885723121
+   },
+   {
+    "etiqueta": "Justiciayseguridad",
+    "anios": [
+     96968000,
+     105966630,
+     115800334,
+     126546605
+    ],
+    "total": 445281569
+   },
+   {
+    "etiqueta": "Fortalecimiento Institucional",
+    "anios": [
+     87482000,
+     95600330,
+     104472040,
+     114167046
+    ],
+    "total": 401721416
+   },
+   {
+    "etiqueta": "Agricultura",
+    "anios": [
+     296174000,
+     323658947,
+     353694498,
+     386517347
+    ],
+    "total": 1360044792
+   },
+   {
+    "etiqueta": "AguaySaneamiento Básico",
+    "anios": [
+     913818000,
+     998620310,
+     1091292275,
+     1192564198
+    ],
+    "total": 4196294783
+   },
+   {
+    "etiqueta": "Grupos Vulnerables",
+    "anios": [
+     115030650,
+     125705494,
+     137370964,
+     150118989
+    ],
+    "total": 528226097
+   },
+   {
+    "etiqueta": "Reclusión",
+    "anios": [
+     376673009,
+     411628265,
+     449827368,
+     491571347
+    ],
+    "total": 1729699989
+   },
+   {
+    "etiqueta": "Desarrollo Comunitario",
+    "anios": [
+     200260000,
+     218844128,
+     239152863,
+     261346249
+    ],
+    "total": 919603240
+   },
+   {
+    "etiqueta": "Equipamento",
+    "anios": [
+     27404000,
+     29947091,
+     32726181,
+     35763171
+    ],
+    "total": 125840443
+   },
+   {
+    "etiqueta": "Salud",
+    "anios": [
+     11255643582,
+     12300167307,
+     13441622833,
+     14689005432
+    ],
+    "total": 51686439154
+   },
+   {
+    "etiqueta": "Educación",
+    "anios": [
+     908988166,
+     993342268,
+     1085524431,
+     1186261098
+    ],
+    "total": 4174115963
+   },
+   {
+    "etiqueta": "DeporteyRecreación",
+    "anios": [
+     763185649,
+     834009277,
+     911405338,
+     995983754
+    ],
+    "total": 3504584018
+   },
+   {
+    "etiqueta": "Cultura",
+    "anios": [
+     276641159,
+     302313459,
+     330368148,
+     361026312
+    ],
+    "total": 1270349078
+   },
+   {
+    "etiqueta": "Medio Ambiente",
+    "anios": [
+     105400000,
+     115181120,
+     125869928,
+     137550657
+    ],
+    "total": 484001705
+   },
+   {
+    "etiqueta": "Alimentación escolar",
+    "anios": [
+     55592820,
+     60751834,
+     66389604,
+     72550559
+    ],
+    "total": 255284817
+   },
+   {
+    "etiqueta": "Indígenas",
+    "anios": [
+     17000000,
+     18577600,
+     20301601,
+     22185590
+    ],
+    "total": 78064791
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     17237333036,
+     18836957542,
+     20585027202,
+     22495317726
+    ],
+    "total": 79154635506
+   }
+  ],
+  "ncols": 2,
+  "financiero": false
+ }
+]

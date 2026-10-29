@@ -1,0 +1,231 @@
+[
+ {
+  "paginas": [
+   92
+  ],
+  "cabecera": "Renta",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   2671052857,
+   2789043760,
+   2911378034,
+   3038117230
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Educación",
+    "anios": [
+     56135129,
+     58941886,
+     61888980,
+     64983429
+    ],
+    "total": 241949424,
+    "ruta": {
+     "linea": "Educación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Salud",
+    "anios": [
+     833413546,
+     875084224,
+     918838435,
+     964780357
+    ],
+    "total": 3592116562,
+    "ruta": {
+     "linea": "Salud"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Agua Potable",
+    "anios": [
+     348219176,
+     365630134,
+     383911641,
+     403107223
+    ],
+    "total": 1500868174,
+    "ruta": {
+     "linea": "Agua Potable"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Deporte",
+    "anios": [
+     46154078,
+     48461782,
+     50884871,
+     53429115
+    ],
+    "total": 198929846,
+    "ruta": {
+     "linea": "Deporte"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Cultura",
+    "anios": [
+     34615559,
+     36346337,
+     38163654,
+     40071836
+    ],
+    "total": 149197386,
+    "ruta": {
+     "linea": "Cultura"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Libre Inversión",
+    "anios": [
+     569014955,
+     581903962,
+     593881246,
+     604745602
+    ],
+    "total": 2349545765,
+    "ruta": {
+     "linea": "Libre Inversión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Alimentación Escolar",
+    "anios": [
+     8929939,
+     9376436,
+     9845258,
+     10337521
+    ],
+    "total": 38489154,
+    "ruta": {
+     "linea": "Alimentación Escolar"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Ingresos Corrientes de Libre Destinación",
+    "anios": [
+     94518928,
+     99244875,
+     104207119,
+     109417474
+    ],
+    "total": 407388396,
+    "ruta": {
+     "linea": "Ingresos Corrientes de Libre Destinación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Pro Cultura",
+    "anios": [
+     63048048,
+     66200450,
+     69510473,
+     72985997
+    ],
+    "total": 271744968,
+    "ruta": {
+     "linea": "Pro Cultura"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Pro Adulto Mayor",
+    "anios": [
+     132482784,
+     139106923,
+     146062269,
+     153365383
+    ],
+    "total": 571017359,
+    "ruta": {
+     "linea": "Pro Adulto Mayor"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Bomberil",
+    "anios": [
+     3943828,
+     4141019,
+     4348070,
+     4565474
+    ],
+    "total": 16998391,
+    "ruta": {
+     "linea": "Bomberil"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Contribución Obra Publica",
+    "anios": [
+     87603551,
+     91983729,
+     96582915,
+     101412061
+    ],
+    "total": 377582256,
+    "ruta": {
+     "linea": "Contribución Obra Publica"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Contribución Sector Eléctrico",
+    "anios": [
+     392973336,
+     412622003,
+     433253103,
+     454915758
+    ],
+    "total": 1693764200,
+    "ruta": {
+     "linea": "Contribución Sector Eléctrico"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

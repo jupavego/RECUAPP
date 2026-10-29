@@ -1,0 +1,616 @@
+[
+ {
+  "pagina": 109,
+  "cabecera": "Concepto",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "INVERSION",
+    "anios": [
+     1134584745,
+     982362002,
+     910125162,
+     956392946
+    ],
+    "total": 3983464855
+   },
+   {
+    "etiqueta": "Asignación para la Paz",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignaciones Directas",
+    "anios": [
+     1660768,
+     1024312,
+     964609,
+     961877
+    ],
+    "total": 4611566
+   },
+   {
+    "etiqueta": "20% Asignaciones Directas",
+    "anios": [
+     1293320,
+     797681,
+     751187,
+     749060
+    ],
+    "total": 3591248
+   },
+   {
+    "etiqueta": "5% Asignaciones Directas Anticipadas",
+    "anios": [
+     367448,
+     226631,
+     213422,
+     212817
+    ],
+    "total": 1020318
+   },
+   {
+    "etiqueta": "Asignación para la Inversión Regional",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Departamentos",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Regiones",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación para la Inversión Local",
+    "anios": [
+     1132923977,
+     981337690,
+     909160553,
+     955431069
+    ],
+    "total": 3978853289
+   },
+   {
+    "etiqueta": "Municipios más pobres",
+    "anios": [
+     1132923977,
+     981337690,
+     909160553,
+     955431069
+    ],
+    "total": 3978853289
+   },
+   {
+    "etiqueta": "Destinaciónpara medio ambienteydesarrollo sostenible",
+    "anios": [
+     151056530,
+     130845025,
+     121221407,
+     127390809
+    ],
+    "total": 530513771
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     981867447,
+     850492664,
+     787939146,
+     828040260
+    ],
+    "total": 3448339517
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 188,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "INVERSION",
+    "anios": [
+     1134584745,
+     982362002,
+     910125162,
+     956392946
+    ],
+    "total": 3983464855
+   },
+   {
+    "etiqueta": "Asignación para la Paz",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignaciones Directas",
+    "anios": [
+     1660768,
+     1024312,
+     964609,
+     961877
+    ],
+    "total": 4611566
+   },
+   {
+    "etiqueta": "20% Asignaciones Directas",
+    "anios": [
+     1293320,
+     797681,
+     751187,
+     749060
+    ],
+    "total": 3591248
+   },
+   {
+    "etiqueta": "5% Asignaciones Directas Anticipadas",
+    "anios": [
+     367448,
+     226631,
+     213422,
+     212817
+    ],
+    "total": 1020318
+   },
+   {
+    "etiqueta": "Asignación para la Inversión Regional",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Departamentos",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Regiones",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación para la Inversión Local",
+    "anios": [
+     1132923977,
+     981337690,
+     909160553,
+     955431069
+    ],
+    "total": 3978853289
+   },
+   {
+    "etiqueta": "Municipios más pobres",
+    "anios": [
+     1132923977,
+     981337690,
+     909160553,
+     955431069
+    ],
+    "total": 3978853289
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     151056530,
+     130845025,
+     121221407,
+     127390809
+    ],
+    "total": 530513771
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     981867447,
+     850492664,
+     787939146,
+     828040260
+    ],
+    "total": 3448339517
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 195,
+  "cabecera": "FUENTES DE FINACIACION",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "INVERSIÓN CON RECUROS PROPIOS",
+    "anios": [
+     10555867775,
+     11387994275,
+     12281781348,
+     13240502475
+    ],
+    "total": 47466145874
+   },
+   {
+    "etiqueta": "Funcionamiento",
+    "anios": [
+     6002158115,
+     6446918031,
+     6924634657,
+     7437750086
+    ],
+    "total": 26811460889
+   }
+  ],
+  "ncols": 4,
+  "financiero": true
+ },
+ {
+  "pagina": 197,
+  "cabecera": "DESCRIPCION",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Gastos de funcionamientos totales",
+    "anios": [
+     6002158114,
+     6446918031,
+     6924634657,
+     7437750085
+    ],
+    "total": 26811460887
+   },
+   {
+    "etiqueta": "Concejo",
+    "anios": [
+     349271234,
+     375152233,
+     402951014,
+     432809684
+    ],
+    "total": 1560184165
+   },
+   {
+    "etiqueta": "Personería",
+    "anios": [
+     195000000,
+     209449500,
+     224969707,
+     241639963
+    ],
+    "total": 871059170
+   },
+   {
+    "etiqueta": "Total concejo y personería",
+    "anios": [
+     544271234,
+     584601733,
+     627920721,
+     674449647
+    ],
+    "total": 2431243335
+   },
+   {
+    "etiqueta": "Administración central",
+    "anios": [
+     5457886880,
+     5862316297,
+     6296713935,
+     6763300438
+    ],
+    "total": 24380217550
+   },
+   {
+    "etiqueta": "Servicios personales",
+    "anios": [
+     4066271063,
+     4367581748,
+     4691219556,
+     5038838925
+    ],
+    "total": 18163911292
+   },
+   {
+    "etiqueta": "Gastos generales",
+    "anios": [
+     1391615817,
+     1494734549,
+     1605494379,
+     1724461512
+    ],
+    "total": 6216306257
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ },
+ {
+  "pagina": 198,
+  "cabecera": "Detalle",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Predial",
+    "anios": [
+     5597390397,
+     6012157026,
+     6457657862,
+     6935524543
+    ],
+    "total": 25002729828
+   },
+   {
+    "etiqueta": "Industria y comercio",
+    "anios": [
+     1078657485,
+     1158586004,
+     1244437227,
+     1336525582
+    ],
+    "total": 4818206298
+   },
+   {
+    "etiqueta": "Avisos y tableros",
+    "anios": [
+     94827314,
+     101854018,
+     109401400,
+     117497104
+    ],
+    "total": 423579836
+   },
+   {
+    "etiqueta": "Delineación urbana",
+    "anios": [
+     2519654519,
+     2706360918,
+     2906902262,
+     3122013030
+    ],
+    "total": 11254930729
+   },
+   {
+    "etiqueta": "Sobretasa a la gasolina",
+    "anios": [
+     706570907,
+     758927811,
+     815164362,
+     875486524
+    ],
+    "total": 3156149604
+   },
+   {
+    "etiqueta": "Plaza de mercado",
+    "anios": [
+     2187942,
+     2350068,
+     2524208,
+     2711000
+    ],
+    "total": 9773218
+   },
+   {
+    "etiqueta": "Venta de bienes y servicios",
+    "anios": [
+     158064575,
+     169777160,
+     182357648,
+     195852114
+    ],
+    "total": 706051497
+   },
+   {
+    "etiqueta": "Intereses moratorios",
+    "anios": [
+     1015222482,
+     1090450468,
+     1171252848,
+     1257925559
+    ],
+    "total": 4534851357
+   },
+   {
+    "etiqueta": "SGP libre destinación",
+    "anios": [
+     1629793625,
+     1750561333,
+     1880277928,
+     2019606522
+    ],
+    "total": 7280239408
+   },
+   {
+    "etiqueta": "Impuesto de vehículos automotores",
+    "anios": [
+     57201705,
+     61440351,
+     65993081,
+     70876569
+    ],
+    "total": 255511706
+   },
+   {
+    "etiqueta": "TOTALES",
+    "anios": [
+     12859570950,
+     13812465158,
+     14835968826,
+     15934018547
+    ],
+    "total": 57442023481
+   }
+  ],
+  "ncols": 4,
+  "financiero": false
+ },
+ {
+  "pagina": 199,
+  "cabecera": "FUENTE DE FINANCIACION",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Recursos propios",
+    "anios": [
+     3879800110,
+     4267166694,
+     4683237141,
+     5128842839
+    ],
+    "total": 17959046784
+   },
+   {
+    "etiqueta": "Sistema general de Participaciones SGP",
+    "anios": [
+     8075663017,
+     8762800383,
+     9444412298,
+     10176120983
+    ],
+    "total": 36458996681
+   },
+   {
+    "etiqueta": "Otras Entidades del Gobierno Nacional",
+    "anios": [
+     6700000000,
+     7196470000,
+     8729728427,
+     8302502303
+    ],
+    "total": 30928700730
+   },
+   {
+    "etiqueta": "Otras Entidades del Gobierno Departamental",
+    "anios": [
+     3290000000,
+     5059689000,
+     4484267414,
+     3742451630
+    ],
+    "total": 16576408044
+   },
+   {
+    "etiqueta": "Estampilla pro adulto mayor",
+    "anios": [
+     604833229,
+     649651371,
+     697790538,
+     749496816
+    ],
+    "total": 2701771954
+   },
+   {
+    "etiqueta": "Estampilla pro cultura",
+    "anios": [
+     300409659,
+     322670014,
+     346579862,
+     372261430
+    ],
+    "total": 1341920965
+   },
+   {
+    "etiqueta": "Tasa prodeportes",
+    "anios": [
+     300409659,
+     322670014,
+     346579862,
+     372261430
+    ],
+    "total": 1341920965
+   },
+   {
+    "etiqueta": "Contribucion obra pública",
+    "anios": [
+     176348523,
+     189415949,
+     203451670,
+     218527439
+    ],
+    "total": 787743581
+   },
+   {
+    "etiqueta": "Sobre tasa bomberil",
+    "anios": [
+     359673116,
+     386324894,
+     414951569,
+     445699480
+    ],
+    "total": 1606649059
+   },
+   {
+    "etiqueta": "Disponible Alumbrado Publico",
+    "anios": [
+     72567880,
+     77945160,
+     83720896,
+     89924615
+    ],
+    "total": 324158551
+   },
+   {
+    "etiqueta": "Sistema general de regalías SGR",
+    "anios": [
+     1134584745,
+     982362001,
+     910125162,
+     956392946
+    ],
+    "total": 3983464854
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     24894289937,
+     29717165480,
+     32844844839,
+     31554481911
+    ],
+    "total": 119010782167
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ }
+]
