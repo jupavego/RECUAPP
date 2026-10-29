@@ -151,44 +151,37 @@
  },
  {
   "tipo": "programa_sin_indicadores",
-  "valor": "3.2.4 Gestión Integral del recurso Hídrico",
+  "valor": "3.2.5 Ordenamiento Territorial y Desarrollo Urbano",
   "sector": null,
   "correccion": null,
   "id": 21
  },
  {
   "tipo": "programa_sin_indicadores",
-  "valor": "3.2.5 Ordenamiento Territorial y Desarrollo Urbano",
+  "valor": "3.3.1. Productividad y competitividad de las empresas Briceñitas",
   "sector": null,
   "correccion": null,
   "id": 22
  },
  {
   "tipo": "programa_sin_indicadores",
-  "valor": "3.3.1. Productividad y competitividad de las empresas Briceñitas",
+  "valor": "SUBTOTAL",
   "sector": null,
   "correccion": null,
   "id": 23
  },
  {
   "tipo": "programa_sin_indicadores",
-  "valor": "SUBTOTAL",
+  "valor": "4.3.3. Vías para la vida",
   "sector": null,
   "correccion": null,
   "id": 24
  },
  {
   "tipo": "programa_sin_indicadores",
-  "valor": "4.3.3. Vías para la vida",
-  "sector": null,
-  "correccion": null,
-  "id": 25
- },
- {
-  "tipo": "programa_sin_indicadores",
   "valor": "4.3.2 Fortalecimiento del buen gobiernopara el respetoy",
   "sector": null,
   "correccion": null,
-  "id": 26
+  "id": 25
  }
 ]

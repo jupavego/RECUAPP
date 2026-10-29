@@ -1,0 +1,3154 @@
+[
+ {
+  "paginas": [
+   85
+  ],
+  "cabecera": "Cuenta",
+  "unidad": "millones",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   62055,
+   64214,
+   66588,
+   69197
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF1",
+    "anios": [
+     22085,
+     23338,
+     24769,
+     26405
+    ],
+    "total": 96597,
+    "ruta": {
+     "linea": "BF1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF1.1",
+    "anios": [
+     17596,
+     18062,
+     18552,
+     19060
+    ],
+    "total": 73270,
+    "ruta": {
+     "linea": "BF1.1"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF1.1.1",
+    "anios": [
+     1899,
+     2039,
+     2196,
+     2364
+    ],
+    "total": 8498,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.1"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "BF1.1.1.1",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.1",
+     "programa": "BF1.1.1.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "BF1.1.1.2",
+    "anios": [
+     510,
+     597,
+     698,
+     817
+    ],
+    "total": 2622,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.1",
+     "programa": "BF1.1.1.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "BF1.1.1.3",
+    "anios": [
+     629,
+     648,
+     667,
+     687
+    ],
+    "total": 2631,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.1",
+     "programa": "BF1.1.1.3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "BF1.1.1.8",
+    "anios": [
+     150,
+     162,
+     175,
+     180
+    ],
+    "total": 667,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.1",
+     "programa": "BF1.1.1.8"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "BF1.1.1.9",
+    "anios": [
+     535,
+     551,
+     567,
+     584
+    ],
+    "total": 2237,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.1",
+     "programa": "BF1.1.1.9"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "BF1.1.1.12",
+    "anios": [
+     76,
+     82,
+     88,
+     95
+    ],
+    "total": 341,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.1",
+     "programa": "BF1.1.1.12"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF1.1.2",
+    "anios": [
+     660,
+     680,
+     700,
+     721
+    ],
+    "total": 2761,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.2"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "BF1.1.2.1",
+    "anios": [
+     182,
+     188,
+     194,
+     199
+    ],
+    "total": 763,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.2",
+     "programa": "BF1.1.2.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "BF1.1.2.2",
+    "anios": [
+     477,
+     492,
+     506,
+     522
+    ],
+    "total": 1997,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.2",
+     "programa": "BF1.1.2.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF1.1.3",
+    "anios": [
+     15037,
+     15344,
+     15656,
+     15975
+    ],
+    "total": 62012,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.3"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "BF1.1.3.1",
+    "anios": [
+     1374,
+     1407,
+     1441,
+     1475
+    ],
+    "total": 5697,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.3",
+     "programa": "BF1.1.3.1"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.3.1.1",
+    "anios": [
+     1175,
+     1199,
+     1223,
+     1247
+    ],
+    "total": 4844,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.3",
+     "programa": "BF1.1.3.1",
+     "subprograma": "BF1.1.3.1.1"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 4,
+    "etiqueta": "BF1.1.3.1.1.1",
+    "anios": [
+     1175,
+     1199,
+     1223,
+     1247
+    ],
+    "total": 4844,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.3",
+     "programa": "BF1.1.3.1",
+     "subprograma": "BF1.1.3.1.1.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.3.1.2",
+    "anios": [
+     199,
+     208,
+     218,
+     228
+    ],
+    "total": 853,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.3",
+     "programa": "BF1.1.3.1",
+     "subprograma": "BF1.1.3.1.2"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 4,
+    "etiqueta": "BF1.1.3.1.2.1",
+    "anios": [
+     168,
+     176,
+     185,
+     194
+    ],
+    "total": 723,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.3",
+     "programa": "BF1.1.3.1",
+     "subprograma": "BF1.1.3.1.2.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 4,
+    "etiqueta": "BF1.1.3.1.2.2",
+    "anios": [
+     31,
+     32,
+     33,
+     34
+    ],
+    "total": 130,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.3",
+     "programa": "BF1.1.3.1",
+     "subprograma": "BF1.1.3.1.2.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "BF1.1.3.1.3",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.3",
+     "programa": "BF1.1.3.1.3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "BF1.1.3.2",
+    "anios": [
+     13664,
+     13937,
+     14216,
+     14500
+    ],
+    "total": 56317,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.3",
+     "programa": "BF1.1.3.2"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.3.2.1",
+    "anios": [
+     10678,
+     10892,
+     11109,
+     11332
+    ],
+    "total": 44011,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.3",
+     "programa": "BF1.1.3.2",
+     "subprograma": "BF1.1.3.2.1"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 4,
+    "etiqueta": "BF1.1.3.2.1.1",
+    "anios": [
+     5957,
+     6076,
+     6197,
+     6321
+    ],
+    "total": 24551,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.3",
+     "programa": "BF1.1.3.2",
+     "subprograma": "BF1.1.3.2.1.1"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 5,
+    "etiqueta": "BF1.1.3.2.1.1.1",
+    "anios": [
+     250,
+     255,
+     260,
+     265
+    ],
+    "total": 1030,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.3",
+     "programa": "BF1.1.3.2",
+     "subprograma": "BF1.1.3.2.1.1.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 5,
+    "etiqueta": "BF1.1.3.2.1.1.2",
+    "anios": [
+     3318,
+     3384,
+     3452,
+     3521
+    ],
+    "total": 13675,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.3",
+     "programa": "BF1.1.3.2",
+     "subprograma": "BF1.1.3.2.1.1.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 5,
+    "etiqueta": "BF1.1.3.2.1.1.3",
+    "anios": [
+     798,
+     814,
+     830,
+     846
+    ],
+    "total": 3288,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.3",
+     "programa": "BF1.1.3.2",
+     "subprograma": "BF1.1.3.2.1.1.3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 5,
+    "etiqueta": "BF1.1.3.2.1.1.4",
+    "anios": [
+     1420,
+     1448,
+     1477,
+     1507
+    ],
+    "total": 5852,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.3",
+     "programa": "BF1.1.3.2",
+     "subprograma": "BF1.1.3.2.1.1.4"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 5,
+    "etiqueta": "BF1.1.3.2.1.1.5",
+    "anios": [
+     172,
+     175,
+     179,
+     182
+    ],
+    "total": 708,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.3",
+     "programa": "BF1.1.3.2",
+     "subprograma": "BF1.1.3.2.1.1.5"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 4,
+    "etiqueta": "BF1.1.3.2.1.2",
+    "anios": [
+     4721,
+     4816,
+     4912,
+     5010
+    ],
+    "total": 19459,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.3",
+     "programa": "BF1.1.3.2",
+     "subprograma": "BF1.1.3.2.1.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.3.2.1.3",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.3",
+     "programa": "BF1.1.3.2",
+     "subprograma": "BF1.1.3.2.1.3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.3.2.2",
+    "anios": [
+     815,
+     831,
+     848,
+     865
+    ],
+    "total": 3359,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.3",
+     "programa": "BF1.1.3.2",
+     "subprograma": "BF1.1.3.2.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.3.2.3",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.3",
+     "programa": "BF1.1.3.2",
+     "subprograma": "BF1.1.3.2.3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.3.2.4",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.3",
+     "programa": "BF1.1.3.2",
+     "subprograma": "BF1.1.3.2.4"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.3.2.5",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.3",
+     "programa": "BF1.1.3.2",
+     "subprograma": "BF1.1.3.2.5"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "BF1.1.3.2.6",
+    "anios": [
+     2171,
+     2214,
+     2258,
+     2303
+    ],
+    "total": 8946,
+    "ruta": {
+     "linea": "BF1.1",
+     "sector": "BF1.1.3",
+     "programa": "BF1.1.3.2",
+     "subprograma": "BF1.1.3.2.6"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2",
+    "anios": [
+     22374,
+     22814,
+     23267,
+     23732
+    ],
+    "total": 92187,
+    "ruta": {
+     "linea": "BF2"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1",
+    "anios": [
+     18018,
+     18371,
+     18735,
+     19110
+    ],
+    "total": 74234,
+    "ruta": {
+     "linea": "BF2",
+     "sector": "BF2.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.1",
+    "anios": [
+     2840,
+     2925,
+     3013,
+     3104
+    ],
+    "total": 11882,
+    "ruta": {
+     "linea": "BF2",
+     "sector": "BF2.1.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.1.1",
+    "anios": [
+     1451,
+     1494,
+     1539,
+     1585
+    ],
+    "total": 6069,
+    "ruta": {
+     "linea": "BF2",
+     "sector": "BF2.1.1.1"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   86,
+   87
+  ],
+  "cabecera": "",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   95629,
+   102284,
+   110306,
+   120293
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.1.2",
+    "anios": [
+     268,
+     276,
+     285,
+     293
+    ],
+    "total": 1122,
+    "ruta": {
+     "linea": "BF2.1.1.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.1.3",
+    "anios": [
+     1121,
+     1155,
+     1189,
+     1225
+    ],
+    "total": 4690,
+    "ruta": {
+     "linea": "BF2.1.1.3"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.1.3.1",
+    "anios": [
+     570,
+     587,
+     604,
+     623
+    ],
+    "total": 2384,
+    "ruta": {
+     "linea": "BF2.1.1.3",
+     "sector": "BF2.1.1.3.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.1.3.2",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF2.1.1.3",
+     "sector": "BF2.1.1.3.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.1.3.3",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF2.1.1.3",
+     "sector": "BF2.1.1.3.3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.1.3.4",
+    "anios": [
+     242,
+     249,
+     256,
+     264
+    ],
+    "total": 1011,
+    "ruta": {
+     "linea": "BF2.1.1.3",
+     "sector": "BF2.1.1.3.4"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.1.3.5",
+    "anios": [
+     7,
+     8,
+     8,
+     8
+    ],
+    "total": 31,
+    "ruta": {
+     "linea": "BF2.1.1.3",
+     "sector": "BF2.1.1.3.5"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.1.3.6",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF2.1.1.3",
+     "sector": "BF2.1.1.3.6"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.1.3.7",
+    "anios": [
+     302,
+     312,
+     321,
+     330
+    ],
+    "total": 1265,
+    "ruta": {
+     "linea": "BF2.1.1.3",
+     "sector": "BF2.1.1.3.7"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.1.4",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF2.1.1.4"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.1.6",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF2.1.1.6"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.2",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF2.1.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.3",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF2.1.3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.4",
+    "anios": [
+     14984,
+     15284,
+     15589,
+     15901
+    ],
+    "total": 61758,
+    "ruta": {
+     "linea": "BF2.1.4"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.4.1",
+    "anios": [
+     737,
+     751,
+     766,
+     782
+    ],
+    "total": 3036,
+    "ruta": {
+     "linea": "BF2.1.4",
+     "sector": "BF2.1.4.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.4.2",
+    "anios": [
+     9192,
+     9376,
+     9563,
+     9755
+    ],
+    "total": 37886,
+    "ruta": {
+     "linea": "BF2.1.4",
+     "sector": "BF2.1.4.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.4.3",
+    "anios": [
+     437,
+     446,
+     455,
+     464
+    ],
+    "total": 1802,
+    "ruta": {
+     "linea": "BF2.1.4",
+     "sector": "BF2.1.4.3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.4.4",
+    "anios": [
+     97,
+     99,
+     100,
+     102
+    ],
+    "total": 398,
+    "ruta": {
+     "linea": "BF2.1.4",
+     "sector": "BF2.1.4.4"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.4.5",
+    "anios": [
+     4522,
+     4612,
+     4704,
+     4799
+    ],
+    "total": 18637,
+    "ruta": {
+     "linea": "BF2.1.4",
+     "sector": "BF2.1.4.5"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.5",
+    "anios": [
+     194,
+     162,
+     133,
+     105
+    ],
+    "total": 594,
+    "ruta": {
+     "linea": "BF2.1.5"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.5.1",
+    "anios": [
+     194,
+     162,
+     133,
+     105
+    ],
+    "total": 594,
+    "ruta": {
+     "linea": "BF2.1.5",
+     "sector": "BF2.1.5.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.5.2",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF2.1.5.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF4",
+    "anios": [
+     4489,
+     5276,
+     6217,
+     7345
+    ],
+    "total": 23327,
+    "ruta": {
+     "linea": "BF4"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF4.1",
+    "anios": [
+     3865,
+     4638,
+     5566,
+     6679
+    ],
+    "total": 20748,
+    "ruta": {
+     "linea": "BF4",
+     "sector": "BF4.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF4.2",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF4",
+     "sector": "BF4.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF4.3",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF4",
+     "sector": "BF4.3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF4.4",
+    "anios": [
+     45,
+     47,
+     50,
+     52
+    ],
+    "total": 194,
+    "ruta": {
+     "linea": "BF4",
+     "sector": "BF4.4"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF4.5",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF4",
+     "sector": "BF4.5"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF4.6",
+    "anios": [
+     578,
+     590,
+     602,
+     614
+    ],
+    "total": 2384,
+    "ruta": {
+     "linea": "BF4",
+     "sector": "BF4.6"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "BF4.6.1",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF4",
+     "sector": "BF4.6",
+     "programa": "BF4.6.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "BF4.6.2",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF4",
+     "sector": "BF4.6",
+     "programa": "BF4.6.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "BF4.6.3",
+    "anios": [
+     578,
+     590,
+     602,
+     614
+    ],
+    "total": 2384,
+    "ruta": {
+     "linea": "BF4",
+     "sector": "BF4.6",
+     "programa": "BF4.6.3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF4.6.4",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF4.6.4"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF4.7",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF4.7"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF5",
+    "anios": [
+     4355,
+     4443,
+     4531,
+     4622
+    ],
+    "total": 17951,
+    "ruta": {
+     "linea": "BF5"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF5.1",
+    "anios": [
+     4355,
+     4443,
+     4531,
+     4622
+    ],
+    "total": 17951,
+    "ruta": {
+     "linea": "BF5",
+     "sector": "BF5.1"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "BF5.1.1",
+    "anios": [
+     65,
+     66,
+     67,
+     68
+    ],
+    "total": 266,
+    "ruta": {
+     "linea": "BF5",
+     "sector": "BF5.1",
+     "programa": "BF5.1.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "BF5.1.2",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF5",
+     "sector": "BF5.1",
+     "programa": "BF5.1.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "BF5.1.3",
+    "anios": [
+     534,
+     544,
+     555,
+     566
+    ],
+    "total": 2199,
+    "ruta": {
+     "linea": "BF5",
+     "sector": "BF5.1",
+     "programa": "BF5.1.3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "BF5.1.4",
+    "anios": [
+     235,
+     240,
+     244,
+     249
+    ],
+    "total": 968,
+    "ruta": {
+     "linea": "BF5",
+     "sector": "BF5.1",
+     "programa": "BF5.1.4"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "BF5.1.5",
+    "anios": [
+     2403,
+     2451,
+     2500,
+     2550
+    ],
+    "total": 9904,
+    "ruta": {
+     "linea": "BF5",
+     "sector": "BF5.1",
+     "programa": "BF5.1.5"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "BF5.1.6",
+    "anios": [
+     1119,
+     1142,
+     1164,
+     1188
+    ],
+    "total": 4613,
+    "ruta": {
+     "linea": "BF5",
+     "sector": "BF5.1",
+     "programa": "BF5.1.6"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF5.2",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF5.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF6",
+    "anios": [
+     133,
+     833,
+     1686,
+     2723
+    ],
+    "total": 5375,
+    "ruta": {
+     "linea": "BF6"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF8",
+    "anios": [
+     4300,
+     4397,
+     4493,
+     4592
+    ],
+    "total": 17782,
+    "ruta": {
+     "linea": "BF8"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF8.1.1.1",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF8.1.1.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF8.1.1.2",
+    "anios": [
+     424,
+     422,
+     422,
+     422
+    ],
+    "total": 1690,
+    "ruta": {
+     "linea": "BF8.1.1.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF8.1.2",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF8.1.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF8.1.2.1",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF8.1.2.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF8.1.2.2",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF8.1.2.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF8.2",
+    "anios": [
+     4724,
+     4819,
+     4915,
+     5014
+    ],
+    "total": 19472,
+    "ruta": {
+     "linea": "BF8.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF8.3",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF8.3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF8.4",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF8.4"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF9.1",
+    "anios": [
+     4630,
+     5505,
+     6551,
+     7792
+    ],
+    "total": 24478,
+    "ruta": {
+     "linea": "BF9.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF9.2",
+    "anios": [
+     2387,
+     3398,
+     4925,
+     7421
+    ],
+    "total": 18131,
+    "ruta": {
+     "linea": "BF9.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF10.1",
+    "anios": [
+     26810,
+     28157,
+     29685,
+     31419
+    ],
+    "total": 116071,
+    "ruta": {
+     "linea": "BF10.1"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF10.2",
+    "anios": [
+     22798,
+     23236,
+     23689,
+     24154
+    ],
+    "total": 93877,
+    "ruta": {
+     "linea": "BF10.1",
+     "sector": "BF10.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF10.3",
+    "anios": [
+     4012,
+     4921,
+     5996,
+     7265
+    ],
+    "total": 22194,
+    "ruta": {
+     "linea": "BF10.1",
+     "sector": "BF10.3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF13.1",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF13.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF13.2",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF13.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF13.3",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "BF13.3"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF12.1",
+    "anios": [
+     26810,
+     28157,
+     29685,
+     31419
+    ],
+    "total": 116071,
+    "ruta": {
+     "linea": "BF12.1"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF12.2",
+    "anios": [
+     22798,
+     23236,
+     23689,
+     24154
+    ],
+    "total": 93877,
+    "ruta": {
+     "linea": "BF12.1",
+     "sector": "BF12.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF12.3",
+    "anios": [
+     4012,
+     4921,
+     5996,
+     7265
+    ],
+    "total": 22194,
+    "ruta": {
+     "linea": "BF12.1",
+     "sector": "BF12.3"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   91
+  ],
+  "cabecera": "",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   11383693720,
+   10911844176,
+   11597439762,
+   13846452940
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Recursos del Sistema de Seguridad Social Integral",
+    "anios": [
+     5881548039,
+     6425591233,
+     7019958422,
+     7669304576
+    ],
+    "total": 26996402268,
+    "ruta": {
+     "linea": "Recursos del Sistema de Seguridad Social Integral"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Indemnizaciones Relacionadas con Seguros No de Vida",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Indemnizaciones Relacionadas con Seguros No de Vida"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Participación y Derechos por Monopolio",
+    "anios": [
+     105708053,
+     115486048,
+     126168507,
+     137839094
+    ],
+    "total": 485201702,
+    "ruta": {
+     "linea": "Participación y Derechos por Monopolio"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Dchos Expl Juegos de Suerte y Azar - Juegos Promoc 75%",
+    "anios": [
+     81339109,
+     88862977,
+     97082802,
+     106062961
+    ],
+    "total": 373347849,
+    "ruta": {
+     "linea": "Participación y Derechos por Monopolio",
+     "sector": "Dchos Expl Juegos de Suerte y Azar - Juegos Promoc 75%"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Dchos Expl Juegos de Suerte y Azar - Juegos Loc 25%",
+    "anios": [
+     24368944,
+     26623071,
+     29085705,
+     31776133
+    ],
+    "total": 111853854,
+    "ruta": {
+     "linea": "Participación y Derechos por Monopolio",
+     "sector": "Dchos Expl Juegos de Suerte y Azar - Juegos Loc 25%"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "RECURSOS DE CAPITAL",
+    "anios": [
+     5396437628,
+     4370766895,
+     4451312833,
+     6039309270
+    ],
+    "total": 20257826625,
+    "ruta": {
+     "linea": "RECURSOS DE CAPITAL"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Rendimientos Financieros",
+    "anios": [
+     66902515,
+     73090998,
+     79851915,
+     87238217
+    ],
+    "total": 307083645,
+    "ruta": {
+     "linea": "RECURSOS DE CAPITAL",
+     "sector": "Rendimientos Financieros"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Depósitos",
+    "anios": [
+     66902515,
+     73090998,
+     79851915,
+     87238217
+    ],
+    "total": 307083645,
+    "ruta": {
+     "linea": "RECURSOS DE CAPITAL",
+     "sector": "Rendimientos Financieros",
+     "programa": "Depósitos"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Recursos del Crédito Interno",
+    "anios": [
+     500000000,
+     500000000,
+     500000000,
+     500000000
+    ],
+    "total": 2000000000,
+    "ruta": {
+     "linea": "RECURSOS DE CAPITAL",
+     "sector": "Recursos del Crédito Interno"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Institutos de Desarrollo Departamental y del o Municipal",
+    "anios": [
+     500000000,
+     500000000,
+     500000000,
+     500000000
+    ],
+    "total": 2000000000,
+    "ruta": {
+     "linea": "RECURSOS DE CAPITAL",
+     "sector": "Recursos del Crédito Interno",
+     "programa": "Institutos de Desarrollo Departamental y del o Municipal"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Transferencias de Capital",
+    "anios": [
+     3000000000,
+     3000000000,
+     3000000000,
+     4500000000
+    ],
+    "total": 13500000000,
+    "ruta": {
+     "linea": "RECURSOS DE CAPITAL",
+     "sector": "Transferencias de Capital"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "No Condicionadas a la Adquisición de un Activo",
+    "anios": [
+     300000000,
+     300000000,
+     300000000,
+     500000000
+    ],
+    "total": 1400000000,
+    "ruta": {
+     "linea": "RECURSOS DE CAPITAL",
+     "sector": "Transferencias de Capital",
+     "programa": "No Condicionadas a la Adquisición de un Activo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Condicionadas a la Adquisición de un Activo",
+    "anios": [
+     2700000000,
+     2700000000,
+     2700000000,
+     4000000000
+    ],
+    "total": 12100000000,
+    "ruta": {
+     "linea": "RECURSOS DE CAPITAL",
+     "sector": "Transferencias de Capital",
+     "programa": "Condicionadas a la Adquisición de un Activo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Recursos del Balance",
+    "anios": [
+     1099396992,
+     0,
+     0,
+     0
+    ],
+    "total": 1099396992,
+    "ruta": {
+     "linea": "RECURSOS DE CAPITAL",
+     "sector": "Recursos del Balance"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Superávit Fiscal",
+    "anios": [
+     1099396992,
+     0,
+     0,
+     0
+    ],
+    "total": 1099396992,
+    "ruta": {
+     "linea": "RECURSOS DE CAPITAL",
+     "sector": "Recursos del Balance",
+     "programa": "Superávit Fiscal"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Retiros FONPET",
+    "anios": [
+     665000000,
+     726512500,
+     793714906,
+     867133535
+    ],
+    "total": 3052360941,
+    "ruta": {
+     "linea": "RECURSOS DE CAPITAL",
+     "sector": "Retiros FONPET"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Para el Pago de Obligaciones Pensionales Corrientes",
+    "anios": [
+     665000000,
+     726512500,
+     793714906,
+     867133535
+    ],
+    "total": 3052360941,
+    "ruta": {
+     "linea": "RECURSOS DE CAPITAL",
+     "sector": "Retiros FONPET",
+     "programa": "Para el Pago de Obligaciones Pensionales Corrientes"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Reintegros y Otros Recursos No Apropiados",
+    "anios": [
+     65138121,
+     71163397,
+     77746011,
+     84937517
+    ],
+    "total": 298985047,
+    "ruta": {
+     "linea": "RECURSOS DE CAPITAL",
+     "sector": "Reintegros y Otros Recursos No Apropiados"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Reintegros",
+    "anios": [
+     65138121,
+     71163397,
+     77746011,
+     84937517
+    ],
+    "total": 298985047,
+    "ruta": {
+     "linea": "RECURSOS DE CAPITAL",
+     "sector": "Reintegros y Otros Recursos No Apropiados",
+     "programa": "Reintegros"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   94,
+   94
+  ],
+  "cabecera": "Descripción",
+  "unidad": "millones",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   6006107180,
+   6561672094,
+   7168626762,
+   7831724738
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Aportes Nación",
+    "anios": [
+     18851088,
+     20594813,
+     22499833,
+     24581068
+    ],
+    "total": 86526802,
+    "ruta": {
+     "linea": "Aportes Nación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Recursos del Sistema de Seguridad Social Integral",
+    "anios": [
+     5881548039,
+     6425591233,
+     7019958422,
+     7669304576
+    ],
+    "total": 26996402268,
+    "ruta": {
+     "linea": "Recursos del Sistema de Seguridad Social Integral"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Participación y Derechos por Monopolio",
+    "anios": [
+     105708053,
+     115486048,
+     126168507,
+     137839094
+    ],
+    "total": 485201702,
+    "ruta": {
+     "linea": "Participación y Derechos por Monopolio"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Suerte y Azar - Juegos Promoc 75%",
+    "anios": [
+     81339109,
+     88862977,
+     97082802,
+     106062961
+    ],
+    "total": 373347849,
+    "ruta": {
+     "linea": "Participación y Derechos por Monopolio",
+     "sector": "Suerte y Azar - Juegos Promoc 75%"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Suerte y Azar - Juegos Loc 25%",
+    "anios": [
+     24368944,
+     26623071,
+     29085705,
+     31776133
+    ],
+    "total": 111853854,
+    "ruta": {
+     "linea": "Participación y Derechos por Monopolio",
+     "sector": "Suerte y Azar - Juegos Loc 25%"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   95
+  ],
+  "cabecera": "Descripción",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   8096437628,
+   7070766895,
+   7151312833,
+   7239309270
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "RECURSOS DE CAPITAL",
+    "anios": [
+     8096437628,
+     7070766895,
+     7151312833,
+     7239309270
+    ],
+    "total": 29557826625,
+    "ruta": {
+     "linea": "RECURSOS DE CAPITAL"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Rendimientos Financieros",
+    "anios": [
+     66902515,
+     73090998,
+     79851915,
+     87238217
+    ],
+    "total": 307083645,
+    "ruta": {
+     "linea": "RECURSOS DE CAPITAL",
+     "sector": "Rendimientos Financieros"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Depósitos",
+    "anios": [
+     66902515,
+     73090998,
+     79851915,
+     87238217
+    ],
+    "total": 307083645,
+    "ruta": {
+     "linea": "RECURSOS DE CAPITAL",
+     "sector": "Rendimientos Financieros",
+     "programa": "Depósitos"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Recursos del Crédito Interno",
+    "anios": [
+     500000000,
+     500000000,
+     500000000,
+     500000000
+    ],
+    "total": 2000000000,
+    "ruta": {
+     "linea": "RECURSOS DE CAPITAL",
+     "sector": "Recursos del Crédito Interno"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Institutos de Desarrollo Departamental y del o Municipal",
+    "anios": [
+     500000000,
+     500000000,
+     500000000,
+     500000000
+    ],
+    "total": 2000000000,
+    "ruta": {
+     "linea": "RECURSOS DE CAPITAL",
+     "sector": "Recursos del Crédito Interno",
+     "programa": "Institutos de Desarrollo Departamental y del o Municipal"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Transferencias de Capital",
+    "anios": [
+     5700000000,
+     5700000000,
+     5700000000,
+     5700000000
+    ],
+    "total": 22800000000,
+    "ruta": {
+     "linea": "RECURSOS DE CAPITAL",
+     "sector": "Transferencias de Capital"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "No Condicionadas a la Adquisición de un Activo",
+    "anios": [
+     700000000,
+     700000000,
+     700000000,
+     700000000
+    ],
+    "total": 2800000000,
+    "ruta": {
+     "linea": "RECURSOS DE CAPITAL",
+     "sector": "Transferencias de Capital",
+     "programa": "No Condicionadas a la Adquisición de un Activo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Condicionadas a la Adquisición de un Activo",
+    "anios": [
+     5000000000,
+     5000000000,
+     5000000000,
+     5000000000
+    ],
+    "total": 20000000000,
+    "ruta": {
+     "linea": "RECURSOS DE CAPITAL",
+     "sector": "Transferencias de Capital",
+     "programa": "Condicionadas a la Adquisición de un Activo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Recursos del Balance",
+    "anios": [
+     1099396992,
+     0,
+     0,
+     0
+    ],
+    "total": 1099396992,
+    "ruta": {
+     "linea": "RECURSOS DE CAPITAL",
+     "sector": "Recursos del Balance"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Superávit Fiscal",
+    "anios": [
+     1099396992,
+     0,
+     0,
+     0
+    ],
+    "total": 1099396992,
+    "ruta": {
+     "linea": "RECURSOS DE CAPITAL",
+     "sector": "Recursos del Balance",
+     "programa": "Superávit Fiscal"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Retiros FONPET",
+    "anios": [
+     665000000,
+     726512500,
+     793714906,
+     867133535
+    ],
+    "total": 3052360941,
+    "ruta": {
+     "linea": "RECURSOS DE CAPITAL",
+     "sector": "Retiros FONPET"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Para el Pago de Obligaciones Pensionales Corrientes",
+    "anios": [
+     665000000,
+     726512500,
+     793714906,
+     867133535
+    ],
+    "total": 3052360941,
+    "ruta": {
+     "linea": "RECURSOS DE CAPITAL",
+     "sector": "Retiros FONPET",
+     "programa": "Para el Pago de Obligaciones Pensionales Corrientes"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Reintegros y Otros Recursos No Apropiados",
+    "anios": [
+     65138121,
+     71163397,
+     77746011,
+     84937517
+    ],
+    "total": 298985047,
+    "ruta": {
+     "linea": "RECURSOS DE CAPITAL",
+     "sector": "Reintegros y Otros Recursos No Apropiados"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Reintegros",
+    "anios": [
+     65138121,
+     71163397,
+     77746011,
+     84937517
+    ],
+    "total": 298985047,
+    "ruta": {
+     "linea": "RECURSOS DE CAPITAL",
+     "sector": "Reintegros y Otros Recursos No Apropiados",
+     "programa": "Reintegros"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   97
+  ],
+  "cabecera": "DESCRIPCIÓN",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   937656758,
+   757288412,
+   597222292,
+   425723416
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "DEUDA",
+    "anios": [
+     937656758,
+     757288412,
+     597222292,
+     425723416
+    ],
+    "total": 2717890878,
+    "ruta": {
+     "linea": "DEUDA"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Amortizaciones",
+    "anios": [
+     573446665,
+     437807412,
+     308022292,
+     187807416
+    ],
+    "total": 1507083785,
+    "ruta": {
+     "linea": "DEUDA",
+     "sector": "Amortizaciones"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Principal",
+    "anios": [
+     573446665,
+     437807412,
+     308022292,
+     187807416
+    ],
+    "total": 1507083785,
+    "ruta": {
+     "linea": "DEUDA",
+     "sector": "Amortizaciones",
+     "programa": "Principal"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Intereses",
+    "anios": [
+     364210093,
+     319481000,
+     289200000,
+     237916000
+    ],
+    "total": 1210807093,
+    "ruta": {
+     "linea": "DEUDA",
+     "sector": "Intereses"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Intereses",
+    "anios": [
+     364210093,
+     319481000,
+     289200000,
+     237916000
+    ],
+    "total": 1210807093,
+    "ruta": {
+     "linea": "DEUDA",
+     "sector": "Intereses",
+     "programa": "Intereses"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   98
+  ],
+  "cabecera": "LÍNEAS",
+  "unidad": "millones",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   11722229232,
+   12247520672,
+   12583504541,
+   14538870397
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea estratégica",
+    "anios": [
+     1280675300,
+     1283035713,
+     1361056847,
+     1543548242
+    ],
+    "total": 5468316101,
+    "ruta": {
+     "linea": "Línea estratégica"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Desarrollo social incluyente",
+    "anios": [
+     10441553932,
+     10964484959,
+     11222447694,
+     12995322155
+    ],
+    "total": 45623808740,
+    "ruta": {
+     "linea": "Desarrollo social incluyente"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   107,
+   108
+  ],
+  "cabecera": "",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   72335701081,
+   62535285235,
+   57935847912,
+   60496559277
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     123787116,
+     107328787,
+     99434782,
+     104576767
+    ],
+    "total": 435127452,
+    "ruta": {
+     "linea": "Destinación para medio ambiente y desarrollo sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     804616256,
+     697637113,
+     646326081,
+     679748988
+    ],
+    "total": 2828328438,
+    "ruta": {
+     "linea": "Resto de Inversión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Comunidades Étnicas",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Comunidades Étnicas"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Comunidades Indígenas",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Comunidades Indígenas"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Destinación para medio ambiente y desarrollo sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Resto de Inversión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Comunidades NARP",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Comunidades NARP"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Destinación para medio ambiente y desarrollo sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Resto de Inversión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Comunidades Rrom",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Comunidades Rrom"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Destinación para medio ambiente y desarrollo sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Resto de Inversión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Asignación para Ciencia, Tecnología e Innovación",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Asignación para Ciencia, Tecnología e Innovación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Asignación para Inversión en Ciencia, Tecnología e Innovación Ambiental",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Asignación para Inversión en Ciencia, Tecnología e Innovación Ambiental"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Resto de inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Resto de inversión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Asignación Ambiental",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Asignación Ambiental"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Municipios Río Magdalena y Canal Dique",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Municipios Río Magdalena y Canal Dique"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "AHORRO",
+    "anios": [
+     38844243,
+     33578940,
+     31117694,
+     32492314
+    ],
+    "total": 136033191,
+    "ruta": {
+     "linea": "AHORRO"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Fondo de Ahorro y Estabilización (Ahorro)",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "AHORRO",
+     "sector": "Fondo de Ahorro y Estabilización (Ahorro)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Fondo Ahorro Pensional Territorial (FONPET)",
+    "anios": [
+     38844243,
+     33578940,
+     31117694,
+     32492314
+    ],
+    "total": 136033191,
+    "ruta": {
+     "linea": "AHORRO",
+     "sector": "Fondo Ahorro Pensional Territorial (FONPET)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "OTROS",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "OTROS"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Funcionamiento operatividad y fiscalización",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Funcionamiento operatividad y fiscalización"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Sistema de Seguimiento, Control y Evaluación (SSEC)",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Sistema de Seguimiento, Control y Evaluación (SSEC)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Contraloría",
+    "anios": [
+     70401205851,
+     60858195556,
+     56382090798,
+     58862923139
+    ],
+    "total": 246504415344,
+    "ruta": {
+     "linea": "Contraloría"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Procuraduría",
+    "anios": [
+     14080241171,
+     12171639111,
+     11276418160,
+     11772584628
+    ],
+    "total": 49300883070,
+    "ruta": {
+     "linea": "Contraloría",
+     "sector": "Procuraduría"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "DNP",
+    "anios": [
+     56320964680,
+     48686556445,
+     45105672638,
+     47090338511
+    ],
+    "total": 197203532274,
+    "ruta": {
+     "linea": "Contraloría",
+     "sector": "DNP"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total",
+    "anios": [
+     967247615,
+     838544839,
+     776878557,
+     816818069
+    ],
+    "total": 3399489080,
+    "ruta": {
+     "linea": "Total"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

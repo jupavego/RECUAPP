@@ -138,7 +138,7 @@ def procesar(pdf, salida, usar_vision_api=False):
             ind.update(linea=(linea_arbol.get(nombre_pp) if nombre_pp else None) or t["linea"],
                        sector=canon[nombre_pp] if nombre_pp and canon[nombre_pp] else (ind.get("sector") or t["sector"]),
                        programa=nombre_pp or cand_i, coincidencia_ppi=round(sc, 2) if canon else None,
-                       pagina=t["n"], fuente_lectura="texto")
+                       pagina=t["n"], fuente_lectura="texto", formato=t.get("formato"))
             indicadores.append(ind)
 
     # ---- tablas-imagen: lectura revisada a mano (indicadores_vision.json) y lectura por API (vision_api/)

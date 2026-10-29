@@ -1,0 +1,1721 @@
+[
+ {
+  "paginas": [
+   277,
+   278
+  ],
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   6054903966,
+   6259014148,
+   6468775953,
+   6684358927
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Educación",
+    "anios": [
+     209726051,
+     216017832,
+     222498367,
+     229173318
+    ],
+    "total": 877415568,
+    "ruta": {
+     "linea": "Educación"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Calidad",
+    "anios": [
+     209726051,
+     216017832,
+     222498367,
+     229173318
+    ],
+    "total": 877415568,
+    "ruta": {
+     "linea": "Educación",
+     "sector": "Calidad"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Matrícula Gratuidad",
+    "anios": [
+     107698540,
+     110929496,
+     114257381,
+     117685102
+    ],
+    "total": 450570519,
+    "ruta": {
+     "linea": "Educación",
+     "sector": "Calidad",
+     "programa": "Matrícula Gratuidad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Matrícula Oficial",
+    "anios": [
+     102027511,
+     105088336,
+     108240987,
+     111488216
+    ],
+    "total": 426845050,
+    "ruta": {
+     "linea": "Educación",
+     "sector": "Calidad",
+     "programa": "Matrícula Oficial"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Salud",
+    "anios": [
+     3121639402,
+     3215288584,
+     3311747242,
+     3411099659
+    ],
+    "total": 13059774887,
+    "ruta": {
+     "linea": "Salud"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Régimen Subsidiado",
+    "anios": [
+     2933384150,
+     3021385675,
+     3112027245,
+     3205388062
+    ],
+    "total": 12272185132,
+    "ruta": {
+     "linea": "Salud",
+     "sector": "Régimen Subsidiado"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Salud Pública",
+    "anios": [
+     188255252,
+     193902909,
+     199719996,
+     205711596
+    ],
+    "total": 787589753,
+    "ruta": {
+     "linea": "Salud",
+     "sector": "Salud Pública"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Agua Potable",
+    "anios": [
+     981037751,
+     1010468884,
+     1040782950,
+     1072006439
+    ],
+    "total": 4104296024,
+    "ruta": {
+     "linea": "Agua Potable"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Propósito General - Destinación",
+    "anios": [
+     1690385057,
+     1763559672,
+     1838457842,
+     1915131273
+    ],
+    "total": 7207533844,
+    "ruta": {
+     "linea": "Propósito General - Destinación"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Libre Destinación",
+    "anios": [
+     179178662,
+     184554022,
+     190090643,
+     195793362
+    ],
+    "total": 749616689,
+    "ruta": {
+     "linea": "Propósito General - Destinación",
+     "sector": "Libre Destinación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Deporte",
+    "anios": [
+     60074397,
+     61876629,
+     63732927,
+     65644915
+    ],
+    "total": 251328868,
+    "ruta": {
+     "linea": "Propósito General - Destinación",
+     "sector": "Deporte"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Cultura",
+    "anios": [
+     45055797,
+     46407471,
+     47799695,
+     49233686
+    ],
+    "total": 188496649,
+    "ruta": {
+     "linea": "Propósito General - Destinación",
+     "sector": "Cultura"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Libre Inversión",
+    "anios": [
+     1406076201,
+     1470721550,
+     1536834577,
+     1604459310
+    ],
+    "total": 6018091638,
+    "ruta": {
+     "linea": "Propósito General - Destinación",
+     "sector": "Libre Inversión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Alimentación Escolar",
+    "anios": [
+     52115705,
+     53679176,
+     55289552,
+     56948238
+    ],
+    "total": 218032671,
+    "ruta": {
+     "linea": "Alimentación Escolar"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   280
+  ],
+  "cabecera": "LINEAS ESTRATEGICAS",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   41801574432,
+   45432481834,
+   44114558970,
+   41999109918
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "UNIDOS COMO PILAR SOCIAL; NUCLEO DE INTEGRIDAD, RESILIENCIA Y SIEMBRA DEL CAPITAL HUMANO",
+    "anios": [
+     11756389256,
+     13454211360,
+     12092100026,
+     11996070099
+    ],
+    "total": 49298770741,
+    "ruta": {
+     "linea": "UNIDOS COMO PILAR SOCIAL; NUCLEO DE INTEGRIDAD, RESILIENCIA Y SIEMBRA DEL CAPITAL HUMANO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "UNIDOS POR LA SEGURIDAD Y LA JUSTICIA; PILARES DE NUESTRA CONVIVENCIA Y PROGRESO",
+    "anios": [
+     450192374,
+     683333334,
+     609333333,
+     561640959
+    ],
+    "total": 2304500000,
+    "ruta": {
+     "linea": "UNIDOS POR LA SEGURIDAD Y LA JUSTICIA; PILARES DE NUESTRA CONVIVENCIA Y PROGRESO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "AMBIENTAL; EN ARMONÍA ENTRE LA COMUNIDAD Y UN ENTORNO ORDENADO",
+    "anios": [
+     4619955586,
+     5210166472,
+     5885096126,
+     5245373652
+    ],
+    "total": 20960591836,
+    "ruta": {
+     "linea": "AMBIENTAL; EN ARMONÍA ENTRE LA COMUNIDAD Y UN ENTORNO ORDENADO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TEJIENDO REDES DE GOBERNANZA Y",
+    "anios": [
+     170000000,
+     258500000,
+     519500000,
+     424000000
+    ],
+    "total": 1372000000,
+    "ruta": {
+     "linea": "TEJIENDO REDES DE GOBERNANZA Y"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "UNIDOS REVITALIZAMOS LA ECONÓMIA; SEMBRANDO INNOVACIÓN,",
+    "anios": [
+     3904250000,
+     3110029751,
+     2951250000,
+     2772470249
+    ],
+    "total": 12738000000,
+    "ruta": {
+     "linea": "UNIDOS REVITALIZAMOS LA ECONÓMIA; SEMBRANDO INNOVACIÓN,"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total Inversión x Vigencia",
+    "anios": [
+     20900787216,
+     22716240917,
+     22057279485,
+     20999554959
+    ],
+    "total": 86673862577,
+    "ruta": {
+     "linea": "Total Inversión x Vigencia"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   281,
+   281,
+   282,
+   282,
+   283
+  ],
+  "cabecera": "COMPONENTE / PROGRAMA",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   31321278512,
+   33128482222,
+   30086700052,
+   29537080696
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Inclusión Digital para la innovación, la competitividad y el Desarrollo Socio-Económico Sostenible",
+    "anios": [
+     20000000,
+     120000000,
+     120000000,
+     20000000
+    ],
+    "total": 280000000,
+    "ruta": {
+     "linea": "Inclusión Digital para la innovación, la competitividad y el Desarrollo Socio-Económico Sostenible"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Vías Digitales; Potenciando la Era de la Comunicación en Comunidades",
+    "anios": [
+     20000000,
+     120000000,
+     120000000,
+     20000000
+    ],
+    "total": 280000000,
+    "ruta": {
+     "linea": "Inclusión Digital para la innovación, la competitividad y el Desarrollo Socio-Económico Sostenible",
+     "sector": "Vías Digitales; Potenciando la Era de la Comunicación en Comunidades"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Promoción del Turismo Sostenible y Economía Comunitaria",
+    "anios": [
+     50000000,
+     165000000,
+     300000000,
+     100000000
+    ],
+    "total": 615000000,
+    "ruta": {
+     "linea": "Promoción del Turismo Sostenible y Economía Comunitaria"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Vitalidad Económica; Transformando la Productividad TurísticayPopular",
+    "anios": [
+     50000000,
+     165000000,
+     300000000,
+     100000000
+    ],
+    "total": 615000000,
+    "ruta": {
+     "linea": "Promoción del Turismo Sostenible y Economía Comunitaria",
+     "sector": "Vitalidad Económica; Transformando la Productividad TurísticayPopular"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Revitalización de la dinámica Productiva y la Competitividad Agropecuaria",
+    "anios": [
+     3834250000,
+     2825029751,
+     2531250000,
+     2652470249
+    ],
+    "total": 11843000000,
+    "ruta": {
+     "linea": "Revitalización de la dinámica Productiva y la Competitividad Agropecuaria"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Cultivando Confianza: Excelencia en Sanidad y Seguridad Alimentaria",
+    "anios": [
+     10000000,
+     10000000,
+     10000000,
+     10000000
+    ],
+    "total": 40000000,
+    "ruta": {
+     "linea": "Revitalización de la dinámica Productiva y la Competitividad Agropecuaria",
+     "sector": "Cultivando Confianza: Excelencia en Sanidad y Seguridad Alimentaria"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Horizontes Compartidos; Integración y Crecimiento para el Pequeño Agricultor",
+    "anios": [
+     322500000,
+     352500000,
+     322500000,
+     322500000
+    ],
+    "total": 1320000000,
+    "ruta": {
+     "linea": "Revitalización de la dinámica Productiva y la Competitividad Agropecuaria",
+     "sector": "Horizontes Compartidos; Integración y Crecimiento para el Pequeño Agricultor"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Puente Verde; Infraestructura y Estrategias para la Agro comercialización",
+    "anios": [
+     806000000,
+     85000000,
+     85000000,
+     85000000
+    ],
+    "total": 1061000000,
+    "ruta": {
+     "linea": "Revitalización de la dinámica Productiva y la Competitividad Agropecuaria",
+     "sector": "Puente Verde; Infraestructura y Estrategias para la Agro comercialización"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Raíces de Futuro; Estrategias para el Desarrollo Rural y Social Integrado",
+    "anios": [
+     33750000,
+     18750000,
+     18750000,
+     18750000
+    ],
+    "total": 90000000,
+    "ruta": {
+     "linea": "Revitalización de la dinámica Productiva y la Competitividad Agropecuaria",
+     "sector": "Raíces de Futuro; Estrategias para el Desarrollo Rural y Social Integrado"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Raíces Fuertes; Financiamiento y Resiliencia en el Campo",
+    "anios": [
+     0,
+     100000000,
+     0,
+     0
+    ],
+    "total": 100000000,
+    "ruta": {
+     "linea": "Revitalización de la dinámica Productiva y la Competitividad Agropecuaria",
+     "sector": "Raíces Fuertes; Financiamiento y Resiliencia en el Campo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Rutas del Progreso; Conectando nuestro territorio para la Competitividad",
+    "anios": [
+     2662000000,
+     2258779751,
+     2095000000,
+     2216220249
+    ],
+    "total": 9232000000,
+    "ruta": {
+     "linea": "Revitalización de la dinámica Productiva y la Competitividad Agropecuaria",
+     "sector": "Rutas del Progreso; Conectando nuestro territorio para la Competitividad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total Inversión",
+    "anios": [
+     3904250000,
+     3110029751,
+     2951250000,
+     2772470249
+    ],
+    "total": 12738000000,
+    "ruta": {
+     "linea": "Total Inversión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Bienestar Integral: Promoción de la Salud y Protección Social",
+    "anios": [
+     8794660373,
+     9421740887,
+     9391683817,
+     9569725027
+    ],
+    "total": 37177810104,
+    "ruta": {
+     "linea": "Bienestar Integral: Promoción de la Salud y Protección Social"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Misión Salud; Estrategias para una Atención Integral yEquitativa",
+    "anios": [
+     8577761933,
+     9199194792,
+     9163420634,
+     9335370252
+    ],
+    "total": 36275747611,
+    "ruta": {
+     "linea": "Bienestar Integral: Promoción de la Salud y Protección Social",
+     "sector": "Misión Salud; Estrategias para una Atención Integral yEquitativa"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Salud en Acción; Promoviendo la Prevención y el Cuidado Comunitario",
+    "anios": [
+     173454920,
+     176930400,
+     180448608,
+     184197280
+    ],
+    "total": 715031208,
+    "ruta": {
+     "linea": "Bienestar Integral: Promoción de la Salud y Protección Social",
+     "sector": "Salud en Acción; Promoviendo la Prevención y el Cuidado Comunitario"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Vigilancia, Inspección y Control Sanitario Integral; Compromisopor la Salud Pública Argelina",
+    "anios": [
+     43443520,
+     45615695,
+     47814575,
+     50157495
+    ],
+    "total": 187031285,
+    "ruta": {
+     "linea": "Bienestar Integral: Promoción de la Salud y Protección Social",
+     "sector": "Vigilancia, Inspección y Control Sanitario Integral; Compromisopor la Salud Pública Argelina"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "EducaFuturo",
+    "anios": [
+     959180000,
+     944180000,
+     731180000,
+     737180000
+    ],
+    "total": 3371720000,
+    "ruta": {
+     "linea": "EducaFuturo"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Inclusión Educativa Municipal; Construyendo espaciospara el Conocimiento",
+    "anios": [
+     646180000,
+     646180000,
+     533180000,
+     539180000
+    ],
+    "total": 2364720000,
+    "ruta": {
+     "linea": "EducaFuturo",
+     "sector": "Inclusión Educativa Municipal; Construyendo espaciospara el Conocimiento"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Rumbo a la Educación Superior de Calidad; Impulsando el Conocimiento Local",
+    "anios": [
+     200000000,
+     200000000,
+     100000000,
+     100000000
+    ],
+    "total": 600000000,
+    "ruta": {
+     "linea": "EducaFuturo",
+     "sector": "Rumbo a la Educación Superior de Calidad; Impulsando el Conocimiento Local"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Sembrando Conocimiento; Plan Integral de Calidad Educativa",
+    "anios": [
+     113000000,
+     98000000,
+     98000000,
+     98000000
+    ],
+    "total": 407000000,
+    "ruta": {
+     "linea": "EducaFuturo",
+     "sector": "Sembrando Conocimiento; Plan Integral de Calidad Educativa"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Fomento Activo de la Cultura, las artes y los saberes",
+    "anios": [
+     294000000,
+     409000000,
+     304000000,
+     294000000
+    ],
+    "total": 1301000000,
+    "ruta": {
+     "linea": "Fomento Activo de la Cultura, las artes y los saberes"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Construyendo Ambientes Culturales y de los Saberes",
+    "anios": [
+     137000000,
+     128000000,
+     148000000,
+     133000000
+    ],
+    "total": 546000000,
+    "ruta": {
+     "linea": "Fomento Activo de la Cultura, las artes y los saberes",
+     "sector": "Construyendo Ambientes Culturales y de los Saberes"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Sembrando Talentos en el Campo del Arte y la Cultura",
+    "anios": [
+     114000000,
+     88000000,
+     93000000,
+     118000000
+    ],
+    "total": 413000000,
+    "ruta": {
+     "linea": "Fomento Activo de la Cultura, las artes y los saberes",
+     "sector": "Sembrando Talentos en el Campo del Arte y la Cultura"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Tejiendo Historias de Identidad y Patrimonio",
+    "anios": [
+     8000000,
+     158000000,
+     28000000,
+     8000000
+    ],
+    "total": 202000000,
+    "ruta": {
+     "linea": "Fomento Activo de la Cultura, las artes y los saberes",
+     "sector": "Tejiendo Historias de Identidad y Patrimonio"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Uniendo esfuerzos para el Desarrollo Cultural",
+    "anios": [
+     35000000,
+     35000000,
+     35000000,
+     35000000
+    ],
+    "total": 140000000,
+    "ruta": {
+     "linea": "Fomento Activo de la Cultura, las artes y los saberes",
+     "sector": "Uniendo esfuerzos para el Desarrollo Cultural"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Impulsando una vitalidad integral del movimiento, la saludyuna sana convivencia",
+    "anios": [
+     435028835,
+     668646129,
+     366229826,
+     217000000
+    ],
+    "total": 1686904790,
+    "ruta": {
+     "linea": "Impulsando una vitalidad integral del movimiento, la saludyuna sana convivencia"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Deporte Activo; Recreación y Vitalidad",
+    "anios": [
+     65000000,
+     50000000,
+     62000000,
+     103000000
+    ],
+    "total": 280000000,
+    "ruta": {
+     "linea": "Impulsando una vitalidad integral del movimiento, la saludyuna sana convivencia",
+     "sector": "Deporte Activo; Recreación y Vitalidad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Transformando nuestra infraestructura para una vida activa",
+    "anios": [
+     370028835,
+     618646129,
+     304229826,
+     114000000
+    ],
+    "total": 1406904790,
+    "ruta": {
+     "linea": "Impulsando una vitalidad integral del movimiento, la saludyuna sana convivencia",
+     "sector": "Transformando nuestra infraestructura para una vida activa"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Tejiendo Caminos de Unidad y de Sociedades Inclusivas",
+    "anios": [
+     1273520048,
+     2010644344,
+     1299006383,
+     1178165072
+    ],
+    "total": 5761335847,
+    "ruta": {
+     "linea": "Tejiendo Caminos de Unidad y de Sociedades Inclusivas"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Acceso Sin Límites; Abriendo Caminos a la Inclusión de la Personas en condición de Discapacidad",
+    "anios": [
+     17500000,
+     32500000,
+     32500000,
+     17500000
+    ],
+    "total": 100000000,
+    "ruta": {
+     "linea": "Tejiendo Caminos de Unidad y de Sociedades Inclusivas",
+     "sector": "Acceso Sin Límites; Abriendo Caminos a la Inclusión de la Personas en condición de Discapacidad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Desarrollo Pleno para Niñas, Niños y Adolescentes, Potenciando Familias",
+    "anios": [
+     471270048,
+     545894344,
+     364256383,
+     365915072
+    ],
+    "total": 1747335847,
+    "ruta": {
+     "linea": "Tejiendo Caminos de Unidad y de Sociedades Inclusivas",
+     "sector": "Desarrollo Pleno para Niñas, Niños y Adolescentes, Potenciando Familias"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Hilos de Esperanza; Acompañamiento Integral a Víctimas en Reconstrucción",
+    "anios": [
+     168500000,
+     268500000,
+     168500000,
+     168500000
+    ],
+    "total": 774000000,
+    "ruta": {
+     "linea": "Tejiendo Caminos de Unidad y de Sociedades Inclusivas",
+     "sector": "Hilos de Esperanza; Acompañamiento Integral a Víctimas en Reconstrucción"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Identidades en Armonía, Garantías para la Diversidad",
+    "anios": [
+     22500000,
+     25000000,
+     25000000,
+     27500000
+    ],
+    "total": 100000000,
+    "ruta": {
+     "linea": "Tejiendo Caminos de Unidad y de Sociedades Inclusivas",
+     "sector": "Identidades en Armonía, Garantías para la Diversidad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Juventud Activa; Puentes hacia el Futuro Integral",
+    "anios": [
+     120000000,
+     335000000,
+     100000000,
+     100000000
+    ],
+    "total": 655000000,
+    "ruta": {
+     "linea": "Tejiendo Caminos de Unidad y de Sociedades Inclusivas",
+     "sector": "Juventud Activa; Puentes hacia el Futuro Integral"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Rescate Urbano; Reconstruyendo una Dignidad Humana",
+    "anios": [
+     10000000,
+     10000000,
+     10000000,
+     10000000
+    ],
+    "total": 40000000,
+    "ruta": {
+     "linea": "Tejiendo Caminos de Unidad y de Sociedades Inclusivas",
+     "sector": "Rescate Urbano; Reconstruyendo una Dignidad Humana"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Tejiendo la Equidad de Género para una Argelia Inclusiva de las mujeres",
+    "anios": [
+     135500000,
+     195500000,
+     135500000,
+     135500000
+    ],
+    "total": 602000000,
+    "ruta": {
+     "linea": "Tejiendo Caminos de Unidad y de Sociedades Inclusivas",
+     "sector": "Tejiendo la Equidad de Género para una Argelia Inclusiva de las mujeres"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Vida Dorada; Cuidando Nuestros Mayores hacia el Mañana",
+    "anios": [
+     328250000,
+     598250000,
+     463250000,
+     353250000
+    ],
+    "total": 1743000000,
+    "ruta": {
+     "linea": "Tejiendo Caminos de Unidad y de Sociedades Inclusivas",
+     "sector": "Vida Dorada; Cuidando Nuestros Mayores hacia el Mañana"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total Inversión",
+    "anios": [
+     11756389256,
+     13454211360,
+     12092100026,
+     11996070099
+    ],
+    "total": 49298770741,
+    "ruta": {
+     "linea": "Total Inversión"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Desarrollo Integral y Sostenible para una Comunidad en Armonía",
+    "anios": [
+     2521918000,
+     3676918000,
+     4357398739,
+     3661918000
+    ],
+    "total": 14218152739,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Desarrollo Integral y Sostenible para una Comunidad en Armonía"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Agua para Todos; Acceso Sostenible al Agua Potable para un Futuro Mejor",
+    "anios": [
+     619740000,
+     519740000,
+     569740000,
+     589740000
+    ],
+    "total": 2298960000,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Desarrollo Integral y Sostenible para una Comunidad en Armonía",
+     "programa": "Agua para Todos; Acceso Sostenible al Agua Potable para un Futuro Mejor"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Argelia Resiliente; Diseñando Hoy, Espacios Ordenadosycon Visión",
+    "anios": [
+     650000000,
+     1450000000,
+     1250000000,
+     1350000000
+    ],
+    "total": 4700000000,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Desarrollo Integral y Sostenible para una Comunidad en Armonía",
+     "programa": "Argelia Resiliente; Diseñando Hoy, Espacios Ordenadosycon Visión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Conectando Redes para un Territorio Saludable",
+    "anios": [
+     832162000,
+     1232162000,
+     1217162000,
+     1227162000
+    ],
+    "total": 4508648000,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Desarrollo Integral y Sostenible para una Comunidad en Armonía",
+     "programa": "Conectando Redes para un Territorio Saludable"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "EcoTransformación; Hacia una Argelia Sostenible",
+    "anios": [
+     170016000,
+     145016000,
+     143956208,
+     145016000
+    ],
+    "total": 604004208,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Desarrollo Integral y Sostenible para una Comunidad en Armonía",
+     "programa": "EcoTransformación; Hacia una Argelia Sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Espacios de Vida; Transformando Hogares y Comunidades",
+    "anios": [
+     250000000,
+     330000000,
+     1176540531,
+     350000000
+    ],
+    "total": 2106540531,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Desarrollo Integral y Sostenible para una Comunidad en Armonía",
+     "programa": "Espacios de Vida; Transformando Hogares y Comunidades"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Gestión Territorial Integrada con enfoque de Futuro Sostenible",
+    "anios": [
+     500000000,
+     0,
+     0,
+     0
+    ],
+    "total": 500000000,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Gestión Territorial Integrada con enfoque de Futuro Sostenible"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Transformando Espacios Ordenados con Visión",
+    "anios": [
+     500000000,
+     0,
+     0,
+     0
+    ],
+    "total": 500000000,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Gestión Territorial Integrada con enfoque de Futuro Sostenible",
+     "programa": "Transformando Espacios Ordenados con Visión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Iluminación Urbana y Rural Sostenible",
+    "anios": [
+     40000000,
+     50000000,
+     50000000,
+     50000000
+    ],
+    "total": 190000000,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Iluminación Urbana y Rural Sostenible"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Caminos de Luz; Transformando Espacios con Iluminación",
+    "anios": [
+     40000000,
+     50000000,
+     50000000,
+     50000000
+    ],
+    "total": 190000000,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Iluminación Urbana y Rural Sostenible",
+     "programa": "Caminos de Luz; Transformando Espacios con Iluminación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Resiliencia Comunitaria y Gestión de Riesgos",
+    "anios": [
+     178000999,
+     157067029,
+     227135040,
+     142205091
+    ],
+    "total": 704408159,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Resiliencia Comunitaria y Gestión de Riesgos"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Uniendo Fuerzas para la Gestión de Emergencias",
+    "anios": [
+     178000999,
+     157067029,
+     227135040,
+     142205091
+    ],
+    "total": 704408159,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Resiliencia Comunitaria y Gestión de Riesgos",
+     "programa": "Uniendo Fuerzas para la Gestión de Emergencias"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "VerdeFuturo, Innovación y Sostenibilidad Ambiental",
+    "anios": [
+     930036587,
+     1026181443,
+     900562347,
+     891250561
+    ],
+    "total": 3748030938,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "VerdeFuturo, Innovación y Sostenibilidad Ambiental"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Construyendo un Territorio Resiliente al Cambio Climático",
+    "anios": [
+     89308061,
+     89889561,
+     114750000,
+     88580758
+    ],
+    "total": 382528380,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "VerdeFuturo, Innovación y Sostenibilidad Ambiental",
+     "programa": "Construyendo un Territorio Resiliente al Cambio Climático"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "EcoConexión, Tejiendo la Red de Vida",
+    "anios": [
+     558778526,
+     654341882,
+     503862347,
+     520519803
+    ],
+    "total": 2237502558,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "VerdeFuturo, Innovación y Sostenibilidad Ambiental",
+     "programa": "EcoConexión, Tejiendo la Red de Vida"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Iniciativa para un Aire Limpio",
+    "anios": [
+     6000000,
+     6000000,
+     6000000,
+     6000000
+    ],
+    "total": 24000000,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "VerdeFuturo, Innovación y Sostenibilidad Ambiental",
+     "programa": "Iniciativa para un Aire Limpio"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Sembrando Educación Ambiental",
+    "anios": [
+     275950000,
+     275950000,
+     275950000,
+     276150000
+    ],
+    "total": 1104000000,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "VerdeFuturo, Innovación y Sostenibilidad Ambiental",
+     "programa": "Sembrando Educación Ambiental"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Vías Seguras y Urbanismo Vital",
+    "anios": [
+     450000000,
+     300000000,
+     350000000,
+     500000000
+    ],
+    "total": 1600000000,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Vías Seguras y Urbanismo Vital"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Accesibilidad Urbana y Entornos Públicos Sostenibles",
+    "anios": [
+     450000000,
+     300000000,
+     350000000,
+     500000000
+    ],
+    "total": 1600000000,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Vías Seguras y Urbanismo Vital",
+     "programa": "Accesibilidad Urbana y Entornos Públicos Sostenibles"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Total Inversión",
+    "anios": [
+     4619955586,
+     5210166472,
+     5885096126,
+     5245373652
+    ],
+    "total": 20960591836,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Total Inversión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "COMPONENTE / PROGRAMA",
+    "anios": [
+     2024,
+     2025,
+     2026,
+     2027
+    ],
+    "total": 8102,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "COMPONENTE / PROGRAMA"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Argelia Segura y Pacífica",
+    "anios": [
+     335000000,
+     543333334,
+     463333333,
+     433333333
+    ],
+    "total": 1775000000,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Argelia Segura y Pacífica"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Gestión Territorial de la Seguridad, la Convivencia y el Orden Publico",
+    "anios": [
+     335000000,
+     543333334,
+     463333333,
+     433333333
+    ],
+    "total": 1775000000,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Argelia Segura y Pacífica",
+     "programa": "Gestión Territorial de la Seguridad, la Convivencia y el Orden Publico"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Cuidado Animal y Protección Consciente",
+    "anios": [
+     11692374,
+     21000000,
+     15000000,
+     18307626
+    ],
+    "total": 66000000,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Cuidado Animal y Protección Consciente"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Huellas Solidarias; Cuidando y Protegiendo a los Seresque Comparten Nuestro Territorio",
+    "anios": [
+     11692374,
+     21000000,
+     15000000,
+     18307626
+    ],
+    "total": 66000000,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Cuidado Animal y Protección Consciente",
+     "programa": "Huellas Solidarias; Cuidando y Protegiendo a los Seresque Comparten Nuestro Territorio"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Justicia, Derechos y Acceso Legal",
+    "anios": [
+     40000000,
+     40000000,
+     40000000,
+     40000000
+    ],
+    "total": 160000000,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Justicia, Derechos y Acceso Legal"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Promoviendo el Derecho y la Equidad",
+    "anios": [
+     40000000,
+     40000000,
+     40000000,
+     40000000
+    ],
+    "total": 160000000,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Justicia, Derechos y Acceso Legal",
+     "programa": "Promoviendo el Derecho y la Equidad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Núcleo Resiliente - Protección y Fortalecimiento Familiar",
+    "anios": [
+     33000000,
+     38500000,
+     50500000,
+     39500000
+    ],
+    "total": 161500000,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Núcleo Resiliente - Protección y Fortalecimiento Familiar"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Vínculos Protegidos, Fortaleciendo la Convivencia Familiar",
+    "anios": [
+     33000000,
+     38500000,
+     50500000,
+     39500000
+    ],
+    "total": 161500000,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Núcleo Resiliente - Protección y Fortalecimiento Familiar",
+     "programa": "Vínculos Protegidos, Fortaleciendo la Convivencia Familiar"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Seguridad Vial Integral",
+    "anios": [
+     30500000,
+     40500000,
+     40500000,
+     30500000
+    ],
+    "total": 142000000,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Seguridad Vial Integral"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Cuidando tu Camino",
+    "anios": [
+     30500000,
+     40500000,
+     40500000,
+     30500000
+    ],
+    "total": 142000000,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Seguridad Vial Integral",
+     "programa": "Cuidando tu Camino"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Total Inversión",
+    "anios": [
+     450192374,
+     683333334,
+     609333333,
+     561640959
+    ],
+    "total": 2304500000,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Total Inversión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "COMPONENTE / PROGRAMA",
+    "anios": [
+     2024,
+     2025,
+     2026,
+     2027
+    ],
+    "total": 8102,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "COMPONENTE / PROGRAMA"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Modernización y Eficiencia Gubernamental",
+    "anios": [
+     145000000,
+     187500000,
+     267500000,
+     150000000
+    ],
+    "total": 750000000,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Modernización y Eficiencia Gubernamental"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Cimientos Estables; Hacia una Gestión Fiscal y Financiera Sostenible",
+    "anios": [
+     50000000,
+     72500000,
+     77500000,
+     55000000
+    ],
+    "total": 255000000,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Modernización y Eficiencia Gubernamental",
+     "programa": "Cimientos Estables; Hacia una Gestión Fiscal y Financiera Sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Gestión Óptima; Impulsando la Excelencia en nuestra Administración Pública Local",
+    "anios": [
+     95000000,
+     115000000,
+     190000000,
+     95000000
+    ],
+    "total": 495000000,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Modernización y Eficiencia Gubernamental",
+     "programa": "Gestión Óptima; Impulsando la Excelencia en nuestra Administración Pública Local"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Participación Ciudadana y Desarrollo Comunitario",
+    "anios": [
+     25000000,
+     71000000,
+     252000000,
+     274000000
+    ],
+    "total": 622000000,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Participación Ciudadana y Desarrollo Comunitario"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Colectivo Cívico; Uniendo a la Comunidad por el futuro",
+    "anios": [
+     25000000,
+     71000000,
+     252000000,
+     274000000
+    ],
+    "total": 622000000,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Participación Ciudadana y Desarrollo Comunitario",
+     "programa": "Colectivo Cívico; Uniendo a la Comunidad por el futuro"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Total Inversión",
+    "anios": [
+     170000000,
+     258500000,
+     519500000,
+     424000000
+    ],
+    "total": 1372000000,
+    "ruta": {
+     "linea": "Total Inversión",
+     "sector": "Total Inversión"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

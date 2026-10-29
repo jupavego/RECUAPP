@@ -1,7 +1,7 @@
 # Reporte de extraccion
 - Capitulo estrategico detectado: paginas 31-204
-- Indicadores de producto: 165 {'texto': 165} (sin cruce claro con el PPI: 51)
-- Programas en el PPI: 46; con indicadores: 30
+- Indicadores de producto: 164 {'texto': 164} (sin cruce claro con el PPI: 50)
+- Programas en el PPI: 46; con indicadores: 31
 - Sectores del resumen PPI: 0; cuadran con la suma de programas: 0
 - Filas del Anexo a revisar a mano: 0
 - Paginas-imagen candidatas sin leer: 5 [34, 137, 148, 153, 169]
@@ -17,7 +17,6 @@
 - 2.3.3.: Acceso a la alfabetización de lapoblación iletrada. (2.3.3.: Acceso a la alfabetización de lapoblación iletrada.)
 - 2.3.5. Consolidación de una institucionalidad habilitantepara (None)
 - 3.2 Ambiente (None)
-- 3.2.4 Gestión Integral del recurso Hídrico (None)
 - 3.2.5 Ordenamiento Territorial y Desarrollo Urbano (None)
 - 3.3.1. Productividad y competitividad de las empresas Briceñitas (None)
 - SUBTOTAL (None)

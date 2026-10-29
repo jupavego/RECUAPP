@@ -1,0 +1,122 @@
+[
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 31,
+  "valor": null,
+  "sugerencia": null,
+  "correccion": null,
+  "id": 1
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 37,
+  "valor": "San Francisco Ciudad agroturística para la naturaleza",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 2
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 46,
+  "valor": "San Francisco con sostenibilidad ambiental para el crecimiento verde y el cambio climático",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 3
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 51,
+  "valor": "San Francisco con protección y bienestar animal",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 4
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 71,
+  "valor": "Equidad e inclusión social para el fortalecimiento del deporte, la recreación y la actividad física.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 5
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 99,
+  "valor": "San Francisco con vías equitativas y competitivas",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 6
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 102,
+  "valor": "San Francisco con vivienda digna",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 7
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 106,
+  "valor": "San Francisco con servicios públicos de calidad",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 8
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Educación",
+  "sector": null,
+  "correccion": null,
+  "id": 9
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Prestaci ón de Servicios",
+  "sector": "Prestaci ón de Servicios",
+  "correccion": null,
+  "id": 10
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Calidad",
+  "sector": "Calidad",
+  "correccion": null,
+  "id": 11
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Matrícul a Gratuidad",
+  "sector": "Calidad",
+  "correccion": null,
+  "id": 12
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Matrícul a Oficial",
+  "sector": "Calidad",
+  "correccion": null,
+  "id": 13
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Programa San Francisco con equidad e inclusión social para el fortalecimiento del deporte",
+  "sector": null,
+  "correccion": null,
+  "id": 14
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Total línea",
+  "sector": null,
+  "correccion": null,
+  "id": 15
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Programa San Francisco territorio de paz y garante de los derechos de las víctimas",
+  "sector": null,
+  "correccion": null,
+  "id": 16
+ }
+]

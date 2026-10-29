@@ -1,0 +1,1814 @@
+[
+ {
+  "pagina": 225,
+  "cabecera": "LÍNEA, COMPONENTE, PROGRAMA",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "01 Oportunidades para el Desarrollo Económico",
+    "anios": [
+     2978787770,
+     3295999346,
+     3646642784,
+     4034146803
+    ],
+    "total": 13955576703
+   },
+   {
+    "etiqueta": "0101 Turismo",
+    "anios": [
+     1039598593,
+     1147683420,
+     1266576729,
+     1397359369
+    ],
+    "total": 4851218110
+   },
+   {
+    "etiqueta": "10101 Elaboración y ejecución de un plan de sostenibilidad turística.",
+    "anios": [
+     62375916,
+     68861005,
+     75994604,
+     83841562
+    ],
+    "total": 291073087
+   },
+   {
+    "etiqueta": "10102 Actualización e implementación de la política pública de Turismo",
+    "anios": [
+     135147817,
+     149198845,
+     164654975,
+     181656718
+    ],
+    "total": 630658354
+   },
+   {
+    "etiqueta": "10103 Generación de una marca de territorio",
+    "anios": [
+     72771902,
+     80337839,
+     88660371,
+     97815156
+    ],
+    "total": 339585268
+   },
+   {
+    "etiqueta": "10104 Realización de Alianzas público privadas para el turismo",
+    "anios": [
+     83167887,
+     91814674,
+     101326138,
+     111788750
+    ],
+    "total": 388097449
+   },
+   {
+    "etiqueta": "10105 Mejoramiento y mantenimiento de infraestructura para el turismo",
+    "anios": [
+     426235423,
+     470550202,
+     519296459,
+     572917341
+    ],
+    "total": 1988999425
+   },
+   {
+    "etiqueta": "10106 Realización de eventos para la promoción del turismo",
+    "anios": [
+     207919719,
+     229536684,
+     253315346,
+     279471874
+    ],
+    "total": 970243622
+   },
+   {
+    "etiqueta": "10107 Fortalecimiento y dinamización de la Política Pública San Carlos El Pueblo de Los Murales",
+    "anios": [
+     51979930,
+     57384171,
+     63328836,
+     69867968
+    ],
+    "total": 242560906
+   },
+   {
+    "etiqueta": "0102 Producción, Transformación y Comercialización Agropecuaria",
+    "anios": [
+     1839608326,
+     2019701114,
+     2218560089,
+     2438099718
+    ],
+    "total": 8515969247
+   },
+   {
+    "etiqueta": "10201 Apoyo, gestión y acompañamiento a las líneas productivas existentes y emergentes",
+    "anios": [
+     116334189,
+     128794935,
+     142653137,
+     158056111
+    ],
+    "total": 545838372
+   },
+   {
+    "etiqueta": "10202 Establecimiento de alianzas para el fortalecimiento técnico, científico y económico del campo",
+    "anios": [
+     255538734,
+     280248581,
+     307467258,
+     337447541
+    ],
+    "total": 1180702114
+   },
+   {
+    "etiqueta": "10203 Generación de un programa de incentivos a la producción que facilite el acceso de los campesinos a abonos, fertilizantes, herramientas e insumos agropecuarios.",
+    "anios": [
+     267392507,
+     295558460,
+     326692391,
+     361098666
+    ],
+    "total": 1250742024
+   },
+   {
+    "etiqueta": "10204 Fortalecimiento de la infraestructura agropecuaria municipal",
+    "anios": [
+     327116634,
+     358527050,
+     393078508,
+     431085111
+    ],
+    "total": 1509807303
+   },
+   {
+    "etiqueta": "10205 Realización de proyectos de apoyo al mejoramiento del hato ganadero",
+    "anios": [
+     199066664,
+     218646464,
+     240259934,
+     264114227
+    ],
+    "total": 922087290
+   },
+   {
+    "etiqueta": "10206 Fortalecimiento de las asociaciones productivas del municipio mediante la asignación de presupuestos participativos, gestión de proyectos y acompañamientos técnicos.",
+    "anios": [
+     142594595,
+     157044347,
+     173052610,
+     190780913
+    ],
+    "total": 663472466
+   },
+   {
+    "etiqueta": "10207 Promoción de técnicas de riego eficiente, capacitación y asesoría para optimizar el uso del agua en la producción agropecuaria",
+    "anios": [
+     182380330,
+     199928794,
+     219292658,
+     240656488
+    ],
+    "total": 842258270
+   },
+   {
+    "etiqueta": "10208 Fortalecimiento de la transformación agropecuaria",
+    "anios": [
+     155329672,
+     170658724,
+     187611509,
+     206354944
+    ],
+    "total": 719954849
+   },
+   {
+    "etiqueta": "10209 Potencialización de procesos de comercialización agropecuaria",
+    "anios": [
+     137062834,
+     149899737,
+     164080882,
+     179743722
+    ],
+    "total": 630787175
+   },
+   {
+    "etiqueta": "10210 Realización del Plan Integral de Riesgos Agropecuarios",
+    "anios": [
+     56792167,
+     60394022,
+     64371202,
+     68761994
+    ],
+    "total": 250319385
+   },
+   {
+    "etiqueta": "0103 Emprendimiento, empleo, Industria y Comercio",
+    "anios": [
+     99580851,
+     128614813,
+     161505966,
+     198687717
+    ],
+    "total": 588389346
+   },
+   {
+    "etiqueta": "10301 Desarrollo del programa de Emprendimiento y fortalecimiento empresarial municipal",
+    "anios": [
+     49790425,
+     64307407,
+     80752983,
+     99343858
+    ],
+    "total": 294194673
+   },
+   {
+    "etiqueta": "10302 Promoción de estrategias para la dinamización del empleo",
+    "anios": [
+     49790425,
+     64307407,
+     80752983,
+     99343858
+    ],
+    "total": 294194673
+   },
+   {
+    "etiqueta": "02 Oportunidades para el Desarrollo Sostenible",
+    "anios": [
+     7426987788,
+     8332571146,
+     9164251051,
+     10279940299
+    ],
+    "total": 35203750284
+   },
+   {
+    "etiqueta": "0201 Protección Ambiental y Animal",
+    "anios": [
+     3923307590,
+     4339329272,
+     4797367906,
+     5301645926
+    ],
+    "total": 18361650694
+   },
+   {
+    "etiqueta": "20101 Protección conservación y restauración de recursos naturales",
+    "anios": [
+     914053226,
+     1741324879,
+     1925970695,
+     2129298854
+    ],
+    "total": 6710647655
+   },
+   {
+    "etiqueta": "20102 Educación, investigación o construcción de proyectos para el mejoramiento de la sostenibilidad ambiental",
+    "anios": [
+     1224453395,
+     798977414,
+     886001528,
+     981945815
+    ],
+    "total": 3891378152
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 226,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "20103 Implementación de la Política Pública de Bienestar Animal 20104 Desarrollo de proyectos Ambientales con trabajo comunitario",
+    "anios": [
+     116400063,
+     128501927,
+     141813977,
+     156457233
+    ],
+    "total": 543173200
+   },
+   {
+    "etiqueta": "20105 Gestión integral de cambio climático",
+    "anios": [
+     310400169,
+     428339757,
+     472713258,
+     521524109
+    ],
+    "total": 1732977292
+   },
+   {
+    "etiqueta": "0202 Servicios Públicos",
+    "anios": [
+     3358748426,
+     3833241858,
+     4190308060,
+     4583210480
+    ],
+    "total": 15965508824
+   },
+   {
+    "etiqueta": "20201 Creación y fortalecimiento de empresas prestadoras de servicios públicos",
+    "anios": [
+     116290183,
+     256761245,
+     283360212,
+     312619077
+    ],
+    "total": 969030716
+   },
+   {
+    "etiqueta": "20202 Construcción, mejoramiento y mantenimiento de infraestructura para la prestación de servicios públicos",
+    "anios": [
+     1408382463,
+     1573839327,
+     1718761079,
+     1878175005
+    ],
+    "total": 6579157874
+   },
+   {
+    "etiqueta": "20203 Fortalecimiento de los programas de gestión y manejo integral de residuos sólidos",
+    "anios": [
+     187321666,
+     209214504,
+     233420053,
+     260175756
+    ],
+    "total": 890131980
+   },
+   {
+    "etiqueta": "20204 Gestión de un plan de acción para la modernización, optimización, cobertura y eficiencia energética.",
+    "anios": [
+     407187741,
+     448367936,
+     493666152,
+     543494188
+    ],
+    "total": 1892716017
+   },
+   {
+    "etiqueta": "20205 Generación de un programa para aumentar la cobertura de internet",
+    "anios": [
+     193535048,
+     213656470,
+     235790034,
+     260136955
+    ],
+    "total": 903118508
+   },
+   {
+    "etiqueta": "20206 Gestión para generación de energías alternativas",
+    "anios": [
+     196767524,
+     206828235,
+     217895017,
+     230068478
+    ],
+    "total": 851559254
+   },
+   {
+    "etiqueta": "20207 Actualización e implementación del Plan Maestro de Acueductos y Alcantarillados del casco urbano y los Corregimientos",
+    "anios": [
+     652496277,
+     717745905,
+     789520495,
+     868472544
+    ],
+    "total": 3028235221
+   },
+   {
+    "etiqueta": "20208 Fortalecimiento de programas acueductos, abastos veredales y pozos sépticos",
+    "anios": [
+     196767524,
+     206828235,
+     217895017,
+     230068478
+    ],
+    "total": 851559254
+   },
+   {
+    "etiqueta": "0203 Cooperación",
+    "anios": [
+     144931772,
+     160000016,
+     176575085,
+     395083893
+    ],
+    "total": 876590766
+   },
+   {
+    "etiqueta": "20301 Creación de estrategias de cooperación enfocada a la gestión de alianzas, recursos, proyectos y acuerdos regionales, nacionales e internacionales.",
+    "anios": [
+     72465886,
+     80000008,
+     88287542,
+     177514323
+    ],
+    "total": 418267760
+   },
+   {
+    "etiqueta": "20302 Establecimiento de alianzas estratégicas con entidades públicas y privadas del nivel regional, nacional e internacional para la gestión de proyectos y recursos",
+    "anios": [
+     72465886,
+     80000008,
+     88287542,
+     217569570
+    ],
+    "total": 458323006
+   },
+   {
+    "etiqueta": "03 Oportunidades para la Equidad Social",
+    "anios": [
+     23825996230,
+     26378330015,
+     29102345864,
+     32133384418
+    ],
+    "total": 111440056528
+   },
+   {
+    "etiqueta": "0301 Salud",
+    "anios": [
+     16811113845,
+     18503437692,
+     20365937417,
+     22415677782
+    ],
+    "total": 78096166736
+   },
+   {
+    "etiqueta": "30101 Actualización e implementación del plan territorial de salud",
+    "anios": [
+     220867979,
+     231626077,
+     243459984,
+     256477283
+    ],
+    "total": 952431323
+   },
+   {
+    "etiqueta": "30102 Realización de un programa de promoción y mantenimiento de la salud, generando estrategias para la prevención de las enfermedades y el diagnóstico oportuno.",
+    "anios": [
+     15864350720,
+     17450785792,
+     19195864371,
+     21115450808
+    ],
+    "total": 73626451691
+   },
+   {
+    "etiqueta": "30103 Implementación de un plan de acción para el fortalecimiento de la Empresa Social del Estado",
+    "anios": [
+     169373381,
+     208851882,
+     253221726,
+     303019222
+    ],
+    "total": 934466210
+   },
+   {
+    "etiqueta": "30104 Actualización e implementación de la política de salud mental del municipio, estableciendo programas y proyectos para su promoción y dinamismo",
+    "anios": [
+     556521765,
+     612173942,
+     673391336,
+     740730470
+    ],
+    "total": 2582817512
+   },
+   {
+    "etiqueta": "0302 Educación",
+    "anios": [
+     2407569098,
+     2700994495,
+     3025319480,
+     3383711866
+    ],
+    "total": 11517594940
+   },
+   {
+    "etiqueta": "30201 Fortalecimiento de la investigación, innovación y Tecnologías de la información y comunicación TIC en la educación",
+    "anios": [
+     209014335,
+     237184808,
+     268328032,
+     302749069
+    ],
+    "total": 1017276244
+   },
+   {
+    "etiqueta": "30202 Fortalecimiento de la calidad y cobertura educativa",
+    "anios": [
+     731172920,
+     812792996,
+     902886489,
+     1002316313
+    ],
+    "total": 3449168717
+   },
+   {
+    "etiqueta": "30203 Creación del programa San Carlos Bilingüe",
+    "anios": [
+     152127969,
+     171334493,
+     192461669,
+     215701563
+    ],
+    "total": 731625694
+   },
+   {
+    "etiqueta": "30204 Creación de un programa de bienestar para los maestros, que permita exaltar y dignificar su labor en el territorio",
+    "anios": [
+     78760854,
+     86851890,
+     95752031,
+     105542185
+    ],
+    "total": 366906960
+   },
+   {
+    "etiqueta": "30205 Fortalecimiento integral de la educación superior",
+    "anios": [
+     81259990,
+     89708416,
+     99001685,
+     109224280
+    ],
+    "total": 379194371
+   },
+   {
+    "etiqueta": "30206 Fortalecimiento del programa Alimentación Escolar -PAE y de transporte escolar.",
+    "anios": [
+     1155233031,
+     1303121892,
+     1466889574,
+     1648178456
+    ],
+    "total": 5573422953
+   },
+   {
+    "etiqueta": "0303 Cultura",
+    "anios": [
+     624906858,
+     752006643,
+     804916265,
+     894221699
+    ],
+    "total": 3076051465
+   },
+   {
+    "etiqueta": "30301 Implementación del Plan Decenal de Cultura.",
+    "anios": [
+     154019154,
+     169931695,
+     187455463,
+     206752577
+    ],
+    "total": 718158888
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 227,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "30302 Construcción, mejoramiento y dotación de las instalaciones de formación y promoción artística y cultural ubicadas en la zona urbana y rural del municipio.",
+    "anios": [
+     324692551,
+     399416072,
+     426671860,
+     476716137
+    ],
+    "total": 1627496619
+   },
+   {
+    "etiqueta": "30303 Desarrollo de eventos artísticos y culturales de alcance municipal, regional, nacional e internacional en el municipio.",
+    "anios": [
+     83507920,
+     113536129,
+     114587130,
+     126764201
+    ],
+    "total": 438395379
+   },
+   {
+    "etiqueta": "30304 Generación de un plan de fortalecimiento de la Biblioteca y ludotecas Municipales.",
+    "anios": [
+     62687234,
+     69122748,
+     76201813,
+     83988785
+    ],
+    "total": 292000579
+   },
+   {
+    "etiqueta": "0304 Deporte",
+    "anios": [
+     983688569,
+     1070715463,
+     1166773023,
+     1272780715
+    ],
+    "total": 4493957770
+   },
+   {
+    "etiqueta": "30401 Formulación e implementación del Plan Decenal de Deporte.",
+    "anios": [
+     109199674,
+     121195295,
+     5553631,
+     6832183
+    ],
+    "total": 242780783
+   },
+   {
+    "etiqueta": "30402 Construcción, mejoramiento, dotación o mantenimiento de escenarios deportivos",
+    "anios": [
+     406236690,
+     440979527,
+     608230281,
+     663928355
+    ],
+    "total": 2119374852
+   },
+   {
+    "etiqueta": "30403 Fortalecimiento de la institucionalidad del deporte la recreación y la actividad física",
+    "anios": [
+     225211892,
+     245225567,
+     267339003,
+     291767095
+    ],
+    "total": 1029543557
+   },
+   {
+    "etiqueta": "30404 Fomento para la actividad física, recreación y deporte urbana y rural",
+    "anios": [
+     243040314,
+     263315074,
+     285650108,
+     310253083
+    ],
+    "total": 1102258578
+   },
+   {
+    "etiqueta": "0305 Atención Diferencial Género y Sectores Poblacionales",
+    "anios": [
+     2998717860,
+     3351175722,
+     3739399679,
+     4166992356
+    ],
+    "total": 14256285617
+   },
+   {
+    "etiqueta": "30501 Actualización e implementación de la Política Pública de Equidad de Género.",
+    "anios": [
+     105199293,
+     120647712,
+     137698207,
+     156513848
+    ],
+    "total": 520059060
+   },
+   {
+    "etiqueta": "30502 Atención integral a la mujer",
+    "anios": [
+     86992835,
+     98820022,
+     111902772,
+     126370282
+    ],
+    "total": 424085911
+   },
+   {
+    "etiqueta": "30503 Apoyo y acompañamiento a la población diversa",
+    "anios": [
+     121439282,
+     138137252,
+     156609080,
+     177037355
+    ],
+    "total": 593222969
+   },
+   {
+    "etiqueta": "30504 Atención integral al adulto mayor",
+    "anios": [
+     1289405306,
+     1427918827,
+     1580351341,
+     1748098129
+    ],
+    "total": 6045773603
+   },
+   {
+    "etiqueta": "30505 Actualización e implementación de la Política Pública de adolescencia y Juventud.",
+    "anios": [
+     148263309,
+     170324971,
+     194655236,
+     221484087
+    ],
+    "total": 734727603
+   },
+   {
+    "etiqueta": "30506 Actualización e implementación de la política pública para personas con discapacidad.",
+    "anios": [
+     616432982,
+     689607281,
+     770192667,
+     858934929
+    ],
+    "total": 2935167858
+   },
+   {
+    "etiqueta": "30507 Atención integral a la primera infancia y la niñez",
+    "anios": [
+     413669743,
+     471257585,
+     534656241,
+     604449395
+    ],
+    "total": 2024032964
+   },
+   {
+    "etiqueta": "30508 Formulación e implementación de la Política Pública de Familia",
+    "anios": [
+     217315110,
+     234462071,
+     253334135,
+     274104331
+    ],
+    "total": 979215647
+   },
+   {
+    "etiqueta": "04 Oportunidades para el Buen Gobierno",
+    "anios": [
+     3162056778,
+     3561818955,
+     3911956674,
+     4156451224
+    ],
+    "total": 14792283632
+   },
+   {
+    "etiqueta": "0401 Gobernanza Eficiente, Cercana y Transparente",
+    "anios": [
+     1612375107,
+     1783361103,
+     1973368537,
+     1984119464
+    ],
+    "total": 7353224211
+   },
+   {
+    "etiqueta": "40101 Creación de la estrategia “Dialoguemos San Carlos”",
+    "anios": [
+     92541287,
+     105928627,
+     120846985,
+     137459077
+    ],
+    "total": 456775975
+   },
+   {
+    "etiqueta": "40102 Realización de programa para el fortalecimiento del Gobierno Digital",
+    "anios": [
+     112616687,
+     131857245,
+     153406427,
+     177514323
+    ],
+    "total": 575394683
+   },
+   {
+    "etiqueta": "40103 Creación de un punto de guía e información ciudadana en las instalaciones de la Alcaldía Municipal para generar una atención oportuna y efectiva.",
+    "anios": [
+     46270643,
+     52964313,
+     60423492,
+     68729538
+    ],
+    "total": 228387987
+   },
+   {
+    "etiqueta": "40104 Atención humana y oportuna al ciudadano",
+    "anios": [
+     92541287,
+     105928627,
+     120846985,
+     137459077
+    ],
+    "total": 456775975
+   },
+   {
+    "etiqueta": "40105 Fortalecimiento de los sistemas integrados de gestión",
+    "anios": [
+     72465886,
+     80000008,
+     88287542,
+     97403830
+    ],
+    "total": 338157267
+   },
+   {
+    "etiqueta": "40106 Fortalecimiento de la hacienda pública en el componente fiscal y financiero con enfoque de transparencia",
+    "anios": [
+     72465886,
+     80000008,
+     88287542,
+     97403830
+    ],
+    "total": 338157267
+   },
+   {
+    "etiqueta": "40107 Formulación e implementación de programas de bienestar laboral y seguridad y salud en el trabajo.",
+    "anios": [
+     46270643,
+     52964313,
+     60423492,
+     68729538
+    ],
+    "total": 228387987
+   },
+   {
+    "etiqueta": "40108 Creación de un sistema de información pública y geográfica",
+    "anios": [
+     72465886,
+     80000008,
+     88287542,
+     97403830
+    ],
+    "total": 338157267
+   },
+   {
+    "etiqueta": "40109 Gestión de la Modernización administrativa de acuerdo con las necesidades institucionales y las directrices normativas",
+    "anios": [
+     49205295,
+     54321064,
+     35969046,
+     39683094
+    ],
+    "total": 179178498
+   },
+   {
+    "etiqueta": "40110 Fortalecimiento de la gestión catastral",
+    "anios": [
+     89364236,
+     93456851,
+     109948409,
+     116138489
+    ],
+    "total": 408907986
+   },
+   {
+    "etiqueta": "40111 Fortalecimiento del Banco de Programas y proyectos de inversión municipal",
+    "anios": [
+     109832919,
+     123585663,
+     139098248,
+     76455396
+    ],
+    "total": 448972226
+   },
+   {
+    "etiqueta": "40112 Fortalecimiento del modelointegrado de planeacióny gestión",
+    "anios": [
+     79523177,
+     82592638,
+     85969046,
+     89683094
+    ],
+    "total": 337767955
+   },
+   {
+    "etiqueta": "40113 Formulación, seguimiento, evaluación y control del plan de desarrollo e indicadores estratégicos municipales",
+    "anios": [
+     74602648,
+     77160532,
+     79974205,
+     83069245
+    ],
+    "total": 314806629
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 228,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "40114 Establecimiento de un sistema para la gestión ágil y transparente de las diferentes licencias y permisos de construcción.",
+    "anios": [
+     74602648,
+     77160532,
+     79974205,
+     83069245
+    ],
+    "total": 314806629
+   },
+   {
+    "etiqueta": "40115 Gestión para la implementación de acciones del Esquema de Ordenamiento Territorial",
+    "anios": [
+     84828850,
+     104946388,
+     127652532,
+     33069245
+    ],
+    "total": 350497014
+   },
+   {
+    "etiqueta": "40116 Modernización de la estratificación municipal",
+    "anios": [
+     29523177,
+     32592638,
+     35969046,
+     39683094
+    ],
+    "total": 137767955
+   },
+   {
+    "etiqueta": "40117 Fortalecimiento de gestión documental",
+    "anios": [
+     104602648,
+     107160532,
+     109974205,
+     113069245
+    ],
+    "total": 434806629
+   },
+   {
+    "etiqueta": "40118 Formulación e implementación del Plan Estratégico de Tecnologías de la información y la Comunicación PETIC",
+    "anios": [
+     147615886,
+     162963192,
+     239793637,
+     264553957
+    ],
+    "total": 814926672
+   },
+   {
+    "etiqueta": "40119 Fortalecimiento de la conectividad del municipio",
+    "anios": [
+     72465886,
+     80000008,
+     88287542,
+     97403830
+    ],
+    "total": 338157267
+   },
+   {
+    "etiqueta": "40120 Promoción del desarrollo de aplicaciones, software y contenidos para impulsar la apropiación de las TIC",
+    "anios": [
+     88569532,
+     97777915,
+     59948409,
+     66138489
+    ],
+    "total": 312434345
+   },
+   {
+    "etiqueta": "0402 Seguridad",
+    "anios": [
+     751116613,
+     878340434,
+     925073995,
+     1032307641
+    ],
+    "total": 3586838684
+   },
+   {
+    "etiqueta": "40201 Formulación e implementación del Plan Integral de Convivencia y Seguridad Ciudadana – PISCC",
+    "anios": [
+     170484208,
+     194377492,
+     241930746,
+     273682568
+    ],
+    "total": 880475014
+   },
+   {
+    "etiqueta": "40202 Fortalecimiento y creación de frentes de seguridad local",
+    "anios": [
+     129767600,
+     109987527,
+     79321381,
+     89098844
+    ],
+    "total": 408175352
+   },
+   {
+    "etiqueta": "40203 Generación del programa de seguridad rural denominado fincas seguras",
+    "anios": [
+     50841482,
+     88720563,
+     68576129,
+     79042495
+    ],
+    "total": 287180668
+   },
+   {
+    "etiqueta": "40204 Diseño y implementación del Sistema integrado de emergencia y seguridad - SIES, también conocido como Centro de Monitoreo y Control (CMC)",
+    "anios": [
+     75681369,
+     123549798,
+     132205070,
+     141725869
+    ],
+    "total": 473162106
+   },
+   {
+    "etiqueta": "40205 Fortalecimiento de la fuerza pública y otros organismos de seguridad",
+    "anios": [
+     324341955,
+     361705053,
+     403040670,
+     448757866
+    ],
+    "total": 1537845544
+   },
+   {
+    "etiqueta": "0403 Paz y Convivencia",
+    "anios": [
+     454119185,
+     491975873,
+     533618229,
+     579424821
+    ],
+    "total": 2059138107
+   },
+   {
+    "etiqueta": "40301 Acompañamiento de la institucionalidad para la construcción de paz y convivencia",
+    "anios": [
+     29523177,
+     32592638,
+     35969046,
+     39683094
+    ],
+    "total": 137767955
+   },
+   {
+    "etiqueta": "40302 Formulación y gestión de programas y proyectos para la reparación integral de victimas e implementación de acuerdos de paz",
+    "anios": [
+     89682118,
+     91728426,
+     93979364,
+     96455396
+    ],
+    "total": 371845303
+   },
+   {
+    "etiqueta": "40303 Apoyo en la construcción e implementación de la catedra de paz",
+    "anios": [
+     39682118,
+     41728426,
+     43979364,
+     46455396
+    ],
+    "total": 171845303
+   },
+   {
+    "etiqueta": "40304 Fortalecimiento de museos comunitarios como el centro de acercamiento para la Reconciliación y la Reparación y otros dignifiquen la memoria.",
+    "anios": [
+     49205295,
+     54321064,
+     59948409,
+     66138489
+    ],
+    "total": 229613258
+   },
+   {
+    "etiqueta": "40305 Gestión ante organismos departamentales y nacionales para la implementación del plan integral de reparación colectiva PIRC",
+    "anios": [
+     29523177,
+     32592638,
+     35969046,
+     39683094
+    ],
+    "total": 137767955
+   },
+   {
+    "etiqueta": "40306 Realización de eventos para la promoción de la paz, memoria, reconciliación y la promoción de garantía de derechos.",
+    "anios": [
+     39364236,
+     43456851,
+     47958727,
+     52910791
+    ],
+    "total": 183690606
+   },
+   {
+    "etiqueta": "40307 Creación del Hogar de paso para la promoción del restablecimiento de derechos de los niños, niñas y adolescentes",
+    "anios": [
+     177139063,
+     195555830,
+     215814273,
+     238098561
+    ],
+    "total": 826607728
+   },
+   {
+    "etiqueta": "0404 Participación Ciudadana",
+    "anios": [
+     344445873,
+     408141546,
+     479895913,
+     560599298
+    ],
+    "total": 1793082629
+   },
+   {
+    "etiqueta": "40401 Creación de la Política Pública de Participación Ciudadana y Acción Comunal.",
+    "anios": [
+     64793810,
+     78146837,
+     93172992,
+     110056478
+    ],
+    "total": 346170117
+   },
+   {
+    "etiqueta": "40402 Fortalecimiento de Presupuesto participativo",
+    "anios": [
+     87317435,
+     94505525,
+     102581337,
+     111642088
+    ],
+    "total": 396046384
+   },
+   {
+    "etiqueta": "40403 Acompañamiento a organizaciones comunitarias y sociales a través de la generación de acciones estratégicas",
+    "anios": [
+     54952751,
+     67282624,
+     81183310,
+     96828780
+    ],
+    "total": 300247465
+   },
+   {
+    "etiqueta": "40404 Dinamización del Consejo de Participación Ciudadana, el CTP y las diferentes instancias de participación ciudadana y control social.",
+    "anios": [
+     63770409,
+     78671174,
+     95484296,
+     114422127
+    ],
+    "total": 352348006
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 229,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "40405 Generación de incentivos a los líderes comunitarios y sociales",
+    "anios": [
+     73611468,
+     89535387,
+     107473978,
+     127649824
+    ],
+    "total": 398270657
+   },
+   {
+    "etiqueta": "05 Oportunidades para el Ordenamiento Territorial",
+    "anios": [
+     5547970162,
+     6262189824,
+     7165459412,
+     7944965320
+    ],
+    "total": 26920584718
+   },
+   {
+    "etiqueta": "0501 Infraestructura Vial y Movilidad",
+    "anios": [
+     2457174063,
+     2842362737,
+     3180757725,
+     3555814033
+    ],
+    "total": 12036108557
+   },
+   {
+    "etiqueta": "50101 Gestión para la pavimentación de vías urbanas y rurales - vías La Holanda-El Jordán-Puerto Garza y El Chocó-San Luis",
+    "anios": [
+     502257442,
+     628402743,
+     699181834,
+     554632922
+    ],
+    "total": 2384474942
+   },
+   {
+    "etiqueta": "50102 Mantenimiento y mejoramiento de vías urbanas y rurales",
+    "anios": [
+     733150788,
+     647252956,
+     736197274,
+     1057993935
+    ],
+    "total": 3174594953
+   },
+   {
+    "etiqueta": "50103 Generación de proyectos para la apertura de vías rurales, la realización de moto-rutas, placa huellas, caminos veredales puentes, box culvert y obras para mejorar la movilidad rural.",
+    "anios": [
+     643036491,
+     470899022,
+     547948085,
+     613193866
+    ],
+    "total": 2275077464
+   },
+   {
+    "etiqueta": "50104 Gestión de la construcción de un parqueadero municipal en alianzas público-privadas.",
+    "anios": [
+     56116588,
+     54358527,
+     45506559,
+     55983037
+    ],
+    "total": 211964711
+   },
+   {
+    "etiqueta": "50105 Formulación e implementación de plan estratégico de movilidad.",
+    "anios": [
+     366309624,
+     178257405,
+     199480528,
+     222967054
+    ],
+    "total": 967014612
+   },
+   {
+    "etiqueta": "50106 Construcción de corredores estratégicos para el fomento del turismo, el deporte y la recreación.",
+    "anios": [
+     156303129,
+     863192082,
+     952443446,
+     1051043219
+    ],
+    "total": 3022981875
+   },
+   {
+    "etiqueta": "0502 Equipamiento y espacio Público",
+    "anios": [
+     1388975547,
+     1522390744,
+     1670603327,
+     1835165825
+    ],
+    "total": 6417135442
+   },
+   {
+    "etiqueta": "50201 Construcción, mejoramiento y mantenimiento de espacios públicos y equipamientos públicos",
+    "anios": [
+     466196038,
+     510157664,
+     559081548,
+     613492222
+    ],
+    "total": 2148927472
+   },
+   {
+    "etiqueta": "50202 Desarrollo de obras de urbanismo e implementación de medidas organizativas mejorar la accesibilidad de transeúntes y personas con movilidad reducida a los espacios públicos.",
+    "anios": [
+     243795618,
+     274686226,
+     308948942,
+     346935131
+    ],
+    "total": 1174365916
+   },
+   {
+    "etiqueta": "50203 Formulación e implementación del Plan Maestro de espacio público y equipamientos",
+    "anios": [
+     100473409,
+     113691264,
+     128372429,
+     144670310
+    ],
+    "total": 487207413
+   },
+   {
+    "etiqueta": "50204 Construcción y embellecimiento de espacios públicos estratégicos con vocación turística",
+    "anios": [
+     472105312,
+     509751684,
+     551374979,
+     597383505
+    ],
+    "total": 2130615480
+   },
+   {
+    "etiqueta": "50205 Fortalecimiento a la red de alumbrado público",
+    "anios": [
+     106405170,
+     114103907,
+     122825427,
+     132684657
+    ],
+    "total": 476019161
+   },
+   {
+    "etiqueta": "0503 Tierras y Vivienda",
+    "anios": [
+     796846194,
+     889154813,
+     1191708247,
+     1305581676
+    ],
+    "total": 4183290930
+   },
+   {
+    "etiqueta": "50301 Gestión de planes, programas y proyectos que permitan identificar y legalizar la propiedad rural y urbana.",
+    "anios": [
+     55293090,
+     228340018,
+     254095563,
+     60560985
+    ],
+    "total": 598289655
+   },
+   {
+    "etiqueta": "50302 Gestión para la construcción y mejoramientos de vivienda en el área urbana y rural, basado en estudio de demanda habitacional",
+    "anios": [
+     280226216,
+     221503666,
+     445510925,
+     593918443
+    ],
+    "total": 1541159250
+   },
+   {
+    "etiqueta": "50303 Conformación y capacitación de una red de gestores comunitarios para los conflictos de tierras.",
+    "anios": [
+     99233840,
+     104700518,
+     116586962,
+     140276266
+    ],
+    "total": 460797586
+   },
+   {
+    "etiqueta": "50304 Elaboración de un plan de administración, recuperación y gestión en las concesiones de los bienes de propiedad del municipio.",
+    "anios": [
+     134076149,
+     144158259,
+     197173148,
+     190555350
+    ],
+    "total": 665962907
+   },
+   {
+    "etiqueta": "50305 Implementación de acciones para la consolidación del programa Barrios de Paz para adelantar procesos de legalización, prestación de servicios públicos, el mejoramiento de vivienda y entornos y la provisión de espacios públicos y equipamientos en los barrios con riesgo mitigable.",
+    "anios": [
+     228016899,
+     190452352,
+     178341649,
+     320270632
+    ],
+    "total": 917081532
+   },
+   {
+    "etiqueta": "0504 Prevención y Atención de Emergencias y Desastres",
+    "anios": [
+     904974360,
+     1008281530,
+     1122390113,
+     1248403786
+    ],
+    "total": 4284049788
+   },
+   {
+    "etiqueta": "50401 Identificación, prevención y mitigación de riesgos de desastres",
+    "anios": [
+     305892446,
+     346914360,
+     392509161,
+     443157674
+    ],
+    "total": 1488473642
+   },
+   {
+    "etiqueta": "50402 Atención de Emergencias y desastres Total General",
+    "anios": [
+     599081914,
+     661367170,
+     729880952,
+     805246112
+    ],
+    "total": 2795576147
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 242,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "INVERSIÓN",
+    "anios": [
+     1252819200,
+     1069907549,
+     991843630,
+     1040129923
+    ],
+    "total": 4354700302
+   },
+   {
+    "etiqueta": "Asignaciónpara la Paz",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignaciones Directas",
+    "anios": [
+     65421410,
+     41111717,
+     38715469,
+     38605822
+    ],
+    "total": 183854418
+   },
+   {
+    "etiqueta": "20% Asignaciones Directas",
+    "anios": [
+     51077977,
+     32099463,
+     30228506,
+     30142895
+    ],
+    "total": 143548841
+   },
+   {
+    "etiqueta": "5% Asignaciones Directas Anticipadas",
+    "anios": [
+     14343433,
+     9012254,
+     8486963,
+     8462927
+    ],
+    "total": 40305577
+   },
+   {
+    "etiqueta": "Asignación para la Inversión Regional",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Departamentos",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Regiones",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignaciónpara la Inversión Local",
+    "anios": [
+     1187397790,
+     1028795832,
+     953128161,
+     1001524101
+    ],
+    "total": 4170845884
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 243,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Municipios máspobres Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     1187397790,
+     1028795832,
+     953128161,
+     1001524101
+    ],
+    "total": 4170845884
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     1029078085,
+     891623055,
+     826044407,
+     867987554
+    ],
+    "total": 3614733101
+   },
+   {
+    "etiqueta": "Comunidades Étnicas",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Comunidades Indígenas",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Comunidades NARP",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Comunidades Rrom",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación para Ciencia, Tecnología e Innovación",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación para Inversión en Ciencia, Tecnología e Innovación Ambiental",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto de inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación Ambiental",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Municipios Río Magdalena y Canal Dique",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "AHORRO",
+    "anios": [
+     71042503,
+     61413331,
+     56900876,
+     59408356
+    ],
+    "total": 248765066
+   },
+   {
+    "etiqueta": "Fondo de Ahorro y Estabilización (Ahorro)",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Fondo Ahorro Pensional Territorial(FONPET)",
+    "anios": [
+     71042503,
+     61413331,
+     56900876,
+     59408356
+    ],
+    "total": 248765066
+   },
+   {
+    "etiqueta": "OTROS",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Funcionamiento, operatividad y fiscalización",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 244,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Sistema de Seguimiento, Control y Evaluación(SSEC)",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Contraloría",
+    "anios": [
+     70401205851,
+     60858195556,
+     56382090798,
+     58862923139
+    ],
+    "total": 246504415344
+   },
+   {
+    "etiqueta": "Procuraduría",
+    "anios": [
+     14080241171,
+     12171639111,
+     11276418160,
+     11772584628
+    ],
+    "total": 49300883070
+   },
+   {
+    "etiqueta": "DNP",
+    "anios": [
+     56320964680,
+     48686556445,
+     45105672638,
+     47090338511
+    ],
+    "total": 197203532274
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     1323861703,
+     1131320880,
+     1048744506,
+     1099538279
+    ],
+    "total": 4603465368
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ }
+]

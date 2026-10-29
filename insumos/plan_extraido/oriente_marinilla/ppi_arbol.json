@@ -1,0 +1,668 @@
+[
+ {
+  "paginas": [
+   172
+  ],
+  "cabecera": "Componente",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   10297339234,
+   12272259588,
+   12756595164,
+   9269990874
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.1 PROMOCIÓN DE LA CULTURA CIUDADANA Y RESPETO POR LAS NORMAS",
+    "anios": [
+     169962146,
+     180159875,
+     190969468,
+     202427636
+    ],
+    "total": 743519125,
+    "ruta": {
+     "linea": "1.1 PROMOCIÓN DE LA CULTURA CIUDADANA Y RESPETO POR LAS NORMAS"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.2 INFRAESTRUCTU RA TECNOLÓGICA PARA LA",
+    "anios": [
+     2352707471,
+     2493869919,
+     2643502114,
+     2802112241
+    ],
+    "total": 10292191745,
+    "ruta": {
+     "linea": "1.2 INFRAESTRUCTU RA TECNOLÓGICA PARA LA"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "SEGURIDAD",
+    "anios": [
+     100000000,
+     100000000,
+     100000000,
+     100000000
+    ],
+    "total": 400000000,
+    "ruta": {
+     "linea": "SEGURIDAD"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.3 FORTALECIMIENT",
+    "anios": [
+     765000000,
+     810900000,
+     859554000,
+     911127240
+    ],
+    "total": 3346581240,
+    "ruta": {
+     "linea": "1.3 FORTALECIMIENT"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "O DE LA CAPACIDAD POLICIAL Y",
+    "anios": [
+     70000000,
+     74200000,
+     78652000,
+     83371120
+    ],
+    "total": 306223120,
+    "ruta": {
+     "linea": "O DE LA CAPACIDAD POLICIAL Y"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "JUDICIAL",
+    "anios": [
+     300000000,
+     318000000,
+     337080000,
+     357304800
+    ],
+    "total": 1312384800,
+    "ruta": {
+     "linea": "JUDICIAL"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.4 GOBERNANZA Y ÉTICA PÚBLICA",
+    "anios": [
+     150000000,
+     159000000,
+     168540000,
+     178652400
+    ],
+    "total": 656192400,
+    "ruta": {
+     "linea": "1.4 GOBERNANZA Y ÉTICA PÚBLICA"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.5 FORTALECIMIENT O INSTITUCIONAL",
+    "anios": [
+     1241000000,
+     2000000000,
+     2000000000,
+     0
+    ],
+    "total": 5241000000,
+    "ruta": {
+     "linea": "1.5 FORTALECIMIENT O INSTITUCIONAL"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total",
+    "anios": [
+     5148669617,
+     6136129794,
+     6378297582,
+     4634995437
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Total"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   173
+  ],
+  "cabecera": "Componente",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   1921000000,
+   2988260000,
+   3059555600,
+   1335128936
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2.1 FORTALECIMIENTO DEL",
+    "anios": [
+     177500000,
+     194150000,
+     211799000,
+     230506940
+    ],
+    "total": 813955940,
+    "ruta": {
+     "linea": "2.1 FORTALECIMIENTO DEL"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "EMPRENDIMIENTO, LA INDUSTRIA Y EL COMERCIO",
+    "anios": [
+     20000000,
+     21200000,
+     22472000,
+     23820320
+    ],
+    "total": 87492320,
+    "ruta": {
+     "linea": "EMPRENDIMIENTO, LA INDUSTRIA Y EL COMERCIO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2.2 MARKETING TERRITORIAL Y FOMENTO DEL TURISMO",
+    "anios": [
+     657000000,
+     1166420000,
+     1176405200,
+     286989512
+    ],
+    "total": 3286814712,
+    "ruta": {
+     "linea": "2.2 MARKETING TERRITORIAL Y FOMENTO DEL TURISMO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2.3 FORMACIÓN Y PROMOCIÓN DEL EMPLEO",
+    "anios": [
+     106000000,
+     112360000,
+     119101600,
+     126247696
+    ],
+    "total": 463709296,
+    "ruta": {
+     "linea": "2.3 FORMACIÓN Y PROMOCIÓN DEL EMPLEO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total a",
+    "anios": [
+     960500000,
+     1494130000,
+     1529777800,
+     667564468
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Total a"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   174
+  ],
+  "cabecera": "Componente",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   5310707711,
+   5626950174,
+   5962167185,
+   6314019884
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "DE SALUD",
+    "anios": [
+     39500000,
+     41870000,
+     44382200,
+     43567800
+    ],
+    "total": 169320000,
+    "ruta": {
+     "linea": "DE SALUD"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3.2 FORTALECIMIENTO DE LA EDUCACIÓN",
+    "anios": [
+     3608207711,
+     3824700174,
+     4054182185,
+     4297433116
+    ],
+    "total": 15784523186,
+    "ruta": {
+     "linea": "3.2 FORTALECIMIENTO DE LA EDUCACIÓN"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3.3 PROTECCIÓN DE LA FAMILIA",
+    "anios": [
+     78000000,
+     82680000,
+     87640800,
+     92899248
+    ],
+    "total": 341220048,
+    "ruta": {
+     "linea": "3.3 PROTECCIÓN DE LA FAMILIA"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3.4 EQUIDAD E",
+    "anios": [
+     85000000,
+     87700000,
+     90562000,
+     93595720
+    ],
+    "total": 356857720,
+    "ruta": {
+     "linea": "3.4 EQUIDAD E"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "INCLUSIÓN SOCIAL",
+    "anios": [
+     1500000000,
+     1590000000,
+     1685400000,
+     1786524000
+    ],
+    "total": 6561924000,
+    "ruta": {
+     "linea": "INCLUSIÓN SOCIAL"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   175
+  ],
+  "cabecera": "Componente",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   598104176,
+   633990427,
+   672029852,
+   712351643
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3.5 ARTE, CULTURA Y PATRIMONIO",
+    "anios": [
+     40000000,
+     42400000,
+     44944000,
+     47640640
+    ],
+    "total": 174984640,
+    "ruta": {
+     "linea": "3.5 ARTE, CULTURA Y PATRIMONIO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3.6 DEPORTE, RECREACIÓN Y ACTIVIDAD FÍSICA",
+    "anios": [
+     558104176,
+     591590427,
+     627085852,
+     664711003
+    ],
+    "total": 2441491458,
+    "ruta": {
+     "linea": "3.6 DEPORTE, RECREACIÓN Y ACTIVIDAD FÍSICA"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   177,
+   178
+  ],
+  "cabecera": "Componente",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   27301815521,
+   49587618974,
+   42388029976,
+   39494978074
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4.2",
+    "anios": [
+     1455987957,
+     9483347234,
+     5512348069,
+     3248316740
+    ],
+    "total": 19700000000,
+    "ruta": {
+     "linea": "4.2"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "INFRAESTRUCTURA",
+    "anios": [
+     0,
+     356000000,
+     291000000,
+     400500000
+    ],
+    "total": 1047500000,
+    "ruta": {
+     "linea": "INFRAESTRUCTURA"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4.3 VIVIENDA",
+    "anios": [
+     0,
+     500000000,
+     0,
+     0
+    ],
+    "total": 500000000,
+    "ruta": {
+     "linea": "4.3 VIVIENDA"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4.4 SERVICIOS PÚBLICOS",
+    "anios": [
+     5318519216,
+     5820877630,
+     6375367219,
+     10987754615
+    ],
+    "total": 28502518680,
+    "ruta": {
+     "linea": "4.4 SERVICIOS PÚBLICOS"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4.5 MOVILIDAD",
+    "anios": [
+     461700000,
+     789402000,
+     3418766120,
+     549892087
+    ],
+    "total": 5219760207,
+    "ruta": {
+     "linea": "4.5 MOVILIDAD"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4.6 GESTIÓN INTEGRAL DEL RIESGO",
+    "anios": [
+     715881568,
+     758834462,
+     804364530,
+     852626402
+    ],
+    "total": 3131706963,
+    "ruta": {
+     "linea": "4.6 GESTIÓN INTEGRAL DEL RIESGO"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total a",
+    "anios": [
+     14086380221,
+     25360010295,
+     19195887844,
+     18378174265
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Total a"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "RURAL",
+    "anios": [
+     150000000,
+     159000000,
+     168540000,
+     178652400
+    ],
+    "total": 656192400,
+    "ruta": {
+     "linea": "RURAL"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "5.2 MEJORAMIENTO DE LA INFRAESTRUCTURA",
+    "anios": [
+     1100000000,
+     636000000,
+     674160000,
+     714609600
+    ],
+    "total": 3124769600,
+    "ruta": {
+     "linea": "5.2 MEJORAMIENTO DE LA INFRAESTRUCTURA"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "RURAL",
+    "anios": [
+     150000000,
+     1159000000,
+     1168540000,
+     178652400
+    ],
+    "total": 2656192400,
+    "ruta": {
+     "linea": "RURAL"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "5.3 PROTECCIÓN, CONSERVACIÓN Y RESTAURACIÓN AMBIENTAL",
+    "anios": [
+     449996302,
+     476996080,
+     505615845,
+     535952795
+    ],
+    "total": 1968561021,
+    "ruta": {
+     "linea": "5.3 PROTECCIÓN, CONSERVACIÓN Y RESTAURACIÓN AMBIENTAL"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "5.4 BIENESTAR ANIMAL",
+    "anios": [
+     406676978,
+     431077597,
+     456942252,
+     484358788
+    ],
+    "total": 1779055615,
+    "ruta": {
+     "linea": "5.4 BIENESTAR ANIMAL"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "5.5 GESTIÓN INTEGRAL DE RESIDUOS",
+    "anios": [
+     250000000,
+     265000000,
+     280900000,
+     297754000
+    ],
+    "total": 1093654000,
+    "ruta": {
+     "linea": "5.5 GESTIÓN INTEGRAL DE RESIDUOS"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total a",
+    "anios": [
+     2756673279,
+     3392073676,
+     3535598097,
+     2687733982
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Total a"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

@@ -1,0 +1,923 @@
+[
+ {
+  "pagina": 172,
+  "cabecera": "Componente",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "1.1 PROMOCIÓN DE LA CULTURA CIUDADANA Y RESPETO POR LAS NORMAS",
+    "anios": [
+     169962146,
+     180159875,
+     190969468,
+     202427636
+    ],
+    "total": 743519125
+   },
+   {
+    "etiqueta": "1.2 INFRAESTRUCTU RA TECNOLÓGICA PARA LA",
+    "anios": [
+     2352707471,
+     2493869919,
+     2643502114,
+     2802112241
+    ],
+    "total": 10292191745
+   },
+   {
+    "etiqueta": "SEGURIDAD",
+    "anios": [
+     100000000,
+     100000000,
+     100000000,
+     100000000
+    ],
+    "total": 400000000
+   },
+   {
+    "etiqueta": "1.3 FORTALECIMIENT",
+    "anios": [
+     765000000,
+     810900000,
+     859554000,
+     911127240
+    ],
+    "total": 3346581240
+   },
+   {
+    "etiqueta": "O DE LA CAPACIDAD POLICIAL Y",
+    "anios": [
+     70000000,
+     74200000,
+     78652000,
+     83371120
+    ],
+    "total": 306223120
+   },
+   {
+    "etiqueta": "JUDICIAL",
+    "anios": [
+     300000000,
+     318000000,
+     337080000,
+     357304800
+    ],
+    "total": 1312384800
+   },
+   {
+    "etiqueta": "1.4 GOBERNANZA Y ÉTICA PÚBLICA",
+    "anios": [
+     150000000,
+     159000000,
+     168540000,
+     178652400
+    ],
+    "total": 656192400
+   },
+   {
+    "etiqueta": "1.5 FORTALECIMIENT O INSTITUCIONAL",
+    "anios": [
+     1241000000,
+     2000000000,
+     2000000000,
+     0
+    ],
+    "total": 5241000000
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     5148669617,
+     6136129794,
+     6378297582,
+     4634995437
+    ],
+    "total": 0
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ },
+ {
+  "pagina": 173,
+  "cabecera": "Componente",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "2.1 FORTALECIMIENTO DEL",
+    "anios": [
+     177500000,
+     194150000,
+     211799000,
+     230506940
+    ],
+    "total": 813955940
+   },
+   {
+    "etiqueta": "EMPRENDIMIENTO, LA INDUSTRIA Y EL COMERCIO",
+    "anios": [
+     20000000,
+     21200000,
+     22472000,
+     23820320
+    ],
+    "total": 87492320
+   },
+   {
+    "etiqueta": "2.2 MARKETING TERRITORIAL Y FOMENTO DEL TURISMO",
+    "anios": [
+     657000000,
+     1166420000,
+     1176405200,
+     286989512
+    ],
+    "total": 3286814712
+   },
+   {
+    "etiqueta": "2.3 FORMACIÓN Y PROMOCIÓN DEL EMPLEO",
+    "anios": [
+     106000000,
+     112360000,
+     119101600,
+     126247696
+    ],
+    "total": 463709296
+   },
+   {
+    "etiqueta": "Total a",
+    "anios": [
+     960500000,
+     1494130000,
+     1529777800,
+     667564468
+    ],
+    "total": 0
+   }
+  ],
+  "ncols": 7,
+  "financiero": false
+ },
+ {
+  "pagina": 174,
+  "cabecera": "Componente",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "DE SALUD",
+    "anios": [
+     39500000,
+     41870000,
+     44382200,
+     43567800
+    ],
+    "total": 169320000
+   },
+   {
+    "etiqueta": "3.2 FORTALECIMIENTO DE LA EDUCACIÓN",
+    "anios": [
+     3608207711,
+     3824700174,
+     4054182185,
+     4297433116
+    ],
+    "total": 15784523186
+   },
+   {
+    "etiqueta": "3.3 PROTECCIÓN DE LA FAMILIA",
+    "anios": [
+     78000000,
+     82680000,
+     87640800,
+     92899248
+    ],
+    "total": 341220048
+   },
+   {
+    "etiqueta": "3.4 EQUIDAD E",
+    "anios": [
+     85000000,
+     87700000,
+     90562000,
+     93595720
+    ],
+    "total": 356857720
+   },
+   {
+    "etiqueta": "INCLUSIÓN SOCIAL",
+    "anios": [
+     1500000000,
+     1590000000,
+     1685400000,
+     1786524000
+    ],
+    "total": 6561924000
+   }
+  ],
+  "ncols": 4,
+  "financiero": false
+ },
+ {
+  "pagina": 175,
+  "cabecera": "Componente",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "3.5 ARTE, CULTURA Y PATRIMONIO",
+    "anios": [
+     40000000,
+     42400000,
+     44944000,
+     47640640
+    ],
+    "total": 174984640
+   },
+   {
+    "etiqueta": "3.6 DEPORTE, RECREACIÓN Y ACTIVIDAD FÍSICA",
+    "anios": [
+     558104176,
+     591590427,
+     627085852,
+     664711003
+    ],
+    "total": 2441491458
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ },
+ {
+  "pagina": 177,
+  "cabecera": "Componente",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "4.2",
+    "anios": [
+     1455987957,
+     9483347234,
+     5512348069,
+     3248316740
+    ],
+    "total": 19700000000
+   },
+   {
+    "etiqueta": "INFRAESTRUCTURA",
+    "anios": [
+     0,
+     356000000,
+     291000000,
+     400500000
+    ],
+    "total": 1047500000
+   },
+   {
+    "etiqueta": "4.3 VIVIENDA",
+    "anios": [
+     0,
+     500000000,
+     0,
+     0
+    ],
+    "total": 500000000
+   },
+   {
+    "etiqueta": "4.4 SERVICIOS PÚBLICOS",
+    "anios": [
+     5318519216,
+     5820877630,
+     6375367219,
+     10987754615
+    ],
+    "total": 28502518680
+   },
+   {
+    "etiqueta": "4.5 MOVILIDAD",
+    "anios": [
+     461700000,
+     789402000,
+     3418766120,
+     549892087
+    ],
+    "total": 5219760207
+   },
+   {
+    "etiqueta": "4.6 GESTIÓN INTEGRAL DEL RIESGO",
+    "anios": [
+     715881568,
+     758834462,
+     804364530,
+     852626402
+    ],
+    "total": 3131706963
+   },
+   {
+    "etiqueta": "Total a",
+    "anios": [
+     14086380221,
+     25360010295,
+     19195887844,
+     18378174265
+    ],
+    "total": 0
+   }
+  ],
+  "ncols": 7,
+  "financiero": false
+ },
+ {
+  "pagina": 178,
+  "cabecera": "Componente",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "RURAL",
+    "anios": [
+     150000000,
+     159000000,
+     168540000,
+     178652400
+    ],
+    "total": 656192400
+   },
+   {
+    "etiqueta": "5.2 MEJORAMIENTO DE LA INFRAESTRUCTURA",
+    "anios": [
+     1100000000,
+     636000000,
+     674160000,
+     714609600
+    ],
+    "total": 3124769600
+   },
+   {
+    "etiqueta": "RURAL",
+    "anios": [
+     150000000,
+     1159000000,
+     1168540000,
+     178652400
+    ],
+    "total": 2656192400
+   },
+   {
+    "etiqueta": "5.3 PROTECCIÓN, CONSERVACIÓN Y RESTAURACIÓN AMBIENTAL",
+    "anios": [
+     449996302,
+     476996080,
+     505615845,
+     535952795
+    ],
+    "total": 1968561021
+   },
+   {
+    "etiqueta": "5.4 BIENESTAR ANIMAL",
+    "anios": [
+     406676978,
+     431077597,
+     456942252,
+     484358788
+    ],
+    "total": 1779055615
+   },
+   {
+    "etiqueta": "5.5 GESTIÓN INTEGRAL DE RESIDUOS",
+    "anios": [
+     250000000,
+     265000000,
+     280900000,
+     297754000
+    ],
+    "total": 1093654000
+   },
+   {
+    "etiqueta": "Total a",
+    "anios": [
+     2756673279,
+     3392073676,
+     3535598097,
+     2687733982
+    ],
+    "total": 0
+   }
+  ],
+  "ncols": 7,
+  "financiero": false
+ },
+ {
+  "pagina": 179,
+  "cabecera": "CONCEPTO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Ingresos Corrientes de Libre Destinación- ICLD",
+    "anios": [
+     0,
+     2704000907,
+     5760650200,
+     7675554042
+    ],
+    "total": 16140205149
+   },
+   {
+    "etiqueta": "Ingresos Corrientes de Libre Destinación - ICLD",
+    "anios": [
+     0,
+     2704000907,
+     5760650200,
+     7675554042
+    ],
+    "total": 16140205149
+   },
+   {
+    "etiqueta": "Ingresos con destinación específica",
+    "anios": [
+     13110132128,
+     17630258839,
+     14831825388,
+     13982708085
+    ],
+    "total": 59554924440
+   },
+   {
+    "etiqueta": "ICLD Educación Superior",
+    "anios": [
+     1054193906,
+     1063781742,
+     1180797734,
+     1310685485
+    ],
+    "total": 4609458867
+   },
+   {
+    "etiqueta": "ICLD Inderma",
+    "anios": [
+     1406371928,
+     1418375656,
+     1574396978,
+     1747580646
+    ],
+    "total": 6146725208
+   },
+   {
+    "etiqueta": "ICLD Gestión del Riesgo",
+    "anios": [
+     106369717,
+     106378174,
+     118079773,
+     131068548
+    ],
+    "total": 461896212
+   },
+   {
+    "etiqueta": "ICLD Fondo de Contingencias",
+    "anios": [
+     527880954,
+     531890871,
+     590398867,
+     655342742
+    ],
+    "total": 2305513434
+   },
+   {
+    "etiqueta": "ICLD Protección Ambiental",
+    "anios": [
+     349996302,
+     354593914,
+     393599245,
+     436895162
+    ],
+    "total": 1535084623
+   },
+   {
+    "etiqueta": "Estampilla pro-adulto mayor",
+    "anios": [
+     1500000000,
+     1590000000,
+     1685400000,
+     1786524000
+    ],
+    "total": 6561924000
+   },
+   {
+    "etiqueta": "Estampillapro-cultura",
+    "anios": [
+     825000000,
+     874500000,
+     926970000,
+     982588200
+    ],
+    "total": 3609058200
+   },
+   {
+    "etiqueta": "Tasaprodeporte 2%",
+    "anios": [
+     500000000,
+     530000000,
+     561800000,
+     595508000
+    ],
+    "total": 2187308000
+   },
+   {
+    "etiqueta": "Contribución 5% sobre contratos",
+    "anios": [
+     800000000,
+     848000000,
+     898880000,
+     952812800
+    ],
+    "total": 3499692800
+   },
+   {
+    "etiqueta": "Impuesto sobre el servicio de alumbrado público",
+    "anios": [
+     2352707471,
+     2493869919,
+     2643502114,
+     2802112241
+    ],
+    "total": 10292191745
+   },
+   {
+    "etiqueta": "Sobretasa bomberil",
+    "anios": [
+     609511851,
+     646082562,
+     684847516,
+     725938367
+    ],
+    "total": 2666380296
+   },
+   {
+    "etiqueta": "Multas de tránsito",
+    "anios": [
+     580000000,
+     614800000,
+     651688000,
+     690789280
+    ],
+    "total": 2537277280
+   },
+   {
+    "etiqueta": "Multas del Código de Policía",
+    "anios": [
+     107000000,
+     113420000,
+     120225200,
+     127438712
+    ],
+    "total": 468083912
+   },
+   {
+    "etiqueta": "Usos del Suelo (Plusvalía, Valorización)",
+    "anios": [
+     300100000,
+     318106000,
+     337192360,
+     357423902
+    ],
+    "total": 1312822262
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 180,
+  "cabecera": "CONCEPTO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "COMPENSACIONES URBANÍSTICAS",
+    "anios": [
+     2091000000,
+     6126460000,
+     2464047600,
+     680000000
+    ],
+    "total": 11361507600
+   },
+   {
+    "etiqueta": "Ingresos del sistema general de participaciones SGP",
+    "anios": [
+     7670833038,
+     8131083020,
+     8618948001,
+     9136084881
+    ],
+    "total": 33556948940
+   },
+   {
+    "etiqueta": "SGP Educación",
+    "anios": [
+     673464834,
+     713872724,
+     756705087,
+     802107393
+    ],
+    "total": 2946150038
+   },
+   {
+    "etiqueta": "SGP Educación Gratuidad Sin Situación de Fondos",
+    "anios": [
+     788789541,
+     836116913,
+     886283928,
+     939460964
+    ],
+    "total": 3450651346
+   },
+   {
+    "etiqueta": "SGP Propósito General Deporte",
+    "anios": [
+     326044777,
+     345607463,
+     366343911,
+     388324546
+    ],
+    "total": 1426320697
+   },
+   {
+    "etiqueta": "SGP Propósito General Cultura",
+    "anios": [
+     244533583,
+     259205598,
+     274757934,
+     291243410
+    ],
+    "total": 1069740525
+   },
+   {
+    "etiqueta": "SGP Propósito General Libre Inversión",
+    "anios": [
+     3198564935,
+     3390478831,
+     3593907561,
+     3809542015
+    ],
+    "total": 13992493342
+   },
+   {
+    "etiqueta": "SGP Agua Potable y Saneamiento Básico",
+    "anios": [
+     2277689696,
+     2414351077,
+     2559212142,
+     2712764870
+    ],
+    "total": 9964017785
+   },
+   {
+    "etiqueta": "SGP alimentación escolar",
+    "anios": [
+     161745672,
+     171450413,
+     181737438,
+     192641684
+    ],
+    "total": 707575207
+   },
+   {
+    "etiqueta": "Ingresos Sistema General de Regalías - SGR",
+    "anios": [
+     0,
+     2233857319,
+     0,
+     0
+    ],
+    "total": 2233857319
+   },
+   {
+    "etiqueta": "Sistema General de Regalías - SGR",
+    "anios": [
+     0,
+     2200000000,
+     0,
+     0
+    ],
+    "total": 2200000000
+   },
+   {
+    "etiqueta": "Desahorro Fonpet",
+    "anios": [
+     15000000,
+     15900000,
+     16854000,
+     17865240
+    ],
+    "total": 65619240
+   },
+   {
+    "etiqueta": "Mesadas Pensionales",
+    "anios": [
+     15000000,
+     15900000,
+     16854000,
+     17865240
+    ],
+    "total": 65619240
+   },
+   {
+    "etiqueta": "Ingresos Fondo local de salud",
+    "anios": [
+     35742623489,
+     37887180898,
+     40160411752,
+     42570036457
+    ],
+    "total": 156360252596
+   },
+   {
+    "etiqueta": "SGP SALUD PUBLICA",
+    "anios": [
+     651056465,
+     690119853,
+     731527045,
+     775418667
+    ],
+    "total": 2848122030
+   },
+   {
+    "etiqueta": "COLJUEGOS",
+    "anios": [
+     1438104513,
+     1524390784,
+     1615854231,
+     1712805485
+    ],
+    "total": 6291155013
+   },
+   {
+    "etiqueta": "SGP SUBSIDIO A LA OFERTA",
+    "anios": [
+     424526090,
+     449997655,
+     476997515,
+     505617366
+    ],
+    "total": 1857138626
+   },
+   {
+    "etiqueta": "ADRES",
+    "anios": [
+     19011341784,
+     20152022291,
+     21361143629,
+     22642812246
+    ],
+    "total": 83167319950
+   },
+   {
+    "etiqueta": "SGP REGIMEN SUBSIDIADO CONTINUIDAD",
+    "anios": [
+     14217594636,
+     15070650314,
+     15974889333,
+     16933382693
+    ],
+    "total": 62196516976
+   },
+   {
+    "etiqueta": "Ingresos transferencias del sector Eléctrico",
+    "anios": [
+     1400000000,
+     1484000000,
+     1573040000,
+     1667422400
+    ],
+    "total": 6124462400
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 181,
+  "cabecera": "CONCEPTO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Transferencias del sector Eléctrico para saneamiento básico, medio ambiente y demás sectores",
+    "anios": [
+     1400000000,
+     1484000000,
+     1573040000,
+     1667422400
+    ],
+    "total": 6124462400
+   },
+   {
+    "etiqueta": "Excedentes Espa",
+    "anios": [
+     150000000,
+     320000000,
+     130000000,
+     137800000
+    ],
+    "total": 737800000
+   },
+   {
+    "etiqueta": "Excedentes Espa",
+    "anios": [
+     150000000,
+     320000000,
+     130000000,
+     137800000
+    ],
+    "total": 737800000
+   },
+   {
+    "etiqueta": "Ingresos de cofinanciación",
+    "anios": [
+     10271511959,
+     18732222986,
+     16926636109,
+     9517719088
+    ],
+    "total": 55448090142
+   },
+   {
+    "etiqueta": "Cofinanciación",
+    "anios": [
+     5189788182,
+     13345595782,
+     11216811274,
+     3465304762
+    ],
+    "total": 33217500000
+   },
+   {
+    "etiqueta": "Cofinanciación PAE Departamento",
+    "anios": [
+     1212174546,
+     1284905019,
+     1361999320,
+     1443719279
+    ],
+    "total": 5302798164
+   },
+   {
+    "etiqueta": "COFINANCIACIÓN APORTES DPTO RÉGIMEN SUBSIDIADO",
+    "anios": [
+     3869549231,
+     4101722185,
+     4347825516,
+     4608695047
+    ],
+    "total": 16927791979
+   },
+   {
+    "etiqueta": "Crédito",
+    "anios": [
+     5000000000,
+     5000000000,
+     0,
+     0
+    ],
+    "total": 10000000000
+   },
+   {
+    "etiqueta": "Crédito",
+    "anios": [
+     5000000000,
+     5000000000,
+     0,
+     0
+    ],
+    "total": 10000000000
+   },
+   {
+    "etiqueta": "Venta de Bienes y servicios",
+    "anios": [
+     3054121001,
+     3420615521,
+     3831089384,
+     4290820110
+    ],
+    "total": 14596646016
+   },
+   {
+    "etiqueta": "Acueducto y alcantarillado",
+    "anios": [
+     3054121001,
+     3420615521,
+     3831089384,
+     4290820110
+    ],
+    "total": 14596646016
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     76414221614,
+     97525262172,
+     91849454833,
+     88996010302
+    ],
+    "total": 354784948921
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ }
+]

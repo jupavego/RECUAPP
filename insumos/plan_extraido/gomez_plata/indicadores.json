@@ -11,7 +11,8 @@
   "programa": "Compromiso con el desarrollo institucional de para el ejercicio de la autoridad sanitaria, la salud pública, la inspección, vigilancia y control en salud",
   "coincidencia_ppi": 0.2,
   "pagina": 18,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "220104905 Capacitaciones realizadas",
@@ -25,7 +26,8 @@
   "programa": "Compromiso con el desarrollo institucional de para el ejercicio de la autoridad sanitaria, la salud pública, la inspección, vigilancia y control en salud",
   "coincidencia_ppi": 0.2,
   "pagina": 18,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "220105201 Sedes educativas mejoradas en zona urbana",
@@ -39,7 +41,8 @@
   "programa": "Compromiso con el desarrollo institucional de para el ejercicio de la autoridad sanitaria, la salud pública, la inspección, vigilancia y control en salud",
   "coincidencia_ppi": 0.2,
   "pagina": 18,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "220105202 Sedes educativas mejoradas en zona rural",
@@ -53,7 +56,8 @@
   "programa": "Compromiso con el desarrollo institucional de para el ejercicio de la autoridad sanitaria, la salud pública, la inspección, vigilancia y control en salud",
   "coincidencia_ppi": 0.2,
   "pagina": 18,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "230103001 Soluciones de conectividad en centros de acceso comunitario instaladas",
@@ -67,7 +71,8 @@
   "programa": "Compromiso con el desarrollo institucional de para el ejercicio de la autoridad sanitaria, la salud pública, la inspección, vigilancia y control en salud",
   "coincidencia_ppi": 0.2,
   "pagina": 18,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "400300601 Documentos de planeación en políticas de agua potable y saneamiento básico elaborados",
@@ -78,10 +83,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 26,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "400300800 Proyectos de acueducto apoyados",
@@ -92,10 +98,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 26,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "400301700 Acueductos optimizados",
@@ -106,10 +113,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 26,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "400301702 Plantas de tratamiento de agua potable optimizadas",
@@ -120,10 +128,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 26,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "400302002 Plantas de tratamiento de aguas residuales optimizadas",
@@ -134,10 +143,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 26,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "320303300 Proyectos para la promoción del uso eficiente y ahorro del agua formulados",
@@ -148,10 +158,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 26,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "400301503 Plantas de tratamiento de agua potable construidas",
@@ -162,10 +173,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 26,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "400304402 Unidades sanitarias con saneamiento básico construidas para vivienda Rural",
@@ -176,10 +188,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 26,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "400300600 Documentos",
@@ -190,10 +203,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 26,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "400304702 Usuarios beneficiados con subsidios al consumo del servicio de acueducto",
@@ -204,10 +218,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 26,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "400304703 Usuarios beneficiados con subsidios al consumo del servicio de alcantarillado",
@@ -218,10 +233,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 26,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "330200100 Documentos de",
@@ -232,10 +248,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 35,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "330201501 Número de capacitaciones realizadas",
@@ -246,10 +263,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 35,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "330200100 Documentos de investigación realizados",
@@ -260,10 +278,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 35,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "330201501 Personas capacitadas",
@@ -274,10 +293,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 35,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "330200301 Documentos de",
@@ -288,10 +308,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 35,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "4502035 - Documentos de planeación",
@@ -302,10 +323,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 38,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "4502038 - Servicio de promoción de la garantía de derechos",
@@ -316,10 +338,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 38,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "4502039 - Servicio de apoyo financiero para empresas y emprendimientos productivos",
@@ -330,10 +353,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 38,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "4502038 - Servicio de promoción de la garantía de derechos",
@@ -344,10 +368,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 38,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "4502038 - Servicio de promoción de la garantía de derechos",
@@ -358,10 +383,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 38,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "4502038 - Servicio de promoción de la garantía de derechos",
@@ -372,10 +398,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 38,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "4502038 - Servicio de promoción de la garantía de",
@@ -387,10 +414,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 38,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "4502038 - Servicio de promoción de la garantía de derechos",
@@ -402,10 +430,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 38,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "4103067 - Documentos de planeación",
@@ -416,10 +445,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 45,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "4104027 - Servicio de articulación de oferta social para la población habitante de calle",
@@ -430,10 +460,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 45,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "360302000 Estrategias realizadas",
@@ -444,10 +475,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 45,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "360302000 Estrategias realizadas",
@@ -458,10 +490,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 45,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "450200113 Estrategias de promoción a la participación ciudadana implementadas",
@@ -472,10 +505,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 45,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "4103067 - Documentos de planeación",
@@ -486,10 +520,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 46,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "450200113 Estrategias de promoción a la participación ciudadana implementadas",
@@ -500,10 +535,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 46,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "410402000 - Personas con discapacidad atendidas con servicios integrales",
@@ -514,10 +550,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 46,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "4104020 - Servicio de atención integral a población en condición de discapacidad",
@@ -528,10 +565,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 46,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "4104020 - Servicio de atención integral a población en condición de discapacidad",
@@ -542,10 +580,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 46,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "4104010 - Servicio de educación informal a cuidadores",
@@ -556,10 +595,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 46,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "4104020 - Servicio de atención integral a población en condición de discapacidad",
@@ -570,10 +610,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 46,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "1905040 - Servicio de certificación de discapacidad para las personas con discapacidad",
@@ -584,10 +625,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 46,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "4502026 Documentos normativos para la garantía de derechos de la población LGTBI formulados N d",
@@ -598,10 +640,11 @@
   "responsable": "",
   "linea": 1,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 46,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "410205000 Edificaciones de atención a la adolescencia y juventud dotadas",
@@ -612,10 +655,11 @@
   "responsable": "",
   "linea": 2,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 50,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "410307100 Estudios de preinversión elaborados",
@@ -626,10 +670,11 @@
   "responsable": "",
   "linea": 2,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 50,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "410400100 Centros de protección social para el adulto mayor construidosydotados",
@@ -640,10 +685,11 @@
   "responsable": "",
   "linea": 2,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 50,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "410200500 Edificaciones de atención a la primera infancia adecuadas",
@@ -654,10 +700,11 @@
   "responsable": "",
   "linea": 2,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 50,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "410403700 Centros de atención integral para personas con discapacidad adecuados",
@@ -668,10 +715,11 @@
   "responsable": "",
   "linea": 2,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 50,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "410305009 Iniciativas de fortalecimiento comunitario apoyadas",
@@ -682,10 +730,11 @@
   "responsable": "",
   "linea": 2,
   "sector": null,
-  "programa": "Compromiso con el aseguramiento, el cuidado y prestación integral de servicios de salud en el territorio",
-  "coincidencia_ppi": 0.29,
+  "programa": "Compromiso con el acceso de la población a los servicios de agua potable y saneamiento básico y la cobertura de otros servicios públicos diferentes a agua potable y saneamiento",
+  "coincidencia_ppi": 0.17,
   "pagina": 50,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "350204700 Documentos de planeación elaborados",
@@ -699,7 +748,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 62,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "350201204 Eventos realizados que fomenten una mentalidad y cultura innovadora",
@@ -713,7 +763,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 62,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "3502019 - Servicio de asistencia técnica y acompañamiento productivoyempresarial",
@@ -727,7 +778,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 62,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "350201500 Empresas asistidas técnicamente en temas de legalidad y/o formalización.",
@@ -741,7 +793,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 62,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "170600201 Documentos de política de comercio exterior realizados",
@@ -755,7 +808,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 62,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "170203806 Ruedas de negocios realizadas",
@@ -769,7 +823,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 62,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "3201003 - Servicio de asistencia técnica para la consolidación de negocios verdes",
@@ -783,7 +838,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 62,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "320100203 Programas de gestión ambiental sectorial diseñados",
@@ -797,7 +853,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 62,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "230205100 Eventos para difundir instrumentos de promoción de la",
@@ -811,7 +868,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 62,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "170202400 Planes de",
@@ -825,7 +883,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 64,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "170200700 Proyectos productivos cofinanciados",
@@ -839,7 +898,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 64,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "170203805 Mercados campesinos realizados",
@@ -853,7 +913,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 64,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "170201000 Pequeños productores rurales asistidos técnicamente",
@@ -867,7 +928,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 64,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "170200701 Proyectos productivos cofinanciados",
@@ -881,7 +943,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 64,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "410305501 Hogares con unidades productivas para autoconsumo instaladas",
@@ -895,7 +958,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 64,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "170800500 Bancos de germoplasma animal, vegetal y microorganismos construido",
@@ -909,7 +973,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 64,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "170908400 Asociaciones",
@@ -923,7 +988,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 64,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "170909200 Trapiches paneleros con mantenimiento",
@@ -937,7 +1003,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 64,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "170910500 Cadenas productivas apoyadas",
@@ -951,7 +1018,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 64,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "350208100 Plaza de mercado construida",
@@ -965,7 +1033,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 64,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "170707801 Productores apoyados para la certificación",
@@ -979,7 +1048,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 64,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Formular e implementar la política pública de las juntas de acción comunal(J.A.C.)",
@@ -994,7 +1064,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 68,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Formación integral de liderazgo social y político con enfoque diferencial, de género ydiversidad cultural",
@@ -1009,7 +1080,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 68,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Acompañar a las J.A.C. en la evaluación de planes de desarrollo y plan de acción comunal",
@@ -1024,7 +1096,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 68,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Promover la constitución de juntas de vivienda comunal.",
@@ -1039,7 +1112,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 68,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Construcción, mejoramiento y acondicionamiento del equipamiento comunal, (Centros de Desarrollo Comunitario C.D.C.)",
@@ -1054,7 +1128,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 68,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Apoyar la instalación de sistemas Solares en los C.D.C.",
@@ -1069,7 +1144,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 68,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Promoción de las veedurías ciudadanas",
@@ -1084,7 +1160,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 68,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Campañas de fortalecimiento fiscal y recaudo",
@@ -1099,7 +1176,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 74,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Actualización permanente de Estatuto Tributario",
@@ -1114,7 +1192,8 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 74,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Estrategias para el mejoramiento del Índice de Desempeño Fiscal ejecutada",
@@ -1129,6 +1208,7 @@
   "programa": "Compromiso con la gestión integral del recurso hídrico (agua), con la conservación de la biodiversidad, fauna y flora y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.22,
   "pagina": 74,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  }
 ]

@@ -26,6 +26,7 @@
  {
   "codigo": "240204200",
   "nombre": "2402042 - Placa huella construida",
+  "descripcion": "Incluye construcción de vías terciarias con sistema de placa huella",
   "unidad": "Metros",
   "meta": "10.000",
   "responsable": "Secretaria De Planeación E Infraestructura",
@@ -38,6 +39,7 @@
  {
   "codigo": "240204101",
   "nombre": "2402041 - Vía terciaria mejorada",
+  "descripcion": "Incluye la construcción de obras de infraestructura vial en vías de la red vial terciaria que mejoren la prestación del servicio",
   "unidad": "Número",
   "meta": "1",
   "responsable": "Secretaria De Planeación E Infraestructura",
@@ -50,6 +52,7 @@
  {
   "codigo": "240204106",
   "nombre": "2402041 - Vía terciaria mejorada",
+  "descripcion": "Incluye la construcción de obras de infraestructura vial en vías de la red vial terciaria que mejoren la prestación del servicio.",
   "unidad": "Número",
   "meta": "2",
   "responsable": "Secretaria De Planeación E Infraestructura",
@@ -62,6 +65,7 @@
  {
   "codigo": "240204114",
   "nombre": "2402041 - Vía terciaria mejorada",
+  "descripcion": "Incluye la construcción de obras de infraestructura vial en vías de la red vial terciaria que mejoren la prestación del servicio, así como los cambios en una infraestructura de transporte con el propósito de mejorar sus especificaciones técnicas iniciales",
   "unidad": "Número",
   "meta": "10",
   "responsable": "Secretaria De Planeación E Infraestructura",
@@ -74,6 +78,7 @@
  {
   "codigo": "240204502",
   "nombre": "2402045 - Vía terciaria rehabilitada",
+  "descripcion": "Incluye las intervenciones en vías para devolverlas al estado inicial para la cual fueron construidas",
   "unidad": "Número",
   "meta": "4",
   "responsable": "Secretaria De Planeación E Infraestructura",
@@ -86,6 +91,7 @@
  {
   "codigo": "240204503",
   "nombre": "2402045 - Vía terciaria rehabilitada",
+  "descripcion": "Incluye las intervenciones en vías para devolverlas al estado inicial para la cual fueron construidas",
   "unidad": "Metros",
   "meta": "5.000",
   "responsable": "Secretaria De Planeación E Infraestructura",
@@ -98,6 +104,7 @@
  {
   "codigo": "240105800",
   "nombre": "2401058 - Puente mejorado",
+  "descripcion": "Incluye las intervenciones que mejoren las especificaciones técnicas iniciales del puente. El municipio de Briceño realizara mantenimiento a",
   "unidad": "Número",
   "meta": "4",
   "responsable": "Secretaria De Planeación E Infraestructura",

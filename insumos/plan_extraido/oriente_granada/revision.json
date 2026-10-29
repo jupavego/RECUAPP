@@ -1,0 +1,1293 @@
+[
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 29,
+  "valor": "Calidad, cobertura y fortalecimiento de la educación inicial, preescolar, básica y media",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 1
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 30,
+  "valor": "Acompañamiento y fomento de la educación superior",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 2
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 32,
+  "valor": "Aseguramiento y prestación integral de servicios de salud",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 3
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 33,
+  "valor": "Salud Pública",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 4
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 35,
+  "valor": "Fomento a la recreación, la actividad física y el deporte para desarrollar entornos de convivencia y paz",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 5
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 38,
+  "valor": "Promoción y acceso efectivo a procesos culturales y artísticos",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 6
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 39,
+  "valor": "Gestión, protección y salvaguardia del patrimonio cultural Granadino",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 7
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 41,
+  "valor": "Atención integral de población en situación permanente de desprotección social y/o familiar",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 8
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 42,
+  "valor": "Atención, asistencia y reparación integral a las víctimas",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 9
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 43,
+  "valor": "Desarrollo integral desde la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niños y adolescentes",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 10
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 46,
+  "valor": "Generación y formalización del empleo y el emprendimiento",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 11
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 49,
+  "valor": "Innovación territorial",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 12
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 51,
+  "valor": "Desarrollo Agropecuario sostenible y adaptable al cambio climático",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 13
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 52,
+  "valor": "Inclusión productiva de pequeños productores rurales",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 14
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 54,
+  "valor": "Sanidad agropecuaria e inocuidad agroalimentaria",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 15
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 55,
+  "valor": "Infraestructura vial",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 16
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 56,
+  "valor": "Seguridad vial",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 17
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 62,
+  "valor": "Fortalecimiento del desempeño ambiental de los sectores productivos",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 18
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 63,
+  "valor": "Gestión de la información y el conocimiento ambiental",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 19
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 64,
+  "valor": "Gestión integral del recurso hídrico",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 20
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 67,
+  "valor": "Acceso de la población a los servicios de agua potable y saneamiento básico",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 21
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 70,
+  "valor": "Ordenamiento territorial y desarrollo urbano",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 22
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 72,
+  "valor": "Consolidación productiva del sector de energía eléctrica",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 23
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 74,
+  "valor": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 24
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 75,
+  "valor": "Participación ciudadana y comunitaria",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 25
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 76,
+  "valor": "Fortalecimiento de la convivencia y la seguridad ciudadana",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 26
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 77,
+  "valor": "Gestión del riesgo de desastres y emergencias",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 27
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 79,
+  "valor": "Sistema penitenciario y carcelario en el marco de los derechos humanos",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 28
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 80,
+  "valor": "Acceso y uso de las Tecnologías de la Información y las Comunicaciones",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 29
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 81,
+  "valor": "Comunicación activa y cercana a la comunidad",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 30
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 82,
+  "valor": "Sistema de información municipal para la gestión territorial.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 31
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1",
+  "sector": null,
+  "correccion": null,
+  "id": 32
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1",
+  "sector": null,
+  "correccion": null,
+  "id": 33
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.1",
+  "sector": "BF1.1.1",
+  "correccion": null,
+  "id": 34
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.1.1",
+  "sector": "BF1.1.1",
+  "correccion": null,
+  "id": 35
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.1.2",
+  "sector": "BF1.1.1",
+  "correccion": null,
+  "id": 36
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.1.3",
+  "sector": "BF1.1.1",
+  "correccion": null,
+  "id": 37
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.1.8",
+  "sector": "BF1.1.1",
+  "correccion": null,
+  "id": 38
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.1.9",
+  "sector": "BF1.1.1",
+  "correccion": null,
+  "id": 39
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.1.12",
+  "sector": "BF1.1.1",
+  "correccion": null,
+  "id": 40
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.2",
+  "sector": "BF1.1.2",
+  "correccion": null,
+  "id": 41
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.2.1",
+  "sector": "BF1.1.2",
+  "correccion": null,
+  "id": 42
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.2.2",
+  "sector": "BF1.1.2",
+  "correccion": null,
+  "id": 43
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.3",
+  "sector": "BF1.1.3",
+  "correccion": null,
+  "id": 44
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.3.1",
+  "sector": "BF1.1.3",
+  "correccion": null,
+  "id": 45
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.3.1.1",
+  "sector": "BF1.1.3",
+  "correccion": null,
+  "id": 46
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.3.1.1.1",
+  "sector": "BF1.1.3",
+  "correccion": null,
+  "id": 47
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.3.1.2",
+  "sector": "BF1.1.3",
+  "correccion": null,
+  "id": 48
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.3.1.2.1",
+  "sector": "BF1.1.3",
+  "correccion": null,
+  "id": 49
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.3.1.2.2",
+  "sector": "BF1.1.3",
+  "correccion": null,
+  "id": 50
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.3.1.3",
+  "sector": "BF1.1.3",
+  "correccion": null,
+  "id": 51
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.3.2",
+  "sector": "BF1.1.3",
+  "correccion": null,
+  "id": 52
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.3.2.1",
+  "sector": "BF1.1.3",
+  "correccion": null,
+  "id": 53
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.3.2.1.1",
+  "sector": "BF1.1.3",
+  "correccion": null,
+  "id": 54
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.3.2.1.1.1",
+  "sector": "BF1.1.3",
+  "correccion": null,
+  "id": 55
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.3.2.1.1.2",
+  "sector": "BF1.1.3",
+  "correccion": null,
+  "id": 56
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.3.2.1.1.3",
+  "sector": "BF1.1.3",
+  "correccion": null,
+  "id": 57
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.3.2.1.1.4",
+  "sector": "BF1.1.3",
+  "correccion": null,
+  "id": 58
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.3.2.1.1.5",
+  "sector": "BF1.1.3",
+  "correccion": null,
+  "id": 59
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.3.2.1.2",
+  "sector": "BF1.1.3",
+  "correccion": null,
+  "id": 60
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.3.2.1.3",
+  "sector": "BF1.1.3",
+  "correccion": null,
+  "id": 61
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.3.2.2",
+  "sector": "BF1.1.3",
+  "correccion": null,
+  "id": 62
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.3.2.3",
+  "sector": "BF1.1.3",
+  "correccion": null,
+  "id": 63
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.3.2.4",
+  "sector": "BF1.1.3",
+  "correccion": null,
+  "id": 64
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.3.2.5",
+  "sector": "BF1.1.3",
+  "correccion": null,
+  "id": 65
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF1.1.3.2.6",
+  "sector": "BF1.1.3",
+  "correccion": null,
+  "id": 66
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF2",
+  "sector": null,
+  "correccion": null,
+  "id": 67
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF2.1",
+  "sector": "BF2.1",
+  "correccion": null,
+  "id": 68
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF2.1.1",
+  "sector": "BF2.1.1",
+  "correccion": null,
+  "id": 69
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF2.1.1.1",
+  "sector": "BF2.1.1.1",
+  "correccion": null,
+  "id": 70
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF2.1.1.2",
+  "sector": null,
+  "correccion": null,
+  "id": 71
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF2.1.1.3",
+  "sector": null,
+  "correccion": null,
+  "id": 72
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF2.1.1.3.1",
+  "sector": "BF2.1.1.3.1",
+  "correccion": null,
+  "id": 73
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF2.1.1.3.2",
+  "sector": "BF2.1.1.3.2",
+  "correccion": null,
+  "id": 74
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF2.1.1.3.3",
+  "sector": "BF2.1.1.3.3",
+  "correccion": null,
+  "id": 75
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF2.1.1.3.4",
+  "sector": "BF2.1.1.3.4",
+  "correccion": null,
+  "id": 76
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF2.1.1.3.5",
+  "sector": "BF2.1.1.3.5",
+  "correccion": null,
+  "id": 77
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF2.1.1.3.6",
+  "sector": "BF2.1.1.3.6",
+  "correccion": null,
+  "id": 78
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF2.1.1.3.7",
+  "sector": "BF2.1.1.3.7",
+  "correccion": null,
+  "id": 79
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF2.1.1.4",
+  "sector": null,
+  "correccion": null,
+  "id": 80
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF2.1.1.6",
+  "sector": null,
+  "correccion": null,
+  "id": 81
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF2.1.2",
+  "sector": null,
+  "correccion": null,
+  "id": 82
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF2.1.3",
+  "sector": null,
+  "correccion": null,
+  "id": 83
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF2.1.4",
+  "sector": null,
+  "correccion": null,
+  "id": 84
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF2.1.4.1",
+  "sector": "BF2.1.4.1",
+  "correccion": null,
+  "id": 85
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF2.1.4.2",
+  "sector": "BF2.1.4.2",
+  "correccion": null,
+  "id": 86
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF2.1.4.3",
+  "sector": "BF2.1.4.3",
+  "correccion": null,
+  "id": 87
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF2.1.4.4",
+  "sector": "BF2.1.4.4",
+  "correccion": null,
+  "id": 88
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF2.1.4.5",
+  "sector": "BF2.1.4.5",
+  "correccion": null,
+  "id": 89
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF2.1.5",
+  "sector": null,
+  "correccion": null,
+  "id": 90
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF2.1.5.1",
+  "sector": "BF2.1.5.1",
+  "correccion": null,
+  "id": 91
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF2.1.5.2",
+  "sector": null,
+  "correccion": null,
+  "id": 92
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF4",
+  "sector": null,
+  "correccion": null,
+  "id": 93
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF4.1",
+  "sector": "BF4.1",
+  "correccion": null,
+  "id": 94
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF4.2",
+  "sector": "BF4.2",
+  "correccion": null,
+  "id": 95
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF4.3",
+  "sector": "BF4.3",
+  "correccion": null,
+  "id": 96
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF4.4",
+  "sector": "BF4.4",
+  "correccion": null,
+  "id": 97
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF4.5",
+  "sector": "BF4.5",
+  "correccion": null,
+  "id": 98
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF4.6",
+  "sector": "BF4.6",
+  "correccion": null,
+  "id": 99
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF4.6.1",
+  "sector": "BF4.6",
+  "correccion": null,
+  "id": 100
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF4.6.2",
+  "sector": "BF4.6",
+  "correccion": null,
+  "id": 101
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF4.6.3",
+  "sector": "BF4.6",
+  "correccion": null,
+  "id": 102
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF4.6.4",
+  "sector": null,
+  "correccion": null,
+  "id": 103
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF4.7",
+  "sector": null,
+  "correccion": null,
+  "id": 104
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF5",
+  "sector": null,
+  "correccion": null,
+  "id": 105
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF5.1",
+  "sector": "BF5.1",
+  "correccion": null,
+  "id": 106
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF5.1.1",
+  "sector": "BF5.1",
+  "correccion": null,
+  "id": 107
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF5.1.2",
+  "sector": "BF5.1",
+  "correccion": null,
+  "id": 108
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF5.1.3",
+  "sector": "BF5.1",
+  "correccion": null,
+  "id": 109
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF5.1.4",
+  "sector": "BF5.1",
+  "correccion": null,
+  "id": 110
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF5.1.5",
+  "sector": "BF5.1",
+  "correccion": null,
+  "id": 111
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF5.1.6",
+  "sector": "BF5.1",
+  "correccion": null,
+  "id": 112
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF5.2",
+  "sector": null,
+  "correccion": null,
+  "id": 113
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF6",
+  "sector": null,
+  "correccion": null,
+  "id": 114
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF8",
+  "sector": null,
+  "correccion": null,
+  "id": 115
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF8.1.1.1",
+  "sector": null,
+  "correccion": null,
+  "id": 116
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF8.1.1.2",
+  "sector": null,
+  "correccion": null,
+  "id": 117
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF8.1.2",
+  "sector": null,
+  "correccion": null,
+  "id": 118
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF8.1.2.1",
+  "sector": null,
+  "correccion": null,
+  "id": 119
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF8.1.2.2",
+  "sector": null,
+  "correccion": null,
+  "id": 120
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF8.2",
+  "sector": null,
+  "correccion": null,
+  "id": 121
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF8.3",
+  "sector": null,
+  "correccion": null,
+  "id": 122
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF8.4",
+  "sector": null,
+  "correccion": null,
+  "id": 123
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF9.1",
+  "sector": null,
+  "correccion": null,
+  "id": 124
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF9.2",
+  "sector": null,
+  "correccion": null,
+  "id": 125
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF10.1",
+  "sector": null,
+  "correccion": null,
+  "id": 126
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF10.2",
+  "sector": "BF10.2",
+  "correccion": null,
+  "id": 127
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF10.3",
+  "sector": "BF10.3",
+  "correccion": null,
+  "id": 128
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF13.1",
+  "sector": null,
+  "correccion": null,
+  "id": 129
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF13.2",
+  "sector": null,
+  "correccion": null,
+  "id": 130
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF13.3",
+  "sector": null,
+  "correccion": null,
+  "id": 131
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF12.1",
+  "sector": null,
+  "correccion": null,
+  "id": 132
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF12.2",
+  "sector": "BF12.2",
+  "correccion": null,
+  "id": 133
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "BF12.3",
+  "sector": "BF12.3",
+  "correccion": null,
+  "id": 134
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Recursos del Sistema de Seguridad Social Integral",
+  "sector": null,
+  "correccion": null,
+  "id": 135
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Indemnizaciones Relacionadas con Seguros No de Vida",
+  "sector": null,
+  "correccion": null,
+  "id": 136
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Participación y Derechos por Monopolio",
+  "sector": null,
+  "correccion": null,
+  "id": 137
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Dchos Expl Juegos de Suerte y Azar - Juegos Promoc 75%",
+  "sector": "Dchos Expl Juegos de Suerte y Azar - Juegos Promoc 75%",
+  "correccion": null,
+  "id": 138
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Dchos Expl Juegos de Suerte y Azar - Juegos Loc 25%",
+  "sector": "Dchos Expl Juegos de Suerte y Azar - Juegos Loc 25%",
+  "correccion": null,
+  "id": 139
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "RECURSOS DE CAPITAL",
+  "sector": null,
+  "correccion": null,
+  "id": 140
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Rendimientos Financieros",
+  "sector": "Rendimientos Financieros",
+  "correccion": null,
+  "id": 141
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Depósitos",
+  "sector": "Rendimientos Financieros",
+  "correccion": null,
+  "id": 142
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Recursos del Crédito Interno",
+  "sector": "Recursos del Crédito Interno",
+  "correccion": null,
+  "id": 143
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Institutos de Desarrollo Departamental y del o Municipal",
+  "sector": "Recursos del Crédito Interno",
+  "correccion": null,
+  "id": 144
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Transferencias de Capital",
+  "sector": "Transferencias de Capital",
+  "correccion": null,
+  "id": 145
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "No Condicionadas a la Adquisición de un Activo",
+  "sector": "Transferencias de Capital",
+  "correccion": null,
+  "id": 146
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Condicionadas a la Adquisición de un Activo",
+  "sector": "Transferencias de Capital",
+  "correccion": null,
+  "id": 147
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Recursos del Balance",
+  "sector": "Recursos del Balance",
+  "correccion": null,
+  "id": 148
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Superávit Fiscal",
+  "sector": "Recursos del Balance",
+  "correccion": null,
+  "id": 149
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Retiros FONPET",
+  "sector": "Retiros FONPET",
+  "correccion": null,
+  "id": 150
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Para el Pago de Obligaciones Pensionales Corrientes",
+  "sector": "Retiros FONPET",
+  "correccion": null,
+  "id": 151
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Reintegros y Otros Recursos No Apropiados",
+  "sector": "Reintegros y Otros Recursos No Apropiados",
+  "correccion": null,
+  "id": 152
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Reintegros",
+  "sector": "Reintegros y Otros Recursos No Apropiados",
+  "correccion": null,
+  "id": 153
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Aportes Nación",
+  "sector": null,
+  "correccion": null,
+  "id": 154
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Suerte y Azar - Juegos Promoc 75%",
+  "sector": "Suerte y Azar - Juegos Promoc 75%",
+  "correccion": null,
+  "id": 155
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Suerte y Azar - Juegos Loc 25%",
+  "sector": "Suerte y Azar - Juegos Loc 25%",
+  "correccion": null,
+  "id": 156
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "DEUDA",
+  "sector": null,
+  "correccion": null,
+  "id": 157
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Amortizaciones",
+  "sector": "Amortizaciones",
+  "correccion": null,
+  "id": 158
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Principal",
+  "sector": "Amortizaciones",
+  "correccion": null,
+  "id": 159
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Intereses",
+  "sector": "Intereses",
+  "correccion": null,
+  "id": 160
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Destinación para medio ambiente y desarrollo sostenible",
+  "sector": null,
+  "correccion": null,
+  "id": 161
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Resto de Inversión",
+  "sector": null,
+  "correccion": null,
+  "id": 162
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Comunidades Étnicas",
+  "sector": null,
+  "correccion": null,
+  "id": 163
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Comunidades Indígenas",
+  "sector": null,
+  "correccion": null,
+  "id": 164
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Comunidades NARP",
+  "sector": null,
+  "correccion": null,
+  "id": 165
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Comunidades Rrom",
+  "sector": null,
+  "correccion": null,
+  "id": 166
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Asignación para Ciencia, Tecnología e Innovación",
+  "sector": null,
+  "correccion": null,
+  "id": 167
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Asignación para Inversión en Ciencia, Tecnología e Innovación Ambiental",
+  "sector": null,
+  "correccion": null,
+  "id": 168
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Resto de inversión",
+  "sector": null,
+  "correccion": null,
+  "id": 169
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Municipios Río Magdalena y Canal Dique",
+  "sector": null,
+  "correccion": null,
+  "id": 170
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "AHORRO",
+  "sector": null,
+  "correccion": null,
+  "id": 171
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fondo de Ahorro y Estabilización (Ahorro)",
+  "sector": "Fondo de Ahorro y Estabilización (Ahorro)",
+  "correccion": null,
+  "id": 172
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Fondo Ahorro Pensional Territorial (FONPET)",
+  "sector": "Fondo Ahorro Pensional Territorial (FONPET)",
+  "correccion": null,
+  "id": 173
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "OTROS",
+  "sector": null,
+  "correccion": null,
+  "id": 174
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Funcionamiento operatividad y fiscalización",
+  "sector": null,
+  "correccion": null,
+  "id": 175
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Sistema de Seguimiento, Control y Evaluación (SSEC)",
+  "sector": null,
+  "correccion": null,
+  "id": 176
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Contraloría",
+  "sector": null,
+  "correccion": null,
+  "id": 177
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Procuraduría",
+  "sector": "Procuraduría",
+  "correccion": null,
+  "id": 178
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "DNP",
+  "sector": "DNP",
+  "correccion": null,
+  "id": 179
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Total",
+  "sector": null,
+  "correccion": null,
+  "id": 180
+ }
+]

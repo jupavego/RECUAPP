@@ -11,7 +11,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 20,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Mortalidad materna por cada 100.000 nacidos vivos",
@@ -25,7 +26,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 22,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Cobertura bruta en educación primaria Cobertura bruta en educación secundaria",
@@ -39,7 +41,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 22,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Porcentaje de cobertura de acueducto",
@@ -53,7 +56,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 24,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Porcentaje de Cobertura de energía eléctrica.",
@@ -67,7 +71,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 24,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Economía - Rendimiento - Café",
@@ -81,7 +86,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 25,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Economía - Rendimiento - Caña panelera",
@@ -95,7 +101,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 25,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Porcentaje de Instituciones Educativas con conexión a internet. Espacios Públicos con conexión a Internet.",
@@ -109,7 +116,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 25,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Coeficiente GINI",
@@ -123,7 +131,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 26,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "ods": "Lograr que las ciudades y los asentamientos",
@@ -138,7 +147,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 26,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "ods": "humanos sean inclusivos, seguros, resilientes y sostenibles",
@@ -153,7 +163,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 26,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Toneladas mes de Residuos sólidos recuperados",
@@ -167,7 +178,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 27,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Área deforestada en la entidad territorial reducida",
@@ -181,7 +193,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 27,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Áreas protegidas y de interés estratégico con plan de manejo implementado.",
@@ -195,7 +208,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 28,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Tasa de homicidios",
@@ -209,7 +223,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 28,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3502002",
@@ -226,7 +241,8 @@
   "programa": "Productividad y competitividad de las empresas locales.",
   "coincidencia_ppi": null,
   "pagina": 41,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3502003",
@@ -243,7 +259,8 @@
   "programa": "Productividad y competitividad de las empresas locales.",
   "coincidencia_ppi": null,
   "pagina": 41,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3502006",
@@ -260,7 +277,8 @@
   "programa": "Productividad y competitividad de las empresas locales.",
   "coincidencia_ppi": null,
   "pagina": 41,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3502009",
@@ -277,7 +295,8 @@
   "programa": "Productividad y competitividad de las empresas locales.",
   "coincidencia_ppi": null,
   "pagina": 41,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3502010",
@@ -294,7 +313,8 @@
   "programa": "Productividad y competitividad de las empresas locales.",
   "coincidencia_ppi": null,
   "pagina": 41,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1702007",
@@ -311,7 +331,8 @@
   "programa": "Inclusión productiva de pequeños productores rurales",
   "coincidencia_ppi": null,
   "pagina": 49,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1702007",
@@ -328,7 +349,8 @@
   "programa": "Inclusión productiva de pequeños productores rurales",
   "coincidencia_ppi": null,
   "pagina": 49,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1702007",
@@ -345,7 +367,8 @@
   "programa": "Inclusión productiva de pequeños productores rurales",
   "coincidencia_ppi": null,
   "pagina": 49,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1708018",
@@ -362,7 +385,8 @@
   "programa": "Ciencia, tecnología e innovación agropecuaria",
   "coincidencia_ppi": null,
   "pagina": 53,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "170801801",
@@ -379,7 +403,8 @@
   "programa": "Ciencia, tecnología e innovación agropecuaria",
   "coincidencia_ppi": null,
   "pagina": 53,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1708032",
@@ -396,7 +421,8 @@
   "programa": "Ciencia, tecnología e innovación agropecuaria",
   "coincidencia_ppi": null,
   "pagina": 53,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1708041",
@@ -413,7 +439,8 @@
   "programa": "Ciencia, tecnología e innovación agropecuaria",
   "coincidencia_ppi": null,
   "pagina": 53,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1708047",
@@ -430,7 +457,8 @@
   "programa": "Ciencia, tecnología e innovación agropecuaria",
   "coincidencia_ppi": null,
   "pagina": 53,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1703010",
@@ -447,7 +475,8 @@
   "programa": "Servicios financieros y gestión del riesgo para las actividades agropecuarias y rurales",
   "coincidencia_ppi": null,
   "pagina": 54,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1703013",
@@ -464,7 +493,8 @@
   "programa": "Servicios financieros y gestión del riesgo para las actividades agropecuarias y rurales",
   "coincidencia_ppi": null,
   "pagina": 54,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1704003",
@@ -479,7 +509,8 @@
   "programa": "Ordenamiento social y uso productivo del territorio rural",
   "coincidencia_ppi": null,
   "pagina": 55,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1704006",
@@ -494,7 +525,8 @@
   "programa": "Ordenamiento social y uso productivo del territorio rural",
   "coincidencia_ppi": null,
   "pagina": 55,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1704010",
@@ -509,7 +541,8 @@
   "programa": "Ordenamiento social y uso productivo del territorio rural",
   "coincidencia_ppi": null,
   "pagina": 55,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1707001",
@@ -526,7 +559,8 @@
   "programa": "Infraestructura productiva y comercialización.",
   "coincidencia_ppi": null,
   "pagina": 57,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1707024",
@@ -543,7 +577,8 @@
   "programa": "Infraestructura productiva y comercialización.",
   "coincidencia_ppi": null,
   "pagina": 57,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1707042",
@@ -560,7 +595,8 @@
   "programa": "Infraestructura productiva y comercialización.",
   "coincidencia_ppi": null,
   "pagina": 57,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1707043",
@@ -577,7 +613,8 @@
   "programa": "Infraestructura productiva y comercialización.",
   "coincidencia_ppi": null,
   "pagina": 57,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1709001",
@@ -594,7 +631,8 @@
   "programa": "Infraestructura productiva y comercialización.",
   "coincidencia_ppi": null,
   "pagina": 58,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1709013",
@@ -611,7 +649,8 @@
   "programa": "Infraestructura productiva y comercialización.",
   "coincidencia_ppi": null,
   "pagina": 58,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1709034",
@@ -628,7 +667,8 @@
   "programa": "Infraestructura productiva y comercialización.",
   "coincidencia_ppi": null,
   "pagina": 58,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1709043",
@@ -645,7 +685,8 @@
   "programa": "Infraestructura productiva y comercialización.",
   "coincidencia_ppi": null,
   "pagina": 58,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1709059",
@@ -662,7 +703,8 @@
   "programa": "Infraestructura productiva y comercialización.",
   "coincidencia_ppi": null,
   "pagina": 58,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1709072",
@@ -679,7 +721,8 @@
   "programa": "Infraestructura productiva y comercialización.",
   "coincidencia_ppi": null,
   "pagina": 58,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1709114",
@@ -696,7 +739,8 @@
   "programa": "Infraestructura productiva y comercialización.",
   "coincidencia_ppi": null,
   "pagina": 58,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2402042",
@@ -713,7 +757,8 @@
   "programa": "Mejoramiento de la infraestructura vial un camino hacia la paz y la modernidad",
   "coincidencia_ppi": null,
   "pagina": 61,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2402042",
@@ -730,7 +775,8 @@
   "programa": "Mejoramiento de la infraestructura vial un camino hacia la paz y la modernidad",
   "coincidencia_ppi": null,
   "pagina": 61,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "080020004",
@@ -747,7 +793,8 @@
   "programa": "Mejoramiento de la infraestructura vial un camino hacia la paz y la modernidad",
   "coincidencia_ppi": null,
   "pagina": 65,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "080020008",
@@ -764,7 +811,8 @@
   "programa": "Mejoramiento de la infraestructura vial un camino hacia la paz y la modernidad",
   "coincidencia_ppi": null,
   "pagina": 65,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "160090003",
@@ -781,7 +829,8 @@
   "programa": "Mejoramiento de la infraestructura vial un camino hacia la paz y la modernidad",
   "coincidencia_ppi": null,
   "pagina": 65,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4501004",
@@ -798,7 +847,8 @@
   "programa": "Fortalecimiento de la convivencia y la Seguridad Ciudadana",
   "coincidencia_ppi": null,
   "pagina": 67,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4501007",
@@ -815,7 +865,8 @@
   "programa": "Fortalecimiento de la convivencia y la Seguridad Ciudadana",
   "coincidencia_ppi": null,
   "pagina": 67,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4501007",
@@ -832,7 +883,8 @@
   "programa": "Fortalecimiento de la convivencia y la Seguridad Ciudadana",
   "coincidencia_ppi": null,
   "pagina": 67,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502001",
@@ -849,7 +901,8 @@
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos.",
   "coincidencia_ppi": null,
   "pagina": 71,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4503002",
@@ -866,7 +919,8 @@
   "programa": "Gestión del riesgo de desastres y emergencias",
   "coincidencia_ppi": null,
   "pagina": 74,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599001",
@@ -883,7 +937,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la Administración pública territorial",
   "coincidencia_ppi": null,
   "pagina": 77,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1903011",
@@ -900,7 +955,8 @@
   "programa": "Inspección, vigilancia y control.",
   "coincidencia_ppi": null,
   "pagina": 85,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1903016",
@@ -917,7 +973,8 @@
   "programa": "Inspección, vigilancia y control.",
   "coincidencia_ppi": null,
   "pagina": 85,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1905015",
@@ -934,7 +991,8 @@
   "programa": "Salud Pública con Equidad.",
   "coincidencia_ppi": null,
   "pagina": 87,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1905020",
@@ -951,7 +1009,8 @@
   "programa": "Salud Pública con Equidad.",
   "coincidencia_ppi": null,
   "pagina": 87,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "190502001",
@@ -968,7 +1027,8 @@
   "programa": "Salud Pública con Equidad.",
   "coincidencia_ppi": null,
   "pagina": 87,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "190502002",
@@ -985,7 +1045,8 @@
   "programa": "Salud Pública con Equidad.",
   "coincidencia_ppi": null,
   "pagina": 87,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1905021",
@@ -1002,7 +1063,8 @@
   "programa": "Salud Pública con Equidad.",
   "coincidencia_ppi": null,
   "pagina": 87,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "190502101",
@@ -1019,7 +1081,8 @@
   "programa": "Salud Pública con Equidad.",
   "coincidencia_ppi": null,
   "pagina": 87,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "190502102",
@@ -1036,7 +1099,8 @@
   "programa": "Salud Pública con Equidad.",
   "coincidencia_ppi": null,
   "pagina": 87,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1906005",
@@ -1053,7 +1117,8 @@
   "programa": "Aseguramiento y prestación integral de servicios de salud con Equidad.",
   "coincidencia_ppi": null,
   "pagina": 91,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1906033",
@@ -1070,7 +1135,8 @@
   "programa": "Aseguramiento y prestación integral de servicios de salud con Equidad.",
   "coincidencia_ppi": null,
   "pagina": 91,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1906029",
@@ -1087,7 +1153,8 @@
   "programa": "Aseguramiento y prestación integral de servicios de salud con Equidad.",
   "coincidencia_ppi": null,
   "pagina": 91,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1906044",
@@ -1104,7 +1171,8 @@
   "programa": "Aseguramiento y prestación integral de servicios de salud con Equidad.",
   "coincidencia_ppi": null,
   "pagina": 91,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "220102805",
@@ -1121,7 +1189,8 @@
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media con Equidad de género.",
   "coincidencia_ppi": null,
   "pagina": 96,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "220102900",
@@ -1138,7 +1207,8 @@
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media con Equidad de género.",
   "coincidencia_ppi": null,
   "pagina": 96,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "220103200",
@@ -1155,7 +1225,8 @@
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media con Equidad de género.",
   "coincidencia_ppi": null,
   "pagina": 96,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "220103201",
@@ -1172,7 +1243,8 @@
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media con Equidad de género.",
   "coincidencia_ppi": null,
   "pagina": 96,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "220103300",
@@ -1189,7 +1261,8 @@
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media con Equidad de género.",
   "coincidencia_ppi": null,
   "pagina": 96,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "220103400",
@@ -1206,7 +1279,8 @@
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media con Equidad de género.",
   "coincidencia_ppi": null,
   "pagina": 96,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "220103500",
@@ -1223,7 +1297,8 @@
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media con Equidad de género.",
   "coincidencia_ppi": null,
   "pagina": 96,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "220103900",
@@ -1240,7 +1315,8 @@
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media con Equidad de género.",
   "coincidencia_ppi": null,
   "pagina": 96,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "220104902",
@@ -1257,7 +1333,8 @@
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media con Equidad de género.",
   "coincidencia_ppi": null,
   "pagina": 96,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "220201100",
@@ -1274,7 +1351,8 @@
   "programa": "Calidad y fomento de la educación superior",
   "coincidencia_ppi": null,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "220203900",
@@ -1291,7 +1369,8 @@
   "programa": "Calidad y fomento de la educación superior",
   "coincidencia_ppi": null,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2202062",
@@ -1308,7 +1387,8 @@
   "programa": "Calidad y fomento de la educación superior",
   "coincidencia_ppi": null,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "410204300",
@@ -1325,7 +1405,8 @@
   "programa": "Protección social integral a las personas mayores.",
   "coincidencia_ppi": null,
   "pagina": 102,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4104009",
@@ -1343,7 +1424,8 @@
   "programa": "Protección social integral a las personas mayores.",
   "coincidencia_ppi": null,
   "pagina": 102,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4104020",
@@ -1360,7 +1442,8 @@
   "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las Familias de Niñas, Niños y Adolescentes.",
   "coincidencia_ppi": null,
   "pagina": 104,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1905040",
@@ -1377,7 +1460,8 @@
   "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las Familias de Niñas, Niños y Adolescentes.",
   "coincidencia_ppi": null,
   "pagina": 104,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2302053",
@@ -1394,7 +1478,8 @@
   "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las Familias de Niñas, Niños y Adolescentes.",
   "coincidencia_ppi": null,
   "pagina": 104,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4102001",
@@ -1411,7 +1496,8 @@
   "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las Familias de Niñas, Niños y Adolescentes.",
   "coincidencia_ppi": null,
   "pagina": 105,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4102008",
@@ -1428,7 +1514,8 @@
   "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las Familias de Niñas, Niños y Adolescentes.",
   "coincidencia_ppi": null,
   "pagina": 105,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4102042",
@@ -1445,7 +1532,8 @@
   "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las Familias de Niñas, Niños y Adolescentes.",
   "coincidencia_ppi": null,
   "pagina": 105,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "410204202",
@@ -1462,7 +1550,8 @@
   "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las Familias de Niñas, Niños y Adolescentes.",
   "coincidencia_ppi": null,
   "pagina": 105,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4102043",
@@ -1479,7 +1568,8 @@
   "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las Familias de Niñas, Niños y Adolescentes.",
   "coincidencia_ppi": null,
   "pagina": 105,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "190502003",
@@ -1496,7 +1586,8 @@
   "programa": "Juntas y juntos si es posible",
   "coincidencia_ppi": null,
   "pagina": 108,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "190502103",
@@ -1513,7 +1604,8 @@
   "programa": "Juntas y juntos si es posible",
   "coincidencia_ppi": null,
   "pagina": 108,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502026",
@@ -1530,7 +1622,8 @@
   "programa": "Transversalización de enfoque para la reconciliación y la construcción de paz",
   "coincidencia_ppi": null,
   "pagina": 111,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "450203800",
@@ -1547,7 +1640,8 @@
   "programa": "Transversalización de enfoque para la reconciliación y la construcción de paz",
   "coincidencia_ppi": null,
   "pagina": 111,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502022",
@@ -1564,7 +1658,8 @@
   "programa": "Transversalización de enfoque para la reconciliación y la construcción de paz",
   "coincidencia_ppi": null,
   "pagina": 112,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4301003",
@@ -1581,7 +1676,8 @@
   "programa": "Fomento a la recreación, la actividad física y el deporte para desarrollar entornos de convivencia y paz",
   "coincidencia_ppi": null,
   "pagina": 115,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4301004",
@@ -1598,7 +1694,8 @@
   "programa": "Fomento a la recreación, la actividad física y el deporte para desarrollar entornos de convivencia y paz",
   "coincidencia_ppi": null,
   "pagina": 115,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4301006",
@@ -1615,7 +1712,8 @@
   "programa": "Fomento a la recreación, la actividad física y el deporte para desarrollar entornos de convivencia y paz",
   "coincidencia_ppi": null,
   "pagina": 115,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4301007",
@@ -1632,7 +1730,8 @@
   "programa": "Fomento a la recreación, la actividad física y el deporte para desarrollar entornos de convivencia y paz",
   "coincidencia_ppi": null,
   "pagina": 115,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4301020",
@@ -1649,7 +1748,8 @@
   "programa": "Fomento a la recreación, la actividad física y el deporte para desarrollar entornos de convivencia y paz",
   "coincidencia_ppi": null,
   "pagina": 115,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4301022",
@@ -1666,7 +1766,8 @@
   "programa": "Fomento a la recreación, la actividad física y el deporte para desarrollar entornos de convivencia y paz",
   "coincidencia_ppi": null,
   "pagina": 115,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4302001",
@@ -1683,7 +1784,8 @@
   "programa": "Formación y preparación de deportistas",
   "coincidencia_ppi": null,
   "pagina": 117,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3301020",
@@ -1700,7 +1802,8 @@
   "programa": "Promoción y acceso efectivo a procesos culturales y artísticos",
   "coincidencia_ppi": null,
   "pagina": 120,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3301038",
@@ -1717,7 +1820,8 @@
   "programa": "Promoción y acceso efectivo a procesos culturales y artísticos",
   "coincidencia_ppi": null,
   "pagina": 120,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3301043",
@@ -1734,7 +1838,8 @@
   "programa": "Promoción y acceso efectivo a procesos culturales y artísticos",
   "coincidencia_ppi": null,
   "pagina": 120,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3302019",
@@ -1751,7 +1856,8 @@
   "programa": "Gestión, protección y salvaguardia del patrimonio cultural colombiano",
   "coincidencia_ppi": null,
   "pagina": 123,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "330201901",
@@ -1768,7 +1874,8 @@
   "programa": "Gestión, protección y salvaguardia del patrimonio cultural colombiano",
   "coincidencia_ppi": null,
   "pagina": 123,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4001030",
@@ -1785,7 +1892,8 @@
   "programa": "Acceso a soluciones de vivienda",
   "coincidencia_ppi": null,
   "pagina": 136,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "400104201",
@@ -1802,7 +1910,8 @@
   "programa": "Acceso a soluciones de vivienda",
   "coincidencia_ppi": null,
   "pagina": 136,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4002016",
@@ -1819,7 +1928,8 @@
   "programa": "Ordenamiento territorial y desarrollo urbano",
   "coincidencia_ppi": null,
   "pagina": 137,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4002019",
@@ -1836,7 +1946,8 @@
   "programa": "Ordenamiento territorial y desarrollo urbano",
   "coincidencia_ppi": null,
   "pagina": 137,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4003010",
@@ -1853,7 +1964,8 @@
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": null,
   "pagina": 139,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4003012",
@@ -1870,7 +1982,8 @@
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": null,
   "pagina": 139,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "400302200",
@@ -1887,7 +2000,8 @@
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": null,
   "pagina": 139,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "400302300",
@@ -1904,7 +2018,8 @@
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": null,
   "pagina": 139,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4003031",
@@ -1921,7 +2036,8 @@
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": null,
   "pagina": 139,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4003021",
@@ -1938,7 +2054,8 @@
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": null,
   "pagina": 139,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3202005",
@@ -1955,12 +2072,13 @@
   "programa": "Conservación de la biodiversidad y sus servicios ecosistémicos",
   "coincidencia_ppi": null,
   "pagina": 143,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3202005",
   "nombre": "Áreas en proceso restauración aisladas",
-  "unidad": "<sup>Hectáreas</sup>",
+  "unidad": "Hectáreas",
   "meta": "15",
   "responsable": "Secretaria de Agricultura, Turismo y Medio Ambiente",
   "pdd": "Programa: Conservación de la biodiversidad y sus servicios ecosistémicos",
@@ -1972,7 +2090,8 @@
   "programa": "Conservación de la biodiversidad y sus servicios ecosistémicos",
   "coincidencia_ppi": null,
   "pagina": 143,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3203001",
@@ -1989,7 +2108,8 @@
   "programa": "Gestión del cambio climático para un desarrollo bajo en carbono y resiliente al clima",
   "coincidencia_ppi": null,
   "pagina": 146,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3203033",
@@ -2006,7 +2126,8 @@
   "programa": "Gestión del cambio climático para un desarrollo bajo en carbono y resiliente al clima",
   "coincidencia_ppi": null,
   "pagina": 146,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3206016",
@@ -2023,7 +2144,8 @@
   "programa": "Ordenamiento Ambiental Territorial",
   "coincidencia_ppi": null,
   "pagina": 147,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3206005",
@@ -2040,7 +2162,8 @@
   "programa": "Ordenamiento Ambiental Territorial",
   "coincidencia_ppi": null,
   "pagina": 147,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3205007",
@@ -2057,7 +2180,8 @@
   "programa": "Ordenamiento Ambiental Territorial",
   "coincidencia_ppi": null,
   "pagina": 148,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3205014",
@@ -2074,7 +2198,8 @@
   "programa": "Ordenamiento Ambiental Territorial",
   "coincidencia_ppi": null,
   "pagina": 148,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4101003",
@@ -2091,7 +2216,8 @@
   "programa": "Atención, Asistencia y Reparación integral a las víctimas",
   "coincidencia_ppi": null,
   "pagina": 151,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4101011",
@@ -2108,7 +2234,8 @@
   "programa": "Atención, Asistencia y Reparación integral a las víctimas",
   "coincidencia_ppi": null,
   "pagina": 151,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4101014",
@@ -2125,7 +2252,8 @@
   "programa": "Atención, Asistencia y Reparación integral a las víctimas",
   "coincidencia_ppi": null,
   "pagina": 151,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1202006",
@@ -2142,7 +2270,8 @@
   "programa": "Promoción al Acceso a la Justicia",
   "coincidencia_ppi": null,
   "pagina": 156,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1202012",
@@ -2159,7 +2288,8 @@
   "programa": "Promoción al Acceso a la Justicia",
   "coincidencia_ppi": null,
   "pagina": 156,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "120201201",
@@ -2176,7 +2306,8 @@
   "programa": "Promoción al Acceso a la Justicia",
   "coincidencia_ppi": null,
   "pagina": 156,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1202019",
@@ -2193,7 +2324,8 @@
   "programa": "Promoción al Acceso a la Justicia",
   "coincidencia_ppi": null,
   "pagina": 156,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1202020",
@@ -2210,7 +2342,8 @@
   "programa": "Promoción al Acceso a la Justicia",
   "coincidencia_ppi": null,
   "pagina": 156,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1203001",
@@ -2227,7 +2360,8 @@
   "programa": "Promoción al Acceso a la Justicia",
   "coincidencia_ppi": null,
   "pagina": 156,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1203009",
@@ -2244,7 +2378,8 @@
   "programa": "Promoción al Acceso a la Justicia",
   "coincidencia_ppi": null,
   "pagina": 156,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "410204504",
@@ -2261,7 +2396,8 @@
   "programa": "Promoción al Acceso a la Justicia",
   "coincidencia_ppi": null,
   "pagina": 156,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1206007",
@@ -2278,6 +2414,7 @@
   "programa": "Sistema penitenciario y Carcelario en el marco de los derechos humanos",
   "coincidencia_ppi": null,
   "pagina": 157,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  }
 ]

@@ -8,9 +8,12 @@ ARTICULO = re.compile(r"^ART[IÍ�]CULO\s*\d+\s*[°º.:\-–]*\s*", re.I)
 CODIGO = re.compile(r"^[\d.]+\s*[:.\-–]\s*")  # "1.1.1:" delante del nombre de un programa
 RE_LINEA = re.compile(r"^(?:L[ií�]nea estrat[eé�]gica|Eje estrat[eé�]gico|Dimensi[oó�]n|Pilar|Reto)\s*(\d+)?\s*[:.\-–]?\s*(.*)", re.I)
 RE_SECTOR = re.compile(r"^Sector\s+(?!es\b|de inversi)(.+)$", re.I)
-RE_PROG = re.compile(r"^Programa\s*(?:[\d.]+\s*)?[:.\-–]?\s*(.+)$", re.I)
+RE_PROG = re.compile(r"^(?:[\d.]+\s+)?Programa\s*(?:[\d.]+\s*)?[:.\-–]?\s*(.+)$", re.I)
 RE_CAPT = re.compile(r"Indicadores de producto programa\s+(.+?)\.?\s*Fuente", re.I)
 RE_RESP = re.compile(r"^Responsables?\s*:\s*(.+)$", re.I)
+RE_ETIQUETA = re.compile(r"^(.{3,45}?)\s*[:.]\s*$")
+RE_ETIQUETA_VALOR = re.compile(r"^(.{3,45}?)\s*:\s+(.+)$")
+CAMPOS_FICHA = {"nombre", "unidad", "linea_base", "meta", "tipo_acumulado", "responsable", "descripcion", "codigo"}
 RE_TIPO = re.compile(r"^Indicadores? de (producto|resultado)s?\b", re.I)
 
 
@@ -48,12 +51,40 @@ def recorre_estructura(paginas):
             if m:
                 ev.append((n, "caption", m.group(1).strip(), s))
                 continue
+            campo, valor = _ficha(s, lineas, k)
+            if campo:
+                ev.append((n, "campo", (campo, valor, s), s))
+                continue
             m = RE_TIPO.match(s)
             if m and len(s) < 120:
                 ev.append((n, "tipo", m.group(1).lower(), s))
         for t in filas_tabla(md):
             ev.append((n, "tabla", t, ""))
     return ev
+
+
+def _sin_etiqueta_pegada(valor):
+    """El convertidor a veces pega la etiqueta siguiente al valor ('765 Valor Esperado Metas Producto 2027:')."""
+    for m in re.finditer(r"\s+([A-ZÁÉÍÓÚ][A-Za-zÁÉÍÓÚáéíóúñ0-9 ]{2,45}?)\s*:", valor):
+        if columnas.campo_de_etiqueta(m.group(1)) in CAMPOS_FICHA:
+            return valor[:m.start()].strip()
+    return valor
+
+
+def _ficha(s, lineas, k):
+    """Linea de ficha ('Linea Base:' con el valor debajo, o 'Linea Base: 0'): (campo, valor) o (None, None)."""
+    m = RE_ETIQUETA_VALOR.match(s)
+    if m:
+        campo = columnas.campo_de_etiqueta(m.group(1))
+        if campo in CAMPOS_FICHA:
+            return campo, _sin_etiqueta_pegada(m.group(2).strip())
+    m = RE_ETIQUETA.match(s)
+    if m:
+        campo = columnas.campo_de_etiqueta(m.group(1))
+        if campo in CAMPOS_FICHA:
+            valor = next((limpia(x.lstrip("# ")) for x in lineas[k + 1:] if x.strip() and not x.startswith("|")), "")
+            return campo, _sin_etiqueta_pegada(valor)
+    return None, None
 
 
 def es_tabla_indicadores(t):
@@ -74,7 +105,31 @@ def tablas_de_indicadores(paginas):
     responsable = None
     tipo_ctx = None  # el titulo "Indicadores de resultado" vale solo para la tabla que le sigue
     tablas, captions = [], []
+    ficha = None  # indicador en formato ficha (campo: valor), no tabla
+
+    def cierra():
+        nonlocal ficha
+        if ficha and (ficha["rec"].get("linea_base") or ficha["rec"].get("meta")):
+            for campo in ("unidad", "linea_base", "meta", "tipo_acumulado", "responsable"):
+                ficha["rec"].setdefault(campo, "")
+            tablas.append(dict(n=ficha["n"], linea=ficha["linea"], sector=ficha["sector"], cand=ficha["programa"],
+                               tipo=ficha["tipo"], formato="ficha", ind=[ficha["rec"]]))
+        ficha = None
+
     for n, tipo, val, _ in recorre_estructura(paginas):
+        if tipo == "campo":
+            campo, valor, texto = val
+            if campo == "nombre":
+                cierra()
+                resultado = "resultado" in norm(texto)
+                if valor:
+                    ficha = dict(n=n, linea=linea, sector=sector, programa=programa,
+                                 tipo="resultado" if resultado else "producto", rec={"nombre": valor})
+            elif ficha and valor and campo not in ficha["rec"]:
+                ficha["rec"][campo] = valor
+            continue
+        if tipo in ("linea", "sector", "programa", "tabla"):
+            cierra()
         if tipo == "linea":
             linea = val
         elif tipo == "sector":
@@ -96,6 +151,7 @@ def tablas_de_indicadores(paginas):
             if tit:
                 titulo = tit
             tablas.append(dict(n=n, linea=linea, sector=sector, cand=programa or caption or titulo,
-                               tipo=tipo_tabla or tipo_ctx or "producto", ind=_con_responsable(columnas.parsea(val, hi, cols), responsable)))
+                               tipo=tipo_tabla or tipo_ctx or "producto", formato="tabla", ind=_con_responsable(columnas.parsea(val, hi, cols), responsable)))
             tipo_ctx = None
+    cierra()
     return tablas, captions

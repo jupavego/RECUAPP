@@ -1,0 +1,640 @@
+[
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 107,
+  "valor": "Fortalecimiento de espacios que",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 1
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 116,
+  "valor": "Construcción de salones",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 2
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 136,
+  "valor": "Fortalecimien to de las políticas públicas y observatorio de políticas públicas en el municipio",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 3
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 139,
+  "valor": "Gestión para la construcción de pavimento rígido, rieles y placa huella en vías rurales",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 4
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 139,
+  "valor": "Mejoramiento de infraestructur a vial rural",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 5
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 139,
+  "valor": "Gestión para la adquisición de maquinaria amarilla",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 6
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 139,
+  "valor": "Mejoramiento y recuperación de espacios públicos",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 7
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 140,
+  "valor": "Expansión, mantenimient o y servicio de alumbrado público",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 8
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 140,
+  "valor": "Gestión para la pavimentació n de vías urbanas",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 9
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 140,
+  "valor": "Mejoramiento de infraestructur a vial urbana",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 10
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 141,
+  "valor": "Gestión para el otorgamiento de subsidios para la asignación de VIS (vivienda de interés social) y/o VIP (Vivienda de Interés Prioritario)",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 11
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 141,
+  "valor": "Gestión para el otorgamiento de subsidios para el mejoramient o y la construcción de vivienda",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 12
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 141,
+  "valor": "Fortalecimie nto de los programas de vivienda",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 13
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 146,
+  "valor": "Mejoramiento de la cobertura y calidad del servicio de agua potable en el área rural",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 14
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 146,
+  "valor": "Ampliación y reposición de la infraestructura",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 15
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 146,
+  "valor": "para la prestación del servicio público domiciliario de acueducto en el área urbana",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 16
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 146,
+  "valor": "para la prestación de servicio público domiciliario de alcantarillado en el área urbana",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 17
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 147,
+  "valor": "Fortalecimiento al servicio de aseo",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 18
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 147,
+  "valor": "Fortalecimiento del Fondo de Solidaridad y Redistribución de Ingresos",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 19
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 149,
+  "valor": "Implementación del Plan Integral de Gestión del Cambio Climático (adaptación, mitigación, educación, sostenibilidad y monitoreo permanente)",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 20
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 149,
+  "valor": "Desarrollo de proyectos para el embellecimiento , fomento de cultura verde y desarrollo sostenible",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 21
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 150,
+  "valor": "Implementación de estrategias para la prevención y mitigación del riesgo de desastres",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 22
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 150,
+  "valor": "Gestión para la implementación de infraestructura adecuada para los organismos de socorro.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 23
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 151,
+  "valor": "Implementació n de proyectos para el bienestar animal",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 24
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 151,
+  "valor": "Fomento al cuidado y bienestar animal",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 25
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 153,
+  "valor": "Implementación del Plan Subregional de Turismo",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 26
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 153,
+  "valor": "Fomento de ventajas competitivas del sector productivo de El Peñol y turismo",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 27
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 153,
+  "valor": "Generación de estrategias de empleabilidad",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 28
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 153,
+  "valor": "Apoyo a la formalización de las personas y entidades que ofertan productos comerciales y de servicios",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 29
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 153,
+  "valor": "Recuperación y conservación de atractivos turísticos",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 30
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 167,
+  "valor": "Fortalecimiento de las políticas públicas y observatorio de políticas públicas en el municipio",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 31
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 168,
+  "valor": "Mejoramiento de infraestructura vial rural",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 32
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 168,
+  "valor": "Expansión, mantenimiento y servicio de alumbrado público",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 33
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 169,
+  "valor": "Gestión para la pavimentación de vías urbanas",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 34
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 169,
+  "valor": "Mejoramiento de infraestructura vial urbana",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 35
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 169,
+  "valor": "Gestión para el otorgamiento de subsidios para el mejoramiento y la construcción de vivienda",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 36
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 169,
+  "valor": "Fortalecimiento de los programas de vivienda",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 37
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 170,
+  "valor": "Mejoramiento del saneamiento básico en la zona rural con construcción de sistemas sépticos",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 38
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 170,
+  "valor": "Actualización e implementación del Plan de gestión Integral de Residuos Sólidos",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 39
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 170,
+  "valor": "Ampliación y reposición de la infraestructura para la prestación del servicio úbli diilii d",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 40
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 170,
+  "valor": "pco omcaro e acueducto en el área urbana",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 41
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 170,
+  "valor": "Ampliación y reposición de la infraestructura para la",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 42
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 171,
+  "valor": "alcantarillado en el área urbana",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 43
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 171,
+  "valor": "Gestión para la adquisición y protección de predios de importancia para la conservación de cuencas hidrográficas",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 44
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 171,
+  "valor": "Fomento de la educación ambiental como eje de",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 45
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 172,
+  "valor": "Desarrollo de proyectos para el embellecimiento, fomento de cultura verde y desarrollo sostenible",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 46
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 172,
+  "valor": "Gestión para la implementación de infraestructura adecuada para los organismos de socorro",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 47
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 173,
+  "valor": "Implementación de proyectos para el bienestar animal",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 48
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 174,
+  "valor": "Actualización e implementación de la políticapública de turismo",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 49
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 215,
+  "valor": "s: 5",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 50
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "01 El Peñol Avanza con Educación, Salud, Cultura y Deporte",
+  "sector": null,
+  "correccion": null,
+  "id": 51
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0101 Educación",
+  "sector": null,
+  "correccion": null,
+  "id": 52
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0102 Salud",
+  "sector": null,
+  "correccion": null,
+  "id": 53
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0103 Cultura",
+  "sector": null,
+  "correccion": null,
+  "id": 54
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0104 Deporte",
+  "sector": null,
+  "correccion": null,
+  "id": 55
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "02 El Peñol Avanza de la Mano de la Participación Social y Comunitaria y De sus diferentes Grupos Poblacionales",
+  "sector": null,
+  "correccion": null,
+  "id": 56
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0201 Ciclo Vital",
+  "sector": null,
+  "correccion": null,
+  "id": 57
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0202 Participación Ciudadana",
+  "sector": null,
+  "correccion": null,
+  "id": 58
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0203 Diversidad",
+  "sector": null,
+  "correccion": null,
+  "id": 59
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0204 Discapacidad",
+  "sector": null,
+  "correccion": null,
+  "id": 60
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0205 Derechos Humanos",
+  "sector": null,
+  "correccion": null,
+  "id": 61
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "03 El Peñol Avanza con Desarrollo Rural y Campesino",
+  "sector": null,
+  "correccion": null,
+  "id": 62
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0301 Agropecuario",
+  "sector": null,
+  "correccion": null,
+  "id": 63
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "04 El Peñol Avanza con Seguridad y Sana Convivencia",
+  "sector": null,
+  "correccion": null,
+  "id": 64
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0401 Seguridad",
+  "sector": null,
+  "correccion": null,
+  "id": 65
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0402 Convivencia",
+  "sector": null,
+  "correccion": null,
+  "id": 66
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0403 Fortalecimiento Institucional",
+  "sector": null,
+  "correccion": null,
+  "id": 67
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "040314 Fortalecimiento de las políticas públicas en el municipio",
+  "sector": null,
+  "correccion": null,
+  "id": 68
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "05 El Peñol Avanza con Desarrollo Territorial Sostenible",
+  "sector": null,
+  "correccion": null,
+  "id": 69
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0501 Movilidad",
+  "sector": null,
+  "correccion": null,
+  "id": 70
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0502 Infraestructura",
+  "sector": null,
+  "correccion": null,
+  "id": 71
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Municipios máspobres",
+  "sector": null,
+  "correccion": null,
+  "id": 72
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Destinación para medio ambiente y desarrollo sostenible",
+  "sector": "Destinación para medio ambiente y desarrollo sostenible",
+  "correccion": null,
+  "id": 73
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Resto de Inversión",
+  "sector": "Resto de Inversión",
+  "correccion": null,
+  "id": 74
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Comunidades Étnicas",
+  "sector": null,
+  "correccion": null,
+  "id": 75
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Comunidades Indígenas",
+  "sector": null,
+  "correccion": null,
+  "id": 76
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Comunidades NARP",
+  "sector": null,
+  "correccion": null,
+  "id": 77
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Comunidades Rrom",
+  "sector": null,
+  "correccion": null,
+  "id": 78
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Asignación para Ciencia, Tecnología e Innovación",
+  "sector": null,
+  "correccion": null,
+  "id": 79
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Asignación para Inversión en Ciencia, Tecnología e Innovación Ambiental",
+  "sector": null,
+  "correccion": null,
+  "id": 80
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Resto de inversión",
+  "sector": null,
+  "correccion": null,
+  "id": 81
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Asignación Ambiental",
+  "sector": null,
+  "correccion": null,
+  "id": 82
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Municipios Río Magdalenay Canal Dique",
+  "sector": null,
+  "correccion": null,
+  "id": 83
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "AHORRO",
+  "sector": null,
+  "correccion": null,
+  "id": 84
+ }
+]

@@ -16,14 +16,16 @@ REGLAS = [
     ("ano_base", r"^ano"),
     ("linea_base", r"lineabase|lineadebase|^lb"),
     ("meta_anual", r"^20\d\d$"),
-    ("meta", r"^meta"),
-    ("tipo_acumulado", r"acumul|orientacion|formadecalculo"),
+    ("meta", r"^meta|valoresperado|^mc$"),
+    ("tipo_acumulado", r"acumul|orientacion|formadecalculo|tipomedida|^tm$"),
     ("responsable", r"responsable|dependencia|lider"),
     ("fuente", r"^fuente"),
-    ("unidad", r"^unidad|^udemedida|^umedida|medidoatraves"),
+    ("unidad", r"^unidad|^udemedida|^umedida|^medicion|medidoatraves"),
     ("sector", r"^sector"),
     ("componente", r"^componente"),  # "Medido a traves de" trae la unidad ("Numero de beneficiarios")
     ("programa", r"^programa"),
+    ("nombre", r"^descripciondelasmetas"),  # La Union: la meta de resultado se describe, sin nombre de indicador
+    ("descripcion", r"^descripcion"),
     ("producto", r"^producto"),
     ("nombre", r"indicador|^nombre"),
 ]
@@ -33,12 +35,11 @@ def compacto(c):
     return norm(limpia(c)).replace(" ", "")
 
 
-def mapea(celdas):
-    """{indice_de_columna: campo} para una fila de encabezado, o None si no parece de indicadores."""
+def _mapea(celdas, desde=0):
     cols, usados = {}, set()
     for j, c in enumerate(celdas):
         k = compacto(c)
-        if not k:
+        if not k or j < desde:
             continue
         for campo, pat in REGLAS:
             if re.search(pat, k):
@@ -48,6 +49,23 @@ def mapea(celdas):
                     cols[j] = campo
                     usados.add(campo)
                 break
+    return cols, usados
+
+
+def mapea(celdas):
+    """{indice_de_columna: campo} para una fila de encabezado, o None si no parece de indicadores.
+
+    Si el encabezado trae dos indicadores (uno de bienestar/resultado y otro "de producto", como San Andres de
+    Cuerquia), el de producto manda: sus campos son los de las columnas a su derecha.
+    """
+    cols, usados = _mapea(celdas)
+    alt = next((j for j, c in enumerate(celdas)
+                if re.search(r"indicadoresde?producto|indicadordeproducto", compacto(c))), None)
+    if cols and alt is not None and cols.get(alt) != "nombre":
+        izq = {j: c for j, c in cols.items() if j < alt and c in ("codigo", "programa", "producto", "sector", "componente")}
+        der, _ = _mapea(celdas, desde=alt)
+        cols = {**izq, **der}
+        usados = set(cols.values())
     if "nombre" in usados and ({"linea_base", "meta"} & usados):
         return cols
     return None
@@ -58,7 +76,7 @@ def tipo_por_cabecera(celdas):
     k = "".join(compacto(c) for c in celdas)  # sin separador: el titulo puede venir partido entre columnas
     if re.search(r"indicadoresde?producto|indicadordeproducto", k):
         return "producto"
-    if re.search(r"indicadoresde?resultado|indicadorderesultado", k):
+    if re.search(r"indicadoresde?resultado|indicadorderesultado|metasderesultado", k):
         return "resultado"
     return None
 
@@ -82,7 +100,6 @@ def clasifica(t):
             junta = _une_filas(t[hi], t[hi + 1]) if hi + 1 < len(t) else None
             cols2 = mapea(junta) if junta else None
             if cols2 and len(cols2) > len(cols or {}):  # "Linea" / "base" repartidos en dos filas
-                t[hi + 1] = junta
                 hi += 1
                 cols = cols2
             if cols:
@@ -126,3 +143,12 @@ def parsea(t, hi, cols):
             rec.setdefault(campo, "")
         out.append(rec)
     return out
+
+
+def campo_de_etiqueta(etiqueta):
+    """Campo canonico de una etiqueta de ficha ('Linea Base', 'Medicion', 'Indicador Producto'...) o None."""
+    k = compacto(etiqueta)
+    for campo, pat in REGLAS:
+        if re.search(pat, k):
+            return None if campo == "meta_anual" else campo
+    return None

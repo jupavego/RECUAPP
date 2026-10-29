@@ -1,0 +1,230 @@
+[
+ {
+  "pagina": 30,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "1. Ingresos corrientes (1.1- 1.2)",
+    "anios": [
+     24905,
+     25652,
+     26421,
+     27214
+    ],
+    "total": 104192
+   },
+   {
+    "etiqueta": "1.1 Ingresos corrientes (sin descontar vigencias futuras)",
+    "anios": [
+     24905,
+     25652,
+     26421,
+     27214
+    ],
+    "total": 104192
+   },
+   {
+    "etiqueta": "1.2 Vigencias futuras",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "2. Gastos de funcionamiento",
+    "anios": [
+     5512,
+     5678,
+     5848,
+     6023
+    ],
+    "total": 23061
+   },
+   {
+    "etiqueta": "3. Ahorro operacional (1- 2)",
+    "anios": [
+     19392,
+     19974,
+     20573,
+     21190
+    ],
+    "total": 81129
+   },
+   {
+    "etiqueta": "4. Saldo de la deuda (4.1- 4.2-4.3+4.4)",
+    "anios": [
+     8043,
+     6348,
+     4956,
+     3576
+    ],
+    "total": 22923
+   },
+   {
+    "etiqueta": "4.1 Saldo de la deuda antes de amortizaciones (4.1.1-4.1.2+4.1.3+4.1.4)",
+    "anios": [
+     9855,
+     8043,
+     6348,
+     4956
+    ],
+    "total": 29202
+   },
+   {
+    "etiqueta": "4.1.1 Saldo de la deuda a 31 de diciembre de la vigencia anterior",
+    "anios": [
+     9855,
+     8043,
+     6348,
+     4956
+    ],
+    "total": 29202
+   },
+   {
+    "etiqueta": "4.1.2 Saldo de la deuda a 31 de diciembre de la vigencia anterior - financiada con regalías",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "4.1.3 Valor de los créditos contratados en la vigencia y no desembolsados",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "4.1.4 Valor del nuevo crédito a contratar - proyección de desembolsos",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "4.2 Amortizaciones de la deuda (4.2.1-4.2.2+4.2.3)",
+    "anios": [
+     1812,
+     1695,
+     1392,
+     1380
+    ],
+    "total": 6279
+   },
+   {
+    "etiqueta": "4.2.1 Amortizaciones de la deuda para la vigencia",
+    "anios": [
+     1812,
+     1695,
+     1392,
+     1380
+    ],
+    "total": 6279
+   },
+   {
+    "etiqueta": "4.2.2 Amortizaciones de la deuda para la vigencia financiada con regalías",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "4.2.3 Amortizaciones del nuevo crédito",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "4.3 Créditos condonables",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "4.4 Amortizaciones de créditos condonables",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   }
+  ],
+  "ncols": 11,
+  "financiero": true
+ },
+ {
+  "pagina": 31,
+  "cabecera": "",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "5. Intereses (5.1-5.2+5.3)",
+    "anios": [
+     1537,
+     1214,
+     967,
+     742
+    ],
+    "total": 4460
+   },
+   {
+    "etiqueta": "5.1 Intereses de la deuda para la vigencia",
+    "anios": [
+     1537,
+     1214,
+     967,
+     742
+    ],
+    "total": 4460
+   },
+   {
+    "etiqueta": "5.2 Intereses de la deuda para la vigencia financiada con regalías",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "5.3 Intereses del nuevo crédito",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   }
+  ],
+  "ncols": 11,
+  "financiero": true
+ }
+]

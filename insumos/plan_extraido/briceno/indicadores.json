@@ -13,11 +13,13 @@
   "programa": "2.2.1 Aseguramiento y prestación integral de servicios de salud",
   "coincidencia_ppi": 0.97,
   "pagina": 36,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "210100900",
   "nombre": "2101009 - Redes de distribución de gas combustible construidas",
+  "descripcion": "Construcción de la red de gas domiciliaria en la zona urbana del municipio.",
   "unidad": "Kilómetros",
   "meta": "1.2",
   "responsable": "Secretaria De Planeación E Infraestructura",
@@ -28,11 +30,13 @@
   "programa": "2.3.1. Calidad, cobertura y fortalecimiento de la educación inicial,prescolar, básicaymedia",
   "coincidencia_ppi": 0.82,
   "pagina": 39,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "Del Indicador",
   "nombre": "producto",
+  "descripcion": "indicador",
   "unidad": "De Medida",
   "meta": "2024- 2027",
   "responsable": "Responsable",
@@ -43,11 +47,13 @@
   "programa": "2.3.1. Calidad, cobertura y fortalecimiento de la educación inicial,prescolar, básicaymedia",
   "coincidencia_ppi": 0.82,
   "pagina": 39,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "220105200",
   "nombre": "2201052 - Infraestructura educativa mejorada",
+  "descripcion": "La prioridad de Briceño es realizar mejoramiento de la infraestructura educativa.",
   "unidad": "Número",
   "meta": "20",
   "responsable": "Secretaria de planeación e infraestructura",
@@ -58,7 +64,8 @@
   "programa": "2.3.1. Calidad, cobertura y fortalecimiento de la educación inicial,prescolar, básicaymedia",
   "coincidencia_ppi": 0.82,
   "pagina": 39,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "SD",
@@ -73,7 +80,8 @@
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 0.63,
   "pagina": 48,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "030010008",
@@ -88,7 +96,8 @@
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 0.63,
   "pagina": 48,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "030010009",
@@ -103,7 +112,8 @@
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 0.63,
   "pagina": 48,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "SD",
@@ -118,7 +128,8 @@
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 0.63,
   "pagina": 48,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "030010012",
@@ -133,7 +144,8 @@
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 0.63,
   "pagina": 48,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "030010013",
@@ -148,7 +160,8 @@
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 0.63,
   "pagina": 48,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "030010014",
@@ -163,7 +176,8 @@
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 0.63,
   "pagina": 48,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "030010015",
@@ -178,11 +192,13 @@
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 0.63,
   "pagina": 48,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "400100100",
   "nombre": "4001001 - Servicio de asistencia técnica y jurídica en saneamiento y titulación de predios",
+  "descripcion": "Gestionar con entidades del departamento o la nación la asesoría y la asistencia para mejorar la capacidad de acción del municipio en el saneamiento territorial mediante la legalización de predios",
   "unidad": "Número de entidades territoriales",
   "meta": "1",
   "responsable": "Secretaria Planeación Infraestructura",
@@ -193,11 +209,13 @@
   "programa": "1.5 Acceso a soluciones de vivienda",
   "coincidencia_ppi": 0.95,
   "pagina": 50,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "400100700",
   "nombre": "4001007 - Servicio de saneamiento y titulación de bienes fiscales",
+  "descripcion": "Mediante la articulación con la oficina de catastro incrementar el número de bienes saneados y titulados",
   "unidad": "Número de bienes fiscales",
   "meta": "3",
   "responsable": "Secretaria Planeación Infraestructura",
@@ -208,11 +226,13 @@
   "programa": "1.5 Acceso a soluciones de vivienda",
   "coincidencia_ppi": 0.95,
   "pagina": 50,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "400103000",
   "nombre": "4001030 - Estudios de pre inversión e inversión",
+  "descripcion": "Incluye la realización de estudios de pre factibilidad, factibilidad o definitivos para la ejecución deproyectos",
   "unidad": "Número de estudios y diseños",
   "meta": "1",
   "responsable": "Secretaria Planeación Infraestructura",
@@ -223,11 +243,13 @@
   "programa": "1.5 Acceso a soluciones de vivienda",
   "coincidencia_ppi": 0.95,
   "pagina": 50,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "400103203",
   "nombre": "4001032 - Servicio de apoyo financiero para mejoramiento de vivienda",
+  "descripcion": "Corresponde al apoyo en especie través de la entrega de materiales para mejoramiento de vivienda y /o mano de obra para la zona urbana",
   "unidad": "Número de hogares",
   "meta": "50",
   "responsable": "Secretaria Planeación Infraestructura",
@@ -238,11 +260,13 @@
   "programa": "1.5 Acceso a soluciones de vivienda",
   "coincidencia_ppi": 0.95,
   "pagina": 50,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "400103204",
   "nombre": "4001032 - Servicio de apoyo financiero para mejoramiento de vivienda",
+  "descripcion": "Corresponde al apoyo en especie través de la entrega de materiales para mejoramiento de vivienda y /o mano de obra para la zona rural.",
   "unidad": "Número de hogares",
   "meta": "150",
   "responsable": "Secretaria Planeación Infraestructura",
@@ -253,11 +277,13 @@
   "programa": "1.5 Acceso a soluciones de vivienda",
   "coincidencia_ppi": 0.95,
   "pagina": 50,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "400201900",
   "nombre": "4002019 - Espacio público construido",
+  "descripcion": "Construcción de obras de infraestructura que intervienen los elementos constitutivos y complementarios del espacio público contenidos en el Decreto 1504 de 1998",
   "unidad": "Metros cuadrados de espacio publico",
   "meta": "100",
   "responsable": "Secretaria Planeación Infraestructura",
@@ -268,11 +294,13 @@
   "programa": "1.7 Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 0.98,
   "pagina": 52,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "400202600",
   "nombre": "4002026 - Zonas verdes mantenidas",
+  "descripcion": "La prioridad del municipio de Briceño es hacerle mantenimiento al parque de la zona urbana y del corregimiento de las Auras",
   "unidad": "Metros cuadrados de zonas verdes",
   "meta": "250",
   "responsable": "Secretaria Planeación Infraestructura Secretaria Me Ambiente Turismo",
@@ -283,11 +311,13 @@
   "programa": "1.7 Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 0.98,
   "pagina": 52,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "400202000",
   "nombre": "4002020 - Espacio público adecuado",
+  "descripcion": "Mejoramiento, ampliación y/o mantenimiento",
   "unidad": "Metros cuadrados de espacio publico",
   "meta": "150",
   "responsable": "Secretaria Planeación Infraestructura",
@@ -298,11 +328,13 @@
   "programa": "1.7 Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 0.98,
   "pagina": 52,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "400202005",
   "nombre": "4002020 - Espacio público adecuado",
+  "descripcion": "Mejoramiento, ampliación",
   "unidad": "Metros cuadrados de espacio publico",
   "meta": "300",
   "responsable": "Secretaria Planeación Infraestructura",
@@ -313,11 +345,13 @@
   "programa": "1.7 Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 0.98,
   "pagina": 52,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "400202200",
   "nombre": "4002022 - Parques mantenidos",
+  "descripcion": "SD",
   "unidad": "Metros cuadrados",
   "meta": "180mt cuadrad os",
   "responsable": "Secretaria Planeación Infraestructura",
@@ -328,11 +362,13 @@
   "programa": "1.7 Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 0.98,
   "pagina": 52,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "400300900",
   "nombre": "4003009 - Servicio de Acueducto",
+  "descripcion": "Es la distribución de agua apta para el consumo humano, incluida su conexión y medición. También forman parte de este servicio las actividades complementarias tales como captación de agua, procesamiento, tratamiento, almacenamiento, conducción, transporte y pago de servicio de energía en municipios prestadores directos conforme a la normatividad vigente.",
   "unidad": "Número de usuarios",
   "meta": "1.348",
   "responsable": "Secretaria De Planeación E Infraestructura",
@@ -343,11 +379,13 @@
   "programa": "1.7 Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 0.98,
   "pagina": 53,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "400301000",
   "nombre": "4003010 - Servicio de Aseo",
+  "descripcion": "Es el servicio de recolección municipal de residuos, principalmente sólidos. También se aplicará este servicio a las actividades complementarias de transporte, tratamiento, aprovechamiento y disposición final de tales residuos.",
   "unidad": "Número de usuarios",
   "meta": "1295",
   "responsable": "Secretaria De Planeación E Infraestructura",
@@ -358,11 +396,13 @@
   "programa": "1.7 Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 0.98,
   "pagina": 53,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "400301001",
   "nombre": "4003010 - Servicio de Aseo",
+  "descripcion": "Es el servicio de recolección municipal de residuos sólidos es una prioridad en el municipio con el fin de dar una disposición final a tales residuos. Por consiguiente, la administración Municipal gestionara la compra de un segundo carro recolector debido a la alta demanda municipal.",
   "unidad": "Número",
   "meta": "1",
   "responsable": "Secretaria De Planeación E Infraestructura",
@@ -373,11 +413,13 @@
   "programa": "1.7 Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 0.98,
   "pagina": 53,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "330103300",
   "nombre": "3301033 - Escuelas de música adecuadas",
+  "descripcion": "Cambio del uso de la infraestructura cultural o parte de ella, garantizando la permanencia del inmueble original.",
   "unidad": "Número de escuelas de música",
   "meta": "1",
   "responsable": "Secretaria De Planeación E Infraestructura",
@@ -388,11 +430,13 @@
   "programa": "1.8 Promoción y acceso efectivo a procesos culturales y artísticos- Infraestructura cultural",
   "coincidencia_ppi": 0.82,
   "pagina": 58,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "330109000",
   "nombre": "3301090 - Centros culturales adecuados",
+  "descripcion": "Cambio del uso de la infraestructura cultural o parte de ella, garantizando la permanencia del inmueble original.",
   "unidad": "Número",
   "meta": "1",
   "responsable": "Secretaria De Planeación E Infraestructura",
@@ -403,11 +447,13 @@
   "programa": "1.8 Promoción y acceso efectivo a procesos culturales y artísticos- Infraestructura cultural",
   "coincidencia_ppi": 0.82,
   "pagina": 58,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "330109400",
   "nombre": "3301094 - Estudios y diseños de infraestructur a cultural",
+  "descripcion": "Corresponde a todos los productos relacionados a la etapa de preinversión en infraestructura cultural, como son estudios de factibilidad, diseños arquitectónicos, planos, estudio de suelos y otros estudios y/o instrumentos similares.",
   "unidad": "Número",
   "meta": "1",
   "responsable": "Secretaria De Planeación E Infraestructura",
@@ -418,11 +464,13 @@
   "programa": "1.8 Promoción y acceso efectivo a procesos culturales y artísticos- Infraestructura cultural",
   "coincidencia_ppi": 0.82,
   "pagina": 58,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "430100400",
   "nombre": "4301004 - Servicio de mantenimient o a la infraestructur a deportiva",
+  "descripcion": "Mantenimiento de la infraestructura deportiva competencia de las Entidades Territoriales. Garantizar las condiciones de funcionalidad del escenario deportivo, mejoramiento en pintura recuperación de implementación deportiva, mejoramiento de condiciones de cerramiento,",
   "unidad": "Número",
   "meta": "5",
   "responsable": "Secretaria De Planeación E Infraestructura",
@@ -433,11 +481,13 @@
   "programa": "1.9 Fomento a la recreación, la actividad física y el deporte- Infraestructura Deportiva",
   "coincidencia_ppi": 0.79,
   "pagina": 59,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599016",
   "nombre": "Sedes mantenidas",
+  "descripcion": "Corresponde a todas las obras operaciones y cuidados necesarios para conservar el buen estado de las sedes de las dependencias municipales para evitar su degradación.",
   "unidad": "Número",
   "meta": "2",
   "responsable": "Secretaria de Planeación e Infraestructura",
@@ -448,11 +498,13 @@
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos.",
   "coincidencia_ppi": 0.72,
   "pagina": 62,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "450200200",
   "nombre": "4502002 - Salón comunal construido y dotado",
+  "descripcion": "Incluye la construcción y dotación de Salones comunales para garantizar la participación e integración de las comunidades.",
   "unidad": "Número",
   "meta": "1",
   "responsable": "Secretaria General y de Gobierno (Desarrollo Comunitario) Secretaria de infraestructura",
@@ -463,7 +515,8 @@
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos.",
   "coincidencia_ppi": 0.72,
   "pagina": 62,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "050010006",
@@ -478,7 +531,8 @@
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos.",
   "coincidencia_ppi": 0.72,
   "pagina": 66,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "050010007",
@@ -493,7 +547,8 @@
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos.",
   "coincidencia_ppi": 0.72,
   "pagina": 66,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Cumplimiento del desempeño en vigilancia epidemiológica",
@@ -507,7 +562,8 @@
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos.",
   "coincidencia_ppi": 0.72,
   "pagina": 66,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "050020002",
@@ -522,7 +578,8 @@
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos.",
   "coincidencia_ppi": 0.72,
   "pagina": 66,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "050020003",
@@ -537,7 +594,8 @@
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos.",
   "coincidencia_ppi": 0.72,
   "pagina": 66,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "SD",
@@ -552,7 +610,8 @@
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos.",
   "coincidencia_ppi": 0.72,
   "pagina": 66,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "SD",
@@ -567,7 +626,8 @@
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos.",
   "coincidencia_ppi": 0.72,
   "pagina": 66,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "50020003",
@@ -582,7 +642,8 @@
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos.",
   "coincidencia_ppi": 0.72,
   "pagina": 66,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "050020005",
@@ -597,7 +658,8 @@
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos.",
   "coincidencia_ppi": 0.72,
   "pagina": 66,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "050020006",
@@ -612,7 +674,8 @@
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos.",
   "coincidencia_ppi": 0.72,
   "pagina": 66,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "050020007",
@@ -627,11 +690,13 @@
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos.",
   "coincidencia_ppi": 0.72,
   "pagina": 66,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "190603200",
   "nombre": "1906032 - Servicio de promoción de afiliaciones al régimen contributivo del Sistema General de Seguridad Social de las personas con capacidad de pago",
+  "descripcion": "Este servicio permite a las entidades promocionar a las personas con capacidad de pago la afiliación al régimen Contributivo del Sistema General de Seguridad Social.",
   "unidad": "Número",
   "meta": "100%",
   "responsable": "Secretaria de salud y Bienestar Social",
@@ -642,11 +707,13 @@
   "programa": "2.2.1 Aseguramiento y prestación integral de servicios de salud",
   "coincidencia_ppi": 0.97,
   "pagina": 70,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "190604400",
   "nombre": "1906044 - Servicio de afiliaciones al régimen subsidiado del Sistema General de Seguridad Social",
+  "descripcion": "Este servicio permite a las entidades territoriales realizar la afiliación de la población al régimen subsidiado conforme a las condiciones del Sistema General de Seguridad Social; incluye el registro, reporte, sistematización y seguimiento de afiliados en los",
   "unidad": "Número",
   "meta": "96%",
   "responsable": "Secretaria de salud y Bienestar Social",
@@ -657,11 +724,13 @@
   "programa": "2.2.1 Aseguramiento y prestación integral de servicios de salud",
   "coincidencia_ppi": 0.97,
   "pagina": 70,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "190301101",
   "nombre": "1903011 - Servicio de inspección, vigilancia y control",
+  "descripcion": "El servicio de inspección, vigilancia y control permite mantener los estándares en las entidades del sector salud",
   "unidad": "Número",
   "meta": "20",
   "responsable": "Secretaria de salud y Bienestar Social",
@@ -672,11 +741,13 @@
   "programa": "2.1.2: Inspección, Vigilancia Y Control",
   "coincidencia_ppi": 0.94,
   "pagina": 71,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "190502000",
   "nombre": "1905020 - Servicio de gestión del riesgo en temas de consumo de sustancias psicoactivas",
+  "descripcion": "Acciones mediante las cuales se previene el consumo de sustancias psicoactivas en la población.",
   "unidad": "Número",
   "meta": "10",
   "responsable": "Secretaria de Salud y Bienestar Social",
@@ -687,11 +758,13 @@
   "programa": "2.1.3 Salud Pública",
   "coincidencia_ppi": 0.86,
   "pagina": 73,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "190502100",
   "nombre": "1905021 - Servicio de gestión del riesgo en temas de salud sexual y reproductiva",
+  "descripcion": "Corresponde a las acciones relacionadas con la prevención y mitigación de riesgos que afectan la salud sexual y reproductiva de las personas en el curso de su vida desde un enfoque de derechos.",
   "unidad": "Número",
   "meta": "10",
   "responsable": "Secretaria de Salud y Bienestar Social",
@@ -702,11 +775,13 @@
   "programa": "2.1.3 Salud Pública",
   "coincidencia_ppi": 0.86,
   "pagina": 73,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "190502101",
   "nombre": "1905021 - Servicio de gestión del riesgo en temas de salud sexual y reproductiva",
+  "descripcion": "Corresponde a las acciones relacionadas con la prevención y mitigación de riesgos que afectan la salud sexual y reproductiva de las personas en el curso de su vida desde un enfoque de derechos.",
   "unidad": "Número",
   "meta": "10",
   "responsable": "Secretaria de Salud y Bienestar Social",
@@ -717,11 +792,13 @@
   "programa": "2.1.3 Salud Pública",
   "coincidencia_ppi": 0.86,
   "pagina": 73,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "190502200",
   "nombre": "1905022 - Servicio de gestión del riesgo en temas de trastornos mentales",
+  "descripcion": "Incluye acciones de prevención de los trastornos mentales asociados a factores sociales, psicológicos y biológicos, en los diferentes entornos en los que se desarrollan los individuos.",
   "unidad": "Número",
   "meta": "10",
   "responsable": "Secretaria de Salud y Bienestar Social",
@@ -732,11 +809,13 @@
   "programa": "2.1.3 Salud Pública",
   "coincidencia_ppi": 0.86,
   "pagina": 73,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "190502203",
   "nombre": "1905022 - Servicio de gestión del riesgo en temas de trastornos mentales",
+  "descripcion": "Incluye acciones de prevención de los trastornos mentales asociados a factores sociales, psicológicos y biológicos, en los diferentes entornos en los que se desarrollan los individuos.",
   "unidad": "Número",
   "meta": "50",
   "responsable": "Secretaria de Salud y Bienestar Social",
@@ -747,11 +826,13 @@
   "programa": "2.1.3 Salud Pública",
   "coincidencia_ppi": 0.86,
   "pagina": 73,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "410200100",
   "nombre": "4102001-Niños y niñas atendidos en servicios integrales",
+  "descripcion": "Desde la comisaria de familia se brindan servicios integrales a niños y niñas enfocados en la prevención y protección a niños, niñas y adolescentes en curso de vida de 0 a 17 años.",
   "unidad": "Número",
   "meta": "1000",
   "responsable": "Secretaria de Salud y Bienestar Social Secretaria General y de Gobierno (Comisaría de Familia) Secretaria de Educación Cultura y Deporte",
@@ -762,11 +843,13 @@
   "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niños y adolescentes",
   "coincidencia_ppi": 0.45,
   "pagina": 89,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "410203800",
   "nombre": "4102038 - Servicio dirigidos a la atención de niños, niñas, adolescentes y jóvenes, con enfoque pedagógico y restaurativo encaminados a la inclusión social",
+  "descripcion": "Servicios dirigidos a la atención de niños, niñas, adolescentes y jóvenes, con enfoque pedagógico y restaurativo encaminados a la inclusión social.",
   "unidad": "Número",
   "meta": "15",
   "responsable": "Secretaria de salud y Bienestar Social Secretaria General y de Gobierno (Comisaría de Familia) Secretaria de Educación Cultura y Deporte",
@@ -777,11 +860,13 @@
   "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niños y adolescentes",
   "coincidencia_ppi": 0.45,
   "pagina": 89,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "430103801",
   "nombre": "4301038 - Servicio de organización de eventos recreativos comunitarios",
+  "descripcion": "Corresponde a la planeación, organización y realización de eventos recreativos, educativos, deportivos y culturales de esparcimiento del tiempo libre y ofertas institucionales para la comunidad juvenil. En el municipio se tiene reglamentada la actualización de la plataforma juvenil y celebración de semana de la juventud.",
   "unidad": "Número",
   "meta": "8",
   "responsable": "Secretaria de Educación, Cultura y Deporte (Coordinación Juventud)",
@@ -792,11 +877,13 @@
   "programa": "2.2.2. Fomento a la recreación, la actividad física y el deporte para desarrollar entornos de ii",
   "coincidencia_ppi": 0.9,
   "pagina": 91,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "410204504 Jóvenes atendidos para la Construcción de Paz",
   "nombre": "4102045 Servicios mediante los cuales se socializan a los niños, niñas, adolescentes y jóvenes; al igual que a sus padres, madres, cuidadores y docentes, los temas relacionados con el reconocimiento de los derechos de la niñez, la adolescencia y la juventud.",
+  "descripcion": "En el municipio de Briceño se realizarán actividades de Promoción para la participación juvenil tanto en la zona urbana como rural en temas, culturales, recreativos, educativos y deportivos. Asimismo, se brindará espacios de formación relacionados con el reconocimiento de los derechos de la adolescencia y la juventud, con diferentes estrategias vivenciales y psicoeducativas. En este orden de ideas se fortalecerá las instancias de participación ciudadana como la plataforma juvenil y CMJ.",
   "unidad": "Número",
   "meta": "1500",
   "responsable": "Secretaria de Educación Juventud",
@@ -807,11 +894,13 @@
   "programa": "2.2.1. Desarrollo Integral de Niños, Niñas, Adolescentes y sus Familias",
   "coincidencia_ppi": 0.96,
   "pagina": 92,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "410102300",
   "nombre": "4101023 - Servicio de orientación y comunicación a las víctimas",
+  "descripcion": "Servicios desarrollados para brindar atención, comunicación y orientación a las víctimas a través de los diferentes canales que dispone la Unidad para la Atención a las víctimas.",
   "unidad": "Numero",
   "meta": "1000",
   "responsable": "Secretaria General y de Gobierno",
@@ -822,11 +911,13 @@
   "programa": "2.2.3. Atención, asistencia y reparación integral a las víctimas",
   "coincidencia_ppi": 0.97,
   "pagina": 93,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "410102500",
   "nombre": "4101025 - Servicio de ayuda y atención humanitaria",
+  "descripcion": "Mediante los cuales se entrega ayuda y atención humanitaria a las víctimas del conflicto armado.",
   "unidad": "Número",
   "meta": "20",
   "responsable": "Secretaria General y de Gobierno",
@@ -837,11 +928,13 @@
   "programa": "2.2.3. Atención, asistencia y reparación integral a las víctimas",
   "coincidencia_ppi": 0.97,
   "pagina": 93,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "410102700",
   "nombre": "4101027 - Servicio de asistencia funeraria",
+  "descripcion": "El municipio brindara servicio de asistencia funeraria a la población victima",
   "unidad": "Porcentaje",
   "meta": "0.5",
   "responsable": "Secretaria General y de Gobierno",
@@ -852,11 +945,13 @@
   "programa": "2.2.3. Atención, asistencia y reparación integral a las víctimas",
   "coincidencia_ppi": 0.97,
   "pagina": 93,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "410103800",
   "nombre": "4101038 - Servicio de asistencia técnica para la participación de las víctimas",
+  "descripcion": "Orientados a generar mecanismos tales como eventos, mesas de participación para la determinación de las medidas y programas que se desarrollan en su proceso de atención y reparación.",
   "unidad": "Número",
   "meta": "4",
   "responsable": "Secretaria General y de Gobierno",
@@ -867,11 +962,13 @@
   "programa": "2.2.3. Atención, asistencia y reparación integral a las víctimas",
   "coincidencia_ppi": 0.97,
   "pagina": 93,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "410400200",
   "nombre": "4104002 - Centros de protección social para el adulto mayor adecuados",
+  "descripcion": "Corresponde a la adecuación de infraestructura destinada al ofrecimiento de servicios de hospedaje, bienestar social y cuidado integral de manera permanente o temporal a los adultos mayores en condiciones de descuido, abandono o víctimas de violencia intrafamiliar.",
   "unidad": "Número",
   "meta": "1",
   "responsable": "Secretaria de salud y Bienestar Social Secretaria de Planeación E Infraestructura",
@@ -882,11 +979,13 @@
   "programa": "2.2.3. Atención, asistencia y reparación integral a las víctimas",
   "coincidencia_ppi": 0.97,
   "pagina": 96,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "410400700",
   "nombre": "4104007 - Centros de protección social para el adulto mayor dotados",
+  "descripcion": "Corresponde a la dotación destinada al ofrecimiento de servicios de hospedaje, bienestar social y cuidado integral de manera permanente o temporal a los adultos mayores en condiciones de descuido, abandono o víctimas de violencia intrafamiliar.",
   "unidad": "Número",
   "meta": "1",
   "responsable": "Secretaria de salud y Bienestar Social",
@@ -897,11 +996,13 @@
   "programa": "2.2.3. Atención, asistencia y reparación integral a las víctimas",
   "coincidencia_ppi": 0.97,
   "pagina": 96,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "190502103",
   "nombre": "1905021 - Servicio de gestión del riesgo en temas de salud sexual y reproductiva",
+  "descripcion": "Corresponde a las acciones relacionadas con la prevención y mitigación de riesgos que afectan la salud sexual y reproductiva de las personas en el curso de su vida desde un enfoque de derechos.",
   "unidad": "Número de campañas",
   "meta": "50",
   "responsable": "Secretaria de Salud y Bienestar Social.",
@@ -912,11 +1013,13 @@
   "programa": "\"Avanzando hacia la Igualdad de Género y la Diversidad\"",
   "coincidencia_ppi": 0.44,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "350200302",
   "nombre": "3502003 - Servicio de asistencia técnica para el fortalecimiento de capacidades gerenciales",
+  "descripcion": "Acompañamiento técnico a las empresas para el desarrollo de capacidades gerenciales a través de programas de gestión empresarial, planes gerenciales, entre otros.",
   "unidad": "Número",
   "meta": "6",
   "responsable": "Secretaria de Agricultura y Desarrollo Económico",
@@ -927,7 +1030,8 @@
   "programa": "\"Avanzando hacia la Igualdad de Género y la Diversidad\"",
   "coincidencia_ppi": 0.44,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "040020001",
@@ -942,11 +1046,13 @@
   "programa": "\"Avanzando hacia la Igualdad de Género y la Diversidad\"",
   "coincidencia_ppi": 0.44,
   "pagina": 104,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "220102805",
   "nombre": "2201028 - Servicio de apoyo a la permanencia con alimentación escolar",
+  "descripcion": "Incluye la implementación de estrategias de alimentación escolar para fortalecer las acciones de retención estudiantil.",
   "unidad": "Número",
   "meta": "1190",
   "responsable": "Secretaria de Educación, Cultura y Deporte.",
@@ -957,11 +1063,13 @@
   "programa": "2.3.1. Calidad, cobertura y fortalecimiento de la educación inicial,prescolar, básicaymedia",
   "coincidencia_ppi": 0.96,
   "pagina": 107,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "220105000",
   "nombre": "2201050 - Servicio de accesibilidad a contenidos web para fines pedagógicos",
+  "descripcion": "Corresponde a la instalación del servicio de internet en los establecimientos educativos para fines pedagógicos",
   "unidad": "Número",
   "meta": "600",
   "responsable": "Secretaria de Educación, Cultura y Deporte",
@@ -972,11 +1080,13 @@
   "programa": "2.3.1. Calidad, cobertura y fortalecimiento de la educación inicial,prescolar, básicaymedia",
   "coincidencia_ppi": 0.96,
   "pagina": 107,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "220105001",
   "nombre": "2201050 - Servicio de accesibilidad a contenidos web",
+  "descripcion": "Corresponde a la instalación del servicio de internet en los establecimientos",
   "unidad": "Número",
   "meta": "24",
   "responsable": "Secretaria de Educación, Cultura y Deporte",
@@ -987,11 +1097,13 @@
   "programa": "2.3.1. Calidad, cobertura y fortalecimiento de la educación inicial,prescolar, básicaymedia",
   "coincidencia_ppi": 0.96,
   "pagina": 107,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "220201100",
   "nombre": "2202011 - Servicio de mejoramiento de la calidad de la educación para el trabajo y el desarrollo humano",
+  "descripcion": "Incluye las acciones de mejoramiento de los programas e instituciones en sus metodologías, métodos, currículos, alianzas, entre otros que permitan el mejoramiento de la calidad",
   "unidad": "Número de procesos",
   "meta": "1",
   "responsable": "Secretaria de Educación, Cultura y Deporte",
@@ -1002,11 +1114,13 @@
   "programa": "2.3.2. Calidad, y fomento de la educación superior",
   "coincidencia_ppi": 0.95,
   "pagina": 110,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "220205500",
   "nombre": "2202055 - Servicio de atención psicosocial a",
+  "descripcion": "Incluye aquellos servicios que se presten a los alumnospara",
   "unidad": "Número de alumnos",
   "meta": "10",
   "responsable": "Secretaria de Educación, Cultura y Deporte",
@@ -1017,7 +1131,8 @@
   "programa": "2.3.2. Calidad, y fomento de la educación superior",
   "coincidencia_ppi": 0.95,
   "pagina": 110,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "SD",
@@ -1032,7 +1147,8 @@
   "programa": "2.3.2. Calidad, y fomento de la educación superior",
   "coincidencia_ppi": 0.95,
   "pagina": 112,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "SD",
@@ -1047,7 +1163,8 @@
   "programa": "2.3.2. Calidad, y fomento de la educación superior",
   "coincidencia_ppi": 0.95,
   "pagina": 112,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "SD",
@@ -1062,11 +1179,13 @@
   "programa": "2.3.2. Calidad, y fomento de la educación superior",
   "coincidencia_ppi": 0.95,
   "pagina": 112,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "230106200",
   "nombre": "2301062 - Servicio de apoyo en tecnologías de la información y las comunicacione s para la educación",
+  "descripcion": "Se presta el servicio a sedes educativas oficiales, bibliotecas y casas de la cultura municipales en cuanto al acceso de la comunidad educativa a terminales de cómputo y a contenidos digitales para la mejora de la calidad de la",
   "unidad": "Número",
   "meta": "36",
   "responsable": "Secretaria de Educación, Cultura y Deporte",
@@ -1077,11 +1196,13 @@
   "programa": "2.3.4 Facilitar el acceso y uso de las Tecnologías de la Información y las Comunicaciones en todo el territorio nacional",
   "coincidencia_ppi": 0.97,
   "pagina": 113,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "230200200",
   "nombre": "2302002 - Contenidos digitales",
+  "descripcion": "La ley 1712 de 2014, regula \"el derecho de acceso a la información pública en Colombia\" por medio de la página web de nuestro municipio y redes sociales se actualizará y se registrará toda la información necesaria e importante de la administración municipal, con el fin de que cualquier persona pueda acceder a ella.",
   "unidad": "Numero",
   "meta": "1",
   "responsable": "Secretaria de ciencia tecnología e innovación",
@@ -1092,26 +1213,13 @@
   "programa": "Fomento del desarrollo de aplicaciones, software y contenidos para impulsar la apropiación de las Tecnologías de la Información y las Comunicaciones (TIC)",
   "coincidencia_ppi": 0.56,
   "pagina": 115,
-  "fuente_lectura": "texto"
- },
- {
-  "codigo": "290030001",
-  "nombre": "Índice de gobierno digital en entidades del orden territorial",
-  "unidad": "Porcentaje",
-  "linea_base": "35",
-  "meta": "35",
-  "tipo_acumulado": "",
-  "responsable": "",
-  "linea": "II BIENESTAR, INCLUSIÓN Y EQUIDAD SOCIAL",
-  "sector": "23: TECNOLOGÍAS DE LA INFORMACIÓN",
-  "programa": "Fomento del desarrollo de aplicaciones, software y contenidos para impulsar la apropiación de las Tecnologías de la Información y las Comunicaciones (TIC)",
-  "coincidencia_ppi": 0.56,
-  "pagina": 116,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "390401600",
   "nombre": "3904016 - Servicios para fortalecer la participación ciudadana en Ciencia, Tecnología e Innovación",
+  "descripcion": "Capacitaciones sobre el buen manejo de las redes sociales, dirigida a niños, niñas, adolescentes y jóvenes del municipio con el fin de fomentar la participación en ciencia, tecnología e innovación.",
   "unidad": "Número",
   "meta": "400",
   "responsable": "Secretaria de ciencia, tecnología e innovación",
@@ -1122,11 +1230,13 @@
   "programa": "Consolidación de una institucionalidad habilitante para la Ciencia Tecnología e Innovación (CTI).",
   "coincidencia_ppi": 0.71,
   "pagina": 117,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "390300200",
   "nombre": "3903002 - Servicio de apoyo para el desarrollo tecnológico y la innovación",
+  "descripcion": "Apoyo a cada una de las personas de la comunidad con la inscripción del Rut ante la DIAN, Apoyo para la creación hojas de vidas, entre otros servicios.",
   "unidad": "Personas",
   "meta": "700",
   "responsable": "Secretaria de ciencia, tecnología e innovación",
@@ -1137,7 +1247,8 @@
   "programa": "Consolidación de una institucionalidad habilitante para la Ciencia Tecnología e Innovación (CTI).",
   "coincidencia_ppi": 0.71,
   "pagina": 117,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "270040002",
@@ -1152,11 +1263,13 @@
   "programa": "Consolidación de una institucionalidad habilitante para la Ciencia Tecnología e Innovación (CTI).",
   "coincidencia_ppi": 0.71,
   "pagina": 120,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "330105300",
   "nombre": "Servicio de promoción de actividades culturales",
+  "descripcion": "Divulgación e inclusión de toda la comunidad para la participación de los eventos culturales tales como. Semana cultural, el encuentro de chirimías, danzas, banda sinfónica, navidad comunitaria, fiestas del agua, fiestas del campesino.",
   "unidad": "Número",
   "meta": "10",
   "responsable": "Secretaria de Educación, Cultura y Deporte.",
@@ -1167,11 +1280,13 @@
   "programa": "1.8 Promoción y acceso efectivo a procesos culturales y artísticos- Infraestructura cultural",
   "coincidencia_ppi": 0.82,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "330105301",
   "nombre": "Servicio de promoción de actividades culturales",
+  "descripcion": "El municipio contratara personal con capacidad y conocimiento para la prestación de servicios a la comunidad de promoción de actividades culturales en las cuales se incluyen , formación, fortalecimiento y apoyo a las diferentes expresiones artísticas.",
   "unidad": "Número",
   "meta": "9",
   "responsable": "Secretaria de Educación, Cultura y Deporte.",
@@ -1182,11 +1297,13 @@
   "programa": "1.8 Promoción y acceso efectivo a procesos culturales y artísticos- Infraestructura cultural",
   "coincidencia_ppi": 0.82,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "330101800",
   "nombre": "Promoción y acceso efectivo a programas culturales y artísticos",
+  "descripcion": "Adecuación de Salones, estos acordes para el desarrollo de actividades de las diferentes disciplinas artísticas. (danza, teatro, música, artes plásticas, pintura, sala de cine)",
   "unidad": "Número",
   "meta": "1",
   "responsable": "Secretaria de Educación, Cultura y Deporte.",
@@ -1197,11 +1314,13 @@
   "programa": "1.8 Promoción y acceso efectivo a procesos culturales y artísticos- Infraestructura cultural",
   "coincidencia_ppi": 0.82,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "330106800",
   "nombre": "Infraestructura cultural intervenida.",
+  "descripcion": "Intervención de los espacios de las diferentes disciplinas tales como, danzas, teatro, sala de cine, artes plásticas, y teatro,quepermitan el",
   "unidad": "Número",
   "meta": "1",
   "responsable": "Secretaria de Educación, Cultura y Deporte.",
@@ -1212,11 +1331,13 @@
   "programa": "1.8 Promoción y acceso efectivo a procesos culturales y artísticos- Infraestructura cultural",
   "coincidencia_ppi": 0.82,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "330200100",
   "nombre": "Documentos de investigación",
+  "descripcion": "Legitimar normativamente los patrimonios culturales del municipio de Briceño.",
   "unidad": "Número",
   "meta": "5",
   "responsable": "Secretaria de Educación, Cultura y Deporte.",
@@ -1227,11 +1348,13 @@
   "programa": "Gestión, Protección Y Salvaguardia Del Patrimonio Cultural Colombiano",
   "coincidencia_ppi": 0.46,
   "pagina": 126,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "330207300",
   "nombre": "Servicios de restauración del patrimonio cultural material inmueble",
+  "descripcion": "Intervención de un salón existente para funcionamiento de sala de cine y este legitimarlo como patrimonio del municipio de Briceño",
   "unidad": "Número",
   "meta": "1",
   "responsable": "Secretaria de Educación, Cultura y Deporte.",
@@ -1242,11 +1365,13 @@
   "programa": "Gestión, Protección Y Salvaguardia Del Patrimonio Cultural Colombiano",
   "coincidencia_ppi": 0.46,
   "pagina": 126,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "330207001",
   "nombre": "Servicio de divulgación y publicación del patrimonio cultural",
+  "descripcion": "Divulgación sobre la conservación del patrimonio cultural del municipio, por medio de ilustración del rescate de las memorias del conflicto de nuestro municipio a través de exposiciones, programas como cartillas, libros de producción audiovisual entre otros",
   "unidad": "Número",
   "meta": "10",
   "responsable": "Secretaria de Educación, Cultura y Deporte.",
@@ -1257,7 +1382,8 @@
   "programa": "Gestión, Protección Y Salvaguardia Del Patrimonio Cultural Colombiano",
   "coincidencia_ppi": 0.46,
   "pagina": 126,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "SD",
@@ -1272,7 +1398,8 @@
   "programa": "Gestión, Protección Y Salvaguardia Del Patrimonio Cultural Colombiano",
   "coincidencia_ppi": 0.46,
   "pagina": 130,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "SD",
@@ -1287,7 +1414,8 @@
   "programa": "Gestión, Protección Y Salvaguardia Del Patrimonio Cultural Colombiano",
   "coincidencia_ppi": 0.46,
   "pagina": 130,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "SD",
@@ -1302,7 +1430,8 @@
   "programa": "Gestión, Protección Y Salvaguardia Del Patrimonio Cultural Colombiano",
   "coincidencia_ppi": 0.46,
   "pagina": 130,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "SD",
@@ -1317,11 +1446,13 @@
   "programa": "Gestión, Protección Y Salvaguardia Del Patrimonio Cultural Colombiano",
   "coincidencia_ppi": 0.46,
   "pagina": 130,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "430100101",
   "nombre": "4301001 - Servicio de apoyo a la actividad física, la recreación y el deporte",
+  "descripcion": "Dentro del proceso planes, programas y proyectos de la dirección de deporte se tiene priorizado la entregan de diferentes incentivos a los participantes o deportistas inscriptos en los diferentes programas, estos pueden ser: artículos deportivos, artículos tecnológicos, apoyo financiero, y la realización e implementación de los mismos.",
   "unidad": "Numero",
   "meta": "15",
   "responsable": "Secretaria de Educación cultura y deporte.",
@@ -1332,11 +1463,13 @@
   "programa": "1.9 Fomento a la recreación, la actividad física y el deporte- Infraestructura Deportiva",
   "coincidencia_ppi": 0.79,
   "pagina": 132,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "430100102",
   "nombre": "4301001 - Servicio de apoyo a la actividad física, la recreación y el deporte",
+  "descripcion": "Dentro del proceso de del servicio en recreación y deporte se harán entregas de artículos deportivos a los líderes y grupos deportivos de la zona urbana y rural.",
   "unidad": "numero",
   "meta": "1200",
   "responsable": "Secretaria de Educación cultura y deporte.",
@@ -1347,11 +1480,13 @@
   "programa": "1.9 Fomento a la recreación, la actividad física y el deporte- Infraestructura Deportiva",
   "coincidencia_ppi": 0.79,
   "pagina": 132,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "430100702",
   "nombre": "4301007 - Servicio de Escuelas Deportivas",
+  "descripcion": "Corresponde a los procesos de iniciación deportiva a partir de las clases donde se practica la actividad física, la recreación y el deporte con la población inscripta en los diferentes espacios deportivos.",
   "unidad": "Numero",
   "meta": "10",
   "responsable": "Secretaria de Educación cultura y deporte.",
@@ -1362,11 +1497,13 @@
   "programa": "1.9 Fomento a la recreación, la actividad física y el deporte- Infraestructura Deportiva",
   "coincidencia_ppi": 0.79,
   "pagina": 132,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "430103500",
   "nombre": "4301035 - Servicio de educación",
+  "descripcion": "Corresponde a la formación de la comunidad del municipio en recreación, actividad",
   "unidad": "Numero",
   "meta": "32",
   "responsable": "Secretaria de Educación cultura y deporte.",
@@ -1377,12 +1514,14 @@
   "programa": "1.9 Fomento a la recreación, la actividad física y el deporte- Infraestructura Deportiva",
   "coincidencia_ppi": 0.79,
   "pagina": 132,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "170201000",
   "producto": "1702010 - Servicio de asistencia técnica agropecuaria dirigida a pequeños productores",
   "nombre": "Pequeños productores rurales asistidos técnicamente",
+  "descripcion": "Atención integral a productores agrícolas, pecuarios, forestales y acuícolas o pesqueros en: Aptitud de suelos; Tecnologías y recursos para actividad productiva; Procedimientos para acceder al financiamiento; Mercadeo",
   "unidad": "Número",
   "meta": "2500",
   "responsable": "Secretaria De Agricultura Y Desarrollo Económico",
@@ -1393,12 +1532,14 @@
   "programa": "3.1.1: Inclusión productiva de pequeñosproductores rurales",
   "coincidencia_ppi": 0.95,
   "pagina": 138,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "170201400",
   "producto": "1702014 - Servicio de apoyo para el acceso a maquinaria y equipos",
   "nombre": "Productores beneficiados con acceso a maquinaria y equipo",
+  "descripcion": "Contempla el acceso de los pequeños productores a los bancos de maquinaria a partir de figuras como el arriendo, la adquisición, entre otros, entre otros",
   "unidad": "Número",
   "meta": "200",
   "responsable": "Secretaria De Agricultura Y Desarrollo Económico",
@@ -1409,12 +1550,14 @@
   "programa": "3.1.1: Inclusión productiva de pequeñosproductores rurales",
   "coincidencia_ppi": 0.95,
   "pagina": 138,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "170203500",
   "producto": "1702035 - Servicio de educación informal en Buenas Prácticas Agrícolas y producción sostenible",
   "nombre": "Personas capacitadas",
+  "descripcion": "Realizar capacitación a productores sobre implementación de Buenas Prácticas Agrícolas.",
   "unidad": "Número",
   "meta": "1000",
   "responsable": "Secretaria De Agricultura Y Desarrollo Económico",
@@ -1425,12 +1568,14 @@
   "programa": "3.1.1: Inclusión productiva de pequeñosproductores rurales",
   "coincidencia_ppi": 0.95,
   "pagina": 138,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "170204000",
   "producto": "1702040 - Servicio de fomento a la asociatividad",
   "nombre": "Productores beneficiados con estrategias de fomento a la asociatividad",
+  "descripcion": "Incluye el desarrollo de actividades encaminadas a fomentar la asociatividad entre los productores rurales dispersos. Adicionalmente, busca sensibilizar a los productores dispersos sobre los beneficios y responsabilidades que se derivan de los procesos asociativos y de participaciónpara el",
   "unidad": "Número",
   "meta": "50",
   "responsable": "Secretaria De Agricultura Y Desarrollo Económico",
@@ -1441,11 +1586,13 @@
   "programa": "3.1.1: Inclusión productiva de pequeñosproductores rurales",
   "coincidencia_ppi": 0.95,
   "pagina": 138,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "170704300",
   "nombre": "1707043 - Servicios de control de parásitos para especies de interés agropecuario",
+  "descripcion": "Consiste en el desarrollo de prácticas enfocadas a promover y proteger la salud de las especies animales por medio del control de parásitos internos y/o externos. Incluye aplicación de vermífugos, baños, entre otros",
   "unidad": "Número",
   "meta": "2500",
   "responsable": "Secretaria De Agricultura Y Desarrollo Económico",
@@ -1456,11 +1603,13 @@
   "programa": "3.1.2 Sanidad Agropecuaria e Inocuidad Agroalimentaria",
   "coincidencia_ppi": 0.96,
   "pagina": 141,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "170704200",
   "nombre": "1707042 - Servicios de vacunación para especies animales de interés agropecuario",
+  "descripcion": "Consiste en la aplicación de biológicos en prácticas de medicina preventiva y/o curativa con el objeto de proteger las especies animales frente a riesgos sanitarios",
   "unidad": "Número",
   "meta": "3000",
   "responsable": "Secretaria De Agricultura Y Desarrollo Económico",
@@ -1471,11 +1620,13 @@
   "programa": "3.1.2 Sanidad Agropecuaria e Inocuidad Agroalimentaria",
   "coincidencia_ppi": 0.96,
   "pagina": 141,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "170706900",
   "nombre": "1707069 - Servicio de divulgación y socialización",
+  "descripcion": "Comprende el desarrollo de la divulgación y socialización de política, documentos de lineamientos técnicos, documentos de seguimiento y evaluación.",
   "unidad": "Número",
   "meta": "60",
   "responsable": "Secretaria De Agricultura Y Desarrollo Económico",
@@ -1486,11 +1637,13 @@
   "programa": "3.1.2 Sanidad Agropecuaria e Inocuidad Agroalimentaria",
   "coincidencia_ppi": 0.96,
   "pagina": 141,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "170901300",
   "nombre": "1709013 - Centros de acopio adecuados",
+  "descripcion": "Los centros de acopio cumplen la función de reunir la producción para su posterior distribución y comercialización. En este sentido el municipio de Briceño apoya con adecuaciones a algunos acopios de leche u otra clase de producto que lo requiera Buscaran alternativas de energías limpias a través de lospaneles solares",
   "unidad": "Número",
   "meta": "3",
   "responsable": "Secretaria de Agricultura y Desarrollo Económico",
@@ -1501,11 +1654,13 @@
   "programa": "\"3.1.3 Infraestructura productiva ycomercialización",
   "coincidencia_ppi": 0.95,
   "pagina": 142,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "170907700",
   "nombre": "1709077 - Plaza de Ferias restructura da",
+  "descripcion": "Infraestructura para la realización de eventos agropecuarios tales como subastas ganaderas, ferias ganaderas, entre otras.",
   "unidad": "Número",
   "meta": "1",
   "responsable": "Secretaria de Agricultura y Desarrollo Económico Secretaría de Planeación E Infraestructura",
@@ -1516,11 +1671,13 @@
   "programa": "\"3.1.3 Infraestructura productiva ycomercialización",
   "coincidencia_ppi": 0.95,
   "pagina": 142,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "350201700",
   "nombre": "3502017 - Servicio de asistencia técnica para emprendedores y/o empresas en edad temprana",
+  "descripcion": "Asistencia técnica dirigida a emprendedores con empresas en etapa temprana (menores de 5 años).",
   "unidad": "Número",
   "meta": "5",
   "responsable": "Secretaria De Agricultura Y Desarrollo Económico",
@@ -1531,11 +1688,13 @@
   "programa": "3.1.4: Productividad Y Competitividad De Las Empresas locales",
   "coincidencia_ppi": 0.88,
   "pagina": 144,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "350201701",
   "nombre": "3502017 - Servicio de asistencia técnica para emprendedores y/o empresas en edad temprana",
+  "descripcion": "Asistencia técnica dirigida a emprendedores con empresas en etapa temprana (menores de 5 años).",
   "unidad": "Número",
   "meta": "10",
   "responsable": "Secretaria De Agricultura Y Desarrollo Económico",
@@ -1546,11 +1705,13 @@
   "programa": "3.1.4: Productividad Y Competitividad De Las Empresas locales",
   "coincidencia_ppi": 0.88,
   "pagina": 144,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "350201208",
   "nombre": "3502012 - Servicio de apoyo para la modernización y fomento de la innovación empresarial",
+  "descripcion": "incluyen formación de capacidades, de transferencia de tecnología, de mentalidad y cultura, de profundización de redes y generación de información para el ecosistema de innovación y emprendimiento del municipio",
   "unidad": "Número",
   "meta": "50",
   "responsable": "Secretaria De Agricultura Y Desarrollo Económico",
@@ -1561,11 +1722,13 @@
   "programa": "3.1.4: Productividad Y Competitividad De Las Empresas locales",
   "coincidencia_ppi": 0.88,
   "pagina": 144,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "350201904",
   "nombre": "3502019 - Servicio de asistencia técnica y acompañamiento productivo y empresarial",
+  "descripcion": "Incluye la identificación del estado de los procesos productivos y definición de planes de mejora para el fomento al desarrollo empresarial con el fin de mejorar procesos de producción, trasformación, administración",
   "unidad": "Número",
   "meta": "1",
   "responsable": "Secretaria De Agricultura Y Desarrollo Económico",
@@ -1576,10 +1739,12 @@
   "programa": "3.1.4: Productividad Y Competitividad De Las Empresas locales",
   "coincidencia_ppi": 0.88,
   "pagina": 144,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "de",
+  "descripcion": "indicador",
   "meta": "medida",
   "responsable": "2027",
   "unidad": "",
@@ -1590,11 +1755,13 @@
   "programa": "3.1.5. Ordenamiento social y uso productivo del territorio rural",
   "coincidencia_ppi": 0.97,
   "pagina": 145,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "170401700",
   "nombre": "1704017 - Servicio de",
+  "descripcion": "Estrategias de comunicación efectiva sobre los beneficios",
   "unidad": "Número",
   "meta": "200",
   "responsable": "Secretaria De Agricultura Y",
@@ -1605,11 +1772,13 @@
   "programa": "3.1.5. Ordenamiento social y uso productivo del territorio rural",
   "coincidencia_ppi": 0.97,
   "pagina": 145,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "170801801",
   "nombre": "1708018 - Especies animales y vegetales mejoradas",
+  "descripcion": "Especies trabajadas a nivel genético para un mejor rendimiento productivo.",
   "unidad": "Número",
   "meta": "2",
   "responsable": "Secretaria De Agricultura Y Desarrollo Económico",
@@ -1620,11 +1789,13 @@
   "programa": "3.1.6 Ciencia, tecnología e innovación agropecuaria",
   "coincidencia_ppi": 0.96,
   "pagina": 147,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "170804100",
   "nombre": "1708041 - Servicio de extensión agropecuaria",
+  "descripcion": "Comprende acciones de acompañamiento integral orientadas a diagnosticar, recomendar, actualizar, formar, transferir, asistir, empoderar y generar capacidad en los productores agropecuarios para que estos incorporen en su actividad productiva prácticas, productos tecnológicos, tecnologías, conocimientos y comportamientos que beneficien su desempeño y mejoren su competitividad y sostenibilidad.",
   "unidad": "Número",
   "meta": "200",
   "responsable": "Secretaria De Agricultura Y Desarrollo Económico",
@@ -1635,11 +1806,13 @@
   "programa": "3.1.6 Ciencia, tecnología e innovación agropecuaria",
   "coincidencia_ppi": 0.96,
   "pagina": 147,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "170805600",
   "nombre": "1708056 - Servicio de implementación de rutas agroecológicas",
+  "descripcion": "Contempla la implementación de estrategias para la articulación, promoción y ejecución de rutas agroecológicas, las cuales incluyen huertas que desarrollan procesos de agricultura urbana. Número",
   "unidad": "Número",
   "meta": "1",
   "responsable": "Secretaria De Agricultura Y Desarrollo Económico",
@@ -1650,11 +1823,13 @@
   "programa": "3.1.6 Ciencia, tecnología e innovación agropecuaria",
   "coincidencia_ppi": 0.96,
   "pagina": 147,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "320200500",
   "nombre": "3202005 - Servicio de restauración de ecosistemas",
+  "descripcion": "Incluye el restablecimiento del ecosistema degradado a una condición similar al ecosistema pre disturbio respecto a su composición, estructura, y funcionamiento.",
   "unidad": "Hectáreas",
   "meta": "10",
   "responsable": "Secretaria Medio Ambiente y Turismo",
@@ -1665,11 +1840,13 @@
   "programa": "3.2.1 Conservación de la biodiversidad y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.97,
   "pagina": 156,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "320200501",
   "nombre": "3202005 - Servicio de restauración de ecosistemas",
+  "descripcion": "Incluye el restablecimiento del ecosistema degradado a una condición similar al ecosistema pre disturbio respecto a su composición, estructura, y funcionamiento.",
   "unidad": "Hectáreas",
   "meta": "5",
   "responsable": "Secretaria Medio Ambiente y Turismo",
@@ -1680,11 +1857,13 @@
   "programa": "3.2.1 Conservación de la biodiversidad y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.97,
   "pagina": 156,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "320200502",
   "nombre": "3202005 - Servicio de restauración de ecosistemas",
+  "descripcion": "Incluye el restablecimiento del ecosistema degradado a una condición similar al ecosistema pre disturbio respecto a su composición, estructura, y funcionamiento.",
   "unidad": "Hectáreas",
   "meta": "5",
   "responsable": "Secretaria Medio Ambiente y Turismo",
@@ -1695,11 +1874,13 @@
   "programa": "3.2.1 Conservación de la biodiversidad y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.97,
   "pagina": 156,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "320200600",
   "nombre": "3202006 - Servicio de reforestación de ecosistemas",
+  "descripcion": "Acciones orientadas a la siembra, mantenimiento y monitoreo de especies vegetales que cumplen una función específica en el área, sin buscar el restablecimiento del ecosistema inicial.",
   "unidad": "Hectáreas",
   "meta": "7",
   "responsable": "Secretaria Medio Ambiente y Turismo",
@@ -1710,11 +1891,13 @@
   "programa": "3.2.1 Conservación de la biodiversidad y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.97,
   "pagina": 156,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "320600500",
   "nombre": "3206005 - Servicio de divulgación de la información en gestión del cambio climático para un desarrollo bajo en carbono y resiliente al clima",
+  "descripcion": "Acciones orientadas a difundir la información en gestión del cambio climático para un desarrollo bajo en carbono y resiliente al clima",
   "unidad": "Número",
   "meta": "100",
   "responsable": "Secretaria Medio Ambiente y Turismo",
@@ -1725,11 +1908,13 @@
   "programa": "3.2.2. Gestión del Cambio climático para un desarrollo bajo en carbonoyresiliente al clima",
   "coincidencia_ppi": 0.97,
   "pagina": 159,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "320600501",
   "nombre": "3206 - Gestión del cambio climático para un desarrollo bajo en carbono y resiliente al clima",
+  "descripcion": "Acciones orientadas a difundir la información en gestión del cambio climático para un desarrollo bajo en carbono y resiliente al clima",
   "unidad": "Número",
   "meta": "100",
   "responsable": "Secretaria Medio Ambiente y Turismo",
@@ -1740,11 +1925,13 @@
   "programa": "3.2.2. Gestión del Cambio climático para un desarrollo bajo en carbonoyresiliente al clima",
   "coincidencia_ppi": 0.97,
   "pagina": 159,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "320600400",
   "nombre": "3206004 - Servicio de educación informal en gestión del cambio climático para un desarrollo bajo en carbono y resiliente al clima",
+  "descripcion": "Incluye la realización de jornadas de educación, información, y sensibilización dirigidos a diferentes públicos.",
   "unidad": "Número",
   "meta": "800",
   "responsable": "Secretaria Medio Ambiente y Turismo",
@@ -1755,11 +1942,13 @@
   "programa": "3.2.2. Gestión del Cambio climático para un desarrollo bajo en carbonoyresiliente al clima",
   "coincidencia_ppi": 0.97,
   "pagina": 159,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "320600800",
   "nombre": "3206008 - Servicio de educación formal en gestión del cambio climático para un desarrollo bajo en carbono y resiliente al clima",
+  "descripcion": "Incluye la realización de jornadas de educación, información y sensibilización dirigidos al público de educación formal.",
   "unidad": "Número",
   "meta": "10",
   "responsable": "Secretaria Medio Ambiente y Turismo",
@@ -1770,11 +1959,13 @@
   "programa": "3.2.2. Gestión del Cambio climático para un desarrollo bajo en carbonoyresiliente al clima",
   "coincidencia_ppi": 0.97,
   "pagina": 159,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "320600700",
   "nombre": "3206007 - Servicio de articulación para la gestión del cambio climático en la toma de decisiones sectoriales y territoriales",
+  "descripcion": "Incluye todas las acciones promovidas por el municipio intra e interinstitucional para incidir con consideraciones de cambio climático en los instrumentos de",
   "unidad": "Número",
   "meta": "8",
   "responsable": "Secretaria Medio Ambiente y Turismo",
@@ -1785,11 +1976,13 @@
   "programa": "3.2.2. Gestión del Cambio climático para un desarrollo bajo en carbonoyresiliente al clima",
   "coincidencia_ppi": 0.97,
   "pagina": 159,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "320400100",
   "nombre": "3204001 - Documentos de investigación para la gestión de la información y el conocimiento ambiental",
+  "descripcion": "Incluye la elaboración de documentos de investigación orientados a ampliar el conocimiento científico ambiental. El municipio de Briceño tiene priorizado gestionar un proyecto para el establecimiento de la Unidad de Consolidación y Análisis de Datos (DinAmiCo) para evaluar el estado de sistemas agropecuarios, áreas de manejo ambiental y aguas residuales con impacto en la salud humana, el entorno y la mitigación del cambio climático. La unidad desarrolla herramientas efectivas para diseñar y supervisar políticas públicas, enfocadas en el desarrollo de servicios ambientales, estrategias de alertas tempranas en salud, educación y empoderamiento de las comunidades, haciendo uso de metodologías de análisis especializado de muestras",
   "unidad": "Número",
   "meta": "1",
   "responsable": "Secretaria Medio Ambiente y Turismo",
@@ -1800,41 +1993,47 @@
   "programa": "3.2.3. Gestión de la información yel conocimiento ambiental",
   "coincidencia_ppi": 0.95,
   "pagina": 161,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "320305000",
   "nombre": "3203050 - Servicio de protección del recurso hídrico",
+  "descripcion": "Incluye acciones orientadas a la administración y manejo de áreas de reserva hídrica o zonas de reserva natural para la protección de las fuentes hídricas",
   "unidad": "Hectáreas",
   "meta": "27",
   "responsable": "Secretaria Medio Ambiente y Turismo",
   "linea_base": "",
   "tipo_acumulado": "",
-  "linea": "3.2.3. Gestión de la información yel conocimiento ambiental",
+  "linea": "3.2.4 Gestión Integral del recurso Hídrico",
   "sector": "32: AMBIENTE Y DESARROLLO SOSTENIBLE",
-  "programa": "3.2.3. Gestión de la información yel conocimiento ambiental",
-  "coincidencia_ppi": 0.95,
+  "programa": "3.2.4 Gestión Integral del recurso Hídrico",
+  "coincidencia_ppi": 0.96,
   "pagina": 163,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "320303300",
   "nombre": "3203033 - Servicio de asistencia técnica para la promoción del uso eficiente y ahorro del agua",
+  "descripcion": "Acciones enfocadas a definir y promover la implementación de programas y mecanismos a los diferentes usuarios del agua que permita crear un habito sostenible en el uso del agua",
   "unidad": "Número",
   "meta": "3",
   "responsable": "Secretaria Medio Ambiente y Turismo",
   "linea_base": "",
   "tipo_acumulado": "",
-  "linea": "3.2.3. Gestión de la información yel conocimiento ambiental",
+  "linea": "3.2.4 Gestión Integral del recurso Hídrico",
   "sector": "32: AMBIENTE Y DESARROLLO SOSTENIBLE",
-  "programa": "3.2.3. Gestión de la información yel conocimiento ambiental",
-  "coincidencia_ppi": 0.95,
+  "programa": "3.2.4 Gestión Integral del recurso Hídrico",
+  "coincidencia_ppi": 0.96,
   "pagina": 163,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "400204000",
   "nombre": "4002040 - Servicio de adquisición de predios en zonas de alto riesgo",
+  "descripcion": "Corresponde a la adquisición de predios localizados en zonas de alto riesgo no mitigable, o los ordenados mediante sentencias judiciales o actos administrativos, para la relocalización transitoria y reubicación definitiva de hogares.",
   "unidad": "Número",
   "meta": "4",
   "responsable": "Secretaria Medio Ambiente y Turismo Secretaria de Planeación e Infraestructura",
@@ -1845,11 +2044,13 @@
   "programa": "3.2.6 Ordenamiento Ambiental Territorial",
   "coincidencia_ppi": 0.94,
   "pagina": 166,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "320500600",
   "nombre": "3205006 - Servicio de divulgación y socialización ambiental en el marco del ordenamiento ambiental territorial",
+  "descripcion": "Acciones orientadas a difundir la información ambiental en el marco del ordenamiento ambiental territorial",
   "unidad": "Número de campañas",
   "meta": "8",
   "responsable": "Secretaria Medio Ambiente y Turismo",
@@ -1860,11 +2061,13 @@
   "programa": "3.2.6 Ordenamiento Ambiental Territorial",
   "coincidencia_ppi": 0.94,
   "pagina": 166,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "320500700",
   "nombre": "3205007 - Servicio de",
+  "descripcion": "Acciones orientadas a la generación de alertaspara",
   "unidad": "Número de sistemas de",
   "meta": "2",
   "responsable": "Secretaria Medio",
@@ -1875,11 +2078,13 @@
   "programa": "3.2.6 Ordenamiento Ambiental Territorial",
   "coincidencia_ppi": 0.94,
   "pagina": 166,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "350204600",
   "nombre": "3502046 - Servicio de promoción turística",
+  "descripcion": "Corresponde a campañas de divulgación y promoción de los atractivos turísticos de las zonas, así como las actividades para el posicionamiento de las regiones, departamentos y municipios como destinos turísticos.",
   "unidad": "Número",
   "meta": "10",
   "responsable": "Secretaria Medio Ambiente y Turismo",
@@ -1890,11 +2095,13 @@
   "programa": "3.1.4: Productividad Y Competitividad De Las Empresas locales",
   "coincidencia_ppi": 0.96,
   "pagina": 171,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "350204901",
   "nombre": "3502049 - Servicio de circuito turístico",
+  "descripcion": "Corresponde a un recorrido por determinados atractivos turísticos.",
   "unidad": "Número",
   "meta": "50",
   "responsable": "Secretaria Medio Ambiente y Turismo",
@@ -1905,11 +2112,13 @@
   "programa": "3.1.4: Productividad Y Competitividad De Las Empresas locales",
   "coincidencia_ppi": 0.96,
   "pagina": 171,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "350205900",
   "nombre": "3502059 - Señalización turística construida",
+  "descripcion": "Corresponde a la señalización de espacios turísticos que lo requieran.",
   "unidad": "Número",
   "meta": "4",
   "responsable": "Secretaria Medio Ambiente y Turismo Secretaría de Planeación E Infraestructura",
@@ -1920,11 +2129,13 @@
   "programa": "3.1.4: Productividad Y Competitividad De Las Empresas locales",
   "coincidencia_ppi": 0.96,
   "pagina": 171,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "350204700",
   "nombre": "3502047 - Documentos de planeación",
+  "descripcion": "Corresponde a documentos que contengan planes, estrategias, políticas públicas sobre asuntos del sector. El municipio de Briceño tiene como prioridad formular y ejecutar el plan de Turismo municipal",
   "unidad": "Número",
   "meta": "1",
   "responsable": "Secretaria Medio Ambiente y Turismo",
@@ -1935,11 +2146,13 @@
   "programa": "3.1.4: Productividad Y Competitividad De Las Empresas locales",
   "coincidencia_ppi": 0.96,
   "pagina": 171,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "350204900",
   "nombre": "3502049 - Servicio de circuito turístico",
+  "descripcion": "Corresponde a un recorrido por determinados atractivos turísticos. En donde se",
   "unidad": "Número",
   "meta": "8",
   "responsable": "Secretaria Medio Ambiente y Turismo",
@@ -1950,7 +2163,8 @@
   "programa": "3.1.4: Productividad Y Competitividad De Las Empresas locales",
   "coincidencia_ppi": 0.96,
   "pagina": 171,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "080020004",
@@ -1965,7 +2179,8 @@
   "programa": "4.1.1 Levantamiento y actualización de información estadística de calidad",
   "coincidencia_ppi": 0.97,
   "pagina": 174,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "080010011",
@@ -1980,7 +2195,8 @@
   "programa": "4.1.1 Levantamiento y actualización de información estadística de calidad",
   "coincidencia_ppi": 0.97,
   "pagina": 174,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "080030002",
@@ -1995,7 +2211,8 @@
   "programa": "4.1.1 Levantamiento y actualización de información estadística de calidad",
   "coincidencia_ppi": 0.97,
   "pagina": 174,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "080030003",
@@ -2010,7 +2227,8 @@
   "programa": "4.1.1 Levantamiento y actualización de información estadística de calidad",
   "coincidencia_ppi": 0.97,
   "pagina": 174,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "080020002",
@@ -2025,7 +2243,8 @@
   "programa": "4.1.1 Levantamiento y actualización de información estadística de calidad",
   "coincidencia_ppi": 0.97,
   "pagina": 174,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "Plan de De",
@@ -2041,7 +2260,8 @@
   "programa": "4.1.1 Levantamiento y actualización de información estadística de calidad",
   "coincidencia_ppi": 0.97,
   "pagina": 174,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "Línea es Seguridad hu justicia social",
@@ -2057,11 +2277,13 @@
   "programa": "4.1.1 Levantamiento y actualización de información estadística de calidad",
   "coincidencia_ppi": 0.97,
   "pagina": 174,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "040106900",
   "nombre": "0401069 - Bases de datos de la Temática de Gobierno",
+  "descripcion": "Información registrada y re correspondien Temática Gobierno.",
   "unidad": "Número",
   "meta": "10",
   "responsable": "Secretaria General y de Gobierno",
@@ -2072,11 +2294,13 @@
   "programa": "4.1.2 Generación de la información geográfica del territorio municipal",
   "coincidencia_ppi": 0.97,
   "pagina": 175,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "040110201",
   "nombre": "0401102 - Servicio de información implementado",
+  "descripcion": "Corresponde proceso que as la disposición información manera acc confiable oportuna.",
   "unidad": "Número",
   "meta": "100% de la demanda",
   "responsable": "Secretaria General y de Gobierno",
@@ -2087,11 +2311,13 @@
   "programa": "4.1.2 Generación de la información geográfica del territorio municipal",
   "coincidencia_ppi": 0.97,
   "pagina": 175,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "040110200",
   "nombre": "0401102 - Servicio de información implementado",
+  "descripcion": "Corresponde proceso que as la disposición información manera acc confiable oportuna.",
   "unidad": "Número",
   "meta": "10",
   "responsable": "Secretaria General y de Gobierno",
@@ -2102,11 +2328,13 @@
   "programa": "4.1.2 Generación de la información geográfica del territorio municipal",
   "coincidencia_ppi": 0.97,
   "pagina": 175,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "040600300",
   "nombre": "0406003 - Servicio de conservació n catastral",
+  "descripcion": "Acciones orientadas a mantener actualizada, en los documentos catastrales, la información relacionada con los bienes inmuebles que hayan sufrido cambios en sus aspectos físico, jurídicoyeconómico.",
   "unidad": "Número",
   "meta": "1",
   "responsable": "Secretaria de Planeación E Infraestructura",
@@ -2117,11 +2345,13 @@
   "programa": "4.1.2 Generación de la información geográfica del territorio municipal",
   "coincidencia_ppi": 0.97,
   "pagina": 175,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "120200200",
   "nombre": "Servicio de justicia a los ciudadanos",
+  "descripcion": "Hace referencia a servicios de información y orientación sobre herramientas y mecanismos legales, formales y no formales, para el reconocimiento y protección de los derechos de los ciudadanos",
   "unidad": "Número",
   "meta": "120",
   "responsable": "Secretaria General y de Gobierno (Comisaría de Familia)",
@@ -2132,11 +2362,13 @@
   "programa": "4.2.1 Promoción al acceso a la justicia",
   "coincidencia_ppi": 0.94,
   "pagina": 181,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "120702500",
   "nombre": "1207025 - Servicio de educación informal en prevención del delito",
+  "descripcion": "Involucra la programación, realización, evaluación y cierre de procesos de formación y educación de índole informal, en temas relevantes de prevención del delito y de fenómenos criminales a particulares, instituciones educativas, entidades, entre otros,",
   "unidad": "Número",
   "meta": "2.000",
   "responsable": "Secretaria General y de Gobierno",
@@ -2147,11 +2379,13 @@
   "programa": "4.2.1 Promoción al acceso a la justicia",
   "coincidencia_ppi": 0.94,
   "pagina": 181,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1202019",
   "nombre": "1202019 - Servicio de promoción del acceso a la justicia",
+  "descripcion": "Estrategias de acceso a la justicia desarrolladas",
   "unidad": "Número",
   "meta": "20",
   "responsable": "Secretaria General y de Gobierno",
@@ -2162,11 +2396,13 @@
   "programa": "4.2.1 Promoción al acceso a la justicia",
   "coincidencia_ppi": 0.94,
   "pagina": 181,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1202012",
   "nombre": "1202012 - Servicio de educación informal en temas de acceso a la justicia",
+  "descripcion": "Capacitaciones y eventos en temas de acceso a la justicia",
   "unidad": "número",
   "meta": "2.000",
   "responsable": "Secretaria General y de Gobierno",
@@ -2177,11 +2413,13 @@
   "programa": "4.2.1 Promoción al acceso a la justicia",
   "coincidencia_ppi": 0.94,
   "pagina": 181,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "120300100",
   "nombre": "1203001 - Servicio de divulgación para promover los métodos de resolución de conflictos",
+  "descripcion": "Con este producto se busca promover los métodos de resolución de conflictos por diferentes medios de comunicación",
   "unidad": "Número",
   "meta": "40",
   "responsable": "Secretaria General y de Gobierno",
@@ -2192,11 +2430,13 @@
   "programa": "2.4.2 Promoción de los métodos de resolución de conflictos",
   "coincidencia_ppi": 0.96,
   "pagina": 182,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "120300900",
   "nombre": "Servicio de educación informal en resolución de conflictos",
+  "descripcion": "Contempla la definición, diseño, construcción y actualización de los contenidos del material pedagógico a utilizar en los eventos de educación informal, tales como los procesos que se adelantan para la implementación de la conciliación en equidad a través del MICE \"Marco para la Implementación de la Conciliación en Equidad”",
   "unidad": "Número",
   "meta": "100",
   "responsable": "Secretaria General y de Gobierno",
@@ -2207,11 +2447,13 @@
   "programa": "2.4.2 Promoción de los métodos de resolución de conflictos",
   "coincidencia_ppi": 0.96,
   "pagina": 182,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "120400200",
   "nombre": "1204002 - Servicio para la articulación de los mecanismos de justicia transicional",
+  "descripcion": "Hace referencia al conjunto de actividades orientadas a diseñar, coordinar e implementar actividades interinstitucionales para fortalecer la articulación de mecanismos de justicia transicional.",
   "unidad": "Número de espacios de articulació n interinstit ucional",
   "meta": "4",
   "responsable": "Secretaria General y de Gobierno",
@@ -2222,7 +2464,8 @@
   "programa": "4.2.2 Justicia Transicional",
   "coincidencia_ppi": 0.91,
   "pagina": 183,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "indicador 060010011",
@@ -2237,11 +2480,13 @@
   "programa": "4.2.2 Justicia Transicional",
   "coincidencia_ppi": 0.91,
   "pagina": 185,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "240803800",
   "nombre": "2408038 - Servicio de seguridad vial y prevenciones de accidentalidad y siniestros en los sistemas de transporte público organizado",
+  "descripcion": "Incluye la implementación de programas, estrategias y acciones dirigidas al mejoramiento de las condiciones de seguridad vial que permitan reducir y evitar la siniestralidad en los Sistemas de Transporte Púbico de Pasajeros.",
   "unidad": "Número",
   "meta": "16",
   "responsable": "Secretaria General y de Gobierno",
@@ -2252,11 +2497,13 @@
   "programa": "Seguridad de transporte",
   "coincidencia_ppi": 0.42,
   "pagina": 187,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "240803500",
   "nombre": "2408035 - Servicio de educación informal",
+  "descripcion": "Incluye estrategias de formación a los actores de los Sistemas de Transporte Público Organizados para promover la cultura ciudadana, seguridad en los sistemas de transportepúblico.",
   "unidad": "Número",
   "meta": "16",
   "responsable": "Secretaria General y de Gobierno",
@@ -2267,11 +2514,13 @@
   "programa": "Seguridad de transporte",
   "coincidencia_ppi": 0.42,
   "pagina": 187,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "240906301",
   "nombre": "2409063 - Servicio de educación informal",
+  "descripcion": "Incluye el diseño e implementación de todo tipo de campañas y estrategias formativas e informativas visuales, auditivas y audiovisuales para la promoción del transporte seguro, sostenibleyeficiente",
   "unidad": "Número",
   "meta": "80",
   "responsable": "Secretaria General y de Gobierno",
@@ -2282,11 +2531,13 @@
   "programa": "Seguridad de transporte",
   "coincidencia_ppi": 0.42,
   "pagina": 188,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2409039 -",
   "nombre": "240903900 Vías con dispositivos de control y señalización",
+  "descripcion": "Vías urbanas y rurales con dispositivos de control y señalización instalados para la prevención de incidentes de transito",
   "unidad": "Kilómetros",
   "meta": "2",
   "responsable": "Secretaría de Planeación E Infraestructura",
@@ -2297,11 +2548,13 @@
   "programa": "Seguridad de transporte",
   "coincidencia_ppi": 0.42,
   "pagina": 188,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "240903800",
   "nombre": "Vías con obras complementarias de seguridad vial",
+  "descripcion": "Incluye todos los servicios y obras conexas a la red vial cuyo objetivo es garantizar la seguridad en la infraestructura de transporte.",
   "unidad": "Kilómetros",
   "meta": "2",
   "responsable": "Secretaría de Planeación E Infraestructura",
@@ -2312,11 +2565,13 @@
   "programa": "Seguridad de transporte",
   "coincidencia_ppi": 0.42,
   "pagina": 188,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "210201100",
   "nombre": "Redes de alumbrado público mantenimiento permanente",
+  "descripcion": "Mantenimiento de redes para brindar el servicio público no domiciliario de energía eléctrica para la iluminación de los bienes de uso público y demás espacios de libre circulación con tránsito vehicular o peatonal, dentro del perímetro urbano con el fin de brindar una seguridad ciudadana y evitar accidentes de tránsito.",
   "unidad": "Metros",
   "meta": "2000",
   "responsable": "Secretaría de Planeación E Infraestructura Secretaria General y de Gobierno",
@@ -2327,11 +2582,13 @@
   "programa": "Seguridad de transporte",
   "coincidencia_ppi": 0.42,
   "pagina": 188,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "450100402",
   "nombre": "4501004 - Servicio de promoción de convivencia y no repetición",
+  "descripcion": "Incluye acciones e iniciativas de carácter institucional e interinstitucional que promuevan la desactivación de los patrones del conflicto armado interno, la construcción de la cultura de respeto y tolerancia en democracia, en perspectiva de crear y mejorar las condiciones de convivenciayde no",
   "unidad": "Número",
   "meta": "40",
   "responsable": "Secretaria de Gobierno - Inspección de Policía",
@@ -2342,11 +2599,13 @@
   "programa": "4.3.1 Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 0.98,
   "pagina": 194,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "450200100",
   "nombre": "Servicio de promoción a la participación ciudadana",
+  "descripcion": "implementación de acciones y estrategias que promuevan el ejercicio de la participación ciudadana.",
   "unidad": "Número",
   "meta": "120",
   "responsable": "General y de Gobierno (Desarrollo Comunitario)",
@@ -2357,11 +2616,13 @@
   "programa": "4502 Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos.",
   "coincidencia_ppi": 0.73,
   "pagina": 198,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "450202601",
   "nombre": "4502026 - Documentos normativos",
+  "descripcion": "Incluye la realización de los documentos de contenido normativo. En Briceño hace referencia a la formulación de la política pública degénero.",
   "unidad": "Número",
   "meta": "1",
   "responsable": "Secretaria General y de Gobierno ( Dirección de equidad de género)",
@@ -2372,11 +2633,13 @@
   "programa": "4502 Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos.",
   "coincidencia_ppi": 0.73,
   "pagina": 198,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "450200113",
   "nombre": "Servicio de promoción a la participación ciudadana",
+  "descripcion": "Corresponde al diseño e implementación de acciones y estrategias que promuevan el ejercicio de la participación ciudadana.",
   "unidad": "Número",
   "meta": "10",
   "responsable": "Secretaria General y de Gobierno (Desarrollo Comunitario)",
@@ -2387,11 +2650,13 @@
   "programa": "4502 Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos.",
   "coincidencia_ppi": 0.73,
   "pagina": 198,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "450202208 –",
   "nombre": "Servicio de asistencia técnica",
+  "descripcion": "acompañamiento, apoyo, asesoría y seguimiento técnico para la transferencia de",
   "unidad": "Número",
   "meta": "1000",
   "responsable": "Secretaria General y de Gobierno",
@@ -2402,11 +2667,13 @@
   "programa": "4502 Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos.",
   "coincidencia_ppi": 0.73,
   "pagina": 198,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "450302302",
   "nombre": "4503023 - Documentos de planeación",
+  "descripcion": "El municipio priorizara la realización de estrategias que permitan la prevención y atención de emergencias que sepresenten.",
   "unidad": "Número",
   "meta": "2",
   "responsable": "Secretaria Medio Ambiente y Turismo",
@@ -2417,11 +2684,13 @@
   "programa": "4.1.3. Gestión del riesgo de desastresyemergencias",
   "coincidencia_ppi": 0.93,
   "pagina": 202,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "450301600",
   "nombre": "4503016 - Servicio de fortalecimiento a las salas de crisis territorial",
+  "descripcion": "Incluye la dotación de los organismos que componen los Consejos territoriales de Gestión de Riesgo y al cuerpo de bomberos con equipos de protección personal equipos, herramientas y accesorios para la atención de emergencias.",
   "unidad": "Número",
   "meta": "1",
   "responsable": "Secretaria Medio Ambiente y Turismo Secretaría de Planeación e Infraestructura",
@@ -2432,11 +2701,13 @@
   "programa": "4.1.3. Gestión del riesgo de desastresyemergencias",
   "coincidencia_ppi": 0.93,
   "pagina": 202,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "Del",
   "nombre": "Del",
+  "descripcion": "indicador",
   "unidad": "De",
   "meta": "2024-",
   "responsable": "Responsable",
@@ -2447,7 +2718,8 @@
   "programa": "4599 Fortalecimiento A La Gestión Y Dirección De La Administración Pública Territorial.",
   "coincidencia_ppi": 0.53,
   "pagina": 204,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Indicador",
@@ -2461,11 +2733,13 @@
   "programa": "4599 Fortalecimiento A La Gestión Y Dirección De La Administración Pública Territorial.",
   "coincidencia_ppi": 0.53,
   "pagina": 204,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "459900201",
   "nombre": "Servicio de",
+  "descripcion": "ejecución delprograma",
   "unidad": "Número",
   "meta": "2",
   "responsable": "Generalyde",
@@ -2476,6 +2750,7 @@
   "programa": "4599 Fortalecimiento A La Gestión Y Dirección De La Administración Pública Territorial.",
   "coincidencia_ppi": 0.53,
   "pagina": 204,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  }
 ]

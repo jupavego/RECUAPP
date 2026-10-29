@@ -1,0 +1,326 @@
+[
+ {
+  "paginas": [
+   181
+  ],
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   44301,
+   45631,
+   46999,
+   48410
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Salud",
+    "anios": [
+     15710,
+     16182,
+     16667,
+     17167
+    ],
+    "total": 65727,
+    "ruta": {
+     "linea": "Salud"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Subsidiado",
+    "anios": [
+     15225,
+     15682,
+     16152,
+     16637
+    ],
+    "total": 63696,
+    "ruta": {
+     "linea": "Subsidiado"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "SGP",
+    "anios": [
+     6557,
+     6754,
+     6956,
+     7165
+    ],
+    "total": 27434,
+    "ruta": {
+     "linea": "SGP"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Régimen subsidiado ADRES",
+    "anios": [
+     6809,
+     7013,
+     7224,
+     7441
+    ],
+    "total": 28488,
+    "ruta": {
+     "linea": "Régimen subsidiado ADRES"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   184
+  ],
+  "cabecera": "Líneas",
+  "unidad": "millones",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   52114,
+   53675,
+   55282,
+   56939
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea Estratégica 1: Bienestar social",
+    "anios": [
+     21701,
+     22352,
+     23023,
+     23714
+    ],
+    "total": 90791,
+    "ruta": {
+     "linea": "Línea Estratégica 1: Bienestar social"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea Estratégica 2: Desarrollo sostenible, ordenamiento territorial y lajusticia ambiental",
+    "anios": [
+     3424,
+     3525,
+     3630,
+     3737
+    ],
+    "total": 14316,
+    "ruta": {
+     "linea": "Línea Estratégica 2: Desarrollo sostenible, ordenamiento territorial y lajusticia ambiental"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea Estratégica 3: Seguridad humana, justiciayordenpúblico",
+    "anios": [
+     516,
+     531,
+     547,
+     564
+    ],
+    "total": 2158,
+    "ruta": {
+     "linea": "Línea Estratégica 3: Seguridad humana, justiciayordenpúblico"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea Estratégica 4: Administración transparente y convergencia territorial",
+    "anios": [
+     416,
+     429,
+     441,
+     455
+    ],
+    "total": 1741,
+    "ruta": {
+     "linea": "Línea Estratégica 4: Administración transparente y convergencia territorial"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TOTAL",
+    "anios": [
+     26057,
+     26838,
+     27641,
+     28469
+    ],
+    "total": 109006,
+    "ruta": {
+     "linea": "TOTAL"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   185
+  ],
+  "cabecera": "Programa",
+  "unidad": "millones",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   3916,
+   3608,
+   3717,
+   3671
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Desarrollo vial e infraestructura pública",
+    "anios": [
+     1424,
+     1254,
+     1292,
+     1252
+    ],
+    "total": 5222,
+    "ruta": {
+     "linea": "Desarrollo vial e infraestructura pública"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total línea",
+    "anios": [
+     2492,
+     2354,
+     2425,
+     2419
+    ],
+    "total": 9690,
+    "ruta": {
+     "linea": "Total línea"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   200
+  ],
+  "cabecera": "Concepto de gasto",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   45305173,
+   14332008,
+   13496649,
+   13458428
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "ASIGNACIONES DIRECTAS (20% DEL SGR)",
+    "anios": [
+     35417498,
+     11204102,
+     10551057,
+     10521175
+    ],
+    "total": 67693833,
+    "ruta": {
+     "linea": "ASIGNACIONES DIRECTAS (20% DEL SGR)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "ANTICIPADAS (5% DEL",
+    "anios": [
+     9842408,
+     3113586,
+     2932107,
+     2923803
+    ],
+    "total": 18811905,
+    "ruta": {
+     "linea": "ANTICIPADAS (5% DEL"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "SGR)",
+    "anios": [
+     8,
+     3,
+     2,
+     6
+    ],
+    "total": 19,
+    "ruta": {
+     "linea": "SGR)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total",
+    "anios": [
+     45259,
+     14317,
+     13483,
+     13444
+    ],
+    "total": 86505739,
+    "ruta": {
+     "linea": "Total"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

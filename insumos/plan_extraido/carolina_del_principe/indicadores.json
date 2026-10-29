@@ -13,7 +13,8 @@
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
   "coincidencia_ppi": 1.0,
   "pagina": 93,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Beneficiar a 12 personas con becas para educación superior en el cuatrienio",
@@ -29,7 +30,8 @@
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
   "coincidencia_ppi": 1.0,
   "pagina": 93,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Suministrar el Servicio de Alimentación Escolar a 430 estudiantes por año en el cuatrienio",
@@ -45,7 +47,8 @@
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
   "coincidencia_ppi": 1.0,
   "pagina": 96,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "estudiantes por año con el servicio de transporte escolar durante el cuatrienio",
@@ -62,7 +65,8 @@
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
   "coincidencia_ppi": 1.0,
   "pagina": 96,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar 4 foros educativos durante el",
@@ -79,7 +83,8 @@
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
   "coincidencia_ppi": 1.0,
   "pagina": 96,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Elabora 1 plan de salud pública territorial",
@@ -88,14 +93,15 @@
   "linea_base": "1",
   "ano_base": "2020",
   "unidad": "Número",
-  "responsable": "<sup>Dirección</sup> Local de Salud",
+  "responsable": "Dirección Local de Salud",
   "tipo_acumulado": "",
   "linea": "SOCIAL",
   "sector": "Capacidades",
   "programa": "Saludpública",
   "coincidencia_ppi": 0.96,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar 4 planes de intervenciones colectivas durante el cuatrienio",
@@ -104,14 +110,15 @@
   "linea_base": "4",
   "ano_base": "2023",
   "unidad": "Número",
-  "responsable": "<sup>Dirección</sup> Local de Salud",
+  "responsable": "Dirección Local de Salud",
   "tipo_acumulado": "",
   "linea": "SOCIAL",
   "sector": "Capacidades",
   "programa": "Saludpública",
   "coincidencia_ppi": 0.96,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar 20 campañas de gestión del riesgo en temas de consumo de sustancias psicoactivas",
@@ -120,14 +127,15 @@
   "linea_base": "0",
   "ano_base": "2023",
   "unidad": "Número",
-  "responsable": "<sup>Dirección</sup> Local de Salud",
+  "responsable": "Dirección Local de Salud",
   "tipo_acumulado": "",
   "linea": "SOCIAL",
   "sector": "Capacidades",
   "programa": "Saludpública",
   "coincidencia_ppi": 0.96,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Implementar 24 estrategias de promoción de la participación socialensalud",
@@ -136,14 +144,15 @@
   "linea_base": "0",
   "ano_base": "2023",
   "unidad": "Número",
-  "responsable": "<sup>Dirección</sup> Local de Salud",
+  "responsable": "Dirección Local de Salud",
   "tipo_acumulado": "",
   "linea": "SOCIAL",
   "sector": "Capacidades",
   "programa": "Saludpública",
   "coincidencia_ppi": 0.96,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Implementar 20 estrategias de promoción de la salud en",
@@ -152,14 +161,15 @@
   "linea_base": "0",
   "ano_base": "2023",
   "unidad": "Número",
-  "responsable": "<sup>Dirección</sup> Local de Salud",
+  "responsable": "Dirección Local de Salud",
   "tipo_acumulado": "",
   "linea": "SOCIAL",
   "sector": "Capacidades",
   "programa": "Saludpública",
   "coincidencia_ppi": 0.96,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Atender a 3279 personas afiliadas a los diferentes regímenes en salud en el municipio durante el cuatrienio",
@@ -168,14 +178,15 @@
   "linea_base": "3044",
   "ano_base": "2023",
   "unidad": "Número",
-  "responsable": "<sup>Dirección</sup> Local de Salud",
+  "responsable": "Dirección Local de Salud",
   "tipo_acumulado": "",
   "linea": "SOCIAL",
   "sector": "Salud",
   "programa": "Aseguramiento y prestación integral de servicios de salud",
   "coincidencia_ppi": 1.0,
   "pagina": 102,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Apoyar financieramente, a través de convenios y demás, a una (1) Institución Prestadora de Servicios -IPS- enelcuatrienio",
@@ -184,14 +195,15 @@
   "linea_base": "1",
   "ano_base": "2023",
   "unidad": "Número",
-  "responsable": "<sup>Dirección</sup> Local de Salud",
+  "responsable": "Dirección Local de Salud",
   "tipo_acumulado": "",
   "linea": "SOCIAL",
   "sector": "Salud",
   "programa": "Aseguramiento y prestación integral de servicios de salud",
   "coincidencia_ppi": 1.0,
   "pagina": 102,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Continuar con la atención de 2762 personas afiliadas al",
@@ -200,14 +212,15 @@
   "linea_base": "2762",
   "ano_base": "2023",
   "unidad": "Número",
-  "responsable": "<sup>Dirección</sup> Local de Salud",
+  "responsable": "Dirección Local de Salud",
   "tipo_acumulado": "",
   "linea": "SOCIAL",
   "sector": "Salud",
   "programa": "Aseguramiento y prestación integral de servicios de salud",
   "coincidencia_ppi": 1.0,
   "pagina": 102,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Implementar cada año 2 estrategias de prevención de la violencia de género en el territorio municipal de Carolina del Príncipe",
@@ -216,35 +229,37 @@
   "linea_base": "2",
   "ano_base": "2023",
   "unidad": "Número",
-  "responsable": "<sup>Dirección</sup> Local de Salud",
+  "responsable": "Dirección Local de Salud",
   "tipo_acumulado": "",
   "linea": "SOCIAL",
   "sector": null,
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial.",
   "coincidencia_ppi": 0.47,
   "pagina": 106,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Implementar 1 políticapública",
   "codigo": "459901802",
-  "nombre": "<sup>Documentos de</sup> estrategias de",
+  "nombre": "Documentos de estrategias de",
   "linea_base": "1",
   "ano_base": "2023",
   "unidad": "Numero",
-  "responsable": "<sup>Dirección</sup> local de salud",
+  "responsable": "Dirección local de salud",
   "tipo_acumulado": "",
   "linea": "SOCIAL",
   "sector": null,
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial.",
   "coincidencia_ppi": 0.47,
   "pagina": 106,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Entregar 8 estímulos a deportistas de nuestro municipio, en el cuatrienio, entre artículos tecnológicos, auxilios económicos, artículos deportivos u otros a deportistas destacados en el municipio de Carolina del Príncipe",
   "codigo": "430100100",
-  "nombre": "<sup>Personas</sup> beneficiadas",
+  "nombre": "Personas beneficiadas",
   "linea_base": "0",
   "ano_base": "2023",
   "unidad": "Número",
@@ -255,7 +270,8 @@
   "programa": "Fomento a la recreación, la actividad física y eldeporte",
   "coincidencia_ppi": 0.99,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar la entrega de 1600 artículos deportivos (uniformes, balones, conos, platillos, escaleras, entre otros) durante el cuatrienio",
@@ -271,7 +287,8 @@
   "programa": "Fomento a la recreación, la actividad física y eldeporte",
   "coincidencia_ppi": 0.99,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Implementar una (1) Escuela Deportiva de iniciación y formación en el cuatrienio en el municipio de",
@@ -287,7 +304,8 @@
   "programa": "Fomento a la recreación, la actividad física y eldeporte",
   "coincidencia_ppi": 0.99,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar,en el",
@@ -303,7 +321,8 @@
   "programa": "Promoción y acceso efectivo a procesos culturales y artísticos.",
   "coincidencia_ppi": 0.36,
   "pagina": 112,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar un (1) documento de investigación sobre patrimonio carolinita en el cuatrienio",
@@ -319,12 +338,13 @@
   "programa": "Gestión, protección y salvaguardia del patrimonio cultural colombiano.",
   "coincidencia_ppi": 0.33,
   "pagina": 114,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar cuatro (4) capacitaciones en el cuatrienio en temas de salvaguarda y protección del patrimonio del municipio de Carolina del Príncipe",
   "codigo": "330201900",
-  "nombre": "<sup>Capacitaciones</sup> realizadas",
+  "nombre": "Capacitaciones realizadas",
   "linea_base": "0",
   "ano_base": "2023",
   "unidad": "Número",
@@ -335,7 +355,8 @@
   "programa": "Gestión, protección y salvaguardia del patrimonio cultural colombiano.",
   "coincidencia_ppi": 0.33,
   "pagina": 114,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar un (1) guion museográfico en el municipio de Carolina del Príncipe en el Cuatrienio",
@@ -351,12 +372,13 @@
   "programa": "Gestión, protección y salvaguardia del patrimonio cultural colombiano.",
   "coincidencia_ppi": 0.33,
   "pagina": 114,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Atender a 80 Jóvenes en el cuatrienio con servicios integrales de salud y otros programas que se oferten en el municipio de Carolina del Príncipe",
   "codigo": "410204502",
-  "nombre": "<sup>Jóvenes</sup> atendidos",
+  "nombre": "Jóvenes atendidos",
   "linea_base": "60",
   "ano_base": "2023",
   "unidad": "Número",
@@ -367,23 +389,25 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial.",
   "coincidencia_ppi": 0.47,
   "pagina": 118,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Implementar y revisar una(1)",
   "codigo": "459901802",
-  "nombre": "<sup>Documentos de</sup> estrategias de",
+  "nombre": "Documentos de estrategias de",
   "linea_base": "1",
   "ano_base": "2020",
   "unidad": "Número",
-  "responsable": "<sup>Dirección</sup> Local de",
+  "responsable": "Dirección Local de",
   "tipo_acumulado": "",
   "linea": "SOCIAL",
   "sector": null,
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial.",
   "coincidencia_ppi": 0.47,
   "pagina": 118,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar la orientación a 216 adultos mayores beneficiarios del programa de la nación Colombia Mayor",
@@ -399,7 +423,8 @@
   "programa": "Atención integral de población en situación permanente de desprotección social y/o familiar",
   "coincidencia_ppi": 1.0,
   "pagina": 123,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar la atención a 150 adultos mayores en servicios integrales de salud y otros programas ofertados por la administración en el cuatrienio",
@@ -415,7 +440,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial.",
   "coincidencia_ppi": 0.47,
   "pagina": 124,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar una (1) dotación, por año, para el fiit",
@@ -429,7 +455,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial.",
   "coincidencia_ppi": 0.47,
   "pagina": 124,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "unconameno y mantenimiento correcto del centro día en el cuatrienio",
@@ -445,7 +472,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial.",
   "coincidencia_ppi": 0.47,
   "pagina": 124,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar la actualización e implementación de 1 política pública de atención integral del adulto mayor en los centro día vida",
@@ -461,7 +489,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial.",
   "coincidencia_ppi": 0.47,
   "pagina": 125,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Beneficiar a 20",
@@ -475,7 +504,8 @@
   "programa": "Inclusión social y productiva para la población en situación de vulnerabilidad.",
   "coincidencia_ppi": 0.52,
   "pagina": 126,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "personas de la comunidad",
@@ -491,7 +521,8 @@
   "programa": "Inclusión social y productiva para la población en situación de vulnerabilidad.",
   "coincidencia_ppi": 0.52,
   "pagina": 126,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Beneficiar con programas de salud (mental, física, psico emocional entre otras) a 20 personas del grupo de LGTBIQ+ de",
@@ -507,7 +538,8 @@
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
   "pagina": 127,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Formular una (1) política pública para la garantía plena de los derechos de la población LGTBIQ+ del municipio de Carolina del Príncipe",
@@ -523,7 +555,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial.",
   "coincidencia_ppi": 0.47,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Certificar a 5 personas en discapacidad a nivel departamental o nacional de acuerdo con directrices de Ley",
@@ -539,7 +572,8 @@
   "programa": "Inclusión social y productiva para la población en situación de vulnerabilidad.",
   "coincidencia_ppi": 0.52,
   "pagina": 130,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Suministrar el servicio de alimentación a 35 personas con discapacidad en el cuatrienio",
@@ -555,7 +589,8 @@
   "programa": "Atención integral de población en situación permanente de desprotección social y/o familiar",
   "coincidencia_ppi": 1.0,
   "pagina": 131,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Atender a 35 personas con discapacidad en servicios de salud, educación, cultura, deportes, entre otros, en el cuatrienio",
@@ -571,7 +606,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial.",
   "coincidencia_ppi": 0.47,
   "pagina": 132,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Implementar una (1) política pública de discapacidad en",
@@ -587,7 +623,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial.",
   "coincidencia_ppi": 0.47,
   "pagina": 132,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar el seguimiento a 1 programa de recolección de residuos",
@@ -603,12 +640,13 @@
   "programa": "Fortalecimiento del desempeño ambiental de los sectores productivos.",
   "coincidencia_ppi": 0.61,
   "pagina": 135,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar los procesos de conservación y mantenimiento de 25 árboles que hacen parte del arbolado urbano",
   "codigo": "320204200",
-  "nombre": "<sup>Árboles</sup> intervenidos",
+  "nombre": "Árboles intervenidos",
   "linea_base": "25",
   "ano_base": "2023",
   "unidad": "Número",
@@ -619,7 +657,8 @@
   "programa": "Conservación de la biodiversidad y sus servicios ecosistémicos.",
   "coincidencia_ppi": 0.41,
   "pagina": 136,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Implementar 6 proyectos de uso eficiente y ahorro del agua por año en el municipio de Carolina del Príncipe",
@@ -635,15 +674,16 @@
   "programa": "Ordenamiento territorial y desarrollo urbano.",
   "coincidencia_ppi": 0.44,
   "pagina": 137,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Mantener los 15000 metros cuadrados de zonas verdes con ornato y poda de césped en el cuatrienio",
   "codigo": "400202600",
-  "nombre": "<sup>Zonas verdes</sup> mantenidas",
+  "nombre": "Zonas verdes mantenidas",
   "linea_base": "15000",
   "ano_base": "2023",
-  "unidad": "<sup>Metros</sup> Cuadrados",
+  "unidad": "Metros Cuadrados",
   "responsable": "Secretaría Agroambiental y de Turismo",
   "tipo_acumulado": "",
   "linea": "SOCIAL",
@@ -651,7 +691,8 @@
   "programa": "Ordenamiento territorial y desarrollo urbano.",
   "coincidencia_ppi": 0.44,
   "pagina": 138,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Implementar 2 documentos de planeación y ordenamiento territorial; plan de saneamiento y manejo de vertimientosy",
@@ -667,7 +708,8 @@
   "programa": "Ordenamiento territorial y desarrollo urbano.",
   "coincidencia_ppi": 0.44,
   "pagina": 138,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Actualizar 1 PGIRS municipal según la evaluación realizada por el municipio en el cuatrienio",
@@ -683,7 +725,8 @@
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 0.47,
   "pagina": 140,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Implementar las acciones contempladas en 1 plan de gestión integral de residuos",
@@ -699,7 +742,8 @@
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 0.47,
   "pagina": 140,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Dinamizar 1 emprendimiento por año en población víctima del municipio de Carolina del Príncipe - Antioquia",
@@ -715,23 +759,25 @@
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 0.45,
   "pagina": 143,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Colocar laboralmente 7",
   "codigo": "360200401",
-  "nombre": "<sup>Victimas</sup> colocadas",
+  "nombre": "Victimas colocadas",
   "linea_base": "3",
   "ano_base": "2023",
   "unidad": "Numero",
-  "responsable": "<sup>Secretaria</sup> General Y De",
+  "responsable": "Secretaria General Y De",
   "tipo_acumulado": "",
   "linea": "SOCIAL",
   "sector": null,
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 0.45,
   "pagina": 143,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar la dotación de 1 punto de atención a víctimas, dos veces en el cuatrienio para garantizar una atención adecuada a dicha población",
@@ -747,12 +793,13 @@
   "programa": "Atención, asistencia y reparación integral a las víctimas",
   "coincidencia_ppi": 0.55,
   "pagina": 145,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Garantizar la atención de 200 personas registradas como víctimas en el municipio de Carolina del Príncipe",
   "codigo": "410102306",
-  "nombre": "<sup>Víctimas</sup> atendidas",
+  "nombre": "Víctimas atendidas",
   "linea_base": "200",
   "ano_base": "2023",
   "unidad": "Numero",
@@ -763,7 +810,8 @@
   "programa": "Atención, asistencia y reparación integral a las víctimas",
   "coincidencia_ppi": 0.55,
   "pagina": 145,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Garantizar la participación a población víctima del municipio de 16 encuentros subregionales y regionales de víctimas en el cuatrienio",
@@ -779,7 +827,8 @@
   "programa": "Atención, asistencia y reparación integral a las víctimas",
   "coincidencia_ppi": 0.55,
   "pagina": 145,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Garantizar el funcionamiento de 1 mesa de",
@@ -795,7 +844,8 @@
   "programa": "Atención, asistencia y reparación integral a las víctimas",
   "coincidencia_ppi": 0.55,
   "pagina": 145,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Instalar 20 unidades productivas para autoconsumo en hogares víctimas como forma de garantizar la protección alimentaria de esta población",
@@ -811,7 +861,8 @@
   "programa": "Inclusión social y productiva para la población en situación de vulnerabilidad",
   "coincidencia_ppi": 0.52,
   "pagina": 147,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Promover 200 espacios de participación con las comunidades organizadas del área urbana y rural del municipio enfocados en liderazgo participativo priorizando el tema de mujer y equidad de genero",
@@ -827,12 +878,13 @@
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos",
   "coincidencia_ppi": 1.0,
   "pagina": 149,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Garantizar la formulación y ejecución de 1 presupuesto participativo por año en el cuatrienio garantizando la participación comunitaria de todos los organismos comunales activos y",
   "codigo": "450200107",
-  "nombre": "<sup>Iniciativas</sup> creadas",
+  "nombre": "Iniciativas creadas",
   "linea_base": "1",
   "ano_base": "2023",
   "unidad": "Numero",
@@ -843,7 +895,8 @@
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos",
   "coincidencia_ppi": 1.0,
   "pagina": 149,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Implementación de una (1) política pública comunal del municipio de Carolina del Príncipe",
@@ -859,7 +912,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 0.47,
   "pagina": 151,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Garantizar la reglamentación implementación de 1 esquema de ordenamiento territorial",
@@ -875,7 +929,8 @@
   "programa": "Ordenamiento territorial y desarrollo urbano",
   "coincidencia_ppi": 0.44,
   "pagina": 152,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Actualizar la información catastral en el territorio del municipio de Carolina del Príncipe",
@@ -892,7 +947,8 @@
   "programa": "Generación de la información geográfica del territorio nacional",
   "coincidencia_ppi": 0.44,
   "pagina": 153,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Implementar y actualizar 1 plan de gestión del riesgo de desastres en el municipio de Carolina del Príncipe",
@@ -908,7 +964,8 @@
   "programa": "Ordenamiento ambiental territorial",
   "coincidencia_ppi": 0.48,
   "pagina": 155,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Fortalecer 1 organismo de atención de emergencias y desastres en el municipio de Carolina del Príncipe (consejo municipal de gestión del riesgo)",
@@ -924,7 +981,8 @@
   "programa": "Gestión del riesgo de desastres y emergencias",
   "coincidencia_ppi": 0.39,
   "pagina": 156,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar 1 convenio con un cuerpo de bomberos e iniciar las",
@@ -940,7 +998,8 @@
   "programa": "Gestión del riesgo de desastres y emergencias",
   "coincidencia_ppi": 0.39,
   "pagina": 156,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Restaurar 2 hectáreas alrededor de las cuencas hidrográficas que atraviesan el territorio municipal",
@@ -956,12 +1015,13 @@
   "programa": "Conservación de la biodiversidad y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.41,
   "pagina": 161,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Garantizar la continuidad de 48 colmenas instaladas e instalar 12 más durante el cuatrienio el municipio de Carolina del Príncipe",
   "codigo": "320200505",
-  "nombre": "<sup>Colmenas</sup> establecidas",
+  "nombre": "Colmenas establecidas",
   "linea_base": "48",
   "ano_base": "2023",
   "unidad": "Numero",
@@ -972,31 +1032,33 @@
   "programa": "Conservación de la biodiversidad y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.41,
   "pagina": 161,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Capacitar a 200personas",
   "codigo": "320201400",
-  "nombre": "<sup>Personas</sup> capacitadas",
+  "nombre": "Personas capacitadas",
   "linea_base": "200",
   "ano_base": "2023",
   "unidad": "Numero",
-  "responsable": "<sup>Secretaria</sup> Agroambiental",
+  "responsable": "Secretaria Agroambiental",
   "tipo_acumulado": "",
   "linea": "AMBIENTAL",
   "sector": null,
   "programa": "Conservación de la biodiversidad y sus servicios ecosistémicos",
   "coincidencia_ppi": 0.41,
   "pagina": 161,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Continuar con la gestión de",
   "codigo": "320204700",
-  "nombre": "<sup>Áreas</sup> administradas",
+  "nombre": "Áreas administradas",
   "linea_base": "8000",
   "ano_base": "2013",
-  "unidad": "<sup>Hectárea</sup> s",
+  "unidad": "Hectárea s",
   "responsable": "Secretaria Agroambiental Y De Turismo",
   "tipo_acumulado": "",
   "linea": "AMBIENTAL",
@@ -1004,7 +1066,8 @@
   "programa": "Gestión integral del recurso hídrico",
   "coincidencia_ppi": 0.52,
   "pagina": 163,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Ajustar e implementar 1 sistema ambiental municipal - SIGAM en el municipio de Carolina del Príncipe",
@@ -1020,7 +1083,8 @@
   "programa": "Gestión del cambio climático para un desarrollo bajo en carbono y resiliente al clima",
   "coincidencia_ppi": 0.38,
   "pagina": 165,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar 4 campañas de información en gestión del cambio climático en el cuatrienio en el municipio de Carolina del Príncipe",
@@ -1036,7 +1100,8 @@
   "programa": "Gestión del cambio climático para un desarrollo bajo en carbono y resiliente al clima",
   "coincidencia_ppi": 0.38,
   "pagina": 166,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar la instalación de 30 estufas ecoeficientes fijas en el cuatrienio en el municipio de Carolina del Príncipe",
@@ -1052,7 +1117,8 @@
   "programa": "Gestión del cambio climático para un desarrollo bajo en carbono y resiliente al clima",
   "coincidencia_ppi": 0.38,
   "pagina": 166,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar la capacitación de 200 personas en el cuatrienio en temas de gestión de cambio climático",
@@ -1068,7 +1134,8 @@
   "programa": "Gestión del cambio climático para un desarrollo bajo en carbono y resiliente al clima",
   "coincidencia_ppi": 0.38,
   "pagina": 166,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Reformulación de 1 ruta de cambio climático para el municipio de Carolina del Príncipe",
@@ -1084,7 +1151,8 @@
   "programa": "Gestión del cambio climático para un desarrollo bajo en carbono y resiliente al clima",
   "coincidencia_ppi": 0.38,
   "pagina": 166,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Garantizar la implementación de 5 estrategias educativo ambientales como el CIDEAM, PRAES, PROCEDAS, mesa ambiental y mesa sectorial con porcicultores",
@@ -1100,7 +1168,8 @@
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
   "pagina": 168,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Apoyar 1 red temática de turismo en el municipio de Carolina del Príncipe, en temas de (agroturismo, el ecoturismo, el turismo de aventura, el aviturismo, el senderismo)",
@@ -1116,12 +1185,13 @@
   "programa": "Productividad y competitividad de las empresas colombianas",
   "coincidencia_ppi": 0.39,
   "pagina": 171,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar 16 capacitaciones en temas que fortalezcan el turismo y la atención al turista en el municipio de Carolina del Príncipe",
   "codigo": "350204501",
-  "nombre": "<sup>Capacitaciones</sup> realizadas",
+  "nombre": "Capacitaciones realizadas",
   "linea_base": "0",
   "ano_base": "2023",
   "unidad": "Numero",
@@ -1132,12 +1202,13 @@
   "programa": "Productividad y competitividad de las empresas colombianas",
   "coincidencia_ppi": 0.39,
   "pagina": 171,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar 4 campañas de promoción turística en el cuatrienio que permita fortalecer el sector turístico carolinita",
   "codigo": "350204600",
-  "nombre": "<sup>Campañas</sup> realizadas",
+  "nombre": "Campañas realizadas",
   "linea_base": "0",
   "ano_base": "2023",
   "unidad": "Numero",
@@ -1148,7 +1219,8 @@
   "programa": "Productividad y competitividad de las empresas colombianas",
   "coincidencia_ppi": 0.39,
   "pagina": 171,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar la caracterizació n de 280 familias campesinas de las 6 veredas del territorio municipal de Carolina del Príncipe, para conocimiento de los índices de necesidades básicas insatisfechas",
@@ -1164,7 +1236,8 @@
   "programa": "Inclusión social y productiva para la población en situación de vulnerabilidad",
   "coincidencia_ppi": 0.52,
   "pagina": 178,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Carolina del Príncipe, incluyendo unidades agrícolas en (café, Gulupa, horticultura y pecuarias en apicultura,",
@@ -1180,7 +1253,8 @@
   "programa": "Inclusión productiva de pequeños productores rurales",
   "coincidencia_ppi": 0.4,
   "pagina": 180,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Asistir técnicamente a 3 empresas de emprendedores en el proceso de legalización y formalización en el municipio de Carolina del Príncipe",
@@ -1196,12 +1270,13 @@
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 0.45,
   "pagina": 182,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar el mejoramiento de 4 productos de emprendedores en temas de etiquetado, marca y demás aspectos comerciales en el cuatrienio",
   "codigo": "350202601",
-  "nombre": "<sup>Productos</sup> mejorados",
+  "nombre": "Productos mejorados",
   "linea_base": "0",
   "ano_base": "2023",
   "unidad": "Numero",
@@ -1212,7 +1287,8 @@
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 0.45,
   "pagina": 182,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Fortalecer 2 organizaciones en gestión para el emprendimiento solidario (asociación de comerciantes y asociación de emprendedores)",
@@ -1228,7 +1304,8 @@
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 0.45,
   "pagina": 183,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Asesoras 15 emprendimientos por año en temas de asociatividad, mejoramiento de la calidad de los",
@@ -1244,7 +1321,8 @@
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 0.45,
   "pagina": 183,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Beneficiar a 120 productores carolinitas con el acceso a maquinaria para el mejoramiento productivo del campo, durante el cuatrienio",
@@ -1260,7 +1338,8 @@
   "programa": "Inclusión productiva de pequeños productores rurales",
   "coincidencia_ppi": 0.4,
   "pagina": 186,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Evaluar, actualizar e implementar 1 plan agropecuario municipal en el municipio de Carolina del Príncipe",
@@ -1276,7 +1355,8 @@
   "programa": "Inclusión productiva de pequeños productores rurales",
   "coincidencia_ppi": 0.4,
   "pagina": 186,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Apoyar 2 jóvenes rurales del municipio de Carolina del",
@@ -1292,7 +1372,8 @@
   "programa": "Inclusión productiva de pequeños productores rurales",
   "coincidencia_ppi": 0.4,
   "pagina": 186,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Generar convenios",
@@ -1306,7 +1387,8 @@
   "programa": "Servicios financieros y gestión del riesgo para las actividades agropecuarias y rurales",
   "coincidencia_ppi": 0.41,
   "pagina": 188,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "con entidades financieraspara el",
@@ -1322,7 +1404,8 @@
   "programa": "Servicios financieros y gestión del riesgo para las actividades agropecuarias y rurales",
   "coincidencia_ppi": 0.41,
   "pagina": 188,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Elaborar 1 política",
@@ -1336,7 +1419,8 @@
   "programa": "Ordenamiento social y uso productivo del territorio rural",
   "coincidencia_ppi": 0.42,
   "pagina": 189,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "pública orientada a",
@@ -1352,7 +1436,8 @@
   "programa": "Ordenamiento social y uso productivo del territorio rural",
   "coincidencia_ppi": 0.42,
   "pagina": 189,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "asegurar los derechos",
@@ -1366,7 +1451,8 @@
   "programa": "Ordenamiento social y uso productivo del territorio rural",
   "coincidencia_ppi": 0.42,
   "pagina": 189,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Lograr 100 bovinos",
@@ -1380,7 +1466,8 @@
   "programa": "Ciencia, tecnología e innovación agropecuaria",
   "coincidencia_ppi": 0.36,
   "pagina": 190,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "mejorados genéticamente en",
@@ -1396,7 +1483,8 @@
   "programa": "Ciencia, tecnología e innovación agropecuaria",
   "coincidencia_ppi": 0.36,
   "pagina": 190,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Adecuar 1 infraestructura para la pos cosecha de gulupa de la asociación de mujeres",
@@ -1412,7 +1500,8 @@
   "programa": "Acceso a soluciones de vivienda",
   "coincidencia_ppi": 0.4,
   "pagina": 192,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Adquirir 1 tractor y 3 aditamentos para fortalecer la agricultura en el municipio de Carolina del Príncipe",
@@ -1428,7 +1517,8 @@
   "programa": "Acceso a soluciones de vivienda",
   "coincidencia_ppi": 0.4,
   "pagina": 192,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "Vivienda",
@@ -1443,7 +1533,8 @@
   "linea": "ECONOMICA",
   "coincidencia_ppi": 0.4,
   "pagina": 192,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Mejorar 50 viviendas campesinas en el cuatrienio, dando cumplimiento a la ley de protección especial de campesinado de acuerdo al acto legislativo 01 de 2023",
@@ -1459,7 +1550,8 @@
   "programa": "Acceso a soluciones de vivienda",
   "coincidencia_ppi": 0.4,
   "pagina": 193,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Construir 5 viviendas rurales en sitio propio para campesinos, dando cumplimiento al acto legislativo 01 de 2023",
@@ -1475,7 +1567,8 @@
   "programa": "Acceso a soluciones de vivienda",
   "coincidencia_ppi": 0.4,
   "pagina": 193,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar 200 mejoramientos de vivienda tanto urbanas como rurales en el cuatrienio para garantizar el cierre de brechas existentes en el municipio",
@@ -1491,7 +1584,8 @@
   "programa": "Acceso a soluciones de vivienda",
   "coincidencia_ppi": 0.4,
   "pagina": 195,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Beneficiar 10 hogares con construcción de vivienda en sitio propio en el municipio de Carolina del Príncipe, tanto urbana como rural",
@@ -1507,7 +1601,8 @@
   "programa": "Acceso a soluciones de vivienda",
   "coincidencia_ppi": 0.4,
   "pagina": 195,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar la construcción de 25 viviendas de",
@@ -1523,12 +1618,13 @@
   "programa": "Acceso a soluciones de vivienda",
   "coincidencia_ppi": 0.4,
   "pagina": 195,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar el mantenimiento y mejoramiento de 20 kilómetros de vía terciaria en el municipio de Carolina del Príncipe",
   "codigo": "240204100",
-  "nombre": "<sup>Vía terciaria</sup> mejorada",
+  "nombre": "Vía terciaria mejorada",
   "linea_base": "10",
   "ano_base": "2023",
   "unidad": "Kilómetros",
@@ -1539,7 +1635,8 @@
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 0.32,
   "pagina": 198,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar la construcción de 4000 metros lineales de placa huella en sitios críticos de las vías terciarias municipales (vías claritas, anillo vial la granja la vega y la vía de la Camelia)",
@@ -1547,7 +1644,7 @@
   "nombre": "Vía terciaria mejorada (placa huella)",
   "linea_base": "800",
   "ano_base": "2022",
-  "unidad": "<sup>Metros</sup> lineales",
+  "unidad": "Metros lineales",
   "responsable": "Dirección Administrativa De Planeación",
   "tipo_acumulado": "",
   "linea": "ECONOMICA",
@@ -1555,12 +1652,13 @@
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 0.32,
   "pagina": 198,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar el mejoramiento de 0.5 kilómetros en el área urbana del municipio de Carolina del Príncipe",
   "codigo": "240211400",
-  "nombre": "<sup>Vía urbana</sup> mejorada",
+  "nombre": "Vía urbana mejorada",
   "linea_base": "0.2",
   "ano_base": "2023",
   "unidad": "Kilómetros",
@@ -1571,7 +1669,8 @@
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 0.32,
   "pagina": 198,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar el mantenimiento de 1 kilómetro en el área urbana del municipio de Carolina del Príncipe",
@@ -1587,7 +1686,8 @@
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 0.32,
   "pagina": 198,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar 3 estudios y diseños para optimización de las vías terciarias de la Teresita, la Camelia y Claritas",
@@ -1603,7 +1703,8 @@
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 0.32,
   "pagina": 198,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar un (1) estudios y diseños para optimización de las vías urbanas",
@@ -1619,7 +1720,8 @@
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 0.32,
   "pagina": 198,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar la ampliación o rectificación de 3",
@@ -1635,7 +1737,8 @@
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 0.32,
   "pagina": 198,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Realizar la instalación de 12 señales verticales en la red vial del Municipio de Carolina del Príncipe",
@@ -1650,7 +1753,8 @@
   "programa": "Seguridad de transporte",
   "coincidencia_ppi": 0.36,
   "pagina": 200,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Mejoramiento de vías urbanas y rurales del municipio de Carolina del Príncipe",
@@ -1665,7 +1769,8 @@
   "programa": "Seguridad de transporte",
   "coincidencia_ppi": 0.36,
   "pagina": 200,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "metros de pasamanos en la red vial del municipio de Carolina del Príncipe",
@@ -1681,12 +1786,13 @@
   "programa": "Seguridad de transporte",
   "coincidencia_ppi": 0.36,
   "pagina": 200,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Optimizar 5 acueductos en el cuatrienio en el municipio de Carolina del Príncipe",
   "codigo": "400301700",
-  "nombre": "<sup>Acueductos</sup> optimizados",
+  "nombre": "Acueductos optimizados",
   "linea_base": "1",
   "ano_base": "2021",
   "unidad": "Numero",
@@ -1697,7 +1803,8 @@
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 0.47,
   "pagina": 202,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Construir 20 unidades sanitarias con saneamiento",
@@ -1711,7 +1818,8 @@
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 0.47,
   "pagina": 202,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "básico para vivienda rural del municipio de Carolina del",
@@ -1727,7 +1835,8 @@
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 0.47,
   "pagina": 202,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Implementar 20 sistemas de potabilización de agua en el cuatrienio en el municipio de Carolina del Príncipe",
@@ -1743,12 +1852,13 @@
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 0.47,
   "pagina": 202,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar los estudios y diseños de 1 plan maestro de acueducto",
   "codigo": "400304200",
-  "nombre": "<sup>Estudios o diseños</sup> realizados",
+  "nombre": "Estudios o diseños realizados",
   "linea_base": "0",
   "ano_base": "2023",
   "unidad": "Numero",
@@ -1759,12 +1869,13 @@
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 0.47,
   "pagina": 202,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "1 alcantarillado con inicio de la implementación del plan maestro",
   "codigo": "400302000",
-  "nombre": "<sup>Alcantarillados</sup> optimizados",
+  "nombre": "Alcantarillados optimizados",
   "linea_base": "0",
   "ano_base": "2023",
   "unidad": "Numero",
@@ -1775,7 +1886,8 @@
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 0.47,
   "pagina": 202,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Mejorar 1 sede educativa en zona urbana del municipio de Carolina del Príncipe en el cuatrienio",
@@ -1791,7 +1903,8 @@
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
   "coincidencia_ppi": 1.0,
   "pagina": 204,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Mejorar 3 sedes educativas en zona rural del municipio de Carolina del Príncipe en el cuatrienio",
@@ -1807,7 +1920,8 @@
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
   "coincidencia_ppi": 1.0,
   "pagina": 204,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar la intervención y mejoramiento de 3 comedores - cocinas de sedes educativas en el municipio de Carolina del Príncipe",
@@ -1823,7 +1937,8 @@
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
   "coincidencia_ppi": 1.0,
   "pagina": 204,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar la intervención y mejoramiento de 1 biblioteca del municipio de Carolina del Príncipe",
@@ -1839,12 +1954,13 @@
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
   "coincidencia_ppi": 1.0,
   "pagina": 204,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar el mantenimiento de 6 sedes educativas durante el cuatrienio en el municipio de Carolina del Príncipe",
   "codigo": "220106200",
-  "nombre": "<sup>Sedes</sup> mantenidas",
+  "nombre": "Sedes mantenidas",
   "linea_base": "1",
   "ano_base": "2023",
   "unidad": "Numero",
@@ -1855,7 +1971,8 @@
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
   "coincidencia_ppi": 1.0,
   "pagina": 204,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar la adecuación de 1 hospital de primer nivel del municipio de Carolina del Príncipe",
@@ -1871,7 +1988,8 @@
   "programa": "Aseguramiento y prestación integral de servicios de salud",
   "coincidencia_ppi": 1.0,
   "pagina": 206,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar 1 dotación en el cuatrienio al hospital de primer nivel San Rafael del municipio de Carolina del Príncipe",
@@ -1887,12 +2005,13 @@
   "programa": "Aseguramiento y prestación integral de servicios de salud",
   "coincidencia_ppi": 1.0,
   "pagina": 206,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Adquirir equipos cómputo dotación",
   "codigo": "390300804",
-  "nombre": "<sup>Equipos</sup> adquiridos",
+  "nombre": "Equipos adquiridos",
   "linea_base": "0",
   "ano_base": "2023",
   "unidad": "Número",
@@ -1903,7 +2022,8 @@
   "programa": "Fomento a vocaciones y formación, generación, uso y apropiación social del conocimiento de la ciencia, tecnología e innovación.",
   "coincidencia_ppi": 0.43,
   "pagina": 207,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar 1 dotación en el cuatrienio al centro de promoción de la legalidad y convivencia en el municipio de Carolina del Príncipe",
@@ -1919,7 +2039,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial.",
   "coincidencia_ppi": 0.47,
   "pagina": 210,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar 1 dotación al comando de policía municipal durante el cuatrienio",
@@ -1935,12 +2056,13 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial.",
   "coincidencia_ppi": 0.47,
   "pagina": 210,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar el mantenimiento de 6 sedes institucionales y las adecuaciones que sean necesarias en aquellas que lo ameriten en el cuatrienio (alcaldía municipal, centro día vida, sede de la mujer, casa de juventud, sede de discapacidad y parque educativo)",
   "codigo": "459901600",
-  "nombre": "<sup>Sedes</sup> mantenidas",
+  "nombre": "Sedes mantenidas",
   "linea_base": "6",
   "ano_base": "2023",
   "unidad": "Numero",
@@ -1951,12 +2073,13 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial.",
   "coincidencia_ppi": 0.47,
   "pagina": 211,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar la dotación de 6 sedes institucionales en el cuatrienio (alcaldía municipal, centro día vida, sede de la mujer, casa de juventud, sede de discapacidad y parque educativo)",
   "codigo": "459903400",
-  "nombre": "<sup>Sedes</sup> dotadas",
+  "nombre": "Sedes dotadas",
   "linea_base": "6",
   "ano_base": "2023",
   "unidad": "Numero",
@@ -1967,7 +2090,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial.",
   "coincidencia_ppi": 0.47,
   "pagina": 211,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar la adecuación de 1 casa de la cultura municipal en el cuatrienio",
@@ -1983,7 +2107,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial.",
   "coincidencia_ppi": 0.47,
   "pagina": 213,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar los procesos de reforzamiento estructural a 1 casa de la cultura municipal.",
@@ -1999,7 +2124,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial.",
   "coincidencia_ppi": 0.47,
   "pagina": 213,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar el mantenimiento de 5 infraestructuras deportivas del municipio de Carolina del Príncipe en el",
@@ -2015,7 +2141,8 @@
   "programa": "Fomento a la recreación, la actividad física y eldeporte",
   "coincidencia_ppi": 0.99,
   "pagina": 214,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar la adecuación de 3 salones comunales de los diferentes organismos comunitarios existentes en el municipio de Carolina del Príncipe",
@@ -2031,7 +2158,8 @@
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos",
   "coincidencia_ppi": 1.0,
   "pagina": 218,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Construir 3 salones comunitarios en el municipio de Carolina del Príncipe",
@@ -2047,7 +2175,8 @@
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos",
   "coincidencia_ppi": 1.0,
   "pagina": 218,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar la dotación de 3 salones comunitarios en el cuatrienio en el municipio de Carolina del Príncipe",
@@ -2063,7 +2192,8 @@
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos",
   "coincidencia_ppi": 1.0,
   "pagina": 218,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Construir 1 parque lineal en la quebrada santa bárbara en el municipio de Carolina del Príncipe",
@@ -2079,7 +2209,8 @@
   "programa": "Productividad y competitividad de las empresas colombianas.",
   "coincidencia_ppi": 0.39,
   "pagina": 220,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "contempla: 1. El mejoramiento del kiosco municipal con accesibilidad. 2. Adecuación del espacio para los emprendedores del municipio. 3. Mejoramiento del parque principal.",
@@ -2096,12 +2227,13 @@
   "programa": "Productividad y competitividad de las empresas colombianas.",
   "coincidencia_ppi": 0.39,
   "pagina": 221,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar 1 señalización turística y de sitios de interés turístico en el cuatrienio en el municipio de Carolina del Príncipe",
   "codigo": "350205900",
-  "nombre": "<sup>Señalización</sup> realizada",
+  "nombre": "Señalización realizada",
   "linea_base": "1",
   "ano_base": "2023",
   "unidad": "Numero",
@@ -2113,7 +2245,8 @@
   "programa": "Productividad y competitividad de las empresas colombianas.",
   "coincidencia_ppi": 0.39,
   "pagina": 221,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Construir 1 terminal turístico para información de sitios de interés, hoteles y demás en el municipio de Carolina del Príncipe",
@@ -2130,12 +2263,13 @@
   "programa": "Productividad y competitividad de las empresas colombianas.",
   "coincidencia_ppi": 0.39,
   "pagina": 221,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Mejorar 1 sendero turístico comprendido en el anillo vial la granja - la vega como",
   "codigo": "350209800",
-  "nombre": "<sup>Senderos</sup> mejorados",
+  "nombre": "Senderos mejorados",
   "linea_base": "0",
   "ano_base": "2023",
   "unidad": "Numero",
@@ -2147,7 +2281,8 @@
   "programa": "Productividad y competitividad de las empresas colombianas.",
   "coincidencia_ppi": 0.39,
   "pagina": 221,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Construir 100 metros cuadrados de espacio público (casas de la conchita y parque lineal Santa Bárbara) que garanticen el goce efectivo del mismo en la comunidad carolinita",
@@ -2155,7 +2290,7 @@
   "nombre": "Espacio público construido",
   "linea_base": "0",
   "ano_base": "2023",
-  "unidad": "<sup>Metros</sup> cuadrados",
+  "unidad": "Metros cuadrados",
   "responsable": "Dirección Administrativa De Planeación",
   "tipo_acumulado": "",
   "linea": "ECONOMICA",
@@ -2163,7 +2298,8 @@
   "programa": "Productividad y competitividad de las empresas colombianas.",
   "coincidencia_ppi": 0.39,
   "pagina": 223,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar estudios y diseños para la construcción de 1 espacio público nuevo (mejoramiento del parque principal y parque lineal",
@@ -2179,7 +2315,8 @@
   "programa": "Productividad y competitividad de las empresas colombianas.",
   "coincidencia_ppi": 0.39,
   "pagina": 223,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Garantizar el mantenimiento de 18200 metros lineales de redes de alumbrado público",
@@ -2195,7 +2332,8 @@
   "programa": "Consolidación productiva del sector de energía eléctrica.",
   "coincidencia_ppi": 0.37,
   "pagina": 224,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar la instalación de 3 soluciones de conectividad en instituciones públicas del municipio en el cuatrienio",
@@ -2211,7 +2349,8 @@
   "programa": "Facilitar el acceso y uso de las tecnologías de la información y las comunicaciones en todo el territorio nacional.",
   "coincidencia_ppi": 0.36,
   "pagina": 227,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Beneficiar a 360 estudiantes de las sedes educativas en el municipio con apoyo en tecnologías de la información y las comunicaciones",
@@ -2227,7 +2366,8 @@
   "programa": "Facilitar el acceso y uso de las tecnologías de la información y las comunicaciones en todo el territorio nacional.",
   "coincidencia_ppi": 0.36,
   "pagina": 227,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Implementar 2 estrategias en el cuatrienio para fortalecer las capacidades institucionales en vocaciones científicas",
@@ -2243,7 +2383,8 @@
   "programa": "Fomento a vocaciones y formación, generación, uso y apropiación social del conocimiento de la ciencia, tecnología e innovación.",
   "coincidencia_ppi": 0.43,
   "pagina": 229,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Fortalecer las capacidades de los 34 maestros del municipio en temas de ciencia, tecnología e innovación en el cuatrienio",
@@ -2259,7 +2400,8 @@
   "programa": "Fomento a vocaciones y formación, generación, uso y apropiación social del conocimiento de la ciencia, tecnología e innovación.",
   "coincidencia_ppi": 0.43,
   "pagina": 229,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Garantizar la atención de 300 personas en el cuatrienio en los servicios prestados en el centro de convivencia ciudadana (casa de justicia) del municipio de Carolina del Príncipe",
@@ -2275,7 +2417,8 @@
   "programa": "Promoción de los métodos de resolución de conflictos",
   "coincidencia_ppi": 0.4,
   "pagina": 231,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Garantizar la operación oportuna de un (1) centro de convivencia ciudadana (casa de justicia) en el cuatrienio",
@@ -2291,7 +2434,8 @@
   "programa": "Promoción de los métodos de resolución de conflictos",
   "coincidencia_ppi": 0.4,
   "pagina": 231,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Desarrollar 1 estrategia por año para que la comunidad carolinita tenga acceso a la justicia de forma equitativa",
@@ -2307,7 +2451,8 @@
   "programa": "Promoción de los métodos de resolución de conflictos",
   "coincidencia_ppi": 0.4,
   "pagina": 231,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar 16 piezas comunicativas en el cuatrienio en temas de resolución de conflictos y convivencia ciudadana",
@@ -2323,7 +2468,8 @@
   "programa": "Promoción de los métodos de resolución de conflictos",
   "coincidencia_ppi": 0.4,
   "pagina": 232,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Publicar a través de las redes sociales, pagina webydemás",
@@ -2339,7 +2485,8 @@
   "programa": "Promoción de los métodos de resolución de conflictos",
   "coincidencia_ppi": 0.4,
   "pagina": 232,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Atender a 10 personas sindicadas privadas de la libertad con servicios de alimentación por año en el cuatrienio, en el municipio de Carolina del Príncipe",
@@ -2355,23 +2502,25 @@
   "programa": "Promoción de los métodos de resolución de conflictos",
   "coincidencia_ppi": 0.4,
   "pagina": 234,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Implementar en el cuatrienio 8",
-  "codigo": "<sup>450100400</sup>",
-  "nombre": "<sup>Iniciativas para</sup> lapromoción",
+  "codigo": "450100400",
+  "nombre": "Iniciativas para lapromoción",
   "linea_base": "2",
   "ano_base": "2023",
   "unidad": "Numero",
-  "responsable": "<sup>Secretaria</sup> General Y De",
+  "responsable": "Secretaria General Y De",
   "tipo_acumulado": "",
   "linea": "INSTITUCIONAL 5.5. LINEA ESTRATEGICA 5. PENSANDO NUESTRA GOBERNANZA",
   "sector": "Población LGTBIQ+",
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
   "pagina": 236,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar 1 rendición pública de cuentas por año y 1 rendición pública de cuentas de infancia y adolescencia en el cuatrienio, para dar cumplimiento a requisitos legales en el municipio de Carolina del Príncipe",
@@ -2387,7 +2536,8 @@
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos",
   "coincidencia_ppi": 1.0,
   "pagina": 239,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Implementar en el cuatrienio 8 estrategias de promoción de la garantía de derechos humanos en el territorio municipal de Carolina del Príncipe",
@@ -2403,7 +2553,8 @@
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos",
   "coincidencia_ppi": 1.0,
   "pagina": 239,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Continuar con la implementación de 4 rutas de atención en temas de derechos humanos y restablecimiento de derechos existentes en el",
@@ -2419,7 +2570,8 @@
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos",
   "coincidencia_ppi": 1.0,
   "pagina": 239,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Continuar con la implementación de 4 estrategias que permitan disminuir y controlar el riesgo en las situaciones prevalentes de origen laboral",
@@ -2435,7 +2587,8 @@
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 0.45,
   "pagina": 241,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Continuar con la implementación de 4 estrategias de promoción de la salud en situaciones prevalentes de origen laboral",
@@ -2451,7 +2604,8 @@
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 0.45,
   "pagina": 241,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar la capacitación a 140 servidores públicos de la administración municipal de Carolina del Príncipe que permita un adecuado desarrollo de las funciones encomendadas",
@@ -2467,7 +2621,8 @@
   "programa": "Formación para el trabajo",
   "coincidencia_ppi": 0.4,
   "pagina": 243,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar la",
@@ -2483,7 +2638,8 @@
   "programa": "Formación para el trabajo",
   "coincidencia_ppi": 0.4,
   "pagina": 243,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Continuar con la implementación de 1 sistema de gestión documental que garantice la correcta conservación de los documentos al interior de la entidad",
@@ -2499,12 +2655,13 @@
   "programa": "Formación para el trabajo",
   "coincidencia_ppi": 0.4,
   "pagina": 246,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Gestionar 1 archivo municipal mediante actividades administrativas y técnicas tendientes a la planificación, manejo y organización de la documentación producida y recibida, desde su origen hasta su destino final, con el objeto de facilitar su utilización y conservación. (ley 594de2000)",
   "codigo": "459901701",
-  "nombre": "<sup>Archivos</sup> gestionados",
+  "nombre": "Archivos gestionados",
   "linea_base": "1",
   "ano_base": "2023",
   "unidad": "Numero",
@@ -2515,7 +2672,8 @@
   "programa": "Formación para el trabajo",
   "coincidencia_ppi": 0.4,
   "pagina": 246,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Actualizar 1 instrumento archivístico en el cuatrienio en la administración municipal de Carolina del Príncipe",
@@ -2531,7 +2689,8 @@
   "programa": "Formación para el trabajo",
   "coincidencia_ppi": 0.4,
   "pagina": 246,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Crear 1 instrumento archivístico en el cuatrienio en la administración municipal de Carolina del",
@@ -2547,7 +2706,8 @@
   "programa": "Formación para el trabajo",
   "coincidencia_ppi": 0.4,
   "pagina": 246,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar un plan de movilidad vial en el municipio de Carolina del Príncipe",
@@ -2563,12 +2723,13 @@
   "programa": "Seguridad de Transporte",
   "coincidencia_ppi": 0.36,
   "pagina": 248,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "meta": "Realizar estrategias educación durante cuatrienio municipio",
   "codigo": "240900900",
-  "nombre": "<sup>Estrategias</sup> implementadas",
+  "nombre": "Estrategias implementadas",
   "linea_base": "8",
   "ano_base": "2023",
   "unidad": "numero",
@@ -2579,15 +2740,16 @@
   "programa": "Seguridad de Transporte",
   "coincidencia_ppi": 0.36,
   "pagina": 249,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
-  "nombre": "Pensado en Nuestra Gente/sector salud",
-  "meta": "Elabora un (1) plan de salud pública territorial",
+  "nombre": "Planes de salud pública elaborados",
   "unidad": "Número",
   "linea_base": "1",
   "ano_base": "2023",
   "fuente": "Dirección Local de Salud",
+  "meta": "1",
   "tipo_acumulado": "",
   "responsable": "",
   "linea": "INSTITUCIONAL 5.5. LINEA ESTRATEGICA 5. PENSANDO NUESTRA GOBERNANZA",
@@ -2595,15 +2757,16 @@
   "programa": "Gestión y Vigilancia de los Riesgos Sanitarios y Ambientales",
   "coincidencia_ppi": 0.43,
   "pagina": 436,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
-  "nombre": "Pensado en Nuestra Gente/Sector Salud",
-  "meta": "Realizar cuatro (4) planes de intervenciones colectivas durante el cuatrienio",
+  "nombre": "Planes de intervenciones colectivas",
   "unidad": "Número",
   "linea_base": "1",
   "ano_base": "2023",
   "fuente": "Dirección Local de Salud",
+  "meta": "4",
   "tipo_acumulado": "",
   "responsable": "",
   "linea": "INSTITUCIONAL 5.5. LINEA ESTRATEGICA 5. PENSANDO NUESTRA GOBERNANZA",
@@ -2611,15 +2774,16 @@
   "programa": "Gestión y Vigilancia de los Riesgos Sanitarios y Ambientales",
   "coincidencia_ppi": 0.43,
   "pagina": 436,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
-  "nombre": "Pensado en Nuestra Gente/Sector Salud",
-  "meta": "Realizar 20 campañas de gestión del riesgo en temas de consumo de sustancias psicoactivas",
+  "nombre": "Campañas de gestión del riesgo en temas de consumo de sustancias psicoactivas implementadas",
   "unidad": "Número",
   "linea_base": "SLB",
   "ano_base": "SLB",
   "fuente": "Dirección Local de Salud",
+  "meta": "20",
   "tipo_acumulado": "",
   "responsable": "",
   "linea": "INSTITUCIONAL 5.5. LINEA ESTRATEGICA 5. PENSANDO NUESTRA GOBERNANZA",
@@ -2627,15 +2791,16 @@
   "programa": "Gestión y Vigilancia de los Riesgos Sanitarios y Ambientales",
   "coincidencia_ppi": 0.43,
   "pagina": 436,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
-  "nombre": "Pensado en Nuestra Gente/Sector Salud",
-  "meta": "Implementar 24 estrategias de promoción de la participación social en salud",
+  "nombre": "Estrategias de promoción de la participación social en salud implementadas",
   "unidad": "Número",
   "linea_base": "SLB",
   "ano_base": "SLB",
   "fuente": "Dirección Local de Salud",
+  "meta": "24",
   "tipo_acumulado": "",
   "responsable": "",
   "linea": "INSTITUCIONAL 5.5. LINEA ESTRATEGICA 5. PENSANDO NUESTRA GOBERNANZA",
@@ -2643,15 +2808,16 @@
   "programa": "Gestión y Vigilancia de los Riesgos Sanitarios y Ambientales",
   "coincidencia_ppi": 0.43,
   "pagina": 436,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
-  "nombre": "Pensado en Nuestra Gente/Sector Salud",
-  "meta": "Implementar 20 estrategias de promoción de la salud en temas de salud sexual y reproductiva en el cuatrienio",
+  "nombre": "Estrategias de promoción de la salud en",
   "unidad": "Número",
   "linea_base": "SLB",
   "ano_base": "SLB",
   "fuente": "Dirección Local de Salud",
+  "meta": "20",
   "tipo_acumulado": "",
   "responsable": "",
   "linea": "INSTITUCIONAL 5.5. LINEA ESTRATEGICA 5. PENSANDO NUESTRA GOBERNANZA",
@@ -2659,6 +2825,7 @@
   "programa": "Gestión y Vigilancia de los Riesgos Sanitarios y Ambientales",
   "coincidencia_ppi": 0.43,
   "pagina": 436,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  }
 ]

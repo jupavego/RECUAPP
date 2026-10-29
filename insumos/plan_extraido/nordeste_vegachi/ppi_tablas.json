@@ -1,0 +1,80 @@
+[
+ {
+  "pagina": 160,
+  "cabecera": "VIGENCIA",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "1.2.3.1.01",
+    "anios": [
+     0,
+     171,
+     186,
+     203
+    ],
+    "total": 560
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     25642,
+     28001,
+     30578,
+     33391
+    ],
+    "total": 117612
+   }
+  ],
+  "ncols": 8,
+  "financiero": false
+ },
+ {
+  "pagina": 162,
+  "cabecera": "VIGENC",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "1.2.3.1.01",
+    "anios": [
+     0,
+     164,
+     179,
+     195
+    ],
+    "total": 538
+   },
+   {
+    "etiqueta": "1.2.3.1.05",
+    "anios": [
+     0,
+     641,
+     700,
+     765
+    ],
+    "total": 2106
+   },
+   {
+    "etiqueta": "1.2.3.3.08",
+    "anios": [
+     0,
+     7093,
+     7746,
+     8458
+    ],
+    "total": 23297
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     25411,
+     27749,
+     30301,
+     33089
+    ],
+    "total": 116550
+   }
+  ],
+  "ncols": 8,
+  "financiero": false
+ }
+]

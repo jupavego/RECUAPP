@@ -1,0 +1,835 @@
+[
+ {
+  "pagina": 158,
+  "cabecera": "Nombre de concepto(Datos en miles de millones)",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Ingresos totales (sin financiación)",
+    "anios": [
+     64180,
+     67389,
+     70759,
+     74297
+    ],
+    "total": 276625
+   },
+   {
+    "etiqueta": "ingresos corrientes",
+    "anios": [
+     59670,
+     62654,
+     65787,
+     69076
+    ],
+    "total": 257187
+   },
+   {
+    "etiqueta": "Tributarios",
+    "anios": [
+     25184,
+     26443,
+     27766,
+     29154
+    ],
+    "total": 108547
+   },
+   {
+    "etiqueta": "impuesto sobre vehículos automotores",
+    "anios": [
+     1271,
+     1334,
+     1401,
+     1471
+    ],
+    "total": 5477
+   },
+   {
+    "etiqueta": "impuesto predial unificado",
+    "anios": [
+     2271,
+     2385,
+     2504,
+     2629
+    ],
+    "total": 9789
+   },
+   {
+    "etiqueta": "impuesto de industria y comercio",
+    "anios": [
+     16370,
+     17188,
+     18047,
+     18950
+    ],
+    "total": 70555
+   },
+   {
+    "etiqueta": "sobretasa a la gasolina",
+    "anios": [
+     666,
+     699,
+     734,
+     771
+    ],
+    "total": 2870
+   },
+   {
+    "etiqueta": "Estampillas",
+    "anios": [
+     1306,
+     1372,
+     1440,
+     1512
+    ],
+    "total": 5630
+   },
+   {
+    "etiqueta": "impuesto de alumbrado público",
+    "anios": [
+     624,
+     655,
+     688,
+     722
+    ],
+    "total": 2689
+   },
+   {
+    "etiqueta": "resto ingresos tributarios",
+    "anios": [
+     2678,
+     2811,
+     2952,
+     3100
+    ],
+    "total": 11541
+   },
+   {
+    "etiqueta": "no tributarios",
+    "anios": [
+     2222,
+     2333,
+     2450,
+     2572
+    ],
+    "total": 9577
+   },
+   {
+    "etiqueta": "Contribuciones",
+    "anios": [
+     746,
+     783,
+     822,
+     863
+    ],
+    "total": 3214
+   },
+   {
+    "etiqueta": "tasas y derechos administrativos",
+    "anios": [
+     186,
+     195,
+     205,
+     215
+    ],
+    "total": 801
+   },
+   {
+    "etiqueta": "multas, sanciones e intereses de mora",
+    "anios": [
+     509,
+     535,
+     561,
+     590
+    ],
+    "total": 2195
+   },
+   {
+    "etiqueta": "venta de bienes y servicios",
+    "anios": [
+     775,
+     814,
+     854,
+     897
+    ],
+    "total": 3340
+   },
+   {
+    "etiqueta": "participación y derechos por monopolio",
+    "anios": [
+     6,
+     7,
+     7,
+     7
+    ],
+    "total": 27
+   },
+   {
+    "etiqueta": "transferencias corrientes",
+    "anios": [
+     32264,
+     33878,
+     35572,
+     37350
+    ],
+    "total": 139064
+   },
+   {
+    "etiqueta": "sistema general de participaciones",
+    "anios": [
+     14639,
+     15371,
+     16140,
+     16947
+    ],
+    "total": 63097
+   },
+   {
+    "etiqueta": "educación",
+    "anios": [
+     868,
+     912,
+     957,
+     1005
+    ],
+    "total": 3742
+   },
+   {
+    "etiqueta": "salud",
+    "anios": [
+     8756,
+     9194,
+     9653,
+     10136
+    ],
+    "total": 37739
+   },
+   {
+    "etiqueta": "agua potable y saneamiento básico",
+    "anios": [
+     1799,
+     1889,
+     1983,
+     2082
+    ],
+    "total": 7753
+   },
+   {
+    "etiqueta": "propósito general",
+    "anios": [
+     2948,
+     3096,
+     3251,
+     3413
+    ],
+    "total": 12708
+   },
+   {
+    "etiqueta": "de libre destinación municipios categorías 4, 5 y 6",
+    "anios": [
+     1315,
+     1380,
+     1449,
+     1522
+    ],
+    "total": 5666
+   },
+   {
+    "etiqueta": "distintos de libre de destinación",
+    "anios": [
+     1634,
+     1715,
+     1801,
+     1891
+    ],
+    "total": 7041
+   },
+   {
+    "etiqueta": "asignaciones especiales",
+    "anios": [
+     268,
+     281,
+     295,
+     310
+    ],
+    "total": 1154
+   },
+   {
+    "etiqueta": "participación en impuestos",
+    "anios": [
+     185,
+     194,
+     204,
+     214
+    ],
+    "total": 797
+   },
+   {
+    "etiqueta": "a entidades territoriales distintas de participaciones y compensaciones",
+    "anios": [
+     2,
+     2,
+     2,
+     2
+    ],
+    "total": 8
+   },
+   {
+    "etiqueta": "resto transferencias corrientes",
+    "anios": [
+     17438,
+     18310,
+     19226,
+     20187
+    ],
+    "total": 75161
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 159,
+  "cabecera": "Nombre de concepto (Datos en miles de millones)",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "gastos totales",
+    "anios": [
+     71490,
+     75065,
+     78818,
+     82759
+    ],
+    "total": 308132
+   },
+   {
+    "etiqueta": "gastos corrientes",
+    "anios": [
+     71490,
+     75065,
+     78818,
+     82759
+    ],
+    "total": 308132
+   },
+   {
+    "etiqueta": "Funcionamiento",
+    "anios": [
+     9661,
+     10144,
+     10651,
+     11184
+    ],
+    "total": 41640
+   },
+   {
+    "etiqueta": "gastos de personal",
+    "anios": [
+     4001,
+     4201,
+     4411,
+     4631
+    ],
+    "total": 17244
+   },
+   {
+    "etiqueta": "adquisición de bienes y servicios",
+    "anios": [
+     3749,
+     3936,
+     4133,
+     4339
+    ],
+    "total": 16157
+   },
+   {
+    "etiqueta": "transferencias corrientes",
+    "anios": [
+     1685,
+     1770,
+     1858,
+     1951
+    ],
+    "total": 7264
+   },
+   {
+    "etiqueta": "sentencias y conciliaciones",
+    "anios": [
+     223,
+     234,
+     245,
+     258
+    ],
+    "total": 960
+   },
+   {
+    "etiqueta": "otras transferencias corrientes",
+    "anios": [
+     1463,
+     1536,
+     1613,
+     1693
+    ],
+    "total": 6305
+   },
+   {
+    "etiqueta": "transferencias de capital",
+    "anios": [
+     187,
+     196,
+     206,
+     216
+    ],
+    "total": 805
+   },
+   {
+    "etiqueta": "gastos de comercialización y producción",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "adquisición de activos financieros",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "disminución de pasivos",
+    "anios": [
+     40,
+     42,
+     44,
+     46
+    ],
+    "total": 172
+   },
+   {
+    "etiqueta": "gastos por tributos, tasas, contribuciones, multas, sanciones e intereses de mora",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "gastos organismos de control",
+    "anios": [
+     607,
+     637,
+     669,
+     703
+    ],
+    "total": 2616
+   },
+   {
+    "etiqueta": "gastos de personal",
+    "anios": [
+     374,
+     392,
+     412,
+     433
+    ],
+    "total": 1611
+   },
+   {
+    "etiqueta": "resto gastos de órganos de control",
+    "anios": [
+     233,
+     245,
+     257,
+     270
+    ],
+    "total": 1005
+   },
+   {
+    "etiqueta": "pago de bonos pensionales y cuotas partes de bono pensional",
+    "anios": [
+     274,
+     288,
+     302,
+     317
+    ],
+    "total": 1181
+   },
+   {
+    "etiqueta": "aportes al fondo de contingencias de las entidades estatales",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "gastos operativos en sectores sociales",
+    "anios": [
+     60416,
+     63437,
+     66609,
+     69939
+    ],
+    "total": 260401
+   },
+   {
+    "etiqueta": "Educación",
+    "anios": [
+     4607,
+     4838,
+     5080,
+     5334
+    ],
+    "total": 19859
+   },
+   {
+    "etiqueta": "salud y protección social",
+    "anios": [
+     32827,
+     34469,
+     36192,
+     38002
+    ],
+    "total": 141490
+   },
+   {
+    "etiqueta": "vivienda, ciudad y territorio",
+    "anios": [
+     2496,
+     2621,
+     2752,
+     2889
+    ],
+    "total": 10758
+   },
+   {
+    "etiqueta": "gobierno territorial",
+    "anios": [
+     3352,
+     3519,
+     3695,
+     3880
+    ],
+    "total": 14446
+   },
+   {
+    "etiqueta": "Transporte",
+    "anios": [
+     3435,
+     3606,
+     3787,
+     3976
+    ],
+    "total": 14804
+   },
+   {
+    "etiqueta": "inclusión social y reconciliación",
+    "anios": [
+     2557,
+     2685,
+     2819,
+     2960
+    ],
+    "total": 11021
+   },
+   {
+    "etiqueta": "deporte, recreación y cultura",
+    "anios": [
+     3679,
+     3863,
+     4056,
+     4259
+    ],
+    "total": 15857
+   },
+   {
+    "etiqueta": "resto de sectores",
+    "anios": [
+     7463,
+     7837,
+     8228,
+     8640
+    ],
+    "total": 32168
+   },
+   {
+    "etiqueta": "intereses y comisiones de la deuda",
+    "anios": [
+     532,
+     559,
+     587,
+     616
+    ],
+    "total": 2294
+   },
+   {
+    "etiqueta": "Interna",
+    "anios": [
+     532,
+     559,
+     587,
+     616
+    ],
+    "total": 2294
+   },
+   {
+    "etiqueta": "Externa",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 160,
+  "cabecera": "Sector",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Comercio, industria y turismo",
+    "anios": [
+     295872367,
+     305872367,
+     316372367,
+     327397367
+    ],
+    "total": 1245514468
+   },
+   {
+    "etiqueta": "Tecnologías de la información y las comunicacio nes",
+    "anios": [
+     58000000,
+     60900000,
+     63945000,
+     67142250
+    ],
+    "total": 249987250
+   },
+   {
+    "etiqueta": "Comercio, industria y turismo",
+    "anios": [
+     189150000,
+     198607500,
+     208537875,
+     218964769
+    ],
+    "total": 815260144
+   },
+   {
+    "etiqueta": "Vivienda, ciudad y territorio",
+    "anios": [
+     227937008,
+     239333858,
+     251300551,
+     263865578
+    ],
+    "total": 982436995
+   }
+  ],
+  "ncols": 8,
+  "financiero": false
+ },
+ {
+  "pagina": 161,
+  "cabecera": "Sector",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Educación",
+    "anios": [
+     2103347578,
+     2154526203,
+     2208263759,
+     2264688193
+    ],
+    "total": 8730825733
+   },
+   {
+    "etiqueta": "Salud y protección social",
+    "anios": [
+     235117490,
+     235117490,
+     235117490,
+     235117490
+    ],
+    "total": 940469960
+   },
+   {
+    "etiqueta": "Inclusión social y reconciliació n",
+    "anios": [
+     91800000,
+     96390000,
+     101209500,
+     106269975
+    ],
+    "total": 395669475
+   }
+  ],
+  "ncols": 8,
+  "financiero": false
+ },
+ {
+  "pagina": 163,
+  "cabecera": "Sector",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Agro- pecuario",
+    "anios": [
+     366100000,
+     382155000,
+     399012750,
+     424816763
+    ],
+    "total": 1572084513
+   },
+   {
+    "etiqueta": "Gestión del riesgo",
+    "anios": [
+     349875000,
+     365868750,
+     382662188,
+     400295297
+    ],
+    "total": 1498701234
+   },
+   {
+    "etiqueta": "Ambiental",
+    "anios": [
+     115000000,
+     116300000,
+     117665000,
+     119098250
+    ],
+    "total": 468063250
+   },
+   {
+    "etiqueta": "Transport e",
+    "anios": [
+     2772599,
+     2888729,
+     3010666399,
+     3138699718
+    ],
+    "total": 11810695928
+   },
+   {
+    "etiqueta": "Minería",
+    "anios": [
+     61840000,
+     64932000,
+     68178600,
+     71587530
+    ],
+    "total": 266538130
+   }
+  ],
+  "ncols": 8,
+  "financiero": false
+ },
+ {
+  "pagina": 164,
+  "cabecera": "Sector",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Desarrollo comunitario",
+    "anios": [
+     340175000,
+     357183750,
+     375042938,
+     393795084
+    ],
+    "total": 1466196772
+   },
+   {
+    "etiqueta": "Transporte",
+    "anios": [
+     188000000,
+     197400000,
+     207270000,
+     217633500
+    ],
+    "total": 810303500
+   },
+   {
+    "etiqueta": "Alumbrado publico",
+    "anios": [
+     624851062,
+     624851062,
+     624851062,
+     624851062
+    ],
+    "total": 2499404248
+   },
+   {
+    "etiqueta": "Seguridad y Convivencia",
+    "anios": [
+     819636443,
+     847738943,
+     872521568,
+     899094574
+    ],
+    "total": 3438991528
+   },
+   {
+    "etiqueta": "Fortalecimi ento Institucional",
+    "anios": [
+     7417700,
+     436485000,
+     456209250,
+     476919713
+    ],
+    "total": 8787313963
+   }
+  ],
+  "ncols": 7,
+  "financiero": false
+ },
+ {
+  "pagina": 176,
+  "cabecera": "Destinación",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Universidad Pública",
+    "anios": [
+     42962829,
+     8178568,
+     7701870,
+     7680058
+    ],
+    "total": 66523325
+   },
+   {
+    "etiqueta": "Amb. y desarrollo",
+    "anios": [
+     202848159,
+     202916310,
+     187991867,
+     197617699
+    ],
+    "total": 791374035
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ }
+]

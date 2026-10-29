@@ -1,0 +1,345 @@
+[
+ {
+  "pagina": 181,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Salud",
+    "anios": [
+     15710,
+     16182,
+     16667,
+     17167
+    ],
+    "total": 65727
+   },
+   {
+    "etiqueta": "Subsidiado",
+    "anios": [
+     15225,
+     15682,
+     16152,
+     16637
+    ],
+    "total": 63696
+   },
+   {
+    "etiqueta": "SGP",
+    "anios": [
+     6557,
+     6754,
+     6956,
+     7165
+    ],
+    "total": 27434
+   },
+   {
+    "etiqueta": "Régimen subsidiado ADRES",
+    "anios": [
+     6809,
+     7013,
+     7224,
+     7441
+    ],
+    "total": 28488
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ },
+ {
+  "pagina": 182,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Concepto",
+    "anios": [
+     2024,
+     2025,
+     2026,
+     2027
+    ],
+    "total": 2027
+   },
+   {
+    "etiqueta": "Régimen Subsidiado",
+    "anios": [
+     1716,
+     1767,
+     1820,
+     1875
+    ],
+    "total": 7179
+   },
+   {
+    "etiqueta": "Destinación",
+    "anios": [
+     3431,
+     3836,
+     3951,
+     3992
+    ],
+    "total": 15212
+   },
+   {
+    "etiqueta": "Libre Inversión",
+    "anios": [
+     2448,
+     2796,
+     2900,
+     2930
+    ],
+    "total": 11076
+   },
+   {
+    "etiqueta": "TOTAL OTRAS FUENTES",
+    "anios": [
+     2555,
+     2632,
+     2710,
+     2792
+    ],
+    "total": 10690
+   },
+   {
+    "etiqueta": "Ingresos corrientes de libre destinación",
+    "anios": [
+     1330,
+     1369,
+     1411,
+     1453
+    ],
+    "total": 5564
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 183,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Transferencias del sector eléctrico",
+    "anios": [
+     1959,
+     2017,
+     2070,
+     2140
+    ],
+    "total": 8146
+   },
+   {
+    "etiqueta": "TOTAL RECURSOS PARA INVERTIR",
+    "anios": [
+     24475,
+     27460,
+     28244,
+     28974
+    ],
+    "total": 109154
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 184,
+  "cabecera": "Líneas",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Línea Estratégica 1: Bienestar social",
+    "anios": [
+     21701,
+     22352,
+     23023,
+     23714
+    ],
+    "total": 90791
+   },
+   {
+    "etiqueta": "Línea Estratégica 2: Desarrollo sostenible, ordenamiento territorial y lajusticia ambiental",
+    "anios": [
+     3424,
+     3525,
+     3630,
+     3737
+    ],
+    "total": 14316
+   },
+   {
+    "etiqueta": "Línea Estratégica 3: Seguridad humana, justiciayordenpúblico",
+    "anios": [
+     516,
+     531,
+     547,
+     564
+    ],
+    "total": 2158
+   },
+   {
+    "etiqueta": "Línea Estratégica 4: Administración transparente y convergencia territorial",
+    "anios": [
+     416,
+     429,
+     441,
+     455
+    ],
+    "total": 1741
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     26057,
+     26838,
+     27641,
+     28469
+    ],
+    "total": 109006
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 185,
+  "cabecera": "Programa",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Desarrollo vial e infraestructura pública",
+    "anios": [
+     1424,
+     1254,
+     1292,
+     1252
+    ],
+    "total": 5222
+   },
+   {
+    "etiqueta": "Total línea",
+    "anios": [
+     2492,
+     2354,
+     2425,
+     2419
+    ],
+    "total": 9690
+   }
+  ],
+  "ncols": 1,
+  "financiero": false
+ },
+ {
+  "pagina": 199,
+  "cabecera": "Concepto de gasto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "ASIGNACIONES DIRECTAS (20% DEL SGR)",
+    "anios": [
+     1262479,
+     224082,
+     211021,
+     210423
+    ],
+    "total": 1908005
+   },
+   {
+    "etiqueta": "ANTICIPADAS (5% DEL",
+    "anios": [
+     238663,
+     62271730,
+     58642144,
+     58476063
+    ],
+    "total": 418053
+   },
+   {
+    "etiqueta": "ASIGNACIÓN PARA LA INVERSIÓN LOCAL SEGÚN NBI Y CUARTA, QUINTA, Y SEXTA CATEGORÍA",
+    "anios": [
+     2206612,
+     1592582,
+     1475448,
+     1550485
+    ],
+    "total": 6825130
+   },
+   {
+    "etiqueta": "ASIGNACIÓN PARA LA INVERSIÓN LOCAL - AMBIENTE Y DESARROLLO SOSTENIBLE",
+    "anios": [
+     267668,
+     245012,
+     226992,
+     238536
+    ],
+    "total": 978209
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     3975423,
+     2123949,
+     1972104,
+     2057921
+    ],
+    "total": 10129399
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 200,
+  "cabecera": "Concepto de gasto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "ASIGNACIONES DIRECTAS (20% DEL SGR)",
+    "anios": [
+     35417498,
+     11204102,
+     10551057,
+     10521175
+    ],
+    "total": 67693833
+   },
+   {
+    "etiqueta": "ANTICIPADAS (5% DEL",
+    "anios": [
+     9842408,
+     3113586,
+     2932107,
+     2923803
+    ],
+    "total": 18811905
+   },
+   {
+    "etiqueta": "SGR)",
+    "anios": [
+     8,
+     3,
+     2,
+     6
+    ],
+    "total": 19
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     45259,
+     14317,
+     13483,
+     13444
+    ],
+    "total": 86505739
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ }
+]

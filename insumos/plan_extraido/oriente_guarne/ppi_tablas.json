@@ -1,0 +1,2160 @@
+[
+ {
+  "pagina": 277,
+  "cabecera": "CONCEPTO",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "INGRESOS TOTALES",
+    "anios": [
+     153990,
+     177569,
+     234639,
+     169097
+    ],
+    "total": 735295
+   },
+   {
+    "etiqueta": "INGRESOS CORRIENTES",
+    "anios": [
+     131160,
+     139318,
+     147984,
+     157189
+    ],
+    "total": 575651
+   },
+   {
+    "etiqueta": "TRIBUTARIOS",
+    "anios": [
+     86773,
+     92170,
+     97903,
+     103992
+    ],
+    "total": 380838
+   },
+   {
+    "etiqueta": "Impuesto sobre vehículos automotores",
+    "anios": [
+     625,
+     664,
+     705,
+     749
+    ],
+    "total": 2743
+   },
+   {
+    "etiqueta": "Impuesto predial unificado",
+    "anios": [
+     12392,
+     13163,
+     13982,
+     14852
+    ],
+    "total": 54389
+   },
+   {
+    "etiqueta": "Impuesto de industria y comercio",
+    "anios": [
+     43905,
+     46636,
+     49537,
+     52618
+    ],
+    "total": 192696
+   },
+   {
+    "etiqueta": "Sobretasa ambiental",
+    "anios": [
+     2515,
+     2671,
+     2837,
+     3014
+    ],
+    "total": 11037
+   },
+   {
+    "etiqueta": "Sobretasa a la gasolina",
+    "anios": [
+     5642,
+     5993,
+     6366,
+     6762
+    ],
+    "total": 24763
+   },
+   {
+    "etiqueta": "Estampillas",
+    "anios": [
+     7288,
+     7741,
+     8223,
+     8734
+    ],
+    "total": 31986
+   },
+   {
+    "etiqueta": "Adulto",
+    "anios": [
+     3518,
+     3737,
+     3969,
+     4216
+    ],
+    "total": 15440
+   },
+   {
+    "etiqueta": "20% Fonpet",
+    "anios": [
+     704,
+     747,
+     794,
+     843
+    ],
+    "total": 3088
+   },
+   {
+    "etiqueta": "70% Centro Vida",
+    "anios": [
+     1970,
+     2092,
+     2223,
+     2361
+    ],
+    "total": 8646
+   },
+   {
+    "etiqueta": "30% Centro De Bienestar",
+    "anios": [
+     844,
+     897,
+     953,
+     1012
+    ],
+    "total": 3706
+   },
+   {
+    "etiqueta": "Cultura",
+    "anios": [
+     1684,
+     1789,
+     1900,
+     2018
+    ],
+    "total": 7391
+   },
+   {
+    "etiqueta": "20% Fonpet",
+    "anios": [
+     337,
+     358,
+     380,
+     404
+    ],
+    "total": 1479
+   },
+   {
+    "etiqueta": "10% Gestor Cultural",
+    "anios": [
+     135,
+     143,
+     152,
+     161
+    ],
+    "total": 591
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 278,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "10% Bibliotecas Publicas",
+    "anios": [
+     135,
+     143,
+     152,
+     161
+    ],
+    "total": 591
+   },
+   {
+    "etiqueta": "80% Inversión Cultura",
+    "anios": [
+     1078,
+     1145,
+     1216,
+     1292
+    ],
+    "total": 4731
+   },
+   {
+    "etiqueta": "Prohospital",
+    "anios": [
+     294,
+     312,
+     332,
+     352
+    ],
+    "total": 1290
+   },
+   {
+    "etiqueta": "Tasa pro deporte",
+    "anios": [
+     1792,
+     1904,
+     2022,
+     2148
+    ],
+    "total": 7866
+   },
+   {
+    "etiqueta": "Impuesto de alumbrado público",
+    "anios": [
+     2142,
+     2275,
+     2417,
+     2567
+    ],
+    "total": 9401
+   },
+   {
+    "etiqueta": "Resto ingresos tributarios",
+    "anios": [
+     12263,
+     13026,
+     13836,
+     14697
+    ],
+    "total": 53822
+   },
+   {
+    "etiqueta": "Publicidad visual",
+    "anios": [
+     128,
+     136,
+     144,
+     153
+    ],
+    "total": 561
+   },
+   {
+    "etiqueta": "Delineación urbanística",
+    "anios": [
+     11571,
+     12290,
+     13055,
+     13867
+    ],
+    "total": 50783
+   },
+   {
+    "etiqueta": "Impuesto sobre teléfonos",
+    "anios": [
+     149,
+     158,
+     168,
+     178
+    ],
+    "total": 653
+   },
+   {
+    "etiqueta": "Impuesto transporte oleoducto",
+    "anios": [
+     94,
+     100,
+     106,
+     113
+    ],
+    "total": 413
+   },
+   {
+    "etiqueta": "Sobretasa bomberil",
+    "anios": [
+     322,
+     342,
+     364,
+     386
+    ],
+    "total": 1414
+   },
+   {
+    "etiqueta": "NO TRIBUTARIOS",
+    "anios": [
+     14374,
+     15268,
+     16218,
+     17227
+    ],
+    "total": 63087
+   },
+   {
+    "etiqueta": "Contribuciones",
+    "anios": [
+     4265,
+     4530,
+     4812,
+     5112
+    ],
+    "total": 18719
+   },
+   {
+    "etiqueta": "Fondo de Seguridad",
+    "anios": [
+     2170,
+     2305,
+     2449,
+     2601
+    ],
+    "total": 9525
+   },
+   {
+    "etiqueta": "Sector eléctrico",
+    "anios": [
+     2080,
+     2209,
+     2346,
+     2492
+    ],
+    "total": 9127
+   },
+   {
+    "etiqueta": "Estratificación económica",
+    "anios": [
+     15,
+     16,
+     17,
+     18
+    ],
+    "total": 66
+   },
+   {
+    "etiqueta": "Multas, sanciones e intereses de mora",
+    "anios": [
+     2339,
+     2485,
+     2640,
+     2804
+    ],
+    "total": 10268
+   },
+   {
+    "etiqueta": "Multas de transito",
+    "anios": [
+     650,
+     691,
+     734,
+     779
+    ],
+    "total": 2854
+   },
+   {
+    "etiqueta": "Transito",
+    "anios": [
+     455,
+     483,
+     513,
+     545
+    ],
+    "total": 1996
+   },
+   {
+    "etiqueta": "Simit",
+    "anios": [
+     65,
+     69,
+     73,
+     78
+    ],
+    "total": 285
+   },
+   {
+    "etiqueta": "Policía de transito",
+    "anios": [
+     130,
+     138,
+     147,
+     156
+    ],
+    "total": 571
+   },
+   {
+    "etiqueta": "Multas de policía",
+    "anios": [
+     72,
+     76,
+     81,
+     86
+    ],
+    "total": 315
+   },
+   {
+    "etiqueta": "Sanciones código policía 30% proy cultura",
+    "anios": [
+     26,
+     28,
+     29,
+     31
+    ],
+    "total": 114
+   },
+   {
+    "etiqueta": "Sanciones código policía 15% funcionamiento",
+    "anios": [
+     10,
+     11,
+     11,
+     12
+    ],
+    "total": 44
+   },
+   {
+    "etiqueta": "Sanciones código policia 25% materialización",
+    "anios": [
+     16,
+     17,
+     18,
+     19
+    ],
+    "total": 70
+   },
+   {
+    "etiqueta": "Sanciones código polica 15% modalidad de vigilancia",
+    "anios": [
+     10,
+     11,
+     11,
+     12
+    ],
+    "total": 44
+   },
+   {
+    "etiqueta": "Sanciones código policia 15% sistema de informacion",
+    "anios": [
+     10,
+     11,
+     11,
+     12
+    ],
+    "total": 44
+   },
+   {
+    "etiqueta": "Sanciones de impuestos",
+    "anios": [
+     119,
+     127,
+     134,
+     143
+    ],
+    "total": 523
+   },
+   {
+    "etiqueta": "Intereses de Mora",
+    "anios": [
+     1498,
+     1591,
+     1690,
+     1796
+    ],
+    "total": 6575
+   },
+   {
+    "etiqueta": "Intereses de mora ICLD(predial, industria, avisos, publicidad",
+    "anios": [
+     1440,
+     1530,
+     1625,
+     1726
+    ],
+    "total": 6321
+   },
+   {
+    "etiqueta": "Intereses código de policia",
+    "anios": [
+     5,
+     6,
+     6,
+     7
+    ],
+    "total": 24
+   },
+   {
+    "etiqueta": "Intereses sobretasa bomberil",
+    "anios": [
+     52,
+     56,
+     59,
+     63
+    ],
+    "total": 230
+   },
+   {
+    "etiqueta": "Venta de bienes y servicios",
+    "anios": [
+     228,
+     243,
+     258,
+     274
+    ],
+    "total": 1003
+   },
+   {
+    "etiqueta": "Espacio publico",
+    "anios": [
+     19,
+     20,
+     21,
+     22
+    ],
+    "total": 82
+   },
+   {
+    "etiqueta": "casa de la cultura",
+    "anios": [
+     39,
+     42,
+     44,
+     47
+    ],
+    "total": 172
+   },
+   {
+    "etiqueta": "ocupación de vías",
+    "anios": [
+     12,
+     13,
+     14,
+     14
+    ],
+    "total": 53
+   },
+   {
+    "etiqueta": "nomenclatura",
+    "anios": [
+     45,
+     48,
+     51,
+     54
+    ],
+    "total": 198
+   },
+   {
+    "etiqueta": "catastro municipal",
+    "anios": [
+     8,
+     8,
+     9,
+     9
+    ],
+    "total": 34
+   },
+   {
+    "etiqueta": "concepto de bomberos",
+    "anios": [
+     15,
+     16,
+     17,
+     18
+    ],
+    "total": 66
+   },
+   {
+    "etiqueta": "Derechos de transito",
+    "anios": [
+     40,
+     43,
+     46,
+     48
+    ],
+    "total": 177
+   },
+   {
+    "etiqueta": "Arriendos",
+    "anios": [
+     50,
+     53,
+     57,
+     60
+    ],
+    "total": 220
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 279,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Otros ingresos no tributarios",
+    "anios": [
+     5889,
+     6255,
+     6644,
+     7058
+    ],
+    "total": 25846
+   },
+   {
+    "etiqueta": "Obligaciones Urbanísticas",
+    "anios": [
+     4791,
+     5089,
+     5405,
+     5742
+    ],
+    "total": 21027
+   },
+   {
+    "etiqueta": "Actuaciones Urbanísticas",
+    "anios": [
+     192,
+     204,
+     217,
+     231
+    ],
+    "total": 844
+   },
+   {
+    "etiqueta": "Compensaciones parqueaderos",
+    "anios": [
+     906,
+     962,
+     1022,
+     1086
+    ],
+    "total": 3976
+   },
+   {
+    "etiqueta": "Fondo de Riesgos",
+    "anios": [
+     124,
+     132,
+     140,
+     149
+    ],
+    "total": 545
+   },
+   {
+    "etiqueta": "Fondo de Compra de predios",
+    "anios": [
+     764,
+     812,
+     862,
+     916
+    ],
+    "total": 3354
+   },
+   {
+    "etiqueta": "Fondo de Contingencias",
+    "anios": [
+     764,
+     812,
+     862,
+     916
+    ],
+    "total": 3354
+   },
+   {
+    "etiqueta": "TRANSFERENCIAS CORRIENTES",
+    "anios": [
+     30013,
+     31880,
+     33863,
+     35969
+    ],
+    "total": 131725
+   },
+   {
+    "etiqueta": "Sistema General de Participaciones",
+    "anios": [
+     16242,
+     17252,
+     18325,
+     19465
+    ],
+    "total": 71284
+   },
+   {
+    "etiqueta": "Educación",
+    "anios": [
+     1075,
+     1142,
+     1213,
+     1288
+    ],
+    "total": 4718
+   },
+   {
+    "etiqueta": "calidad",
+    "anios": [
+     614,
+     652,
+     693,
+     736
+    ],
+    "total": 2695
+   },
+   {
+    "etiqueta": "gratuidad",
+    "anios": [
+     461,
+     490,
+     520,
+     552
+    ],
+    "total": 2023
+   },
+   {
+    "etiqueta": "Salud",
+    "anios": [
+     19474,
+     20685,
+     21972,
+     23339
+    ],
+    "total": 85470
+   },
+   {
+    "etiqueta": "SGP subsidiado ssf",
+    "anios": [
+     4964,
+     5273,
+     5601,
+     5949
+    ],
+    "total": 21787
+   },
+   {
+    "etiqueta": "SGP salud publica",
+    "anios": [
+     706,
+     750,
+     797,
+     846
+    ],
+    "total": 3099
+   },
+   {
+    "etiqueta": "SGP subsidio a la oferta",
+    "anios": [
+     476,
+     506,
+     537,
+     570
+    ],
+    "total": 2089
+   },
+   {
+    "etiqueta": "Coljuegos 75%",
+    "anios": [
+     517,
+     549,
+     583,
+     620
+    ],
+    "total": 2269
+   },
+   {
+    "etiqueta": "coljuegos 25%",
+    "anios": [
+     172,
+     183,
+     194,
+     206
+    ],
+    "total": 755
+   },
+   {
+    "etiqueta": "Subsidiado departamento",
+    "anios": [
+     2057,
+     2185,
+     2321,
+     2465
+    ],
+    "total": 9028
+   },
+   {
+    "etiqueta": "Subsidiado Adress",
+    "anios": [
+     10582,
+     11240,
+     11939,
+     12682
+    ],
+    "total": 46443
+   },
+   {
+    "etiqueta": "Agua potable y saneamiento básico",
+    "anios": [
+     3754,
+     3987,
+     4236,
+     4499
+    ],
+    "total": 16476
+   },
+   {
+    "etiqueta": "Propósito general",
+    "anios": [
+     4996,
+     5307,
+     5637,
+     5987
+    ],
+    "total": 21927
+   },
+   {
+    "etiqueta": "libre inversión",
+    "anios": [
+     4208,
+     4470,
+     4748,
+     5043
+    ],
+    "total": 18469
+   },
+   {
+    "etiqueta": "cultura",
+    "anios": [
+     345,
+     366,
+     389,
+     413
+    ],
+    "total": 1513
+   },
+   {
+    "etiqueta": "deporte",
+    "anios": [
+     443,
+     471,
+     500,
+     531
+    ],
+    "total": 1945
+   },
+   {
+    "etiqueta": "Asignaciones especiales (alimentación escolar)",
+    "anios": [
+     271,
+     288,
+     306,
+     325
+    ],
+    "total": 1190
+   },
+   {
+    "etiqueta": "Atención integral de la primera infancia",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Participación en impuestos (degüello)",
+    "anios": [
+     12,
+     13,
+     13,
+     14
+    ],
+    "total": 52
+   },
+   {
+    "etiqueta": "Participación en impuestos (Plusvalía)",
+    "anios": [
+     269,
+     285,
+     303,
+     322
+    ],
+    "total": 1179
+   },
+   {
+    "etiqueta": "Participación en contribuciones servicios públicos",
+    "anios": [
+     163,
+     173,
+     184,
+     195
+    ],
+    "total": 715
+   },
+   {
+    "etiqueta": "INGRESOS DE CAPITAL",
+    "anios": [
+     2413,
+     2563,
+     2722,
+     2892
+    ],
+    "total": 10590
+   },
+   {
+    "etiqueta": "Rendimientos financieros",
+    "anios": [
+     1293,
+     1373,
+     1459,
+     1550
+    ],
+    "total": 5675
+   },
+   {
+    "etiqueta": "Retiros del FONPET",
+    "anios": [
+     797,
+     846,
+     899,
+     955
+    ],
+    "total": 3497
+   },
+   {
+    "etiqueta": "Resto recursos de capital reintegros",
+    "anios": [
+     323,
+     343,
+     365,
+     387
+    ],
+    "total": 1418
+   },
+   {
+    "etiqueta": "COFINANCIACION- COMPENSACION",
+    "anios": [
+     20417,
+     15688,
+     68932,
+     9017
+    ],
+    "total": 114054
+   },
+   {
+    "etiqueta": "Casetas de acción comunal construidas (cuantificar valor de 1- 2-2-2)",
+    "anios": [
+     400,
+     800,
+     800,
+     800
+    ],
+    "total": 2800
+   },
+   {
+    "etiqueta": "Construcción sede municipal",
+    "anios": [
+     0,
+     0,
+     24000,
+     0
+    ],
+    "total": 24000
+   },
+   {
+    "etiqueta": "Construcción y dotación hospital",
+    "anios": [
+     0,
+     0,
+     36000,
+     0
+    ],
+    "total": 36000
+   },
+   {
+    "etiqueta": "Vías terciarias",
+    "anios": [
+     2800,
+     2800,
+     2800,
+     2800
+    ],
+    "total": 11200
+   },
+   {
+    "etiqueta": "Alimentación escolar Gobernación",
+    "anios": [
+     1704,
+     1755,
+     1808,
+     1862
+    ],
+    "total": 7129
+   },
+   {
+    "etiqueta": "Mantenimiento manual de vías gobernación",
+    "anios": [
+     79,
+     81,
+     84,
+     86
+    ],
+    "total": 330
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 280,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Transporte escolar gobernación",
+    "anios": [
+     136,
+     140,
+     144,
+     149
+    ],
+    "total": 569
+   },
+   {
+    "etiqueta": "Saneamiento rural - doméstico",
+    "anios": [
+     390,
+     390,
+     390,
+     390
+    ],
+    "total": 1560
+   },
+   {
+    "etiqueta": "Gestión del Riesgo - Limpieza de Quebradas",
+    "anios": [
+     315,
+     315,
+     315,
+     315
+    ],
+    "total": 1260
+   },
+   {
+    "etiqueta": "Saneamiento rural - centros educativos",
+    "anios": [
+     365,
+     365,
+     365,
+     365
+    ],
+    "total": 1460
+   },
+   {
+    "etiqueta": "Saneamiento rural - colectivo",
+    "anios": [
+     350,
+     350,
+     350,
+     350
+    ],
+    "total": 1400
+   },
+   {
+    "etiqueta": "PRISER",
+    "anios": [
+     65,
+     65,
+     65,
+     65
+    ],
+    "total": 260
+   },
+   {
+    "etiqueta": "Estufas eficientes",
+    "anios": [
+     168,
+     168,
+     168,
+     168
+    ],
+    "total": 672
+   },
+   {
+    "etiqueta": "Vivienda VIVA",
+    "anios": [
+     333,
+     354,
+     376,
+     399
+    ],
+    "total": 1462
+   },
+   {
+    "etiqueta": "Ampliación de plantas residuales",
+    "anios": [
+     2404,
+     0,
+     0,
+     0
+    ],
+    "total": 2404
+   },
+   {
+    "etiqueta": "Centro cultural 2 etapa Instituto de cultura de Antioquia",
+    "anios": [
+     1500,
+     0,
+     0,
+     0
+    ],
+    "total": 1500
+   },
+   {
+    "etiqueta": "Indeportes Skape park",
+    "anios": [
+     0,
+     2700,
+     0,
+     0
+    ],
+    "total": 2700
+   },
+   {
+    "etiqueta": "Acueducto y alcantarillado chaparral y san Ignacio",
+    "anios": [
+     1596,
+     0,
+     0,
+     0
+    ],
+    "total": 1596
+   },
+   {
+    "etiqueta": "Carrera 52A departamento",
+    "anios": [
+     1268,
+     1268,
+     1268,
+     1268
+    ],
+    "total": 5072
+   },
+   {
+    "etiqueta": "Centro de integración Min Interior",
+    "anios": [
+     2544,
+     0,
+     0,
+     0
+    ],
+    "total": 2544
+   },
+   {
+    "etiqueta": "Actualización Catastral",
+    "anios": [
+     4000,
+     4000,
+     0,
+     0
+    ],
+    "total": 8000
+   },
+   {
+    "etiqueta": "Compra de predios con la gobernación",
+    "anios": [
+     0,
+     137,
+     0,
+     0
+    ],
+    "total": 137
+   },
+   {
+    "etiqueta": "EMPRESTITOS",
+    "anios": [
+     0,
+     20000,
+     15000,
+     0
+    ],
+    "total": 35000
+   },
+   {
+    "etiqueta": "Centro de Educación Superior",
+    "anios": [
+     0,
+     20000,
+     0,
+     0
+    ],
+    "total": 20000
+   },
+   {
+    "etiqueta": "Construcción sede municipal",
+    "anios": [
+     0,
+     0,
+     6000,
+     0
+    ],
+    "total": 6000
+   },
+   {
+    "etiqueta": "Construcción y dotación hospital",
+    "anios": [
+     0,
+     0,
+     9000,
+     0
+    ],
+    "total": 9000
+   },
+   {
+    "etiqueta": "REGALIAS",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Regalías",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ },
+ {
+  "pagina": 280,
+  "cabecera": "GASTOS",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "GASTOS TOTALES",
+    "anios": [
+     153990,
+     177569,
+     234639,
+     169097
+    ],
+    "total": 735295
+   },
+   {
+    "etiqueta": "CONCEJO",
+    "anios": [
+     5190,
+     2327,
+     2471,
+     2625
+    ],
+    "total": 12613
+   },
+   {
+    "etiqueta": "PERSONERIA",
+    "anios": [
+     1683,
+     1787,
+     1898,
+     2017
+    ],
+    "total": 7385
+   },
+   {
+    "etiqueta": "FUNCIONAMIENTO",
+    "anios": [
+     32083,
+     34962,
+     38105,
+     41535
+    ],
+    "total": 146685
+   },
+   {
+    "etiqueta": "Nomina",
+    "anios": [
+     18650,
+     20420,
+     22358,
+     24479
+    ],
+    "total": 85907
+   },
+   {
+    "etiqueta": "Mesadas,cuotaspartes",
+    "anios": [
+     1837,
+     1951,
+     2073,
+     2202
+    ],
+    "total": 8063
+   },
+   {
+    "etiqueta": "Gastos Generales",
+    "anios": [
+     8390,
+     9186,
+     10058,
+     11012
+    ],
+    "total": 38646
+   },
+   {
+    "etiqueta": "Salud funcionamiento",
+    "anios": [
+     172,
+     183,
+     194,
+     206
+    ],
+    "total": 755
+   },
+   {
+    "etiqueta": "Transferencias",
+    "anios": [
+     3034,
+     3222,
+     3423,
+     3636
+    ],
+    "total": 13315
+   },
+   {
+    "etiqueta": "DEUDA",
+    "anios": [
+     8460,
+     15171,
+     17521,
+     16083
+    ],
+    "total": 57235
+   },
+   {
+    "etiqueta": "Amortización",
+    "anios": [
+     5180,
+     10020,
+     11213,
+     10209
+    ],
+    "total": 36622
+   },
+   {
+    "etiqueta": "Intereses",
+    "anios": [
+     2516,
+     4339,
+     5446,
+     4958
+    ],
+    "total": 17259
+   },
+   {
+    "etiqueta": "Fondo de Contingencias",
+    "anios": [
+     764,
+     812,
+     862,
+     916
+    ],
+    "total": 3354
+   },
+   {
+    "etiqueta": "INVERSION",
+    "anios": [
+     106575,
+     123322,
+     174643,
+     106838
+    ],
+    "total": 511378
+   },
+   {
+    "etiqueta": "Alimentación escolar",
+    "anios": [
+     1975,
+     2043,
+     2114,
+     2187
+    ],
+    "total": 8319
+   },
+   {
+    "etiqueta": "Alumbradopublico",
+    "anios": [
+     2142,
+     2275,
+     2417,
+     2567
+    ],
+    "total": 9401
+   },
+   {
+    "etiqueta": "Ambiental",
+    "anios": [
+     4497,
+     4673,
+     4861,
+     5061
+    ],
+    "total": 19092
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 281,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Bibliotecaspublicas",
+    "anios": [
+     135,
+     143,
+     152,
+     161
+    ],
+    "total": 591
+   },
+   {
+    "etiqueta": "Centro de bienestar",
+    "anios": [
+     844,
+     897,
+     953,
+     1012
+    ],
+    "total": 3706
+   },
+   {
+    "etiqueta": "Centro vida",
+    "anios": [
+     1970,
+     2092,
+     2223,
+     2361
+    ],
+    "total": 8646
+   },
+   {
+    "etiqueta": "Cultura",
+    "anios": [
+     1423,
+     1511,
+     1605,
+     1705
+    ],
+    "total": 6244
+   },
+   {
+    "etiqueta": "Deporte",
+    "anios": [
+     2235,
+     2374,
+     2522,
+     2679
+    ],
+    "total": 9810
+   },
+   {
+    "etiqueta": "Educación",
+    "anios": [
+     1211,
+     1282,
+     1357,
+     1437
+    ],
+    "total": 5287
+   },
+   {
+    "etiqueta": "Estratificación",
+    "anios": [
+     15,
+     16,
+     17,
+     18
+    ],
+    "total": 66
+   },
+   {
+    "etiqueta": "Gestor cultural",
+    "anios": [
+     135,
+     143,
+     152,
+     161
+    ],
+    "total": 591
+   },
+   {
+    "etiqueta": "Inversión libre inversión ICLD",
+    "anios": [
+     34874,
+     33161,
+     32849,
+     36360
+    ],
+    "total": 137244
+   },
+   {
+    "etiqueta": "Infraestructura",
+    "anios": [
+     3200,
+     3600,
+     78600,
+     3600
+    ],
+    "total": 89000
+   },
+   {
+    "etiqueta": "Libre inversión",
+    "anios": [
+     6093,
+     6472,
+     6874,
+     7302
+    ],
+    "total": 26741
+   },
+   {
+    "etiqueta": "Parqueaderos",
+    "anios": [
+     906,
+     962,
+     1022,
+     1086
+    ],
+    "total": 3976
+   },
+   {
+    "etiqueta": "Riesgos",
+    "anios": [
+     514,
+     546,
+     580,
+     616
+    ],
+    "total": 2256
+   },
+   {
+    "etiqueta": "Saludpublica",
+    "anios": [
+     706,
+     750,
+     797,
+     846
+    ],
+    "total": 3099
+   },
+   {
+    "etiqueta": "Salud reg. subsidiado",
+    "anios": [
+     18120,
+     19247,
+     20444,
+     21716
+    ],
+    "total": 79527
+   },
+   {
+    "etiqueta": "Salud servicio a la oferta",
+    "anios": [
+     476,
+     506,
+     537,
+     570
+    ],
+    "total": 2089
+   },
+   {
+    "etiqueta": "Saneamiento básico",
+    "anios": [
+     3917,
+     4160,
+     4419,
+     4694
+    ],
+    "total": 17190
+   },
+   {
+    "etiqueta": "Seguridad",
+    "anios": [
+     2176,
+     2311,
+     2455,
+     2608
+    ],
+    "total": 9550
+   },
+   {
+    "etiqueta": "Seguridad cultura",
+    "anios": [
+     26,
+     28,
+     29,
+     31
+    ],
+    "total": 114
+   },
+   {
+    "etiqueta": "Seguridad materialización",
+    "anios": [
+     16,
+     17,
+     18,
+     19
+    ],
+    "total": 70
+   },
+   {
+    "etiqueta": "Transito",
+    "anios": [
+     455,
+     483,
+     513,
+     545
+    ],
+    "total": 1996
+   },
+   {
+    "etiqueta": "Vías,espaciopublico",
+    "anios": [
+     4870,
+     5170,
+     5489,
+     5828
+    ],
+    "total": 21357
+   },
+   {
+    "etiqueta": "Regalías saneamiento básico",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Deporte Skape Park",
+    "anios": [
+     0,
+     2700,
+     0,
+     0
+    ],
+    "total": 2700
+   },
+   {
+    "etiqueta": "Centro regional educación",
+    "anios": [
+     0,
+     20000,
+     0,
+     0
+    ],
+    "total": 20000
+   },
+   {
+    "etiqueta": "Vivienda viva",
+    "anios": [
+     333,
+     354,
+     376,
+     399
+    ],
+    "total": 1462
+   },
+   {
+    "etiqueta": "Centro de integración Min Interior",
+    "anios": [
+     2544,
+     0,
+     0,
+     0
+    ],
+    "total": 2544
+   },
+   {
+    "etiqueta": "Compra depredios con lagobernación",
+    "anios": [
+     0,
+     137,
+     0,
+     0
+    ],
+    "total": 137
+   },
+   {
+    "etiqueta": "Carrera 52A departamento",
+    "anios": [
+     1268,
+     1268,
+     1268,
+     1268
+    ],
+    "total": 5072
+   },
+   {
+    "etiqueta": "Ampliación deplantas residuales PDA",
+    "anios": [
+     2404,
+     0,
+     0,
+     0
+    ],
+    "total": 2404
+   },
+   {
+    "etiqueta": "Acueductoyalcantarillado chaparralysan Ignacio PDA",
+    "anios": [
+     1596,
+     0,
+     0,
+     0
+    ],
+    "total": 1596
+   },
+   {
+    "etiqueta": "Actualización Catastral",
+    "anios": [
+     4000,
+     4000,
+     0,
+     0
+    ],
+    "total": 8000
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ },
+ {
+  "pagina": 283,
+  "cabecera": "Línea",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "1. Nos une la educación, la cultura, el desarrollo humano integralysocial",
+    "anios": [
+     48271,
+     68426,
+     88679,
+     50031
+    ],
+    "total": 255409
+   },
+   {
+    "etiqueta": "convivencia ciudadana, la justicia social y la movilidad",
+    "anios": [
+     5228,
+     5433,
+     5711,
+     6016
+    ],
+    "total": 22389
+   },
+   {
+    "etiqueta": "3. Nos une el desarrollo económico sostenible para elprogreso",
+    "anios": [
+     15317,
+     14825,
+     15068,
+     16247
+    ],
+    "total": 61459
+   },
+   {
+    "etiqueta": "4. Nos une el territorio",
+    "anios": [
+     33787,
+     30265,
+     30723,
+     29595
+    ],
+    "total": 124372
+   },
+   {
+    "etiqueta": "5. Nos une lagobernanza",
+    "anios": [
+     3970,
+     4370,
+     34459,
+     4946
+    ],
+    "total": 47747
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     106574,
+     123322,
+     174642,
+     106838
+    ],
+    "total": 511377
+   }
+  ],
+  "ncols": 11,
+  "financiero": false
+ },
+ {
+  "pagina": 284,
+  "cabecera": "Componentes",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "1.1. Educación y cultura para el desarrollo humano integral",
+    "anios": [
+     13603,
+     33574,
+     12903,
+     13909
+    ],
+    "total": 73991
+   },
+   {
+    "etiqueta": "1.2. Inclusión social: dirección de vida, familiaydiversidad",
+    "anios": [
+     6666,
+     4597,
+     6584,
+     4756
+    ],
+    "total": 22604
+   },
+   {
+    "etiqueta": "1.3. Bien-estar integral",
+    "anios": [
+     28002,
+     30253,
+     69191,
+     31365
+    ],
+    "total": 158813
+   },
+   {
+    "etiqueta": "2.3. Seguridad, justicia, convivencia y Movilidad",
+    "anios": [
+     4293,
+     4844,
+     5096,
+     5363
+    ],
+    "total": 19597
+   },
+   {
+    "etiqueta": "3.1. Infraestructura para la equidad y la competitividad",
+    "anios": [
+     12135,
+     12636,
+     12743,
+     14088
+    ],
+    "total": 51603
+   },
+   {
+    "etiqueta": "3.2. Desarrollo agropecuarioyrural",
+    "anios": [
+     2367,
+     1671,
+     1775,
+     1575
+    ],
+    "total": 7390
+   },
+   {
+    "etiqueta": "4.1. Potencial ecológicoyambiental",
+    "anios": [
+     4465,
+     4364,
+     7089,
+     4914
+    ],
+    "total": 20833
+   },
+   {
+    "etiqueta": "4.2. Territorio planificado y sostenible",
+    "anios": [
+     5524,
+     5676,
+     1850,
+     2205
+    ],
+    "total": 15256
+   },
+   {
+    "etiqueta": "4.3. Viviendayhábitat",
+    "anios": [
+     23798,
+     20224,
+     21783,
+     22475
+    ],
+    "total": 88282
+   },
+   {
+    "etiqueta": "5.2. Eficiencia administrativa, transparencia y acceso a la información pública",
+    "anios": [
+     2350,
+     2664,
+     32647,
+     3016
+    ],
+    "total": 40678
+   },
+   {
+    "etiqueta": "5.3. Fortalecimiento financiero e institucional",
+    "anios": [
+     1390,
+     1402,
+     1488,
+     1586
+    ],
+    "total": 5867
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     106574,
+     123322,
+     174642,
+     106838
+    ],
+    "total": 511377
+   }
+  ],
+  "ncols": 11,
+  "financiero": false
+ },
+ {
+  "pagina": 285,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": ", ylos saberes.",
+    "anios": [
+     7482,
+     26931,
+     5812,
+     6273
+    ],
+    "total": 46499
+   },
+   {
+    "etiqueta": "1.1.4. Bienestar para la comunidad educativa",
+    "anios": [
+     2127,
+     2272,
+     2367,
+     2474
+    ],
+    "total": 9242
+   },
+   {
+    "etiqueta": "1.1.6. Gestión de la ciudadanía cultural",
+    "anios": [
+     1584,
+     1653,
+     1712,
+     1847
+    ],
+    "total": 6797
+   },
+   {
+    "etiqueta": "1.2.3. Protección integral de las personas mayores.",
+    "anios": [
+     2523,
+     2500,
+     3494,
+     2900
+    ],
+    "total": 11417
+   },
+   {
+    "etiqueta": "nutricional y alimentación escolar",
+    "anios": [
+     3046,
+     3062,
+     3416,
+     3463
+    ],
+    "total": 12987
+   },
+   {
+    "etiqueta": "1.3.4. Aseguramiento y prestación de servicios de salud.",
+    "anios": [
+     20740,
+     19568,
+     20981,
+     22621
+    ],
+    "total": 83910
+   }
+  ],
+  "ncols": 11,
+  "financiero": false
+ },
+ {
+  "pagina": 286,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "1.3.7. Deporte, recreación y actividad física para la transformación socialycultural 1.3.8. Desarrollo del rendimiento deportivo para la competencia",
+    "anios": [
+     1050,
+     1103,
+     1171,
+     1244
+    ],
+    "total": 4569
+   },
+   {
+    "etiqueta": "1.3.9. Espacios deportivos protectores e incluyentes",
+    "anios": [
+     1330,
+     4315,
+     1360,
+     1851
+    ],
+    "total": 8857
+   },
+   {
+    "etiqueta": "garantía de derechos ylajusticia social 2.3.3. Infraestructura para la seguridad, la convivencia y la justicia social",
+    "anios": [
+     2170,
+     2214,
+     2352,
+     2498
+    ],
+    "total": 9236
+   },
+   {
+    "etiqueta": "2.3.5. Fortalecimiento institucional para la regulación y el control vial",
+    "anios": [
+     1095,
+     1162,
+     1235,
+     1312
+    ],
+    "total": 4805
+   },
+   {
+    "etiqueta": "3.1.1. Infraestructura estratégica para la conexión e integración territorial y extraterritorial",
+    "anios": [
+     12135,
+     12636,
+     12743,
+     14088
+    ],
+    "total": 51603
+   }
+  ],
+  "ncols": 11,
+  "financiero": false
+ },
+ {
+  "pagina": 287,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "3.2.2. Sistemas de producción de agricultura campesina, familiar ycomunitaria 3.2.3. Asociatividad, cooperación y fortalecimiento para el desarrollo rural.",
+    "anios": [
+     2200,
+     1274,
+     1353,
+     1438
+    ],
+    "total": 6266
+   },
+   {
+    "etiqueta": "4.1.1. Gestión integral de los recursos, conservación de la biodiversidad y sus servicios eco sistémicos",
+    "anios": [
+     3317,
+     3405,
+     3517,
+     3680
+    ],
+    "total": 13920
+   },
+   {
+    "etiqueta": "4.2.2. Gestión del riesgo de desastres",
+    "anios": [
+     1114,
+     1259,
+     1326,
+     1273
+    ],
+    "total": 4973
+   },
+   {
+    "etiqueta": "4.3.1. Gestión, Promoción y legalización de soluciones habitacionales - Política Pública de Vivienda",
+    "anios": [
+     4517,
+     5320,
+     5076,
+     5366
+    ],
+    "total": 20279
+   },
+   {
+    "etiqueta": "4.3.3. Urbanismo sostenible para el Desarrollo.",
+    "anios": [
+     7260,
+     6815,
+     8160,
+     9016
+    ],
+    "total": 31252
+   }
+  ],
+  "ncols": 11,
+  "financiero": false
+ },
+ {
+  "pagina": 288,
+  "cabecera": "",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "5.3.1. Fortalecimiento de los ingresos y eficiencia del gasto público",
+    "anios": [
+     1390,
+     1402,
+     1488,
+     1586
+    ],
+    "total": 5867
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     106574,
+     123322,
+     174642,
+     106838
+    ],
+    "total": 511377
+   }
+  ],
+  "ncols": 11,
+  "financiero": true
+ }
+]

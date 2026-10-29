@@ -26,11 +26,11 @@ def _sospechosa(i):
 DECISIONES = [
     dict(id="ppi_nivel", pregunta="PPI: ¿a que nivel minimo lo exigimos?",
          opciones=["programa", "sector", "linea", "solo total por año"],
-         evidencia="Solo 6 de 20 planes traen la inversion por linea/sector/programa en texto extraible; 12 no la traen."),
+         evidencia="Solo 21 de 44 planes con indicadores traen la inversion por linea/sector/programa en texto extraible; 23 no la traen."),
     dict(id="resultado", pregunta="¿Guardamos tambien los indicadores de resultado (separados de los de producto)?",
-         opciones=["si", "no"], evidencia="Ya se extraen aparte: 852 de resultado frente a 4.394 de producto."),
+         opciones=["si", "no"], evidencia="Ya se extraen aparte: 1.616 de resultado frente a 9.204 de producto."),
     dict(id="alineacion", pregunta="¿Capturamos la alineacion (ODS, PND, PDD) como categoria propia?",
-         opciones=["si", "no", "solo ODS"], evidencia="Solo la traen algunos planes (p. ej. Angostura, San Andres)."),
+         opciones=["si", "no", "solo ODS"], evidencia="Solo 1 de 44 planes la trae como columna (ODS, PND o PDD)."),
     dict(id="jerarquia", pregunta="Niveles superiores: ¿usamos nombres fijos (linea > sector > programa) o los del plan?",
          opciones=["nombres fijos", "los del plan + equivalencia"],
          evidencia="Los planes los llaman linea, eje, dimension, pilar, reto, componente o estrategia."),
@@ -40,7 +40,7 @@ DECISIONES = [
 def propuesta_categorias(carpetas):
     """Cobertura de cada campo en los planes ya procesados + una recomendacion inicial (editable)."""
     from .categorias import CAMPOS, perfil
-    filas = [perfil(c) for c in carpetas]
+    filas = [f for f in (perfil(c) for c in carpetas) if f["indicadores"] > 0]  # un plan sin indicadores no es evidencia
     n = len(filas)
     out = []
     for campo, nombre in CAMPOS:
@@ -128,7 +128,7 @@ pintaCats();pinta();
 
 def escribe_html(items, destino, categorias=None):
     def js(x):
-        return json.dumps(x, ensure_ascii=False).replace("</", "<\/")
+        return json.dumps(x, ensure_ascii=False).replace("</", "<\\/")
     pag = PAGINA.replace("__DATOS__", js(items)).replace("__CATS__", js(categorias or [])).replace("__DECS__", js(DECISIONES))
     Path(destino).write_text(pag, encoding="utf8")
 

@@ -1,0 +1,366 @@
+[
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 127,
+  "valor": "1903 Inspección, vigilancia y control.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 1
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 128,
+  "valor": "1905 Salud pública",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 2
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 132,
+  "valor": "2201 Calidad, cobertura y fortalecimiento de la educación inicial, preescolar, básica y media",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 3
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 134,
+  "valor": "2202 Calidad y fomento de la educación superior",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 4
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 136,
+  "valor": "3301 Promoción y acceso efectivo a procesos culturales y artísticos",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 5
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 138,
+  "valor": "3399 Fortalecimiento de la gestión y dirección del sector Cultura",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 6
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 139,
+  "valor": "3904 Generación de una cultura que valora y gestiona el conocimiento y la",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 7
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 140,
+  "valor": "4001 Acceso a soluciones de vivienda",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 8
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 141,
+  "valor": "4002 Ordenamiento territorial y desarrollo urbano",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 9
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 142,
+  "valor": "4003 Acceso de la población a los servicios de agua potable y saneamiento básico",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 10
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 145,
+  "valor": "4301 Fomento a la recreación, la actividad física y el deporte.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 11
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 147,
+  "valor": "4302 Formación y preparación de deportistas",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 12
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 150,
+  "valor": "1702 Inclusión productiva de pequeños productores rurales",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 13
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 151,
+  "valor": "1704 Ordenamiento social y uso productivo del territorio rural.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 14
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 152,
+  "valor": "1707 Sanidad agropecuaria e inocuidad agroalimentaria.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 15
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 153,
+  "valor": "1708 Ciencia, tecnología e innovación agropecuaria.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 16
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 154,
+  "valor": "1709 Infraestructura productiva y comercialización",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 17
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 155,
+  "valor": "2102 Consolidación productiva del sector de energía eléctrica.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 18
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 156,
+  "valor": "2104 Consolidación productiva del sector minero.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 19
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 159,
+  "valor": "3201 fortalecimiento del desempeño ambiental de los sectores productivos",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 20
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 160,
+  "valor": "3203 Gestión integral del recurso Hídrico",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 21
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 161,
+  "valor": "3206 Gestión del cambio climático para un desarrollo bajo en carbono y resiliente al clima",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 22
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 162,
+  "valor": "3208 Educación ambiental",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 23
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 164,
+  "valor": "3502 productividad y competitividad de las empresas colombianas.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 24
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 166,
+  "valor": "3602 Generación y formalización del empleo.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 25
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 167,
+  "valor": "3605 Fomento de la investigación, desarrollo tecnológico e innovación del sector trabajo.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 26
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 170,
+  "valor": "0401 Levantamiento y actualización de información estadística de calidad.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 27
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 171,
+  "valor": "2301 Facilitar el acceso y uso de las Tecnologías de la Información y las Comunicaciones en todo el territorio nacional.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 28
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 172,
+  "valor": "2302 Fomento del desarrollo de aplicaciones, software y contenidos para impulsar la apropiación de las Tecnologías de la Información y las Comunicaciones (TIC).",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 29
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 174,
+  "valor": "2402 Infraestructura red vial regional.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 30
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 176,
+  "valor": "2409 Seguridad de transporte.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 31
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 179,
+  "valor": "1202 Promoción al acceso a la justicia.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 32
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 180,
+  "valor": "1204 Justicia Transicional.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 33
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 181,
+  "valor": "1206 Sistema penitenciario y carcelario en el marco de los derechos humanos.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 34
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 182,
+  "valor": "2502 Promoción, protección y defensa de los Derechos Humanos y el Derecho Internacional Humanitario.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 35
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 183,
+  "valor": "4101 Atención, asistencia y reparación integral a las víctimas.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 36
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 187,
+  "valor": "4104 Atención integral de población en situación permanente de desprotección social y/o familiar",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 37
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 189,
+  "valor": "4501 Fortalecimiento de la convivencia y la seguridad ciudadana.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 38
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 191,
+  "valor": "4502 Fortalecimiento del buen gobierno para el respeto y garantía de los derechos humanos.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 39
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 194,
+  "valor": "4503 Gestión del riesgo de desastres y emergencias.",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 40
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 196,
+  "valor": "4599 Fortalecimiento a la gestión y dirección de la administración pública",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 41
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 240,
+  "valor": "de Gobierno “El Desarrollo Territorial nos Junta”. 2024-2027,",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 42
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "4503002",
+  "sector": null,
+  "correccion": null,
+  "id": 43
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "4503014",
+  "sector": "4503014",
+  "correccion": null,
+  "id": 44
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "4503022",
+  "sector": null,
+  "correccion": null,
+  "id": 45
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "4599025",
+  "sector": null,
+  "correccion": null,
+  "id": 46
+ }
+]

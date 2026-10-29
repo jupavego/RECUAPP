@@ -58,6 +58,7 @@ def _repara_glifo(m):
 def limpia(s):
     s = re.sub(r"<br>", " ", s)
     s = re.sub(r"<!--.*?-->", " ", s)
+    s = re.sub(r"</?(?:mark|u|i|b|sup|sub)>", "", s)
     s = re.sub(r"[*_~]", "", s)
     s = re.sub("[A-Za-záéíóúñ�]*�[A-Za-záéíóúñ�]*", _repara_glifo, s)
     s = s.replace("�", "")

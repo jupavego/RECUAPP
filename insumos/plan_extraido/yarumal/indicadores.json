@@ -13,7 +13,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 174,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599031",
@@ -29,7 +30,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 174,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599033",
@@ -45,12 +47,13 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 174,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599034",
   "producto": "Sedes dotadas",
-  "nombre": "<sup>Sedes</sup> dotadas",
+  "nombre": "Sedes dotadas",
   "unidad": "Número",
   "meta": "14",
   "linea_base": "",
@@ -61,7 +64,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 175,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599002",
@@ -77,12 +81,13 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 175,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599016",
   "producto": "Sedes mantenidas",
-  "nombre": "<sup>Sedes</sup> mantenidas",
+  "nombre": "Sedes mantenidas",
   "unidad": "Número de sedes",
   "meta": "28",
   "linea_base": "",
@@ -93,7 +98,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 175,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599017",
@@ -109,12 +115,13 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 175,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4501048",
   "producto": "Servicio de apoyo para el acceso a la justicia policiva",
-  "nombre": "<sup>Estrategias</sup> implementadas",
+  "nombre": "Estrategias implementadas",
   "unidad": "Número",
   "meta": "8",
   "linea_base": "",
@@ -125,7 +132,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 176,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4501082",
@@ -141,7 +149,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 176,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4501069",
@@ -157,7 +166,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 176,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4501067",
@@ -173,12 +183,13 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 177,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4501026",
   "producto": "Planes Integrales de Seguridad y Convivencia - PISCC con enfoque de género elaborados",
-  "nombre": "<sup>Documentos de</sup> Planeación",
+  "nombre": "Documentos de Planeación",
   "unidad": "Número",
   "meta": "1",
   "linea_base": "",
@@ -189,12 +200,13 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 177,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4501054",
   "producto": "Servicio de sanidad animal",
-  "nombre": "<sup>Número de</sup> animales",
+  "nombre": "Número de animales",
   "unidad": "Número",
   "meta": "1.800",
   "linea_base": "",
@@ -205,7 +217,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 177,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502024",
@@ -221,7 +234,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 178,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502001",
@@ -237,7 +251,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 178,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502038",
@@ -253,7 +268,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 179,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502034",
@@ -269,7 +285,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 179,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502034",
@@ -285,7 +302,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 179,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502001",
@@ -301,7 +319,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 179,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502022",
@@ -317,7 +336,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 179,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4503002",
@@ -333,7 +353,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 181,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4503028",
@@ -349,7 +370,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 181,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4503035",
@@ -365,7 +387,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 181,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "0406003",
@@ -381,7 +404,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 182,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "0406016",
@@ -397,7 +421,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 182,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "0401006",
@@ -413,7 +438,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 182,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "0401105",
@@ -429,7 +455,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 182,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2501011",
@@ -445,7 +472,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 183,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2301016",
@@ -461,7 +489,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 184,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2301062",
@@ -477,7 +506,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 184,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2301075",
@@ -494,7 +524,8 @@
   "programa": "enseñanza-aprendizaje y contribuir al mejoramiento de la calidad educativa.",
   "coincidencia_ppi": 0.32,
   "pagina": 185,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1702010",
@@ -510,12 +541,13 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 187,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1702011",
   "producto": "Servicio de asesoría para el fortalecimiento de la asociatividad",
-  "nombre": "<sup>Asociaciones</sup> fortalecidas",
+  "nombre": "Asociaciones fortalecidas",
   "unidad": "Número",
   "meta": "16",
   "linea_base": "",
@@ -526,7 +558,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 187,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1702007",
@@ -542,7 +575,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 187,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1709106",
@@ -558,7 +592,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 188,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1709093",
@@ -574,7 +609,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 188,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1709106",
@@ -590,7 +626,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 188,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1709105",
@@ -606,7 +643,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 189,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1709114",
@@ -622,7 +660,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 189,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1709013",
@@ -638,7 +677,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 189,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1709112",
@@ -654,7 +694,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 189,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1709043",
@@ -670,7 +711,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 189,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1707024",
@@ -686,7 +728,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 190,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3202006",
@@ -702,12 +745,13 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 191,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3202047",
   "producto": "Servicio de administración y manejo de áreas protegidas locales no vinculadas al",
-  "nombre": "<sup>Hectáreas de</sup> áreas",
+  "nombre": "Hectáreas de áreas",
   "unidad": "Hectáreas",
   "meta": "400",
   "linea_base": "",
@@ -718,7 +762,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 191,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3208013",
@@ -734,7 +779,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 193,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3203050",
@@ -750,7 +796,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 193,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3502011",
@@ -766,7 +813,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 194,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3502009",
@@ -782,7 +830,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 194,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3502012",
@@ -798,7 +847,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 194,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3502010",
@@ -815,7 +865,8 @@
   "programa": "adición, establecer la CTI+E en colaboración con el CUEES como incubadora de ideas para el desarrollo de nuevos productos y servicios.",
   "coincidencia_ppi": 0.23,
   "pagina": 195,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3502047",
@@ -832,7 +883,8 @@
   "programa": "adición, establecer la CTI+E en colaboración con el CUEES como incubadora de ideas para el desarrollo de nuevos productos y servicios.",
   "coincidencia_ppi": 0.23,
   "pagina": 195,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3502111",
@@ -849,12 +901,13 @@
   "programa": "adición, establecer la CTI+E en colaboración con el CUEES como incubadora de ideas para el desarrollo de nuevos productos y servicios.",
   "coincidencia_ppi": 0.23,
   "pagina": 195,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3502046",
   "producto": "Servicio de circuito turístico",
-  "nombre": "<sup>Campañas</sup> realizadas",
+  "nombre": "Campañas realizadas",
   "unidad": "Número",
   "meta": "8",
   "programa_sub": "adición, establecer la CTI+E en colaboración con el CUEES como incubadora de ideas para el desarrollo de nuevos productos y servicios.",
@@ -866,12 +919,13 @@
   "programa": "adición, establecer la CTI+E en colaboración con el CUEES como incubadora de ideas para el desarrollo de nuevos productos y servicios.",
   "coincidencia_ppi": 0.23,
   "pagina": 195,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2105012",
   "producto": "Servicio de asistencia técnica en estructuración de proyectos de energías limpias",
-  "nombre": "<sup>Proyectos</sup> estructurados",
+  "nombre": "Proyectos estructurados",
   "unidad": "Número",
   "meta": "3",
   "linea_base": "",
@@ -882,7 +936,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 196,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2102010",
@@ -898,7 +953,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 196,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2104031",
@@ -914,12 +970,13 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 197,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3605012",
   "producto": "Servicio de articulación con el sector productivo",
-  "nombre": "<sup>Estrategias</sup> implementadas",
+  "nombre": "Estrategias implementadas",
   "unidad": "Número",
   "meta": "12",
   "linea_base": "",
@@ -930,7 +987,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 197,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3602029",
@@ -946,7 +1004,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 198,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3601012",
@@ -962,12 +1021,13 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 199,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2402041",
   "producto": "Vía terciaria mejorada",
-  "nombre": "<sup>Placa huella</sup> construida",
+  "nombre": "Placa huella construida",
   "unidad": "metros",
   "meta": "10.000",
   "linea_base": "",
@@ -978,7 +1038,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 199,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2402114",
@@ -995,12 +1056,13 @@
   "programa": "eficiente y reestructurar el Fondo Rotatorio para optimizar su funcionamiento.",
   "coincidencia_ppi": 0.32,
   "pagina": 200,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2402112",
   "producto": "Vía terciaria con mantenimiento periódico o rutinario",
-  "nombre": "<sup>Vías terciarias con</sup> mantenimiento.",
+  "nombre": "Vías terciarias con mantenimiento.",
   "unidad": "Kilómetros",
   "meta": "200",
   "programa_sub": "eficiente y reestructurar el Fondo Rotatorio para optimizar su funcionamiento.",
@@ -1012,12 +1074,13 @@
   "programa": "eficiente y reestructurar el Fondo Rotatorio para optimizar su funcionamiento.",
   "coincidencia_ppi": 0.32,
   "pagina": 200,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2402056",
   "producto": "Caminos ancestrales con mantenimiento",
-  "nombre": "<sup>Caminos ancestrales</sup> con mantenimiento",
+  "nombre": "Caminos ancestrales con mantenimiento",
   "unidad": "Kilómetros",
   "meta": "20",
   "programa_sub": "eficiente y reestructurar el Fondo Rotatorio para optimizar su funcionamiento.",
@@ -1029,12 +1092,13 @@
   "programa": "eficiente y reestructurar el Fondo Rotatorio para optimizar su funcionamiento.",
   "coincidencia_ppi": 0.32,
   "pagina": 200,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2402140",
   "producto": "Estudios de preinversión",
-  "nombre": "<sup>Estudios de pre-</sup> inversión realizados",
+  "nombre": "Estudios de pre- inversión realizados",
   "unidad": "Numero",
   "meta": "6",
   "linea_base": "",
@@ -1045,7 +1109,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 201,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2402097",
@@ -1061,12 +1126,13 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 201,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2409023",
   "producto": "Servicio de sensibilización a los actores viales",
-  "nombre": "<sup>Capacitaciones</sup> realizadas",
+  "nombre": "Capacitaciones realizadas",
   "unidad": "Número",
   "meta": "24",
   "linea_base": "",
@@ -1077,12 +1143,13 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 201,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2409013",
   "producto": "Infraestructura de transporte para la seguridad vial",
-  "nombre": "<sup>Vías urbanas con</sup> demarcación",
+  "nombre": "Vías urbanas con demarcación",
   "unidad": "Metros lineales",
   "meta": "3.000",
   "linea_base": "",
@@ -1093,12 +1160,13 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 202,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2409009",
   "producto": "Servicio de promoción y difusión para la seguridad de transporte",
-  "nombre": "<sup>Estrategias</sup> implementadas",
+  "nombre": "Estrategias implementadas",
   "unidad": "Número",
   "meta": "4",
   "linea_base": "",
@@ -1109,7 +1177,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 202,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2409013",
@@ -1125,12 +1194,13 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 202,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2409063",
   "producto": "Servicio de educación informal",
-  "nombre": "<sup>Estrategias</sup> implementadas",
+  "nombre": "Estrategias implementadas",
   "unidad": "Número",
   "meta": "4",
   "linea_base": "",
@@ -1141,7 +1211,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 203,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2409022",
@@ -1157,7 +1228,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 203,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2409059",
@@ -1173,7 +1245,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 203,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2409062",
@@ -1189,7 +1262,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 204,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2409011",
@@ -1205,7 +1279,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 204,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4001039",
@@ -1221,12 +1296,13 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 205,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4001001",
   "producto": "Servicio de asistencia técnica y jurídica en saneamiento y titulación de predios",
-  "nombre": "<sup>Asistencias técnicas y</sup> jurídicas realizadas",
+  "nombre": "Asistencias técnicas y jurídicas realizadas",
   "unidad": "Número",
   "meta": "200",
   "linea_base": "",
@@ -1237,7 +1313,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 205,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4001032",
@@ -1253,7 +1330,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 205,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4002016",
@@ -1269,7 +1347,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 206,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4002019",
@@ -1285,7 +1364,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 206,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4002022",
@@ -1301,12 +1381,13 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 206,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4002019",
   "producto": "Espacio público construido",
-  "nombre": "<sup>Sendero peatonal</sup> construido",
+  "nombre": "Sendero peatonal construido",
   "unidad": "Metros lineales",
   "meta": "400",
   "linea_base": "",
@@ -1317,12 +1398,13 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 206,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4003017",
   "producto": "Acueductos optimizados",
-  "nombre": "<sup>Acueductos</sup> optimizados",
+  "nombre": "Acueductos optimizados",
   "unidad": "Número",
   "meta": "5",
   "linea_base": "",
@@ -1333,7 +1415,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 207,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4003017",
@@ -1349,7 +1432,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 207,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4003047",
@@ -1365,7 +1449,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 207,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4003020",
@@ -1381,7 +1466,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 207,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4003018",
@@ -1397,7 +1483,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 207,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4003044",
@@ -1413,7 +1500,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 208,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4003022",
@@ -1429,7 +1517,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 208,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4003021",
@@ -1445,7 +1534,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 208,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4003042",
@@ -1461,7 +1551,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 208,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3302042",
@@ -1477,12 +1568,13 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 210,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3302004",
   "producto": "Servicio de exposiciones",
-  "nombre": "<sup>Exposiciones</sup> realizadas",
+  "nombre": "Exposiciones realizadas",
   "unidad": "Número",
   "meta": "32",
   "linea_base": "",
@@ -1493,7 +1585,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 210,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3301054",
@@ -1509,7 +1602,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 212,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3301129",
@@ -1525,7 +1619,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 212,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3301051",
@@ -1541,7 +1636,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 212,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3301073",
@@ -1557,7 +1653,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 212,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3301085",
@@ -1573,12 +1670,13 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 212,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3301100",
   "producto": "Servicio de divulgación y publicaciones",
-  "nombre": "<sup>Publicaciones</sup> realizadas",
+  "nombre": "Publicaciones realizadas",
   "unidad": "Número",
   "meta": "16",
   "linea_base": "",
@@ -1589,7 +1687,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 213,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3301087",
@@ -1605,7 +1704,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 213,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3301073",
@@ -1621,12 +1721,13 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 213,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3301122",
   "producto": "Servicio de fomento para el acceso de la oferta cultural",
-  "nombre": "<sup>Personas</sup> beneficiadas",
+  "nombre": "Personas beneficiadas",
   "unidad": "Número",
   "meta": "1.000",
   "linea_base": "",
@@ -1637,12 +1738,13 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 213,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3301090",
   "producto": "Centros culturales adecuados",
-  "nombre": "<sup>Centros culturales</sup> adecuados",
+  "nombre": "Centros culturales adecuados",
   "unidad": "Número",
   "meta": "1",
   "linea_base": "",
@@ -1653,7 +1755,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 213,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4301037",
@@ -1669,7 +1772,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 215,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4301004",
@@ -1685,12 +1789,13 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 215,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4301001",
   "producto": "Servicio de apoyo a la actividad física, la recreación y el deporte",
-  "nombre": "<sup>Personas</sup> beneficiadas",
+  "nombre": "Personas beneficiadas",
   "unidad": "Número",
   "meta": "1.500",
   "linea_base": "",
@@ -1701,7 +1806,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 215,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4301038",
@@ -1717,12 +1823,13 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 215,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4301024",
   "producto": "Gimnasios al aire libre estáticos",
-  "nombre": "<sup>Gimnasios al aire</sup> libre construidos",
+  "nombre": "Gimnasios al aire libre construidos",
   "unidad": "Número",
   "meta": "1",
   "linea_base": "",
@@ -1733,7 +1840,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 215,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4301015",
@@ -1749,12 +1857,13 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 215,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4301013",
   "producto": "Parques recreativos mejorados",
-  "nombre": "<sup>Parques recreativos</sup> mejorados",
+  "nombre": "Parques recreativos mejorados",
   "unidad": "Número",
   "meta": "1",
   "linea_base": "",
@@ -1765,7 +1874,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 216,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2202073",
@@ -1781,7 +1891,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 217,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2202061",
@@ -1797,7 +1908,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 217,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2202071",
@@ -1813,7 +1925,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 217,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201034",
@@ -1829,7 +1942,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 218,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201006",
@@ -1845,7 +1959,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 218,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201047",
@@ -1861,7 +1976,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 218,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201028",
@@ -1877,7 +1993,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 218,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201029",
@@ -1893,7 +2010,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 218,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201054",
@@ -1909,7 +2027,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 219,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201033",
@@ -1925,7 +2044,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 219,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201049",
@@ -1941,13 +2061,14 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 219,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201051",
   "producto": "Infraestructura educativa construida",
   "nombre": "Sedes educativas nuevas construidas",
-  "unidad": "<sup>Número</sup>",
+  "unidad": "Número",
   "meta": "2",
   "linea_base": "",
   "tipo_acumulado": "",
@@ -1957,7 +2078,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 219,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201052",
@@ -1973,7 +2095,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 219,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201062",
@@ -1990,7 +2113,8 @@
   "programa": "promedio de 20 sedes mejoradas en el periodo",
   "coincidencia_ppi": 0.39,
   "pagina": 220,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201032",
@@ -2007,7 +2131,8 @@
   "programa": "promedio de 20 sedes mejoradas en el periodo",
   "coincidencia_ppi": 0.39,
   "pagina": 220,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4104014",
@@ -2023,7 +2148,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 221,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4104009",
@@ -2039,7 +2165,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 221,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4104008",
@@ -2055,7 +2182,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 221,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4104020",
@@ -2071,7 +2199,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 221,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4104042",
@@ -2087,7 +2216,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 222,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4101016",
@@ -2103,7 +2233,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 223,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4101025",
@@ -2119,7 +2250,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 223,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4101011",
@@ -2135,7 +2267,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 223,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4101038",
@@ -2151,7 +2284,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 223,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4101038",
@@ -2167,7 +2301,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 223,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4101100",
@@ -2183,7 +2318,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 223,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4102001",
@@ -2199,7 +2335,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 224,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4102002",
@@ -2215,7 +2352,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 224,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4102042",
@@ -2231,7 +2369,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 224,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4102052",
@@ -2248,7 +2387,8 @@
   "programa": "escenarios comunitarios protectores de derechos",
   "coincidencia_ppi": 0.41,
   "pagina": 225,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4102046",
@@ -2265,7 +2405,8 @@
   "programa": "escenarios comunitarios protectores de derechos",
   "coincidencia_ppi": 0.41,
   "pagina": 225,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4102047",
@@ -2282,7 +2423,8 @@
   "programa": "escenarios comunitarios protectores de derechos",
   "coincidencia_ppi": 0.41,
   "pagina": 225,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4103017",
@@ -2298,7 +2440,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 226,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4103052",
@@ -2314,7 +2457,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 226,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4103006",
@@ -2330,7 +2474,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 226,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4103050",
@@ -2346,7 +2491,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 226,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1202001",
@@ -2362,7 +2508,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 227,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1206007",
@@ -2378,7 +2525,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 227,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1903011",
@@ -2394,7 +2542,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 228,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1906004",
@@ -2410,7 +2559,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 229,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1906044",
@@ -2426,7 +2576,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 229,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1905049",
@@ -2442,7 +2593,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 230,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1905024",
@@ -2458,7 +2610,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 230,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1905031",
@@ -2474,7 +2627,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 230,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1905022",
@@ -2490,7 +2644,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 230,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1905054",
@@ -2506,7 +2661,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 230,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1905021",
@@ -2523,7 +2679,8 @@
   "programa": "procedimientos e intervenciones integrales.",
   "coincidencia_ppi": 0.47,
   "pagina": 231,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1905026",
@@ -2540,7 +2697,8 @@
   "programa": "procedimientos e intervenciones integrales.",
   "coincidencia_ppi": 0.47,
   "pagina": 231,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1905024",
@@ -2557,7 +2715,8 @@
   "programa": "procedimientos e intervenciones integrales.",
   "coincidencia_ppi": 0.47,
   "pagina": 231,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1905025",
@@ -2574,7 +2733,8 @@
   "programa": "procedimientos e intervenciones integrales.",
   "coincidencia_ppi": 0.47,
   "pagina": 231,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1905022",
@@ -2591,6 +2751,7 @@
   "programa": "procedimientos e intervenciones integrales.",
   "coincidencia_ppi": 0.47,
   "pagina": 231,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  }
 ]

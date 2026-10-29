@@ -11,7 +11,8 @@
   "programa": "La educación es primero",
   "coincidencia_ppi": null,
   "pagina": 54,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Tasa de deserción escolar",
@@ -25,7 +26,8 @@
   "programa": "La educación es primero",
   "coincidencia_ppi": null,
   "pagina": 54,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Infraestructura educativa mejorada",
@@ -40,7 +42,8 @@
   "programa": "La educación es primero",
   "coincidencia_ppi": null,
   "pagina": 55,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo a la permanencia con transporte escolar",
@@ -55,7 +58,8 @@
   "programa": "La educación es primero",
   "coincidencia_ppi": null,
   "pagina": 55,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo a la permanencia con alimentación escolar",
@@ -70,7 +74,8 @@
   "programa": "La educación es primero",
   "coincidencia_ppi": null,
   "pagina": 55,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Infraestructura educativa dotada",
@@ -85,7 +90,8 @@
   "programa": "La educación es primero",
   "coincidencia_ppi": null,
   "pagina": 55,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Servicio educativo",
@@ -99,7 +105,8 @@
   "programa": "La educación es primero",
   "coincidencia_ppi": null,
   "pagina": 55,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Servicio educativo",
@@ -113,7 +120,8 @@
   "programa": "La educación es primero",
   "coincidencia_ppi": null,
   "pagina": 55,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de promoción de actividades culturales",
@@ -128,7 +136,8 @@
   "programa": "La cultura es primero",
   "coincidencia_ppi": null,
   "pagina": 58,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de fomento para el acceso de la oferta cultural",
@@ -143,7 +152,8 @@
   "programa": "La cultura es primero",
   "coincidencia_ppi": null,
   "pagina": 58,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Infraestruct uras culturales dotadas",
@@ -158,7 +168,8 @@
   "programa": "La cultura es primero",
   "coincidencia_ppi": null,
   "pagina": 58,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Parques mejorados",
@@ -173,7 +184,8 @@
   "programa": "La cultura es primero",
   "coincidencia_ppi": null,
   "pagina": 58,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Tasa de mortalidad por infarto agudo de miocardio",
@@ -187,7 +199,8 @@
   "programa": "La salud es primero",
   "coincidencia_ppi": null,
   "pagina": 59,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Porcentaje de personas atendidas que consultan por salud mental",
@@ -201,7 +214,8 @@
   "programa": "La salud es primero",
   "coincidencia_ppi": null,
   "pagina": 59,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio atención salud a población",
@@ -216,7 +230,8 @@
   "programa": "La salud es primero",
   "coincidencia_ppi": null,
   "pagina": 60,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio atención salud a población",
@@ -231,7 +246,8 @@
   "programa": "La salud es primero",
   "coincidencia_ppi": null,
   "pagina": 60,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio promoción la salud",
@@ -246,7 +262,8 @@
   "programa": "La salud es primero",
   "coincidencia_ppi": null,
   "pagina": 60,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Cancha construida",
@@ -261,7 +278,8 @@
   "programa": "El deporte es primero",
   "coincidencia_ppi": null,
   "pagina": 64,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Cancha mejorada",
@@ -276,7 +294,8 @@
   "programa": "El deporte es primero",
   "coincidencia_ppi": null,
   "pagina": 64,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Gimnasios aire estáticos",
@@ -291,7 +310,8 @@
   "programa": "El deporte es primero",
   "coincidencia_ppi": null,
   "pagina": 64,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio promoción la activ física, recreación deporte",
@@ -306,7 +326,8 @@
   "programa": "El deporte es primero",
   "coincidencia_ppi": null,
   "pagina": 64,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Casos de desnutrición aguda en menores de cinco años",
@@ -320,7 +341,8 @@
   "programa": "Los Niños, Niñas y Adolescentes son primero",
   "coincidencia_ppi": null,
   "pagina": 65,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Porcentaje de niños, niñas y adolescentes que participan de actividades",
@@ -334,7 +356,8 @@
   "programa": "Los Niños, Niñas y Adolescentes son primero",
   "coincidencia_ppi": null,
   "pagina": 65,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Niños y niñas atendidos con servicio integrales en salud",
@@ -348,7 +371,8 @@
   "programa": "Los Niños, Niñas y Adolescentes son primero",
   "coincidencia_ppi": null,
   "pagina": 66,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Niños, niñas y adolescentes atendidos",
@@ -362,7 +386,8 @@
   "programa": "Los Niños, Niñas y Adolescentes son primero",
   "coincidencia_ppi": null,
   "pagina": 66,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "indicador",
@@ -376,7 +401,8 @@
   "programa": "La Juventud es primero",
   "coincidencia_ppi": null,
   "pagina": 67,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Porcentaje de población",
@@ -390,7 +416,8 @@
   "programa": "La Juventud es primero",
   "coincidencia_ppi": null,
   "pagina": 67,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de educación informal a niños, niñas, adolescentes y jóvenes para el reconocimiento de sus derechos",
@@ -405,7 +432,8 @@
   "programa": "La Juventud es primero",
   "coincidencia_ppi": null,
   "pagina": 68,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo financiero para proyectos productivos",
@@ -420,7 +448,8 @@
   "programa": "La Juventud es primero",
   "coincidencia_ppi": null,
   "pagina": 68,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Porcentaje de mujeres que reciben servicios de atención",
@@ -434,7 +463,8 @@
   "programa": "Las Mujeres son primero",
   "coincidencia_ppi": null,
   "pagina": 70,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo",
@@ -449,7 +479,8 @@
   "programa": "Las Mujeres son primero",
   "coincidencia_ppi": null,
   "pagina": 70,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Porcentaje de la población LGTBIQ+ que recibe bienes y servicios con enfoque diferencial",
@@ -463,7 +494,8 @@
   "programa": "El respeto a la diversidad es primero",
   "coincidencia_ppi": null,
   "pagina": 72,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio promoción la garantía derechos",
@@ -478,7 +510,8 @@
   "programa": "Nuestros adultos mayores son primero",
   "coincidencia_ppi": null,
   "pagina": 73,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Porcentaje de adultos mayores que recibe bienes y servicios con enfoque diferencial",
@@ -492,7 +525,8 @@
   "programa": "Nuestros adultos mayores son primero",
   "coincidencia_ppi": null,
   "pagina": 74,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio atención protección integral adulto mayo",
@@ -507,7 +541,8 @@
   "programa": "Nuestros adultos mayores son primero",
   "coincidencia_ppi": null,
   "pagina": 74,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio atención protección",
@@ -522,7 +557,8 @@
   "programa": "Nuestros adultos mayores son primero",
   "coincidencia_ppi": null,
   "pagina": 74,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Porcentaje de personas con discapacidad que recibe bienes y servicios con enfoque diferencial",
@@ -536,7 +572,8 @@
   "programa": "Restablecimiento de derechos de la población víctima",
   "coincidencia_ppi": null,
   "pagina": 76,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Porcentaje de personas víctimas del conflicto armado que recibe bienes y servicios con enfoque diferencial",
@@ -550,7 +587,8 @@
   "programa": "Restablecimiento de derechos de la población víctima",
   "coincidencia_ppi": null,
   "pagina": 77,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "indicador",
@@ -564,7 +602,8 @@
   "programa": "Restablecimiento de derechos de la población víctima",
   "coincidencia_ppi": null,
   "pagina": 85,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Seguridad alimentaria",
@@ -578,7 +617,8 @@
   "programa": "Restablecimiento de derechos de la población víctima",
   "coincidencia_ppi": null,
   "pagina": 85,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Cadenas productivas apoyadas",
@@ -592,7 +632,8 @@
   "programa": "Restablecimiento de derechos de la población víctima",
   "coincidencia_ppi": null,
   "pagina": 86,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Proyectos productivos cofinanciados",
@@ -606,7 +647,8 @@
   "programa": "Restablecimiento de derechos de la población víctima",
   "coincidencia_ppi": null,
   "pagina": 86,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Pequeños productores rurales asistidos técnicamente",
@@ -620,7 +662,8 @@
   "programa": "Restablecimiento de derechos de la población víctima",
   "coincidencia_ppi": null,
   "pagina": 86,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Asociaciones apoyadas",
@@ -634,7 +677,8 @@
   "programa": "Restablecimiento de derechos de la población víctima",
   "coincidencia_ppi": null,
   "pagina": 86,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Parcelas, módulos y unidades",
@@ -648,7 +692,8 @@
   "programa": "Restablecimiento de derechos de la población víctima",
   "coincidencia_ppi": null,
   "pagina": 86,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Red vial terciaria en buen estado Armonización",
@@ -662,7 +707,8 @@
   "programa": "La infraestructura vial es primero",
   "coincidencia_ppi": null,
   "pagina": 88,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Plan de",
@@ -676,7 +722,8 @@
   "programa": "La infraestructura vial es primero",
   "coincidencia_ppi": null,
   "pagina": 88,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Desarrollo",
@@ -690,7 +737,8 @@
   "programa": "La infraestructura vial es primero",
   "coincidencia_ppi": null,
   "pagina": 88,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Línea estratégica Convergencia regional",
@@ -704,7 +752,8 @@
   "programa": "La infraestructura vial es primero",
   "coincidencia_ppi": null,
   "pagina": 88,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Sostenimiento de la cobertura de bosques del municipio.",
@@ -718,7 +767,8 @@
   "programa": "El ambiente es primero",
   "coincidencia_ppi": null,
   "pagina": 98,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de restauración de ecosistemas",
@@ -733,7 +783,8 @@
   "programa": "El ambiente es primero",
   "coincidencia_ppi": null,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de restauración de ecosistemas",
@@ -748,7 +799,8 @@
   "programa": "El ambiente es primero",
   "coincidencia_ppi": null,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de restauración de ecosistemas",
@@ -763,7 +815,8 @@
   "programa": "El ambiente es primero",
   "coincidencia_ppi": null,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de restauración de ecosistemas",
@@ -778,7 +831,8 @@
   "programa": "El ambiente es primero",
   "coincidencia_ppi": null,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de administración y manejo de áreas protegidas locales no vinculadas al Sistema Nacional de Áreas Protegidas",
@@ -793,7 +847,8 @@
   "programa": "El ambiente es primero",
   "coincidencia_ppi": null,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Documentos de lineamientos",
@@ -808,7 +863,8 @@
   "programa": "El ambiente es primero",
   "coincidencia_ppi": null,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Cobertura de acueducto",
@@ -822,7 +878,8 @@
   "programa": "Los servicios públicos son primero",
   "coincidencia_ppi": null,
   "pagina": 102,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Cobertura de Alcantarillado",
@@ -836,7 +893,8 @@
   "programa": "Los servicios públicos son primero",
   "coincidencia_ppi": null,
   "pagina": 102,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Cobertura de Aseo",
@@ -850,7 +908,8 @@
   "programa": "Los servicios públicos son primero",
   "coincidencia_ppi": null,
   "pagina": 102,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de Aseo",
@@ -865,7 +924,8 @@
   "programa": "Los servicios públicos son primero",
   "coincidencia_ppi": null,
   "pagina": 103,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Acueductos construidos",
@@ -880,7 +940,8 @@
   "programa": "Los servicios públicos son primero",
   "coincidencia_ppi": null,
   "pagina": 103,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Acueductos optimizados",
@@ -895,7 +956,8 @@
   "programa": "Los servicios públicos son primero",
   "coincidencia_ppi": null,
   "pagina": 103,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Alcantarillados construidos",
@@ -910,7 +972,8 @@
   "programa": "Los servicios públicos son primero",
   "coincidencia_ppi": null,
   "pagina": 103,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Alcantarillados optimizados",
@@ -925,7 +988,8 @@
   "programa": "Los servicios públicos son primero",
   "coincidencia_ppi": null,
   "pagina": 103,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Porcentaje de viviendas con déficit cualitativo",
@@ -939,7 +1003,8 @@
   "programa": "La vivienda es primero",
   "coincidencia_ppi": null,
   "pagina": 104,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Porcentaje de viviendas con déficit cuantitativo",
@@ -953,7 +1018,8 @@
   "programa": "La vivienda es primero",
   "coincidencia_ppi": null,
   "pagina": 104,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Vivienda de Interés Social mejoradas",
@@ -968,7 +1034,8 @@
   "programa": "La vivienda es primero",
   "coincidencia_ppi": null,
   "pagina": 105,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Vivienda de",
@@ -983,7 +1050,8 @@
   "programa": "La vivienda es primero",
   "coincidencia_ppi": null,
   "pagina": 105,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "indicador",
@@ -997,7 +1065,8 @@
   "programa": "Buen Gobierno y participación ciudadana",
   "coincidencia_ppi": null,
   "pagina": 118,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Índice de",
@@ -1011,7 +1080,8 @@
   "programa": "Buen Gobierno y participación ciudadana",
   "coincidencia_ppi": null,
   "pagina": 118,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Desempeño",
@@ -1025,7 +1095,8 @@
   "programa": "Buen Gobierno y participación ciudadana",
   "coincidencia_ppi": null,
   "pagina": 118,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de promoción a la participación ciudadana",
@@ -1040,7 +1111,8 @@
   "programa": "Buen Gobierno y participación ciudadana",
   "coincidencia_ppi": null,
   "pagina": 119,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Documentos de planeación",
@@ -1055,7 +1127,8 @@
   "programa": "Buen Gobierno y participación ciudadana",
   "coincidencia_ppi": null,
   "pagina": 119,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "indicador",
@@ -1069,7 +1142,8 @@
   "programa": "La seguridad es primero",
   "coincidencia_ppi": null,
   "pagina": 121,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Tasa de comportamient os contrarios a la convivencia por cada 100 mil habitantes",
@@ -1083,7 +1157,8 @@
   "programa": "La seguridad es primero",
   "coincidencia_ppi": null,
   "pagina": 121,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Proyectos de convivencia y seguridad ciudadana apoyados financierament e",
@@ -1097,7 +1172,8 @@
   "programa": "La seguridad es primero",
   "coincidencia_ppi": null,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Niños, niñas, adolescentes y jóvenes beneficiados",
@@ -1111,7 +1187,8 @@
   "programa": "La seguridad es primero",
   "coincidencia_ppi": null,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Entidades asistidas técnicamente en justicia restaurativa",
@@ -1125,7 +1202,8 @@
   "programa": "La seguridad es primero",
   "coincidencia_ppi": null,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Estrategias de promoción de la cultura ciudadana implementadas",
@@ -1139,6 +1217,7 @@
   "programa": "La seguridad es primero",
   "coincidencia_ppi": null,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  }
 ]

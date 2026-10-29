@@ -1,0 +1,90 @@
+[
+ {
+  "paginas": [
+   228
+  ],
+  "cabecera": "Cuenta",
+  "unidad": "millones",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   2542,
+   2619,
+   2698,
+   2770
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "BF2.1.1",
+    "anios": [
+     2542,
+     2619,
+     2698,
+     2770
+    ],
+    "total": 10629,
+    "ruta": {
+     "linea": "BF2.1.1"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.1.1",
+    "anios": [
+     2098,
+     2161,
+     2226,
+     2293
+    ],
+    "total": 8778,
+    "ruta": {
+     "linea": "BF2.1.1",
+     "sector": "BF2.1.1.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.1.3.4.1",
+    "anios": [
+     249,
+     256,
+     264,
+     272
+    ],
+    "total": 1041,
+    "ruta": {
+     "linea": "BF2.1.1",
+     "sector": "BF2.1.1.3.4.1"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "BF2.1.1.3.4.2",
+    "anios": [
+     195,
+     202,
+     208,
+     205
+    ],
+    "total": 810,
+    "ruta": {
+     "linea": "BF2.1.1",
+     "sector": "BF2.1.1.3.4.2"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

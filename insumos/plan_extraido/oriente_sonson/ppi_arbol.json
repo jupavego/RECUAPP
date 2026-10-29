@@ -1,0 +1,391 @@
+[
+ {
+  "paginas": [
+   160,
+   161
+  ],
+  "cabecera": "Sector",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   3201224443,
+   3290747418,
+   3384746542,
+   3483445622
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Comercio, industria y turismo",
+    "anios": [
+     295872367,
+     305872367,
+     316372367,
+     327397367
+    ],
+    "total": 1245514468,
+    "ruta": {
+     "linea": "Comercio, industria y turismo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Tecnologías de la información y las comunicacio nes",
+    "anios": [
+     58000000,
+     60900000,
+     63945000,
+     67142250
+    ],
+    "total": 249987250,
+    "ruta": {
+     "linea": "Tecnologías de la información y las comunicacio nes"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Comercio, industria y turismo",
+    "anios": [
+     189150000,
+     198607500,
+     208537875,
+     218964769
+    ],
+    "total": 815260144,
+    "ruta": {
+     "linea": "Comercio, industria y turismo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Vivienda, ciudad y territorio",
+    "anios": [
+     227937008,
+     239333858,
+     251300551,
+     263865578
+    ],
+    "total": 982436995,
+    "ruta": {
+     "linea": "Vivienda, ciudad y territorio"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Educación",
+    "anios": [
+     2103347578,
+     2154526203,
+     2208263759,
+     2264688193
+    ],
+    "total": 8730825733,
+    "ruta": {
+     "linea": "Educación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Salud y protección social",
+    "anios": [
+     235117490,
+     235117490,
+     235117490,
+     235117490
+    ],
+    "total": 940469960,
+    "ruta": {
+     "linea": "Salud y protección social"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Inclusión social y reconciliació n",
+    "anios": [
+     91800000,
+     96390000,
+     101209500,
+     106269975
+    ],
+    "total": 395669475,
+    "ruta": {
+     "linea": "Inclusión social y reconciliació n"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   163
+  ],
+  "cabecera": "Sector",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   895587599,
+   932144479,
+   3978184937,
+   4154497558
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Agro- pecuario",
+    "anios": [
+     366100000,
+     382155000,
+     399012750,
+     424816763
+    ],
+    "total": 1572084513,
+    "ruta": {
+     "linea": "Agro- pecuario"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Gestión del riesgo",
+    "anios": [
+     349875000,
+     365868750,
+     382662188,
+     400295297
+    ],
+    "total": 1498701234,
+    "ruta": {
+     "linea": "Gestión del riesgo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Ambiental",
+    "anios": [
+     115000000,
+     116300000,
+     117665000,
+     119098250
+    ],
+    "total": 468063250,
+    "ruta": {
+     "linea": "Ambiental"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Transport e",
+    "anios": [
+     2772599,
+     2888729,
+     3010666399,
+     3138699718
+    ],
+    "total": 11810695928,
+    "ruta": {
+     "linea": "Transport e"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Minería",
+    "anios": [
+     61840000,
+     64932000,
+     68178600,
+     71587530
+    ],
+    "total": 266538130,
+    "ruta": {
+     "linea": "Minería"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   164
+  ],
+  "cabecera": "Sector",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   1980080205,
+   2463658755,
+   2535894818,
+   2612293933
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Desarrollo comunitario",
+    "anios": [
+     340175000,
+     357183750,
+     375042938,
+     393795084
+    ],
+    "total": 1466196772,
+    "ruta": {
+     "linea": "Desarrollo comunitario"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Transporte",
+    "anios": [
+     188000000,
+     197400000,
+     207270000,
+     217633500
+    ],
+    "total": 810303500,
+    "ruta": {
+     "linea": "Transporte"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Alumbrado publico",
+    "anios": [
+     624851062,
+     624851062,
+     624851062,
+     624851062
+    ],
+    "total": 2499404248,
+    "ruta": {
+     "linea": "Alumbrado publico"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Seguridad y Convivencia",
+    "anios": [
+     819636443,
+     847738943,
+     872521568,
+     899094574
+    ],
+    "total": 3438991528,
+    "ruta": {
+     "linea": "Seguridad y Convivencia"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Fortalecimi ento Institucional",
+    "anios": [
+     7417700,
+     436485000,
+     456209250,
+     476919713
+    ],
+    "total": 8787313963,
+    "ruta": {
+     "linea": "Fortalecimi ento Institucional"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   176
+  ],
+  "cabecera": "Destinación",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   245810988,
+   211094878,
+   195693737,
+   205297757
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Universidad Pública",
+    "anios": [
+     42962829,
+     8178568,
+     7701870,
+     7680058
+    ],
+    "total": 66523325,
+    "ruta": {
+     "linea": "Universidad Pública"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Amb. y desarrollo",
+    "anios": [
+     202848159,
+     202916310,
+     187991867,
+     197617699
+    ],
+    "total": 791374035,
+    "ruta": {
+     "linea": "Amb. y desarrollo"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

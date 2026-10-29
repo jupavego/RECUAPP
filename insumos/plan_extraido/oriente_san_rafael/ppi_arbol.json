@@ -1,0 +1,1309 @@
+[
+ {
+  "paginas": [
+   166
+  ],
+  "cabecera": "Línea, Componente y Programa",
+  "unidad": "millones",
+  "niveles": [
+   "linea",
+   "programa"
+  ],
+  "total_raices": [
+   5799472216,
+   7069914151,
+   8220482104,
+   9315265349
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "01. Equidad y Desarrollo Social",
+    "anios": [
+     19768983,
+     22346440,
+     24880031,
+     27381833
+    ],
+    "total": 94377288599,
+    "ruta": {
+     "linea": "01. Equidad y Desarrollo Social"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "0101. Deporte y Recreación (A4)",
+    "anios": [
+     623380778,
+     738362504,
+     853366902,
+     967949226
+    ],
+    "total": 3183059410,
+    "ruta": {
+     "linea": "0101. Deporte y Recreación (A4)"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 1,
+    "etiqueta": "010101 Promoción del desarrollo y práctica del deporte, la recreación y el aprovechamiento del tiempo libre, la salud físicaymental",
+    "anios": [
+     167898362,
+     197582256,
+     227274086,
+     256818189
+    ],
+    "total": 849572893,
+    "ruta": {
+     "linea": "0101. Deporte y Recreación (A4)",
+     "programa": "010101 Promoción del desarrollo y práctica del deporte, la recreación y el aprovechamiento del tiempo libre, la salud físicaymental"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 1,
+    "etiqueta": "010102 Mejoramiento, mantenimiento y dotación de escenarios deportivos e implementos para la práctica del deporte",
+    "anios": [
+     455482415,
+     540780248,
+     626092817,
+     711131037
+    ],
+    "total": 2333486517,
+    "ruta": {
+     "linea": "0101. Deporte y Recreación (A4)",
+     "programa": "010102 Mejoramiento, mantenimiento y dotación de escenarios deportivos e implementos para la práctica del deporte"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "0102. Cultura(A5)",
+    "anios": [
+     789813694,
+     926392907,
+     1063011974,
+     1198889071
+    ],
+    "total": 3978107646,
+    "ruta": {
+     "linea": "0102. Cultura(A5)"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 1,
+    "etiqueta": "010201 Fortalecimiento de los procesos culturales y artísticos del municipio de San Rafael",
+    "anios": [
+     218121726,
+     266157439,
+     314193153,
+     362228866
+    ],
+    "total": 1160701183,
+    "ruta": {
+     "linea": "0102. Cultura(A5)",
+     "programa": "010201 Fortalecimiento de los procesos culturales y artísticos del municipio de San Rafael"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 1,
+    "etiqueta": "010202 Mejoramiento, mantenimiento y dotación de escenarios culturales, artísticos y patrimoniales",
+    "anios": [
+     571691968,
+     660235467,
+     748818821,
+     836660205
+    ],
+    "total": 2817406462,
+    "ruta": {
+     "linea": "0102. Cultura(A5)",
+     "programa": "010202 Mejoramiento, mantenimiento y dotación de escenarios culturales, artísticos y patrimoniales"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "0103. Atención a Grupos Vulnerables - Promoción Social(A14)",
+    "anios": [
+     2200622583,
+     2711587007,
+     3161999592,
+     3584842038
+    ],
+    "total": 11659051220,
+    "ruta": {
+     "linea": "0103. Atención a Grupos Vulnerables - Promoción Social(A14)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "010301 Acompañamiento a población en situación de discapacidad",
+    "anios": [
+     664629230,
+     818088661,
+     953382541,
+     1080405378
+    ],
+    "total": 3516505811,
+    "ruta": {
+     "linea": "010301 Acompañamiento a población en situación de discapacidad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "010302 Desarrollo integral de primera infancia, niños, niñas adolescentesy jóvenes",
+    "anios": [
+     481703380,
+     596790819,
+     684629929,
+     760062477
+    ],
+    "total": 2523186605,
+    "ruta": {
+     "linea": "010302 Desarrollo integral de primera infancia, niños, niñas adolescentesy jóvenes"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "010303 Atención integral al adulto mayor",
+    "anios": [
+     867067448,
+     1070101899,
+     1267081166,
+     1461303420
+    ],
+    "total": 4665553933,
+    "ruta": {
+     "linea": "010303 Atención integral al adulto mayor"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "010304 Atención permanente de las víctimas y generación de escenarios para implementación",
+    "anios": [
+     107045196,
+     132620182,
+     152139984,
+     168902773
+    ],
+    "total": 560708135,
+    "ruta": {
+     "linea": "010304 Atención permanente de las víctimas y generación de escenarios para implementación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "010305 Implementación de estrategias de acompañamiento a la comunidad diversa",
+    "anios": [
+     45440924,
+     53623732,
+     59989985,
+     65529133
+    ],
+    "total": 224583775,
+    "ruta": {
+     "linea": "010305 Implementación de estrategias de acompañamiento a la comunidad diversa"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   167,
+   168,
+   169
+  ],
+  "cabecera": "",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   10324930551,
+   11311962277,
+   12315757837,
+   52993381112
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "010306 Fomento de garantía de derechos de las mujeres",
+    "anios": [
+     34736405,
+     40361714,
+     44775986,
+     48638856
+    ],
+    "total": 168512961,
+    "ruta": {
+     "linea": "010306 Fomento de garantía de derechos de las mujeres"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "0104. Desarrollo Comunitario (A16)",
+    "anios": [
+     118106309,
+     127860163,
+     137641387,
+     146913072
+    ],
+    "total": 530520931,
+    "ruta": {
+     "linea": "0104. Desarrollo Comunitario (A16)"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "010401 Fortalecimiento de las Juntas de Acción Comunal - JAC-",
+    "anios": [
+     18402264,
+     19891621,
+     21385084,
+     22802117
+    ],
+    "total": 82481086,
+    "ruta": {
+     "linea": "0104. Desarrollo Comunitario (A16)",
+     "sector": "010401 Fortalecimiento de las Juntas de Acción Comunal - JAC-"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "010402 Salones Comunales adecuados",
+    "anios": [
+     81301782,
+     88076920,
+     94871218,
+     101308839
+    ],
+    "total": 365558759,
+    "ruta": {
+     "linea": "0104. Desarrollo Comunitario (A16)",
+     "sector": "010402 Salones Comunales adecuados"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "010403 Acompañamiento a las organizaciones comunitarias, las asociaciones, corporaciones, veedurías, mesas de trabajo, juntas de vivienda y grupos activistas, en pro de la articulación con la",
+    "anios": [
+     18402264,
+     19891621,
+     21385084,
+     22802117
+    ],
+    "total": 82481086,
+    "ruta": {
+     "linea": "0104. Desarrollo Comunitario (A16)",
+     "sector": "010403 Acompañamiento a las organizaciones comunitarias, las asociaciones, corporaciones, veedurías, mesas de trabajo, juntas de vivienda y grupos activistas, en pro de la articulación con la"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "0105. Educación(A1)",
+    "anios": [
+     620697711,
+     627220846,
+     650237712,
+     672612865
+    ],
+    "total": 2570769134,
+    "ruta": {
+     "linea": "0105. Educación(A1)"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "010501 Fortalecimiento para la prestación del servicio educativo",
+    "anios": [
+     391817368,
+     401630522,
+     411456416,
+     421045108
+    ],
+    "total": 1625949415,
+    "ruta": {
+     "linea": "0105. Educación(A1)",
+     "sector": "010501 Fortalecimiento para la prestación del servicio educativo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "010502 Mejoramiento de infraestructura educativa y dotación escolar",
+    "anios": [
+     105187666,
+     111794014,
+     118413853,
+     124782536
+    ],
+    "total": 460178070,
+    "ruta": {
+     "linea": "0105. Educación(A1)",
+     "sector": "010502 Mejoramiento de infraestructura educativa y dotación escolar"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "010503 Estrategias de fomento para la educación superior",
+    "anios": [
+     123692677,
+     113796310,
+     120367442,
+     126785221
+    ],
+    "total": 484641649,
+    "ruta": {
+     "linea": "0105. Educación(A1)",
+     "sector": "010503 Estrategias de fomento para la educación superior"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "0106. Salud (A2)",
+    "anios": [
+     15416362,
+     17215016,
+     19013773,
+     20810627
+    ],
+    "total": 72455780259,
+    "ruta": {
+     "linea": "0106. Salud (A2)"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "010601 Estrategias de promoción y prevención en el sector salud",
+    "anios": [
+     422026518,
+     443662652,
+     465309006,
+     486765088
+    ],
+    "total": 1817763263,
+    "ruta": {
+     "linea": "0106. Salud (A2)",
+     "sector": "010601 Estrategias de promoción y prevención en el sector salud"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "010602 Desarrollo de estrategias para el cuidado de la salud mental en el municipio",
+    "anios": [
+     134798094,
+     143866698,
+     152955743,
+     161664243
+    ],
+    "total": 593284779,
+    "ruta": {
+     "linea": "0106. Salud (A2)",
+     "sector": "010602 Desarrollo de estrategias para el cuidado de la salud mental en el municipio"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "010603 Implementación de estrategias de entornos protectores municipales",
+    "anios": [
+     155150579,
+     161091379,
+     167032178,
+     172972978
+    ],
+    "total": 656247114,
+    "ruta": {
+     "linea": "0106. Salud (A2)",
+     "sector": "010603 Implementación de estrategias de entornos protectores municipales"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "010604 Garantía de derechos en seguridad alimentaria",
+    "anios": [
+     228055571,
+     242648610,
+     257272311,
+     271325194
+    ],
+    "total": 999301687,
+    "ruta": {
+     "linea": "0106. Salud (A2)",
+     "sector": "010604 Garantía de derechos en seguridad alimentaria"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "010605 Aseguramiento en salud de la población (régimen subsidiado, régimen contributivo)",
+    "anios": [
+     14232594,
+     15962862,
+     17693131,
+     19423400112
+    ],
+    "total": 67311988379,
+    "ruta": {
+     "linea": "0106. Salud (A2)",
+     "sector": "010605 Aseguramiento en salud de la población (régimen subsidiado, régimen contributivo)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "010606 Inspección, vigilancia y control en el servicio de salud",
+    "anios": [
+     243737758,
+     260884833,
+     278072790,
+     294499657
+    ],
+    "total": 1077195038,
+    "ruta": {
+     "linea": "0106. Salud (A2)",
+     "sector": "010606 Inspección, vigilancia y control en el servicio de salud"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "02. Desarrollo Económico para la competitividad",
+    "anios": [
+     890785532,
+     964446436,
+     1038314266,
+     1108329781
+    ],
+    "total": 4001876014,
+    "ruta": {
+     "linea": "02. Desarrollo Económico para la competitividad"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "0201. Agricultura y desarrollo rural(A8)",
+    "anios": [
+     352957360,
+     382069930,
+     411264103,
+     438939095
+    ],
+    "total": 1585230487,
+    "ruta": {
+     "linea": "02. Desarrollo Económico para la competitividad",
+     "sector": "0201. Agricultura y desarrollo rural(A8)"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "020101 Fortalecimiento Agropecuario",
+    "anios": [
+     352957360,
+     382069930,
+     411264103,
+     438939095
+    ],
+    "total": 1585230487,
+    "ruta": {
+     "linea": "02. Desarrollo Económico para la competitividad",
+     "sector": "0201. Agricultura y desarrollo rural(A8)",
+     "programa": "020101 Fortalecimiento Agropecuario"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "0202. Turismo(A13)",
+    "anios": [
+     413189484,
+     392891229,
+     453438806,
+     548361632
+    ],
+    "total": 1807881151,
+    "ruta": {
+     "linea": "02. Desarrollo Económico para la competitividad",
+     "sector": "0202. Turismo(A13)"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "020201 Gestión integral para el desarrollo turístico",
+    "anios": [
+     413189484,
+     392891229,
+     453438806,
+     548361632
+    ],
+    "total": 1807881151,
+    "ruta": {
+     "linea": "02. Desarrollo Económico para la competitividad",
+     "sector": "0202. Turismo(A13)",
+     "programa": "020201 Gestión integral para el desarrollo turístico"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "0203.Emprendimiento (A13)",
+    "anios": [
+     124638688,
+     189485277,
+     173611357,
+     121029055
+    ],
+    "total": 608764376,
+    "ruta": {
+     "linea": "02. Desarrollo Económico para la competitividad",
+     "sector": "0203.Emprendimiento (A13)"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "020301 Fortalecimiento del emprendimiento y empresarismo competitivo",
+    "anios": [
+     124638688,
+     189485277,
+     173611357,
+     121029055
+    ],
+    "total": 608764376,
+    "ruta": {
+     "linea": "02. Desarrollo Económico para la competitividad",
+     "sector": "0203.Emprendimiento (A13)",
+     "programa": "020301 Fortalecimiento del emprendimiento y empresarismo competitivo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "03. Mejoramiento de la infraestructura y la prestación de los serviciospúblicos",
+    "anios": [
+     3274068994,
+     3589218964,
+     3904694187,
+     4214114196
+    ],
+    "total": 14982096342,
+    "ruta": {
+     "linea": "03. Mejoramiento de la infraestructura y la prestación de los serviciospúblicos"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "0301. Equipamiento y espacio público(A15)",
+    "anios": [
+     348727854,
+     377363088,
+     406078274,
+     433304998
+    ],
+    "total": 1565474214,
+    "ruta": {
+     "linea": "03. Mejoramiento de la infraestructura y la prestación de los serviciospúblicos",
+     "sector": "0301. Equipamiento y espacio público(A15)"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "030101 Mantenimiento del equipamiento",
+    "anios": [
+     311478627,
+     337159342,
+     362912015,
+     387325071
+    ],
+    "total": 1398875055,
+    "ruta": {
+     "linea": "03. Mejoramiento de la infraestructura y la prestación de los serviciospúblicos",
+     "sector": "0301. Equipamiento y espacio público(A15)",
+     "programa": "030101 Mantenimiento del equipamiento"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "potenciando los recursos municipales y mejorando las condiciones económicas del",
+    "anios": [
+     37249227,
+     40203745,
+     43166259,
+     45979927
+    ],
+    "total": 166599159,
+    "ruta": {
+     "linea": "03. Mejoramiento de la infraestructura y la prestación de los serviciospúblicos",
+     "sector": "0301. Equipamiento y espacio público(A15)",
+     "programa": "potenciando los recursos municipales y mejorando las condiciones económicas del"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "0302. Agua Potable y Saneamiento Básico(A3)",
+    "anios": [
+     1207612509,
+     1307396570,
+     1407218178,
+     1506340774
+    ],
+    "total": 5428568030,
+    "ruta": {
+     "linea": "03. Mejoramiento de la infraestructura y la prestación de los serviciospúblicos",
+     "sector": "0302. Agua Potable y Saneamiento Básico(A3)"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "030201 Fortalecimiento de los servicios de Agua Potable y Saneamiento Básico en el sector urbano del municipio",
+    "anios": [
+     1207612509,
+     1307396570,
+     1407218178,
+     1506340774
+    ],
+    "total": 5428568030,
+    "ruta": {
+     "linea": "03. Mejoramiento de la infraestructura y la prestación de los serviciospúblicos",
+     "sector": "0302. Agua Potable y Saneamiento Básico(A3)",
+     "programa": "030201 Fortalecimiento de los servicios de Agua Potable y Saneamiento Básico en el sector urbano del municipio"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "0303. Prevención y atención de desastres(A12)",
+    "anios": [
+     730187671,
+     828280643,
+     926472140,
+     1022829402
+    ],
+    "total": 3507769857,
+    "ruta": {
+     "linea": "03. Mejoramiento de la infraestructura y la prestación de los serviciospúblicos",
+     "sector": "0303. Prevención y atención de desastres(A12)"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "030301 Gestión del riesgo y atención de desastres",
+    "anios": [
+     730187671,
+     828280643,
+     926472140,
+     1022829402
+    ],
+    "total": 3507769857,
+    "ruta": {
+     "linea": "03. Mejoramiento de la infraestructura y la prestación de los serviciospúblicos",
+     "sector": "0303. Prevención y atención de desastres(A12)",
+     "programa": "030301 Gestión del riesgo y atención de desastres"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "0304. Servicios Públicos diferentes a APSB(A6)",
+    "anios": [
+     448450918,
+     494388163,
+     540340025,
+     586019742
+    ],
+    "total": 2069198848,
+    "ruta": {
+     "linea": "03. Mejoramiento de la infraestructura y la prestación de los serviciospúblicos",
+     "sector": "0304. Servicios Públicos diferentes a APSB(A6)"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "030401 Programa de Alumbrado Público",
+    "anios": [
+     448450918,
+     494388163,
+     540340025,
+     586019742
+    ],
+    "total": 2069198848,
+    "ruta": {
+     "linea": "03. Mejoramiento de la infraestructura y la prestación de los serviciospúblicos",
+     "sector": "0304. Servicios Públicos diferentes a APSB(A6)",
+     "programa": "030401 Programa de Alumbrado Público"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "0305. Vivienda(A7)",
+    "anios": [
+     232485451,
+     251652156,
+     270872563,
+     289093206
+    ],
+    "total": 1044103375,
+    "ruta": {
+     "linea": "03. Mejoramiento de la infraestructura y la prestación de los serviciospúblicos",
+     "sector": "0305. Vivienda(A7)"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "030501 Estrategias municipales para la atención en vivienda",
+    "anios": [
+     232485451,
+     251652156,
+     270872563,
+     289093206
+    ],
+    "total": 1044103375,
+    "ruta": {
+     "linea": "03. Mejoramiento de la infraestructura y la prestación de los serviciospúblicos",
+     "sector": "0305. Vivienda(A7)",
+     "programa": "030501 Estrategias municipales para la atención en vivienda"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "0306. Transporte(A9)",
+    "anios": [
+     306604591,
+     330138345,
+     353713007,
+     376526074
+    ],
+    "total": 1366982018,
+    "ruta": {
+     "linea": "03. Mejoramiento de la infraestructura y la prestación de los serviciospúblicos",
+     "sector": "0306. Transporte(A9)"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "030601 Impulsar el desarrollo de vías rurales y urbanas en el municipio",
+    "anios": [
+     306604591,
+     330138345,
+     353713007,
+     376526074
+    ],
+    "total": 1366982018,
+    "ruta": {
+     "linea": "03. Mejoramiento de la infraestructura y la prestación de los serviciospúblicos",
+     "sector": "0306. Transporte(A9)",
+     "programa": "030601 Impulsar el desarrollo de vías rurales y urbanas en el municipio"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "04. Gestión ambiental para la sostenibilidad territorial",
+    "anios": [
+     2928810230,
+     3169345670,
+     3410448845,
+     3640982561
+    ],
+    "total": 13149587307,
+    "ruta": {
+     "linea": "04. Gestión ambiental para la sostenibilidad territorial"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "0401. Ambiental (A10)",
+    "anios": [
+     1751408589,
+     1895887337,
+     2040771104,
+     2178114663
+    ],
+    "total": 7866181693,
+    "ruta": {
+     "linea": "04. Gestión ambiental para la sostenibilidad territorial",
+     "sector": "0401. Ambiental (A10)"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "040101 Gestión ambiental para la sostenibilidad territorial",
+    "anios": [
+     1581698339,
+     1711697720,
+     1842060367,
+     1965660147
+    ],
+    "total": 7101116573,
+    "ruta": {
+     "linea": "04. Gestión ambiental para la sostenibilidad territorial",
+     "sector": "0401. Ambiental (A10)",
+     "programa": "040101 Gestión ambiental para la sostenibilidad territorial"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "040102 Gestión Integral de Cambio Climático",
+    "anios": [
+     169710251,
+     184189616,
+     198710737,
+     212454516
+    ],
+    "total": 765065120,
+    "ruta": {
+     "linea": "04. Gestión ambiental para la sostenibilidad territorial",
+     "sector": "0401. Ambiental (A10)",
+     "programa": "040102 Gestión Integral de Cambio Climático"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "0402. Bienestar animal(A10)",
+    "anios": [
+     62604093,
+     67395558,
+     72199549,
+     76770339
+    ],
+    "total": 278969539,
+    "ruta": {
+     "linea": "04. Gestión ambiental para la sostenibilidad territorial",
+     "sector": "0402. Bienestar animal(A10)"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "040201 Protección y bienestar animal",
+    "anios": [
+     62604093,
+     67395558,
+     72199549,
+     76770339
+    ],
+    "total": 278969539,
+    "ruta": {
+     "linea": "04. Gestión ambiental para la sostenibilidad territorial",
+     "sector": "0402. Bienestar animal(A10)",
+     "programa": "040201 Protección y bienestar animal"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "0403. Agua Potable y Saneamiento Básico(A3)",
+    "anios": [
+     1114797548,
+     1206062775,
+     1297478192,
+     1386097559
+    ],
+    "total": 5004436075,
+    "ruta": {
+     "linea": "04. Gestión ambiental para la sostenibilidad territorial",
+     "sector": "0403. Agua Potable y Saneamiento Básico(A3)"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "servicios de Agua Potable y Saneamiento Básico en el",
+    "anios": [
+     1114797548,
+     1206062775,
+     1297478192,
+     1386097559
+    ],
+    "total": 5004436075,
+    "ruta": {
+     "linea": "04. Gestión ambiental para la sostenibilidad territorial",
+     "sector": "0403. Agua Potable y Saneamiento Básico(A3)",
+     "programa": "servicios de Agua Potable y Saneamiento Básico en el"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "05. Gobernanza territorial",
+    "anios": [
+     2413033327,
+     2743480537,
+     3074323869,
+     3397859536
+    ],
+    "total": 11628697269,
+    "ruta": {
+     "linea": "05. Gobernanza territorial"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "0501. Fortalecimiento Institucional(A17)",
+    "anios": [
+     498553192,
+     537394281,
+     576338704,
+     613359395
+    ],
+    "total": 2225645572,
+    "ruta": {
+     "linea": "05. Gobernanza territorial",
+     "sector": "0501. Fortalecimiento Institucional(A17)"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "050101 Fortalecimiento institucional",
+    "anios": [
+     100526203,
+     108918186,
+     117333936,
+     125307227
+    ],
+    "total": 452085553,
+    "ruta": {
+     "linea": "05. Gobernanza territorial",
+     "sector": "0501. Fortalecimiento Institucional(A17)",
+     "programa": "050101 Fortalecimiento institucional"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "050102 Formulación, ejecución, seguimiento, evaluación y control del plan de desarrollo municipal",
+    "anios": [
+     81823542,
+     87326756,
+     92842370,
+     98127136
+    ],
+    "total": 360119803,
+    "ruta": {
+     "linea": "05. Gobernanza territorial",
+     "sector": "0501. Fortalecimiento Institucional(A17)",
+     "programa": "050102 Formulación, ejecución, seguimiento, evaluación y control del plan de desarrollo municipal"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "modelo integrado de planeación y gestión (MIPG), acorde con los lineamientos del decreto 1499 -2017",
+    "anios": [
+     103638702,
+     111557328,
+     119496620,
+     127051166
+    ],
+    "total": 461743817,
+    "ruta": {
+     "linea": "05. Gobernanza territorial",
+     "sector": "0501. Fortalecimiento Institucional(A17)",
+     "programa": "modelo integrado de planeación y gestión (MIPG), acorde con los lineamientos del decreto 1499 -2017"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "de capacitación y asistencia técnica orientados al desarrollo eficiente de las competencias y",
+    "anios": [
+     91854510,
+     99321913,
+     106809982,
+     113913305
+    ],
+    "total": 411899709,
+    "ruta": {
+     "linea": "05. Gobernanza territorial",
+     "sector": "0501. Fortalecimiento Institucional(A17)",
+     "programa": "de capacitación y asistencia técnica orientados al desarrollo eficiente de las competencias y"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "050105 Fortalecimiento de los procesos de gestión documental acorde a la normatividad legal",
+    "anios": [
+     57711447,
+     61896372,
+     66091629,
+     70094514
+    ],
+    "total": 255793962,
+    "ruta": {
+     "linea": "05. Gobernanza territorial",
+     "sector": "0501. Fortalecimiento Institucional(A17)",
+     "programa": "050105 Fortalecimiento de los procesos de gestión documental acorde a la normatividad legal"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "050106 Fortalecimiento de la haciendapúblicayfiscalización",
+    "anios": [
+     62998787,
+     68373727,
+     73764167,
+     78866048
+    ],
+    "total": 284002728,
+    "ruta": {
+     "linea": "05. Gobernanza territorial",
+     "sector": "0501. Fortalecimiento Institucional(A17)",
+     "programa": "050106 Fortalecimiento de la haciendapúblicayfiscalización"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "0502.Seguridad, convivencia y derechos humanos(A18)",
+    "anios": [
+     895893915,
+     1104066876,
+     1312300810,
+     1519466520
+    ],
+    "total": 4831728121,
+    "ruta": {
+     "linea": "05. Gobernanza territorial",
+     "sector": "0502.Seguridad, convivencia y derechos humanos(A18)"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "050201 Promoción de la convivencia ciudadana",
+    "anios": [
+     112852951,
+     135659857,
+     158478278,
+     181082338
+    ],
+    "total": 588073424,
+    "ruta": {
+     "linea": "05. Gobernanza territorial",
+     "sector": "0502.Seguridad, convivencia y derechos humanos(A18)",
+     "programa": "050201 Promoción de la convivencia ciudadana"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "050202 Garantía de derechos humanos",
+    "anios": [
+     99919310,
+     108146991,
+     116397700,
+     124219691
+    ],
+    "total": 448683692,
+    "ruta": {
+     "linea": "05. Gobernanza territorial",
+     "sector": "0502.Seguridad, convivencia y derechos humanos(A18)",
+     "programa": "050202 Garantía de derechos humanos"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "050203 Fortalecimiento de la convivencia y la seguridad ciudadana",
+    "anios": [
+     525507735,
+     662940863,
+     800394665,
+     937530499
+    ],
+    "total": 2926373762,
+    "ruta": {
+     "linea": "05. Gobernanza territorial",
+     "sector": "0502.Seguridad, convivencia y derechos humanos(A18)",
+     "programa": "050203 Fortalecimiento de la convivencia y la seguridad ciudadana"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "050204 Gobernanza comunitaria en San Rafael",
+    "anios": [
+     157613918,
+     197319165,
+     237030168,
+     276633991
+    ],
+    "total": 868597242,
+    "ruta": {
+     "linea": "05. Gobernanza territorial",
+     "sector": "0502.Seguridad, convivencia y derechos humanos(A18)",
+     "programa": "050204 Gobernanza comunitaria en San Rafael"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "0503. Movilidad(A9)",
+    "anios": [
+     1018586221,
+     1102019379,
+     1185684355,
+     1265033622
+    ],
+    "total": 4571323577,
+    "ruta": {
+     "linea": "05. Gobernanza territorial",
+     "sector": "0503. Movilidad(A9)"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "050301 Actualización e implementación del Plan de Movilidad municipal",
+    "anios": [
+     1018586221,
+     1102019379,
+     1185684355,
+     1265033622
+    ],
+    "total": 4571323577,
+    "ruta": {
+     "linea": "05. Gobernanza territorial",
+     "sector": "0503. Movilidad(A9)",
+     "programa": "050301 Actualización e implementación del Plan de Movilidad municipal"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total general",
+    "anios": [
+     29275681,
+     32812931,
+     36307812,
+     39743119618
+    ],
+    "total": 138139545,
+    "ruta": {
+     "linea": "Total general"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

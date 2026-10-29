@@ -1,0 +1,1669 @@
+[
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 46,
+  "valor": null,
+  "sugerencia": null,
+  "correccion": null,
+  "id": 1
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 47,
+  "valor": "Cobertura en vacunación con",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 2
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 47,
+  "valor": "Cobertura escolar bruta en educación",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 3
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 47,
+  "valor": "marco de la atención integral a la primera infancia",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 4
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 48,
+  "valor": "presunto delito sexualcontra adolescente",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 5
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 48,
+  "valor": "Tasa de homicidios en adolescentes (12 a",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 6
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 48,
+  "valor": "Tasa de homicidios en niños y niñas de 6",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 7
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 48,
+  "valor": "transporte en adolescentes (12 a 17 años)",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 8
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 48,
+  "valor": "Tasa de suicidios en niños y niñas de 6 a",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 9
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 48,
+  "valor": "Tasa de violencia contra adolescentes 12",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 10
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 135,
+  "valor": "ATENCIÓN INTEGRAL DE POBLACIÓN EN SITUACIÓN PERMANENTE DE DESPROTECCION SOCIAL Y/O FAMILIAR",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 11
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 154,
+  "valor": "ASEGURAMIENTO Y PRESTACIÓN INTEGRAL DE LOS SERVICIOS DE SALUD",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 12
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 155,
+  "valor": "SALUD PÚBLICA",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 13
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 223,
+  "valor": "FORTALECIMIENTO FAMILIAR / PERSONAS CON CAPACIDADES DIFERENTES",
+  "anios": [
+   0,
+   94555816,
+   0,
+   0,
+   44669701,
+   0,
+   0,
+   0,
+   139225517
+  ],
+  "correccion": null,
+  "id": 14
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 223,
+  "valor": "FORTALECIMIENTO FAMILIAR / MUJERES CAPACES",
+  "anios": [
+   0,
+   165928000,
+   0,
+   0,
+   134009103,
+   0,
+   0,
+   0,
+   299937103
+  ],
+  "correccion": null,
+  "id": 15
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 223,
+  "valor": "FORTALECIMIENTO FAMILIAR / RESPETO POR LA DIVERSIDAD SEXUAL",
+  "anios": [
+   0,
+   44669701,
+   0,
+   0,
+   44669701,
+   0,
+   0,
+   0,
+   89339402
+  ],
+  "correccion": null,
+  "id": 16
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 223,
+  "valor": "FORTALECIMIENTO FAMILIAR / POBLACIÓN EN SITUACIÓN DE POBREZA EXTREMA",
+  "anios": [
+   0,
+   155557500,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   155557500
+  ],
+  "correccion": null,
+  "id": 17
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 223,
+  "valor": "FORTALECIMIENTO FAMILIAR / POBLACIÓN AFRO",
+  "anios": [
+   0,
+   171852500,
+   0,
+   0,
+   44669701,
+   0,
+   0,
+   0,
+   216522201
+  ],
+  "correccion": null,
+  "id": 18
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 223,
+  "valor": "CULTURA Y PATRIMONIO / PROMOCIÓN Y ACCESO EFECTIVO A LOS PROCESOS CULTURALES",
+  "anios": [
+   134009103,
+   20000000,
+   387709599,
+   0,
+   0,
+   628541213,
+   0,
+   0,
+   1170259915
+  ],
+  "correccion": null,
+  "id": 19
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 223,
+  "valor": "DEPORTE, RECREACIÓN Y ACTIVIDAD FÍSICA / FOMENTO A LA RECREACIÓN, LA ACTIVIDAD FÍSICA Y EL DEPORTE",
+  "anios": [
+   134009103,
+   50000000,
+   516946128,
+   0,
+   0,
+   785676513,
+   500000000,
+   0,
+   1986631744
+  ],
+  "correccion": null,
+  "id": 20
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 223,
+  "valor": "EDUCACIÓN CON CALIDAD Y OPORTUNIDAD / – CALIDAD, COBERTURA Y FORTALECIMIENTO DE LA EDUCACIÓN INICIAL, PRESCOLAR, BÁSICA Y MEDIA",
+  "anios": [
+   0,
+   558889916,
+   1240967270,
+   0,
+   0,
+   0,
+   300000000,
+   0,
+   2099857186
+  ],
+  "correccion": null,
+  "id": 21
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 224,
+  "valor": "- / 20.000.000",
+  "anios": [
+   974679092,
+   0,
+   0,
+   0,
+   0,
+   0,
+   994679092
+  ],
+  "correccion": null,
+  "id": 22
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 224,
+  "valor": "VIVIENDAS DIGNAS PARA LAS FAMILIAS CISNEREÑAS / ACCESO A SOLUCIONES DE VIVIENDA",
+  "anios": [
+   0,
+   353705000,
+   0,
+   0,
+   414820000,
+   0,
+   339585917,
+   1000000000,
+   2108110917
+  ],
+  "correccion": null,
+  "id": 23
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 224,
+  "valor": "INFRAESTRUCTURA PÚBLICA / FORTALECIMIENTO A LA GESTIÓN Y DIRECCIÓN DE LA ADMINISTRACIÓN PÚBLICA TERRITORIAL",
+  "anios": [
+   223348505,
+   0,
+   0,
+   0,
+   1291116324,
+   0,
+   375505337,
+   0,
+   1889970166
+  ],
+  "correccion": null,
+  "id": 24
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 224,
+  "valor": "TRANSPORTE / MEJORAMIENTO DE LA MALLA VIAL URBANA Y RURAL",
+  "anios": [
+   223348505,
+   150000000,
+   0,
+   0,
+   500000000,
+   0,
+   1190000000,
+   2200000000,
+   4263348505
+  ],
+  "correccion": null,
+  "id": 25
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 224,
+  "valor": "TRANSPORTE / SEGURIDAD DEL TRANSPORTE",
+  "anios": [
+   0,
+   134009103,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   134009103
+  ],
+  "correccion": null,
+  "id": 26
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 224,
+  "valor": "GESTIÓN DEL RIESGO / GESTIÓN DEL RIESGO DE DESASTRES Y EMERGENCIAS",
+  "anios": [
+   178678804,
+   80000000,
+   0,
+   0,
+   89339402,
+   0,
+   0,
+   0,
+   348018207
+  ],
+  "correccion": null,
+  "id": 27
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 224,
+  "valor": "ORDENAMIENTO TERRITORIAL Y DESARROLLO URBANO / ORDENAMIENTO TERRITORIAL Y DESARROLLO URBANO",
+  "anios": [
+   0,
+   20741000,
+   0,
+   0,
+   0,
+   0,
+   300000000,
+   0,
+   320741000
+  ],
+  "correccion": null,
+  "id": 28
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 224,
+  "valor": "DOR Y TURISMO SOSTENIBLE / PRODUCTIVIDAD Y COMPETITIVIDAD DE LAS EMPRESAS COLOMBIANAS",
+  "anios": [
+   223348505,
+   52955357,
+   0,
+   0,
+   134009103,
+   0,
+   0,
+   0,
+   410312966
+  ],
+  "correccion": null,
+  "id": 29
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 224,
+  "valor": "EMPREND FORTALECIMIENTO DEL SECTOR AGROPECUARIO / INCLUSIÓN PRODUCTIVA DE PEQUEÑOS PRODUCTORES",
+  "anios": [
+   0,
+   290374000,
+   0,
+   0,
+   134009103,
+   0,
+   0,
+   0,
+   424383103
+  ],
+  "correccion": null,
+  "id": 30
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 225,
+  "valor": "EMPREND FORTALECIMIENTO DEL SECTOR AGROPECUARIO / RECURSOS PROPIOS SGP",
+  "anios": [],
+  "correccion": null,
+  "id": 31
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 225,
+  "valor": "FORTALECIMIENTO DEL BUEN GOBIERNO PARA EL RESPETO Y GARANTÍA DE LOS DERECHOS HUMANOS / - 283.667.449",
+  "anios": [
+   0,
+   0,
+   89339402,
+   0,
+   0,
+   0,
+   373006851
+  ],
+  "correccion": null,
+  "id": 32
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 225,
+  "valor": "FORTALECIMIENTO DEL DESEMPEÑO AMBIENTAL DE LOS SECTORES PRODUCTIVOS / - 89.339.402",
+  "anios": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   89339402
+  ],
+  "correccion": null,
+  "id": 33
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 225,
+  "valor": "CONSERVACIÓN DE LA BIODIVERSIDAD Y SUS SERVICIOS ECOSISTÉMICOS / - 178.678.804",
+  "anios": [
+   0,
+   0,
+   446697011,
+   0,
+   490417852,
+   0,
+   1115793667
+  ],
+  "correccion": null,
+  "id": 34
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 225,
+  "valor": "GESTIÓN INTEGRAL DEL RECURSO HÍDRICO / - 178.678.804",
+  "anios": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   178678804
+  ],
+  "correccion": null,
+  "id": 35
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 226,
+  "valor": "- / 44.669.701",
+  "anios": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   44669701
+  ],
+  "correccion": null,
+  "id": 36
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 226,
+  "valor": "- / 134.009.103",
+  "anios": [
+   0,
+   0,
+   178678804,
+   0,
+   0,
+   0,
+   312687908
+  ],
+  "correccion": null,
+  "id": 37
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 226,
+  "valor": "- / 44.669.701",
+  "anios": [
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   44669701
+  ],
+  "correccion": null,
+  "id": 38
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 226,
+  "valor": "- / FORTALECIMIENTO DE LA CONVIVIENCIA Y LA SEGURIDAD CIUDADANA",
+  "anios": [
+   446697011,
+   0,
+   0,
+   0,
+   0,
+   1031564107,
+   0,
+   0,
+   1478261118
+  ],
+  "correccion": null,
+  "id": 39
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 226,
+  "valor": "FUERZA PÚBLICA / SISTEMA PENITENCIARIO Y CARCELARIO EN EL MARCO DE LOS DERECHOS HUMANOS",
+  "anios": [
+   402027310,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   402027310
+  ],
+  "correccion": null,
+  "id": 40
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 226,
+  "valor": "APOYO A LAS VÍCTIMAS / ATENCIÓN, ASISTENCIA Y REPARACIÓN INTEGRAL DE VICTIMAS",
+  "anios": [
+   178678804,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   178678804
+  ],
+  "correccion": null,
+  "id": 41
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 226,
+  "valor": "BUEN GOBIERNO / FORTALECIMIENTO DEL BUEN GOBIERNO PARA EL RESPETO Y GARANTÍA DE LOS DERECHOS HUMANOS",
+  "anios": [
+   0,
+   580782145,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   580782145
+  ],
+  "correccion": null,
+  "id": 42
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 226,
+  "valor": "BUEN GOBIERNO / MEJORAMIENTO DE INGRESOS",
+  "anios": [
+   594518866,
+   134009103,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   728527969
+  ],
+  "correccion": null,
+  "id": 43
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 226,
+  "valor": "BUEN GOBIERNO / CUALIFICACIÓN DEL TALENTO HUMANO",
+  "anios": [
+   0,
+   166252551,
+   0,
+   0,
+   0,
+   0,
+   0,
+   0,
+   166252551
+  ],
+  "correccion": null,
+  "id": 44
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 228,
+  "valor": "BUEN GOBIERNO / 25.000.000",
+  "anios": [
+   25000000
+  ],
+  "correccion": null,
+  "id": 45
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 228,
+  "valor": "BUEN GOBIERNO / JUVENTUD ACTIVA Y PARTICIPATIVA",
+  "anios": [
+   20000000,
+   10000000,
+   30000000
+  ],
+  "correccion": null,
+  "id": 46
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 228,
+  "valor": "FORTALECIMIENTO FAMILIAR / PERSONAS CON CAPACIDADES DIFERENTES",
+  "anios": [
+   20000000,
+   10000000,
+   30000000
+  ],
+  "correccion": null,
+  "id": 47
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 228,
+  "valor": "FORTALECIMIENTO FAMILIAR / MUJERES CAPACES",
+  "anios": [
+   20000000,
+   30000000,
+   50000000
+  ],
+  "correccion": null,
+  "id": 48
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 228,
+  "valor": "FORTALECIMIENTO FAMILIAR / RESPETO POR LA DIVERSIDAD SEXUAL",
+  "anios": [
+   10000000,
+   10000000,
+   20000000
+  ],
+  "correccion": null,
+  "id": 49
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 228,
+  "valor": "FORTALECIMIENTO FAMILIAR / POBLACIÓN EN SITUACIÓN DE POBREZA EXTREMA",
+  "anios": [
+   25000000,
+   25000000
+  ],
+  "correccion": null,
+  "id": 50
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 228,
+  "valor": "FORTALECIMIENTO FAMILIAR / POBLACIÓN AFRO",
+  "anios": [
+   25000000,
+   10000000,
+   35000000
+  ],
+  "correccion": null,
+  "id": 51
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 229,
+  "valor": "VIVIENDAS DIGNAS PARA LAS FAMILIAS CISNEREÑAS / ACCESO A SOLUCIONES DE VIVIENDA",
+  "anios": [
+   50000000,
+   50000000
+  ],
+  "correccion": null,
+  "id": 52
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 229,
+  "valor": "MEJORAMIENTO DE LA INFRAESTRUCTURA PÚBLICA / FORTALECIMIENTO A LA GESTIÓN Y DIRECCIÓN DE LA ADMINISTRACIÓN PÚBLICA TERRITORIAL",
+  "anios": [
+   50000000,
+   50000000
+  ],
+  "correccion": null,
+  "id": 53
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 229,
+  "valor": "TRANSPORTE / MEJORAMIENTO DE LA MALLA VIAL URBANA Y RURAL",
+  "anios": [
+   50000000,
+   490000000,
+   540000000
+  ],
+  "correccion": null,
+  "id": 54
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 229,
+  "valor": "TRANSPORTE / SEGURIDAD DEL TRANSPORTE",
+  "anios": [
+   30000000,
+   30000000
+  ],
+  "correccion": null,
+  "id": 55
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 229,
+  "valor": "GESTIÓN DEL RIESGO / GESTIÓN DEL RIESGO DE DESASTRES Y EMERGENCIAS",
+  "anios": [
+   40000000,
+   20000000,
+   60000000
+  ],
+  "correccion": null,
+  "id": 56
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 229,
+  "valor": "ORDENAMIENTO TERRITORIAL Y DESARROLLO URBANO / ORDENAMIENTO TERRITORIAL Y DESARROLLO URBANO",
+  "anios": [
+   300000000,
+   300000000
+  ],
+  "correccion": null,
+  "id": 57
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 229,
+  "valor": "TURISMO SOSTENIBLE / PRODUCTIVIDAD Y COMPETITIVIDAD DE LAS EMPRESAS COLOMBIANAS",
+  "anios": [
+   50000000,
+   30000000,
+   80000000
+  ],
+  "correccion": null,
+  "id": 58
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 229,
+  "valor": "FORTALECIMIENTO / INCLUSIÓN PRODUCTIVA DE PEQUEÑOS PRODUCTORES",
+  "anios": [
+   50000000,
+   30000000,
+   80000000
+  ],
+  "correccion": null,
+  "id": 59
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 229,
+  "valor": "DEL SECTOR AGROPECUARIO / INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACIÓN",
+  "anios": [
+   20000000,
+   20000000
+  ],
+  "correccion": null,
+  "id": 60
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 233,
+  "valor": "- / 21.482.000",
+  "anios": [
+   10741000,
+   32223000
+  ],
+  "correccion": null,
+  "id": 61
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 233,
+  "valor": "- / ADULTO MAYOR CON ATENCIÓN INTEGRAL",
+  "anios": [
+   16111500,
+   0,
+   214820000,
+   302270264,
+   533201764
+  ],
+  "correccion": null,
+  "id": 62
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 233,
+  "valor": "CULTURA Y PATRIMONIO / PROMOCIÓN Y ACCESO EFECTIVO A LOS PROCESOS CULTURALES",
+  "anios": [
+   32223000,
+   0,
+   93226252,
+   0,
+   151135132,
+   276584384
+  ],
+  "correccion": null,
+  "id": 63
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 233,
+  "valor": "DEPORTE, RECREACIÓN Y ACTIVIDAD FÍSICA / FOMENTO A LA RECREACIÓN, LA ACTIVIDAD FÍSICA Y EL DEPORTE",
+  "anios": [
+   32223000,
+   0,
+   124301668,
+   0,
+   188918914,
+   500000000,
+   845443582
+  ],
+  "correccion": null,
+  "id": 64
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 233,
+  "valor": "EDUCACIÓN CON CALIDAD Y OPORTUNIDAD / – CALIDAD, COBERTURA Y FORTALECIMIENTO DE LA EDUCACIÓN INICIAL, PRESCOLAR, BÁSICA Y MEDIA",
+  "anios": [
+   0,
+   148927205,
+   298395313,
+   0,
+   179591192,
+   626913710
+  ],
+  "correccion": null,
+  "id": 65
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 234,
+  "valor": "VIVIENDAS DIGNAS PARA LAS FAMILIAS CISNEREÑAS / ACCESO A SOLUCIONES DE VIVIENDA",
+  "anios": [
+   0,
+   53705000,
+   0,
+   110876920,
+   164581920
+  ],
+  "correccion": null,
+  "id": 66
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 235,
+  "valor": "ALUMBRADO PÚBLICO / CONSOLIDACIÓN PRODUCTIVA DEL SECTOR DE ENERGÍA ELÉCTRICA",
+  "anios": [
+   0,
+   0,
+   0,
+   420601147,
+   420601147
+  ],
+  "correccion": null,
+  "id": 67
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 235,
+  "valor": "ALUMBRADO PÚBLICO / CONSERVACIÓN DE LA BIODIVERSIDAD Y SUS SERVICIOS ECOSISTÉMICOS",
+  "anios": [
+   0,
+   42964000,
+   107410000,
+   121009278,
+   271383278
+  ],
+  "correccion": null,
+  "id": 68
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 236,
+  "valor": "FUERZA PÚBLICA / FORTALECIMIENTO DE LA CONVIVIENCIA Y LA SEGURIDAD CIUDADANA",
+  "anios": [
+   107410000,
+   0,
+   0,
+   248043524,
+   355453524
+  ],
+  "correccion": null,
+  "id": 69
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 236,
+  "valor": "VERSIÓN / 728.357.640",
+  "anios": [
+   881697765,
+   5872423746,
+   7344163553,
+   2238547973,
+   1310968981,
+   911477390,
+   0,
+   19287637048
+  ],
+  "correccion": null,
+  "id": 70
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 237,
+  "valor": "- / ADULTO MAYOR CON ATENCIÓN INTEGRAL",
+  "anios": [
+   17305362,
+   0,
+   230738162,
+   324668491,
+   572712015
+  ],
+  "correccion": null,
+  "id": 71
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 237,
+  "valor": "CULTURA Y PATRIMONIO / PROMOCIÓN Y ACCESO EFECTIVO A LOS PROCESOS CULTURALES",
+  "anios": [
+   34610724,
+   0,
+   100134317,
+   0,
+   162334245,
+   297079286
+  ],
+  "correccion": null,
+  "id": 72
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 237,
+  "valor": "DEPORTE, RECREACIÓN Y ACTIVIDAD FÍSICA / FOMENTO A LA RECREACIÓN, LA ACTIVIDAD FÍSICA Y EL DEPORTE",
+  "anios": [
+   34610724,
+   0,
+   133512422,
+   0,
+   202917806,
+   371040952
+  ],
+  "correccion": null,
+  "id": 73
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 237,
+  "valor": "EDUCACIÓN CON CALIDAD Y OPORTUNIDAD / – CALIDAD, COBERTURA Y FORTALECIMIENTO DE LA EDUCACIÓN INICIAL, PRESCOLAR, BÁSICA Y MEDIA",
+  "anios": [
+   0,
+   159962711,
+   320506406,
+   0,
+   480469117
+  ],
+  "correccion": null,
+  "id": 74
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 238,
+  "valor": "VIVIENDAS DIGNAS PARA LAS FAMILIAS CISNEREÑAS / ACCESO A SOLUCIONES DE VIVIENDA",
+  "anios": [
+   0,
+   100000000,
+   200000000,
+   228708997,
+   1000000000,
+   1528708997
+  ],
+  "correccion": null,
+  "id": 75
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 238,
+  "valor": "MEJORAMIENTO DE LA INFRAESTRUCTURA PÚBLICA / FORTALECIMIENTO A LA GESTIÓN Y DIRECCIÓN DE LA ADMINISTRACIÓN PÚBLICA TERRITORIAL",
+  "anios": [
+   57684541,
+   0,
+   429640000,
+   3680034,
+   491004575
+  ],
+  "correccion": null,
+  "id": 76
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 238,
+  "valor": "TRANSPORTE / MEJORAMIENTO DE LA MALLA VIAL URBANA Y RURAL",
+  "anios": [
+   57684541,
+   50000000,
+   0,
+   300000000,
+   407684541
+  ],
+  "correccion": null,
+  "id": 77
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 239,
+  "valor": "FORTALECIMIENTO DEL BUEN GOBIERNO PARA EL RESPETO Y GARANTÍA DE LOS DERECHOS HUMANOS / - 69.221.449",
+  "anios": [
+   23073816,
+   92295265
+  ],
+  "correccion": null,
+  "id": 78
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 239,
+  "valor": "AGUA POTABLE Y SANEAMIENTO BÁSICO / ACCESO DE LA POBLACIÓN A LOS SERVICIOS DE AGUA POTABLE Y SANEAMIENTO BÁSICO",
+  "anios": [
+   0,
+   0,
+   1232253331,
+   230738162,
+   200000000,
+   1662991493
+  ],
+  "correccion": null,
+  "id": 79
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 239,
+  "valor": "ALUMBRADO PÚBLICO / CONSOLIDACIÓN PRODUCTIVA DEL SECTOR DE ENERGÍA ELÉCTRICA",
+  "anios": [
+   0,
+   0,
+   0,
+   451767692,
+   451767692
+  ],
+  "correccion": null,
+  "id": 80
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 239,
+  "valor": "MEDIO AMBIENTE / CONSERVACIÓN DE LA BIODIVERSIDAD Y SUS SERVICIOS ECOSISTÉMICOS",
+  "anios": [
+   0,
+   46147632,
+   115369081,
+   112109076,
+   273625789
+  ],
+  "correccion": null,
+  "id": 81
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 240,
+  "valor": "- / 46.147.632",
+  "anios": [
+   0,
+   46147632
+  ],
+  "correccion": null,
+  "id": 82
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 240,
+  "valor": "- / 11.536.908",
+  "anios": [
+   0,
+   11536908
+  ],
+  "correccion": null,
+  "id": 83
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 240,
+  "valor": "- / 34.610.724",
+  "anios": [
+   46147632,
+   80758357
+  ],
+  "correccion": null,
+  "id": 84
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 240,
+  "valor": "- / 11.536.908",
+  "anios": [
+   0,
+   11536908
+  ],
+  "correccion": null,
+  "id": 85
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 240,
+  "valor": "- / DE LA CONVIVIENCIA Y LA SEGURIDAD CIUDADANA",
+  "anios": [
+   115369081,
+   0,
+   0,
+   266423549,
+   381792630
+  ],
+  "correccion": null,
+  "id": 86
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 242,
+  "valor": "- / ADULTO MAYOR CON ATENCIÓN INTEGRAL",
+  "anios": [
+   18587689,
+   0,
+   247835860,
+   348726426,
+   615149975
+  ],
+  "correccion": null,
+  "id": 87
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 242,
+  "valor": "CULTURA Y PATRIMONIO / PROMOCIÓN Y ACCESO EFECTIVO A LOS PROCESOS CULTURALES",
+  "anios": [
+   37175379,
+   20000000,
+   107554270,
+   0,
+   174363213,
+   339092862
+  ],
+  "correccion": null,
+  "id": 88
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 242,
+  "valor": "DEPORTE, RECREACIÓN Y ACTIVIDAD FÍSICA / FOMENTO A LA RECREACIÓN, LA ACTIVIDAD FÍSICA Y EL DEPORTE",
+  "anios": [
+   37175379,
+   50000000,
+   143405692,
+   0,
+   217954015,
+   448535086
+  ],
+  "correccion": null,
+  "id": 89
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 242,
+  "valor": "EDUCACIÓN CON CALIDAD Y OPORTUNIDAD / – CALIDAD, COBERTURA Y FORTALECIMIENTO DE LA EDUCACIÓN INICIAL, PRESCOLAR, BÁSICA Y MEDIA",
+  "anios": [
+   0,
+   200000000,
+   344255930,
+   0,
+   544255930
+  ],
+  "correccion": null,
+  "id": 90
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 243,
+  "valor": "- / 20.000.000",
+  "anios": [
+   270385099,
+   0,
+   290385099
+  ],
+  "correccion": null,
+  "id": 91
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 243,
+  "valor": "MEJORAMIENTO DE LA INFRAESTRUCTURA PÚBLICA / FORTALECIMIENTO A LA GESTIÓN Y DIRECCIÓN DE LA ADMINISTRACIÓN PÚBLICA TERRITORIAL",
+  "anios": [
+   61958965,
+   0,
+   461476324,
+   371825303,
+   895260592
+  ],
+  "correccion": null,
+  "id": 92
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 243,
+  "valor": "TRANSPORTE / MEJORAMIENTO DE LA MALLA VIAL URBANA Y RURAL",
+  "anios": [
+   61958965,
+   100000000,
+   500000000,
+   400000000,
+   2200000000,
+   3261958965
+  ],
+  "correccion": null,
+  "id": 93
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 244,
+  "valor": "- / 50.000.000",
+  "anios": [
+   0,
+   50000000
+  ],
+  "correccion": null,
+  "id": 94
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 244,
+  "valor": "- / 12.391.793",
+  "anios": [
+   0,
+   12391793
+  ],
+  "correccion": null,
+  "id": 95
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 244,
+  "valor": "AGUA POTABLE Y SANEAMIENTO BÁSICO / ACCESO DE LA POBLACIÓN A LOS SERVICIOS DE AGUA POTABLE Y SANEAMIENTO BÁSICO",
+  "anios": [
+   0,
+   0,
+   1323563303,
+   500000000,
+   1823563303
+  ],
+  "correccion": null,
+  "id": 96
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 244,
+  "valor": "ALUMBRADO PÚBLICO / CONSOLIDACIÓN PRODUCTIVA DEL SECTOR DE ENERGÍA ELÉCTRICA",
+  "anios": [
+   0,
+   0,
+   0,
+   485243678,
+   485243678
+  ],
+  "correccion": null,
+  "id": 97
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 244,
+  "valor": "MEDIO AMBIENTE / CONSERVACIÓN DE LA BIODIVERSIDAD Y SUS SERVICIOS ECOSISTÉMICOS",
+  "anios": [
+   0,
+   49567172,
+   123917930,
+   118177799,
+   291662901
+  ],
+  "correccion": null,
+  "id": 98
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 245,
+  "valor": "- / 12.391.793",
+  "anios": [
+   0,
+   12391793
+  ],
+  "correccion": null,
+  "id": 99
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 245,
+  "valor": "- / 37.175.379",
+  "anios": [
+   49567172,
+   86742551
+  ],
+  "correccion": null,
+  "id": 100
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 245,
+  "valor": "- / 12.391.793",
+  "anios": [
+   0,
+   12391793
+  ],
+  "correccion": null,
+  "id": 101
+ },
+ {
+  "tipo": "ppi_fila",
+  "pagina": 245,
+  "valor": "- / FORTALECIMIENTO DE LA CONVIVIENCIA Y LA SEGURIDAD CIUDADANA",
+  "anios": [
+   123917930,
+   0,
+   0,
+   286165534,
+   410083464
+  ],
+  "correccion": null,
+  "id": 102
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "PERSONAS CON CAPACIDADES DIFERENTES",
+  "sector": "FORTALECIMIENTO FAMILIAR",
+  "correccion": null,
+  "id": 103
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "MUJERES CAPACES",
+  "sector": "FORTALECIMIENTO FAMILIAR",
+  "correccion": null,
+  "id": 104
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "RESPETO POR LA DIVERSIDAD SEXUAL",
+  "sector": "FORTALECIMIENTO FAMILIAR",
+  "correccion": null,
+  "id": 105
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "POBLACIÓN EN SITUACIÓN DE POBREZA EXTREMA",
+  "sector": "FORTALECIMIENTO FAMILIAR",
+  "correccion": null,
+  "id": 106
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "POBLACIÓN AFRO",
+  "sector": "FORTALECIMIENTO FAMILIAR",
+  "correccion": null,
+  "id": 107
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "– CALIDAD, COBERTURA Y FORTALECIMIENTO DE LA EDUCACIÓN INICIAL, PRESCOLAR, BÁSICA Y MEDIA",
+  "sector": "EDUCACIÓN CON CALIDAD Y OPORTUNIDAD",
+  "correccion": null,
+  "id": 108
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "20.000.000",
+  "sector": "-",
+  "correccion": null,
+  "id": 109
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "MEJORAMIENTO DE LA MALLA VIAL URBANA Y RURAL",
+  "sector": "TRANSPORTE",
+  "correccion": null,
+  "id": 110
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "PRODUCTIVIDAD Y COMPETITIVIDAD DE LAS EMPRESAS COLOMBIANAS",
+  "sector": "DOR Y TURISMO SOSTENIBLE",
+  "correccion": null,
+  "id": 111
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "RECURSOS PROPIOS SGP",
+  "sector": "EMPREND FORTALECIMIENTO DEL SECTOR AGROPECUARIO",
+  "correccion": null,
+  "id": 112
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "- 283.667.449",
+  "sector": "FORTALECIMIENTO DEL BUEN GOBIERNO PARA EL RESPETO Y GARANTÍA DE LOS DERECHOS HUMANOS",
+  "correccion": null,
+  "id": 113
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "- 89.339.402",
+  "sector": "FORTALECIMIENTO DEL DESEMPEÑO AMBIENTAL DE LOS SECTORES PRODUCTIVOS",
+  "correccion": null,
+  "id": 114
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "- 178.678.804",
+  "sector": "CONSERVACIÓN DE LA BIODIVERSIDAD Y SUS SERVICIOS ECOSISTÉMICOS",
+  "correccion": null,
+  "id": 115
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "44.669.701",
+  "sector": "-",
+  "correccion": null,
+  "id": 116
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "134.009.103",
+  "sector": "-",
+  "correccion": null,
+  "id": 117
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "MEJORAMIENTO DE INGRESOS",
+  "sector": "BUEN GOBIERNO",
+  "correccion": null,
+  "id": 118
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "CUALIFICACIÓN DEL TALENTO HUMANO",
+  "sector": "BUEN GOBIERNO",
+  "correccion": null,
+  "id": 119
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "25.000.000",
+  "sector": "BUEN GOBIERNO",
+  "correccion": null,
+  "id": 120
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "JUVENTUD ACTIVA Y PARTICIPATIVA",
+  "sector": "BUEN GOBIERNO",
+  "correccion": null,
+  "id": 121
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "ADULTO MAYOR CON ATENCIÓN INTEGRAL",
+  "sector": "BUEN GOBIERNO",
+  "correccion": null,
+  "id": 122
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "INFRAESTRUCTURA PRODUCTIVA Y COMERCIALIZACIÓN",
+  "sector": "DEL SECTOR AGROPECUARIO",
+  "correccion": null,
+  "id": 123
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "26.852.500",
+  "sector": "-",
+  "correccion": null,
+  "id": 124
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "21.482.000",
+  "sector": "-",
+  "correccion": null,
+  "id": 125
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "FORTALECIMIENTO DEL DESEMPEÑO AMBIENTAL DE LOS SECTORES PRODUCTIVOS",
+  "sector": "ALUMBRADO PÚBLICO",
+  "correccion": null,
+  "id": 126
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "GESTIÓN INTEGRAL DEL RECURSO HÍDRICO",
+  "sector": "ALUMBRADO PÚBLICO",
+  "correccion": null,
+  "id": 127
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "EDUCACIÓN AMBIENTAL",
+  "sector": "MEDIO AMBIENTE",
+  "correccion": null,
+  "id": 128
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "FOMENTO DEL DESARROLLO DE APLICACIONES, SOFTWARE Y CONTENIDOS PARA IMPULSAR LA APROPIACIÓN DE LAS TECNOLOGÍAS DE LA INFORMACIÓN Y LAS COMUNICACIONES (TIC)",
+  "sector": "BUEN GOBIERNO",
+  "correccion": null,
+  "id": 129
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "728.357.640",
+  "sector": "VERSIÓN",
+  "correccion": null,
+  "id": 130
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "60.000.000",
+  "sector": "-",
+  "correccion": null,
+  "id": 131
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "INCLUSIÓN PRODUCTIVA DE",
+  "sector": "MÁGICO FORTALECIMIENTO DEL SECTOR AGROPECUARIO",
+  "correccion": null,
+  "id": 132
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "- 69.221.449",
+  "sector": "FORTALECIMIENTO DEL BUEN GOBIERNO PARA EL RESPETO Y GARANTÍA DE LOS DERECHOS HUMANOS",
+  "correccion": null,
+  "id": 133
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "ACCESO DE LA POBLACIÓN A LOS SERVICIOS DE AGUA POTABLE Y SANEAMIENTO BÁSICO",
+  "sector": "AGUA POTABLE Y SANEAMIENTO BÁSICO",
+  "correccion": null,
+  "id": 134
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "46.147.632",
+  "sector": "-",
+  "correccion": null,
+  "id": 135
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "11.536.908",
+  "sector": "-",
+  "correccion": null,
+  "id": 136
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "34.610.724",
+  "sector": "-",
+  "correccion": null,
+  "id": 137
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "DE LA CONVIVIENCIA Y LA SEGURIDAD CIUDADANA",
+  "sector": "-",
+  "correccion": null,
+  "id": 138
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "64.446.000",
+  "sector": "-",
+  "correccion": null,
+  "id": 139
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "50.000.000",
+  "sector": "-",
+  "correccion": null,
+  "id": 140
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "12.391.793",
+  "sector": "-",
+  "correccion": null,
+  "id": 141
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "37.175.379",
+  "sector": "-",
+  "correccion": null,
+  "id": 142
+ }
+]

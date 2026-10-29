@@ -1,0 +1,250 @@
+[
+ {
+  "pagina": 225,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "INVERSIÓN",
+    "anios": [
+     1314462497,
+     1128830989,
+     1046261678,
+     1098171662
+    ],
+    "total": 4587726826
+   },
+   {
+    "etiqueta": "Asignaciónpara la Paz",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignaciones Directas",
+    "anios": [
+     46828669,
+     29870037,
+     28129024,
+     28049359
+    ],
+    "total": 132877089
+   },
+   {
+    "etiqueta": "Directas",
+    "anios": [
+     36637798,
+     23369863,
+     22007721,
+     21945393
+    ],
+    "total": 103960775
+   },
+   {
+    "etiqueta": "5% Asignaciones Directas Anticipadas",
+    "anios": [
+     10190871,
+     6500174,
+     6121303,
+     6103967
+    ],
+    "total": 28916315
+   },
+   {
+    "etiqueta": "Inversión Regional",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Inversión Local",
+    "anios": [
+     1267633828,
+     1098960952,
+     1018132654,
+     1070122303
+    ],
+    "total": 4454849737
+   },
+   {
+    "etiqueta": "Municipios máspobres",
+    "anios": [
+     1267633828,
+     1098960952,
+     1018132654,
+     1070122303
+    ],
+    "total": 4454849737
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     169017844,
+     146528127,
+     135751021,
+     142682974
+    ],
+    "total": 593979966
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     1098615984,
+     952432825,
+     882381634,
+     927439329
+    ],
+    "total": 3860869772
+   },
+   {
+    "etiqueta": "Innovación",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación Ambiental",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Dique",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "AHORRO",
+    "anios": [
+     31300836,
+     27060361,
+     25075934,
+     26180544
+    ],
+    "total": 109617675
+   },
+   {
+    "etiqueta": "Estabilización(Ahorro)",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Fondo Ahorro Pensional Territorial(FONPET)",
+    "anios": [
+     31300836,
+     27060361,
+     25075934,
+     26180544
+    ],
+    "total": 109617675
+   },
+   {
+    "etiqueta": "OTROS",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ },
+ {
+  "pagina": 226,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "fiscalización",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Evaluación(SSEC)",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Contraloría",
+    "anios": [
+     70401205851,
+     60858195556,
+     56382090798,
+     58862923139
+    ],
+    "total": 246504415344
+   },
+   {
+    "etiqueta": "Procuraduría",
+    "anios": [
+     14080241171,
+     12171639111,
+     11276418160,
+     11772584628
+    ],
+    "total": 49300883070
+   },
+   {
+    "etiqueta": "DNP",
+    "anios": [
+     56320964680,
+     48686556445,
+     45105672638,
+     47090338511
+    ],
+    "total": 197203532274
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     1345763333,
+     1155891350,
+     1071337613,
+     1124352206
+    ],
+    "total": 4697344502
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ }
+]

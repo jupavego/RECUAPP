@@ -1,0 +1,1500 @@
+[
+ {
+  "paginas": [
+   280
+  ],
+  "cabecera": "",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   15434,
+   30252,
+   18441,
+   3469
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Transporte escolar gobernación",
+    "anios": [
+     136,
+     140,
+     144,
+     149
+    ],
+    "total": 569,
+    "ruta": {
+     "linea": "Transporte escolar gobernación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Saneamiento rural - doméstico",
+    "anios": [
+     390,
+     390,
+     390,
+     390
+    ],
+    "total": 1560,
+    "ruta": {
+     "linea": "Saneamiento rural - doméstico"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Gestión del Riesgo - Limpieza de Quebradas",
+    "anios": [
+     315,
+     315,
+     315,
+     315
+    ],
+    "total": 1260,
+    "ruta": {
+     "linea": "Gestión del Riesgo - Limpieza de Quebradas"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Saneamiento rural - centros educativos",
+    "anios": [
+     365,
+     365,
+     365,
+     365
+    ],
+    "total": 1460,
+    "ruta": {
+     "linea": "Saneamiento rural - centros educativos"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Saneamiento rural - colectivo",
+    "anios": [
+     350,
+     350,
+     350,
+     350
+    ],
+    "total": 1400,
+    "ruta": {
+     "linea": "Saneamiento rural - colectivo"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "PRISER",
+    "anios": [
+     65,
+     65,
+     65,
+     65
+    ],
+    "total": 260,
+    "ruta": {
+     "linea": "PRISER"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Estufas eficientes",
+    "anios": [
+     168,
+     168,
+     168,
+     168
+    ],
+    "total": 672,
+    "ruta": {
+     "linea": "Estufas eficientes"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Vivienda VIVA",
+    "anios": [
+     333,
+     354,
+     376,
+     399
+    ],
+    "total": 1462,
+    "ruta": {
+     "linea": "Vivienda VIVA"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Ampliación de plantas residuales",
+    "anios": [
+     2404,
+     0,
+     0,
+     0
+    ],
+    "total": 2404,
+    "ruta": {
+     "linea": "Ampliación de plantas residuales"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Centro cultural 2 etapa Instituto de cultura de Antioquia",
+    "anios": [
+     1500,
+     0,
+     0,
+     0
+    ],
+    "total": 1500,
+    "ruta": {
+     "linea": "Centro cultural 2 etapa Instituto de cultura de Antioquia"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Indeportes Skape park",
+    "anios": [
+     0,
+     2700,
+     0,
+     0
+    ],
+    "total": 2700,
+    "ruta": {
+     "linea": "Indeportes Skape park"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Acueducto y alcantarillado chaparral y san Ignacio",
+    "anios": [
+     1596,
+     0,
+     0,
+     0
+    ],
+    "total": 1596,
+    "ruta": {
+     "linea": "Acueducto y alcantarillado chaparral y san Ignacio"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Carrera 52A departamento",
+    "anios": [
+     1268,
+     1268,
+     1268,
+     1268
+    ],
+    "total": 5072,
+    "ruta": {
+     "linea": "Carrera 52A departamento"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Centro de integración Min Interior",
+    "anios": [
+     2544,
+     0,
+     0,
+     0
+    ],
+    "total": 2544,
+    "ruta": {
+     "linea": "Centro de integración Min Interior"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Actualización Catastral",
+    "anios": [
+     4000,
+     4000,
+     0,
+     0
+    ],
+    "total": 8000,
+    "ruta": {
+     "linea": "Actualización Catastral"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Compra de predios con la gobernación",
+    "anios": [
+     0,
+     137,
+     0,
+     0
+    ],
+    "total": 137,
+    "ruta": {
+     "linea": "Compra de predios con la gobernación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "EMPRESTITOS",
+    "anios": [
+     0,
+     20000,
+     15000,
+     0
+    ],
+    "total": 35000,
+    "ruta": {
+     "linea": "EMPRESTITOS"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Centro de Educación Superior",
+    "anios": [
+     0,
+     20000,
+     0,
+     0
+    ],
+    "total": 20000,
+    "ruta": {
+     "linea": "EMPRESTITOS",
+     "sector": "Centro de Educación Superior"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Construcción sede municipal",
+    "anios": [
+     0,
+     0,
+     6000,
+     0
+    ],
+    "total": 6000,
+    "ruta": {
+     "linea": "EMPRESTITOS",
+     "sector": "Construcción sede municipal"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Construcción y dotación hospital",
+    "anios": [
+     0,
+     0,
+     9000,
+     0
+    ],
+    "total": 9000,
+    "ruta": {
+     "linea": "EMPRESTITOS",
+     "sector": "Construcción y dotación hospital"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "REGALIAS",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "REGALIAS"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Regalías",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Regalías"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   281
+  ],
+  "cabecera": "",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   96462,
+   114330,
+   165251,
+   97022
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Bibliotecaspublicas",
+    "anios": [
+     135,
+     143,
+     152,
+     161
+    ],
+    "total": 591,
+    "ruta": {
+     "linea": "Bibliotecaspublicas"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Centro de bienestar",
+    "anios": [
+     844,
+     897,
+     953,
+     1012
+    ],
+    "total": 3706,
+    "ruta": {
+     "linea": "Centro de bienestar"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Centro vida",
+    "anios": [
+     1970,
+     2092,
+     2223,
+     2361
+    ],
+    "total": 8646,
+    "ruta": {
+     "linea": "Centro vida"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Cultura",
+    "anios": [
+     1423,
+     1511,
+     1605,
+     1705
+    ],
+    "total": 6244,
+    "ruta": {
+     "linea": "Cultura"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Deporte",
+    "anios": [
+     2235,
+     2374,
+     2522,
+     2679
+    ],
+    "total": 9810,
+    "ruta": {
+     "linea": "Deporte"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Educación",
+    "anios": [
+     1211,
+     1282,
+     1357,
+     1437
+    ],
+    "total": 5287,
+    "ruta": {
+     "linea": "Educación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Estratificación",
+    "anios": [
+     15,
+     16,
+     17,
+     18
+    ],
+    "total": 66,
+    "ruta": {
+     "linea": "Estratificación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Gestor cultural",
+    "anios": [
+     135,
+     143,
+     152,
+     161
+    ],
+    "total": 591,
+    "ruta": {
+     "linea": "Gestor cultural"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Inversión libre inversión ICLD",
+    "anios": [
+     34874,
+     33161,
+     32849,
+     36360
+    ],
+    "total": 137244,
+    "ruta": {
+     "linea": "Inversión libre inversión ICLD"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Infraestructura",
+    "anios": [
+     3200,
+     3600,
+     78600,
+     3600
+    ],
+    "total": 89000,
+    "ruta": {
+     "linea": "Infraestructura"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Libre inversión",
+    "anios": [
+     6093,
+     6472,
+     6874,
+     7302
+    ],
+    "total": 26741,
+    "ruta": {
+     "linea": "Libre inversión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Parqueaderos",
+    "anios": [
+     906,
+     962,
+     1022,
+     1086
+    ],
+    "total": 3976,
+    "ruta": {
+     "linea": "Parqueaderos"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Riesgos",
+    "anios": [
+     514,
+     546,
+     580,
+     616
+    ],
+    "total": 2256,
+    "ruta": {
+     "linea": "Riesgos"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Saludpublica",
+    "anios": [
+     706,
+     750,
+     797,
+     846
+    ],
+    "total": 3099,
+    "ruta": {
+     "linea": "Saludpublica"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Salud reg. subsidiado",
+    "anios": [
+     18120,
+     19247,
+     20444,
+     21716
+    ],
+    "total": 79527,
+    "ruta": {
+     "linea": "Salud reg. subsidiado"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Salud servicio a la oferta",
+    "anios": [
+     476,
+     506,
+     537,
+     570
+    ],
+    "total": 2089,
+    "ruta": {
+     "linea": "Salud servicio a la oferta"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Saneamiento básico",
+    "anios": [
+     3917,
+     4160,
+     4419,
+     4694
+    ],
+    "total": 17190,
+    "ruta": {
+     "linea": "Saneamiento básico"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Seguridad",
+    "anios": [
+     2176,
+     2311,
+     2455,
+     2608
+    ],
+    "total": 9550,
+    "ruta": {
+     "linea": "Seguridad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Seguridad cultura",
+    "anios": [
+     26,
+     28,
+     29,
+     31
+    ],
+    "total": 114,
+    "ruta": {
+     "linea": "Seguridad cultura"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Seguridad materialización",
+    "anios": [
+     16,
+     17,
+     18,
+     19
+    ],
+    "total": 70,
+    "ruta": {
+     "linea": "Seguridad materialización"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Transito",
+    "anios": [
+     455,
+     483,
+     513,
+     545
+    ],
+    "total": 1996,
+    "ruta": {
+     "linea": "Transito"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Vías,espaciopublico",
+    "anios": [
+     4870,
+     5170,
+     5489,
+     5828
+    ],
+    "total": 21357,
+    "ruta": {
+     "linea": "Vías,espaciopublico"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Regalías saneamiento básico",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Regalías saneamiento básico"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Deporte Skape Park",
+    "anios": [
+     0,
+     2700,
+     0,
+     0
+    ],
+    "total": 2700,
+    "ruta": {
+     "linea": "Deporte Skape Park"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Centro regional educación",
+    "anios": [
+     0,
+     20000,
+     0,
+     0
+    ],
+    "total": 20000,
+    "ruta": {
+     "linea": "Centro regional educación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Vivienda viva",
+    "anios": [
+     333,
+     354,
+     376,
+     399
+    ],
+    "total": 1462,
+    "ruta": {
+     "linea": "Vivienda viva"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Centro de integración Min Interior",
+    "anios": [
+     2544,
+     0,
+     0,
+     0
+    ],
+    "total": 2544,
+    "ruta": {
+     "linea": "Centro de integración Min Interior"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Compra depredios con lagobernación",
+    "anios": [
+     0,
+     137,
+     0,
+     0
+    ],
+    "total": 137,
+    "ruta": {
+     "linea": "Compra depredios con lagobernación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Carrera 52A departamento",
+    "anios": [
+     1268,
+     1268,
+     1268,
+     1268
+    ],
+    "total": 5072,
+    "ruta": {
+     "linea": "Carrera 52A departamento"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Ampliación deplantas residuales PDA",
+    "anios": [
+     2404,
+     0,
+     0,
+     0
+    ],
+    "total": 2404,
+    "ruta": {
+     "linea": "Ampliación deplantas residuales PDA"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Acueductoyalcantarillado chaparralysan Ignacio PDA",
+    "anios": [
+     1596,
+     0,
+     0,
+     0
+    ],
+    "total": 1596,
+    "ruta": {
+     "linea": "Acueductoyalcantarillado chaparralysan Ignacio PDA"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Actualización Catastral",
+    "anios": [
+     4000,
+     4000,
+     0,
+     0
+    ],
+    "total": 8000,
+    "ruta": {
+     "linea": "Actualización Catastral"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   283,
+   284
+  ],
+  "cabecera": "Línea",
+  "unidad": "millones",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   424314,
+   491868,
+   697073,
+   425763
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1. Nos une la educación, la cultura, el desarrollo humano integralysocial",
+    "anios": [
+     48271,
+     68426,
+     88679,
+     50031
+    ],
+    "total": 255409,
+    "ruta": {
+     "linea": "1. Nos une la educación, la cultura, el desarrollo humano integralysocial"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "convivencia ciudadana, la justicia social y la movilidad",
+    "anios": [
+     5228,
+     5433,
+     5711,
+     6016
+    ],
+    "total": 22389,
+    "ruta": {
+     "linea": "convivencia ciudadana, la justicia social y la movilidad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3. Nos une el desarrollo económico sostenible para elprogreso",
+    "anios": [
+     15317,
+     14825,
+     15068,
+     16247
+    ],
+    "total": 61459,
+    "ruta": {
+     "linea": "3. Nos une el desarrollo económico sostenible para elprogreso"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4. Nos une el territorio",
+    "anios": [
+     33787,
+     30265,
+     30723,
+     29595
+    ],
+    "total": 124372,
+    "ruta": {
+     "linea": "4. Nos une el territorio"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "5. Nos une lagobernanza",
+    "anios": [
+     3970,
+     4370,
+     34459,
+     4946
+    ],
+    "total": 47747,
+    "ruta": {
+     "linea": "5. Nos une lagobernanza"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total",
+    "anios": [
+     106574,
+     123322,
+     174642,
+     106838
+    ],
+    "total": 511377,
+    "ruta": {
+     "linea": "Total"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.1. Educación y cultura para el desarrollo humano integral",
+    "anios": [
+     13603,
+     33574,
+     12903,
+     13909
+    ],
+    "total": 73991,
+    "ruta": {
+     "linea": "1.1. Educación y cultura para el desarrollo humano integral"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.2. Inclusión social: dirección de vida, familiaydiversidad",
+    "anios": [
+     6666,
+     4597,
+     6584,
+     4756
+    ],
+    "total": 22604,
+    "ruta": {
+     "linea": "1.2. Inclusión social: dirección de vida, familiaydiversidad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.3. Bien-estar integral",
+    "anios": [
+     28002,
+     30253,
+     69191,
+     31365
+    ],
+    "total": 158813,
+    "ruta": {
+     "linea": "1.3. Bien-estar integral"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2.3. Seguridad, justicia, convivencia y Movilidad",
+    "anios": [
+     4293,
+     4844,
+     5096,
+     5363
+    ],
+    "total": 19597,
+    "ruta": {
+     "linea": "2.3. Seguridad, justicia, convivencia y Movilidad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3.1. Infraestructura para la equidad y la competitividad",
+    "anios": [
+     12135,
+     12636,
+     12743,
+     14088
+    ],
+    "total": 51603,
+    "ruta": {
+     "linea": "3.1. Infraestructura para la equidad y la competitividad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3.2. Desarrollo agropecuarioyrural",
+    "anios": [
+     2367,
+     1671,
+     1775,
+     1575
+    ],
+    "total": 7390,
+    "ruta": {
+     "linea": "3.2. Desarrollo agropecuarioyrural"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4.1. Potencial ecológicoyambiental",
+    "anios": [
+     4465,
+     4364,
+     7089,
+     4914
+    ],
+    "total": 20833,
+    "ruta": {
+     "linea": "4.1. Potencial ecológicoyambiental"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4.2. Territorio planificado y sostenible",
+    "anios": [
+     5524,
+     5676,
+     1850,
+     2205
+    ],
+    "total": 15256,
+    "ruta": {
+     "linea": "4.2. Territorio planificado y sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4.3. Viviendayhábitat",
+    "anios": [
+     23798,
+     20224,
+     21783,
+     22475
+    ],
+    "total": 88282,
+    "ruta": {
+     "linea": "4.3. Viviendayhábitat"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "5.2. Eficiencia administrativa, transparencia y acceso a la información pública",
+    "anios": [
+     2350,
+     2664,
+     32647,
+     3016
+    ],
+    "total": 40678,
+    "ruta": {
+     "linea": "5.2. Eficiencia administrativa, transparencia y acceso a la información pública"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "5.3. Fortalecimiento financiero e institucional",
+    "anios": [
+     1390,
+     1402,
+     1488,
+     1586
+    ],
+    "total": 5867,
+    "ruta": {
+     "linea": "5.3. Fortalecimiento financiero e institucional"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total",
+    "anios": [
+     106574,
+     123322,
+     174642,
+     106838
+    ],
+    "total": 511377,
+    "ruta": {
+     "linea": "Total"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   285,
+   286,
+   287
+  ],
+  "cabecera": "",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   73690,
+   95489,
+   76075,
+   81344
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": ", ylos saberes.",
+    "anios": [
+     7482,
+     26931,
+     5812,
+     6273
+    ],
+    "total": 46499,
+    "ruta": {
+     "linea": ", ylos saberes."
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.1.4. Bienestar para la comunidad educativa",
+    "anios": [
+     2127,
+     2272,
+     2367,
+     2474
+    ],
+    "total": 9242,
+    "ruta": {
+     "linea": "1.1.4. Bienestar para la comunidad educativa"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.1.6. Gestión de la ciudadanía cultural",
+    "anios": [
+     1584,
+     1653,
+     1712,
+     1847
+    ],
+    "total": 6797,
+    "ruta": {
+     "linea": "1.1.6. Gestión de la ciudadanía cultural"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.2.3. Protección integral de las personas mayores.",
+    "anios": [
+     2523,
+     2500,
+     3494,
+     2900
+    ],
+    "total": 11417,
+    "ruta": {
+     "linea": "1.2.3. Protección integral de las personas mayores."
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "nutricional y alimentación escolar",
+    "anios": [
+     3046,
+     3062,
+     3416,
+     3463
+    ],
+    "total": 12987,
+    "ruta": {
+     "linea": "nutricional y alimentación escolar"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.3.4. Aseguramiento y prestación de servicios de salud.",
+    "anios": [
+     20740,
+     19568,
+     20981,
+     22621
+    ],
+    "total": 83910,
+    "ruta": {
+     "linea": "1.3.4. Aseguramiento y prestación de servicios de salud."
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.3.7. Deporte, recreación y actividad física para la transformación socialycultural 1.3.8. Desarrollo del rendimiento deportivo para la competencia",
+    "anios": [
+     1050,
+     1103,
+     1171,
+     1244
+    ],
+    "total": 4569,
+    "ruta": {
+     "linea": "1.3.7. Deporte, recreación y actividad física para la transformación socialycultural 1.3.8. Desarrollo del rendimiento deportivo para la competencia"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1.3.9. Espacios deportivos protectores e incluyentes",
+    "anios": [
+     1330,
+     4315,
+     1360,
+     1851
+    ],
+    "total": 8857,
+    "ruta": {
+     "linea": "1.3.9. Espacios deportivos protectores e incluyentes"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "garantía de derechos ylajusticia social 2.3.3. Infraestructura para la seguridad, la convivencia y la justicia social",
+    "anios": [
+     2170,
+     2214,
+     2352,
+     2498
+    ],
+    "total": 9236,
+    "ruta": {
+     "linea": "garantía de derechos ylajusticia social 2.3.3. Infraestructura para la seguridad, la convivencia y la justicia social"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2.3.5. Fortalecimiento institucional para la regulación y el control vial",
+    "anios": [
+     1095,
+     1162,
+     1235,
+     1312
+    ],
+    "total": 4805,
+    "ruta": {
+     "linea": "2.3.5. Fortalecimiento institucional para la regulación y el control vial"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3.1.1. Infraestructura estratégica para la conexión e integración territorial y extraterritorial",
+    "anios": [
+     12135,
+     12636,
+     12743,
+     14088
+    ],
+    "total": 51603,
+    "ruta": {
+     "linea": "3.1.1. Infraestructura estratégica para la conexión e integración territorial y extraterritorial"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3.2.2. Sistemas de producción de agricultura campesina, familiar ycomunitaria 3.2.3. Asociatividad, cooperación y fortalecimiento para el desarrollo rural.",
+    "anios": [
+     2200,
+     1274,
+     1353,
+     1438
+    ],
+    "total": 6266,
+    "ruta": {
+     "linea": "3.2.2. Sistemas de producción de agricultura campesina, familiar ycomunitaria 3.2.3. Asociatividad, cooperación y fortalecimiento para el desarrollo rural."
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4.1.1. Gestión integral de los recursos, conservación de la biodiversidad y sus servicios eco sistémicos",
+    "anios": [
+     3317,
+     3405,
+     3517,
+     3680
+    ],
+    "total": 13920,
+    "ruta": {
+     "linea": "4.1.1. Gestión integral de los recursos, conservación de la biodiversidad y sus servicios eco sistémicos"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4.2.2. Gestión del riesgo de desastres",
+    "anios": [
+     1114,
+     1259,
+     1326,
+     1273
+    ],
+    "total": 4973,
+    "ruta": {
+     "linea": "4.2.2. Gestión del riesgo de desastres"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4.3.1. Gestión, Promoción y legalización de soluciones habitacionales - Política Pública de Vivienda",
+    "anios": [
+     4517,
+     5320,
+     5076,
+     5366
+    ],
+    "total": 20279,
+    "ruta": {
+     "linea": "4.3.1. Gestión, Promoción y legalización de soluciones habitacionales - Política Pública de Vivienda"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4.3.3. Urbanismo sostenible para el Desarrollo.",
+    "anios": [
+     7260,
+     6815,
+     8160,
+     9016
+    ],
+    "total": 31252,
+    "ruta": {
+     "linea": "4.3.3. Urbanismo sostenible para el Desarrollo."
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

@@ -1,0 +1,414 @@
+[
+ {
+  "pagina": 140,
+  "cabecera": "Concepto",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Educación",
+    "anios": [
+     158,
+     166,
+     175,
+     183
+    ],
+    "total": 682
+   },
+   {
+    "etiqueta": "Prestaci ón de Servicios",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Calidad",
+    "anios": [
+     158,
+     166,
+     175,
+     183
+    ],
+    "total": 682
+   },
+   {
+    "etiqueta": "Matrícul a Gratuidad",
+    "anios": [
+     74,
+     77,
+     81,
+     85
+    ],
+    "total": 317
+   },
+   {
+    "etiqueta": "Matrícul a Oficial",
+    "anios": [
+     85,
+     89,
+     94,
+     98
+    ],
+    "total": 366
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ },
+ {
+  "pagina": 143,
+  "cabecera": "Líneas",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Línea Estratégica 1: San Francisco prósperoysostenible",
+    "anios": [
+     440001467,
+     452204594,
+     453870436,
+     455550551
+    ],
+    "total": 1801627048
+   },
+   {
+    "etiqueta": "Línea Estratégica 2: San Francisco incluyenteycon equidad social",
+    "anios": [
+     8880011334,
+     9145556718,
+     9409624382,
+     9677352665
+    ],
+    "total": 37112545100
+   },
+   {
+    "etiqueta": "Línea Estratégica 3: San Francisco con infraestructura para la equidad y la competitividad",
+    "anios": [
+     1443201158,
+     1468991223,
+     1563990923,
+     1659775245
+    ],
+    "total": 6135958549
+   },
+   {
+    "etiqueta": "Línea Estratégica 4: San Francisco con desarrollo institucional y gobernanza para la construcción depaz",
+    "anios": [
+     626220821,
+     698175821,
+     704059901,
+     714305834
+    ],
+    "total": 2742762378
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     11389434779,
+     11764928357,
+     12131545642,
+     12506984296
+    ],
+    "total": 47792893075
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 144,
+  "cabecera": "sostenible",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Programa San Francisco con emprendimiento y productividad para el desarrollo local y la soberanía alimentaria",
+    "anios": [
+     137242294,
+     141040,
+     141463,
+     141888063
+    ],
+    "total": 279412860
+   },
+   {
+    "etiqueta": "Programa San Francisco Ciudad agroturística para la naturaleza",
+    "anios": [
+     154397581,
+     158670,
+     159146,
+     159624070
+    ],
+    "total": 314339467
+   },
+   {
+    "etiqueta": "Programa San Francisco con sostenibilidad ambiental para el crecimiento verde y el cambio climático",
+    "anios": [
+     131206303,
+     134863,
+     135577,
+     136302409
+    ],
+    "total": 267779152
+   },
+   {
+    "etiqueta": "Programa San Francisco con bienestar y protección animal",
+    "anios": [
+     17155286,
+     17630068,
+     17682959,
+     17736007
+    ],
+    "total": 70204320
+   }
+  ],
+  "ncols": 4,
+  "financiero": false
+ },
+ {
+  "pagina": 144,
+  "cabecera": "Línea estratégica 2: San Francisco incluyente y con equidad social",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Programa San Francisco con equidad e inclusión social para la permanencia y calidad educativa",
+    "anios": [
+     200151288,
+     206155,
+     212340,
+     218710717
+    ],
+    "total": 419280500
+   },
+   {
+    "etiqueta": "Programa San Francisco con equidad e inclusión social para el desarrollo cultural",
+    "anios": [
+     138031914,
+     142172,
+     144637,
+     147171243
+    ],
+    "total": 285489966
+   },
+   {
+    "etiqueta": "Programa San Francisco con equidad e inclusión social para el mejoramiento de la salud",
+    "anios": [
+     7798077,
+     8032019,
+     8272980,
+     8521169805
+    ],
+    "total": 8545272881
+   },
+   {
+    "etiqueta": "Programa San Francisco con equidad e inclusión social para el fortalecimiento del deporte",
+    "anios": [
+     158324309,
+     162930,
+     167816,
+     168618889
+    ],
+    "total": 327273944
+   },
+   {
+    "etiqueta": "Programa San Francisco con equidad e inclusión para nuestra niñez, adolescencia y familia.",
+    "anios": [
+     61244374,
+     62939,
+     63128164,
+     63317548
+    ],
+    "total": 187753025
+   },
+   {
+    "etiqueta": "Programa San Francisco con equidad e inclusión social para nuestros jóvenes",
+    "anios": [
+     61244374,
+     62939,
+     63128164,
+     63317548
+    ],
+    "total": 187753025
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ },
+ {
+  "pagina": 145,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Programa San Francisco con equidad e inclusión para nuestras mujeres",
+    "anios": [
+     61244374,
+     62939,
+     63128164,
+     63317548
+    ],
+    "total": 187753025
+   },
+   {
+    "etiqueta": "Programa San Francisco con equidad e inclusión para nuestra población diversa",
+    "anios": [
+     61244374,
+     62939,
+     63128164,
+     63317548
+    ],
+    "total": 187753025
+   },
+   {
+    "etiqueta": "Programa San Francisco con equidad e inclusión para nuestras personas mayores",
+    "anios": [
+     279204477,
+     287580,
+     296208,
+     305094271
+    ],
+    "total": 584882536
+   },
+   {
+    "etiqueta": "Programa San Francisco con equidad e inclusión para nuestras personas en situación de discapacidad",
+    "anios": [
+     61244374,
+     62939,
+     63128164,
+     63317548
+    ],
+    "total": 187753025
+   },
+   {
+    "etiqueta": "Total línea",
+    "anios": [
+     8880011,
+     9145556,
+     9409624,
+     9677352665
+    ],
+    "total": 9704787856
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ },
+ {
+  "pagina": 145,
+  "cabecera": "para la equidadyla competitividad",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Programa San Francisco con vías equitativas y competitivas",
+    "anios": [
+     171552869,
+     176699,
+     257767,
+     339401022
+    ],
+    "total": 511388357
+   },
+   {
+    "etiqueta": "Programa San Francisco con vivienda digna",
+    "anios": [
+     171552869,
+     176699,
+     177229,
+     177761242
+    ],
+    "total": 349668039
+   },
+   {
+    "etiqueta": "Programa San Francisco con servicios públicos de calidad",
+    "anios": [
+     1100095421,
+     1115592,
+     1128993,
+     1142612982
+    ],
+    "total": 2244952988
+   },
+   {
+    "etiqueta": "Total línea",
+    "anios": [
+     1443201158,
+     223,
+     23,
+     1659775245
+    ],
+    "total": 3102976649
+   }
+  ],
+  "ncols": 4,
+  "financiero": false
+ },
+ {
+  "pagina": 145,
+  "cabecera": "Línea Estratégica 4: San Francisco con desarrollo institucional y gobernanza para la construcción de paz",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Programa San Francisco seguro y con orden público",
+    "anios": [
+     279169368,
+     287544,
+     292196,
+     296976464
+    ],
+    "total": 576725572
+   },
+   {
+    "etiqueta": "Programa San Francisco con desarrollo institucional para la gestión y resultados",
+    "anios": [
+     142903539,
+     147190,
+     147632,
+     148075114
+    ],
+    "total": 291273475
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ },
+ {
+  "pagina": 146,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Programa San Francisco con participación y desarrollo comunitario para la gobernanza",
+    "anios": [
+     142903539,
+     147190,
+     147632,
+     148075114
+    ],
+    "total": 291273475
+   },
+   {
+    "etiqueta": "Programa San Francisco territorio de paz y garante de los derechos de las víctimas",
+    "anios": [
+     61244374,
+     116250,
+     116598,
+     121179142
+    ],
+    "total": 182656364
+   },
+   {
+    "etiqueta": "Total línea",
+    "anios": [
+     626220821,
+     698175,
+     704059,
+     714305834
+    ],
+    "total": 1341928889
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ }
+]

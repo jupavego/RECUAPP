@@ -1,0 +1,696 @@
+[
+ {
+  "pagina": 206,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Asignaciones Directas",
+    "anios": [
+     6117762,
+     3907805,
+     3680034,
+     3669612
+    ],
+    "total": 17375213
+   },
+   {
+    "etiqueta": "20% Asignaciones Directas",
+    "anios": [
+     4787367,
+     3057997,
+     2879758,
+     2871602
+    ],
+    "total": 13596724
+   },
+   {
+    "etiqueta": "5% Asignaciones Directas Anticipadas",
+    "anios": [
+     1330395,
+     849808,
+     800276,
+     798010
+    ],
+    "total": 3778489
+   },
+   {
+    "etiqueta": "Asignación para la Inversión Local",
+    "anios": [
+     1043412745,
+     907569585,
+     840818073,
+     886333491
+    ],
+    "total": 3678133894
+   },
+   {
+    "etiqueta": "Municipios máspobres",
+    "anios": [
+     1043412745,
+     907569585,
+     840818073,
+     886333491
+    ],
+    "total": 3678133894
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     139121699,
+     121009278,
+     112109076,
+     118177799
+    ],
+    "total": 490417852
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     904291046,
+     786560307,
+     728708997,
+     768155692
+    ],
+    "total": 3187716042
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 217,
+  "cabecera": "FUENTES DE FINACIACION",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "INVERSIÓN CON RECUROS PROPIOS",
+    "anios": [
+     3390548554,
+     3641788201,
+     3911644707,
+     4201106415
+    ],
+    "total": 15145087877
+   },
+   {
+    "etiqueta": "Funcionamiento",
+    "anios": [
+     2712438843,
+     2913430561,
+     3129315766,
+     3360885132
+    ],
+    "total": 12116070302
+   },
+   {
+    "etiqueta": "Inversión",
+    "anios": [
+     678109711,
+     728357640,
+     782328941,
+     840221283
+    ],
+    "total": 3029017575
+   },
+   {
+    "etiqueta": "SGP EDUCACION CALIDAD",
+    "anios": [
+     230512046,
+     247592988,
+     265939629,
+     285645755
+    ],
+    "total": 1029690418
+   },
+   {
+    "etiqueta": "Educacion calidad",
+    "anios": [
+     115881596,
+     124468423,
+     133691533,
+     143598075
+    ],
+    "total": 517639627
+   },
+   {
+    "etiqueta": "Educaciongratuidad ssf",
+    "anios": [
+     114630449,
+     123124566,
+     132248096,
+     142047680
+    ],
+    "total": 512050791
+   },
+   {
+    "etiqueta": "SGP ALIMENTACION ESCOLAR",
+    "anios": [
+     47297575,
+     50802325,
+     54566777,
+     58610175
+    ],
+    "total": 211276852
+   },
+   {
+    "etiqueta": "SGP AGUA POTABLE Y SANEAMIENTO BASI",
+    "anios": [
+     1068096686,
+     1147242651,
+     1232253331,
+     1323563303
+    ],
+    "total": 4771155972
+   },
+   {
+    "etiqueta": "SGP PPTO GENERAL LIBRE DESTINACION",
+    "anios": [
+     1877186942,
+     2016286494,
+     2165693323,
+     2326171199
+    ],
+    "total": 8385337958
+   },
+   {
+    "etiqueta": "Funcionamiento",
+    "anios": [
+     1501749553,
+     1613029195,
+     1732554659,
+     1860936959
+    ],
+    "total": 6708270367
+   },
+   {
+    "etiqueta": "Inversión",
+    "anios": [
+     375437388,
+     403257299,
+     433138665,
+     465234240
+    ],
+    "total": 1677067592
+   },
+   {
+    "etiqueta": "SGP GENERAL LIBRE INVERSION",
+    "anios": [
+     1373282737,
+     1522654090,
+     1788079227,
+     2131535739
+    ],
+    "total": 6815551793
+   },
+   {
+    "etiqueta": "(Apalacamiento deuda libre inversion)",
+    "anios": [
+     1016501933,
+     1044213624,
+     968993384,
+     829835953
+    ],
+    "total": 3859544894
+   },
+   {
+    "etiqueta": "SGP DEPORTE",
+    "anios": [
+     115726346,
+     124301668,
+     133512422,
+     143405692
+    ],
+    "total": 516946128
+   },
+   {
+    "etiqueta": "SGP CULTURA",
+    "anios": [
+     86794760,
+     93226252,
+     100134317,
+     107554270
+    ],
+    "total": 387709599
+   },
+   {
+    "etiqueta": "SGP SALUD",
+    "anios": [
+     3918869623,
+     4209257862,
+     4521163870,
+     4856182112
+    ],
+    "total": 17505473467
+   },
+   {
+    "etiqueta": "SSF",
+    "anios": [
+     3700672709,
+     3974892557,
+     4269432095,
+     4585797013
+    ],
+    "total": 16530794374
+   },
+   {
+    "etiqueta": "CSF",
+    "anios": [
+     218196914,
+     234365305,
+     251731774,
+     270385099
+    ],
+    "total": 974679093
+   },
+   {
+    "etiqueta": "SISTEMA GENERAL DE REGALIAS SGR",
+    "anios": [
+     1049530507,
+     911477390,
+     844498107,
+     890003102
+    ],
+    "total": 3695509106
+   },
+   {
+    "etiqueta": "Asignaciones directas",
+    "anios": [
+     6117762,
+     3907805,
+     3680034,
+     3669612
+    ],
+    "total": 17375213
+   },
+   {
+    "etiqueta": "Inversion local",
+    "anios": [
+     904291046,
+     786560307,
+     728708997,
+     768155691
+    ],
+    "total": 3187716041
+   },
+   {
+    "etiqueta": "Ambienteydesarrollo sostenible",
+    "anios": [
+     139121699,
+     121009278,
+     112109076,
+     118177799
+    ],
+    "total": 490417852
+   },
+   {
+    "etiqueta": "OTRAS FUENTES(Estampillas - tasas)",
+    "anios": [
+     828943148,
+     890367835,
+     956344091,
+     1027209188
+    ],
+    "total": 3702864262
+   },
+   {
+    "etiqueta": "Estampillapro adulto mayor",
+    "anios": [
+     281417246,
+     302270264,
+     324668491,
+     348726426
+    ],
+    "total": 1257082427
+   },
+   {
+    "etiqueta": "Estampillapro cultura",
+    "anios": [
+     140708623,
+     151135132,
+     162334245,
+     174363213
+    ],
+    "total": 628541213
+   },
+   {
+    "etiqueta": "Tasaprodeportes",
+    "anios": [
+     175885778,
+     188918914,
+     202917806,
+     217954015
+    ],
+    "total": 785676514
+   },
+   {
+    "etiqueta": "Contribucion obrapublica",
+    "anios": [
+     230931500,
+     248043524,
+     266423549,
+     286165534
+    ],
+    "total": 1031564108
+   },
+   {
+    "etiqueta": "TOTALES",
+    "anios": [
+     13157845775,
+     13964629922,
+     15017485710,
+     16323777763
+    ],
+    "total": 62166603433
+   }
+  ],
+  "ncols": 3,
+  "financiero": true
+ },
+ {
+  "pagina": 218,
+  "cabecera": "DESCRIPCION",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Gastos de funcionamiento totales",
+    "anios": [
+     3500552015,
+     3759942919,
+     4038554689,
+     4337811592
+    ],
+    "total": 15636861215
+   },
+   {
+    "etiqueta": "Concejo",
+    "anios": [
+     209964264,
+     225522616,
+     242233842,
+     260183369
+    ],
+    "total": 937904091
+   },
+   {
+    "etiqueta": "Personería",
+    "anios": [
+     195000000,
+     209449500,
+     224969708,
+     241639963
+    ],
+    "total": 871059171
+   },
+   {
+    "etiqueta": "Total concejo y personería",
+    "anios": [
+     404964264,
+     434972116,
+     467203550,
+     501823333
+    ],
+    "total": 1808963263
+   },
+   {
+    "etiqueta": "Administración central",
+    "anios": [
+     3095587751,
+     3324970803,
+     3571351139,
+     3835988259
+    ],
+    "total": 13827897952
+   },
+   {
+    "etiqueta": "Servicios personales",
+    "anios": [
+     1279825075,
+     1374660113,
+     1476522427,
+     1585932739
+    ],
+    "total": 5716940354
+   },
+   {
+    "etiqueta": "Gastos generales",
+    "anios": [
+     1416003149,
+     1520928982,
+     1633629819,
+     1754681789
+    ],
+    "total": 6325243739
+   },
+   {
+    "etiqueta": "Transferencias",
+    "anios": [
+     399759527,
+     429381708,
+     461198893,
+     495373730
+    ],
+    "total": 1785713858
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 219,
+  "cabecera": "Detalle",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Predial",
+    "anios": [
+     983112444,
+     1055961077,
+     1134207792,
+     1218139169
+    ],
+    "total": 4391420482
+   },
+   {
+    "etiqueta": "Industriaycomercio",
+    "anios": [
+     1435933787,
+     1542336480,
+     1656623613,
+     1779213761
+    ],
+    "total": 6414107641
+   },
+   {
+    "etiqueta": "Avisosytableros",
+    "anios": [
+     52806214,
+     56719154,
+     60922043,
+     65430274
+    ],
+    "total": 235877685
+   },
+   {
+    "etiqueta": "Delineacion urbana",
+    "anios": [
+     52654468,
+     56556164,
+     60746976,
+     65242252
+    ],
+    "total": 235199860
+   },
+   {
+    "etiqueta": "Sobretasa a lagasolina",
+    "anios": [
+     451334414,
+     484778294,
+     520700366,
+     559232193
+    ],
+    "total": 2016045267
+   },
+   {
+    "etiqueta": "Plaza de mercado",
+    "anios": [
+     63864553,
+     68596917,
+     73679948,
+     79132264
+    ],
+    "total": 285273682
+   },
+   {
+    "etiqueta": "Venta de bienesyservicios",
+    "anios": [
+     137792495,
+     148002919,
+     158969935,
+     170733711
+    ],
+    "total": 615499060
+   },
+   {
+    "etiqueta": "Multas tributarias",
+    "anios": [
+     59423522,
+     63826805,
+     68556372,
+     73629543
+    ],
+    "total": 265436242
+   },
+   {
+    "etiqueta": "Intereses moratorios",
+    "anios": [
+     65701759,
+     70570260,
+     75799516,
+     81408680
+    ],
+    "total": 293480215
+   },
+   {
+    "etiqueta": "SGP libre diestinacion",
+    "anios": [
+     1877186942,
+     2016286494,
+     2165693323,
+     2326171199
+    ],
+    "total": 8385337958
+   },
+   {
+    "etiqueta": "Impuesto de vehiculos automotores",
+    "anios": [
+     76687596,
+     82370147,
+     88473775,
+     95020834
+    ],
+    "total": 342552352
+   },
+   {
+    "etiqueta": "Deguelloganado mayor",
+    "anios": [
+     11237301,
+     12069985,
+     12964371,
+     13923734
+    ],
+    "total": 50195391
+   },
+   {
+    "etiqueta": "TOTALES",
+    "anios": [
+     5267735496,
+     5658074695,
+     6077338030,
+     6527277614
+    ],
+    "total": 23530425835
+   }
+  ],
+  "ncols": 4,
+  "financiero": true
+ },
+ {
+  "pagina": 219,
+  "cabecera": "FUENTE DE FINANCIACION",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Recursos propios",
+    "anios": [
+     678109711,
+     728357640,
+     782328941,
+     840221283
+    ],
+    "total": 3029017575
+   },
+   {
+    "etiqueta": "Sistema General de Participaciones SGP",
+    "anios": [
+     6199515228,
+     6754121511,
+     7559794853,
+     8541895333
+    ],
+    "total": 29055326925
+   },
+   {
+    "etiqueta": "Otras entidades del gobierno nacional",
+    "anios": [
+     6837504472,
+     7344163973,
+     7888366073,
+     8472893999
+    ],
+    "total": 30542928517
+   },
+   {
+    "etiqueta": "Otras entidades del departamento",
+    "anios": [
+     1711710244,
+     2238547973,
+     2604424378,
+     3549576364
+    ],
+    "total": 10104258959
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 220,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Otras fuentes (estampillas - tasas)",
+    "anios": [
+     1220527866,
+     1310968981,
+     1408111783,
+     1512452866
+    ],
+    "total": 5452061496
+   },
+   {
+    "etiqueta": "Sistema General de Regalías -SGR",
+    "anios": [
+     1049530507,
+     911477390,
+     844498107,
+     890003102
+    ],
+    "total": 3695509106
+   },
+   {
+    "etiqueta": "Recursos de crédito",
+    "anios": [
+     0,
+     0,
+     1000000000,
+     2200000000
+    ],
+    "total": 3200000000
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     17696898028,
+     19287637468,
+     22087524135,
+     26007042947
+    ],
+    "total": 85079102578
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ }
+]

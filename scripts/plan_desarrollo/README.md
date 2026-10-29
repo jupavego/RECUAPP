@@ -28,6 +28,13 @@ posición, y se separan en `indicadores` (producto) e `indicadores_resultado`. U
 resultado" solo vale para la tabla que le sigue. El PPI se entrega como `ppi_tablas.json` (cualquier tabla con
 columnas 2024-2027 y su nivel) además del formato por programa de Girardota.
 
+### Formatos de indicador que se leen
+1. **Tabla** (la mayoría): columnas reconocidas por encabezado, también si viene partido en dos filas o con dos
+   indicadores (bienestar y producto; gana el de producto).
+2. **Ficha campo-valor** (El Carmen de Viboral): "Indicador Producto / Medición / Línea Base / Valor esperado / Tipo Medida".
+3. Sin leer todavía: **texto corrido** (La Unión: "Producto: … Indicador de producto: … Fórmula: …") y **tablas como imagen**
+   (San Roque, Alejandría). `insumos/plan_extraido/RESUMEN.md` lista el estado de cada plan.
+
 ### PPI de cualquier plan (`ppi_tablas.py`)
 Las columnas (cada año y el total) se leen del encabezado, y la jerarquía línea → sector → programa se **infiere de
 las sumas**: una fila es padre de las siguientes cuando estas suman su valor. Sale en `ppi_arbol.json` (con la

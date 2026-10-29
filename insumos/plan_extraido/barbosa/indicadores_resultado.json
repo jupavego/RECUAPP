@@ -121,6 +121,17 @@
   "sector": null
  },
  {
+  "nombre": "capacitación desarrollados",
+  "linea_base": "0",
+  "meta": "7",
+  "tipo_acumulado": "Incremento",
+  "responsable": "INDER",
+  "unidad": "",
+  "pagina": 228,
+  "linea": null,
+  "sector": null
+ },
+ {
   "nombre": "Porcentaje de grupos de base asesorados, acompañados o asistidos",
   "linea_base": "100",
   "meta": "100",
@@ -249,6 +260,17 @@
   "tipo_acumulado": "",
   "responsable": "",
   "pagina": 240,
+  "linea": null,
+  "sector": null
+ },
+ {
+  "nombre": "conectadas a la red local de gas combustible",
+  "linea_base": "0",
+  "meta": "100",
+  "tipo_acumulado": "Incremento",
+  "responsable": "Secretaria de Obras Públicas",
+  "unidad": "",
+  "pagina": 243,
   "linea": null,
   "sector": null
  },

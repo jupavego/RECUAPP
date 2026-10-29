@@ -1,0 +1,687 @@
+[
+ {
+  "paginas": [
+   140
+  ],
+  "cabecera": "Concepto",
+  "unidad": "millones",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   158,
+   166,
+   175,
+   183
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Educación",
+    "anios": [
+     158,
+     166,
+     175,
+     183
+    ],
+    "total": 682,
+    "ruta": {
+     "linea": "Educación"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Prestaci ón de Servicios",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Educación",
+     "sector": "Prestaci ón de Servicios"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Calidad",
+    "anios": [
+     158,
+     166,
+     175,
+     183
+    ],
+    "total": 682,
+    "ruta": {
+     "linea": "Educación",
+     "sector": "Calidad"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Matrícul a Gratuidad",
+    "anios": [
+     74,
+     77,
+     81,
+     85
+    ],
+    "total": 317,
+    "ruta": {
+     "linea": "Educación",
+     "sector": "Calidad",
+     "programa": "Matrícul a Gratuidad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Matrícul a Oficial",
+    "anios": [
+     85,
+     89,
+     94,
+     98
+    ],
+    "total": 366,
+    "ruta": {
+     "linea": "Educación",
+     "sector": "Calidad",
+     "programa": "Matrícul a Oficial"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   143
+  ],
+  "cabecera": "Líneas",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   22778869559,
+   23529856713,
+   24263091284,
+   25013968591
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea Estratégica 1: San Francisco prósperoysostenible",
+    "anios": [
+     440001467,
+     452204594,
+     453870436,
+     455550551
+    ],
+    "total": 1801627048,
+    "ruta": {
+     "linea": "Línea Estratégica 1: San Francisco prósperoysostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea Estratégica 2: San Francisco incluyenteycon equidad social",
+    "anios": [
+     8880011334,
+     9145556718,
+     9409624382,
+     9677352665
+    ],
+    "total": 37112545100,
+    "ruta": {
+     "linea": "Línea Estratégica 2: San Francisco incluyenteycon equidad social"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea Estratégica 3: San Francisco con infraestructura para la equidad y la competitividad",
+    "anios": [
+     1443201158,
+     1468991223,
+     1563990923,
+     1659775245
+    ],
+    "total": 6135958549,
+    "ruta": {
+     "linea": "Línea Estratégica 3: San Francisco con infraestructura para la equidad y la competitividad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Línea Estratégica 4: San Francisco con desarrollo institucional y gobernanza para la construcción depaz",
+    "anios": [
+     626220821,
+     698175821,
+     704059901,
+     714305834
+    ],
+    "total": 2742762378,
+    "ruta": {
+     "linea": "Línea Estratégica 4: San Francisco con desarrollo institucional y gobernanza para la construcción depaz"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TOTAL",
+    "anios": [
+     11389434779,
+     11764928357,
+     12131545642,
+     12506984296
+    ],
+    "total": 47792893075,
+    "ruta": {
+     "linea": "TOTAL"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   144
+  ],
+  "cabecera": "sostenible",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   440001464,
+   18064641,
+   18119145,
+   455550549
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Programa San Francisco con emprendimiento y productividad para el desarrollo local y la soberanía alimentaria",
+    "anios": [
+     137242294,
+     141040,
+     141463,
+     141888063
+    ],
+    "total": 279412860,
+    "ruta": {
+     "linea": "Programa San Francisco con emprendimiento y productividad para el desarrollo local y la soberanía alimentaria"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Programa San Francisco Ciudad agroturística para la naturaleza",
+    "anios": [
+     154397581,
+     158670,
+     159146,
+     159624070
+    ],
+    "total": 314339467,
+    "ruta": {
+     "linea": "Programa San Francisco Ciudad agroturística para la naturaleza"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Programa San Francisco con sostenibilidad ambiental para el crecimiento verde y el cambio climático",
+    "anios": [
+     131206303,
+     134863,
+     135577,
+     136302409
+    ],
+    "total": 267779152,
+    "ruta": {
+     "linea": "Programa San Francisco con sostenibilidad ambiental para el crecimiento verde y el cambio climático"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Programa San Francisco con bienestar y protección animal",
+    "anios": [
+     17155286,
+     17630068,
+     17682959,
+     17736007
+    ],
+    "total": 70204320,
+    "ruta": {
+     "linea": "Programa San Francisco con bienestar y protección animal"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   144,
+   145
+  ],
+  "cabecera": "Línea estratégica 2: San Francisco incluyente y con equidad social",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   914878824,
+   18102290,
+   144759933,
+   19164752686
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Programa San Francisco con equidad e inclusión social para la permanencia y calidad educativa",
+    "anios": [
+     200151288,
+     206155,
+     212340,
+     218710717
+    ],
+    "total": 419280500,
+    "ruta": {
+     "linea": "Programa San Francisco con equidad e inclusión social para la permanencia y calidad educativa"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Programa San Francisco con equidad e inclusión social para el desarrollo cultural",
+    "anios": [
+     138031914,
+     142172,
+     144637,
+     147171243
+    ],
+    "total": 285489966,
+    "ruta": {
+     "linea": "Programa San Francisco con equidad e inclusión social para el desarrollo cultural"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Programa San Francisco con equidad e inclusión social para el mejoramiento de la salud",
+    "anios": [
+     7798077,
+     8032019,
+     8272980,
+     8521169805
+    ],
+    "total": 8545272881,
+    "ruta": {
+     "linea": "Programa San Francisco con equidad e inclusión social para el mejoramiento de la salud"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Programa San Francisco con equidad e inclusión social para el fortalecimiento del deporte",
+    "anios": [
+     158324309,
+     162930,
+     167816,
+     168618889
+    ],
+    "total": 327273944,
+    "ruta": {
+     "linea": "Programa San Francisco con equidad e inclusión social para el fortalecimiento del deporte"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Programa San Francisco con equidad e inclusión para nuestra niñez, adolescencia y familia.",
+    "anios": [
+     61244374,
+     62939,
+     63128164,
+     63317548
+    ],
+    "total": 187753025,
+    "ruta": {
+     "linea": "Programa San Francisco con equidad e inclusión para nuestra niñez, adolescencia y familia."
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Programa San Francisco con equidad e inclusión social para nuestros jóvenes",
+    "anios": [
+     61244374,
+     62939,
+     63128164,
+     63317548
+    ],
+    "total": 187753025,
+    "ruta": {
+     "linea": "Programa San Francisco con equidad e inclusión para nuestra niñez, adolescencia y familia.",
+     "sector": "Programa San Francisco con equidad e inclusión social para nuestros jóvenes"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Programa San Francisco con equidad e inclusión para nuestras mujeres",
+    "anios": [
+     61244374,
+     62939,
+     63128164,
+     63317548
+    ],
+    "total": 187753025,
+    "ruta": {
+     "linea": "Programa San Francisco con equidad e inclusión para nuestra niñez, adolescencia y familia.",
+     "sector": "Programa San Francisco con equidad e inclusión social para nuestros jóvenes",
+     "programa": "Programa San Francisco con equidad e inclusión para nuestras mujeres"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "subprograma",
+    "profundidad": 3,
+    "etiqueta": "Programa San Francisco con equidad e inclusión para nuestra población diversa",
+    "anios": [
+     61244374,
+     62939,
+     63128164,
+     63317548
+    ],
+    "total": 187753025,
+    "ruta": {
+     "linea": "Programa San Francisco con equidad e inclusión para nuestra niñez, adolescencia y familia.",
+     "sector": "Programa San Francisco con equidad e inclusión social para nuestros jóvenes",
+     "programa": "Programa San Francisco con equidad e inclusión para nuestras mujeres",
+     "subprograma": "Programa San Francisco con equidad e inclusión para nuestra población diversa"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Programa San Francisco con equidad e inclusión para nuestras personas mayores",
+    "anios": [
+     279204477,
+     287580,
+     296208,
+     305094271
+    ],
+    "total": 584882536,
+    "ruta": {
+     "linea": "Programa San Francisco con equidad e inclusión para nuestras personas mayores"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Programa San Francisco con equidad e inclusión para nuestras personas en situación de discapacidad",
+    "anios": [
+     61244374,
+     62939,
+     63128164,
+     63317548
+    ],
+    "total": 187753025,
+    "ruta": {
+     "linea": "Programa San Francisco con equidad e inclusión para nuestras personas en situación de discapacidad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total línea",
+    "anios": [
+     8880011,
+     9145556,
+     9409624,
+     9677352665
+    ],
+    "total": 9704787856,
+    "ruta": {
+     "linea": "Total línea"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   145
+  ],
+  "cabecera": "para la equidadyla competitividad",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   2886402317,
+   1469213,
+   1564012,
+   3319550491
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Programa San Francisco con vías equitativas y competitivas",
+    "anios": [
+     171552869,
+     176699,
+     257767,
+     339401022
+    ],
+    "total": 511388357,
+    "ruta": {
+     "linea": "Programa San Francisco con vías equitativas y competitivas"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Programa San Francisco con vivienda digna",
+    "anios": [
+     171552869,
+     176699,
+     177229,
+     177761242
+    ],
+    "total": 349668039,
+    "ruta": {
+     "linea": "Programa San Francisco con vivienda digna"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Programa San Francisco con servicios públicos de calidad",
+    "anios": [
+     1100095421,
+     1115592,
+     1128993,
+     1142612982
+    ],
+    "total": 2244952988,
+    "ruta": {
+     "linea": "Programa San Francisco con servicios públicos de calidad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total línea",
+    "anios": [
+     1443201158,
+     223,
+     23,
+     1659775245
+    ],
+    "total": 3102976649,
+    "ruta": {
+     "linea": "Total línea"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   145,
+   146
+  ],
+  "cabecera": "Línea Estratégica 4: San Francisco con desarrollo institucional y gobernanza para la construcción de paz",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   1109538102,
+   1249159,
+   1260485,
+   1280536554
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Programa San Francisco seguro y con orden público",
+    "anios": [
+     279169368,
+     287544,
+     292196,
+     296976464
+    ],
+    "total": 576725572,
+    "ruta": {
+     "linea": "Programa San Francisco seguro y con orden público"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Programa San Francisco con desarrollo institucional para la gestión y resultados",
+    "anios": [
+     142903539,
+     147190,
+     147632,
+     148075114
+    ],
+    "total": 291273475,
+    "ruta": {
+     "linea": "Programa San Francisco con desarrollo institucional para la gestión y resultados"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Programa San Francisco con participación y desarrollo comunitario para la gobernanza",
+    "anios": [
+     142903539,
+     147190,
+     147632,
+     148075114
+    ],
+    "total": 291273475,
+    "ruta": {
+     "linea": "Programa San Francisco con desarrollo institucional para la gestión y resultados",
+     "sector": "Programa San Francisco con participación y desarrollo comunitario para la gobernanza"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Programa San Francisco territorio de paz y garante de los derechos de las víctimas",
+    "anios": [
+     61244374,
+     116250,
+     116598,
+     121179142
+    ],
+    "total": 182656364,
+    "ruta": {
+     "linea": "Programa San Francisco territorio de paz y garante de los derechos de las víctimas"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total línea",
+    "anios": [
+     626220821,
+     698175,
+     704059,
+     714305834
+    ],
+    "total": 1341928889,
+    "ruta": {
+     "linea": "Total línea"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

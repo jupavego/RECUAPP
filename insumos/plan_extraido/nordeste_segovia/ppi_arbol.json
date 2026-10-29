@@ -1,0 +1,280 @@
+[
+ {
+  "paginas": [
+   238,
+   239
+  ],
+  "cabecera": "Código Sector Fut",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   168909889484,
+   169119775309,
+   272477057832,
+   266483839787
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "12",
+    "anios": [
+     1539495479,
+     2117463555,
+     914357965,
+     727688704
+    ],
+    "total": 5299005703,
+    "ruta": {
+     "linea": "12"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "17",
+    "anios": [
+     140000000,
+     100000000,
+     100000000,
+     400000000
+    ],
+    "total": 740000000,
+    "ruta": {
+     "linea": "17"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "19",
+    "anios": [
+     35386210947,
+     37897279880,
+     38815515495,
+     84511821107
+    ],
+    "total": 196610827429,
+    "ruta": {
+     "linea": "19"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "21",
+    "anios": [
+     1654506733,
+     2056433921,
+     2036661310,
+     2084423149
+    ],
+    "total": 7832025113,
+    "ruta": {
+     "linea": "21"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "22",
+    "anios": [
+     12288254654,
+     12624603310,
+     32729869663,
+     11536389985
+    ],
+    "total": 69179117612,
+    "ruta": {
+     "linea": "22"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "24",
+    "anios": [
+     2228960710,
+     1243998622,
+     2348826807,
+     2432421378
+    ],
+    "total": 8254207517,
+    "ruta": {
+     "linea": "24"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "32",
+    "anios": [
+     221903128,
+     1681903128,
+     771903128,
+     621903128
+    ],
+    "total": 3297612512,
+    "ruta": {
+     "linea": "32"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "33",
+    "anios": [
+     3732845222,
+     2510829284,
+     3066198657,
+     4594759409
+    ],
+    "total": 13904632572,
+    "ruta": {
+     "linea": "33"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "35",
+    "anios": [
+     50000000,
+     0,
+     2750000000,
+     2150000000
+    ],
+    "total": 4950000000,
+    "ruta": {
+     "linea": "35"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "36",
+    "anios": [
+     166400000,
+     87492000,
+     88616760,
+     89775263
+    ],
+    "total": 432284023,
+    "ruta": {
+     "linea": "36"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "39",
+    "anios": [
+     110000000,
+     320000000,
+     326000000,
+     332180000
+    ],
+    "total": 1088180000,
+    "ruta": {
+     "linea": "39"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "40",
+    "anios": [
+     4523425879,
+     4496159451,
+     7373899486,
+     4200024470
+    ],
+    "total": 20593509286,
+    "ruta": {
+     "linea": "40"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "43",
+    "anios": [
+     5235741703,
+     3494081797,
+     24135904250,
+     3063997909
+    ],
+    "total": 35929725659,
+    "ruta": {
+     "linea": "43"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "45",
+    "anios": [
+     7335703436,
+     7740479764,
+     8933665389,
+     6353956313
+    ],
+    "total": 30363804902,
+    "ruta": {
+     "linea": "45"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "41",
+    "anios": [
+     2639351794,
+     4894901409,
+     9180042451,
+     6965778623
+    ],
+    "total": 23680074277,
+    "ruta": {
+     "linea": "41"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TO",
+    "anios": [
+     91657089799,
+     87854149188,
+     138905596471,
+     136418720349
+    ],
+    "total": 454835555807,
+    "ruta": {
+     "linea": "TO"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

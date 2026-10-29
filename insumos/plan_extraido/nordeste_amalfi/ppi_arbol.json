@@ -1,0 +1,667 @@
+[
+ {
+  "paginas": [
+   291
+  ],
+  "cabecera": "CODIGO DE PRODUCTO",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   33,
+   68,
+   108,
+   20
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4301004",
+    "anios": [
+     4,
+     8,
+     12,
+     1
+    ],
+    "total": 25,
+    "ruta": {
+     "linea": "4301004"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1702007",
+    "anios": [
+     4,
+     5,
+     6,
+     7
+    ],
+    "total": 22,
+    "ruta": {
+     "linea": "1702007"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1702009",
+    "anios": [
+     25,
+     55,
+     90,
+     12
+    ],
+    "total": 182,
+    "ruta": {
+     "linea": "1702009"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   296
+  ],
+  "cabecera": "CODIGO DE PRODUCTO",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   2484,
+   3088,
+   3697,
+   4301
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1702038",
+    "anios": [
+     55,
+     75,
+     100,
+     120
+    ],
+    "total": 350,
+    "ruta": {
+     "linea": "1702038"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1703006",
+    "anios": [
+     30,
+     60,
+     90,
+     120
+    ],
+    "total": 300,
+    "ruta": {
+     "linea": "1703006"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1704010",
+    "anios": [
+     112,
+     132,
+     152,
+     172
+    ],
+    "total": 568,
+    "ruta": {
+     "linea": "1704010"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1708018",
+    "anios": [
+     172,
+     202,
+     232,
+     262
+    ],
+    "total": 868,
+    "ruta": {
+     "linea": "1708018"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1708041",
+    "anios": [
+     2100,
+     2600,
+     3100,
+     3600
+    ],
+    "total": 11400,
+    "ruta": {
+     "linea": "1708041"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1709043",
+    "anios": [
+     15,
+     19,
+     23,
+     27
+    ],
+    "total": 84,
+    "ruta": {
+     "linea": "1709043"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   311
+  ],
+  "cabecera": "CODIGO DE PRODUCTO",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   193,
+   243,
+   292,
+   340
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3202014",
+    "anios": [
+     8,
+     11,
+     14,
+     15
+    ],
+    "total": 48,
+    "ruta": {
+     "linea": "3202014"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3202043",
+    "anios": [
+     174,
+     219,
+     264,
+     309
+    ],
+    "total": 966,
+    "ruta": {
+     "linea": "3202043"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3202012",
+    "anios": [
+     7,
+     8,
+     8,
+     9
+    ],
+    "total": 32,
+    "ruta": {
+     "linea": "3202012"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3203050",
+    "anios": [
+     4,
+     5,
+     6,
+     7
+    ],
+    "total": 22,
+    "ruta": {
+     "linea": "3203050"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   316
+  ],
+  "cabecera": "CODIGO DE PRODUCTO",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   1636,
+   1996,
+   2371,
+   317
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3208016",
+    "anios": [
+     1610,
+     1965,
+     2345,
+     276
+    ],
+    "total": 6196,
+    "ruta": {
+     "linea": "3208016"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3502009",
+    "anios": [
+     26,
+     31,
+     26,
+     41
+    ],
+    "total": 124,
+    "ruta": {
+     "linea": "3502009"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   326
+  ],
+  "cabecera": "CODIGO DE PRODUCTO",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   12945,
+   15545,
+   18095,
+   20512
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "3605011",
+    "anios": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "total": 4,
+    "ruta": {
+     "linea": "3605011"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "0401105",
+    "anios": [
+     7844,
+     7844,
+     7844,
+     7844
+    ],
+    "total": 31376,
+    "ruta": {
+     "linea": "0401105"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "0406016",
+    "anios": [
+     2400,
+     4800,
+     7200,
+     9467
+    ],
+    "total": 23867,
+    "ruta": {
+     "linea": "0406016"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "0406003",
+    "anios": [
+     2700,
+     2900,
+     3050,
+     3200
+    ],
+    "total": 11850,
+    "ruta": {
+     "linea": "0406003"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   331
+  ],
+  "cabecera": "CODIGO DE PRODUCTO",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   6186,
+   8208,
+   10236,
+   10269
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2402112",
+    "anios": [
+     479,
+     499,
+     522,
+     550
+    ],
+    "total": 2050,
+    "ruta": {
+     "linea": "2402112"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2402042",
+    "anios": [
+     5700,
+     7700,
+     9700,
+     9700
+    ],
+    "total": 32800,
+    "ruta": {
+     "linea": "2402042"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2402055",
+    "anios": [
+     3,
+     4,
+     5,
+     6
+    ],
+    "total": 18,
+    "ruta": {
+     "linea": "2402055"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2402048",
+    "anios": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "total": 10,
+    "ruta": {
+     "linea": "2402048"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "2402040",
+    "anios": [
+     3,
+     3,
+     6,
+     9
+    ],
+    "total": 21,
+    "ruta": {
+     "linea": "2402040"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   341
+  ],
+  "cabecera": "CODIGO DE PRODUCTO",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   6,
+   9,
+   12,
+   14
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "1204007",
+    "anios": [
+     3,
+     4,
+     5,
+     6
+    ],
+    "total": 18,
+    "ruta": {
+     "linea": "1204007"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4101027",
+    "anios": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "total": 4,
+    "ruta": {
+     "linea": "4101027"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4101097",
+    "anios": [
+     2,
+     4,
+     6,
+     7
+    ],
+    "total": 19,
+    "ruta": {
+     "linea": "4101097"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   371
+  ],
+  "cabecera": "CODIGO DE PRODUCTO",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   6,
+   7,
+   8,
+   9
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4503002",
+    "anios": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "total": 4,
+    "ruta": {
+     "linea": "4503002"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "4503014",
+    "anios": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "total": 4,
+    "ruta": {
+     "linea": "4503002",
+     "sector": "4503014"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4503022",
+    "anios": [
+     4,
+     5,
+     6,
+     7
+    ],
+    "total": 22,
+    "ruta": {
+     "linea": "4503022"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "4599025",
+    "anios": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "total": 4,
+    "ruta": {
+     "linea": "4599025"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

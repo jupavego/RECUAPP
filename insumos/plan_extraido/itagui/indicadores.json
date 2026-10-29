@@ -17,7 +17,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 38,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "2. Servicio de educa- ción informal",
@@ -37,7 +38,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 38,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "3. Servicio de divulgación para promover el acceso a la justicia.",
@@ -57,7 +59,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 38,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "4. Servicio de Información para la promoción de los enfoques de la justicia inclusiva",
@@ -77,7 +80,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 38,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Articulación Coran- tioquia",
@@ -97,7 +101,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 38,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Articulación ODS",
@@ -117,7 +122,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 38,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "5. Servicio de justicia a los ciudadanos.",
@@ -137,7 +143,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 39,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "6. Documento de lineamien- tos técnicos.",
@@ -157,7 +164,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 39,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "7. Servicio de imple- mentación de medidas de satisfacción y acompa- ñamiento a las víctimas del conflicto armado.",
@@ -177,7 +185,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 39,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "8. Servicio de ayuda y atención humanitaria.",
@@ -197,7 +206,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 39,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "9. Servicio de promoción de convivencia y no repetición.",
@@ -217,7 +227,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 39,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Articulación Corantioquia",
@@ -237,7 +248,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 39,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "10. Servicio de orientación a casos de violencia degénero",
@@ -257,7 +269,8 @@
   "programa": "ATENCIÓN Y RESTABLECIMIENTO INTEGRAL PARA EL FORTALECI- MIENTO DE NNA Y SUS GRUPOS POBLACIONALES",
   "coincidencia_ppi": 0.77,
   "pagina": 40,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "11. Servicio de protección para el restablecimiento de derechos de niños, niñas, adolescentes",
@@ -277,7 +290,8 @@
   "programa": "ATENCIÓN Y RESTABLECIMIENTO INTEGRAL PARA EL FORTALECI- MIENTO DE NNA Y SUS GRUPOS POBLACIONALES",
   "coincidencia_ppi": 0.77,
   "pagina": 40,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "12. Documentos de lineamientos técnicos",
@@ -297,7 +311,8 @@
   "programa": "CENTRO DE DETENCIÓN PREVENTIVA Y ASISTENCIA FUNERARIA",
   "coincidencia_ppi": 0.89,
   "pagina": 42,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "13. Servicio de justicia a los ciudadanos",
@@ -317,7 +332,8 @@
   "programa": "CENTRO DE DETENCIÓN PREVENTIVA Y ASISTENCIA FUNERARIA",
   "coincidencia_ppi": 0.89,
   "pagina": 42,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Articulación Corantioquia",
@@ -337,7 +353,8 @@
   "programa": "CENTRO DE DETENCIÓN PREVENTIVA Y ASISTENCIA FUNERARIA",
   "coincidencia_ppi": 0.89,
   "pagina": 42,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Articulación ODS",
@@ -356,7 +373,8 @@
   "programa": "CENTRO DE DETENCIÓN PREVENTIVA Y ASISTENCIA FUNERARIA",
   "coincidencia_ppi": 0.89,
   "pagina": 42,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "14. Documentos Planeación.",
@@ -376,7 +394,8 @@
   "programa": "FORTALECIMIENTO DE LAS CAPACIDADES INSTITUCIONALES",
   "coincidencia_ppi": 0.96,
   "pagina": 44,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "15. Documentos Planeación.",
@@ -396,7 +415,8 @@
   "programa": "FORTALECIMIENTO DE LAS CAPACIDADES INSTITUCIONALES",
   "coincidencia_ppi": 0.96,
   "pagina": 44,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "16. Servicio de dotación para la movilidad opera- cional y el apoyo logístico.",
@@ -416,7 +436,8 @@
   "programa": "FORTALECIMIENTO DE LAS CAPACIDADES INSTITUCIONALES",
   "coincidencia_ppi": 0.96,
   "pagina": 44,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "17. Servicio de dotación de elementos de protección.",
@@ -436,7 +457,8 @@
   "programa": "FORTALECIMIENTO DE LAS CAPACIDADES INSTITUCIONALES",
   "coincidencia_ppi": 0.96,
   "pagina": 44,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "18. Servicio de apoyo financiero para dotar a miembros de la fuerzapública.",
@@ -456,7 +478,8 @@
   "programa": "FORTALECIMIENTO DE LAS CAPACIDADES INSTITUCIONALES",
   "coincidencia_ppi": 0.96,
   "pagina": 44,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "19. Infraestructura para la promoción a la cultura de la legalidad y a la convivencia adecuada.",
@@ -476,7 +499,8 @@
   "programa": "FORTALECIMIENTO DE LAS CAPACIDADES INSTITUCIONALES",
   "coincidencia_ppi": 0.96,
   "pagina": 44,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Articulación Corantioquia",
@@ -496,7 +520,8 @@
   "programa": "FORTALECIMIENTO DE LAS CAPACIDADES INSTITUCIONALES",
   "coincidencia_ppi": 0.96,
   "pagina": 44,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Articulación ODS",
@@ -516,7 +541,8 @@
   "programa": "FORTALECIMIENTO DE LAS CAPACIDADES INSTITUCIONALES",
   "coincidencia_ppi": 0.96,
   "pagina": 44,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "20. Servicio de vigilancia a través de cámaras de seguridad",
@@ -536,7 +562,8 @@
   "programa": "PREVENCIÓN INTEGRAL DEL DELITO Y PROMOCIÓN DE ENTOR- NOS SEGUROS",
   "coincidencia_ppi": 0.92,
   "pagina": 46,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "21. Servicio de vigilancia a través de cámaras de seguridad",
@@ -556,7 +583,8 @@
   "programa": "PREVENCIÓN INTEGRAL DEL DELITO Y PROMOCIÓN DE ENTOR- NOS SEGUROS",
   "coincidencia_ppi": 0.92,
   "pagina": 46,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Articulación Corantioquia",
@@ -576,7 +604,8 @@
   "programa": "PREVENCIÓN INTEGRAL DEL DELITO Y PROMOCIÓN DE ENTOR- NOS SEGUROS",
   "coincidencia_ppi": 0.92,
   "pagina": 46,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Articulación ODS",
@@ -596,7 +625,8 @@
   "programa": "PREVENCIÓN INTEGRAL DEL DELITO Y PROMOCIÓN DE ENTOR- NOS SEGUROS",
   "coincidencia_ppi": 0.92,
   "pagina": 46,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "22. Servicio de promoción de convivencia y no repetición.",
@@ -616,7 +646,8 @@
   "programa": "PREVENCIÓN INTEGRAL DEL DELITO Y PROMOCIÓN DE ENTOR- NOS SEGUROS",
   "coincidencia_ppi": 0.92,
   "pagina": 47,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "23.Servicio de asistencia técnica.",
@@ -636,7 +667,8 @@
   "programa": "PREVENCIÓN INTEGRAL DEL DELITO Y PROMOCIÓN DE ENTOR- NOS SEGUROS",
   "coincidencia_ppi": 0.92,
   "pagina": 47,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "24. Servicio de promoción a la participación ciudadana.",
@@ -656,7 +688,8 @@
   "programa": "PREVENCIÓN INTEGRAL DEL DELITO Y PROMOCIÓN DE ENTOR- NOS SEGUROS",
   "coincidencia_ppi": 0.92,
   "pagina": 47,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "25. Servicio de educación informal.",
@@ -676,7 +709,8 @@
   "programa": "PREVENCIÓN INTEGRAL DEL DELITO Y PROMOCIÓN DE ENTOR- NOS SEGUROS",
   "coincidencia_ppi": 0.92,
   "pagina": 47,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "26. Servicio de educación informal.",
@@ -696,7 +730,8 @@
   "programa": "PREVENCIÓN INTEGRAL DEL DELITO Y PROMOCIÓN DE ENTOR- NOS SEGUROS",
   "coincidencia_ppi": 0.92,
   "pagina": 47,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "31. Servicio de apoyo al fortaleci- miento de políticas públicas para la generación y formalización del empleo en el marco del trabajo decente.",
@@ -716,7 +751,8 @@
   "programa": "PREVENCIÓN INTEGRAL DEL DELITO Y PROMOCIÓN DE ENTOR- NOS SEGUROS",
   "coincidencia_ppi": 0.92,
   "pagina": 50,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "1. Fin de la Pob",
@@ -734,7 +770,8 @@
   "programa": "PREVENCIÓN INTEGRAL DEL DELITO Y PROMOCIÓN DE ENTOR- NOS SEGUROS",
   "coincidencia_ppi": 0.92,
   "pagina": 50,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Articulación ODS",
@@ -753,7 +790,8 @@
   "programa": "PREVENCIÓN INTEGRAL DEL DELITO Y PROMOCIÓN DE ENTOR- NOS SEGUROS",
   "coincidencia_ppi": 0.92,
   "pagina": 50,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "32. Servicio de educación informal",
@@ -773,7 +811,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 51,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "1. Fin de la Pobreza.",
@@ -791,7 +830,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 51,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Articulación ODS",
@@ -810,7 +850,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 51,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "33. Servicio de asistencia técnica para el fortalecimiento de capacidades gerenciales.",
@@ -830,7 +871,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 52,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "34. Servicio de apoyo para la modernización y fomento de la innovación empresarial",
@@ -850,7 +892,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 52,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "35. Servicios de apoyo para el fomento de capacidades en economía circular y soste- nibilidad",
@@ -870,7 +913,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 52,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "36. Servicio para la formalización empresarial y de productos o servicios.",
@@ -890,7 +934,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 53,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "37. Servicio de educación informal para la sociedad engeneral.",
@@ -910,7 +955,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 53,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "40. Servicio de asistencia técnica",
@@ -930,7 +976,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 55,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "41. Documentos de lineamientos técnicos",
@@ -950,7 +997,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 55,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "42. Servicio de promoción turística",
@@ -970,7 +1018,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 55,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "43. Documentos normativos",
@@ -990,7 +1039,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 55,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "1. Fin de la Pobreza.",
@@ -1008,7 +1058,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 55,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Articulación ODS",
@@ -1027,7 +1078,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 55,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "44. Servicio de asistencia técnica",
@@ -1047,7 +1099,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 57,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "45. Servicio de información actualizado",
@@ -1067,7 +1120,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 57,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "46. Documentos metodológicos",
@@ -1087,7 +1141,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 57,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "47. Servicio de organización de eventos recreati- vos comunitarios",
@@ -1107,7 +1162,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 57,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "48. Documentos de planeación",
@@ -1127,7 +1183,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 57,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Corresponsa- bles",
@@ -1148,7 +1205,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 57,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Articulación Corantioquia",
@@ -1169,7 +1227,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 57,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Articulación ODS",
@@ -1189,7 +1248,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 57,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "49. Servicio de promoción a la parti- cipación ciudadana",
@@ -1209,7 +1269,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 58,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "50. Servicio de promoción a la parti- cipación ciudadana",
@@ -1229,7 +1290,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 58,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "51. Servicio de promoción a la parti- cipación ciudadana",
@@ -1249,7 +1311,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 58,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Articulación Coran- tioquia",
@@ -1269,7 +1332,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 58,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Articulación ODS",
@@ -1288,7 +1352,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 58,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "52. Servicio de promoción a la participación ciuda- dana",
@@ -1308,7 +1373,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 59,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "53. Servicio de promoción a la participación ciuda- dana",
@@ -1328,7 +1394,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 59,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "54. Servicio de educación informal",
@@ -1348,7 +1415,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 59,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "55. Servicio de promoción de convivencia y no repetición",
@@ -1368,7 +1436,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 59,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "56. Servicio de asistencia técnica",
@@ -1388,7 +1457,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 60,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "57. Documentos de planeación",
@@ -1408,7 +1478,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 60,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "58. Infraestruc- tura educativa mejorada",
@@ -1428,7 +1499,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 64,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "59. Servicio de apoyo pedagógico para la oferta de educación inclusi- va para preescolar, básica y media",
@@ -1448,7 +1520,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 64,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "60. Servicio educación formal por modelos edu- cativos flexibles",
@@ -1468,7 +1541,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 64,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "61. Servicio de asistencia técnica en educación inicial, básica y media",
@@ -1488,7 +1562,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 64,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "62. Servicio de fomento para la permanencia en programas de educación formal",
@@ -1508,7 +1583,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 64,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "63. Servicio de apoyo a la permanencia con alimentación escolar",
@@ -1528,7 +1604,8 @@
   "programa": "ITAGÜÍ EMPRESARIAL, PROGRESO Y DESARROLLO PARA TODOS.",
   "coincidencia_ppi": 1.0,
   "pagina": 64,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "66. Servicio de apoyo para el fortalecimiento de escuelas depadres",
@@ -1548,7 +1625,8 @@
   "programa": "TODOS EN UNA ESCUELA INCLUYENTE, INNOVADORA Y CON CALIDAD.",
   "coincidencia_ppi": 0.92,
   "pagina": 66,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "67. Servicio de apoyo al acceso a la educación inherente a la prestación del servicio educativo",
@@ -1568,7 +1646,8 @@
   "programa": "TODOS EN UNA ESCUELA INCLUYENTE, INNOVADORA Y CON CALIDAD.",
   "coincidencia_ppi": 0.92,
   "pagina": 66,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "68. Servicio de asistencia técnica en educación inicial, preescolar básica y media",
@@ -1588,7 +1667,8 @@
   "programa": "TODOS EN UNA ESCUELA INCLUYENTE, INNOVADORA Y CON CALIDAD.",
   "coincidencia_ppi": 0.92,
   "pagina": 66,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "69. Servicio educa- tivos de promoción del bilingüismo",
@@ -1608,7 +1688,8 @@
   "programa": "TODOS EN UNA ESCUELA INCLUYENTE, INNOVADORA Y CON CALIDAD.",
   "coincidencia_ppi": 0.92,
   "pagina": 66,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "70. Servicios de asistencia técnica en innovación educativa en la educación inicial, preescolar, básica ymedia",
@@ -1628,7 +1709,8 @@
   "programa": "TODOS EN UNA ESCUELA INCLUYENTE, INNOVADORA Y CON CALIDAD.",
   "coincidencia_ppi": 0.92,
   "pagina": 66,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "77. Servicio de atención integral para la primera infancia",
@@ -1648,7 +1730,8 @@
   "programa": "TODOS EN UNA ESCUELA INCLUYENTE, INNOVADORA Y CON CALIDAD.",
   "coincidencia_ppi": 0.92,
   "pagina": 68,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "78. Servicio de promoción y prevención de los derechos de los niños, niñas y adolescentes",
@@ -1668,7 +1751,8 @@
   "programa": "TODOS EN UNA ESCUELA INCLUYENTE, INNOVADORA Y CON CALIDAD.",
   "coincidencia_ppi": 0.92,
   "pagina": 68,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "79. Servicio de desarrollo de contenidos edu- cativos para la educación inicial, preescolar, básica y media",
@@ -1688,7 +1772,8 @@
   "programa": "TODOS EN UNA ESCUELA INCLUYENTE, INNOVADORA Y CON CALIDAD.",
   "coincidencia_ppi": 0.92,
   "pagina": 68,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Articulación ODS",
@@ -1706,7 +1791,8 @@
   "programa": "TODOS EN UNA ESCUELA INCLUYENTE, INNOVADORA Y CON CALIDAD.",
   "coincidencia_ppi": 0.92,
   "pagina": 69,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "5. Igualdad de Género",
@@ -1724,7 +1810,8 @@
   "programa": "TODOS EN UNA ESCUELA INCLUYENTE, INNOVADORA Y CON CALIDAD.",
   "coincidencia_ppi": 0.92,
   "pagina": 69,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "80. Documentos normativos",
@@ -1744,7 +1831,8 @@
   "programa": "EN ITAGÜÍ, DIGNIFICAMOS Y DESARROLLAMOS LA PROFESIÓN DOCENTE",
   "coincidencia_ppi": 0.93,
   "pagina": 70,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "81. Servicio de apoyo financiero para la perma- nencia a la edu- cación superior",
@@ -1764,7 +1852,8 @@
   "programa": "EN ITAGÜÍ, DIGNIFICAMOS Y DESARROLLAMOS LA PROFESIÓN DOCENTE",
   "coincidencia_ppi": 0.93,
   "pagina": 70,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "82. Servicio de articulación entre la educación media y el sector productivo",
@@ -1784,7 +1873,8 @@
   "programa": "EN ITAGÜÍ, DIGNIFICAMOS Y DESARROLLAMOS LA PROFESIÓN DOCENTE",
   "coincidencia_ppi": 0.93,
   "pagina": 70,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "1. Fin de la Pobreza",
@@ -1801,7 +1891,8 @@
   "programa": "EN ITAGÜÍ, DIGNIFICAMOS Y DESARROLLAMOS LA PROFESIÓN DOCENTE",
   "coincidencia_ppi": 0.93,
   "pagina": 70,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Articulación ODS",
@@ -1820,7 +1911,8 @@
   "programa": "EN ITAGÜÍ, DIGNIFICAMOS Y DESARROLLAMOS LA PROFESIÓN DOCENTE",
   "coincidencia_ppi": 0.93,
   "pagina": 70,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "83. Servicio de Apoyo Finan- ciero para el Fortalecimiento del Talento Humano",
@@ -1840,7 +1932,8 @@
   "programa": "EN ITAGÜÍ, DIGNIFICAMOS Y DESARROLLAMOS LA PROFESIÓN DOCENTE",
   "coincidencia_ppi": 0.93,
   "pagina": 71,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "84. Servicio educativo",
@@ -1860,7 +1953,8 @@
   "programa": "EN ITAGÜÍ, DIGNIFICAMOS Y DESARROLLAMOS LA PROFESIÓN DOCENTE",
   "coincidencia_ppi": 0.93,
   "pagina": 71,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "85. Servicio de docencia escolar",
@@ -1880,7 +1974,8 @@
   "programa": "EN ITAGÜÍ, DIGNIFICAMOS Y DESARROLLAMOS LA PROFESIÓN DOCENTE",
   "coincidencia_ppi": 0.93,
   "pagina": 71,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "86. Servicio de promoción de la salud",
@@ -1900,7 +1995,8 @@
   "programa": "EN ITAGÜÍ, DIGNIFICAMOS Y DESARROLLAMOS LA PROFESIÓN DOCENTE",
   "coincidencia_ppi": 0.93,
   "pagina": 73,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "87. Servicio de gestión del riesgo en temas de trastornos mentales",
@@ -1920,7 +2016,8 @@
   "programa": "EN ITAGÜÍ, DIGNIFICAMOS Y DESARROLLAMOS LA PROFESIÓN DOCENTE",
   "coincidencia_ppi": 0.93,
   "pagina": 73,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "88. Servicio de gestión del riesgo en temas de trastornos mentales",
@@ -1940,7 +2037,8 @@
   "programa": "EN ITAGÜÍ, DIGNIFICAMOS Y DESARROLLAMOS LA PROFESIÓN DOCENTE",
   "coincidencia_ppi": 0.93,
   "pagina": 73,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "90. Servicio de gestión del riesgo en temas de salud sexual y reproductiva",
@@ -1960,7 +2058,8 @@
   "programa": "TODOS POR LA GESTIÓN DEL CUIDADO Y LA CALIDAD DE VIDA",
   "coincidencia_ppi": 0.95,
   "pagina": 75,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "91. Servicio de gestión del riesgo en temas de salud sexual y reproductiva",
@@ -1980,7 +2079,8 @@
   "programa": "TODOS POR LA GESTIÓN DEL CUIDADO Y LA CALIDAD DE VIDA",
   "coincidencia_ppi": 0.95,
   "pagina": 75,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Articulación ODS",
@@ -1997,7 +2097,8 @@
   "programa": "TODOS POR LA GESTIÓN DEL CUIDADO Y LA CALIDAD DE VIDA",
   "coincidencia_ppi": 0.95,
   "pagina": 75,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "92. Servicio de promoción de la salud y preven- ción de riesgos asociados a condiciones no transmisibles",
@@ -2017,7 +2118,8 @@
   "programa": "TODOS POR LA GESTIÓN DEL CUIDADO Y LA CALIDAD DE VIDA",
   "coincidencia_ppi": 0.95,
   "pagina": 76,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "93. Servicio de gestión del riesgo para abordar con- diciones crónicas prevalentes",
@@ -2037,7 +2139,8 @@
   "programa": "TODOS POR LA GESTIÓN DEL CUIDADO Y LA CALIDAD DE VIDA",
   "coincidencia_ppi": 0.95,
   "pagina": 76,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "94. Servicio de educación informal en temas de salud pública",
@@ -2057,7 +2160,8 @@
   "programa": "TODOS POR LA GESTIÓN DEL CUIDADO Y LA CALIDAD DE VIDA",
   "coincidencia_ppi": 0.95,
   "pagina": 77,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "95. Servicio de asistencia técnica para el autoconsu- mo de los hogares en situación de vulnerabilidad social",
@@ -2077,7 +2181,8 @@
   "programa": "TODOS POR LA GESTIÓN DEL CUIDADO Y LA CALIDAD DE VIDA",
   "coincidencia_ppi": 0.95,
   "pagina": 77,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "96. Servicio de promoción de la salud",
@@ -2097,7 +2202,8 @@
   "programa": "TODOS POR LA GESTIÓN DEL CUIDADO Y LA CALIDAD DE VIDA",
   "coincidencia_ppi": 0.95,
   "pagina": 77,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "97. Servicio de gestión del riesgo para abordar situaciones prevalentes de origen laboral",
@@ -2117,7 +2223,8 @@
   "programa": "TODOS POR LA GESTIÓN DEL CUIDADO Y LA CALIDAD DE VIDA",
   "coincidencia_ppi": 0.95,
   "pagina": 78,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "98. Servicio de gestión del riesgo para abordar situaciones prevalentes de origen laboral",
@@ -2137,7 +2244,8 @@
   "programa": "TODOS POR LA GESTIÓN DEL CUIDADO Y LA CALIDAD DE VIDA",
   "coincidencia_ppi": 0.95,
   "pagina": 78,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "99. Servicio de educación informal en temas de salud pública",
@@ -2157,7 +2265,8 @@
   "programa": "TODOS POR LA GESTIÓN DEL CUIDADO Y LA CALIDAD DE VIDA",
   "coincidencia_ppi": 0.95,
   "pagina": 78,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "100. Servicio de gestión del riesgo para abordar situaciones de sa- lud relacionadas con condiciones ambientales",
@@ -2177,7 +2286,8 @@
   "programa": "TODOS PREPARADOS, SALVAMOS VIDAS . Este programa busca",
   "coincidencia_ppi": 0.75,
   "pagina": 80,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Ailió ODS",
@@ -2194,7 +2304,8 @@
   "programa": "TODOS PREPARADOS, SALVAMOS VIDAS . Este programa busca",
   "coincidencia_ppi": 0.75,
   "pagina": 80,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "101. Servicio de atención en salud pública en situacio- nes de emergencias y desastres",
@@ -2214,7 +2325,8 @@
   "programa": "TODOS PREPARADOS, SALVAMOS VIDAS . Este programa busca",
   "coincidencia_ppi": 0.75,
   "pagina": 81,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "102. Servicio de entrega de racio- nes de alimentos",
@@ -2234,7 +2346,8 @@
   "programa": "TODOS PREPARADOS, SALVAMOS VIDAS . Este programa busca",
   "coincidencia_ppi": 0.75,
   "pagina": 82,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "103. Servicio de gestión de oferta social para la po- blación vulnerable",
@@ -2254,7 +2367,8 @@
   "programa": "TODOS PREPARADOS, SALVAMOS VIDAS . Este programa busca",
   "coincidencia_ppi": 0.75,
   "pagina": 82,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "104. Servicio de atención psicoso- cial a víctimas del conflicto armado",
@@ -2274,7 +2388,8 @@
   "programa": "TODOS PREPARADOS, SALVAMOS VIDAS . Este programa busca",
   "coincidencia_ppi": 0.75,
   "pagina": 82,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "105. Servicio de certificación de discapacidad para las personas con discapacidad",
@@ -2294,7 +2409,8 @@
   "programa": "TODOS PREPARADOS, SALVAMOS VIDAS . Este programa busca",
   "coincidencia_ppi": 0.75,
   "pagina": 82,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "106. Servicio para la habilitación y la rehabilitación funcional",
@@ -2314,7 +2430,8 @@
   "programa": "TODOS PREPARADOS, SALVAMOS VIDAS . Este programa busca",
   "coincidencia_ppi": 0.75,
   "pagina": 82,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "107. Servicio de promoción de la participación social en salud Responsables",
@@ -2334,7 +2451,8 @@
   "programa": "TODOS PREPARADOS, SALVAMOS VIDAS . Este programa busca",
   "coincidencia_ppi": 0.75,
   "pagina": 82,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Corresponsables:",
@@ -2354,7 +2472,8 @@
   "programa": "TODOS PREPARADOS, SALVAMOS VIDAS . Este programa busca",
   "coincidencia_ppi": 0.75,
   "pagina": 82,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "108. Servicio de afiliaciones al ré- gimen subsidiado del Sistema Gene- ral de Seguridad Social",
@@ -2374,7 +2493,8 @@
   "programa": "TODOS PREPARADOS, SALVAMOS VIDAS . Este programa busca",
   "coincidencia_ppi": 0.75,
   "pagina": 83,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "109. Servicio de apoyo financiero para la atención en salud a la población",
@@ -2394,7 +2514,8 @@
   "programa": "TODOS PREPARADOS, SALVAMOS VIDAS . Este programa busca",
   "coincidencia_ppi": 0.75,
   "pagina": 83,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "110. Hospitales de primer nivel de atención dotados",
@@ -2414,7 +2535,8 @@
   "programa": "TODOS PREPARADOS, SALVAMOS VIDAS . Este programa busca",
   "coincidencia_ppi": 0.75,
   "pagina": 83,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "111. Servicio de promoción de la participación social en salud",
@@ -2434,7 +2556,8 @@
   "programa": "TODOS PREPARADOS, SALVAMOS VIDAS . Este programa busca",
   "coincidencia_ppi": 0.75,
   "pagina": 83,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "112. Servicio de educación infor- mal en temas de salud pública",
@@ -2454,7 +2577,8 @@
   "programa": "TODOS PREPARADOS, SALVAMOS VIDAS . Este programa busca",
   "coincidencia_ppi": 0.75,
   "pagina": 83,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "115. Servicio de gestión del riesgo para enfermeda- des emergentes, reemergentes y desatendidas",
@@ -2474,7 +2598,8 @@
   "programa": "TODOS UNIDOS POR UNA CIUDAD SIN ENFERMEDADES TRANS- MISIBLES",
   "coincidencia_ppi": 0.85,
   "pagina": 85,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "116. Servicio degestión del riesgo para enfermedades inmunoprevenibles",
@@ -2494,7 +2619,8 @@
   "programa": "TODOS UNIDOS POR UNA CIUDAD SIN ENFERMEDADES TRANS- MISIBLES",
   "coincidencia_ppi": 0.85,
   "pagina": 85,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "117.Servicio de gestión del riesgo para enfermedades inmunoprevenibles",
@@ -2514,7 +2640,8 @@
   "programa": "TODOS UNIDOS POR UNA CIUDAD SIN ENFERMEDADES TRANS- MISIBLES",
   "coincidencia_ppi": 0.85,
   "pagina": 85,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Articulación ODS",
@@ -2531,7 +2658,8 @@
   "programa": "TODOS UNIDOS POR UNA CIUDAD SIN ENFERMEDADES TRANS- MISIBLES",
   "coincidencia_ppi": 0.85,
   "pagina": 85,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "118. Servicio de organización de eventos recreati- vos comunitarios",
@@ -2551,7 +2679,8 @@
   "programa": "TODOS UNIDOS POR UNA CIUDAD SIN ENFERMEDADES TRANS- MISIBLES",
   "coincidencia_ppi": 0.85,
   "pagina": 86,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "121. Servicio de Escuelas Deportivas",
@@ -2571,7 +2700,8 @@
   "programa": "TODOS UNIDOS POR UNA CIUDAD SIN ENFERMEDADES TRANS- MISIBLES",
   "coincidencia_ppi": 0.85,
   "pagina": 88,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "122. Servicio de organización de eventos deportivos comunitarios",
@@ -2591,7 +2721,8 @@
   "programa": "TODOS UNIDOS POR UNA CIUDAD SIN ENFERMEDADES TRANS- MISIBLES",
   "coincidencia_ppi": 0.85,
   "pagina": 88,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "123. Servicio de adminis- tración de la infraestructura deportiva",
@@ -2611,7 +2742,8 @@
   "programa": "TODOS UNIDOS POR UNA CIUDAD SIN ENFERMEDADES TRANS- MISIBLES",
   "coincidencia_ppi": 0.85,
   "pagina": 88,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "124. Documentos normativos",
@@ -2631,7 +2763,8 @@
   "programa": "TODOS UNIDOS POR UNA CIUDAD SIN ENFERMEDADES TRANS- MISIBLES",
   "coincidencia_ppi": 0.85,
   "pagina": 89,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "125. Documentos de lineamientos técnicos",
@@ -2651,7 +2784,8 @@
   "programa": "TODOS UNIDOS POR UNA CIUDAD SIN ENFERMEDADES TRANS- MISIBLES",
   "coincidencia_ppi": 0.85,
   "pagina": 89,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "126. Servicio de asistencia técnica para la promoción del deporte",
@@ -2671,7 +2805,8 @@
   "programa": "TODOS UNIDOS POR UNA CIUDAD SIN ENFERMEDADES TRANS- MISIBLES",
   "coincidencia_ppi": 0.85,
   "pagina": 89,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "127. Servicio de pre- paración deportiva",
@@ -2691,7 +2826,8 @@
   "programa": "TODOS UNIDOS POR UNA CIUDAD SIN ENFERMEDADES TRANS- MISIBLES",
   "coincidencia_ppi": 0.85,
   "pagina": 89,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "128. Servicio de apoyo financiero al sector artístico ycultural",
@@ -2711,7 +2847,8 @@
   "programa": "TODOS UNIDOS POR UNA CIUDAD SIN ENFERMEDADES TRANS- MISIBLES",
   "coincidencia_ppi": 0.85,
   "pagina": 90,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "140. Servicio de salvaguardia al patrimonio inmaterial",
@@ -2731,7 +2868,8 @@
   "programa": "TODOS UNIDOS POR UNA CIUDAD SIN ENFERMEDADES TRANS- MISIBLES",
   "coincidencia_ppi": 0.85,
   "pagina": 93,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "141. Servicio de asistencia técnica para los museos",
@@ -2751,7 +2889,8 @@
   "programa": "TODOS UNIDOS POR UNA CIUDAD SIN ENFERMEDADES TRANS- MISIBLES",
   "coincidencia_ppi": 0.85,
   "pagina": 93,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "142. Servicio de divulgación y publicación del Patrimonio cultural",
@@ -2771,7 +2910,8 @@
   "programa": "TODOS UNIDOS POR UNA CIUDAD SIN ENFERMEDADES TRANS- MISIBLES",
   "coincidencia_ppi": 0.85,
   "pagina": 93,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "143. Servicios de educación informal al sector bibliote- cario, del libro y la lectura",
@@ -2791,7 +2931,8 @@
   "programa": "TODOS UNIDOS POR UNA CIUDAD SIN ENFERMEDADES TRANS- MISIBLES",
   "coincidencia_ppi": 0.85,
   "pagina": 93,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "144. Servicios de preservación del patrimonio bibliográfico y documental",
@@ -2811,7 +2952,8 @@
   "programa": "TODOS UNIDOS POR UNA CIUDAD SIN ENFERMEDADES TRANS- MISIBLES",
   "coincidencia_ppi": 0.85,
   "pagina": 93,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "145. Servicio de preserva- ción de los parques y áreas arqueológicas patrimoniales",
@@ -2831,7 +2973,8 @@
   "programa": "TODOS UNIDOS POR UNA CIUDAD SIN ENFERMEDADES TRANS- MISIBLES",
   "coincidencia_ppi": 0.85,
   "pagina": 93,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "146. Documen- tos normativos",
@@ -2851,7 +2994,8 @@
   "programa": "TODOS UNIDOS POR UNA CIUDAD SIN ENFERMEDADES TRANS- MISIBLES",
   "coincidencia_ppi": 0.85,
   "pagina": 93,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "150. Servicio de apoyo para la organización y la participación del sector artístico, cultural y la ciudadanía",
@@ -2871,7 +3015,8 @@
   "programa": "PARTICIPACIÓN PARA LA CULTURA CIUDADANA Y EL DESARRO- LLO SOSTENIBLE",
   "coincidencia_ppi": 0.9,
   "pagina": 95,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "151. Servicio de asistencia técnica en el fortaleci- miento de los consejeros de cultura",
@@ -2891,7 +3036,8 @@
   "programa": "PARTICIPACIÓN PARA LA CULTURA CIUDADANA Y EL DESARRO- LLO SOSTENIBLE",
   "coincidencia_ppi": 0.9,
   "pagina": 95,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "152. Servicio de información para el sector artístico ycultural",
@@ -2911,7 +3057,8 @@
   "programa": "PARTICIPACIÓN PARA LA CULTURA CIUDADANA Y EL DESARRO- LLO SOSTENIBLE",
   "coincidencia_ppi": 0.9,
   "pagina": 95,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "153. Servicio de apoyo financiero para creadores y gestores cultu- rales",
@@ -2931,7 +3078,8 @@
   "programa": "PARTICIPACIÓN PARA LA CULTURA CIUDADANA Y EL DESARRO- LLO SOSTENIBLE",
   "coincidencia_ppi": 0.9,
   "pagina": 95,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Corresponsables:",
@@ -2950,7 +3098,8 @@
   "programa": "PARTICIPACIÓN PARA LA CULTURA CIUDADANA Y EL DESARRO- LLO SOSTENIBLE",
   "coincidencia_ppi": 0.9,
   "pagina": 95,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "154. Centros comuni- tarios dotados",
@@ -2970,7 +3119,8 @@
   "programa": "PARTICIPACIÓN PARA LA CULTURA CIUDADANA Y EL DESARRO- LLO SOSTENIBLE",
   "coincidencia_ppi": 0.9,
   "pagina": 97,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "155. Servicio de asistencia técnica a comunidades en temas de fortale- cimiento del tejido social y construcción de escenarios comu- nitarios protectores de derechos",
@@ -2990,7 +3140,8 @@
   "programa": "PARTICIPACIÓN PARA LA CULTURA CIUDADANA Y EL DESARRO- LLO SOSTENIBLE",
   "coincidencia_ppi": 0.9,
   "pagina": 97,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "156. Servicio dirigi- dos a la atención de niños, niñas, adoles- centes y jóvenes, con enfoque pedagógico y restaurativo encaminados a la inclusión social",
@@ -3010,7 +3161,8 @@
   "programa": "PARTICIPACIÓN PARA LA CULTURA CIUDADANA Y EL DESARRO- LLO SOSTENIBLE",
   "coincidencia_ppi": 0.9,
   "pagina": 97,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "157. Servicio de acompañamiento fa- miliar y comunitario para la superación de lapobreza",
@@ -3030,7 +3182,8 @@
   "programa": "PARTICIPACIÓN PARA LA CULTURA CIUDADANA Y EL DESARRO- LLO SOSTENIBLE",
   "coincidencia_ppi": 0.9,
   "pagina": 97,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "158. Servicio de orientación a casos de violencia de género",
@@ -3050,7 +3203,8 @@
   "programa": "PARTICIPACIÓN PARA LA CULTURA CIUDADANA Y EL DESARRO- LLO SOSTENIBLE",
   "coincidencia_ppi": 0.9,
   "pagina": 98,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "159. Servicio de educación informal",
@@ -3070,7 +3224,8 @@
   "programa": "PARTICIPACIÓN PARA LA CULTURA CIUDADANA Y EL DESARRO- LLO SOSTENIBLE",
   "coincidencia_ppi": 0.9,
   "pagina": 98,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "160. Servicio de promoción de la garantía de derechos",
@@ -3090,7 +3245,8 @@
   "programa": "PARTICIPACIÓN PARA LA CULTURA CIUDADANA Y EL DESARRO- LLO SOSTENIBLE",
   "coincidencia_ppi": 0.9,
   "pagina": 98,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "161. Servicio de educación informal",
@@ -3110,7 +3266,8 @@
   "programa": "PARTICIPACIÓN PARA LA CULTURA CIUDADANA Y EL DESARRO- LLO SOSTENIBLE",
   "coincidencia_ppi": 0.9,
   "pagina": 98,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "165. Servicio de atención integral a la primera infancia",
@@ -3130,7 +3287,8 @@
   "programa": "PARTICIPACIÓN PARA LA CULTURA CIUDADANA Y EL DESARRO- LLO SOSTENIBLE",
   "coincidencia_ppi": 0.9,
   "pagina": 100,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "166. Servicios de promoción de los derechos de los niños, niñas, adolescentes y jóvenes",
@@ -3150,7 +3308,8 @@
   "programa": "PARTICIPACIÓN PARA LA CULTURA CIUDADANA Y EL DESARRO- LLO SOSTENIBLE",
   "coincidencia_ppi": 0.9,
   "pagina": 100,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "167. Servicio de asistencia técni- ca en el ciclo de políticas públicas de familia y otras relacionadas",
@@ -3170,7 +3329,8 @@
   "programa": "PARTICIPACIÓN PARA LA CULTURA CIUDADANA Y EL DESARRO- LLO SOSTENIBLE",
   "coincidencia_ppi": 0.9,
   "pagina": 100,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "168. Documentos de planeación",
@@ -3190,7 +3350,8 @@
   "programa": "PARTICIPACIÓN PARA LA CULTURA CIUDADANA Y EL DESARRO- LLO SOSTENIBLE",
   "coincidencia_ppi": 0.9,
   "pagina": 100,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "169. Servicio de asistencia técni- ca a comunida- des en temas de fortalecimiento del tejido social y construcción de escenarios comunitarios protectores de",
@@ -3210,7 +3371,8 @@
   "programa": "PARTICIPACIÓN PARA LA CULTURA CIUDADANA Y EL DESARRO- LLO SOSTENIBLE",
   "coincidencia_ppi": 0.9,
   "pagina": 100,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Corresponsa- bles:",
@@ -3230,7 +3392,8 @@
   "programa": "PARTICIPACIÓN PARA LA CULTURA CIUDADANA Y EL DESARRO- LLO SOSTENIBLE",
   "coincidencia_ppi": 0.9,
   "pagina": 100,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "170. Servicio de integración de la oferta pública",
@@ -3250,7 +3413,8 @@
   "programa": "PARTICIPACIÓN PARA LA CULTURA CIUDADANA Y EL DESARRO- LLO SOSTENIBLE",
   "coincidencia_ppi": 0.9,
   "pagina": 101,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "171. Servicio de promoción a la participación ciudadana",
@@ -3270,7 +3434,8 @@
   "programa": "PARTICIPACIÓN PARA LA CULTURA CIUDADANA Y EL DESARRO- LLO SOSTENIBLE",
   "coincidencia_ppi": 0.9,
   "pagina": 101,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "172. Servicios de educación informal a niños, niñas, adolescentes y jóvenes para el reconocimiento de sus derechos",
@@ -3290,7 +3455,8 @@
   "programa": "PARTICIPACIÓN PARA LA CULTURA CIUDADANA Y EL DESARRO- LLO SOSTENIBLE",
   "coincidencia_ppi": 0.9,
   "pagina": 101,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "176. Servicio de asistencia técni- ca a comunida- des en temas de fortalecimiento del tejido social y construcción de escenarios comunitarios protectores de derechos",
@@ -3310,7 +3476,8 @@
   "programa": "PERSONAS MAYORES EN FAMILIA, PROTEGIDOS Y AUTÓNOMOS",
   "coincidencia_ppi": 1.0,
   "pagina": 103,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "177. Servicio de gestión de oferta social para la población vulnerable",
@@ -3330,7 +3497,8 @@
   "programa": "PERSONAS MAYORES EN FAMILIA, PROTEGIDOS Y AUTÓNOMOS",
   "coincidencia_ppi": 1.0,
   "pagina": 103,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "178. Servicio de apoyo para remisión a rutas de atención com- plementarias",
@@ -3350,7 +3518,8 @@
   "programa": "PERSONAS MAYORES EN FAMILIA, PROTEGIDOS Y AUTÓNOMOS",
   "coincidencia_ppi": 1.0,
   "pagina": 103,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "179. Servicio de asistencia técni- ca a comunida- des en temas de fortalecimiento del tejido social y construcción de escenarios comunitarios protectores de derechos",
@@ -3370,7 +3539,8 @@
   "programa": "PERSONAS MAYORES EN FAMILIA, PROTEGIDOS Y AUTÓNOMOS",
   "coincidencia_ppi": 1.0,
   "pagina": 103,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "180. Documen- tos de planea- ción",
@@ -3390,7 +3560,8 @@
   "programa": "PERSONAS MAYORES EN FAMILIA, PROTEGIDOS Y AUTÓNOMOS",
   "coincidencia_ppi": 1.0,
   "pagina": 103,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "181. Centros de protección social para el adulto mayor dotados",
@@ -3410,7 +3581,8 @@
   "programa": "PERSONAS MAYORES EN FAMILIA, PROTEGIDOS Y AUTÓNOMOS",
   "coincidencia_ppi": 1.0,
   "pagina": 103,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "182. Servicio de promoción de temas de diná- mica relacional y desarrollo autónomo",
@@ -3430,7 +3602,8 @@
   "programa": "PERSONAS MAYORES EN FAMILIA, PROTEGIDOS Y AUTÓNOMOS",
   "coincidencia_ppi": 1.0,
   "pagina": 104,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "183. Servicio de gestión de oferta social para la población vulnerable",
@@ -3450,7 +3623,8 @@
   "programa": "PERSONAS MAYORES EN FAMILIA, PROTEGIDOS Y AUTÓNOMOS",
   "coincidencia_ppi": 1.0,
   "pagina": 104,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "187. Servicio de articulación de oferta social para la pobla- ción habitante de calle",
@@ -3470,7 +3644,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 106,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "188. Servicio de gestión de oferta social para la pobla- ción vulnerable",
@@ -3490,7 +3665,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 106,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Articulación",
@@ -3507,7 +3683,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 106,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "189. Docu- mentos de investigación",
@@ -3527,7 +3704,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 107,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "190. Servicio de educación informal",
@@ -3547,7 +3725,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 107,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "191. Servicio de asistencia técnica",
@@ -3567,7 +3746,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 107,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "194. Docu- mentos de evaluación",
@@ -3587,7 +3767,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "195. Servicio de asistencia técnica",
@@ -3607,7 +3788,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "196. Servicios de información implementa- dos",
@@ -3627,7 +3809,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "197. Servicio de orientación a casos de violencia de género",
@@ -3647,7 +3830,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "198. Servicio de promoción de la garantía de derechos",
@@ -3667,7 +3851,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "199. Servicio de promoción de la garantía de derechos",
@@ -3687,7 +3872,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "200. Docu- mentos de planeación",
@@ -3707,7 +3893,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 110,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "201. Servicio de promoción a la participación ciudadana",
@@ -3727,7 +3914,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 110,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "202. Servicio de asistencia técnica",
@@ -3747,7 +3935,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 110,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "203. Servicios de información implementados",
@@ -3767,7 +3956,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 110,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "204. Servicio de educación informal",
@@ -3787,7 +3977,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 110,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "208. Documentos de planeación",
@@ -3807,7 +3998,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 115,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "209. Servicio de apoyo financiero para el Mejora- miento integral de barrios",
@@ -3827,7 +4019,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 115,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "210. Servicio de apoyo financiero para mejoramiento de vivienda",
@@ -3847,7 +4040,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 115,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "211. Servicio de asistencia técnica y jurídica en saneamiento y titulación de predios",
@@ -3867,7 +4061,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 115,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "212. Servicio de apoyo a la ejecu- ción de la política de vivienda",
@@ -3887,7 +4082,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 115,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "214. Espacio pú- blico construido",
@@ -3907,7 +4103,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 117,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "215. Espacio pú- blico adecuado",
@@ -3927,7 +4124,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 117,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Articulación Corantioquia",
@@ -3947,7 +4145,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 117,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Articulación",
@@ -3966,7 +4165,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 117,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "ODS",
@@ -3985,7 +4185,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 117,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "216. Parque recreo-deportivo construido y dotado",
@@ -4005,7 +4206,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 118,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "217. Infraestruc- tura educativa construida",
@@ -4025,7 +4227,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 118,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "218. Infraestruc- tura educativa mejorada",
@@ -4045,7 +4248,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 118,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "219. Sedes ampliadas",
@@ -4065,7 +4269,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 118,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "220. Estudios de pre inversión e inversión",
@@ -4085,7 +4290,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 118,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "221. Servicio de mantenimiento a la infraestructura deportiva",
@@ -4105,7 +4311,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 118,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "222. Parques recreativos mejorados",
@@ -4125,7 +4332,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 118,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "223. Placa deporti- va mejorada",
@@ -4145,7 +4353,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 118,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "224. Gimnasios al aire libre estáticos",
@@ -4165,7 +4374,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 118,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "225. Cancha mantenida",
@@ -4185,7 +4395,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 118,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "226. Coliseos cubiertos mante- nidos",
@@ -4205,7 +4416,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 118,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "227. Canchas de alto rendimiento construidas",
@@ -4225,7 +4437,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 118,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "231. Servicio de Alcantari- llado",
@@ -4245,7 +4458,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 120,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "232. Servicio de Acueducto",
@@ -4265,7 +4479,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 120,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "233. Acueduc- tos optimiza- dos",
@@ -4285,7 +4500,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 120,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "234. Acueduc- tos optimiza- dos",
@@ -4305,7 +4521,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 120,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "236. Redes de alumbrado público ampliadas",
@@ -4325,7 +4542,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "237. Servicio de Alumbrado Público",
@@ -4345,7 +4563,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Articulación Corantioquia",
@@ -4365,7 +4584,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Articulación ODS",
@@ -4384,7 +4604,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "9. Industria, Innovación e Infraestructura.",
@@ -4402,7 +4623,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "238. Servicio de acceso zonas digitales",
@@ -4422,7 +4644,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 123,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "239. Servicio de información implementado",
@@ -4442,7 +4665,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 123,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Articulación Corantioquia",
@@ -4462,7 +4686,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 123,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "240. Puente construido en vía urbana existente",
@@ -4482,7 +4707,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 125,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "241. Vía urbana con manteni- miento periódico o rutinario",
@@ -4502,7 +4728,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 125,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "242. Vía urbana construida",
@@ -4522,7 +4749,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 125,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "243. Vía urbana rehabilitada",
@@ -4542,7 +4770,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 125,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "244. Andenes de la red urbana construidos",
@@ -4562,7 +4791,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 125,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "245. Andenes de la red urbana mantenidos",
@@ -4582,7 +4812,8 @@
   "programa": "APOYO Y REHABILITACIÓN A PERSONAS EN SITUACIÓN DE CALLE Y CON ADICCIONES",
   "coincidencia_ppi": 0.87,
   "pagina": 125,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "246. Servicios de transporte público organizado imple- mentados (SITM. SITP. SETP,SITR)",
@@ -4602,7 +4833,8 @@
   "programa": "TRANSPORTE PÚBLICO SEGURO,EFICIENTE Y SOSTENIBLE",
   "coincidencia_ppi": 0.92,
   "pagina": 127,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "247. Estaciones construidas",
@@ -4622,7 +4854,8 @@
   "programa": "TRANSPORTE PÚBLICO SEGURO,EFICIENTE Y SOSTENIBLE",
   "coincidencia_ppi": 0.92,
   "pagina": 127,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "248. Estaciones mejoradas",
@@ -4642,7 +4875,8 @@
   "programa": "TRANSPORTE PÚBLICO SEGURO,EFICIENTE Y SOSTENIBLE",
   "coincidencia_ppi": 0.92,
   "pagina": 127,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "249. Estaciones mantenidas",
@@ -4662,7 +4896,8 @@
   "programa": "TRANSPORTE PÚBLICO SEGURO,EFICIENTE Y SOSTENIBLE",
   "coincidencia_ppi": 0.92,
   "pagina": 127,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Articulación Coran- tioquia",
@@ -4681,7 +4916,8 @@
   "programa": "TRANSPORTE PÚBLICO SEGURO,EFICIENTE Y SOSTENIBLE",
   "coincidencia_ppi": 0.92,
   "pagina": 127,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "250. Vías con obras com- plementarias de seguridad vial",
@@ -4701,7 +4937,8 @@
   "programa": "TRANSPORTE PÚBLICO SEGURO,EFICIENTE Y SOSTENIBLE",
   "coincidencia_ppi": 0.92,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "251. Cicloin- fraestructura construida",
@@ -4721,7 +4958,8 @@
   "programa": "TRANSPORTE PÚBLICO SEGURO,EFICIENTE Y SOSTENIBLE",
   "coincidencia_ppi": 0.92,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "252. Vías con dispositivos de control y señalización",
@@ -4741,7 +4979,8 @@
   "programa": "TRANSPORTE PÚBLICO SEGURO,EFICIENTE Y SOSTENIBLE",
   "coincidencia_ppi": 0.92,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "253. Infraes- tructura de transporte para la segu- ridad vial",
@@ -4761,7 +5000,8 @@
   "programa": "TRANSPORTE PÚBLICO SEGURO,EFICIENTE Y SOSTENIBLE",
   "coincidencia_ppi": 0.92,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "254. Celdas de estacio- namiento disponibles",
@@ -4781,7 +5021,8 @@
   "programa": "TRANSPORTE PÚBLICO SEGURO,EFICIENTE Y SOSTENIBLE",
   "coincidencia_ppi": 0.92,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "255. Infraes- tructura de transporte para la segu- ridad vial",
@@ -4801,7 +5042,8 @@
   "programa": "TRANSPORTE PÚBLICO SEGURO,EFICIENTE Y SOSTENIBLE",
   "coincidencia_ppi": 0.92,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "256. Infraes- tructura de transporte para la se- guridad vial mejorada",
@@ -4821,7 +5063,8 @@
   "programa": "TRANSPORTE PÚBLICO SEGURO,EFICIENTE Y SOSTENIBLE",
   "coincidencia_ppi": 0.92,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "264. Unidades de generación fotovoltaica de energía eléctrica instaladas",
@@ -4841,7 +5084,8 @@
   "programa": "CONSTRUYENDO UN TERRITORIO RESILIENTE AL CAMBIO CLIMÁ- TICO",
   "coincidencia_ppi": 0.99,
   "pagina": 132,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "265. Documentos de lineamientos técnicos para la gestión del cambio climático y un desarrollo bajo en carbono y resiliente al clima",
@@ -4861,7 +5105,8 @@
   "programa": "CONSTRUYENDO UN TERRITORIO RESILIENTE AL CAMBIO CLIMÁ- TICO",
   "coincidencia_ppi": 0.99,
   "pagina": 132,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "266. Servicio de divulgación de la información en gestión del cambio climático para un desarrollo bajo en carbono y resiliente al clima.",
@@ -4881,7 +5126,8 @@
   "programa": "CONSTRUYENDO UN TERRITORIO RESILIENTE AL CAMBIO CLIMÁ- TICO",
   "coincidencia_ppi": 0.99,
   "pagina": 132,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Articulación Corantioquia",
@@ -4900,7 +5146,8 @@
   "programa": "CONSTRUYENDO UN TERRITORIO RESILIENTE AL CAMBIO CLIMÁ- TICO",
   "coincidencia_ppi": 0.99,
   "pagina": 132,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "267. Servicio de apoyo financiero para la forma- lización de la propiedad",
@@ -4920,7 +5167,8 @@
   "programa": "CONSTRUYENDO UN TERRITORIO RESILIENTE AL CAMBIO CLIMÁ- TICO",
   "coincidencia_ppi": 0.99,
   "pagina": 133,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "273. Servicio de recuperación de ecosistemas",
@@ -4940,7 +5188,8 @@
   "programa": "SOSTENIBILIDAD AMBIENTAL: VALORANDO Y PROTEGIENDO LOS RECURSOS DEL SUELO,FLORA Y AIRE",
   "coincidencia_ppi": 0.99,
   "pagina": 135,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "274. Servicio de reforestación de ecosistemas",
@@ -4960,7 +5209,8 @@
   "programa": "SOSTENIBILIDAD AMBIENTAL: VALORANDO Y PROTEGIENDO LOS RECURSOS DEL SUELO,FLORA Y AIRE",
   "coincidencia_ppi": 0.99,
   "pagina": 135,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "281. Servicios de seguimiento al Plan de Ges- tión Integral de Residuos Sólidos PGIRS",
@@ -4980,7 +5230,8 @@
   "programa": "SOSTENIBILIDAD AMBIENTAL: VALORANDO Y PROTEGIENDO LOS RECURSOS DEL SUELO,FLORA Y AIRE",
   "coincidencia_ppi": 0.99,
   "pagina": 137,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "286. Servicio de asistencia técnica para la implementación de las estrate- gias educativo ambientales y de participación",
@@ -5000,7 +5251,8 @@
   "programa": "EDUCAR PARA CONSERVAR: PROMOVIENDO LA CONCIENCIA AMBIENTAL",
   "coincidencia_ppi": 0.9,
   "pagina": 139,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "287. Servicio de divulgación de la información de la política nacio- nal de educación ambiental y participación",
@@ -5020,7 +5272,8 @@
   "programa": "EDUCAR PARA CONSERVAR: PROMOVIENDO LA CONCIENCIA AMBIENTAL",
   "coincidencia_ppi": 0.9,
   "pagina": 139,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "292. Infraes- tructura para el bienestar animal construida y dotada",
@@ -5040,7 +5293,8 @@
   "programa": "EDUCAR PARA CONSERVAR: PROMOVIENDO LA CONCIENCIA AMBIENTAL",
   "coincidencia_ppi": 0.9,
   "pagina": 141,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "293. Servicio de apoyo financiero para la atención integral de animales",
@@ -5060,7 +5314,8 @@
   "programa": "EDUCAR PARA CONSERVAR: PROMOVIENDO LA CONCIENCIA AMBIENTAL",
   "coincidencia_ppi": 0.9,
   "pagina": 141,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "294. Servicio de atención integral a la fauna",
@@ -5080,7 +5335,8 @@
   "programa": "EDUCAR PARA CONSERVAR: PROMOVIENDO LA CONCIENCIA AMBIENTAL",
   "coincidencia_ppi": 0.9,
   "pagina": 141,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Articulación Corantioquia",
@@ -5100,7 +5356,8 @@
   "programa": "EDUCAR PARA CONSERVAR: PROMOVIENDO LA CONCIENCIA AMBIENTAL",
   "coincidencia_ppi": 0.9,
   "pagina": 141,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "295. Obras y me- didas de adecua- ción hidráulica.",
@@ -5120,7 +5377,8 @@
   "programa": "EDUCAR PARA CONSERVAR: PROMOVIENDO LA CONCIENCIA AMBIENTAL",
   "coincidencia_ppi": 0.9,
   "pagina": 142,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "296. Obras para la prevención y control de movi- mientos en masa",
@@ -5140,7 +5398,8 @@
   "programa": "EDUCAR PARA CONSERVAR: PROMOVIENDO LA CONCIENCIA AMBIENTAL",
   "coincidencia_ppi": 0.9,
   "pagina": 142,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "297. Documentos de planeación",
@@ -5160,7 +5419,8 @@
   "programa": "EDUCAR PARA CONSERVAR: PROMOVIENDO LA CONCIENCIA AMBIENTAL",
   "coincidencia_ppi": 0.9,
   "pagina": 142,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "300. Documentos de planeación",
@@ -5180,7 +5440,8 @@
   "programa": "EDUCAR PARA CONSERVAR: PROMOVIENDO LA CONCIENCIA AMBIENTAL",
   "coincidencia_ppi": 0.9,
   "pagina": 147,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "301. Servicio de asistencia técnica",
@@ -5200,7 +5461,8 @@
   "programa": "EDUCAR PARA CONSERVAR: PROMOVIENDO LA CONCIENCIA AMBIENTAL",
   "coincidencia_ppi": 0.9,
   "pagina": 147,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "302. Servicio de educación informal",
@@ -5220,7 +5482,8 @@
   "programa": "EDUCAR PARA CONSERVAR: PROMOVIENDO LA CONCIENCIA AMBIENTAL",
   "coincidencia_ppi": 0.9,
   "pagina": 147,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "303. Documentos metodológicos",
@@ -5240,7 +5503,8 @@
   "programa": "EDUCAR PARA CONSERVAR: PROMOVIENDO LA CONCIENCIA AMBIENTAL",
   "coincidencia_ppi": 0.9,
   "pagina": 147,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "304. Documentos normativos",
@@ -5260,7 +5524,8 @@
   "programa": "EDUCAR PARA CONSERVAR: PROMOVIENDO LA CONCIENCIA AMBIENTAL",
   "coincidencia_ppi": 0.9,
   "pagina": 147,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "305. Servicios de información implementados",
@@ -5280,7 +5545,8 @@
   "programa": "EDUCAR PARA CONSERVAR: PROMOVIENDO LA CONCIENCIA AMBIENTAL",
   "coincidencia_ppi": 0.9,
   "pagina": 147,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "306. Documentos de planeación",
@@ -5300,7 +5566,8 @@
   "programa": "EDUCAR PARA CONSERVAR: PROMOVIENDO LA CONCIENCIA AMBIENTAL",
   "coincidencia_ppi": 0.9,
   "pagina": 147,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Articulación ODS",
@@ -5320,7 +5587,8 @@
   "programa": "EDUCAR PARA CONSERVAR: PROMOVIENDO LA CONCIENCIA AMBIENTAL",
   "coincidencia_ppi": 0.9,
   "pagina": 147,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "307. Docu- mentos de evaluación",
@@ -5340,7 +5608,8 @@
   "programa": "EDUCAR PARA CONSERVAR: PROMOVIENDO LA CONCIENCIA AMBIENTAL",
   "coincidencia_ppi": 0.9,
   "pagina": 148,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "308. Docu- mentos de planeación",
@@ -5360,7 +5629,8 @@
   "programa": "EDUCAR PARA CONSERVAR: PROMOVIENDO LA CONCIENCIA AMBIENTAL",
   "coincidencia_ppi": 0.9,
   "pagina": 148,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "309. Servicio de sanea- miento fiscal y financiero",
@@ -5380,7 +5650,8 @@
   "programa": "EDUCAR PARA CONSERVAR: PROMOVIENDO LA CONCIENCIA AMBIENTAL",
   "coincidencia_ppi": 0.9,
   "pagina": 148,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "310. Servicio de sanea- miento fiscal y financiero",
@@ -5400,7 +5671,8 @@
   "programa": "EDUCAR PARA CONSERVAR: PROMOVIENDO LA CONCIENCIA AMBIENTAL",
   "coincidencia_ppi": 0.9,
   "pagina": 148,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "314. Documentos de planeación",
@@ -5420,7 +5692,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 150,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Articulación ODS",
@@ -5439,7 +5712,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 150,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "315. Servicio de Implementación Sistemas de Gestión",
@@ -5459,7 +5733,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 152,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "316. Servicio de educación informal",
@@ -5479,7 +5754,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 152,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "317. Servicio de Implementación Sistemas de Gestión",
@@ -5499,7 +5775,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 152,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "318. Servicio de educación informal",
@@ -5519,7 +5796,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 152,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "319. Documen- tos normativos",
@@ -5539,7 +5817,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 152,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Responsable",
@@ -5559,7 +5838,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 152,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Articulación ODS",
@@ -5578,7 +5858,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 152,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "320. Servicios de información implementados",
@@ -5598,7 +5879,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 153,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "321. Servicio de Implementación Sistemas de Gestión",
@@ -5618,7 +5900,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 153,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Articulación ODS",
@@ -5637,7 +5920,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 153,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "322. Servicio de asistencia técnica",
@@ -5657,7 +5941,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 154,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "323. Documentos normativos",
@@ -5677,7 +5962,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 154,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "324. Documentos de lineamientos técnicos",
@@ -5697,7 +5983,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 154,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "325. Servicio de divulgación en temas de lucha contra la corrupción",
@@ -5717,7 +6004,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 155,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "326. Servicio de Imple- mentación Sistemas de Gestión",
@@ -5737,7 +6025,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 155,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "328. Documentos de planeación lineamiento",
@@ -5757,7 +6046,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 157,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "329. Servicio de información actualizado",
@@ -5777,7 +6067,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 157,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "330. Servicios de información actualizado",
@@ -5797,7 +6088,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 157,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "331. Centro Integrado de Ser- vicios adecuado",
@@ -5817,7 +6109,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 157,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "332. Servicio de información actualizado",
@@ -5837,7 +6130,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 157,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "333. Sistemas de información implementa- dos",
@@ -5857,7 +6151,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 158,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "334. Servicio de informa- ción para el registro administrativo de SISBEN",
@@ -5877,7 +6172,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 158,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "335. Servicio de estratifica- ción socioeco- nómica",
@@ -5897,7 +6193,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 158,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "336. Servicio de integración de la oferta pública",
@@ -5917,7 +6214,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 159,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "337. Servicio de integración de la oferta pública",
@@ -5937,7 +6235,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 159,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "338. Servicio de integración de la oferta pública",
@@ -5957,7 +6256,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 159,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "339. Docu- mentos de lineamientos técnicos",
@@ -5977,7 +6277,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 161,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "340. Servicio de gestión documental",
@@ -5997,7 +6298,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 161,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "341. Servicio de gestión documental",
@@ -6017,7 +6319,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 161,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "342. Docu- mentos de planeación",
@@ -6037,7 +6340,8 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 161,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "343. Servicio de educación informal",
@@ -6057,6 +6361,7 @@
   "programa": "CONSOLIDACION DE LA POLITICA DE LEGALIDAD Y OPORTUNIDAD EN LA GESTIÓN ADMINISTRATIVA",
   "coincidencia_ppi": 0.79,
   "pagina": 161,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  }
 ]

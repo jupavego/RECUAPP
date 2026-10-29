@@ -192,6 +192,18 @@
   "sector": "privado, cajas de compensación, instituciones de formación en idioma inglés."
  },
  {
+  "nombre": "Personas ocupadas en la ciudad en actividades relacionadas con el turismo",
+  "unidad": "Número",
+  "ano_base": "2022",
+  "linea_base": "91.861",
+  "meta": "115.200",
+  "responsable": "Secretaría de Turismo y Entretenimiento",
+  "tipo_acumulado": "",
+  "pagina": 239,
+  "linea": 1,
+  "sector": "privado, cajas de compensación, instituciones de formación en idioma inglés."
+ },
+ {
   "nombre": "Índice de cultura ciudadana",
   "unidad": "Número",
   "ano_base": "2023",

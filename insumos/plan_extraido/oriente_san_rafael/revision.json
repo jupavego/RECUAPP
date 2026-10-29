@@ -1,0 +1,582 @@
+[
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 102,
+  "valor": "s: 3",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 1
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 116,
+  "valor": "s: 2",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 2
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 118,
+  "valor": "Fortalecimiento de los servicios",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 3
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 125,
+  "valor": "municipio",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 4
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 132,
+  "valor": "s: 1",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 5
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 135,
+  "valor": "s: 11",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 6
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 142,
+  "valor": "Actualizació n e implementa",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 7
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 142,
+  "valor": "ción del Plan de Movilidad municipal",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 8
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 143,
+  "valor": "Promoción del desarrollo y práctica del",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 9
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 143,
+  "valor": "deporte, la recreación y el aprovechamient o del tiemo",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 10
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 143,
+  "valor": "p libre, la salud física y mental",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 11
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 143,
+  "valor": "Mejoramiento, mantenimiento y",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 12
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 143,
+  "valor": "dotación de escenarios deportivos e",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 13
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 143,
+  "valor": "implementos para la práctica del deporte",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 14
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 143,
+  "valor": "Fortalecimiento de los procesos culturalesy",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 15
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 144,
+  "valor": "artísticos del municipio de San Rafael",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 16
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 145,
+  "valor": "Atención permanente de las víctimas y",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 17
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 145,
+  "valor": "generación de escenarios para implementación de programas de paz total",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 18
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 147,
+  "valor": "Fortalecimiento para la",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 19
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 147,
+  "valor": "prestación del servicio educativo",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 20
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 148,
+  "valor": "Estrategias de promoción y",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 21
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 148,
+  "valor": "prevención en el sector salud",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 22
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 150,
+  "valor": "servicio de salud",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 23
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 151,
+  "valor": "Gestión integral para el",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 24
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 151,
+  "valor": "desarrollo turístico",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 25
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 152,
+  "valor": "Mantenimiento del",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 26
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 152,
+  "valor": "equipamiento",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 27
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 152,
+  "valor": "Generación de Alianzas con actores tanto",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 28
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 152,
+  "valor": "públicos como privados para continuar potenciando los recursos municipales y mejorando las condiciones económicas del territorio y sus habitantes",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 29
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 153,
+  "valor": "p",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 30
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 153,
+  "valor": "Gestión del",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 31
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 155,
+  "valor": "Impulsar el",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 32
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 155,
+  "valor": "desarrollo de vías rurales y urbanas en el",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 33
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 155,
+  "valor": "Gestión ambiental para",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 34
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 155,
+  "valor": "la sostenibilidad territorial",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 35
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 157,
+  "valor": "Fortalecimiento de los servicios de Agua Potable y Snmint",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 36
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 157,
+  "valor": "aeaeo Básico en el sector rural del municipio",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 37
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 159,
+  "valor": "Garantía de",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 38
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 160,
+  "valor": "ciudadana",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 39
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 160,
+  "valor": "Actualización e implementación",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 40
+ },
+ {
+  "tipo": "programa_sin_cruce",
+  "pagina": 160,
+  "valor": "del Plan de Movilidad",
+  "sugerencia": null,
+  "correccion": null,
+  "id": 41
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "01. Equidad y Desarrollo Social",
+  "sector": null,
+  "correccion": null,
+  "id": 42
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0101. Deporte y Recreación (A4)",
+  "sector": null,
+  "correccion": null,
+  "id": 43
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "010102 Mejoramiento, mantenimiento y dotación de escenarios deportivos e implementos para la práctica del deporte",
+  "sector": null,
+  "correccion": null,
+  "id": 44
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0102. Cultura(A5)",
+  "sector": null,
+  "correccion": null,
+  "id": 45
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0103. Atención a Grupos Vulnerables - Promoción Social(A14)",
+  "sector": null,
+  "correccion": null,
+  "id": 46
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "010302 Desarrollo integral de primera infancia, niños, niñas adolescentesy jóvenes",
+  "sector": null,
+  "correccion": null,
+  "id": 47
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "010304 Atención permanente de las víctimas y generación de escenarios para implementación",
+  "sector": null,
+  "correccion": null,
+  "id": 48
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0104. Desarrollo Comunitario (A16)",
+  "sector": null,
+  "correccion": null,
+  "id": 49
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0105. Educación(A1)",
+  "sector": null,
+  "correccion": null,
+  "id": 50
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0106. Salud (A2)",
+  "sector": null,
+  "correccion": null,
+  "id": 51
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "010606 Inspección, vigilancia y control en el servicio de salud",
+  "sector": "010606 Inspección, vigilancia y control en el servicio de salud",
+  "correccion": null,
+  "id": 52
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "02. Desarrollo Económico para la competitividad",
+  "sector": null,
+  "correccion": null,
+  "id": 53
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0201. Agricultura y desarrollo rural(A8)",
+  "sector": "0201. Agricultura y desarrollo rural(A8)",
+  "correccion": null,
+  "id": 54
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0202. Turismo(A13)",
+  "sector": "0202. Turismo(A13)",
+  "correccion": null,
+  "id": 55
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "020201 Gestión integral para el desarrollo turístico",
+  "sector": "0202. Turismo(A13)",
+  "correccion": null,
+  "id": 56
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0203.Emprendimiento (A13)",
+  "sector": "0203.Emprendimiento (A13)",
+  "correccion": null,
+  "id": 57
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "03. Mejoramiento de la infraestructura y la prestación de los serviciospúblicos",
+  "sector": null,
+  "correccion": null,
+  "id": 58
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0301. Equipamiento y espacio público(A15)",
+  "sector": "0301. Equipamiento y espacio público(A15)",
+  "correccion": null,
+  "id": 59
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "potenciando los recursos municipales y mejorando las condiciones económicas del",
+  "sector": "0301. Equipamiento y espacio público(A15)",
+  "correccion": null,
+  "id": 60
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0302. Agua Potable y Saneamiento Básico(A3)",
+  "sector": "0302. Agua Potable y Saneamiento Básico(A3)",
+  "correccion": null,
+  "id": 61
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0303. Prevención y atención de desastres(A12)",
+  "sector": "0303. Prevención y atención de desastres(A12)",
+  "correccion": null,
+  "id": 62
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0304. Servicios Públicos diferentes a APSB(A6)",
+  "sector": "0304. Servicios Públicos diferentes a APSB(A6)",
+  "correccion": null,
+  "id": 63
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0305. Vivienda(A7)",
+  "sector": "0305. Vivienda(A7)",
+  "correccion": null,
+  "id": 64
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0306. Transporte(A9)",
+  "sector": "0306. Transporte(A9)",
+  "correccion": null,
+  "id": 65
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0401. Ambiental (A10)",
+  "sector": "0401. Ambiental (A10)",
+  "correccion": null,
+  "id": 66
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "040101 Gestión ambiental para la sostenibilidad territorial",
+  "sector": "0401. Ambiental (A10)",
+  "correccion": null,
+  "id": 67
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0402. Bienestar animal(A10)",
+  "sector": "0402. Bienestar animal(A10)",
+  "correccion": null,
+  "id": 68
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0403. Agua Potable y Saneamiento Básico(A3)",
+  "sector": "0403. Agua Potable y Saneamiento Básico(A3)",
+  "correccion": null,
+  "id": 69
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "servicios de Agua Potable y Saneamiento Básico en el",
+  "sector": "0403. Agua Potable y Saneamiento Básico(A3)",
+  "correccion": null,
+  "id": 70
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "05. Gobernanza territorial",
+  "sector": null,
+  "correccion": null,
+  "id": 71
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0501. Fortalecimiento Institucional(A17)",
+  "sector": "0501. Fortalecimiento Institucional(A17)",
+  "correccion": null,
+  "id": 72
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0502.Seguridad, convivencia y derechos humanos(A18)",
+  "sector": "0502.Seguridad, convivencia y derechos humanos(A18)",
+  "correccion": null,
+  "id": 73
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "050202 Garantía de derechos humanos",
+  "sector": "0502.Seguridad, convivencia y derechos humanos(A18)",
+  "correccion": null,
+  "id": 74
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "0503. Movilidad(A9)",
+  "sector": "0503. Movilidad(A9)",
+  "correccion": null,
+  "id": 75
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "050301 Actualización e implementación del Plan de Movilidad municipal",
+  "sector": "0503. Movilidad(A9)",
+  "correccion": null,
+  "id": 76
+ },
+ {
+  "tipo": "programa_sin_indicadores",
+  "valor": "Total general",
+  "sector": null,
+  "correccion": null,
+  "id": 77
+ }
+]

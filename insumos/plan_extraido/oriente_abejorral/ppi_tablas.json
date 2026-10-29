@@ -1,0 +1,1827 @@
+[
+ {
+  "pagina": 89,
+  "cabecera": "CUENTA",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "INGRESOS TOTALES",
+    "anios": [
+     32143170088,
+     33107465192,
+     34100689151,
+     35123709825
+    ],
+    "total": 134475034256
+   },
+   {
+    "etiqueta": "1. INGRESOS CORRIENTES",
+    "anios": [
+     13311253878,
+     13710591496,
+     14121909244,
+     14545566521
+    ],
+    "total": 55689321139
+   },
+   {
+    "etiqueta": "1.1 INGRESOS TRIBUTARIOS",
+    "anios": [
+     4714547600,
+     4855984028,
+     5001663550,
+     5151713457
+    ],
+    "total": 19723908635
+   },
+   {
+    "etiqueta": "1.1.1. PREDIAL",
+    "anios": [
+     1036444302,
+     1067537631,
+     1099563760,
+     1132550673
+    ],
+    "total": 4336096366
+   },
+   {
+    "etiqueta": "1.1.2. INDUSTRIA Y COMERCIO",
+    "anios": [
+     1278973301,
+     1317342500,
+     1356862775,
+     1397568658
+    ],
+    "total": 5350747234
+   },
+   {
+    "etiqueta": "1.1.3. OTROS",
+    "anios": [
+     2399129997,
+     2471103897,
+     2545237015,
+     2621594126
+    ],
+    "total": 10037065035
+   },
+   {
+    "etiqueta": "1.2. INGRESOS NO TRIBUTARIOS",
+    "anios": [
+     919264279,
+     946842209,
+     975247476,
+     1004504900
+    ],
+    "total": 3845858864
+   },
+   {
+    "etiqueta": "1.3. TRANSFERENCIAS",
+    "anios": [
+     6353493973,
+     6544098793,
+     6740421758,
+     6942634410
+    ],
+    "total": 26580648934
+   },
+   {
+    "etiqueta": "1.3.1. DEL NIVEL NACIONAL",
+    "anios": [
+     5029545947,
+     5180432327,
+     5335845298,
+     5495920656
+    ],
+    "total": 21041744228
+   },
+   {
+    "etiqueta": "1.3.2. OTRAS TRANSFERENCIAS",
+    "anios": [
+     1323948026,
+     1363666466,
+     1404576460,
+     1446713754
+    ],
+    "total": 5538904706
+   },
+   {
+    "etiqueta": "FONDOS CON DESTINACIÓN ESPECIAL",
+    "anios": [
+     18831916210,
+     19396873696,
+     19978779907,
+     20578143304
+    ],
+    "total": 78785713117
+   },
+   {
+    "etiqueta": "GASTOS TOTALES",
+    "anios": [
+     3540768919,
+     4019128312,
+     5756358335,
+     4722656230
+    ],
+    "total": 18038911796
+   },
+   {
+    "etiqueta": "3. GASTOS CORRIENTES",
+    "anios": [
+     3540768919,
+     4019128312,
+     5756358335,
+     4722656230
+    ],
+    "total": 18038911796
+   },
+   {
+    "etiqueta": "3.1. FUNCIONAMIENTO",
+    "anios": [
+     3240000000,
+     3564000000,
+     3920400000,
+     4312440000
+    ],
+    "total": 15036840000
+   },
+   {
+    "etiqueta": "3.1.1. SERVICIOS PERSONALES",
+    "anios": [
+     5318925459,
+     5478493223,
+     5642848019,
+     5812133460
+    ],
+    "total": 22252400161
+   },
+   {
+    "etiqueta": "3.1.2. GASTOS GENERALES",
+    "anios": [
+     494171520,
+     560953682,
+     950739171,
+     1994564497
+    ],
+    "total": 4000428870
+   },
+   {
+    "etiqueta": "3.1.3. TRANSFERENCIAS PAGADAS",
+    "anios": [
+     1197618952,
+     795005676,
+     1835958335,
+     2065082006
+    ],
+    "total": 5893664969
+   },
+   {
+    "etiqueta": "3.2. INTERESES DEUDA PUBLICA",
+    "anios": [
+     300768919,
+     455128312,
+     234081794,
+     410216230
+    ],
+    "total": 1400195255
+   },
+   {
+    "etiqueta": "3.3. OTROS GASTOS CORRIENTES",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "DÉFICIT O AHORRO CORRIENTE (1 - 3)",
+    "anios": [
+     9770484959,
+     9691463184,
+     8365550909,
+     9822910291
+    ],
+    "total": 37650409343
+   },
+   {
+    "etiqueta": "2. INGRESOS DE CAPITAL",
+    "anios": [
+     18831916210,
+     19396873696,
+     19978779907,
+     20578143304
+    ],
+    "total": 78785713117
+   },
+   {
+    "etiqueta": "2.1. REGALÍAS",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "2.2. TRANSFERENCIAS NACIONALES (SGP, etc.)",
+    "anios": [
+     6353493973,
+     6544098793,
+     6740421758,
+     6942634410
+    ],
+    "total": 26580648934
+   },
+   {
+    "etiqueta": "2.3. COFINANCIACIÓN",
+    "anios": [
+     3878427888,
+     3994780725,
+     4114624147,
+     4238062871
+    ],
+    "total": 16225895631
+   },
+   {
+    "etiqueta": "2.4. OTROS",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "4. GASTOS DE CAPITAL (INVERSIÓN)",
+    "anios": [
+     28293936127,
+     28897444300,
+     29748563094,
+     30379543768
+    ],
+    "total": 117319487289
+   },
+   {
+    "etiqueta": "4.1.1.1. FORMACIÓN BRUTAL DE CAPITAL FIJO",
+    "anios": [
+     8191595979,
+     8470754027,
+     8760625528,
+     9061695597
+    ],
+    "total": 34484671131
+   }
+  ],
+  "ncols": 4,
+  "financiero": true
+ },
+ {
+  "pagina": 90,
+  "cabecera": "SUPERÁVIT PRIMARIO",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Ingresos Corrientes",
+    "anios": [
+     13311,
+     13711,
+     14122,
+     14546
+    ],
+    "total": 55690
+   },
+   {
+    "etiqueta": "Recursos de Capital",
+    "anios": [
+     18832,
+     19397,
+     19979,
+     20578
+    ],
+    "total": 78786
+   },
+   {
+    "etiqueta": "Gastos de Funcionamiento",
+    "anios": [
+     3240,
+     3564,
+     3920,
+     4312
+    ],
+    "total": 15036
+   },
+   {
+    "etiqueta": "Gastos de Inversión",
+    "anios": [
+     28294,
+     28897,
+     29749,
+     30380
+    ],
+    "total": 117320
+   },
+   {
+    "etiqueta": "Superávit Primario",
+    "anios": [
+     609,
+     646,
+     432,
+     432
+    ],
+    "total": 2119
+   },
+   {
+    "etiqueta": "SERVICIO",
+    "anios": [
+     2024,
+     2025,
+     2026,
+     2027
+    ],
+    "total": 8102
+   },
+   {
+    "etiqueta": "Intereses",
+    "anios": [
+     343,
+     290,
+     236,
+     208
+    ],
+    "total": 1077
+   },
+   {
+    "etiqueta": "Amortización",
+    "anios": [
+     351,
+     356,
+     196,
+     224
+    ],
+    "total": 1127
+   },
+   {
+    "etiqueta": "Saldo",
+    "anios": [
+     2032,
+     1676,
+     1480,
+     1256
+    ],
+    "total": 6444
+   }
+  ],
+  "ncols": 4,
+  "financiero": true
+ },
+ {
+  "pagina": 91,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Educación",
+    "anios": [
+     464978099,
+     478927442,
+     493295266,
+     508094124
+    ],
+    "total": 1945294931
+   },
+   {
+    "etiqueta": "Calidad",
+    "anios": [
+     464978099,
+     478927442,
+     493295266,
+     508094124
+    ],
+    "total": 1945294931
+   },
+   {
+    "etiqueta": "Matrícula Gratuidad",
+    "anios": [
+     242166076,
+     249431058,
+     256913990,
+     264621410
+    ],
+    "total": 1013132534
+   },
+   {
+    "etiqueta": "Matrícula Oficial",
+    "anios": [
+     222812023,
+     229496384,
+     236381276,
+     243472714
+    ],
+    "total": 932162397
+   },
+   {
+    "etiqueta": "Salud",
+    "anios": [
+     5650572410,
+     5820089581,
+     5994692268,
+     6174533036
+    ],
+    "total": 23639887295
+   },
+   {
+    "etiqueta": "Régimen Subsidiado",
+    "anios": [
+     5370336089,
+     5531446171,
+     5697389556,
+     5868311243
+    ],
+    "total": 22467483059
+   },
+   {
+    "etiqueta": "Salud Pública",
+    "anios": [
+     280236321,
+     288643410,
+     297302712,
+     306221793
+    ],
+    "total": 1172404236
+   },
+   {
+    "etiqueta": "Agua Potable",
+    "anios": [
+     1549854289,
+     1596349918,
+     1644240416,
+     1693567628
+    ],
+    "total": 6484012251
+   },
+   {
+    "etiqueta": "Propósito General – Destinación",
+    "anios": [
+     4807642740,
+     4951872023,
+     5100428184,
+     5253441029
+    ],
+    "total": 20113383976
+   },
+   {
+    "etiqueta": "Libre Destinación",
+    "anios": [
+     1819356487,
+     1873937182,
+     1930155297,
+     1988059956
+    ],
+    "total": 7611508922
+   },
+   {
+    "etiqueta": "Deporte",
+    "anios": [
+     70430258,
+     72543166,
+     74719461,
+     76961045
+    ],
+    "total": 294653930
+   },
+   {
+    "etiqueta": "Cultura",
+    "anios": [
+     52822677,
+     54407357,
+     56039578,
+     57720765
+    ],
+    "total": 220990377
+   },
+   {
+    "etiqueta": "Libre Inversión",
+    "anios": [
+     2301153900,
+     2370188517,
+     2441294173,
+     2514532998
+    ],
+    "total": 9627169588
+   },
+   {
+    "etiqueta": "FONPET (2)",
+    "anios": [
+     563879418,
+     580795801,
+     598219675,
+     616166265
+    ],
+    "total": 2359061159
+   },
+   {
+    "etiqueta": "Alimentación Escolar",
+    "anios": [
+     94898263,
+     97745211,
+     100677567,
+     103697894
+    ],
+    "total": 397018935
+   },
+   {
+    "etiqueta": "TOTAL SGP",
+    "anios": [
+     12567945801,
+     12944984175,
+     13333333701,
+     13733333711
+    ],
+    "total": 52579597388
+   },
+   {
+    "etiqueta": "TRANSFERENCIAS PARA SALUD ADRESS Y DPTO",
+    "anios": [
+     6333738259,
+     6639630550,
+     7649754666,
+     9921560674
+    ],
+    "total": 30544684149
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ },
+ {
+  "pagina": 93,
+  "cabecera": "CONCEPTO DE INGRESOS",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "TRIBUTARIOS",
+    "anios": [
+     4714547600,
+     4855984028,
+     5001663550,
+     5151713457
+    ],
+    "total": 19723908635
+   },
+   {
+    "etiqueta": "NO TRIBUTARIOS",
+    "anios": [
+     919264279,
+     946842209,
+     975247476,
+     1004504900
+    ],
+    "total": 3845858864
+   },
+   {
+    "etiqueta": "OTRAS TRANSFERENCIAS DEL GOBIERNO NACIONAL",
+    "anios": [
+     1323948026,
+     1363666466,
+     1404576460,
+     1446713754
+    ],
+    "total": 5752993728
+   }
+  ],
+  "ncols": 4,
+  "financiero": true
+ },
+ {
+  "pagina": 99,
+  "cabecera": "NOMBRE",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "INGRESOS TOTALES",
+    "anios": [
+     32143170088,
+     33107465192,
+     34100689151,
+     35123709825
+    ],
+    "total": 134475034256
+   },
+   {
+    "etiqueta": "INGRESOS CORRIENTES",
+    "anios": [
+     13311253878,
+     13710591496,
+     14121909244,
+     14545566521
+    ],
+    "total": 55689321139
+   },
+   {
+    "etiqueta": "INGRESOS TRIBUTARIOS",
+    "anios": [
+     4714547600,
+     4855984028,
+     5001663550,
+     5151713457
+    ],
+    "total": 19723908635
+   },
+   {
+    "etiqueta": "IMPUESTOS DIRECTOS",
+    "anios": [
+     1036444302,
+     1067537631,
+     1099563760,
+     1132550673
+    ],
+    "total": 4336096366
+   },
+   {
+    "etiqueta": "Impuesto Predial Unificado",
+    "anios": [
+     790045630,
+     813746999,
+     838159409,
+     863304191
+    ],
+    "total": 3305256229
+   },
+   {
+    "etiqueta": "Impuesto Predial Vigencia Anterior",
+    "anios": [
+     246398672,
+     253790632,
+     261404351,
+     269246482
+    ],
+    "total": 1030840137
+   },
+   {
+    "etiqueta": "IMPUESTOS INDIRECTOS",
+    "anios": [
+     2220473799,
+     2287088012,
+     2355700653,
+     2426371673
+    ],
+    "total": 9289634137
+   },
+   {
+    "etiqueta": "IndustriayComercio",
+    "anios": [
+     1222637603,
+     1259316731,
+     1297096233,
+     1336009120
+    ],
+    "total": 5115059687
+   },
+   {
+    "etiqueta": "AvisosyTableros",
+    "anios": [
+     64913468,
+     66860872,
+     68866698,
+     70932699
+    ],
+    "total": 271573737
+   },
+   {
+    "etiqueta": "Industria y Comercio Vigencia Anterior",
+    "anios": [
+     56335698,
+     58025769,
+     59766542,
+     61559538
+    ],
+    "total": 235687547
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 100,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Avisos y Tableros Vigencia Anterior",
+    "anios": [
+     7612031,
+     7840392,
+     8075604,
+     8317872
+    ],
+    "total": 31845899
+   },
+   {
+    "etiqueta": "Licencias de construcción, Aprobación de planos y delineación urbana",
+    "anios": [
+     150988402,
+     155518054,
+     160183596,
+     164989104
+    ],
+    "total": 631679156
+   },
+   {
+    "etiqueta": "Sobretasa a lagasolina motor",
+    "anios": [
+     301920810,
+     310978434,
+     320307787,
+     329917021
+    ],
+    "total": 1263124052
+   },
+   {
+    "etiqueta": "Impuesto de Alumbrado Público",
+    "anios": [
+     392473516,
+     404247721,
+     416375153,
+     428866408
+    ],
+    "total": 1641962798
+   },
+   {
+    "etiqueta": "Reteica",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Impuesto de Teléfonos",
+    "anios": [
+     23592271,
+     24300039,
+     25029040,
+     25779911
+    ],
+    "total": 98701261
+   },
+   {
+    "etiqueta": "INGRESOS TRIBUTARIOS CON DESTINACIÓN ESPECIFICA",
+    "anios": [
+     1457629499,
+     1501358385,
+     1546399137,
+     1592791111
+    ],
+    "total": 6098178132
+   },
+   {
+    "etiqueta": "Sobretasa Ambiental",
+    "anios": [
+     134557158,
+     138593873,
+     142751689,
+     147034240
+    ],
+    "total": 562936960
+   },
+   {
+    "etiqueta": "Sobretasa Ambiental Vigencia Anterior",
+    "anios": [
+     37643259,
+     38772557,
+     39935734,
+     41133806
+    ],
+    "total": 157485356
+   },
+   {
+    "etiqueta": "Sobretasa Bomberil",
+    "anios": [
+     41922297,
+     43179966,
+     44475365,
+     45809626
+    ],
+    "total": 175387254
+   },
+   {
+    "etiqueta": "Sobretasa Bomberil Vigencia Anterior",
+    "anios": [
+     14922027,
+     15369688,
+     15830779,
+     16305702
+    ],
+    "total": 62428196
+   },
+   {
+    "etiqueta": "Estampillaprocultura",
+    "anios": [
+     393569533,
+     405376619,
+     417537918,
+     430064056
+    ],
+    "total": 1646548126
+   },
+   {
+    "etiqueta": "Estampilla Proadulto Mayor",
+    "anios": [
+     798732556,
+     822694533,
+     847375369,
+     872796630
+    ],
+    "total": 3341599088
+   },
+   {
+    "etiqueta": "Estampilla para justicia familiar",
+    "anios": [
+     36282669,
+     37371149,
+     38492283,
+     39647051
+    ],
+    "total": 151793152
+   },
+   {
+    "etiqueta": "INGRESOS NO TRIBUTARIOS",
+    "anios": [
+     919264279,
+     946842209,
+     975247476,
+     1004504900
+    ],
+    "total": 3845858864
+   },
+   {
+    "etiqueta": "TASAS",
+    "anios": [
+     512879666,
+     528266056,
+     544114038,
+     560437458
+    ],
+    "total": 2145697218
+   },
+   {
+    "etiqueta": "Plaza de ferias, coso municipalycorrales",
+    "anios": [
+     3035925,
+     3127003,
+     3220813,
+     3317437
+    ],
+    "total": 12701178
+   },
+   {
+    "etiqueta": "Aprovechamientos",
+    "anios": [
+     8575115,
+     8832368,
+     9097339,
+     9370259
+    ],
+    "total": 35875081
+   },
+   {
+    "etiqueta": "Servicios Deportivos, RecreativosyCulturales",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Tasa Prodeporte",
+    "anios": [
+     452653127,
+     466232721,
+     480219703,
+     494626294
+    ],
+    "total": 1893731845
+   },
+   {
+    "etiqueta": "Expedición de certificados y constancias",
+    "anios": [
+     48615499,
+     50073964,
+     51576183,
+     53123468
+    ],
+    "total": 203389114
+   },
+   {
+    "etiqueta": "MULTAS",
+    "anios": [
+     254002670,
+     261622750,
+     269471433,
+     277555577
+    ],
+    "total": 1062652430
+   },
+   {
+    "etiqueta": "Intereses de Mora Impuesto Predial Unificado",
+    "anios": [
+     220506410,
+     227121602,
+     233935250,
+     240953308
+    ],
+    "total": 922516570
+   },
+   {
+    "etiqueta": "Intereses de mora Industria y Comercio",
+    "anios": [
+     14438297,
+     14871446,
+     15317589,
+     15777117
+    ],
+    "total": 60404449
+   },
+   {
+    "etiqueta": "Multas de Tránsito y Transporte",
+    "anios": [
+     9727298,
+     10019117,
+     10319691,
+     10629282
+    ],
+    "total": 40695388
+   },
+   {
+    "etiqueta": "Multas nuevo código de policía",
+    "anios": [
+     9330665,
+     9610585,
+     9898903,
+     10195870
+    ],
+    "total": 39036023
+   },
+   {
+    "etiqueta": "RENTAS CONTRACTUALES",
+    "anios": [
+     98125289,
+     101069048,
+     104101119,
+     107224153
+    ],
+    "total": 410519609
+   },
+   {
+    "etiqueta": "Arrendamiento de bienes inmuebles",
+    "anios": [
+     98125289,
+     101069048,
+     104101119,
+     107224153
+    ],
+    "total": 410519609
+   },
+   {
+    "etiqueta": "INGRESOS NO TRIBUTARIOS CON DESTINACIÓN ESPECIFICA",
+    "anios": [
+     54256654,
+     55884355,
+     57560886,
+     59287712
+    ],
+    "total": 226989607
+   },
+   {
+    "etiqueta": "Servicio de Bascula Plaza de Ferias",
+    "anios": [
+     1312785,
+     1352169,
+     1392734,
+     1434516
+    ],
+    "total": 5492204
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 101,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Intereses Sobretasa Ambiental",
+    "anios": [
+     37436717,
+     38559819,
+     39716614,
+     40908112
+    ],
+    "total": 156621262
+   },
+   {
+    "etiqueta": "Intereses Sobretasa Bomberil",
+    "anios": [
+     15507152,
+     15972367,
+     16451538,
+     16945084
+    ],
+    "total": 64876141
+   },
+   {
+    "etiqueta": "TRANSFERENCIAS SISTEMA GENERAL DE PARTICIPACIONES",
+    "anios": [
+     6353493973,
+     6544098793,
+     6740421758,
+     6942634410
+    ],
+    "total": 26580648934
+   },
+   {
+    "etiqueta": "Sistema General de Participaciones Libre asignación Sistema General de Participaciones- Propósito General",
+    "anios": [
+     1819356487,
+     1873937182,
+     1930155297,
+     1988059956
+    ],
+    "total": 7611508922
+   },
+   {
+    "etiqueta": "Sistema General de Participaciones- Cultura",
+    "anios": [
+     52822677,
+     54407357,
+     56039578,
+     57720765
+    ],
+    "total": 220990377
+   },
+   {
+    "etiqueta": "Sistema General de Participaciones- Deporte y Recreación",
+    "anios": [
+     70430258,
+     72543166,
+     74719461,
+     76961045
+    ],
+    "total": 294653930
+   },
+   {
+    "etiqueta": "Sistema General de Participaciones- Libre Inversión",
+    "anios": [
+     2301153900,
+     2370188517,
+     2441294173,
+     2514532998
+    ],
+    "total": 9627169588
+   },
+   {
+    "etiqueta": "Sistema General de Participaciones- Agua Potable y Saneamiento Básico",
+    "anios": [
+     1549854289,
+     1596349918,
+     1644240416,
+     1693567628
+    ],
+    "total": 6484012251
+   },
+   {
+    "etiqueta": "Sistema General de Participaciones- Alimentación escolar Sistema General de Participaciones- Sector Educación",
+    "anios": [
+     94898263,
+     97745211,
+     100677567,
+     103697894
+    ],
+    "total": 397018935
+   },
+   {
+    "etiqueta": "Calidad Matricula",
+    "anios": [
+     222812023,
+     229496384,
+     236381276,
+     243472714
+    ],
+    "total": 932162397
+   },
+   {
+    "etiqueta": "Gratuidad",
+    "anios": [
+     242166076,
+     249431058,
+     256913990,
+     264621410
+    ],
+    "total": 1013132534
+   },
+   {
+    "etiqueta": "OTRAS TRANSFERENCIAS",
+    "anios": [
+     1323948026,
+     1363666466,
+     1404576460,
+     1446713754
+    ],
+    "total": 5538904706
+   },
+   {
+    "etiqueta": "TRANSFERENCIAS CORRIENTES CON DESTINACIÓN ESPECIFICA",
+    "anios": [
+     488693812,
+     503354626,
+     518455265,
+     534008923
+    ],
+    "total": 2044512626
+   },
+   {
+    "etiqueta": "Transferencias del sector eléctrico",
+    "anios": [
+     488693812,
+     503354626,
+     518455265,
+     534008923
+    ],
+    "total": 2044512626
+   },
+   {
+    "etiqueta": "TRANSFERENCIAS CORRIENTES CON LIBRE DESTINACIÓN",
+    "anios": [
+     835254214,
+     860311840,
+     886121195,
+     912704831
+    ],
+    "total": 3494392080
+   },
+   {
+    "etiqueta": "Impuesto de vehículos",
+    "anios": [
+     835254214,
+     860311840,
+     886121195,
+     912704831
+    ],
+    "total": 3494392080
+   },
+   {
+    "etiqueta": "CONTRIBUCIONES",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "VALORIZACIÓN",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "FONDOS CON DESTINACIÓN ESPECIAL",
+    "anios": [
+     18831916210,
+     19396873696,
+     19978779907,
+     20578143304
+    ],
+    "total": 78785713117
+   },
+   {
+    "etiqueta": "FONDOS CON DESTINACIÓN ESPECIAL",
+    "anios": [
+     18831916210,
+     19396873696,
+     19978779907,
+     20578143304
+    ],
+    "total": 78785713117
+   },
+   {
+    "etiqueta": "FONDO LOCAL DE SALUD",
+    "anios": [
+     18268036792,
+     18816077895,
+     19380560232,
+     19961977039
+    ],
+    "total": 76426651958
+   },
+   {
+    "etiqueta": "Régimen subsidiado en salud",
+    "anios": [
+     17650269556,
+     18179777642,
+     18725170972,
+     19286926102
+    ],
+    "total": 73842144272
+   },
+   {
+    "etiqueta": "S.G.P. Régimen Subsidiado Continuidad(11/12)",
+    "anios": [
+     4851276779,
+     4996815082,
+     5146719534,
+     5301121120
+    ],
+    "total": 20295932515
+   },
+   {
+    "etiqueta": "S.G.P. Régimen Subsidiado (Última doceava)",
+    "anios": [
+     519059310,
+     534631089,
+     550670022,
+     567190123
+    ],
+    "total": 2171550544
+   },
+   {
+    "etiqueta": "FOSYGA Continuidad",
+    "anios": [
+     10219207494,
+     10525783719,
+     10841557231,
+     11166803948
+    ],
+    "total": 42753352392
+   },
+   {
+    "etiqueta": "FOSYGA población pobre no asegurada",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Coljuegos - Recursos propios 75%",
+    "anios": [
+     248913782,
+     256381195,
+     264072631,
+     271994810
+    ],
+    "total": 1041362418
+   },
+   {
+    "etiqueta": "Aportes del Departamento",
+    "anios": [
+     1739615437,
+     1791803900,
+     1845558017,
+     1900924758
+    ],
+    "total": 7277902112
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 102,
+  "cabecera": "",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Recursos de Inspección, vigilancia y control Tasa 0.4%",
+    "anios": [
+     72196754,
+     74362657,
+     76593537,
+     78891343
+    ],
+    "total": 302044291
+   },
+   {
+    "etiqueta": "Prestación servicios de salud a la PPNA en lo no cubierto con subsidios a la demanda",
+    "anios": [
+     254833392,
+     262478394,
+     270352746,
+     278463328
+    ],
+    "total": 1066127860
+   },
+   {
+    "etiqueta": "S.G.P Aportes patronales (sin situación de fondos)",
+    "anios": [
+     254833392,
+     262478394,
+     270352746,
+     278463328
+    ],
+    "total": 1066127860
+   },
+   {
+    "etiqueta": "Saludpublica colectiva",
+    "anios": [
+     280236321,
+     288643410,
+     297302712,
+     306221793
+    ],
+    "total": 1172404236
+   },
+   {
+    "etiqueta": "S.G.P Saludpública(11/12)",
+    "anios": [
+     256064514,
+     263746449,
+     271658842,
+     279808607
+    ],
+    "total": 1071278412
+   },
+   {
+    "etiqueta": "S.G.P Salud pública (ultima doceava)",
+    "anios": [
+     24171807,
+     24896961,
+     25643870,
+     26413186
+    ],
+    "total": 101125824
+   },
+   {
+    "etiqueta": "Otrosgastos en salud",
+    "anios": [
+     82697523,
+     85178449,
+     87733802,
+     90365816
+    ],
+    "total": 345975590
+   },
+   {
+    "etiqueta": "Recursos propios Coljuegos 25%",
+    "anios": [
+     82697523,
+     85178449,
+     87733802,
+     90365816
+    ],
+    "total": 345975590
+   },
+   {
+    "etiqueta": "FONDO CUENTA DE SEGURIDAD Y CONVIVENCIA",
+    "anios": [
+     563879418,
+     580795801,
+     598219675,
+     616166265
+    ],
+    "total": 2359061159
+   },
+   {
+    "etiqueta": "CIUDADANA- FONSET FONDO CUENTA DE SEGURIDAD Y CONVIVENCIA",
+    "anios": [
+     563879418,
+     580795801,
+     598219675,
+     616166265
+    ],
+    "total": 2359061159
+   },
+   {
+    "etiqueta": "Fondo cuenta de seguridad y convivencia ciudadana - FONSET",
+    "anios": [
+     563879418,
+     580795801,
+     598219675,
+     616166265
+    ],
+    "total": 2359061159
+   },
+   {
+    "etiqueta": "Recursos de Cofinanciación",
+    "anios": [
+     3878427888,
+     3994780725,
+     4114624147,
+     4238062871
+    ],
+    "total": 16225895631
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 102,
+  "cabecera": "DIMENSIONES",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Abejorral ambientalmente seguro y sostenible",
+    "anios": [
+     4214,
+     4456,
+     4637,
+     4777
+    ],
+    "total": 18084
+   },
+   {
+    "etiqueta": "Bienestar social para un Abejorral más humano",
+    "anios": [
+     21646,
+     22024,
+     22733,
+     23461
+    ],
+    "total": 89864
+   },
+   {
+    "etiqueta": "Seguridad y convivencia ciudadana para el desarrollo económico y turístico de Abejorral",
+    "anios": [
+     1697,
+     1784,
+     1838,
+     1893
+    ],
+    "total": 7211
+   },
+   {
+    "etiqueta": "Unidos logramos gobernanza en Abejorral",
+    "anios": [
+     737,
+     634,
+     541,
+     248
+    ],
+    "total": 2160
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     28294,
+     28897,
+     29749,
+     30380
+    ],
+    "total": 117319
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 104,
+  "cabecera": "DIMENSIONES",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Abejorral ambientalmente",
+    "anios": [
+     2028,
+     2089,
+     2152,
+     2216
+    ],
+    "total": 8485
+   },
+   {
+    "etiqueta": "seguro y sostenible",
+    "anios": [
+     2186,
+     2347,
+     2465,
+     2540
+    ],
+    "total": 9538
+   },
+   {
+    "etiqueta": "Bienestar social para un Abejorral más",
+    "anios": [
+     1511,
+     1557,
+     1603,
+     1651
+    ],
+    "total": 6323
+   },
+   {
+    "etiqueta": "humano",
+    "anios": [
+     19156,
+     19392,
+     19973,
+     20573
+    ],
+    "total": 79093
+   },
+   {
+    "etiqueta": "Seguridad y convivencia ciudadana para el",
+    "anios": [
+     470,
+     485,
+     499,
+     514
+    ],
+    "total": 1968
+   },
+   {
+    "etiqueta": "desarrollo económico y turístico de Abejorral",
+    "anios": [
+     1386,
+     1427,
+     1470,
+     1514
+    ],
+    "total": 5797
+   },
+   {
+    "etiqueta": "Unidos logramos gobernanza en",
+    "anios": [
+     630,
+     610,
+     544,
+     251
+    ],
+    "total": 2035
+   },
+   {
+    "etiqueta": "Abejorral",
+    "anios": [
+     120,
+     124,
+     127,
+     131
+    ],
+    "total": 502
+   }
+  ],
+  "ncols": 7,
+  "financiero": false
+ },
+ {
+  "pagina": 104,
+  "cabecera": "LÍNEAS ESTRATÉGICAS",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Abejorral ambientalmente seguro y sostenible",
+    "anios": [
+     50,
+     52,
+     53,
+     55
+    ],
+    "total": 209
+   },
+   {
+    "etiqueta": "Disminución de las brechas de inclusión con enfoque diferencial",
+    "anios": [
+     32,
+     34,
+     37,
+     41
+    ],
+    "total": 144
+   }
+  ],
+  "ncols": 7,
+  "financiero": false
+ },
+ {
+  "pagina": 106,
+  "cabecera": "DIMENSIÓN",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Seguridad y convivencia ciudadana para el desarrollo económico",
+    "anios": [
+     95,
+     98,
+     101,
+     104
+    ],
+    "total": 397
+   },
+   {
+    "etiqueta": "y turístico de Abejorral",
+    "anios": [
+     265,
+     273,
+     281,
+     290
+    ],
+    "total": 1109
+   }
+  ],
+  "ncols": 8,
+  "financiero": false
+ },
+ {
+  "pagina": 109,
+  "cabecera": "DIMENSIÓN",
+  "unidad": "millones",
+  "filas": [
+   {
+    "etiqueta": "Unidos logramos gobernanza en",
+    "anios": [
+     69,
+     71,
+     73,
+     76
+    ],
+    "total": 289
+   },
+   {
+    "etiqueta": "Abejorral",
+    "anios": [
+     120,
+     124,
+     127,
+     131
+    ],
+    "total": 502
+   }
+  ],
+  "ncols": 8,
+  "financiero": false
+ },
+ {
+  "pagina": 110,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "INVERSIÓN",
+    "anios": [
+     1435177352,
+     1241569324,
+     1150290441,
+     1208055000
+    ],
+    "total": 5035092117
+   },
+   {
+    "etiqueta": "Asignación para la Paz",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignaciones Directas",
+    "anios": [
+     4023638,
+     2504279,
+     2358314,
+     2351635
+    ],
+    "total": 11237866
+   },
+   {
+    "etiqueta": "20% Asignaciones Directas",
+    "anios": [
+     3137296,
+     1952690,
+     1838875,
+     1833668
+    ],
+    "total": 8762529
+   },
+   {
+    "etiqueta": "5% Asignaciones Directas Anticipadas",
+    "anios": [
+     886342,
+     551589,
+     519439,
+     517967
+    ],
+    "total": 2475337
+   },
+   {
+    "etiqueta": "Asignación para la Inversión Regional",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Departamentos",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Regiones",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación para la Inversión Local",
+    "anios": [
+     1431153714,
+     1239065045,
+     1147932127,
+     1205703365
+    ],
+    "total": 5023854251
+   },
+   {
+    "etiqueta": "Municipios más pobres",
+    "anios": [
+     1431153714,
+     1239065045,
+     1147932127,
+     1205703365
+    ],
+    "total": 5023854251
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     190820495,
+     165208673,
+     153057617,
+     160760449
+    ],
+    "total": 669847234
+   }
+  ],
+  "ncols": 3,
+  "financiero": true
+ },
+ {
+  "pagina": 355,
+  "cabecera": "`DIMENSIONES`",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "`Abejorral` `ambientalmente` `seguroy sostenible`",
+    "anios": [
+     4214,
+     4456,
+     4637,
+     4777
+    ],
+    "total": 18084
+   },
+   {
+    "etiqueta": "`Bienestar social` `para un Abejorral` `más humano`",
+    "anios": [
+     21646,
+     22024,
+     22733,
+     23461
+    ],
+    "total": 89864
+   },
+   {
+    "etiqueta": "`Seguridad y` `convivencia` `ciudadana para el` `desarrollo económico`",
+    "anios": [
+     1697,
+     1784,
+     1838,
+     1893
+    ],
+    "total": 7211
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ }
+]

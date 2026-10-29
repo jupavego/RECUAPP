@@ -1,0 +1,363 @@
+[
+ {
+  "paginas": [
+   250
+  ],
+  "cabecera": "",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   71765239519,
+   62037440635,
+   57474594081,
+   60009224905
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Comunidades NARP",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Comunidades NARP"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Destinación para medio ambiente y desarrollo sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Resto de Inversión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Comunidades Rrom",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Comunidades Rrom"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Destinación para medio ambiente y desarrollo sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Resto de Inversión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Asignación para Ciencia, Tecnología e Innovación",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Asignación para Ciencia, Tecnología e Innovación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Asignación para Inversión en Ciencia, Tecnología e Innovación Ambiental",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Asignación para Inversión en Ciencia, Tecnología e Innovación Ambiental"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Resto de inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Resto de inversión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Asignación Ambiental",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Asignación Ambiental"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Municipios Río Magdalena y Canal Dique",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Municipios Río Magdalena y Canal Dique"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "AHORRO",
+    "anios": [
+     36932871,
+     31919923,
+     29566463,
+     30866874
+    ],
+    "total": 129286131,
+    "ruta": {
+     "linea": "AHORRO"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Fondo de Ahorro y Estabilización (Ahorro)",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "AHORRO",
+     "sector": "Fondo de Ahorro y Estabilización (Ahorro)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Fondo Ahorro Pensional Territorial(FONPET)",
+    "anios": [
+     36932871,
+     31919923,
+     29566463,
+     30866874
+    ],
+    "total": 129286131,
+    "ruta": {
+     "linea": "AHORRO",
+     "sector": "Fondo Ahorro Pensional Territorial(FONPET)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "OTROS",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "OTROS"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Funcionamiento, operatividad y fiscalización",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Funcionamiento, operatividad y fiscalización"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Sistema de Seguimiento, Control y Evaluación (SSEC)",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0,
+    "ruta": {
+     "linea": "Sistema de Seguimiento, Control y Evaluación (SSEC)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Contraloría",
+    "anios": [
+     70401205851,
+     60858195556,
+     56382090798,
+     58862923139
+    ],
+    "total": 246504415344,
+    "ruta": {
+     "linea": "Contraloría"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Procuraduría",
+    "anios": [
+     14080241171,
+     12171639111,
+     11276418160,
+     11772584628
+    ],
+    "total": 49300883070,
+    "ruta": {
+     "linea": "Contraloría",
+     "sector": "Procuraduría"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "DNP",
+    "anios": [
+     56320964680,
+     48686556445,
+     45105672638,
+     47090338511
+    ],
+    "total": 197203532274,
+    "ruta": {
+     "linea": "Contraloría",
+     "sector": "DNP"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Total",
+    "anios": [
+     1327100797,
+     1147325156,
+     1062936820,
+     1115434892
+    ],
+    "total": 4652797665,
+    "ruta": {
+     "linea": "Total"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

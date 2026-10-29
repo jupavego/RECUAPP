@@ -11,7 +11,8 @@
   "programa": "Inspección, vigilancia y control",
   "coincidencia_ppi": 1.0,
   "pagina": 92,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Establecimientos abiertos al público vigilados y controlados",
@@ -25,7 +26,8 @@
   "programa": "Inspección, vigilancia y control",
   "coincidencia_ppi": 1.0,
   "pagina": 92,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Instituciones financiadas para la atención en salud a la población",
@@ -39,7 +41,8 @@
   "programa": "Aseguramiento y prestación integral de servicios de salud",
   "coincidencia_ppi": 1.0,
   "pagina": 93,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Sistema de información implementado",
@@ -53,7 +56,8 @@
   "programa": "Aseguramiento y prestación integral de servicios de salud",
   "coincidencia_ppi": 1.0,
   "pagina": 93,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Reportes de información entregados",
@@ -67,7 +71,8 @@
   "programa": "Aseguramiento y prestación integral de servicios de salud",
   "coincidencia_ppi": 1.0,
   "pagina": 93,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Personas afiliadas al régimen subsidiado",
@@ -81,7 +86,8 @@
   "programa": "Aseguramiento y prestación integral de servicios de salud",
   "coincidencia_ppi": 1.0,
   "pagina": 93,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Personas no afiliadas atendidas con servicios de salud diferente de población migrante",
@@ -95,7 +101,8 @@
   "programa": "Aseguramiento y prestación integral de servicios de salud",
   "coincidencia_ppi": 1.0,
   "pagina": 93,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Personas migrantes no afiliadas atendidas con servicios de salud en urgencias",
@@ -109,7 +116,8 @@
   "programa": "Aseguramiento y prestación integral de servicios de salud",
   "coincidencia_ppi": 1.0,
   "pagina": 93,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Hospitales de primer nivel de atención construidos",
@@ -123,7 +131,8 @@
   "programa": "Aseguramiento y prestación integral de servicios de salud",
   "coincidencia_ppi": 1.0,
   "pagina": 93,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Hospitales de primer nivel de atención dotados",
@@ -137,7 +146,8 @@
   "programa": "Aseguramiento y prestación integral de servicios de salud",
   "coincidencia_ppi": 1.0,
   "pagina": 93,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Reducir el índice de violencia intrafamiliar",
@@ -151,7 +161,8 @@
   "programa": "Aseguramiento y prestación integral de servicios de salud",
   "coincidencia_ppi": 1.0,
   "pagina": 96,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Restablecimiento de derechos",
@@ -165,7 +176,8 @@
   "programa": "Aseguramiento y prestación integral de servicios de salud",
   "coincidencia_ppi": 1.0,
   "pagina": 96,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Sedes construidadas para la primera infancia",
@@ -179,7 +191,8 @@
   "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niños y adolescentes",
   "coincidencia_ppi": 1.0,
   "pagina": 107,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Niños y niñas atendidos en Servicio integrales",
@@ -193,7 +206,8 @@
   "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niños y adolescentes",
   "coincidencia_ppi": 1.0,
   "pagina": 107,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Documentos de lineamientos técnicos realizados",
@@ -207,7 +221,8 @@
   "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niños y adolescentes",
   "coincidencia_ppi": 1.0,
   "pagina": 107,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Agentes de la institucionalidad de infancia, adolescencia y juventud asistidos técnicamente",
@@ -221,7 +236,8 @@
   "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niños y adolescentes",
   "coincidencia_ppi": 1.0,
   "pagina": 107,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Campañas de promoción realizadas",
@@ -235,7 +251,8 @@
   "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niños y adolescentes",
   "coincidencia_ppi": 1.0,
   "pagina": 107,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Documentos de lineamientos técnicos realizados",
@@ -249,7 +266,8 @@
   "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niños y adolescentes",
   "coincidencia_ppi": 1.0,
   "pagina": 107,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Documentos de lineamientos técnicos realizados",
@@ -263,7 +281,8 @@
   "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niños y adolescentes",
   "coincidencia_ppi": 1.0,
   "pagina": 107,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Documentos de lineamientos técnicos realizados",
@@ -277,7 +296,8 @@
   "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niños y adolescentes",
   "coincidencia_ppi": 1.0,
   "pagina": 107,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Niños, niñas, adolescentes y jóvenes atendidos en los servicios de restablecimiento en la administración de justicia",
@@ -291,7 +311,8 @@
   "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niños y adolescentes",
   "coincidencia_ppi": 1.0,
   "pagina": 107,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Adultos mayores atendidos con servicios integrales",
@@ -305,7 +326,8 @@
   "programa": "Atención integral de población en situación permanente de desprotección social y/o familiar",
   "coincidencia_ppi": 1.0,
   "pagina": 108,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Centros de día para el adulto mayor construidos",
@@ -319,7 +341,8 @@
   "programa": "Atención integral de población en situación permanente de desprotección social y/o familiar",
   "coincidencia_ppi": 1.0,
   "pagina": 108,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Personas con discapacidad atendidas con servicios integrales",
@@ -333,7 +356,8 @@
   "programa": "Atención integral de población en situación permanente de desprotección social y/o familiar",
   "coincidencia_ppi": 1.0,
   "pagina": 108,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Centros de atención integral para personas con discapacidad dotados",
@@ -347,7 +371,8 @@
   "programa": "Atención integral de población en situación permanente de desprotección social y/o familiar",
   "coincidencia_ppi": 1.0,
   "pagina": 108,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Víctimas caracterizadas",
@@ -361,7 +386,8 @@
   "programa": "Atención, asistencia y reparación integral a las víctimas",
   "coincidencia_ppi": 1.0,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Solicitudes tramitadas",
@@ -375,7 +401,8 @@
   "programa": "Atención, asistencia y reparación integral a las víctimas",
   "coincidencia_ppi": 1.0,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Hogares víctimas con atención humanitaria",
@@ -389,7 +416,8 @@
   "programa": "Atención, asistencia y reparación integral a las víctimas",
   "coincidencia_ppi": 1.0,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Espacio público construido",
@@ -403,7 +431,8 @@
   "programa": "Ordenamiento territorial y desarrollo urbano",
   "coincidencia_ppi": 1.0,
   "pagina": 117,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Espacio público adecuado",
@@ -417,7 +446,8 @@
   "programa": "Ordenamiento territorial y desarrollo urbano",
   "coincidencia_ppi": 1.0,
   "pagina": 117,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Plazas mantenidas",
@@ -431,7 +461,8 @@
   "programa": "Ordenamiento territorial y desarrollo urbano",
   "coincidencia_ppi": 1.0,
   "pagina": 117,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Documentos de planeación en Ordenamiento Territorial implementados",
@@ -445,7 +476,8 @@
   "programa": "Ordenamiento territorial y desarrollo urbano",
   "coincidencia_ppi": 1.0,
   "pagina": 117,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Documentos de planeación elaborados",
@@ -459,7 +491,8 @@
   "programa": "Ordenamiento territorial y desarrollo urbano",
   "coincidencia_ppi": 1.0,
   "pagina": 117,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Zonas verdes mantenidas",
@@ -473,7 +506,8 @@
   "programa": "Ordenamiento territorial y desarrollo urbano",
   "coincidencia_ppi": 1.0,
   "pagina": 117,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Zonas verdes adecuadas",
@@ -487,7 +521,8 @@
   "programa": "Ordenamiento territorial y desarrollo urbano",
   "coincidencia_ppi": 1.0,
   "pagina": 117,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Hogares beneficiados con mejoramiento de una vivienda",
@@ -501,7 +536,8 @@
   "programa": "Acceso a soluciones de vivienda",
   "coincidencia_ppi": 1.0,
   "pagina": 118,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Documentos de planeación en políticas de Agua Potable y Saneamiento Básico elaborados",
@@ -515,7 +551,8 @@
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 1.0,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Proyectos de acueducto, alcantarillado y aseo apoyados financieramente",
@@ -529,7 +566,8 @@
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 1.0,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Acueductos construidos",
@@ -543,7 +581,8 @@
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 1.0,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Red de alcantarillado construida",
@@ -557,7 +596,8 @@
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 1.0,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Unidades sanitarias con saneamiento básico construidas para vivienda Rural",
@@ -571,7 +611,8 @@
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 1.0,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Recursos entregados en subsidios al consumo",
@@ -585,7 +626,8 @@
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 1.0,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Asistencias técnicas realizadas",
@@ -599,7 +641,8 @@
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 1.0,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Acueductos optimizados",
@@ -613,7 +656,8 @@
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 1.0,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Estudios o diseños realizados",
@@ -627,7 +671,8 @@
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 1.0,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Plan Integral de gestión de residuo sólidos (PGIRS) actualizado",
@@ -641,7 +686,8 @@
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 1.0,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Plan de Gestión Integral de Residuos Solidos implementado",
@@ -655,7 +701,8 @@
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 1.0,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Residuos valorizados producidos",
@@ -669,7 +716,8 @@
   "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
   "coincidencia_ppi": 1.0,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Programas realizados",
@@ -681,9 +729,10 @@
   "linea": "s",
   "sector": "Educación",
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
-  "coincidencia_ppi": 0.91,
+  "coincidencia_ppi": 0.99,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Entidades y organizaciones asistidas técnicamente",
@@ -695,9 +744,10 @@
   "linea": "s",
   "sector": "Educación",
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
-  "coincidencia_ppi": 0.91,
+  "coincidencia_ppi": 0.99,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Establecimientos Educativos oficiales con acompañamiento en el marco de las estrategias de calidad educativa",
@@ -709,9 +759,10 @@
   "linea": "s",
   "sector": "Educación",
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
-  "coincidencia_ppi": 0.91,
+  "coincidencia_ppi": 0.99,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Secretarías de educación y organizaciones de los grupos étnicos asistidos técnicamente para fortalecer la incorporación del enfoque étnico en la prestación del servicio educativo",
@@ -723,9 +774,10 @@
   "linea": "s",
   "sector": "Educación",
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
-  "coincidencia_ppi": 0.91,
+  "coincidencia_ppi": 0.99,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Ambientes de aprendizaje en funcionamiento",
@@ -737,9 +789,10 @@
   "linea": "s",
   "sector": "Educación",
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
-  "coincidencia_ppi": 0.91,
+  "coincidencia_ppi": 0.99,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Estudiantes beneficiados del programa de alimentación escolar",
@@ -751,9 +804,10 @@
   "linea": "s",
   "sector": "Educación",
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
-  "coincidencia_ppi": 0.91,
+  "coincidencia_ppi": 0.99,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Beneficiarios de transporte escolar",
@@ -765,9 +819,10 @@
   "linea": "s",
   "sector": "Educación",
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
-  "coincidencia_ppi": 0.91,
+  "coincidencia_ppi": 0.99,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Beneficiarios atendidos con modelos educativos flexibles",
@@ -779,9 +834,10 @@
   "linea": "s",
   "sector": "Educación",
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
-  "coincidencia_ppi": 0.91,
+  "coincidencia_ppi": 0.99,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Estudiantes beneficiados con estrategias de promoción del bilingüismo",
@@ -793,9 +849,10 @@
   "linea": "s",
   "sector": "Educación",
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
-  "coincidencia_ppi": 0.91,
+  "coincidencia_ppi": 0.99,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Lineamientos curriculares para las especializadas de media técnicas desarrollados",
@@ -807,9 +864,10 @@
   "linea": "s",
   "sector": "Educación",
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
-  "coincidencia_ppi": 0.91,
+  "coincidencia_ppi": 0.99,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Docentes de educación preescolar, básica y media con dotación",
@@ -821,9 +879,10 @@
   "linea": "s",
   "sector": "Educación",
   "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
-  "coincidencia_ppi": 0.91,
+  "coincidencia_ppi": 0.99,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Foros educativos territoriales realizados",
@@ -837,7 +896,8 @@
   "programa": "Calidad y fomento de la educación superior",
   "coincidencia_ppi": 1.0,
   "pagina": 129,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Capacitaciones realizadas (Docente, directivos docentes y comunidad educativa)",
@@ -851,7 +911,8 @@
   "programa": "Calidad y fomento de la educación superior",
   "coincidencia_ppi": 1.0,
   "pagina": 129,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Establecimientos educativos conectados a internet",
@@ -865,7 +926,8 @@
   "programa": "Calidad y fomento de la educación superior",
   "coincidencia_ppi": 1.0,
   "pagina": 129,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Sedes dotadas",
@@ -879,7 +941,8 @@
   "programa": "Calidad y fomento de la educación superior",
   "coincidencia_ppi": 1.0,
   "pagina": 129,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Sedes educativas mejoradas",
@@ -893,7 +956,8 @@
   "programa": "Calidad y fomento de la educación superior",
   "coincidencia_ppi": 1.0,
   "pagina": 129,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Sedes ampliadas",
@@ -907,7 +971,8 @@
   "programa": "Calidad y fomento de la educación superior",
   "coincidencia_ppi": 1.0,
   "pagina": 129,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Entidades o instituciones de educación acompañadas en el mejoramiento de la calidad y la pertinencia de la Educación para el Trabajo y Desarrollo Humano- ETDH",
@@ -921,7 +986,8 @@
   "programa": "Calidad y fomento de la educación superior",
   "coincidencia_ppi": 1.0,
   "pagina": 130,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Beneficiarios de estrategias o programas de apoyo financiero para la permanencia en la educación superior",
@@ -935,7 +1001,8 @@
   "programa": "Calidad y fomento de la educación superior",
   "coincidencia_ppi": 1.0,
   "pagina": 130,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Infraestructura deportiva mantenida",
@@ -949,7 +1016,8 @@
   "programa": "Fomento a la recreación, la actividad sica y el deporte para desarrollar entornos de convivencia y paz",
   "coincidencia_ppi": 0.99,
   "pagina": 140,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Parques adecuados",
@@ -963,7 +1031,8 @@
   "programa": "Fomento a la recreación, la actividad sica y el deporte para desarrollar entornos de convivencia y paz",
   "coincidencia_ppi": 0.99,
   "pagina": 140,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Placa deportiva con cubierta y sin graderías construida",
@@ -977,7 +1046,8 @@
   "programa": "Fomento a la recreación, la actividad sica y el deporte para desarrollar entornos de convivencia y paz",
   "coincidencia_ppi": 0.99,
   "pagina": 140,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Personas que ecceden a servicios deportivos, recreativos y de actividad física",
@@ -991,7 +1061,8 @@
   "programa": "Fomento a la recreación, la actividad sica y el deporte para desarrollar entornos de convivencia y paz",
   "coincidencia_ppi": 0.99,
   "pagina": 140,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Eventos recreativos comunitarios realizados",
@@ -1005,7 +1076,8 @@
   "programa": "Fomento a la recreación, la actividad sica y el deporte para desarrollar entornos de convivencia y paz",
   "coincidencia_ppi": 0.99,
   "pagina": 140,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Instituciones educativas vinculadas al programa Supérate-Intercolegiados",
@@ -1019,7 +1091,8 @@
   "programa": "Fomento a la recreación, la actividad sica y el deporte para desarrollar entornos de convivencia y paz",
   "coincidencia_ppi": 0.99,
   "pagina": 140,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Artículos deportivos entregados",
@@ -1033,7 +1106,8 @@
   "programa": "Fomento a la recreación, la actividad sica y el deporte para desarrollar entornos de convivencia y paz",
   "coincidencia_ppi": 0.99,
   "pagina": 140,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Coliseo adecuado",
@@ -1047,7 +1121,8 @@
   "programa": "Formación y preparación de deportistas",
   "coincidencia_ppi": 1.0,
   "pagina": 141,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Estímulos entregados",
@@ -1061,7 +1136,8 @@
   "programa": "Formación y preparación de deportistas",
   "coincidencia_ppi": 1.0,
   "pagina": 141,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Documentos de planeación realizados",
@@ -1075,7 +1151,8 @@
   "programa": "Formación y preparación de deportistas",
   "coincidencia_ppi": 1.0,
   "pagina": 141,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Clubes deportivos apoyados",
@@ -1089,7 +1166,8 @@
   "programa": "Formación y preparación de deportistas",
   "coincidencia_ppi": 1.0,
   "pagina": 141,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Informes de gestión desarrollados",
@@ -1103,7 +1181,8 @@
   "programa": "Fortalecimiento del control y la vigilancia de la gestión fiscal y resarcimiento al daño del patrimonio público",
   "coincidencia_ppi": 1.0,
   "pagina": 152,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Instancias territoriales asistidas",
@@ -1117,7 +1196,8 @@
   "programa": "Gestión del riesgo de desastres y emergencias",
   "coincidencia_ppi": 1.0,
   "pagina": 162,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Cuerpos de bomberos disponibles para la prevención y control de incendios en la entidad territorial",
@@ -1131,7 +1211,8 @@
   "programa": "Gestión del riesgo de desastres y emergencias",
   "coincidencia_ppi": 1.0,
   "pagina": 162,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Emergencias y desastres atendidas",
@@ -1145,7 +1226,8 @@
   "programa": "Gestión del riesgo de desastres y emergencias",
   "coincidencia_ppi": 1.0,
   "pagina": 162,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Solicitudes tramitadas",
@@ -1159,7 +1241,8 @@
   "programa": "Gestión del riesgo de desastres y emergencias",
   "coincidencia_ppi": 1.0,
   "pagina": 162,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Estudios de riesgo de desastres elaborados",
@@ -1173,7 +1256,8 @@
   "programa": "Gestión del riesgo de desastres y emergencias",
   "coincidencia_ppi": 1.0,
   "pagina": 162,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Sistemas de Alerta Temprana implementados",
@@ -1187,7 +1271,8 @@
   "programa": "Gestión del riesgo de desastres y emergencias",
   "coincidencia_ppi": 1.0,
   "pagina": 162,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Organismos de atención de emergencias fortalecidos",
@@ -1201,7 +1286,8 @@
   "programa": "Gestión del riesgo de desastres y emergencias",
   "coincidencia_ppi": 1.0,
   "pagina": 162,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Obras de infraestructura para la reducción del riesgo de desastres realizadas",
@@ -1215,7 +1301,8 @@
   "programa": "Gestión del riesgo de desastres y emergencias",
   "coincidencia_ppi": 1.0,
   "pagina": 162,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Hogares apoyados con ayudas humanitarias",
@@ -1229,7 +1316,8 @@
   "programa": "Gestión del riesgo de desastres y emergencias",
   "coincidencia_ppi": 1.0,
   "pagina": 162,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Hogares apoyados",
@@ -1243,7 +1331,8 @@
   "programa": "Gestión del riesgo de desastres y emergencias",
   "coincidencia_ppi": 1.0,
   "pagina": 162,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Documentos de investigación elaborados",
@@ -1257,7 +1346,8 @@
   "programa": "Gestión del riesgo de desastres y emergencias",
   "coincidencia_ppi": 1.0,
   "pagina": 162,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Sistemas de información actualizados",
@@ -1271,7 +1361,8 @@
   "programa": "Gestión del riesgo de desastres y emergencias",
   "coincidencia_ppi": 1.0,
   "pagina": 162,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Casos atendidos",
@@ -1285,7 +1376,8 @@
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
   "pagina": 167,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Programas de educación informal realizados",
@@ -1299,7 +1391,8 @@
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
   "pagina": 167,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Diligencias de inspección realizadas",
@@ -1313,7 +1406,8 @@
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
   "pagina": 167,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Unidades policiales dotadas",
@@ -1327,7 +1421,8 @@
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
   "pagina": 167,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Cámaras de seguridad instaladas",
@@ -1341,7 +1436,8 @@
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
   "pagina": 167,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Miembros de la fuerza pública apoyados",
@@ -1355,7 +1451,8 @@
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
   "pagina": 167,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Inspecciones de policía adecuadas",
@@ -1369,7 +1466,8 @@
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
   "pagina": 167,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Cámaras de seguridad mantenidas",
@@ -1383,7 +1481,8 @@
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
   "pagina": 167,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Planes estratégicos elaborados",
@@ -1397,7 +1496,8 @@
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
   "pagina": 167,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Proyectos de convivencia y seguridad ciudadana apoyados financieramente",
@@ -1411,7 +1511,8 @@
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
   "pagina": 167,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Documentos normativos para la equidad de género para las mujeres formulado",
@@ -1425,7 +1526,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
   "pagina": 168,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Rutas de atención implementadas",
@@ -1439,7 +1541,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
   "pagina": 168,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Sedes mantenidas",
@@ -1453,7 +1556,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
   "pagina": 168,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Metodologías aplicadas",
@@ -1467,7 +1571,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
   "pagina": 175,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Proyectos asistidos técnicamente",
@@ -1481,7 +1586,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
   "pagina": 175,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Instancias formales y no formales de participación fortalecidas",
@@ -1496,7 +1602,8 @@
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantia de los derechos humanos.",
   "coincidencia_ppi": 1.0,
   "pagina": 176,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Servicio de asistencia técnica",
@@ -1511,7 +1618,8 @@
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantia de los derechos humanos.",
   "coincidencia_ppi": 1.0,
   "pagina": 176,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Servicios de promoción a la participación ciudadana",
@@ -1526,7 +1634,8 @@
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantia de los derechos humanos.",
   "coincidencia_ppi": 1.0,
   "pagina": 176,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Estrategias de fomento de participación para las mujeres",
@@ -1541,7 +1650,8 @@
   "programa": "Fortalecimiento del buen gobierno para el respeto y garantia de los derechos humanos.",
   "coincidencia_ppi": 1.0,
   "pagina": 176,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Sistemas de información actualizados",
@@ -1555,7 +1665,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
   "pagina": 177,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Proyectos asisidos técnicamente",
@@ -1569,7 +1680,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
   "pagina": 177,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Campañas de gestión tributaria realizadas",
@@ -1583,7 +1695,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
   "pagina": 177,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Salones comunales adecuados",
@@ -1597,7 +1710,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
   "pagina": 177,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Sedes mantenidas",
@@ -1611,7 +1725,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
   "pagina": 177,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Boletines estadísticos producidos",
@@ -1625,7 +1740,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
   "pagina": 177,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Documentos de planeación con seguimiento realizados",
@@ -1639,7 +1755,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
   "pagina": 177,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Estudios de preinversión elaborados",
@@ -1653,7 +1770,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
   "pagina": 177,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Sistema de Gestión implementado",
@@ -1667,7 +1785,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
   "pagina": 177,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Hogares que realizaron la encuesta",
@@ -1681,7 +1800,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
   "pagina": 177,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Documentos de lineamientos técnicos realizados",
@@ -1695,7 +1815,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
   "pagina": 177,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Índice de capacidad en la prestación de servicios de tecnología",
@@ -1709,7 +1830,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
   "pagina": 177,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Documentos custodiados",
@@ -1723,7 +1845,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
   "pagina": 177,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Procesos implementados",
@@ -1737,7 +1860,8 @@
   "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
   "coincidencia_ppi": 1.0,
   "pagina": 177,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Infraestructura para el bienestar animal construida y dotada",
@@ -1751,7 +1875,8 @@
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
   "pagina": 180,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Animales atendidos",
@@ -1765,7 +1890,8 @@
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
   "pagina": 180,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Animales entregados en adopción",
@@ -1779,7 +1905,8 @@
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
   "pagina": 180,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Animales con identificación y registro oficial",
@@ -1793,7 +1920,8 @@
   "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
   "coincidencia_ppi": 1.0,
   "pagina": 180,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Planes de Desarrollo Agropecuario y Rural elaborados",
@@ -1807,7 +1935,8 @@
   "programa": "Inclusión productiva de pequeños productores rurales",
   "coincidencia_ppi": 1.0,
   "pagina": 188,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Planes de Desarrollo Agropecuario y Rural acompañados",
@@ -1821,7 +1950,8 @@
   "programa": "Inclusión productiva de pequeños productores rurales",
   "coincidencia_ppi": 1.0,
   "pagina": 188,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Guías de movilización de animales expedidas",
@@ -1835,7 +1965,8 @@
   "programa": "Sanidad agropecuaria e inocuidad agroalimentaria",
   "coincidencia_ppi": 1.0,
   "pagina": 189,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Documentos de investigación sobre el estado de poblaciones de fauna y flora elaborados",
@@ -1849,7 +1980,8 @@
   "programa": "Conservación de la biodiversidad y sus servicios ecosistémicos",
   "coincidencia_ppi": 1.0,
   "pagina": 197,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Árboles intervenidos",
@@ -1863,7 +1995,8 @@
   "programa": "Conservación de la biodiversidad y sus servicios ecosistémicos",
   "coincidencia_ppi": 1.0,
   "pagina": 197,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Áreas de ecosistemas protegidas",
@@ -1877,7 +2010,8 @@
   "programa": "Conservación de la biodiversidad y sus servicios ecosistémicos",
   "coincidencia_ppi": 1.0,
   "pagina": 197,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Documentos de lineamientos técnicos realizados para la conservación de la biodiversidad",
@@ -1891,7 +2025,8 @@
   "programa": "Conservación de la biodiversidad y sus servicios ecosistémicos",
   "coincidencia_ppi": 1.0,
   "pagina": 197,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Cartografía de áreas protegidas elaborada",
@@ -1905,7 +2040,8 @@
   "programa": "Conservación de la biodiversidad y sus servicios ecosistémicos",
   "coincidencia_ppi": 1.0,
   "pagina": 197,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Áreas con esquemas de Pago por Servicios Ambientales implementados",
@@ -1919,7 +2055,8 @@
   "programa": "Conservación de la biodiversidad y sus servicios ecosistémicos",
   "coincidencia_ppi": 1.0,
   "pagina": 197,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Documentos de lineamientos técnicos con el manejo de especies de fauna y flora elaborados",
@@ -1933,7 +2070,8 @@
   "programa": "Conservación de la biodiversidad y sus servicios ecosistémicos",
   "coincidencia_ppi": 1.0,
   "pagina": 197,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Árboles nativos sembrados",
@@ -1947,7 +2085,8 @@
   "programa": "Conservación de la biodiversidad y sus servicios ecosistémicos",
   "coincidencia_ppi": 1.0,
   "pagina": 197,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Áreas en proceso restauración en mantenimiento",
@@ -1961,7 +2100,8 @@
   "programa": "Conservación de la biodiversidad y sus servicios ecosistémicos",
   "coincidencia_ppi": 1.0,
   "pagina": 197,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Documentos de lineamientos técnicos elaborados",
@@ -1975,7 +2115,8 @@
   "programa": "Fortalecimiento del desempeño ambiental de los sectores productivos",
   "coincidencia_ppi": 0.61,
   "pagina": 198,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Campañas de educación ambiental y participación implementadas",
@@ -1989,7 +2130,8 @@
   "programa": "Fortalecimiento del desempeño ambiental de los sectores productivos",
   "coincidencia_ppi": 0.61,
   "pagina": 198,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Estrategias educativo ambientales y de participación implementadas",
@@ -2003,7 +2145,8 @@
   "programa": "Fortalecimiento del desempeño ambiental de los sectores productivos",
   "coincidencia_ppi": 0.61,
   "pagina": 198,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Áreas para la protección hídrica",
@@ -2017,7 +2160,8 @@
   "programa": "Gestión del cambio climático para un desarrollo bajo en carbono y resiliente al clima",
   "coincidencia_ppi": 1.0,
   "pagina": 200,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Documento de plan de ordenación y manejo de cuenca hifrográfica adoptado",
@@ -2031,7 +2175,8 @@
   "programa": "Gestión del cambio climático para un desarrollo bajo en carbono y resiliente al clima",
   "coincidencia_ppi": 1.0,
   "pagina": 200,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Documento de política pública elaborados",
@@ -2045,7 +2190,8 @@
   "programa": "Fortalecimiento de la gestión y dirección del Sector Comercio, Industriay Turismo",
   "coincidencia_ppi": 0.99,
   "pagina": 209,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Documento de política pública elaborados",
@@ -2059,7 +2205,8 @@
   "programa": "Fortalecimiento de la gestión y dirección del Sector Comercio, Industriay Turismo",
   "coincidencia_ppi": 0.99,
   "pagina": 209,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Eventos de formación realizados",
@@ -2073,7 +2220,8 @@
   "programa": "Fortalecimiento de la gestión y dirección del Sector Comercio, Industriay Turismo",
   "coincidencia_ppi": 0.99,
   "pagina": 209,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Creación de programa REDESS que promueva la economia solidaria y popular en el municipio",
@@ -2087,7 +2235,8 @@
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 1.0,
   "pagina": 215,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Creación del programa de emprendimiento para Girardota",
@@ -2101,7 +2250,8 @@
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 1.0,
   "pagina": 215,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Eventos de formación realizados",
@@ -2115,7 +2265,8 @@
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 1.0,
   "pagina": 215,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Personas colocadas laboralmente",
@@ -2129,7 +2280,8 @@
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 1.0,
   "pagina": 215,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Personas orientadas laboralmente",
@@ -2143,7 +2295,8 @@
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 1.0,
   "pagina": 215,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Eventos realizados",
@@ -2157,7 +2310,8 @@
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 1.0,
   "pagina": 215,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Capacitaciones realizadas",
@@ -2171,7 +2325,8 @@
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 1.0,
   "pagina": 215,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Ambiente de formación modernizados",
@@ -2185,7 +2340,8 @@
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 1.0,
   "pagina": 215,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Vía terciaria con mantenimiento de emergencia",
@@ -2199,7 +2355,8 @@
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 1.0,
   "pagina": 229,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Vía urbana con mantenimiento",
@@ -2213,7 +2370,8 @@
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 1.0,
   "pagina": 229,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Vías regionales o urbanas inventariadas",
@@ -2227,7 +2385,8 @@
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 1.0,
   "pagina": 229,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Vía terciaria construida",
@@ -2241,7 +2400,8 @@
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 1.0,
   "pagina": 229,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Vía terciaria mejorada",
@@ -2255,7 +2415,8 @@
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 1.0,
   "pagina": 229,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Ciclo infraestructura urbana con mantenimiento",
@@ -2269,7 +2430,8 @@
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 1.0,
   "pagina": 229,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Estudios de preinversión realizados",
@@ -2283,7 +2445,8 @@
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 1.0,
   "pagina": 229,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Andén construido",
@@ -2297,7 +2460,8 @@
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 1.0,
   "pagina": 229,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Andenes de la red urbana mejorados",
@@ -2311,7 +2475,8 @@
   "programa": "Infraestructura red vial regional",
   "coincidencia_ppi": 1.0,
   "pagina": 229,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Actualizar el plan local de seguridad vial",
@@ -2325,7 +2490,8 @@
   "programa": "Prestación de servicios de transporte público de pasajeros",
   "coincidencia_ppi": 1.0,
   "pagina": 230,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Informes de seguridad vial",
@@ -2339,7 +2505,8 @@
   "programa": "Seguridad de transporte",
   "coincidencia_ppi": 1.0,
   "pagina": 231,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Formular, implementar, realizar segimiento, controlar el plan de movilidad Segura y Sostenible",
@@ -2353,7 +2520,8 @@
   "programa": "Seguridad de transporte",
   "coincidencia_ppi": 1.0,
   "pagina": 231,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Señalizar metros líneales de vías",
@@ -2367,7 +2535,8 @@
   "programa": "Seguridad de transporte",
   "coincidencia_ppi": 1.0,
   "pagina": 231,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Realizar auditoria y seguimiento a la ejecución de los planes estratégicos de seguridad víal",
@@ -2381,7 +2550,8 @@
   "programa": "Seguridad de transporte",
   "coincidencia_ppi": 1.0,
   "pagina": 231,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Crear el observatorio de seguridad vial y movilidad",
@@ -2395,7 +2565,8 @@
   "programa": "Seguridad de transporte",
   "coincidencia_ppi": 1.0,
   "pagina": 231,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Personas capacitadas",
@@ -2409,7 +2580,8 @@
   "programa": "Seguridad de transporte",
   "coincidencia_ppi": 1.0,
   "pagina": 231,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Operativos de control realizados",
@@ -2423,7 +2595,8 @@
   "programa": "Seguridad de transporte",
   "coincidencia_ppi": 1.0,
   "pagina": 231,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Ejecutar mantenimiento preventivo y correctivo a las unidades de semaforización",
@@ -2437,7 +2610,8 @@
   "programa": "Seguridad de transporte",
   "coincidencia_ppi": 1.0,
   "pagina": 231,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Instalación y mantenimiento de señalización",
@@ -2451,7 +2625,8 @@
   "programa": "Seguridad de transporte",
   "coincidencia_ppi": 1.0,
   "pagina": 231,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Documentos de seguimiento elaborados",
@@ -2465,7 +2640,8 @@
   "programa": "Fomento del desarrollo de aplicaciones, sotiware y contenidos para impulsar la apropiación de las Tecnologías de la Información y las Comunicaciones (TIC)",
   "coincidencia_ppi": 0.99,
   "pagina": 243,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Documentos de lineamientos técnicos realizados",
@@ -2479,7 +2655,8 @@
   "programa": "Fomento del desarrollo de aplicaciones, sotiware y contenidos para impulsar la apropiación de las Tecnologías de la Información y las Comunicaciones (TIC)",
   "coincidencia_ppi": 0.99,
   "pagina": 243,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Plan de comunicaciones realizados",
@@ -2493,7 +2670,8 @@
   "programa": "Fomento del desarrollo de aplicaciones, sotiware y contenidos para impulsar la apropiación de las Tecnologías de la Información y las Comunicaciones (TIC)",
   "coincidencia_ppi": 0.99,
   "pagina": 244,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Documento metodológico del modelo de acompañamiento para la implementación de la Estrategia de Gobierno digital elaborado",
@@ -2507,7 +2685,8 @@
   "programa": "Fomento del desarrollo de aplicaciones, sotiware y contenidos para impulsar la apropiación de las Tecnologías de la Información y las Comunicaciones (TIC)",
   "coincidencia_ppi": 0.99,
   "pagina": 244,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Productos digitales desarrollados",
@@ -2521,7 +2700,8 @@
   "programa": "Fomento del desarrollo de aplicaciones, sotiware y contenidos para impulsar la apropiación de las Tecnologías de la Información y las Comunicaciones (TIC)",
   "coincidencia_ppi": 0.99,
   "pagina": 244,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Ejercicios de participación ciudadana realizados",
@@ -2535,7 +2715,8 @@
   "programa": "Fomento del desarrollo de aplicaciones, sotiware y contenidos para impulsar la apropiación de las Tecnologías de la Información y las Comunicaciones (TIC)",
   "coincidencia_ppi": 0.99,
   "pagina": 244,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Salud pública",

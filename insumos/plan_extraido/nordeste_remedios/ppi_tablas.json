@@ -1,0 +1,228 @@
+[
+ {
+  "pagina": 186,
+  "cabecera": "CONCEPTO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Asignaciones Directas (20% del SGR)",
+    "anios": [
+     3349511859,
+     5264226397,
+     4957394343,
+     4943354442
+    ],
+    "total": 18514487041
+   },
+   {
+    "etiqueta": "Asignaciones Directas",
+    "anios": [
+     4445358778,
+     1462913512,
+     1377645759,
+     1373744111
+    ],
+    "total": 8659662160
+   },
+   {
+    "etiqueta": "Asignación para la Inversión Local según NBI y Cuarta, Quinta, y Sexta",
+    "anios": [
+     1207279856,
+     1651662628,
+     1530183263,
+     1607597517
+    ],
+    "total": 5996723264
+   },
+   {
+    "etiqueta": "Asignación para la Inversión Local–",
+    "anios": [
+     940290276,
+     254101943,
+     235412810,
+     247322695
+    ],
+    "total": 1677127724
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     9942440769,
+     8632904480,
+     8100636175,
+     8172018765
+    ],
+    "total": 34848000189
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 187,
+  "cabecera": "CONCEPTO DE GASTO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Asignación para la Inversión Local–",
+    "anios": [
+     140290276,
+     254101943,
+     235412810,
+     247322695
+    ],
+    "total": 1677127724
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     4585649054,
+     254101943,
+     235412810,
+     247322695
+    ],
+    "total": 5322486502
+   }
+  ],
+  "ncols": 6,
+  "financiero": true
+ },
+ {
+  "pagina": 192,
+  "cabecera": "CONCEPTO DE GASTO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Directas (20% del SGR)",
+    "anios": [
+     2959511859,
+     5264226397,
+     2957394343,
+     4943354442
+    ],
+    "total": 16124487041
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     2959513883,
+     8378802537,
+     5865225391,
+     7924696070
+    ],
+    "total": 25128237881
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 404,
+  "cabecera": "N°",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "1",
+    "anios": [
+     29661000000,
+     32627100000,
+     35889810000,
+     39478791000
+    ],
+    "total": 137656701000
+   },
+   {
+    "etiqueta": "2",
+    "anios": [
+     422400000,
+     464640000,
+     511104000,
+     562214400
+    ],
+    "total": 1960358400
+   },
+   {
+    "etiqueta": "3",
+    "anios": [
+     349150000,
+     384065000,
+     422471500,
+     464718650
+    ],
+    "total": 1620405150
+   },
+   {
+    "etiqueta": "4",
+    "anios": [
+     50000000,
+     55000000,
+     60500000,
+     66550000
+    ],
+    "total": 232050000
+   },
+   {
+    "etiqueta": "5",
+    "anios": [
+     45000000,
+     44550000,
+     49005000,
+     53905500
+    ],
+    "total": 192460500
+   },
+   {
+    "etiqueta": "6",
+    "anios": [
+     25300000,
+     27830000,
+     30613000,
+     33674300
+    ],
+    "total": 117417300
+   },
+   {
+    "etiqueta": "7",
+    "anios": [
+     20000000,
+     22000000,
+     24200000,
+     26620000
+    ],
+    "total": 92820000
+   },
+   {
+    "etiqueta": "9",
+    "anios": [
+     510400000,
+     536440000,
+     565084000,
+     596592400
+    ],
+    "total": 2208516400
+   },
+   {
+    "etiqueta": "10",
+    "anios": [
+     311600000,
+     367760000,
+     429536000,
+     497489600
+    ],
+    "total": 1606385600
+   },
+   {
+    "etiqueta": "11",
+    "anios": [
+     288000000,
+     316800000,
+     348480000,
+     383328000
+    ],
+    "total": 1336608000
+   }
+  ],
+  "ncols": 9,
+  "financiero": false
+ }
+]

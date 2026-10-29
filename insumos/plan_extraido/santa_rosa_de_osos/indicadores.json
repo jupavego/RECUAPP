@@ -12,7 +12,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 94,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Cobertura de acueducto(REC)",
@@ -27,7 +28,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 94,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Cobertura de alcantarillado(REC)",
@@ -42,7 +44,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 94,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Cobertura de alcantarillado(REC)",
@@ -57,7 +60,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 94,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Porcentaje de nacidos vivos con bajo peso al nacer",
@@ -72,7 +76,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 94,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Porcentaje de nacidos vivos con bajo peso al nacer",
@@ -87,7 +92,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 94,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Tasa ajustada de mortalidad por accidentes de transporte terrestre",
@@ -102,7 +108,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 94,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Tasa de fecundidad específica en mujeres de 10 a 19 años",
@@ -117,7 +124,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 94,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Tasa de mortalidad",
@@ -132,7 +140,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 94,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Tasa de mortalidad infantil en menores de 5 años",
@@ -147,7 +156,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 94,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "INCLUSIÓN SOCIAL Y RECONCILIACIÓN",
@@ -162,7 +172,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 95,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "SALUD Y PROTECCIÓN SOCIAL",
@@ -177,7 +188,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 95,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de auditoría y visitas inspectivas",
@@ -193,7 +205,8 @@
   "programa": "Fortalecimiento de la prestación del servicio de salud con habilitación de servicios hospitalarios de segundo nivel",
   "coincidencia_ppi": null,
   "pagina": 95,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Fortalecimiento de los programas de promoción y prevención de la salud",
@@ -208,7 +221,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 95,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de gestión del riesgo en temas de salud sexual y reproductiva",
@@ -224,7 +238,8 @@
   "programa": "Fortalecimiento de los programas de promoción y prevención de la salud",
   "coincidencia_ppi": null,
   "pagina": 95,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "TRANSPORTE",
@@ -239,7 +254,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 95,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "VIVIENDA, CIUDAD Y TERRITORIO",
@@ -254,7 +270,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 95,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Alcantarillados optimizados",
@@ -270,7 +287,8 @@
   "programa": "Construcción, optimización y fortalecimiento de la red de alcantarillado",
   "coincidencia_ppi": null,
   "pagina": 95,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Construcción, optimización y fortalecimiento de sistemas de acueducto",
@@ -285,7 +303,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 95,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Acueductos optimizados",
@@ -301,7 +320,8 @@
   "programa": "Construcción, optimización y fortalecimiento de sistemas de acueducto",
   "coincidencia_ppi": null,
   "pagina": 95,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo financiero para subsidios al consumo en los servicios públicos domiciliarios",
@@ -317,7 +337,8 @@
   "programa": "Construcción, optimización y fortalecimiento de sistemas de acueducto",
   "coincidencia_ppi": null,
   "pagina": 95,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Instalación de sistemas individuales de tratamiento de aguas residuales rurales",
@@ -332,7 +353,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 95,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.2. Desarrollo Social Inclusivo",
@@ -348,7 +370,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 96,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.2. Desarrollo Social Inclusivo",
@@ -364,7 +387,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 96,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.2. Desarrollo Social Inclusivo",
@@ -380,7 +404,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 96,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.2. Desarrollo Social Inclusivo",
@@ -396,7 +421,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 96,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.2. Desarrollo Social Inclusivo",
@@ -412,7 +438,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 96,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.2. Desarrollo Social Inclusivo",
@@ -428,7 +455,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 96,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.2. Desarrollo Social Inclusivo",
@@ -444,7 +472,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 96,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.2. Desarrollo Social Inclusivo",
@@ -460,7 +489,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 96,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.2. Desarrollo Social Inclusivo",
@@ -476,7 +506,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 96,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "TRANSPORTE",
@@ -491,7 +522,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 97,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "TRANSPORTE",
@@ -506,7 +538,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 97,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "EDUCACIÓN",
@@ -521,7 +554,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 97,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "EDUCACIÓN",
@@ -536,7 +570,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 97,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "EDUCACIÓN",
@@ -551,7 +586,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 97,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "EDUCACIÓN",
@@ -566,7 +602,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 97,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "EDUCACIÓN",
@@ -581,7 +618,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 97,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "EDUCACIÓN",
@@ -596,7 +634,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 97,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "EDUCACIÓN",
@@ -611,7 +650,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 97,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "EDUCACIÓN",
@@ -626,7 +666,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 97,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "EDUCACIÓN",
@@ -641,7 +682,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 97,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.3. Desarrollo Social Resiliente",
@@ -657,7 +699,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.3. Desarrollo Social Resiliente",
@@ -673,7 +716,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.3. Desarrollo Social Resiliente",
@@ -689,7 +733,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.3. Desarrollo Social Resiliente",
@@ -705,7 +750,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.3. Desarrollo Social Resiliente",
@@ -721,7 +767,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.3. Desarrollo Social Resiliente",
@@ -737,7 +784,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.3. Desarrollo Social Resiliente",
@@ -753,7 +801,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.3. Desarrollo Social Resiliente",
@@ -769,7 +818,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.3. Desarrollo Social Resiliente",
@@ -785,7 +835,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.3. Desarrollo Social Resiliente",
@@ -801,7 +852,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "GOBIERNO TERRITORIAL",
@@ -816,7 +868,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 100,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio prevención y control de incendios",
@@ -832,7 +885,8 @@
   "programa": "Implementación y fortalecimiento el Sistema Municipal de Gestión del Riesgo y Atención de Emergencias a través de acciones de atención y manejo",
   "coincidencia_ppi": null,
   "pagina": 100,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "INCLUSIÓN SOCIAL Y RECONCILIACIÓN",
@@ -847,7 +901,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 100,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de entrega de raciones de alimentos",
@@ -863,7 +918,8 @@
   "programa": "Diseño e implementación del Programa del Derecho Humano a la Alimentación",
   "coincidencia_ppi": null,
   "pagina": 100,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "INFORMACIÓN ESTADÍSTICA",
@@ -878,7 +934,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 100,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "SALUD Y PROTECCIÓN SOCIAL",
@@ -893,7 +950,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 100,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Diseño e implementación del Programa Municipal de Prevención y Atención Integral de Salud Mental",
@@ -908,7 +966,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 100,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de gestión del riesgo en temas de trastornos mentales",
@@ -924,7 +983,8 @@
   "programa": "Diseño e implementación del Programa Municipal de Prevención y Atención Integral de Salud Mental",
   "coincidencia_ppi": null,
   "pagina": 100,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de promoción de la salud",
@@ -940,7 +1000,8 @@
   "programa": "Diseño e implementación del Programa Municipal de Prevención y Atención Integral de Salud Mental",
   "coincidencia_ppi": null,
   "pagina": 100,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Fortalecimiento de los programas de promoción y prevención de la salud",
@@ -955,7 +1016,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 100,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de gestión del riesgo para abordar situaciones prevalentes de origen laboral",
@@ -971,7 +1033,8 @@
   "programa": "Fortalecimiento de los programas de promoción y prevención de la salud",
   "coincidencia_ppi": null,
   "pagina": 100,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de gestión del riesgo para enfermedades emergentes, reemergentes y desatendidas",
@@ -987,7 +1050,8 @@
   "programa": "Fortalecimiento de los programas de promoción y prevención de la salud",
   "coincidencia_ppi": null,
   "pagina": 100,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de promoción de la salud y prevención de riesgos asociados a condiciones no transmisibles",
@@ -1003,7 +1067,8 @@
   "programa": "Fortalecimiento de los programas de promoción y prevención de la salud",
   "coincidencia_ppi": null,
   "pagina": 100,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Implementación y fortalecimiento el Sistema Municipal de Gestión del Riesgo y Atención de Emergencias a través de acciones de atención y manejo",
@@ -1018,7 +1083,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 100,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.4. Desarrollo Social Sostenible",
@@ -1034,7 +1100,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 101,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.4.Desarrollo Social Sostenible",
@@ -1050,7 +1117,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 101,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.4. Desarrollo Social Sostenible",
@@ -1066,7 +1134,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 101,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.4. Desarrollo Social Sostenible",
@@ -1082,7 +1151,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 101,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.4. Desarrollo Social Sostenible",
@@ -1098,7 +1168,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 101,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.4. Desarrollo Social Sostenible",
@@ -1114,7 +1185,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 101,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.4. Desarrollo Social Sostenible",
@@ -1130,7 +1202,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 101,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.4.Desarrollo Social Sostenible",
@@ -1146,7 +1219,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 101,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.4. Desarrollo Social Sostenible",
@@ -1162,7 +1236,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 101,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.4.Desarrollo Social Sostenible",
@@ -1178,7 +1253,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 101,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.4.Desarrollo Social Sostenible",
@@ -1194,7 +1270,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 101,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "1.4.Desarrollo Social Sostenible",
@@ -1210,7 +1287,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 101,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "GOBIERNO TERRITORIAL",
@@ -1225,7 +1303,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 102,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Implementación del programa social de la población afrodescendiente a través de estrategias de emprendimiento, capacitación, participación ciudadana y disposición de espacios físicos",
@@ -1240,7 +1319,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 102,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Implementación del programa social de poblaciónLGBTIQ a través deestrategias de emprendimiento, capacitación, participación ciudadana y disposición de espacios físicos",
@@ -1255,7 +1335,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 102,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "INCLUSIÓN SOCIAL Y RECONCILIACIÓN",
@@ -1270,7 +1351,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 102,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Diseño, implementación y seguimiento de la política de inclusión social",
@@ -1285,7 +1367,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 102,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Gestión de la Casa de la Discapacidad, con el equipamiento requerido para atender y desarrollar los programas que requiere esta población",
@@ -1300,7 +1383,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 102,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Implementación del programa social de la población adultamayor a través deestrategias de emprendimiento, capacitación, participación ciudadana y disposición de espacios físicos",
@@ -1315,7 +1399,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 102,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de atención y protección",
@@ -1331,7 +1416,8 @@
   "programa": "Implementación del programa social de la población adultamayor a través deestrategias de emprendimiento, capacitación, participación ciudadana y disposición de espacios físicos",
   "coincidencia_ppi": null,
   "pagina": 102,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "MINAS Y ENERGÍA",
@@ -1346,7 +1432,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 102,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Redes de alumbrado público con mantenimiento",
@@ -1362,7 +1449,8 @@
   "programa": "Creación y fortalecimiento del Plan Integral de ViviendaMunicipal",
   "coincidencia_ppi": null,
   "pagina": 102,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "TRABAJO",
@@ -1377,7 +1465,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 102,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "VIVIENDA, CIUDAD Y TERRITORIO",
@@ -1392,7 +1481,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 102,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Creación y fortalecimiento del Plan Integral de ViviendaMunicipal",
@@ -1407,7 +1497,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 102,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Vivienda deInterés Prioritario construidas",
@@ -1423,7 +1514,8 @@
   "programa": "Creación y fortalecimiento del Plan Integral de ViviendaMunicipal",
   "coincidencia_ppi": null,
   "pagina": 102,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Vivienda deInterés Social construidas",
@@ -1439,7 +1531,8 @@
   "programa": "Creación y fortalecimiento del Plan Integral de ViviendaMunicipal",
   "coincidencia_ppi": null,
   "pagina": 102,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Vivienda deInterés Social mejoradas",
@@ -1455,7 +1548,8 @@
   "programa": "Creación y fortalecimiento del Plan Integral de ViviendaMunicipal",
   "coincidencia_ppi": null,
   "pagina": 102,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "2.1.Desarrollo Económico Seguro y en Paz",
@@ -1471,7 +1565,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 103,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "2.1.Desarrollo Económico Seguro y en Paz",
@@ -1487,7 +1582,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 103,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "2.1. Desarrollo Económico Seguro y en Paz",
@@ -1503,7 +1599,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 103,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "EDUCACIÓN",
@@ -1518,7 +1615,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 104,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "INCLUSIÓN SOCIAL Y RECONCILIACIÓN",
@@ -1533,7 +1631,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 104,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "adolescentes",
@@ -1548,7 +1647,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 104,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "jóvenes Servicios dirigidos a la atención de niños, niñas, adolescentes y jóvenes, con enfoque pedagógico y restaurativo encaminados a la inclusión",
@@ -1564,7 +1664,8 @@
   "programa": "adolescentes",
   "coincidencia_ppi": null,
   "pagina": 104,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "social Servicios de asistencia técnica en políticas públicas de infancia, adolescencia y",
@@ -1580,7 +1681,8 @@
   "programa": "adolescentes",
   "coincidencia_ppi": null,
   "pagina": 104,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "TRABAJO",
@@ -1595,7 +1697,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 104,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "2.2. Desarrollo Económico Inclusivo",
@@ -1611,7 +1714,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 106,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "Económico Inclusivo Desarrollo",
@@ -1627,7 +1731,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 106,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "Económico Inclusivo Desarrollo 2.2. Desarrollo Económico Inclusivo",
@@ -1643,7 +1748,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 106,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "EDUCACIÓN",
@@ -1658,7 +1764,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 108,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Gestionar un programa de dotación tecnológica para estudiantes, garantizando la respectiva conectividad",
@@ -1673,7 +1780,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 108,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "TECNOLOGÍAS DE LA INFORMACIÓN Y LAS COMUNICACIONES",
@@ -1688,7 +1796,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 108,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "TRABAJO",
@@ -1703,7 +1812,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 108,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "TRANSPORTE",
@@ -1718,7 +1828,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 108,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Plan de mantenimiento de vías urbanas",
@@ -1733,7 +1844,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 108,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Vía urbana mejorada",
@@ -1749,7 +1861,8 @@
   "programa": "Plan de mantenimiento de vías urbanas",
   "coincidencia_ppi": null,
   "pagina": 108,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "2.3. Desarrollo Económico Resiliente",
@@ -1765,7 +1878,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "2.3. Desarrollo Económico Resiliente",
@@ -1781,7 +1895,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "2.3. Desarrollo Económico Resiliente",
@@ -1797,7 +1912,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "2.3. Desarrollo Económico Resiliente",
@@ -1813,7 +1929,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "2.3. Desarrollo Económico Resiliente",
@@ -1829,7 +1946,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "2.3. Desarrollo Económico Resiliente",
@@ -1845,7 +1963,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "2.3. Desarrollo Económico Resiliente",
@@ -1861,7 +1980,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "2.3.Desarrollo Económico Resiliente",
@@ -1877,7 +1997,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "2.3. Desarrollo Económico Resiliente",
@@ -1893,7 +2014,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "2.3. Desarrollo Económico Resiliente",
@@ -1909,7 +2031,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "AGRICULTURA Y DESARROLLO RURAL",
@@ -1924,7 +2047,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 110,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo para el fomento organizativo de la Agricultura Campesina, Familiar y Comunitaria",
@@ -1940,7 +2064,8 @@
   "programa": "Acompañamiento a asociaciones de productores conformadas o en proceso de conformación para el desarrollo de sus capacidades",
   "coincidencia_ppi": null,
   "pagina": 110,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio deasesoría para el fortalecimiento de la asociatividad",
@@ -1956,7 +2081,8 @@
   "programa": "Acompañamiento a asociaciones de productores conformadas o en proceso de conformación para el desarrollo de sus capacidades",
   "coincidencia_ppi": null,
   "pagina": 110,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de fortalecimiento de capacidades locales",
@@ -1972,7 +2098,8 @@
   "programa": "Acompañamiento a asociaciones de productores conformadas o en proceso de conformación para el desarrollo de sus capacidades",
   "coincidencia_ppi": null,
   "pagina": 110,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Implementación del Programa de apoyo y fomento a la infraestructura para la producción y comercialización agropecuaria",
@@ -1987,7 +2114,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 110,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Plan de asistencia técnica para la atención integral a productores agropecuarios",
@@ -2002,7 +2130,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 110,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de educación informal en Buenas Prácticas Agrícolas y producción sostenible",
@@ -2018,7 +2147,8 @@
   "programa": "Plan de asistencia técnica para la atención integral a productores agropecuarios",
   "coincidencia_ppi": null,
   "pagina": 110,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Plan Municipal de mejoramiento genético",
@@ -2033,7 +2163,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 110,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "AMBIENTE Y DESARROLLO SOSTENIBLE",
@@ -2048,7 +2179,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 110,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "CIENCIA, TECNOLOGÍA E INNOVACIÓN",
@@ -2063,7 +2195,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 110,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Diseño e Implementación del Programa Santa Rosa HUB de ciencia, tecnología e innovación",
@@ -2078,7 +2211,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 110,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Generación de una cultura que valora y gestiona el conocimiento y la innovación",
@@ -2093,7 +2227,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 110,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "2.4. Desarrollo Económico Sostenible",
@@ -2109,7 +2244,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 112,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "GOBIERNO TERRITORIAL",
@@ -2124,7 +2260,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 112,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "3.1. Desarrollo Sostenible Seguro y en Paz",
@@ -2140,7 +2277,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 114,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "3.1. Desarrollo Sostenible Seguro y en Paz",
@@ -2156,7 +2294,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 114,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "3.1. Desarrollo Sostenible Seguro y en Paz",
@@ -2172,7 +2311,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 114,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "AMBIENTE Y DESARROLLO SOSTENIBLE",
@@ -2187,7 +2327,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 114,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "VIVIENDA, CIUDAD Y TERRITORIO",
@@ -2202,7 +2343,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 114,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Soluciones de disposición final de residuos sólidos construidas",
@@ -2218,7 +2360,8 @@
   "programa": "Implementación del Plan de Gestión Integral de Residuos Sólidos PGIRS",
   "coincidencia_ppi": null,
   "pagina": 114,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "3.2. Desarrollo Sostenible Inclusivo",
@@ -2234,7 +2377,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 115,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "3.2. Desarrollo Sostenible Inclusivo",
@@ -2250,7 +2394,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 115,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "AMBIENTE Y DESARROLLO SOSTENIBLE",
@@ -2265,7 +2410,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 115,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de educación informal en gestión del cambio climático para un desarrollo bajo en carbono y resiliente al clima",
@@ -2281,7 +2427,8 @@
   "programa": "Diseño e implementación del Programa Santa Rosa Ciudad en Armonía con la Naturaleza",
   "coincidencia_ppi": null,
   "pagina": 115,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de asistencia técnica en planificacióny gestión ambiental.",
@@ -2297,7 +2444,8 @@
   "programa": "Diseño e implementación del Programa Santa Rosa Ciudad en Armonía con la Naturaleza",
   "coincidencia_ppi": null,
   "pagina": 115,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "VIVIENDA, CIUDAD Y TERRITORIO",
@@ -2312,7 +2460,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 115,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "3.3.Desarrollo Sostenible Resiliente",
@@ -2328,7 +2477,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 116,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "3.3.Desarrollo Sostenible Resiliente",
@@ -2344,7 +2494,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 116,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "3.3.Desarrollo Sostenible Resiliente",
@@ -2360,7 +2511,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 116,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "3.3.Desarrollo Sostenible Resiliente",
@@ -2376,7 +2528,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 116,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "3.3. Desarrollo Sostenible Resiliente",
@@ -2392,7 +2545,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 116,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "3.3.Desarrollo Sostenible Resiliente",
@@ -2408,7 +2562,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 116,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "3.3.Desarrollo Sostenible Resiliente",
@@ -2424,7 +2579,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 116,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "3.3.Desarrollo Sostenible Resiliente",
@@ -2440,7 +2596,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 116,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "AMBIENTE Y",
@@ -2455,7 +2612,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 117,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "AMBIENTE Y DESARROLLO SOSTENIBLE",
@@ -2470,7 +2628,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 117,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio apoyo financiero para la implementación de esquemas de pago por Servicio ambientales",
@@ -2486,7 +2645,8 @@
   "programa": "Diseño e implementación del Programa Santa Rosa Ciudad en Armonía con la Naturaleza",
   "coincidencia_ppi": null,
   "pagina": 117,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de asistencia técnica para la promoción del uso eficiente y ahorro del agua",
@@ -2502,7 +2662,8 @@
   "programa": "Diseño e implementación del Programa Santa Rosa Ciudad en Armonía con la Naturaleza",
   "coincidencia_ppi": null,
   "pagina": 117,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de protección de ecosistemas",
@@ -2518,7 +2679,8 @@
   "programa": "Diseño e implementación del Programa Santa Rosa Ciudad en Armonía con la Naturaleza",
   "coincidencia_ppi": null,
   "pagina": 117,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de reforestación de ecosistemas",
@@ -2534,7 +2696,8 @@
   "programa": "Diseño e implementación del Programa Santa Rosa Ciudad en Armonía con la Naturaleza",
   "coincidencia_ppi": null,
   "pagina": 117,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "GOBIERNO TERRITORIAL",
@@ -2549,7 +2712,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 117,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de sanidad animal",
@@ -2565,7 +2729,8 @@
   "programa": "Diseño e implementación del Programa de Bienestar Animal, parala atención integral de los animales domésticos que se encuentran en condición de calle o estado de vulnerabilidad",
   "coincidencia_ppi": null,
   "pagina": 117,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "MINAS Y ENERGÍA",
@@ -2580,7 +2745,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 117,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Unidades de generación fotovoltaica de energía eléctrica instaladas",
@@ -2596,7 +2762,8 @@
   "programa": "Diseño de proyectos con energías limpias para el uso doméstico (vivienda urbana y rural), comercial (establecimientos) e industrial (refrigeración)",
   "coincidencia_ppi": null,
   "pagina": 117,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "VIVIENDA, CIUDAD Y TERRITORIO",
@@ -2611,7 +2778,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 117,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Zonas verdes mantenidas",
@@ -2627,7 +2795,8 @@
   "programa": "Diseño e implementación del Programa de Fortalecimiento y Desarrollo Territorial",
   "coincidencia_ppi": null,
   "pagina": 117,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "3.4. Desarrollo Sostenible",
@@ -2643,7 +2812,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 118,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "3.4. Desarrollo Sostenible",
@@ -2659,7 +2829,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 118,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "3.4. Desarrollo Sostenible",
@@ -2675,7 +2846,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 118,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "AMBIENTE Y DESARROLLO SOSTENIBLE",
@@ -2690,7 +2862,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 118,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Implementación y fortalecimiento el Sistema Municipal de Gestión del Riesgo y Atención de Emergencias a través de acciones de mitigación del riesgo",
@@ -2705,7 +2878,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 118,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "VIVIENDA, CIUDAD Y TERRITORIO",
@@ -2720,7 +2894,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 118,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "4.1. Desarrollo Cultural y Deportivo para la Seguridad y la Paz",
@@ -2736,7 +2911,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 120,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "4.1. Desarrollo Cultural y Deportivo para la Seguridad y la Paz",
@@ -2752,7 +2928,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 120,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "4.1. Desarrollo Cultural y Deportivo para la Seguridad y la Paz",
@@ -2768,7 +2945,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 120,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "CULTURA",
@@ -2783,7 +2961,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 121,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Diseño e implementación del programa Santa Rosa capital colombiana de la lectura",
@@ -2798,7 +2977,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 121,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios bibliotecarios",
@@ -2814,7 +2994,8 @@
   "programa": "Diseño e implementación del programa Santa Rosa capital colombiana de la lectura",
   "coincidencia_ppi": null,
   "pagina": 121,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "TECNOLOGÍAS DE LA INFORMACIÓN Y LAS COMUNICACIONES",
@@ -2829,7 +3010,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 121,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "4.2. Desarrollo Cultural y Deportivopara la Inclusión",
@@ -2845,7 +3027,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 121,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "4.2. Desarrollo Cultural y",
@@ -2861,7 +3044,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 121,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "CULTURA",
@@ -2876,7 +3060,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 123,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de mantenimiento de infraestructura cultural",
@@ -2892,7 +3077,8 @@
   "programa": "Diseño e implementación del programa de Escuelas Populares de Arte (EPA), garantizando la formación deniños, jóvenes, maestros rurales,y demás población, con la creación de grupos folclóricos y la realización de actividades complementarias.",
   "coincidencia_ppi": null,
   "pagina": 123,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Diseño e implementación del Programa Santa Rosa Capital Colombiana de la Cultura",
@@ -2907,7 +3093,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 123,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "4.3. Desarrollo Cultural y Deportivo para la resiliencia",
@@ -2923,7 +3110,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 123,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "4.3. Desarrollo Cultural y Deportivo para la resiliencia",
@@ -2939,7 +3127,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 123,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "CULTURA",
@@ -2954,7 +3143,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 124,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de mantenimiento de infraestructura cultural",
@@ -2970,7 +3160,8 @@
   "programa": "Diseño e implementación del programa de Escuelas Populares de Arte (EPA), garantizando la formación de niños, jóvenes, maestros rurales,y demás población, con la creación de grupos folclóricos y la realización de actividades complementarias.",
   "coincidencia_ppi": null,
   "pagina": 124,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Diseño e implementación del Programa Santa Rosa Capital Colombiana de la Cultura",
@@ -2985,7 +3176,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 124,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Gestión para la consolidación del archivo histórico municipal",
@@ -3000,7 +3192,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 124,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "4.4. Desarrollo Cultural y Deportivo para la sostenibilidad",
@@ -3016,7 +3209,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 126,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "4.4. Desarrollo Cultural y Deportivo para la sostenibilidad",
@@ -3032,7 +3226,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 126,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "4.4. Desarrollo Cultural y Deportivo para la sostenibilidad",
@@ -3048,7 +3243,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 126,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "4.4. Desarrollo Cultural y Deportivo para la sostenibilidad",
@@ -3064,7 +3260,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 126,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "CULTURA",
@@ -3079,7 +3276,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 127,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "DEPORTE Y RECREACIÓN",
@@ -3094,7 +3292,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 127,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Fomento de la actividad física yel deporte como parte de los hábitos de vida saludable",
@@ -3109,7 +3308,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 127,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de promoción de la actividad física, la recreación y el deporte",
@@ -3125,7 +3325,8 @@
   "programa": "Fomento de la actividad física yel deporte como parte de los hábitos de vida saludable",
   "coincidencia_ppi": null,
   "pagina": 127,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Formación y preparación de deportistas con entrenadores capacitados en habilidades y técnicas",
@@ -3140,7 +3341,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 127,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Mantenimiento y dotación de escenarios deportivos",
@@ -3155,7 +3357,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 127,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "5.1. Desarrollo Cívico e Institucional para la Seguridad y la Paz",
@@ -3171,7 +3374,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "5.1. Desarrollo Cívico e Institucional para la Seguridad y la Paz",
@@ -3187,7 +3391,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "5.1. Desarrollo Cívico e Institucional para la Seguridad y la Paz",
@@ -3203,7 +3408,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "5.1. Desarrollo Cívico e Institucional para la Seguridad y la Paz",
@@ -3219,7 +3425,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "5.1. Desarrollo Cívico e Institucional para la Seguridad y la Paz",
@@ -3235,7 +3442,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "5.1. Desarrollo Cívico e Institucional para la Seguridad y la Paz",
@@ -3251,7 +3459,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "GOBIERNO TERRITORIAL",
@@ -3266,7 +3475,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 129,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo para el acceso a la justicia policiva",
@@ -3282,7 +3492,8 @@
   "programa": "Diseño e implementación del Programa Santa Rosa Ciudad Segura y Pacífica",
   "coincidencia_ppi": null,
   "pagina": 129,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Comandos de policía construidas y dotadas",
@@ -3298,7 +3509,8 @@
   "programa": "Diseño e implementación del Programa Santa Rosa Ciudad Segura y Pacífica",
   "coincidencia_ppi": null,
   "pagina": 129,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de promoción de convivencia y no repetición",
@@ -3314,7 +3526,8 @@
   "programa": "Diseño e implementación del Programa Santa Rosa Ciudad Segura y Pacífica",
   "coincidencia_ppi": null,
   "pagina": 129,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "INCLUSIÓN SOCIAL Y RECONCILIACIÓN",
@@ -3329,7 +3542,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 129,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de ayuda y atención humanitaria",
@@ -3345,7 +3559,8 @@
   "programa": "Diseño e implementación del Plan Integral de Atención a las Víctimas (PAT)",
   "coincidencia_ppi": null,
   "pagina": 129,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "JUSTICIA Y DEL DERECHO",
@@ -3360,7 +3575,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 129,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de educación informal en prevención del delito",
@@ -3376,7 +3592,8 @@
   "programa": "Diseño e implementación del Programa Santa Rosa Ciudad Segura y Pacífica",
   "coincidencia_ppi": null,
   "pagina": 129,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de justicia a los ciudadanos",
@@ -3392,7 +3609,8 @@
   "programa": "Diseño e implementación del Programa Santa Rosa Ciudad Segura y Pacífica",
   "coincidencia_ppi": null,
   "pagina": 129,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "ORGANISMOS DE CONTROL",
@@ -3407,7 +3625,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 129,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "5.2. Desarrollo Cívico e Institucional Inclusivo",
@@ -3423,7 +3642,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 131,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "5.2. Desarrollo Cívico e Institucional Inclusivo",
@@ -3439,7 +3659,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 131,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "5.2. Desarrollo Cívico e Institucional Inclusivo",
@@ -3455,7 +3676,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 131,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "5.2. Desarrollo Cívico e Institucional Inclusivo",
@@ -3471,7 +3693,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 131,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "5.2. Desarrollo Cívico e Institucional Inclusivo",
@@ -3487,7 +3710,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 131,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "GOBIERNO TERRITORIAL",
@@ -3502,14 +3726,15 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 132,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Salón comunal construido y dotado",
   "nombre": "Salones comunales construidos y dotados",
   "unidad": "Número",
   "meta": "8",
-  "responsable": "<sup>Secretaría de</sup> Infraestructura",
+  "responsable": "Secretaría de Infraestructura",
   "programa_sub": "Diseño del programa de programa de participación ciudadana para el fortalecimiento de las organizaciones sociales y comunitarias y la motivación de la participación ciudadana en los espacios del que hacer institucional",
   "linea_base": "",
   "tipo_acumulado": "",
@@ -3518,7 +3743,8 @@
   "programa": "Diseño del programa de programa de participación ciudadana para el fortalecimiento de las organizaciones sociales y comunitarias y la motivación de la participación ciudadana en los espacios del que hacer institucional",
   "coincidencia_ppi": null,
   "pagina": 132,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de promoción a la participación ciudadana",
@@ -3534,7 +3760,8 @@
   "programa": "Diseño del programa de programa de participación ciudadana para el fortalecimiento de las organizaciones sociales y comunitarias y la motivación de la participación ciudadana en los espacios del que hacer institucional",
   "coincidencia_ppi": null,
   "pagina": 132,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Diseño e implementación del Plan Municipal de Modernización del Estado de cara a los retos de la sociedad actual",
@@ -3549,7 +3776,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 132,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de educación informal",
@@ -3565,7 +3793,8 @@
   "programa": "Diseño e implementación del Plan Municipal de Modernización del Estado de cara a los retos de la sociedad actual",
   "coincidencia_ppi": null,
   "pagina": 132,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Gestión del talento humano institucional para la prestación de mejores servicios a la ciudadanía",
@@ -3580,7 +3809,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 132,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Implementación del programasocial de la mujer através de estrategias de emprendimiento, capacitación, participación ciudadana y disposición de espacios físicos",
@@ -3595,7 +3825,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 132,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "TECNOLOGÍAS DE LA INFORMACIÓN Y LAS COMUNICACIONES",
@@ -3610,7 +3841,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 132,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "5.3. Desarrollo Cívico e Institucional Resiliente",
@@ -3626,7 +3858,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 133,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "5.3. Desarrollo Cívico e InstitucionalResiliente",
@@ -3642,7 +3875,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 133,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "5.3. Desarrollo Cívico e Institucional Resiliente",
@@ -3658,7 +3892,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 133,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "5.3. Desarrollo Cívico e Institucional Resiliente",
@@ -3674,7 +3909,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 133,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Implementación y fortalecimiento el Sistema Municipal de Gestión del Riesgo y Atención de Emergencias a través de acciones de conocimiento del riesgo",
@@ -3689,7 +3925,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 133,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Gestión para la creación del museo municipal, la construcción de monumentos a personajes ilustres de Santa Rosa de Osos y el desarrollo de un programa de conservación del patrimonio arquitectónico.",
@@ -3704,7 +3941,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 133,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "5.4. Desarrollo Cívico e Institucional Sostenible",
@@ -3720,7 +3958,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 135,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "5.4. Desarrollo Cívico e Institucional Sostenible",
@@ -3736,7 +3975,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 135,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "5.4. Desarrollo Cívico e Institucional Sostenible",
@@ -3752,7 +3992,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 135,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "componente": "5.4. Desarrollo Cívico e Institucional Sostenible",
@@ -3768,7 +4009,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 135,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "CULTURA",
@@ -3783,7 +4025,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 135,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "GOBIERNO TERRITORIAL",
@@ -3798,7 +4041,8 @@
   "linea": null,
   "coincidencia_ppi": null,
   "pagina": 135,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Diseño e implementación del Plan Municipal de Modernización del Estado de cara a los retos de la sociedadactual",
@@ -3813,7 +4057,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 135,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "programa": "Diseño e implementación del Programa de Fortalecimiento y Desarrollo Territorial",
@@ -3828,7 +4073,8 @@
   "sector": null,
   "coincidencia_ppi": null,
   "pagina": 135,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "Transporte",
@@ -3843,7 +4089,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 171,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "Vivienda Ciudad y Territorio",
@@ -3858,7 +4105,8 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 171,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "sector": "Ambiente y desarrollo Sostenible",
@@ -3873,6 +4121,7 @@
   "programa": null,
   "coincidencia_ppi": null,
   "pagina": 171,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  }
 ]

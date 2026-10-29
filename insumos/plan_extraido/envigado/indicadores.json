@@ -11,7 +11,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 488,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Eventos de Rendición Pública de Cuentas realizados",
@@ -25,7 +26,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 488,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Manual de comunicación interna",
@@ -39,7 +41,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 488,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Conversatorios realizados para socializar los programas, acciones y cumplimiento de las metas del Plan de Desarrollo",
@@ -53,7 +56,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 488,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Publicaciones realizadas en medios impresos locales y regionales",
@@ -67,7 +71,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 488,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Publicaciones realizadas en medios web y digitales",
@@ -81,7 +86,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 488,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Publicaciones realizadas en medios audiovisuales",
@@ -95,7 +101,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 488,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Publicaciones realizadas en medios web, digitales y audiovisuales de carácter nacional",
@@ -109,7 +116,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 489,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Índice de calidad de vida",
@@ -124,7 +132,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 508,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Índice multidimensional de calidad de vida",
@@ -139,7 +148,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 508,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Porcentaje de personas pobres - IPM",
@@ -154,7 +164,8 @@
   "programa": null,
   "coincidencia_ppi": 0,
   "pagina": 508,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Oportunidad en la activación de rutas de atención en salud mental",
@@ -168,7 +179,8 @@
   "programa": "Gestión integral e integrada de la salud mental en los entornos para la vida",
   "coincidencia_ppi": 1.0,
   "pagina": 513,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Centro comunitario en salud mental",
@@ -183,7 +195,8 @@
   "programa": "Gestión integral e integrada de la salud mental en los entornos para la vida",
   "coincidencia_ppi": 1.0,
   "pagina": 514,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Redes comunitarias de salud mental implementadas",
@@ -198,7 +211,8 @@
   "programa": "Seguridad alimentaria y nutricional para el desarrollo humano",
   "coincidencia_ppi": 1.0,
   "pagina": 515,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Hogares asesorados en temas de salud mental",
@@ -213,7 +227,8 @@
   "programa": "Seguridad alimentaria y nutricional para el desarrollo humano",
   "coincidencia_ppi": 1.0,
   "pagina": 515,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Estudiantes de las instituciones educativas oficiales asesorados en temas de salud mental",
@@ -228,7 +243,8 @@
   "programa": "Seguridad alimentaria y nutricional para el desarrollo humano",
   "coincidencia_ppi": 1.0,
   "pagina": 515,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Personas atendidas con servicios de gestión del riesgo en temas de consumo de sustanciaspsicoactivas",
@@ -243,7 +259,8 @@
   "programa": "Seguridad alimentaria y nutricional para el desarrollo humano",
   "coincidencia_ppi": 1.0,
   "pagina": 515,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de asesoría remota en salud mental",
@@ -258,7 +275,8 @@
   "programa": "Seguridad alimentaria y nutricional para el desarrollo humano",
   "coincidencia_ppi": 1.0,
   "pagina": 515,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de comunicación y divulgación en temas de salud mental",
@@ -273,7 +291,8 @@
   "programa": "Seguridad alimentaria y nutricional para el desarrollo humano",
   "coincidencia_ppi": 1.0,
   "pagina": 515,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de asistencia técnica a los actores del Sistema General de Seguridad Social en Salud",
@@ -288,7 +307,8 @@
   "programa": "Seguridad alimentaria y nutricional para el desarrollo humano",
   "coincidencia_ppi": 1.0,
   "pagina": 515,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Cobertura de asesorías y acompañamientos en lactancia materna (demanda)",
@@ -302,7 +322,8 @@
   "programa": "Seguridad alimentaria y nutricional para el desarrollo humano",
   "coincidencia_ppi": 1.0,
   "pagina": 515,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo para la seguridad alimentaria",
@@ -317,7 +338,8 @@
   "programa": "Seguridad alimentaria y nutricional para el desarrollo humano",
   "coincidencia_ppi": 1.0,
   "pagina": 516,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo para la seguridad alimentaria",
@@ -332,7 +354,8 @@
   "programa": "Seguridad alimentaria y nutricional para el desarrollo humano",
   "coincidencia_ppi": 1.0,
   "pagina": 516,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de asesoría para temas de consumo, calidad e inocuidad de los alimentos",
@@ -347,7 +370,8 @@
   "programa": "Seguridad alimentaria y nutricional para el desarrollo humano",
   "coincidencia_ppi": 1.0,
   "pagina": 516,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de asesoría nutricional y promoción de alimentación sana",
@@ -362,7 +386,8 @@
   "programa": "Seguridad alimentaria y nutricional para el desarrollo humano",
   "coincidencia_ppi": 1.0,
   "pagina": 516,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de promoción en salud para hogares gestantes, lactantes y niños y niñas menores de dos años",
@@ -377,7 +402,8 @@
   "programa": "Seguridad alimentaria y nutricional para el desarrollo humano",
   "coincidencia_ppi": 1.0,
   "pagina": 516,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de promoción de la lactancia materna",
@@ -392,7 +418,8 @@
   "programa": "Seguridad alimentaria y nutricional para el desarrollo humano",
   "coincidencia_ppi": 1.0,
   "pagina": 516,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Cobertura de población atendida con el Plan de Intervenciones Colectivas",
@@ -407,7 +434,8 @@
   "programa": "Salud pública y vida saludable",
   "coincidencia_ppi": 1.0,
   "pagina": 517,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Personas dependientes de cuidado que mejoran su calidad de vida",
@@ -422,7 +450,8 @@
   "programa": "Salud pública y vida saludable",
   "coincidencia_ppi": 1.0,
   "pagina": 517,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Cobertura de población intervenida con las estrategias para el fortalecimiento del Plan Ampliado de Inmunización",
@@ -437,7 +466,8 @@
   "programa": "Salud pública y vida saludable",
   "coincidencia_ppi": 1.0,
   "pagina": 517,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Cobertura en acciones de vigilancia epidemiológica a personas diagnosticadas con tuberculosis",
@@ -452,7 +482,8 @@
   "programa": "Salud pública y vida saludable",
   "coincidencia_ppi": 1.0,
   "pagina": 517,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Incidencia de casos autóctonos de eventos en eliminación y/o erradicación (polio, SRC, sarampión, rubéola, rabia, tétanos neonatal)",
@@ -467,7 +498,8 @@
   "programa": "Salud pública y vida saludable",
   "coincidencia_ppi": 1.0,
   "pagina": 517,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de atención primaria en salud a la población",
@@ -482,7 +514,8 @@
   "programa": "Salud pública y vida saludable",
   "coincidencia_ppi": 1.0,
   "pagina": 518,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de promoción y prevención de riesgos asociados a condiciones no transmisibles",
@@ -497,7 +530,8 @@
   "programa": "Salud pública y vida saludable",
   "coincidencia_ppi": 1.0,
   "pagina": 518,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de promoción y prevención de riesgos asociados a la salud sexual y reproductiva",
@@ -512,7 +546,8 @@
   "programa": "Salud pública y vida saludable",
   "coincidencia_ppi": 1.0,
   "pagina": 518,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de certificación de discapacidad para las personas con discapacidad",
@@ -527,7 +562,8 @@
   "programa": "Salud pública y vida saludable",
   "coincidencia_ppi": 1.0,
   "pagina": 518,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de promoción y prevención de riesgos asociados a enfermedades inmunoprevenibles en niños y niñas",
@@ -542,7 +578,8 @@
   "programa": "Salud pública y vida saludable",
   "coincidencia_ppi": 1.0,
   "pagina": 518,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Acciones desarrolladas para el mejoramiento de la salud pública con enfoque diferencial",
@@ -557,7 +594,8 @@
   "programa": "Salud pública y vida saludable",
   "coincidencia_ppi": 1.0,
   "pagina": 518,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de promoción y prevención de riesgos asociados a enfermedades inmunoprevenibles",
@@ -572,7 +610,8 @@
   "programa": "Salud pública y vida saludable",
   "coincidencia_ppi": 1.0,
   "pagina": 518,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Mantenimiento preventivo y curativo de la cava PAI y elementos de locomoción",
@@ -587,7 +626,8 @@
   "programa": "Salud pública y vida saludable",
   "coincidencia_ppi": 1.0,
   "pagina": 518,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Insumos de cuidado del Centro de Ayudas Sociales",
@@ -602,7 +642,8 @@
   "programa": "Salud pública y vida saludable",
   "coincidencia_ppi": 1.0,
   "pagina": 519,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de cuidado domiciliario para personas en situación de dependencia",
@@ -617,7 +658,8 @@
   "programa": "Salud pública y vida saludable",
   "coincidencia_ppi": 1.0,
   "pagina": 519,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo financiero para cuidadores primarios",
@@ -632,7 +674,8 @@
   "programa": "Salud pública y vida saludable",
   "coincidencia_ppi": 1.0,
   "pagina": 519,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de información de vigilancia epidemiológica",
@@ -647,7 +690,8 @@
   "programa": "Salud pública y vida saludable",
   "coincidencia_ppi": 1.0,
   "pagina": 519,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Estrategia de vigilancia en salud pública",
@@ -662,7 +706,8 @@
   "programa": "Salud pública y vida saludable",
   "coincidencia_ppi": 1.0,
   "pagina": 519,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de gestión del riesgo para eventos inmunoprevenibles, transmisibles y no transmisibles",
@@ -677,7 +722,8 @@
   "programa": "Salud pública y vida saludable",
   "coincidencia_ppi": 1.0,
   "pagina": 519,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de promoción y prevención de riesgos asociados a enfermedades emergentes, reemergentes y desatendidas",
@@ -692,7 +738,8 @@
   "programa": "Salud pública y vida saludable",
   "coincidencia_ppi": 1.0,
   "pagina": 519,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de asistencia técnica a instituciones prestadoras de servicios de salud",
@@ -707,7 +754,8 @@
   "programa": "Salud pública y vida saludable",
   "coincidencia_ppi": 1.0,
   "pagina": 519,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Cobertura del aseguramiento en salud del",
@@ -722,7 +770,8 @@
   "programa": "Aseguramiento en salud",
   "coincidencia_ppi": 1.0,
   "pagina": 520,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de sensibilización en derechos y deberes en salud",
@@ -737,7 +786,8 @@
   "programa": "Aseguramiento en salud",
   "coincidencia_ppi": 1.0,
   "pagina": 520,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Visitas a empresas en aseguramiento, sistema de salud y seguridad en el trabajo",
@@ -752,7 +802,8 @@
   "programa": "Aseguramiento en salud",
   "coincidencia_ppi": 1.0,
   "pagina": 520,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de inspección en aseguramiento",
@@ -767,7 +818,8 @@
   "programa": "Aseguramiento en salud",
   "coincidencia_ppi": 1.0,
   "pagina": 520,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de afiliaciones al régimen",
@@ -782,7 +834,8 @@
   "programa": "Gestión de la prestación de servicios en salud",
   "coincidencia_ppi": 1.0,
   "pagina": 521,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Satisfacción global con los servicios de salud",
@@ -796,7 +849,8 @@
   "programa": "Gestión de la prestación de servicios en salud",
   "coincidencia_ppi": 1.0,
   "pagina": 521,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo financiero para la atención en salud a la población",
@@ -811,7 +865,8 @@
   "programa": "Gestión de la prestación de servicios en salud",
   "coincidencia_ppi": 1.0,
   "pagina": 521,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Inspección y vigilancia a la prestación de servicios de salud",
@@ -826,7 +881,8 @@
   "programa": "Gestión de la prestación de servicios en salud",
   "coincidencia_ppi": 1.0,
   "pagina": 521,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Acciones de asesoría, asistencia técnica y capacitaciones a los diferentes actores del sistema",
@@ -841,7 +897,8 @@
   "programa": "Gestión de la prestación de servicios en salud",
   "coincidencia_ppi": 1.0,
   "pagina": 521,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Incidencia de dengue",
@@ -855,7 +912,8 @@
   "programa": "Inspección, vigilancia y control en salud",
   "coincidencia_ppi": 1.0,
   "pagina": 522,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Índice de riesgo de la calidad del agua para consumo humano municipal",
@@ -869,7 +927,8 @@
   "programa": "Inspección, vigilancia y control en salud",
   "coincidencia_ppi": 1.0,
   "pagina": 522,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Incidencia de rabia animal",
@@ -883,7 +942,8 @@
   "programa": "Inspección, vigilancia y control en salud",
   "coincidencia_ppi": 1.0,
   "pagina": 522,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Tasa de enfermedades transmitidas por alimentos",
@@ -897,7 +957,8 @@
   "programa": "Inspección, vigilancia y control en salud",
   "coincidencia_ppi": 1.0,
   "pagina": 522,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de análisis de laboratorio",
@@ -912,7 +973,8 @@
   "programa": "Planeación estratégica en salud",
   "coincidencia_ppi": 1.0,
   "pagina": 523,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio del ejercicio del procedimiento administrativo sancionatorio",
@@ -927,7 +989,8 @@
   "programa": "Planeación estratégica en salud",
   "coincidencia_ppi": 1.0,
   "pagina": 523,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de vigilancia y control sanitario de los factores de riesgo para la salud, en los establecimientos y espacios que pueden generar riesgospara lapoblación",
@@ -942,7 +1005,8 @@
   "programa": "Planeación estratégica en salud",
   "coincidencia_ppi": 1.0,
   "pagina": 523,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de vigilancia y control sanitario de los factores de riesgo para la salud, en los establecimientos y espacios que pueden generar riesgospara lapoblación",
@@ -957,7 +1021,8 @@
   "programa": "Planeación estratégica en salud",
   "coincidencia_ppi": 1.0,
   "pagina": 523,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de vigilancia de la calidad del aguapara consumo humano",
@@ -972,7 +1037,8 @@
   "programa": "Planeación estratégica en salud",
   "coincidencia_ppi": 1.0,
   "pagina": 523,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de vacunación de perros y gatos",
@@ -987,7 +1053,8 @@
   "programa": "Planeación estratégica en salud",
   "coincidencia_ppi": 1.0,
   "pagina": 523,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de vacunación de perros y gatos",
@@ -1002,7 +1069,8 @@
   "programa": "Planeación estratégica en salud",
   "coincidencia_ppi": 1.0,
   "pagina": 523,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de educación no formal en regulación sanitaria",
@@ -1017,7 +1085,8 @@
   "programa": "Planeación estratégica en salud",
   "coincidencia_ppi": 1.0,
   "pagina": 523,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de promoción y prevención de riesgos asociados a situaciones de salud relacionadas con condiciones ambientales",
@@ -1032,7 +1101,8 @@
   "programa": "Planeación estratégica en salud",
   "coincidencia_ppi": 1.0,
   "pagina": 523,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Índice de desempeño del Plan Territorial de Salud",
@@ -1047,7 +1117,8 @@
   "programa": "Planeación estratégica en salud",
   "coincidencia_ppi": 1.0,
   "pagina": 523,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Informes de seguimiento a documentos de planeación territorial en salud",
@@ -1062,7 +1133,8 @@
   "programa": "Fusión de músculo y alma",
   "coincidencia_ppi": 1.0,
   "pagina": 524,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Producción científica en salud",
@@ -1077,7 +1149,8 @@
   "programa": "Fusión de músculo y alma",
   "coincidencia_ppi": 1.0,
   "pagina": 524,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de información del sector salud",
@@ -1092,7 +1165,8 @@
   "programa": "Fusión de músculo y alma",
   "coincidencia_ppi": 1.0,
   "pagina": 524,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de comunicación y divulgación en salud",
@@ -1107,7 +1181,8 @@
   "programa": "Fusión de músculo y alma",
   "coincidencia_ppi": 1.0,
   "pagina": 524,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de educación no formal del talento humano en salud",
@@ -1122,7 +1197,8 @@
   "programa": "Fusión de músculo y alma",
   "coincidencia_ppi": 1.0,
   "pagina": 524,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Cobertura de servicios deportivos de disciplinas tradicionales, nuevas",
@@ -1136,7 +1212,8 @@
   "programa": "Fusión de músculo y alma",
   "coincidencia_ppi": 1.0,
   "pagina": 524,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de formación de niños, niñas, adolescentes y jóvenes con talento deportivo",
@@ -1151,7 +1228,8 @@
   "programa": "Fusión de músculo y alma",
   "coincidencia_ppi": 1.0,
   "pagina": 525,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de escuelas deportivas",
@@ -1166,7 +1244,8 @@
   "programa": "Fusión de músculo y alma",
   "coincidencia_ppi": 1.0,
   "pagina": 525,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de atención médica",
@@ -1181,7 +1260,8 @@
   "programa": "Fusión de músculo y alma",
   "coincidencia_ppi": 1.0,
   "pagina": 525,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo financiero para la profesionalización de deportistas",
@@ -1196,7 +1276,8 @@
   "programa": "Fusión de músculo y alma",
   "coincidencia_ppi": 1.0,
   "pagina": 525,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de organización de eventos deportivos comunitarios",
@@ -1211,7 +1292,8 @@
   "programa": "Fusión de músculo y alma",
   "coincidencia_ppi": 1.0,
   "pagina": 525,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de preparación deportiva",
@@ -1226,7 +1308,8 @@
   "programa": "Fusión de músculo y alma",
   "coincidencia_ppi": 1.0,
   "pagina": 525,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Mesas de apoyo y trabajo con clubes deportivos",
@@ -1241,7 +1324,8 @@
   "programa": "Fusión de músculo y alma",
   "coincidencia_ppi": 1.0,
   "pagina": 526,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo técnico a organismos deportivos",
@@ -1256,7 +1340,8 @@
   "programa": "Fusión de músculo y alma",
   "coincidencia_ppi": 1.0,
   "pagina": 526,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de promoción de educación física",
@@ -1271,7 +1356,8 @@
   "programa": "Fusión de músculo y alma",
   "coincidencia_ppi": 1.0,
   "pagina": 526,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de información deportiva (observatorio)",
@@ -1286,7 +1372,8 @@
   "programa": "Fusión de músculo y alma",
   "coincidencia_ppi": 1.0,
   "pagina": 526,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de deportes y actividad física como hábito de vida saludable",
@@ -1301,7 +1388,8 @@
   "programa": "Fusión de músculo y alma",
   "coincidencia_ppi": 1.0,
   "pagina": 527,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de promoción de la lúdica y recreación",
@@ -1316,7 +1404,8 @@
   "programa": "Fusión de músculo y alma",
   "coincidencia_ppi": 1.0,
   "pagina": 527,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de organización de eventos recreativos comunitarios",
@@ -1331,7 +1420,8 @@
   "programa": "Fusión de músculo y alma",
   "coincidencia_ppi": 1.0,
   "pagina": 527,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de vías activas saludables",
@@ -1346,7 +1436,8 @@
   "programa": "Fusión de músculo y alma",
   "coincidencia_ppi": 1.0,
   "pagina": 527,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio depromoción de la actividad física",
@@ -1361,7 +1452,8 @@
   "programa": "Fusión de músculo y alma",
   "coincidencia_ppi": 1.0,
   "pagina": 527,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Disciplinas deportivas y modalidades de actividad física para personas con discapacidad ofertadas",
@@ -1376,7 +1468,8 @@
   "programa": "Fusión de músculo y alma",
   "coincidencia_ppi": 1.0,
   "pagina": 527,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de organización de eventos recreativos para personas con discapacidad",
@@ -1391,7 +1484,8 @@
   "programa": "Fusión de músculo y alma",
   "coincidencia_ppi": 1.0,
   "pagina": 527,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Índice de Desarrollo Familiar",
@@ -1406,7 +1500,8 @@
   "programa": "Protección integral a la familia",
   "coincidencia_ppi": 1.0,
   "pagina": 528,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Tasa de violencia en el contexto familiar",
@@ -1421,7 +1516,8 @@
   "programa": "Protección integral a la familia",
   "coincidencia_ppi": 1.0,
   "pagina": 528,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de asesoría psicosocial para mejorar la convivencia familiar",
@@ -1436,7 +1532,8 @@
   "programa": "Protección integral a la familia",
   "coincidencia_ppi": 1.0,
   "pagina": 529,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de promoción de los derechos de la familia en el marco de la Ley 1361 de 2009 y la Política Pública para las Familias",
@@ -1451,7 +1548,8 @@
   "programa": "Protección integral a la familia",
   "coincidencia_ppi": 1.0,
   "pagina": 529,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Diálogos para el fortalecimiento de las dinámicas familiares en el territorio",
@@ -1466,7 +1564,8 @@
   "programa": "Protección integral a la familia",
   "coincidencia_ppi": 1.0,
   "pagina": 529,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de acompañamiento para el acceso y sostenimiento de los usuarios en la estrategia de comedores comunitarios",
@@ -1481,7 +1580,8 @@
   "programa": "Protección integral a la familia",
   "coincidencia_ppi": 1.0,
   "pagina": 529,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de información a través del Observatorio de Familia",
@@ -1496,7 +1596,8 @@
   "programa": "Protección integral a la familia",
   "coincidencia_ppi": 1.0,
   "pagina": 529,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de acompañamiento para la movilidad social de las familias en el marco del proyecto Familia Vamos Adelante",
@@ -1511,7 +1612,8 @@
   "programa": "Protección integral a la familia",
   "coincidencia_ppi": 1.0,
   "pagina": 529,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Tasa específica de fecundidad de 10 a 14 años",
@@ -1526,7 +1628,8 @@
   "programa": "Niños, niñas y adolescentes",
   "coincidencia_ppi": 1.0,
   "pagina": 530,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Tasa específica de fecundidad de 15 a 19 años",
@@ -1541,7 +1644,8 @@
   "programa": "Niños, niñas y adolescentes",
   "coincidencia_ppi": 1.0,
   "pagina": 530,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Tasa de trabajo infantil para menores entre 5 y 17 años",
@@ -1556,7 +1660,8 @@
   "programa": "Niños, niñas y adolescentes",
   "coincidencia_ppi": 1.0,
   "pagina": 530,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Tasa de violencia contra niños y niñas de 0 a 5 años",
@@ -1571,7 +1676,8 @@
   "programa": "Niños, niñas y adolescentes",
   "coincidencia_ppi": 1.0,
   "pagina": 530,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios para la promoción y garantía de los derechos de niños, niñas y adolescentes",
@@ -1586,7 +1692,8 @@
   "programa": "Niños, niñas y adolescentes",
   "coincidencia_ppi": 1.0,
   "pagina": 531,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de promoción de los derechos y de la participación de niños, niñas y adolescentes en diferentes ámbitos de la vida municipal",
@@ -1601,7 +1708,8 @@
   "programa": "Niños, niñas y adolescentes",
   "coincidencia_ppi": 1.0,
   "pagina": 531,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de asesoría psicosocial a niños, niñas y adolescentes",
@@ -1616,7 +1724,8 @@
   "programa": "Niños, niñas y adolescentes",
   "coincidencia_ppi": 1.0,
   "pagina": 531,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Actualización de la Política Pública de Niños, Niñas y Adolescentes",
@@ -1631,7 +1740,8 @@
   "programa": "Niños, niñas y adolescentes",
   "coincidencia_ppi": 1.0,
   "pagina": 531,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Jóvenes entre 14 y 28 años que no estudian ni se encuentran ocupados",
@@ -1646,7 +1756,8 @@
   "programa": "Jóvenes",
   "coincidencia_ppi": 1.0,
   "pagina": 532,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Índice de Desarrollo Juvenil",
@@ -1661,7 +1772,8 @@
   "programa": "Jóvenes",
   "coincidencia_ppi": 1.0,
   "pagina": 532,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios para el acceso a derechos y la promoción de talentos y habilidades a través de la Casa de la Juventud",
@@ -1676,7 +1788,8 @@
   "programa": "Jóvenes",
   "coincidencia_ppi": 1.0,
   "pagina": 532,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de acompañamiento para el fortalecimiento de las dinámicas organizativas juveniles",
@@ -1691,7 +1804,8 @@
   "programa": "Jóvenes",
   "coincidencia_ppi": 1.0,
   "pagina": 532,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de acompañamiento al Subsistema de Participación Juvenil",
@@ -1706,7 +1820,8 @@
   "programa": "Jóvenes",
   "coincidencia_ppi": 1.0,
   "pagina": 532,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de orientación a los jóvenes a través de la Unidad Móvil Envigado Joven",
@@ -1721,7 +1836,8 @@
   "programa": "Jóvenes",
   "coincidencia_ppi": 1.0,
   "pagina": 532,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Personas de 60 años o más afiliados al sistema de seguridad social en salud",
@@ -1736,7 +1852,8 @@
   "programa": "Personas mayores",
   "coincidencia_ppi": 1.0,
   "pagina": 533,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Personas de 60 años o más que practican actividades lúdicas, recreativas o deportivas",
@@ -1751,7 +1868,8 @@
   "programa": "Personas mayores",
   "coincidencia_ppi": 1.0,
   "pagina": 533,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios para el entrenamiento en prácticas de cuidado dirigidos a las personas mayores, sus familias y/o cuidadores (incluye atención domiciliaria)",
@@ -1766,7 +1884,8 @@
   "programa": "Personas mayores",
   "coincidencia_ppi": 1.0,
   "pagina": 534,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios para la atención integral a las personas mayores a través de la estrategia de grupos desconcentrados",
@@ -1781,7 +1900,8 @@
   "programa": "Personas mayores",
   "coincidencia_ppi": 1.0,
   "pagina": 534,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios para la atención integral a las personas mayores en los Centros Integrales de Atención a la Persona Mayor",
@@ -1796,7 +1916,8 @@
   "programa": "Personas mayores",
   "coincidencia_ppi": 1.0,
   "pagina": 534,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios para la atención a las personas mayores a través de los Centros Vida",
@@ -1811,7 +1932,8 @@
   "programa": "Personas mayores",
   "coincidencia_ppi": 1.0,
   "pagina": 534,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios para la promoción de la participación y de los derechos y deberes de las personas mayores",
@@ -1826,7 +1948,8 @@
   "programa": "Personas mayores",
   "coincidencia_ppi": 1.0,
   "pagina": 534,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de institucionalización para personas mayores vulnerables",
@@ -1841,7 +1964,8 @@
   "programa": "Personas mayores",
   "coincidencia_ppi": 1.0,
   "pagina": 534,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios itinerantes para la promoción de la cultura, la recreación y el ocio productivo de las personas mayores",
@@ -1856,7 +1980,8 @@
   "programa": "Personas mayores",
   "coincidencia_ppi": 1.0,
   "pagina": 534,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Brecha de las mujeres en el Índice de Calidad de Vida",
@@ -1871,7 +1996,8 @@
   "programa": "Mujeres empoderadas y ejerciendo su autonomía",
   "coincidencia_ppi": 1.0,
   "pagina": 535,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Brecha de las mujeres en el Índice Multidimensional de Calidad de Vida",
@@ -1886,7 +2012,8 @@
   "programa": "Mujeres empoderadas y ejerciendo su autonomía",
   "coincidencia_ppi": 1.0,
   "pagina": 535,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Brecha de las mujeres en deserción escolar de todos los niveles (preescolar, básica primaria, secundaria, media y superior)",
@@ -1901,7 +2028,8 @@
   "programa": "Mujeres empoderadas y ejerciendo su autonomía",
   "coincidencia_ppi": 1.0,
   "pagina": 535,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Brecha de las mujeres en deserción en educación superior pregrado",
@@ -1916,7 +2044,8 @@
   "programa": "Mujeres empoderadas y ejerciendo su autonomía",
   "coincidencia_ppi": 1.0,
   "pagina": 535,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de educación para la promoción de la igualdad de género y la prevención de las violencias de género",
@@ -1931,7 +2060,8 @@
   "programa": "Mujeres empoderadas y ejerciendo su autonomía",
   "coincidencia_ppi": 1.0,
   "pagina": 537,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de comunicación y divulgación para la promoción de los derechos de las mujeres y la erradicación de la violencia de género",
@@ -1946,7 +2076,8 @@
   "programa": "Mujeres empoderadas y ejerciendo su autonomía",
   "coincidencia_ppi": 1.0,
   "pagina": 537,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de atención a mujeres víctimas de violencia de género (asesoría psicológica y legal)",
@@ -1961,7 +2092,8 @@
   "programa": "Mujeres empoderadas y ejerciendo su autonomía",
   "coincidencia_ppi": 1.0,
   "pagina": 537,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de atención remota (Línea Mujer Envigado)",
@@ -1976,7 +2108,8 @@
   "programa": "Mujeres empoderadas y ejerciendo su autonomía",
   "coincidencia_ppi": 1.0,
   "pagina": 537,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de protección a mujeres víctimas de violencia de género",
@@ -1991,7 +2124,8 @@
   "programa": "Mujeres empoderadas y ejerciendo su autonomía",
   "coincidencia_ppi": 1.0,
   "pagina": 537,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de educación no formal para funcionarios y funcionarias en enfoque de género y activación de rutas de atención",
@@ -2006,7 +2140,8 @@
   "programa": "Mujeres empoderadas y ejerciendo su autonomía",
   "coincidencia_ppi": 1.0,
   "pagina": 537,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de educación no formal para funcionarios y funcionarias de la administración de justicia",
@@ -2021,7 +2156,8 @@
   "programa": "Mujeres empoderadas y ejerciendo su autonomía",
   "coincidencia_ppi": 1.0,
   "pagina": 537,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de educación no formal para funcionarios y funcionarias de la red municipal de salud",
@@ -2036,7 +2172,8 @@
   "programa": "Mujeres empoderadas y ejerciendo su autonomía",
   "coincidencia_ppi": 1.0,
   "pagina": 537,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de sensibilización en salud, salud sexual y salud reproductiva con enfoque de género y diferencial",
@@ -2051,7 +2188,8 @@
   "programa": "Mujeres empoderadas y ejerciendo su autonomía",
   "coincidencia_ppi": 1.0,
   "pagina": 537,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de promoción de la participación de las mujeres",
@@ -2066,7 +2204,8 @@
   "programa": "Mujeres empoderadas y ejerciendo su autonomía",
   "coincidencia_ppi": 1.0,
   "pagina": 538,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de asistencia técnica para la transversalización de los enfoques de género e interseccionalidad",
@@ -2081,7 +2220,8 @@
   "programa": "Mujeres empoderadas y ejerciendo su autonomía",
   "coincidencia_ppi": 1.0,
   "pagina": 538,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Operación de la Casa de la Mujeres Empoderadas",
@@ -2096,7 +2236,8 @@
   "programa": "Mujeres empoderadas y ejerciendo su autonomía",
   "coincidencia_ppi": 1.0,
   "pagina": 538,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Operación de la Casa de la Mujeres Rurales",
@@ -2111,7 +2252,8 @@
   "programa": "Mujeres empoderadas y ejerciendo su autonomía",
   "coincidencia_ppi": 1.0,
   "pagina": 538,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de sensibilización y capacitación desde la coeducación",
@@ -2126,7 +2268,8 @@
   "programa": "Mujeres empoderadas y ejerciendo su autonomía",
   "coincidencia_ppi": 1.0,
   "pagina": 538,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de asistencia técnica a mesas temáticas",
@@ -2141,7 +2284,8 @@
   "programa": "Mujeres empoderadas y ejerciendo su autonomía",
   "coincidencia_ppi": 1.0,
   "pagina": 538,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de asesoría para la incorporación del lenguaje no sexista",
@@ -2156,7 +2300,8 @@
   "programa": "Mujeres empoderadas y ejerciendo su autonomía",
   "coincidencia_ppi": 1.0,
   "pagina": 538,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Círculo de mujeres",
@@ -2171,7 +2316,8 @@
   "programa": "Mujeres empoderadas y ejerciendo su autonomía",
   "coincidencia_ppi": 1.0,
   "pagina": 538,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de educación no formal para mujeres en liderazgo, empoderamiento, transformación de imaginarios culturales de género",
@@ -2186,7 +2332,8 @@
   "programa": "Mujeres empoderadas y ejerciendo su autonomía",
   "coincidencia_ppi": 1.0,
   "pagina": 538,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de seguimiento y evaluación de la Política Pública de Equidad de Género",
@@ -2201,7 +2348,8 @@
   "programa": "Mujeres empoderadas y ejerciendo su autonomía",
   "coincidencia_ppi": 1.0,
   "pagina": 538,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de educación no formal para mujeres rurales en enfoque de género y reconocimiento de derechos",
@@ -2216,7 +2364,8 @@
   "programa": "Mujeres empoderadas y ejerciendo su autonomía",
   "coincidencia_ppi": 1.0,
   "pagina": 538,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Documento técnico para la implementación del sistema municipal de cuidados",
@@ -2231,7 +2380,8 @@
   "programa": "Personas con discapacidad",
   "coincidencia_ppi": 1.0,
   "pagina": 539,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de sensibilización para la incorporación de buenas prácticas de género en el sector empresarial",
@@ -2246,7 +2396,8 @@
   "programa": "Personas con discapacidad",
   "coincidencia_ppi": 1.0,
   "pagina": 539,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de comercialización de unidades productivas de mujeres del sector urbano",
@@ -2261,7 +2412,8 @@
   "programa": "Personas con discapacidad",
   "coincidencia_ppi": 1.0,
   "pagina": 539,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de formación para el empleo y la autonomía económica",
@@ -2276,7 +2428,8 @@
   "programa": "Personas con discapacidad",
   "coincidencia_ppi": 1.0,
   "pagina": 539,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de comercialización de unidades productivas de mujeres del sector rural",
@@ -2291,7 +2444,8 @@
   "programa": "Personas con discapacidad",
   "coincidencia_ppi": 1.0,
   "pagina": 539,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de acompañamiento técnico y comercial a unidades productivas de mujeres",
@@ -2306,7 +2460,8 @@
   "programa": "Personas con discapacidad",
   "coincidencia_ppi": 1.0,
   "pagina": 539,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de gestión para la colocación laboral",
@@ -2321,7 +2476,8 @@
   "programa": "Personas con discapacidad",
   "coincidencia_ppi": 1.0,
   "pagina": 539,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Personas con discapacidad que alcanzan el 50% de los logros en los procesos de habilitación y rehabilitación respecto del total de personas con discapacidad que participan en dichos procesos",
@@ -2336,7 +2492,8 @@
   "programa": "Personas con discapacidad",
   "coincidencia_ppi": 1.0,
   "pagina": 540,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Tasa de asistencia escolar de población con discapacidad entre los 5 y 21 años",
@@ -2351,7 +2508,8 @@
   "programa": "Personas con discapacidad",
   "coincidencia_ppi": 1.0,
   "pagina": 540,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Tasa de desempleo de población con discapacidad",
@@ -2366,7 +2524,8 @@
   "programa": "Personas con discapacidad",
   "coincidencia_ppi": 1.0,
   "pagina": 540,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios para la promoción de la inclusión y permanencia en el entorno laboral de personas con discapacidad",
@@ -2381,7 +2540,8 @@
   "programa": "Personas con discapacidad",
   "coincidencia_ppi": 1.0,
   "pagina": 541,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de habilitación y rehabilitación para personas con discapacidad múltiple y visual",
@@ -2396,7 +2556,8 @@
   "programa": "Personas con discapacidad",
   "coincidencia_ppi": 1.0,
   "pagina": 541,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de apoyo para la inclusión social de personas con discapacidad a través de actividades artísticas o culturales",
@@ -2411,7 +2572,8 @@
   "programa": "Personas con discapacidad",
   "coincidencia_ppi": 1.0,
   "pagina": 541,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios para el desarrollo de habilidades para la vida independiente de las personas adultas con discapacidad",
@@ -2426,7 +2588,8 @@
   "programa": "Personas con discapacidad",
   "coincidencia_ppi": 1.0,
   "pagina": 541,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de habilitación y rehabilitación para jóvenes, adultos y adultos mayores vulnerables con discapacidad cognitiva o psicosocial a través del Centro de Atención Integral a Personas con Discapacidad",
@@ -2441,7 +2604,8 @@
   "programa": "Personas con discapacidad",
   "coincidencia_ppi": 1.0,
   "pagina": 541,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de habilitación y rehabilitación para el desarrollo o fortalecimiento de habilidades socio-ocupacionales de las personas con discapacidad",
@@ -2456,7 +2620,8 @@
   "programa": "Personas con discapacidad",
   "coincidencia_ppi": 1.0,
   "pagina": 541,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios itinerantes para la atención de personas con discapacidad",
@@ -2471,7 +2636,8 @@
   "programa": "Personas con discapacidad",
   "coincidencia_ppi": 1.0,
   "pagina": 541,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios para la promoción de la inclusión social y los derechos de las personas con discapacidad",
@@ -2486,7 +2652,8 @@
   "programa": "Personas con discapacidad",
   "coincidencia_ppi": 1.0,
   "pagina": 541,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de terapia ocupacional, interpretación en lengua de señas y psicología para el fortalecimiento de las estrategias del programa de discapacidad",
@@ -2501,7 +2668,8 @@
   "programa": "Personas con discapacidad",
   "coincidencia_ppi": 1.0,
   "pagina": 541,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Actualización de la Política Pública de Discapacidad e Inclusión Social",
@@ -2516,7 +2684,8 @@
   "programa": "Personas con discapacidad",
   "coincidencia_ppi": 1.0,
   "pagina": 541,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Brecha de desempleo de comunidades étnicas",
@@ -2531,7 +2700,8 @@
   "programa": "Grupos étnicos",
   "coincidencia_ppi": 1.0,
   "pagina": 542,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Brecha de ingresos de comunidades étnicas",
@@ -2546,7 +2716,8 @@
   "programa": "Grupos étnicos",
   "coincidencia_ppi": 1.0,
   "pagina": 542,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Percepción de discriminación por pertenencia a una comunidad étnica",
@@ -2561,7 +2732,8 @@
   "programa": "Grupos étnicos",
   "coincidencia_ppi": 1.0,
   "pagina": 542,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de promoción de la participación de los grupos étnicos",
@@ -2576,7 +2748,8 @@
   "programa": "Víctimas del conflicto armado",
   "coincidencia_ppi": 1.0,
   "pagina": 543,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios para la promoción del autorreconocimiento y prevención de la discriminación hacia grupos étnicos",
@@ -2591,7 +2764,8 @@
   "programa": "Víctimas del conflicto armado",
   "coincidencia_ppi": 1.0,
   "pagina": 543,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios para la conmemoración y exaltación de la cultura de los grupos étnicos",
@@ -2606,7 +2780,8 @@
   "programa": "Víctimas del conflicto armado",
   "coincidencia_ppi": 1.0,
   "pagina": 543,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de asistencia técnica a las unidades ejecutoras en enfoque étnico diferencial y transversalización de la Política Pública de los Grupos Étnicos",
@@ -2621,7 +2796,8 @@
   "programa": "Víctimas del conflicto armado",
   "coincidencia_ppi": 1.0,
   "pagina": 543,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Índice de Goce Efectivo de Derechos (Superación de la situación de vulnerabilidad)",
@@ -2636,7 +2812,8 @@
   "programa": "Víctimas del conflicto armado",
   "coincidencia_ppi": 1.0,
   "pagina": 543,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios para la conmemoración del Día Nacional de la Memoria y Solidaridad con las Víctimas del conflicto armado",
@@ -2651,7 +2828,8 @@
   "programa": "Habitantes de calle",
   "coincidencia_ppi": 0.95,
   "pagina": 544,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de acompañamiento y fortalecimiento a la Mesa de Participación Efectiva de las Víctimas del conflicto armado",
@@ -2666,7 +2844,8 @@
   "programa": "Habitantes de calle",
   "coincidencia_ppi": 0.95,
   "pagina": 544,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Ayuda Humanitaria Inmediata y Auxilio Funerario para población desplazada o víctimas del conflicto armado respectivamente",
@@ -2681,7 +2860,8 @@
   "programa": "Habitantes de calle",
   "coincidencia_ppi": 0.95,
   "pagina": 544,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Seguimiento a la articulación de las unidades ejecutoras para el acercamiento efectivo de la oferta institucional a las víctimas del conflicto armado",
@@ -2696,7 +2876,8 @@
   "programa": "Habitantes de calle",
   "coincidencia_ppi": 0.95,
   "pagina": 544,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Personas habitantes de y en situación de calle que egresan satisfactoriamente",
@@ -2711,7 +2892,8 @@
   "programa": "Habitantes de calle",
   "coincidencia_ppi": 0.95,
   "pagina": 544,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de sensibilización para promover la institucionalización en los habitantes de calle",
@@ -2726,7 +2908,8 @@
   "programa": "Migrantes",
   "coincidencia_ppi": 1.0,
   "pagina": 545,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de atención integral al habitante de calle para su resocialización",
@@ -2741,7 +2924,8 @@
   "programa": "Migrantes",
   "coincidencia_ppi": 1.0,
   "pagina": 545,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de sensibilización y promoción para desestimular la mendicidad",
@@ -2756,7 +2940,8 @@
   "programa": "Migrantes",
   "coincidencia_ppi": 1.0,
   "pagina": 545,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de orientación básica a los habitantes de calle y sus familias",
@@ -2771,7 +2956,8 @@
   "programa": "Migrantes",
   "coincidencia_ppi": 1.0,
   "pagina": 545,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Riesgo de vulneración de derechos humanos para",
@@ -2786,7 +2972,8 @@
   "programa": "Migrantes",
   "coincidencia_ppi": 1.0,
   "pagina": 545,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de articulación para la atención a",
@@ -2801,7 +2988,8 @@
   "programa": "Población LGBTIQ+ o personas con orientaciones sexuales, identidades y expresiones de género no hegemónicas",
   "coincidencia_ppi": 0.41,
   "pagina": 546,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Apoyo financiero a las personas mayores",
@@ -2816,7 +3004,8 @@
   "programa": "Servicios domiciliarios",
   "coincidencia_ppi": 1.0,
   "pagina": 549,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Apoyo financiero a las personas con discapacidad",
@@ -2831,7 +3020,8 @@
   "programa": "Servicios domiciliarios",
   "coincidencia_ppi": 1.0,
   "pagina": 549,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Apoyo financiero para madres sustitutas",
@@ -2846,7 +3036,8 @@
   "programa": "Servicios domiciliarios",
   "coincidencia_ppi": 1.0,
   "pagina": 549,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Cobertura de acueducto",
@@ -2861,7 +3052,8 @@
   "programa": "Servicios domiciliarios",
   "coincidencia_ppi": 1.0,
   "pagina": 549,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Ampliación de la red de acueducto",
@@ -2876,7 +3068,8 @@
   "programa": "Acceso a vivienda",
   "coincidencia_ppi": 1.0,
   "pagina": 551,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Ampliación de la red de alcantarillado",
@@ -2891,7 +3084,8 @@
   "programa": "Acceso a vivienda",
   "coincidencia_ppi": 1.0,
   "pagina": 551,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Acueductos comunitarios/veredales ampliados y/o fortalecidos",
@@ -2906,7 +3100,8 @@
   "programa": "Acceso a vivienda",
   "coincidencia_ppi": 1.0,
   "pagina": 551,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Construcción de soluciones de disposición final de residuos sépticos",
@@ -2921,7 +3116,8 @@
   "programa": "Acceso a vivienda",
   "coincidencia_ppi": 1.0,
   "pagina": 551,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Construcción de sistemas de reutilización de aguas lluvias",
@@ -2936,7 +3132,8 @@
   "programa": "Acceso a vivienda",
   "coincidencia_ppi": 1.0,
   "pagina": 551,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Déficit cuantitativo de vivienda",
@@ -2951,7 +3148,8 @@
   "programa": "Acceso a vivienda",
   "coincidencia_ppi": 1.0,
   "pagina": 551,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Déficit cualitativo de vivienda",
@@ -2966,7 +3164,8 @@
   "programa": "Acceso a vivienda",
   "coincidencia_ppi": 1.0,
   "pagina": 551,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo financiero para adquisición de vivienda nueva",
@@ -2981,7 +3180,8 @@
   "programa": "Acceso a vivienda",
   "coincidencia_ppi": 1.0,
   "pagina": 552,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo financiero para adquisición de vivienda usada",
@@ -2996,7 +3196,8 @@
   "programa": "Acceso a vivienda",
   "coincidencia_ppi": 1.0,
   "pagina": 552,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo financiero para mejoramiento de vivienda",
@@ -3011,7 +3212,8 @@
   "programa": "Acceso a vivienda",
   "coincidencia_ppi": 1.0,
   "pagina": 552,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo financiero para construcción de vivienda en sitio propio",
@@ -3026,7 +3228,8 @@
   "programa": "Acceso a vivienda",
   "coincidencia_ppi": 1.0,
   "pagina": 552,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo financiero para adquisición de vivienda nueva o usada por reasentamiento de zonas de alto riesgo no mitigable",
@@ -3041,7 +3244,8 @@
   "programa": "Acceso a vivienda",
   "coincidencia_ppi": 1.0,
   "pagina": 552,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo financiero a personas con discapacidad para adecuación de vivienda",
@@ -3056,7 +3260,8 @@
   "programa": "Acceso a vivienda",
   "coincidencia_ppi": 1.0,
   "pagina": 552,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo financiero para servicios públicos domiciliarios de acueducto, alcantarillado y aseo",
@@ -3071,7 +3276,8 @@
   "programa": "Acceso a vivienda",
   "coincidencia_ppi": 1.0,
   "pagina": 552,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Gestión de unidades de vivienda rural de interés social nuevas",
@@ -3086,7 +3292,8 @@
   "programa": "Acceso a vivienda",
   "coincidencia_ppi": 1.0,
   "pagina": 552,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Gestión de unidades de vivienda urbana de interés social nuevas",
@@ -3101,7 +3308,8 @@
   "programa": "Acceso a vivienda",
   "coincidencia_ppi": 1.0,
   "pagina": 552,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Gestión de unidades de vivienda de interés social nuevas para funcionarios y docentes",
@@ -3116,7 +3324,8 @@
   "programa": "Acceso a vivienda",
   "coincidencia_ppi": 1.0,
   "pagina": 552,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Tasa de tránsito de",
@@ -3130,7 +3339,8 @@
   "programa": "Educación inicial: Tejiendo sueños",
   "coincidencia_ppi": 1.0,
   "pagina": 554,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de educación inicial con atención integral para el acceso, permanencia y continuidad de los niños y niñas",
@@ -3145,7 +3355,8 @@
   "programa": "Educación inicial: Tejiendo sueños",
   "coincidencia_ppi": 1.0,
   "pagina": 555,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Ampliación de cobertura de los grados de prejardín y jardín con atención integral",
@@ -3160,7 +3371,8 @@
   "programa": "Educación inicial: Tejiendo sueños",
   "coincidencia_ppi": 1.0,
   "pagina": 555,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Documento conlineamientos técnicos y pedagógicos para la educación inicial con atención integral",
@@ -3175,7 +3387,8 @@
   "programa": "Educación inicial: Tejiendo sueños",
   "coincidencia_ppi": 1.0,
   "pagina": 555,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de eventos del festival de educación inicial",
@@ -3190,7 +3403,8 @@
   "programa": "Educación inicial: Tejiendo sueños",
   "coincidencia_ppi": 1.0,
   "pagina": 555,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Sedes de instituciones educativas oficiales con jornada única resignificada",
@@ -3205,7 +3419,8 @@
   "programa": "Calidad educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 557,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Incentivos a instituciones educativas oficiales que mejoran su desempeño en exámenes estandarizados (Pruebas Saber 11)",
@@ -3220,7 +3435,8 @@
   "programa": "Calidad educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 557,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de fortalecimiento a las capacidades pedagógicas de los docentes",
@@ -3235,7 +3451,8 @@
   "programa": "Calidad educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 557,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de acompañamiento y formación situada para docentes",
@@ -3250,7 +3467,8 @@
   "programa": "Calidad educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 557,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Foros educativos municipales",
@@ -3265,7 +3483,8 @@
   "programa": "Calidad educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 557,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo financiero a docentes para el acceso y permanencia a programas de pregrado y posgrado",
@@ -3280,7 +3499,8 @@
   "programa": "Calidad educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 557,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Modelos educativos flexibles en instituciones educativas oficiales",
@@ -3295,7 +3515,8 @@
   "programa": "Calidad educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 557,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Dotación de bibliotecas escolares de las sedes de primaria de las instituciones educativas oficiales",
@@ -3310,7 +3531,8 @@
   "programa": "Calidad educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 557,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de fomento para la prevención de riesgos sociales en entornos escolares",
@@ -3325,7 +3547,8 @@
   "programa": "Calidad educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 558,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio atención integral para la convivencia escolar",
@@ -3340,7 +3563,8 @@
   "programa": "Calidad educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 558,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Proyectos pedagógicos transversales en establecimientos educativos oficiales y no oficiales",
@@ -3355,7 +3579,8 @@
   "programa": "Calidad educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 558,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Proyecto Alcalde en la Escuela en instituciones educativas oficiales",
@@ -3370,7 +3595,8 @@
   "programa": "Calidad educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 558,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo pedagógico para la oferta de educación inclusiva",
@@ -3385,7 +3611,8 @@
   "programa": "Calidad educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 558,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Estrategias de formación básica y media para adultos, volver al aula",
@@ -3400,7 +3627,8 @@
   "programa": "Calidad educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 558,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio educativo de promoción del bilingüismo para estudiantes de preescolar (centros de desarrollo infantil e instituciones educativas oficiales), básica y media",
@@ -3415,7 +3643,8 @@
   "programa": "Calidad educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 558,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Tasa de deserción en instituciones educativas oficiales",
@@ -3430,7 +3659,8 @@
   "programa": "Cobertura educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 559,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo a la permanencia con kit escolar en instituciones educativas oficiales",
@@ -3445,7 +3675,8 @@
   "programa": "Gestión del talento humano educativo y bienestar docente",
   "coincidencia_ppi": 1.0,
   "pagina": 560,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio educación formal por modelos educativos flexibles",
@@ -3460,7 +3691,8 @@
   "programa": "Gestión del talento humano educativo y bienestar docente",
   "coincidencia_ppi": 1.0,
   "pagina": 560,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Documento de evaluación, caracterización y análisis de la infraestructura y medios educativos",
@@ -3475,7 +3707,8 @@
   "programa": "Gestión del talento humano educativo y bienestar docente",
   "coincidencia_ppi": 1.0,
   "pagina": 560,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo a la permanencia con alimentación escolar",
@@ -3490,7 +3723,8 @@
   "programa": "Gestión del talento humano educativo y bienestar docente",
   "coincidencia_ppi": 1.0,
   "pagina": 560,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Satisfacción de los docentes y directivos docentes con los programas de bienestar laboral integral",
@@ -3505,7 +3739,8 @@
   "programa": "Innovación educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 561,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de bienestar laboral docente y directivo docente",
@@ -3520,7 +3755,8 @@
   "programa": "Innovación educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 561,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de educación para el desarrollo humano de los docentes y directivos docentes",
@@ -3535,7 +3771,8 @@
   "programa": "Innovación educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 561,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de docencia y administración escolar",
@@ -3550,7 +3787,8 @@
   "programa": "Innovación educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 561,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Operación de la Casa del Maestro",
@@ -3565,7 +3803,8 @@
   "programa": "Innovación educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 561,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Proyectos de conocimiento registrados con propósito de reconocimient o ante Ministerio de Ciencia, Tecnología e Innovación",
@@ -3580,7 +3819,8 @@
   "programa": "Innovación educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 562,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de conectividad digital para fines pedagógicos",
@@ -3595,7 +3835,8 @@
   "programa": "Innovación educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 562,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Dotación tecnológica de la Secretaría de Educación e institucionales educativas oficiales",
@@ -3610,7 +3851,8 @@
   "programa": "Innovación educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 562,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de asistencia técnicapara promover la innovación en la práctica pedagógica con enfoque STEM y STEM+H",
@@ -3625,7 +3867,8 @@
   "programa": "Innovación educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 562,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de acceso y promoción a las metodologías relacionadas con enfoque STEM y STEM+H",
@@ -3640,7 +3883,8 @@
   "programa": "Innovación educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 562,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Proyectos pedagógicos de ciencia, tecnología e innovación",
@@ -3655,7 +3899,8 @@
   "programa": "Administración e inspección educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 563,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Proyectos de ciencia, tecnología e innovación que promueven la innovación, la transferencia tecnológica y el emprendimiento",
@@ -3670,7 +3915,8 @@
   "programa": "Administración e inspección educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 563,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Tasa de cobertura escolar neta",
@@ -3684,7 +3930,8 @@
   "programa": "Administración e inspección educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 563,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio educativo",
@@ -3699,7 +3946,8 @@
   "programa": "Administración e inspección educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 564,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de inspección, vigilancia y control del sector educativo",
@@ -3714,7 +3962,8 @@
   "programa": "Administración e inspección educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 564,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Acciones de implementación de la Política Pública Educativa",
@@ -3729,7 +3978,8 @@
   "programa": "Planeación estratégica educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 565,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de monitoreo y seguimiento a los egresados de las instituciones educativas",
@@ -3744,7 +3994,8 @@
   "programa": "Planeación estratégica educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 565,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Documento de Política Pública Educativa",
@@ -3759,7 +4010,8 @@
   "programa": "Planeación estratégica educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 565,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de implementación de sistemas de gestión en las instituciones educativas oficiales",
@@ -3774,7 +4026,8 @@
   "programa": "Planeación estratégica educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 565,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Creación del observatorio de la educación",
@@ -3789,7 +4042,8 @@
   "programa": "Planeación estratégica educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 565,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Plan estratégico de comunicación para la educación",
@@ -3804,7 +4058,8 @@
   "programa": "Planeación estratégica educativa",
   "coincidencia_ppi": 1.0,
   "pagina": 565,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Tasa deserción en educación superior pregrado",
@@ -3818,7 +4073,8 @@
   "programa": "Educación terciaria",
   "coincidencia_ppi": 0.54,
   "pagina": 566,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Tasa neta de escolaridad en educación superior",
@@ -3832,7 +4088,8 @@
   "programa": "Educación terciaria",
   "coincidencia_ppi": 0.54,
   "pagina": 566,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Tasa bruta de escolaridad en educación superior",
@@ -3846,7 +4103,8 @@
   "programa": "Educación terciaria",
   "coincidencia_ppi": 0.54,
   "pagina": 566,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo financiero a la Institución Universitaria de Envigado",
@@ -3861,7 +4119,8 @@
   "programa": "Educación terciaria",
   "coincidencia_ppi": 0.54,
   "pagina": 568,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de articulación educativa entre la Institución Universitaria de Envigado y el sector productivo",
@@ -3876,7 +4135,8 @@
   "programa": "Educación terciaria",
   "coincidencia_ppi": 0.54,
   "pagina": 568,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios deinvestigaciónde la Institución Universitaria de Envigado",
@@ -3891,7 +4151,8 @@
   "programa": "Educación terciaria",
   "coincidencia_ppi": 0.54,
   "pagina": 568,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios deproyección socialde la Institución Universitaria de Envigado",
@@ -3906,7 +4167,8 @@
   "programa": "Educación terciaria",
   "coincidencia_ppi": 0.54,
   "pagina": 568,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios deinternacionalizaciónde la Institución Universitaria de Envigado",
@@ -3921,7 +4183,8 @@
   "programa": "Educación terciaria",
   "coincidencia_ppi": 0.54,
   "pagina": 568,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo financiero para el acceso y permanencia a la Institución Universitaria de Envigado",
@@ -3936,7 +4199,8 @@
   "programa": "Educación terciaria",
   "coincidencia_ppi": 0.54,
   "pagina": 568,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de fortalecimiento a las capacidades de los docentes de educación superior",
@@ -3951,7 +4215,8 @@
   "programa": "Educación terciaria",
   "coincidencia_ppi": 0.54,
   "pagina": 568,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de educación formal en el saber administrativo público",
@@ -3966,7 +4231,8 @@
   "programa": "Educación terciaria",
   "coincidencia_ppi": 0.54,
   "pagina": 568,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de acreditación de la calidad de la educación superior",
@@ -3981,7 +4247,8 @@
   "programa": "Educación terciaria",
   "coincidencia_ppi": 0.54,
   "pagina": 568,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo financiero al Tecnológico de Artes Débora Arango",
@@ -3996,7 +4263,8 @@
   "programa": "Educación terciaria",
   "coincidencia_ppi": 0.54,
   "pagina": 569,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo financiero para el acceso al Tecnológico de Artes Débora Arango",
@@ -4011,7 +4279,8 @@
   "programa": "Educación terciaria",
   "coincidencia_ppi": 0.54,
   "pagina": 569,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo para la permanencia en el Tecnológico de Artes Débora Arango",
@@ -4026,7 +4295,8 @@
   "programa": "Educación terciaria",
   "coincidencia_ppi": 0.54,
   "pagina": 569,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Retos de innovación en el contexto de las prácticas artísticas y creativas",
@@ -4041,7 +4311,8 @@
   "programa": "Educación terciaria",
   "coincidencia_ppi": 0.54,
   "pagina": 569,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio para el cumplimiento de condiciones de calidad de la educación superior",
@@ -4056,7 +4327,8 @@
   "programa": "Educación terciaria",
   "coincidencia_ppi": 0.54,
   "pagina": 569,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Tasa de desempleo",
@@ -4070,7 +4342,8 @@
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 0.65,
   "pagina": 570,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Tasa de ocupación",
@@ -4084,7 +4357,8 @@
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 0.65,
   "pagina": 570,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de colocación laboral",
@@ -4099,7 +4373,8 @@
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 0.65,
   "pagina": 571,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de formación en competencias para la inserción laboral",
@@ -4114,7 +4389,8 @@
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 0.65,
   "pagina": 571,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de registro laboral",
@@ -4129,7 +4405,8 @@
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 0.65,
   "pagina": 571,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de asistencia técnica para la generación y formalización del empleo",
@@ -4144,7 +4421,8 @@
   "programa": "Generación y formalización del empleo",
   "coincidencia_ppi": 0.65,
   "pagina": 571,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de asistencia técnica y formación para emprendedores",
@@ -4159,7 +4437,8 @@
   "programa": "Formación para el trabajo y el desarrollo humano",
   "coincidencia_ppi": 0.61,
   "pagina": 572,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de asesoría técnica para el emprendimiento",
@@ -4174,7 +4453,8 @@
   "programa": "Formación para el trabajo y el desarrollo humano",
   "coincidencia_ppi": 0.61,
   "pagina": 572,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de promoción y comercialización de emprendimientos",
@@ -4189,7 +4469,8 @@
   "programa": "Formación para el trabajo y el desarrollo humano",
   "coincidencia_ppi": 0.61,
   "pagina": 572,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de gestión para el emprendimiento",
@@ -4204,7 +4485,8 @@
   "programa": "Formación para el trabajo y el desarrollo humano",
   "coincidencia_ppi": 0.61,
   "pagina": 572,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de apoyo financiero para la creación de empresas",
@@ -4219,7 +4501,8 @@
   "programa": "Formación para el trabajo y el desarrollo humano",
   "coincidencia_ppi": 0.61,
   "pagina": 572,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de promoción y comercialización de emprendimientos del sector creativo y cultural",
@@ -4234,7 +4517,8 @@
   "programa": "Formación para el trabajo y el desarrollo humano",
   "coincidencia_ppi": 0.61,
   "pagina": 572,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de educación para el trabajoy desarrollo humano",
@@ -4249,7 +4533,8 @@
   "programa": "Formación para el trabajo y el desarrollo humano",
   "coincidencia_ppi": 0.61,
   "pagina": 573,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo para el fortalecimiento de la política de formación para el trabajoy desarrollo humano",
@@ -4264,7 +4549,8 @@
   "programa": "Formación para el trabajo y el desarrollo humano",
   "coincidencia_ppi": 0.61,
   "pagina": 573,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de educación para el trabajoy desarrollo humano",
@@ -4279,7 +4565,8 @@
   "programa": "Formación para el trabajo y el desarrollo humano",
   "coincidencia_ppi": 0.61,
   "pagina": 573,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de educación para el trabajoy desarrollo humano",
@@ -4294,7 +4581,8 @@
   "programa": "Formación para el trabajo y el desarrollo humano",
   "coincidencia_ppi": 0.61,
   "pagina": 573,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de articulación educativa entre la educación técnica y tecnológica y el sector productivo",
@@ -4309,7 +4597,8 @@
   "programa": "Formación para el trabajo y el desarrollo humano",
   "coincidencia_ppi": 0.61,
   "pagina": 573,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Tasa de formalidad empresarial",
@@ -4323,7 +4612,8 @@
   "programa": "Productividad y competitividad de las empresas",
   "coincidencia_ppi": 0.5,
   "pagina": 574,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Empresas exportadoras de Envigado",
@@ -4337,7 +4627,8 @@
   "programa": "Productividad y competitividad de las empresas",
   "coincidencia_ppi": 0.5,
   "pagina": 574,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Tasa de mortalidad empresarial",
@@ -4351,7 +4642,8 @@
   "programa": "Productividad y competitividad de las empresas",
   "coincidencia_ppi": 0.5,
   "pagina": 574,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de asistencia técnica a empresas para el fortalecimiento de capacidades gerenciales",
@@ -4366,7 +4658,8 @@
   "programa": "Productividad y competitividad de las empresas",
   "coincidencia_ppi": 0.5,
   "pagina": 576,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo financiero para el mejoramiento de productos o procesos de las empresas",
@@ -4381,7 +4674,8 @@
   "programa": "Productividad y competitividad de las empresas",
   "coincidencia_ppi": 0.5,
   "pagina": 576,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de promoción y comercialización de empresas",
@@ -4396,7 +4690,8 @@
   "programa": "Productividad y competitividad de las empresas",
   "coincidencia_ppi": 0.5,
   "pagina": 576,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo para la transferencia y/o implementación de acciones o metodología de aumento de la productividad",
@@ -4411,7 +4706,8 @@
   "programa": "Productividad y competitividad de las empresas",
   "coincidencia_ppi": 0.5,
   "pagina": 576,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de promoción y comercialización de empresas del sector creativo y cultural",
@@ -4426,7 +4722,8 @@
   "programa": "Productividad y competitividad de las empresas",
   "coincidencia_ppi": 0.5,
   "pagina": 576,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo para la transferencia y/o implementación de acciones o metodología de aumento de la productividad",
@@ -4441,7 +4738,8 @@
   "programa": "Productividad y competitividad de las empresas",
   "coincidencia_ppi": 0.5,
   "pagina": 576,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Visitantes no residentes",
@@ -4455,7 +4753,8 @@
   "programa": "Desarrollo de estrategias para la promoción y el posicionamiento del sector turismo",
   "coincidencia_ppi": 0.52,
   "pagina": 577,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Incremento de la formalización de turismo",
@@ -4469,7 +4768,8 @@
   "programa": "Desarrollo de estrategias para la promoción y el posicionamiento del sector turismo",
   "coincidencia_ppi": 0.52,
   "pagina": 577,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de promoción turística",
@@ -4484,7 +4784,8 @@
   "programa": "Desarrollo de estrategias para la promoción y el posicionamiento del sector turismo",
   "coincidencia_ppi": 0.52,
   "pagina": 578,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de recorridos y/o circuitos por sitios o atractivos turísticos urbanos o rurales",
@@ -4499,7 +4800,8 @@
   "programa": "Desarrollo de estrategias para la promoción y el posicionamiento del sector turismo",
   "coincidencia_ppi": 0.52,
   "pagina": 578,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de educación informal en asuntos turísticos",
@@ -4514,7 +4816,8 @@
   "programa": "Desarrollo de estrategias para la promoción y el posicionamiento del sector turismo",
   "coincidencia_ppi": 0.52,
   "pagina": 578,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Documentos de investigación y/o generación de conocimiento del sector turismo",
@@ -4529,7 +4832,8 @@
   "programa": "Desarrollo de estrategias para la promoción y el posicionamiento del sector turismo",
   "coincidencia_ppi": 0.52,
   "pagina": 578,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo y consolidación de las instancias de participación del sector turismo",
@@ -4544,7 +4848,8 @@
   "programa": "Desarrollo de estrategias para la promoción y el posicionamiento del sector turismo",
   "coincidencia_ppi": 0.52,
   "pagina": 578,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de organización de estrategias",
@@ -4559,7 +4864,8 @@
   "programa": "Arte y cultura",
   "coincidencia_ppi": 0.45,
   "pagina": 579,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Ciudadanos que hacen uso y disfrute de los bienes y servicios ofertados por la Secretaría de Cultura",
@@ -4574,7 +4880,8 @@
   "programa": "Arte y cultura",
   "coincidencia_ppi": 0.45,
   "pagina": 579,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Personas que asisten o participan en programas culturales",
@@ -4589,7 +4896,8 @@
   "programa": "Arte y cultura",
   "coincidencia_ppi": 0.45,
   "pagina": 579,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de divulgación y publicaciones en temas culturales",
@@ -4604,7 +4912,8 @@
   "programa": "Arte y cultura",
   "coincidencia_ppi": 0.45,
   "pagina": 580,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo financiero para el desarrollo de prácticas artísticas y culturales",
@@ -4619,7 +4928,8 @@
   "programa": "Arte y cultura",
   "coincidencia_ppi": 0.45,
   "pagina": 580,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de circulación artística y cultural",
@@ -4634,7 +4944,8 @@
   "programa": "Arte y cultura",
   "coincidencia_ppi": 0.45,
   "pagina": 580,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de información para el sector artístico y cultural",
@@ -4649,7 +4960,8 @@
   "programa": "Arte y cultura",
   "coincidencia_ppi": 0.45,
   "pagina": 580,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Asistencias técnicas en procesos artísticos, culturales y patrimoniales",
@@ -4664,7 +4976,8 @@
   "programa": "Arte y cultura",
   "coincidencia_ppi": 0.45,
   "pagina": 580,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de organización de festivales de arte y cultura",
@@ -4679,7 +4992,8 @@
   "programa": "Arte y cultura",
   "coincidencia_ppi": 0.45,
   "pagina": 580,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Semana de la Cultura y Fiestas del Carriel",
@@ -4694,7 +5008,8 @@
   "programa": "Arte y cultura",
   "coincidencia_ppi": 0.45,
   "pagina": 580,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Agenda cultural",
@@ -4709,7 +5024,8 @@
   "programa": "Arte y cultura",
   "coincidencia_ppi": 0.45,
   "pagina": 580,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de asistencia técnica en el fortalecimiento de los consejeros de cultura",
@@ -4724,7 +5040,8 @@
   "programa": "Arte y cultura",
   "coincidencia_ppi": 0.45,
   "pagina": 580,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Celebración 250 años del municipio de Envigado",
@@ -4739,7 +5056,8 @@
   "programa": "Arte y cultura",
   "coincidencia_ppi": 0.45,
   "pagina": 580,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Gestión de actividades para la activación del Distrito Cultural",
@@ -4754,7 +5072,8 @@
   "programa": "Arte y cultura",
   "coincidencia_ppi": 0.45,
   "pagina": 580,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Ciudadanos que participan en consumo de los bienes y servicios patrimoniales culturales",
@@ -4768,7 +5087,8 @@
   "programa": "Patrimonio",
   "coincidencia_ppi": 0.46,
   "pagina": 581,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de educación informal a Vigías del Patrimonio",
@@ -4783,7 +5103,8 @@
   "programa": "Patrimonio",
   "coincidencia_ppi": 0.46,
   "pagina": 581,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo al proceso de formación artística y cultural",
@@ -4798,7 +5119,8 @@
   "programa": "Patrimonio",
   "coincidencia_ppi": 0.46,
   "pagina": 581,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Escuelas de Música",
@@ -4813,7 +5135,8 @@
   "programa": "Patrimonio",
   "coincidencia_ppi": 0.46,
   "pagina": 581,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Orquesta Sinfónica",
@@ -4828,7 +5151,8 @@
   "programa": "Patrimonio",
   "coincidencia_ppi": 0.46,
   "pagina": 581,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Operaciónde la redde museos locales",
@@ -4843,7 +5167,8 @@
   "programa": "Sistema Municipal de Bibliotecas Públicas",
   "coincidencia_ppi": 0.44,
   "pagina": 582,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Adecuación del Museo de la Memoria",
@@ -4858,7 +5183,8 @@
   "programa": "Sistema Municipal de Bibliotecas Públicas",
   "coincidencia_ppi": 0.44,
   "pagina": 582,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de salvaguardia al patrimonio inmaterial (semana santa y manifestación cultural silletera)",
@@ -4873,7 +5199,8 @@
   "programa": "Sistema Municipal de Bibliotecas Públicas",
   "coincidencia_ppi": 0.44,
   "pagina": 582,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Infraestructuras culturales dotadas",
@@ -4888,7 +5215,8 @@
   "programa": "Sistema Municipal de Bibliotecas Públicas",
   "coincidencia_ppi": 0.44,
   "pagina": 582,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de restauración del patrimonio cultural material inmueble",
@@ -4903,7 +5231,8 @@
   "programa": "Sistema Municipal de Bibliotecas Públicas",
   "coincidencia_ppi": 0.44,
   "pagina": 582,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Plan Especial de Manejo y Protección (PEMP) de Bienes de Interés Cultural (BIC)",
@@ -4918,7 +5247,8 @@
   "programa": "Sistema Municipal de Bibliotecas Públicas",
   "coincidencia_ppi": 0.44,
   "pagina": 582,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de investigación sobre gestión cultural, antropología, arqueología, historia y patrimonio cultural material e inmaterial",
@@ -4933,7 +5263,8 @@
   "programa": "Sistema Municipal de Bibliotecas Públicas",
   "coincidencia_ppi": 0.44,
   "pagina": 582,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de organización de eventos para la conmemoración del natalicio de Débora Arango Pérez",
@@ -4948,7 +5279,8 @@
   "programa": "Sistema Municipal de Bibliotecas Públicas",
   "coincidencia_ppi": 0.44,
   "pagina": 582,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Ciudadanos que participan en servicios bibliotecarios y promoción de la lectura",
@@ -4963,7 +5295,8 @@
   "programa": "Sistema Municipal de Bibliotecas Públicas",
   "coincidencia_ppi": 0.44,
   "pagina": 583,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Promedio de libros leídos",
@@ -4978,7 +5311,8 @@
   "programa": "Sistema Municipal de Bibliotecas Públicas",
   "coincidencia_ppi": 0.44,
   "pagina": 583,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios bibliotecarios",
@@ -4993,7 +5327,8 @@
   "programa": "Sistema Municipal de Bibliotecas Públicas",
   "coincidencia_ppi": 0.44,
   "pagina": 583,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de organización de eventos del festival del libro (Envigado se pinta de letras)",
@@ -5008,7 +5343,8 @@
   "programa": "Sistema Municipal de Bibliotecas Públicas",
   "coincidencia_ppi": 0.44,
   "pagina": 583,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de planeación para la promoción de la lectura, escritura y oralidad",
@@ -5023,7 +5359,8 @@
   "programa": "Sistema Municipal de Bibliotecas Públicas",
   "coincidencia_ppi": 0.44,
   "pagina": 583,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Casos de presuntos comportamientos contrarios a la integridad",
@@ -5038,7 +5375,8 @@
   "programa": "Planificación, ordenamiento territorial y proyectos estratégicos",
   "coincidencia_ppi": 1.0,
   "pagina": 585,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de estudios técnicos para el ordenamiento ambiental territorial",
@@ -5053,7 +5391,8 @@
   "programa": "Planificación, ordenamiento territorial y proyectos estratégicos",
   "coincidencia_ppi": 1.0,
   "pagina": 587,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de planeación para el ordenamiento territorial",
@@ -5068,7 +5407,8 @@
   "programa": "Planificación, ordenamiento territorial y proyectos estratégicos",
   "coincidencia_ppi": 1.0,
   "pagina": 587,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de asistencia técnica en planificación urbana y ordenamiento territorial",
@@ -5083,7 +5423,8 @@
   "programa": "Planificación, ordenamiento territorial y proyectos estratégicos",
   "coincidencia_ppi": 1.0,
   "pagina": 587,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de asistencia jurídica en derecho urbano y ordenamiento territorial",
@@ -5098,7 +5439,8 @@
   "programa": "Planificación, ordenamiento territorial y proyectos estratégicos",
   "coincidencia_ppi": 1.0,
   "pagina": 587,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de diseño de incentivos para el fomento de proyectos de construcción sostenible",
@@ -5113,7 +5455,8 @@
   "programa": "Planificación, ordenamiento territorial y proyectos estratégicos",
   "coincidencia_ppi": 1.0,
   "pagina": 587,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de análisis de amenazas y riesgos geológicos con incidencia en el ordenamiento territorial",
@@ -5128,7 +5471,8 @@
   "programa": "Planificación, ordenamiento territorial y proyectos estratégicos",
   "coincidencia_ppi": 1.0,
   "pagina": 587,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de asistencia técnica y jurídica en legalización de predios",
@@ -5143,7 +5487,8 @@
   "programa": "Planificación, ordenamiento territorial y proyectos estratégicos",
   "coincidencia_ppi": 1.0,
   "pagina": 587,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Informe de seguimiento al Plan Especial del Centro",
@@ -5158,7 +5503,8 @@
   "programa": "Planificación, ordenamiento territorial y proyectos estratégicos",
   "coincidencia_ppi": 1.0,
   "pagina": 587,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Gestión de nuevo espacio público",
@@ -5173,7 +5519,8 @@
   "programa": "Planificación, ordenamiento territorial y proyectos estratégicos",
   "coincidencia_ppi": 1.0,
   "pagina": 588,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Gestión de equipamientos colectivos",
@@ -5188,7 +5535,8 @@
   "programa": "Planificación, ordenamiento territorial y proyectos estratégicos",
   "coincidencia_ppi": 1.0,
   "pagina": 588,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de conservación patrimonial y/o ambiental",
@@ -5203,7 +5551,8 @@
   "programa": "Planificación, ordenamiento territorial y proyectos estratégicos",
   "coincidencia_ppi": 1.0,
   "pagina": 588,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de asistencia técnica en proyectos",
@@ -5218,7 +5567,8 @@
   "programa": "Planificación, ordenamiento territorial y proyectos estratégicos",
   "coincidencia_ppi": 1.0,
   "pagina": 588,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de asistencia técnica en planeación social y sectorial",
@@ -5233,7 +5583,8 @@
   "programa": "Planificación, ordenamiento territorial y proyectos estratégicos",
   "coincidencia_ppi": 1.0,
   "pagina": 588,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de planeación social para la protección de moradores",
@@ -5248,7 +5599,8 @@
   "programa": "Planificación, ordenamiento territorial y proyectos estratégicos",
   "coincidencia_ppi": 1.0,
   "pagina": 588,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de control urbanístico",
@@ -5263,7 +5615,8 @@
   "programa": "Desarrollo urbano",
   "coincidencia_ppi": 1.0,
   "pagina": 589,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de información urbanística (observatorio)",
@@ -5278,7 +5631,8 @@
   "programa": "Desarrollo urbano",
   "coincidencia_ppi": 1.0,
   "pagina": 589,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Implementación de las acciones de los proyectos de mejoramiento integral de barrios",
@@ -5293,7 +5647,8 @@
   "programa": "Desarrollo urbano",
   "coincidencia_ppi": 1.0,
   "pagina": 589,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Intervenciones de mejoramiento integral de barrios",
@@ -5308,7 +5663,8 @@
   "programa": "Desarrollo rural",
   "coincidencia_ppi": 1.0,
   "pagina": 590,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Intervenciones de mejoramiento integral de barrios",
@@ -5323,7 +5679,8 @@
   "programa": "Desarrollo rural",
   "coincidencia_ppi": 1.0,
   "pagina": 590,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Gestión y operación de instrumentos de gestión del suelo (proyectos de renovación, inmobiliarios o mixtos) a través de alianzas público-privadaso de otros mecanismos de gestión asociada reglamentados en la ley",
@@ -5338,7 +5695,8 @@
   "programa": "Desarrollo rural",
   "coincidencia_ppi": 1.0,
   "pagina": 590,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Productores con áreas dedicadas a la actividad agropecuaria y/o agroecoturística",
@@ -5353,7 +5711,8 @@
   "programa": "Desarrollo rural",
   "coincidencia_ppi": 1.0,
   "pagina": 590,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Unidades productivas agropecuarias",
@@ -5368,7 +5727,8 @@
   "programa": "Desarrollo rural",
   "coincidencia_ppi": 1.0,
   "pagina": 590,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de fortalecimiento productivo y empresarial",
@@ -5383,7 +5743,8 @@
   "programa": "Desarrollo rural",
   "coincidencia_ppi": 1.0,
   "pagina": 591,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo a la comercialización en ferias",
@@ -5398,7 +5759,8 @@
   "programa": "Desarrollo rural",
   "coincidencia_ppi": 1.0,
   "pagina": 591,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Prestación del servicio público de extensión agropecuaria",
@@ -5413,7 +5775,8 @@
   "programa": "Desarrollo rural",
   "coincidencia_ppi": 1.0,
   "pagina": 591,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo a las unidades productivas para la seguridad alimentaria",
@@ -5428,7 +5791,8 @@
   "programa": "Desarrollo rural",
   "coincidencia_ppi": 1.0,
   "pagina": 591,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo técnico para la implementación de acciones de mitigación y adaptación al cambio climático",
@@ -5443,7 +5807,8 @@
   "programa": "Desarrollo rural",
   "coincidencia_ppi": 1.0,
   "pagina": 591,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Espacio público efectivo",
@@ -5458,7 +5823,8 @@
   "programa": "Espacio público",
   "coincidencia_ppi": 1.0,
   "pagina": 593,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Construcción de peatonalización de la Calle 37 Sur entre Carrera 45A y Carrera 45B",
@@ -5473,7 +5839,8 @@
   "programa": "Espacio público",
   "coincidencia_ppi": 1.0,
   "pagina": 593,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Construcción de peatonalización de la Carrera 43 entreTransversal 31 Sur y Transversal 32A Sur",
@@ -5488,7 +5855,8 @@
   "programa": "Espacio público",
   "coincidencia_ppi": 1.0,
   "pagina": 593,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Intervenciones de espacio público entorno a la quebrada de La Ayurá",
@@ -5503,7 +5871,8 @@
   "programa": "Espacio público",
   "coincidencia_ppi": 1.0,
   "pagina": 593,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Habilitación del Parque Urbano Fernando González",
@@ -5518,7 +5887,8 @@
   "programa": "Espacio público",
   "coincidencia_ppi": 1.0,
   "pagina": 593,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Construcción y mejoramiento de andenes",
@@ -5533,7 +5903,8 @@
   "programa": "Espacio público",
   "coincidencia_ppi": 1.0,
   "pagina": 594,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Mejoramiento, adecuación y/o mantenimiento de espacio publico",
@@ -5548,7 +5919,8 @@
   "programa": "Espacio público",
   "coincidencia_ppi": 1.0,
   "pagina": 594,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Intervenciones artísticas (MIB)",
@@ -5563,7 +5935,8 @@
   "programa": "Espacio público",
   "coincidencia_ppi": 1.0,
   "pagina": 594,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de alumbrado público",
@@ -5578,7 +5951,8 @@
   "programa": "Espacio público",
   "coincidencia_ppi": 1.0,
   "pagina": 594,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Ampliación de la red de alumbrado público",
@@ -5593,7 +5967,8 @@
   "programa": "Espacio público",
   "coincidencia_ppi": 1.0,
   "pagina": 594,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Diseño e instalación de alumbrado navideño",
@@ -5608,7 +5983,8 @@
   "programa": "Espacio público",
   "coincidencia_ppi": 1.0,
   "pagina": 594,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Sistemas de telegestión en operación",
@@ -5623,7 +5999,8 @@
   "programa": "Espacio público",
   "coincidencia_ppi": 1.0,
   "pagina": 594,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Equipamiento colectivo construido",
@@ -5638,7 +6015,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 595,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Obras de adecuación de equipamientos colectivos y espacios públicos para la accesibilidad universal",
@@ -5653,7 +6031,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 595,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Habilitación de la casa rural de la cultura",
@@ -5668,7 +6047,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 596,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Habilitación de la casa cultural del pueblo gitano",
@@ -5683,7 +6063,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 596,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Intervención de la Casa Museo Débora Arango",
@@ -5698,7 +6079,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 596,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Habilitación de la Casa del Maestro",
@@ -5713,7 +6095,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 596,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Habilitación del centro de documentación y apoyo a la práctica pedagógica",
@@ -5728,7 +6111,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 596,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Mejoramiento, adecuación y/o mantenimiento de infraestructura educativa y cultural",
@@ -5743,7 +6127,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 596,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Terminación del bloque 14 de la Institución Universitaria de Envigado (fase 1 etapa 1)",
@@ -5758,7 +6143,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 596,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Intervención de la Escuela Fernando González",
@@ -5773,7 +6159,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 596,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Construcción de equipamiento deportivo para canchas en altura",
@@ -5788,7 +6175,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 597,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Construcción de cancha de baloncesto",
@@ -5803,7 +6191,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 597,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Construcción de parques infantiles",
@@ -5818,7 +6207,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 597,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Construcción de gimnasios al aire libre",
@@ -5833,7 +6223,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 597,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Mejoramiento, adecuación y/o mantenimiento de infraestructura deportiva y recreativa",
@@ -5848,7 +6239,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 597,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Intervención de la pista de patinaje",
@@ -5863,7 +6255,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 597,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Construcción y/o adecuación de centro de encuentro ciudadano",
@@ -5878,7 +6271,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 598,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Terminación del nuevo Centro Administrativo Municipal",
@@ -5893,7 +6287,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 598,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Terminación de nueva sede de la Secretaría de Movilidad",
@@ -5908,7 +6303,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 598,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Terminación de la etapa 1 del Centro de Comunicaciones, Comando y Control",
@@ -5923,7 +6319,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 598,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Construcción del Centro de Encuentro Ciudadano Las Orquídeas",
@@ -5938,7 +6335,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 598,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Mejoramiento, adecuación y/o mantenimiento de infraestructura social e institucional",
@@ -5953,7 +6351,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 598,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Construcción de ciclo infraestructura en Avenida Las Vegas",
@@ -5968,7 +6367,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 599,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Estudios y diseños de ampliaciones e intercambiadores viales",
@@ -5983,7 +6383,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 599,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Construcción de intervenciones viales de pequeña escala (broches)",
@@ -5998,7 +6399,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 599,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Construcción de estaciones de Metroplús",
@@ -6013,7 +6415,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 599,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Construcción de la vía Carrera 15",
@@ -6028,7 +6431,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 599,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Construcción de intercambiador entre Vía Las Palmas y Transversal de la Montaña",
@@ -6043,7 +6447,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 599,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Construcción de intercambiador entre vía El Escobero y transversal de la Montaña",
@@ -6058,7 +6463,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 599,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Construcción de intercambiador entre Carrera 43A y Calle 21 Sur",
@@ -6073,7 +6479,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 599,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Construcción de intercambiador entre Calle 50 Sur y Carrera 48",
@@ -6088,7 +6495,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 599,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Construcción de intercambiador entre Carrera 27 y Calle 23 Sur",
@@ -6103,7 +6511,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 599,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Construcción del puente de la Carrera 15",
@@ -6118,7 +6527,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 599,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Ampliación de la Carrera 43A entreCalle",
@@ -6133,7 +6543,8 @@
   "programa": "Equipamiento colectivo e infraestructura vial",
   "coincidencia_ppi": 1.0,
   "pagina": 599,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Mantenimiento de ciclo infraestructura",
@@ -6148,7 +6559,8 @@
   "programa": "Movilidad para la gente",
   "coincidencia_ppi": 1.0,
   "pagina": 600,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Pavimentación de vías",
@@ -6163,7 +6575,8 @@
   "programa": "Movilidad para la gente",
   "coincidencia_ppi": 1.0,
   "pagina": 600,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Terminación de la Vía Manantiales",
@@ -6178,7 +6591,8 @@
   "programa": "Movilidad para la gente",
   "coincidencia_ppi": 1.0,
   "pagina": 600,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Ampliación de la Carrera 20",
@@ -6193,7 +6607,8 @@
   "programa": "Movilidad para la gente",
   "coincidencia_ppi": 1.0,
   "pagina": 600,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Ampliación del puente Calle 37 Sur",
@@ -6208,7 +6623,8 @@
   "programa": "Movilidad para la gente",
   "coincidencia_ppi": 1.0,
   "pagina": 600,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Etapa 1 de la ampliación de la Vía El Escobero entreTransversal Intermedia y Transversal de la Montaña",
@@ -6223,7 +6639,8 @@
   "programa": "Movilidad para la gente",
   "coincidencia_ppi": 1.0,
   "pagina": 600,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de seguimiento a instrumentos de planeación de la movilidad",
@@ -6238,7 +6655,8 @@
   "programa": "Movilidad para la gente",
   "coincidencia_ppi": 1.0,
   "pagina": 602,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de seguimiento a instrumentos de planeación de la movilidad",
@@ -6253,7 +6671,8 @@
   "programa": "Movilidad para la gente",
   "coincidencia_ppi": 1.0,
   "pagina": 602,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de sensibilización a los actores viales",
@@ -6268,7 +6687,8 @@
   "programa": "Movilidad para la gente",
   "coincidencia_ppi": 1.0,
   "pagina": 602,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de sensibilización a los actores viales",
@@ -6283,7 +6703,8 @@
   "programa": "Movilidad para la gente",
   "coincidencia_ppi": 1.0,
   "pagina": 602,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Vías con dispositivos de control y señalización",
@@ -6298,7 +6719,8 @@
   "programa": "Movilidad para la gente",
   "coincidencia_ppi": 1.0,
   "pagina": 602,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Estación de peaje adecuada",
@@ -6313,7 +6735,8 @@
   "programa": "Movilidad para la gente",
   "coincidencia_ppi": 1.0,
   "pagina": 602,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de gestión para el desarrollo de aplicaciones móviles",
@@ -6328,7 +6751,8 @@
   "programa": "Movilidad para la gente",
   "coincidencia_ppi": 1.0,
   "pagina": 602,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Celdas de estacionamiento disponibles",
@@ -6343,7 +6767,8 @@
   "programa": "Movilidad para la gente",
   "coincidencia_ppi": 1.0,
   "pagina": 602,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de Educación Informal para la Gestión Administrativa",
@@ -6358,7 +6783,8 @@
   "programa": "Movilidad para la gente",
   "coincidencia_ppi": 1.0,
   "pagina": 602,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Generación de ciclo infraestructura liviana",
@@ -6373,7 +6799,8 @@
   "programa": "Movilidad para la gente",
   "coincidencia_ppi": 1.0,
   "pagina": 602,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Señalización de ciclo infraestructura",
@@ -6388,7 +6815,8 @@
   "programa": "Movilidad para la gente",
   "coincidencia_ppi": 1.0,
   "pagina": 602,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de control a la seguridad vial",
@@ -6403,7 +6831,8 @@
   "programa": "Movilidad para la gente",
   "coincidencia_ppi": 1.0,
   "pagina": 603,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de control a la seguridad vial",
@@ -6418,7 +6847,8 @@
   "programa": "Movilidad para la gente",
   "coincidencia_ppi": 1.0,
   "pagina": 603,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de información de seguridad vial",
@@ -6433,7 +6863,8 @@
   "programa": "Movilidad para la gente",
   "coincidencia_ppi": 1.0,
   "pagina": 603,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Zonas escolares señalizadas y con obras de seguridad vial",
@@ -6448,7 +6879,8 @@
   "programa": "Movilidad para la gente",
   "coincidencia_ppi": 1.0,
   "pagina": 603,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de atención integral a víctimas directas e indirectas de accidentes e incidentes de transporte",
@@ -6463,7 +6895,8 @@
   "programa": "Movilidad para la gente",
   "coincidencia_ppi": 1.0,
   "pagina": 603,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Vías con dispositivos de control y señalización",
@@ -6478,7 +6911,8 @@
   "programa": "Movilidad para la gente",
   "coincidencia_ppi": 1.0,
   "pagina": 603,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de transporte público organizado",
@@ -6493,7 +6927,8 @@
   "programa": "Movilidad para la gente",
   "coincidencia_ppi": 1.0,
   "pagina": 603,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de transporte público organizado",
@@ -6508,7 +6943,8 @@
   "programa": "Movilidad para la gente",
   "coincidencia_ppi": 1.0,
   "pagina": 603,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de transporte público organizado",
@@ -6523,7 +6959,8 @@
   "programa": "Movilidad para la gente",
   "coincidencia_ppi": 1.0,
   "pagina": 603,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo para el fortalecimiento de la gestión de las entidades públicas",
@@ -6538,7 +6975,8 @@
   "programa": "Gestión ambiental y acción por el cambio climático",
   "coincidencia_ppi": 1.0,
   "pagina": 604,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Aprovechamiento de residuos con relación a las toneladas generadas",
@@ -6553,7 +6991,8 @@
   "programa": "Gestión ambiental y acción por el cambio climático",
   "coincidencia_ppi": 1.0,
   "pagina": 604,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Reducción de emisiones totales de CO2",
@@ -6568,7 +7007,8 @@
   "programa": "Gestión ambiental y acción por el cambio climático",
   "coincidencia_ppi": 1.0,
   "pagina": 604,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Adquisición de áreas de importancia estratégica para la conservación de recursos hídricos que surten de agua los acueductos",
@@ -6583,7 +7023,8 @@
   "programa": "Gestión ambiental y acción por el cambio climático",
   "coincidencia_ppi": 1.0,
   "pagina": 605,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de sensibilización a los actores del sector constructor",
@@ -6598,7 +7039,8 @@
   "programa": "Gestión ambiental y acción por el cambio climático",
   "coincidencia_ppi": 1.0,
   "pagina": 607,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de asistencia técnica en planificación y gestión ambiental",
@@ -6613,7 +7055,8 @@
   "programa": "Gestión ambiental y acción por el cambio climático",
   "coincidencia_ppi": 1.0,
   "pagina": 607,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo técnico para la implementación de acciones de mitigación y adaptación al cambio climático",
@@ -6628,7 +7071,8 @@
   "programa": "Gestión ambiental y acción por el cambio climático",
   "coincidencia_ppi": 1.0,
   "pagina": 608,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Documentos de planeación para la gestión del cambio climático y un desarrollo bajo en carbono y resiliente al clima",
@@ -6643,7 +7087,8 @@
   "programa": "Gestión ambiental y acción por el cambio climático",
   "coincidencia_ppi": 1.0,
   "pagina": 608,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo técnico para la implementación de acciones de mitigación y adaptación al cambio climático",
@@ -6658,7 +7103,8 @@
   "programa": "Gestión ambiental y acción por el cambio climático",
   "coincidencia_ppi": 1.0,
   "pagina": 608,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio apoyo financiero para la implementación de esquemas de pago por servicios ambientales",
@@ -6673,7 +7119,8 @@
   "programa": "Gestión ambiental y acción por el cambio climático",
   "coincidencia_ppi": 1.0,
   "pagina": 608,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de educación informal en gestión del cambio climático para un desarrollo bajo en carbono y resiliente al clima",
@@ -6688,7 +7135,8 @@
   "programa": "Gestión ambiental y acción por el cambio climático",
   "coincidencia_ppi": 1.0,
   "pagina": 608,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Unidad de generación fotovoltaica de energía eléctrica en institución educativa oficial",
@@ -6703,7 +7151,8 @@
   "programa": "Gestión ambiental y acción por el cambio climático",
   "coincidencia_ppi": 1.0,
   "pagina": 608,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Unidad de generación fotovoltaica de energía eléctrica en equipamiento deportivo",
@@ -6718,7 +7167,8 @@
   "programa": "Gestión ambiental y acción por el cambio climático",
   "coincidencia_ppi": 1.0,
   "pagina": 608,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Espacio público verde",
@@ -6732,7 +7182,8 @@
   "programa": "Ecosistemas y biodiversidad",
   "coincidencia_ppi": 1.0,
   "pagina": 609,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Sistema Local de Áreas Protegidas con acciones de conservación",
@@ -6746,7 +7197,8 @@
   "programa": "Ecosistemas y biodiversidad",
   "coincidencia_ppi": 1.0,
   "pagina": 609,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Diseño de un conjunto de incentivos para la conservación en suelos protegidos",
@@ -6761,7 +7213,8 @@
   "programa": "Ecosistemas y biodiversidad",
   "coincidencia_ppi": 1.0,
   "pagina": 610,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Diseño de estrategia para medir la efectividad en la conservación en suelos protegidos",
@@ -6776,7 +7229,8 @@
   "programa": "Ecosistemas y biodiversidad",
   "coincidencia_ppi": 1.0,
   "pagina": 610,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Mantenimiento de pasos de fauna silvestre",
@@ -6791,7 +7245,8 @@
   "programa": "Ecosistemas y biodiversidad",
   "coincidencia_ppi": 1.0,
   "pagina": 610,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Implementación de pasos subterráneos y aéreos para fortalecer la conectividad ecológica",
@@ -6806,7 +7261,8 @@
   "programa": "Ecosistemas y biodiversidad",
   "coincidencia_ppi": 1.0,
   "pagina": 610,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Documentos de planeación para la conservación de la biodiversidad y sus servicios ecosistémicos",
@@ -6821,7 +7277,8 @@
   "programa": "Ecosistemas y biodiversidad",
   "coincidencia_ppi": 1.0,
   "pagina": 610,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de monitoreo de la biodiversidad",
@@ -6836,7 +7293,8 @@
   "programa": "Ecosistemas y biodiversidad",
   "coincidencia_ppi": 1.0,
   "pagina": 610,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Implementación de ejes estratégicos del Sistema Local de Áreas Protegidas",
@@ -6851,7 +7309,8 @@
   "programa": "Ecosistemas y biodiversidad",
   "coincidencia_ppi": 1.0,
   "pagina": 610,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios silviculturales",
@@ -6866,7 +7325,8 @@
   "programa": "Ecosistemas y biodiversidad",
   "coincidencia_ppi": 1.0,
   "pagina": 611,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de conservación y mejoramiento de jardines funcionales",
@@ -6881,7 +7341,8 @@
   "programa": "Ecosistemas y biodiversidad",
   "coincidencia_ppi": 1.0,
   "pagina": 611,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Generación de jardines funcionales",
@@ -6896,7 +7357,8 @@
   "programa": "Ecosistemas y biodiversidad",
   "coincidencia_ppi": 1.0,
   "pagina": 611,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de manejo del arbolado urbano",
@@ -6911,7 +7373,8 @@
   "programa": "Ecosistemas y biodiversidad",
   "coincidencia_ppi": 1.0,
   "pagina": 611,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Evaluación de bienes y servicios ecosistémicos",
@@ -6926,7 +7389,8 @@
   "programa": "Ecosistemas y biodiversidad",
   "coincidencia_ppi": 1.0,
   "pagina": 611,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de operación de parques públicos",
@@ -6941,7 +7405,8 @@
   "programa": "Ecosistemas y biodiversidad",
   "coincidencia_ppi": 1.0,
   "pagina": 612,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Mantenimiento de cuencas (La Ayurá, La Mina, La Cien Pesos y Las Palmas)",
@@ -6956,7 +7421,8 @@
   "programa": "Ecosistemas y biodiversidad",
   "coincidencia_ppi": 1.0,
   "pagina": 612,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Documento de inventario de recursos naturales",
@@ -6971,7 +7437,8 @@
   "programa": "Ecosistemas y biodiversidad",
   "coincidencia_ppi": 1.0,
   "pagina": 612,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Mantenimiento de áreas de importancia estratégica para la conservación de recursos hídricos que surten de agua los acueductos",
@@ -6986,7 +7453,8 @@
   "programa": "Ecosistemas y biodiversidad",
   "coincidencia_ppi": 1.0,
   "pagina": 612,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de protección de ecosistemas",
@@ -7001,7 +7469,8 @@
   "programa": "Ecosistemas y biodiversidad",
   "coincidencia_ppi": 1.0,
   "pagina": 612,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de conectividad de ecosistemas estratégicos",
@@ -7017,7 +7486,8 @@
   "programa": "Bienestar animal",
   "coincidencia_ppi": 1.0,
   "pagina": 613,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Índice de bienestar animal",
@@ -7032,7 +7502,8 @@
   "programa": "Bienestar animal",
   "coincidencia_ppi": 1.0,
   "pagina": 613,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Casos de conflictos por disfuncionalidad",
@@ -7047,7 +7518,8 @@
   "programa": "Bienestar animal",
   "coincidencia_ppi": 1.0,
   "pagina": 613,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de apoyo a centros de atención y valoración de fauna",
@@ -7062,7 +7534,8 @@
   "programa": "Bienestar animal",
   "coincidencia_ppi": 1.0,
   "pagina": 614,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de control y vigilancia al tráfico ilegal de especies",
@@ -7077,7 +7550,8 @@
   "programa": "Bienestar animal",
   "coincidencia_ppi": 1.0,
   "pagina": 614,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de adopción de fauna doméstica",
@@ -7092,7 +7566,8 @@
   "programa": "Bienestar animal",
   "coincidencia_ppi": 1.0,
   "pagina": 614,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de atención médica de fauna doméstica",
@@ -7107,7 +7582,8 @@
   "programa": "Bienestar animal",
   "coincidencia_ppi": 1.0,
   "pagina": 614,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de identificación y registro de fauna doméstica",
@@ -7122,7 +7598,8 @@
   "programa": "Bienestar animal",
   "coincidencia_ppi": 1.0,
   "pagina": 614,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Índice Municipal de Riesgo de Desastres ajustado por Capacidades",
@@ -7137,7 +7614,8 @@
   "programa": "Gestión del riesgo",
   "coincidencia_ppi": 1.0,
   "pagina": 616,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Documentos de planeación de la gestión del riesgo",
@@ -7152,7 +7630,8 @@
   "programa": "Gestión del riesgo",
   "coincidencia_ppi": 1.0,
   "pagina": 616,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de asesoría y asistencia para la comunidad por situaciones de riesgo en emergencias y/o desastres",
@@ -7167,7 +7646,8 @@
   "programa": "Gestión del riesgo",
   "coincidencia_ppi": 1.0,
   "pagina": 616,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de asesoría y asistencia técnica para eventos de afluencia masiva de personas e inspecciones técnicas en seguridad humana y contra incendio",
@@ -7182,7 +7662,8 @@
   "programa": "Gestión del riesgo",
   "coincidencia_ppi": 1.0,
   "pagina": 616,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Documentos con diseños de obra para la reducción y mitigación del riesgo de desastres",
@@ -7197,7 +7678,8 @@
   "programa": "Gestión del riesgo",
   "coincidencia_ppi": 1.0,
   "pagina": 616,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Tasa de homicidio",
@@ -7211,7 +7693,8 @@
   "programa": "Seguridad ciudadana y prevención del delito",
   "coincidencia_ppi": 1.0,
   "pagina": 619,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Documentos planeación de la seguridad",
@@ -7226,7 +7709,8 @@
   "programa": "Seguridad ciudadana y prevención del delito",
   "coincidencia_ppi": 1.0,
   "pagina": 623,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Mesas de seguimiento al Plan Integral de Seguridad y Convivencia Ciudadana",
@@ -7241,7 +7725,8 @@
   "programa": "Seguridad ciudadana y prevención del delito",
   "coincidencia_ppi": 1.0,
   "pagina": 623,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de información para la seguridad",
@@ -7256,7 +7741,8 @@
   "programa": "Seguridad ciudadana y prevención del delito",
   "coincidencia_ppi": 1.0,
   "pagina": 623,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Revisión, actualización y gestión de convenios interinstitucionales",
@@ -7271,7 +7757,8 @@
   "programa": "Seguridad ciudadana y prevención del delito",
   "coincidencia_ppi": 1.0,
   "pagina": 623,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de articulación con las empresas de vigilancia integradas a las operaciones de seguridad",
@@ -7286,7 +7773,8 @@
   "programa": "Seguridad ciudadana y prevención del delito",
   "coincidencia_ppi": 1.0,
   "pagina": 623,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Dotación del Centro de Comunicaciones, Comando y Control",
@@ -7301,7 +7789,8 @@
   "programa": "Seguridad ciudadana y prevención del delito",
   "coincidencia_ppi": 1.0,
   "pagina": 624,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de vigilancia a través de cámaras de seguridad nuevas",
@@ -7316,7 +7805,8 @@
   "programa": "Seguridad ciudadana y prevención del delito",
   "coincidencia_ppi": 1.0,
   "pagina": 624,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de mantenimiento de cámaras de seguridad",
@@ -7331,7 +7821,8 @@
   "programa": "Seguridad ciudadana y prevención del delito",
   "coincidencia_ppi": 1.0,
   "pagina": 624,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de vigilancia a través de cámaras de seguridad renovadas",
@@ -7346,7 +7837,8 @@
   "programa": "Seguridad ciudadana y prevención del delito",
   "coincidencia_ppi": 1.0,
   "pagina": 624,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de alarmas comunitarias para la seguridad",
@@ -7361,7 +7853,8 @@
   "programa": "Seguridad ciudadana y prevención del delito",
   "coincidencia_ppi": 1.0,
   "pagina": 624,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Botones de pánico",
@@ -7376,7 +7869,8 @@
   "programa": "Seguridad ciudadana y prevención del delito",
   "coincidencia_ppi": 1.0,
   "pagina": 624,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Botones de pánico para la protección a mujeres, población LGBTIQ+ y grupos vulnerables",
@@ -7391,7 +7885,8 @@
   "programa": "Seguridad ciudadana y prevención del delito",
   "coincidencia_ppi": 1.0,
   "pagina": 624,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Operaciones con acompañamiento canino para desestimular el delito y el expendio de sustancias psicoactivas",
@@ -7406,7 +7901,8 @@
   "programa": "Seguridad ciudadana y prevención del delito",
   "coincidencia_ppi": 1.0,
   "pagina": 625,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Operaciones con acompañamiento canino para desestimular el delito y el expendio de sustancias psicoactivas",
@@ -7421,7 +7917,8 @@
   "programa": "Seguridad ciudadana y prevención del delito",
   "coincidencia_ppi": 1.0,
   "pagina": 625,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de dotación para la movilidad operacional",
@@ -7436,7 +7933,8 @@
   "programa": "Seguridad ciudadana y prevención del delito",
   "coincidencia_ppi": 1.0,
   "pagina": 625,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo financiero para dotar a miembros de la fuerza publica",
@@ -7451,7 +7949,8 @@
   "programa": "Seguridad ciudadana y prevención del delito",
   "coincidencia_ppi": 1.0,
   "pagina": 625,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Mantenimiento de infraestructura para la seguridad operacional",
@@ -7466,7 +7965,8 @@
   "programa": "Seguridad ciudadana y prevención del delito",
   "coincidencia_ppi": 1.0,
   "pagina": 625,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Participación en el desarrollo y apoyo en la realización de campañas de prevención de la Policía de Prevención y Convivencia Ciudadana",
@@ -7481,7 +7981,8 @@
   "programa": "Seguridad ciudadana y prevención del delito",
   "coincidencia_ppi": 1.0,
   "pagina": 625,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Estrategia de complementación del pie de fuerza policial",
@@ -7496,7 +7997,8 @@
   "programa": "Seguridad ciudadana y prevención del delito",
   "coincidencia_ppi": 1.0,
   "pagina": 625,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Implementación del programa de recompensas",
@@ -7511,7 +8013,8 @@
   "programa": "Seguridad ciudadana y prevención del delito",
   "coincidencia_ppi": 1.0,
   "pagina": 625,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de apoyo logístico y operativo para los organismos de seguridad y justicia",
@@ -7526,7 +8029,8 @@
   "programa": "Seguridad ciudadana y prevención del delito",
   "coincidencia_ppi": 1.0,
   "pagina": 625,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Tasa de violencia en el contexto familiar",
@@ -7541,7 +8045,8 @@
   "programa": "Sana convivencia",
   "coincidencia_ppi": 1.0,
   "pagina": 626,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de promoción de la convivencia ciudadana",
@@ -7556,7 +8061,8 @@
   "programa": "Sana convivencia",
   "coincidencia_ppi": 1.0,
   "pagina": 626,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Documentos de planeación para la promoción de la cultura ciudadana",
@@ -7571,7 +8077,8 @@
   "programa": "Cultura ciudadana",
   "coincidencia_ppi": 1.0,
   "pagina": 629,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de educación informal para la comunidad en general en cultura ciudadana",
@@ -7586,7 +8093,8 @@
   "programa": "Cultura ciudadana",
   "coincidencia_ppi": 1.0,
   "pagina": 629,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Implementación de los procesos de participación ciudadana",
@@ -7601,7 +8109,8 @@
   "programa": "Participación ciudadana incidente",
   "coincidencia_ppi": 0.82,
   "pagina": 630,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de capacitación para la participación incidente",
@@ -7616,7 +8125,8 @@
   "programa": "Participación ciudadana incidente",
   "coincidencia_ppi": 0.82,
   "pagina": 631,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de formación para la participación incidente",
@@ -7631,7 +8141,8 @@
   "programa": "Participación ciudadana incidente",
   "coincidencia_ppi": 0.82,
   "pagina": 631,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de educación formal",
@@ -7646,7 +8157,8 @@
   "programa": "Participación ciudadana incidente",
   "coincidencia_ppi": 0.82,
   "pagina": 631,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de organización de eventos de la semana de la participación incidente",
@@ -7661,7 +8173,8 @@
   "programa": "Participación ciudadana incidente",
   "coincidencia_ppi": 0.82,
   "pagina": 631,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de semillero de nuevos liderazgos",
@@ -7676,7 +8189,8 @@
   "programa": "Participación ciudadana incidente",
   "coincidencia_ppi": 0.82,
   "pagina": 631,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de formación para funcionarios en participación incidente",
@@ -7691,7 +8205,8 @@
   "programa": "Participación ciudadana incidente",
   "coincidencia_ppi": 0.82,
   "pagina": 631,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de incentivos a la participación",
@@ -7706,7 +8221,8 @@
   "programa": "Participación ciudadana incidente",
   "coincidencia_ppi": 0.82,
   "pagina": 632,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo financiero para iniciativas comunitarias",
@@ -7721,7 +8237,8 @@
   "programa": "Participación ciudadana incidente",
   "coincidencia_ppi": 0.82,
   "pagina": 632,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de organización de eventos de rendición pública de cuentas de presupuesto participativo",
@@ -7736,7 +8253,8 @@
   "programa": "Participación ciudadana incidente",
   "coincidencia_ppi": 0.82,
   "pagina": 632,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de plataforma web para la participación ciudadana",
@@ -7751,7 +8269,8 @@
   "programa": "Participación ciudadana incidente",
   "coincidencia_ppi": 0.82,
   "pagina": 632,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de planeación participativa del presupuesto",
@@ -7766,7 +8285,8 @@
   "programa": "Participación ciudadana incidente",
   "coincidencia_ppi": 0.82,
   "pagina": 632,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de organización de eventos de asambleas zonales",
@@ -7781,7 +8301,8 @@
   "programa": "Participación ciudadana incidente",
   "coincidencia_ppi": 0.82,
   "pagina": 632,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de asistencia técnica para el seguimiento y evaluación de los planes zonales de desarrollo",
@@ -7796,7 +8317,8 @@
   "programa": "Participación ciudadana incidente",
   "coincidencia_ppi": 0.82,
   "pagina": 633,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de asistencia técnica para organizaciones sociales",
@@ -7811,7 +8333,8 @@
   "programa": "Participación ciudadana incidente",
   "coincidencia_ppi": 0.82,
   "pagina": 633,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de asistencia técnica para instancias de participación ciudadana",
@@ -7826,7 +8349,8 @@
   "programa": "Participación ciudadana incidente",
   "coincidencia_ppi": 0.82,
   "pagina": 633,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de organización de eventos integración y articulación de instancias de participación ciudadana",
@@ -7841,7 +8365,8 @@
   "programa": "Participación ciudadana incidente",
   "coincidencia_ppi": 0.82,
   "pagina": 633,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de información a través del Observatorio de Participación",
@@ -7856,7 +8381,8 @@
   "programa": "Participación ciudadana incidente",
   "coincidencia_ppi": 0.82,
   "pagina": 633,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de comunicación y divulgación de la participación ciudadana",
@@ -7871,7 +8397,8 @@
   "programa": "Participación ciudadana incidente",
   "coincidencia_ppi": 0.82,
   "pagina": 633,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de formación para juntas de acción comunal",
@@ -7886,7 +8413,8 @@
   "programa": "Transparencia, rendición de cuentas y acceso a la información",
   "coincidencia_ppi": 1.0,
   "pagina": 634,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de inspección, vigilancia y control de organismos comunales",
@@ -7901,7 +8429,8 @@
   "programa": "Transparencia, rendición de cuentas y acceso a la información",
   "coincidencia_ppi": 1.0,
   "pagina": 634,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de asistencia técnica para organizaciones comunitarias",
@@ -7916,7 +8445,8 @@
   "programa": "Transparencia, rendición de cuentas y acceso a la información",
   "coincidencia_ppi": 1.0,
   "pagina": 634,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Juegos comunales",
@@ -7931,7 +8461,8 @@
   "programa": "Transparencia, rendición de cuentas y acceso a la información",
   "coincidencia_ppi": 1.0,
   "pagina": 634,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de organización de eventos del día de la acción comunal",
@@ -7946,7 +8477,8 @@
   "programa": "Transparencia, rendición de cuentas y acceso a la información",
   "coincidencia_ppi": 1.0,
   "pagina": 634,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Percepción ciudadana sobre la claridad y oportunidad de la información difundida por la Alcaldía de Envigado",
@@ -7961,7 +8493,8 @@
   "programa": "Transparencia, rendición de cuentas y acceso a la información",
   "coincidencia_ppi": 1.0,
   "pagina": 634,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Mesas de trabajo comunitarias",
@@ -7976,7 +8509,8 @@
   "programa": "Transparencia, rendición de cuentas y acceso a la información",
   "coincidencia_ppi": 1.0,
   "pagina": 635,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de formación para el control social",
@@ -7991,7 +8525,8 @@
   "programa": "Transparencia, rendición de cuentas y acceso a la información",
   "coincidencia_ppi": 1.0,
   "pagina": 635,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de comunicación y divulgación en eventos públicos con veedurías ciudadanas",
@@ -8006,7 +8541,8 @@
   "programa": "Transparencia, rendición de cuentas y acceso a la información",
   "coincidencia_ppi": 1.0,
   "pagina": 635,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de información implementados a través de la rendición pública de cuentas",
@@ -8021,7 +8557,8 @@
   "programa": "Transparencia, rendición de cuentas y acceso a la información",
   "coincidencia_ppi": 1.0,
   "pagina": 635,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de promoción a la participación",
@@ -8036,7 +8573,8 @@
   "programa": "Transparencia, rendición de cuentas y acceso a la información",
   "coincidencia_ppi": 1.0,
   "pagina": 635,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Índice de Desempeño Institucional",
@@ -8050,7 +8588,8 @@
   "programa": "Desempeño administrativo",
   "coincidencia_ppi": 1.0,
   "pagina": 636,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Gestión de certificaciones y/o sellos asociados al sistema de gestión de la calidad",
@@ -8065,7 +8604,8 @@
   "programa": "Desempeño administrativo",
   "coincidencia_ppi": 1.0,
   "pagina": 637,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de gestión documental",
@@ -8080,7 +8620,8 @@
   "programa": "Desempeño administrativo",
   "coincidencia_ppi": 1.0,
   "pagina": 637,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Ruta y gestión de atención al ciudadano",
@@ -8095,7 +8636,8 @@
   "programa": "Desempeño administrativo",
   "coincidencia_ppi": 1.0,
   "pagina": 637,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de prácticas profesionales",
@@ -8110,7 +8652,8 @@
   "programa": "Desempeño administrativo",
   "coincidencia_ppi": 1.0,
   "pagina": 637,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Renovación del parque automotor institucional",
@@ -8125,7 +8668,8 @@
   "programa": "Desempeño administrativo",
   "coincidencia_ppi": 1.0,
   "pagina": 638,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Gestión y mantenimiento del parque automotor institucional",
@@ -8140,7 +8684,8 @@
   "programa": "Desempeño administrativo",
   "coincidencia_ppi": 1.0,
   "pagina": 638,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Creación de Oficina Asesora de Proyectos Especiales",
@@ -8155,7 +8700,8 @@
   "programa": "Desempeño administrativo",
   "coincidencia_ppi": 1.0,
   "pagina": 638,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Dimensión de Talento Humano del Índice de Desempeño Institucional",
@@ -8170,7 +8716,8 @@
   "programa": "Talento humano",
   "coincidencia_ppi": 1.0,
   "pagina": 639,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Índice de Clima Laboral",
@@ -8185,7 +8732,8 @@
   "programa": "Talento humano",
   "coincidencia_ppi": 1.0,
   "pagina": 639,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de asesoría psicosocial para funcionarios y sus familias",
@@ -8200,7 +8748,8 @@
   "programa": "Talento humano",
   "coincidencia_ppi": 1.0,
   "pagina": 640,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Estudios de riesgo psicosocial, clima, cambio y cultura organizacional",
@@ -8215,7 +8764,8 @@
   "programa": "Talento humano",
   "coincidencia_ppi": 1.0,
   "pagina": 640,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Intervenciones de riesgo psicosocial, clima, cultura y cambio organizacional",
@@ -8230,7 +8780,8 @@
   "programa": "Talento humano",
   "coincidencia_ppi": 1.0,
   "pagina": 640,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de apoyo financiero para adquisición de vivienda (funcionarios)",
@@ -8245,7 +8796,8 @@
   "programa": "Talento humano",
   "coincidencia_ppi": 1.0,
   "pagina": 640,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de apoyo financiero para educación técnica, tecnológica y superior (funcionarios)",
@@ -8260,7 +8812,8 @@
   "programa": "Talento humano",
   "coincidencia_ppi": 1.0,
   "pagina": 640,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Documento para la planeación estratégica en tecnologías de la información",
@@ -8275,7 +8828,8 @@
   "programa": "Innovación, gobierno abierto y digital",
   "coincidencia_ppi": 1.0,
   "pagina": 642,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de soporte, mantenimiento y actualización de los sistemas de información e infraestructura tecnológica",
@@ -8290,7 +8844,8 @@
   "programa": "Innovación, gobierno abierto y digital",
   "coincidencia_ppi": 1.0,
   "pagina": 642,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de seguridad informática",
@@ -8305,7 +8860,8 @@
   "programa": "Innovación, gobierno abierto y digital",
   "coincidencia_ppi": 1.0,
   "pagina": 642,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Modernización de los sistemas de información",
@@ -8320,7 +8876,8 @@
   "programa": "Información estadística de calidad",
   "coincidencia_ppi": 1.0,
   "pagina": 643,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de instalación de fibra óptica",
@@ -8335,7 +8892,8 @@
   "programa": "Información estadística de calidad",
   "coincidencia_ppi": 1.0,
   "pagina": 643,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de conectividad (acceso zonas digitales)",
@@ -8350,7 +8908,8 @@
   "programa": "Información estadística de calidad",
   "coincidencia_ppi": 1.0,
   "pagina": 643,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de apoyo para la implementación de ciencia, tecnología e innovación en las empresas",
@@ -8365,7 +8924,8 @@
   "programa": "Información estadística de calidad",
   "coincidencia_ppi": 1.0,
   "pagina": 643,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicios de apoyo técnico para emprendimientos deciencia, tecnología e innovaciónque promueven la innovación y la transferencia tecnológica",
@@ -8380,7 +8940,8 @@
   "programa": "Información estadística de calidad",
   "coincidencia_ppi": 1.0,
   "pagina": 643,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Informes de resultados para la temática de gobierno",
@@ -8395,7 +8956,8 @@
   "programa": "Información estadística de calidad",
   "coincidencia_ppi": 1.0,
   "pagina": 644,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Informes de resultados para la temática de pobreza y condiciones de vida",
@@ -8410,7 +8972,8 @@
   "programa": "Información estadística de calidad",
   "coincidencia_ppi": 1.0,
   "pagina": 644,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de información para el registro administrativo de SISBEN",
@@ -8425,7 +8988,8 @@
   "programa": "Información estadística de calidad",
   "coincidencia_ppi": 1.0,
   "pagina": 644,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de información catastral actualizado",
@@ -8440,7 +9004,8 @@
   "programa": "Información estadística de calidad",
   "coincidencia_ppi": 1.0,
   "pagina": 644,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "producto": "Servicio de conservación catastral",
@@ -8455,7 +9020,8 @@
   "programa": "Información estadística de calidad",
   "coincidencia_ppi": 1.0,
   "pagina": 644,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "indicador",
@@ -8472,6 +9038,7 @@
   "programa": "Información estadística de calidad",
   "coincidencia_ppi": 1.0,
   "pagina": 672,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  }
 ]

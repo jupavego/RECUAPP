@@ -9,10 +9,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Conservación de la naturaleza y su restauración",
+  "coincidencia_ppi": 0.0,
   "pagina": 69,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "110130006",
@@ -24,10 +25,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Conservación de la naturaleza y su restauración",
+  "coincidencia_ppi": 0.0,
   "pagina": 69,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "110030010",
@@ -39,10 +41,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Conservación de la naturaleza y su restauración",
+  "coincidencia_ppi": 0.0,
   "pagina": 69,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3204002",
@@ -58,7 +61,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 69,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3204054",
@@ -74,7 +78,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 69,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3202012",
@@ -90,7 +95,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 70,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3202006",
@@ -106,7 +112,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 70,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3202012",
@@ -122,7 +129,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 70,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3208006",
@@ -138,7 +146,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 70,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3202001",
@@ -154,7 +163,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 70,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3202005",
@@ -170,7 +180,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 70,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3202012",
@@ -186,7 +197,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 70,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3202037",
@@ -202,7 +214,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 70,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3202038",
@@ -218,7 +231,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 70,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3202049",
@@ -234,7 +248,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 70,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3206002",
@@ -250,7 +265,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 71,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3206008",
@@ -266,7 +282,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 71,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3206008",
@@ -282,7 +299,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 71,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3203033",
@@ -298,7 +316,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 71,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4003049",
@@ -314,7 +333,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 71,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3208006",
@@ -330,7 +350,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 71,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3208006",
@@ -346,7 +367,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 71,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3208006",
@@ -362,7 +384,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 71,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3208006",
@@ -378,7 +401,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 71,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3208006",
@@ -394,7 +418,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 72,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3208006",
@@ -410,7 +435,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 72,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3208006",
@@ -426,7 +452,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 72,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3208006",
@@ -442,7 +469,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 72,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3208006",
@@ -458,7 +486,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 72,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3207008",
@@ -474,7 +503,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 72,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2104018",
@@ -490,7 +520,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 72,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3208006",
@@ -506,7 +537,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 72,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1708053",
@@ -522,7 +554,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 74,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3202028",
@@ -538,7 +571,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 74,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1704014",
@@ -554,7 +588,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 75,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4001004",
@@ -570,7 +605,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 75,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "406004",
@@ -586,7 +622,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 75,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4001002",
@@ -602,7 +639,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 77,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4001030",
@@ -618,7 +656,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 77,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4001042",
@@ -634,7 +673,8 @@
   "sector": null,
   "coincidencia_ppi": 0.67,
   "pagina": 77,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4001042",
@@ -650,7 +690,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 77,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4001044",
@@ -666,7 +707,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 77,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4001044",
@@ -682,7 +724,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 77,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4001044",
@@ -698,7 +741,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 77,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2102011",
@@ -711,10 +755,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Cobertura de alumbrado público para todos",
+  "coincidencia_ppi": 0.0,
   "pagina": 78,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2102013",
@@ -727,10 +772,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Cobertura de alumbrado público para todos",
+  "coincidencia_ppi": 0.0,
   "pagina": 78,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2102069",
@@ -743,10 +789,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Cobertura de alumbrado público para todos",
+  "coincidencia_ppi": 0.0,
   "pagina": 78,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4003017",
@@ -762,7 +809,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 79,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4003015",
@@ -778,7 +826,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 79,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4003016",
@@ -794,7 +843,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 79,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4003048",
@@ -810,7 +860,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 79,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4003042",
@@ -826,7 +877,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 79,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4003026",
@@ -842,7 +894,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 80,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4003020",
@@ -858,7 +911,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 80,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4003045",
@@ -874,7 +928,8 @@
   "sector": null,
   "coincidencia_ppi": 0.67,
   "pagina": 80,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3201009",
@@ -890,7 +945,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 80,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3201021",
@@ -906,7 +962,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 80,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3206003",
@@ -922,7 +979,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 80,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3206003",
@@ -938,7 +996,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 80,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3201009",
@@ -954,7 +1013,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 80,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4003047",
@@ -970,7 +1030,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 81,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4003025",
@@ -986,7 +1047,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 81,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4003009",
@@ -1002,7 +1064,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 81,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4003014",
@@ -1018,7 +1081,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 81,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4003010",
@@ -1034,7 +1098,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 81,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4003012",
@@ -1050,7 +1115,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 81,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2402056",
@@ -1066,7 +1132,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 82,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2401008",
@@ -1082,7 +1149,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 82,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2402039",
@@ -1098,7 +1166,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 82,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2402042",
@@ -1114,7 +1183,8 @@
   "sector": null,
   "coincidencia_ppi": 0.4,
   "pagina": 82,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2401012",
@@ -1130,7 +1200,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 82,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2402112",
@@ -1146,7 +1217,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 82,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4002021",
@@ -1158,10 +1230,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Infraestructura pública para todos",
+  "coincidencia_ppi": 0.0,
   "pagina": 84,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4301009",
@@ -1173,10 +1246,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Infraestructura pública para todos",
+  "coincidencia_ppi": 0.0,
   "pagina": 84,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4002026",
@@ -1188,10 +1262,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Infraestructura pública para todos",
+  "coincidencia_ppi": 0.0,
   "pagina": 84,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4002014",
@@ -1203,14 +1278,15 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Infraestructura pública para todos",
+  "coincidencia_ppi": 0.0,
   "pagina": 84,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4002020",
-  "nombre": "<sup>Proyectos de Espacio público</sup> adecuado",
+  "nombre": "Proyectos de Espacio público adecuado",
   "linea_base": "3",
   "unidad": "Número",
   "responsable": "secretaria planeación infraestructura",
@@ -1218,10 +1294,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Infraestructura pública para todos",
+  "coincidencia_ppi": 0.0,
   "pagina": 84,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4002022",
@@ -1233,10 +1310,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Infraestructura pública para todos",
+  "coincidencia_ppi": 0.0,
   "pagina": 84,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4002039",
@@ -1248,10 +1326,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Infraestructura pública para todos",
+  "coincidencia_ppi": 0.0,
   "pagina": 84,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4104008",
@@ -1264,10 +1343,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Garantía del derecho, incluyente y equitativa para el adulto mayor",
+  "coincidencia_ppi": 0.0,
   "pagina": 87,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4104009",
@@ -1280,10 +1360,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Garantía del derecho, incluyente y equitativa para el adulto mayor",
+  "coincidencia_ppi": 0.0,
   "pagina": 87,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4104010",
@@ -1296,10 +1377,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Garantía del derecho, incluyente y equitativa para el adulto mayor",
+  "coincidencia_ppi": 0.0,
   "pagina": 87,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4104008",
@@ -1315,7 +1397,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 88,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4104008",
@@ -1331,7 +1414,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 88,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4104008",
@@ -1347,7 +1431,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 88,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4104008",
@@ -1363,7 +1448,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 88,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4104008",
@@ -1379,7 +1465,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 88,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4104008",
@@ -1395,7 +1482,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 88,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4104008",
@@ -1411,7 +1499,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 88,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4104008",
@@ -1427,7 +1516,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 88,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4104008",
@@ -1443,7 +1533,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 88,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4104008",
@@ -1459,7 +1550,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 88,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4104008",
@@ -1475,7 +1567,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 88,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4101014",
@@ -1488,10 +1581,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Víctimas con protección y atención integral",
+  "coincidencia_ppi": 0.0,
   "pagina": 90,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4101023",
@@ -1504,10 +1598,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Víctimas con protección y atención integral",
+  "coincidencia_ppi": 0.0,
   "pagina": 90,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4101031",
@@ -1520,10 +1615,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Víctimas con protección y atención integral",
+  "coincidencia_ppi": 0.0,
   "pagina": 90,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4101042",
@@ -1536,10 +1632,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Víctimas con protección y atención integral",
+  "coincidencia_ppi": 0.0,
   "pagina": 90,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4101047",
@@ -1552,10 +1649,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Víctimas con protección y atención integral",
+  "coincidencia_ppi": 0.0,
   "pagina": 90,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4101068",
@@ -1568,10 +1666,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Víctimas con protección y atención integral",
+  "coincidencia_ppi": 0.0,
   "pagina": 90,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4101073",
@@ -1584,10 +1683,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Víctimas con protección y atención integral",
+  "coincidencia_ppi": 0.0,
   "pagina": 90,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4101074",
@@ -1600,10 +1700,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Víctimas con protección y atención integral",
+  "coincidencia_ppi": 0.0,
   "pagina": 90,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4101079",
@@ -1616,10 +1717,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Víctimas con protección y atención integral",
+  "coincidencia_ppi": 0.0,
   "pagina": 90,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4101073",
@@ -1635,7 +1737,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 91,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4103004",
@@ -1651,7 +1754,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 91,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4103004",
@@ -1667,7 +1771,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 91,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4103004",
@@ -1683,7 +1788,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 91,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4103004",
@@ -1699,7 +1805,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 91,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "Oportunidades de Empleo creadas",
@@ -1714,7 +1821,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 92,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4104020",
@@ -1730,7 +1838,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 93,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4104020",
@@ -1746,7 +1855,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 93,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4104020",
@@ -1762,7 +1872,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 93,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502038",
@@ -1778,7 +1889,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 94,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502038",
@@ -1794,7 +1906,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 94,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502038",
@@ -1810,7 +1923,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 94,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502038",
@@ -1826,7 +1940,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 95,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502038",
@@ -1842,7 +1957,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 95,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4102001",
@@ -1858,7 +1974,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 98,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4102002",
@@ -1874,7 +1991,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 98,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4102038",
@@ -1890,7 +2008,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 98,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4102046",
@@ -1906,7 +2025,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 98,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4102052",
@@ -1922,7 +2042,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 98,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4102026",
@@ -1938,7 +2059,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4301038",
@@ -1954,7 +2076,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4103053",
@@ -1970,7 +2093,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201018",
@@ -1986,7 +2110,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4102001",
@@ -2002,7 +2127,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4102019",
@@ -2018,7 +2144,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502037",
@@ -2034,7 +2161,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4102001",
@@ -2050,7 +2178,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201018",
@@ -2066,7 +2195,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4102001",
@@ -2082,7 +2212,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 99,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502038",
@@ -2098,7 +2229,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 101,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502038",
@@ -2114,7 +2246,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 101,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502038",
@@ -2130,7 +2263,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 101,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502038",
@@ -2146,7 +2280,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 101,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4102041",
@@ -2162,7 +2297,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 103,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4103050",
@@ -2178,7 +2314,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 103,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4501018",
@@ -2194,7 +2331,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 103,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4501082",
@@ -2210,7 +2348,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 103,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1702007",
@@ -2226,7 +2365,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 107,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1702011",
@@ -2242,7 +2382,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 107,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1702012",
@@ -2258,7 +2399,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 107,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1702016",
@@ -2274,7 +2416,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 107,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1702018",
@@ -2290,7 +2433,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 107,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1702024",
@@ -2306,7 +2450,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 107,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1702025",
@@ -2322,7 +2467,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 107,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1702035",
@@ -2338,7 +2484,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 107,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1703006",
@@ -2354,7 +2501,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 107,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1707042",
@@ -2370,7 +2518,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 107,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1707050",
@@ -2386,7 +2535,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 107,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1707061",
@@ -2402,7 +2552,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 107,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1709091",
@@ -2418,7 +2569,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 108,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1709034",
@@ -2434,7 +2586,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 108,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1702021",
@@ -2450,7 +2603,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 108,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1702007",
@@ -2466,7 +2620,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 108,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1707078",
@@ -2482,7 +2637,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 108,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1702040",
@@ -2498,7 +2654,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 108,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1704018",
@@ -2514,7 +2671,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 108,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4501011",
@@ -2530,7 +2688,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 108,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1704003",
@@ -2546,7 +2705,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 108,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1704003",
@@ -2562,7 +2722,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 108,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1709102",
@@ -2578,7 +2739,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4102001",
@@ -2594,7 +2756,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1702021",
@@ -2610,7 +2773,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1702021",
@@ -2626,7 +2790,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1702007",
@@ -2642,7 +2807,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1702009",
@@ -2658,7 +2824,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1702009",
@@ -2674,7 +2841,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1702007",
@@ -2690,7 +2858,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1702007",
@@ -2706,7 +2875,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 109,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1709040",
@@ -2722,7 +2892,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 110,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1709043",
@@ -2738,7 +2909,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 110,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1709091",
@@ -2754,7 +2926,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 110,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1709092",
@@ -2770,7 +2943,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 110,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1709106",
@@ -2786,7 +2960,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 110,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1709114",
@@ -2802,7 +2977,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 110,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3502110",
@@ -2818,7 +2994,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 111,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3502045",
@@ -2834,7 +3011,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 111,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3502047",
@@ -2850,7 +3028,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 112,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3502045",
@@ -2866,7 +3045,8 @@
   "sector": null,
   "coincidencia_ppi": 0.67,
   "pagina": 112,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3502036",
@@ -2882,7 +3062,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 112,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3502039",
@@ -2898,7 +3079,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 112,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3502046",
@@ -2914,7 +3096,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 112,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3502047",
@@ -2930,7 +3113,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 112,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3502059",
@@ -2946,7 +3130,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 112,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3502036",
@@ -2962,7 +3147,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 112,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3602004",
@@ -2978,7 +3164,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 114,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3502016",
@@ -2994,7 +3181,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 114,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4103052",
@@ -3010,7 +3198,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 114,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3603003",
@@ -3026,7 +3215,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 114,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3602032",
@@ -3042,7 +3232,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 114,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3602017",
@@ -3058,7 +3249,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 114,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3502016",
@@ -3074,7 +3266,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 114,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3603003",
@@ -3090,7 +3283,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 114,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1707067",
@@ -3106,7 +3300,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 116,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1702007",
@@ -3122,7 +3317,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 116,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4103017",
@@ -3138,7 +3334,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 116,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1707070",
@@ -3154,7 +3351,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 116,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1707070",
@@ -3170,7 +3368,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 116,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4102014",
@@ -3186,7 +3385,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 116,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1905028",
@@ -3202,7 +3402,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 116,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201030",
@@ -3218,7 +3419,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 120,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201031",
@@ -3234,7 +3436,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 120,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201032",
@@ -3250,7 +3453,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 120,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201033",
@@ -3266,7 +3470,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 120,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201034",
@@ -3282,7 +3487,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 120,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201035",
@@ -3298,7 +3504,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 120,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201036",
@@ -3314,7 +3521,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 120,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201037",
@@ -3330,7 +3538,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 120,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201038",
@@ -3346,7 +3555,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 120,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201043",
@@ -3362,7 +3572,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 120,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201048",
@@ -3378,7 +3589,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 120,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201049",
@@ -3394,7 +3606,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 120,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201001",
@@ -3410,7 +3623,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 120,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201050",
@@ -3426,7 +3640,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 120,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2202005",
@@ -3442,7 +3657,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201050",
@@ -3458,7 +3674,8 @@
   "sector": null,
   "coincidencia_ppi": 0.67,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201052",
@@ -3474,7 +3691,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201054",
@@ -3490,7 +3708,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201055",
@@ -3506,7 +3725,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201061",
@@ -3522,7 +3742,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201062",
@@ -3538,7 +3759,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201064",
@@ -3554,7 +3776,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201067",
@@ -3570,7 +3793,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201068",
@@ -3586,7 +3810,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201069",
@@ -3602,7 +3827,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201070",
@@ -3618,7 +3844,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201075",
@@ -3634,7 +3861,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2201080",
@@ -3650,7 +3878,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 122,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2202011",
@@ -3666,7 +3895,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 123,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2202039",
@@ -3682,7 +3912,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 123,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2202061",
@@ -3698,7 +3929,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 123,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2202062",
@@ -3714,7 +3946,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 123,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2202063",
@@ -3730,7 +3963,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 123,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2202065",
@@ -3746,7 +3980,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 123,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2202067",
@@ -3762,7 +3997,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 123,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1903011",
@@ -3775,10 +4011,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Fortalecimiento de la autoridad sanitaria",
+  "coincidencia_ppi": 0.0,
   "pagina": 125,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1903025",
@@ -3791,10 +4028,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Fortalecimiento de la autoridad sanitaria",
+  "coincidencia_ppi": 0.0,
   "pagina": 125,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1903031",
@@ -3807,10 +4045,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Fortalecimiento de la autoridad sanitaria",
+  "coincidencia_ppi": 0.0,
   "pagina": 125,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1903035",
@@ -3823,10 +4062,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Fortalecimiento de la autoridad sanitaria",
+  "coincidencia_ppi": 0.0,
   "pagina": 125,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1903041",
@@ -3839,10 +4079,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Fortalecimiento de la autoridad sanitaria",
+  "coincidencia_ppi": 0.0,
   "pagina": 125,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1903045",
@@ -3855,10 +4096,11 @@
   "tipo_acumulado": "",
   "linea": null,
   "sector": null,
-  "programa": null,
-  "coincidencia_ppi": 0,
+  "programa": "Fortalecimiento de la autoridad sanitaria",
+  "coincidencia_ppi": 0.0,
   "pagina": 125,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1906044",
@@ -3874,7 +4116,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 127,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4102021",
@@ -3890,7 +4133,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 127,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1905054",
@@ -3906,7 +4150,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 127,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1905044",
@@ -3922,7 +4167,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 127,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1905054",
@@ -3938,7 +4184,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 127,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3603003",
@@ -3954,7 +4201,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 127,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1906032",
@@ -3970,7 +4218,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 127,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1906024",
@@ -3986,7 +4235,8 @@
   "sector": null,
   "coincidencia_ppi": 0.67,
   "pagina": 127,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1906029",
@@ -4002,7 +4252,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 127,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1901119",
@@ -4018,7 +4269,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 127,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1906004",
@@ -4034,7 +4286,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1906030",
@@ -4050,7 +4303,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1906026",
@@ -4066,7 +4320,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1906027",
@@ -4082,7 +4337,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1905024",
@@ -4098,7 +4354,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1905031",
@@ -4114,7 +4371,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1905015",
@@ -4130,7 +4388,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 128,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4301001",
@@ -4146,7 +4405,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 130,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4301037",
@@ -4162,7 +4422,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 130,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4301037",
@@ -4178,7 +4439,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 130,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4301038",
@@ -4194,7 +4456,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 130,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4301001",
@@ -4210,7 +4473,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 130,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4301037",
@@ -4226,7 +4490,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 130,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4301038",
@@ -4242,7 +4507,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 130,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4301004",
@@ -4258,7 +4524,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 130,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4301019",
@@ -4274,7 +4541,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 130,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4301021",
@@ -4290,7 +4558,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 130,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4301022",
@@ -4306,7 +4575,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 130,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "nombre": "José Fernando Salaz Calle 50 # 50 – 27Centro Código Postal:0 E-mail:alcaldia",
@@ -4321,7 +4591,8 @@
   "sector": null,
   "coincidencia_ppi": 0.05,
   "pagina": 130,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3301053",
@@ -4337,7 +4608,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 132,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3301053",
@@ -4353,7 +4625,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 132,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3301053",
@@ -4369,7 +4642,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 132,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3301053",
@@ -4385,7 +4659,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 132,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3301053",
@@ -4401,7 +4676,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 133,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3301053",
@@ -4417,7 +4693,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 133,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3301053",
@@ -4433,7 +4710,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 133,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3301053",
@@ -4449,7 +4727,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 133,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502001",
@@ -4465,7 +4744,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 136,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502001",
@@ -4481,7 +4761,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 136,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502035",
@@ -4497,7 +4778,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 136,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502001",
@@ -4513,7 +4795,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 137,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4103015",
@@ -4529,7 +4812,8 @@
   "sector": null,
   "coincidencia_ppi": 0.67,
   "pagina": 137,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502035",
@@ -4545,7 +4829,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 137,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502026",
@@ -4561,7 +4846,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 137,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502035",
@@ -4577,7 +4863,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 137,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502035",
@@ -4593,7 +4880,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 137,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "1702038",
@@ -4609,7 +4897,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 137,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502001",
@@ -4625,7 +4914,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 137,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502001",
@@ -4641,7 +4931,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 137,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3904021",
@@ -4657,7 +4948,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 137,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502001",
@@ -4673,7 +4965,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 137,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4002004",
@@ -4689,7 +4982,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 139,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4501026",
@@ -4705,7 +4999,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 139,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502017",
@@ -4721,7 +5016,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 139,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "`0401105",
@@ -4737,7 +5033,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 139,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502017",
@@ -4753,7 +5050,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 139,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599018",
@@ -4769,7 +5067,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 139,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599018",
@@ -4785,7 +5084,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 139,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599032",
@@ -4801,7 +5101,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 140,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4501031",
@@ -4817,7 +5118,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 140,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599023",
@@ -4833,7 +5135,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 140,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599023",
@@ -4849,7 +5152,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 140,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599023",
@@ -4865,7 +5169,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 140,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599002",
@@ -4881,7 +5186,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 140,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599023",
@@ -4897,7 +5203,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 141,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599025",
@@ -4913,7 +5220,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 141,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599026",
@@ -4929,7 +5237,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 141,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599029",
@@ -4945,7 +5254,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 141,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599030",
@@ -4961,7 +5271,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 141,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599031",
@@ -4977,7 +5288,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 141,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599034",
@@ -4993,7 +5305,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 141,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599037",
@@ -5009,7 +5322,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 141,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599038",
@@ -5025,7 +5339,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 141,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599009",
@@ -5041,7 +5356,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 141,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599016",
@@ -5057,7 +5373,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 141,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599017",
@@ -5073,7 +5390,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 141,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599028",
@@ -5089,7 +5407,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 141,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599035",
@@ -5105,7 +5424,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 141,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4599036",
@@ -5121,7 +5441,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 141,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4102046",
@@ -5137,7 +5458,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 142,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4501029",
@@ -5153,7 +5475,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 142,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4501028",
@@ -5169,7 +5492,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 142,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4501047",
@@ -5185,7 +5509,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 142,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4501026",
@@ -5201,7 +5526,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 142,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4501047",
@@ -5217,7 +5543,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 143,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4501026",
@@ -5233,11 +5560,12 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 143,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2409009",
-  "nombre": "<sup>Servicio de promoción y difusión</sup> para la seguridad de transporte",
+  "nombre": "Servicio de promoción y difusión para la seguridad de transporte",
   "linea_base": "3",
   "ano_base": "2024",
   "programa": "4",
@@ -5249,11 +5577,12 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 143,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2409022",
-  "nombre": "<sup>Servicio de educación informal en</sup> seguridad vial",
+  "nombre": "Servicio de educación informal en seguridad vial",
   "linea_base": "2",
   "ano_base": "2024",
   "programa": "4",
@@ -5265,11 +5594,12 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 143,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2409023",
-  "nombre": "<sup>Servicio de sensibilización a los</sup> actores viales",
+  "nombre": "Servicio de sensibilización a los actores viales",
   "linea_base": "2",
   "ano_base": "2024",
   "programa": "4",
@@ -5281,7 +5611,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 143,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4501018",
@@ -5297,7 +5628,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 143,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4501048",
@@ -5313,7 +5645,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 143,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4501031",
@@ -5329,7 +5662,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 143,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502019",
@@ -5345,7 +5679,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 145,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502026",
@@ -5361,7 +5696,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 145,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "4502019",
@@ -5377,7 +5713,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 145,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "3904021",
@@ -5393,7 +5730,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 145,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2301047",
@@ -5409,7 +5747,8 @@
   "sector": null,
   "coincidencia_ppi": 0.0,
   "pagina": 145,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2302024",
@@ -5425,7 +5764,8 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 145,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  },
  {
   "codigo": "2302068",
@@ -5441,6 +5781,7 @@
   "sector": null,
   "coincidencia_ppi": 1.0,
   "pagina": 145,
-  "fuente_lectura": "texto"
+  "fuente_lectura": "texto",
+  "formato": "tabla"
  }
 ]

@@ -1,0 +1,785 @@
+[
+ {
+  "paginas": [
+   91
+  ],
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   31469629861,
+   32529598900,
+   34316422068,
+   37388228096
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Educación",
+    "anios": [
+     464978099,
+     478927442,
+     493295266,
+     508094124
+    ],
+    "total": 1945294931,
+    "ruta": {
+     "linea": "Educación"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Calidad",
+    "anios": [
+     464978099,
+     478927442,
+     493295266,
+     508094124
+    ],
+    "total": 1945294931,
+    "ruta": {
+     "linea": "Educación",
+     "sector": "Calidad"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Matrícula Gratuidad",
+    "anios": [
+     242166076,
+     249431058,
+     256913990,
+     264621410
+    ],
+    "total": 1013132534,
+    "ruta": {
+     "linea": "Educación",
+     "sector": "Calidad",
+     "programa": "Matrícula Gratuidad"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "programa",
+    "profundidad": 2,
+    "etiqueta": "Matrícula Oficial",
+    "anios": [
+     222812023,
+     229496384,
+     236381276,
+     243472714
+    ],
+    "total": 932162397,
+    "ruta": {
+     "linea": "Educación",
+     "sector": "Calidad",
+     "programa": "Matrícula Oficial"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Salud",
+    "anios": [
+     5650572410,
+     5820089581,
+     5994692268,
+     6174533036
+    ],
+    "total": 23639887295,
+    "ruta": {
+     "linea": "Salud"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Régimen Subsidiado",
+    "anios": [
+     5370336089,
+     5531446171,
+     5697389556,
+     5868311243
+    ],
+    "total": 22467483059,
+    "ruta": {
+     "linea": "Salud",
+     "sector": "Régimen Subsidiado"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Salud Pública",
+    "anios": [
+     280236321,
+     288643410,
+     297302712,
+     306221793
+    ],
+    "total": 1172404236,
+    "ruta": {
+     "linea": "Salud",
+     "sector": "Salud Pública"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Agua Potable",
+    "anios": [
+     1549854289,
+     1596349918,
+     1644240416,
+     1693567628
+    ],
+    "total": 6484012251,
+    "ruta": {
+     "linea": "Agua Potable"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Propósito General – Destinación",
+    "anios": [
+     4807642740,
+     4951872023,
+     5100428184,
+     5253441029
+    ],
+    "total": 20113383976,
+    "ruta": {
+     "linea": "Propósito General – Destinación"
+    },
+    "con_hijos": true
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Libre Destinación",
+    "anios": [
+     1819356487,
+     1873937182,
+     1930155297,
+     1988059956
+    ],
+    "total": 7611508922,
+    "ruta": {
+     "linea": "Propósito General – Destinación",
+     "sector": "Libre Destinación"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Deporte",
+    "anios": [
+     70430258,
+     72543166,
+     74719461,
+     76961045
+    ],
+    "total": 294653930,
+    "ruta": {
+     "linea": "Propósito General – Destinación",
+     "sector": "Deporte"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Cultura",
+    "anios": [
+     52822677,
+     54407357,
+     56039578,
+     57720765
+    ],
+    "total": 220990377,
+    "ruta": {
+     "linea": "Propósito General – Destinación",
+     "sector": "Cultura"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "Libre Inversión",
+    "anios": [
+     2301153900,
+     2370188517,
+     2441294173,
+     2514532998
+    ],
+    "total": 9627169588,
+    "ruta": {
+     "linea": "Propósito General – Destinación",
+     "sector": "Libre Inversión"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "sector",
+    "profundidad": 1,
+    "etiqueta": "FONPET (2)",
+    "anios": [
+     563879418,
+     580795801,
+     598219675,
+     616166265
+    ],
+    "total": 2359061159,
+    "ruta": {
+     "linea": "Propósito General – Destinación",
+     "sector": "FONPET (2)"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Alimentación Escolar",
+    "anios": [
+     94898263,
+     97745211,
+     100677567,
+     103697894
+    ],
+    "total": 397018935,
+    "ruta": {
+     "linea": "Alimentación Escolar"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TOTAL SGP",
+    "anios": [
+     12567945801,
+     12944984175,
+     13333333701,
+     13733333711
+    ],
+    "total": 52579597388,
+    "ruta": {
+     "linea": "TOTAL SGP"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TRANSFERENCIAS PARA SALUD ADRESS Y DPTO",
+    "anios": [
+     6333738259,
+     6639630550,
+     7649754666,
+     9921560674
+    ],
+    "total": 30544684149,
+    "ruta": {
+     "linea": "TRANSFERENCIAS PARA SALUD ADRESS Y DPTO"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   102
+  ],
+  "cabecera": "DIMENSIONES",
+  "unidad": "millones",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   56588,
+   57795,
+   59498,
+   60759
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Abejorral ambientalmente seguro y sostenible",
+    "anios": [
+     4214,
+     4456,
+     4637,
+     4777
+    ],
+    "total": 18084,
+    "ruta": {
+     "linea": "Abejorral ambientalmente seguro y sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Bienestar social para un Abejorral más humano",
+    "anios": [
+     21646,
+     22024,
+     22733,
+     23461
+    ],
+    "total": 89864,
+    "ruta": {
+     "linea": "Bienestar social para un Abejorral más humano"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Seguridad y convivencia ciudadana para el desarrollo económico y turístico de Abejorral",
+    "anios": [
+     1697,
+     1784,
+     1838,
+     1893
+    ],
+    "total": 7211,
+    "ruta": {
+     "linea": "Seguridad y convivencia ciudadana para el desarrollo económico y turístico de Abejorral"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Unidos logramos gobernanza en Abejorral",
+    "anios": [
+     737,
+     634,
+     541,
+     248
+    ],
+    "total": 2160,
+    "ruta": {
+     "linea": "Unidos logramos gobernanza en Abejorral"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "TOTAL",
+    "anios": [
+     28294,
+     28897,
+     29749,
+     30380
+    ],
+    "total": 117319,
+    "ruta": {
+     "linea": "TOTAL"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   104
+  ],
+  "cabecera": "DIMENSIONES",
+  "unidad": "millones",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   27487,
+   28031,
+   28833,
+   29390
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Abejorral ambientalmente",
+    "anios": [
+     2028,
+     2089,
+     2152,
+     2216
+    ],
+    "total": 8485,
+    "ruta": {
+     "linea": "Abejorral ambientalmente"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "seguro y sostenible",
+    "anios": [
+     2186,
+     2347,
+     2465,
+     2540
+    ],
+    "total": 9538,
+    "ruta": {
+     "linea": "seguro y sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Bienestar social para un Abejorral más",
+    "anios": [
+     1511,
+     1557,
+     1603,
+     1651
+    ],
+    "total": 6323,
+    "ruta": {
+     "linea": "Bienestar social para un Abejorral más"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "humano",
+    "anios": [
+     19156,
+     19392,
+     19973,
+     20573
+    ],
+    "total": 79093,
+    "ruta": {
+     "linea": "humano"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Seguridad y convivencia ciudadana para el",
+    "anios": [
+     470,
+     485,
+     499,
+     514
+    ],
+    "total": 1968,
+    "ruta": {
+     "linea": "Seguridad y convivencia ciudadana para el"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "desarrollo económico y turístico de Abejorral",
+    "anios": [
+     1386,
+     1427,
+     1470,
+     1514
+    ],
+    "total": 5797,
+    "ruta": {
+     "linea": "desarrollo económico y turístico de Abejorral"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Unidos logramos gobernanza en",
+    "anios": [
+     630,
+     610,
+     544,
+     251
+    ],
+    "total": 2035,
+    "ruta": {
+     "linea": "Unidos logramos gobernanza en"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Abejorral",
+    "anios": [
+     120,
+     124,
+     127,
+     131
+    ],
+    "total": 502,
+    "ruta": {
+     "linea": "Abejorral"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   104
+  ],
+  "cabecera": "LÍNEAS ESTRATÉGICAS",
+  "unidad": "millones",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   82,
+   86,
+   90,
+   96
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Abejorral ambientalmente seguro y sostenible",
+    "anios": [
+     50,
+     52,
+     53,
+     55
+    ],
+    "total": 209,
+    "ruta": {
+     "linea": "Abejorral ambientalmente seguro y sostenible"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Disminución de las brechas de inclusión con enfoque diferencial",
+    "anios": [
+     32,
+     34,
+     37,
+     41
+    ],
+    "total": 144,
+    "ruta": {
+     "linea": "Disminución de las brechas de inclusión con enfoque diferencial"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   106
+  ],
+  "cabecera": "DIMENSIÓN",
+  "unidad": "millones",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   360,
+   371,
+   382,
+   394
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Seguridad y convivencia ciudadana para el desarrollo económico",
+    "anios": [
+     95,
+     98,
+     101,
+     104
+    ],
+    "total": 397,
+    "ruta": {
+     "linea": "Seguridad y convivencia ciudadana para el desarrollo económico"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "y turístico de Abejorral",
+    "anios": [
+     265,
+     273,
+     281,
+     290
+    ],
+    "total": 1109,
+    "ruta": {
+     "linea": "y turístico de Abejorral"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   109
+  ],
+  "cabecera": "DIMENSIÓN",
+  "unidad": "millones",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   189,
+   195,
+   200,
+   207
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Unidos logramos gobernanza en",
+    "anios": [
+     69,
+     71,
+     73,
+     76
+    ],
+    "total": 289,
+    "ruta": {
+     "linea": "Unidos logramos gobernanza en"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "Abejorral",
+    "anios": [
+     120,
+     124,
+     127,
+     131
+    ],
+    "total": 502,
+    "ruta": {
+     "linea": "Abejorral"
+    },
+    "con_hijos": false
+   }
+  ]
+ },
+ {
+  "paginas": [
+   355
+  ],
+  "cabecera": "`DIMENSIONES`",
+  "unidad": "pesos",
+  "niveles": [
+   "linea",
+   "sector",
+   "programa",
+   "subprograma"
+  ],
+  "total_raices": [
+   27557,
+   28264,
+   29208,
+   30131
+  ],
+  "registros": [
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "`Abejorral` `ambientalmente` `seguroy sostenible`",
+    "anios": [
+     4214,
+     4456,
+     4637,
+     4777
+    ],
+    "total": 18084,
+    "ruta": {
+     "linea": "`Abejorral` `ambientalmente` `seguroy sostenible`"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "`Bienestar social` `para un Abejorral` `más humano`",
+    "anios": [
+     21646,
+     22024,
+     22733,
+     23461
+    ],
+    "total": 89864,
+    "ruta": {
+     "linea": "`Bienestar social` `para un Abejorral` `más humano`"
+    },
+    "con_hijos": false
+   },
+   {
+    "nivel": "linea",
+    "profundidad": 0,
+    "etiqueta": "`Seguridad y` `convivencia` `ciudadana para el` `desarrollo económico`",
+    "anios": [
+     1697,
+     1784,
+     1838,
+     1893
+    ],
+    "total": 7211,
+    "ruta": {
+     "linea": "`Seguridad y` `convivencia` `ciudadana para el` `desarrollo económico`"
+    },
+    "con_hijos": false
+   }
+  ]
+ }
+]

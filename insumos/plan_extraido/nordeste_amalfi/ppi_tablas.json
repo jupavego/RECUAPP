@@ -1,0 +1,384 @@
+[
+ {
+  "pagina": 291,
+  "cabecera": "CODIGO DE PRODUCTO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "4301004",
+    "anios": [
+     4,
+     8,
+     12,
+     1
+    ],
+    "total": 25
+   },
+   {
+    "etiqueta": "1702007",
+    "anios": [
+     4,
+     5,
+     6,
+     7
+    ],
+    "total": 22
+   },
+   {
+    "etiqueta": "1702009",
+    "anios": [
+     25,
+     55,
+     90,
+     12
+    ],
+    "total": 182
+   }
+  ],
+  "ncols": 10,
+  "financiero": false
+ },
+ {
+  "pagina": 296,
+  "cabecera": "CODIGO DE PRODUCTO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "1702038",
+    "anios": [
+     55,
+     75,
+     100,
+     120
+    ],
+    "total": 350
+   },
+   {
+    "etiqueta": "1703006",
+    "anios": [
+     30,
+     60,
+     90,
+     120
+    ],
+    "total": 300
+   },
+   {
+    "etiqueta": "1704010",
+    "anios": [
+     112,
+     132,
+     152,
+     172
+    ],
+    "total": 568
+   },
+   {
+    "etiqueta": "1708018",
+    "anios": [
+     172,
+     202,
+     232,
+     262
+    ],
+    "total": 868
+   },
+   {
+    "etiqueta": "1708041",
+    "anios": [
+     2100,
+     2600,
+     3100,
+     3600
+    ],
+    "total": 11400
+   },
+   {
+    "etiqueta": "1709043",
+    "anios": [
+     15,
+     19,
+     23,
+     27
+    ],
+    "total": 84
+   }
+  ],
+  "ncols": 10,
+  "financiero": false
+ },
+ {
+  "pagina": 311,
+  "cabecera": "CODIGO DE PRODUCTO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "3202014",
+    "anios": [
+     8,
+     11,
+     14,
+     15
+    ],
+    "total": 48
+   },
+   {
+    "etiqueta": "3202043",
+    "anios": [
+     174,
+     219,
+     264,
+     309
+    ],
+    "total": 966
+   },
+   {
+    "etiqueta": "3202012",
+    "anios": [
+     7,
+     8,
+     8,
+     9
+    ],
+    "total": 32
+   },
+   {
+    "etiqueta": "3203050",
+    "anios": [
+     4,
+     5,
+     6,
+     7
+    ],
+    "total": 22
+   }
+  ],
+  "ncols": 10,
+  "financiero": false
+ },
+ {
+  "pagina": 316,
+  "cabecera": "CODIGO DE PRODUCTO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "3208016",
+    "anios": [
+     1610,
+     1965,
+     2345,
+     276
+    ],
+    "total": 6196
+   },
+   {
+    "etiqueta": "3502009",
+    "anios": [
+     26,
+     31,
+     26,
+     41
+    ],
+    "total": 124
+   }
+  ],
+  "ncols": 10,
+  "financiero": false
+ },
+ {
+  "pagina": 326,
+  "cabecera": "CODIGO DE PRODUCTO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "3605011",
+    "anios": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "total": 4
+   },
+   {
+    "etiqueta": "0401105",
+    "anios": [
+     7844,
+     7844,
+     7844,
+     7844
+    ],
+    "total": 31376
+   },
+   {
+    "etiqueta": "0406016",
+    "anios": [
+     2400,
+     4800,
+     7200,
+     9467
+    ],
+    "total": 23867
+   },
+   {
+    "etiqueta": "0406003",
+    "anios": [
+     2700,
+     2900,
+     3050,
+     3200
+    ],
+    "total": 11850
+   }
+  ],
+  "ncols": 10,
+  "financiero": false
+ },
+ {
+  "pagina": 331,
+  "cabecera": "CODIGO DE PRODUCTO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "2402112",
+    "anios": [
+     479,
+     499,
+     522,
+     550
+    ],
+    "total": 2050
+   },
+   {
+    "etiqueta": "2402042",
+    "anios": [
+     5700,
+     7700,
+     9700,
+     9700
+    ],
+    "total": 32800
+   },
+   {
+    "etiqueta": "2402055",
+    "anios": [
+     3,
+     4,
+     5,
+     6
+    ],
+    "total": 18
+   },
+   {
+    "etiqueta": "2402048",
+    "anios": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "total": 10
+   },
+   {
+    "etiqueta": "2402040",
+    "anios": [
+     3,
+     3,
+     6,
+     9
+    ],
+    "total": 21
+   }
+  ],
+  "ncols": 10,
+  "financiero": false
+ },
+ {
+  "pagina": 341,
+  "cabecera": "CODIGO DE PRODUCTO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "1204007",
+    "anios": [
+     3,
+     4,
+     5,
+     6
+    ],
+    "total": 18
+   },
+   {
+    "etiqueta": "4101027",
+    "anios": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "total": 4
+   },
+   {
+    "etiqueta": "4101097",
+    "anios": [
+     2,
+     4,
+     6,
+     7
+    ],
+    "total": 19
+   }
+  ],
+  "ncols": 10,
+  "financiero": false
+ },
+ {
+  "pagina": 371,
+  "cabecera": "CODIGO DE PRODUCTO",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "4503002",
+    "anios": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "total": 4
+   },
+   {
+    "etiqueta": "4503014",
+    "anios": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "total": 4
+   },
+   {
+    "etiqueta": "4503022",
+    "anios": [
+     4,
+     5,
+     6,
+     7
+    ],
+    "total": 22
+   },
+   {
+    "etiqueta": "4599025",
+    "anios": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "total": 4
+   }
+  ],
+  "ncols": 10,
+  "financiero": false
+ }
+]

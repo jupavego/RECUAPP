@@ -1,0 +1,1351 @@
+[
+ {
+  "pagina": 180,
+  "cabecera": "Línea, Componente y Programa",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "01 El Peñol Avanza con Educación, Salud, Cultura y Deporte",
+    "anios": [
+     21391088145,
+     23434806516,
+     25478703677,
+     27522788565
+    ],
+    "total": 97827386903
+   },
+   {
+    "etiqueta": "0101 Educación",
+    "anios": [
+     2179537974,
+     2502796514,
+     2826233843,
+     3149858899
+    ],
+    "total": 10658427229
+   },
+   {
+    "etiqueta": "010101 Mantenimiento, mejoramiento y construcción de infraestructura educativa",
+    "anios": [
+     588365816,
+     686492296,
+     784618775,
+     882745254
+    ],
+    "total": 2942222142
+   },
+   {
+    "etiqueta": "010102 Fortalecimiento de la cobertura educativa mediante estrategias de acceso y permanencia en el sistema educativo",
+    "anios": [
+     523369505,
+     591713539,
+     660057573,
+     728401607
+    ],
+    "total": 2503542225
+   },
+   {
+    "etiqueta": "010103 Fortalecimiento de la calidad educativa mediante la implementación de los ejes del PEM (calidad, cobertura, eficiencia y pertinencia)",
+    "anios": [
+     293967547,
+     333666822,
+     373366098,
+     413065373
+    ],
+    "total": 1414065840
+   },
+   {
+    "etiqueta": "010104 Reducción de Brechas entre lo urbano y lo rural",
+    "anios": [
+     773835105,
+     890923857,
+     1008191396,
+     1125646664
+    ],
+    "total": 3798597022
+   },
+   {
+    "etiqueta": "0102 Salud",
+    "anios": [
+     16269249548,
+     17424778570,
+     18580307592,
+     19735836614
+    ],
+    "total": 72010172324
+   },
+   {
+    "etiqueta": "010201 Fortalecimiento de la autoridad sanitaria y los servicios de salud del municipio",
+    "anios": [
+     15471336384,
+     16560441609,
+     17649546834,
+     18738652059
+    ],
+    "total": 68419976887
+   },
+   {
+    "etiqueta": "010202 Implementación del Plan Territorial de Salud",
+    "anios": [
+     86307995,
+     101814621,
+     117321247,
+     132827873
+    ],
+    "total": 438271735
+   },
+   {
+    "etiqueta": "010203 Fortalecimiento de las acciones en Salud Pública en El Peñol",
+    "anios": [
+     711605169,
+     762522340,
+     813439511,
+     864356682
+    ],
+    "total": 3151923702
+   },
+   {
+    "etiqueta": "0103 Cultura",
+    "anios": [
+     1302732335,
+     1542154117,
+     1781575900,
+     2020997683
+    ],
+    "total": 6647460035
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 181,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "010301 Actualización e implementación del plan municipal de cultura",
+    "anios": [
+     129564544,
+     152219247,
+     174873950,
+     197528653
+    ],
+    "total": 654186395
+   },
+   {
+    "etiqueta": "010302 Mantenimiento, mejoramiento y dotación de infraestructura de los espacios culturales del municipio",
+    "anios": [
+     307781360,
+     365076275,
+     422371190,
+     479666105
+    ],
+    "total": 1574894930
+   },
+   {
+    "etiqueta": "010303 Fortalecimiento y dinamización de los procesos formativos artísticos y culturales en el área urbana y rural del municipio",
+    "anios": [
+     375044389,
+     445178955,
+     515313520,
+     585448086
+    ],
+    "total": 1920984950
+   },
+   {
+    "etiqueta": "010304 Fortalecimiento de espacios que promuevan la multiculturalidad, la identidad, la memoria, mediante festivales, conciertos, exposiciones, y oferta de formación de públicos",
+    "anios": [
+     490342041,
+     579679641,
+     669017240,
+     758354839
+    ],
+    "total": 2497393761
+   },
+   {
+    "etiqueta": "0104 Deporte",
+    "anios": [
+     1639568288,
+     1965077315,
+     2290586342,
+     2616095369
+    ],
+    "total": 8511327315
+   },
+   {
+    "etiqueta": "010401 Mantenimiento, Mejoramiento y construcción de infraestructura que promueva el acceso al deporte con calidad y oportunidad",
+    "anios": [
+     445663435,
+     531323477,
+     616983519,
+     702643562
+    ],
+    "total": 2296613993
+   },
+   {
+    "etiqueta": "010402 Fortalecimiento de la recreación, deporte y actividad física para la prevención y mitigación del consumo de drogas en niños, adolescentes y jóvenes",
+    "anios": [
+     466078487,
+     556244278,
+     646410070,
+     736575861
+    ],
+    "total": 2405308695
+   },
+   {
+    "etiqueta": "010403 Incentivo al rendimiento deportivo a través de estímulos para entrenadores y deportistas destacados en sus categorías individual y colectivo",
+    "anios": [
+     184772484,
+     222063793,
+     259355103,
+     296646413
+    ],
+    "total": 962837793
+   },
+   {
+    "etiqueta": "010404 Apoyo a las escuelas y los clubes deportivos existentes en el municipio",
+    "anios": [
+     234286019,
+     282194882,
+     330103745,
+     378012608
+    ],
+    "total": 1224597253
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 182,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "010405 Promoción del deporte social, campesino y comunitario",
+    "anios": [
+     308767864,
+     373250885,
+     437733906,
+     502216926
+    ],
+    "total": 1621969580
+   },
+   {
+    "etiqueta": "02 El Peñol Avanza de la Mano de la Participación Social y Comunitaria y De sus diferentes Grupos Poblacionales",
+    "anios": [
+     4818883444,
+     5412259353,
+     6005635262,
+     6599011171
+    ],
+    "total": 22835789230
+   },
+   {
+    "etiqueta": "0201 Ciclo Vital",
+    "anios": [
+     2832591769,
+     3184601065,
+     3536610361,
+     3888619657
+    ],
+    "total": 13442422853
+   },
+   {
+    "etiqueta": "020101 Implementación de la política pública de envejecimiento y vejez",
+    "anios": [
+     331492932,
+     376159891,
+     420826851,
+     465493810
+    ],
+    "total": 1593973484
+   },
+   {
+    "etiqueta": "020102 Implementación del plan Gerontológico Municipal",
+    "anios": [
+     301607332,
+     351972693,
+     402338054,
+     452703415
+    ],
+    "total": 1508621494
+   },
+   {
+    "etiqueta": "020103 Gestión para la construcción de la segunda etapa del centro gerontológico",
+    "anios": [
+     271183133,
+     304830400,
+     338477668,
+     372124936
+    ],
+    "total": 1286616137
+   },
+   {
+    "etiqueta": "020104 Fortalecimiento del CPSAM (Centro de Protección Social para el Adulto Mayor)",
+    "anios": [
+     525805837,
+     604929665,
+     684053494,
+     763177322
+    ],
+    "total": 2577966318
+   },
+   {
+    "etiqueta": "020105 Fortalecimiento de la Comisaría de Familia",
+    "anios": [
+     281050667,
+     325811966,
+     370573264,
+     415334563
+    ],
+    "total": 1392770460
+   },
+   {
+    "etiqueta": "020106 Ejecución de la política pública de infancia, adolescencia y fortalecimiento familiar",
+    "anios": [
+     650645797,
+     707186205,
+     763726612,
+     820267020
+    ],
+    "total": 2941825634
+   },
+   {
+    "etiqueta": "020107 Implementación del programa de escuela de liderazgo juvenil",
+    "anios": [
+     311722191,
+     335358331,
+     358994470,
+     382630609
+    ],
+    "total": 1388705601
+   },
+   {
+    "etiqueta": "020108 Implementación de la política pública de juventud",
+    "anios": [
+     159083880,
+     178351914,
+     197619948,
+     216887982
+    ],
+    "total": 751943725
+   },
+   {
+    "etiqueta": "0202 Participación Ciudadana",
+    "anios": [
+     373484261,
+     444281064,
+     515077867,
+     585874671
+    ],
+    "total": 1918717863
+   },
+   {
+    "etiqueta": "020201 Fortalecimiento a las juntas de acción comunal y acompañamiento a demás organizaciones con asiento en el municipio",
+    "anios": [
+     36679285,
+     43644399,
+     50609514,
+     57574628
+    ],
+    "total": 188507826
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 183,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "020202 Apoyo a los procesos comunitarios con el mantenimiento de las sedes comunales generando espacios agradables para la construcción de sociedad",
+    "anios": [
+     55018928,
+     65466599,
+     75914270,
+     86361942
+    ],
+    "total": 282761739
+   },
+   {
+    "etiqueta": "020203 Construcción de salones comunales que permitan el encuentro comunitario",
+    "anios": [
+     102701998,
+     122204318,
+     141706638,
+     161208958
+    ],
+    "total": 527821912
+   },
+   {
+    "etiqueta": "020204 Promoción de programas de bienestar social y comunitario",
+    "anios": [
+     43370694,
+     51481470,
+     59592245,
+     67703021
+    ],
+    "total": 222147430
+   },
+   {
+    "etiqueta": "020205 Fortalecimiento de los referentes culturales y sociales del municipio, mediante la celebración y conmemoración de días especiales y espacios de encuentro",
+    "anios": [
+     36679285,
+     43644399,
+     50609514,
+     57574628
+    ],
+    "total": 188507826
+   },
+   {
+    "etiqueta": "020206 Acompañamiento y fortalecimiento a las organizaciones comunitarias para la cofinanciación de proyectos con entidades públicas y privadas",
+    "anios": [
+     36679285,
+     43644399,
+     50609514,
+     57574628
+    ],
+    "total": 188507826
+   },
+   {
+    "etiqueta": "020207 Acompañamiento a la creación de JAC",
+    "anios": [
+     36679285,
+     43644399,
+     50609514,
+     57574628
+    ],
+    "total": 188507826
+   },
+   {
+    "etiqueta": "020208 Fortalecimiento y apoyo al control social y político de la comunidad",
+    "anios": [
+     25675500,
+     30551080,
+     35426659,
+     40302239
+    ],
+    "total": 131955478
+   },
+   {
+    "etiqueta": "0203 Diversidad",
+    "anios": [
+     132527022,
+     144016920,
+     155506818,
+     166996716
+    ],
+    "total": 599047478
+   },
+   {
+    "etiqueta": "020301 Promoción de los espacios de reconocimiento de las negritudes y la población afrodescendiente",
+    "anios": [
+     11989315,
+     12898397,
+     13807480,
+     14716562
+    ],
+    "total": 53411754
+   },
+   {
+    "etiqueta": "020302 Acompañamiento a la población sexualmente diversa",
+    "anios": [
+     59946575,
+     64491987,
+     69037398,
+     73582810
+    ],
+    "total": 267058769
+   },
+   {
+    "etiqueta": "020303 Implementación de la política pública de la mujer",
+    "anios": [
+     60591132,
+     66626536,
+     72661941,
+     78697345
+    ],
+    "total": 278576954
+   },
+   {
+    "etiqueta": "0204 Discapacidad",
+    "anios": [
+     1327660604,
+     1457987489,
+     1588314375,
+     1718641261
+    ],
+    "total": 6092603728
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 184,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "020401 Implementación de la política pública de discapacidad",
+    "anios": [
+     956097795,
+     1037316627,
+     1118535460,
+     1199754293
+    ],
+    "total": 4311704176
+   },
+   {
+    "etiqueta": "020402 Creación de la casa de la discapacidad",
+    "anios": [
+     371562809,
+     420670862,
+     469778914,
+     518886967
+    ],
+    "total": 1780899553
+   },
+   {
+    "etiqueta": "0205 Derechos Humanos",
+    "anios": [
+     152619788,
+     181372814,
+     210125840,
+     238878866
+    ],
+    "total": 782997309
+   },
+   {
+    "etiqueta": "020501 Atención, asistencia y reparación integral a las víctimas",
+    "anios": [
+     70198651,
+     83528835,
+     96859020,
+     110189204
+    ],
+    "total": 360775710
+   },
+   {
+    "etiqueta": "020502 Fortalecimiento al programa renta ciudadana",
+    "anios": [
+     82421137,
+     97843979,
+     113266821,
+     128689662
+    ],
+    "total": 422221599
+   },
+   {
+    "etiqueta": "03 El Peñol Avanza con Desarrollo Rural y Campesino",
+    "anios": [
+     656271226,
+     781594453,
+     886917679,
+     1092240906
+    ],
+    "total": 3417024264
+   },
+   {
+    "etiqueta": "0301 Agropecuario",
+    "anios": [
+     656271226,
+     781594453,
+     886917679,
+     1092240906
+    ],
+    "total": 3417024264
+   },
+   {
+    "etiqueta": "030101 Fortalecimiento de la economía familiar campesina",
+    "anios": [
+     79610887,
+     93907133,
+     108203378,
+     122499624
+    ],
+    "total": 404221022
+   },
+   {
+    "etiqueta": "030102 Apoyo en la formulación de planes de asistencia técnica rural",
+    "anios": [
+     139905721,
+     165856805,
+     191807888,
+     217758972
+    ],
+    "total": 715329387
+   },
+   {
+    "etiqueta": "030103 Promoción de los mercados campesinos y cultivos limpios",
+    "anios": [
+     126246127,
+     149192734,
+     172139341,
+     195085948
+    ],
+    "total": 642664150
+   },
+   {
+    "etiqueta": "030104 Fortalecimiento de los procesos de formación en áreas Agropecuarias",
+    "anios": [
+     104262363,
+     123445047,
+     142627731,
+     161810415
+    ],
+    "total": 532145555
+   },
+   {
+    "etiqueta": "030105 Fortalecimiento de la asociatividad, la producción, comercialización de los productos agrícolas locales",
+    "anios": [
+     126246127,
+     149192734,
+     172139341,
+     195085948
+    ],
+    "total": 642664150
+   },
+   {
+    "etiqueta": "030106 Gestión para la construcción del centro de comercialización de productos agrícolas",
+    "anios": [
+     80000000,
+     100000000,
+     100000000,
+     200000000
+    ],
+    "total": 480000000
+   },
+   {
+    "etiqueta": "04 El Peñol Avanza con Seguridad y Sana Convivencia",
+    "anios": [
+     3853463678,
+     4630566978,
+     5407670279,
+     6184773579
+    ],
+    "total": 20076474514
+   },
+   {
+    "etiqueta": "0401 Seguridad",
+    "anios": [
+     1533950739,
+     1873562080,
+     2213173420,
+     2552784761
+    ],
+    "total": 8173471001
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 185,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "040101 Mejoramiento a la infraestructura de la fuerza pública",
+    "anios": [
+     536715622,
+     658075227,
+     779434832,
+     900794438
+    ],
+    "total": 2875020119
+   },
+   {
+    "etiqueta": "040102 Implementación de un plan integral de seguridad y convivencia ciudadana",
+    "anios": [
+     642628361,
+     786321886,
+     930015412,
+     1073708937
+    ],
+    "total": 3432674597
+   },
+   {
+    "etiqueta": "040103 Fortalecimiento y mejoramiento del Centro de monitoreo y control",
+    "anios": [
+     354606756,
+     429164966,
+     503723176,
+     578281386
+    ],
+    "total": 1865776285
+   },
+   {
+    "etiqueta": "0402 Convivencia",
+    "anios": [
+     70198651,
+     83528835,
+     96859020,
+     110189204
+    ],
+    "total": 360775710
+   },
+   {
+    "etiqueta": "040201 Promoción de mecanismos alternativos de solución de conflictos",
+    "anios": [
+     70198651,
+     83528835,
+     96859020,
+     110189204
+    ],
+    "total": 360775710
+   },
+   {
+    "etiqueta": "0403 Fortalecimiento Institucional",
+    "anios": [
+     2249314288,
+     2673476063,
+     3097637839,
+     3521799614
+    ],
+    "total": 11542227803
+   },
+   {
+    "etiqueta": "040301 Formulación, ejecución, seguimiento, evaluación y control del plan de desarrollo municipal y sistemas de rendición pública de cuentas",
+    "anios": [
+     62716137,
+     74625450,
+     86534762,
+     98444074
+    ],
+    "total": 322320423
+   },
+   {
+    "etiqueta": "040302 Fortalecimiento del modelo integrado de planeación y gestión (MIPG), acorde con los lineamientos del decreto 1499 -2017",
+    "anios": [
+     250864550,
+     298501799,
+     346139048,
+     393776297
+    ],
+    "total": 1289281693
+   },
+   {
+    "etiqueta": "040303 Elaboración de procesos integrales de evaluación institucional y reorganización administrativa",
+    "anios": [
+     229959171,
+     273626649,
+     317294127,
+     360961605
+    ],
+    "total": 1181841552
+   },
+   {
+    "etiqueta": "040304 Generación de alianzas que posibiliten diálogo con agentes públicos y privados del mundo, para diseñar estrategias que promuevan oportunidades en el territorio y potencialicen el capital social Peñolense.",
+    "anios": [
+     104526896,
+     124375749,
+     144224603,
+     164073457
+    ],
+    "total": 537200705
+   },
+   {
+    "etiqueta": "040305 Fortalecimiento de los procesos de gestión documental acorde a al normatividad legal",
+    "anios": [
+     146337654,
+     174126049,
+     201914445,
+     229702840
+    ],
+    "total": 752080988
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 186,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "040306 Fortalecimiento de la hacienda pública y fiscalización",
+    "anios": [
+     355391445,
+     422877548,
+     490363651,
+     557849754
+    ],
+    "total": 1826482398
+   },
+   {
+    "etiqueta": "040307 Fortalecimiento de la capacidad institucional a través de la ejecución del Plan de Bienestar Laboral",
+    "anios": [
+     334486066,
+     398002398,
+     461518730,
+     525035062
+    ],
+    "total": 1719042257
+   },
+   {
+    "etiqueta": "040308 Revisión e implementación de la estratificación urbana y rural",
+    "anios": [
+     83621517,
+     99500600,
+     115379683,
+     131258766
+    ],
+    "total": 429760564
+   },
+   {
+    "etiqueta": "040309 Implementación, revisión y ajuste del esquema de ordenamiento territorial - EOT",
+    "anios": [
+     320197253,
+     378924250,
+     437651248,
+     496378246
+    ],
+    "total": 1633150997
+   },
+   {
+    "etiqueta": "040310 Fortalecimiento de la formación y gestión en proyectos",
+    "anios": [
+     78593775,
+     93221557,
+     107849339,
+     122477122
+    ],
+    "total": 402141793
+   },
+   {
+    "etiqueta": "040311 Fortalecimiento de los sistemas de información territorial y social",
+    "anios": [
+     57688396,
+     68346407,
+     79004419,
+     89662430
+    ],
+    "total": 294701652
+   },
+   {
+    "etiqueta": "040312 Fortalecimiento de los Consejos Territoriales",
+    "anios": [
+     62716137,
+     74625450,
+     86534762,
+     98444074
+    ],
+    "total": 322320423
+   },
+   {
+    "etiqueta": "040313 Fortalecimiento de la gestión catastral",
+    "anios": [
+     57688396,
+     68346407,
+     79004419,
+     89662430
+    ],
+    "total": 294701652
+   },
+   {
+    "etiqueta": "040314 Fortalecimiento de las políticas públicas en el municipio",
+    "anios": [
+     104526896,
+     124375749,
+     144224603,
+     164073457
+    ],
+    "total": 537200705
+   },
+   {
+    "etiqueta": "05 El Peñol Avanza con Desarrollo Territorial Sostenible",
+    "anios": [
+     4309781647,
+     5098448476,
+     5887115305,
+     6675782134
+    ],
+    "total": 21971127563
+   },
+   {
+    "etiqueta": "0501 Movilidad",
+    "anios": [
+     683430152,
+     796706136,
+     909982120,
+     1023258104
+    ],
+    "total": 3413376512
+   },
+   {
+    "etiqueta": "050101 Actualización e implementación del Plan de Movilidad Municipal",
+    "anios": [
+     391921407,
+     457748846,
+     523576285,
+     589403724
+    ],
+    "total": 1962650262
+   },
+   {
+    "etiqueta": "050102 Formulación y ejecución del programa de educación y seguridad vial",
+    "anios": [
+     291508746,
+     338957290,
+     386405835,
+     433854380
+    ],
+    "total": 1450726250
+   },
+   {
+    "etiqueta": "0502 Infraestructura",
+    "anios": [
+     3152431698,
+     3740421505,
+     4328411312,
+     4916401119
+    ],
+    "total": 16137665634
+   },
+   {
+    "etiqueta": "050201 Gestión para la construcción de pavimento",
+    "anios": [
+     207124361,
+     240440359,
+     273756357,
+     307072356
+    ],
+    "total": 1028393433
+   }
+  ],
+  "ncols": 6,
+  "financiero": false
+ },
+ {
+  "pagina": 198,
+  "cabecera": "Concepto",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "INVERSIÓN",
+    "anios": [
+     961324134,
+     833693605,
+     772375683,
+     812238451
+    ],
+    "total": 3379631873
+   },
+   {
+    "etiqueta": "Asignaciónpara la Paz",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignaciones Directas",
+    "anios": [
+     3228,
+     1991,
+     1875,
+     1870
+    ],
+    "total": 8964
+   },
+   {
+    "etiqueta": "20% Asignaciones Directas",
+    "anios": [
+     2514,
+     1550,
+     1460,
+     1456
+    ],
+    "total": 6980
+   },
+   {
+    "etiqueta": "5% Asignaciones Directas Anticipadas",
+    "anios": [
+     714,
+     440,
+     415,
+     414
+    ],
+    "total": 1983
+   },
+   {
+    "etiqueta": "Asignaciónpara la Inversión Regional",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Departamentos",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Regiones",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignaciónpara la Inversión Local",
+    "anios": [
+     961320906,
+     833691614,
+     772373808,
+     812236582
+    ],
+    "total": 3379622910
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 199,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Municipios máspobres",
+    "anios": [
+     961320906,
+     833691614,
+     772373808,
+     812236582
+    ],
+    "total": 3379622910
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     128176121,
+     111158882,
+     102983174,
+     108298211
+    ],
+    "total": 450616388
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     833144785,
+     722532732,
+     669390634,
+     703938371
+    ],
+    "total": 2929006522
+   },
+   {
+    "etiqueta": "Comunidades Étnicas",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Comunidades Indígenas",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Comunidades NARP",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Comunidades Rrom",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Destinación para medio ambiente y desarrollo sostenible",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto de Inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación para Ciencia, Tecnología e Innovación",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación para Inversión en Ciencia, Tecnología e Innovación Ambiental",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Resto de inversión",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Asignación Ambiental",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Municipios Río Magdalenay Canal Dique",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "AHORRO",
+    "anios": [
+     154140393,
+     133266048,
+     123483387,
+     128942790
+    ],
+    "total": 539832618
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ },
+ {
+  "pagina": 200,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Fondo de Ahorroy Estabilización(Ahorro)",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Fondo Ahorro Pensional Territorial(FONPET)",
+    "anios": [
+     154140393,
+     133266048,
+     123483387,
+     128942790
+    ],
+    "total": 539832618
+   },
+   {
+    "etiqueta": "OTROS",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Funcionamiento, operatividady fiscalización",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Sistema de Seguimiento, Control y Evaluación (SSEC)",
+    "anios": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "total": 0
+   },
+   {
+    "etiqueta": "Contraloría",
+    "anios": [
+     70401205851,
+     60858195556,
+     56382090798,
+     58862923139
+    ],
+    "total": 246504415344
+   },
+   {
+    "etiqueta": "Procuraduría",
+    "anios": [
+     14080241171,
+     12171639111,
+     11276418160,
+     11772584628
+    ],
+    "total": 49300883070
+   },
+   {
+    "etiqueta": "DNP",
+    "anios": [
+     56320964680,
+     48686556445,
+     45105672638,
+     47090338511
+    ],
+    "total": 197203532274
+   },
+   {
+    "etiqueta": "Total",
+    "anios": [
+     1115464527,
+     966959653,
+     895859070,
+     941181241
+    ],
+    "total": 3919464491
+   }
+  ],
+  "ncols": 5,
+  "financiero": true
+ },
+ {
+  "pagina": 201,
+  "cabecera": "",
+  "unidad": "pesos",
+  "filas": [
+   {
+    "etiqueta": "Local según NBI y cuarta, quinta y sexta categoría",
+    "anios": [
+     720532511,
+     722532732,
+     669390634,
+     703938371
+    ],
+    "total": 2816394248
+   },
+   {
+    "etiqueta": "TOTAL",
+    "anios": [
+     777889037,
+     833693878,
+     772375708,
+     812238453
+    ],
+    "total": 3196197076
+   }
+  ],
+  "ncols": 5,
+  "financiero": false
+ }
+]
