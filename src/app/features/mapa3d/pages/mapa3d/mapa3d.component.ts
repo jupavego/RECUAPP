@@ -10,7 +10,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { mergeGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 import { MapaService, Municipio, Punto, Zona } from '../../../mapa/services/mapa.service';
 import { CATEGORIA } from '../../../mapa/utils/puntos';
-import { Aura, ItemAura, crearAuras, crearIcono } from '../../utils/aura';
+import { Aura, COLOR_INDUSTRIA, Icono, ItemAura, crearAgrupador, crearAuras, crearIcono } from '../../utils/aura';
 import { Modelo, modelarEquipamiento } from '../../utils/equipamientos';
 import { coloresPorMunicipio, hex } from '../../../mapa/utils/paleta';
 import { Geometria, decodeGeometria } from '../../../mapa/utils/polyline';
@@ -183,8 +183,7 @@ const TOLERANCIA_CAUCE_PX = 9;
 const VELO_VEREDA = 0.2;
 /** Ajuste de tono de la foto satelital: más clara, sin desenfoque. */
 const TONO_FOTO = 'brightness(1.4) contrast(0.95) saturate(1.1)';
-/** Cuánto se levanta (metros del modelo) una vereda al pasar el cursor y al elegirla. */
-const ALZA_HOVER = 90;
+/** Cuánto se levanta (metros del modelo) una vereda al elegirla; al pasar el cursor solo se le dibuja el borde. */
 const ALZA_ELEGIDA = 170;
 
 interface Relieve {
@@ -575,6 +574,8 @@ export class Mapa3dComponent implements AfterViewInit {
   private ctxResalte!: CanvasRenderingContext2D;
   private texturaResalte!: THREE.CanvasTexture;
   private hover = -1;
+  private bordeClaves = '';
+  private bordesHover = new Map<number, THREE.Group>();
   // levantamiento de las veredas
   private capas: Capa[] = [];
   /** identificador de vereda + 1 por píxel del croquis (0 = ninguna) */
@@ -622,7 +623,9 @@ export class Mapa3dComponent implements AfterViewInit {
   private inicioEquip: number[] = [];
   /** neón en el círculo de cada equipamiento y su icono flotante */
   private auraEquip: Aura | null = null;
-  private iconosEquip: ReturnType<typeof crearIcono>[] = [];
+  private iconosEquip: Icono[] = [];
+  private auraIndustrias: Aura | null = null;
+  private agrupadorIconos: ReturnType<typeof crearAgrupador> | null = null;
   private equipHover = -1;
   private rotuloEquip: HTMLElement | null = null;
   private tFabricaHover = 0;
@@ -2496,14 +2499,17 @@ export class Mapa3dComponent implements AfterViewInit {
     this.escena.add(malla);
     this.registrarCapa(geo.getAttribute('position') as THREE.BufferAttribute, ids, pesos);
     this.auraEquip = crearAuras(items);
+    this.auraEquip.resaltar(-1);
     this.escena.add(this.auraEquip.grupo);
     for (const ic of this.iconosEquip) this.escena.add(ic.sprite);
+    this.agrupadorIconos ??= crearAgrupador(this.iconosEquip, this.escena);
   }
 
   /** El neón pulsa y los iconos flotan sin tapar su edificio. */
   private animarAuras(t: number): void {
     this.auraEquip?.animar(t);
-    for (const ic of this.iconosEquip) ic.animar(t, this.camara);
+    this.auraIndustrias?.animar(t);
+    this.agrupadorIconos?.animar(t, this.camara);
   }
 
   /**
@@ -2517,6 +2523,7 @@ export class Mapa3dComponent implements AfterViewInit {
     const geos: THREE.BufferGeometry[] = [], ids: number[] = [], pesos: number[] = [];
     const paredes = ['#d9d2c3', '#cbbba3', '#bfd0dc', '#e1e4e7', '#d8c3b0'];
     const lechos = new THREE.Matrix4();
+    const itemsAura: ItemAura[] = [];
 
     this.fabricas.forEach((f, n) => {
       this.inicioFabrica.push(ids.length);
@@ -2580,7 +2587,12 @@ export class Mapa3dComponent implements AfterViewInit {
         puffs.push({ tex: Math.floor(rnd() * 4), theta: rnd() * Math.PI * 2, giro: (rnd() - 0.5) * 0.3, tam: 0.8 + rnd() * 0.5, desv: rnd() });
       }
       this.humos.push({ x: hx, y: base + ch + 2, z: hz, fase, ini: this.humos.length * HUMO_BOCANADAS, puffs });
+      itemsAura.push({ x: f.x, y: base, z: f.z, radio: RADIO_FABRICA * 0.95, alto: alto + 22, color: COLOR_INDUSTRIA });
+      const icono = crearIcono('industria', COLOR_INDUSTRIA, f.x, base + ch * 0.6, f.z);
+      this.iconosEquip.push(icono);
+      this.escena.add(icono.sprite);
     });
+    this.agrupadorIconos ??= crearAgrupador(this.iconosEquip, this.escena);
     this.crearHumo();
 
     const geo = mergeGeometries(geos, false);
@@ -2594,6 +2606,9 @@ export class Mapa3dComponent implements AfterViewInit {
     malla.receiveShadow = true;
     this.escena.add(malla);
     this.registrarCapa(geo.getAttribute('position') as THREE.BufferAttribute, ids, pesos);
+    this.auraIndustrias = crearAuras(itemsAura);
+    this.auraIndustrias.resaltar(-1);
+    this.escena.add(this.auraIndustrias.grupo);
   }
 
   /**
@@ -3779,7 +3794,9 @@ export class Mapa3dComponent implements AfterViewInit {
     this.geoEquip?.dispose();
     this.matEquip?.dispose();
     this.auraEquip?.dispose();
+    this.auraIndustrias?.dispose();
     this.iconosEquip.forEach(ic => ic.dispose());
+    this.agrupadorIconos?.dispose();
     this.humoInst?.malla.geometry.dispose();
     (this.humoInst?.malla.material as THREE.Material | undefined)?.dispose();
     this.geoAutos.forEach(g => g.dispose());
@@ -3797,11 +3814,50 @@ export class Mapa3dComponent implements AfterViewInit {
     for (const s of this.nubeAvion?.sprites ?? []) s.material.dispose();
   }
 
+  /** Borde de la vereda elegida y de la que está bajo el cursor: el mismo muro translúcido con línea blanca que rodea el municipio. */
+  private mostrarBordeHover(): void {
+    const claves = `${this.elegida}|${this.hover}`;
+    if (claves === this.bordeClaves) return;
+    this.bordeClaves = claves;
+    for (const g of this.bordesHover.values()) g.visible = false;
+    for (const id of new Set([this.elegida, this.hover])) if (id >= 0) this.bordeDe(id).visible = true;
+  }
+
+  private bordeDe(id: number): THREE.Group {
+    let g = this.bordesHover.get(id);
+    if (!g) {
+      const pieza = this.piezas[id], v: number[] = [], linea: number[] = [];
+      const ALTO = 140;
+      for (const poligono of pieza.geometria) {
+        const anillo = poligono[0];
+        for (let i = 0; i < anillo.length; i++) {
+          const [la, lo] = anillo[i], [lb, lob] = anillo[(i + 1) % anillo.length];
+          const ya = this.alturaEn(lo, la), yb = this.alturaEn(lob, lb);
+          const ax = this.aX(lo), az = this.aZ(la), bx = this.aX(lob), bz = this.aZ(lb);
+          v.push(ax, ya, az, ax, ya + ALTO, az, bx, yb, bz, bx, yb, bz, ax, ya + ALTO, az, bx, yb + ALTO, bz);
+          linea.push(ax, ya + ALTO, az, bx, yb + ALTO, bz);
+        }
+      }
+      g = new THREE.Group();
+      const m = new THREE.BufferGeometry();
+      m.setAttribute('position', new THREE.Float32BufferAttribute(v, 3));
+      g.add(new THREE.Mesh(m, new THREE.MeshBasicMaterial({ color: pieza.color, transparent: true, opacity: 0.32, side: THREE.DoubleSide, depthWrite: false })));
+      const l = new THREE.BufferGeometry();
+      l.setAttribute('position', new THREE.Float32BufferAttribute(linea, 3));
+      g.add(new THREE.LineSegments(l, new THREE.LineBasicMaterial({ color: '#ffffff' })));
+      g.traverse(o => { o.frustumCulled = false; });
+      this.escena.add(g);
+      this.bordesHover.set(id, g);
+    }
+    return g;
+  }
+
   /** Acerca el levantamiento de cada vereda a su meta (hover o elegida) con una suave aceleración. */
   private animarAlzado(): void {
+    this.mostrarBordeHover();
     let cambio = false;
     this.piezas.forEach((_, id) => {
-      const meta = id === this.elegida ? ALZA_ELEGIDA : id === this.hover ? ALZA_HOVER : 0;
+      const meta = 0;
       const actual = this.alzado[id];
       if (actual === meta) return;
       const nuevo = Math.abs(meta - actual) < 0.5 ? meta : actual + (meta - actual) * 0.16;
@@ -4084,6 +4140,7 @@ export class Mapa3dComponent implements AfterViewInit {
   /** Cápsula con el nombre del lugar y el color de su categoría sobre el equipamiento señalado. */
   private marcarEquipHover(i: number): void {
     this.equipHover = i;
+    this.auraEquip?.resaltar(i);
     if (i < 0) {
       if (this.rotuloEquip) this.rotuloEquip.style.display = 'none';
       return;
@@ -4115,6 +4172,7 @@ export class Mapa3dComponent implements AfterViewInit {
   /** Marca la fábrica bajo el cursor: anillo claro a su alrededor y una cápsula con el nombre de la empresa. */
   private marcarFabricaHover(i: number): void {
     this.fabricaHover = i;
+    this.auraIndustrias?.resaltar(i);
     if (this.anilloHover) this.anilloHover.visible = false;
     if (i < 0) {
       if (this.rotuloFabrica) this.rotuloFabrica.style.display = 'none';
@@ -4137,6 +4195,7 @@ export class Mapa3dComponent implements AfterViewInit {
       this.rotuloFabrica.append(document.createElement('i'), document.createElement('span'));
       this.contenedorRotulos.nativeElement.appendChild(this.rotuloFabrica);
     }
+    (this.rotuloFabrica.firstElementChild as HTMLElement).style.background = COLOR_INDUSTRIA;
     this.rotuloFabrica.lastElementChild!.textContent = f.datos.n;
     this.rotuloFabrica.style.display = '';
   }

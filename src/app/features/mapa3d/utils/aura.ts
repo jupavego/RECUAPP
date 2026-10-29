@@ -2,8 +2,12 @@ import * as THREE from 'three';
 import { CategoriaPunto } from '../../mapa/services/mapa.service';
 
 /** Símbolo de cada tipo de infraestructura, para el icono flotante. */
-const GLIFO: Record<CategoriaPunto, string> = {
-  educacion: '🎓', cultura: '🎭', salud: '🏥', turismo: '🧭', deporte: '⚽', justicia: '🛡️', patrimonio: '🏺',
+/** Las industrias son una categoría más del mapa 3D, con su propio color, símbolo y neón. */
+export type CategoriaIcono = CategoriaPunto | 'industria';
+export const COLOR_INDUSTRIA = '#f97316';
+
+const GLIFO: Record<CategoriaIcono, string> = {
+  educacion: '🎓', cultura: '🎭', salud: '🏥', turismo: '🧭', deporte: '⚽', justicia: '🛡️', patrimonio: '🏺', industria: '🏭',
 };
 
 /** Fracción de la altura del domo que sí lleva luz: solo el borde de abajo, sin techo. */
@@ -23,11 +27,13 @@ export interface Aura {
   grupo: THREE.Group;
   /** pulso suave del neón; `t` en segundos */
   animar(t: number): void;
+  /** todos los aros quedan encendidos; el del edificio `i` (-1 = ninguno) brilla más */
+  resaltar(i: number): void;
   dispose(): void;
 }
 
 /** Medallón redondo del color de la categoría con su símbolo en el centro. */
-export function texturaIcono(cat: CategoriaPunto, color: string): THREE.CanvasTexture {
+export function texturaIcono(cat: CategoriaIcono, color: string, cuenta = 0): THREE.CanvasTexture {
   const c = document.createElement('canvas');
   c.width = c.height = 128;
   const ctx = c.getContext('2d')!;
@@ -43,6 +49,18 @@ export function texturaIcono(cat: CategoriaPunto, color: string): THREE.CanvasTe
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
   ctx.fillText(GLIFO[cat], 64, 69);
+  if (cuenta > 1) {                                              // grupo: insignia con el número de puntos
+    ctx.beginPath();
+    ctx.arc(100, 28, 26, 0, Math.PI * 2);
+    ctx.fillStyle = '#111827';
+    ctx.fill();
+    ctx.lineWidth = 4;
+    ctx.strokeStyle = '#ffffff';
+    ctx.stroke();
+    ctx.fillStyle = '#ffffff';
+    ctx.font = `bold ${cuenta > 9 ? 26 : 32}px sans-serif`;
+    ctx.fillText(String(cuenta), 100, 30);
+  }
   const t = new THREE.CanvasTexture(c);
   t.colorSpace = THREE.SRGBColorSpace;
   return t;
@@ -121,6 +139,12 @@ export function crearAuras(items: ItemAura[]): Aura {
       matAro.opacity = pulso;
       matCortina.opacity = 0.9 * pulso;
     },
+    resaltar: i => {
+      [aros, cortinas].forEach(o => {
+        items.forEach((it, j) => o.setColorAt(j, c.set(it.color).multiplyScalar(j === i ? 2.2 : 1)));
+        o.instanceColor!.needsUpdate = true;
+      });
+    },
     dispose: () => {
       aros.dispose(); cortinas.dispose(); geoAro.dispose(); geoCortina.dispose();
       matAro.dispose(); matCortina.dispose(); texAro.dispose(); texCortina.dispose();
@@ -133,29 +157,105 @@ export function crearAura(radio: number, alto: number, color: string): Aura {
   return crearAuras([{ x: 0, y: 0, z: 0, radio, alto, color }]);
 }
 
-/**
- * Icono flotante sobre un edificio: sprite con el medallón de su tipo. Siempre queda por encima del edificio y, cuanto más
- * se mira desde arriba, se sube y se corre hacia el fondo de la vista para no taparlo; flota despacio.
- */
-export function crearIcono(cat: CategoriaPunto, color: string, x: number, cima: number, z: number): { sprite: THREE.Sprite; animar(t: number, camara: THREE.Camera): void; dispose(): void } {
+export interface Icono {
+  sprite: THREE.Sprite;
+  cat: CategoriaIcono; color: string;
+  x: number; cima: number; z: number;
+  /** pone el sprite sobre su edificio con el tamaño `tam` (m); `visible` false lo esconde */
+  animar(t: number, camara: THREE.Camera, tam: number, visible: boolean): void;
+  dispose(): void;
+}
+
+/** Tamaño (m) con que un icono se lee igual en pantalla a cualquier zoom: proporcional a su distancia a la cámara. */
+export const tamanoIcono = (d: number): number => Math.min(420, Math.max(4, d * 0.04));
+
+/** Sitúa un sprite sobre una cima: siempre por encima del edificio y, cuanto más se mira desde arriba, se sube y se
+ *  corre hacia el fondo de la vista para no taparlo; flota despacio. */
+function colocar(sprite: THREE.Sprite, x: number, cima: number, z: number, tam: number, t: number, cam: THREE.Vector3): void {
+  const d = Math.max(cam.distanceTo(sprite.position.set(x, cima, z)), 1);
+  const picado = Math.min(1, Math.max(0, (cam.y - cima) / d));          // 0 = vista de lado, 1 = vista desde arriba
+  let dx = x - cam.x, dz = z - cam.z;
+  const h = Math.hypot(dx, dz) || 1;
+  dx /= h; dz /= h;
+  const corrimiento = tam * 1.1 * picado * picado;                      // hacia el fondo, que en pantalla es "arriba"
+  sprite.scale.set(tam, tam, 1);
+  sprite.position.set(x + dx * corrimiento, cima + tam * (0.8 + 0.9 * picado) + tam * 0.1 * Math.sin(t * 1.6), z + dz * corrimiento);
+}
+
+/** Icono flotante sobre un edificio: sprite con el medallón de su tipo. */
+export function crearIcono(cat: CategoriaIcono, color: string, x: number, cima: number, z: number): Icono {
   const tex = texturaIcono(cat, color);
   const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthWrite: false }));
   sprite.renderOrder = 12;
-  const cima3 = new THREE.Vector3(x, cima, z);
   return {
-    sprite,
-    animar: (t, camara) => {
-      const cam = camara.position, d = Math.max(cam.distanceTo(cima3), 1);
-      const tam = Math.min(40, Math.max(6, d * 0.05));                      // se lee igual de cerca y de lejos, sin crecer sin fin
-      sprite.material.opacity = Math.min(1, Math.max(0, (6500 - d) / 2500));  // de muy lejos se apagan para no amontonarse
-      const picado = Math.min(1, Math.max(0, (cam.y - cima) / d));          // 0 = vista de lado, 1 = vista desde arriba
-      let dx = x - cam.x, dz = z - cam.z;
-      const h = Math.hypot(dx, dz) || 1;
-      dx /= h; dz /= h;
-      const corrimiento = tam * 1.1 * picado * picado;                      // hacia el fondo, que en pantalla es "arriba"
-      sprite.scale.set(tam, tam, 1);
-      sprite.position.set(x + dx * corrimiento, cima + tam * (0.8 + 0.9 * picado) + tam * 0.1 * Math.sin(t * 1.6), z + dz * corrimiento);
+    sprite, cat, color, x, cima, z,
+    animar: (t, camara, tam, visible) => {
+      sprite.visible = visible;
+      if (visible) colocar(sprite, x, cima, z, tam, t, camara.position);
     },
     dispose: () => { tex.dispose(); sprite.material.dispose(); },
+  };
+}
+
+/** Lado (en coordenadas normalizadas de pantalla, 2 = toda la altura) de la celda en que se funden iconos del mismo tipo. */
+const CELDA_PANTALLA = 0.15;
+
+/**
+ * Los iconos se mantienen legibles al alejar (tamaño constante en pantalla) y, cuando varios del mismo tipo caen en la
+ * misma celda de la pantalla, se funden en uno solo con la cantidad; al acercarse se separan solos.
+ */
+export function crearAgrupador(iconos: Icono[], escena: THREE.Object3D) {
+  const texturas = new Map<string, THREE.CanvasTexture>();
+  const grupos: THREE.Sprite[] = [];
+  const textura = (cat: CategoriaIcono, color: string, n: number) => {
+    const k = `${cat}|${n}`;
+    let t = texturas.get(k);
+    if (!t) texturas.set(k, t = texturaIcono(cat, color, n));
+    return t;
+  };
+  const sprite = (i: number) => {
+    if (!grupos[i]) {
+      const s = new THREE.Sprite(new THREE.SpriteMaterial({ transparent: true, depthWrite: false }));
+      s.renderOrder = 12;
+      escena.add(s);
+      grupos[i] = s;
+    }
+    return grupos[i];
+  };
+  return {
+    animar(t: number, camara: THREE.Camera): void {
+      const cam = camara.position, v = new THREE.Vector3();
+      const celdas = new Map<string, Icono[]>();
+      const clave = new Map<Icono, string>();
+      for (const ic of iconos) {
+        v.set(ic.x, ic.cima, ic.z).project(camara);
+        const k = `${ic.cat}|${Math.floor(v.x / CELDA_PANTALLA)}|${Math.floor(v.y / CELDA_PANTALLA)}`;
+        clave.set(ic, k);
+        const g = celdas.get(k);
+        g ? g.push(ic) : celdas.set(k, [ic]);
+      }
+      let usados = 0;
+      for (const ic of iconos) {
+        const solo = celdas.get(clave.get(ic)!)!.length === 1;
+        ic.animar(t, camara, tamanoIcono(Math.hypot(cam.x - ic.x, cam.y - ic.cima, cam.z - ic.z)), solo);
+      }
+      for (const g of celdas.values()) {
+        if (g.length < 2) continue;
+        let x = 0, z = 0, cima = 0;
+        for (const ic of g) { x += ic.x; z += ic.z; cima = Math.max(cima, ic.cima); }
+        x /= g.length; z /= g.length;
+        const s = sprite(usados++);
+        const mat = s.material as THREE.SpriteMaterial;
+        mat.map = textura(g[0].cat, g[0].color, g.length);
+        mat.needsUpdate = true;
+        s.visible = true;
+        colocar(s, x, cima, z, tamanoIcono(Math.hypot(cam.x - x, cam.y - cima, cam.z - z)) * 1.15, t, cam);
+      }
+      for (let i = usados; i < grupos.length; i++) grupos[i].visible = false;
+    },
+    dispose(): void {
+      for (const s of grupos) { escena.remove(s); s.material.dispose(); }
+      texturas.forEach(t => t.dispose());
+    },
   };
 }

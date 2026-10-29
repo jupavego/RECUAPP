@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { CATEGORIAS } from '../../../mapa/utils/puntos';
 import { VARIANTES, Variante, modelarEquipamiento } from '../../utils/equipamientos';
-import { Aura, crearAura, crearIcono } from '../../utils/aura';
+import { Aura, crearAura, crearIcono, tamanoIcono } from '../../utils/aura';
 
 /** Catálogo de los edificios que representan los puntos de interés en el mapa 3D, uno a la vez y a escala real. */
 @Component({
@@ -164,7 +164,7 @@ export class CatalogoEdificiosComponent implements AfterViewInit {
   private animarAura(): void {
     const t = this.reloj.getElapsedTime();
     this.aura?.animar(t);
-    this.icono?.animar(t, this.camara);
+    if (this.icono) this.icono.animar(t, this.camara, tamanoIcono(Math.hypot(this.camara.position.x - this.icono.x, this.camara.position.y - this.icono.cima, this.camara.position.z - this.icono.z)), true);
   }
 
   private quitar(): void {
