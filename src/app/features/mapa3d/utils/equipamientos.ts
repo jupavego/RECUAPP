@@ -99,8 +99,56 @@ function escuela(e: Ensamble, rural: boolean): Modelo {
   return { piezas: e.piezas, radio: 32, losa: [50, 32] };
 }
 
-/** Biblioteca, casa de cultura o teatro: fachada clásica con pórtico de columnas, frontón y gradas. Emisora: caseta con mástil. */
+/**
+ * Casa de la cultura: casona en U de un piso alrededor de un patio con fuente, techos de teja, corredor de postes de madera,
+ * puerta rosada y un mural de colores en la pared lateral.
+ */
+function casaCultura(e: Ensamble): Modelo {
+  const muro = '#f3ead8', madera = '#7c5a3a';
+  e.caja(36, 5, 9, muro, 0, 0, -8).cuatroAguas(38, 3.4, 11, TEJA, 0, 5, -8)
+    .caja(9, 5, 17, muro, -13.5, 0, 0.5).cuatroAguas(11, 3.4, 19, TEJA, -13.5, 5, 0.5)
+    .caja(9, 5, 17, muro, 13.5, 0, 0.5).cuatroAguas(11, 3.4, 19, TEJA, 13.5, 5, 0.5)
+    .caja(18, 0.15, 16, '#d8cdb8', 0, 0, 0.5)
+    .cil(2.3, 2.5, 0.9, '#9ca3af', 0, 0.15, 2, 16).cil(1.8, 1.8, 0.5, '#7fc4e3', 0, 0.9, 2, 16).cil(0.3, 0.3, 2, '#cbd5e1', 0, 0.9, 2, 8)
+    .caja(18, 0.3, 2.4, madera, 0, 3.7, -4.7);
+  for (const x of [-8, -4, 0, 4, 8]) e.cil(0.2, 0.2, 3.7, madera, x, 0, -3.6, 6);
+  e.caja(2.6, 3.2, 0.3, ROSA, 0, 0, -3.45).caja(6, 0.9, 0.3, '#fff', 0, 4.1, -3.4)
+    .ventanas(2.4, 1.7, VIDRIO, -7, 1.3, -3.5).ventanas(2.4, 1.7, VIDRIO, 7, 1.3, -3.5)
+    .ventanas(2.4, 1.7, VIDRIO, -12, 1.3, -3.5).ventanas(2.4, 1.7, VIDRIO, 12, 1.3, -3.5)
+    .ventanas(2.4, 1.7, VIDRIO, -9, 1.3, -12.5, true).ventanas(2.4, 1.7, VIDRIO, 9, 1.3, -12.5, true);
+  // mural en la pared exterior del ala izquierda
+  ['#f59e0b', '#be185d', '#1d4ed8', '#16a34a'].forEach((c, k) => e.caja(0.25, 3.2, 3.6, c, -18.2, 0.9, -5.5 + k * 4.2));
+  e.caja(0.4, 0.4, 3.2, madera, -10.2, 3.8, 9.6).caja(0.4, 0.4, 3.2, madera, 10.2, 3.8, 9.6)
+    .mastil(11, 8, 12, ROSA).arbol(-20, 12, 8).arbol(20, 12, 8).arbol(0, 14, 7);
+  return { piezas: e.piezas, radio: 26, losa: [42, 34] };
+}
+
+/**
+ * Biblioteca: edificio moderno de dos pisos, planta baja de vidrio, piso alto en voladizo con aletas rosadas contra el sol,
+ * terraza de lectura con bancas y una pila de libros a la entrada.
+ */
+function biblioteca(e: Ensamble): Modelo {
+  e.caja(26, 4, 13, '#f4f1ec', 0, 0, -4)
+    .caja(22, 3, 0.3, '#8fd0e8', 0, 0.5, 2.6)
+    .caja(30, 4.6, 16, '#f4f1ec', 0, 4, -3)
+    .caja(26, 2.6, 0.3, VIDRIO, 0, 4.9, 5.1)
+    .caja(31, 0.6, 17, '#6b7280', 0, 8.6, -3)
+    .caja(14, 0.4, 8, '#9ca3af', -6, 9.2, -6)
+    .caja(31, 0.15, 16, '#e5e7eb', 0, 0, 0);
+  for (let k = 0; k < 8; k++) e.caja(0.5, 4.6, 0.7, ROSA, -14 + k * 4, 4, 5.4);
+  e.caja(7, 0.4, 3.4, ROSA, -6, 3.5, 3.4).caja(0.3, 3.5, 0.3, '#e5e7eb', -9, 0, 4.8).caja(0.3, 3.5, 0.3, '#e5e7eb', -3, 0, 4.8)
+    .caja(2.4, 3, 0.3, '#374151', -6, 0, 2.7)
+    .caja(24, 0.3, 4.4, '#d9d2c3', 0, 0, 7).caja(22, 0.3, 2.4, '#e3dccf', 0, 0.3, 9.4)
+    .caja(2.6, 0.5, 0.8, '#7c5a3a', -6, 0.6, 9).caja(2.6, 0.5, 0.8, '#7c5a3a', 6, 0.6, 9)
+    .caja(3, 0.6, 2, '#dc2626', 15, 0, 9).caja(2.6, 0.6, 1.8, '#2563eb', 15.1, 0.6, 9).caja(2.8, 0.6, 2, '#f59e0b', 14.9, 1.2, 9).caja(2.2, 0.6, 1.6, '#16a34a', 15, 1.8, 9)
+    .mastil(10, -17, 8, ROSA).arbol(-19, 12, 8).arbol(20, 4, 8);
+  return { piezas: e.piezas, radio: 25, losa: [38, 28] };
+}
+
+/** Escuela de música o escenario cultural: fachada clásica con pórtico de columnas, frontón y gradas. Emisora: caseta con mástil. */
 function cultura(e: Ensamble, tipo: string): Modelo {
+  if (/casa de (la )?cultura/.test(tipo)) return casaCultura(e);
+  if (/biblioteca/.test(tipo)) return biblioteca(e);
   if (/emisora/.test(tipo)) {
     e.caja(12, 4, 9, '#e5e7eb', 0, 0, 0).caja(12.4, 0.6, 9.4, ROSA, 0, 4, 0).ventanas(8, 1.2, VIDRIO, 0, 1.6, 4.5)
       .caja(4, 0.4, 4, CONCRETO, 12, 0, 0);
@@ -340,6 +388,36 @@ export function modelarEquipamiento(c: CategoriaPunto, tipo: string, nombre: str
     case 'patrimonio': return patrimonio(e, tipo.toLowerCase(), rnd);
   }
 }
+
+/** Un ejemplo de cada edificio distinto, con un punto real de Girardota como muestra, para el catálogo. */
+export interface Variante { categoria: CategoriaPunto; etiqueta: string; tipo: string; nombre: string; }
+export const VARIANTES: Variante[] = [
+  { categoria: 'educacion', etiqueta: 'Sede urbana', tipo: 'Sede educativa urbana', nombre: 'I. E. Colombia' },
+  { categoria: 'educacion', etiqueta: 'Sede rural', tipo: 'Sede educativa rural', nombre: 'E R La Manga' },
+  { categoria: 'cultura', etiqueta: 'Casa de la cultura', tipo: 'Casa de cultura', nombre: 'Pedrito Ruiz' },
+  { categoria: 'cultura', etiqueta: 'Biblioteca', tipo: 'Biblioteca', nombre: 'Biblioteca pública' },
+  { categoria: 'cultura', etiqueta: 'Escuela de música / escenario', tipo: 'Escuela de música', nombre: 'Escuela de música' },
+  { categoria: 'cultura', etiqueta: 'Emisora', tipo: 'Emisora comunitaria', nombre: 'Radio Alternativa' },
+  { categoria: 'salud', etiqueta: 'Hospital', tipo: 'Hospital / IPS pública', nombre: 'Hospital San Rafael' },
+  { categoria: 'salud', etiqueta: 'Centro de salud', tipo: 'Optometría', nombre: 'Centro de salud' },
+  { categoria: 'turismo', etiqueta: 'Iglesia', tipo: 'Patrimonio religioso / arquitectónico', nombre: 'Catedral' },
+  { categoria: 'turismo', etiqueta: 'Parque', tipo: 'Espacio público / encuentro ciudadano', nombre: 'Parque principal' },
+  { categoria: 'turismo', etiqueta: 'Mirador', tipo: 'Atractivo natural / ecoturismo', nombre: 'Cascada' },
+  { categoria: 'turismo', etiqueta: 'Mercado', tipo: 'Economía campesina / mercado local', nombre: 'Mercado agroverde' },
+  { categoria: 'turismo', etiqueta: 'Truchera', tipo: 'Turismo rural / pesca deportiva', nombre: 'Truchera' },
+  { categoria: 'turismo', etiqueta: 'Petroglifos', tipo: 'Patrimonio arqueológico / cultural', nombre: 'Petroglifos' },
+  { categoria: 'deporte', etiqueta: 'Cancha de fútbol', tipo: 'Cancha de fútbol', nombre: 'Cancha' },
+  { categoria: 'deporte', etiqueta: 'Cancha sintética', tipo: 'Cancha sintética', nombre: 'Cancha' },
+  { categoria: 'deporte', etiqueta: 'Placa polideportiva', tipo: 'Placa polideportiva', nombre: 'Placa' },
+  { categoria: 'deporte', etiqueta: 'Pista de patinaje', tipo: 'Pista de patinaje', nombre: 'Pista' },
+  { categoria: 'deporte', etiqueta: 'Pista de bicicrós', tipo: 'Pista de bicicrós', nombre: 'Pista' },
+  { categoria: 'justicia', etiqueta: 'Estación de policía', tipo: 'Estación de policía', nombre: 'Estación' },
+  { categoria: 'justicia', etiqueta: 'Personería', tipo: 'Personería municipal', nombre: 'Personería' },
+  { categoria: 'patrimonio', etiqueta: 'Estación del ferrocarril', tipo: 'Bien de interés cultural nacional', nombre: 'Estación' },
+  { categoria: 'patrimonio', etiqueta: 'Sitio arqueológico', tipo: 'Sitio arqueológico', nombre: 'Sitio' },
+  { categoria: 'patrimonio', etiqueta: 'Yacimiento', tipo: 'Sitio arqueológico · yacimiento', nombre: 'Yacimiento' },
+  { categoria: 'patrimonio', etiqueta: 'Punto de hallazgo', tipo: 'Sitio arqueológico · punto de hallazgo', nombre: 'Hallazgo' },
+];
 
 export const COLOR_ACENTO: Record<CategoriaPunto, string> = {
   educacion: AZUL, cultura: ROSA, salud: CIAN, turismo: VERDE, deporte: LIMA, justicia: ROJO, patrimonio: CAFE,
