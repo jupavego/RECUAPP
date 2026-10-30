@@ -281,7 +281,8 @@
    "padre": null,
    "padre_confirmado": null,
    "nota": "Instituto de deportes. El PDF lo nombra como responsable de 7 indicadores, y «Coliseos adecuados» se le asignó aquí por el sector deporte (el plan no lo dice). No figura en el organigrama ni en la lista de dependencias de la alcaldía: se trata como entidad externa.",
-   "icono": "03-deporte"
+   "icono": "03-deporte",
+   "vinculo": "edu"
   },
   {
    "id": "sub_seg",

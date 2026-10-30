@@ -476,12 +476,6 @@ interface Pieza {
   rotulo: HTMLElement | null;
 }
 
-/** El panel recuerda si el usuario lo dejó contraído (comodidad por navegador). */
-const CLAVE_PANEL = 'mapa3d.panelAbierto';
-function leerPanelAbierto(): boolean {
-  try { return localStorage.getItem(CLAVE_PANEL) !== '0'; } catch { return true; }
-}
-
 const TIPOS_ZONA: Record<string, string> = {
   VE: 'Vereda', CM: 'Cabecera municipal', CO: 'Centro poblado', CA: 'Caserío', IN: 'Inspección',
 };
@@ -660,13 +654,16 @@ const TIPOS_ZONA: Record<string, string> = {
             [attr.aria-pressed]="conduciendo()" [attr.title]="conduciendo() ? 'Salir de la conducción (Esc)' : 'Conducir libremente por el mapa'"
             [attr.aria-label]="conduciendo() ? 'Salir de la conducción' : 'Conducir'">
       <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-        <path d="M5 16l1.4-5a2 2 0 0 1 1.9-1.500h7.400a2 2 0 0 1 1.900 1.500L19 16M4 16h16v3H4zM7 19v1.500M17 19v1.500" fill="none" stroke="currentColor" stroke-width="1.800" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3 15.500v-3a1.600 1.600 0 0 1 1.200-1.500L7 10.200l1.900-3a1.600 1.600 0 0 1 1.400-.8h3.600a1.600 1.600 0 0 1 1.300.7l2.200 3.100 2.100.6a1.600 1.600 0 0 1 1.100 1.500v2.700h-2M5 15.500H3M16 15.500H9M7 10.200h10.500M12.200 6.200v4" fill="none" stroke="currentColor" stroke-width="1.700" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="7" cy="16.500" r="2" fill="none" stroke="currentColor" stroke-width="1.700"/>
+        <circle cx="18" cy="16.500" r="2" fill="none" stroke="currentColor" stroke-width="1.700"/>
       </svg>
     </button>
 
     @if (conduciendo()) {
       <div class="hud-conduccion">
         <div class="velocimetro"><b #hudVelocidad>0</b> km/h</div>
+        <div class="zona-hud" #hudZona></div>
         <p>W A S D o flechas · Shift turbo · Espacio freno · R reaparecer · Esc salir</p>
       </div>
       @if (cayo()) {
@@ -718,10 +715,10 @@ const TIPOS_ZONA: Record<string, string> = {
     .rotulos ::ng-deep .rot.fabrica i { background: #6b7280; }
     .creditos { position: absolute; left: 16px; bottom: 8px; margin: 0; max-width: calc(100% - 90px); pointer-events: none;
       font: 600 10px/1.3 system-ui; color: rgba(255,255,255,.92); text-shadow: 0 1px 3px rgba(0,0,0,.7); }
-    .foto { position: absolute; z-index: 10; left: 16px; bottom: 34px; width: 42px; height: 42px; padding: 0; display: grid; place-items: center;
+    .foto { position: absolute; z-index: 10; right: 104px; bottom: 16px; width: 38px; height: 38px; padding: 0; display: grid; place-items: center;
       border-radius: 12px; background: rgba(255,255,255,.85); color: #26425a; box-shadow: 0 2px 8px rgba(30,60,90,.25); backdrop-filter: blur(6px); }
     .foto:hover { background: #fff; }
-    .conducir { position: absolute; z-index: 10; left: 66px; bottom: 34px; width: 42px; height: 42px; padding: 0; display: grid; place-items: center;
+    .conducir { position: absolute; z-index: 10; right: 60px; bottom: 16px; width: 38px; height: 38px; padding: 0; display: grid; place-items: center;
       border-radius: 12px; background: rgba(255,255,255,.85); color: #26425a; box-shadow: 0 2px 8px rgba(30,60,90,.25); backdrop-filter: blur(6px); }
     .conducir:hover { background: #fff; }
     .conducir.activa { background: #26425a; color: #fff; }
@@ -729,6 +726,7 @@ const TIPOS_ZONA: Record<string, string> = {
       text-shadow: 0 1px 4px rgba(0,0,0,.7); pointer-events: none; font: 600 .8rem system-ui; }
     .hud-conduccion .velocimetro { font-size: 1rem; }
     .hud-conduccion .velocimetro b { font-size: 2rem; }
+    .hud-conduccion .zona-hud { margin-top: 2px; font-size: .95rem; letter-spacing: .01em; }
     .hud-conduccion p { margin: 2px 0 0; opacity: .85; }
     .caida { position: absolute; z-index: 11; top: 40%; left: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 10px;
       padding: 16px 26px; border-radius: 16px; background: rgba(20,30,40,.8); color: #fff; font: 1.1rem system-ui; }
@@ -858,6 +856,7 @@ export class Mapa3dComponent implements AfterViewInit {
   private conduccion?: Conduccion;
   private antesDeConducir?: { pos: THREE.Vector3; objetivo: THREE.Vector3; fov: number };
   @ViewChild('hudVelocidad') private hudVelocidad?: ElementRef<HTMLElement>;
+  @ViewChild('hudZona') private hudZona?: ElementRef<HTMLElement>;
   private hudAcumulado = 0;
   readonly anio = signal(ANIO_INICIAL);
   readonly hayPoblacion = signal(false);
@@ -1109,11 +1108,10 @@ export class Mapa3dComponent implements AfterViewInit {
     });
   }
 
-  readonly panelAbierto = signal(leerPanelAbierto());
+  readonly panelAbierto = signal(true);
 
   alternarPanel(): void {
     this.panelAbierto.update(v => !v);
-    try { localStorage.setItem(CLAVE_PANEL, this.panelAbierto() ? '1' : '0'); } catch { /* sin almacenamiento: no pasa nada */ }
   }
 
   tipoDe(z: Zona): string { return TIPOS_ZONA[z.t ?? 'VE'] ?? 'Zona'; }
@@ -3208,6 +3206,11 @@ export class Mapa3dComponent implements AfterViewInit {
       this.hudAcumulado = 0;
       const el = this.hudVelocidad?.nativeElement;
       if (el) el.textContent = String(Math.round(c.kmh));
+      const dz = this.hudZona?.nativeElement;
+      if (dz) {
+        const p = c.posicion, id = this.idEn(this.lon0 + p.x / this.mLon, this.lat0 - p.z / this.mLat);
+        dz.textContent = id >= 0 ? `${this.tipoDe(this.piezas[id].zona)} · ${this.piezas[id].zona.n}` : 'Fuera de las zonas del municipio';
+      }
     }
     if (c.cayo !== this.cayo()) this.zona.run(() => this.cayo.set(c.cayo));
   }

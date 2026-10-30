@@ -1,0 +1,96 @@
+:host { display: block; }
+
+$c-secretaria: #2f6f5e;
+$c-oficina: #a87a1e;
+$c-subsecretaria: #3a78b5;
+$c-unidad: #8c5aa6;
+$c-entidad: #b0443f;
+
+.org {
+  padding: 12px 16px 16px;
+  color: var(--color-text-primary, #1a1a1a);
+
+  &__cab {
+    display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 12px;
+    h1 { margin: 0 0 4px; font-size: 1.4rem; }
+    p { margin: 0; max-width: 62ch; font-size: .9rem; opacity: .75; }
+  }
+  &__volver {
+    padding: 8px 14px; border: 1px solid var(--color-brand-border, #ccd); border-radius: 999px;
+    font-size: .85rem; text-decoration: none; color: inherit; white-space: nowrap;
+    &:hover { background: var(--color-brand-surface, #eef); }
+  }
+  &__acciones { display: flex; align-items: center; gap: 10px; }
+  &__vista {
+    display: inline-flex; border: 1px solid var(--color-brand-border, #ccd); border-radius: 999px; overflow: hidden;
+    button { padding: 7px 16px; border: 0; background: transparent; color: inherit; font: inherit; font-size: .85rem; cursor: pointer;
+      &.on { background: #29422f; color: #fff; } }
+  }
+  &__lienzo { position: relative; margin-top: 4px; }
+  &__vacio { padding: 48px 16px; text-align: center; opacity: .7; }
+}
+
+svg { display: block; width: 100%; height: calc(100dvh - 210px); min-height: 520px; }
+
+.banda { stroke: currentColor; stroke-opacity: .06; stroke-width: 1; }
+.banda__txt { font-size: 15px; fill: currentColor; opacity: .45; letter-spacing: .04em; text-transform: uppercase; }
+.arista {
+  stroke: currentColor; fill: none; stroke-opacity: .35; stroke-width: 2; transition: stroke-opacity .15s;
+  &--externa { stroke-dasharray: 8 6; }
+  &--viva { stroke-opacity: .8; stroke-width: 2; }
+  &--tenue { stroke-opacity: .05; }
+}
+
+.nodo {
+  cursor: pointer; outline: none; transition: opacity .15s;
+  circle { fill: var(--color-background-primary, #fff); stroke-width: 3.5; transition: stroke-width .15s; }
+  &:hover circle, &:focus-visible circle, &--fijo circle { stroke-width: 6; }
+  &--tenue { opacity: .18; }
+  &--secretaria circle { stroke: $c-secretaria; }
+  &--oficina circle { stroke: $c-oficina; }
+  &--subsecretaria circle { stroke: $c-subsecretaria; }
+  &--unidad circle { stroke: $c-unidad; }
+  &--entidad circle { stroke: $c-entidad; stroke-dasharray: 5 3; }
+  &--centro circle { stroke: #29422f; stroke-width: 4; fill: var(--color-brand-surface, #f1f5ea); }
+}
+.rotulo {
+  font-size: 17px; font-weight: 500; fill: currentColor; pointer-events: none;
+  paint-order: stroke; stroke: var(--color-background-primary, #fff); stroke-width: 5px;
+}
+
+.ficha {
+  position: absolute; z-index: 5; width: 310px; padding: 12px 14px; pointer-events: none;
+  background: var(--color-background-primary, #fff); border: 1px solid var(--color-brand-border, #ccd);
+  border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 0, 0, .16); font-size: .84rem;
+  h2 { margin: 0 0 2px; font-size: .98rem; }
+  p { margin: 4px 0 0; }
+  &__tipo { opacity: .65; }
+  &__resp { margin-top: 8px !important; }
+  &__dato { opacity: .8; word-break: break-all; }
+  &__vacio, &__nota { font-style: italic; opacity: .65; }
+}
+
+.leyenda {
+  display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 12px 0 0; padding: 0; list-style: none; font-size: .82rem;
+  li::before { content: ''; display: inline-block; width: 12px; height: 12px; margin-right: 6px; border: 3px solid; border-radius: 50%; vertical-align: -2px; }
+  &__secretaria::before { border-color: $c-secretaria; }
+  &__oficina::before { border-color: $c-oficina; }
+  &__subsecretaria::before { border-color: $c-subsecretaria; }
+  &__unidad::before { border-color: $c-unidad; }
+  &__entidad::before { border-color: $c-entidad; border-style: dashed; }
+}
+
+@media (max-width: 640px) { .ficha { position: static; width: auto; margin-top: 8px; } }
+
+.anillo {
+  &--0 { fill: $c-oficina; fill-opacity: .1; }
+  &--1 { fill: $c-secretaria; fill-opacity: .08; }
+  &--2 { fill: $c-subsecretaria; fill-opacity: .06; }
+  &__borde { stroke-width: 2; stroke-opacity: .5;
+    &--0 { stroke: $c-oficina; } &--1 { stroke: $c-secretaria; } &--2 { stroke: $c-subsecretaria; } }
+}
+.guia { stroke: currentColor; stroke-opacity: .35; stroke-width: 1; stroke-dasharray: 4 4; }
+.rotulo--lado { font-size: 24px; stroke-width: 7px; }
+.arista { svg.loto & { stroke-width: 1.6; } }
+.rotulo--nodo { font-family: var(--font-body); font-size: 14px; font-weight: 500; stroke-width: 5px; }
+svg.loto { height: auto; min-height: 0; aspect-ratio: 1520 / 870; }

@@ -23,6 +23,12 @@ const POR_PAGINA = 25;
 /** categoría del plan cuyos productos se están viendo en el visor de abajo */
 export interface Grupo { tipo: 'linea' | 'sector' | 'programa' | 'ods'; valor: string; titulo: string; etiqueta: string }
 
+/** ícono de trazo fino (Tabler, /img/trazo) de cada subsecretaría o unidad: más abstracto y sin ruido junto a los íconos de las secretarías */
+const TRAZO_SUB: Record<string, string> = {
+  sub_cul: 'palette', sub_seg: 'shield-check', uni_com: 'users', uni_ins: 'scale',
+  sub_prot: 'heart-handshake', inder: 'run', sub_part: 'speakerphone', sub_dec: 'chart-line', sub_tec: 'bulb',
+};
+
 type Tarjeta = 'lineas' | 'sectores' | 'programas' | 'resultado' | 'responsables' | 'ods' | 'financiacion' | 'calidad' | 'solopdf';
 
 @Component({
@@ -61,7 +67,7 @@ export class PlanComponent {
 
   constructor() {
     const q = this.ruta.snapshot.queryParamMap.get('tema');
-    if (q === 'botanico' || q === 'oscuro' || q === 'base') this.tema.fijar(q);
+    if (q === 'botanico' || q === 'oscuro') this.tema.fijar(q);
   }
 
   readonly abierta = signal<Tarjeta | null>(null);
@@ -82,7 +88,7 @@ export class PlanComponent {
   readonly maxPrograma = computed(() => Math.max(1, ...(this.plan()?.programas ?? []).map(s => s.productos)));
   readonly maxLinea = computed(() => Math.max(1, ...(this.plan()?.lineas ?? []).map(s => s.productos)));
   /** dependencias sin padre; las subsecretarías se muestran debajo de la suya */
-  readonly raices = computed(() => (this.plan()?.dependencias ?? []).filter(d => !d.padre));
+  readonly raices = computed(() => (this.plan()?.dependencias ?? []).filter(d => !d.padre && !d.vinculo));
   /** las dependencias de primer nivel, de la que más productos tiene a la que menos (el orden de la alcaldía desempata) */
   readonly raicesPorPeso = computed(() => [...this.raices()].sort((a, b) => this.totalDep(b.id) - this.totalDep(a.id)));
 
@@ -178,7 +184,8 @@ export class PlanComponent {
   /** la secretaría de la subsecretaría abierta también se ve abierta */
   hijoAbierto(id: string): boolean {
     const a = this.depAbierta();
-    return !!a && this.dependencias().get(a)?.padre === id;
+    const d = a ? this.dependencias().get(a) : undefined;
+    return !!d && (d.padre === id || d.vinculo === id);
   }
 
   /** productos de un responsable; una secretaría incluye los de sus subsecretarías */
@@ -203,6 +210,10 @@ export class PlanComponent {
     return i ? `/img/ods/${i}.png` : null;
   }
 
+  trazoSub(id: string): string | null {
+    return TRAZO_SUB[id] ?? null;
+  }
+
   urlIcono(clave: string): string | null {
     const i = this.icono().get(clave);
     return i ? `/img/iconos/${i}.png` : null;
@@ -210,6 +221,11 @@ export class PlanComponent {
 
   alternar(t: Tarjeta): void {
     this.abierta.set(this.abierta() === t ? null : t);
+  }
+
+  /** entidades externas que se muestran en un tercer nivel bajo esta dependencia */
+  externas(id: string): Dependencia[] {
+    return (this.plan()?.dependencias ?? []).filter(d => d.vinculo === id);
   }
 
   hijos(id: string): Dependencia[] {

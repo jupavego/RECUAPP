@@ -1,0 +1,116 @@
+@if (plan(); as p) {
+  <section class="org">
+    <header class="org__cab">
+      <div>
+        <h1>Estructura organizacional · {{ p.municipio }}</h1>
+        <p>Organigrama de la alcaldía: arriba el despacho del alcalde, luego las oficinas asesoras y las secretarías, y bajo cada una sus subsecretarías y unidades. El tamaño del nodo sigue los productos del plan. Pasa el cursor para ver el detalle y haz clic para fijarlo.</p>
+      </div>
+      <div class="org__acciones">
+        <div class="org__vista" role="group" aria-label="Vista del organigrama">
+          <button type="button" [class.on]="vista() === 'loto'" (click)="vista.set('loto')">Loto</button>
+          <button type="button" [class.on]="vista() === 'arbol'" (click)="vista.set('arbol')">Árbol</button>
+        </div>
+        <a class="org__volver" [routerLink]="['/plan', dane()]">Ver plan de desarrollo</a>
+      </div>
+    </header>
+
+    <div class="org__lienzo" (mousemove)="mover($event)">
+      @if (vista() === 'loto') {
+      <svg class="loto" [attr.viewBox]="'-60 0 ' + (lotoW + 120) + ' ' + lotoH" role="img" [attr.aria-label]="'Organigrama en loto de la alcaldía de ' + p.municipio" (click)="fijo.set(null)">
+        @for (i of [2, 1, 0]; track i) {
+          <path class="anillo anillo--{{ i }}" [attr.d]="arco(i, true)" stroke="none" />
+          <path class="anillo__borde anillo__borde--{{ i }}" [attr.d]="arco(i)" fill="none" />
+        }
+        @for (a of aristasVista(); track a.a) {
+          <path class="arista" [class.arista--externa]="a.externa" [class.arista--viva]="viva(a)" [class.arista--tenue]="foco() && !viva(a)" [attr.d]="a.d" />
+        }
+        @for (e of loto().etiquetas; track e.texto) {
+          <line class="guia" [attr.x1]="e.x" [attr.y1]="e.y2" [attr.x2]="e.x" [attr.y2]="e.y" />
+          <text class="rotulo rotulo--lado" [attr.x]="e.x + (e.ancla === 'end' ? -8 : 8)" [attr.y]="e.y + 5" [attr.text-anchor]="e.ancla">{{ e.texto }}</text>
+        }
+        @if (despacho(); as d) {
+          <g class="nodo nodo--centro" [class.nodo--tenue]="atenuado('des')" tabindex="0" (mouseenter)="sobre.set('des')" (mouseleave)="sobre.set(null)"
+            (focus)="sobre.set('des')" (blur)="sobre.set(null)" (click)="$event.stopPropagation(); fijar('des')">
+            <circle [attr.cx]="lotoAlcalde.x" [attr.cy]="lotoAlcalde.y" [attr.r]="lotoAlcalde.r" />
+            @if (icono(d); as u) { <image [attr.href]="u" [attr.x]="lotoAlcalde.x - 36" [attr.y]="lotoAlcalde.y - 38" width="72" height="72" /> }
+          </g>
+        }
+        @for (n of loto().nodos; track n.dep.id) {
+          <g class="nodo nodo--{{ n.dep.tipo }}" [class.nodo--tenue]="atenuado(n.dep.id)" [class.nodo--fijo]="fijo() === n.dep.id" tabindex="0"
+            (mouseenter)="sobre.set(n.dep.id)" (mouseleave)="sobre.set(null)" (focus)="sobre.set(n.dep.id)" (blur)="sobre.set(null)"
+            (click)="$event.stopPropagation(); fijar(n.dep.id)">
+            <circle [attr.cx]="n.x" [attr.cy]="n.y" [attr.r]="n.r" />
+            @if (icono(n.dep); as u) { <image [attr.href]="u" [attr.x]="n.x - n.r * 0.68" [attr.y]="n.y - n.r * 0.68" [attr.width]="n.r * 1.36" [attr.height]="n.r * 1.36" /> }
+            <text class="rotulo rotulo--nodo" text-anchor="middle">
+              @for (l of lineas(n.dep.nombre, 15, 6); track $index) { <tspan [attr.x]="n.x" [attr.y]="n.y + n.r + 17 + $index * 15">{{ l }}</tspan> }
+            </text>
+          </g>
+        }
+      </svg>
+      } @else {
+      <svg [attr.viewBox]="'0 0 ' + ancho + ' ' + alto" role="img" [attr.aria-label]="'Organigrama de la alcaldía de ' + p.municipio" (click)="fijo.set(null)">
+        @for (b of bandas; track b.y) {
+          <line class="banda" x1="0" [attr.y1]="b.y" [attr.x2]="ancho" [attr.y2]="b.y" />
+          <text class="banda__txt" x="16" [attr.y]="b.y - 70">{{ b.texto }}</text>
+        }
+
+        @for (a of aristas(); track a.a) {
+          <path class="arista" [class.arista--externa]="a.externa" [class.arista--viva]="viva(a)" [class.arista--tenue]="foco() && !viva(a)" [attr.d]="a.d" />
+        }
+
+        @if (despacho(); as d) {
+          <g class="nodo nodo--centro" [class.nodo--tenue]="atenuado('des')" tabindex="0" (mouseenter)="sobre.set('des')" (mouseleave)="sobre.set(null)"
+            (focus)="sobre.set('des')" (blur)="sobre.set(null)" (click)="$event.stopPropagation(); fijar('des')">
+            <circle [attr.cx]="alcalde.x" [attr.cy]="alcalde.y" [attr.r]="alcalde.r" />
+            @if (icono(d); as u) { <image [attr.href]="u" [attr.x]="alcalde.x - 46" [attr.y]="alcalde.y - 50" width="92" height="92" /> }
+            <text class="rotulo" [attr.x]="alcalde.x + alcalde.r + 14" [attr.y]="alcalde.y + 6" text-anchor="start">Alcaldía</text>
+          </g>
+        }
+
+        @for (n of nodos(); track n.dep.id) {
+          <g class="nodo nodo--{{ n.dep.tipo }}" [class.nodo--tenue]="atenuado(n.dep.id)" [class.nodo--fijo]="fijo() === n.dep.id" tabindex="0"
+            (mouseenter)="sobre.set(n.dep.id)" (mouseleave)="sobre.set(null)" (focus)="sobre.set(n.dep.id)" (blur)="sobre.set(null)"
+            (click)="$event.stopPropagation(); fijar(n.dep.id)">
+            <circle [attr.cx]="n.x" [attr.cy]="n.y" [attr.r]="n.r" />
+            @if (icono(n.dep); as u) { <image [attr.href]="u" [attr.x]="n.x - n.r * 0.68" [attr.y]="n.y - n.r * 0.68" [attr.width]="n.r * 1.36" [attr.height]="n.r * 1.36" /> }
+            <text class="rotulo" text-anchor="middle">
+              @for (l of lineas(n.dep.nombre); track $index) { <tspan [attr.x]="n.x" [attr.y]="n.y + n.r + 24 + $index * 22">{{ l }}</tspan> }
+            </text>
+          </g>
+        }
+      </svg>
+      }
+
+      @if (activa(); as d) {
+        <aside class="ficha" [style.left.px]="izq()" [style.top.px]="arr()">
+          <h2>{{ d.nombre }}</h2>
+          <p class="ficha__tipo">{{ tipo(d) }}@if (padre(d); as pa) { · depende de {{ pa }} }</p>
+          @if (resp(d); as r) {
+            <p class="ficha__resp"><strong>{{ r.nombre }}</strong><br />{{ r.cargo }}</p>
+            @if (r.correo) { <p class="ficha__dato">{{ r.correo }}</p> }
+            @if (r.telefono) { <p class="ficha__dato">Tel. {{ r.telefono }}@if (r.extension) { ext. {{ r.extension }} }</p> }
+          } @else {
+            <p class="ficha__vacio">Responsable sin identificar en la página de la alcaldía.</p>
+          }
+          @if (d.id !== 'des') {
+            <p class="ficha__dato">Equipo: {{ d.equipo.length }} {{ d.equipo.length === 1 ? 'persona' : 'personas' }}</p>
+            <p class="ficha__dato">Productos del plan: {{ d.productos.alta }} confirmados · {{ d.productos.media + d.productos.baja }} sugeridos</p>
+          }
+          @if (d.nota) { <p class="ficha__nota">{{ d.nota }}</p> }
+        </aside>
+      }
+    </div>
+
+    <ul class="leyenda" aria-label="Tipos de dependencia">
+      <li class="leyenda__secretaria">Secretaría</li>
+      <li class="leyenda__oficina">Oficina</li>
+      <li class="leyenda__subsecretaria">Subsecretaría</li>
+      <li class="leyenda__unidad">Unidad</li>
+      <li class="leyenda__entidad">Entidad externa</li>
+    </ul>
+  </section>
+} @else if (plan() === null) {
+  <p class="org__vacio">No hay datos de estructura para esta entidad.</p>
+} @else {
+  <p class="org__vacio">Cargando…</p>
+}

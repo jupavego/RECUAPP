@@ -188,7 +188,7 @@
   &__cab { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; margin: 0 0 8px; font-size: .85rem; .mas { margin: 0 0 0 auto; } }
   &__lista {
     list-style: none; margin: 0; padding: 0; max-height: 380px; overflow-y: auto; display: grid; gap: 6px;
-    li { display: grid; grid-template-columns: 1.4fr 1fr 210px 40px; align-items: center; gap: 4px 14px; padding: 6px 8px; border-radius: 8px; background: var(--neutral-50, #fafafa); font-size: .8rem; }
+    li { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 280px 40px; align-items: center; gap: 4px 14px; padding: 6px 8px; border-radius: 8px; background: var(--neutral-50, #fafafa); font-size: .8rem; }
   }
   &__ind { color: var(--dark-900, #0f172a); }
   &__prod { color: var(--neutral-600, #52525b); }
@@ -499,3 +499,29 @@
 }
 .paginas { display: flex; justify-content: center; align-items: center; gap: 14px; margin-top: 14px; font-size: .85rem;
   button { padding: 6px 14px; font: inherit; cursor: pointer; border-radius: 8px; border: 1px solid var(--color-border-tertiary, #e4e4e7); background: var(--color-background-primary, #fff); color: inherit; &:disabled { opacity: .4; cursor: default; } } }
+
+// Subresponsables con ícono de trazo fino: una máscara coloreada con el verde del tema, sin fondo.
+.ico-trazo { flex: none; width: 22px; height: 22px; margin: 0 10px 0 4px; background-color: var(--color-brand-primary); opacity: .85;
+  -webkit-mask: var(--trazo) center / contain no-repeat; mask: var(--trazo) center / contain no-repeat; }
+
+// Botón del equipo 60 % más grande; la lista desplegada conserva su tamaño de texto.
+.dep-cab__persona .equipo { font-size: 1.28rem; padding: 13px 19px; border-radius: 19px; }
+.dep-cab__persona .equipo summary { gap: 13px;
+  &::after { width: 14px; height: 14px; margin-right: 6px; } }
+.dep-cab__persona .equipo .equipo__ico { width: 58px; height: 58px; }
+.dep-cab__persona .equipo .equipo__n { min-width: 35px; height: 35px; padding: 0 10px; font-size: 1.15rem; }
+.dep-cab__persona .equipo ul { font-size: .8rem; top: calc(100% + 12px); }
+
+// El texto del botón del equipo usa el mismo estilo y tamaño que el nombre del responsable (.dep-cab__quien).
+.dep-cab__persona .equipo summary { font-size: 1.15rem; font-weight: 600; color: var(--dark-900, #0f172a); }
+
+// Contador del equipo: círculo en la esquina superior derecha del encabezado de la dependencia.
+.dep-cab { position: relative; }
+.dep-cab__n { position: absolute; top: 14px; right: 16px; z-index: 1; display: grid; place-items: center; min-width: 35px; height: 35px; padding: 0 10px; border-radius: 999px;
+  font-size: 1.15rem; font-weight: 600; color: #fff; background: var(--color-brand-primary); }
+
+// Entidad externa (INDER) en un tercer nivel bajo su secretaría, con borde punteado.
+.ext { position: relative; margin: 4px 0 0 26px; }
+.barras button.sub.sub--ext { border: 1.5px dashed var(--color-brand-border, #99f6e4); border-left-width: 1.5px; border-radius: 10px; background: transparent; padding-right: 44px !important; }
+.sub--ext .sub__tag { background: transparent; border: 1px dashed currentColor; }
+.ext .alerta { top: 50%; bottom: auto; right: 8px; transform: translateY(-50%); width: 26px; height: 26px; }

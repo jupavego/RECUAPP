@@ -28,6 +28,8 @@ export interface PersonaResponsable {
 export interface Dependencia {
   id: string;
   nombre: string;
+  /** secretaría con la que se muestra la entidad externa (tercer nivel, sin sumar a sus productos); null si no aplica */
+  vinculo?: string | null;
   tipo: 'secretaria' | 'oficina' | 'subsecretaria' | 'unidad' | 'entidad';
   url: string | null;
   /** dependencia de la que depende, si es subsecretaría */

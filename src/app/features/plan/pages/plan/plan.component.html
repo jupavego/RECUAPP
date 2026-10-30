@@ -115,11 +115,27 @@
               </button>
               @for (h of hijos(d.id); track h.id) {
                 <button type="button" class="sub" [attr.aria-expanded]="depAbierta() === h.id" (click)="alternarDep(h.id)" [title]="h.nombre + (h.padre_confirmado ? '' : ' · Adscripción a esta secretaría por confirmar') + (h.nota ? ' · ' + h.nota : '')">
-                  @if (urlIcono(h.id); as u) { <img class="ico-sub" [src]="u" alt="" width="26" height="26" /> }
+                  @if (trazoSub(h.id); as t) { <span class="ico-trazo" [style.--trazo]="'url(/img/trazo/' + t + '.svg)'" aria-hidden="true"></span> } @else { @if (urlIcono(h.id); as u) { <img class="ico-sub" [src]="u" alt="" width="26" height="26" /> } }
                   <span class="barras__nombre sub__nombre">{{ h.nombre }}</span>
                   @if (!h.padre_confirmado) { <em class="sub__tag">por confirmar</em> }
                   <span class="barras__valor">{{ total(h.productos) }}</span>
                 </button>
+              }
+              @for (e of externas(d.id); track e.id) {
+                <div class="ext">
+                  <button type="button" class="sub sub--ext" [attr.aria-expanded]="depAbierta() === e.id" (click)="alternarDep(e.id)">
+                    @if (trazoSub(e.id); as t) { <span class="ico-trazo" [style.--trazo]="'url(/img/trazo/' + t + '.svg)'" aria-hidden="true"></span> }
+                    <span class="barras__nombre sub__nombre">{{ e.nombre }}</span>
+                    <em class="sub__tag">entidad externa</em>
+                    <span class="barras__valor">{{ totalDep(e.id) }}</span>
+                  </button>
+                  @if (e.nota) {
+                    <span class="alerta" tabindex="0" role="note" aria-label="Nota sobre esta entidad">
+                      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg>
+                      <span class="alerta__caja" role="tooltip"><b>Entidad externa</b>{{ e.nota }}</span>
+                    </span>
+                  }
+                </div>
               }
               @if (d.tipo === 'entidad' && d.nota) {
                 <span class="alerta" tabindex="0" role="note" aria-label="Nota sobre esta entidad">
@@ -129,9 +145,10 @@
               }
               @if (d.tipo === 'secretaria' && !hijos(d.id).length) { <span class="sub--vacia" aria-hidden="true"></span> }
               @if (depAbierta(); as ab) {
-                @if (ab === d.id || dependencias().get(ab)?.padre === d.id) {
+                @if (ab === d.id || dependencias().get(ab)?.padre === d.id || dependencias().get(ab)?.vinculo === d.id) {
                   <div class="subcapsula__cuerpo">
                     <header class="dep-cab">
+                      @if (equipoDe(ab).length; as n) { <span class="dep-cab__n" [title]="n + ' funcionarios en el directorio de la alcaldía'">{{ n }}</span> }
                       <div class="dep-cab__top">
                         @if (urlIcono(ab); as u) { <img class="dep-cab__ico" [src]="u" alt="" width="56" height="56" /> }
                         <div class="dep-cab__titulo">
@@ -155,7 +172,7 @@
                           </div>
                           @if (eq.length) {
                             <details class="equipo" appCierraFuera>
-                          <summary [title]="'Directorio de funcionarios de la alcaldía: ' + eq.length + ' personas'"><img class="equipo__ico" src="img/iconos/contacto.webp" alt="" width="36" height="36" />Equipo de la dependencia <span class="equipo__n">{{ eq.length }}</span></summary>
+                          <summary [title]="'Directorio de funcionarios de la alcaldía: ' + eq.length + ' personas'"><img class="equipo__ico" src="img/iconos/contacto.webp" alt="" width="36" height="36" />Equipo de la dependencia</summary>
                           <ul>
                             <li class="equipo__cols" aria-hidden="true"><span>Funcionario</span><span>Cargo</span><span>Contacto</span><span></span></li>
                             @for (f of eq; track f.nombre) {

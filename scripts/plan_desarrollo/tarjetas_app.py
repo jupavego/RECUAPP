@@ -280,7 +280,7 @@ def construye(raiz, dane):
     return {
         "dane": dane, "municipio": base["municipio"], "plan": base["plan"],
         "fuente": {"nombre": "DNP, SisPT (plan indicativo) y PDF del plan", "fecha": "2026-10-30"},
-        "dependencias": [{k: d.get(k) for k in ("id", "nombre", "tipo", "url", "padre", "padre_confirmado", "nota", "icono")} | {"productos": por_dep[d["id"]], "responsable": personas.get(d["id"]), "equipo": equipos[d["id"]]} for d in deps],
+        "dependencias": [{k: d.get(k) for k in ("id", "nombre", "tipo", "url", "padre", "padre_confirmado", "nota", "icono", "vinculo")} | {"productos": por_dep[d["id"]], "responsable": personas.get(d["id"]), "equipo": equipos[d["id"]]} for d in deps],
         "alcalde": alcalde, "responsables_fecha": fecha_web,
         "otras_entidades": [{"nombre": o["nombre"], "icono": o.get("icono")} for o in otras],
         "lineas": list(lineas.values()),
