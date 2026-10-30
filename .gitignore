@@ -77,3 +77,7 @@ __pycache__/
 # Insumos demasiado pesados para git (shapefiles del DANE y geojson de potencialidades)
 /insumos/geografia/dane_cnpv2018/
 /insumos/geografia/_Potencialidades_Modelo_Plan.geojson
+
+# Planes de desarrollo originales (fuente pesada, solo local)
+insumos/plan/**/*.pdf
+insumos/plan/*.pdf
