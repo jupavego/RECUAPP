@@ -1,0 +1,13 @@
+<svg [attr.viewBox]="'0 0 ' + tam().w + ' ' + tam().h" preserveAspectRatio="none" aria-hidden="true">
+  @for (e of enlaces(); track $index) {
+    <path class="pin-net__enlace" [attr.d]="e.d" pathLength="100" [style.animation-delay]="e.delay" />
+  }
+  @for (p of pins(); track $index) {
+    <g [attr.transform]="'translate(' + p.x + ' ' + p.y + ') scale(' + escala + ')'">
+      <path class="pin-net__pin" pathLength="100" [style.animation-delay]="p.drawDelay"
+        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+      <circle class="pin-net__ojo" cx="12" cy="9" r="2.8" pathLength="100" [style.animation-delay]="p.ojoDelay" />
+      <circle class="pin-net__punta" cx="12" cy="22" r="1.1" [style.animation-delay]="p.puntaDelay" />
+    </g>
+  }
+</svg>

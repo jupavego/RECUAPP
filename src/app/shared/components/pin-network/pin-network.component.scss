@@ -1,0 +1,39 @@
+:host {
+  position: absolute; inset: 0; z-index: 0; display: block; pointer-events: none;
+  --pin: #4F8A2E;
+  --pin-rgb: 79, 138, 46;
+}
+:host-context(body.tema-oscuro) { --pin: #99CC33; --pin-rgb: 153, 204, 51; }
+
+svg { width: 100%; height: 100%; display: block; }
+
+.pin-net__pin, .pin-net__ojo, .pin-net__enlace {
+  fill: none; stroke: var(--pin); stroke-linecap: round; stroke-linejoin: round;
+  stroke-dasharray: 100; stroke-dashoffset: 100; opacity: 0;
+  animation-fill-mode: forwards; animation-timing-function: ease-out; animation-iteration-count: 1;
+}
+.pin-net__pin   { stroke-width: .85; animation-name: pin-trazo; animation-duration: 9.62s; }
+.pin-net__ojo   { stroke-width: .6; animation-name: pin-trazo; animation-duration: 3.85s; }
+.pin-net__enlace { stroke-width: 1.6; stroke-dasharray: 100; animation-name: enlace-trazo; animation-duration: 7.69s; }
+.pin-net__punta { fill: var(--pin); opacity: 0; animation: pin-punta 3.85s ease-out 0s 1 forwards; transform-box: fill-box; transform-origin: center; }
+
+@keyframes pin-trazo {
+  0%   { stroke-dashoffset: 100; opacity: 0; }
+  5%   { opacity: .9; }
+  80%  { stroke-dashoffset: 0; opacity: .9; filter: drop-shadow(0 0 1px rgba(var(--pin-rgb), .9)); }
+  100% { stroke-dashoffset: 0; opacity: .85; filter: drop-shadow(0 0 .5px rgba(var(--pin-rgb), .3)); }
+}
+@keyframes enlace-trazo {
+  0%   { stroke-dashoffset: 100; opacity: 0; }
+  5%   { opacity: .8; }
+  100% { stroke-dashoffset: 0; opacity: .65; }
+}
+@keyframes pin-punta {
+  0%   { opacity: 0; transform: scale(.4); }
+  60%  { opacity: 1; transform: scale(1.8); filter: drop-shadow(0 0 2px rgba(var(--pin-rgb), .95)); }
+  100% { opacity: .8; transform: scale(1); filter: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pin-net__pin, .pin-net__ojo, .pin-net__enlace, .pin-net__punta { animation: none; stroke-dashoffset: 0; opacity: .35; }
+}

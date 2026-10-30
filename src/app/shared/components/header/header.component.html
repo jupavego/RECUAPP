@@ -7,15 +7,6 @@
       <a routerLink="/mapa" routerLinkActive="is-active">Mapa</a>
       <a routerLink="/mapa3d" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">Modelo 3D</a>
       <a routerLink="/mapa3d/catalogo" routerLinkActive="is-active">Catálogo</a>
-      <button type="button" class="topbar__tema" [class.is-on]="tema.botanico()" [class.is-dark]="tema.oscuro()" (click)="tema.alternar()"
-              [attr.aria-label]="'Tema de color: ' + (tema.oscuro() ? 'botánico oscuro' : tema.botanico() ? 'botánico' : 'predeterminado')"
-              [title]="'Tema de color: ' + (tema.oscuro() ? 'botánico oscuro' : tema.botanico() ? 'botánico' : 'predeterminado') + ' (clic para cambiar)'">
-        @if (tema.oscuro()) {
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>
-        } @else {
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4C9 4 4 9.5 4 15c0 1.7.5 3 1.2 4C6 14 10 10.5 15 9c-4 2.5-7 6-8 11 1 .6 2.2 1 3.5 1C17 21 20 13 20 4z"/></svg>
-        }
-      </button>
       @if (session.isLoggedIn()) {
         <a routerLink="/app" routerLinkActive="is-active">Mi espacio</a>
         @if (session.isAdmin()) {
@@ -26,6 +17,15 @@
         <a routerLink="/auth/login">Ingresar</a>
         <a routerLink="/auth/register" class="topbar__cta">Registrarse</a>
       }
+      <button type="button" class="topbar__tema" [class.is-dark]="tema.oscuro()" (click)="tema.alternar()"
+              [attr.aria-label]="'Tema de color: ' + (tema.oscuro() ? 'oscuro' : 'claro')"
+              [title]="'Tema de color: ' + (tema.oscuro() ? 'oscuro' : 'claro') + ' (clic para cambiar)'">
+        @if (tema.oscuro()) {
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>
+        } @else {
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4C9 4 4 9.5 4 15c0 1.7.5 3 1.2 4C6 14 10 10.5 15 9c-4 2.5-7 6-8 11 1 .6 2.2 1 3.5 1C17 21 20 13 20 4z"/></svg>
+        }
+      </button>
     </nav>
   </div>
 </header>

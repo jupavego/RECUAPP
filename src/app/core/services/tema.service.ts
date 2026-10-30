@@ -4,18 +4,18 @@ import { filter } from 'rxjs';
 
 const CLAVE = 'plan-tema';
 
-export type ModoTema = 'base' | 'botanico' | 'oscuro';
-const ORDEN: ModoTema[] = ['base', 'botanico', 'oscuro'];
+export type ModoTema = 'botanico' | 'oscuro';
+const ORDEN: ModoTema[] = ['botanico', 'oscuro'];
 
 /**
- * Modos opcionales de color: la paleta de la app, "Earthy Botanical" y su variante oscura.
- * Se eligen con el botón de la cabecera y se recuerdan en el navegador.
+ * Modos de color de la app: "Earthy Botanical" (el claro, por defecto) y su variante oscura.
+ * Se alternan con el botón de la cabecera y se recuerdan en el navegador.
  */
 @Injectable({ providedIn: 'root' })
 export class TemaService {
   readonly modo = signal<ModoTema>(this.leer());
-  /** el tema botánico está activo, en claro o en oscuro */
-  readonly botanico = computed(() => this.modo() !== 'base');
+  /** la paleta botánica es la de siempre (en claro o en oscuro); se conserva por quienes la consultan */
+  readonly botanico = computed(() => true);
   readonly oscuro = computed(() => this.modo() === 'oscuro');
 
   private readonly router = inject(Router);
@@ -37,7 +37,7 @@ export class TemaService {
     return /^\/mapa(3d)?([/?#]|$)/.test(url);
   }
 
-  /** base → botánico → botánico oscuro → base */
+  /** botánico → botánico oscuro → botánico */
   alternar(): void {
     this.fijar(ORDEN[(ORDEN.indexOf(this.modo()) + 1) % ORDEN.length]);
   }
@@ -50,7 +50,7 @@ export class TemaService {
   private leer(): ModoTema {
     try {
       const v = localStorage.getItem(CLAVE);
-      return v === 'botanico' || v === 'oscuro' ? v : 'base';
-    } catch { return 'base'; }
+      return v === 'oscuro' ? v : 'botanico';
+    } catch { return 'botanico'; }
   }
 }
