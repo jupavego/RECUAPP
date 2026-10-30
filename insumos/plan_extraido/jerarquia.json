@@ -1,0 +1,493 @@
+{
+ "resumen": {
+  "lineas": 4,
+  "sectores": 17,
+  "programas": 46,
+  "indicadores": 233,
+  "indicadores_sin_programa_en_ppi": 1
+ },
+ "cardinalidad": {
+  "sectores_por_linea": {
+   "1 Justicia e inclusión social y bienestar ciudadano": 6,
+   "2 Gobernanza y participación ciudadana": 3,
+   "3 Integración regional y desarrollo económico y sostenible": 6,
+   "4 Desarrollo del conocimiento, innovación y gobierno abierto": 2
+  },
+  "programas_por_linea": {
+   "1 Justicia e inclusión social y bienestar ciudadano": 16,
+   "2 Gobernanza y participación ciudadana": 9,
+   "3 Integración regional y desarrollo económico y sostenible": 17,
+   "4 Desarrollo del conocimiento, innovación y gobierno abierto": 4
+  },
+  "lineas_por_sector": {
+   "Agricultura y desarrollo rural": [
+    "3"
+   ],
+   "Ambiente y desarrollo sostenible": [
+    "3"
+   ],
+   "Comercio, industria y turismo": [
+    "3"
+   ],
+   "Cultura": [
+    "1"
+   ],
+   "Deporte y Recreación": [
+    "1"
+   ],
+   "Educación": [
+    "1"
+   ],
+   "Gobierno Territorial": [
+    "2"
+   ],
+   "Inclusión social y reconciliación": [
+    "1"
+   ],
+   "Información Estadística": [
+    "4"
+   ],
+   "Justicia y del derecho": [
+    "2"
+   ],
+   "Minas y energia": [
+    "3"
+   ],
+   "Organismos de Control": [
+    "2"
+   ],
+   "Salud y protección social": [
+    "1"
+   ],
+   "Tecnologías de la información y las comunicaciones": [
+    "4"
+   ],
+   "Trabajo": [
+    "3"
+   ],
+   "Transporte": [
+    "3"
+   ],
+   "Vivienda, ciudad y territorio": [
+    "1"
+   ]
+  },
+  "sectores_en_varias_lineas": [],
+  "programas_en_varios_lugares": []
+ },
+ "filas_sin_linea": [],
+ "indicadores_sin_programa_en_ppi": [
+  [
+   "Ambiente y desarrollo sostenible",
+   "Fortalecimiento del desempeño ambiental de los sectores productivos"
+  ]
+ ],
+ "arbol": [
+  {
+   "numero": "1",
+   "linea": "1 Justicia e inclusión social y bienestar ciudadano",
+   "n_sectores": 6,
+   "n_programas": 16,
+   "n_indicadores": 108,
+   "ppi_total": 168065123939,
+   "sectores": [
+    {
+     "sector": "Salud y protección social",
+     "n_programas": 3,
+     "n_indicadores": 24,
+     "ppi_total": 131282933844,
+     "programas": [
+      {
+       "programa": "Inspección, vigilancia y control",
+       "ppi_total": 1091703702,
+       "indicadores": 2
+      },
+      {
+       "programa": "Salud pública",
+       "ppi_total": 9158724058,
+       "indicadores": 12
+      },
+      {
+       "programa": "Aseguramiento y prestación integral de servicios de salud",
+       "ppi_total": 121032506084,
+       "indicadores": 10
+      }
+     ]
+    },
+    {
+     "sector": "Inclusión social y reconciliación",
+     "n_programas": 3,
+     "n_indicadores": 16,
+     "ppi_total": 18339922532,
+     "programas": [
+      {
+       "programa": "Desarrollo integral de la primera infancia a la juventud, y fortalecimiento de las capacidades de las familias de niñas, niños y adolescentes",
+       "ppi_total": 17321727544,
+       "indicadores": 9
+      },
+      {
+       "programa": "Atención integral de población en situación permanente de desprotección social y/o familiar",
+       "ppi_total": 258194988,
+       "indicadores": 4
+      },
+      {
+       "programa": "Atención, asistencia y reparación integral a las víctimas",
+       "ppi_total": 760000000,
+       "indicadores": 3
+      }
+     ]
+    },
+    {
+     "sector": "Vivienda, ciudad y territorio",
+     "n_programas": 3,
+     "n_indicadores": 20,
+     "ppi_total": 3641000000,
+     "programas": [
+      {
+       "programa": "Acceso a soluciones de vivienda",
+       "ppi_total": 3031000000,
+       "indicadores": 1
+      },
+      {
+       "programa": "Ordenamiento territorial y desarrollo urbano",
+       "ppi_total": 290000000,
+       "indicadores": 7
+      },
+      {
+       "programa": "Acceso de la población a los servicios de agua potable y saneamiento básico",
+       "ppi_total": 320000000,
+       "indicadores": 12
+      }
+     ]
+    },
+    {
+     "sector": "Educación",
+     "n_programas": 3,
+     "n_indicadores": 19,
+     "ppi_total": 5957000000,
+     "programas": [
+      {
+       "programa": "Calidad, cobertura y fortalecimiento de la educación inicial, prescolar, básica y media",
+       "ppi_total": 1150000000,
+       "indicadores": 11
+      },
+      {
+       "programa": "Fortalecimiento de la gestión y dirección del Sector Educación",
+       "ppi_total": 460000000,
+       "indicadores": 0
+      },
+      {
+       "programa": "Calidad y fomento de la educación superior",
+       "ppi_total": 4347000000,
+       "indicadores": 8
+      }
+     ]
+    },
+    {
+     "sector": "Cultura",
+     "n_programas": 2,
+     "n_indicadores": 18,
+     "ppi_total": 3339066143,
+     "programas": [
+      {
+       "programa": "Promoción y acceso efectivo a procesos culturales y artisticos",
+       "ppi_total": 2237174316,
+       "indicadores": 14
+      },
+      {
+       "programa": "Gestión, protección y salvaguardia del patrimonio cultural colombiano",
+       "ppi_total": 1101891827,
+       "indicadores": 4
+      }
+     ]
+    },
+    {
+     "sector": "Deporte y Recreación",
+     "n_programas": 2,
+     "n_indicadores": 11,
+     "ppi_total": 5505201420,
+     "programas": [
+      {
+       "programa": "Fomento a la recreación, la actividad sica y el deporte para desarrollar entornos de convivencia y paz",
+       "ppi_total": 4730201420,
+       "indicadores": 7
+      },
+      {
+       "programa": "Formación y preparación de deportistas",
+       "ppi_total": 775000000,
+       "indicadores": 4
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "2",
+   "linea": "2 Gobernanza y participación ciudadana",
+   "n_sectores": 3,
+   "n_programas": 9,
+   "n_indicadores": 54,
+   "ppi_total": 30205439968,
+   "sectores": [
+    {
+     "sector": "Justicia y del derecho",
+     "n_programas": 2,
+     "n_indicadores": 2,
+     "ppi_total": 3175473000,
+     "programas": [
+      {
+       "programa": "Sistema penitenciario y carcelario en el marco de los derechos humanos",
+       "ppi_total": 2495014500,
+       "indicadores": 1
+      },
+      {
+       "programa": "Promoción al acceso a la justicia",
+       "ppi_total": 680458500,
+       "indicadores": 1
+      }
+     ]
+    },
+    {
+     "sector": "Organismos de Control",
+     "n_programas": 3,
+     "n_indicadores": 3,
+     "ppi_total": 907278000,
+     "programas": [
+      {
+       "programa": "Lucha contra la corrupción",
+       "ppi_total": 90727800,
+       "indicadores": 1
+      },
+      {
+       "programa": "Vigilancia de la gestión administrativa de los funcionarios del Estado",
+       "ppi_total": 635094600,
+       "indicadores": 1
+      },
+      {
+       "programa": "Fortalecimiento del control y la vigilancia de la gestión fiscal y resarcimiento al daño del patrimonio público",
+       "ppi_total": 181455600,
+       "indicadores": 1
+      }
+     ]
+    },
+    {
+     "sector": "Gobierno Territorial",
+     "n_programas": 4,
+     "n_indicadores": 49,
+     "ppi_total": 26122688968,
+     "programas": [
+      {
+       "programa": "Gestión del riesgo de desastres y emergencias",
+       "ppi_total": 1195338765,
+       "indicadores": 12
+      },
+      {
+       "programa": "Fortalecimiento del buen gobierno para el respeto y garantia de los derechos humanos.",
+       "ppi_total": 5226458688,
+       "indicadores": 4
+      },
+      {
+       "programa": "Fortalecimiento de la convivencia y la seguridad ciudadana",
+       "ppi_total": 12014864163,
+       "indicadores": 14
+      },
+      {
+       "programa": "Fortalecimiento a la gestión y dirección de la administración pública territorial",
+       "ppi_total": 7686027352,
+       "indicadores": 19
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "3",
+   "linea": "3 Integración regional y desarrollo económico y sostenible",
+   "n_sectores": 6,
+   "n_programas": 17,
+   "n_indicadores": 59,
+   "ppi_total": 49171222676,
+   "sectores": [
+    {
+     "sector": "Agricultura y desarrollo rural",
+     "n_programas": 2,
+     "n_indicadores": 3,
+     "ppi_total": 6100018699,
+     "programas": [
+      {
+       "programa": "Inclusión productiva de pequeños productores rurales",
+       "ppi_total": 5827835299,
+       "indicadores": 2
+      },
+      {
+       "programa": "Sanidad agropecuaria e inocuidad agroalimentaria",
+       "ppi_total": 272183400,
+       "indicadores": 1
+      }
+     ]
+    },
+    {
+     "sector": "Ambiente y desarrollo sostenible",
+     "n_programas": 6,
+     "n_indicadores": 18,
+     "ppi_total": 4107242080,
+     "programas": [
+      {
+       "programa": "Conservación de la biodiversidad y sus servicios ecosistémicos",
+       "ppi_total": 998005800,
+       "indicadores": 9
+      },
+      {
+       "programa": "Educación Ambiental",
+       "ppi_total": 1134097500,
+       "indicadores": 3
+      },
+      {
+       "programa": "Gestión integral de mares, costas y recursos acuáticos",
+       "ppi_total": 0,
+       "indicadores": 1
+      },
+      {
+       "programa": "Gestión integral del recurso hídrico",
+       "ppi_total": 1360917000,
+       "indicadores": 2
+      },
+      {
+       "programa": "Gestión de la información y el conocimiento ambiental",
+       "ppi_total": 307110890,
+       "indicadores": 1
+      },
+      {
+       "programa": "Gestión del cambio climático para un desarrollo bajo en carbono y resiliente al clima",
+       "ppi_total": 307110890,
+       "indicadores": 2
+      }
+     ]
+    },
+    {
+     "sector": "Trabajo",
+     "n_programas": 1,
+     "n_indicadores": 8,
+     "ppi_total": 544366800,
+     "programas": [
+      {
+       "programa": "Generación y formalización del empleo",
+       "ppi_total": 544366800,
+       "indicadores": 8
+      }
+     ]
+    },
+    {
+     "sector": "Comercio, industria y turismo",
+     "n_programas": 2,
+     "n_indicadores": 7,
+     "ppi_total": 622607316,
+     "programas": [
+      {
+       "programa": "Productividad y competitividad de las empresas colombianas",
+       "ppi_total": 362911200,
+       "indicadores": 4
+      },
+      {
+       "programa": "Fortalecimiento de la gestión y dirección del Sector Comercio, Industriay Turismo",
+       "ppi_total": 259696116,
+       "indicadores": 3
+      }
+     ]
+    },
+    {
+     "sector": "Minas y energia",
+     "n_programas": 3,
+     "n_indicadores": 4,
+     "ppi_total": 12320802742,
+     "programas": [
+      {
+       "programa": "Consolidación productiva del sector de energía eléctrica",
+       "ppi_total": 9072780000,
+       "indicadores": 2
+      },
+      {
+       "programa": "Gestión de la información en el sector minero energético",
+       "ppi_total": 226819500,
+       "indicadores": 1
+      },
+      {
+       "programa": "Acceso al servicio público domiciliario degas combustible",
+       "ppi_total": 3021203242,
+       "indicadores": 1
+      }
+     ]
+    },
+    {
+     "sector": "Transporte",
+     "n_programas": 3,
+     "n_indicadores": 19,
+     "ppi_total": 25476185039,
+     "programas": [
+      {
+       "programa": "Infraestructura red vial regional",
+       "ppi_total": 21774672000,
+       "indicadores": 9
+      },
+      {
+       "programa": "Prestación de servicios de transporte público de pasajeros",
+       "ppi_total": 1886957039,
+       "indicadores": 1
+      },
+      {
+       "programa": "Seguridad de transporte",
+       "ppi_total": 1814556000,
+       "indicadores": 9
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "numero": "4",
+   "linea": "4 Desarrollo del conocimiento, innovación y gobierno abierto",
+   "n_sectores": 2,
+   "n_programas": 4,
+   "n_indicadores": 9,
+   "ppi_total": 2072019440,
+   "sectores": [
+    {
+     "sector": "Información Estadística",
+     "n_programas": 2,
+     "n_indicadores": 2,
+     "ppi_total": 226819500,
+     "programas": [
+      {
+       "programa": "Levantamiento y actualización de información estadística de calidad",
+       "ppi_total": 113409750,
+       "indicadores": 1
+      },
+      {
+       "programa": "Generación de la información geográfica del territorio nacional",
+       "ppi_total": 113409750,
+       "indicadores": 1
+      }
+     ]
+    },
+    {
+     "sector": "Tecnologías de la información y las comunicaciones",
+     "n_programas": 2,
+     "n_indicadores": 7,
+     "ppi_total": 1845199940,
+     "programas": [
+      {
+       "programa": "Facilitar el acceso y uso de las Tecnologías de la Información y las Comunicaciones (TIC) en todo el territorio nacional",
+       "ppi_total": 1618380440,
+       "indicadores": 1
+      },
+      {
+       "programa": "Fomento del desarrollo de aplicaciones, sotiware y contenidos para impulsar la apropiación de las Tecnologías de la Información y las Comunicaciones (TIC)",
+       "ppi_total": 226819500,
+       "indicadores": 6
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

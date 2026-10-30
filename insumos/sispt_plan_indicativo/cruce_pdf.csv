@@ -1,0 +1,96 @@
+﻿plan,sispt,nuestros,sispt_n,nuestros_emparejados,meta_igual,nuestros_sin_par,sispt_cubiertos,pct_sispt_cubierto
+oriente_abejorral,Abejorral,148,198,29,9,119,25,13
+occidente_abriaqui,Abriaquí,191,176,152,138,39,128,73
+nordeste_amalfi,Amalfi,385,191,272,210,113,172,90
+suroeste_angelopolis,Angelópolis,143,180,38,30,105,30,17
+angostura,Angostura,137,356,85,78,52,85,24
+nordeste_anori,Anorí,141,174,72,61,69,66,38
+uraba_apartado,Apartadó,539,726,423,406,116,405,56
+uraba_arboletes,Arboletes,424,235,227,154,197,134,57
+oriente_argelia,Argelia,269,261,219,206,50,216,83
+barbosa,Barbosa,166,233,135,108,31,123,53
+bello,Bello,279,288,275,239,4,224,78
+suroeste_betania,Betania,16,132,5,0,11,4,3
+suroeste_betulia,Betulia,127,134,86,84,41,85,63
+briceno,Briceño,164,341,120,112,44,118,35
+occidente_buritica,Buriticá,8,59,1,1,7,1,2
+bajo_cauca_caceres,Cáceres,132,167,78,62,54,68,41
+occidente_caicedo,Caicedo,206,186,172,158,34,162,87
+caldas,Caldas,229,239,222,164,7,176,74
+campamento,Campamento,79,95,45,40,34,44,46
+occidente_canasgordas,Cañasgordas,305,255,154,131,151,128,50
+suroeste_caramanta,Caramanta,82,184,78,71,4,78,42
+uraba_carepa,Carepa,186,228,78,22,108,74,32
+carolina_del_principe,(sin emparejar),,,,,,,
+bajo_cauca_caucasia,Caucasia,12,299,4,0,8,3,1
+uraba_chigorodo,Chigorodó,326,173,164,131,162,130,75
+nordeste_cisneros,Cisneros,216,203,117,88,99,109,54
+suroeste_ciudad_bolivar,Ciudad bolívar,299,334,268,265,31,267,80
+suroeste_concordia,Concordia,63,156,56,41,7,55,35
+occidente_dabeiba,Dabeiba,302,219,220,204,82,163,74
+donmatias,Donmatías,54,105,6,0,48,3,3
+bajo_cauca_el_bagre,El bagre,293,321,220,193,73,189,59
+oriente_el_carmen_de_viboral,El carmen de viboral,136,181,7,2,129,1,1
+oriente_el_penol,(sin emparejar),,,,,,,
+oriente_el_retiro,(sin emparejar),,,,,,,
+entrerrios,Entrerrios,121,157,75,67,46,71,45
+envigado,Envigado,567,317,236,126,331,229,72
+suroeste_fredonia,Fredonia,179,257,157,139,22,124,48
+occidente_frontino,Frontino,353,336,156,136,197,144,43
+gomez_plata,Gómez plata,80,358,17,3,63,16,4
+oriente_granada,Granada,175,249,97,96,78,96,39
+guadalupe,Guadalupe,341,302,193,13,148,184,61
+oriente_guarne,Guarne,358,187,102,99,256,63,34
+oriente_guatape,Guatape,176,93,36,35,140,19,20
+occidente_heliconia,Heliconia,60,61,3,0,57,3,5
+itagui,Itagui,305,338,178,173,127,176,52
+suroeste_jardin,Jardín,102,116,2,0,100,2,2
+suroeste_jerico,Jericó,84,268,37,1,47,33,12
+oriente_la_ceja,La ceja,14,159,2,2,12,2,1
+oriente_la_ceja_v2,(sin emparejar),,,,,,,
+suroeste_la_pintada,La pintada,163,223,37,26,126,31,14
+oriente_la_union,La unión,14,157,0,0,14,0,0
+occidente_liborina,Liborina,85,148,83,78,2,80,54
+oriente_marinilla,Marinilla,217,222,159,145,58,137,62
+medellin,Medellín,856,596,549,530,307,458,77
+suroeste_montebello,Montebello,74,177,74,72,0,73,41
+uraba_murindo,Murindó,1,154,0,0,1,0,0
+uraba_mutata,Mutatá,269,196,195,151,74,170,87
+oriente_narino,Nariño,123,142,119,114,4,110,77
+bajo_cauca_nechi,Nechí,115,221,88,66,27,83,38
+uraba_necocli,Necoclí,267,256,130,107,137,115,45
+occidente_peque,Peque,107,195,2,0,105,2,1
+magdalena_medio_puerto_berrio,Puerto berrío,200,195,170,159,30,158,81
+magdalena_medio_puerto_nare,Puerto nare,158,160,158,143,0,145,91
+magdalena_medio_puerto_triunfo,Puerto triunfo,9,165,0,0,9,0,0
+nordeste_remedios,Remedios,194,316,113,94,81,103,33
+suroeste_salgar,Salgar,239,238,236,234,3,233,98
+san_andres_de_cuerquia,San andrés de cuerquía,55,242,0,0,55,0,0
+oriente_san_carlos,San carlos,172,116,161,116,11,67,58
+oriente_san_francisco,San francisco,122,137,34,21,88,25,18
+oriente_san_luis,San luis,41,161,0,0,41,0,0
+san_pedro_de_los_milagros,San pedro de los milagros,116,117,84,83,32,83,71
+uraba_san_pedro_de_uraba,San pedro de uraba,281,286,271,3,10,260,91
+oriente_san_rafael,San rafael,114,86,110,95,4,78,91
+suroeste_santa_barbara,Santa bárbara,135,109,90,80,45,81,74
+occidente_santa_fe_de_antioquia,Santafé de antioquia,84,134,63,52,21,63,47
+santa_rosa_de_osos,Santa rosa de osos,249,158,138,126,111,119,75
+nordeste_santo_domingo,Santo domingo,199,236,187,155,12,168,71
+oriente_san_vicente_ferrer,(sin emparejar),,,,,,,
+nordeste_segovia,Segovia,360,250,48,16,312,46,18
+oriente_sonson,Sonson,141,185,139,132,2,134,72
+occidente_sopetran,Sopetrán,411,218,361,173,50,200,92
+suroeste_tamesis,Támesis,203,236,120,103,83,102,43
+suroeste_tarso,Tarso,182,170,0,0,182,0,0
+suroeste_titiribi,Titiribí,28,175,27,24,1,27,15
+toledo,Toledo,140,108,16,12,124,13,12
+occidente_uramita,Uramita,98,116,37,0,61,37,32
+suroeste_urrao,Urrao,137,231,9,4,128,7,3
+suroeste_valparaiso,Valparaíso,95,189,34,24,61,32,17
+nordeste_vegachi,Vegachí,338,437,7,4,331,7,2
+suroeste_venecia,Venecia,197,183,195,177,2,157,86
+uraba_vigia_del_fuerte,Vigía del fuerte,306,289,62,24,244,52,18
+nordeste_yali,Yalí,237,253,173,159,64,170,67
+yarumal,Yarumal,161,152,146,135,15,134,88
+magdalena_medio_yondo,Yondó,310,252,248,215,62,185,73
+bajo_cauca_zaragoza,Zaragoza,346,277,300,253,46,251,91

@@ -1,0 +1,226 @@
+{
+ "fuente": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/default.aspx",
+ "fecha": "2026-10-30",
+ "dependencias": [
+  {
+   "dependencia": "Alcalde Municipal",
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Alcalde-Municipal.aspx",
+   "responsable": {
+    "cargo": "Alcalde Municipal",
+    "nombre": "Kevin Rene Bernal Morales",
+    "perfil": "Líder gubernamental y administrador público de alta gerencia con una destacada trayectoria de más de 13 años en la dirección político-administrativa territorial y la defensa institucional. Actualmente se desempeña como alcalde Municipal de Girardota, liderando el plan de desarrollo local, la ejecución presupuestal y la articulación de políticas públicas de alto impacto social. Con una sólida experiencia en el Ministerio Público como Personero Municipal en Girardota, Santa Fe de Antioquia y San Jerónimo, garantizando los derechos humanos, el control disciplinario y la veeduría ciudadana. La exp",
+    "foto_url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/PublishingImages/Paginas/Alcalde-Municipal/Kevin-Bernal.png",
+    "foto": "alcalde-municipal.png"
+   }
+  },
+  {
+   "dependencia": "Secretaría de Agricultura y Desarrollo Rural",
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Secretaria-de-Agricultura-y-Desarrollo-Rural.aspx",
+   "responsable": {
+    "cargo": "Secretario de Agricultura",
+    "nombre": "Jaime de Jesus Madrigal Morales",
+    "perfil": "Profesional con más de 25 años de trayectoria sólida en el sector público, destacando un rol reciente como secretario de Despacho y una amplia experiencia como Profesional Especializado y Contratista en diversas entidades gubernamentales y alcaldías locales. Especialista en la gestión estratégica, dirección de equipos multidisciplinarios, formulación de políticas públicas y optimización de procesos administrativos.",
+    "foto_url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/PublishingImages/Paginas/Secretaria-de-Agricultura-y-Desarrollo-Rural/JAIME%20DE%20JESUS%20MADRIGAL%20MORALES.png",
+    "foto": "secretaria-de-agricultura-y-desarrollo-rural.png"
+   }
+  },
+  {
+   "dependencia": "Secretaría de Ambiental y desarrollo Sostenible",
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Subsecretaria-de-Medio-Ambiente.aspx",
+   "responsable": {
+    "cargo": "Secretaria Ambiental y Desarrollo Sostenible",
+    "nombre": "Eliana Cardona Arboleda",
+    "perfil": "Profesional con más de 14 años de experiencia liderando procesos de gestión social, formación, cultura y desarrollo comunitario. Se viene desempeñando como secretaria de Despacho en la administración pública, coordinando estrategias institucionales y articulando proyectos de alto impacto. Cuenta con una sólida trayectoria en trabajo de campo y ejecución de proyectos sociales en entidades de renombre como Comfenalco Antioquia y la Fundación Portafolio Verde.",
+    "foto_url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/PublishingImages/Paginas/Subsecretaria-de-Medio-Ambiente/ELIANA%20CARDONA%20ARBOLEDA.png",
+    "foto": "subsecretaria-de-medio-ambiente.png"
+   }
+  },
+  {
+   "dependencia": "Secretaría de Gobierno y Derechos Humanos",
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Secretaria-de-Gobierno-y-Derechos-Humanos.aspx",
+   "responsable": {
+    "cargo": "Secretario de Gobierno y Derechos Humanos",
+    "nombre": "Diego Mauricio Rojas Castro",
+    "perfil": "Profesional con más de 25 años de trayectoria destacada en el sector público, con sólida experiencia en la alta dirección gubernamental, investigación judicial y gestión de la movilidad urbana. Se ha desempeñado con éxito como secretario de Despacho, liderando la planeación estratégica y la toma de decisiones institucionales. Cuenta con una sólida formación práctica en la fiscalía general de la Nación y administraciones municipales.",
+    "foto_url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/PublishingImages/Paginas/Secretaria-de-Gobierno-y-Derechos-Humanos/DIEGO%20MAURICIO%20ROJAS%20CASTRO.png",
+    "foto": "secretaria-de-gobierno-y-derechos-humanos.png"
+   }
+  },
+  {
+   "dependencia": "Secretaría de Hacienda y Desarrollo Económico",
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Secretaria-de-Hacienda-y-Desarrollo-Economico.aspx",
+   "responsable": {
+    "cargo": "Secretaria de Hacienda y Desarrollo Económico",
+    "nombre": "Diana Milena Osorno Alzate",
+    "perfil": "Profesional con más de 17 años de experiencia en el sector público, la educación superior y la gestión administrativa. Cuenta con experiencia en docencia universitaria en áreas de economía, administración y contaduría, así como en el fortalecimiento de la competitividad territorial y el desarrollo de proyectos orientados al servicio de la comunidad.",
+    "foto_url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/PublishingImages/Paginas/Secretaria-de-Hacienda-y-Desarrollo-Economico/DIANA%20MILENA%20OSORNO%20ALZATE.png",
+    "foto": "secretaria-de-hacienda-y-desarrollo-economico.png"
+   }
+  },
+  {
+   "dependencia": "Secretaría de Infraestructura",
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Secretaria-de-Infraestructura.aspx",
+   "responsable": {
+    "cargo": "Secretario de Infraestructura",
+    "nombre": "Victor Manuel Castro Quintero",
+    "perfil": "Profesional con una sólida trayectoria de 3 años en la gestión pública municipal, con experiencia tanto en la ejecución de contratos estatales como en la dirección de dependencias gubernamentales. Ha ejercido roles como Contratista y secretario de Despacho en el ámbito local, lo que le otorga un profundo conocimiento de los procesos administrativos, la normatividad vigente, la atención ciudadana y el cumplimiento de metas institucionales orientadas al bienestar comunitario.",
+    "foto_url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/PublishingImages/Paginas/Secretaria-de-Infraestructura/VICTOR%20MANUEL%20CASTRO%20QUINTERO.png",
+    "foto": "secretaria-de-infraestructura.png"
+   }
+  },
+  {
+   "dependencia": "Secretaría de Planeación, Desarrollo Territorial y Participación Ciudadana",
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Secretaria-de-Planeacion-y-Desarrollo-.aspx",
+   "responsable": {
+    "cargo": "Secretaria de Planeacion y Desarrollo Territorial",
+    "nombre": "Diana Carolina Zuleta Castrillon",
+    "perfil": "Profesional con más de 13 años de experiencia en el sector público,",
+    "foto_url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/PublishingImages/Paginas/Secretaria-de-Planeacion-y-Desarrollo-/Diana-Zuleta-Sec-Planeacion-y-Desarrollo.png",
+    "foto": "secretaria-de-planeacion-y-desarrollo.png"
+   }
+  },
+  {
+   "dependencia": "Secretaría de Salud y Protección Social",
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Secretar%C3%ADa-de-Salud,-Participaci%C3%B3n-Ciudadana-y-Protecci%C3%B3n-Social.aspx",
+   "responsable": {
+    "cargo": "Secretaria de Salud y Protección Social",
+    "nombre": "Diana Matilde Quiceno Cano",
+    "perfil": "Profesional con amplia experiencia en el sector público y privado, con trayectoria en la gestión administrativa, coordinación y apoyo a procesos institucionales, atención al ciudadano, gestión documental y seguimiento de procedimientos. Cuenta con experiencia en diferentes dependencias de la administración municipal, incluyendo el Despacho del Alcalde, Secretaría de Salud y Protección Social y Subsecretaría de Familia y Entornos Protectores.",
+    "foto_url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/PublishingImages/Paginas/Secretar%C3%ADa-de-Salud,-Participaci%C3%B3n-Ciudadana-y-Protecci%C3%B3n-Social/Diana-Quiceno.png",
+    "foto": "secretaria-de-salud-participacion-ciudadana-y-proteccion-social.png"
+   }
+  },
+  {
+   "dependencia": "Secretaría de Servicios Administrativos",
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Secretaria-General-y-de-Servicios-Administrativos.aspx",
+   "responsable": {
+    "cargo": "Secretaria de Servicios Administrativos",
+    "nombre": "Luz Mary Sanchez Alzate",
+    "perfil": "Profesional y Líder del sector",
+    "foto_url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/PublishingImages/Paginas/Secretaria-General-y-de-Servicios-Administrativos/LUZ%20MARY%20SANCHEZ%20ALZATE.png",
+    "foto": "secretaria-general-y-de-servicios-administrativos.png"
+   }
+  },
+  {
+   "dependencia": "Secretaría de Tránsito y Transporte",
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Secretaria-de-Transporte-y-Transito.aspx",
+   "responsable": {
+    "cargo": "Secretario",
+    "nombre": "Joaquín Bernardo Hernández López",
+    "perfil": "Profesional del sector público con 20 años de trayectoria en la administración y gestión gubernamental a nivel municipal y departamental. Amplia experiencia liderando despachos públicos, formulación de políticas locales, representación comunitaria y dirección de equipos multidisciplinarios. Su recorrido incluye roles clave como Secretario de Despacho, Concejal, Registrador Municipal y Personero Delegado, demostrando una sólida competencia en gobernanza, legalidad, planeación estratégica y desarrollo institucional con un alto sentido de compromiso social y transparencia.",
+    "foto_url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/PublishingImages/Paginas/Secretaria-de-Transporte-y-Transito/Joaqu%C3%ADn%20Hern%C3%A1ndez.png",
+    "foto": "secretaria-de-transporte-y-transito.png"
+   }
+  },
+  {
+   "dependencia": "Secretaría de Educación y cultura",
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Secretaria-de-Educacion-.aspx",
+   "responsable": {
+    "cargo": "Secretario de Educación y Cultura",
+    "nombre": "Santiago Orozco Carmona",
+    "perfil": "Profesional con más de 11 años de experiencia en la dirección, coordinación y asesoría de proyectos estratégicos en el sector público e instituciones de educación superior. Trayectoria destacada en la alta gestión local como secretario de Despacho en la Alcaldía de Girardota, y en el liderazgo de proyectos de gran envergadura en instituciones como el ITM y el Colegio Mayor de Antioquia.",
+    "foto_url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/PublishingImages/Paginas/Secretaria-de-Educacion-/SANTIAGO%20OROZCO%20CARMONA.png",
+    "foto": "secretaria-de-educacion.png"
+   }
+  },
+  {
+   "dependencia": "Subsecretaría de Seguridad y espacio publico",
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Subsecretaria-de-Seguridad.aspx",
+   "responsable": {
+    "cargo": "Subsecretario de Seguridad y Convivencia",
+    "nombre": "Daniel Alejandro Hernandez Alzate",
+    "perfil": "Profesional en Derecho con experiencia de más de 4 años en la administración pública y trayectoria en cargos de dirección y asesoría jurídica. Actualmente ejerce como secretario de Despacho de la Alcaldía de Girardota, liderando procesos administrativos y estratégicos orientados al fortalecimiento institucional y la atención de las necesidades de la ciudadanía.",
+    "foto_url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/PublishingImages/Paginas/Subsecretaria-de-Seguridad/DANIEL%20ALEJANDRO%20HERNANDEZ%20ALZATE.png",
+    "foto": "subsecretaria-de-seguridad.png"
+   }
+  },
+  {
+   "dependencia": "Subsecretaría de Protección Social",
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Subsecretaria-de-Proteccion-Social.aspx",
+   "responsable": {
+    "cargo": "Subsecretaria de Protección Social",
+    "nombre": "Yeimi Alexandra Cataño Cataño",
+    "perfil": "Profesional en Trabajo Social con más de 7 años de experiencia",
+    "foto_url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/PublishingImages/Paginas/Subsecretaria-de-Proteccion-Social/Yeimi-Catano-Subsec-Proteccion-Social.png",
+    "foto": "subsecretaria-de-proteccion-social.png"
+   }
+  },
+  {
+   "dependencia": "Subsecretaría de Participación Ciudadana",
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Subsecretaria-de-Participacion%20Ciudadana.aspx",
+   "responsable": {
+    "cargo": "Subsecretaria de Participación Ciudadana",
+    "nombre": "Erica Yanet Arias Garcia",
+    "perfil": "Profesional del sector educativo y de la gestión social con experiencia en la docencia de primera infancia y en la administración pública. Su trayectoria incluye la labor pedagógica en el Colegio Juan Bernardone, liderando procesos formativos y de desarrollo integral para niños en etapa de preescolar, así como el ejercicio del liderazgo administrativo en el sector gubernamental como Subsecretario de Despacho en la Alcaldía de Girardota.",
+    "foto_url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/PublishingImages/Paginas/Subsecretaria-de-Participacion%20Ciudadana/ERICA%20YANET%20ARIAS%20GARCIA.png",
+    "foto": "subsecretaria-de-participacion-ciudadana.png"
+   }
+  },
+  {
+   "dependencia": "Subsecretaría de Cultura",
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Subsecretaria-de-Cultura.aspx",
+   "responsable": {
+    "cargo": "Subsecretario de Cultura",
+    "nombre": "Carlos Andres Zapata Gil",
+    "perfil": "Docente y gestor cultural con más de dos décadas de experiencia en el ámbito educativo y de la administración pública. Especialista en procesos de enseñanza-aprendizaje en el sector de la educación superior (Universidad de Antioquia, Débora Arango) y en la formación artística y comunitaria (Corporación Canto Alegre).",
+    "foto_url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/PublishingImages/Paginas/Subsecretaria-de-Cultura/CARLOS%20ANDRES%20ZAPATA%20GIL.png",
+    "foto": "subsecretaria-de-cultura.png"
+   }
+  },
+  {
+   "dependencia": "Subsecretaría de Desarrollo económico y Competitividad.",
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Subsecretaria-desarrollo-economico.aspx",
+   "responsable": {
+    "cargo": "Subsecretario de Desarrollo Economico",
+    "nombre": "Carlos Mario Sierra Zapata",
+    "perfil": "Cuenta con mas de 7 años en el sector público, se ha desempeñado como",
+    "foto_url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/PublishingImages/Paginas/Subsecretaria-desarrollo-economico/Carlos-Mario-Sierra-Subsec-Desarrollo-Economico.png",
+    "foto": "subsecretaria-desarrollo-economico.png"
+   }
+  },
+  {
+   "dependencia": "Oficina de Comunicaciones",
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Oficina-de-Comunicaciones.aspx",
+   "responsable": {
+    "cargo": "Jefe de Comunicaciones",
+    "nombre": "Joan Camilo Cuartas",
+    "perfil": "Cuenta con más de 7 años de experiencia en estrategias de comunicación pública y política, cuenta con experiencia en la coordinación de equipos e implementación de planes de trabajo en el sector público, estrategias de comunicación digital, generación de contenidos y administración web.",
+    "foto_url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/PublishingImages/Paginas/Oficina-de-Comunicaciones/JOAN%20CAMILO%20CUARTAS.png",
+    "foto": "oficina-de-comunicaciones.png"
+   }
+  },
+  {
+   "dependencia": "Oficina Jurídica",
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Oficina-juridica.aspx",
+   "responsable": {
+    "cargo": "Jefe de Oficina Juridica",
+    "nombre": "Andres Felipe Garcia Carmona",
+    "perfil": "Abogado con sólida trayectoria de más de seis años en la administración pública, desempeñando cargos técnicos, profesionales y directivos dentro de la Alcaldía de Girardota. Posee experiencia en dirección jurídica, contratación estatal, derecho administrativo, elaboración de actos administrativos, asesoría legal y gestión institucional.",
+    "foto_url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/PublishingImages/Paginas/Oficina-juridica/ANDRES%20FELIPE%20GARCIA%20CARMONA.png",
+    "foto": "oficina-juridica.png"
+   }
+  },
+  {
+   "dependencia": "Oficina Control Interno Disciplinario",
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Control-interno-disciplinario.aspx",
+   "responsable": {
+    "cargo": "Jefe de Oficina de Control Interno Disciplinario",
+    "nombre": "Julian Henao Carmona",
+    "perfil": "Profesional del Derecho con más de cuatro años de experiencia en entidades públicas, liderando procesos administrativos y jurídicos. Ha ejercido cargos de dirección y asesoría legal en la Alcaldía de Girardota y la Personería de Medellín.",
+    "foto_url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/PublishingImages/Paginas/Control-interno-disciplinario/JULIAN%20HENAO%20CARMONA.png",
+    "foto": "control-interno-disciplinario.png"
+   }
+  },
+  {
+   "dependencia": "Oficina asesora de Control Interno",
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Secretaria-de-Control-Interno.aspx",
+   "responsable": {
+    "cargo": "Jefe de Oficina Control Interno",
+    "nombre": "Claudia Patricia Toro Bustamante",
+    "perfil": "Profesional con más de 4 años de experiencia destacada en el sector público y de educación superior, especializado en la dirección de oficinas, control interno y gestión contractual. Con sólida capacidad para auditar procesos, garantizar el cumplimiento normativo y liderar equipos hacia la eficiencia administrativa.",
+    "foto_url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/PublishingImages/Paginas/Secretaria-de-Control-Interno/CLAUDIA%20PATRICIA%20TORO%20BUSTAMANTE.png",
+    "foto": "secretaria-de-control-interno.png"
+   }
+  }
+ ]
+}

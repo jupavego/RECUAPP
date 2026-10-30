@@ -1,0 +1,372 @@
+@if (plan(); as p) {
+  <main class="plan">
+    <header class="plan__cabecera">
+      <p class="plan__etiqueta">Plan de desarrollo 2024-2027</p>
+      <h1>{{ p.municipio }}</h1>
+      <p class="plan__sub">{{ p.plan }}</p>
+    </header>
+
+    <section class="rejilla" aria-label="Categorías del plan">
+
+      <!-- Resumen -->
+      <article class="tarjeta tarjeta--ancha tarjeta--resumen">
+        <h2>Resumen</h2>
+        <dl class="cifras">
+          <div><dt>Líneas estratégicas</dt><dd>{{ p.lineas.length }}</dd></div>
+          <div><dt>Sectores</dt><dd>{{ p.sectores.length }}</dd></div>
+          <div><dt>Programas</dt><dd>{{ p.programas.length }}</dd></div>
+          <div><dt>Productos e indicadores</dt><dd>{{ p.productos.length }}</dd></div>
+          <div><dt>Indicadores de resultado</dt><dd>{{ p.resultado.length }}</dd></div>
+          <div><dt>Dependencias</dt><dd>{{ raices().length }}</dd></div>
+        </dl>
+        <p class="nota">Fuente: {{ p.fuente.nombre }}, consultados el {{ p.fuente.fecha }}.</p>
+      </article>
+
+      <!-- Líneas -->
+      <article class="tarjeta" [class.tarjeta--abierta]="abierta() === 'lineas'">
+        <h2>Líneas estratégicas <span class="cuenta">{{ p.lineas.length }}</span></h2>
+        <ul class="barras">
+          @for (l of p.lineas; track l.id) {
+            <li>
+              <div role="button" tabindex="0" class="barras__fila clicable" (click)="verGrupo('linea', l.id, l.nombre)" (keydown.enter)="verGrupo('linea', l.id, l.nombre)">
+                <span class="barras__nombre">{{ l.nombre }}</span>
+                <span class="barras__valor">{{ l.productos }} productos · {{ l.programas }} programas</span>
+                <span class="barras__pista"><i [style.width.%]="pct(l.productos, maxLinea())"></i></span>
+              </div>
+            </li>
+          }
+        </ul>
+      </article>
+
+      <!-- Sectores -->
+      <article class="tarjeta" [class.tarjeta--abierta]="abierta() === 'sectores'">
+        <h2>Sectores <span class="cuenta">{{ p.sectores.length }}</span></h2>
+        <ul class="barras">
+          @for (s of (abierta() === 'sectores' ? p.sectores : p.sectores.slice(0, 6)); track s.cod) {
+            <li>
+              <div role="button" tabindex="0" class="barras__fila clicable" (click)="verGrupo('sector', s.cod, s.nombre)" (keydown.enter)="verGrupo('sector', s.cod, s.nombre)">
+                <span class="barras__nombre">{{ s.nombre }}</span>
+                <span class="barras__valor">{{ s.productos }}</span>
+                <span class="barras__pista"><i [style.width.%]="pct(s.productos, maxSector())"></i></span>
+              </div>
+            </li>
+          }
+        </ul>
+        @if (p.sectores.length > 6) {
+          <button type="button" class="mas" (click)="alternar('sectores')">
+            {{ abierta() === 'sectores' ? 'Ver menos' : 'Ver los ' + p.sectores.length }}
+          </button>
+        }
+      </article>
+
+      <!-- Programas -->
+      <article class="tarjeta" [class.tarjeta--abierta]="abierta() === 'programas'">
+        <h2>Programas <span class="cuenta">{{ p.programas.length }}</span></h2>
+        <ul class="barras">
+          @for (g of (abierta() === 'programas' ? p.programas : p.programas.slice(0, 6)); track g.cod) {
+            <li>
+              <div role="button" tabindex="0" class="barras__fila clicable" (click)="verGrupo('programa', g.cod, g.nombre)" (keydown.enter)="verGrupo('programa', g.cod, g.nombre)">
+                <span class="barras__nombre">{{ g.nombre }}</span>
+                <span class="barras__valor">{{ g.productos }}</span>
+                <span class="barras__pista"><i [style.width.%]="pct(g.productos, maxPrograma())"></i></span>
+              </div>
+            </li>
+          }
+        </ul>
+        <button type="button" class="mas" (click)="alternar('programas')">
+          {{ abierta() === 'programas' ? 'Ver menos' : 'Ver los ' + p.programas.length }}
+        </button>
+      </article>
+
+      <!-- Responsables -->
+      <article class="tarjeta tarjeta--ancha" [class.tarjeta--abierta]="abierta() === 'responsables'">
+        <h2>Responsables <span class="cuenta">{{ raices().length }} dependencias</span></h2>
+        <p class="nota">Las dependencias de la alcaldía, tomadas de su sitio web. Cada producto se asigna con lo que dice el PDF; si no lo dice, se sugiere por sector. La dona de cada responsable muestra su porcentaje de los {{ p.productos.length }} productos del plan; un producto con varios responsables cuenta en cada uno.</p>
+        <p class="leyenda leyenda--cat"><b>Categoría de la asignación:</b>
+          <span class="tip" tabindex="0"><i class="p1"></i> Según el PDF, lo dice el plan
+            <span class="tip__caja" role="tooltip">
+              <b class="tip__tit">Asignada según el PDF</b>
+              <span class="tip__cifra">{{ conteo().alta }} productos · {{ pct(conteo().alta, plan()!.productos.length) }} %</span>
+              <span class="tip__txt">de los {{ plan()!.productos.length }} del plan. La dona de cada responsable es su porcentaje sobre ese total.</span>
+            </span></span>
+          <span class="tip" tabindex="0"><i class="p2"></i> Sugerida por sector, el PDF no lo dice
+            <span class="tip__caja" role="tooltip">
+              <b class="tip__tit">Sugerida por el sector</b>
+              <span class="tip__cifra">{{ conteo().sugerida }} productos · {{ pct(conteo().sugerida, plan()!.productos.length) }} %</span>
+              <span class="tip__txt">de los {{ plan()!.productos.length }} del plan. El PDF no nombra responsable; se propone por el sector del producto.</span>
+            </span></span></p>
+        <ul class="barras barras--dos">
+          @for (d of raicesPorPeso(); track d.id) {
+            <li class="subcapsula" [class.subcapsula--abierta]="depAbierta() === d.id || hijoAbierto(d.id)">
+              <button type="button" class="con-icono" [attr.aria-expanded]="depAbierta() === d.id" (click)="alternarDep(d.id)">
+                <span class="ico">
+                  @if (urlIcono(d.id); as u) { <img [src]="u" alt="" width="60" height="60" /> } @else { <i class="ico__vacio" title="Sin icono asignado">{{ d.nombre.charAt(0) }}</i> }
+                </span>
+                <span class="barras__nombre">{{ d.nombre }}</span>
+                <span class="barras__valor dep__cuenta"><b>{{ totalDep(d.id) }}</b> {{ totalDep(d.id) === 1 ? 'producto' : 'productos' }}</span>
+                <svg class="dona" [style.--dona]="colorDona(d.id)" viewBox="0 0 44 44" width="56" height="56" role="img" [attr.aria-label]="pct(totalDep(d.id), p.productos.length) + ' % de los productos del plan'">
+                  <title>{{ pct(totalDep(d.id), p.productos.length) }} % de los {{ p.productos.length }} productos del plan · {{ conf(d.id, 'alta') }} según el PDF · {{ conf(d.id, 'sugerida') }} sugeridos por sector</title>
+                  <circle class="dona__pista" cx="22" cy="22" r="17" pathLength="100" />
+                  <circle class="dona__alta" cx="22" cy="22" r="17" pathLength="100" [attr.stroke-dasharray]="pct(conf(d.id, 'alta'), p.productos.length) + ' 100'" />
+                  <circle class="dona__sug" cx="22" cy="22" r="17" pathLength="100" [attr.stroke-dasharray]="pct(conf(d.id, 'sugerida'), p.productos.length) + ' 100'" [attr.stroke-dashoffset]="-pct(conf(d.id, 'alta'), p.productos.length)" />
+                  <text x="22" y="22" text-anchor="middle" dominant-baseline="central" class="dona__texto">{{ pct(totalDep(d.id), p.productos.length) }}<tspan class="dona__pct" dx="1">%</tspan></text>
+                </svg>
+                <span class="dep__sep" aria-hidden="true"></span>
+              </button>
+              @for (h of hijos(d.id); track h.id) {
+                <button type="button" class="sub" [attr.aria-expanded]="depAbierta() === h.id" (click)="alternarDep(h.id)" [title]="h.nombre + (h.padre_confirmado ? '' : ' · Adscripción a esta secretaría por confirmar') + (h.nota ? ' · ' + h.nota : '')">
+                  @if (urlIcono(h.id); as u) { <img class="ico-sub" [src]="u" alt="" width="26" height="26" /> }
+                  <span class="barras__nombre sub__nombre">{{ h.nombre }}</span>
+                  @if (!h.padre_confirmado) { <em class="sub__tag">por confirmar</em> }
+                  <span class="barras__valor">{{ total(h.productos) }}</span>
+                </button>
+              }
+              @if (d.tipo === 'entidad' && d.nota) {
+                <span class="alerta" tabindex="0" role="note" aria-label="Nota sobre esta entidad">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></svg>
+                  <span class="alerta__caja" role="tooltip"><b>Entidad externa</b>{{ d.nota }}</span>
+                </span>
+              }
+              @if (d.tipo === 'secretaria' && !hijos(d.id).length) { <span class="sub--vacia" aria-hidden="true"></span> }
+              @if (depAbierta(); as ab) {
+                @if (ab === d.id || dependencias().get(ab)?.padre === d.id) {
+                  <div class="subcapsula__cuerpo">
+                    <header class="dep-cab">
+                      <div class="dep-cab__top">
+                        @if (urlIcono(ab); as u) { <img class="dep-cab__ico" [src]="u" alt="" width="56" height="56" /> }
+                        <div class="dep-cab__titulo">
+                          <h3 class="dep-cab__nombre">{{ dependencias().get(ab)?.nombre }}</h3>
+                          <span class="dep-cab__cuenta">{{ productosDe(ab).length }} productos e indicadores</span>
+                        </div>
+                      </div>
+                      @let eq = equipoDe(ab);
+                      @if (dependencias().get(ab)?.responsable || eq.length) {
+                        <div class="dep-cab__persona">
+                          <div class="dep-cab__datos">
+                            @if (dependencias().get(ab)?.responsable; as r) {
+                          <span class="dep-cab__cargo">{{ r.cargo }}</span>
+                          <b class="dep-cab__quien">{{ r.nombre }}</b>
+                          <span class="dep-cab__contacto">
+                            @if (r.correo) { <a [href]="'mailto:' + r.correo">{{ r.correo }}</a> }
+                            @if (r.telefono) { <span>Tel. {{ r.telefono }}{{ r.extension ? ' ext. ' + r.extension : '' }}</span> }
+                            <a [href]="r.url" target="_blank" rel="noopener">Ver en el sitio de la alcaldía</a>
+                          </span>
+                        }
+                          </div>
+                          @if (eq.length) {
+                            <details class="equipo" appCierraFuera>
+                          <summary [title]="'Directorio de funcionarios de la alcaldía: ' + eq.length + ' personas'"><img class="equipo__ico" src="img/iconos/contacto.webp" alt="" width="36" height="36" />Equipo de la dependencia <span class="equipo__n">{{ eq.length }}</span></summary>
+                          <ul>
+                            <li class="equipo__cols" aria-hidden="true"><span>Funcionario</span><span>Cargo</span><span>Contacto</span><span></span></li>
+                            @for (f of eq; track f.nombre) {
+                              <li>
+                                <b class="equipo__nombre">{{ f.nombre }}</b>
+                                <span class="equipo__cargo">{{ f.cargo }}</span>
+                                <span class="equipo__contacto">
+                                  @if (f.correo) { <a [href]="'mailto:' + f.correo">{{ f.correo }}</a> }
+                                  @if (f.telefono) { <span>Tel. {{ f.telefono }}{{ f.extension ? ' · ext. ' + f.extension : '' }}</span> }
+                                </span>
+                                <button type="button" class="equipo__chat" disabled [attr.aria-label]="'Chat con ' + f.nombre + ' (próximamente)'" title="Chat: próximamente">
+                                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.5-4.6A8 8 0 1 1 21 12Z"/><path d="M8.5 11h7M8.5 14h4"/></svg>
+                                </button>
+                              </li>
+                            }
+                          </ul>
+                        </details>
+                          }
+                        </div>
+                      }
+                    </header>
+                    <section class="tabla-prod">
+                      <h4 class="tabla-prod__titulo">Productos e indicadores a cargo de {{ dependencias().get(ab)?.nombre }}</h4>
+                      <ul class="subcapsula__lista">
+                        <li class="subcapsula__cols" aria-hidden="true"><span>Indicador de producto</span><span>Producto</span><span>Meta del cuatrienio · fuente</span><span>Detalle</span></li>
+                        @for (x of productosDe(ab); track x.id) {
+                          <li>
+                            <span class="subcapsula__ind">{{ x.indicador }}</span>
+                            <span class="subcapsula__prod">{{ x.producto }}</span>
+                            <span class="subcapsula__meta">
+                              Meta {{ num(x.meta) }} {{ x.unidad }}
+                              · <em class="chip__tag">{{ confDe(x, ab) === 'alta' ? 'según el PDF' : 'sugerido' }}</em>
+                            </span>
+                            <button type="button" class="info" [attr.aria-label]="'Detalle de ' + x.indicador"
+                              (mouseenter)="mostrarDetalle($event, x)" (focus)="mostrarDetalle($event, x)" (mouseleave)="ocultarDetalle()" (blur)="ocultarDetalle()">
+                              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><circle cx="12" cy="8" r=".6" fill="currentColor"/></svg>
+                            </button>
+                          </li>
+                        }
+                      </ul>
+                    </section>
+                  </div>
+                }
+              }
+            </li>
+          }
+        </ul>
+        @if (p.otras_entidades.length) {
+          <p class="nota">También aparecen fuera de la lista de dependencias: {{ nombresOtras() }}.</p>
+        }
+      </article>
+
+      <!-- Resultado -->
+      <article class="tarjeta" [class.tarjeta--abierta]="abierta() === 'resultado'">
+        <h2>Indicadores de resultado <span class="cuenta">{{ p.resultado.length }}</span></h2>
+        <ul class="lista">
+          @for (r of (abierta() === 'resultado' ? p.resultado : p.resultado.slice(0, 5)); track r.id) {
+            <li><span>{{ r.indicador }}</span><b>{{ r.meta }}</b></li>
+          }
+        </ul>
+        <button type="button" class="mas" (click)="alternar('resultado')">
+          {{ abierta() === 'resultado' ? 'Ver menos' : 'Ver los ' + p.resultado.length }}
+        </button>
+      </article>
+
+      <!-- ODS -->
+      <article class="tarjeta tarjeta--doble" [class.tarjeta--abierta]="abierta() === 'ods'">
+        <h2>Objetivos de Desarrollo Sostenible <span class="cuenta">{{ p.ods.length }}</span></h2>
+        <p class="nota">Productos del plan según su ODS.</p>
+        <ul class="lista lista--ods">
+          @for (o of (abierta() === 'ods' ? p.ods : p.ods.slice(0, 6)); track o.nombre) {
+            <li class="clicable" role="button" tabindex="0" (click)="verGrupo('ods', o.nombre, o.nombre)" (keydown.enter)="verGrupo('ods', o.nombre, o.nombre)">
+              <span class="ods">
+                @if (urlOds(o.nombre); as u) { <img [src]="u" alt="" width="34" height="34" /> }
+                <span class="ods__nombre">{{ o.nombre }}</span>
+              </span>
+              <b>{{ o.productos }} productos</b>
+            </li>
+          }
+        </ul>
+        @if (p.ods.length > 6) {
+          <button type="button" class="mas" (click)="alternar('ods')">
+            {{ abierta() === 'ods' ? 'Ver menos' : 'Ver los ' + p.ods.length }}
+          </button>
+        }
+      </article>
+
+      <!-- Inversión -->
+      <article class="tarjeta tarjeta--ancha" [class.tarjeta--abierta]="abierta() === 'financiacion'">
+        <h2>Inversión programada</h2>
+        @if (p.financiacion; as f) {
+          <p class="nota">{{ f.fuente }}. Total del cuatrienio: <b>{{ mm(sumaAnios(f.total)) }}</b>.</p>
+          <ul class="lista">
+            @for (a of f.anios; track a; let i = $index) {
+              <li><span>{{ a }}</span><b>{{ mm(f.total[i]) }}</b></li>
+            }
+          </ul>
+          <h3>Por línea estratégica</h3>
+          <ul class="lista">
+            @for (l of f.lineas; track l.id) {
+              <li><span>{{ l.id }}</span><b>{{ pct(sumaAnios(l.anios), sumaAnios(f.total)) }} %</b></li>
+            }
+          </ul>
+          <h3>Por sector</h3>
+          <ul class="lista">
+            @for (s of (abierta() === 'financiacion' ? f.sectores : f.sectores.slice(0, 5)); track s.nombre) {
+              <li>
+                <span>{{ s.nombre }}@if (s.cuadra === false) { <em class="marca" title="El resumen del sector no coincide con la suma de sus programas en el PDF">revisar</em> }</span>
+                <b>{{ mm(sumaAnios(s.anios)) }}</b>
+              </li>
+            }
+          </ul>
+          <button type="button" class="mas" (click)="alternar('financiacion')">
+            {{ abierta() === 'financiacion' ? 'Ver menos' : 'Ver los ' + f.sectores.length + ' sectores' }}
+          </button>
+        } @else {
+          <p class="nota">Todavía no se ha leído el plan de inversiones de esta entidad.</p>
+        }
+      </article>
+
+      <!-- Calidad -->
+      <article class="tarjeta">
+        <h2>Calidad de los datos</h2>
+        <ul class="lista">
+          <li><span>Productos con dato del PDF</span><b>{{ pct(p.calidad.con_pdf, p.calidad.productos) }} %</b></li>
+          <li><span>Responsable según el PDF</span><b>{{ pct(p.calidad.resp_pdf, p.calidad.productos) }} %</b></li>
+          <li><span>Responsable sugerido por sector</span><b>{{ pct(p.calidad.resp_pista, p.calidad.productos) }} %</b></li>
+          <li><span>Responsable fuera de la lista</span><b>{{ p.calidad.resp_otra_entidad }}</b></li>
+          <li><span>Sin responsable</span><b>{{ p.calidad.sin_resp }}</b></li>
+          <li><span>Montos de SisPT descartados</span><b>{{ p.calidad.atipico }}</b></li>
+        </ul>
+      </article>
+
+      <!-- Solo en el PDF -->
+      <article class="tarjeta" [class.tarjeta--abierta]="abierta() === 'solopdf'">
+        <h2>Solo en el PDF <span class="cuenta">{{ p.solo_pdf.length }}</span></h2>
+        <p class="nota">Indicadores que trae el PDF y no se encontraron en SisPT.</p>
+        <ul class="lista">
+          @for (x of (abierta() === 'solopdf' ? p.solo_pdf : p.solo_pdf.slice(0, 4)); track $index) {
+            <li><span>{{ x.nombre }}</span><b>p. {{ x.pagina }}</b></li>
+          }
+        </ul>
+        @if (p.solo_pdf.length > 4) {
+          <button type="button" class="mas" (click)="alternar('solopdf')">
+            {{ abierta() === 'solopdf' ? 'Ver menos' : 'Ver los ' + p.solo_pdf.length }}
+          </button>
+        }
+      </article>
+    </section>
+
+    <!-- Visor de productos de la categoría elegida -->
+    @if (grupo(); as g) {
+      <section id="visor" class="visor" aria-live="polite">
+        <header class="visor__cab">
+          <div>
+            <p class="visor__etiqueta">{{ g.etiqueta }}</p>
+            <h2>{{ g.titulo }}</h2>
+            <p class="visor__cuenta">{{ delGrupo().length }} productos e indicadores</p>
+          </div>
+          <button type="button" class="visor__cerrar" (click)="cerrarVisor()">Cerrar</button>
+        </header>
+        <input class="visor__buscar" type="search" placeholder="Buscar en estos productos" [value]="texto()" (input)="buscar($any($event.target).value)" aria-label="Buscar en estos productos" />
+        <ul class="subcapsula__lista visor__lista">
+          <li class="subcapsula__cols" aria-hidden="true"><span>Indicador de producto</span><span>Producto y responsables</span><span>Meta del cuatrienio · fuente</span><span>Detalle</span></li>
+          @for (x of visibles(); track x.id) {
+            <li>
+              <span class="subcapsula__ind">{{ x.indicador }}</span>
+              <span class="subcapsula__prod">{{ x.producto }}
+                <span class="visor__resp">
+                  @for (r of respDe(x); track r.nombre) { <em class="chip" [class.chip--sugerida]="r.conf !== 'alta'">{{ r.nombre }}</em> }
+                  @for (f of x.fuera; track f) { <em class="chip chip--fuera">{{ f }}</em> }
+                  @if (!x.resp.length && !x.fuera.length) { <em class="chip chip--fuera">Sin responsable</em> }
+                </span>
+              </span>
+              <span class="subcapsula__meta">Meta {{ num(x.meta) }} {{ x.unidad }}</span>
+              <button type="button" class="info" [attr.aria-label]="'Detalle de ' + x.indicador"
+                (mouseenter)="mostrarDetalle($event, x)" (focus)="mostrarDetalle($event, x)" (mouseleave)="ocultarDetalle()" (blur)="ocultarDetalle()">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><circle cx="12" cy="8" r=".6" fill="currentColor"/></svg>
+              </button>
+            </li>
+          } @empty { <li class="visor__vacio">Ningún producto coincide con la búsqueda.</li> }
+        </ul>
+        @if (paginas() > 1) {
+          <div class="paginas">
+            <button type="button" (click)="mover(-1)" [disabled]="pagina() === 0">Anterior</button>
+            <span>Página {{ pagina() + 1 }} de {{ paginas() }}</span>
+            <button type="button" (click)="mover(1)" [disabled]="pagina() >= paginas() - 1">Siguiente</button>
+          </div>
+        }
+      </section>
+    }
+  </main>
+  @if (tip(); as t) {
+    <div class="tipfijo" [class.tipfijo--izq]="t.lado === 'izq'" role="tooltip" (mouseenter)="conservarDetalle()" (mouseleave)="ocultarDetalle()" [style.top.px]="t.top" [style.left.px]="t.left" [style.--ancla.px]="t.ancla">
+      <b class="tipfijo__tit">{{ t.x.indicador }}</b>
+      <dl>
+        <div><dt>Código de indicador de producto (SisPT)</dt><dd>{{ t.x.id }}</dd></div>
+        @if (t.x.detalle) { <div><dt>En el plan</dt><dd>{{ t.x.detalle }}</dd></div> }
+        <div><dt>Sector</dt><dd>{{ sectorDe().get(t.x.sector) }}</dd></div>
+        <div><dt>ODS</dt><dd>{{ t.x.ods || '—' }}</dd></div>
+        <div><dt>Programación por año</dt>
+          <dd class="tipfijo__anios">
+            @for (a of ['2024', '2025', '2026', '2027']; track a; let i = $index) { <span><small>{{ a }}</small>{{ num(t.x.prog[i]) }}</span> }
+          </dd></div>
+        @if (t.x.pdf) { <div><dt>En el PDF</dt><dd>página {{ t.x.pdf.pagina }}@if (t.x.pdf.linea_base) {, línea base {{ t.x.pdf.linea_base }}}</dd></div> }
+        @if (t.x.nota) { <div><dt>Nota</dt><dd>{{ t.x.nota }}</dd></div> }
+      </dl>
+    </div>
+  }
+} @else if (plan() === null) {
+  <main class="plan"><p class="vacio">Todavía no hay datos del plan de esta entidad.</p></main>
+} @else {
+  <main class="plan"><p class="vacio">Cargando el plan…</p></main>
+}

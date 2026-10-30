@@ -1,0 +1,466 @@
+{
+ "dane": "05308",
+ "municipio": "Girardota",
+ "fuente": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/default.aspx",
+ "fecha": "2026-10-30",
+ "dependencias": [
+  {
+   "id": "agri",
+   "nombre": "Secretaría de Agricultura y Desarrollo Rural",
+   "tipo": "secretaria",
+   "claves": [
+    "agricultura"
+   ],
+   "url": null,
+   "padre": null,
+   "padre_confirmado": null,
+   "icono": "07-agricultura",
+   "directorio": [
+    "dependencia:agricultura"
+   ]
+  },
+  {
+   "id": "amb",
+   "nombre": "Secretaría de Ambiental y Desarrollo Sostenible",
+   "tipo": "secretaria",
+   "claves": [
+    "ambient"
+   ],
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Subsecretaria-de-Medio-Ambiente.aspx",
+   "padre": null,
+   "padre_confirmado": null,
+   "nota": "Su página en el sitio se titula \"Subsecretaría de Medio Ambiente\".",
+   "icono": "05-ambiente",
+   "directorio": [
+    "dependencia:ambiente"
+   ]
+  },
+  {
+   "id": "gob",
+   "nombre": "Secretaría de Gobierno y Derechos Humanos",
+   "tipo": "secretaria",
+   "claves": [
+    "gobierno",
+    "derechos humanos"
+   ],
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Secretaria-de-Gobierno-y-Derechos-Humanos.aspx",
+   "padre": null,
+   "padre_confirmado": null,
+   "icono": "04-gobierno",
+   "directorio": [
+    "dependencia:gobierno"
+   ]
+  },
+  {
+   "id": "hac",
+   "nombre": "Secretaría de Hacienda y Desarrollo Económico",
+   "tipo": "secretaria",
+   "claves": [
+    "hacienda"
+   ],
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Secretaria-de-Hacienda-y-Desarrollo-Economico.aspx",
+   "padre": null,
+   "padre_confirmado": null,
+   "icono": "10-hacienda",
+   "directorio": [
+    "dependencia:hacienda"
+   ]
+  },
+  {
+   "id": "inf",
+   "nombre": "Secretaría de Infraestructura",
+   "tipo": "secretaria",
+   "claves": [
+    "infraestructura"
+   ],
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Secretaria-de-Infraestructura.aspx",
+   "padre": null,
+   "padre_confirmado": null,
+   "icono": "06-infraestructura",
+   "directorio": [
+    "dependencia:infraestructura"
+   ]
+  },
+  {
+   "id": "pla",
+   "nombre": "Secretaría de Planeación, Desarrollo Territorial y Participación Ciudadana",
+   "tipo": "secretaria",
+   "claves": [
+    "planeaci",
+    "participacion ciudadana"
+   ],
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Secretaria-de-Planeacion-y-Desarrollo-.aspx",
+   "padre": null,
+   "padre_confirmado": null,
+   "icono": "11-planeacion",
+   "directorio": [
+    "dependencia:planeacion"
+   ]
+  },
+  {
+   "id": "sal",
+   "nombre": "Secretaría de Salud y Protección Social",
+   "tipo": "secretaria",
+   "claves": [
+    "salud",
+    "proteccion social"
+   ],
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Secretar%C3%ADa-de-Salud,-Participaci%C3%B3n-Ciudadana-y-Protecci%C3%B3n-Social.aspx",
+   "padre": null,
+   "padre_confirmado": null,
+   "icono": "02-salud",
+   "directorio": [
+    "dependencia:salud"
+   ]
+  },
+  {
+   "id": "adm",
+   "nombre": "Secretaría de Servicios Administrativos",
+   "tipo": "secretaria",
+   "claves": [
+    "servicios administrativos",
+    "administrativos servicios",
+    "secretaria general"
+   ],
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Secretaria-General-y-de-Servicios-Administrativos.aspx",
+   "padre": null,
+   "padre_confirmado": null,
+   "icono": "21-servicios-administrativos",
+   "directorio": [
+    "dependencia:servicios administrativos"
+   ]
+  },
+  {
+   "id": "tra",
+   "nombre": "Secretaría de Tránsito y Transporte",
+   "tipo": "secretaria",
+   "claves": [
+    "transito",
+    "transporte"
+   ],
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Secretaria-de-Transporte-y-Transito.aspx",
+   "padre": null,
+   "padre_confirmado": null,
+   "icono": "17-movilidad",
+   "directorio": [
+    "dependencia:transito"
+   ]
+  },
+  {
+   "id": "edu",
+   "nombre": "Secretaría de Educación y Cultura",
+   "tipo": "secretaria",
+   "claves": [
+    "educacion",
+    "cultura"
+   ],
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Secretaria-de-Educacion-.aspx",
+   "padre": null,
+   "padre_confirmado": null,
+   "icono": "01-educacion",
+   "directorio": [
+    "dependencia:educacion"
+   ]
+  },
+  {
+   "id": "com",
+   "nombre": "Oficina de Comunicaciones",
+   "tipo": "oficina",
+   "claves": [
+    "comunicaciones"
+   ],
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Oficina-de-Comunicaciones.aspx",
+   "padre": null,
+   "padre_confirmado": null,
+   "icono": "22-comunicaciones",
+   "directorio": [
+    "cargo:comunicaciones"
+   ]
+  },
+  {
+   "id": "jur",
+   "nombre": "Oficina Jurídica",
+   "tipo": "oficina",
+   "claves": [
+    "juridica"
+   ],
+   "url": null,
+   "padre": null,
+   "padre_confirmado": null,
+   "icono": "18-justicia",
+   "directorio": [
+    "cargo:juridic",
+    "correo:juridic"
+   ]
+  },
+  {
+   "id": "cid",
+   "nombre": "Oficina de Control Interno Disciplinario",
+   "tipo": "oficina",
+   "claves": [
+    "disciplinario"
+   ],
+   "url": null,
+   "padre": null,
+   "padre_confirmado": null,
+   "icono": "23-control-disciplinario",
+   "directorio": [
+    "correo:controlinterno.disciplinario",
+    "cargo:disciplinario"
+   ]
+  },
+  {
+   "id": "cia",
+   "nombre": "Oficina Asesora de Control Interno",
+   "tipo": "oficina",
+   "claves": [
+    "control interno"
+   ],
+   "url": null,
+   "padre": null,
+   "padre_confirmado": null,
+   "icono": "24-control-interno",
+   "directorio": [
+    "dependencia:control interno"
+   ]
+  },
+  {
+   "id": "des",
+   "nombre": "Despacho del Alcalde",
+   "tipo": "oficina",
+   "claves": [
+    "despacho del alcalde",
+    "despacho"
+   ],
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Alcalde-Municipal.aspx",
+   "padre": null,
+   "padre_confirmado": null,
+   "icono": "30-despacho-alcalde",
+   "nota": "Preparado como dependencia propia; el sitio de la alcaldía presenta al alcalde en su página."
+  },
+  {
+   "id": "sub_prot",
+   "nombre": "Subsecretaría de Protección Social",
+   "tipo": "subsecretaria",
+   "claves": [
+    "subsecretaria de proteccion social"
+   ],
+   "url": null,
+   "padre": "sal",
+   "padre_confirmado": true,
+   "nota": "La nombra el PDF y el organigrama de la alcaldía la ubica bajo Salud y Protección Social.",
+   "icono": "08-desarrollo-social",
+   "directorio": [
+    "correo:sub.proteccionsocial"
+   ]
+  },
+  {
+   "id": "sub_part",
+   "nombre": "Subsecretaría de Participación Ciudadana",
+   "tipo": "subsecretaria",
+   "claves": [
+    "subsecretaria de participacion"
+   ],
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Subsecretaria-de-Participacion%20Ciudadana.aspx",
+   "padre": "pla",
+   "padre_confirmado": true,
+   "nota": "El PDF la nombra junto con economía solidaria, trabajo, turismo y empleo (una sola subsecretaría); el organigrama la ubica bajo Planeación y separa esa parte en Desarrollo Económico y Competitividad. Aquí queda solo participación ciudadana.",
+   "icono": "20-participacion",
+   "directorio": [
+    "correo:sub.participacionciudadana"
+   ]
+  },
+  {
+   "id": "inder",
+   "nombre": "INDER",
+   "tipo": "entidad",
+   "claves": [
+    "inder"
+   ],
+   "url": null,
+   "padre": null,
+   "padre_confirmado": null,
+   "nota": "Instituto de deportes. El PDF lo nombra como responsable de 7 indicadores, y «Coliseos adecuados» se le asignó aquí por el sector deporte (el plan no lo dice). No figura en el organigrama ni en la lista de dependencias de la alcaldía: se trata como entidad externa.",
+   "icono": "03-deporte"
+  },
+  {
+   "id": "sub_seg",
+   "nombre": "Subsecretaría de Seguridad y Espacio Público",
+   "tipo": "subsecretaria",
+   "claves": [
+    "subsecretaria de seguridad"
+   ],
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Subsecretaria-de-Seguridad.aspx",
+   "padre": "gob",
+   "padre_confirmado": true,
+   "nota": "Confirmada por el organigrama de la alcaldía. El PDF no le asigna productos con ese nombre.",
+   "icono": "25-sub-seguridad-espacio-publico"
+  },
+  {
+   "id": "sub_cul",
+   "nombre": "Subsecretaría de Cultura",
+   "tipo": "subsecretaria",
+   "claves": [
+    "cultura"
+   ],
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Subsecretaria-de-Cultura.aspx",
+   "padre": "edu",
+   "padre_confirmado": true,
+   "nota": "Confirmada por el organigrama de la alcaldía. El PDF nombra «Cultura» como responsable.",
+   "icono": "09-cultura"
+  },
+  {
+   "id": "sub_dec",
+   "nombre": "Subsecretaría de Desarrollo Económico y Competitividad",
+   "tipo": "subsecretaria",
+   "claves": [
+    "desarrollo economico y competitividad"
+   ],
+   "url": "https://www.girardota.gov.co/NuestraAlcaldia/Dependencias/Paginas/Subsecretaria-desarrollo-economico.aspx",
+   "padre": "hac",
+   "padre_confirmado": true,
+   "nota": "Confirmada por el organigrama de la alcaldía. Recibe los productos de comercio, industria, turismo y trabajo que el PDF atribuye a la subsecretaría combinada de participación y economía solidaria.",
+   "icono": "27-sub-desarrollo-economico"
+  },
+  {
+   "id": "sub_tec",
+   "nombre": "Subsecretaría de Tecnología e Innovación",
+   "tipo": "subsecretaria",
+   "claves": [
+    "subsecretaria de tecnologia"
+   ],
+   "url": null,
+   "padre": "adm",
+   "padre_confirmado": true,
+   "nota": "Confirmada por el organigrama de la alcaldía. No figura en el sitio ni en el PDF con productos.",
+   "icono": "19-tic"
+  },
+  {
+   "id": "uni_com",
+   "nombre": "Comisarías de Familia",
+   "tipo": "unidad",
+   "claves": [
+    "comisaria"
+   ],
+   "url": null,
+   "padre": "gob",
+   "padre_confirmado": true,
+   "nota": "Confirmada por el organigrama de la alcaldía. Aparece como unidad, no como subsecretaría.",
+   "icono": "29-comisarias-familia"
+  },
+  {
+   "id": "uni_ins",
+   "nombre": "Inspección de Policía",
+   "tipo": "unidad",
+   "claves": [
+    "inspeccion de policia"
+   ],
+   "url": null,
+   "padre": "gob",
+   "padre_confirmado": true,
+   "nota": "Confirmada por el organigrama de la alcaldía. Aparece como unidad, no como subsecretaría.",
+   "icono": "28-inspeccion-policia"
+  }
+ ],
+ "otras_entidades": [],
+ "alias_responsable": {
+  "alcaldia": {
+   "dep": [
+    "des"
+   ],
+   "nota": "El PDF dice «Alcaldía» como responsable; se asignó al Despacho del Alcalde."
+  },
+  "mantenimiento comunicaciones": {
+   "dep": [
+    "com"
+   ],
+   "nota": "El texto del responsable está mal leído («Mantenimiento Comunicaciones»); se asignó a la Oficina de Comunicaciones."
+  }
+ },
+ "producto_responsable": {
+  "Coliseos adecuados": {
+   "dep": [
+    "inder"
+   ],
+   "nota": "El plan no nombra responsable; se asignó al INDER por ser un producto de deporte (podría ser de Infraestructura)."
+  }
+ },
+ "reasignar": [
+  {
+   "desde": "sub_part",
+   "hacia": "sub_dec",
+   "sectores": [
+    "35",
+    "36"
+   ],
+   "nota": "Comercio, industria, turismo y trabajo pasan a Desarrollo Económico y Competitividad"
+  }
+ ],
+ "reparto_productos": {
+  "IP-130": {
+   "desde": "gob",
+   "dep": "uni_ins",
+   "nota": "El PDF asigna este producto a Gobierno y Derechos Humanos; se distribuyó a esta dependencia por su temática (inspecciones y diligencias de policía)."
+  },
+  "IP-127": {
+   "desde": "gob",
+   "dep": "uni_ins",
+   "nota": "El PDF asigna este producto a Gobierno y Derechos Humanos; se distribuyó a esta dependencia por su temática (inspecciones y diligencias de policía)."
+  },
+  "IP-125": {
+   "desde": "gob",
+   "dep": "uni_com",
+   "nota": "El PDF asigna este producto a Gobierno y Derechos Humanos; se distribuyó a esta dependencia por su temática (atención de casos de violencia, rutas de atención y niñez)."
+  },
+  "IP-121": {
+   "desde": "gob",
+   "dep": "uni_com",
+   "nota": "El PDF asigna este producto a Gobierno y Derechos Humanos; se distribuyó a esta dependencia por su temática (atención de casos de violencia, rutas de atención y niñez)."
+  },
+  "IP-28": {
+   "desde": "gob",
+   "dep": "uni_com",
+   "nota": "El PDF asigna este producto a Gobierno y Derechos Humanos; se distribuyó a esta dependencia por su temática (atención de casos de violencia, rutas de atención y niñez)."
+  },
+  "IP-129": {
+   "desde": "gob",
+   "dep": "sub_seg",
+   "nota": "El PDF asigna este producto a Gobierno y Derechos Humanos; se distribuyó a esta dependencia por su temática (seguridad, convivencia, fuerza pública, cámaras, bomberos y privados de la libertad)."
+  },
+  "IP-133": {
+   "desde": "gob",
+   "dep": "sub_seg",
+   "nota": "El PDF asigna este producto a Gobierno y Derechos Humanos; se distribuyó a esta dependencia por su temática (seguridad, convivencia, fuerza pública, cámaras, bomberos y privados de la libertad)."
+  },
+  "IP-128": {
+   "desde": "gob",
+   "dep": "sub_seg",
+   "nota": "El PDF asigna este producto a Gobierno y Derechos Humanos; se distribuyó a esta dependencia por su temática (seguridad, convivencia, fuerza pública, cámaras, bomberos y privados de la libertad)."
+  },
+  "IP-131": {
+   "desde": "gob",
+   "dep": "sub_seg",
+   "nota": "El PDF asigna este producto a Gobierno y Derechos Humanos; se distribuyó a esta dependencia por su temática (seguridad, convivencia, fuerza pública, cámaras, bomberos y privados de la libertad)."
+  },
+  "IP-136": {
+   "desde": "gob",
+   "dep": "sub_seg",
+   "nota": "El PDF asigna este producto a Gobierno y Derechos Humanos; se distribuyó a esta dependencia por su temática (seguridad, convivencia, fuerza pública, cámaras, bomberos y privados de la libertad)."
+  },
+  "IP-108": {
+   "desde": "gob",
+   "dep": "sub_seg",
+   "nota": "El PDF asigna este producto a Gobierno y Derechos Humanos; se distribuyó a esta dependencia por su temática (seguridad, convivencia, fuerza pública, cámaras, bomberos y privados de la libertad)."
+  },
+  "IP-103": {
+   "desde": "gob",
+   "dep": "sub_seg",
+   "nota": "El PDF asigna este producto a Gobierno y Derechos Humanos; se distribuyó a esta dependencia por su temática (seguridad, convivencia, fuerza pública, cámaras, bomberos y privados de la libertad)."
+  },
+  "IP-126": {
+   "desde": "gob",
+   "dep": "sub_seg",
+   "nota": "El PDF asigna este producto a Gobierno y Derechos Humanos; se distribuyó a esta dependencia por su temática (seguridad, convivencia, fuerza pública, cámaras, bomberos y privados de la libertad)."
+  }
+ }
+}

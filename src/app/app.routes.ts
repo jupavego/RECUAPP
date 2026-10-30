@@ -11,6 +11,18 @@ export const routes: Routes = [
       import('./shared/pages/home/home.component').then(m => m.HomeComponent),
   },
 
+  // ── Plan de desarrollo por entidad (público; piloto) ─────────────────────
+  {
+    path: 'plan',
+    loadComponent: () =>
+      import('./features/plan/pages/plan/plan.component').then(m => m.PlanComponent),
+  },
+  {
+    path: 'plan/:dane',
+    loadComponent: () =>
+      import('./features/plan/pages/plan/plan.component').then(m => m.PlanComponent),
+  },
+
   // ── Mapa territorial (público) ───────────────────────────────────────────
   {
     path: 'mapa',

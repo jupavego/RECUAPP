@@ -3,7 +3,7 @@ import argparse
 import json
 from pathlib import Path
 
-from . import categorias, conocimiento, evaluar, muestra, paginas, pipeline, resumen, vision
+from . import categorias, conocimiento, evaluar, jerarquia, muestra, paginas, pipeline, resumen, vision
 
 
 def main():
@@ -57,6 +57,9 @@ def main():
     p = sub.add_parser("resumen", help="regenera RESUMEN.md de la carpeta de salidas (estado por plan + cobertura de categorias)")
     p.add_argument("salidas")
 
+    p = sub.add_parser("jerarquia", help="jerarquia y cardinalidad linea -> sector -> programa de un plan ya extraido (jerarquia.json)")
+    p.add_argument("salida")
+
     a = ap.parse_args()
     if a.cmd == "extraer":
         print(pipeline.procesar(a.pdf, a.salida, usar_vision_api=a.vision))
@@ -69,6 +72,8 @@ def main():
         pend = vision.candidatas(a.pdf, range(cap2[0], cap2[1] + 1), set())
         paginas.convertir_ocr(a.pdf, pend, salida / "paginas_ocr")
         print(f"OCR de {len(pend)} paginas: {pend}")
+    elif a.cmd == "jerarquia":
+        print(jerarquia.escribe(a.salida))
     elif a.cmd == "aprender":
         print(f"{pipeline.aprender(a.salida)} alias aprendidos")
     elif a.cmd == "alias":

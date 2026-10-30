@@ -1,0 +1,1135 @@
+{
+ "fuente": "https://www.girardota.gov.co/NuestraAlcaldia/Paginas/Directorio-de-Funcionarios.aspx",
+ "archivo": "https://www.girardota.gov.co/NuestraAlcaldia/Documents/Directorio.xlsx",
+ "fecha": "2026-10-30",
+ "funcionarios": [
+  {
+   "nombre": "Margarita Maria Alzate Cataño",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Agricultura",
+   "correo": "auxiliar.agricultura@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "5000"
+  },
+  {
+   "nombre": "Edwin Alberto Gonzalez Agudelo",
+   "cargo": "Técnico operativo",
+   "dependencia": "Agricultura",
+   "correo": "asistencia.agronomia@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "5012"
+  },
+  {
+   "nombre": "Diana Ligia Hoyos Mesa",
+   "cargo": "Técnico operativo",
+   "dependencia": "Agricultura",
+   "correo": "asistencia.agropecuaria@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "5015"
+  },
+  {
+   "nombre": "Jaime de Jesús Madrigal Morales",
+   "cargo": "Secretario de Despacho",
+   "dependencia": "Agricultura",
+   "correo": "secretario.agricultura@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "5001"
+  },
+  {
+   "nombre": "John Jairo Muñoz Caicedo",
+   "cargo": "Técnico operativo",
+   "dependencia": "Agricultura",
+   "correo": "agricultura.tecnico1@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "5014"
+  },
+  {
+   "nombre": "Carlos Alberto Salinas",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Agricultura",
+   "correo": "agricultura.agronomo@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "5009"
+  },
+  {
+   "nombre": "Kevin Rene Bernal Morales",
+   "cargo": "Alcalde",
+   "dependencia": "Alcaldía",
+   "correo": "alcaldia@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Joan Esteban Saldarriaga Ayala",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Alcaldía",
+   "correo": "alcaldia.secretario@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1110"
+  },
+  {
+   "nombre": "Maria Victoria Benitez Hernandez",
+   "cargo": "Secretario Ejecutivo",
+   "dependencia": "Alcaldía",
+   "correo": "alcaldia@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Joan Camilo Cuartas Mejía",
+   "cargo": "Jefe Oficina Comunicaciones",
+   "dependencia": "Alcaldía",
+   "correo": "direccioncomunicaciones@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1111"
+  },
+  {
+   "nombre": "John Edward Castañeda Mazo",
+   "cargo": "Conductor Alcalde",
+   "dependencia": "Alcaldía",
+   "correo": "chana.16@hotmail.com",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Julian Henao Carmona",
+   "cargo": "Jefe de oficina",
+   "dependencia": "Alcaldía",
+   "correo": "controlinterno.disciplinario@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "2100"
+  },
+  {
+   "nombre": "Valentina Valencia Suarez",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Alcaldía",
+   "correo": "auxiliar.disciplinario@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "2100"
+  },
+  {
+   "nombre": "Eliana Cardona Arboleda",
+   "cargo": "Secretario de Despacho",
+   "dependencia": "Ambiente",
+   "correo": "secretaria.ambiente@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "5100"
+  },
+  {
+   "nombre": "Cristina Isabel Lemos Rojas",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Ambiente",
+   "correo": "medio.ambiente@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "5102"
+  },
+  {
+   "nombre": "Agustin Adolfo Cataño",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Ambiente",
+   "correo": "pu.ambiental2@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "5103"
+  },
+  {
+   "nombre": "Luisa Fernanda Ochoa Rua",
+   "cargo": "Técnico operativo",
+   "dependencia": "Ambiente",
+   "correo": "tecnico.ambiente@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "5103"
+  },
+  {
+   "nombre": "Margarita Maria Piedrahita Castaño",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Ambiente",
+   "correo": "auxiliar.ambiente@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Luis Carlos Arenas Arias",
+   "cargo": "Secretario de Despacho",
+   "dependencia": "Control interno",
+   "correo": "control.interno@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1601"
+  },
+  {
+   "nombre": "Carlos Alberto Algumedo Romaña",
+   "cargo": "Secretario de Despacho",
+   "dependencia": "Educación",
+   "correo": "secretaria.educacion@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "4006"
+  },
+  {
+   "nombre": "Maria Elena Cadavid Sierra",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Educación",
+   "correo": "uai.giradota@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Carlos Andres Zapata Gil",
+   "cargo": "Subsecretario de despacho",
+   "dependencia": "Educación",
+   "correo": "sub.cultura@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "4101"
+  },
+  {
+   "nombre": "Javier Alonso Cordoba Bustamante",
+   "cargo": "Técnico operativo",
+   "dependencia": "Educación",
+   "correo": "tecnico.educacion2@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "4004"
+  },
+  {
+   "nombre": "Naila Julieth Perez Mazo",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Educación",
+   "correo": "auxiliar.educacion@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "4000"
+  },
+  {
+   "nombre": "Diana Marcela Carmona Madrid",
+   "cargo": "Técnico operativo",
+   "dependencia": "Educación",
+   "correo": "corporacion.politecnica@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "4005"
+  },
+  {
+   "nombre": "Gladys Patricia Cataño Bedoya",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Educación",
+   "correo": "gladys.catano@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1103"
+  },
+  {
+   "nombre": "Gloria Ines Velasquez Miranda",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Educación",
+   "correo": "auxiliar.educación2@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "5100"
+  },
+  {
+   "nombre": "Veronica Patricia Rave Palacio",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Gobierno",
+   "correo": "auxiliar.gobierno@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "2000"
+  },
+  {
+   "nombre": "July Janeth Cadavid Zapata",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Gobierno",
+   "correo": "comisaria2.social@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "2015"
+  },
+  {
+   "nombre": "Mauricio Tascon Torres",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Gobierno",
+   "correo": "comisaria2.psicologo@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "2016"
+  },
+  {
+   "nombre": "Jorge Eduardo Arango Gonzalez",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Gobierno",
+   "correo": "auxiliar.espaciopublico@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Nelida del Carmen Diaz Monsalve",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Gobierno",
+   "correo": "comisaria.social@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "2011"
+  },
+  {
+   "nombre": "Joaquin Bernardo Hernandez Londoño",
+   "cargo": "Secretario de Despacho",
+   "dependencia": "Gobierno",
+   "correo": "secretaria.gobierno@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "2001"
+  },
+  {
+   "nombre": "Tulio Fernando Saldarriaga Guillen",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Gobierno",
+   "correo": "fsaldarriaga630@gmail.com",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Maria Elena Arroyave Arroyave",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Gobierno",
+   "correo": "auxiliar.inspeccion1@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "2008"
+  },
+  {
+   "nombre": "Luz Magnolia Londoño Rios",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Gobierno",
+   "correo": "auxiliar.comisaria@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "2013"
+  },
+  {
+   "nombre": "Blanca Liliana Castaño Peinado",
+   "cargo": "Comisario",
+   "dependencia": "Gobierno",
+   "correo": "comisaria.familia@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "2010"
+  },
+  {
+   "nombre": "Diego Fernando Riaño Hernandez",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Gobierno",
+   "correo": "victimas.girardota@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "2019"
+  },
+  {
+   "nombre": "Martha Ruby Patiño Giraldo",
+   "cargo": "Inspector Policía",
+   "dependencia": "Gobierno",
+   "correo": "martha.patino@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "2002"
+  },
+  {
+   "nombre": "Gloria Yanet Gomez Murillo",
+   "cargo": "Técnico operativo",
+   "dependencia": "Gobierno",
+   "correo": "espacio.publico@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "2005"
+  },
+  {
+   "nombre": "Diego Fernando Roldan Alvarez",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Gobierno",
+   "correo": "comisaria.psicologo@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "2012"
+  },
+  {
+   "nombre": "Raul Alberto Quintero Misas",
+   "cargo": "Inspector Policía",
+   "dependencia": "Gobierno",
+   "correo": "gobierno.inspeccion2@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "2003"
+  },
+  {
+   "nombre": "Carolina Fernanda Chavarria Castaño",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Gobierno",
+   "correo": "sub.seguridad@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Diego Mauricio Rojas Castro",
+   "cargo": "Subsecretario de despacho",
+   "dependencia": "Gobierno",
+   "correo": "sub.seguridad@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Gabriela Maria Guzman Vasquez",
+   "cargo": "Comisario",
+   "dependencia": "Gobierno",
+   "correo": "comisaria.familia2@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "2014"
+  },
+  {
+   "nombre": "Luisa Fernanda Madrid Cabrera",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Hacienda",
+   "correo": "auxiliar.contabilidad@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1419"
+  },
+  {
+   "nombre": "Maria Eugenia Lopez Giraldo",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Hacienda",
+   "correo": "auxiliar.catastro2@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1416"
+  },
+  {
+   "nombre": "Giovanni Alonso Madrigal Cataño",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Hacienda",
+   "correo": "auxiliar.catastro3@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1418"
+  },
+  {
+   "nombre": "Diana Patricia Madrigal Cataño",
+   "cargo": "Técnico operativo",
+   "dependencia": "Hacienda",
+   "correo": "tecnico.presupuesto@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1403"
+  },
+  {
+   "nombre": "Astrid Eliana Rave Cadavid",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Hacienda",
+   "correo": "hacienda.presupuesto@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1407"
+  },
+  {
+   "nombre": "Yuliet Cecilia Rios Quintero",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Hacienda",
+   "correo": "desarrollo.economico@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1220"
+  },
+  {
+   "nombre": "Jeremy Brayan Salcedo Higuita",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Hacienda",
+   "correo": "auxiliar.hacienda@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1400"
+  },
+  {
+   "nombre": "Isabel Cristina Serna Valencia",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Hacienda",
+   "correo": "tesoreria.caja@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Albeiro de Jesús Mazo Carmona",
+   "cargo": "Tesorero",
+   "dependencia": "Hacienda",
+   "correo": "hacienda.tesoreria@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1402"
+  },
+  {
+   "nombre": "Juan Carlos Vasquez Correa",
+   "cargo": "Técnico operativo",
+   "dependencia": "Hacienda",
+   "correo": "tecnico.hacienda@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Maria Patricia Gallego Vanegas",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Hacienda",
+   "correo": "auxiliar.agricultura@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1406"
+  },
+  {
+   "nombre": "Maribel Aguirre Jaramillo",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Hacienda",
+   "correo": "impuestos.hacienda@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1423"
+  },
+  {
+   "nombre": "Maria Isabel Alvarez Duque",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Hacienda",
+   "correo": "contabilidad@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1419"
+  },
+  {
+   "nombre": "Javier Alonso Alvarez Moreno",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Hacienda",
+   "correo": "hacienda.catastro@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1417"
+  },
+  {
+   "nombre": "Javier Alberto Niño Corredor",
+   "cargo": "Secretario de Despacho",
+   "dependencia": "Hacienda",
+   "correo": "secretaria.hacienda@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1401"
+  },
+  {
+   "nombre": "Rolando Areiza Villa",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Hacienda",
+   "correo": "fiscalizacion.hacienda@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1422"
+  },
+  {
+   "nombre": "Edgar Antonio Cataño Carmona",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Hacienda",
+   "correo": "auxiliar.coactivo@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1413"
+  },
+  {
+   "nombre": "Andres Julian Lopera Osorio",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Hacienda",
+   "correo": "cobro.coactivo@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1410"
+  },
+  {
+   "nombre": "Doricela Bustamante Hoyos",
+   "cargo": "Técnico operativo",
+   "dependencia": "Hacienda",
+   "correo": "auxiliar.comisaria@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1300"
+  },
+  {
+   "nombre": "Yolima de Jesús Cano Guillen",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Infraestructura",
+   "correo": "auxiliar.infraestructura@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1600"
+  },
+  {
+   "nombre": "Juliana Andrea Alzate Lopez",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Infraestructura",
+   "correo": "infraestructura.equipamiento1@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1306"
+  },
+  {
+   "nombre": "Juan Fernando Bustamante Piedrahita",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Infraestructura",
+   "correo": "infraestructura.sp@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1305"
+  },
+  {
+   "nombre": "Sergio Leon Montoya Castillo",
+   "cargo": "Secretario de Despacho",
+   "dependencia": "Infraestructura",
+   "correo": "secretaria.infraestructura@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1301"
+  },
+  {
+   "nombre": "Santiago Vasquez Echeverri",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Infraestructura",
+   "correo": "infraestructura.equipamiento@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1303"
+  },
+  {
+   "nombre": "Diana Maria Orlas Cataño",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Infraestructura",
+   "correo": "infraestructura.equipamiento2@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1302"
+  },
+  {
+   "nombre": "Ruben Dario Zuleta Montoya",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Infraestructura",
+   "correo": "ruben.zuleta@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1307"
+  },
+  {
+   "nombre": "Hernan Dario Castrillon Zapata",
+   "cargo": "Trabajador Oficial (Obrero)",
+   "dependencia": "Obreros",
+   "correo": "hdario323@hotmail.com",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Juan Esteban Montoya Arboleda",
+   "cargo": "Conductor Mecanico",
+   "dependencia": "Obreros",
+   "correo": "juanema2014@gmail.com",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Argemiro Cortes Alzate",
+   "cargo": "Trabajador Oficial (Obrero)",
+   "dependencia": "Obreros",
+   "correo": "cacao.5911@hotmail.com",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Carlos Mario Zapata Carmona",
+   "cargo": "Conductor Mecanico",
+   "dependencia": "Obreros",
+   "correo": "carlosmario213@outlook.com",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Andres Felipe Giraldo Monsalve",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Planeación",
+   "correo": "planeacion.seguimiento@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1206"
+  },
+  {
+   "nombre": "Blanca Nury Alzate Mira",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Planeación",
+   "correo": "planeacion.proyectos@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1204"
+  },
+  {
+   "nombre": "Johana Cañaveral Piedrahita",
+   "cargo": "Técnico operativo",
+   "dependencia": "Planeación",
+   "correo": "sisben_05_girardota@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1222"
+  },
+  {
+   "nombre": "Cesar Augusto Carmona Cordoba",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Planeación",
+   "correo": "cesar.carmona@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1209"
+  },
+  {
+   "nombre": "Luz Eugenia Zapata Bohorquez",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Planeación",
+   "correo": "banco.proyectos@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1202"
+  },
+  {
+   "nombre": "Alejandro Valencia Naranjo",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Planeación",
+   "correo": "planeacion.licencias@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1211"
+  },
+  {
+   "nombre": "Ubeimar Alonso Villa Cataño",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Planeación",
+   "correo": "wbeimar.villa@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1203"
+  },
+  {
+   "nombre": "Jaime Albeiro Zapata Madrigal",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Planeación",
+   "correo": "planeacion.urbanismo@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1202"
+  },
+  {
+   "nombre": "Juan Esteban Zapata Mesa",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Planeación",
+   "correo": "auxiliar.urbanistico@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1210"
+  },
+  {
+   "nombre": "Diana Carolina Zuleta Castrillon",
+   "cargo": "Secretario de Despacho",
+   "dependencia": "Planeación",
+   "correo": "diana.zuleta@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1206"
+  },
+  {
+   "nombre": "Natalia Andrea Valencia Corrales",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Planeación",
+   "correo": "auxiliar.licencia@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "3018"
+  },
+  {
+   "nombre": "Erika Antia Patiño",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Salud",
+   "correo": "salud.mental@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1506"
+  },
+  {
+   "nombre": "Juan Diego Blandon Correa",
+   "cargo": "Técnico operativo",
+   "dependencia": "Salud",
+   "correo": "aseguramiento.salud@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1503"
+  },
+  {
+   "nombre": "Yeimi Alexandra Cataño Cataño",
+   "cargo": "Subsecretario de despacho",
+   "dependencia": "Salud",
+   "correo": "sub.proteccionsocial@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1510"
+  },
+  {
+   "nombre": "Diana Carolina Estrada Castro",
+   "cargo": "Técnico operativo",
+   "dependencia": "Salud",
+   "correo": "epidemiologia@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1504"
+  },
+  {
+   "nombre": "Maria Alejandra Figueredo Coronado",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Salud",
+   "correo": "salud.ambiental@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1505"
+  },
+  {
+   "nombre": "Marta Irene Lopera Rojas",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Salud",
+   "correo": "salud.aseguramiento@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1502"
+  },
+  {
+   "nombre": "Gladiz Cenet Arias Londoño",
+   "cargo": "Secretario de Despacho",
+   "dependencia": "Salud",
+   "correo": "secretaria.salud@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1501"
+  },
+  {
+   "nombre": "Nathalia Rodriguez Valero",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Salud",
+   "correo": "participacionciudadana.salud@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1513"
+  },
+  {
+   "nombre": "Nancy Catalina Roncancio Diaz",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Salud",
+   "correo": "salud.mujer@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1512"
+  },
+  {
+   "nombre": "Luz Dary Valencia Suarez",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Salud",
+   "correo": "salud.familiasaccion@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1511"
+  },
+  {
+   "nombre": "Ruben Dario Vanegas Alzate",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Salud",
+   "correo": "auxiliar.salud@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1500"
+  },
+  {
+   "nombre": "Isabel Cano Bedoya",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Salud",
+   "correo": "auxiliar.participacionciudadana@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Paola Andrea Castrillón Valencia",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Salud",
+   "correo": "comunicaciones.participacion@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Leidy Londoño Mejia",
+   "cargo": "Técnico operativo",
+   "dependencia": "Salud",
+   "correo": "tecnico.emprendimiento@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Andrea Longas Bohorquez",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Salud",
+   "correo": "emprendimiento.participacion@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Erica Yanet Arias Garcia",
+   "cargo": "Subsecretario de despacho",
+   "dependencia": "Salud",
+   "correo": "sub.participacionciudadana@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Paula Andrea Osses Cano",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Salud",
+   "correo": "proyectos.participacion@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Piedad del Rosario Carmona Lopez",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Servicios Administrativos",
+   "correo": "auxiliar.servicios@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "4001"
+  },
+  {
+   "nombre": "Luis Albeiro Rios Acevedo",
+   "cargo": "Técnico operativo",
+   "dependencia": "Servicios Administrativos",
+   "correo": "tecnico.sistemas3@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1730"
+  },
+  {
+   "nombre": "Victor Hugo Mejía Arias",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Servicios Administrativos",
+   "correo": "tramites.archivo@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Laura Elena Cañas Villa",
+   "cargo": "Técnico operativo",
+   "dependencia": "Servicios Administrativos",
+   "correo": "archivo.tecnico@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1721"
+  },
+  {
+   "nombre": "Juan Camilo Hincapie Giraldo",
+   "cargo": "Técnico operativo",
+   "dependencia": "Servicios Administrativos",
+   "correo": "tecnico.sistemas5@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1730"
+  },
+  {
+   "nombre": "Adel Betancur Gutierrez",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Servicios Administrativos",
+   "correo": "juridico1@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1701"
+  },
+  {
+   "nombre": "Jaidy Judith Altamiranda Madera",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Servicios Administrativos",
+   "correo": "gestion.nomina@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "William Cardona Hidalgo",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Servicios Administrativos",
+   "correo": "juridica.auxiliar@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1708"
+  },
+  {
+   "nombre": "Xiomara Cardona Villa",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Servicios Administrativos",
+   "correo": "juridica.abogada@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1712"
+  },
+  {
+   "nombre": "Albeiro de Jesus Carmona Longas",
+   "cargo": "Técnico operativo",
+   "dependencia": "Servicios Administrativos",
+   "correo": "albeiro.carmona@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1221"
+  },
+  {
+   "nombre": "Edwin Correa Arias",
+   "cargo": "Técnico operativo",
+   "dependencia": "Servicios Administrativos",
+   "correo": "tecnico.sistemas4@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1730"
+  },
+  {
+   "nombre": "Harol Andres Ayala Seguro",
+   "cargo": "Jefe Oficina Juridica",
+   "dependencia": "Servicios Administrativos",
+   "correo": "juridico@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1711"
+  },
+  {
+   "nombre": "Andrés Felipe García Carmona",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Servicios Administrativos",
+   "correo": "juridica.abogada1@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1713"
+  },
+  {
+   "nombre": "Laura Vanessa Jaramillo Alzate",
+   "cargo": "Profesional Universitario",
+   "dependencia": "Servicios Administrativos",
+   "correo": "talento.humano@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1704"
+  },
+  {
+   "nombre": "Jhon Jairo Cadavid Madrigal",
+   "cargo": "Almacenista General",
+   "dependencia": "Servicios Administrativos",
+   "correo": "almacen.girardota@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1716"
+  },
+  {
+   "nombre": "Monica Cecilia Hoyos Mesa",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Control interno",
+   "correo": "auxiliar.control@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1600"
+  },
+  {
+   "nombre": "Luz Mary Sánchez Alzate",
+   "cargo": "Secretario de Despacho",
+   "dependencia": "Servicios Administrativos",
+   "correo": "servicios.administrativos@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1701"
+  },
+  {
+   "nombre": "Aracelly Del Socorro Valencia Cadavid",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Servicios Administrativos",
+   "correo": "auxiliar.juridica@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1710"
+  },
+  {
+   "nombre": "Ingrid Eliana Arroyave Hoyos",
+   "cargo": "Técnico operativo",
+   "dependencia": "Servicios Administrativos",
+   "correo": "tecnico.talento@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1703"
+  },
+  {
+   "nombre": "John Jairo de Jesus Arboleda Jaramillo",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Tránsito",
+   "correo": "auxiliar.licencia@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "1720"
+  },
+  {
+   "nombre": "Bibiana Andrea Agudelo Bustamante",
+   "cargo": "Agente Tránsito",
+   "dependencia": "Tránsito",
+   "correo": "agente.transito4@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Jorge Osvaldo Betancur Arango",
+   "cargo": "Técnico operativo",
+   "dependencia": "Tránsito",
+   "correo": "jorge.betancur@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Jeniffer Milena Montoya Mira",
+   "cargo": "Agente Tránsito",
+   "dependencia": "Tránsito",
+   "correo": "agente.transito8@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Diana Patricia Cardona Castillo",
+   "cargo": "Agente Tránsito",
+   "dependencia": "Tránsito",
+   "correo": "agente.transito3@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Claudia Patricia Carmona Ramirez",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Tránsito",
+   "correo": "auxiliar.matricula@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "3014"
+  },
+  {
+   "nombre": "Sandra Lucia Cordoba Cataño",
+   "cargo": "Auxiliar Administrativo",
+   "dependencia": "Tránsito",
+   "correo": "auxiliar.transito@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "3000"
+  },
+  {
+   "nombre": "Yulieth Paola Correa Hoyos",
+   "cargo": "Subsecretario de despacho",
+   "dependencia": "Tránsito",
+   "correo": "sub.control@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "3007"
+  },
+  {
+   "nombre": "Andres Felipe Garcia Botero",
+   "cargo": "Agente Tránsito",
+   "dependencia": "Tránsito",
+   "correo": "agente.transito6@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Daniel Alejandro Hernandez Alzate",
+   "cargo": "Secretario de Despacho",
+   "dependencia": "Tránsito",
+   "correo": "secretaria.transito@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "3001"
+  },
+  {
+   "nombre": "Efrain Hoyos Sierra",
+   "cargo": "Agente Tránsito",
+   "dependencia": "Tránsito",
+   "correo": "efrain.hoyos@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Juan Pablo Serna Gallego",
+   "cargo": "Agente Tránsito",
+   "dependencia": "Tránsito",
+   "correo": "juanpabloserna68@gmail.com",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Luisa Fernanda Montoya Jaramillo",
+   "cargo": "Agente Tránsito",
+   "dependencia": "Tránsito",
+   "correo": "agente.transito10@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "John Fredy Palomino Saldarriaga",
+   "cargo": "Agente Tránsito",
+   "dependencia": "Tránsito",
+   "correo": "agente.transito11@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Paula Andrea Posada Cadavid",
+   "cargo": "Agente Tránsito",
+   "dependencia": "Tránsito",
+   "correo": "paupo0913@gmail.com",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Angela Maria Rivera Pabon",
+   "cargo": "Agente Tránsito",
+   "dependencia": "Tránsito",
+   "correo": "agente.transito7@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Sandra Ruiz Gomez",
+   "cargo": "Inspector Tránsito",
+   "dependencia": "Tránsito",
+   "correo": "inspeccion.transito@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": "3006"
+  },
+  {
+   "nombre": "Luis Carlos Saavedra Monsalve",
+   "cargo": "Agente Tránsito",
+   "dependencia": "Tránsito",
+   "correo": "agente.transito2@girardota.gov.co",
+   "telefono": "3224299",
+   "extension": null
+  },
+  {
+   "nombre": "Nemesio de Jesus Agudelo Bustamante",
+   "cargo": "Conductor",
+   "dependencia": "Tránsito",
+   "correo": "nemesio.agudelo@gmail.com",
+   "telefono": "3224299",
+   "extension": null
+  }
+ ]
+}
