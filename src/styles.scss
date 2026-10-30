@@ -456,3 +456,47 @@ html, body {
     color: var(--color-text-tertiary);
   }
 }
+
+/* ── Tema opcional "Earthy Botanical": se activa desde el botón del panel superior y vale para cualquier vista ──*/
+html.tema-botanico {
+  --color-brand-primary:     #29422F;
+  --color-brand-primary-rgb: 41, 66, 47;
+  --color-brand-light:       #66AA33;   // lima del tema: segundo extremo de los degradados de marca
+  --color-brand-light-rgb:   102, 170, 51;
+  --color-brand-lima:        #99CC33;
+  --color-brand-dark:        #29422F;
+  --color-brand-border:      #C8D9C0;
+  --color-brand-surface:     #EAF2D6;
+  --color-brand-accent:      #E0B33A;
+  --color-page-bg:                  #F5F0EA;
+  --color-background-primary:       #FCF9F6;
+  --color-background-secondary:     #F5F0EA;
+  --color-background-tertiary:      #E0EAD8;
+  --color-border-tertiary:          #C8D9C0;
+  --color-text-primary:             #1A1A1A;
+}
+
+/* Variante oscura del tema botánico: invierte las escalas de neutros y de texto, y conserva el verde y el lima de marca. */
+html.tema-botanico.tema-oscuro {
+  color-scheme: dark;
+  --color-brand-primary:     #66AA33;
+  --color-brand-primary-rgb: 102, 170, 51;
+  --color-brand-light:       #99CC33;
+  --color-brand-light-rgb:   153, 204, 51;
+  --color-brand-dark:        #99CC33;
+  --color-brand-border:      #36503A;
+  --color-brand-surface:     #22331F;
+  --color-page-bg:                  #121A14;
+  --color-background-primary:       #1A261D;
+  --color-background-secondary:     #16201A;
+  --color-background-tertiary:      #233229;
+  --color-border-primary:           #3B5340;
+  --color-border-tertiary:          #2F4533;
+  --color-text-primary:             #E8EFE4;
+  --color-text-secondary:           #C3CFBF;
+  --color-text-tertiary:            #8FA08C;
+  --neutral-0: #1A261D; --neutral-50: #16201A; --neutral-100: #233229; --neutral-200: #2F4533; --neutral-300: #3B5340;
+  --neutral-400: #6F8470; --neutral-500: #8FA08C; --neutral-600: #A9B8A5; --neutral-700: #C3CFBF; --neutral-800: #D8E1D4; --neutral-900: #E8EFE4;
+  --dark-50: #121A14; --dark-100: #1A261D; --dark-200: #233229; --dark-300: #2F4533; --dark-400: #6F8470;
+  --dark-500: #8FA08C; --dark-600: #A9B8A5; --dark-700: #C3CFBF; --dark-800: #D8E1D4; --dark-900: #E8EFE4;
+}

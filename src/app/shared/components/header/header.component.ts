@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { TemaService } from '../../../core/services/tema.service';
 import { SessionService } from '../../../core/services/session.service';
 import { UserWidgetComponent } from '../user-widget/user-widget.component';
 import { SITE } from '../../../data/site.data';
@@ -14,4 +15,5 @@ import { SITE } from '../../../data/site.data';
 export class HeaderComponent {
   readonly session = inject(SessionService);
   readonly site    = SITE;
+  readonly tema    = inject(TemaService);
 }

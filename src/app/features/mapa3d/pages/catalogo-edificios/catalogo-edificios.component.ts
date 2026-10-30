@@ -7,7 +7,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { Aura, CategoriaIcono, COLOR_INDUSTRIA, crearAura, crearIcono, tamanoIcono } from '../../utils/aura';
 
 /** Lo que no es un punto de interés ni una fábrica no lleva neón ni icono. */
-const SIN_AURA: string[] = ['vivienda', 'vehiculos', 'vias', 'agua', 'naturaleza'];
+const SIN_AURA: string[] = ['vivienda', 'vehiculos', 'vias', 'agua', 'naturaleza', 'gente'];
 
 /** Catálogo de los edificios que representan los puntos de interés en el mapa 3D, uno a la vez y a escala real. */
 @Component({
@@ -75,6 +75,7 @@ export class CatalogoEdificiosComponent implements AfterViewInit {
     { id: 'vias', nombre: 'Vías', color: '#55585d' },
     { id: 'agua', nombre: 'Ríos y quebradas', color: '#4db3e6' },
     { id: 'naturaleza', nombre: 'Árboles y aves', color: '#4f9a45' },
+    { id: 'gente', nombre: 'Personas', color: '#f59e0b' },
   ].map(c => ({ ...c, items: VARIANTES.filter(v => v.categoria === c.id) })).filter(g => g.items.length);
   readonly actual = signal<Variante>(VARIANTES[0]);
   readonly girando = signal(true);
@@ -90,6 +91,8 @@ export class CatalogoEdificiosComponent implements AfterViewInit {
   private aura: Aura | null = null;
   private icono: ReturnType<typeof crearIcono> | null = null;
   private reloj = new THREE.Clock();
+  private sol!: THREE.DirectionalLight;
+  private triangulos = 0;
 
   ngAfterViewInit(): void {
     const el = this.lienzo.nativeElement;
@@ -107,6 +110,7 @@ export class CatalogoEdificiosComponent implements AfterViewInit {
     Object.assign(sol.shadow.camera, { left: -90, right: 90, top: 90, bottom: -90, near: 1, far: 400 });
     sol.shadow.bias = -0.0004;
     this.escena.add(sol);
+    this.sol = sol;
 
     const suelo = new THREE.Mesh(new THREE.CircleGeometry(1500, 48).rotateX(-Math.PI / 2), new THREE.MeshStandardMaterial({ color: '#8fae78', roughness: 1 }));
     suelo.position.y = -0.4;
@@ -195,7 +199,7 @@ export class CatalogoEdificiosComponent implements AfterViewInit {
     let semilla = 7;
     const m = modelarEquipamiento(v.categoria, v.tipo, v.nombre, () => ((semilla = (semilla * 16807) % 2147483647) / 2147483647));
     const grupo = new THREE.Group();
-    const r = m.radio + 8;
+    const r = m.radio + (m.radio < 4 ? 1.2 : 8);
     const plataforma = new THREE.Mesh(new THREE.CylinderGeometry(r, r + 1.5, 1.2, 64).translate(0, -0.6, 0), new THREE.MeshStandardMaterial({ color: '#7fa468', roughness: 1 }));
     plataforma.receiveShadow = true;
     grupo.add(plataforma);
@@ -211,7 +215,8 @@ export class CatalogoEdificiosComponent implements AfterViewInit {
       grupo.add(malla);
     }
     const caja = new THREE.Box3();
-    for (const p of m.piezas) { p.g.computeBoundingBox(); caja.union(p.g.boundingBox!); }
+    this.triangulos = 0;
+    for (const p of m.piezas) { this.triangulos += (p.g.index?.count ?? p.g.attributes['position'].count) / 3; p.g.computeBoundingBox(); caja.union(p.g.boundingBox!); }
     const tam = caja.getSize(new THREE.Vector3());
     if (this.conAura() && !SIN_AURA.includes(v.categoria)) {
       const color = this.grupos.find(g => g.id === v.categoria)!.color;
@@ -236,9 +241,18 @@ export class CatalogoEdificiosComponent implements AfterViewInit {
   }
 
   private encuadrar(tam: THREE.Vector3): void {
-    this.medida.set(`${Math.round(tam.x)} × ${Math.round(tam.z)} m, ${Math.round(tam.y)} m de alto`);
-    const d = Math.max(tam.x, tam.z, tam.y * 1.4, 18) * 1.7 + 14;
-    this.controles.target.set(0, Math.min(tam.y * 0.35, 14), 0);
+    const chico = tam.y < 4;
+    const cm = (n: number) => (Math.round(n * 100) / 100).toString().replace('.', ',');
+    this.medida.set(chico ? `${cm(tam.y)} m de alto · ${Math.round(this.triangulos)} triángulos` : `${Math.round(tam.x)} × ${Math.round(tam.z)} m, ${Math.round(tam.y)} m de alto`);
+    // lo pequeño (una persona) pide cámara y sombras de cerca; lo demás conserva el encuadre de siempre
+    this.camara.near = chico ? 0.1 : 1;
+    this.camara.updateProjectionMatrix();
+    this.controles.minDistance = chico ? 1.5 : 12;
+    const sombra = this.sol.shadow.camera;
+    Object.assign(sombra, chico ? { left: -4, right: 4, top: 4, bottom: -4 } : { left: -90, right: 90, top: 90, bottom: -90 });
+    sombra.updateProjectionMatrix();
+    const d = chico ? Math.max(tam.y * 2.6, 3) : Math.max(tam.x, tam.z, tam.y * 1.4, 18) * 1.7 + 14;
+    this.controles.target.set(0, chico ? tam.y * 0.5 : Math.min(tam.y * 0.35, 14), 0);
     this.camara.position.set(d * 0.7, d * 0.5, d * 0.85);
     this.controles.update();
   }

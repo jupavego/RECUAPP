@@ -89,6 +89,12 @@
     <div class="mapa__lienzo" #lienzo role="img"
          aria-label="Croquis de Antioquia por subregiones y municipios"></div>
     <div class="mapa__pista" #pista hidden></div>
+    @if (esperaCarga()) {
+      <div class="mapa__espera">
+        <p>El mapa de Google está en pausa para no gastar cargas.</p>
+        <button type="button" (click)="cargarMapa()">Cargar mapa</button>
+      </div>
+    }
 
     @if (puntoSel(); as p) {
       <aside class="mapa__panel" aria-label="Información del punto">

@@ -1,0 +1,54 @@
+{
+ "km_red_modelada": 104.8,
+ "km_mapa3d": 454.1,
+ "umbrales": {
+  "10": {
+   "modelada_dentro_del_3d_pct": 59.2,
+   "mapa3d_dentro_de_la_modelada_pct": 14.6
+  },
+  "25": {
+   "modelada_dentro_del_3d_pct": 88.6,
+   "mapa3d_dentro_de_la_modelada_pct": 25.2
+  },
+  "50": {
+   "modelada_dentro_del_3d_pct": 94.6,
+   "mapa3d_dentro_de_la_modelada_pct": 32.3
+  }
+ },
+ "por_estado_25m_pct": {
+  "sin_dato": 72.3,
+  "sin_pavimentar": 88.4,
+  "afirmada": 89.3,
+  "pavimentada": 92.8
+ },
+ "por_tipo_25m_pct": {
+  "Camino / sendero": [
+   9.2,
+   72.3
+  ],
+  "Carretera terciaria": [
+   4.4,
+   88.4
+  ],
+  "Carretera secundaria": [
+   44.6,
+   87.1
+  ],
+  "Transversal": [
+   19.6,
+   94.2
+  ],
+  "Troncal": [
+   13.5,
+   89.2
+  ],
+  "Autopista/doble calzada": [
+   13.5,
+   96.3
+  ]
+ },
+ "desfase_m": {
+  "mediana": 6.7,
+  "p90": 16.8
+ }
+}

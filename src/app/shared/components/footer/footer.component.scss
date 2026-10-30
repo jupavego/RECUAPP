@@ -158,3 +158,12 @@
     gap: 0.75rem;
   }
 }
+
+:host-context(body.tema-botanico) .footer {
+  background: linear-gradient(155deg, #1F3324 0%, #29422F 50%, #4F8A2E 85%, #66AA33 100%);
+  .footer__orb--2 { background: rgba(153, 204, 51, .22); }
+}
+
+:host-context(body.tema-oscuro) .footer {
+  background: linear-gradient(155deg, #0C120E 0%, #16201A 55%, #2A4A22 100%);
+}

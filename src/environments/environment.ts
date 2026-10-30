@@ -9,4 +9,6 @@ export const environment = {
   sentryDsn: '',          // vacío en desarrollo — Sentry solo activo en producción
   turnstileSiteKey: '',   // clave pública de Cloudflare Turnstile (vacío = sin captcha)
   googleMapsApiKey: 'AIzaSyDbJTm65fipASI_Q93Y_qo3DGIqKhbIoco',   // Maps JavaScript API (clave de Comeren) — restringida a localhost:* en Google Cloud Console
+  // true = el mapa 2D carga Google Maps solo al abrir la página; false = espera al botón "Cargar mapa" (cada carga se factura)
+  mapaGoogleAuto: false,
 };

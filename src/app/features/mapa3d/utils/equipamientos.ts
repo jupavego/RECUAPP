@@ -3,7 +3,8 @@ import { CategoriaPunto } from '../../mapa/services/mapa.service';
 
 /** Un edificio listo para ponerse en el mapa: piezas con su color, en metros y con el origen en el suelo, en el centro. */
 export interface Modelo {
-  piezas: { g: THREE.BufferGeometry; color: string }[];
+  /** `mov` (solo la gente): [sentido del vaivén (0 = fija), altura de la articulación (m), amplitud (rad)] */
+  piezas: { g: THREE.BufferGeometry; color: string; mov?: [number, number, number] }[];
   /** radio que ocupa en planta (m) */
   radio: number;
   /** losa de cimentación [ancho, fondo] que se asienta en la ladera; sin ella el edificio se apoya en su centro */
@@ -293,6 +294,22 @@ function deporte(e: Ensamble, tipo: string): Modelo {
       .arbol(-20, 14, 7).arbol(20, 14, 7);
     return { piezas: e.piezas, radio: 26, losa: [48, 36] };
   }
+  if (/piscina/.test(tipo)) {
+    // piscina con borde, carriles, escaleras, piscina infantil, sillas de sol y una cubierta con sombra
+    const w = 46, d = 24, AGUA = '#38bdf8', BORDE = '#f1f5f9';
+    e.caja(w + 18, 0.3, d + 20, '#d9d3c4', 0, 0, 0)
+      .caja(w + 3, 0.8, 1.5, BORDE, 0, 0.3, d / 2 + 0.75).caja(w + 3, 0.8, 1.5, BORDE, 0, 0.3, -d / 2 - 0.75)
+      .caja(1.5, 0.8, d, BORDE, w / 2 + 0.75, 0.3, 0).caja(1.5, 0.8, d, BORDE, -w / 2 - 0.75, 0.3, 0)
+      .caja(w, 0.65, d, AGUA, 0, 0.3, 0);
+    for (let k = -2; k <= 2; k++) e.caja(w - 4, 0.05, 0.3, '#1d4ed8', 0, 0.96, k * 4.4);
+    for (const s of [-1, 1]) e.cil(0.25, 0.25, 2, '#c5cbd1', s * (w / 2 - 3), 0.3, d / 2 + 0.2, 6).cil(0.25, 0.25, 2, '#c5cbd1', s * (w / 2 - 6), 0.3, d / 2 + 0.2, 6);
+    e.caja(0.3, 0.05, d, '#e5e7eb', -w / 2 + 2, 0.96, 0)                                      // línea de la zona de salida
+      .caja(16, 0.8, 12, BORDE, w / 2 + 18, 0.3, -4).caja(14, 0.9, 10, '#67e8f9', w / 2 + 18, 0.3, -4);  // piscina infantil
+    for (let k = 0; k < 6; k++) e.caja(2.2, 0.7, 5, '#fef3c7', -w / 2 + 4 + k * 4, 0.3, d / 2 + 6.5).caja(2.2, 1.3, 1, '#fef3c7', -w / 2 + 4 + k * 4, 0.8, d / 2 + 9);
+    for (const x of [-12, 12]) for (const z of [-d / 2 - 7, -d / 2 - 12]) e.cil(0.3, 0.3, 6, '#6b7280', x, 0.3, z, 6);
+    e.caja(28, 0.3, 7.5, '#ef4444', 0, 6.2, -d / 2 - 9.5).arbol(-w / 2 - 6, -d / 2 - 6, 8).arbol(w / 2 + 6, d / 2 + 8, 8);
+    return { piezas: e.piezas, radio: 40, losa: [w + 22, d + 22] };
+  }
   // bicrós: óvalo de tierra con una fila de lomos y rampa de partida
   e.oval(28, 16, 0.3, '#9aa0a6', 0, 0, 0).oval(24, 12, 0.25, '#a8774a', 0, 0.3, 0, 0.62);
   for (let k = 0; k < 7; k++) e.monticulo(2.8, 1.6, '#8a5f36', -16 + k * 5.4, 0.3, -10);
@@ -374,6 +391,16 @@ function patrimonio(e: Ensamble, tipo: string, rnd: () => number): Modelo {
   return { piezas: e.piezas, radio: 16 };
 }
 
+/** El vehículo del catálogo según su nombre (el auto rojo es el de siempre). */
+function vehiculo(e: Ensamble, t: string): Modelo {
+  if (/moto/.test(t)) return moto(e);
+  if (/taxi/.test(t)) return taxi(e);
+  if (/\bfj\b/.test(t)) return fj80(e);
+  if (/\bbus\b/.test(t)) return bus(e);
+  if (/cami[oó]n|tr[aá]iler/.test(t)) return camion(e);
+  return auto(e);
+}
+
 /** El edificio que representa a un punto de interés según su categoría y su tipo de lugar. */
 export function modelarEquipamiento(c: CategoriaCatalogo, tipo: string, nombre: string, rnd: () => number): Modelo {
   const e = new Ensamble();
@@ -381,8 +408,10 @@ export function modelarEquipamiento(c: CategoriaCatalogo, tipo: string, nombre: 
   switch (c) {
     case 'industria': return fabrica(e);
     case 'vivienda': return vivienda(e);
-    case 'vehiculos': return /avi[oó]n/.test(t) ? { piezas: [], radio: 42 } : /moto/.test(t) ? moto(e) : auto(e);    // el avión es un modelo .glb que carga el catálogo
-    case 'vias': return /puente/.test(t) ? puente(e, /principal/.test(t) ? 34 : 13) : tramo(e, /principal/.test(t) ? 'principal' : /local/.test(t) ? 'local' : 'sendero');
+    case 'vehiculos': return /avi[oó]n/.test(t) ? { piezas: [], radio: 42 } : vehiculo(e, t);    // el avión es un modelo .glb que carga el catálogo
+    case 'vias':
+      for (const k of ['autopista', 'troncal', 'secundaria', 'mixta', 'afirmada', 'carreteable', 'restringida'] as const) if (t.includes(k)) return carretera(e, k);
+      return /puente/.test(t) ? puente(e, /principal/.test(t) ? 34 : 13) : tramo(e, /principal/.test(t) ? 'principal' : /local/.test(t) ? 'local' : 'sendero');
     case 'agua': return tramo(e, /quebrada/.test(t) ? 'quebrada' : 'rio');
     case 'naturaleza':
       if (/p[aá]jaro|garza/.test(t)) return pajaro(e);
@@ -391,6 +420,7 @@ export function modelarEquipamiento(c: CategoriaCatalogo, tipo: string, nombre: 
       if (/yarumo/.test(t)) return arbolRegional(e, 'yarumo');
       if (/ceiba/.test(t)) return arbolRegional(e, 'ceiba');
       return arbol(e);
+    case 'gente': return persona(e, t);
     case 'educacion': return escuela(e, /rural/i.test(tipo));
     case 'cultura': return cultura(e, t);
     case 'salud': return salud(e, t);
@@ -445,8 +475,8 @@ function rueda(e: Ensamble, r: number, ancho: number, x: number, y: number, z: n
 }
 
 /** Auto del tráfico: carrocería de color (frente hacia +x), cabina con vidrios, techo gris claro, ruedas y luces. */
-function auto(e: Ensamble): Modelo {
-  const ROJO = '#ff2d2d', GRIS = '#d3d8dd', OSCURO = '#2b2f36';
+function auto(e: Ensamble, cuerpo = '#ff2d2d', techo = '#d3d8dd', taxi = false): Modelo {
+  const ROJO = cuerpo, GRIS = techo, OSCURO = '#2b2f36';
   e.caja(15, 0.5, 6.2, OSCURO, 0, 0.6, 0)                                   // chasis
     .caja(15, 2.2, 6.5, ROJO, 0, 1.0, 0)                                    // carrocería baja
     .caja(4.2, 0.45, 6.2, ROJO, 5, 3.2, 0).caja(2.6, 0.45, 6.2, ROJO, -5.7, 3.2, 0) // capó y maletero
@@ -460,7 +490,88 @@ function auto(e: Ensamble): Modelo {
   const perfil = new THREE.Shape([new THREE.Vector2(3, 3.2), new THREE.Vector2(1.6, 5.7), new THREE.Vector2(-3.6, 5.7), new THREE.Vector2(-5, 3.2)]);
   e.piezas.push({ g: new THREE.ExtrudeGeometry(perfil, { depth: 5.6, bevelEnabled: false }).translate(0, 0, -2.8), color: VIDRIO });
   for (const x of [-4.6, 4.6]) for (const z of [-3.15, 3.15]) rueda(e, 1.5, 1.1, x, 0, z);
+  if (taxi) {
+    e.caja(8, 0.35, 6.6, '#111827', -1, 1.9, 0).caja(2.6, 0.9, 1.6, '#fff8dc', -1, 6.05, 0).caja(2.7, 0.25, 1.7, '#111827', -1, 6.0, 0); // franja y aviso
+  }
   return { piezas: e.piezas, radio: 10 };
+}
+
+/** Taxi amarillo: el auto con franja negra y aviso en el techo. */
+function taxi(e: Ensamble): Modelo {
+  return auto(e, '#f5c400', '#f5c400', true);
+}
+
+/** Cilindro horizontal a lo largo de x, centrado en (x, y, z): tanques, escapes, repuesto. */
+function ejeX(e: Ensamble, r: number, largo: number, color: string, x: number, y: number, z: number): void {
+  e.piezas.push({ g: new THREE.CylinderGeometry(r, r, largo, 14).rotateZ(Math.PI / 2).translate(x, y, z), color });
+}
+
+/** Campero de los años 80 (tipo Toyota FJ60): caja cuadrada, techo blanco, parrilla, farolas redondas y repuesto atrás. */
+function fj80(e: Ensamble): Modelo {
+  const CUERPO = '#d8c9a0', OSCURO = '#2b2f36';
+  e.caja(15.5, 0.5, 5.8, OSCURO, 0, 0.9, 0)                                         // chasis
+    .caja(15.5, 2.6, 6.2, CUERPO, 0, 1.4, 0)                                         // carrocería baja
+    .caja(4.4, 0.5, 6.0, CUERPO, 5.5, 4.0, 0)                                        // capó plano
+    .caja(11, 2.6, 5.7, VIDRIO, -1.5, 4.0, 0)                                        // cabina acristalada
+    .caja(0.5, 2.6, 0.5, CUERPO, 4.0, 4.0, 2.9).caja(0.5, 2.6, 0.5, CUERPO, 4.0, 4.0, -2.9)       // parantes delanteros
+    .caja(0.5, 2.6, 0.5, CUERPO, -7.0, 4.0, 2.9).caja(0.5, 2.6, 0.5, CUERPO, -7.0, 4.0, -2.9)     // parantes traseros
+    .caja(0.6, 2.6, 5.9, CUERPO, -1.5, 4.0, 0).caja(0.6, 2.6, 5.9, CUERPO, -4.2, 4.0, 0)          // parantes centrales
+    .caja(11.6, 0.45, 6.2, '#f1f5f9', -1.5, 6.6, 0)                                  // techo blanco
+    .caja(9, 0.2, 5.4, OSCURO, -1.5, 7.05, 0)                                        // parrilla de techo
+    .caja(0.3, 1.8, 4.6, OSCURO, 7.8, 2.2, 0)                                        // parrilla frontal
+    .caja(0.8, 0.7, 6.8, '#9ca3af', 8.0, 1.1, 0).caja(0.8, 0.7, 6.8, '#9ca3af', -7.9, 1.1, 0)     // parachoques cromados
+    .caja(0.2, 1.1, 1.1, '#fff3b0', 7.8, 2.5, 2.6).caja(0.2, 1.1, 1.1, '#fff3b0', 7.8, 2.5, -2.6) // farolas
+    .caja(0.2, 0.5, 1.0, '#b91c1c', -7.85, 2.6, 2.4).caja(0.2, 0.5, 1.0, '#b91c1c', -7.85, 2.6, -2.4); // luces traseras
+  e.piezas.push({ g: new THREE.CylinderGeometry(1.5, 1.5, 0.9, 18).rotateZ(Math.PI / 2).translate(-8.5, 3.9, 0), color: '#1f2328' });  // repuesto
+  e.piezas.push({ g: new THREE.CylinderGeometry(0.9, 0.9, 0.95, 14).rotateZ(Math.PI / 2).translate(-8.5, 3.9, 0), color: '#c5cbd1' });
+  for (const x of [-4.8, 4.8]) for (const z of [-3.3, 3.3]) rueda(e, 1.8, 1.4, x, 0, z);
+  return { piezas: e.piezas, radio: 11 };
+}
+
+/** Bus blanco: dos líneas verdes degradadas en los laterales, ventanas corridas, puerta delantera y aire en el techo. */
+function bus(e: Ensamble): Modelo {
+  const L = 40, OSCURO = '#2b2f36';
+  e.caja(L, 9.8, 8.2, '#f8fafc', 0, 1.4, 0)                                          // carrocería
+    .caja(L - 6, 3.4, 8.5, VIDRIO, -1.5, 6.0, 0)                                     // ventanas laterales corridas
+    .caja(0.3, 4.2, 7.4, VIDRIO, L / 2 + 0.05, 6.4, 0).caja(0.3, 3.4, 7.0, VIDRIO, -L / 2 - 0.05, 6.4, 0) // parabrisas y vidrio trasero
+    .caja(0.6, 3.4, 8.55, '#f8fafc', -9, 6.0, 0).caja(0.6, 3.4, 8.55, '#f8fafc', 0, 6.0, 0).caja(0.6, 3.4, 8.55, '#f8fafc', 9, 6.0, 0) // parantes
+    .caja(4, 6.2, 8.4, '#2b4c5c', 14.5, 1.9, 0)                                      // puerta delantera
+    .caja(L, 0.5, 8.4, '#e2e8f0', 0, 11.2, 0).caja(8, 1.2, 4.5, '#cbd5e1', -8, 11.7, 0)  // techo y equipo de aire
+    .caja(0.8, 1.0, 8.5, OSCURO, L / 2, 1.2, 0).caja(0.8, 1.0, 8.5, OSCURO, -L / 2, 1.2, 0) // parachoques
+    .caja(0.2, 0.7, 1.4, '#fff3b0', L / 2 + 0.05, 2.8, 3).caja(0.2, 0.7, 1.4, '#fff3b0', L / 2 + 0.05, 2.8, -3)
+    .caja(0.2, 0.7, 1.2, '#b91c1c', -L / 2 - 0.05, 2.8, 3).caja(0.2, 0.7, 1.2, '#b91c1c', -L / 2 - 0.05, 2.8, -3);
+  // dos líneas verdes en cada lado, que van de verde oscuro (atrás) a verde claro (adelante)
+  const n = 20, seg = L / n, oscuro = new THREE.Color('#14532d'), claro = new THREE.Color('#86efac');
+  for (let k = 0; k < n; k++) {
+    const color = '#' + oscuro.clone().lerp(claro, k / (n - 1)).getHexString();
+    for (const lado of [1, -1]) for (const y of [2.5, 3.8]) e.caja(seg, 0.8, 0.2, color, -L / 2 + seg * (k + 0.5), y, lado * 4.2);
+  }
+  for (const x of [-12, 13]) for (const z of [-4.3, 4.3]) rueda(e, 1.8, 1.7, x, 0, z);
+  return { piezas: e.piezas, radio: 26 };
+}
+
+/** Tractocamión con tráiler (frente hacia +x): cabina sobre el motor, tanques, escapes, plataforma y furgón con franja azul. */
+function camion(e: Ensamble): Modelo {
+  const CABINA = '#1e40af', OSCURO = '#2b2f36', ACERO = '#aeb6bf';
+  e.caja(60, 0.9, 5.6, OSCURO, 0, 2.0, 0)                                            // chasis
+    .caja(10, 8, 7, CABINA, 25, 2.9, 0)                                              // cabina
+    .caja(0.3, 3.2, 6.4, VIDRIO, 30.05, 6.4, 0).caja(5.5, 2.6, 7.1, VIDRIO, 26.5, 6.6, 0)  // parabrisas y ventanas
+    .caja(4.5, 2.4, 6.6, '#e5e7eb', 21, 10.9, 0)                                     // deflector del techo
+    .caja(0.9, 1.4, 7.4, OSCURO, 30.2, 1.8, 0).caja(0.3, 1.8, 5.2, OSCURO, 30.15, 3.3, 0)   // parachoques y parrilla
+    .caja(0.2, 0.8, 1.4, '#fff3b0', 30.1, 4.6, 2.6).caja(0.2, 0.8, 1.4, '#fff3b0', 30.1, 4.6, -2.6)
+    .caja(8, 0.6, 6.4, OSCURO, 14, 3.0, 0)                                           // quinta rueda
+    .caja(42, 0.7, 6.8, OSCURO, -9, 2.9, 0)                                          // plataforma del tráiler
+    .caja(48, 10, 7.6, '#f1f5f9', -6, 3.6, 0)                                        // furgón
+    .caja(48, 1.4, 7.7, CABINA, -6, 6.3, 0)                                          // franja azul
+    .caja(0.3, 8.6, 6.8, '#cbd5e1', -30.1, 4.2, 0)                                   // puertas traseras
+    .caja(0.7, 0.8, 7.2, '#b91c1c', -30.4, 2.4, 0);                                  // defensa trasera
+  for (const z of [3.4, -3.4]) {
+    ejeX(e, 1.0, 5.5, ACERO, 17, 3.0, z * 1.05);                                     // tanque de combustible
+    e.cil(0.35, 0.35, 11, ACERO, 19, 2.4, z * 0.97, 8);                              // escape vertical
+  }
+  for (const x of [26.5]) for (const z of [-3.3, 3.3]) rueda(e, 2.1, 1.7, x, 0, z);        // eje delantero
+  for (const x of [14, 10.8, -22, -25.4, -28.8]) for (const z of [-3.3, 3.3]) rueda(e, 2.1, 2.0, x, 0, z); // tracción y tráiler
+  return { piezas: e.piezas, radio: 34 };
 }
 
 /** Moto de calle (frente hacia +x): ruedas con rin, horquilla, tanque, asiento, motor, escape, manubrio y farola. */
@@ -585,6 +696,70 @@ function tramo(e: Ensamble, tipo: 'principal' | 'local' | 'sendero' | 'rio' | 'q
 }
 
 /**
+ * Carreteras según la red vial oficial (IGAC): tipo de vía y estado de la superficie. Mismos anchos de mapa que `tramo`
+ * (≈ 2,2 unidades por metro real) y el mismo largo, para que se comparen lado a lado.
+ *   autopista   doble calzada pavimentada, con separador y barandas     pavimentada
+ *   troncal     dos carriles con doble línea amarilla                    pavimentada (troncal y transversal)
+ *   secundaria  dos carriles con línea central discontinua               pavimentada
+ *   mixta       placa huella: rieles de concreto con piedra y grava      código IGAC 3306 (afirmada / mixta)
+ *   afirmada    afirmado (grava) con huellas y cunetas                   carretera terciaria
+ *   carreteable tierra de un carril, con pasto al centro y charcos       sin pavimentar (código 3350)
+ *   restringida afirmada con talanquera                                  acceso restringido (accesibilidad 3600)
+ */
+function carretera(e: Ensamble, tipo: 'autopista' | 'troncal' | 'secundaria' | 'mixta' | 'afirmada' | 'carreteable' | 'restringida'): Modelo {
+  const L = 80, asfalto = '#3e4146', berma = '#a9aaa8', blanco = '#f5f5f4', amarillo = '#f2c230';
+  const dash = (ancho: number, color: string, x: number) => { for (let z = -L / 2 + 8; z < L / 2 - 8; z += 24) e.caja(ancho, 0.05, 12, color, x, 0.3, z); };
+  const huellas = (x: number, color: string, ancho = 1.8) => { e.caja(ancho, 0.05, L, color, -x, 0.3, 0).caja(ancho, 0.05, L, color, x, 0.3, 0); };
+  const cunetas = (x: number) => { for (const s of [-1, 1]) e.caja(2.2, 0.06, L, '#7d8a63', s * x, 0.02, 0); };
+  switch (tipo) {
+    case 'autopista':
+      e.caja(37, 0.2, L, berma, 0, 0, 0)
+        .caja(14, 0.3, L, asfalto, -10, 0, 0).caja(14, 0.3, L, asfalto, 10, 0, 0)
+        .caja(6, 0.4, L, '#7fa468', 0, 0, 0).caja(0.8, 1.1, L, '#c9c7c0', -2.6, 0.4, 0).caja(0.8, 1.1, L, '#c9c7c0', 2.6, 0.4, 0);   // separador y barandas
+      for (const s of [-1, 1]) { e.caja(0.5, 0.05, L, amarillo, s * 3.6, 0.3, 0).caja(0.5, 0.05, L, blanco, s * 16.2, 0.3, 0); dash(0.4, blanco, s * 10); }
+      break;
+    case 'troncal':
+      e.caja(19, 0.2, L, berma, 0, 0, 0).caja(16, 0.3, L, asfalto, 0, 0, 0)
+        .caja(0.4, 0.05, L, amarillo, -0.5, 0.3, 0).caja(0.4, 0.05, L, amarillo, 0.5, 0.3, 0)
+        .caja(0.5, 0.05, L, blanco, -7.2, 0.3, 0).caja(0.5, 0.05, L, blanco, 7.2, 0.3, 0);
+      break;
+    case 'secundaria':
+      e.caja(16.5, 0.2, L, berma, 0, 0, 0).caja(14, 0.3, L, asfalto, 0, 0, 0)
+        .caja(0.5, 0.05, L, blanco, -6.3, 0.3, 0).caja(0.5, 0.05, L, blanco, 6.3, 0.3, 0);
+      dash(0.4, amarillo, 0);
+      break;
+    case 'mixta':
+      // placa huella: dos rieles de concreto con piedra incrustada, sobre afirmado; grava entre los rieles y a los lados
+      e.caja(14, 0.25, L, '#b8a47e', 0, 0, 0).caja(3, 0.28, L, '#c9b98f', 0, 0, 0);
+      for (const s of [-1, 1]) {
+        e.caja(4.6, 0.36, L, '#bdbbb4', s * 3.9, 0, 0);
+        for (let z = -L / 2 + 2; z < L / 2; z += 4) e.caja(4.6, 0.02, 0.35, '#8f8d86', s * 3.9, 0.36, z);        // juntas de la placa
+        for (let z = -L / 2 + 5; z < L / 2 - 2; z += 9) e.caja(0.9, 0.05, 0.9, '#8a8478', s * 3.9 + (z % 2 ? 1.1 : -1.1), 0.36, z);   // piedra incrustada
+      }
+      cunetas(8.2);
+      break;
+    case 'afirmada':
+      e.caja(12, 0.25, L, '#b8a47e', 0, 0, 0).caja(2.6, 0.04, L, '#c8b88f', 0, 0.25, 0);
+      huellas(3.2, '#9b8862');
+      cunetas(7.4);
+      break;
+    case 'carreteable':
+      e.caja(7, 0.2, L, '#8a6a45', 0, 0, 0).caja(1.6, 0.06, L, '#6f8f4e', 0, 0.2, 0);
+      huellas(2.4, '#6e5233', 1.4);
+      for (const [x, z, w, d] of [[-2.4, -20, 2.6, 7], [2.4, 14, 2.6, 9]] as const) e.caja(w, 0.03, d, '#5f5240', x, 0.21, z);   // charcos de barro
+      break;
+    case 'restringida':
+      e.caja(12, 0.25, L, '#b8a47e', 0, 0, 0);
+      huellas(3.2, '#9b8862');
+      cunetas(7.4);
+      for (const s of [-1, 1]) e.caja(1.2, 5, 1.2, '#8b8d90', s * 7.4, 0, 0);                                    // postes
+      for (let i = 0; i < 6; i++) e.caja(2.4, 0.9, 1, i % 2 ? '#f5f5f4' : '#d32f2f', -7.4 + 1.2 + i * 2.4, 4.3, 0);   // brazo rayado cerrado
+      break;
+  }
+  return { piezas: e.piezas, radio: 46 };
+}
+
+/**
  * Puente de una vía local sobre un cauce (como los del mapa): tablero de concreto con asfalto, aceras, pasamanos y travesaño
  * amarillos con postes, y los terraplenes de acceso. El cauce corre de lado a lado, por debajo.
  */
@@ -622,7 +797,112 @@ function pajaro(e: Ensamble): Modelo {
   return { piezas: p, radio: 42 };
 }
 
-export type CategoriaCatalogo = CategoriaPunto | 'industria' | 'vivienda' | 'vehiculos' | 'vias' | 'agua' | 'naturaleza';
+/** Colores de la persona según su variante (hombre, mujer, niño escolar o campesino), compartidos por los dos estilos. */
+function ropaPersona(t: string) {
+  const nino = /ni[ñn]o|escolar/.test(t), mujer = /mujer/.test(t), campesino = /campesin/.test(t);
+  return {
+    nino, mujer, campesino, piel: '#d9a074', zapato: '#26262b',
+    camisa: nino ? '#f4f4f4' : mujer ? '#c2410c' : campesino ? '#e8dcc0' : '#1d4ed8',
+    pantalon: nino ? '#1e3a8a' : mujer ? '#7c2d12' : campesino ? '#5b4a36' : '#374151',
+    pelo: mujer ? '#3b2314' : campesino ? '#5a5a5a' : '#1f1a17',
+  };
+}
+
+/**
+ * Persona de bajo polígono (unos 520 triángulos, 1,70 m): pensada para repetirse por cientos como InstancedMesh. Son pocas piezas
+ * con colores planos (se funden en una sola geometría con color por vértice), sin esqueleto: parte de una pose a medio paso
+ * y el mapa balancea piernas y brazos en el vértice (`mov` de cada pieza) y las mueve por trayectos. Variantes por nombre: mujer (falda y cabello largo), niño (escolar, 72 % de la talla)
+ * y campesino (sombrero aguadeño y carriel).
+ */
+function persona(e: Ensamble, t: string): Modelo {
+  if (/mu[ñn]eco/.test(t)) return personaMuneco(e, t);
+  const { nino, mujer, campesino, piel, zapato, camisa, pantalon, pelo } = ropaPersona(t);
+  const p = e.piezas;
+  const pone = (g: THREE.BufferGeometry, color: string) => p.push({ g, color });
+  /** Pieza que cuelga de una articulación (cadera u hombro): se mece en x y se abre en z. */
+  const miembro = (g: THREE.BufferGeometry, color: string, x: number, y: number, rx: number, rz = 0, brazo = false) =>
+    p.push({ g: g.rotateX(rx).rotateZ(rz).translate(x, y, 0), color, mov: [(x < 0 ? -1 : 1) * (brazo ? -1 : 1), y, brazo ? 0.6 : 0.5] });
+
+  for (const lado of [-1, 1]) {
+    const paso = lado * 0.16;
+    // pierna (con zapato) colgando de la cadera, una adelante y otra atrás
+    miembro(new THREE.CylinderGeometry(0.062, 0.05, 0.8, 6).translate(0, -0.4, 0), mujer ? piel : pantalon, lado * 0.09, 0.87, paso);
+    miembro(new THREE.BoxGeometry(0.11, 0.07, 0.26).translate(0, -0.835, 0.04), zapato, lado * 0.09, 0.87, paso);
+    // brazo: manga, antebrazo y mano, en contrafase con la pierna del mismo lado
+    const hombro = 1.37, brazo = -paso * 1.8;
+    miembro(new THREE.CylinderGeometry(0.05, 0.046, 0.3, 6).translate(0, -0.15, 0), camisa, lado * 0.225, hombro, brazo, lado * 0.07, true);
+    miembro(new THREE.CylinderGeometry(0.042, 0.036, 0.27, 6).translate(0, -0.435, 0), piel, lado * 0.225, hombro, brazo, lado * 0.07, true);
+    miembro(new THREE.BoxGeometry(0.06, 0.09, 0.04).translate(0, -0.62, 0), piel, lado * 0.225, hombro, brazo, lado * 0.07, true);
+  }
+  pone(new THREE.CylinderGeometry(0.17, 0.145, 0.55, 8).scale(1, 1, 0.62).translate(0, 1.125, 0), camisa);
+  if (mujer) pone(new THREE.CylinderGeometry(0.16, 0.25, 0.4, 10).translate(0, 0.72, 0), pantalon);
+  else pone(new THREE.CylinderGeometry(0.15, 0.15, 0.05, 8).scale(1, 1, 0.66).translate(0, 0.89, 0), '#2b2118');   // cinturón
+  pone(new THREE.CylinderGeometry(0.05, 0.055, 0.09, 6).translate(0, 1.42, 0), piel);
+  pone(new THREE.SphereGeometry(0.115, 8, 6).scale(0.92, 1.12, 1).translate(0, 1.56, 0), piel);
+  for (const lado of [-1, 1]) pone(new THREE.BoxGeometry(0.018, 0.024, 0.01).translate(lado * 0.04, 1.565, 0.106), '#1b1b1b');
+  // cabello: flequillo y casquete arriba, y nuca (larga en la mujer)
+  pone(new THREE.SphereGeometry(0.124, 8, 5, 0, Math.PI * 2, 0, Math.PI * 0.42).scale(0.95, 1.12, 1.04).translate(0, 1.565, -0.008), pelo);
+  pone(mujer
+    ? new THREE.SphereGeometry(0.12, 8, 6).scale(1.05, 2.1, 0.7).translate(0, 1.42, -0.085)
+    : new THREE.SphereGeometry(0.12, 8, 5).scale(0.95, 1, 0.62).translate(0, 1.54, -0.06), pelo);
+  if (campesino) {
+    pone(new THREE.CylinderGeometry(0.27, 0.27, 0.014, 12).translate(0, 1.655, 0), '#e9dcae');          // ala
+    pone(new THREE.CylinderGeometry(0.1, 0.115, 0.1, 10).translate(0, 1.71, 0), '#e9dcae');             // copa
+    pone(new THREE.CylinderGeometry(0.118, 0.118, 0.025, 10).translate(0, 1.678, 0), '#2b2b2b');         // cinta
+    pone(new THREE.BoxGeometry(0.2, 0.2, 0.08).translate(-0.2, 0.93, 0.07), '#5a3a1e');                   // carriel
+  }
+  if (nino) pone(new THREE.BoxGeometry(0.26, 0.3, 0.12).translate(0, 1.13, -0.165), '#dc2626');         // maleta escolar
+  if (nino) for (const pz of p) { pz.g.scale(0.72, 0.72, 0.72); if (pz.mov) pz.mov[1] *= 0.72; }
+  return { piezas: p, radio: 0.9 };
+}
+
+/**
+ * Persona estilo muñeco (unos 800 triángulos): cabeza grande y redonda, cuerpo de cápsula, piernas cortas, ojos grandes y mejillas.
+ * Se lee mejor de lejos que la proporcionada y se instancia igual (piezas planas, sin esqueleto).
+ */
+function personaMuneco(e: Ensamble, t: string): Modelo {
+  const { nino, mujer, campesino, piel, zapato, camisa, pantalon, pelo } = ropaPersona(t);
+  const p = e.piezas;
+  const pone = (g: THREE.BufferGeometry, color: string) => p.push({ g, color });
+  const capsula = (r: number, largo: number) => new THREE.CapsuleGeometry(r, largo, 2, 6);
+
+  for (const lado of [-1, 1]) {
+    const paso = lado * 0.2;
+    // zapato y pierna corta, una adelante y otra atrás
+    pone(new THREE.SphereGeometry(0.085, 6, 4).scale(1, 0.6, 1.55).translate(0, -0.37, 0.04).rotateX(paso).translate(lado * 0.095, 0.41, 0), zapato);
+    pone(capsula(0.065, 0.2).translate(0, -0.17, 0).rotateX(paso).translate(lado * 0.095, 0.41, 0), mujer ? piel : pantalon);
+    // brazo redondo con manga y mano de bola, en contrafase
+    const brazo = -paso * 1.5, rz = lado * 0.22;
+    pone(capsula(0.05, 0.14).translate(0, -0.14, 0).rotateX(brazo).rotateZ(rz).translate(lado * 0.2, 0.98, 0), camisa);
+    pone(new THREE.SphereGeometry(0.05, 5, 4).translate(0, -0.3, 0).rotateX(brazo).rotateZ(rz).translate(lado * 0.2, 0.98, 0), piel);
+  }
+  pone(capsula(0.17, 0.26).scale(1, 1, 0.85).translate(0, 0.72, 0), camisa);
+  if (mujer) pone(new THREE.CylinderGeometry(0.17, 0.27, 0.3, 10).translate(0, 0.52, 0), pantalon);
+  // cabeza grande
+  pone(new THREE.SphereGeometry(0.24, 10, 7).scale(1, 0.95, 0.96).translate(0, 1.27, 0), piel);
+  for (const lado of [-1, 1]) {
+    pone(new THREE.SphereGeometry(0.03, 5, 4).scale(1, 1.25, 0.6).translate(lado * 0.085, 1.285, 0.212), '#1b1b1b');
+    pone(new THREE.SphereGeometry(0.036, 5, 3).scale(1, 0.62, 0.3).translate(lado * 0.14, 1.215, 0.185), '#f08a8a');
+  }
+  pone(new THREE.BoxGeometry(0.06, 0.013, 0.012).translate(0, 1.18, 0.219), '#7a2e2e');
+  // cabello: casquete con flequillo y nuca; coletas en la mujer
+  pone(new THREE.SphereGeometry(0.25, 9, 4, 0, Math.PI * 2, 0, Math.PI * 0.4).scale(1, 0.96, 1.02).translate(0, 1.275, -0.005), pelo);
+  pone(new THREE.SphereGeometry(0.245, 7, 4).scale(0.98, 0.95, 0.75).translate(0, 1.27, -0.06), pelo);
+  if (mujer) for (const lado of [-1, 1]) pone(new THREE.SphereGeometry(0.075, 5, 4).translate(lado * 0.26, 1.16, -0.03), pelo);
+  if (campesino) {
+    pone(new THREE.CylinderGeometry(0.36, 0.36, 0.02, 14).translate(0, 1.5, 0), '#e9dcae');          // ala
+    pone(new THREE.CylinderGeometry(0.15, 0.17, 0.14, 10).translate(0, 1.58, 0), '#e9dcae');         // copa
+    pone(new THREE.CylinderGeometry(0.175, 0.175, 0.03, 10).translate(0, 1.535, 0), '#2b2b2b');       // cinta
+    pone(new THREE.BoxGeometry(0.18, 0.17, 0.08).translate(-0.17, 0.6, 0.12), '#5a3a1e');             // carriel
+  }
+  if (nino) {
+    pone(new THREE.BoxGeometry(0.3, 0.36, 0.13).translate(0, 0.8, -0.2), '#dc2626');                 // maleta escolar
+    for (const g of p) g.g.scale(0.8, 0.8, 0.8);
+  }
+  return { piezas: p, radio: 0.9 };
+}
+
+export type CategoriaCatalogo = CategoriaPunto | 'industria' | 'vivienda' | 'vehiculos' | 'vias' | 'agua' | 'naturaleza' | 'gente';
 
 /** Un ejemplo de cada edificio distinto, con un punto real de Girardota como muestra, para el catálogo. */
 export interface Variante { categoria: CategoriaCatalogo; etiqueta: string; tipo: string; nombre: string; }
@@ -631,10 +911,21 @@ export const VARIANTES: Variante[] = [
   { categoria: 'vivienda', etiqueta: 'Vivienda típica', tipo: 'Vivienda', nombre: 'Vivienda' },
   { categoria: 'vehiculos', etiqueta: 'Auto', tipo: 'Vehículo', nombre: 'Auto' },
   { categoria: 'vehiculos', etiqueta: 'Moto', tipo: 'Vehículo', nombre: 'Moto' },
+  { categoria: 'vehiculos', etiqueta: 'Taxi', tipo: 'Vehículo', nombre: 'Taxi' },
+  { categoria: 'vehiculos', etiqueta: 'Campero FJ (años 80)', tipo: 'Vehículo', nombre: 'Campero FJ' },
+  { categoria: 'vehiculos', etiqueta: 'Bus', tipo: 'Vehículo', nombre: 'Bus' },
+  { categoria: 'vehiculos', etiqueta: 'Camión con tráiler', tipo: 'Vehículo', nombre: 'Camión con tráiler' },
   { categoria: 'vehiculos', etiqueta: 'Avión (Boeing 787)', tipo: 'Vehículo', nombre: 'Avión' },
   { categoria: 'vias', etiqueta: 'Vía principal', tipo: 'Vía', nombre: 'principal' },
   { categoria: 'vias', etiqueta: 'Vía local', tipo: 'Vía', nombre: 'local' },
   { categoria: 'vias', etiqueta: 'Sendero', tipo: 'Vía', nombre: 'sendero' },
+  { categoria: 'vias', etiqueta: 'Autopista / doble calzada (pavimentada)', tipo: 'Vía', nombre: 'autopista' },
+  { categoria: 'vias', etiqueta: 'Troncal / transversal (pavimentada)', tipo: 'Vía', nombre: 'troncal' },
+  { categoria: 'vias', etiqueta: 'Carretera secundaria pavimentada', tipo: 'Vía', nombre: 'secundaria' },
+  { categoria: 'vias', etiqueta: 'Carretera secundaria afirmada / mixta (placa huella)', tipo: 'Vía', nombre: 'mixta' },
+  { categoria: 'vias', etiqueta: 'Carretera terciaria afirmada', tipo: 'Vía', nombre: 'afirmada' },
+  { categoria: 'vias', etiqueta: 'Carreteable sin pavimentar', tipo: 'Vía', nombre: 'carreteable' },
+  { categoria: 'vias', etiqueta: 'Vía con acceso restringido', tipo: 'Vía', nombre: 'restringida' },
   { categoria: 'vias', etiqueta: 'Puente (vía local)', tipo: 'Vía', nombre: 'puente' },
   { categoria: 'vias', etiqueta: 'Puente (vía principal)', tipo: 'Vía', nombre: 'puente principal' },
   { categoria: 'agua', etiqueta: 'Río (Medellín)', tipo: 'Cauce', nombre: 'río' },
@@ -645,6 +936,14 @@ export const VARIANTES: Variante[] = [
   { categoria: 'naturaleza', etiqueta: 'Ceiba', tipo: 'Vegetación', nombre: 'Ceiba' },
   { categoria: 'naturaleza', etiqueta: 'Árbol del bosque',tipo: 'Vegetación', nombre: 'Árbol' },
   { categoria: 'naturaleza', etiqueta: 'Pájaro (bandada)', tipo: 'Fauna', nombre: 'Pájaro' },
+  { categoria: 'gente', etiqueta: 'Hombre', tipo: 'Persona', nombre: 'Hombre' },
+  { categoria: 'gente', etiqueta: 'Mujer', tipo: 'Persona', nombre: 'Mujer' },
+  { categoria: 'gente', etiqueta: 'Niño escolar', tipo: 'Persona', nombre: 'Niño escolar' },
+  { categoria: 'gente', etiqueta: 'Campesino', tipo: 'Persona', nombre: 'Campesino' },
+  { categoria: 'gente', etiqueta: 'Hombre (muñeco)', tipo: 'Persona', nombre: 'Hombre muñeco' },
+  { categoria: 'gente', etiqueta: 'Mujer (muñeco)', tipo: 'Persona', nombre: 'Mujer muñeco' },
+  { categoria: 'gente', etiqueta: 'Niño escolar (muñeco)', tipo: 'Persona', nombre: 'Niño escolar muñeco' },
+  { categoria: 'gente', etiqueta: 'Campesino (muñeco)', tipo: 'Persona', nombre: 'Campesino muñeco' },
   { categoria: 'educacion', etiqueta: 'Sede urbana', tipo: 'Sede educativa urbana', nombre: 'I. E. Colombia' },
   { categoria: 'educacion', etiqueta: 'Sede rural', tipo: 'Sede educativa rural', nombre: 'E R La Manga' },
   { categoria: 'cultura', etiqueta: 'Casa de la cultura', tipo: 'Casa de cultura', nombre: 'Pedrito Ruiz' },
@@ -663,6 +962,7 @@ export const VARIANTES: Variante[] = [
   { categoria: 'deporte', etiqueta: 'Cancha sintética', tipo: 'Cancha sintética', nombre: 'Cancha' },
   { categoria: 'deporte', etiqueta: 'Placa polideportiva', tipo: 'Placa polideportiva', nombre: 'Placa' },
   { categoria: 'deporte', etiqueta: 'Pista de patinaje', tipo: 'Pista de patinaje', nombre: 'Pista' },
+  { categoria: 'deporte', etiqueta: 'Piscina', tipo: 'Piscina (OSM)', nombre: 'Piscina' },
   { categoria: 'deporte', etiqueta: 'Pista de bicicrós', tipo: 'Pista de bicicrós', nombre: 'Pista' },
   { categoria: 'justicia', etiqueta: 'Estación de policía', tipo: 'Estación de policía', nombre: 'Estación' },
   { categoria: 'justicia', etiqueta: 'Personería', tipo: 'Personería municipal', nombre: 'Personería' },

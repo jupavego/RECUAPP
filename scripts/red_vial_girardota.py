@@ -10,8 +10,8 @@ Salidas (public/data/mapa3d/):
 Uso:  python scripts/red_vial_girardota.py
 
 ⚠ Los códigos del IGAC (tipo_via, estado_superficie, accesibilidad) no traen diccionario en la carpeta de insumos.
-  Los significados de DICCIONARIO_* abajo son SUPUESTOS deducidos de la geometría y la capa; confírmelos con la ficha
-  técnica del IGAC antes de publicar. Cambiar un significado solo exige editar el diccionario.
+  estado_superficie se validó contra la etiqueta surface de OSM (ver comentarios de DICCIONARIO_SUPERFICIE); tipo_via y
+  accesibilidad siguen siendo SUPUESTOS: confírmelos con la ficha técnica del IGAC antes de publicar. Cambiar un significado solo exige editar el diccionario.
 """
 import json, math
 from pathlib import Path
@@ -33,8 +33,9 @@ CONCORDA = 0.7         # fracción del eje IGAC cubierta por OSM para decir que 
 # --- SUPUESTOS a confirmar con la ficha del IGAC -----------------------------------------------------------------
 DICCIONARIO_SUPERFICIE = {
     '3301': 'pavimentada',
-    '3306': 'afirmada',        # destapada / afirmado
-    '3350': 'sin_pavimentar',  # carreteable en tierra / trocha
+    '3306': 'afirmada',        # MIXTA: contrastado con la etiqueta surface de OSM (45 % asfalto, 37 % grava, 18 % tierra)
+    '3350': 'sin_pavimentar',  # contrastado con OSM: grava y barro
+    # 3301 pavimentada: contrastado con OSM (97 % asfalto / pavimento / concreto)
     'Sin Valor': 'sin_dato',
 }
 DICCIONARIO_TIPO = {'1': 'Autopista/doble calzada', '3': 'Troncal', '4': 'Transversal', '5': 'Carretera secundaria',
@@ -175,7 +176,7 @@ def escribir_vista(datos):
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><style>html,body,#m{height:100%;margin:0}
 #l{position:absolute;z-index:999;right:10px;top:10px;background:#fff;padding:8px 10px;font:12px sans-serif;border-radius:6px;box-shadow:0 1px 4px #0005}
 #l i{display:inline-block;width:22px;border-top-width:4px;border-top-style:solid;margin-right:6px;vertical-align:middle}</style>
-<div id="m"></div><div id="l"><b>Estado</b><br><i style="border-color:#2E7D32"></i>pavimentada<br><i style="border-color:#F9A825"></i>afirmada
+<div id="m"></div><div id="l"><b>Estado</b><br><i style="border-color:#2E7D32"></i>pavimentada<br><i style="border-color:#F9A825"></i>afirmada / mixta
 <br><i style="border-color:#8D5524;border-top-style:dashed"></i>sin pavimentar<br><i style="border-color:#757575;border-top-style:dotted"></i>sin dato
 <br><b>Fuente</b><br>borde negro = IGAC+OSM · borde rojo = solo IGAC · punteado gris = solo OSM
 <br><label><input type="checkbox" id="g"> sat&eacute;lite (Esri)</label></div>
@@ -199,16 +200,24 @@ GOOGLE_HTML = r"""<!doctype html><meta charset="utf-8"><title>Red vial Girardota
 <style>html,body,#m{height:100%;margin:0}#p{position:absolute;z-index:5;left:10px;top:10px;background:#fff;padding:8px 10px;font:12px sans-serif;border-radius:6px;box-shadow:0 1px 4px #0005;max-width:260px;max-height:80%;overflow:auto}
 #p i{display:inline-block;width:22px;border-top:4px solid;margin-right:6px;vertical-align:middle}#p a{display:block;color:#C62828;cursor:pointer;margin:2px 0}</style>
 <div id="m"></div><div id="p"><b>Red IGAC sobre Google Maps</b><br>
-<label><input type="checkbox" id="v" checked> mostrar red</label><br>
+<label><input type="checkbox" id="u" checked> <b>Red unificada</b> (3D + IGAC)</label><br>
+<label><input type="checkbox" id="v"> red IGAC original</label><br>
 <label><input type="checkbox" id="s"> sat&eacute;lite</label><br>
+<label><input type="checkbox" id="q"> calles OSM (todas, finas)</label><br>
+<label><input type="checkbox" id="w" checked> <b style="color:#D81B60">Overture que OSM no tiene</b></label><br>
 <label>Opacidad <input type="range" id="o" min="0.1" max="1" step="0.1" value="0.8"></label><br>
-<i style="border-color:#2E7D32"></i>pavimentada<br><i style="border-color:#F9A825"></i>afirmada<br><i style="border-color:#8D5524;border-top-style:dashed"></i>sin pavimentar<br>
-<i style="border-color:#757575;border-top-style:dotted"></i>sin dato<br><b>Revisar (oficial sin par en OSM):</b><div id="r"></div></div>
+<i style="border-color:#2E7D32"></i>pavimentada<br><i style="border-color:#F9A825"></i>afirmada / mixta<br><i style="border-color:#8D5524;border-top-style:dashed"></i>sin pavimentar<br>
+<i style="border-color:#757575;border-top-style:dotted"></i>sin dato<br><i style="border-color:#C62828;border-top-style:double"></i>borde rojo: solo IGAC, sin v&iacute;a en el 3D<br><b>Calles OSM</b> (grises, sin estado oficial)<br><i style="border-color:#37474F;border-top-width:2px"></i>principal<br><i style="border-color:#455A64;border-top-width:1px"></i>local<br><i style="border-color:#78909C;border-top-width:1px"></i>sendero / camino<br><i style="border-color:#D81B60"></i>Overture, no est&aacute; en OSM<br><b>Revisar (oficial sin par en OSM):</b><div id="r"></div></div>
 <script>
-const D=__DATOS__;
+const D=__DATOS__;const O=__OSM__;const V=__OVERTURE__;const U=__UNIFICADA__;
 function ini(){
  const m=new google.maps.Map(document.getElementById('m'),{center:{lat:6.38,lng:-75.45},zoom:12,mapTypeId:'roadmap',streetViewControl:false});
  const L=[];let op=.8;
+ const GR={0:['#37474F',2],1:['#455A64',1.2],2:['#78909C',1]};
+ const LO=O.map(([c,pts])=>new google.maps.Polyline({path:pts.map(q=>({lat:q[1],lng:q[0]})),map:m,strokeColor:GR[c][0],strokeWeight:GR[c][1],strokeOpacity:.75,zIndex:1,clickable:false}));
+ const LV=V.map(([c,pts])=>new google.maps.Polyline({path:pts.map(q=>({lat:q[1],lng:q[0]})),map:m,strokeColor:'#D81B60',strokeWeight:c?2:3,strokeOpacity:.9,zIndex:3,clickable:false}));
+ w.onchange=()=>LV.forEach(l=>l.setVisible(w.checked));
+ q.onchange=()=>LO.forEach(l=>l.setVisible(q.checked));
  D.features.filter(f=>f.properties.fuente!=='osm').forEach(f=>{const s=f.properties.estilo,path=f.geometry.coordinates.map(c=>({lat:c[1],lng:c[0]}));
   const o={path,map:m,strokeColor:s.color,strokeOpacity:s.trazo?0:op,strokeWeight:Math.max(2,s.ancho-1),zIndex:2};
   if(s.trazo)o.icons=[{icon:{path:'M 0,-1 0,1',strokeOpacity:op,scale:s.ancho-1},offset:'0',repeat:s.trazo.split(' ')[0]*3+'px'}];
@@ -216,10 +225,43 @@ function ini(){
   l.addListener('click',e=>new google.maps.InfoWindow({position:e.latLng,content:Object.entries(f.properties).filter(([k])=>k!='estilo').map(([k,v])=>k+': '+v).join('<br>')}).open(m));
   if(f.properties.fuente==='igac'){const a=document.createElement('a');a.textContent=f.properties.id+' · '+f.properties.tipo+' · '+f.properties.longitud_m+' m';
    a.onclick=()=>{const b=new google.maps.LatLngBounds();path.forEach(q=>b.extend(q));m.fitBounds(b)};r.appendChild(a);}});
+ const LU=U.map(([st,pts,fu])=>{const o={path:pts.map(q=>({lat:q[1],lng:q[0]})),map:m,strokeColor:st.color,strokeOpacity:st.trazo?0:st.opacidad,strokeWeight:Math.max(1.5,st.ancho-1),zIndex:fu==='osm'?2:4,clickable:false};
+  if(st.trazo)o.icons=[{icon:{path:'M 0,-1 0,1',strokeOpacity:st.opacidad,scale:st.ancho-1},offset:'0',repeat:st.trazo.split(' ')[0]*3+'px'}];
+  return new google.maps.Polyline(o)});
+ u.onchange=()=>LU.forEach(l=>l.setVisible(u.checked));
+ L.forEach(([l])=>l.setVisible(false));
  const pinta=()=>L.forEach(([l,s])=>{l.setVisible(v.checked);s.trazo?l.setOptions({icons:l.get('icons').map(i=>({...i,icon:{...i.icon,strokeOpacity:op}}))}):l.setOptions({strokeOpacity:op})});
  v.onchange=pinta;o.oninput=()=>{op=+o.value;pinta()};s.onchange=()=>m.setMapTypeId(s.checked?'hybrid':'roadmap');
 }
 </script><script src="https://maps.googleapis.com/maps/api/js?key=__KEY__&callback=ini" async></script>"""
+
+
+def overture():
+    """Vías de Overture que no están en OSM (scripts/red_vial_overture.py); [] si todavía no se generó."""
+    ruta = SALIDA / 'red-vial-49-overture.json'
+    if not ruta.exists():
+        return []
+    d = json.loads(ruta.read_text(encoding='utf-8'))
+    R_A_M = to_m
+    limite = limite_municipal()          # Overture se bajó por rectángulo: se recorta al municipio
+    sal = []
+    for f in d['o']:
+        x, y, pts = f[2], f[3], [(f[2] / d['k'], f[3] / d['k'])]
+        for i in range(4, len(f), 2):
+            x += f[i]; y += f[i + 1]; pts.append((x / d['k'], y / d['k']))
+        for t in partes_lineales(transform(R_A_M, LineString(pts)).intersection(limite)):
+            if t.length >= 40:
+                sal.append([f[1], [[round(a, 5), round(b, 5)] for a, b in transform(to_deg, t).coords]])
+    return sal
+
+
+def unificada():
+    """Red unificada (scripts/red_vial_unificada.py) como [estilo, [[lon, lat], ...], fuente]; [] si todavía no se generó."""
+    ruta = SALIDA / 'red-vial-49-unificada.geojson'
+    if not ruta.exists():
+        return []
+    return [[f['properties']['estilo'], [[round(x, 5), round(y, 5)] for x, y in f['geometry']['coordinates']], f['properties']['fuente']]
+            for f in json.loads(ruta.read_text(encoding='utf-8'))['features']]
 
 
 def escribir_vista_google():
@@ -230,7 +272,7 @@ def escribir_vista_google():
     clave = re.search(r"googleMapsApiKey:\s*'([^']+)'", (RAIZ / 'src/environments/environment.ts').read_text(encoding='utf-8')).group(1)
     datos = json.loads((SALIDA / 'red-vial-49.geojson').read_text(encoding='utf-8'))
     out = RAIZ / 'insumos/geografia/red-vial-49-google.html'
-    out.write_text(GOOGLE_HTML.replace('__DATOS__', json.dumps(datos, separators=(',', ':'))).replace('__KEY__', clave), encoding='utf-8')
+    out.write_text(GOOGLE_HTML.replace('__DATOS__', json.dumps(datos, separators=(',', ':'))).replace('__OSM__', json.dumps([[c, [[round(x, 5), round(y, 5)] for x, y in g.coords]] for c, g in leer_osm()], separators=(',', ':'))).replace('__UNIFICADA__', json.dumps(unificada(), separators=(',', ':'))).replace('__OVERTURE__', json.dumps(overture())).replace('__KEY__', clave), encoding='utf-8')
     print('Vista Google:', out)
 
 

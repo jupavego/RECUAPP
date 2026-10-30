@@ -27,8 +27,11 @@
     display: flex;
     align-items: center;
     gap: 16px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 
     a {
+      white-space: nowrap;
       color: var(--neutral-700, #475569);
       text-decoration: none;
       font-weight: 600;
@@ -39,6 +42,20 @@
     }
   }
 
+  &__tema {
+    display: grid; place-items: center; width: 36px; height: 36px; padding: 0; cursor: pointer; border-radius: 50%;
+    color: #29422F; border: 1px solid #C8D9C0; background: linear-gradient(180deg, #FFFFFF, #F0F5EA);
+    box-shadow: 0 1px 2px rgba(41, 66, 47, .12);
+    transition: background .2s, color .2s, border-color .2s, box-shadow .2s, transform .1s;
+    svg { width: 18px; height: 18px; }
+    &:hover { border-color: #29422F; box-shadow: 0 2px 8px rgba(41, 66, 47, .22); }
+    &:active { transform: scale(.94); }
+    &:focus-visible { outline: 2px solid #E0B33A; outline-offset: 2px; }
+    &.is-on { color: #99CC33; border-color: #66AA33; background: linear-gradient(180deg, #3D5C3D, #29422F); box-shadow: 0 0 0 2px rgba(153, 204, 51, .35); }
+  }
+
+  &__tema.is-dark { color: #99CC33; border-color: #66AA33; background: linear-gradient(180deg, #1F3324, #121A14); }
+
   &__cta {
     background: var(--primary-600, #0d9488);
     color: #fff !important;
@@ -46,5 +63,32 @@
     border-radius: 999px;
 
     &:hover { background: var(--primary-700, #0f766e); }
+  }
+}
+
+// Tema Earthy Botanical (vista previa del plan: /plan?tema=botanico). Ver features/plan.
+:host-context(body.tema-botanico) .topbar {
+  background: #FCF9F6;
+  border-bottom-color: #C8D9C0;
+
+  &__logo { color: #66AA33; }
+
+  &__nav a {
+    color: #2A3D2A;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 2px;
+    &:hover, &.is-active { color: #29422F; text-decoration: underline; text-decoration-color: #E0B33A; }
+  }
+
+  &__cta { background: linear-gradient(135deg, #29422F, #4F8A2E); &:hover { background: #1F3324; text-decoration: none; } }
+}
+
+:host-context(body.tema-oscuro) .topbar {
+  background: #16201A;
+  border-bottom-color: #2F4533;
+  &__logo { color: #99CC33; }
+  &__nav a {
+    color: #C3CFBF;
+    &:hover, &.is-active { color: #99CC33; text-decoration-color: #99CC33; }
   }
 }

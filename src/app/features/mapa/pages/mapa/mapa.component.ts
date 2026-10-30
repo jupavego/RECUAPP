@@ -5,6 +5,7 @@ import {
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { forkJoin } from 'rxjs';
+import { environment } from '../../../../../environments/environment';
 import { GoogleMapsLoaderService } from '../../../../core/services/google-maps-loader.service';
 import { MapaService, MunicipiosData, Municipio, Punto, Territorio, Zona } from '../../services/mapa.service';
 import {
@@ -223,7 +224,19 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
     });
   }
 
+  /** en desarrollo el mapa espera al botón "Cargar mapa": cada carga de Google Maps cuenta para la facturación */
+  readonly esperaCarga = signal(!environment.mapaGoogleAuto);
+
   ngAfterViewInit(): void {
+    if (!this.esperaCarga()) this.iniciarMapa();
+  }
+
+  cargarMapa(): void {
+    this.esperaCarga.set(false);
+    this.iniciarMapa();
+  }
+
+  private iniciarMapa(): void {
     this.loader.load().then(() => this.zone.runOutsideAngular(() => {
       this.mapa = new google.maps.Map(this.lienzo.nativeElement, {
         center: { lat: 7.0, lng: -75.5 }, zoom: 7, minZoom: 6, maxZoom: 17,

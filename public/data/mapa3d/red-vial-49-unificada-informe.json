@@ -1,0 +1,18 @@
+{
+ "tramos": 1937,
+ "km_total": 473.1,
+ "km_con_atributos_igac": 92.4,
+ "km_base_3d": 454.1,
+ "km_igac_agregado_sin_par": 19.0,
+ "km_por_fuente_y_estado": {
+  "igac|afirmada": 12.5,
+  "igac|pavimentada": 2.9,
+  "igac|sin_dato": 3.0,
+  "igac|sin_pavimentar": 0.7,
+  "igac+osm|afirmada": 53.5,
+  "igac+osm|pavimentada": 28.2,
+  "igac+osm|sin_dato": 6.5,
+  "igac+osm|sin_pavimentar": 4.2,
+  "osm|sin_dato": 361.7
+ }
+}

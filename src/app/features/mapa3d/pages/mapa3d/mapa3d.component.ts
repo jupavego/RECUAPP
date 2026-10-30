@@ -10,8 +10,9 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { mergeGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 import { MapaService, Municipio, Punto, Zona } from '../../../mapa/services/mapa.service';
-import { CATEGORIA } from '../../../mapa/utils/puntos';
+import { CATEGORIA, CATEGORIAS } from '../../../mapa/utils/puntos';
 import { Aura, COLOR_INDUSTRIA, GLIFO, Icono, ItemAura, crearAgrupador, crearAuras, crearIcono } from '../../utils/aura';
+import { Conduccion } from '../../utils/conduccion';
 import { Modelo, modelarEquipamiento } from '../../utils/equipamientos';
 import { coloresPorMunicipio, hex } from '../../../mapa/utils/paleta';
 import { Geometria, decodeGeometria } from '../../../mapa/utils/polyline';
@@ -105,6 +106,8 @@ const TESELA_TERRENO = 64;
 const DISTANCIA_ARBOL_SIMPLE = 10000;
 /** Ancho dibujado de las vías por clase (principal, local, sendero), en metros del modelo. */
 const ANCHO_VIA = [34, 13, 6];
+/** Repinta de grava o tierra las vías que la red oficial (IGAC) dice que no están pavimentadas (vias-estado-<id>.json). */
+const USAR_ESTADO_VIAL = true;
 /** Los cauces se dibujan a su ancho real × este factor (el Río Medellín: 30 m → 66 m), con un mínimo para que se lean. */
 const FACTOR_ANCHO_CAUCE = 2.2;
 const ANCHO_MIN_CAUCE = 6;
@@ -160,6 +163,56 @@ const SOLAPE_DEPORTE = 0.4;
 /** Las canchas y placas están pegadas a la calle en las manzanas angostas: piden menos holgura a las vías (fracción de su radio) que el resto. */
 const HOLGURA_DEPORTE = 0.3;
 const COLORES_AUTOS = ['#ff2d2d', '#ff8a00', '#ffd400', '#00d26a', '#00c2ff', '#2f6bff', '#e040fb', '#ff4fa3'];
+/**
+ * Vehículos del tráfico (modelos del catálogo): el auto es el único que cambia de color; el camión y el bus solo van por
+ * vías principales, el campero FJ solo por veredas, y el taxi por cualquier vía.
+ */
+const FLOTA = ['Auto', 'Taxi', 'Campero FJ', 'Bus', 'Camión con tráiler', 'Moto'];
+const [AUTO, TAXI, FJ, BUS, CAMION, MOTO] = [0, 1, 2, 3, 4, 5];
+/** Parte de la flota que se reparte entre los tipos que la vía permite; el resto son autos. */
+const MEZCLA_FLOTA: [number, number][] = [[CAMION, 0.1], [BUS, 0.04], [TAXI, 0.15], [FJ, 0.2], [MOTO, 0.3]];
+/** Color de la carrocería del auto en su modelo: las piezas de este color toman el del vehículo. */
+const COLOR_CARROCERIA_AUTO = '#ff2d2d';
+/**
+ * Gente a pie (modelos "Personas" del catálogo): camina por las aceras de la red del pueblo, a la misma escala exagerada de los
+ * vehículos. Solo se dibuja la que está a menos de GENTE_RADIO metros del punto que se mira, y solo si la cámara está a menos
+ * de GENTE_DISTANCIA_MAX de él: fuera de ahí ni se mueve ni se pinta. Velocidad en m/s del modelo.
+ */
+const GENTE = ['Hombre', 'Mujer', 'Niño escolar', 'Campesino'];
+const [HOMBRE, MUJER, NINO, CAMPESINO] = [0, 1, 2, 3];
+const MEZCLA_GENTE: [number, number][] = [[CAMPESINO, 0.12], [NINO, 0.15], [MUJER, 0.35]];
+const TINTES_GENTE = ['#ffffff', '#f4e6d8', '#e8d2bb', '#d9bd9f', '#cfae90'];
+const GENTE_ESCALA = 3.3;
+const GENTE_ESPACIO = 60;
+const GENTE_MAX = 3000;
+const GENTE_RADIO = 350;
+const GENTE_DISTANCIA_MAX = 1000;
+const GENTE_VELOCIDAD = [4, 7];
+/** Distancia de la acera al eje de la vía (justo fuera de su calzada, de ANCHO_VIA / 2): en vías principales y en calles locales. */
+const GENTE_ACERA = [19.5, 8.5];
+/** Tumbos al caminar: cuánto se ladea (rad) y cuánto se inclina hacia adelante en cada paso. */
+const GENTE_TUMBO = 0.13, GENTE_CABECEO = 0.04;
+
+/** Une las piezas de un modelo del catálogo en una sola geometría, con el color de cada pieza en sus vértices. */
+function fusionarColoreado(piezas: Modelo['piezas']): THREE.BufferGeometry | null {
+  if (!piezas.length) return null;
+  const c = new THREE.Color(), hayMov = piezas.some(p => p.mov);
+  const gs = piezas.map(p => {
+    const g = p.g.index ? p.g.toNonIndexed() : p.g;
+    for (const k of Object.keys(g.attributes)) if (k !== 'position' && k !== 'normal') g.deleteAttribute(k);
+    const n = g.getAttribute('position').count, col = new Float32Array(n * 3);
+    c.set(p.color);
+    for (let i = 0; i < n; i++) { col[i * 3] = c.r; col[i * 3 + 1] = c.g; col[i * 3 + 2] = c.b; }
+    g.setAttribute('color', new THREE.BufferAttribute(col, 3));
+    if (hayMov) {
+      const mv = new Float32Array(n * 3);
+      for (let i = 0; i < n; i++) mv.set(p.mov ?? [0, 0, 0], i * 3);
+      g.setAttribute('miembro', new THREE.BufferAttribute(mv, 3));
+    }
+    return g;
+  });
+  return mergeGeometries(gs, false);
+}
 const VELOCIDAD_PAJAROS = 130;
 const RECORRIDO_PAJAROS = 6800;
 const PAUSA_PAJAROS = 14;
@@ -208,6 +261,9 @@ const TOLERANCIA_CAUCE_PX = 9;
 const VELO_VEREDA = 0.2;
 /** Ajuste de tono de la foto satelital: más clara, sin desenfoque. */
 const TONO_FOTO = 'brightness(1.4) contrast(0.95) saturate(1.1)';
+/** Edificios que se achican para que quepan donde corresponde (junto a la piscina de Comfama, sin invadir la vía). */
+const ESCALA_MANUAL = new Map<string, number>([['COLEGIO COMFAMA', 0.7], ['Centro Integral de Salud Comfama Girardota', 0.7]]);
+
 /** Cuánto se levanta (metros del modelo) una vereda al elegirla; al pasar el cursor solo se le dibuja el borde. */
 const ALZA_ELEGIDA = 170;
 
@@ -290,10 +346,13 @@ interface Bocanada {
 }
 
 interface Calzada { x: number[]; z: number[]; y: number[]; cum: number[]; largo: number; }
-interface Auto { calzada: number; s: number; i: number; v: number; carril: number; }
-/** Tramo de vía entre dos cruces de la red del pueblo; `unico` = solo se circula de `ini` a `fin`. */
-interface Arista extends Calzada { unico: boolean; vf: number; ini: string; fin: string; }
-interface AutoRed { arista: number; s: number; i: number; dir: 1 | -1; v: number; carril: number; }
+/** `tipo` = índice en FLOTA; `k` = su lugar dentro de las mallas instanciadas de ese tipo. */
+interface Auto { calzada: number; s: number; i: number; v: number; carril: number; tipo: number; k: number; }
+/** Tramo de vía entre dos cruces de la red del pueblo; `unico` = solo se circula de `ini` a `fin`; `rural` = cae en una vereda. */
+interface Arista extends Calzada { unico: boolean; vf: number; ini: string; fin: string; rural: boolean; }
+interface AutoRed { arista: number; s: number; i: number; dir: 1 | -1; v: number; carril: number; tipo: number; k: number; }
+/** Persona a pie: `tipo` = índice en GENTE, `lado` = distancia (con signo) de la acera al eje de la vía, `tinte` = índice en TINTES_GENTE. */
+interface Peaton { arista: number; s: number; i: number; dir: 1 | -1; v: number; lado: number; tipo: number; tinte: number; fase: number; }
 
 interface Industria {
   n: string; ciiu: number | null; c: string; dir?: string; lat: number; lon: number;
@@ -439,7 +498,7 @@ const TIPOS_ZONA: Record<string, string> = {
     @if (cargando()) { <div class="estado">Levantando el territorio…</div> }
     @if (error()) { <div class="estado error">{{ error() }}</div> }
 
-    <div #rotulos class="rotulos"></div>
+    <div #rotulos class="rotulos" [hidden]="modoFoto()"></div>
 
     <div class="panel" [class.cerrado]="!panelAbierto()">
       <div class="cabecera">
@@ -497,6 +556,15 @@ const TIPOS_ZONA: Record<string, string> = {
             }
           </div>
         }
+        <div class="leyenda" role="group" aria-label="Tipos de edificio">
+          <span class="leyenda-t">Leyenda</span>
+          @for (l of leyenda; track l.id) {
+            <button type="button" class="ley" [class.activa]="capasActivas().has(l.id)" [attr.aria-pressed]="capasActivas().has(l.id)"
+                    [style.--c]="l.color" (click)="alternarCapa(l.id)">
+              <span class="medalla-ley">{{ l.glifo }}</span>{{ l.nombre }}
+            </button>
+          }
+        </div>
         <button type="button" (click)="vistaGeneral()">Vista general</button>
         <p class="ayuda">Arrastra para desplazarte · rueda para acercar · rueda presionada para girar e inclinar · clic derecho para inclinar</p>
       } @else if (fabricaSeleccion() || rioSeleccion() || seleccion()) {
@@ -579,6 +647,43 @@ const TIPOS_ZONA: Record<string, string> = {
 
     <p class="creditos">Datos: © colaboradores de OpenStreetMap · Overture Maps · IGAC (drenajes 1:100.000) · Sentinel-2 © EOX</p>
 
+    <button type="button" class="foto" [class.activa]="modoFoto()" (click)="alternarFoto()"
+            [attr.aria-pressed]="modoFoto()" [attr.title]="modoFoto() ? 'Mostrar marcaciones e íconos' : 'Modo fotografía: ocultar marcaciones e íconos'"
+            [attr.aria-label]="modoFoto() ? 'Salir del modo fotografía' : 'Modo fotografía'">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+        <path d="M9 4l-1.5 2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-2.500L15 4H9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        <circle cx="12" cy="13" r="3.600" fill="none" stroke="currentColor" stroke-width="1.8"/>
+      </svg>
+    </button>
+
+    <button type="button" class="conducir" [class.activa]="conduciendo()" (click)="alternarConduccion()"
+            [attr.aria-pressed]="conduciendo()" [attr.title]="conduciendo() ? 'Salir de la conducción (Esc)' : 'Conducir libremente por el mapa'"
+            [attr.aria-label]="conduciendo() ? 'Salir de la conducción' : 'Conducir'">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+        <path d="M5 16l1.4-5a2 2 0 0 1 1.9-1.500h7.400a2 2 0 0 1 1.900 1.500L19 16M4 16h16v3H4zM7 19v1.500M17 19v1.500" fill="none" stroke="currentColor" stroke-width="1.800" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
+    @if (conduciendo()) {
+      <div class="hud-conduccion">
+        <div class="velocimetro"><b #hudVelocidad>0</b> km/h</div>
+        <p>W A S D o flechas · Shift turbo · Espacio freno · R reaparecer · Esc salir</p>
+      </div>
+      @if (cayo()) {
+        <div class="caida"><strong>Caíste al vacío</strong><button type="button" (click)="reaparecerCarro()">Reaparecer</button></div>
+      }
+      <div class="mando" aria-hidden="true">
+        <div class="giro">
+          <button type="button" (pointerdown)="pulsarTecla('KeyA', true)" (pointerup)="pulsarTecla('KeyA', false)" (pointerleave)="pulsarTecla('KeyA', false)">◀</button>
+          <button type="button" (pointerdown)="pulsarTecla('KeyD', true)" (pointerup)="pulsarTecla('KeyD', false)" (pointerleave)="pulsarTecla('KeyD', false)">▶</button>
+        </div>
+        <div class="pedales">
+          <button type="button" (pointerdown)="pulsarTecla('KeyW', true)" (pointerup)="pulsarTecla('KeyW', false)" (pointerleave)="pulsarTecla('KeyW', false)">▲</button>
+          <button type="button" (pointerdown)="pulsarTecla('KeyS', true)" (pointerup)="pulsarTecla('KeyS', false)" (pointerleave)="pulsarTecla('KeyS', false)">▼</button>
+        </div>
+      </div>
+    }
+
     <div class="zoom">
       <button type="button" (click)="acercar(0.75)" aria-label="Acercar">+</button>
       <button type="button" (click)="acercar(1.33)" aria-label="Alejar">−</button>
@@ -613,6 +718,27 @@ const TIPOS_ZONA: Record<string, string> = {
     .rotulos ::ng-deep .rot.fabrica i { background: #6b7280; }
     .creditos { position: absolute; left: 16px; bottom: 8px; margin: 0; max-width: calc(100% - 90px); pointer-events: none;
       font: 600 10px/1.3 system-ui; color: rgba(255,255,255,.92); text-shadow: 0 1px 3px rgba(0,0,0,.7); }
+    .foto { position: absolute; z-index: 10; left: 16px; bottom: 34px; width: 42px; height: 42px; padding: 0; display: grid; place-items: center;
+      border-radius: 12px; background: rgba(255,255,255,.85); color: #26425a; box-shadow: 0 2px 8px rgba(30,60,90,.25); backdrop-filter: blur(6px); }
+    .foto:hover { background: #fff; }
+    .conducir { position: absolute; z-index: 10; left: 66px; bottom: 34px; width: 42px; height: 42px; padding: 0; display: grid; place-items: center;
+      border-radius: 12px; background: rgba(255,255,255,.85); color: #26425a; box-shadow: 0 2px 8px rgba(30,60,90,.25); backdrop-filter: blur(6px); }
+    .conducir:hover { background: #fff; }
+    .conducir.activa { background: #26425a; color: #fff; }
+    .hud-conduccion { position: absolute; z-index: 10; left: 50%; bottom: 20px; transform: translateX(-50%); text-align: center; color: #fff;
+      text-shadow: 0 1px 4px rgba(0,0,0,.7); pointer-events: none; font: 600 .8rem system-ui; }
+    .hud-conduccion .velocimetro { font-size: 1rem; }
+    .hud-conduccion .velocimetro b { font-size: 2rem; }
+    .hud-conduccion p { margin: 2px 0 0; opacity: .85; }
+    .caida { position: absolute; z-index: 11; top: 40%; left: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 10px;
+      padding: 16px 26px; border-radius: 16px; background: rgba(20,30,40,.8); color: #fff; font: 1.1rem system-ui; }
+    .caida button { padding: 8px 18px; border-radius: 10px; background: #fff; color: #26425a; font-weight: 700; }
+    .mando { position: absolute; z-index: 10; left: 16px; right: 16px; bottom: 90px; display: none; justify-content: space-between; pointer-events: none; }
+    .mando .giro, .mando .pedales { display: flex; gap: 10px; pointer-events: auto; }
+    .mando .pedales { flex-direction: column; }
+    .mando button { width: 56px; height: 56px; border-radius: 50%; background: rgba(255,255,255,.7); color: #26425a; font-size: 1.3rem; touch-action: none; }
+    @media (pointer: coarse) { .mando { display: flex; } }
+    .foto.activa { background: #26425a; color: #fff; }
     .zoom { position: absolute; z-index: 10; right: 16px; bottom: 16px; display: flex; flex-direction: column; gap: 6px; }
     .zoom button { width: 38px; height: 38px; padding: 0; border-radius: 12px; font: 700 1.3rem/1 system-ui;
       background: rgba(255,255,255,.9); color: #26425a; box-shadow: 0 3px 12px rgba(30,60,90,.25); }
@@ -692,6 +818,14 @@ const TIPOS_ZONA: Record<string, string> = {
     .ficha .dato b { font-weight: 700; color: #26425a; }
     .ficha .dato.fuente { font-size: .66rem; color: #8aa0b0; margin-top: 4px; }
     .ficha .dato { font-size: .78rem; color: #4d6a80; }
+    .leyenda { display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px; }
+    .leyenda-t { font-size: .78rem; color: #6b8294; }
+    .leyenda .ley { display: flex; align-items: center; gap: 8px; padding: 4px 8px; font-size: .78rem; text-align: left;
+      background: rgba(38,66,90,.08); color: #6b8294; }
+    .leyenda .ley .medalla-ley { flex: none; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center;
+      font-size: .75rem; background: #cbd5df; filter: grayscale(1); opacity: .7; }
+    .leyenda .ley.activa { background: rgba(38,66,90,.16); color: #26425a; font-weight: 600; }
+    .leyenda .ley.activa .medalla-ley { background: var(--c); filter: none; opacity: 1; }
     .anios { display: flex; align-items: center; gap: 4px; margin-bottom: 10px; font-size: .78rem; color: #6b8294; }
     .anios span { margin-right: 2px; }
     .anios button { padding: 4px 9px; font-size: .75rem; background: rgba(38,66,90,.12); color: #26425a; }
@@ -717,6 +851,14 @@ export class Mapa3dComponent implements AfterViewInit {
   readonly error = signal('');
   readonly seleccion = signal<Zona | null>(null);
   readonly pinFicha = signal<FichaPin | null>(null);
+  /** modo fotografía: sin rótulos, pines ni aros de luz */
+  readonly modoFoto = signal(false);
+  readonly conduciendo = signal(false);
+  readonly cayo = signal(false);
+  private conduccion?: Conduccion;
+  private antesDeConducir?: { pos: THREE.Vector3; objetivo: THREE.Vector3; fov: number };
+  @ViewChild('hudVelocidad') private hudVelocidad?: ElementRef<HTMLElement>;
+  private hudAcumulado = 0;
   readonly anio = signal(ANIO_INICIAL);
   readonly hayPoblacion = signal(false);
   readonly aniosPoblacion = ANIOS_POBLACION;
@@ -745,6 +887,8 @@ export class Mapa3dComponent implements AfterViewInit {
   private piezas: Pieza[] = [];
   private foto: HTMLImageElement | null = null;
   private texturaColor!: THREE.CanvasTexture;
+  private lienzoLimpio!: HTMLCanvasElement;
+  private lienzoConZonas!: HTMLCanvasElement;
   private lienzoIds!: HTMLCanvasElement;
   private ctxIds!: CanvasRenderingContext2D;
   private lienzoResalte!: HTMLCanvasElement;
@@ -760,6 +904,9 @@ export class Mapa3dComponent implements AfterViewInit {
   };
   private colorRio = { de: 0, a: 0, t: 0 };
   private bordeClaves = '';
+  private bordeMunicipio: THREE.Object3D[] = [];
+  /** visibilidad de los objetos de marcación antes de entrar al modo fotografía */
+  private visiblesAntesFoto = new Map<THREE.Object3D, boolean>();
   private bordesHover = new Map<number, THREE.Group>();
   // levantamiento de las veredas
   private capas: Capa[] = [];
@@ -809,8 +956,19 @@ export class Mapa3dComponent implements AfterViewInit {
   /** neón en el círculo de cada equipamiento y su icono flotante */
   private auraEquip: Aura | null = null;
   private iconosEquip: Icono[] = [];
-  /** con una zona elegida solo se ven los pines de esa zona */
-  private readonly pinVisible = (ic: Icono): boolean => this.elegida < 0 || ic.zona === this.elegida;
+  /** tipos de edificio cuyos pines se muestran (la leyenda los deja apagados al inicio) */
+  readonly capasActivas = signal<ReadonlySet<string>>(new Set());
+  readonly leyenda = [
+    ...CATEGORIAS.map(c => ({ id: c.id as string, nombre: c.nombre, color: c.color, glifo: GLIFO[c.id] })),
+    { id: 'industria', nombre: 'Industrias', color: COLOR_INDUSTRIA, glifo: GLIFO.industria },
+  ];
+  /** con una zona elegida solo se ven los pines de esa zona, y solo de los tipos activados en la leyenda */
+  private readonly pinVisible = (ic: Icono): boolean =>
+    !this.modoFoto() && this.capasActivas().has(ic.cat) && (this.elegida < 0 || ic.zona === this.elegida);
+
+  alternarCapa(id: string): void {
+    this.capasActivas.update(s => { const n = new Set(s); n.has(id) ? n.delete(id) : n.add(id); return n; });
+  }
   private auraIndustrias: Aura | null = null;
   private agrupadorIconos: ReturnType<typeof crearAgrupador> | null = null;
   private equipHover = -1;
@@ -823,6 +981,8 @@ export class Mapa3dComponent implements AfterViewInit {
   private humos: Humo[] = [];
   private miraTmp = new THREE.Vector3();
   private medidasRotulos: ({ w: number; h: number } | undefined)[] = [];
+  /** Cápsulas de zona visibles en pantalla, de mayor a menor prioridad: tapan lo que tengan detrás al pasar o hacer clic. */
+  private cajasRotulos: { id: number; x0: number; y0: number; x1: number; y1: number }[] = [];
   /** todas las bocanadas de humo de las chimeneas: una sola llamada de dibujo en vez de una por bocanada */
   private humoInst?: { malla: THREE.Mesh; pos: Float32Array; esc: Float32Array; rot: Float32Array; col: Float32Array; op: Float32Array; atributos: THREE.InstancedBufferAttribute[]; rotAcum: Float32Array };
   private geoIndustrias: THREE.BufferGeometry | null = null;
@@ -830,9 +990,18 @@ export class Mapa3dComponent implements AfterViewInit {
   private aristas: Arista[] = [];
   private nodos = new Map<string, number[]>();
   private autosRed: AutoRed[] = [];
-  private mallaAutos: THREE.InstancedMesh[] = [];
+  /** por tipo de FLOTA: las mallas instanciadas de sus piezas (comparten las matrices) */
+  private flota: THREE.InstancedMesh[][] = [];
+  /** por tipo de FLOTA: las aristas de la red del pueblo por donde puede circular */
+  private viasPermitidas: number[][] = [];
   private geoAutos: THREE.BufferGeometry[] = [];
   private matAutos: THREE.Material[] = [];
+  private gente: Peaton[] = [];
+  /** por tipo de GENTE: su malla instanciada (solo con las personas que caen dentro del radio de vista) */
+  private mallasGente: (THREE.InstancedMesh | null)[] = [];
+  private geoGente: THREE.BufferGeometry[] = [];
+  private matGente: THREE.Material | null = null;
+  private gentePintada = false;
   private pajaros: Pajaro[] = [];
   private avion: Avion | null = null;
   private tiempoAvion = 0;
@@ -891,19 +1060,21 @@ export class Mapa3dComponent implements AfterViewInit {
       terr: this.mapa.territorio(ID_MUNICIPIO),
       foto: this.cargarImagen(`data/mapa3d/ortofoto-${ID_MUNICIPIO}.jpg`),
       vias: this.http.get<Compacto>(`data/mapa3d/vias-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
+      viasEstado: this.http.get<Compacto>(`data/mapa3d/vias-estado-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
       edificios: this.http.get<Compacto>(`data/mapa3d/edificios-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
       cauces: this.http.get<Cauces>(`data/mapa3d/cauces-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
       industrias: this.http.get<Industria[]>(`data/mapa3d/industrias-${ID_MUNICIPIO}.json`).pipe(catchError(() => of([] as Industria[]))),
       poblacion: this.http.get<PoblacionVeredas>(`data/mapa/poblacion/veredas-${CODIGO_DANE}.geojson`).pipe(catchError(() => of(null))),
       puntos: this.mapa.puntos(ID_MUNICIPIO),
     }).subscribe({
-      next: ({ relieve, muni, terr, foto, vias, edificios, cauces, poblacion, industrias, puntos }) => {
+      next: ({ relieve, muni, terr, foto, vias, viasEstado, edificios, cauces, poblacion, industrias, puntos }) => {
         try {
           this.foto = foto;
           this.construir(relieve, muni.municipios, terr.v);
           this.fabricas = this.ubicarIndustrias(industrias, vias);
           this.equipamientos = this.ubicarEquipamientos(puntos, vias);
           if (vias?.v) this.construirVias(vias);
+          if (USAR_ESTADO_VIAL && viasEstado?.v) this.construirViasEstado(viasEstado);
           if (cauces?.c) this.construirCauces(cauces);
           if (vias?.v && cauces?.c) this.construirPuentes(vias, cauces);
           if (cauces?.c) this.construirPajaros(cauces);
@@ -1076,6 +1247,11 @@ export class Mapa3dComponent implements AfterViewInit {
       c.fillStyle = '#7c9a62';
       c.fillRect(0, 0, W, H);
     }
+    // copia sin las zonas dibujadas, para el modo fotografía
+    this.lienzoLimpio = document.createElement('canvas');
+    this.lienzoLimpio.width = W; this.lienzoLimpio.height = H;
+    this.lienzoLimpio.getContext('2d')!.drawImage(color, 0, 0);
+    this.lienzoConZonas = color;
     // encima, un velo muy tenue del color de cada vereda y sus límites finos
     c.lineJoin = 'round';
     for (const p of this.piezas) {
@@ -1405,6 +1581,61 @@ export class Mapa3dComponent implements AfterViewInit {
     this.crearCinta(principal, '', 0, 1, this.texturaVia('principal'));
     this.crearCinta(local, '', 0, 1, this.texturaVia('local'));
     this.crearCinta(sendero, '#a98f66', 0, 1);
+  }
+
+  /**
+   * Estado oficial de la superficie: sobre el asfalto de las vías que el IGAC marca como mixtas (afirmado con tramos
+   * pavimentados) o sin pavimentar se pinta grava o tierra, con su cuneta. Mismo trazado y ancho que la vía de abajo.
+   */
+  private construirViasEstado(d: Compacto): void {
+    const porEstado = new Map<number, GrupoCinta>();
+    for (const v of d.v!) {
+      const [estado, clase] = v;
+      if (!porEstado.has(estado)) porEstado.set(estado, this.nuevoGrupo());
+      this.agregarCinta(porEstado.get(estado)!, this.desdeDeltas(v, d.k, 2), ANCHO_VIA[clase], ANCHO_VIA[clase] * 1.8);
+    }
+    const colores: Record<number, string> = { 1: '#a8996f', 2: '#7a5c3a' };      // cuneta: afirmado / tierra
+    for (const [estado, g] of porEstado) {
+      this.crearCinta({ ...g, pos: this.ensanchar(g.pos, 1.3) }, colores[estado], 0, 2);
+      this.crearCinta(g, '', 0, 3, this.texturaViaSinPavimento(estado === 1 ? 'mixta' : 'tierra'));
+    }
+  }
+
+  /** Grava con parches de asfalto (código IGAC 3306) o tierra con huellas y pasto al centro (3350). */
+  private texturaViaSinPavimento(tipo: 'mixta' | 'tierra'): THREE.CanvasTexture {
+    const W = 64, H = 128;
+    const c = document.createElement('canvas');
+    c.width = W; c.height = H;
+    const x = c.getContext('2d')!;
+    x.fillStyle = tipo === 'mixta' ? '#b8a47e' : '#8a6a45';
+    x.fillRect(0, 0, W, H);
+    for (let i = 0; i < 320; i++) {        // piedrilla / terrones
+      x.fillStyle = `rgba(${Math.random() < 0.5 ? '255,255,255' : '0,0,0'},.07)`;
+      x.fillRect(Math.random() * W, Math.random() * H, 2, 2);
+    }
+    x.fillStyle = tipo === 'mixta' ? '#9b8862' : '#6e5233';      // huellas de las llantas
+    x.fillRect(W * 0.22, 0, 7, H);
+    x.fillRect(W * 0.78 - 7, 0, 7, H);
+    if (tipo === 'mixta') {
+      x.fillStyle = '#c9b98f';             // grava clara entre los rieles
+      x.fillRect(W * 0.38, 0, W * 0.24, H);
+      for (const x0 of [4, W - 4 - 22]) {  // placa huella: dos rieles de concreto con juntas y piedra incrustada
+        x.fillStyle = '#bdbbb4';
+        x.fillRect(x0, 0, 22, H);
+        x.fillStyle = '#8f8d86';
+        for (let y = 0; y < H; y += 16) x.fillRect(x0, y, 22, 1.5);
+        x.fillStyle = '#8a8478';
+        for (const [dx, dy] of [[5, 6], [15, 22], [8, 40], [16, 56], [6, 72], [14, 90], [9, 108], [17, 120]]) x.fillRect(x0 + dx, dy, 3, 3);
+      }
+    } else {
+      x.fillStyle = '#6f8f4e';             // pasto entre las huellas
+      x.fillRect(W / 2 - 4, 0, 8, H);
+    }
+    const t = new THREE.CanvasTexture(c);
+    t.colorSpace = THREE.SRGBColorSpace;
+    t.wrapT = THREE.RepeatWrapping;
+    t.anisotropy = this.renderer.capabilities.getMaxAnisotropy();
+    return t;
   }
 
   /**
@@ -2078,13 +2309,16 @@ export class Mapa3dComponent implements AfterViewInit {
     }
     const g = new THREE.BufferGeometry();
     g.setAttribute('position', new THREE.Float32BufferAttribute(v, 3));
-    this.escena.add(new THREE.Mesh(g, new THREE.MeshBasicMaterial({
+    const muro = new THREE.Mesh(g, new THREE.MeshBasicMaterial({
       color: new THREE.Color().setHSL((((tono % 360) + 360) % 360) / 360, 0.65, 0.5),
       transparent: true, opacity: 0.28, side: THREE.DoubleSide, depthWrite: false,
-    })));
+    }));
+    this.escena.add(muro);
     const lg = new THREE.BufferGeometry();
     lg.setAttribute('position', new THREE.Float32BufferAttribute(linea, 3));
-    this.escena.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: '#ffffff' })));
+    const lineaBorde = new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: '#ffffff' }));
+    this.escena.add(lineaBorde);
+    this.bordeMunicipio = [muro, lineaBorde];
   }
 
   private construirLuces(): void {
@@ -2316,7 +2550,9 @@ export class Mapa3dComponent implements AfterViewInit {
    *  - Pueblo: en un radio alrededor de Girardota las vías forman una red (se parten en los puntos que comparten). Cada
    *    auto avanza por una arista y, al llegar a un cruce, elige por dónde seguir; en la doble calzada solo en su sentido,
    *    y en las demás vías en ambos, por el carril derecho. Así entran desde la autopista y recorren las calles.
-   * Todo va en dos mallas instanciadas (carrocería de color y techo gris claro).
+   * Los vehículos son los modelos del catálogo (auto, taxi, campero FJ, bus y camión con tráiler), repartidos entre los autos
+   * de siempre: el camión solo va por vías principales, el FJ solo por veredas y el resto por cualquier vía. Cada tipo va en
+   * mallas instanciadas propias.
    */
   private construirTrafico(vias: Compacto): void {
     type Muestra = { x: number; z: number; tx: number; tz: number; p: number };
@@ -2404,29 +2640,49 @@ export class Mapa3dComponent implements AfterViewInit {
         if (d.largo < 5) continue;
         const idx = this.aristas.length;
         const ini = llave(tramo[0]), fin = llave(tramo[tramo.length - 1]);
-        this.aristas.push({ ...d, unico: r.unico, vf: r.vf, ini, fin });
+        const mitad = d.x.length >> 1;
+        this.aristas.push({ ...d, unico: r.unico, vf: r.vf, ini, fin, rural: this.esRural(d.x[mitad], d.z[mitad]) });
         for (const k of new Set([ini, fin])) (this.nodos.get(k) ?? this.nodos.set(k, []).get(k)!).push(idx);
       }
     }
 
+    this.construirGente();
+
     // ── autos ──
     const rnd = mulberry32(900);
-    // fuera del pueblo, las calzadas dobles dan vueltas por su propio tramo
+    const porTipo = FLOTA.map(() => 0);
+    /** Tipo de vehículo para una vía: el camión solo en principales y el FJ solo en veredas; el resto va por cualquiera. */
+    const elegir = (principal: boolean, rural: boolean): number => {
+      let r = rnd();
+      for (const [t, p] of MEZCLA_FLOTA) {
+        if (((t === CAMION || t === BUS) && !principal) || (t === FJ && !rural)) continue;
+        if (r < p) return t;
+        r -= p;
+      }
+      return AUTO;
+    };
+    // fuera del pueblo, las calzadas dobles dan vueltas por su propio tramo (todas son vías principales)
     const enRed = new Set(red.filter(r => r.poli >= 0).map(r => r.poli));
     for (const p of dobles) {
       if (enRed.has(p)) continue;
       const d = densificar(polis[p]);
       if (d.largo < 150) continue;
       this.calzadas.push(d);
+      // el FJ solo la recorre si casi todo su trazado pasa por veredas
+      let veredales = 0;
+      for (let i = 0; i < d.x.length; i += 4) if (this.esRural(d.x[i], d.z[i])) veredales++;
+      const rural = veredales / Math.ceil(d.x.length / 4) > 0.7;
       const n = Math.max(1, Math.round(d.largo / TRAFICO_ESPACIO));
       for (let a = 0; a < n; a++) {
+        const tipo = elegir(true, rural);
         this.autos.push({
           calzada: this.calzadas.length - 1, s: rnd() * d.largo, i: 0,
           v: TRAFICO_VELOCIDAD[0] + rnd() * (TRAFICO_VELOCIDAD[1] - TRAFICO_VELOCIDAD[0]),
-          carril: [-8, 0, 8][Math.floor(rnd() * 3)],
+          carril: [-8, 0, 8][Math.floor(rnd() * 3)], tipo, k: porTipo[tipo]++,
         });
       }
     }
+    this.viasPermitidas = FLOTA.map((_, t) => this.aristas.flatMap((e, i) => this.admite(t, e) ? [i] : []));
     // en el pueblo, autos repartidos por las aristas según su largo
     const total = this.aristas.reduce((t, e) => t + e.largo, 0);
     const nRed = Math.round(total / TRAFICO_ESPACIO_PUEBLO);
@@ -2436,43 +2692,201 @@ export class Mapa3dComponent implements AfterViewInit {
       const q = rnd() * total;
       const arista = Math.max(0, acumulado.findIndex(c => c >= q));
       const e = this.aristas[arista];
+      const tipo = elegir(e.vf === 1, e.rural);
       this.autosRed.push({
         arista, s: rnd() * e.largo, i: 0, dir: e.unico || rnd() < 0.5 ? 1 : -1,
         v: TRAFICO_VELOCIDAD[0] + rnd() * (TRAFICO_VELOCIDAD[1] - TRAFICO_VELOCIDAD[0]), carril: [-8, 0, 8][Math.floor(rnd() * 3)],
+        tipo, k: porTipo[tipo]++,
       });
     }
-    const cuenta = this.autos.length + this.autosRed.length;
-    if (!cuenta) return;
+    if (!this.autos.length && !this.autosRed.length) return;
 
-    // carrocería (toma el color de cada auto) y techo gris claro (igual en todos): dos mallas que comparten las matrices
-    const cuerpo = new THREE.BoxGeometry(15, 4, 6.5).translate(0, 2, 0);
-    const techo = new THREE.BoxGeometry(8, 3.2, 5.8).translate(-1, 5.6, 0);
-    this.geoAutos = [cuerpo, techo];
-    this.matAutos = [
-      new THREE.MeshStandardMaterial({ roughness: 0.4, metalness: 0.1 }),
-      new THREE.MeshStandardMaterial({ color: '#d3d8dd', roughness: 0.5, metalness: 0.1 }),
-    ];
-    const hacer = (g: THREE.BufferGeometry, m: THREE.Material) => {
-      const malla = new THREE.InstancedMesh(g, m, cuenta);
-      malla.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
-      malla.frustumCulled = false;
-      this.escena.add(malla);
-      return malla;
-    };
-    const malla = hacer(cuerpo, this.matAutos[0]);
-    this.mallaAutos = [malla, hacer(techo, this.matAutos[1])];
+    // un juego de mallas instanciadas por tipo de vehículo, con los modelos del catálogo (color por vértice); en el auto,
+    // la carrocería es una malla aparte que toma el color de cada auto
+    const material = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.45, metalness: 0.1, side: THREE.DoubleSide });
+    this.matAutos = [material];
+    this.geoAutos = [];
     const color = new THREE.Color();
-    for (let i = 0; i < cuenta; i++) malla.setColorAt(i, color.set(COLORES_AUTOS[Math.floor(rnd() * COLORES_AUTOS.length)]));
+    this.flota = FLOTA.map((nombre, t) => {
+      const cuenta = porTipo[t];
+      if (!cuenta) return [];
+      const piezas = modelarEquipamiento('vehiculos', 'Vehículo', nombre, () => 0.5).piezas;
+      const pintadas = t === AUTO ? piezas.filter(p => p.color === COLOR_CARROCERIA_AUTO).map(p => ({ ...p, color: '#ffffff' })) : [];
+      const fijas = t === AUTO ? piezas.filter(p => p.color !== COLOR_CARROCERIA_AUTO) : piezas;
+      return [pintadas, fijas].flatMap(grupo => {
+        const g = fusionarColoreado(grupo);
+        if (!g) return [];
+        this.geoAutos.push(g);
+        const malla = new THREE.InstancedMesh(g, material, cuenta);
+        malla.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+        malla.frustumCulled = false;
+        if (grupo === pintadas) for (let i = 0; i < cuenta; i++) malla.setColorAt(i, color.set(COLORES_AUTOS[Math.floor(rnd() * COLORES_AUTOS.length)]));
+        this.escena.add(malla);
+        return [malla];
+      });
+    });
     this.animarTrafico(0);
   }
 
+  /**
+   * Reparte la gente por las aceras de la red del pueblo (menos la doble calzada), unas 60 m de vía por persona, con un tope.
+   * Cada tipo de persona va en una malla instanciada propia; `animarGente` solo llena las de la zona que se mira.
+   */
+  private construirGente(): void {
+    const aceras = this.aristas.flatMap((e, i) => e.unico ? [] : [i]);
+    if (!aceras.length || new URLSearchParams(location.search).has('singente')) return;   // ?singente: para medir el costo de la gente
+    const rnd = mulberry32(1700);
+    const total = aceras.reduce((t, i) => t + this.aristas[i].largo, 0);
+    const acumulado: number[] = [];
+    aceras.reduce((t, i, k) => (acumulado[k] = t + this.aristas[i].largo), 0);
+    const porTipo = GENTE.map(() => 0);
+    for (let a = 0, n = Math.min(GENTE_MAX, Math.round(total / GENTE_ESPACIO)); a < n; a++) {
+      const q = rnd() * total;
+      const arista = aceras[Math.max(0, acumulado.findIndex(c => c >= q))];
+      const e = this.aristas[arista];
+      let r = rnd(), tipo = HOMBRE;
+      for (const [t, p] of MEZCLA_GENTE) {
+        if (r < p) { tipo = t; break; }
+        r -= p;
+      }
+      porTipo[tipo]++;
+      this.gente.push({
+        arista, s: rnd() * e.largo, i: 0, dir: rnd() < 0.5 ? 1 : -1,
+        v: GENTE_VELOCIDAD[0] + rnd() * (GENTE_VELOCIDAD[1] - GENTE_VELOCIDAD[0]),
+        lado: (rnd() < 0.5 ? -1 : 1) * GENTE_ACERA[e.vf < 1 ? 1 : 0],
+        tipo, tinte: Math.floor(rnd() * TINTES_GENTE.length), fase: rnd() * Math.PI * 2,
+      });
+    }
+    const material = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.85, metalness: 0, side: THREE.DoubleSide });
+    this.matGente = material;
+    // piernas y brazos se balancean en el vértice (atributo `miembro` del modelo, fase por persona): la GPU lo hace gratis
+    material.onBeforeCompile = sh => {
+      sh.vertexShader = sh.vertexShader
+        .replace('#include <common>', `#include <common>
+          attribute vec3 miembro;
+          attribute float aFase;`)
+        .replace('#include <beginnormal_vertex>', `#include <beginnormal_vertex>
+          if (miembro.x != 0.0) {
+            float angN = miembro.x * sin(aFase) * miembro.z, cN = cos(angN), sN = sin(angN);
+            objectNormal = vec3(objectNormal.x, objectNormal.y * cN - objectNormal.z * sN, objectNormal.y * sN + objectNormal.z * cN);
+          }`)
+        .replace('#include <begin_vertex>', `#include <begin_vertex>
+          if (miembro.x != 0.0) {
+            float ang = miembro.x * sin(aFase) * miembro.z, c = cos(ang), s = sin(ang), dy = transformed.y - miembro.y;
+            transformed.y = miembro.y + dy * c - transformed.z * s;
+            transformed.z = dy * s + transformed.z * c;
+          }`);
+    };
+    this.mallasGente = GENTE.map((nombre, t) => {
+      const g = porTipo[t] ? fusionarColoreado(modelarEquipamiento('gente', 'Persona', nombre, () => 0.5).piezas) : null;
+      if (!g) return null;
+      this.geoGente.push(g);
+      g.setAttribute('aFase', new THREE.InstancedBufferAttribute(new Float32Array(porTipo[t]), 1).setUsage(THREE.DynamicDrawUsage));
+      const malla = new THREE.InstancedMesh(g, material, porTipo[t]);
+      malla.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+      malla.setColorAt(0, new THREE.Color('#ffffff'));
+      malla.frustumCulled = false;
+      malla.count = 0;
+      this.escena.add(malla);
+      return malla;
+    });
+  }
+
+  /**
+   * Camina a la gente por las aceras y pinta solo la que está dentro de GENTE_RADIO del punto que se mira (al borde del radio
+   * se encoge hasta desaparecer). Si la cámara está lejos de ese punto no se mueve ni se pinta a nadie.
+   */
+  private animarGente(dt: number): void {
+    if (!this.gente.length) return;
+    const centro = this.controles.target;
+    if (this.camara.position.distanceTo(centro) > GENTE_DISTANCIA_MAX) {
+      if (this.gentePintada) for (const m of this.mallasGente) if (m) m.count = 0;
+      this.gentePintada = false;
+      return;
+    }
+    this.gentePintada = true;
+    const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), pos = new THREE.Vector3(), escala = new THREE.Vector3();
+    const arriba = new THREE.Vector3(0, 1, 0), adelante = new THREE.Vector3(0, 0, 1), derecha = new THREE.Vector3(1, 0, 0);
+    const tinte = new THREE.Color(), ladeo = new THREE.Quaternion();
+    const cuenta = this.mallasGente.map(() => 0);
+    const borde = GENTE_RADIO * 0.25, t = performance.now() / 1000;
+    for (const a of this.gente) {
+      let e = this.aristas[a.arista];
+      a.s += a.dir * a.v * dt;
+      if (a.s > e.largo || a.s < 0) {
+        // llegó a un cruce: sigue por cualquier acera que salga de él, o da la vuelta si no hay
+        const nodo = a.s > e.largo ? e.fin : e.ini;
+        const opciones: [number, 1 | -1][] = [];
+        for (const j of this.nodos.get(nodo) ?? []) {
+          const o = this.aristas[j];
+          if (j === a.arista || o.unico) continue;
+          if (o.ini === nodo) opciones.push([j, 1]);
+          if (o.fin === nodo) opciones.push([j, -1]);
+        }
+        if (opciones.length) {
+          const [j, d] = opciones[Math.floor(Math.random() * opciones.length)];
+          a.arista = j;
+          a.dir = d;
+          a.s = d > 0 ? 0 : this.aristas[j].largo;
+          a.i = 0;
+          e = this.aristas[j];
+        } else {
+          a.dir = a.dir > 0 ? -1 : 1;
+          a.s = Math.min(e.largo, Math.max(0, a.s));
+        }
+      }
+      let i = a.i;
+      while (i > 0 && a.s < e.cum[i]) i--;
+      while (i < e.cum.length - 2 && a.s > e.cum[i + 1]) i++;
+      a.i = i;
+      const seg = e.cum[i + 1] - e.cum[i] || 1, k = Math.min(1, Math.max(0, (a.s - e.cum[i]) / seg));
+      const tx = a.dir * (e.x[i + 1] - e.x[i]) / seg, tz = a.dir * (e.z[i + 1] - e.z[i]) / seg;
+      const x = e.x[i] + (e.x[i + 1] - e.x[i]) * k - tz * a.lado, z = e.z[i] + (e.z[i + 1] - e.z[i]) * k + tx * a.lado;
+      const dx = x - centro.x, dz = z - centro.z, d2 = dx * dx + dz * dz;
+      if (d2 > GENTE_RADIO * GENTE_RADIO) continue;
+      let y = e.y[i] + (e.y[i + 1] - e.y[i]) * k;
+      const lon = this.lon0 + x / this.mLon, lat = this.lat0 - z / this.mLat, id = this.idEn(lon, lat);
+      if (id >= 0 && this.alzado[id] > 0.5) y += this.alzado[id] * this.pesoBorde(lon, lat, id);
+      // el paso: rebote al apoyar cada pie y tumbo de lado a lado, sin animar piernas (solo cambia la matriz de la instancia)
+      const fase = t * a.v * 0.9 + a.fase, tumbo = Math.sin(fase);
+      y += Math.abs(tumbo) * 0.15;
+      const tam = GENTE_ESCALA * Math.min(1, (GENTE_RADIO - Math.sqrt(d2)) / borde);
+      q.setFromAxisAngle(arriba, Math.atan2(tx, tz));
+      q.multiply(ladeo.setFromAxisAngle(adelante, tumbo * GENTE_TUMBO));
+      q.multiply(ladeo.setFromAxisAngle(derecha, Math.abs(Math.cos(fase)) * GENTE_CABECEO));
+      m4.compose(pos.set(x, y, z), q, escala.set(tam, tam, tam));
+      const malla = this.mallasGente[a.tipo]!, n = cuenta[a.tipo]++;
+      malla.setMatrixAt(n, m4);
+      malla.setColorAt(n, tinte.set(TINTES_GENTE[a.tinte]));
+      (malla.geometry.getAttribute('aFase') as THREE.InstancedBufferAttribute).setX(n, fase);
+    }
+    this.mallasGente.forEach((m, k) => {
+      if (!m) return;
+      m.count = cuenta[k];
+      m.instanceMatrix.needsUpdate = true;
+      if (m.instanceColor) m.instanceColor.needsUpdate = true;
+      m.geometry.getAttribute('aFase').needsUpdate = true;
+    });
+  }
+
+  /** Si un vehículo de ese tipo puede circular por la vía: el camión solo en principales y el FJ solo en veredas. */
+  private admite(tipo: number, e: Arista): boolean {
+    return tipo === CAMION || tipo === BUS ? e.vf === 1 : tipo === FJ ? e.rural : true;
+  }
+
+  /** Si el punto cae en una vereda (no en una cabecera, centro poblado, caserío ni inspección). */
+  private esRural(x: number, z: number): boolean {
+    const id = this.idEn(this.lon0 + x / this.mLon, this.lat0 - z / this.mLat);
+    return id >= 0 && (this.piezas[id].zona.t ?? 'VE') === 'VE';
+  }
+
   private animarTrafico(dt: number): void {
-    if (!this.mallaAutos.length) return;
+    if (!this.flota.length) return;
     const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), qz = new THREE.Quaternion();
     const arriba = new THREE.Vector3(0, 1, 0), lateral = new THREE.Vector3(0, 0, 1);
     const pos = new THREE.Vector3(), escala = new THREE.Vector3(1, 1, 1);
     /** Coloca el auto n sobre la polilínea `c` a `s` metros, mirando en el sentido `dir`, a `carril` metros a su derecha. */
-    const colocar = (n: number, c: { x: number[]; z: number[]; y: number[]; cum: number[] }, indice: number, s: number, dir: number, carril: number): number => {
+    const colocar = (tipo: number, n: number, c: { x: number[]; z: number[]; y: number[]; cum: number[] }, indice: number, s: number, dir: number, carril: number): number => {
       let i = indice;
       while (i > 0 && s < c.cum[i]) i--;
       while (i < c.cum.length - 2 && s > c.cum[i + 1]) i++;
@@ -2485,19 +2899,18 @@ export class Mapa3dComponent implements AfterViewInit {
       if (id >= 0 && this.alzado[id] > 0.5) y += this.alzado[id] * this.pesoBorde(lon, lat, id);
       q.setFromAxisAngle(arriba, Math.atan2(-tz, tx)).multiply(qz.setFromAxisAngle(lateral, Math.atan(dir * (c.y[i + 1] - c.y[i]) / seg)));
       m4.compose(pos.set(x, y, z), q, escala);
-      for (const malla of this.mallaAutos) malla.setMatrixAt(n, m4);
+      for (const malla of this.flota[tipo]) malla.setMatrixAt(n, m4);
       return i;
     };
 
-    this.autos.forEach((a, n) => {
+    this.autos.forEach(a => {
       const c = this.calzadas[a.calzada];
       a.s += a.v * dt;
       if (a.s >= c.largo) { a.s -= c.largo; a.i = 0; }
-      a.i = colocar(n, c, a.i, a.s, 1, a.carril);
+      a.i = colocar(a.tipo, a.k, c, a.i, a.s, 1, a.carril);
     });
 
-    const base = this.autos.length;
-    this.autosRed.forEach((a, k) => {
+    this.autosRed.forEach(a => {
       let e = this.aristas[a.arista];
       a.s += a.dir * a.v * e.vf * dt;
       if (a.s > e.largo || a.s < 0) {
@@ -2507,6 +2920,7 @@ export class Mapa3dComponent implements AfterViewInit {
         for (const j of this.nodos.get(nodo) ?? []) {
           if (j === a.arista) continue;
           const o = this.aristas[j];
+          if (!this.admite(a.tipo, o)) continue;
           if (o.ini === nodo) opciones.push([j, 1]);
           if (o.fin === nodo && !o.unico) opciones.push([j, -1]);
         }
@@ -2521,7 +2935,8 @@ export class Mapa3dComponent implements AfterViewInit {
           a.dir = a.dir > 0 ? -1 : 1;                       // calle sin salida: da la vuelta
           a.s = Math.min(e.largo, Math.max(0, a.s));
         } else {
-          a.arista = Math.floor(Math.random() * this.aristas.length);   // calzada que se acaba: reaparece en otra vía
+          const lista = this.viasPermitidas[a.tipo];                    // calzada que se acaba: reaparece en otra vía permitida
+          a.arista = lista[Math.floor(Math.random() * lista.length)];
           a.dir = 1;
           a.s = 0;
           a.i = 0;
@@ -2529,9 +2944,9 @@ export class Mapa3dComponent implements AfterViewInit {
         e = this.aristas[a.arista];
       }
       // en las vías de doble sentido va por el carril derecho; en la doble calzada, en el que le tocó
-      a.i = colocar(base + k, e, a.i, a.s, a.dir, e.unico ? a.carril : (e.vf < 1 ? 5 : 8));
+      a.i = colocar(a.tipo, a.k, e, a.i, a.s, a.dir, e.unico ? a.carril : (e.vf < 1 ? 5 : 8));
     });
-    for (const malla of this.mallaAutos) malla.instanceMatrix.needsUpdate = true;
+    for (const mallas of this.flota) for (const malla of mallas) malla.instanceMatrix.needsUpdate = true;
   }
 
   /**
@@ -2576,6 +2991,12 @@ export class Mapa3dComponent implements AfterViewInit {
     lista.forEach((p, i) => {
       if (p.lat == null || p.lng == null) return;
       const modelo = modelarEquipamiento(p.c, p.t, p.n, mulberry32(9100 + i));
+      const esc = ESCALA_MANUAL.get(p.n);
+      if (esc) {
+        modelo.piezas.forEach(pz => pz.g.scale(esc, esc, esc));
+        modelo.radio *= esc;
+        if (modelo.losa) modelo.losa = [modelo.losa[0] * esc, modelo.losa[1] * esc];
+      }
       const x0 = this.aX(p.lng), z0 = this.aZ(p.lat);
       for (const [dx, dz] of intentos) {
         const x = x0 + dx, z = z0 + dz;
@@ -2706,7 +3127,114 @@ export class Mapa3dComponent implements AfterViewInit {
   }
 
   /** El neón pulsa y los iconos flotan sin tapar su edificio. */
+  /** Objetos 3D de marcación que el modo fotografía esconde (anillos, halos de río y el borde del municipio). */
+  private marcaciones(): THREE.Object3D[] {
+    return [this.anilloHover, this.anilloFabrica, this.haloHover, this.haloElegido, ...this.bordeMunicipio].filter((o): o is THREE.Object3D => !!o);
+  }
+
+  alternarConduccion(): void {
+    if (this.conduciendo()) { this.salirDeConducir(); return; }
+    this.conduccion ??= new Conduccion((x, z) => {
+      if (Math.abs(x) > this.ancho / 2 || Math.abs(z) > this.alto / 2) return -Infinity;
+      return this.alturaEn(this.lon0 + x / this.mLon, this.lat0 - z / this.mLat);
+    });
+    this.vuelo = null;
+    this.cerrarPin();
+    const t = this.controles.target, p = this.camara.position;
+    this.antesDeConducir = { pos: p.clone(), objetivo: t.clone(), fov: this.camara.fov };
+    if (!this.conduccion.objeto.parent) this.escena.add(this.conduccion.objeto);
+    this.conduccion.teclas.clear();
+    this.conduccion.aparecer(t.x, t.z, Math.atan2(t.x - p.x, t.z - p.z));
+    this.controles.enabled = false;
+    this.camara.fov = 62;
+    this.camara.updateProjectionMatrix();
+    this.cayo.set(false);
+    this.conduciendo.set(true);
+    window.addEventListener('keydown', this.alTecla);
+    window.addEventListener('keyup', this.alTecla);
+    window.addEventListener('blur', this.alPerderFoco);
+  }
+
+  private salirDeConducir(): void {
+    window.removeEventListener('keydown', this.alTecla);
+    window.removeEventListener('keyup', this.alTecla);
+    window.removeEventListener('blur', this.alPerderFoco);
+    if (!this.conduciendo()) return;
+    this.conduccion?.ocultar();
+    this.conduccion?.teclas.clear();
+    const a = this.antesDeConducir;
+    if (a) {
+      this.camara.position.copy(a.pos);
+      this.controles.target.copy(a.objetivo);
+      this.camara.fov = a.fov;
+      this.camara.updateProjectionMatrix();
+    }
+    this.controles.enabled = true;
+    this.controles.update();
+    this.conduciendo.set(false);
+    this.cayo.set(false);
+  }
+
+  reaparecerCarro(): void {
+    this.conduccion?.reaparecer();
+    this.cayo.set(false);
+  }
+
+  pulsarTecla(codigo: string, abajo: boolean): void {
+    if (abajo) this.conduccion?.teclas.add(codigo); else this.conduccion?.teclas.delete(codigo);
+  }
+
+  private readonly alTecla = (e: KeyboardEvent): void => {
+    if ((e.target as HTMLElement | null)?.closest?.('input, textarea, select')) return;
+    if (e.type === 'keydown') {
+      if (e.code === 'Escape') { this.zona.run(() => this.salirDeConducir()); return; }
+      if (e.code === 'KeyR') { this.zona.run(() => this.reaparecerCarro()); return; }
+    }
+    if (/^(Key[WASD]|Arrow(Up|Down|Left|Right)|Space|Shift(Left|Right))$/.test(e.code)) {
+      e.preventDefault();
+      this.pulsarTecla(e.code, e.type === 'keydown');
+    }
+  };
+
+  private readonly alPerderFoco = (): void => this.conduccion?.teclas.clear();
+
+  private conducirFotograma(dt: number): void {
+    const c = this.conduccion!;
+    c.actualizar(dt);
+    c.seguir(this.camara, dt);
+    this.controles.target.copy(c.posicion);
+    this.hudAcumulado += dt;
+    if (this.hudAcumulado > 0.1) {
+      this.hudAcumulado = 0;
+      const el = this.hudVelocidad?.nativeElement;
+      if (el) el.textContent = String(Math.round(c.kmh));
+    }
+    if (c.cayo !== this.cayo()) this.zona.run(() => this.cayo.set(c.cayo));
+  }
+
+  alternarFoto(): void {
+    this.modoFoto.update(v => !v);
+    const foto = this.modoFoto();
+    if (foto) {
+      this.cerrarPin();
+      this.marcarFabricaHover(-1);
+      this.marcarEquipHover(-1);
+      this.visiblesAntesFoto.clear();
+      for (const o of this.marcaciones()) this.visiblesAntesFoto.set(o, o.visible);
+    } else {
+      this.visiblesAntesFoto.forEach((v, o) => { o.visible = v; });
+    }
+    // el suelo pierde las zonas dibujadas (velo y límites) y el resalte del cursor
+    this.texturaColor.image = foto ? this.lienzoLimpio : this.lienzoConZonas;
+    this.texturaColor.needsUpdate = true;
+    this.pintarResalte();
+  }
+
   private animarAuras(t: number): void {
+    const foto = this.modoFoto();
+    if (foto) for (const o of this.marcaciones()) o.visible = false;
+    if (this.auraEquip) this.auraEquip.grupo.visible = !foto;
+    if (this.auraIndustrias) this.auraIndustrias.grupo.visible = !foto;
     this.auraEquip?.animar(t);
     this.auraIndustrias?.animar(t);
     this.agrupadorIconos?.animar(t, this.camara);
@@ -3526,11 +4054,14 @@ export class Mapa3dComponent implements AfterViewInit {
         const dt = Math.min(0.1, (t - anterior) / 1000);
         anterior = t;
         const t0 = this.perf ? performance.now() : 0;
-        if (this.vuelo) this.avanzarVuelo(t);
-        this.aplicarGiroYZoom();
-        this.controles.update();
-        this.limitarDesplazamiento();
-        this.mantenerSobreElRelieve();
+        if (this.conduciendo()) this.conducirFotograma(dt);
+        else {
+          if (this.vuelo) this.avanzarVuelo(t);
+          this.aplicarGiroYZoom();
+          this.controles.update();
+          this.limitarDesplazamiento();
+          this.mantenerSobreElRelieve();
+        }
         this.ajustarPlanoCercano();
         this.animarAlzado();
         this.actualizarSombras();
@@ -3541,6 +4072,7 @@ export class Mapa3dComponent implements AfterViewInit {
         this.animarAvion(dt);
         this.animarEstela(dt);
         this.animarTrafico(dt);
+        this.animarGente(dt);
         this.animarHumo();
         this.animarAuras(t / 1000);
         this.animarConfluencias();
@@ -4118,6 +4650,7 @@ export class Mapa3dComponent implements AfterViewInit {
   }
 
   private liberar(): void {
+    this.salirDeConducir();
     cancelAnimationFrame(this.animacion);
     this.controles?.dispose();
     this.renderer?.dispose();
@@ -4139,6 +4672,8 @@ export class Mapa3dComponent implements AfterViewInit {
     (this.humoInst?.malla.material as THREE.Material | undefined)?.dispose();
     this.geoAutos.forEach(g => g.dispose());
     this.matAutos.forEach(m => m.dispose());
+    this.geoGente.forEach(g => g.dispose());
+    this.matGente?.dispose();
     this.texturasConfluencia.forEach(t => t.dispose());
     this.materialesConfluencia.forEach(m => m.dispose());
     this.geosPajaros.forEach(g => g.dispose());
@@ -4154,10 +4689,11 @@ export class Mapa3dComponent implements AfterViewInit {
 
   /** Borde de la vereda elegida y de la que está bajo el cursor: el mismo muro translúcido con línea blanca que rodea el municipio. */
   private mostrarBordeHover(): void {
-    const claves = `${this.elegida}|${this.hover}`;
+    const claves = `${this.elegida}|${this.hover}|${this.modoFoto()}`;
     if (claves === this.bordeClaves) return;
     this.bordeClaves = claves;
     for (const g of this.bordesHover.values()) g.visible = false;
+    if (this.modoFoto()) return;
     for (const id of new Set([this.elegida, this.hover])) if (id >= 0) this.bordeDe(id).visible = true;
   }
 
@@ -4240,6 +4776,7 @@ export class Mapa3dComponent implements AfterViewInit {
   private actualizarRotulos(): void {
     const w = this.lienzo.nativeElement.clientWidth, h = this.lienzo.nativeElement.clientHeight;
     const ocupados: { x0: number; y0: number; x1: number; y1: number }[] = [];
+    this.cajasRotulos = [];
     const v = new THREE.Vector3();
     // vista casi a ras del mapa: los nombres quedarían sobre la pared frontal de la maqueta, así que se ocultan
     const mira = this.miraTmp.copy(this.camara.position).sub(this.controles.target);
@@ -4277,6 +4814,7 @@ export class Mapa3dComponent implements AfterViewInit {
       if (!visible) continue;
       if (!medida && el.offsetWidth) this.medidasRotulos[id] = medida = { w: el.offsetWidth, h: el.offsetHeight };
       ocupados.push(caja);
+      this.cajasRotulos.push({ id, ...caja });
       el.classList.toggle('activo', activo);
       el.style.transform = `translate(${x - (activo ? el.offsetWidth : medida?.w ?? 0) / 2}px, ${y - (activo ? el.offsetHeight : medida?.h ?? 0) - 8 + dy}px) scale(${escala})`;
     }
@@ -4330,6 +4868,14 @@ export class Mapa3dComponent implements AfterViewInit {
     return id < this.piezas.length ? id : -1;
   }
 
+  /** Zona cuya cápsula de nombre está bajo el cursor (o -1). Los rótulos son HTML sin eventos, así que se buscan en pantalla. */
+  private rotuloBajoCursor(ev: PointerEvent): number {
+    const r = this.renderer.domElement.getBoundingClientRect();
+    const x = ev.clientX - r.left, y = ev.clientY - r.top;
+    const c = this.cajasRotulos.find(b => x >= b.x0 && x <= b.x1 && y >= b.y0 && y <= b.y1);
+    return c ? c.id : -1;
+  }
+
   /** Los pines flotan sobre la escena y no se pueden "tocar" con el rayo: se buscan en pantalla y tienen prioridad sobre lo que haya detrás. */
   private pinBajoCursor(ev: PointerEvent) {
     const r = this.renderer.domElement.getBoundingClientRect();
@@ -4352,6 +4898,15 @@ export class Mapa3dComponent implements AfterViewInit {
       if (eq !== this.equipHover) this.marcarEquipHover(eq);
       if (this.hover !== -1) { this.hover = -1; this.pintarResalte(); }
       if (this.rioHover) { this.rioHover = null; this.pintarHalos(); }
+      this.lienzo.nativeElement.style.cursor = 'pointer';
+      return;
+    }
+    const rot = this.rotuloBajoCursor(ev);
+    if (rot >= 0) {                                      // la cápsula de una zona tapa ríos y edificios que tenga detrás
+      if (this.fabricaHover >= 0) this.marcarFabricaHover(-1);
+      if (this.equipHover >= 0) this.marcarEquipHover(-1);
+      if (this.rioHover) { this.rioHover = null; this.pintarHalos(); }
+      if (rot !== this.hover) { this.hover = rot; this.pintarResalte(); }
       this.lienzo.nativeElement.style.cursor = 'pointer';
       return;
     }
@@ -4433,19 +4988,17 @@ export class Mapa3dComponent implements AfterViewInit {
       this.volarA(objetivo.clone().add(this.camara.position.clone().sub(this.controles.target).normalize().multiplyScalar(ref.tipo === 'fabrica' ? 1200 : 450)), objetivo);
       return;
     }
-    const ref = pin?.icono?.ref;
-    const fab = ref ? (ref.tipo === 'fabrica' ? ref.i : -1) : this.fabricaBajoCursor(ev);
-    if (fab >= 0) {                                      // clic en una fábrica: la elige; otro clic en la misma, la suelta
-      this.seleccionarFabrica(fab === this.fabricaElegida ? -1 : fab);
+    const rot = this.rotuloBajoCursor(ev);
+    if (rot >= 0) {                                      // clic en la cápsula de una zona: manda sobre lo que haya detrás
+      this.seleccionarFabrica(-1);
+      if (rot === this.elegida) { this.deseleccionar(); this.seleccionarRio(null); } else this.elegir(rot);
       return;
     }
-    const eq = ref ? (ref.tipo === 'equip' ? ref.i : -1) : this.equipBajoCursor(ev);
-    if (eq >= 0) {                                       // clic en un equipamiento: la cámara se acerca a él
-      const q = this.equipamientos[eq];
-      const objetivo = new THREE.Vector3(q.x, this.alturaXZ(q.x, q.z) + 10, q.z);
-      this.volarA(objetivo.clone().add(this.camara.position.clone().sub(this.controles.target).normalize().multiplyScalar(450)), objetivo);
-      return;
-    }
+    // clic en el edificio (no en su pin): abre el mismo panel y acerca la cámara
+    const fab = this.fabricaBajoCursor(ev);
+    if (fab >= 0) { this.irAPin({ tipo: 'fabrica', i: fab }); return; }
+    const eq = this.equipBajoCursor(ev);
+    if (eq >= 0) { this.irAPin({ tipo: 'equip', i: eq }); return; }
     const rio = this.rioBajoCursor(ev);
     if (rio) {                                           // clic en un cauce: lo elige; otro clic en el mismo, lo suelta
       this.seleccionarRio(rio === this.rioElegido ? null : rio);
@@ -4698,6 +5251,8 @@ export class Mapa3dComponent implements AfterViewInit {
 
   /** Abre el panel lateral derecho con los datos del pin (equipamiento o industria). */
   private abrirPin(ref: { tipo: 'equip' | 'fabrica'; i: number }): void {
+    const capa = ref.tipo === 'fabrica' ? 'industria' : this.equipamientos[ref.i].datos.p.c;
+    if (!this.capasActivas().has(capa)) this.alternarCapa(capa);     // el pin que se abre debe verse
     if (ref.tipo === 'fabrica') {
       const d = this.fabricas[ref.i].datos;
       const num = (v: number) => (v >= 100 ? v.toFixed(0) : v >= 1 ? v.toFixed(1) : v.toFixed(2)).replace('.', ',');
@@ -4707,6 +5262,8 @@ export class Mapa3dComponent implements AfterViewInit {
         { k: 'Fuentes fijas', v: `${d.fuentes ?? 0}${d.chimenea ? ` · chimenea hasta ${num(d.chimenea)} m` : ''}` },
         { k: 'Combustibles', v: d.combustibles?.join(', ') ?? '' },
         { k: 'Control de emisiones', v: d.control?.join(', ') ?? '' },
+        { k: 'Emisiones estimadas', v: CONTAMINANTES.filter(([c]) => d.em?.[c]).map(([c, n]) => `${n} ${num(d.em![c])} Mg/año`).join(' · ') },
+        { k: 'Medido en chimenea', v: Object.entries(d.kgh ?? {}).map(([c, v]) => `${c} ${num(v)} kg/h`).join(' · ') },
       ].filter(f => f.v);
       this.pinFicha.set({ color: COLOR_INDUSTRIA, glifo: GLIFO.industria, categoria: 'Industria', titulo: d.n, filas, fuente: 'Inventario de emisiones atmosféricas · Corantioquia 2021', mapa2d: null, aproximada: false });
       return;
@@ -4762,6 +5319,7 @@ export class Mapa3dComponent implements AfterViewInit {
       c.strokeStyle = trazo;
       if (grosor) c.stroke();
     };
+    if (this.modoFoto()) { this.texturaResalte.needsUpdate = true; return; }
     dibujar(this.elegida, 'rgba(255,200,60,.3)', 'rgba(255,190,30,1)', 0);
     if (this.hover !== this.elegida) dibujar(this.hover, 'rgba(255,255,255,.2)', 'rgba(255,255,255,1)', 0);
     this.texturaResalte.needsUpdate = true;
