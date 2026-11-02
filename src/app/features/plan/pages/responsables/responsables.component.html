@@ -1,0 +1,274 @@
+@if (plan(); as p) {
+  <main class="resp">
+    @if (!depId()) {
+    <header class="resp__cabecera">
+      <p class="resp__etiqueta">Plan de desarrollo 2024-2027 · vista por responsable</p>
+      <h1>{{ p.municipio }}</h1>
+      <p class="resp__sub">Qué le toca a cada dependencia de la alcaldía: quién la dirige, su equipo, los productos del plan a su cargo y cómo van en el seguimiento{{ seguimiento() ? ' ' + seguimiento()!.anio : '' }}.</p>
+      <a class="resp__volver" routerLink="/plan">← Plan de desarrollo</a>
+    </header>
+
+    @let g = general();
+    <section class="cifras tarjeta" aria-label="Resumen">
+      <dl>
+        <div><dt>Responsables</dt><dd>{{ g.responsables }}</dd></div>
+        <div><dt>Con persona identificada</dt><dd>{{ g.conPersona }}</dd></div>
+        <div><dt>Funcionarios en el directorio</dt><dd>{{ g.personas }}</dd></div>
+        <div><dt>Productos del plan</dt><dd>{{ p.productos.length }}</dd></div>
+        @if (seguimiento()) { <div><dt>Con avance {{ seguimiento()!.anio }}</dt><dd>{{ g.conSeguimiento }}</dd></div> }
+        <div><dt>Sin productos asignados</dt><dd>{{ g.sinProductos }}</dd></div>
+      </dl>
+      <p class="nota">
+        Cada producto se asigna a quien lo dice el PDF del plan; si no lo dice, se sugiere por sector. Un producto con varios responsables cuenta en cada uno. El avance sale del informe de seguimiento
+        @if (seguimiento(); as s) { ({{ s.anio }}: {{ g.conSeguimiento }} de los {{ p.productos.length }} productos cruzados por código SisPT; {{ s.sin_codigo }} fichas del informe no traen código y quedan fuera). } @else { (aún no cargado para esta entidad). }
+      </p>
+    </section>
+
+    <section class="barra-herr" aria-label="Filtros">
+      <label class="buscar">
+        <span class="sr">Buscar responsable</span>
+        <input type="search" placeholder="Buscar dependencia o persona…" [value]="texto()" (input)="texto.set($any($event.target).value)" />
+      </label>
+      <div class="orden" role="group" aria-label="Ordenar">
+        <span>Ordenar por</span>
+        <button type="button" [class.on]="orden() === 'productos'" (click)="orden.set('productos')">Productos</button>
+        @if (seguimiento()) { <button type="button" [class.on]="orden() === 'avance'" (click)="orden.set('avance')">Avance</button> }
+        <button type="button" [class.on]="orden() === 'nombre'" (click)="orden.set('nombre')">Nombre</button>
+      </div>
+    </section>
+
+    <section class="cuadricula" aria-label="Responsables">
+      @for (r of lista(); track r.dep.id) {
+        <a class="ficha" [routerLink]="['/responsables', r.dep.id]">
+          <span class="ficha__top">
+            @if (urlIcono(r.dep); as u) { <img [src]="u" alt="" width="44" height="44" /> } @else { <i class="ficha__vacio">{{ r.dep.nombre.charAt(0) }}</i> }
+            <span class="ficha__nombre">{{ r.dep.nombre }}</span>
+          </span>
+          <span class="ficha__quien">
+            @if (r.dep.responsable; as q) { <b>{{ q.nombre }}</b><em>{{ q.cargo }}</em> } @else { <em>Persona a cargo sin identificar en el sitio</em> }
+          </span>
+          <span class="ficha__datos">
+            <span><b>{{ cantidad(r) }}</b> productos</span>
+            <span><b>{{ r.equipo }}</b> funcionarios</span>
+            @if (r.grupo.length > 1) { <span><b>{{ r.grupo.length - 1 }}</b> {{ r.grupo.length === 2 ? 'subdependencia' : 'subdependencias' }}</span> }
+          </span>
+          <span class="reparto" [title]="r.alta + ' según el PDF · ' + r.sugerida + ' sugeridos por sector'">
+            <i class="reparto__alta" [style.width.%]="pct(r.alta, g.maxProductos)"></i><i class="reparto__sug" [style.width.%]="pct(r.sugerida, g.maxProductos)"></i>
+          </span>
+          @if (seguimiento()) {
+            <span class="avance" [class]="claseAvance(r.avance)">
+              <span class="avance__pista"><i [style.width.%]="r.avance ?? 0"></i></span>
+              <span class="avance__txt">
+                @if (r.avance !== null) { <b>{{ entero(r.avance) }} %</b> de avance · {{ r.conSeguimiento }} con informe } @else { Sin indicadores en el informe }
+              </span>
+            </span>
+          }
+        </a>
+      } @empty {
+        <p class="vacio">Ningún responsable coincide con la búsqueda.</p>
+      }
+    </section>
+    } @else {
+    @if (actual(); as r) {
+      <section id="detalle" class="detalle tarjeta">
+        <a class="resp__volver" routerLink="/responsables">← Todos los responsables</a>
+        <header class="det-cab">
+          @if (urlIcono(r.dep); as u) { <img class="det-cab__ico" [src]="u" alt="" width="64" height="64" /> }
+          <div class="det-cab__titulo">
+            <h2>{{ r.dep.nombre }}</h2>
+            <span class="det-cab__tipo">{{ r.dep.tipo }}@if (r.grupo.length > 1) { · con {{ r.grupo.length - 1 }} {{ r.grupo.length === 2 ? 'subdependencia' : 'subdependencias' }} }</span>
+          </div>
+        </header>
+
+        <div class="personas">
+          @for (d of r.grupo; track d.id) {
+            <article class="persona" [class.persona--sub]="esSub(r, d)">
+              @if (esSub(r, d)) { <span class="persona__dep">{{ d.nombre }}</span> }
+              @if (d.responsable; as q) {
+                <span class="persona__cargo">{{ q.cargo }}</span>
+                <b class="persona__nombre">{{ q.nombre }}</b>
+                <span class="persona__contacto">
+                  @if (q.correo) { <a [href]="'mailto:' + q.correo">{{ q.correo }}</a> }
+                  @if (q.telefono) { <span>Tel. {{ q.telefono }}{{ q.extension ? ' ext. ' + q.extension : '' }}</span> }
+                  <a [href]="q.url" target="_blank" rel="noopener">Sitio de la alcaldía</a>
+                </span>
+              } @else {
+                <span class="persona__cargo">{{ esSub(r, d) ? 'Subdependencia' : 'Dependencia' }}</span>
+                <em>La alcaldía no publica quién la dirige.</em>
+              }
+              @if (d.nota) { <span class="persona__nota">{{ d.nota }}</span> }
+            </article>
+          }
+          @for (e of externas(r); track e.id) {
+            <article class="persona persona--sub">
+              <span class="persona__dep">{{ e.nombre }} · entidad externa</span>
+              <em>{{ e.nota || 'Se muestra bajo esta secretaría, sin sumar a sus productos.' }}</em>
+            </article>
+          }
+        </div>
+
+        <dl class="kpis">
+          <div><dt>Productos a cargo</dt><dd>{{ cantidad(r) }}</dd></div>
+          <div><dt>Según el PDF</dt><dd>{{ r.alta }}</dd></div>
+          <div><dt>Sugeridos por sector</dt><dd>{{ r.sugerida }}</dd></div>
+          @if (seguimiento()) {
+            <div><dt>Avance {{ seguimiento()!.anio }}</dt><dd>{{ r.avance !== null ? entero(r.avance) + ' %' : '—' }}</dd></div>
+            <div><dt>Cumplidos (≥ 100 %)</dt><dd>{{ r.cumplidos }}</dd></div>
+            <div><dt>Con menos de 50 %</dt><dd>{{ r.atrasados }}</dd></div>
+          }
+        </dl>
+
+        @if (aniosOficiales(r).length) {
+          <section class="oficial" aria-label="Lo que dice el informe de seguimiento">
+            <h3>Lo que dice el informe de seguimiento de la alcaldía</h3>
+            <div class="oficial__anios">
+              @for (a of aniosOficiales(r); track a) {
+                @let o = r.oficial![a];
+                @let gl = globalDe(a);
+                <article class="oficial__anio">
+                  <h4>{{ a }}</h4>
+                  <dl>
+                    <div [class]="claseAvance(o.plan_accion)">
+                      <dt>Plan de acción</dt><dd>{{ o.plan_accion !== null ? num(o.plan_accion) + ' %' : '—' }}</dd>
+                      @if (gl?.plan_accion != null) { <small>plan completo: {{ num(gl!.plan_accion) }} %</small> }
+                    </div>
+                    @if (o.cuatrienio !== null) {
+                      <div>
+                        <dt>Avance al cuatrienio</dt><dd>{{ num(o.cuatrienio) }} %</dd>
+                        @if (gl?.cuatrienio != null) { <small>plan completo: {{ num(gl!.cuatrienio) }} %</small> }
+                      </div>
+                    }
+                    <div><dt>Metas en el informe</dt><dd>{{ o.metas ?? '—' }}</dd></div>
+                  </dl>
+                </article>
+              }
+            </div>
+            <p class="nota">Cuadros publicados por la alcaldía como imagen y transcritos. El plan de acción mide lo programado para el año (en {{ seguimiento()!.anio }}, con corte al tercer trimestre); el avance al cuatrienio, lo logrado frente a la meta de los cuatro años. Son cifras reportadas por la alcaldía, sin auditar.</p>
+          </section>
+        }
+
+        @if (porLinea().length) {
+          <div class="reparto2">
+            <div>
+              <h3>Por línea estratégica</h3>
+              <ul class="mini">
+                @for (l of porLinea(); track l.nombre) {
+                  <li><span class="mini__n">{{ l.nombre }}</span><span class="mini__b"><i [style.width.%]="pct(l.n, cantidad(r))"></i></span><b>{{ l.n }}</b></li>
+                }
+              </ul>
+            </div>
+            <div>
+              <h3>Por sector</h3>
+              <ul class="mini">
+                @for (l of porSector(); track l.nombre) {
+                  <li><span class="mini__n">{{ l.nombre }}</span><span class="mini__b"><i [style.width.%]="pct(l.n, cantidad(r))"></i></span><b>{{ l.n }}</b></li>
+                }
+              </ul>
+            </div>
+          </div>
+        }
+
+        @if (equipoDe(r).length) {
+          <details class="equipo">
+            <summary>Equipo en el directorio · {{ r.equipo }} {{ r.equipo === 1 ? 'persona' : 'personas' }}</summary>
+            @for (e of equipoDe(r); track e.dep.id) {
+              @if (equipoDe(r).length > 1) { <h3>{{ e.dep.nombre }}</h3> }
+              <ul class="gente">
+                @for (f of e.gente; track f.nombre + f.cargo) {
+                  <li>
+                    <b>{{ f.nombre }}</b><span>{{ f.cargo }}</span>
+                    @if (f.correo) { <a [href]="'mailto:' + f.correo">{{ f.correo }}</a> }
+                    @if (f.telefono) { <span>Tel. {{ f.telefono }}{{ f.extension ? ' ext. ' + f.extension : '' }}</span> }
+                  </li>
+                }
+              </ul>
+            }
+          </details>
+        }
+
+        <div class="prod-cab">
+          <h3>Productos e indicadores <span class="cuenta">{{ filasActual().length }}</span></h3>
+          @if (seguimiento()) {
+            <label class="chk"><input type="checkbox" [checked]="soloConAvance()" (change)="soloConAvance.set($any($event.target).checked)" /> Solo los que tienen avance en el informe</label>
+          }
+        </div>
+        @if (filasActual().length) {
+          <div class="tabla-marco">
+            <table class="tabla">
+              <thead>
+                <tr>
+                  <th>Código</th><th>Indicador</th>
+                  <th class="num">Meta 4 años</th>
+                  <th>Programación</th>
+                  @if (seguimiento()) { @for (a of aniosInforme(); track a) { <th>Avance {{ a }}</th> } }
+                </tr>
+              </thead>
+              <tbody>
+                @for (f of filasActual(); track f.x.id + f.dep.id) {
+                  <tr>
+                    <td class="cod">{{ f.x.id }}</td>
+                    <td class="ind">
+                      <b>{{ f.x.indicador }}</b><span>{{ f.x.producto }}</span>
+                      <span class="ind__pie">
+                        @if (r.grupo.length > 1) { <em>{{ f.dep.nombre }}</em> }
+                        <span class="chip" [class.chip--sugerida]="f.conf !== 'alta'">{{ f.conf === 'alta' ? 'según el PDF' : 'sugerida por sector' }}</span>
+                      </span>
+                    </td>
+                    <td class="num" data-et="Meta 4 años">{{ num(f.x.meta) }} <small>{{ f.x.unidad }}</small></td>
+                    <td data-et="Programación">
+                      <span class="prog">
+                        @for (v of f.x.prog; track $index) { <span><small>{{ anios[$index] }}</small>{{ num(v) }}</span> }
+                      </span>
+                    </td>
+                    @if (seguimiento()) {
+                      @for (a of aniosInforme(); track a) {
+                        @let y = f.s?.por_anio?.[a];
+                        <td class="pct" [attr.data-et]="'Avance ' + a">
+                          @if (y && y.pct !== null) {
+                            <span class="avance" [class]="claseAvance(y.pct)">
+                              <span class="avance__pista"><i [style.width.%]="y.pct > 100 ? 100 : y.pct"></i></span>
+                              <b>{{ entero(y.pct) }} %</b>
+                              <small class="pct__det">{{ num(y.avance) }} de {{ num(y.programada) }} programado</small>
+                            </span>
+                          } @else { <span class="nd">sin informe</span> }
+                        </td>
+                      }
+                    }
+                  </tr>
+                  @if (narrativas(f).length || f.s?.proyecto) {
+                    <tr class="fila-narr">
+                      <td [attr.colspan]="4 + aniosInforme().length">
+                        <details>
+                          <summary>Qué reportó la alcaldía @if (hayDiferencia(f)) { <em class="aviso" title="La ficha y la tabla resumen del informe dan cifras distintas para este indicador">· la ficha difiere de la tabla</em> }</summary>
+                          @if (f.s?.proyecto) { <p class="narr__proy"><b>Proyecto:</b> {{ f.s!.proyecto }}@if (f.s!.bpin) { · BPIN {{ f.s!.bpin }} }</p> }
+                          @for (n of narrativas(f); track n.anio) {
+                            <p class="narr"><b>{{ n.anio }}</b> {{ n.texto }}</p>
+                          }
+                          @for (a of aniosInforme(); track a) {
+                            @let y = f.s?.por_anio?.[a];
+                            @if (y?.ficha; as fi) {
+                              <p class="narr narr--dif"><b>{{ a }} · ficha</b> programada {{ num(fi.programada) }}, avance {{ num(fi.avance) }} ({{ entero(fi.pct) }} %); la tabla resumen dice programada {{ num(y!.programada) }}, avance {{ num(y!.avance) }}.</p>
+                            }
+                          }
+                        </details>
+                      </td>
+                    </tr>
+                  }
+                }
+              </tbody>
+            </table>
+          </div>
+        } @else {
+          <p class="vacio">Este responsable no tiene productos asignados en el plan{{ soloConAvance() ? ' con avance en el informe' : '' }}.</p>
+        }
+      </section>
+    } @else {
+      <p class="vacio">No existe ese responsable. <a class="resp__volver" routerLink="/responsables">Ver todos</a></p>
+    }
+    }
+  </main>
+} @else if (plan() === null) {
+  <main class="resp"><p class="vacio">No hay datos del plan para esta entidad.</p></main>
+} @else {
+  <main class="resp"><p class="vacio">Cargando…</p></main>
+}

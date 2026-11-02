@@ -102,6 +102,63 @@ export interface PlanEntidad {
   };
 }
 
+/** avance físico de un indicador en un informe de seguimiento del municipio */
+export interface AvanceAnio {
+  programada: number | null;
+  avance: number | null;
+  /** % de avance sobre lo programado del año; puede pasar de 100 */
+  pct: number | null;
+  /** 'tabla' = tabla resumen del informe; 'ficha' = ficha del indicador */
+  fuente: 'tabla' | 'ficha';
+  /** si la ficha dice otra cosa que la tabla resumen, lo que dice la ficha */
+  ficha?: { programada: number | null; avance: number | null; pct: number | null };
+}
+
+export interface AvanceIndicador {
+  /** valores del último año informado */
+  programada: number | null;
+  avance: number | null;
+  pct: number | null;
+  acumulacion: string | null;
+  por_anio: Record<string, AvanceAnio>;
+  /** texto con que el informe explica lo ejecutado, por año */
+  narrativas?: Record<string, string | null>;
+  proyecto?: string | null;
+  bpin?: string | null;
+  /** id de la dependencia bajo la que el informe presenta el indicador, por año */
+  informe_dep?: Record<string, string | null>;
+}
+
+/** cuadros oficiales del informe para una dependencia, por año */
+export interface AvanceDependencia {
+  metas: number | null;
+  /** avance al cuatrienio; los informes de 2024 no lo traen por dependencia */
+  cuatrienio: number | null;
+  plan_accion: number | null;
+}
+
+export interface AvanceNivel {
+  nivel: string;
+  nombre: string;
+  cuatrienio: number | null;
+  plan_accion: number | null;
+}
+
+/** seguimiento por id de producto (IP-xx); generado por scripts/plan_desarrollo/seguimiento_json.py */
+export interface Seguimiento {
+  /** último año informado */
+  anio: number;
+  anios: string[];
+  fuente: string;
+  /** fichas del último año que no se pudieron cruzar con un producto */
+  sin_codigo: number;
+  sin_codigo_por_anio: Record<string, number>;
+  indicadores: Record<string, AvanceIndicador>;
+  dependencias: Record<string, Record<string, AvanceDependencia>>;
+  /** global y por línea estratégica, por año */
+  global: Record<string, AvanceNivel[]>;
+}
+
 @Injectable({ providedIn: 'root' })
 export class PlanService {
   private readonly http = inject(HttpClient);
@@ -109,5 +166,10 @@ export class PlanService {
   /** Datos de una entidad, generados por scripts/plan_desarrollo/tarjetas_app.py. */
   entidad(dane: string): Observable<PlanEntidad> {
     return this.http.get<PlanEntidad>(`/data/plan/${dane}.json`);
+  }
+
+  /** Seguimiento del último año informado; falla (404) si la entidad aún no tiene informe. */
+  seguimiento(dane: string): Observable<Seguimiento> {
+    return this.http.get<Seguimiento>(`/data/plan/${dane}-seguimiento.json`);
   }
 }

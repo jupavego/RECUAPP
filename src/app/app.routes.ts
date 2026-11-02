@@ -18,6 +18,16 @@ export const routes: Routes = [
       import('./features/plan/pages/plan/plan.component').then(m => m.PlanComponent),
   },
   {
+    path: 'responsables',
+    loadComponent: () =>
+      import('./features/plan/pages/responsables/responsables.component').then(m => m.ResponsablesComponent),
+  },
+  {
+    path: 'responsables/:dep',
+    loadComponent: () =>
+      import('./features/plan/pages/responsables/responsables.component').then(m => m.ResponsablesComponent),
+  },
+  {
     path: 'plan/:dane/organigrama',
     loadComponent: () =>
       import('./features/plan/pages/organigrama/organigrama.component').then(m => m.OrganigramaComponent),
