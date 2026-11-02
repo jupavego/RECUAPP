@@ -678,17 +678,53 @@ export class PuebloComponent implements AfterViewInit {
     this.reubicarSitios(d);
     this.crearAccesos(d);
     ZONAS_PUENTE = this.crucesDeRio(d).map(c => ({ x: c.x, z: c.z, r: c.largo / 2 + 34 }));
-    this.construirTerreno(d);
-    this.construirCamino(d);
-    this.construirPuentes(d);
-    this.construirCasas(d);
-    this.armarPueblo(rs, d);
-    this.sembrarArboles(d);
-    this.construirMovimiento(d);
+    // cada etapa se registra para la caída: lo que arma, baja del cielo en su turno
+    this.caer(0, 0.8, 520, () => this.construirTerreno(d));
+    this.caer(0.4, 0.7, 420, () => { this.construirCamino(d); this.construirPuentes(d); });
+    this.caer(0.6, 0.7, 440, () => this.construirCasas(d));
+    this.caer(0.85, 0.7, 420, () => this.sembrarArboles(d));
+    this.caer(1.05, 0.65, 360, () => this.armarPueblo(rs, d), 0.07);
+    this.caer(1.5, 0.55, 240, () => { this.construirMovimiento(d); });
     this.construirPajaros(d);
-    this.construirFarolas(d);
+    this.caer(1.8, 0.5, 180, () => this.construirFarolas(d), 0, false);
     this.construirEstrellas();
     this.construirNiebla(d);
+  }
+
+  /** Objetos que caen del cielo al cargar: su altura base, el turno en que empiezan y cuánto caen. */
+  private caidas: { obj: THREE.Object3D; base: number; espera: number; dur: number; desde: number; oculta: boolean }[] = [];
+  private caidaT0 = -1;
+  private entregas = new Map<string, number>();
+
+  /** Ejecuta una etapa de construcción y deja caer del cielo lo que añadió a la escena (los edificios, uno tras otro). */
+  private caer(espera: number, dur: number, desde: number, etapa: () => void, escalon = 0, oculta = true): void {
+    const antes = new Set(this.escena.children);
+    etapa();
+    // toda la caída dura un 40 % de lo previsto en cada etapa
+    espera *= 0.4; dur *= 0.4; escalon *= 0.4;
+    let i = 0;
+    for (const obj of this.escena.children) {
+      if (antes.has(obj) || obj instanceof THREE.Sprite) continue;
+      const id = obj.userData['id'] as string | undefined;
+      const turno = escalon && id ? espera + i++ * escalon : espera + (escalon ? 0 : i++ * 0.02);
+      this.caidas.push({ obj, base: obj.position.y, espera: turno, dur, desde: desde * (0.85 + 0.3 * this.rnd()), oculta });
+      if (id) this.entregas.set(id, turno + dur);
+    }
+  }
+
+  private animarCaidas(t: number): void {
+    if (!this.caidas.length) return;
+    if (this.caidaT0 < 0) this.caidaT0 = t;
+    const local = t - this.caidaT0;
+    const suave = (k: number) => 1 - Math.pow(1 - k, 4);          // cae rápido y se asienta frenando, sin rebotes
+    let vivas = 0;
+    for (const c of this.caidas) {
+      const k = Math.min(1, Math.max(0, (local - c.espera) / c.dur));
+      if (k < 1) vivas++;
+      if (c.oculta) c.obj.visible = local >= c.espera;
+      c.obj.position.y = c.base + c.desde * (1 - suave(k));
+    }
+    if (!vivas) { for (const c of this.caidas) { c.obj.position.y = c.base; c.obj.visible = true; } this.caidas = []; this.entregas.clear(); this.caidaT0 = -2; }
   }
 
   private material(color: string): THREE.MeshStandardMaterial {
@@ -2073,6 +2109,7 @@ export class PuebloComponent implements AfterViewInit {
   private animar(dt: number, t: number): void {
     this.aura?.animar(t);
     this.moverGente(dt);
+    this.animarCaidas(t);
     this.animarHumo(t);
     this.animarCiclo(t, dt);
     if (this.texAgua) this.texAgua.offset.y = -t * 0.35;     // la corriente corre a lo largo del cauce
@@ -2088,10 +2125,13 @@ export class PuebloComponent implements AfterViewInit {
     const activo = this.elegido()?.dep.id;
     for (const b of this.edificios) {
       const s = b.pin.sprite;
+      const llega = this.entregas.get(b.r.dep.id);
+      const pop = llega === undefined || this.caidaT0 === -2 ? 1 : Math.min(1, Math.max(0, (t - this.caidaT0 - llega) / 0.14));
+      s.visible = pop > 0;
       s.position.set(b.x, b.y + b.cima + 4 + Math.sin(t * 1.6 + b.x) * 1.2, b.z);
       const d = this.camara.position.distanceTo(s.position);
       const grande = b.r.dep.id === this.resaltando || b.r.dep.id === activo ? 1.3 : 1;
-      const alto = Math.min(150, Math.max(12, d * 0.09)) * grande;
+      const alto = Math.min(150, Math.max(12, d * 0.09)) * grande * (pop < 1 ? 1 - Math.pow(1 - pop, 3) : 1);
       s.scale.set(alto * b.pin.aspecto, alto, 1);
     }
   }
