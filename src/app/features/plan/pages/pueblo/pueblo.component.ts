@@ -1,0 +1,1436 @@
+import { HttpClient } from '@angular/common/http';
+import { AfterViewInit, Component, DestroyRef, ElementRef, ViewChild, computed, effect, inject, signal, untracked } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { catchError, map, of, switchMap } from 'rxjs';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { Aura, crearAuras } from '../../../mapa3d/utils/aura';
+import { CategoriaCatalogo, Modelo, modelarEquipamiento } from '../../../mapa3d/utils/equipamientos';
+import { PlanEntidad, PlanService, Seguimiento } from '../../services/plan.service';
+import { Resumen, construirResumenes, matizDe } from '../responsables/responsables.component';
+
+const ENTIDAD_PILOTO = '05308';
+
+/** Qué edificio del catálogo del mapa 3D representa a cada responsable de primer nivel. */
+const EDIFICIOS: Record<string, { cat: CategoriaCatalogo; tipo: string; nombre: string }> = {
+  des: { cat: 'cultura', tipo: 'Casa de cultura', nombre: 'Despacho' },
+  edu: { cat: 'educacion', tipo: 'Sede educativa urbana', nombre: 'Educación' },
+  sal: { cat: 'salud', tipo: 'Hospital / IPS pública', nombre: 'Hospital' },
+  gob: { cat: 'justicia', tipo: 'Estación de policía', nombre: 'Estación' },
+  jur: { cat: 'justicia', tipo: 'Personería municipal', nombre: 'Personería' },
+  hac: { cat: 'vivienda', tipo: 'Edificio', nombre: 'Edificio' },
+  pla: { cat: 'cultura', tipo: 'Biblioteca', nombre: 'Biblioteca' },
+  inf: { cat: 'industria', tipo: 'Industria', nombre: 'Fábrica' },
+  agri: { cat: 'turismo', tipo: 'Economía campesina / mercado local', nombre: 'Mercado' },
+  amb: { cat: 'turismo', tipo: 'Atractivo natural / ecoturismo', nombre: 'Cascada' },
+  tra: { cat: 'patrimonio', tipo: 'Bien de interés cultural nacional', nombre: 'Estación' },
+  adm: { cat: 'vivienda', tipo: 'Edificio', nombre: 'Edificio' },
+  com: { cat: 'cultura', tipo: 'Emisora comunitaria', nombre: 'Emisora' },
+  cid: { cat: 'vivienda', tipo: 'Edificio', nombre: 'Edificio' },
+  cia: { cat: 'cultura', tipo: 'Escuela de música', nombre: 'Escuela' },
+};
+
+/**
+ * Casco urbano real de Girardota, extraído de los datos del mapa 3D (relieve del IGAC, vías, quebradas y huellas de edificios de OSM):
+ * `alturas` es una malla de nx × nz celdas de `paso` m (m sobre el punto más bajo), x hacia el este y z hacia el sur desde el centro;
+ * `vias`, `rios` y `casas` van en metros desde ese mismo centro; `sitios` son los puntos libres elegidos para cada responsable [x, z, giro].
+ */
+interface Diorama {
+  centro: [number, number];
+  ancho: number; fondo: number; paso: number; nx: number; nz: number;
+  alturas: number[];
+  sitios: Record<string, [number, number, number]>;
+  vias: [number, number[]][];
+  rios: [number, number[]][];
+  casas: [number, number, number, number][];
+}
+
+/** Exageración vertical del relieve, para que las laderas se lean como montaña. */
+const EXA = 2.3;
+/** Fondo de la isla (m bajo el punto más bajo) y paleta alegre con la que se pintan casas y edificios. */
+const FONDO = 90;
+const PALETA = ['#f4c542', '#e86a5f', '#5aa9e6', '#f29ac0', '#8fd175', '#f59e42', '#9b8de0', '#4fc3b5', '#f3e3c3'];
+const TEJAS = ['#b5532f', '#c26a45', '#9e4527', '#a9532f'];
+/** ¿Es un color neutro y claro (paredes, concreto)? Esos son los que se repintan; ventanas, techos y vidrios se quedan. */
+const esNeutro = (hex: string): boolean => { const c = new THREE.Color(hex), h = { h: 0, s: 0, l: 0 }; c.getHSL(h); return h.s < 0.3 && h.l > 0.45; };
+
+const hash = (i: number, j: number): number => { const s = Math.sin(i * 127.1 + j * 311.7) * 43758.5453; return s - Math.floor(s); };
+function ruido(x: number, z: number): number {
+  const i = Math.floor(x), j = Math.floor(z), fx = x - i, fz = z - j;
+  const u = fx * fx * (3 - 2 * fx), v = fz * fz * (3 - 2 * fz);
+  const a = hash(i, j) + (hash(i + 1, j) - hash(i, j)) * u, b = hash(i, j + 1) + (hash(i + 1, j + 1) - hash(i, j + 1)) * u;
+  return a + (b - a) * v;
+}
+
+let RELIEVE: Diorama | null = null;
+/** Eje del río que serpentea por el norte del valle (z en función de x), y su ancho y hondura. */
+const zRio = (x: number): number => -420 + 38 * Math.sin(x / 105) + 16 * Math.sin(x / 41 + 1.7);
+const ANCHO_RIO = 26;
+const HONDO_RIO = 5;
+/** Altura del terreno (exagerada) en x, z metros desde el centro del casco urbano. */
+export function alturaTerreno(x: number, z: number): number {
+  const d = RELIEVE;
+  if (!d) return 0;
+  const fx = Math.min(Math.max((x + d.ancho / 2) / d.paso, 0), d.nx - 1.001), fz = Math.min(Math.max((z + d.fondo / 2) / d.paso, 0), d.nz - 1.001);
+  const i = Math.floor(fx), j = Math.floor(fz), tx = fx - i, tz = fz - j;
+  const h = (a: number, b: number) => d.alturas[b * d.nx + a];
+  const base = ((h(i, j) * (1 - tx) + h(i + 1, j) * tx) * (1 - tz) + (h(i, j + 1) * (1 - tx) + h(i + 1, j + 1) * tx) * tz) * EXA;
+  // cauce del río: una zanja suave a lo largo de su eje
+  const t = Math.max(0, 1 - Math.abs(z - zRio(x)) / (ANCHO_RIO * 1.3));
+  return base - HONDO_RIO * t * t * (3 - 2 * t);
+}
+
+/** Granja solar: filas de paneles inclinados sobre soportes, con una caseta de control e inversores. */
+function granjaSolar(): Modelo {
+  const piezas: Modelo['piezas'] = [];
+  const caja = (w: number, h: number, d: number, color: string, x: number, y: number, z: number, rx = 0): void => {
+    const g = new THREE.BoxGeometry(w, h, d);
+    if (rx) g.rotateX(rx);
+    piezas.push({ g: g.translate(x, y, z), color });
+  };
+  const filas = 4, columnas = 5, ancho = 9, fondo = 5.2, paso = 13;
+  for (let i = 0; i < filas; i++) {
+    for (let j = 0; j < columnas; j++) {
+      const x = (j - (columnas - 1) / 2) * (ancho + 1.2), z = (i - (filas - 1) / 2) * paso - 4;
+      caja(ancho, 0.35, fondo, '#17306b', x, 3.4, z, -0.5);                       // panel
+      caja(ancho + 0.3, 0.12, fondo + 0.3, '#cbd5e1', x, 3.34, z, -0.5);          // marco
+      caja(0.4, 3, 0.4, '#8b949e', x - ancho / 3, 1.5, z + 1.2);                  // soportes
+      caja(0.4, 3.9, 0.4, '#8b949e', x + ancho / 3, 1.95, z + 1.2);
+    }
+  }
+  caja(10, 4.6, 7, '#e8eaed', -(columnas * (ancho + 1.2)) / 2 + 2, 0, 24);          // caseta de control
+  caja(10.6, 0.5, 7.6, '#9aa0a6', -(columnas * (ancho + 1.2)) / 2 + 2, 4.6, 24);
+  for (let k = 0; k < 3; k++) caja(1.6, 2.4, 1.2, '#f3f4f6', 8 + k * 2.6 - (columnas * (ancho + 1.2)) / 2 + 2, 0, 24);  // inversores
+  caja(0.5, 9, 0.5, '#6b7280', 24, 0, 24);                                          // poste de la línea
+  caja(5, 0.4, 0.4, '#6b7280', 24, 8.4, 24);
+  return { piezas, radio: 38, losa: [64, 62] };
+}
+
+/** Un tramo de calle por el que circulan los vehículos y la gente: puntos [x, z…] con la distancia acumulada en cada uno. */
+interface Ruta { pts: number[]; cum: number[]; total: number; clase: number; }
+interface Agente { ruta: Ruta; s: number; dir: 1 | -1; vel: number; lado: number; i: number; }
+/** Un tipo de vehículo o de persona: una malla instanciada por pieza del modelo, y quienes la usan. */
+interface Flota { mallas: THREE.InstancedMesh[]; escala: number; eje: 'x' | 'z'; agentes: Agente[]; faros?: THREE.Points; colas?: THREE.Points; }
+
+/** Alza de las calles sobre el relieve y ancho de cada clase de vía. */
+const ALZA_CALLE = 2.4;
+/** Velocidad de la bandada de pájaros (m/s). */
+const VELOCIDAD_PAJAROS = 70;
+const ANCHO_CALLE = [15, 9, 4];
+
+/** Pájaro de la bandada: el cuerpo y los pivotes de hombros y codos que aletean, y su sitio dentro de la V. */
+interface Pajaro {
+  grupo: THREE.Group; izq: THREE.Object3D; der: THREE.Object3D; codoIzq: THREE.Object3D; codoDer: THREE.Object3D;
+  ox: number; oz: number; oy: number; y: number; fase: number; ritmo: number;
+}
+/** Chimenea que echa humo: su boca y las bocanadas que suben, se ensanchan y se desvanecen. */
+interface Humo { x: number; y: number; z: number; puffs: THREE.Sprite[]; }
+
+interface Edificio {
+  r: Resumen;
+  grupo: THREE.Group;
+  mats: THREE.MeshStandardMaterial[];
+  x: number; z: number; y: number; cima: number; radio: number;
+  pin: Pin;
+}
+interface Pin { sprite: THREE.Sprite; aspecto: number; tex: THREE.CanvasTexture; }
+
+/** Pueblo 3D: cada responsable de la alcaldía es un edificio sobre el casco urbano real de Girardota; se explora, se toca y se salta a su ficha. */
+@Component({
+  selector: 'app-pueblo',
+  standalone: true,
+  imports: [RouterLink],
+  template: `
+    <header class="titulo">
+      <button type="button" class="titulo__ley" [class.on]="leyenda()" [attr.aria-expanded]="leyenda()" (click)="leyenda.set(!leyenda())">☰ Responsables</button>
+      <a routerLink="/responsables">← Responsables</a>
+      <h1>{{ plan()?.municipio ?? '…' }}</h1>
+      <p>Plan de desarrollo 2024-2027 · cada pin es un responsable: pasa el cursor y toca para ver su ficha</p>
+    </header>
+
+    <div class="cuerpo" [class.cuerpo--ley]="leyenda()">
+      @if (leyenda()) {
+      <aside class="leyenda" aria-label="Leyenda de responsables">
+      <h2>Responsables</h2>
+      @for (r of resumenes(); track r.dep.id) {
+        <button type="button" [class.on]="elegido()?.dep?.id === r.dep.id" [style.--h]="matiz(r.dep.id)" (click)="elegir(r.dep.id)" (mouseenter)="resaltar(r.dep.id)" (mouseleave)="resaltar(null)">
+          @if (icono(r); as u) { <img [src]="u" alt="" width="26" height="26" /> } @else { <i>{{ r.dep.nombre.charAt(0) }}</i> }
+          <span>{{ corto(r.dep.nombre) }}</span>
+          <b>{{ r.avance !== null ? entero(r.avance) + '%' : '—' }}</b>
+        </button>
+      }
+    </aside>
+      }
+
+      <div class="mapa">
+        <div #lienzo class="lienzo" [class.lienzo--mano]="sobre()"></div>
+        @if (tip(); as t) {
+      <div class="tip" [style.left.px]="t.x" [style.top.px]="t.y" [style.--h]="matiz(t.r.dep.id)" role="status">
+        <span class="tip__tipo">{{ t.r.dep.tipo }}</span>
+        <b>{{ t.r.dep.nombre }}</b>
+        @if (t.r.dep.responsable; as q) { <span>{{ q.nombre }}</span> }
+        <span class="tip__datos">{{ t.r.alta + t.r.sugerida }} productos · {{ t.r.equipo }} en el equipo · {{ t.r.avance !== null ? entero(t.r.avance) + ' % de avance' : 'sin indicadores' }}</span>
+      </div>
+    }
+        @if (elegido(); as r) {
+      <aside class="ficha" [style.--h]="matiz(r.dep.id)" aria-live="polite">
+        <button type="button" class="ficha__cerrar" aria-label="Cerrar" (click)="soltar()">×</button>
+        <span class="ficha__tipo">{{ r.dep.tipo }}</span>
+        <h2>{{ r.dep.nombre }}</h2>
+        @if (r.dep.responsable; as q) { <p class="ficha__quien"><b>{{ q.nombre }}</b><span>{{ q.cargo }}</span></p> } @else { <p class="ficha__quien"><span>La alcaldía no publica quién la dirige.</span></p> }
+        <dl>
+          <div><dt>Productos</dt><dd>{{ r.alta + r.sugerida }}</dd></div>
+          <div><dt>Equipo</dt><dd>{{ r.equipo }}</dd></div>
+          <div><dt>Avance</dt><dd>{{ r.avance !== null ? entero(r.avance) + ' %' : '—' }}</dd></div>
+        </dl>
+        <span class="barra"><i [style.width.%]="r.avance ?? 0" [class]="clase(r.avance)"></i></span>
+        <a class="ficha__ir" [routerLink]="['/responsables', r.dep.id]">Ver ficha completa →</a>
+      </aside>
+    }
+        <span class="reloj" aria-label="Hora del día en la maqueta">{{ hora() }}</span>
+        <p class="ayuda">Arrastra para girar · rueda para acercar · clic derecho para desplazar</p>
+      </div>
+    </div>
+  `,
+  styles: [`
+    :host { display: flex; flex-direction: column; height: calc(100dvh - 64px); min-height: 560px; overflow: hidden;
+      background: var(--color-page-bg, #f5f0ea); font-family: Inter, system-ui, sans-serif; color: #1f3326; }
+    .titulo { position: relative; flex: none; padding: 10px 16px 8px; text-align: center; }
+    .titulo__ley { position: absolute; left: 12px; top: 12px; min-height: 40px; padding: 0 16px; border: 1px solid #C8D9C0; border-radius: 999px; font: inherit; font-size: .85rem; font-weight: 700; cursor: pointer;
+      background: #fcf9f6; color: #29422F; }
+    .titulo__ley.on { background: #29422F; color: #fcf9f6; }
+    .titulo__ley:focus-visible { outline: 3px solid #66AA33; outline-offset: 2px; }
+    .titulo a { font-size: .8rem; color: #29422F; }
+    h1 { margin: 0; font-size: clamp(1.5rem, 3.6vw, 2.2rem); letter-spacing: .14em; text-transform: uppercase; color: #243746; }
+    .titulo p { margin: 2px 0 0; font-size: .82rem; color: #3D5C3D; }
+    .cuerpo { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr; gap: 12px; padding: 0 12px 12px; }
+    .cuerpo--ley { grid-template-columns: 280px 1fr; }
+    .leyenda { min-height: 0; overflow-y: auto; padding: 2px 4px 2px 0; display: flex; flex-direction: column; gap: 2px; scrollbar-width: thin; }
+    .leyenda h2 { margin: 0 6px 6px; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: #29422F; }
+    .leyenda button { display: grid; grid-template-columns: 28px 1fr auto; align-items: center; gap: 10px; width: 100%; min-height: 44px; padding: 4px 10px; border: 0; border-radius: 14px; background: transparent;
+      font: inherit; font-size: .86rem; font-weight: 600; text-align: left; cursor: pointer; color: hsl(var(--h) 38% 20%); }
+    .leyenda button img { width: 28px; height: 28px; object-fit: contain; }
+    .leyenda button i { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; font-style: normal; background: hsl(var(--h) 45% 85%); }
+    .leyenda button b { font-size: .76rem; color: hsl(var(--h) 38% 30%); font-variant-numeric: tabular-nums; }
+    .leyenda button:hover { background: hsl(var(--h) 45% 92%); }
+    .leyenda button.on { background: hsl(var(--h) 45% 88%); box-shadow: inset 3px 0 0 hsl(var(--h) 45% 38%); }
+    .leyenda button:focus-visible { outline: 3px solid hsl(var(--h) 45% 45%); outline-offset: -2px; }
+    .mapa { position: relative; min-width: 0; min-height: 0; border-radius: 24px; overflow: hidden; border: 1px solid #C8D9C0;
+      background: linear-gradient(#a9cdee, #d4e6f5 70%, #e6eff7); }
+    .lienzo { position: absolute; inset: 0; touch-action: none; }
+    .lienzo--mano { cursor: pointer; }
+    .tip { position: absolute; z-index: 5; transform: translate(14px, -50%); max-width: 260px; display: grid; gap: 2px; padding: 10px 14px; border-radius: 16px; pointer-events: none;
+      background: rgba(252, 249, 246, .96); box-shadow: 0 6px 18px rgba(20, 40, 25, .3); border-left: 5px solid hsl(var(--h) 45% 38%); font-size: .8rem; color: #1A1A1A; }
+    .tip b { font-size: .95rem; line-height: 1.2; }
+    .tip__tipo { font-size: .65rem; letter-spacing: .06em; text-transform: uppercase; color: hsl(var(--h) 38% 30%); }
+    .tip__datos { margin-top: 2px; color: #3D5C3D; }
+    .ficha { position: absolute; top: 12px; right: 12px; width: min(320px, calc(100% - 24px)); padding: 16px 18px 14px; border-radius: 22px;
+      background: rgba(252, 249, 246, .94); backdrop-filter: blur(6px); box-shadow: 0 8px 26px rgba(20, 40, 25, .28); border-top: 5px solid hsl(var(--h) 45% 38%); }
+    .ficha__cerrar { position: absolute; top: 8px; right: 10px; width: 32px; height: 32px; border: 0; border-radius: 50%; background: transparent; font-size: 1.4rem; cursor: pointer; color: #3D5C3D; }
+    .ficha__tipo { font-size: .7rem; letter-spacing: .05em; text-transform: uppercase; color: hsl(var(--h) 38% 30%); }
+    .ficha h2 { margin: 2px 24px 6px 0; font-size: 1.1rem; line-height: 1.2; color: #1A1A1A; }
+    .ficha__quien { margin: 0 0 10px; display: grid; font-size: .85rem; }
+    .ficha__quien span { color: #3D5C3D; }
+    .ficha dl { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 0 0 10px; }
+    .ficha dt { font-size: .7rem; color: #3D5C3D; }
+    .ficha dd { margin: 0; font-size: 1.35rem; font-weight: 700; color: hsl(var(--h) 38% 28%); font-variant-numeric: tabular-nums; }
+    .barra { display: block; height: 8px; border-radius: 999px; background: #E0EAD8; overflow: hidden; }
+    .barra i { display: block; height: 100%; border-radius: 999px; background: #66AA33; }
+    .barra i.bajo { background: #b5523b; } .barra i.ok { background: #2F7A3A; }
+    .ficha__ir { display: inline-block; margin-top: 12px; font-weight: 600; font-size: .88rem; color: #29422F; }
+    .reloj { position: absolute; left: 12px; top: 12px; z-index: 6; padding: 5px 12px; border-radius: 999px; font-size: .8rem; font-weight: 700; font-variant-numeric: tabular-nums;
+      background: rgba(252, 249, 246, .92); color: #29422F; box-shadow: 0 3px 10px rgba(20, 40, 25, .22); pointer-events: none; }
+    .ayuda { position: absolute; left: 0; right: 0; bottom: 8px; margin: 0; text-align: center; font-size: .7rem; font-weight: 600; color: #36556b; pointer-events: none; }
+    @media (max-width: 860px) {
+      :host { height: auto; min-height: calc(100dvh - 64px); overflow: visible; }
+      .titulo p { display: none; }
+      .cuerpo { grid-template-rows: minmax(420px, 70dvh); }
+      .cuerpo--ley { grid-template-columns: 1fr; grid-template-rows: auto minmax(420px, 70dvh); }
+      .titulo__ley { position: static; margin-bottom: 6px; }
+      .leyenda { flex-direction: row; overflow-x: auto; overflow-y: hidden; padding: 0 0 6px; }
+      .leyenda h2 { display: none; }
+      .leyenda button { flex: none; width: auto; grid-template-columns: 28px auto; }
+      .leyenda button b { display: none; }
+      .ficha { top: auto; bottom: 12px; }
+    }
+  `],
+})
+export class PuebloComponent implements AfterViewInit {
+  @ViewChild('lienzo', { static: true }) private lienzo!: ElementRef<HTMLDivElement>;
+  private readonly destroyRef = inject(DestroyRef);
+  private readonly servicio = inject(PlanService);
+  private readonly ruta = inject(ActivatedRoute);
+  private readonly http = inject(HttpClient);
+
+  readonly plan = toSignal<PlanEntidad | null | undefined>(
+    this.ruta.paramMap.pipe(map(p => p.get('dane') ?? ENTIDAD_PILOTO), switchMap(d => this.servicio.entidad(d).pipe(catchError(() => of(null))))),
+    { initialValue: undefined },
+  );
+  private readonly seguimiento = toSignal<Seguimiento | null>(
+    this.ruta.paramMap.pipe(map(p => p.get('dane') ?? ENTIDAD_PILOTO), switchMap(d => this.servicio.seguimiento(d).pipe(catchError(() => of(null))))),
+    { initialValue: null },
+  );
+  private readonly datos = toSignal<Diorama | null>(this.http.get<Diorama>('data/plan/girardota-diorama.json').pipe(catchError(() => of(null))), { initialValue: null });
+  readonly resumenes = computed<Resumen[]>(() => {
+    const p = this.plan();
+    return p ? construirResumenes(p, this.seguimiento()).filter(r => EDIFICIOS[r.dep.id]) : [];
+  });
+  readonly elegido = signal<Resumen | null>(null);
+  readonly sobre = signal(false);
+  readonly hora = signal('☀ 10:00');
+  readonly leyenda = signal(false);
+  readonly tip = signal<{ r: Resumen; x: number; y: number } | null>(null);
+
+  private renderer!: THREE.WebGLRenderer;
+  private readonly escena = new THREE.Scene();
+  private readonly camara = new THREE.PerspectiveCamera(30, 1, 5, 7000);
+  private controles!: OrbitControls;
+  private sol!: THREE.DirectionalLight;
+  private readonly reloj = new THREE.Clock();
+  private readonly matCache = new Map<string, THREE.MeshStandardMaterial>();
+  private readonly desechables: { dispose(): void }[] = [];
+  private edificios: Edificio[] = [];
+  private aura: Aura | null = null;
+  private nubes: THREE.Group[] = [];
+  private listo = false;
+  private vistaPuesta = false;
+  private construido = false;
+  private animacion = 0;
+  private vuelo: { t: number; de: THREE.Vector3; deObj: THREE.Vector3; a: THREE.Vector3; aObj: THREE.Vector3 } | null = null;
+  private semilla = 11;
+  /** celdas de 24 m con lo que ya está construido (casas, calles, edificios): sirve para no sembrar árboles encima */
+  private readonly ocupado = new Set<string>();
+
+  constructor() {
+    effect(() => {
+      this.resumenes(); this.datos();
+      untracked(() => this.intentar());
+    });
+  }
+
+  matiz(id: string): number { return matizDe(id); }
+  corto(n: string): string { return n.split(',')[0].replace(/^(Secretar[ií]a|Oficina|Despacho)( Asesora)?( de(l)?)? ?/i, m => (/^Despacho/i.test(m) ? 'Despacho ' : '')).replace(/^./, c => c.toUpperCase()); }
+  entero(v: number): string { return Math.round(v).toLocaleString('es-CO'); }
+  clase(v: number | null): string { return v === null ? '' : v >= 100 ? 'ok' : v < 50 ? 'bajo' : ''; }
+  icono(r: Resumen): string | null { return r.dep.icono ? `/img/iconos/${r.dep.icono}.png` : null; }
+
+  private flotas: Flota[] = [];
+  private hemi!: THREE.HemisphereLight;
+  private luna!: THREE.DirectionalLight;
+  private matNube: THREE.MeshStandardMaterial | null = null;
+  private matFarola: THREE.MeshStandardMaterial | null = null;
+  private brillos: { pts: THREE.Points; max: number; px: number }[] = [];
+  private estrellas: THREE.Points | null = null;
+  private horaMostrada = -1;
+  private fondoMapa: HTMLElement | null = null;
+  /** ventanas encendidas de las casas: x, y, z de cada una */
+  private ventanas: number[] = [];
+  private ventanasEd: number[] = [];
+  private pajaros: Pajaro[] = [];
+  private humos: Humo[] = [];
+  private tiempoPajaros = 0;
+  /** tramos de calle y quebrada por celdas de 40 m: [x0, z0, x1, z1, mitad del ancho] */
+  private readonly segmentos = new Map<string, number[][]>();
+
+  private rnd = (): number => (this.semilla = (this.semilla * 16807) % 2147483647) / 2147483647;
+
+  ngAfterViewInit(): void {
+    const el = this.lienzo.nativeElement;
+    this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    this.renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+    this.renderer.shadowMap.enabled = true;
+    this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    el.appendChild(this.renderer.domElement);
+
+    this.hemi = new THREE.HemisphereLight(0xffffff, 0x88aa77, 1.2);
+    this.escena.add(this.hemi);
+    this.luna = new THREE.DirectionalLight(0x9db4ff, 0);
+    this.luna.position.set(-300, 500, -200);
+    this.escena.add(this.luna);
+    const sol = new THREE.DirectionalLight(0xfff4e0, 2.6);
+    sol.position.set(320, 520, 240);
+    sol.castShadow = true;
+    sol.shadow.mapSize.set(4096, 4096);
+    Object.assign(sol.shadow.camera, { left: -820, right: 820, top: 820, bottom: -820, near: 10, far: 2200 });
+    sol.shadow.bias = -0.0004;
+    this.escena.add(sol);
+    this.sol = sol;
+    this.construirNubes();
+
+    this.controles = new OrbitControls(this.camara, this.renderer.domElement);
+    this.controles.enableDamping = true;
+    this.controles.maxPolarAngle = Math.PI / 2 - 0.04;
+    this.controles.minDistance = 90;
+    this.controles.autoRotate = false;
+    this.controles.target.set(0, 40, 0);
+    this.camara.position.set(1190, 720, 1300);
+    this.controles.addEventListener('start', () => { this.controles.autoRotate = false; this.vuelo = null; this.tip.set(null); });
+
+    const ajustar = () => {
+      const { clientWidth: w, clientHeight: h } = el;
+      this.renderer.setSize(w, h);
+      this.camara.aspect = w / Math.max(h, 1);
+      // la vista inicial es también lo más lejos que se puede alejar; en recuadros más cuadrados se aleja un poco más para que la maqueta entre igual de ancha
+      const dist = 1401 * Math.pow(Math.max(1, 2.22 / this.camara.aspect), 1.1);
+      this.controles.maxDistance = dist;
+      if (!this.vistaPuesta) {
+        this.vistaPuesta = true;
+        this.camara.position.copy(this.controles.target).addScaledVector(new THREE.Vector3(0.641, 0.208, -0.738).normalize(), dist);
+      } else if (this.camara.position.distanceTo(this.controles.target) > dist) {
+        this.camara.position.sub(this.controles.target).setLength(dist).add(this.controles.target);
+      }
+      this.camara.updateProjectionMatrix();
+    };
+    const obs = new ResizeObserver(ajustar);
+    obs.observe(el);
+    ajustar();
+
+    const dom = this.renderer.domElement;
+    let abajo: { x: number; y: number } | null = null;
+    const alBajar = (e: PointerEvent) => { abajo = { x: e.clientX, y: e.clientY }; };
+    const alSubir = (e: PointerEvent) => {
+      if (!abajo || Math.hypot(e.clientX - abajo.x, e.clientY - abajo.y) > 5) return;
+      const id = this.buscar(e);
+      if (id) this.elegir(id); else this.soltar();
+    };
+    const alMover = (e: PointerEvent) => {
+      if (e.buttons) { this.tip.set(null); return; }
+      const id = this.buscar(e);
+      this.sobre.set(!!id);
+      this.resaltar(id);
+      const b = id ? this.edificios.find(x => x.r.dep.id === id) : null;
+      const caja = this.lienzo.nativeElement.getBoundingClientRect();
+      this.tip.set(b ? { r: b.r, x: e.clientX - caja.left, y: e.clientY - caja.top } : null);
+    };
+    const alSalir = () => { this.tip.set(null); this.sobre.set(false); this.resaltar(null); };
+    dom.addEventListener('pointerdown', alBajar);
+    dom.addEventListener('pointerup', alSubir);
+    dom.addEventListener('pointermove', alMover);
+    dom.addEventListener('pointerleave', alSalir);
+
+    this.listo = true;
+    this.intentar();
+
+    const bucle = () => {
+      this.animacion = requestAnimationFrame(bucle);
+      const dt = Math.min(this.reloj.getDelta(), 0.1);
+      this.animar(dt, this.reloj.elapsedTime);
+      this.controles.update();
+      this.renderer.render(this.escena, this.camara);
+    };
+    bucle();
+
+    this.destroyRef.onDestroy(() => {
+      cancelAnimationFrame(this.animacion);
+      obs.disconnect();
+      dom.removeEventListener('pointerdown', alBajar);
+      dom.removeEventListener('pointerup', alSubir);
+      dom.removeEventListener('pointermove', alMover);
+      dom.removeEventListener('pointerleave', alSalir);
+      this.controles.dispose();
+      this.aura?.dispose();
+      for (const e of this.edificios) { e.pin.tex.dispose(); e.pin.sprite.material.dispose(); }
+      this.escena.traverse(o => { if (o instanceof THREE.Mesh || o instanceof THREE.InstancedMesh) o.geometry.dispose(); });
+      for (const m of this.matCache.values()) m.dispose();
+      for (const d of this.desechables) d.dispose();
+      this.renderer.dispose();
+      RELIEVE = null;
+    });
+  }
+
+  /** Arma el pueblo cuando ya están el plan y los datos del casco urbano. */
+  private intentar(): void {
+    const d = this.datos(), rs = this.resumenes();
+    if (!this.listo || this.construido || !d || !rs.length) return;
+    this.construido = true;
+    RELIEVE = d;
+    this.indexarCaminos(d);
+    this.reubicarSitios(d);
+    this.construirTerreno(d);
+    this.construirCamino(d);
+    this.construirPuentes(d);
+    this.construirCasas(d);
+    this.armarPueblo(rs, d);
+    this.sembrarArboles(d);
+    this.construirMovimiento(d);
+    this.construirPajaros(d);
+    this.construirFarolas(d);
+    this.construirEstrellas();
+  }
+
+  private material(color: string): THREE.MeshStandardMaterial {
+    let m = this.matCache.get(color);
+    if (!m) { m = new THREE.MeshStandardMaterial({ color, roughness: 0.85, metalness: 0.05, side: THREE.DoubleSide }); this.matCache.set(color, m); }
+    return m;
+  }
+
+  private marcar(x: number, z: number): void { this.ocupado.add(`${Math.floor(x / 24)},${Math.floor(z / 24)}`); }
+  private estaOcupado(x: number, z: number): boolean { return this.ocupado.has(`${Math.floor(x / 24)},${Math.floor(z / 24)}`); }
+
+  /** Isla de maqueta: el relieve real del casco urbano, cortado en bloque, con paredes de tierra por estratos y un fondo que se angosta. */
+  private construirTerreno(d: Diorama): void {
+    const W = d.ancho, H = d.fondo;
+    const g = new THREE.PlaneGeometry(W, H, d.nx - 1, d.nz - 1).rotateX(-Math.PI / 2);
+    const pos = g.attributes['position'] as THREE.BufferAttribute;
+    const col = new Float32Array(pos.count * 3);
+    const c = new THREE.Color(), pasto = new THREE.Color('#8fd175'), monte = new THREE.Color('#5aa84a'), pizarra = new THREE.Color('#8fa35a'), roca = new THREE.Color('#b0a088');
+    for (let i = 0; i < pos.count; i++) {
+      const x = pos.getX(i), z = pos.getZ(i);
+      const h = alturaTerreno(x, z);
+      pos.setY(i, h);
+      const v = 0.94 + 0.12 * ruido(x * 0.05, z * 0.05);
+      if (h < 30) c.copy(pasto);
+      else if (h < 120) c.copy(pasto).lerp(monte, (h - 30) / 90);
+      else if (h < 230) c.copy(monte).lerp(pizarra, (h - 120) / 110);
+      else c.copy(pizarra).lerp(roca, Math.min(1, (h - 230) / 120));
+      col.set([c.r * v, c.g * v, c.b * v], i * 3);
+    }
+    g.setAttribute('color', new THREE.BufferAttribute(col, 3));
+    g.computeVertexNormals();
+    const cesped = this.texturaCesped();
+    cesped.repeat.set(W / 22, H / 22);
+    const matTierra = new THREE.MeshStandardMaterial({ vertexColors: true, map: cesped, roughness: 1, flatShading: true });
+    const malla = new THREE.Mesh(g, matTierra);
+    malla.receiveShadow = true;
+    this.escena.add(malla);
+
+    // paredes: cada columna del borde baja del relieve a la tierra y de ahí al fondo, que se angosta como una roca flotante
+    const filas = [[0, '#6fb04f'], [5, '#9a6a45'], [FONDO * 0.45, '#7c5238'], [FONDO, '#3b2f2a']] as const;
+    const borde: [number, number][] = [];
+    const paso = d.paso;
+    for (let x = -W / 2; x < W / 2; x += paso) borde.push([x, -H / 2]);
+    for (let z = -H / 2; z < H / 2; z += paso) borde.push([W / 2, z]);
+    for (let x = W / 2; x > -W / 2; x -= paso) borde.push([x, H / 2]);
+    for (let z = H / 2; z > -H / 2; z -= paso) borde.push([-W / 2, z]);
+    borde.push(borde[0]);
+    const pw: number[] = [], cw: number[] = [], iw: number[] = [];
+    const cc = new THREE.Color();
+    borde.forEach(([x, z], k) => {
+      const h = alturaTerreno(x, z);
+      filas.forEach(([baja, color], r) => {
+        const encoge = r === 3 ? 0.86 : r === 2 ? 0.95 : 1;
+        pw.push(x * encoge, r === 0 ? h : r === 1 ? h - baja : -baja, z * encoge);
+        cc.set(color); cw.push(cc.r, cc.g, cc.b);
+      });
+      if (k) for (let r = 0; r < 3; r++) { const a0 = (k - 1) * 4 + r, a1 = k * 4 + r; iw.push(a0, a1, a0 + 1, a1, a1 + 1, a0 + 1); }
+    });
+    const gw = new THREE.BufferGeometry();
+    gw.setAttribute('position', new THREE.Float32BufferAttribute(pw, 3));
+    gw.setAttribute('color', new THREE.Float32BufferAttribute(cw, 3));
+    gw.setIndex(iw);
+    gw.computeVertexNormals();
+    const matPared = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 1, flatShading: true, side: THREE.DoubleSide });
+    const paredes = new THREE.Mesh(gw, matPared);
+    paredes.receiveShadow = true; paredes.castShadow = true;
+    this.escena.add(paredes);
+    const fondo = new THREE.Mesh(new THREE.PlaneGeometry(W * 0.86, H * 0.86).rotateX(Math.PI / 2), new THREE.MeshStandardMaterial({ color: '#3b2f2a', roughness: 1 }));
+    fondo.position.y = -FONDO;
+    this.escena.add(fondo);
+    this.desechables.push(matTierra, matPared, gw, fondo.geometry, fondo.material as THREE.Material);
+  }
+
+  /** Cinta que sigue el relieve a lo largo de una línea (calle o quebrada), partida donde sale del recuadro; `vRep` m de largo por vuelta de textura. */
+  private cinta(d: Diorama, pts: number[], ancho: number, alza: number, vRep = 24): THREE.BufferGeometry | null {
+    const dentro = (x: number, z: number) => Math.abs(x) < d.ancho / 2 - 2 && Math.abs(z) < d.fondo / 2 - 2;
+    const tramos: { x: number; z: number; s: number }[][] = [];
+    let tramo: { x: number; z: number; s: number }[] = [];
+    let acum = 0;
+    for (let i = 0; i + 3 < pts.length; i += 2) {
+      const [x0, z0, x1, z1] = [pts[i], pts[i + 1], pts[i + 2], pts[i + 3]];
+      const largo = Math.hypot(x1 - x0, z1 - z0);
+      if (largo < 0.01) continue;
+      const pasos = Math.max(1, Math.ceil(largo / 5));
+      for (let k = i === 0 ? 0 : 1; k <= pasos; k++) {
+        const t = k / pasos, x = x0 + (x1 - x0) * t, z = z0 + (z1 - z0) * t;
+        if (!dentro(x, z)) { if (tramo.length > 1) tramos.push(tramo); tramo = []; continue; }
+        this.marcar(x, z);
+        tramo.push({ x, z, s: acum + largo * t });
+      }
+      acum += largo;
+    }
+    if (tramo.length > 1) tramos.push(tramo);
+    const pos: number[] = [], idx: number[] = [], uv: number[] = [];
+    for (const tr of tramos) {
+      const base = pos.length / 3;
+      tr.forEach((q, j) => {
+        const a = tr[Math.max(j - 1, 0)], c = tr[Math.min(j + 1, tr.length - 1)];
+        const tx = c.x - a.x, tz = c.z - a.z, l = Math.hypot(tx, tz) || 1;
+        const nx = -tz / l, nz = tx / l, y = alturaTerreno(q.x, q.z) + alza, v = q.s / vRep;
+        pos.push(q.x + nx * ancho / 2, y, q.z + nz * ancho / 2, q.x - nx * ancho / 2, y, q.z - nz * ancho / 2);
+        uv.push(0, v, 1, v);
+        if (j) { const k = base + j * 2; idx.push(k - 2, k - 1, k, k - 1, k + 1, k); }
+      });
+    }
+    if (!idx.length) return null;
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    geo.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2));
+    geo.setIndex(idx);
+    geo.computeVertexNormals();
+    return geo;
+  }
+
+  /** Textura de calle (u cruza la vía, v la recorre): asfalto con grano, bordillos blancos y raya central discontinua; o acera de concreto con juntas. */
+  private texturaVia(clase: 'asfalto' | 'local' | 'sendero' | 'acera'): THREE.CanvasTexture {
+    const W = 64, H = 128;
+    const c = document.createElement('canvas');
+    c.width = W; c.height = H;
+    const g = c.getContext('2d')!;
+    const base = { asfalto: '#50565c', local: '#6f757b', sendero: '#c9b68a', acera: '#d8d3c8' }[clase];
+    g.fillStyle = base; g.fillRect(0, 0, W, H);
+    for (let i = 0; i < 520; i++) {
+      const v = this.rnd();
+      g.fillStyle = v < 0.5 ? 'rgba(0,0,0,.10)' : 'rgba(255,255,255,.09)';
+      g.fillRect(this.rnd() * W, this.rnd() * H, 1 + this.rnd() * 2, 1 + this.rnd() * 2);
+    }
+    if (clase === 'asfalto' || clase === 'local') {
+      g.fillStyle = '#f4f1e6';
+      g.fillRect(3, 0, 2, H); g.fillRect(W - 5, 0, 2, H);                 // delineado de borde
+      g.fillStyle = clase === 'asfalto' ? '#f2c230' : '#f4f1e6';
+      for (const y of [6, 70]) g.fillRect(W / 2 - 1, y, 2, 40);          // raya central discontinua
+      g.fillStyle = 'rgba(0,0,0,.22)';
+      g.fillRect(0, 0, 2, H); g.fillRect(W - 2, 0, 2, H);                 // sombra del bordillo
+    } else if (clase === 'acera') {
+      g.fillStyle = 'rgba(0,0,0,.22)'; g.fillRect(0, 0, 2, H); g.fillRect(W - 2, 0, 2, H);
+      g.fillRect(0, 0, W, 1); g.fillRect(0, H / 2, W, 1);                 // juntas de las losas
+      g.fillStyle = 'rgba(255,255,255,.35)'; g.fillRect(2, 0, 1, H); g.fillRect(W - 3, 0, 1, H);
+    } else {
+      g.fillStyle = 'rgba(90,70,40,.25)'; g.fillRect(W / 2 - 6, 0, 3, H); g.fillRect(W / 2 + 3, 0, 3, H);   // huellas del sendero
+    }
+    const tex = new THREE.CanvasTexture(c);
+    tex.colorSpace = THREE.SRGBColorSpace;
+    tex.wrapT = THREE.RepeatWrapping;
+    tex.anisotropy = 4;
+    this.desechables.push(tex);
+    return tex;
+  }
+
+  /** Césped: fondo claro con briznas más oscuras y más claras, para que el color del relieve lo tiña sin perder el grano. */
+  private texturaCesped(): THREE.CanvasTexture {
+    const N = 256;
+    const c = document.createElement('canvas');
+    c.width = c.height = N;
+    const g = c.getContext('2d')!;
+    g.fillStyle = '#e9efe2'; g.fillRect(0, 0, N, N);
+    for (let i = 0; i < 2600; i++) {
+      const x = this.rnd() * N, y = this.rnd() * N, l = 3 + this.rnd() * 6, a = (this.rnd() - 0.5) * 0.9;
+      g.strokeStyle = this.rnd() < 0.55 ? `rgba(60,110,50,${0.18 + this.rnd() * 0.2})` : `rgba(255,255,230,${0.2 + this.rnd() * 0.25})`;
+      g.lineWidth = 1 + this.rnd();
+      for (const dx of [0, -N, N]) for (const dy of [0, -N, N]) { g.beginPath(); g.moveTo(x + dx, y + dy); g.lineTo(x + dx + Math.sin(a) * l, y + dy - Math.cos(a) * l); g.stroke(); }
+    }
+    const tex = new THREE.CanvasTexture(c);
+    tex.colorSpace = THREE.SRGBColorSpace;
+    tex.wrapS = tex.wrapT = THREE.RepeatWrapping;
+    tex.anisotropy = 8;
+    this.desechables.push(tex);
+    return tex;
+  }
+
+  /** Agua del río: más oscura y honda al centro, con espuma en las orillas y vetas que corren con la corriente. */
+  private texturaAgua(): THREE.CanvasTexture {
+    const W = 64, H = 128;
+    const c = document.createElement('canvas');
+    c.width = W; c.height = H;
+    const g = c.getContext('2d')!;
+    const gr = g.createLinearGradient(0, 0, W, 0);
+    gr.addColorStop(0, '#9fe0f5'); gr.addColorStop(0.16, '#4fb6e0'); gr.addColorStop(0.5, '#1f7fb8'); gr.addColorStop(0.84, '#4fb6e0'); gr.addColorStop(1, '#9fe0f5');
+    g.fillStyle = gr; g.fillRect(0, 0, W, H);
+    for (let i = 0; i < 40; i++) {
+      const x = 8 + this.rnd() * (W - 16), y = this.rnd() * H, l = 8 + this.rnd() * 22;
+      g.fillStyle = `rgba(255,255,255,${0.16 + this.rnd() * 0.22})`;
+      for (const dy of [0, -H, H]) g.fillRect(x, y + dy, 1 + this.rnd() * 2, l);
+    }
+    g.fillStyle = 'rgba(255,255,255,.55)'; g.fillRect(0, 0, 3, H); g.fillRect(W - 3, 0, 3, H);
+    const tex = new THREE.CanvasTexture(c);
+    tex.colorSpace = THREE.SRGBColorSpace;
+    tex.wrapT = THREE.RepeatWrapping;
+    this.desechables.push(tex);
+    return tex;
+  }
+  private texAgua: THREE.CanvasTexture | null = null;
+  /** puentes ya puestos: centro, radio de influencia y altura de su tablero (para que el tráfico los cruce por encima) */
+  private puentes: { x: number; z: number; r: number; y: number }[] = [];
+
+  /** Altura a la que circula el tráfico en un punto: sobre el terreno, o sobre el tablero si hay un puente. */
+  private nivel(x: number, z: number): number {
+    let y = alturaTerreno(x, z) + ALZA_CALLE + 0.3;
+    for (const b of this.puentes) if (Math.abs(x - b.x) < b.r && Math.abs(z - b.z) < b.r && Math.hypot(x - b.x, z - b.z) < b.r) y = Math.max(y, b.y);
+    return y;
+  }
+
+  /** Un puente del catálogo del mapa 3D en cada cruce de una vía principal o local con el río o una quebrada ancha. */
+  private construirPuentes(d: Diorama): void {
+    const cauces: { pts: number[]; ancho: number }[] = [];
+    const eje: number[] = [];
+    for (let x = -d.ancho / 2 + 2; x <= d.ancho / 2 - 2; x += 14) eje.push(x, zRio(x));
+    cauces.push({ pts: eje, ancho: ANCHO_RIO });
+    for (const [w, pts] of d.rios) cauces.push({ pts, ancho: Math.max(6, w * 1.4) });
+    const inter = (ax: number, az: number, bx: number, bz: number, cx: number, cz: number, dx: number, dz: number) => {
+      const den = (bx - ax) * (dz - cz) - (bz - az) * (dx - cx);
+      if (Math.abs(den) < 1e-9) return null;
+      const t = ((cx - ax) * (dz - cz) - (cz - az) * (dx - cx)) / den, u = ((cx - ax) * (bz - az) - (cz - az) * (bx - ax)) / den;
+      return t >= 0 && t <= 1 && u >= 0 && u <= 1 ? t : null;
+    };
+    const cruces: { x: number; z: number; dx: number; dz: number; via: number; rio: number; largo: number }[] = [];
+    for (const [clase, pts] of d.vias) {
+      const k = Math.min(clase, 2);
+      if (k > 1) continue;
+      for (let i = 0; i + 3 < pts.length; i += 2) {
+        const [x0, z0, x1, z1] = [pts[i], pts[i + 1], pts[i + 2], pts[i + 3]];
+        for (const c of cauces) {
+          if (c.ancho < 9) continue;      // las quebradas angostas se cruzan sin puente
+          for (let j = 0; j + 3 < c.pts.length; j += 2) {
+            const [a0, b0, a1, b1] = [c.pts[j], c.pts[j + 1], c.pts[j + 2], c.pts[j + 3]];
+            if (Math.max(x0, x1) < Math.min(a0, a1) - 1 || Math.min(x0, x1) > Math.max(a0, a1) + 1 || Math.max(z0, z1) < Math.min(b0, b1) - 1 || Math.min(z0, z1) > Math.max(b0, b1) + 1) continue;
+            const t = inter(x0, z0, x1, z1, a0, b0, a1, b1);
+            if (t === null) continue;
+            const l = Math.hypot(x1 - x0, z1 - z0) || 1;
+            const lr = Math.hypot(a1 - a0, b1 - b0) || 1;
+            const sen = Math.abs(((x1 - x0) / l) * ((b1 - b0) / lr) - ((z1 - z0) / l) * ((a1 - a0) / lr));
+            if (sen < 0.45) continue;      // una vía casi paralela al cauce no lo cruza: lo bordea
+            cruces.push({ x: x0 + (x1 - x0) * t, z: z0 + (z1 - z0) * t, dx: (x1 - x0) / l, dz: (z1 - z0) / l, via: ANCHO_CALLE[k], rio: c.ancho, largo: c.ancho / sen + 20 });
+          }
+        }
+      }
+    }
+    cruces.sort((a, b) => b.rio - a.rio);
+    const hechos: typeof cruces = [];
+    for (const c of cruces) {
+      if (Math.abs(c.x) > d.ancho / 2 - 60 || Math.abs(c.z) > d.fondo / 2 - 60) continue;
+      if (hechos.some(o => Math.hypot(o.x - c.x, o.z - c.z) < 55)) continue;
+      hechos.push(c);
+    }
+    const modelo = modelarEquipamiento('vias', 'Vía', 'puente', this.rnd);
+    // se descartan del modelo el suelo y el agua de su maqueta, y los terraplenes: el relieve y el río ya están
+    const piezas = modelo.piezas.filter(p => !['#d3e2a6', '#4db3e6', '#7fa468'].includes(p.color));
+    for (const c of hechos) {
+      const sz = c.largo / 100, sx = (c.via + 6) / 14.95, mitad = sz * 50;
+      const yIn = alturaTerreno(c.x - c.dx * mitad, c.z - c.dz * mitad), yOut = alturaTerreno(c.x + c.dx * mitad, c.z + c.dz * mitad);
+      const cabeceo = Math.max(-0.22, Math.min(0.22, Math.atan2(yOut - yIn, 2 * mitad)));
+      const banco = (yIn + yOut) / 2;
+      const g = new THREE.Group();
+      g.position.set(c.x, banco + ALZA_CALLE - 7.3, c.z);
+      g.rotation.order = 'YXZ';
+      g.rotation.y = Math.atan2(c.dx, c.dz);
+      g.rotation.x = -cabeceo;                  // el tablero sigue la pendiente entre las dos orillas
+      g.scale.set(sx, 1, sz);
+      for (const pz of piezas) {
+        const m = new THREE.Mesh(pz.g, this.material(pz.color));
+        m.castShadow = true; m.receiveShadow = true;
+        g.add(m);
+      }
+      // el puente cuenta como vía: ni casas ni árboles debajo
+      for (let k = -mitad; k <= mitad; k += 12) {
+        const px = c.x + c.dx * k, pz = c.z + c.dz * k, clave = `${Math.floor(px / 40)},${Math.floor(pz / 40)}`;
+        const seg = [px, pz, px + c.dx * 12, pz + c.dz * 12, (c.via + 6) / 2 + 3];
+        const l = this.segmentos.get(clave);
+        if (l) l.push(seg); else this.segmentos.set(clave, [seg]);
+      }
+      this.escena.add(g);
+      this.puentes.push({ x: c.x, z: c.z, r: mitad * 0.95, y: banco + ALZA_CALLE + 0.3 });
+    }
+  }
+
+  /** Calles con acera, bordillo y raya central, y el río y las quebradas con agua que corre, tal como están en los datos del mapa. */
+  private construirCamino(d: Diorama): void {
+    const clases = [{ ancho: 15, tex: 'asfalto' as const }, { ancho: 9, tex: 'local' as const }, { ancho: 4, tex: 'sendero' as const }];
+    const acera = this.texturaVia('acera');
+    const matAcera = new THREE.MeshStandardMaterial({ map: acera, roughness: 1, polygonOffset: true, polygonOffsetFactor: -1, polygonOffsetUnits: -1, side: THREE.DoubleSide });
+    this.desechables.push(matAcera);
+    clases.forEach((cl, k) => {
+      const mat = new THREE.MeshStandardMaterial({ map: this.texturaVia(cl.tex), roughness: 0.95, polygonOffset: true, polygonOffsetFactor: -3, polygonOffsetUnits: -3, side: THREE.DoubleSide });
+      this.desechables.push(mat);
+      for (const [clase, pts] of d.vias) {
+        if (Math.min(clase, 2) !== k) continue;
+        if (k < 2) {
+          const ga = this.cinta(d, pts, cl.ancho + 6, 2.1 + (2 - k) * 0.25, 6);
+          if (ga) { const m = new THREE.Mesh(ga, matAcera); m.receiveShadow = true; this.escena.add(m); this.desechables.push(ga); }
+        }
+        const g = this.cinta(d, pts, cl.ancho, 2.2 + (2 - k) * 0.25);
+        if (g) { const m = new THREE.Mesh(g, mat); m.receiveShadow = true; this.escena.add(m); this.desechables.push(g); }
+      }
+    });
+    // el río y las quebradas: orilla de barro, y encima el agua con su corriente
+    this.texAgua = this.texturaAgua();
+    this.texAgua.repeat.set(1, 1);
+    const agua = new THREE.MeshStandardMaterial({ map: this.texAgua, roughness: 0.2, metalness: 0.15, polygonOffset: true, polygonOffsetFactor: -4, polygonOffsetUnits: -4, side: THREE.DoubleSide });
+    const barro = new THREE.MeshStandardMaterial({ color: '#7a6a48', roughness: 1, polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2, side: THREE.DoubleSide });
+    this.desechables.push(agua, barro);
+    const poner = (pts: number[], ancho: number, alza: number) => {
+      const orilla = this.cinta(d, pts, ancho + 7, alza - 0.5, 30);
+      if (orilla) { this.escena.add(new THREE.Mesh(orilla, barro)); this.desechables.push(orilla); }
+      const rio = this.cinta(d, pts, ancho, alza, 30);
+      if (rio) { this.escena.add(new THREE.Mesh(rio, agua)); this.desechables.push(rio); }
+    };
+    const eje: number[] = [];
+    for (let x = -d.ancho / 2 + 2; x <= d.ancho / 2 - 2; x += 14) eje.push(x, zRio(x));
+    poner(eje, ANCHO_RIO, 1.1);
+    for (const [ancho, pts] of d.rios) poner(pts, Math.max(6, ancho * 1.4), 1.8);
+  }
+
+  /** Indexa los tramos de calle y de quebrada para saber rápido si un punto cae encima de uno. */
+  private indexarCaminos(d: Diorama): void {
+    const ancho = [15, 9, 4];
+    const agregar = (pts: number[], mitad: number) => {
+      for (let i = 0; i + 3 < pts.length; i += 2) {
+        const seg = [pts[i], pts[i + 1], pts[i + 2], pts[i + 3], mitad];
+        const largo = Math.hypot(seg[2] - seg[0], seg[3] - seg[1]), n = Math.max(1, Math.ceil(largo / 20));
+        const vistos = new Set<string>();
+        for (let k = 0; k <= n; k++) {
+          const x = seg[0] + (seg[2] - seg[0]) * k / n, z = seg[1] + (seg[3] - seg[1]) * k / n, clave = `${Math.floor(x / 40)},${Math.floor(z / 40)}`;
+          if (vistos.has(clave)) continue;
+          vistos.add(clave);
+          const l = this.segmentos.get(clave);
+          if (l) l.push(seg); else this.segmentos.set(clave, [seg]);
+        }
+      }
+    };
+    for (const [clase, pts] of d.vias) agregar(pts, ancho[Math.min(clase, 2)] / 2);
+    for (const [w, pts] of d.rios) agregar(pts, Math.max(6, w * 1.4) / 2);
+  }
+
+  /** ¿Cae el punto sobre una calle, una quebrada o el río (o a menos de `margen` m de su orilla)? */
+  private sobreCamino(x: number, z: number, margen: number): boolean {
+    if (Math.abs(z - zRio(x)) * 0.8 < ANCHO_RIO / 2 + margen) return true;
+    const cx = Math.floor(x / 40), cz = Math.floor(z / 40);
+    for (let a = -1; a <= 1; a++) for (let b = -1; b <= 1; b++) {
+      const l = this.segmentos.get(`${cx + a},${cz + b}`);
+      if (!l) continue;
+      for (const [x0, z0, x1, z1, mitad] of l) {
+        const dx = x1 - x0, dz = z1 - z0, L = dx * dx + dz * dz;
+        const t = L === 0 ? 0 : Math.max(0, Math.min(1, ((x - x0) * dx + (z - z0) * dz) / L));
+        if (Math.hypot(x - (x0 + t * dx), z - (z0 + t * dz)) < mitad + margen) return true;
+      }
+    }
+    return false;
+  }
+
+  /** Si la explanada de un responsable quedó sobre una calle o el río, lo corre al sitio libre más cercano. */
+  private reubicarSitios(d: Diorama): void {
+    const ids = Object.keys(d.sitios);
+    const ok = (id: string, x: number, z: number) => {
+      if (Math.abs(x) > d.ancho / 2 - 70 || Math.abs(z) > d.fondo / 2 - 70) return false;
+      if (this.sobreCamino(x, z, id === 'inf' ? 44 : 30)) return false;
+      if (ids.some(o => o !== id && Math.hypot(x - d.sitios[o][0], z - d.sitios[o][1]) < 190)) return false;
+      let lo = Infinity, hi = -Infinity;
+      for (const [a, b] of [[-14, -14], [14, -14], [-14, 14], [14, 14], [0, 0]]) { const h = alturaTerreno(x + a, z + b); lo = Math.min(lo, h); hi = Math.max(hi, h); }
+      return hi - lo <= 14;
+    };
+    for (const id of ids) {
+      const [x, z] = d.sitios[id];
+      if (ok(id, x, z)) continue;
+      let puesto = false;
+      for (let r = 12; r <= 280 && !puesto; r += 12) {
+        for (let k = 0; k < 360 && !puesto; k += 20) {
+          const px = x + r * Math.cos(k * Math.PI / 180), pz = z + r * Math.sin(k * Math.PI / 180);
+          if (ok(id, px, pz)) { d.sitios[id][0] = Math.round(px); d.sitios[id][1] = Math.round(pz); puesto = true; }
+        }
+      }
+    }
+  }
+
+  /** Las casas y edificios reales del casco urbano, uno por huella, con paredes de colores alegres y techo de teja. */
+  private construirCasas(d: Diorama): void {
+    const sitios = Object.values(d.sitios);
+    const lejos = (x: number, z: number) => sitios.every(s => Math.hypot(x - s[0], z - s[1]) > 52);
+    const medio = (area: number) => Math.min(16, Math.max(4.5, Math.sqrt(area / 1.35))) / 2 + 1;
+    const lista = d.casas.filter(c => lejos(c[0], c[1]) && !this.sobreCamino(c[0], c[1], medio(c[2])));
+    const caja = new THREE.BoxGeometry(1, 1, 1).translate(0, 0.5, 0);
+    const techo = new THREE.CylinderGeometry(0, Math.SQRT1_2, 1, 4, 1).rotateY(Math.PI / 4).translate(0, 0.5, 0);
+    this.desechables.push(caja, techo);
+    const blanco = new THREE.MeshStandardMaterial({ color: '#ffffff', roughness: 0.9 });
+    this.desechables.push(blanco);
+    const paredes = new THREE.InstancedMesh(caja, blanco, lista.length);
+    const techos = new THREE.InstancedMesh(techo, blanco, lista.length);
+    const m = new THREE.Matrix4(), q = new THREE.Quaternion(), p = new THREE.Vector3(), s = new THREE.Vector3(), eje = new THREE.Vector3(0, 1, 0), c = new THREE.Color();
+    lista.forEach(([x, z, area, ry], i) => {
+      const h = hash(i * 3.7, 11), alto = area > 380 ? 12 + 6 * h : area > 160 ? 6.5 + 3 * h : 4.5 + 2 * h;
+      const corto = Math.min(16, Math.max(4.5, Math.sqrt(area / 1.35))), largo = Math.min(26, Math.max(corto, area / corto));
+      const y = alturaTerreno(x, z) - 0.3;
+      this.marcar(x, z);
+      q.setFromAxisAngle(eje, ry);
+      paredes.setMatrixAt(i, m.compose(p.set(x, y, z), q, s.set(corto, alto, largo)));
+      paredes.setColorAt(i, c.set(PALETA[Math.floor(hash(i * 1.3, 5) * PALETA.length)]));
+      const grande = area > 380;
+      if (hash(i * 5.3, 17) < 0.22) this.ventanas.push(x + Math.cos(ry) * (corto / 2 + 0.5), y + alto * 0.45, z - Math.sin(ry) * (corto / 2 + 0.5));
+      techos.setMatrixAt(i, m.compose(p.set(x, y + alto, z), q, s.set(corto * 1.12, grande ? 0.8 : Math.min(corto * 0.42, 3.6), largo * 1.08)));
+      techos.setColorAt(i, c.set(grande ? '#8b9096' : TEJAS[Math.floor(hash(i * 2.1, 9) * TEJAS.length)]));
+    });
+    for (const im of [paredes, techos]) { im.castShadow = true; im.receiveShadow = true; this.escena.add(im); }
+    this.brillo(this.ventanas, '#ffc566', 3.6, 0.65);
+  }
+
+  private instanciar(modelo: Modelo, puestos: { x: number; y: number; z: number; ry: number; s: number }[]): void {
+    const mat = new THREE.Matrix4(), q = new THREE.Quaternion(), p = new THREE.Vector3(), s = new THREE.Vector3(), eje = new THREE.Vector3(0, 1, 0);
+    for (const pieza of modelo.piezas) {
+      const im = new THREE.InstancedMesh(pieza.g, this.material(pieza.color), puestos.length);
+      puestos.forEach((u, i) => {
+        q.setFromAxisAngle(eje, u.ry);
+        mat.compose(p.set(u.x, u.y, u.z), q, s.set(u.s, u.s, u.s));
+        im.setMatrixAt(i, mat);
+      });
+      im.castShadow = true; im.receiveShadow = true;
+      this.escena.add(im);
+    }
+  }
+
+  /** Bosque en las laderas y árboles sueltos por el pueblo: todos los del catálogo (samán, guayacán amarillo, yarumo, ceiba y el del bosque). */
+  private sembrarArboles(d: Diorama): void {
+    for (const s of Object.values(d.sitios)) for (let a = -2; a <= 2; a++) for (let b = -2; b <= 2; b++) this.marcar(s[0] + a * 24, s[1] + b * 24);
+    const especies = [
+      { nombre: 'Árbol', peso: 4 }, { nombre: 'Samán', peso: 1.5 }, { nombre: 'Guayacán', peso: 2.5 }, { nombre: 'Yarumo', peso: 2 }, { nombre: 'Ceiba', peso: 1.2 },
+    ];
+    const total = especies.reduce((a, e) => a + e.peso, 0);
+    const porEspecie = new Map<string, { x: number; y: number; z: number; ry: number; s: number }[]>(especies.map(e => [e.nombre, []]));
+    let n = 0, intentos = 0;
+    while (n < 1500 && intentos++ < 30000) {
+      const x = (this.rnd() - 0.5) * (d.ancho - 20), z = (this.rnd() - 0.5) * (d.fondo - 20);
+      const h = alturaTerreno(x, z);
+      if (this.sobreCamino(x, z, 3)) continue;
+      const enPueblo = this.estaOcupado(x, z);
+      if (enPueblo && this.rnd() > 0.18) continue;       // dentro del casco urbano solo unos pocos, entre las casas
+      if (!enPueblo && h < 40 && this.rnd() > 0.5) continue;
+      let t = this.rnd() * total, esp = especies[0].nombre;
+      for (const e of especies) { if ((t -= e.peso) <= 0) { esp = e.nombre; break; } }
+      porEspecie.get(esp)!.push({ x, y: h, z, ry: this.rnd() * 6.28, s: (enPueblo ? 0.45 : h < 40 ? 0.6 : 1.0) * (0.75 + this.rnd() * 0.5) });
+      n++;
+    }
+    for (const e of especies) this.instanciar(modelarEquipamiento('naturaleza', 'Vegetación', e.nombre, this.rnd), porEspecie.get(e.nombre)!);
+  }
+
+  /** Tramos de calle dentro del recuadro, partidos donde la vía sale de él. */
+  private rutasDe(d: Diorama, clases: number[]): Ruta[] {
+    const rutas: Ruta[] = [];
+    const dentro = (x: number, z: number) => Math.abs(x) < d.ancho / 2 - 6 && Math.abs(z) < d.fondo / 2 - 6;
+    for (const [clase, pts] of d.vias) {
+      const k = Math.min(clase, 2);
+      if (!clases.includes(k)) continue;
+      let tramo: number[] = [];
+      const cerrar = () => {
+        if (tramo.length >= 4) {
+          const cum = [0];
+          for (let i = 2; i < tramo.length; i += 2) cum.push(cum[cum.length - 1] + Math.hypot(tramo[i] - tramo[i - 2], tramo[i + 1] - tramo[i - 1]));
+          if (cum[cum.length - 1] > 50) rutas.push({ pts: tramo, cum, total: cum[cum.length - 1], clase: k });
+        }
+        tramo = [];
+      };
+      for (let i = 0; i + 1 < pts.length; i += 2) { if (dentro(pts[i], pts[i + 1])) tramo.push(pts[i], pts[i + 1]); else cerrar(); }
+      cerrar();
+    }
+    return rutas;
+  }
+
+  /** Tráfico por las calles principales y locales, y gente por las aceras, con los modelos del catálogo del mapa 3D. */
+  private construirMovimiento(d: Diorama): void {
+    const elegir = (rutas: Ruta[]) => {
+      const total = rutas.reduce((a, r) => a + r.total, 0);
+      return () => { let t = this.rnd() * total; for (const r of rutas) if ((t -= r.total) <= 0) return r; return rutas[0]; };
+    };
+    const calles = this.rutasDe(d, [0, 1]), aceras = this.rutasDe(d, [1, 2]);
+    const autos = elegir(calles), peatones = elegir(aceras);
+    const colores = ['#ff2d2d', '#ff8a00', '#ffd400', '#00d26a', '#00c2ff', '#2f6bff', '#e040fb', '#ff4fa3'];
+    const c = new THREE.Color();
+    const crear = (modelo: Modelo, n: number, escala: number, eje: 'x' | 'z', pintar: boolean, ruta: () => Ruta, vel: [number, number], lado: (r: Ruta) => number): void => {
+      const mallas = modelo.piezas.map(p => {
+        const cuerpo = pintar && p.color === '#ff2d2d';
+        const im = new THREE.InstancedMesh(p.g, this.material(cuerpo ? '#ffffff' : p.color), n);
+        im.frustumCulled = false;
+        im.castShadow = true;
+        im.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+        if (cuerpo) for (let i = 0; i < n; i++) im.setColorAt(i, c.set(colores[Math.floor(this.rnd() * colores.length)]));
+        this.escena.add(im);
+        return im;
+      });
+      const agentes: Agente[] = [];
+      for (let i = 0; i < n; i++) {
+        const r = ruta();
+        agentes.push({ ruta: r, s: this.rnd() * r.total, dir: this.rnd() < 0.5 ? 1 : -1, vel: vel[0] + this.rnd() * (vel[1] - vel[0]), lado: lado(r), i });
+      }
+      const flota: Flota = { mallas, escala, eje, agentes };
+      if (eje === 'x') {
+        // dos faros delanteros y dos luces traseras por vehículo, que se encienden de noche
+        const cero = new Array(n * 6).fill(0);
+        flota.faros = this.brillo(cero, '#fff1c0', 5.5, 0.8) ?? undefined;
+        flota.colas = this.brillo([...cero], '#ff3b2f', 3.4, 0.7) ?? undefined;
+        for (const pt of [flota.faros, flota.colas]) (pt?.geometry.attributes['position'] as THREE.BufferAttribute | undefined)?.setUsage(THREE.DynamicDrawUsage);
+      }
+      this.flotas.push(flota);
+    };
+    const carril = (r: Ruta) => ANCHO_CALLE[r.clase] * 0.25;
+    const flota: [string, number, [number, number]][] = [['Auto', 22, [18, 30]], ['Taxi', 8, [18, 30]], ['Campero FJ', 5, [16, 26]], ['Bus', 4, [12, 18]], ['Camión con tráiler', 3, [10, 16]], ['Moto', 10, [22, 34]]];
+    for (const [nombre, n, vel] of flota) {
+      const escala = nombre === 'Bus' || nombre.startsWith('Camión') ? 0.5 : 0.55;
+      crear(modelarEquipamiento('vehiculos', 'Vehículo', nombre, this.rnd), n, escala, 'x', nombre === 'Auto', autos, vel, carril);
+    }
+    for (const nombre of ['Hombre', 'Mujer', 'Niño escolar', 'Campesino']) {
+      crear(modelarEquipamiento('gente', 'Persona', nombre, this.rnd), 22, 3.4, 'z', false, peatones, [3, 6], r => (this.rnd() < 0.5 ? 1 : -1) * (ANCHO_CALLE[r.clase] / 2 + 2.2));
+    }
+  }
+
+  /** Avanza vehículos y gente por su tramo; al llegar a un extremo dan la vuelta. */
+  private moverGente(dt: number): void {
+    const m = new THREE.Matrix4(), q = new THREE.Quaternion(), p = new THREE.Vector3(), sc = new THREE.Vector3(), eje = new THREE.Vector3(0, 1, 0);
+    for (const f of this.flotas) {
+      for (const a of f.agentes) {
+        const r = a.ruta;
+        a.s += a.dir * a.vel * dt;
+        if (a.s < 0) { a.s = 0; a.dir = 1; } else if (a.s > r.total) { a.s = r.total; a.dir = -1; }
+        let lo = 0, hi = r.cum.length - 1;
+        while (hi - lo > 1) { const mid = (lo + hi) >> 1; if (r.cum[mid] <= a.s) lo = mid; else hi = mid; }
+        const x0 = r.pts[2 * lo], z0 = r.pts[2 * lo + 1], x1 = r.pts[2 * hi], z1 = r.pts[2 * hi + 1];
+        const largo = r.cum[hi] - r.cum[lo] || 1, t = (a.s - r.cum[lo]) / largo;
+        let hx = (x1 - x0) / largo, hz = (z1 - z0) / largo;
+        if (a.dir < 0) { hx = -hx; hz = -hz; }
+        const x = x0 + (x1 - x0) * t - hz * a.lado, z = z0 + (z1 - z0) * t + hx * a.lado;
+        q.setFromAxisAngle(eje, f.eje === 'x' ? Math.atan2(-hz, hx) : Math.atan2(hx, hz));
+        const yv = this.nivel(x, z);
+        m.compose(p.set(x, yv, z), q, sc.setScalar(f.escala));
+        if (f.faros && f.colas && f.faros.visible) {
+          const pf = f.faros.geometry.attributes['position'] as THREE.BufferAttribute, pc = f.colas.geometry.attributes['position'] as THREE.BufferAttribute;
+          for (const lado of [-1, 1]) {
+            const k = a.i * 2 + (lado > 0 ? 1 : 0), lx = -hz * lado * 0.8, lz = hx * lado * 0.8;
+            pf.setXYZ(k, x + hx * 2.9 + lx, yv + 1.1, z + hz * 2.9 + lz);
+            pc.setXYZ(k, x - hx * 2.9 + lx, yv + 1.2, z - hz * 2.9 + lz);
+          }
+        }
+        for (const im of f.mallas) im.setMatrixAt(a.i, m);
+      }
+      for (const im of f.mallas) im.instanceMatrix.needsUpdate = true;
+      if (f.faros && f.colas && f.faros.visible) { (f.faros.geometry.attributes['position'] as THREE.BufferAttribute).needsUpdate = true; (f.colas.geometry.attributes['position'] as THREE.BufferAttribute).needsUpdate = true; }
+    }
+  }
+
+  /** Puntos de luz que se encienden de noche (aureolas aditivas, sin luces reales): ventanas, farolas. */
+  private brillo(pos: number[], color: string, tam: number, max: number): THREE.Points | null {
+    if (!pos.length) return null;
+    const c = document.createElement('canvas');
+    c.width = c.height = 64;
+    const g = c.getContext('2d')!;
+    const gr = g.createRadialGradient(32, 32, 0, 32, 32, 32);
+    gr.addColorStop(0, 'rgba(255,255,255,1)'); gr.addColorStop(0.25, 'rgba(255,255,255,.7)'); gr.addColorStop(1, 'rgba(255,255,255,0)');
+    g.fillStyle = gr; g.fillRect(0, 0, 64, 64);
+    const tex = new THREE.CanvasTexture(c);
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    const mat = new THREE.PointsMaterial({ map: tex, color, size: tam, sizeAttenuation: false, transparent: true, opacity: 0, depthWrite: false, blending: THREE.AdditiveBlending });
+    const pts = new THREE.Points(geo, mat);
+    pts.frustumCulled = false;
+    pts.visible = false;
+    pts.renderOrder = 9;
+    this.escena.add(pts);
+    this.desechables.push(tex, geo, mat);
+    this.brillos.push({ pts, max, px: tam });
+    return pts;
+  }
+
+  /** Postes de luz a lo largo de las calles principales y locales, alternando de lado; su lámpara se enciende al anochecer. */
+  private construirFarolas(d: Diorama): void {
+    const postes: { x: number; z: number; ry: number; y: number }[] = [];
+    const luces: number[] = [];
+    const lejosDeSitios = (x: number, z: number) => Object.values(d.sitios).every(s => Math.hypot(x - s[0], z - s[1]) > 48);
+    let alterna = 0;
+    for (const r of this.rutasDe(d, [0, 1])) {
+      const paso = r.clase === 0 ? 62 : 84, lado = ANCHO_CALLE[r.clase] / 2 + 2.2;
+      for (let s = paso / 2; s < r.total; s += paso) {
+        let lo = 0, hi = r.cum.length - 1;
+        while (hi - lo > 1) { const m = (lo + hi) >> 1; if (r.cum[m] <= s) lo = m; else hi = m; }
+        const x0 = r.pts[2 * lo], z0 = r.pts[2 * lo + 1], x1 = r.pts[2 * hi], z1 = r.pts[2 * hi + 1];
+        const largo = r.cum[hi] - r.cum[lo] || 1, t = (s - r.cum[lo]) / largo;
+        const tx = (x1 - x0) / largo, tz = (z1 - z0) / largo;
+        const sig = (alterna++ % 2) ? 1 : -1;
+        const nx = -tz * sig, nz = tx * sig;                            // hacia afuera de la vía
+        const x = x0 + (x1 - x0) * t + nx * lado, z = z0 + (z1 - z0) * t + nz * lado;
+        if (!lejosDeSitios(x, z) || Math.abs(z - zRio(x)) * 0.8 < ANCHO_RIO / 2 + 6) continue;
+        if (this.puentes.some(b => Math.hypot(x - b.x, z - b.z) < b.r + 6)) continue;
+        postes.push({ x, z, ry: Math.atan2(nz, -nx), y: alturaTerreno(x, z) + 2.3 });      // el brazo apunta hacia la vía
+        luces.push(x - nx * 3.1, alturaTerreno(x, z) + 2.3 + 10.4, z - nz * 3.1);
+      }
+    }
+    if (!postes.length) return;
+    const palo = new THREE.CylinderGeometry(0.45, 0.7, 11, 6).translate(0, 5.5, 0);
+    const brazo = new THREE.BoxGeometry(3.4, 0.45, 0.45).translate(-1.5, 10.8, 0);
+    const cabeza = new THREE.BoxGeometry(2.2, 0.5, 1.1).translate(-3.1, 10.5, 0);
+    this.matFarola = new THREE.MeshStandardMaterial({ color: '#fff3c4', emissive: '#ffd986', emissiveIntensity: 0, roughness: 0.5 });
+    const gris = new THREE.MeshStandardMaterial({ color: '#4b5560', roughness: 0.7 });
+    this.desechables.push(palo, brazo, cabeza, this.matFarola, gris);
+    const m = new THREE.Matrix4(), q = new THREE.Quaternion(), eje = new THREE.Vector3(0, 1, 0), p = new THREE.Vector3(), sc = new THREE.Vector3(1, 1, 1);
+    [[palo, gris], [brazo, gris], [cabeza, this.matFarola]].forEach(([g, mt]) => {
+      const im = new THREE.InstancedMesh(g as THREE.BufferGeometry, mt as THREE.Material, postes.length);
+      postes.forEach((u, i) => { q.setFromAxisAngle(eje, u.ry); im.setMatrixAt(i, m.compose(p.set(u.x, u.y, u.z), q, sc)); });
+      im.castShadow = true;
+      this.escena.add(im);
+    });
+    this.brillo(luces, '#ffe2a0', 9, 0.7);
+  }
+
+  /** Estrellas sobre el horizonte, que solo se ven de noche: muchas pequeñas y unas pocas más grandes que titilan. */
+  private construirEstrellas(): void {
+    const capa = (n: number, size: number): THREE.Points => {
+      const pos: number[] = [];
+      for (let i = 0; i < n; i++) {
+        const a = this.rnd() * Math.PI * 2, e = 0.03 + Math.pow(this.rnd(), 0.8) * 1.4, r = 3600;
+        pos.push(Math.cos(a) * Math.cos(e) * r, Math.sin(e) * r, Math.sin(a) * Math.cos(e) * r);
+      }
+      const geo = new THREE.BufferGeometry();
+      geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+      const mat = new THREE.PointsMaterial({ color: '#ffffff', size: size * Math.min(devicePixelRatio, 2), sizeAttenuation: false, transparent: true, opacity: 0, depthWrite: false });
+      const pts = new THREE.Points(geo, mat);
+      pts.frustumCulled = false;
+      pts.visible = false;
+      this.escena.add(pts);
+      this.desechables.push(geo, mat);
+      return pts;
+    };
+    this.estrellas = capa(1800, 1.6);
+    this.estrellasGrandes = capa(220, 3);
+  }
+  private estrellasGrandes: THREE.Points | null = null;
+
+  /** Un día de 24 h en 30 s: el sol cruza el cielo, el cielo y las luces cambian, y al anochecer se encienden farolas y ventanas. */
+  private animarCiclo(t: number): void {
+    const hh = (10 + t * 24 / 30) % 24;
+    const a = (hh - 6) / 12 * Math.PI, alto = Math.sin(a);                 // alto > 0: de día
+    const dia = THREE.MathUtils.smoothstep(alto, -0.1, 0.28), noche = 1 - dia;
+    const ocaso = Math.exp(-Math.pow(alto / 0.22, 2));                       // tinte cálido al amanecer y al atardecer
+    const mezcla = (d: string, o: string, n: string) => new THREE.Color(d).lerp(new THREE.Color(o), ocaso * dia + ocaso * noche * 0.5).lerp(new THREE.Color(n), noche);
+    this.sol.position.set(Math.cos(a) * 640, Math.max(alto, 0.05) * 560 + 30, 230);
+    this.sol.intensity = 2.6 * dia;
+    this.sol.color.set('#fff4e0').lerp(new THREE.Color('#ff9a55'), ocaso);
+    this.luna.intensity = 0.55 * noche;
+    this.luna.position.set(-Math.cos(a) * 500, 420, -240);
+    this.hemi.intensity = 0.5 + 0.7 * dia;
+    this.hemi.color.set('#8fa3d8').lerp(new THREE.Color('#ffffff'), dia);
+    this.hemi.groundColor.set('#222a3a').lerp(new THREE.Color('#88aa77'), dia);
+    if (this.matNube) { this.matNube.emissiveIntensity = 0.04 + 0.21 * dia; this.matNube.color.set('#8d98b8').lerp(new THREE.Color('#ffffff'), dia); }
+    if (this.matFarola) this.matFarola.emissiveIntensity = 1.6 * noche;
+    // los edificios de los responsables se iluminan por dentro (salvo el que está resaltado, que ya brilla)
+    const activo = this.elegido()?.dep.id;
+    for (const b of this.edificios) {
+      if (b.r.dep.id === this.resaltando || b.r.dep.id === activo) continue;
+      for (const mt of b.mats) { mt.emissive.set('#ffb35a'); mt.emissiveIntensity = 0.05 * noche; }
+    }
+    // el tamaño en pantalla de las luces crece poco al acercarse, para que se vean de lejos sin volverse manchas de cerca
+    const zoom = Math.min(1.5, Math.max(0.6, Math.sqrt(1400 / this.camara.position.distanceTo(this.controles.target)))) * Math.min(devicePixelRatio, 2);
+    for (const b of this.brillos) { const mt = b.pts.material as THREE.PointsMaterial; b.pts.visible = noche > 0.03; mt.opacity = b.max * Math.min(1, noche * 1.6); mt.size = b.px * zoom; }
+    const brilloEstrella = Math.max(0, noche - 0.35) * 1.5;
+    for (const [capa, vivo] of [[this.estrellas, 0], [this.estrellasGrandes, 1]] as const) {
+      if (!capa) continue;
+      capa.visible = noche > 0.4;
+      (capa.material as THREE.PointsMaterial).opacity = Math.min(1, brilloEstrella) * (vivo ? 0.65 + 0.35 * Math.sin(t * 2.3) : 0.85);
+    }
+    // el cielo es el degradado del recuadro del mapa
+    const arriba = mezcla('#a9cdee', '#e9936a', '#0a1230'), abajo = mezcla('#e6eff7', '#f7c98b', '#222f5a');
+    if (!this.fondoMapa) this.fondoMapa = this.lienzo.nativeElement.parentElement;
+    if (this.fondoMapa) this.fondoMapa.style.background = `linear-gradient(#${arriba.getHexString()}, #${abajo.getHexString()})`;
+    const hora = Math.floor(hh);
+    if (hora !== this.horaMostrada) {
+      this.horaMostrada = hora;
+      this.hora.set(`${dia > 0.5 ? '☀' : '🌙'} ${String(hora).padStart(2, '0')}:00`);
+    }
+  }
+
+  /** Bocanadas de humo grises que nacen en la boca de la chimenea, suben con el viento, se ensanchan y se desvanecen. */
+  private crearHumo(x: number, y: number, z: number): void {
+    const c = document.createElement('canvas');
+    c.width = c.height = 64;
+    const g = c.getContext('2d')!;
+    const gr = g.createRadialGradient(32, 32, 2, 32, 32, 30);
+    gr.addColorStop(0, 'rgba(255,255,255,1)'); gr.addColorStop(0.5, 'rgba(255,255,255,.55)'); gr.addColorStop(1, 'rgba(255,255,255,0)');
+    g.fillStyle = gr; g.fillRect(0, 0, 64, 64);
+    const tex = new THREE.CanvasTexture(c);
+    tex.colorSpace = THREE.SRGBColorSpace;
+    this.desechables.push(tex);
+    const puffs = Array.from({ length: 18 }, () => {
+      const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthWrite: false, opacity: 0 }));
+      sp.renderOrder = 8;
+      this.escena.add(sp);
+      this.desechables.push(sp.material);
+      return sp;
+    });
+    this.humos.push({ x, y, z, puffs });
+  }
+
+  private animarHumo(t: number): void {
+    for (const h of this.humos) {
+      h.puffs.forEach((sp, i) => {
+        const p = ((t / 9) + i / h.puffs.length) % 1;
+        sp.position.set(h.x + p * 95 + Math.sin(t * 0.7 + i) * 3, h.y + p * 125, h.z + p * 32);
+        const e = 9 + p * 36;
+        sp.scale.set(e, e, 1);
+        sp.material.opacity = Math.min(p / 0.08, 1) * (1 - p) * 0.75;
+        sp.material.color.setScalar(0.32 + 0.6 * p);
+      });
+    }
+  }
+
+  /** Bandada en V que cruza el pueblo de sur a norte, con las alas aleteando (las mismas aves del mapa 3D). */
+  private construirPajaros(d: Diorama): void {
+    const plano = (pts: [number, number][], lado: number) => {
+      const g = new THREE.ShapeGeometry(new THREE.Shape(pts.map(([x, z]) => new THREE.Vector2(lado * x, -z))));
+      g.rotateX(-Math.PI / 2);
+      this.desechables.push(g);
+      return g;
+    };
+    const brazo: [number, number][] = [[0, -9], [6, -10.5], [13, -10], [20, -7.5], [20, -1], [14, 2.5], [7, 4.5], [0, 5]];
+    const mano: [number, number][] = [[0, -7.5], [8, -9.5], [17, -9], [26, -6], [34, -1.5], [37, 1.5], [31, 1], [29, 4.5], [23, 2.5], [21, 6], [15, 3.5], [12, 6.5], [6, 4], [0, 0.5]];
+    const forma = (g: THREE.BufferGeometry, x = 0, y = 0, z = 0) => { g.translate(x, y, z); this.desechables.push(g); return g; };
+    const cuerpo = forma(new THREE.SphereGeometry(1, 10, 8).scale(3.6, 3.2, 12));
+    const cabeza = forma(new THREE.SphereGeometry(2.7, 9, 7), 0, 1.2, -12.5);
+    const pico = forma(new THREE.ConeGeometry(1.1, 6.5, 6).rotateX(-Math.PI / 2), 0, 0.7, -18.6);
+    const cola = forma(new THREE.ShapeGeometry(new THREE.Shape([[-2.5, 8], [-6.5, 21], [-3.5, 24], [0, 22], [3.5, 24], [6.5, 21], [2.5, 8]].map(([x, z]) => new THREE.Vector2(x, -z)))).rotateX(-Math.PI / 2));
+    const blanco = new THREE.MeshLambertMaterial({ color: '#f6f8fa', emissive: '#7a8490', side: THREE.DoubleSide });
+    const plumas = new THREE.MeshLambertMaterial({ color: '#e7ecf1', emissive: '#6b7480', side: THREE.DoubleSide });
+    const amarillo = new THREE.MeshLambertMaterial({ color: '#f2a73b', emissive: '#6b4a14' });
+    this.desechables.push(blanco, plumas, amarillo);
+    const alaGeos = [-1, 1].map(lado => ({ brazo: plano(brazo, lado), mano: plano(mano, lado) }));
+    for (let i = 0; i < 9; i++) {
+      const fila = Math.ceil(i / 2), lado = i % 2 ? 1 : -1;
+      const grupo = new THREE.Group();
+      grupo.add(new THREE.Mesh(cuerpo, blanco), new THREE.Mesh(cabeza, blanco), new THREE.Mesh(pico, amarillo), new THREE.Mesh(cola, plumas));
+      const [izq, der] = alaGeos.map((g, k) => {
+        const signo = k ? 1 : -1;
+        const hombro = new THREE.Group();
+        hombro.position.set(signo * 2.5, 0.8, 0);
+        const codo = new THREE.Group();
+        codo.position.set(signo * 20, 0, 0);
+        hombro.add(new THREE.Mesh(g.brazo, blanco), codo);
+        codo.add(new THREE.Mesh(g.mano, plumas));
+        grupo.add(hombro);
+        return { hombro, codo };
+      });
+      grupo.visible = false;
+      this.escena.add(grupo);
+      this.pajaros.push({
+        grupo, izq: izq.hombro, der: der.hombro, codoIzq: izq.codo, codoDer: der.codo,
+        ox: i ? lado * fila * 75 + (this.rnd() - 0.5) * 40 : 0, oz: i ? fila * 85 + (this.rnd() - 0.5) * 50 : 0, oy: (this.rnd() - 0.5) * 40,
+        y: 200, fase: this.rnd() * Math.PI * 2, ritmo: 7 + this.rnd() * 3,
+      });
+    }
+    this.recorridoPajaros = d.fondo + 600;
+    this.tiempoPajaros = (this.recorridoPajaros / VELOCIDAD_PAJAROS) * 0.28;
+  }
+  private recorridoPajaros = 1700;
+
+  private animarPajaros(dt: number, t: number): void {
+    if (!this.pajaros.length) return;
+    this.tiempoPajaros += dt;
+    const duracion = this.recorridoPajaros / VELOCIDAD_PAJAROS;
+    const fase = this.tiempoPajaros % (duracion + 7);
+    const volando = fase < duracion, avance = fase / duracion;
+    const suave = (v: number) => { const u = Math.min(1, Math.max(0, v / 0.06)); return u * u * (3 - 2 * u); };
+    const escala = 0.5 * suave(avance) * suave(1 - avance);
+    const zGuia = this.recorridoPajaros / 2 - avance * this.recorridoPajaros;     // de sur (+z) a norte (-z)
+    for (const b of this.pajaros) {
+      b.grupo.visible = volando && escala > 0.01;
+      if (!b.grupo.visible) continue;
+      const x = -120 + b.ox + Math.sin(t * 0.6 + b.fase) * 14, z = zGuia + b.oz;
+      const objetivo = Math.max(alturaTerreno(Math.max(-690, Math.min(690, x)), Math.max(-540, Math.min(540, z))), 0) + 150 + b.oy + Math.sin(t * 1.1 + b.fase) * 8;
+      b.y += (objetivo - b.y) * Math.min(1, dt * 1.5);
+      b.grupo.position.set(x, b.y, z);
+      b.grupo.scale.setScalar(escala);
+      const a = Math.sin(t * b.ritmo + b.fase) * 0.55, m = Math.sin(t * b.ritmo + b.fase - 0.9) * 0.55;
+      b.izq.rotation.z = a; b.der.rotation.z = -a;
+      b.codoIzq.rotation.z = m; b.codoDer.rotation.z = -m;
+    }
+  }
+
+  private construirNubes(): void {
+    const mat = new THREE.MeshStandardMaterial({ color: '#ffffff', roughness: 1, emissive: '#ffffff', emissiveIntensity: 0.25 });
+    this.desechables.push(mat);
+    this.matNube = mat;
+    for (let i = 0; i < 12; i++) {
+      const g = new THREE.Group();
+      const n = 3 + Math.floor(this.rnd() * 3);
+      for (let k = 0; k < n; k++) {
+        const b = new THREE.Mesh(new THREE.SphereGeometry(18 + this.rnd() * 18, 18, 14), mat);
+        b.position.set((k - n / 2) * 26 + this.rnd() * 8, this.rnd() * 10, this.rnd() * 14);
+        b.scale.y = 0.85;
+        g.add(b);
+      }
+      const a = (35 + this.rnd() * 210) * Math.PI / 180, r = 1250 + this.rnd() * 500;
+      g.position.set(Math.cos(a) * r, 520 + this.rnd() * 450, Math.sin(a) * r);
+      this.nubes.push(g);
+      this.escena.add(g);
+    }
+  }
+
+  /** Un edificio por responsable, en el sitio libre que le tocó dentro del casco urbano y de cara a la calle más cercana. */
+  private armarPueblo(rs: Resumen[], d: Diorama): void {
+    const itemsAura: { x: number; y: number; z: number; radio: number; alto: number; color: string }[] = [];
+    for (const r of rs) {
+      const def = EDIFICIOS[r.dep.id], sitio = d.sitios[r.dep.id];
+      if (!def || !sitio) continue;
+      const [x, z, ry] = sitio;
+      const m = r.dep.id === 'amb' ? granjaSolar() : modelarEquipamiento(def.cat, def.tipo, def.nombre, this.rnd);
+      const ESC = 0.85;
+      const y0 = alturaTerreno(x, z);
+      const grupo = new THREE.Group();
+      grupo.position.set(x, y0 + 0.3, z);
+      const radio = m.radio * ESC + 8;
+      // explanada que asienta el edificio en la ladera
+      const base = new THREE.Mesh(new THREE.CylinderGeometry(radio, radio + 3, 14, 40).translate(0, -7, 0), new THREE.MeshStandardMaterial({ color: '#d7dcc0', roughness: 1 }));
+      base.receiveShadow = true;
+      this.desechables.push(base.geometry, base.material as THREE.Material);
+      grupo.add(base);
+      const cuerpo = new THREE.Group();
+      cuerpo.rotation.y = ry;
+      cuerpo.scale.setScalar(ESC);
+      const mats: THREE.MeshStandardMaterial[] = [];
+      const caja = new THREE.Box3();
+      const tinte = PALETA[rs.indexOf(r) % PALETA.length];
+      for (const p of m.piezas) {
+        const mt = new THREE.MeshStandardMaterial({ color: r.dep.id !== 'amb' && esNeutro(p.color) ? tinte : p.color, roughness: 0.85, metalness: 0.05, side: THREE.DoubleSide });
+        mats.push(mt);
+        const malla = new THREE.Mesh(p.g, mt);
+        malla.castShadow = true; malla.receiveShadow = true;
+        cuerpo.add(malla);
+        p.g.computeBoundingBox();
+        caja.union(p.g.boundingBox!);
+      }
+      grupo.add(cuerpo);
+      if (r.dep.id !== 'amb') {
+        // ventanas encendidas repartidas por las fachadas del edificio
+        const bb = new THREE.Box3();
+        for (const pz of m.piezas) { pz.g.computeBoundingBox(); bb.union(pz.g.boundingBox!); }
+        const cs = Math.cos(ry), sn = Math.sin(ry);
+        for (let k = 0; k < 9; k++) {
+          const cara = Math.floor(this.rnd() * 4);
+          const lx = cara < 2 ? (cara ? bb.max.x + 0.5 : bb.min.x - 0.5) : bb.min.x + this.rnd() * (bb.max.x - bb.min.x);
+          const lz = cara >= 2 ? (cara === 3 ? bb.max.z + 0.5 : bb.min.z - 0.5) : bb.min.z + this.rnd() * (bb.max.z - bb.min.z);
+          const ly = 2.5 + this.rnd() * Math.max(2, bb.max.y * 0.75 - 2.5);
+          this.ventanasEd.push(x + (lx * cs + lz * sn) * ESC, y0 + 0.3 + ly * ESC, z + (-lx * sn + lz * cs) * ESC);
+        }
+      }
+      if (def.nombre === 'Fábrica') {
+        // la chimenea del modelo está en (-35, 70, -11) de la fábrica
+        const boca = new THREE.Vector3(-35 * ESC, 72 * ESC, -11 * ESC).applyAxisAngle(new THREE.Vector3(0, 1, 0), ry);
+        this.crearHumo(x + boca.x, y0 + 0.3 + boca.y, z + boca.z);
+      }
+      grupo.userData['id'] = r.dep.id;
+      const alto = caja.max.y * ESC;
+      const pin = this.crearPin(r);
+      pin.sprite.userData['id'] = r.dep.id;
+      this.escena.add(grupo, pin.sprite);
+      this.edificios.push({ r, grupo, mats, x, z, y: y0 + 0.3, cima: alto, radio, pin });
+      itemsAura.push({ x, y: y0 + 0.3, z, radio: radio + 2, alto: alto * 1.1 + 4, color: new THREE.Color().setHSL(matizDe(r.dep.id) / 360, 0.6, 0.5).getStyle() });
+    }
+    this.brillo(this.ventanasEd, '#ffd08a', 4.2, 0.75);
+    this.aura = crearAuras(itemsAura);
+    this.escena.add(this.aura.grupo);
+  }
+
+  /** Pin de mapa con el icono del responsable adentro; la punta queda sobre el techo del edificio. */
+  private crearPin(r: Resumen): Pin {
+    const ancho = 200, alto = 260;
+    const c = document.createElement('canvas');
+    c.width = ancho; c.height = alto;
+    const tex = new THREE.CanvasTexture(c);
+    tex.colorSpace = THREE.SRGBColorSpace;
+    const h = matizDe(r.dep.id);
+    const dibujar = (ico: HTMLImageElement | null) => {
+      const ctx = c.getContext('2d')!;
+      ctx.clearRect(0, 0, ancho, alto);
+      ctx.shadowColor = 'rgba(0,0,0,.35)'; ctx.shadowBlur = 10; ctx.shadowOffsetY = 4;
+      ctx.beginPath();
+      ctx.moveTo(100, 250);
+      ctx.bezierCurveTo(70, 205, 18, 150, 18, 92);
+      ctx.arc(100, 92, 82, Math.PI, 0, false);
+      ctx.bezierCurveTo(182, 150, 130, 205, 100, 250);
+      ctx.closePath();
+      ctx.fillStyle = `hsl(${h} 50% 38%)`;
+      ctx.fill();
+      ctx.shadowColor = 'transparent';
+      ctx.lineWidth = 7; ctx.strokeStyle = '#fcf9f6'; ctx.stroke();
+      ctx.beginPath(); ctx.arc(100, 92, 60, 0, Math.PI * 2); ctx.fillStyle = '#fcf9f6'; ctx.fill();
+      if (ico) ctx.drawImage(ico, 56, 48, 88, 88);
+      else { ctx.fillStyle = `hsl(${h} 45% 30%)`; ctx.font = '700 64px Inter, system-ui, sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(r.dep.nombre.charAt(0), 100, 96); }
+      tex.needsUpdate = true;
+    };
+    dibujar(null);
+    if (r.dep.icono) {
+      const img = new Image();
+      img.onload = () => dibujar(img);
+      img.src = `/img/iconos/${r.dep.icono}.png`;
+    }
+    const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthWrite: false, depthTest: false }));
+    sprite.center.set(0.5, 0);
+    sprite.renderOrder = 12;
+    return { sprite, aspecto: ancho / alto, tex };
+  }
+
+  private rayo = new THREE.Raycaster();
+  private buscar(e: PointerEvent): string | null {
+    const caja = this.renderer.domElement.getBoundingClientRect();
+    const p = new THREE.Vector2(((e.clientX - caja.left) / caja.width) * 2 - 1, -((e.clientY - caja.top) / caja.height) * 2 + 1);
+    this.rayo.setFromCamera(p, this.camara);
+    const objetos: THREE.Object3D[] = [];
+    for (const b of this.edificios) objetos.push(b.grupo, b.pin.sprite);
+    const hit = this.rayo.intersectObjects(objetos, true)[0];
+    let o: THREE.Object3D | null = hit?.object ?? null;
+    while (o && !o.userData['id']) o = o.parent;
+    return o ? (o.userData['id'] as string) : null;
+  }
+
+  private resaltando: string | null = null;
+  resaltar(id: string | null): void {
+    if (id === this.resaltando) return;
+    this.resaltando = id;
+    for (const b of this.edificios) {
+      const on = b.r.dep.id === id || b.r.dep.id === this.elegido()?.dep.id;
+      for (const m of b.mats) { m.emissive.set(on ? '#44552a' : '#000000'); m.emissiveIntensity = on ? 0.55 : 0; }
+    }
+    this.aura?.resaltar(this.edificios.findIndex(b => b.r.dep.id === (id ?? this.elegido()?.dep.id)));
+  }
+
+  elegir(id: string): void {
+    const b = this.edificios.find(e => e.r.dep.id === id);
+    if (!b) return;
+    this.elegido.set(b.r);
+    this.tip.set(null);
+    this.resaltando = null;
+    this.resaltar(id);
+    this.controles.autoRotate = false;
+    // la cámara se acerca conservando el rumbo desde el que se estaba mirando
+    const dir = this.camara.position.clone().sub(this.controles.target).setY(0);
+    if (dir.lengthSq() < 1e-6) dir.set(0, 0, 1);
+    dir.normalize();
+    const dist = Math.max(b.radio * 3.4, 150);
+    const aObj = new THREE.Vector3(b.x, b.y + Math.min(b.cima * 0.4, 14), b.z);
+    const a = aObj.clone().add(dir.multiplyScalar(dist)).setY(b.y + dist * 0.6 + 10);
+    this.vuelo = { t: 0, de: this.camara.position.clone(), deObj: this.controles.target.clone(), a, aObj };
+  }
+
+  soltar(): void {
+    this.elegido.set(null);
+    this.resaltando = null;
+    this.resaltar(null);
+  }
+
+  private animar(dt: number, t: number): void {
+    this.aura?.animar(t);
+    this.moverGente(dt);
+    this.animarHumo(t);
+    this.animarCiclo(t);
+    if (this.texAgua) this.texAgua.offset.y = -t * 0.35;     // la corriente corre a lo largo del cauce
+    this.animarPajaros(dt, t);
+    if (this.vuelo) {
+      this.vuelo.t = Math.min(1, this.vuelo.t + dt / 1.4);
+      const k = 1 - Math.pow(1 - this.vuelo.t, 3);
+      this.camara.position.lerpVectors(this.vuelo.de, this.vuelo.a, k);
+      this.controles.target.lerpVectors(this.vuelo.deObj, this.vuelo.aObj, k);
+      if (this.vuelo.t >= 1) this.vuelo = null;
+    }
+    for (const n of this.nubes) { const a = Math.atan2(n.position.z, n.position.x) + dt * 0.012, r = Math.hypot(n.position.x, n.position.z); n.position.x = Math.cos(a) * r; n.position.z = Math.sin(a) * r; }
+    // los pines mantienen casi el mismo tamaño en pantalla sin importar la distancia
+    const activo = this.elegido()?.dep.id;
+    for (const b of this.edificios) {
+      const s = b.pin.sprite;
+      s.position.set(b.x, b.y + b.cima + 4 + Math.sin(t * 1.6 + b.x) * 1.2, b.z);
+      const d = this.camara.position.distanceTo(s.position);
+      const grande = b.r.dep.id === this.resaltando || b.r.dep.id === activo ? 1.3 : 1;
+      const alto = Math.min(150, Math.max(12, d * 0.09)) * grande;
+      s.scale.set(alto * b.pin.aspecto, alto, 1);
+    }
+  }
+}

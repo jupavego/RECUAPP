@@ -23,6 +23,11 @@ export const routes: Routes = [
       import('./features/plan/pages/responsables/responsables.component').then(m => m.ResponsablesComponent),
   },
   {
+    path: 'responsables/pueblo',
+    loadComponent: () =>
+      import('./features/plan/pages/pueblo/pueblo.component').then(m => m.PuebloComponent),
+  },
+  {
     path: 'responsables/:dep',
     loadComponent: () =>
       import('./features/plan/pages/responsables/responsables.component').then(m => m.ResponsablesComponent),
