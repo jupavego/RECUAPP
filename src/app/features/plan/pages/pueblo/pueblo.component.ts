@@ -127,6 +127,12 @@ interface Pajaro {
 /** Chimenea que echa humo: su boca y las bocanadas que suben, se ensanchan y se desvanecen. */
 interface Humo { x: number; y: number; z: number; puffs: THREE.Sprite[]; }
 
+/** Cúmulo del fondo: bocanadas con su sitio relativo, deriva con el viento y ciclo de vida (nace, se ve, se deshace). */
+interface Nube {
+  puffs: { sp: THREE.Sprite; dx: number; dy: number; dz: number; tam: number; op: number; claro: number }[];
+  x: number; y: number; z: number; vx: number; vz: number; edad: number; vida: number; espera: number;
+}
+
 interface Edificio {
   r: Resumen;
   grupo: THREE.Group;
@@ -159,11 +165,26 @@ interface Pin { sprite: THREE.Sprite; aspecto: number; tex: THREE.CanvasTexture;
       <div class="mapa">
         <div #lienzo class="lienzo" [class.lienzo--mano]="sobre()"></div>
         @if (tip(); as t) {
-      <div class="tip" [style.left.px]="t.x" [style.top.px]="t.y" [style.--h]="matiz(t.r.dep.id)" role="status">
-        <span class="tip__tipo">{{ t.r.dep.tipo }}</span>
-        <b>{{ t.r.dep.nombre }}</b>
-        @if (t.r.dep.responsable; as q) { <span>{{ q.nombre }}</span> }
-        <span class="tip__datos">{{ t.r.alta + t.r.sugerida }} productos · {{ t.r.equipo }} en el equipo · {{ t.r.avance !== null ? entero(t.r.avance) + ' % de avance' : 'sin indicadores' }}</span>
+      <div class="tip tarj" [style.left.px]="colocar(t.x, t.y).x" [style.top.px]="colocar(t.x, t.y).y" [style.--acento-h]="matiz(t.r.dep.id)" role="status">
+        <span class="tarj__cielo" aria-hidden="true"></span>
+        @if (icono(t.r); as u) { <img class="tarj__ico" [src]="u" alt="" width="84" height="84" /> } @else { <i class="tarj__vacio">{{ t.r.dep.nombre.charAt(0) }}</i> }
+        <span class="tarj__anillo" [class]="'tarj__anillo ' + claseAvance(t.r.avance)" role="img" [attr.aria-label]="t.r.avance !== null ? entero(t.r.avance) + ' % de avance' : 'Sin indicadores en el informe'">
+          <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="tarj__pista" cx="60" cy="60" r="52" /><circle class="tarj__valor" cx="60" cy="60" r="52" [style.stroke-dashoffset]="anilloOffset(t.r.avance)" /></svg>
+          <span class="tarj__pct">{{ t.r.avance !== null ? entero(t.r.avance) : '—' }}<small>{{ t.r.avance !== null ? '%' : '' }}</small></span>
+        </span>
+        <span class="tarj__nombre">{{ t.r.dep.nombre }}</span>
+        <span class="tarj__quien">
+          @if (t.r.dep.responsable; as q) { <b>{{ q.nombre }}</b><em>{{ q.cargo }}</em> } @else { <em>Persona a cargo sin identificar en el sitio</em> }
+        </span>
+        <span class="tarj__datos">
+          <span><b>{{ t.r.alta + t.r.sugerida }}</b> productos</span>
+          <span><b>{{ t.r.equipo }}</b> funcionarios</span>
+          @if (t.r.grupo.length > 1) { <span><b>{{ t.r.grupo.length - 1 }}</b> {{ t.r.grupo.length === 2 ? 'subdependencia' : 'subdependencias' }}</span> }
+        </span>
+        <span class="tarj__reparto"><i class="alta" [style.width.%]="porcentaje(t.r.alta)"></i><i class="sug" [style.width.%]="porcentaje(t.r.sugerida)"></i></span>
+        <span class="tarj__estado" [class]="'tarj__estado ' + claseAvance(t.r.avance)">
+          @if (t.r.avance !== null) { {{ t.r.conSeguimiento }} con informe · {{ t.r.cumplidos }} cumplidos · {{ t.r.atrasados }} bajo 50 % } @else { Sin indicadores en el informe }
+        </span>
       </div>
     }
         @if (elegido(); as r) {
@@ -188,7 +209,7 @@ interface Pin { sprite: THREE.Sprite; aspecto: number; tex: THREE.CanvasTexture;
     </div>
 
     <header class="titulo titulo--pie">
-      <a routerLink="/responsables">← Responsables</a>
+      <a routerLink="/plan">← Plan de desarrollo</a>
       <h1>{{ plan()?.municipio ?? '…' }}</h1>
       <p>Plan de desarrollo 2024-2027 · cada pin es un responsable: pasa el cursor y toca para ver su ficha</p>
     </header>
@@ -220,11 +241,33 @@ interface Pin { sprite: THREE.Sprite; aspecto: number; tex: THREE.CanvasTexture;
       background: linear-gradient(#a9cdee, #d4e6f5 70%, #e6eff7); }
     .lienzo { position: absolute; inset: 0; touch-action: none; }
     .lienzo--mano { cursor: pointer; }
-    .tip { position: absolute; z-index: 5; transform: translate(14px, -50%); max-width: 260px; display: grid; gap: 2px; padding: 10px 14px; border-radius: 16px; pointer-events: none;
-      background: rgba(252, 249, 246, .96); box-shadow: 0 6px 18px rgba(20, 40, 25, .3); border-left: 5px solid hsl(var(--h) 45% 38%); font-size: .8rem; color: #1A1A1A; }
-    .tip b { font-size: .95rem; line-height: 1.2; }
-    .tip__tipo { font-size: .65rem; letter-spacing: .06em; text-transform: uppercase; color: hsl(var(--h) 38% 30%); }
-    .tip__datos { margin-top: 2px; color: #3D5C3D; }
+    .tip { position: absolute; z-index: 5; pointer-events: none; max-width: calc(100% - 16px); }
+    .tarj { --acento: hsl(var(--acento-h, 110) 38% 30%); --acento-claro: hsl(var(--acento-h, 110) 45% 88%); --av: #cbd5c4;
+      box-sizing: border-box; width: 330px; position: relative; overflow: hidden; isolation: isolate; display: grid; gap: 8px; align-content: start; padding: 112px 16px 16px;
+      background: #FCF9F6; border: 1px solid #C8D9C0; border-radius: 28px; box-shadow: 0 14px 30px rgba(20, 40, 25, .28); color: #1A1A1A; }
+    .tarj__cielo { position: absolute; inset: 0 0 auto 0; height: 104px; z-index: -1; background: linear-gradient(135deg, var(--acento-claro), transparent 85%); }
+    .tarj__cielo::after { content: ''; position: absolute; right: -30px; top: -50px; width: 150px; height: 150px; border-radius: 62% 38% 70% 30% / 50% 60% 40% 50%; background: var(--acento); opacity: .14; }
+    .tarj__ico { position: absolute; left: 16px; top: 14px; width: 84px; height: 84px; object-fit: contain; filter: drop-shadow(0 5px 8px rgb(0 0 0 / .22)); }
+    .tarj__vacio { position: absolute; left: 16px; top: 14px; display: grid; place-items: center; width: 76px; height: 76px; border-radius: 22px; font-size: 1.8rem; font-style: normal; font-weight: 600; background: #FCF9F6; color: var(--acento); }
+    .tarj__anillo { position: absolute; right: 14px; top: 14px; width: 72px; height: 72px; }
+    .tarj__anillo.av--ok { --av: #2F7A3A; } .tarj__anillo.av--medio { --av: #66AA33; } .tarj__anillo.av--bajo { --av: #b5523b; }
+    .tarj__anillo svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+    .tarj__anillo circle { fill: none; stroke-width: 12; stroke-linecap: round; }
+    .tarj__pista { stroke: #E0EAD8; }
+    .tarj__valor { stroke: var(--av); stroke-dasharray: 326.73; }
+    .tarj__pct { position: absolute; inset: 0; display: flex; justify-content: center; align-items: center; font-weight: 700; font-size: 1.05rem; font-variant-numeric: tabular-nums; }
+    .tarj__pct small { font-size: .6rem; margin-left: 1px; align-self: center; }
+    .tarj__nombre { font-weight: 600; font-size: 1.05rem; line-height: 1.25; }
+    .tarj__quien { display: grid; gap: 1px; font-size: .85rem; }
+    .tarj__quien b { color: #1A1A1A; }
+    .tarj__quien em { font-style: normal; font-size: .76rem; color: #3D5C3D; }
+    .tarj__datos { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: .78rem; color: #3D5C3D; }
+    .tarj__datos b { font-size: 1.05rem; color: var(--acento); }
+    .tarj__reparto { display: flex; height: 6px; border-radius: 999px; overflow: hidden; background: #E0EAD8; }
+    .tarj__reparto i { display: block; height: 100%; }
+    .tarj__reparto .alta { background: #29422F; } .tarj__reparto .sug { background: #99CC33; }
+    .tarj__estado { font-size: .74rem; padding-left: 8px; border-left: 3px solid var(--av); color: #3D5C3D; }
+    .tarj__estado.av--ok { --av: #2F7A3A; } .tarj__estado.av--medio { --av: #66AA33; } .tarj__estado.av--bajo { --av: #b5523b; }
     .ficha { position: absolute; top: 12px; right: 12px; width: min(320px, calc(100% - 24px)); padding: 16px 18px 14px; border-radius: 22px;
       background: rgba(252, 249, 246, .94); backdrop-filter: blur(6px); box-shadow: 0 8px 26px rgba(20, 40, 25, .28); border-top: 5px solid hsl(var(--h) 45% 38%); }
     .ficha__cerrar { position: absolute; top: 8px; right: 10px; width: 32px; height: 32px; border: 0; border-radius: 50%; background: transparent; font-size: 1.4rem; cursor: pointer; color: #3D5C3D; }
@@ -291,7 +334,7 @@ export class PuebloComponent implements AfterViewInit {
   private readonly desechables: { dispose(): void }[] = [];
   private edificios: Edificio[] = [];
   private aura: Aura | null = null;
-  private nubes: THREE.Group[] = [];
+  private nubes: Nube[] = [];
   private listo = false;
   private vistaPuesta = false;
   private construido = false;
@@ -308,6 +351,26 @@ export class PuebloComponent implements AfterViewInit {
     });
   }
 
+  /** ayudas de la tarjeta que aparece al pasar el cursor: tamaños relativos, anillo de avance y sitio dentro del mapa */
+  private maxProductos = computed(() => Math.max(1, ...this.resumenes().map(r => r.alta + r.sugerida)));
+  porcentaje(n: number): number { return Math.round(100 * n / this.maxProductos()); }
+  anilloOffset(p: number | null): number { return 326.73 * (1 - Math.min(100, Math.max(0, p ?? 0)) / 100); }
+  claseAvance(p: number | null): string { return p === null ? 'av--nd' : p >= 100 ? 'av--ok' : p >= 50 ? 'av--medio' : 'av--bajo'; }
+  /**
+   * Dónde poner la tarjeta junto al cursor para que se vea completa dentro del mapa: a la derecha si cabe, si no a la izquierda,
+   * y si el mapa es angosto, centrada; en vertical se centra en el cursor sin salirse por arriba ni por abajo.
+   */
+  colocar(x: number, y: number): { x: number; y: number } {
+    const mapa = this.lienzo.nativeElement, W = mapa.clientWidth, H = mapa.clientHeight;
+    const el = mapa.parentElement?.querySelector('.tip') as HTMLElement | null;
+    const w = Math.min(el?.offsetWidth || 330, W - 16), h = Math.min(el?.offsetHeight || 310, H - 16), m = 8, sep = 18;
+    let left = x + sep;
+    if (left + w > W - m) left = x - sep - w;
+    left = Math.max(m, Math.min(W - w - m, left));
+    const top = Math.max(m, Math.min(H - h - m, y - h / 2));
+    return { x: Math.round(left), y: Math.round(top) };
+  }
+
   matiz(id: string): number { return matizDe(id); }
   corto(n: string): string { return n.split(',')[0].replace(/^(Secretar[ií]a|Oficina|Despacho)( Asesora)?( de(l)?)? ?/i, m => (/^Despacho/i.test(m) ? 'Despacho ' : '')).replace(/^./, c => c.toUpperCase()); }
   entero(v: number): string { return Math.round(v).toLocaleString('es-CO'); }
@@ -317,7 +380,6 @@ export class PuebloComponent implements AfterViewInit {
   private flotas: Flota[] = [];
   private hemi!: THREE.HemisphereLight;
   private luna!: THREE.DirectionalLight;
-  private matNube: THREE.MeshStandardMaterial | null = null;
   private matFarola: THREE.MeshStandardMaterial | null = null;
   private brillos: { pts: THREE.Points; max: number; px: number }[] = [];
   private estrellas: THREE.Points | null = null;
@@ -1087,10 +1149,13 @@ export class PuebloComponent implements AfterViewInit {
   private estrellasGrandes: THREE.Points | null = null;
 
   /** Un día de 24 h en 30 s: el sol cruza el cielo, el cielo y las luces cambian, y al anochecer se encienden farolas y ventanas. */
-  private animarCiclo(t: number): void {
+  private animarCiclo(t: number, dt: number): void {
     const hh = (10 + t * 24 / 30) % 24;
     const a = (hh - 6) / 12 * Math.PI, alto = Math.sin(a);                 // alto > 0: de día
-    const dia = THREE.MathUtils.smoothstep(alto, -0.1, 0.28), noche = 1 - dia;
+    const dia = THREE.MathUtils.smoothstep(alto, -0.3, 0.12), noche = 1 - dia;
+    // las luces artificiales se encienden a las 18:00 y se apagan a las 6:00 (con una rampa corta)
+    const rampa = (v: number) => { const u = Math.min(1, Math.max(0, v)); return u * u * (3 - 2 * u); };
+    const luz = hh >= 12 ? rampa((hh - 17.8) / 0.5) : 1 - rampa((hh - 5.8) / 0.5);
     const ocaso = Math.exp(-Math.pow(alto / 0.22, 2));                       // tinte cálido al amanecer y al atardecer
     const mezcla = (d: string, o: string, n: string) => new THREE.Color(d).lerp(new THREE.Color(o), ocaso * dia + ocaso * noche * 0.5).lerp(new THREE.Color(n), noche);
     this.sol.position.set(Math.cos(a) * 640, Math.max(alto, 0.05) * 560 + 30, 230);
@@ -1101,23 +1166,23 @@ export class PuebloComponent implements AfterViewInit {
     this.hemi.intensity = 0.5 + 0.7 * dia;
     this.hemi.color.set('#8fa3d8').lerp(new THREE.Color('#ffffff'), dia);
     this.hemi.groundColor.set('#222a3a').lerp(new THREE.Color('#88aa77'), dia);
-    if (this.matNube) { this.matNube.emissiveIntensity = 0.04 + 0.21 * dia; this.matNube.color.set('#8d98b8').lerp(new THREE.Color('#ffffff'), dia); }
-    if (this.matFarola) this.matFarola.emissiveIntensity = 1.6 * noche;
+    if (this.matFarola) this.matFarola.emissiveIntensity = 1.6 * luz;
     // los edificios de los responsables se iluminan por dentro (salvo el que está resaltado, que ya brilla)
     const activo = this.elegido()?.dep.id;
     for (const b of this.edificios) {
       if (b.r.dep.id === this.resaltando || b.r.dep.id === activo) continue;
-      for (const mt of b.mats) { mt.emissive.set('#ffb35a'); mt.emissiveIntensity = 0.05 * noche; }
+      for (const mt of b.mats) { mt.emissive.set('#ffb35a'); mt.emissiveIntensity = 0.05 * luz; }
     }
     // el tamaño en pantalla de las luces crece poco al acercarse, para que se vean de lejos sin volverse manchas de cerca
     const zoom = Math.min(1.5, Math.max(0.6, Math.sqrt(1400 / this.camara.position.distanceTo(this.controles.target)))) * Math.min(devicePixelRatio, 2);
-    for (const b of this.brillos) { const mt = b.pts.material as THREE.PointsMaterial; b.pts.visible = noche > 0.03; mt.opacity = b.max * Math.min(1, noche * 1.6); mt.size = b.px * zoom; }
+    for (const b of this.brillos) { const mt = b.pts.material as THREE.PointsMaterial; b.pts.visible = luz > 0.02; mt.opacity = b.max * luz; mt.size = b.px * zoom; }
     const brilloEstrella = Math.max(0, noche - 0.35) * 1.5;
     for (const [capa, vivo] of [[this.estrellas, 0], [this.estrellasGrandes, 1]] as const) {
       if (!capa) continue;
       capa.visible = noche > 0.4;
       (capa.material as THREE.PointsMaterial).opacity = Math.min(1, brilloEstrella) * (vivo ? 0.65 + 0.35 * Math.sin(t * 2.3) : 0.85);
     }
+    this.animarNubes(dt, dia, ocaso);
     // el cielo es el degradado del recuadro del mapa
     const arriba = mezcla('#a9cdee', '#e9936a', '#0a1230'), abajo = mezcla('#e6eff7', '#f7c98b', '#222f5a');
     if (!this.fondoMapa) this.fondoMapa = this.lienzo.nativeElement.parentElement;
@@ -1234,23 +1299,116 @@ export class PuebloComponent implements AfterViewInit {
     }
   }
 
-  private construirNubes(): void {
-    const mat = new THREE.MeshStandardMaterial({ color: '#ffffff', roughness: 1, emissive: '#ffffff', emissiveIntensity: 0.25 });
-    this.desechables.push(mat);
-    this.matNube = mat;
-    for (let i = 0; i < 12; i++) {
-      const g = new THREE.Group();
-      const n = 3 + Math.floor(this.rnd() * 3);
-      for (let k = 0; k < n; k++) {
-        const b = new THREE.Mesh(new THREE.SphereGeometry(18 + this.rnd() * 18, 18, 14), mat);
-        b.position.set((k - n / 2) * 26 + this.rnd() * 8, this.rnd() * 10, this.rnd() * 14);
-        b.scale.y = 0.85;
-        g.add(b);
+  /** Bocanada de nube del mapa 3D: ruido fractal con borde que se desvanece y sombreado hacia la luz horneado en la textura. */
+  private texturaBocanada(semilla: number): THREE.CanvasTexture {
+    const N = 160;
+    const hash = (x: number, y: number) => {
+      let h = Math.imul(x, 374761393) + Math.imul(y, 668265263) + Math.imul(semilla, 982451653);
+      h = Math.imul(h ^ (h >>> 13), 1274126177);
+      return ((h ^ (h >>> 16)) >>> 0) / 4294967295;
+    };
+    const valor = (x: number, y: number) => {
+      const xi = Math.floor(x), yi = Math.floor(y), fx = x - xi, fy = y - yi;
+      const u = fx * fx * (3 - 2 * fx), v = fy * fy * (3 - 2 * fy);
+      return (hash(xi, yi) * (1 - u) + hash(xi + 1, yi) * u) * (1 - v) + (hash(xi, yi + 1) * (1 - u) + hash(xi + 1, yi + 1) * u) * v;
+    };
+    const fbm = (x: number, y: number) => {
+      let a = 0.5, s2 = 0, f = 1;
+      for (let o = 0; o < 5; o++) { s2 += a * valor(x * f, y * f); f *= 2.03; a *= 0.5; }
+      return s2;
+    };
+    const dens = new Float32Array(N * N);
+    for (let j = 0; j < N; j++) {
+      for (let i = 0; i < N; i++) {
+        const px = (i / (N - 1)) * 2 - 1, py = (j / (N - 1)) * 2 - 1;
+        const caida = 1 - Math.min(1, Math.max(0, (Math.hypot(px, py) - 0.3) / 0.7));
+        const d = Math.min(1, Math.max(0, fbm(px * 2.4 + 7, py * 2.4 + 7) * 2.1 * caida * caida * (3 - 2 * caida) - 0.3));
+        dens[j * N + i] = d * d * (3 - 2 * d);
       }
-      const a = (35 + this.rnd() * 210) * Math.PI / 180, r = 1250 + this.rnd() * 500;
-      g.position.set(Math.cos(a) * r, 520 + this.rnd() * 450, Math.sin(a) * r);
-      this.nubes.push(g);
-      this.escena.add(g);
+    }
+    const c = document.createElement('canvas');
+    c.width = c.height = N;
+    const ctx = c.getContext('2d')!;
+    const img = ctx.createImageData(N, N);
+    for (let j = 0; j < N; j++) {
+      for (let i = 0; i < N; i++) {
+        const d = dens[j * N + i], hacia = dens[Math.max(0, j - 6) * N + Math.max(0, i - 4)];
+        const lum = Math.min(1.05, Math.max(0.74, 0.9 + (d - hacia) * 1.4)), k = (j * N + i) * 4;
+        img.data[k] = Math.min(255, 255 * lum * (0.93 + 0.07 * lum));
+        img.data[k + 1] = Math.min(255, 255 * lum * (0.96 + 0.04 * lum));
+        img.data[k + 2] = Math.min(255, 255 * lum);
+        img.data[k + 3] = 255 * d;
+      }
+    }
+    ctx.putImageData(img, 0, 0);
+    const t = new THREE.CanvasTexture(c);
+    t.colorSpace = THREE.SRGBColorSpace;
+    this.desechables.push(t);
+    return t;
+  }
+
+  /** Cúmulos que aparecen al azar en el cielo del fondo durante el día, derivan con el viento y se deshacen. */
+  private construirNubes(): void {
+    const texturas = [11, 23, 37, 51].map(sm => this.texturaBocanada(sm));
+    for (let i = 0; i < 7; i++) {
+      const puffs: Nube['puffs'] = [];
+      for (let k = 0; k < 15; k++) {
+        const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: texturas[Math.floor(this.rnd() * 4)], transparent: true, depthWrite: false, opacity: 0, fog: false }));
+        sp.renderOrder = 3;
+        sp.visible = false;
+        this.escena.add(sp);
+        this.desechables.push(sp.material);
+        puffs.push({ sp, dx: 0, dy: 0, dz: 0, tam: 1, op: 0.4, claro: 0.8 });
+      }
+      this.nubes.push({ puffs, x: 0, y: 0, z: 0, vx: 0, vz: 0, edad: 0, vida: 1, espera: this.rnd() * 14 });
+    }
+  }
+
+  /** Coloca una nube en el cielo que se ve tras la maqueta: según desde dónde mira la cámara ahora, a poca altura sobre el horizonte. */
+  private sembrarNube(n: Nube): void {
+    const cam = this.camara.position;
+    // un punto del cielo visible: arriba en el cuadro, donde queda el cielo tras la maqueta
+    this.camara.updateMatrixWorld();
+    const rayo = new THREE.Vector3((this.rnd() * 2 - 1) * 0.95, 0.45 + this.rnd() * 0.5, 0.5).unproject(this.camara).sub(cam).normalize();
+    if (rayo.y < 0.012) { rayo.y = 0.012; rayo.normalize(); }
+    const dist = 3300 + this.rnd() * 2200;
+    const az = Math.atan2(rayo.x, rayo.z);
+    const radio = dist * (0.03 + this.rnd() * 0.03);
+    n.x = cam.x + rayo.x * dist; n.z = cam.z + rayo.z * dist; n.y = cam.y + rayo.y * dist;
+    n.vx = 10 + this.rnd() * 8; n.vz = 3 + this.rnd() * 3;
+    n.vida = 35 + this.rnd() * 35; n.edad = 0;
+    const lat = new THREE.Vector2(Math.cos(az), -Math.sin(az)), hacia = new THREE.Vector2(Math.sin(az), Math.cos(az));
+    const sol = new THREE.Vector2(-1, -1).normalize();
+    n.puffs.forEach(pf => {
+      const ang = this.rnd() * Math.PI * 2, r = Math.sqrt(this.rnd());
+      const ox = Math.cos(ang) * r * radio * 1.35, oz = Math.sin(ang) * r * radio * 0.7;
+      const alto = (1 - r * r) * radio * 0.34 * (0.35 + this.rnd() * 0.9);
+      pf.dx = lat.x * ox + hacia.x * oz; pf.dz = lat.y * ox + hacia.y * oz; pf.dy = alto - radio * 0.08;
+      pf.tam = radio * (0.75 + this.rnd() * 0.7) * (1.15 - r * 0.45) * 2.2;
+      pf.op = 0.4 + this.rnd() * 0.3;
+      pf.claro = Math.min(1, Math.max(0, 0.62 + 0.3 * Math.min(1, alto / (radio * 0.34)) + 0.15 * Math.max(-1, Math.min(1, (ox * sol.x + oz * sol.y) / (radio * 1.35)))));
+    });
+  }
+
+  private animarNubes(dt: number, dia: number, ocaso: number): void {
+    if (!this.vistaPuesta) return;
+    const base = new THREE.Color('#c4dcf5'), blanco = new THREE.Color('#fffdf9'), calido = new THREE.Color('#ffc59a'), c = new THREE.Color();
+    for (const n of this.nubes) {
+      if (n.espera > 0) { n.espera -= dt; if (n.espera <= 0) this.sembrarNube(n); else continue; }
+      n.edad += dt;
+      n.x += n.vx * dt; n.z += n.vz * dt;
+      if (n.edad >= n.vida) { n.espera = this.rnd() * 12; for (const pf of n.puffs) pf.sp.visible = false; continue; }
+      const t = n.edad / n.vida, env = Math.min(1, t / 0.2, (1 - t) / 0.25) * dia;
+      for (const pf of n.puffs) {
+        pf.sp.visible = env > 0.01;
+        if (!pf.sp.visible) continue;
+        pf.sp.position.set(n.x + pf.dx, n.y + pf.dy, n.z + pf.dz);
+        pf.sp.scale.set(pf.tam, pf.tam, 1);
+        const mt = pf.sp.material;
+        mt.opacity = pf.op * env;
+        c.copy(base).lerp(blanco, pf.claro).lerp(calido, Math.min(1, ocaso * 0.8));
+        mt.color.copy(c);
+      }
     }
   }
 
@@ -1410,7 +1568,7 @@ export class PuebloComponent implements AfterViewInit {
     this.aura?.animar(t);
     this.moverGente(dt);
     this.animarHumo(t);
-    this.animarCiclo(t);
+    this.animarCiclo(t, dt);
     if (this.texAgua) this.texAgua.offset.y = -t * 0.35;     // la corriente corre a lo largo del cauce
     this.animarPajaros(dt, t);
     if (this.vuelo) {
@@ -1420,7 +1578,6 @@ export class PuebloComponent implements AfterViewInit {
       this.controles.target.lerpVectors(this.vuelo.deObj, this.vuelo.aObj, k);
       if (this.vuelo.t >= 1) this.vuelo = null;
     }
-    for (const n of this.nubes) { const a = Math.atan2(n.position.z, n.position.x) + dt * 0.012, r = Math.hypot(n.position.x, n.position.z); n.position.x = Math.cos(a) * r; n.position.z = Math.sin(a) * r; }
     // los pines mantienen casi el mismo tamaño en pantalla sin importar la distancia
     const activo = this.elegido()?.dep.id;
     for (const b of this.edificios) {

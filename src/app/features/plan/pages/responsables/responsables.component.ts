@@ -9,7 +9,6 @@ import { AvanceDependencia, AvanceIndicador, Confianza, Dependencia, Funcionario
 const ENTIDAD_PILOTO = '05308';
 const ANIOS = ['2024', '2025', '2026', '2027'];
 
-export type Orden = 'productos' | 'avance' | 'nombre';
 export type Pestana = 'panorama' | 'productos' | 'equipo';
 
 /** Circunferencia del anillo de avance (radio 52 del viewBox). */
@@ -128,9 +127,7 @@ export class ResponsablesComponent {
   @HostBinding('class.tema-botanico') get botanico(): boolean { return this.tema.botanico(); }
   @HostBinding('class.tema-oscuro') get oscuro(): boolean { return this.tema.oscuro(); }
 
-  readonly orden = signal<Orden>('productos');
-  readonly texto = signal('');
-  /** responsable de la ruta /responsables/:dep; null en el listado */
+  /** responsable de la ruta /responsables/:dep */
   readonly depId = toSignal(this.ruta.paramMap.pipe(map(p => p.get('dep'))), { initialValue: this.ruta.snapshot.paramMap.get('dep') });
   readonly soloConAvance = signal(false);
   readonly pestana = signal<Pestana>('panorama');
@@ -140,16 +137,6 @@ export class ResponsablesComponent {
   readonly resumenes = computed<Resumen[]>(() => {
     const p = this.plan();
     return p ? construirResumenes(p, this.seguimiento()) : [];
-  });
-
-  readonly lista = computed(() => {
-    const q = this.sinTildes(this.texto().trim());
-    const o = this.orden();
-    const base = this.resumenes().filter(r => !q || this.sinTildes(r.dep.nombre + ' ' + (r.dep.responsable?.nombre ?? '')).includes(q));
-    return [...base].sort((a, b) =>
-      o === 'nombre' ? a.dep.nombre.localeCompare(b.dep.nombre, 'es')
-      : o === 'avance' ? (b.avance ?? -1) - (a.avance ?? -1)
-      : this.cantidad(b) - this.cantidad(a));
   });
 
   readonly actual = computed<Resumen | null>(() => this.resumenes().find(r => r.dep.id === this.depId()) ?? null);
@@ -195,20 +182,6 @@ export class ResponsablesComponent {
 
   /** indicadores distintos del responsable que el informe ubica en alguna vereda */
   readonly indicadoresConVereda = computed(() => new Set(this.veredasActual().flatMap(v => v.proyectos.map(p => p.ip))).size);
-
-  /** cifras de la vista general */
-  readonly general = computed(() => {
-    const rs = this.resumenes();
-    const conInforme = new Set(rs.flatMap(r => r.filas).filter(f => f.pct !== null).map(f => f.x.id));
-    return {
-      responsables: rs.length,
-      conPersona: rs.filter(r => r.dep.responsable).length,
-      personas: rs.reduce((a, r) => a + r.equipo, 0),
-      sinProductos: rs.filter(r => !r.filas.length).length,
-      conSeguimiento: conInforme.size,
-      maxProductos: Math.max(1, ...rs.map(r => this.cantidad(r))),
-    };
-  });
 
   /** productos distintos del responsable */
   cantidad(r: Resumen): number {

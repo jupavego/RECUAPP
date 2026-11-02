@@ -1,78 +1,5 @@
 @if (plan(); as p) {
   <main class="resp">
-    @if (!depId()) {
-    <header class="resp__cabecera">
-      <p class="resp__etiqueta">Plan de desarrollo 2024-2027 · vista por responsable</p>
-      <h1>{{ p.municipio }}</h1>
-      <p class="resp__sub">Qué le toca a cada dependencia de la alcaldía: quién la dirige, su equipo, los productos del plan a su cargo y cómo van en el seguimiento{{ seguimiento() ? ' ' + seguimiento()!.anio : '' }}.</p>
-      <a class="resp__volver" routerLink="/plan">← Plan de desarrollo</a>
-      <a class="resp__pueblo" routerLink="/responsables/pueblo">Ver los responsables como un pueblo 3D →</a>
-    </header>
-
-    @let g = general();
-    <section class="cifras tarjeta" aria-label="Resumen">
-      <dl>
-        <div><dt>Responsables</dt><dd>{{ g.responsables }}</dd></div>
-        <div><dt>Con persona identificada</dt><dd>{{ g.conPersona }}</dd></div>
-        <div><dt>Funcionarios en el directorio</dt><dd>{{ g.personas }}</dd></div>
-        <div><dt>Productos del plan</dt><dd>{{ p.productos.length }}</dd></div>
-        @if (seguimiento()) { <div><dt>Con avance {{ seguimiento()!.anio }}</dt><dd>{{ g.conSeguimiento }}</dd></div> }
-        <div><dt>Sin productos asignados</dt><dd>{{ g.sinProductos }}</dd></div>
-      </dl>
-      <p class="nota">
-        Cada producto se asigna a quien lo dice el PDF del plan; si no lo dice, se sugiere por sector. Un producto con varios responsables cuenta en cada uno. El avance sale del informe de seguimiento
-        @if (seguimiento(); as s) { ({{ s.anio }}: {{ g.conSeguimiento }} de los {{ p.productos.length }} productos cruzados por código SisPT; {{ s.sin_codigo }} fichas del informe no traen código y quedan fuera). } @else { (aún no cargado para esta entidad). }
-      </p>
-    </section>
-
-    <section class="barra-herr" aria-label="Filtros">
-      <label class="buscar">
-        <span class="sr">Buscar responsable</span>
-        <input type="search" placeholder="Buscar dependencia o persona…" [value]="texto()" (input)="texto.set($any($event.target).value)" />
-      </label>
-      <div class="orden" role="group" aria-label="Ordenar">
-        <span>Ordenar por</span>
-        <button type="button" [class.on]="orden() === 'productos'" (click)="orden.set('productos')">Productos</button>
-        @if (seguimiento()) { <button type="button" [class.on]="orden() === 'avance'" (click)="orden.set('avance')">Avance</button> }
-        <button type="button" [class.on]="orden() === 'nombre'" (click)="orden.set('nombre')">Nombre</button>
-      </div>
-    </section>
-
-    <section class="cuadricula" aria-label="Responsables">
-      @for (r of lista(); track r.dep.id; let i = $index) {
-        <a class="ficha" [routerLink]="['/responsables', r.dep.id]" [style.--acento-h]="acentoH(r.dep.id)" [style.--i]="i">
-          <span class="ficha__cielo" aria-hidden="true"></span>
-          @if (urlIcono(r.dep); as u) { <img class="ficha__ico" [src]="u" alt="" width="84" height="84" loading="lazy" /> } @else { <i class="ficha__vacio">{{ r.dep.nombre.charAt(0) }}</i> }
-          @if (seguimiento()) {
-            <span class="ficha__anillo anillo" [class]="'ficha__anillo anillo ' + claseAvance(r.avance)" role="img"
-              [attr.aria-label]="r.avance !== null ? entero(r.avance) + ' % de avance' : 'Sin indicadores en el informe'">
-              <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="anillo__pista" cx="60" cy="60" r="52" /><circle class="anillo__valor" cx="60" cy="60" r="52" [style.stroke-dashoffset]="anilloOffset(r.avance)" /></svg>
-              <span class="ficha__pct">{{ r.avance !== null ? entero(r.avance) : '—' }}<small>{{ r.avance !== null ? '%' : '' }}</small></span>
-            </span>
-          }
-          <span class="ficha__nombre">{{ r.dep.nombre }}</span>
-          <span class="ficha__quien">
-            @if (r.dep.responsable; as q) { <b>{{ q.nombre }}</b><em>{{ q.cargo }}</em> } @else { <em>Persona a cargo sin identificar en el sitio</em> }
-          </span>
-          <span class="ficha__datos">
-            <span><b>{{ cantidad(r) }}</b> productos</span>
-            <span><b>{{ r.equipo }}</b> funcionarios</span>
-            @if (r.grupo.length > 1) { <span><b>{{ r.grupo.length - 1 }}</b> {{ r.grupo.length === 2 ? 'subdependencia' : 'subdependencias' }}</span> }
-          </span>
-          <span class="reparto" [title]="r.alta + ' según el PDF · ' + r.sugerida + ' sugeridos por sector'">
-            <i class="reparto__alta" [style.width.%]="pct(r.alta, g.maxProductos)"></i><i class="reparto__sug" [style.width.%]="pct(r.sugerida, g.maxProductos)"></i>
-          </span>
-          @if (seguimiento()) {
-            <span class="ficha__estado" [class]="'ficha__estado ' + claseAvance(r.avance)">
-              @if (r.avance !== null) { {{ r.conSeguimiento }} con informe · {{ r.cumplidos }} cumplidos · {{ r.atrasados }} bajo 50 % } @else { Sin indicadores en el informe }
-            </span>
-          }
-        </a>
-      } @empty {
-        <p class="vacio">Ningún responsable coincide con la búsqueda.</p>
-      }
-    </section>
-    } @else {
     @if (actual(); as r) {
       <section id="detalle" class="detalle" [style.--acento-h]="acentoH(r.dep.id)">
         <a class="resp__volver" routerLink="/responsables">← Todos los responsables</a>
@@ -332,7 +259,6 @@
       </section>
     } @else {
       <p class="vacio">No existe ese responsable. <a class="resp__volver" routerLink="/responsables">Ver todos</a></p>
-    }
     }
 
     <section class="fuentes tarjeta" aria-labelledby="fuentes-t">

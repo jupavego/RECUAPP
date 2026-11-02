@@ -20,13 +20,9 @@ export const routes: Routes = [
   {
     path: 'responsables',
     loadComponent: () =>
-      import('./features/plan/pages/responsables/responsables.component').then(m => m.ResponsablesComponent),
-  },
-  {
-    path: 'responsables/pueblo',
-    loadComponent: () =>
       import('./features/plan/pages/pueblo/pueblo.component').then(m => m.PuebloComponent),
   },
+  { path: 'responsables/pueblo', redirectTo: 'responsables', pathMatch: 'full' },
   {
     path: 'responsables/:dep',
     loadComponent: () =>
