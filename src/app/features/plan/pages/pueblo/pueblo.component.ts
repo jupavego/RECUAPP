@@ -142,13 +142,6 @@ interface Pin { sprite: THREE.Sprite; aspecto: number; tex: THREE.CanvasTexture;
   standalone: true,
   imports: [RouterLink],
   template: `
-    <header class="titulo">
-      <button type="button" class="titulo__ley" [class.on]="leyenda()" [attr.aria-expanded]="leyenda()" (click)="leyenda.set(!leyenda())">☰ Responsables</button>
-      <a routerLink="/responsables">← Responsables</a>
-      <h1>{{ plan()?.municipio ?? '…' }}</h1>
-      <p>Plan de desarrollo 2024-2027 · cada pin es un responsable: pasa el cursor y toca para ver su ficha</p>
-    </header>
-
     <div class="cuerpo" [class.cuerpo--ley]="leyenda()">
       @if (leyenda()) {
       <aside class="leyenda" aria-label="Leyenda de responsables">
@@ -188,23 +181,30 @@ interface Pin { sprite: THREE.Sprite; aspecto: number; tex: THREE.CanvasTexture;
         <a class="ficha__ir" [routerLink]="['/responsables', r.dep.id]">Ver ficha completa →</a>
       </aside>
     }
+      <button type="button" class="titulo__ley" [class.on]="leyenda()" [attr.aria-expanded]="leyenda()" (click)="leyenda.set(!leyenda())">☰ Responsables</button>
         <span class="reloj" aria-label="Hora del día en la maqueta">{{ hora() }}</span>
         <p class="ayuda">Arrastra para girar · rueda para acercar · clic derecho para desplazar</p>
       </div>
     </div>
+
+    <header class="titulo titulo--pie">
+      <a routerLink="/responsables">← Responsables</a>
+      <h1>{{ plan()?.municipio ?? '…' }}</h1>
+      <p>Plan de desarrollo 2024-2027 · cada pin es un responsable: pasa el cursor y toca para ver su ficha</p>
+    </header>
   `,
   styles: [`
-    :host { display: flex; flex-direction: column; height: calc(100dvh - 64px); min-height: 560px; overflow: hidden;
+    :host { display: block;
       background: var(--color-page-bg, #f5f0ea); font-family: Inter, system-ui, sans-serif; color: #1f3326; }
-    .titulo { position: relative; flex: none; padding: 10px 16px 8px; text-align: center; }
-    .titulo__ley { position: absolute; left: 12px; top: 12px; min-height: 40px; padding: 0 16px; border: 1px solid #C8D9C0; border-radius: 999px; font: inherit; font-size: .85rem; font-weight: 700; cursor: pointer;
+        .titulo { flex: none; padding: 6px 16px 12px; text-align: center; }
+    .titulo__ley { position: absolute; left: 12px; top: 12px; z-index: 6; min-height: 38px; padding: 0 16px; border: 1px solid #C8D9C0; border-radius: 999px; font: inherit; font-size: .85rem; font-weight: 700; cursor: pointer;
       background: #fcf9f6; color: #29422F; }
     .titulo__ley.on { background: #29422F; color: #fcf9f6; }
     .titulo__ley:focus-visible { outline: 3px solid #66AA33; outline-offset: 2px; }
     .titulo a { font-size: .8rem; color: #29422F; }
     h1 { margin: 0; font-size: clamp(1.5rem, 3.6vw, 2.2rem); letter-spacing: .14em; text-transform: uppercase; color: #243746; }
     .titulo p { margin: 2px 0 0; font-size: .82rem; color: #3D5C3D; }
-    .cuerpo { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr; gap: 12px; padding: 0 12px 12px; }
+    .cuerpo { height: calc(100dvh - 64px); min-height: 520px; display: grid; grid-template-columns: 1fr; gap: 12px; padding: 12px 12px 0; }
     .cuerpo--ley { grid-template-columns: 280px 1fr; }
     .leyenda { min-height: 0; overflow-y: auto; padding: 2px 4px 2px 0; display: flex; flex-direction: column; gap: 2px; scrollbar-width: thin; }
     .leyenda h2 { margin: 0 6px 6px; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: #29422F; }
@@ -239,15 +239,14 @@ interface Pin { sprite: THREE.Sprite; aspecto: number; tex: THREE.CanvasTexture;
     .barra i { display: block; height: 100%; border-radius: 999px; background: #66AA33; }
     .barra i.bajo { background: #b5523b; } .barra i.ok { background: #2F7A3A; }
     .ficha__ir { display: inline-block; margin-top: 12px; font-weight: 600; font-size: .88rem; color: #29422F; }
-    .reloj { position: absolute; left: 12px; top: 12px; z-index: 6; padding: 5px 12px; border-radius: 999px; font-size: .8rem; font-weight: 700; font-variant-numeric: tabular-nums;
+    .reloj { position: absolute; left: 12px; top: 58px; z-index: 6; padding: 5px 12px; border-radius: 999px; font-size: .8rem; font-weight: 700; font-variant-numeric: tabular-nums;
       background: rgba(252, 249, 246, .92); color: #29422F; box-shadow: 0 3px 10px rgba(20, 40, 25, .22); pointer-events: none; }
     .ayuda { position: absolute; left: 0; right: 0; bottom: 8px; margin: 0; text-align: center; font-size: .7rem; font-weight: 600; color: #36556b; pointer-events: none; }
     @media (max-width: 860px) {
       :host { height: auto; min-height: calc(100dvh - 64px); overflow: visible; }
       .titulo p { display: none; }
-      .cuerpo { grid-template-rows: minmax(420px, 70dvh); }
+      .cuerpo { height: auto; grid-template-rows: minmax(420px, 70dvh); }
       .cuerpo--ley { grid-template-columns: 1fr; grid-template-rows: auto minmax(420px, 70dvh); }
-      .titulo__ley { position: static; margin-bottom: 6px; }
       .leyenda { flex-direction: row; overflow-x: auto; overflow-y: hidden; padding: 0 0 6px; }
       .leyenda h2 { display: none; }
       .leyenda button { flex: none; width: auto; grid-template-columns: 28px auto; }
@@ -372,11 +371,11 @@ export class PuebloComponent implements AfterViewInit {
       this.renderer.setSize(w, h);
       this.camara.aspect = w / Math.max(h, 1);
       // la vista inicial es también lo más lejos que se puede alejar; en recuadros más cuadrados se aleja un poco más para que la maqueta entre igual de ancha
-      const dist = 1401 * Math.pow(Math.max(1, 2.22 / this.camara.aspect), 1.1);
+      const dist = 1401 * Math.pow(Math.max(1, 2.35 / this.camara.aspect), 1.1);
       this.controles.maxDistance = dist;
       if (!this.vistaPuesta) {
         this.vistaPuesta = true;
-        this.camara.position.copy(this.controles.target).addScaledVector(new THREE.Vector3(0.641, 0.208, -0.738).normalize(), dist);
+        this.camara.position.copy(this.controles.target).addScaledVector(new THREE.Vector3(0.476, 0.191, -0.859).normalize(), dist);
       } else if (this.camara.position.distanceTo(this.controles.target) > dist) {
         this.camara.position.sub(this.controles.target).setLength(dist).add(this.controles.target);
       }
