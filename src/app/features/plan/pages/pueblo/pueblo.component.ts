@@ -70,7 +70,7 @@ let RELIEVE: Diorama | null = null;
 const zRio = (x: number): number => -420 + 38 * Math.sin(x / 105) + 16 * Math.sin(x / 41 + 1.7);
 const ANCHO_RIO = 26;
 /** Radio (m) de la explanada de cada edificio y ancho del talud con el que se funde con la ladera. */
-const PADS: Record<string, number> = { agri: 28, amb: 61, gob: 28, hac: 18, inf: 52, pla: 29, sal: 37, adm: 18, tra: 86, edu: 35, com: 23, jur: 27, cid: 18, cia: 32, des: 30 };
+const PADS: Record<string, number> = { agri: 28, amb: 61, gob: 28, hac: 18, inf: 52, pla: 29, sal: 37, adm: 18, tra: 66, edu: 35, com: 23, jur: 27, cid: 18, cia: 32, des: 30 };
 const TALUD = 18;
 /** Explanadas aplanadas en el terreno: centro, radio y cota. */
 let PLATAFORMAS: { x: number; z: number; r: number; y: number }[] = [];
@@ -1053,6 +1053,7 @@ export class PuebloComponent implements AfterViewInit {
     const ok = (id: string, x: number, z: number) => {
       if (Math.abs(x) > d.ancho / 2 - 70 || Math.abs(z) > d.fondo / 2 - 70) return false;
       if (this.sobreCamino(x, z, id === 'inf' ? 44 : Math.max(30, (PADS[id] ?? 30) * 0.8))) return false;
+      if (this.cercaDeAgua(d, x, z, (PADS[id] ?? 30) + 4)) return false;      // la explanada nunca tapa el río ni las quebradas
       if (ids.some(o => o !== id && Math.hypot(x - d.sitios[o][0], z - d.sitios[o][1]) < 190)) return false;
       let lo = Infinity, hi = -Infinity;
       for (const [a, b] of [[-14, -14], [14, -14], [-14, 14], [14, 14], [0, 0]]) { const h = alturaTerreno(x + a, z + b); lo = Math.min(lo, h); hi = Math.max(hi, h); }
@@ -1905,7 +1906,7 @@ export class PuebloComponent implements AfterViewInit {
       porColor.get(color)!.push(n);
     };
     const caja = (w: number, h: number, d: number, color: string, x: number, y: number, z: number) => poner(new THREE.BoxGeometry(w, h, d).translate(x, y, z), color);
-    const cx = m.radio + 28, zc = 2.5, ancho = 56, fondo = 53;
+    const cx = m.radio + 22, zc = 1, ancho = 44, fondo = 40;
     caja(ancho, 0.3, fondo, '#4a4f55', cx, 0.15, zc);
     for (const dz of [-1, 1]) caja(ancho + 0.8, 0.4, 0.6, '#d6d3c8', cx, 0.2, zc + dz * fondo / 2);
     for (const dx of [-1, 1]) caja(0.6, 0.4, fondo, '#d6d3c8', cx + dx * ancho / 2, 0.2, zc);
@@ -1934,10 +1935,10 @@ export class PuebloComponent implements AfterViewInit {
         x += v.ancho + 1.1;
       }
     };
-    fila(-16, -Math.PI / 2, ['Auto', 'Auto', 'Taxi', 'Campero FJ']);
-    fila(-6.5, Math.PI / 2, ['Auto', 'Auto', 'Taxi', 'Campero FJ']);
-    fila(0.5, Math.PI / 2, ['Moto']);
-    fila(15.5, -Math.PI / 2, ['Bus', 'Camión con tráiler', 'Bus']);
+    fila(-14, -Math.PI / 2, ['Auto', 'Auto', 'Taxi', 'Campero FJ']);
+    fila(-5.5, Math.PI / 2, ['Auto', 'Auto', 'Taxi', 'Campero FJ']);
+    fila(0.2, Math.PI / 2, ['Moto']);
+    fila(11, -Math.PI / 2, ['Bus', 'Camión con tráiler', 'Bus']);
     // postes de luz en el borde y en el medio de los costados largos, con el brazo hacia el lote
     const postes: [number, number][] = [[cx - ancho / 2 + 1.5, zc - fondo / 2 + 1.5], [cx + ancho / 2 - 1.5, zc - fondo / 2 + 1.5], [cx - ancho / 2 + 1.5, zc + fondo / 2 - 1.5], [cx + ancho / 2 - 1.5, zc + fondo / 2 - 1.5], [cx, zc - fondo / 2 + 1.5], [cx, zc + fondo / 2 - 1.5]];
     const cabezas: [number, number][] = [];
@@ -1967,7 +1968,7 @@ export class PuebloComponent implements AfterViewInit {
       m.piezas.push({ g, color });
       fijas.add(g);
     }
-    m.radio = cx + 34;
+    m.radio = cx + 24;
     return { fijas, faroles: cabezas.map(([hx, hz]) => [hx * Math.cos(giro) + hz * Math.sin(giro), -hx * Math.sin(giro) + hz * Math.cos(giro)] as [number, number]) };
   }
 
