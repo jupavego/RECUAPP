@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, Component, DestroyRef, ElementRef, ViewChild, computed, effect, inject, signal, untracked } from '@angular/core';
+import { TemaService } from '../../../../core/services/tema.service';
+import { AfterViewInit, Component, DestroyRef, ElementRef, HostBinding, ViewChild, computed, effect, inject, signal, untracked } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { catchError, map, of, switchMap } from 'rxjs';
@@ -287,6 +288,17 @@ interface Pin { sprite: THREE.Sprite; aspecto: number; tex: THREE.CanvasTexture;
     .reloj { position: absolute; left: 12px; top: 12px; z-index: 6; padding: 5px 12px; border-radius: 999px; font-size: .8rem; font-weight: 700; font-variant-numeric: tabular-nums;
       background: rgba(252, 249, 246, .92); color: #29422F; box-shadow: 0 3px 10px rgba(20, 40, 25, .22); pointer-events: none; }
     .ayuda { position: absolute; left: 50%; bottom: 10px; transform: translateX(-50%); max-width: calc(100% - 24px); margin: 0; padding: 5px 14px; border-radius: 999px; text-align: center; font-size: .72rem; font-weight: 600; color: #29422F; background: rgba(252, 249, 246, .88); box-shadow: 0 2px 8px rgba(20, 40, 25, .2); pointer-events: none; }
+    :host(.tema-oscuro) h1 { color: #eaf3e4; }
+    :host(.tema-oscuro) .titulo__ojo { color: #a9cf8f; }
+    :host(.tema-oscuro) .titulo p { color: #b9c9b3; }
+    :host(.tema-oscuro) .titulo__ley { background: #66AA33; color: #10200f; border-color: #66AA33; }
+    :host(.tema-oscuro) .titulo__ley.on { background: transparent; color: #eaf3e4; border-color: #7fae63; }
+    :host(.tema-oscuro) .leyenda h2 { color: #a9cf8f; }
+    :host(.tema-oscuro) .leyenda button { color: hsl(var(--h) 40% 86%); }
+    :host(.tema-oscuro) .leyenda button b { color: hsl(var(--h) 40% 74%); }
+    :host(.tema-oscuro) .leyenda button:hover { background: hsl(var(--h) 25% 22%); }
+    :host(.tema-oscuro) .leyenda button.on { background: hsl(var(--h) 28% 26%); box-shadow: inset 3px 0 0 hsl(var(--h) 50% 60%); }
+    :host(.tema-oscuro) .mapa { border-color: #2f4a35; }
     @media (max-width: 860px) {
       :host { height: auto; min-height: calc(100dvh - 64px); overflow: visible; }
       .titulo { flex-direction: column; align-items: flex-start; padding: 10px 14px 2px; }
@@ -305,6 +317,8 @@ interface Pin { sprite: THREE.Sprite; aspecto: number; tex: THREE.CanvasTexture;
 export class PuebloComponent implements AfterViewInit {
   @ViewChild('lienzo', { static: true }) private lienzo!: ElementRef<HTMLDivElement>;
   private readonly destroyRef = inject(DestroyRef);
+  private readonly tema = inject(TemaService);
+  @HostBinding('class.tema-oscuro') get oscuro(): boolean { return this.tema.oscuro(); }
   private readonly servicio = inject(PlanService);
   private readonly ruta = inject(ActivatedRoute);
   private readonly http = inject(HttpClient);
@@ -1242,9 +1256,9 @@ export class PuebloComponent implements AfterViewInit {
   }
   private estrellasGrandes: THREE.Points | null = null;
 
-  /** Un día de 24 h en 30 s: el sol cruza el cielo, el cielo y las luces cambian, y al anochecer se encienden farolas y ventanas. */
+  /** Un día de 24 h en 3 min: el sol cruza el cielo, el cielo y las luces cambian, y al anochecer se encienden farolas y ventanas. */
   private animarCiclo(t: number, dt: number): void {
-    const hh = (10 + t * 24 / 30) % 24;
+    const hh = (10 + t * 24 / 180) % 24;
     const a = (hh - 6) / 12 * Math.PI, alto = Math.sin(a);                 // alto > 0: de día
     const dia = THREE.MathUtils.smoothstep(alto, -0.3, 0.12), noche = 1 - dia;
     // las luces artificiales se encienden a las 18:00 y se apagan a las 6:00 (con una rampa corta)
