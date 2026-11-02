@@ -700,22 +700,31 @@ export class PuebloComponent implements AfterViewInit {
   private caer(espera: number, dur: number, desde: number, etapa: () => void, escalon = 0, oculta = true): void {
     const antes = new Set(this.escena.children);
     etapa();
-    // toda la caída dura un 40 % de lo previsto en cada etapa
-    espera *= 0.4; dur *= 0.4; escalon *= 0.4;
+    // toda la caída dura ~2 s en total, de modo que todo esté asentado mucho antes de los 5 s
+    espera *= 0.7; dur *= 0.7; escalon *= 0.7;
+    const nuevos = this.escena.children.filter(o => !antes.has(o) && !(o instanceof THREE.Sprite));
     let i = 0;
-    for (const obj of this.escena.children) {
-      if (antes.has(obj) || obj instanceof THREE.Sprite) continue;
+    for (const [k, obj] of nuevos.entries()) {
       const id = obj.userData['id'] as string | undefined;
-      const turno = escalon && id ? espera + i++ * escalon : espera + (escalon ? 0 : i++ * 0.02);
-      this.caidas.push({ obj, base: obj.position.y, espera: turno, dur, desde: desde * (0.85 + 0.3 * this.rnd()), oculta });
+      // los edificios caen uno tras otro; el resto de cada etapa se reparte en un breve abanico
+      const turno = escalon && id ? espera + i++ * escalon : espera + (k / Math.max(1, nuevos.length)) * 0.22;
+      const salto = desde * (0.85 + 0.3 * this.rnd());
+      this.caidas.push({ obj, base: obj.position.y, espera: turno, dur, desde: salto, oculta });
+      obj.position.y += salto;                 // ya arranca arriba: no hay cuadro con todo asentado antes de la caída
+      if (oculta) obj.visible = false;
       if (id) this.entregas.set(id, turno + dur);
     }
   }
 
-  private animarCaidas(t: number): void {
+  private caidaT = 0;
+  private caidaCuadros = 0;
+
+  /** Avanza la caída con su propio reloj: los primeros cuadros (compilar shaders, subir texturas) no se la comen y ningún cuadro lento la salta de golpe. */
+  private animarCaidas(dt: number): void {
     if (!this.caidas.length) return;
-    if (this.caidaT0 < 0) this.caidaT0 = t;
-    const local = t - this.caidaT0;
+    if (++this.caidaCuadros < 3) return;
+    this.caidaT += Math.min(dt, 0.05);
+    const local = this.caidaT;
     const suave = (k: number) => 1 - Math.pow(1 - k, 4);          // cae rápido y se asienta frenando, sin rebotes
     let vivas = 0;
     for (const c of this.caidas) {
@@ -2109,7 +2118,7 @@ export class PuebloComponent implements AfterViewInit {
   private animar(dt: number, t: number): void {
     this.aura?.animar(t);
     this.moverGente(dt);
-    this.animarCaidas(t);
+    this.animarCaidas(dt);
     this.animarHumo(t);
     this.animarCiclo(t, dt);
     if (this.texAgua) this.texAgua.offset.y = -t * 0.35;     // la corriente corre a lo largo del cauce
@@ -2125,8 +2134,8 @@ export class PuebloComponent implements AfterViewInit {
     const activo = this.elegido()?.dep.id;
     for (const b of this.edificios) {
       const s = b.pin.sprite;
-      const llega = this.entregas.get(b.r.dep.id);
-      const pop = llega === undefined || this.caidaT0 === -2 ? 1 : Math.min(1, Math.max(0, (t - this.caidaT0 - llega) / 0.14));
+      const llega = this.caidaCuadros < 3 ? 1e9 : this.entregas.get(b.r.dep.id);
+      const pop = llega === undefined || this.caidaT0 === -2 ? 1 : Math.min(1, Math.max(0, (this.caidaT - llega) / 0.25));
       s.visible = pop > 0;
       s.position.set(b.x, b.y + b.cima + 4 + Math.sin(t * 1.6 + b.x) * 1.2, b.z);
       const d = this.camara.position.distanceTo(s.position);
