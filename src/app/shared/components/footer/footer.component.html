@@ -1,41 +1,40 @@
 <footer class="footer">
-  <div class="footer__orb footer__orb--1" aria-hidden="true"></div>
-  <div class="footer__orb footer__orb--2" aria-hidden="true"></div>
-
-  <div class="footer__inner">
-    <div class="footer__brand">
-      <p class="footer__eyebrow">{{ site.tagline }}</p>
-      <h3 class="footer__logo">{{ site.name }}</h3>
-    </div>
-
-    <div class="footer__col">
-      <h4 class="footer__col-title">Explorar</h4>
-      <ul class="footer__links footer__links--grid">
-        <li><a routerLink="/">Inicio</a></li>
-        <li><a routerLink="/plan">Plan de desarrollo</a></li>
-        <li><a routerLink="/plan/05308/organigrama">Organigrama</a></li>
-        <li><a routerLink="/mapa">Mapa</a></li>
-        <li><a routerLink="/mapa3d">Modelo 3D</a></li>
-        <li><a routerLink="/mapa3d/catalogo">Catálogo</a></li>
-      </ul>
-    </div>
-
-    <div class="footer__col">
-      <h4 class="footer__col-title">Legal</h4>
-      <ul class="footer__links">
-        <li><a routerLink="/privacidad">Privacidad</a></li>
-        <li><a routerLink="/security">Seguridad</a></li>
+  <div class="footer__scene">
+  <div class="footer__panel">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <p class="footer__eyebrow">{{ site.tagline }}</p>
+        <h3 class="footer__logo">{{ site.name }}</h3>
         @if (site.contact.email) {
-          <li><a [href]="'mailto:' + site.contact.email">{{ site.contact.email }}</a></li>
+          <a class="footer__mail" [href]="'mailto:' + site.contact.email">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>
+            {{ site.contact.email }}
+          </a>
         }
-      </ul>
+      </div>
+
+      <nav class="footer__col" aria-label="Explorar">
+        <ul class="footer__links footer__links--grid">
+          <li><a routerLink="/">Inicio</a></li>
+          <li><a routerLink="/plan">Plan de desarrollo</a></li>
+          <li><a routerLink="/plan/05308/organigrama">Organigrama</a></li>
+          <li><a routerLink="/mapa">Mapa</a></li>
+          <li><a routerLink="/mapa3d">Modelo 3D</a></li>
+          <li><a routerLink="/mapa3d/catalogo">Catálogo</a></li>
+        </ul>
+      </nav>
     </div>
+  </div>
   </div>
 
   <div class="footer__bottom">
     <span>© {{ year }} {{ site.name }}</span>
-    <a [href]="site.legal.developerUrl" target="_blank" rel="noopener noreferrer">
-      Desarrollado por {{ site.legal.developer }}
+    <nav class="footer__legal" aria-label="Legal">
+      <a routerLink="/privacidad">Privacidad</a>
+      <a routerLink="/security">Seguridad</a>
+    </nav>
+    <a class="footer__dev" [href]="site.legal.developerUrl" target="_blank" rel="noopener noreferrer">
+      Desarrollado por <strong>{{ site.legal.developer }}</strong>
     </a>
   </div>
 </footer>
