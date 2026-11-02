@@ -1069,6 +1069,17 @@ export class PuebloComponent implements AfterViewInit {
           if (ok(id, px, pz)) { d.sitios[id][0] = Math.round(px); d.sitios[id][1] = Math.round(pz); puesto = true; }
         }
       }
+      // sin lugar ideal: se acepta uno sin agua bajo la explanada, aunque quede cerca de alguna calle o en pendiente
+      const sinAgua = (px: number, pz: number) => Math.abs(px) < d.ancho / 2 - 70 && Math.abs(pz) < d.fondo / 2 - 70
+        && !this.cercaDeAgua(d, px, pz, (PADS[id] ?? 30) + 4) && ids.every(o => o === id || Math.hypot(px - d.sitios[o][0], pz - d.sitios[o][1]) > 150);
+      if (!puesto && this.cercaDeAgua(d, x, z, (PADS[id] ?? 30) + 4)) {
+        for (let r = 12; r <= 420 && !puesto; r += 12) {
+          for (let k = 0; k < 360 && !puesto; k += 15) {
+            const px = x + r * Math.cos(k * Math.PI / 180), pz = z + r * Math.sin(k * Math.PI / 180);
+            if (sinAgua(px, pz)) { d.sitios[id][0] = Math.round(px); d.sitios[id][1] = Math.round(pz); puesto = true; }
+          }
+        }
+      }
     }
     // servicios administrativos y agricultura intercambian de lugar
     if (d.sitios['adm'] && d.sitios['agri']) [d.sitios['adm'], d.sitios['agri']] = [d.sitios['agri'], d.sitios['adm']];
@@ -1322,7 +1333,7 @@ export class PuebloComponent implements AfterViewInit {
       crear(modelarEquipamiento('vehiculos', 'Vehículo', nombre, this.rnd), n, escala, 'x', nombre === 'Auto', autos, vel, carril);
     }
     for (const nombre of ['Hombre', 'Mujer', 'Niño escolar', 'Campesino']) {
-      crear(modelarEquipamiento('gente', 'Persona', nombre, this.rnd), 44, 3.4, 'z', false, peatones, [3, 6], r => (this.rnd() < 0.5 ? 1 : -1) * (ANCHO_CALLE[r.clase] / 2 + 2.2));
+      crear(modelarEquipamiento('gente', 'Persona', nombre, this.rnd), 44, 2.3, 'z', false, peatones, [3, 6], r => (this.rnd() < 0.5 ? 1 : -1) * (ANCHO_CALLE[r.clase] / 2 + 2.2));
     }
   }
 
