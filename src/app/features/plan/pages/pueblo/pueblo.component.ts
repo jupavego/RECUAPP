@@ -148,6 +148,14 @@ interface Pin { sprite: THREE.Sprite; aspecto: number; tex: THREE.CanvasTexture;
   standalone: true,
   imports: [RouterLink],
   template: `
+    <header class="titulo">
+      <div class="titulo__txt">
+        <span class="titulo__ojo">{{ plan()?.municipio ?? 'Girardota' }} · Plan de desarrollo 2024-2027</span>
+        <h1>Conoce a los responsables del plan</h1>
+        <p>Cada pin del pueblo es una dependencia de la alcaldía: pasa el cursor para ver quién la dirige y toca para abrir su ficha.</p>
+      </div>
+      <button type="button" class="titulo__ley" [class.on]="leyenda()" [attr.aria-expanded]="leyenda()" (click)="leyenda.set(!leyenda())">☰ {{ leyenda() ? 'Ocultar la lista' : 'Ver la lista de responsables' }}</button>
+    </header>
     <div class="cuerpo" [class.cuerpo--ley]="leyenda()">
       @if (leyenda()) {
       <aside class="leyenda" aria-label="Leyenda de responsables">
@@ -202,30 +210,24 @@ interface Pin { sprite: THREE.Sprite; aspecto: number; tex: THREE.CanvasTexture;
         <a class="ficha__ir" [routerLink]="['/responsables', r.dep.id]">Ver ficha completa →</a>
       </aside>
     }
-      <button type="button" class="titulo__ley" [class.on]="leyenda()" [attr.aria-expanded]="leyenda()" (click)="leyenda.set(!leyenda())">☰ Responsables</button>
         <span class="reloj" aria-label="Hora del día en la maqueta">{{ hora() }}</span>
         <p class="ayuda">Arrastra para girar · rueda para acercar · clic derecho para desplazar</p>
       </div>
     </div>
-
-    <header class="titulo titulo--pie">
-      <a routerLink="/plan">← Plan de desarrollo</a>
-      <h1>{{ plan()?.municipio ?? '…' }}</h1>
-      <p>Plan de desarrollo 2024-2027 · cada pin es un responsable: pasa el cursor y toca para ver su ficha</p>
-    </header>
   `,
   styles: [`
-    :host { display: block;
+    :host {
       background: var(--color-page-bg, #f5f0ea); font-family: Inter, system-ui, sans-serif; color: #1f3326; }
-        .titulo { flex: none; padding: 6px 16px 12px; text-align: center; }
-    .titulo__ley { position: absolute; left: 12px; top: 12px; z-index: 6; min-height: 38px; padding: 0 16px; border: 1px solid #C8D9C0; border-radius: 999px; font: inherit; font-size: .85rem; font-weight: 700; cursor: pointer;
-      background: #fcf9f6; color: #29422F; }
-    .titulo__ley.on { background: #29422F; color: #fcf9f6; }
+        .titulo { flex: none; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 20px 4px; }
+    .titulo__ojo { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #3D5C3D; }
+    .titulo__ley { flex: none; min-height: 44px; padding: 0 16px; border: 1px solid #C8D9C0; border-radius: 999px; font: inherit; font-size: .85rem; font-weight: 700; cursor: pointer;
+      background: #29422F; color: #fcf9f6; }
+    .titulo__ley.on { background: #fcf9f6; color: #29422F; }
     .titulo__ley:focus-visible { outline: 3px solid #66AA33; outline-offset: 2px; }
-    .titulo a { font-size: .8rem; color: #29422F; }
-    h1 { margin: 0; font-size: clamp(1.5rem, 3.6vw, 2.2rem); letter-spacing: .14em; text-transform: uppercase; color: #243746; }
+    h1 { margin: 2px 0 0; font-size: clamp(1.25rem, 2.6vw, 1.75rem); line-height: 1.15; color: #243746; }
     .titulo p { margin: 2px 0 0; font-size: .82rem; color: #3D5C3D; }
-    .cuerpo { height: calc(100dvh - 64px); min-height: 520px; display: grid; grid-template-columns: 1fr; gap: 12px; padding: 12px 12px 0; }
+    :host { display: flex; flex-direction: column; height: calc(100dvh - 64px); }
+    .cuerpo { flex: 1; min-height: 420px; display: grid; grid-template-columns: 1fr; gap: 12px; padding: 12px 12px 0; }
     .cuerpo--ley { grid-template-columns: 280px 1fr; }
     .leyenda { min-height: 0; overflow-y: auto; padding: 2px 4px 2px 0; display: flex; flex-direction: column; gap: 2px; scrollbar-width: thin; }
     .leyenda h2 { margin: 0 6px 6px; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: #29422F; }
@@ -282,12 +284,14 @@ interface Pin { sprite: THREE.Sprite; aspecto: number; tex: THREE.CanvasTexture;
     .barra i { display: block; height: 100%; border-radius: 999px; background: #66AA33; }
     .barra i.bajo { background: #b5523b; } .barra i.ok { background: #2F7A3A; }
     .ficha__ir { display: inline-block; margin-top: 12px; font-weight: 600; font-size: .88rem; color: #29422F; }
-    .reloj { position: absolute; left: 12px; top: 58px; z-index: 6; padding: 5px 12px; border-radius: 999px; font-size: .8rem; font-weight: 700; font-variant-numeric: tabular-nums;
+    .reloj { position: absolute; left: 12px; top: 12px; z-index: 6; padding: 5px 12px; border-radius: 999px; font-size: .8rem; font-weight: 700; font-variant-numeric: tabular-nums;
       background: rgba(252, 249, 246, .92); color: #29422F; box-shadow: 0 3px 10px rgba(20, 40, 25, .22); pointer-events: none; }
-    .ayuda { position: absolute; left: 0; right: 0; bottom: 8px; margin: 0; text-align: center; font-size: .7rem; font-weight: 600; color: #36556b; pointer-events: none; }
+    .ayuda { position: absolute; left: 50%; bottom: 10px; transform: translateX(-50%); max-width: calc(100% - 24px); margin: 0; padding: 5px 14px; border-radius: 999px; text-align: center; font-size: .72rem; font-weight: 600; color: #29422F; background: rgba(252, 249, 246, .88); box-shadow: 0 2px 8px rgba(20, 40, 25, .2); pointer-events: none; }
     @media (max-width: 860px) {
       :host { height: auto; min-height: calc(100dvh - 64px); overflow: visible; }
+      .titulo { flex-direction: column; align-items: flex-start; padding: 10px 14px 2px; }
       .titulo p { display: none; }
+      .cuerpo { flex: none; }
       .cuerpo { height: auto; grid-template-rows: minmax(420px, 70dvh); }
       .cuerpo--ley { grid-template-columns: 1fr; grid-template-rows: auto minmax(420px, 70dvh); }
       .leyenda { flex-direction: row; overflow-x: auto; overflow-y: hidden; padding: 0 0 6px; }
@@ -919,7 +923,68 @@ export class PuebloComponent implements AfterViewInit {
       techos.setColorAt(i, c.set(grande ? '#8b9096' : TEJAS[Math.floor(hash(i * 2.1, 9) * TEJAS.length)]));
     });
     for (const im of [paredes, techos]) { im.castShadow = true; im.receiveShadow = true; this.escena.add(im); }
+    this.detallarCasas(lista);
     this.brillo(this.ventanas, '#ffc566', 3.6, 0.65);
+  }
+
+  /** Zócalo, puerta con escalón, ventanas con marco por piso y alguna chimenea: todo se reparte en mallas instanciadas sobre la misma huella de cada casa. */
+  private detallarCasas(lista: number[][]): void {
+    type Pieza = { m: THREE.Matrix4; c: string };
+    const g: Record<'zocalo' | 'puerta' | 'marco' | 'vidrio' | 'chimenea', Pieza[]> = { zocalo: [], puerta: [], marco: [], vidrio: [], chimenea: [] };
+    const q = new THREE.Quaternion(), eje = new THREE.Vector3(0, 1, 0), pos = new THREE.Vector3(), sc = new THREE.Vector3(), v = new THREE.Vector3();
+    lista.forEach(([x, z, area, ry], i) => {
+      const h = hash(i * 3.7, 11), alto = area > 380 ? 12 + 6 * h : area > 160 ? 6.5 + 3 * h : 4.5 + 2 * h;
+      const corto = Math.min(16, Math.max(4.5, Math.sqrt(area / 1.35))), largo = Math.min(26, Math.max(corto, area / corto));
+      const y = alturaTerreno(x, z) - 0.3, grande = area > 380;
+      q.setFromAxisAngle(eje, ry);
+      const poner = (k: keyof typeof g, lx: number, ly: number, lz: number, sx: number, sy: number, sz: number, c: string) => {
+        pos.copy(v.set(lx, ly, lz).applyQuaternion(q)).add(sc.set(x, y, z));
+        g[k].push({ m: new THREE.Matrix4().compose(pos, q, sc.set(sx, sy, sz)), c });
+      };
+      poner('zocalo', 0, 0, 0, corto + 0.3, 0.75, largo + 0.3, grande ? '#6f7378' : '#8d8478');
+      const pisos = Math.max(1, Math.round(alto / 3.3)), hp = alto / pisos;
+      const puerta = !grande && corto >= 4.5;
+      for (let f = 0; f < pisos; f++) {
+        const yv = f * hp + hp * 0.5 + 0.1, hv = Math.min(1.5, hp * 0.46);
+        const nz = Math.floor((largo - 1.6) / 3.4);
+        for (const lado of [-1, 1]) {
+          for (let k = 0; k < nz; k++) {
+            if (hash(i * 7.1 + f * 3 + k, lado + 40) < 0.1) continue;
+            const lz = (k - (nz - 1) / 2) * 3.4;
+            poner('marco', lado * (corto / 2 + 0.03), yv, lz, 0.16, hv + 0.34, 1.34, '#f3efe6');
+            poner('vidrio', lado * (corto / 2 + 0.1), yv, lz, 0.1, hv, 1.0, hash(i + k * 1.7, 55 + f) < 0.5 ? '#5f7f95' : '#7396ab');
+          }
+        }
+        const nx = Math.floor((corto - 1.4) / 3.2);
+        for (const cara of [-1, 1]) {
+          if (cara === 1 && f === 0 && puerta) continue;
+          for (let k = 0; k < nx; k++) {
+            const lx = (k - (nx - 1) / 2) * 3.2;
+            poner('marco', lx, yv, cara * (largo / 2 + 0.03), 1.34, hv + 0.34, 0.16, '#f3efe6');
+            poner('vidrio', lx, yv, cara * (largo / 2 + 0.1), 1.0, hv, 0.1, '#6a8aa0');
+          }
+        }
+      }
+      if (puerta) {
+        poner('puerta', 0, 0.1, largo / 2 + 0.1, 1.2, 2.3, 0.22, hash(i * 1.9, 3) < 0.5 ? '#6b4a32' : '#3f5a48');
+        poner('zocalo', 0, 0, largo / 2 + 0.55, 2.2, 0.28, 1.1, '#b9b2a6');
+      }
+      if (!grande && hash(i * 4.1, 29) < 0.28) poner('chimenea', corto * 0.22, alto + 0.2, -largo * 0.18, 0.9, 2.8, 0.9, '#a3836f');
+    });
+    const caja = new THREE.BoxGeometry(1, 1, 1).translate(0, 0.5, 0);
+    this.desechables.push(caja);
+    const vidrio = new THREE.MeshStandardMaterial({ color: '#ffffff', roughness: 0.18, metalness: 0.35, emissive: '#2a3a46', emissiveIntensity: 0.15 });
+    const mate = new THREE.MeshStandardMaterial({ color: '#ffffff', roughness: 0.9 });
+    this.desechables.push(vidrio, mate);
+    const color = new THREE.Color();
+    for (const k of Object.keys(g) as (keyof typeof g)[]) {
+      const piezas = g[k];
+      if (!piezas.length) continue;
+      const im = new THREE.InstancedMesh(caja, k === 'vidrio' ? vidrio : mate, piezas.length);
+      piezas.forEach((u, i) => { im.setMatrixAt(i, u.m); im.setColorAt(i, color.set(u.c)); });
+      im.castShadow = k === 'chimenea'; im.receiveShadow = true;
+      this.escena.add(im);
+    }
   }
 
   private instanciar(modelo: Modelo, puestos: { x: number; y: number; z: number; ry: number; s: number }[]): void {
@@ -1019,13 +1084,13 @@ export class PuebloComponent implements AfterViewInit {
       this.flotas.push(flota);
     };
     const carril = (r: Ruta) => ANCHO_CALLE[r.clase] * 0.25;
-    const flota: [string, number, [number, number]][] = [['Auto', 22, [18, 30]], ['Taxi', 8, [18, 30]], ['Campero FJ', 5, [16, 26]], ['Bus', 4, [12, 18]], ['Camión con tráiler', 3, [10, 16]], ['Moto', 10, [22, 34]]];
+    const flota: [string, number, [number, number]][] = [['Auto', 46, [18, 30]], ['Taxi', 18, [18, 30]], ['Campero FJ', 11, [16, 26]], ['Bus', 8, [12, 18]], ['Camión con tráiler', 6, [10, 16]], ['Moto', 22, [22, 34]]];
     for (const [nombre, n, vel] of flota) {
       const escala = nombre === 'Bus' || nombre.startsWith('Camión') ? 0.5 : 0.55;
       crear(modelarEquipamiento('vehiculos', 'Vehículo', nombre, this.rnd), n, escala, 'x', nombre === 'Auto', autos, vel, carril);
     }
     for (const nombre of ['Hombre', 'Mujer', 'Niño escolar', 'Campesino']) {
-      crear(modelarEquipamiento('gente', 'Persona', nombre, this.rnd), 22, 3.4, 'z', false, peatones, [3, 6], r => (this.rnd() < 0.5 ? 1 : -1) * (ANCHO_CALLE[r.clase] / 2 + 2.2));
+      crear(modelarEquipamiento('gente', 'Persona', nombre, this.rnd), 44, 3.4, 'z', false, peatones, [3, 6], r => (this.rnd() < 0.5 ? 1 : -1) * (ANCHO_CALLE[r.clase] / 2 + 2.2));
     }
   }
 
@@ -1089,10 +1154,11 @@ export class PuebloComponent implements AfterViewInit {
   private construirFarolas(d: Diorama): void {
     const postes: { x: number; z: number; ry: number; y: number }[] = [];
     const luces: number[] = [];
+    const charcos: { x: number; z: number; hx: number; hz: number }[] = [];
     const lejosDeSitios = (x: number, z: number) => Object.values(d.sitios).every(s => Math.hypot(x - s[0], z - s[1]) > 48);
     let alterna = 0;
     for (const r of this.rutasDe(d, [0, 1])) {
-      const paso = r.clase === 0 ? 62 : 84, lado = ANCHO_CALLE[r.clase] / 2 + 2.2;
+      const paso = r.clase === 0 ? 40 : 54, lado = ANCHO_CALLE[r.clase] / 2 + 2.2;
       for (let s = paso / 2; s < r.total; s += paso) {
         let lo = 0, hi = r.cum.length - 1;
         while (hi - lo > 1) { const m = (lo + hi) >> 1; if (r.cum[m] <= s) lo = m; else hi = m; }
@@ -1106,6 +1172,7 @@ export class PuebloComponent implements AfterViewInit {
         if (this.puentes.some(b => Math.hypot(x - b.x, z - b.z) < b.r + 6)) continue;
         postes.push({ x, z, ry: Math.atan2(nz, -nx), y: alturaTerreno(x, z) + 2.3 });      // el brazo apunta hacia la vía
         luces.push(x - nx * 3.1, alturaTerreno(x, z) + 2.3 + 10.4, z - nz * 3.1);
+        charcos.push({ x: x - nx * 5.5, z: z - nz * 5.5, hx: x - nx * 3.1, hz: z - nz * 3.1 });
       }
     }
     if (!postes.length) return;
@@ -1123,7 +1190,34 @@ export class PuebloComponent implements AfterViewInit {
       this.escena.add(im);
     });
     this.brillo(luces, '#ffe2a0', 9, 0.7);
+    this.estelasDeLuz(charcos);
   }
+
+  /** Cada farola ilumina la vía: un charco de luz cálida sobre el asfalto y un cono tenue que baja desde la lámpara. */
+  private estelasDeLuz(pts: { x: number; z: number; hx: number; hz: number }[]): void {
+    if (!pts.length) return;
+    const c = document.createElement('canvas');
+    c.width = c.height = 128;
+    const g = c.getContext('2d')!;
+    const gr = g.createRadialGradient(64, 64, 0, 64, 64, 64);
+    gr.addColorStop(0, 'rgba(255,226,160,1)'); gr.addColorStop(0.35, 'rgba(255,205,120,.55)'); gr.addColorStop(0.7, 'rgba(255,190,100,.18)'); gr.addColorStop(1, 'rgba(255,190,100,0)');
+    g.fillStyle = gr; g.fillRect(0, 0, 128, 128);
+    const tex = new THREE.CanvasTexture(c);
+    const charco = new THREE.MeshBasicMaterial({ map: tex, transparent: true, opacity: 0, depthWrite: false, blending: THREE.AdditiveBlending, polygonOffset: true, polygonOffsetFactor: -8, polygonOffsetUnits: -8 });
+    const haz = new THREE.MeshBasicMaterial({ color: '#ffd68a', transparent: true, opacity: 0, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide });
+    const plano = new THREE.PlaneGeometry(1, 1).rotateX(-Math.PI / 2);
+    const cono = new THREE.ConeGeometry(7.5, 10.4, 14, 1, true).translate(0, -5.2, 0);
+    const suelo = new THREE.InstancedMesh(plano, charco, pts.length), conos = new THREE.InstancedMesh(cono, haz, pts.length);
+    const m = new THREE.Matrix4(), q = new THREE.Quaternion(), p = new THREE.Vector3(), sc = new THREE.Vector3();
+    pts.forEach((u, i) => {
+      suelo.setMatrixAt(i, m.compose(p.set(u.x, alturaTerreno(u.x, u.z) + 2.75, u.z), q, sc.set(38, 1, 38)));
+      conos.setMatrixAt(i, m.compose(p.set(u.hx, alturaTerreno(u.hx, u.hz) + 2.3 + 10.4, u.hz), q, sc.set(1, 1, 1)));
+    });
+    for (const im of [suelo, conos]) { im.frustumCulled = false; im.visible = false; im.renderOrder = 4; this.escena.add(im); }
+    this.desechables.push(tex, charco, haz, plano, cono);
+    this.estelas = [{ obj: suelo, mat: charco, max: 0.85 }, { obj: conos, mat: haz, max: 0.1 }];
+  }
+  private estelas: { obj: THREE.Object3D; mat: THREE.Material; max: number }[] = [];
 
   /** Estrellas sobre el horizonte, que solo se ven de noche: muchas pequeñas y unas pocas más grandes que titilan. */
   private construirEstrellas(): void {
@@ -1175,6 +1269,7 @@ export class PuebloComponent implements AfterViewInit {
     }
     // el tamaño en pantalla de las luces crece poco al acercarse, para que se vean de lejos sin volverse manchas de cerca
     const zoom = Math.min(1.5, Math.max(0.6, Math.sqrt(1400 / this.camara.position.distanceTo(this.controles.target)))) * Math.min(devicePixelRatio, 2);
+    for (const e of this.estelas) { e.obj.visible = luz > 0.02; e.mat.opacity = e.max * luz; }
     for (const b of this.brillos) { const mt = b.pts.material as THREE.PointsMaterial; b.pts.visible = luz > 0.02; mt.opacity = b.max * luz; mt.size = b.px * zoom; }
     const brilloEstrella = Math.max(0, noche - 0.35) * 1.5;
     for (const [capa, vivo] of [[this.estrellas, 0], [this.estrellasGrandes, 1]] as const) {
