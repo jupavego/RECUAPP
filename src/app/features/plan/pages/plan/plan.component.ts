@@ -1,10 +1,10 @@
 import { Component, HostBinding, computed, inject, signal } from '@angular/core';
-import { CierraFueraDirective } from '../../../../shared/directives/cierra-fuera.directive';
 import { TemaService } from '../../../../core/services/tema.service';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { catchError, map, of, switchMap } from 'rxjs';
-import { Confianza, Dependencia, Funcionario, PlanEntidad, PlanService, ProductoPlan } from '../../services/plan.service';
+import { matizDe } from '../responsables/responsables.component';
+import { Confianza, Dependencia, PlanEntidad, PlanService, ProductoPlan } from '../../services/plan.service';
 
 /** Entidad que se abre cuando la ruta no trae código DANE (mientras dure el piloto). */
 const ENTIDAD_PILOTO = '05308';
@@ -34,13 +34,14 @@ type Tarjeta = 'lineas' | 'sectores' | 'programas' | 'resultado' | 'responsables
 @Component({
   selector: 'app-plan',
   standalone: true,
-  imports: [CierraFueraDirective],
+  imports: [],
   templateUrl: './plan.component.html',
   styleUrl: './plan.component.scss',
 })
 export class PlanComponent {
   private readonly servicio = inject(PlanService);
   private readonly ruta = inject(ActivatedRoute);
+  private readonly router = inject(Router);
 
   /** undefined mientras carga, null si no hay datos de la entidad */
   readonly plan = toSignal<PlanEntidad | null | undefined>(
@@ -71,6 +72,53 @@ export class PlanComponent {
   }
 
   readonly abierta = signal<Tarjeta | null>(null);
+
+  // Sectores en mosaico: del que más productos tiene al que menos
+  readonly sectoresOrden = computed(() => [...(this.plan()?.sectores ?? [])].sort((a, b) => b.productos - a.productos));
+  matizSector(i: number): number {
+    const n = Math.max(1, this.sectoresOrden().length - 1);
+    return 150 - Math.round((i * 110) / n);
+  }
+
+  // Programas agrupados por línea estratégica (la línea se deduce de los productos del programa)
+  readonly buscaProg = signal('');
+  private readonly gruposProg = signal<string[] | null>(null);
+  readonly lineaDePrograma = computed(() => {
+    const m = new Map<string, string>();
+    for (const x of this.plan()?.productos ?? []) if (x.programa && !m.has(x.programa)) m.set(x.programa, x.linea);
+    return m;
+  });
+  readonly programasPorLinea = computed(() => {
+    const p = this.plan();
+    if (!p) return [];
+    const q = this.buscaProg().trim().toLowerCase();
+    const de = this.lineaDePrograma();
+    return p.lineas.map((l, i) => {
+      const items = p.programas.filter(g => de.get(g.cod) === l.id && (!q || g.nombre.toLowerCase().includes(q)))
+        .sort((a, b) => b.productos - a.productos);
+      return { id: l.id, n: i + 1, nombre: l.nombre, matiz: this.matiz(i), items, total: items.reduce((a, g) => a + g.productos, 0) };
+    }).filter(g => g.items.length);
+  });
+  grupoAbierto(id: string): boolean {
+    if (this.buscaProg().trim()) return true;
+    return (this.gruposProg() ?? [this.plan()?.lineas[0]?.id ?? '']).includes(id);
+  }
+  alternarGrupo(id: string): void {
+    const act = this.gruposProg() ?? [this.plan()?.lineas[0]?.id ?? ''];
+    this.gruposProg.set(act.includes(id) ? act.filter(x => x !== id) : [...act, id]);
+  }
+
+  // Indicadores de resultado: 5 a la vista; al abrir, todos con buscador
+  readonly buscaRes = signal('');
+  readonly resultadoVisible = computed(() => {
+    const todos = this.plan()?.resultado ?? [];
+    if (this.abierta() !== 'resultado') return todos.slice(0, 5);
+    const q = this.buscaRes().trim().toLowerCase();
+    return q ? todos.filter(r => r.indicador.toLowerCase().includes(q)) : todos;
+  });
+  matizLinea(id: string): number {
+    return this.matiz(Math.max(0, (this.plan()?.lineas ?? []).findIndex(l => l.id === id)));
+  }
 
   readonly dependencias = computed(() => new Map((this.plan()?.dependencias ?? []).map(d => [d.id, d])));
   /** icono de cada entidad responsable, por id de dependencia o por nombre de otra entidad */
@@ -146,8 +194,11 @@ export class PlanComponent {
     return x.resp.map(r => ({ nombre: deps.get(r.dep)?.nombre ?? r.dep, conf: r.conf }));
   }
 
-  /** responsable (o subsecretaría) cuya subcápsula está abierta */
-  readonly depAbierta = signal<string | null>(null);
+  /** Abre la ficha independiente del responsable; una subsecretaría o entidad externa abre la de su secretaría. */
+  irFicha(id: string): void {
+    const d = this.dependencias().get(id);
+    this.router.navigate(['/responsables', d?.padre ?? d?.vinculo ?? id]);
+  }
 
   /** detalle de un producto flotando junto a su botón; va fuera de la lista porque la lista tiene scroll y recortaría la caja */
   readonly tip = signal<{ x: ProductoPlan; top: number; left: number; lado: 'izq' | 'abajo'; ancla: number } | null>(null);
@@ -175,34 +226,6 @@ export class PlanComponent {
   /** El cursor está sobre el botón o sobre la caja: no se cierra. */
   conservarDetalle(): void {
     clearTimeout(this.cierreDetalle);
-  }
-
-  alternarDep(id: string): void {
-    this.depAbierta.set(this.depAbierta() === id ? null : id);
-  }
-
-  /** la secretaría de la subsecretaría abierta también se ve abierta */
-  hijoAbierto(id: string): boolean {
-    const a = this.depAbierta();
-    const d = a ? this.dependencias().get(a) : undefined;
-    return !!d && (d.padre === id || d.vinculo === id);
-  }
-
-  /** productos de un responsable; una secretaría incluye los de sus subsecretarías */
-  productosDe(id: string): ProductoPlan[] {
-    const deps = this.dependencias();
-    return (this.plan()?.productos ?? []).filter(x => x.resp.some(r => r.dep === id || deps.get(r.dep)?.padre === id));
-  }
-
-  /** equipo de un responsable; una secretaría incluye el de sus subsecretarías */
-  equipoDe(id: string): Funcionario[] {
-    const deps = this.plan()?.dependencias ?? [];
-    return deps.filter(d => d.id === id || d.padre === id).flatMap(d => d.equipo ?? []);
-  }
-
-  confDe(x: ProductoPlan, id: string): Confianza {
-    const deps = this.dependencias();
-    return x.resp.find(r => r.dep === id || deps.get(r.dep)?.padre === id)?.conf ?? 'baja';
   }
 
   urlOds(nombre: string): string | null {
@@ -262,6 +285,16 @@ export class PlanComponent {
 
   sumaAnios(v: number[]): number {
     return v.reduce((a, b) => a + b, 0);
+  }
+
+  /** matiz de cada eje, dentro de la gama verde-lima-dorado del tema */
+  matiz(i: number): number {
+    return [150, 120, 88, 46][i % 4];
+  }
+
+  /** matiz estable de cada responsable, el mismo de su ficha */
+  matizDep(id: string): number {
+    return matizDe(id);
   }
 
   pct(n: number, d: number): number {

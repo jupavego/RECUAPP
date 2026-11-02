@@ -1,87 +1,131 @@
 @if (plan(); as p) {
   <main class="plan">
-    <header class="plan__cabecera">
-      <p class="plan__etiqueta">Plan de desarrollo 2024-2027</p>
-      <h1>{{ p.municipio }}</h1>
-      <p class="plan__sub">{{ p.plan }}</p>
+    <header class="hero">
+      <svg class="hero__hojas" viewBox="0 0 240 240" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <path d="M120 230V90" />
+          <path d="M120 150C80 150 56 120 52 84c40 0 66 28 68 66Z" />
+          <path d="M120 120c38 0 62-26 66-62-38 0-64 26-66 62Z" />
+          <path d="M120 90c-22-4-36-22-38-44 24 2 38 18 38 44Z" />
+        </g>
+      </svg>
+      <div class="hero__texto">
+        <p class="plan__etiqueta">Plan de desarrollo 2024-2027</p>
+        <h1>{{ p.municipio }}</h1>
+        <p class="plan__sub">{{ p.plan }}</p>
+        <nav class="hero__atajos" aria-label="Ir a una sección">
+          <a href="#lineas">Líneas</a>
+          <a href="#sectores">Sectores</a>
+          <a href="#responsables">Responsables</a>
+          <a href="#ods">ODS</a>
+          <a href="#inversion">Inversión</a>
+        </nav>
+      </div>
+      <dl class="hero__cifras">
+        <div class="hero__principal"><dt>Productos e indicadores</dt><dd>{{ p.productos.length }}</dd></div>
+        <div><dt>Líneas estratégicas</dt><dd>{{ p.lineas.length }}</dd></div>
+        <div><dt>Sectores</dt><dd>{{ p.sectores.length }}</dd></div>
+        <div><dt>Programas</dt><dd>{{ p.programas.length }}</dd></div>
+        <div><dt>Indicadores de resultado</dt><dd>{{ p.resultado.length }}</dd></div>
+        <div><dt>Dependencias</dt><dd>{{ raices().length }}</dd></div>
+      </dl>
+      <p class="hero__fuente">Fuente: {{ p.fuente.nombre }}, consultados el {{ p.fuente.fecha }}.</p>
     </header>
 
     <section class="rejilla" aria-label="Categorías del plan">
 
-      <!-- Resumen -->
-      <article class="tarjeta tarjeta--ancha tarjeta--resumen">
-        <h2>Resumen</h2>
-        <dl class="cifras">
-          <div><dt>Líneas estratégicas</dt><dd>{{ p.lineas.length }}</dd></div>
-          <div><dt>Sectores</dt><dd>{{ p.sectores.length }}</dd></div>
-          <div><dt>Programas</dt><dd>{{ p.programas.length }}</dd></div>
-          <div><dt>Productos e indicadores</dt><dd>{{ p.productos.length }}</dd></div>
-          <div><dt>Indicadores de resultado</dt><dd>{{ p.resultado.length }}</dd></div>
-          <div><dt>Dependencias</dt><dd>{{ raices().length }}</dd></div>
-        </dl>
-        <p class="nota">Fuente: {{ p.fuente.nombre }}, consultados el {{ p.fuente.fecha }}.</p>
-      </article>
-
       <!-- Líneas -->
-      <article class="tarjeta" [class.tarjeta--abierta]="abierta() === 'lineas'">
+      <article id="lineas" class="tarjeta tarjeta--ancha tarjeta--lineas" [class.tarjeta--abierta]="abierta() === 'lineas'">
         <h2>Líneas estratégicas <span class="cuenta">{{ p.lineas.length }}</span></h2>
-        <ul class="barras">
-          @for (l of p.lineas; track l.id) {
-            <li>
-              <div role="button" tabindex="0" class="barras__fila clicable" (click)="verGrupo('linea', l.id, l.nombre)" (keydown.enter)="verGrupo('linea', l.id, l.nombre)">
-                <span class="barras__nombre">{{ l.nombre }}</span>
-                <span class="barras__valor">{{ l.productos }} productos · {{ l.programas }} programas</span>
-                <span class="barras__pista"><i [style.width.%]="pct(l.productos, maxLinea())"></i></span>
-              </div>
+        <ul class="ejes">
+          @for (l of p.lineas; track l.id; let i = $index) {
+            <li [style.--i]="i" [style.--eje]="matiz(i)">
+              <button type="button" class="eje" (click)="verGrupo('linea', l.id, l.nombre)" [attr.aria-label]="l.nombre + ': ' + l.productos + ' productos, ' + pct(l.productos, p.productos.length) + ' % del plan. Ver productos'">
+                <svg class="eje__anillo" viewBox="0 0 44 44" width="64" height="64" role="img" [attr.aria-label]="pct(l.productos, p.productos.length) + ' % de los productos del plan'">
+                  <circle class="eje__pista" cx="22" cy="22" r="17" pathLength="100" />
+                  <circle class="eje__arco" cx="22" cy="22" r="17" pathLength="100" [attr.stroke-dasharray]="pct(l.productos, p.productos.length) + ' 100'" />
+                  <text x="22" y="22" text-anchor="middle" dominant-baseline="central" class="eje__pct">{{ pct(l.productos, p.productos.length) }}%</text>
+                </svg>
+                <span class="eje__num">Eje {{ i + 1 }}</span>
+                <span class="eje__nombre">{{ l.nombre }}</span>
+                <span class="eje__datos"><b>{{ l.productos }}</b> productos · <b>{{ l.programas }}</b> programas</span>
+                <span class="eje__ver" aria-hidden="true">Ver productos →</span>
+              </button>
             </li>
           }
         </ul>
       </article>
 
-      <!-- Sectores -->
-      <article class="tarjeta" [class.tarjeta--abierta]="abierta() === 'sectores'">
+      <!-- Sectores: mosaico, el tamaño de cada bloque es su número de productos -->
+      <article id="sectores" class="tarjeta tarjeta--ancha">
         <h2>Sectores <span class="cuenta">{{ p.sectores.length }}</span></h2>
-        <ul class="barras">
-          @for (s of (abierta() === 'sectores' ? p.sectores : p.sectores.slice(0, 6)); track s.cod) {
-            <li>
-              <div role="button" tabindex="0" class="barras__fila clicable" (click)="verGrupo('sector', s.cod, s.nombre)" (keydown.enter)="verGrupo('sector', s.cod, s.nombre)">
-                <span class="barras__nombre">{{ s.nombre }}</span>
-                <span class="barras__valor">{{ s.productos }}</span>
-                <span class="barras__pista"><i [style.width.%]="pct(s.productos, maxSector())"></i></span>
-              </div>
+        <ul class="mosaico">
+          @for (s of sectoresOrden(); track s.cod; let i = $index) {
+            <li [style.--n]="s.productos" [style.--i]="i" [style.--eje]="matizSector(i)">
+              <button type="button" class="tesela" (click)="verGrupo('sector', s.cod, s.nombre)" [attr.aria-label]="s.nombre + ': ' + s.productos + ' productos. Ver productos'">
+                <span class="tesela__n">{{ s.productos }}</span>
+                <span class="tesela__nombre">{{ s.nombre }}</span>
+              </button>
             </li>
           }
         </ul>
-        @if (p.sectores.length > 6) {
-          <button type="button" class="mas" (click)="alternar('sectores')">
-            {{ abierta() === 'sectores' ? 'Ver menos' : 'Ver los ' + p.sectores.length }}
-          </button>
-        }
+        <p class="nota">El tamaño de cada bloque es proporcional a sus productos e indicadores.</p>
       </article>
 
-      <!-- Programas -->
-      <article class="tarjeta" [class.tarjeta--abierta]="abierta() === 'programas'">
+      <!-- Programas: agrupados por línea estratégica -->
+      <article id="programas" class="tarjeta tarjeta--programas">
         <h2>Programas <span class="cuenta">{{ p.programas.length }}</span></h2>
-        <ul class="barras">
-          @for (g of (abierta() === 'programas' ? p.programas : p.programas.slice(0, 6)); track g.cod) {
-            <li>
-              <div role="button" tabindex="0" class="barras__fila clicable" (click)="verGrupo('programa', g.cod, g.nombre)" (keydown.enter)="verGrupo('programa', g.cod, g.nombre)">
-                <span class="barras__nombre">{{ g.nombre }}</span>
-                <span class="barras__valor">{{ g.productos }}</span>
-                <span class="barras__pista"><i [style.width.%]="pct(g.productos, maxPrograma())"></i></span>
-              </div>
+        <input class="buscar" type="search" placeholder="Buscar un programa" aria-label="Buscar un programa" [value]="buscaProg()" (input)="buscaProg.set($any($event.target).value)" />
+        @for (g of programasPorLinea(); track g.id) {
+          <section class="grupo" [style.--eje]="g.matiz">
+            <button type="button" class="grupo__cab" [attr.aria-expanded]="grupoAbierto(g.id)" (click)="alternarGrupo(g.id)">
+              <span class="grupo__eje">Eje {{ g.n }}</span>
+              <span class="grupo__nombre">{{ g.nombre }}</span>
+              <span class="grupo__cuenta">{{ g.items.length }} · {{ g.total }} prod.</span>
+            </button>
+            @if (grupoAbierto(g.id)) {
+              <ul class="barras grupo__lista">
+                @for (x of g.items; track x.cod) {
+                  <li>
+                    <div role="button" tabindex="0" class="barras__fila clicable" (click)="verGrupo('programa', x.cod, x.nombre)" (keydown.enter)="verGrupo('programa', x.cod, x.nombre)">
+                      <span class="barras__nombre">{{ x.nombre }}</span>
+                      <span class="barras__valor">{{ x.productos }}</span>
+                      <span class="barras__pista"><i [style.width.%]="pct(x.productos, maxPrograma())"></i></span>
+                    </div>
+                  </li>
+                }
+              </ul>
+            }
+          </section>
+        } @empty { <p class="nota">Ningún programa coincide con la búsqueda.</p> }
+      </article>
+
+      <!-- Resultado -->
+      <article id="resultado" class="tarjeta tarjeta--resultado" [class.tarjeta--abierta]="abierta() === 'resultado'">
+        <h2>Indicadores de resultado <span class="cuenta">{{ p.resultado.length }}</span></h2>
+        @if (abierta() === 'resultado') {
+          <input class="buscar" type="search" placeholder="Buscar un indicador" aria-label="Buscar un indicador de resultado" [value]="buscaRes()" (input)="buscaRes.set($any($event.target).value)" />
+        }
+        <ul class="metas">
+          @for (r of resultadoVisible(); track r.id) {
+            <li [style.--eje]="matizLinea(r.linea)">
+              <span class="metas__ind">{{ r.indicador }}</span>
+              <b class="metas__valor">{{ r.meta }}</b>
             </li>
-          }
+          } @empty { <li class="nota">Ningún indicador coincide con la búsqueda.</li> }
         </ul>
-        <button type="button" class="mas" (click)="alternar('programas')">
-          {{ abierta() === 'programas' ? 'Ver menos' : 'Ver los ' + p.programas.length }}
+        <button type="button" class="mas" (click)="alternar('resultado')">
+          {{ abierta() === 'resultado' ? 'Ver menos' : 'Ver los ' + p.resultado.length }}
         </button>
       </article>
 
       <!-- Responsables -->
-      <article class="tarjeta tarjeta--ancha" [class.tarjeta--abierta]="abierta() === 'responsables'">
+      <article id="responsables" class="tarjeta tarjeta--ancha" [class.tarjeta--abierta]="abierta() === 'responsables'">
         <h2>Responsables <span class="cuenta">{{ raices().length }} dependencias</span></h2>
-        <p class="nota">Las dependencias de la alcaldía, tomadas de su sitio web. Cada producto se asigna con lo que dice el PDF; si no lo dice, se sugiere por sector. La dona de cada responsable muestra su porcentaje de los {{ p.productos.length }} productos del plan; un producto con varios responsables cuenta en cada uno.</p>
+        <details class="como">
+          <summary>Cómo se lee esta sección</summary>
+          <p class="nota">Las dependencias de la alcaldía, tomadas de su sitio web. Cada producto se asigna con lo que dice el PDF; si no lo dice, se sugiere por sector. El anillo de cada responsable muestra su porcentaje de los {{ p.productos.length }} productos del plan; un producto con varios responsables cuenta en cada uno.</p>
+        </details>
         <p class="leyenda leyenda--cat"><b>Categoría de la asignación:</b>
           <span class="tip" tabindex="0"><i class="p1"></i> Según el PDF, lo dice el plan
             <span class="tip__caja" role="tooltip">
@@ -96,9 +140,9 @@
               <span class="tip__txt">de los {{ plan()!.productos.length }} del plan. El PDF no nombra responsable; se propone por el sector del producto.</span>
             </span></span></p>
         <ul class="barras barras--dos">
-          @for (d of raicesPorPeso(); track d.id) {
-            <li class="subcapsula" [class.subcapsula--abierta]="depAbierta() === d.id || hijoAbierto(d.id)">
-              <button type="button" class="con-icono" [attr.aria-expanded]="depAbierta() === d.id" (click)="alternarDep(d.id)">
+          @for (d of raicesPorPeso(); track d.id; let i = $index) {
+            <li class="subcapsula" [style.--eje]="matizDep(d.id)" [style.--i]="i">
+              <button type="button" class="con-icono" [title]="'Ver la ficha de ' + d.nombre" (click)="irFicha(d.id)">
                 <span class="ico">
                   @if (urlIcono(d.id); as u) { <img [src]="u" alt="" width="60" height="60" /> } @else { <i class="ico__vacio" title="Sin icono asignado">{{ d.nombre.charAt(0) }}</i> }
                 </span>
@@ -111,10 +155,10 @@
                   <circle class="dona__sug" cx="22" cy="22" r="17" pathLength="100" [attr.stroke-dasharray]="pct(conf(d.id, 'sugerida'), p.productos.length) + ' 100'" [attr.stroke-dashoffset]="-pct(conf(d.id, 'alta'), p.productos.length)" />
                   <text x="22" y="22" text-anchor="middle" dominant-baseline="central" class="dona__texto">{{ pct(totalDep(d.id), p.productos.length) }}<tspan class="dona__pct" dx="1">%</tspan></text>
                 </svg>
-                <span class="dep__sep" aria-hidden="true"></span>
+                <span class="dep__barra" aria-hidden="true"><i [style.width.%]="pct(conf(d.id, 'alta'), totalDep(d.id))"></i><b [style.width.%]="pct(conf(d.id, 'sugerida'), totalDep(d.id))"></b></span>
               </button>
               @for (h of hijos(d.id); track h.id) {
-                <button type="button" class="sub" [attr.aria-expanded]="depAbierta() === h.id" (click)="alternarDep(h.id)" [title]="h.nombre + (h.padre_confirmado ? '' : ' · Adscripción a esta secretaría por confirmar') + (h.nota ? ' · ' + h.nota : '')">
+                <button type="button" class="sub" (click)="irFicha(h.id)" [title]="'Ver la ficha · ' + h.nombre + (h.padre_confirmado ? '' : ' · Adscripción a esta secretaría por confirmar') + (h.nota ? ' · ' + h.nota : '')">
                   @if (trazoSub(h.id); as t) { <span class="ico-trazo" [style.--trazo]="'url(/img/trazo/' + t + '.svg)'" aria-hidden="true"></span> } @else { @if (urlIcono(h.id); as u) { <img class="ico-sub" [src]="u" alt="" width="26" height="26" /> } }
                   <span class="barras__nombre sub__nombre">{{ h.nombre }}</span>
                   @if (!h.padre_confirmado) { <em class="sub__tag">por confirmar</em> }
@@ -123,7 +167,7 @@
               }
               @for (e of externas(d.id); track e.id) {
                 <div class="ext">
-                  <button type="button" class="sub sub--ext" [attr.aria-expanded]="depAbierta() === e.id" (click)="alternarDep(e.id)">
+                  <button type="button" class="sub sub--ext" (click)="irFicha(e.id)" [title]="'Ver la ficha · ' + e.nombre">
                     @if (trazoSub(e.id); as t) { <span class="ico-trazo" [style.--trazo]="'url(/img/trazo/' + t + '.svg)'" aria-hidden="true"></span> }
                     <span class="barras__nombre sub__nombre">{{ e.nombre }}</span>
                     <em class="sub__tag">entidad externa</em>
@@ -144,79 +188,6 @@
                 </span>
               }
               @if (d.tipo === 'secretaria' && !hijos(d.id).length) { <span class="sub--vacia" aria-hidden="true"></span> }
-              @if (depAbierta(); as ab) {
-                @if (ab === d.id || dependencias().get(ab)?.padre === d.id || dependencias().get(ab)?.vinculo === d.id) {
-                  <div class="subcapsula__cuerpo">
-                    <header class="dep-cab">
-                      @if (equipoDe(ab).length; as n) { <span class="dep-cab__n" [title]="n + ' funcionarios en el directorio de la alcaldía'">{{ n }}</span> }
-                      <div class="dep-cab__top">
-                        @if (urlIcono(ab); as u) { <img class="dep-cab__ico" [src]="u" alt="" width="56" height="56" /> }
-                        <div class="dep-cab__titulo">
-                          <h3 class="dep-cab__nombre">{{ dependencias().get(ab)?.nombre }}</h3>
-                          <span class="dep-cab__cuenta">{{ productosDe(ab).length }} productos e indicadores</span>
-                        </div>
-                      </div>
-                      @let eq = equipoDe(ab);
-                      @if (dependencias().get(ab)?.responsable || eq.length) {
-                        <div class="dep-cab__persona">
-                          <div class="dep-cab__datos">
-                            @if (dependencias().get(ab)?.responsable; as r) {
-                          <span class="dep-cab__cargo">{{ r.cargo }}</span>
-                          <b class="dep-cab__quien">{{ r.nombre }}</b>
-                          <span class="dep-cab__contacto">
-                            @if (r.correo) { <a [href]="'mailto:' + r.correo">{{ r.correo }}</a> }
-                            @if (r.telefono) { <span>Tel. {{ r.telefono }}{{ r.extension ? ' ext. ' + r.extension : '' }}</span> }
-                            <a [href]="r.url" target="_blank" rel="noopener">Ver en el sitio de la alcaldía</a>
-                          </span>
-                        }
-                          </div>
-                          @if (eq.length) {
-                            <details class="equipo" appCierraFuera>
-                          <summary [title]="'Directorio de funcionarios de la alcaldía: ' + eq.length + ' personas'"><img class="equipo__ico" src="img/iconos/contacto.webp" alt="" width="36" height="36" />Equipo de la dependencia</summary>
-                          <ul>
-                            <li class="equipo__cols" aria-hidden="true"><span>Funcionario</span><span>Cargo</span><span>Contacto</span><span></span></li>
-                            @for (f of eq; track f.nombre) {
-                              <li>
-                                <b class="equipo__nombre">{{ f.nombre }}</b>
-                                <span class="equipo__cargo">{{ f.cargo }}</span>
-                                <span class="equipo__contacto">
-                                  @if (f.correo) { <a [href]="'mailto:' + f.correo">{{ f.correo }}</a> }
-                                  @if (f.telefono) { <span>Tel. {{ f.telefono }}{{ f.extension ? ' · ext. ' + f.extension : '' }}</span> }
-                                </span>
-                                <button type="button" class="equipo__chat" disabled [attr.aria-label]="'Chat con ' + f.nombre + ' (próximamente)'" title="Chat: próximamente">
-                                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.5-4.6A8 8 0 1 1 21 12Z"/><path d="M8.5 11h7M8.5 14h4"/></svg>
-                                </button>
-                              </li>
-                            }
-                          </ul>
-                        </details>
-                          }
-                        </div>
-                      }
-                    </header>
-                    <section class="tabla-prod">
-                      <h4 class="tabla-prod__titulo">Productos e indicadores a cargo de {{ dependencias().get(ab)?.nombre }}</h4>
-                      <ul class="subcapsula__lista">
-                        <li class="subcapsula__cols" aria-hidden="true"><span>Indicador de producto</span><span>Producto</span><span>Meta del cuatrienio · fuente</span><span>Detalle</span></li>
-                        @for (x of productosDe(ab); track x.id) {
-                          <li>
-                            <span class="subcapsula__ind">{{ x.indicador }}</span>
-                            <span class="subcapsula__prod">{{ x.producto }}</span>
-                            <span class="subcapsula__meta">
-                              Meta {{ num(x.meta) }} {{ x.unidad }}
-                              · <em class="chip__tag">{{ confDe(x, ab) === 'alta' ? 'según el PDF' : 'sugerido' }}</em>
-                            </span>
-                            <button type="button" class="info" [attr.aria-label]="'Detalle de ' + x.indicador"
-                              (mouseenter)="mostrarDetalle($event, x)" (focus)="mostrarDetalle($event, x)" (mouseleave)="ocultarDetalle()" (blur)="ocultarDetalle()">
-                              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><circle cx="12" cy="8" r=".6" fill="currentColor"/></svg>
-                            </button>
-                          </li>
-                        }
-                      </ul>
-                    </section>
-                  </div>
-                }
-              }
             </li>
           }
         </ul>
@@ -225,21 +196,8 @@
         }
       </article>
 
-      <!-- Resultado -->
-      <article class="tarjeta" [class.tarjeta--abierta]="abierta() === 'resultado'">
-        <h2>Indicadores de resultado <span class="cuenta">{{ p.resultado.length }}</span></h2>
-        <ul class="lista">
-          @for (r of (abierta() === 'resultado' ? p.resultado : p.resultado.slice(0, 5)); track r.id) {
-            <li><span>{{ r.indicador }}</span><b>{{ r.meta }}</b></li>
-          }
-        </ul>
-        <button type="button" class="mas" (click)="alternar('resultado')">
-          {{ abierta() === 'resultado' ? 'Ver menos' : 'Ver los ' + p.resultado.length }}
-        </button>
-      </article>
-
       <!-- ODS -->
-      <article class="tarjeta tarjeta--doble" [class.tarjeta--abierta]="abierta() === 'ods'">
+      <article id="ods" class="tarjeta tarjeta--doble" [class.tarjeta--abierta]="abierta() === 'ods'">
         <h2>Objetivos de Desarrollo Sostenible <span class="cuenta">{{ p.ods.length }}</span></h2>
         <p class="nota">Productos del plan según su ODS.</p>
         <ul class="lista lista--ods">
@@ -261,7 +219,7 @@
       </article>
 
       <!-- Inversión -->
-      <article class="tarjeta tarjeta--ancha" [class.tarjeta--abierta]="abierta() === 'financiacion'">
+      <article id="inversion" class="tarjeta tarjeta--ancha" [class.tarjeta--abierta]="abierta() === 'financiacion'">
         <h2>Inversión programada</h2>
         @if (p.financiacion; as f) {
           <p class="nota">{{ f.fuente }}. Total del cuatrienio: <b>{{ mm(sumaAnios(f.total)) }}</b>.</p>

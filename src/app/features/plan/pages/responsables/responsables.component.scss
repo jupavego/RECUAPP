@@ -161,6 +161,7 @@ h3 { margin: 0 0 8px; font-size: .9rem; color: var(--dark-700, #334155); }
   display: inline-block; padding: 1px 9px; font-size: .7rem; white-space: nowrap; border-radius: 999px;
   background: var(--color-brand-surface, #f0fdfa); border: 1px solid var(--color-brand-border, #99f6e4); color: var(--color-brand-primary);
   &--sugerida { background: #FBF3D5; border-color: var(--plan-amarillo, #E0B33A); color: #5C4A12; }
+  &--meta { white-space: normal; background: transparent; border-color: var(--color-border-tertiary, #e4e4e7); color: var(--neutral-600, #52525b); }
 }
 
 // Cuadros oficiales del informe (plan de acción y avance al cuatrienio) de la dependencia

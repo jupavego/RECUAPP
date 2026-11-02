@@ -162,6 +162,9 @@
                       <span class="ind__pie">
                         @if (r.grupo.length > 1) { <em>{{ f.dep.nombre }}</em> }
                         <span class="chip" [class.chip--sugerida]="f.conf !== 'alta'">{{ f.conf === 'alta' ? 'según el PDF' : 'sugerida por sector' }}</span>
+                        <span class="chip chip--meta" title="Sector">{{ sectorNombre(f.x.sector) }}</span>
+                        @if (f.x.ods) { <span class="chip chip--meta" title="Objetivo de Desarrollo Sostenible">ODS · {{ f.x.ods }}</span> }
+                        @if (f.x.pdf) { <span class="chip chip--meta" title="Dónde aparece en el PDF del plan">PDF p. {{ f.x.pdf.pagina }}@if (f.x.pdf.linea_base) {, línea base {{ f.x.pdf.linea_base }}}</span> }
                       </span>
                     </td>
                     <td class="num" data-et="Meta 4 años">{{ num(f.x.meta) }} <small>{{ f.x.unidad }}</small></td>
@@ -185,11 +188,13 @@
                       }
                     }
                   </tr>
-                  @if (narrativas(f).length || f.s?.proyecto) {
+                  @if (narrativas(f).length || f.s?.proyecto || f.x.detalle || f.x.nota) {
                     <tr class="fila-narr">
                       <td [attr.colspan]="4 + aniosInforme().length">
                         <details>
-                          <summary>Qué reportó la alcaldía @if (hayDiferencia(f)) { <em class="aviso" title="La ficha y la tabla resumen del informe dan cifras distintas para este indicador">· la ficha difiere de la tabla</em> }</summary>
+                          <summary>Detalle y lo que reportó la alcaldía @if (hayDiferencia(f)) { <em class="aviso" title="La ficha y la tabla resumen del informe dan cifras distintas para este indicador">· la ficha difiere de la tabla</em> }</summary>
+                          @if (f.x.detalle) { <p class="narr"><b>En el plan</b> {{ f.x.detalle }}</p> }
+                          @if (f.x.nota) { <p class="narr"><b>Nota</b> {{ f.x.nota }}</p> }
                           @if (f.s?.proyecto) { <p class="narr__proy"><b>Proyecto:</b> {{ f.s!.proyecto }}@if (f.s!.bpin) { · BPIN {{ f.s!.bpin }} }</p> }
                           @for (n of narrativas(f); track n.anio) {
                             <p class="narr"><b>{{ n.anio }}</b> {{ n.texto }}</p>

@@ -222,6 +222,11 @@ export class ResponsablesComponent {
   }
 
   /** narrativas del informe de un producto, de la más reciente a la más antigua */
+  /** nombre del sector de un producto, por su código */
+  sectorNombre(cod: string): string {
+    return this.plan()?.sectores.find(x => x.cod === cod)?.nombre ?? cod;
+  }
+
   narrativas(f: FilaProducto): { anio: string; texto: string }[] {
     const n = f.s?.narrativas ?? {};
     return this.aniosInforme().filter(a => n[a]).map(a => ({ anio: a, texto: n[a]! }));
