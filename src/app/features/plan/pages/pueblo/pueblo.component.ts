@@ -6,6 +6,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { catchError, map, of, switchMap } from 'rxjs';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { mergeGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 import { Aura, crearAuras } from '../../../mapa3d/utils/aura';
 import { CategoriaCatalogo, Modelo, modelarEquipamiento } from '../../../mapa3d/utils/equipamientos';
 import { PlanEntidad, PlanService, Seguimiento } from '../../services/plan.service';
@@ -68,9 +69,16 @@ let RELIEVE: Diorama | null = null;
 /** Eje del río que serpentea por el norte del valle (z en función de x), y su ancho y hondura. */
 const zRio = (x: number): number => -420 + 38 * Math.sin(x / 105) + 16 * Math.sin(x / 41 + 1.7);
 const ANCHO_RIO = 26;
+/** Radio (m) de la explanada de cada edificio y ancho del talud con el que se funde con la ladera. */
+const PADS: Record<string, number> = { agri: 28, amb: 61, gob: 28, hac: 18, inf: 52, pla: 29, sal: 37, adm: 18, tra: 86, edu: 35, com: 23, jur: 27, cid: 18, cia: 32, des: 30 };
+const TALUD = 18;
+/** Explanadas aplanadas en el terreno: centro, radio y cota. */
+let PLATAFORMAS: { x: number; z: number; r: number; y: number }[] = [];
+/** Entorno de cada puente: ahí las explanadas no tocan el relieve, para que el tablero y sus rampas queden coherentes. */
+let ZONAS_PUENTE: { x: number; z: number; r: number }[] = [];
 const HONDO_RIO = 5;
 /** Altura del terreno (exagerada) en x, z metros desde el centro del casco urbano. */
-export function alturaTerreno(x: number, z: number): number {
+export function alturaTerreno(x: number, z: number, conPlataformas = true): number {
   const d = RELIEVE;
   if (!d) return 0;
   const fx = Math.min(Math.max((x + d.ancho / 2) / d.paso, 0), d.nx - 1.001), fz = Math.min(Math.max((z + d.fondo / 2) / d.paso, 0), d.nz - 1.001);
@@ -79,7 +87,21 @@ export function alturaTerreno(x: number, z: number): number {
   const base = ((h(i, j) * (1 - tx) + h(i + 1, j) * tx) * (1 - tz) + (h(i, j + 1) * (1 - tx) + h(i + 1, j + 1) * tx) * tz) * EXA;
   // cauce del río: una zanja suave a lo largo de su eje
   const t = Math.max(0, 1 - Math.abs(z - zRio(x)) / (ANCHO_RIO * 1.3));
-  return base - HONDO_RIO * t * t * (3 - 2 * t);
+  let alto = base - HONDO_RIO * t * t * (3 - 2 * t);
+  if (conPlataformas) {
+    // cada edificio asienta su explanada: dentro del radio el suelo es plano y alrededor baja (o sube) en un talud hasta la ladera
+    for (const p of PLATAFORMAS) {
+      const dist = Math.hypot(x - p.x, z - p.z);
+      if (dist >= p.r + TALUD) continue;
+      // la explanada no toca el cauce del río: ahí manda el relieve natural (puentes y orillas)
+      const lejosRio = Math.min(1, Math.max(0, (Math.abs(z - zRio(x)) - ANCHO_RIO * 0.9) / 14));
+      let lejosPuente = 1;
+      for (const zn of ZONAS_PUENTE) lejosPuente = Math.min(lejosPuente, Math.max(0, (Math.hypot(x - zn.x, z - zn.z) - zn.r) / 16));
+      const k = dist <= p.r ? 0 : (dist - p.r) / TALUD, w = (1 - k * k * (3 - 2 * k)) * lejosRio * lejosRio * (3 - 2 * lejosRio) * lejosPuente * lejosPuente * (3 - 2 * lejosPuente);
+      alto = alto * (1 - w) + p.y * w;
+    }
+  }
+  return alto;
 }
 
 /** Granja solar: filas de paneles inclinados sobre soportes, con una caseta de control e inversores. */
@@ -105,8 +127,23 @@ function granjaSolar(): Modelo {
   for (let k = 0; k < 3; k++) caja(1.6, 2.4, 1.2, '#f3f4f6', 8 + k * 2.6 - (columnas * (ancho + 1.2)) / 2 + 2, 0, 24);  // inversores
   caja(0.5, 9, 0.5, '#6b7280', 24, 0, 24);                                          // poste de la línea
   caja(5, 0.4, 0.4, '#6b7280', 24, 8.4, 24);
-  return { piezas, radio: 38, losa: [64, 62] };
+  // aerogenerador (el rotor gira aparte) y, a su lado, el edificio de monitoreo con antena y parabólica
+  piezas.push({ g: new THREE.CylinderGeometry(0.9, 1.7, EOLICA.alto, 12).translate(EOLICA.x, EOLICA.alto / 2, EOLICA.z), color: '#e8ecef' });
+  caja(3, 3, 8, '#dfe4e8', EOLICA.x, EOLICA.alto - 3, EOLICA.z - 0.5);
+  caja(18, 0.5, 14, '#9aa0a6', EOLICA.x, 0, 10);
+  caja(13, 5.4, 9, '#f1f3f5', EOLICA.x, 0.5, 10);
+  caja(14, 0.6, 10, '#5f6b76', EOLICA.x, 5.9, 10);
+  caja(11, 1.3, 0.2, '#2f4a5e', EOLICA.x, 2.4, 14.55);
+  caja(1.4, 2.3, 0.2, '#3f5a48', EOLICA.x + 5, 0.5, 14.55);
+  caja(0.3, 9, 0.3, '#6b7280', EOLICA.x - 4.5, 6.5, 8);
+  caja(2.4, 0.2, 0.2, '#6b7280', EOLICA.x - 4.5, 14, 8);
+  piezas.push({ g: new THREE.SphereGeometry(1.6, 14, 8, 0, Math.PI * 2, 0, Math.PI / 2).rotateX(-Math.PI / 2.6).translate(EOLICA.x + 3.5, 7.8, 9), color: '#f3f4f6' });
+  caja(1.8, 1.2, 1.2, '#f3f4f6', EOLICA.x + 6.5, 0.5, 4.5);
+  return { piezas, radio: 62, losa: [118, 62] };
 }
+
+/** Dónde queda el aerogenerador dentro de la granja (m del modelo). */
+const EOLICA = { x: 44, z: -22, alto: 36 };
 
 /** Un tramo de calle por el que circulan los vehículos y la gente: puntos [x, z…] con la distancia acumulada en cada uno. */
 interface Ruta { pts: number[]; cum: number[]; total: number; clase: number; }
@@ -173,7 +210,7 @@ interface Pin { sprite: THREE.Sprite; aspecto: number; tex: THREE.CanvasTexture;
 
       <div class="mapa">
         <div #lienzo class="lienzo" [class.lienzo--mano]="sobre()"></div>
-        @if (tip(); as t) {
+        @for (t of tipLista(); track t.r.dep.id) {
       <div class="tip tarj" [style.left.px]="colocar(t.x, t.y).x" [style.top.px]="colocar(t.x, t.y).y" [style.--acento-h]="matiz(t.r.dep.id)" role="status">
         <span class="tarj__cielo" aria-hidden="true"></span>
         @if (icono(t.r); as u) { <img class="tarj__ico" [src]="u" alt="" width="84" height="84" /> } @else { <i class="tarj__vacio">{{ t.r.dep.nombre.charAt(0) }}</i> }
@@ -211,8 +248,14 @@ interface Pin { sprite: THREE.Sprite; aspecto: number; tex: THREE.CanvasTexture;
         <a class="ficha__ir" [routerLink]="['/responsables', r.dep.id]">Ver ficha completa →</a>
       </aside>
     }
-        <span class="reloj" aria-label="Hora del día en la maqueta">{{ hora() }}</span>
-        <p class="ayuda">Arrastra para girar · rueda para acercar · clic derecho para desplazar</p>
+        <div class="reloj" [class.abierto]="relojAbierto()" role="group" aria-label="Hora del día en la maqueta">
+          <button type="button" class="reloj__h" (click)="relojAbierto.set(!relojAbierto())" [attr.aria-expanded]="relojAbierto()" aria-label="Cambiar la hora del día">{{ hora() }}</button>
+          <span class="reloj__mando">
+          <input type="range" min="0" max="24" step="0.25" [value]="horaSim" (input)="fijarHora($any($event.target).value)" aria-label="Elegir la hora del día" />
+          <button type="button" (click)="alternarCiclo()" [attr.aria-label]="enPausa ? 'Reanudar el ciclo del día' : 'Pausar el ciclo del día'">{{ enPausa ? '▶' : '⏸' }}</button>
+          </span>
+        </div>
+        <p class="ayuda">Arrastra para desplazar · clic derecho para girar · rueda para acercar</p>
       </div>
     </div>
   `,
@@ -243,11 +286,31 @@ interface Pin { sprite: THREE.Sprite; aspecto: number; tex: THREE.CanvasTexture;
     .mapa { position: relative; min-width: 0; min-height: 0; border-radius: 24px; overflow: hidden; border: 1px solid #C8D9C0;
       background: linear-gradient(#a9cdee, #d4e6f5 70%, #e6eff7); }
     .lienzo { position: absolute; inset: 0; touch-action: none; }
-    .lienzo--mano { cursor: pointer; }
+    .lienzo { cursor: grab; } .lienzo:active { cursor: grabbing; }
+    .lienzo--mano, .lienzo--mano:active { cursor: pointer; }
     .tip { position: absolute; z-index: 5; pointer-events: none; max-width: calc(100% - 16px); }
     .tarj { --acento: hsl(var(--acento-h, 110) 38% 30%); --acento-claro: hsl(var(--acento-h, 110) 45% 88%); --av: #cbd5c4;
       box-sizing: border-box; width: 330px; position: relative; overflow: hidden; isolation: isolate; display: grid; gap: 8px; align-content: start; padding: 112px 16px 16px;
       background: #FCF9F6; border: 1px solid #C8D9C0; border-radius: 28px; box-shadow: 0 14px 30px rgba(20, 40, 25, .28); color: #1A1A1A; }
+    .tarj { transform-origin: 50% 0; animation: tarj-in .42s cubic-bezier(.2, 1.5, .4, 1) both; }
+    .tarj::after { content: ''; position: absolute; inset: -20% auto -20% -60%; width: 40%; z-index: 2; pointer-events: none; transform: skewX(-18deg);
+      background: linear-gradient(90deg, transparent, rgb(255 255 255 / .55), transparent); animation: tarj-brillo .9s .12s ease-out both; }
+    .tarj__ico { animation: tarj-ico .6s .06s cubic-bezier(.3, 1.7, .5, 1) both, tarj-flota 3.2s .7s ease-in-out infinite; }
+    .tarj__anillo { animation: tarj-ico .5s .14s cubic-bezier(.3, 1.6, .5, 1) both; }
+    .tarj__valor { animation: tarj-trazo 1s .2s cubic-bezier(.3, .7, .2, 1) both; }
+    .tarj__nombre, .tarj__quien, .tarj__datos, .tarj__estado { animation: tarj-sube .45s cubic-bezier(.2, .9, .3, 1) both; }
+    .tarj__nombre { animation-delay: .12s; } .tarj__quien { animation-delay: .19s; } .tarj__datos { animation-delay: .26s; } .tarj__estado { animation-delay: .42s; }
+    .tarj__reparto i { transform-origin: left; animation: tarj-crece .7s .34s cubic-bezier(.3, .7, .2, 1) both; }
+    .tarj__cielo::after { animation: tarj-mancha 7s ease-in-out infinite alternate; }
+    @keyframes tarj-in { from { opacity: 0; transform: translateY(16px) scale(.8) rotate(-2.5deg); } to { opacity: 1; transform: none; } }
+    @keyframes tarj-brillo { from { left: -60%; opacity: 1; } to { left: 140%; opacity: 0; } }
+    @keyframes tarj-ico { from { opacity: 0; transform: scale(.2) rotate(-30deg); } to { opacity: 1; transform: none; } }
+    @keyframes tarj-flota { 0%, 100% { translate: 0 0; } 50% { translate: 0 -3px; } }
+    @keyframes tarj-trazo { from { stroke-dashoffset: 326.73; } }
+    @keyframes tarj-sube { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+    @keyframes tarj-crece { from { transform: scaleX(0); } to { transform: none; } }
+    @keyframes tarj-mancha { from { transform: rotate(0) scale(1); } to { transform: rotate(24deg) scale(1.18); } }
+    @media (prefers-reduced-motion: reduce) { .tarj, .tarj *, .tarj::after { animation: none !important; } }
     .tarj__cielo { position: absolute; inset: 0 0 auto 0; height: 104px; z-index: -1; background: linear-gradient(135deg, var(--acento-claro), transparent 85%); }
     .tarj__cielo::after { content: ''; position: absolute; right: -30px; top: -50px; width: 150px; height: 150px; border-radius: 62% 38% 70% 30% / 50% 60% 40% 50%; background: var(--acento); opacity: .14; }
     .tarj__ico { position: absolute; left: 16px; top: 14px; width: 84px; height: 84px; object-fit: contain; filter: drop-shadow(0 5px 8px rgb(0 0 0 / .22)); }
@@ -285,8 +348,14 @@ interface Pin { sprite: THREE.Sprite; aspecto: number; tex: THREE.CanvasTexture;
     .barra i { display: block; height: 100%; border-radius: 999px; background: #66AA33; }
     .barra i.bajo { background: #b5523b; } .barra i.ok { background: #2F7A3A; }
     .ficha__ir { display: inline-block; margin-top: 12px; font-weight: 600; font-size: .88rem; color: #29422F; }
-    .reloj { position: absolute; left: 12px; top: 12px; z-index: 6; padding: 5px 12px; border-radius: 999px; font-size: .8rem; font-weight: 700; font-variant-numeric: tabular-nums;
-      background: rgba(252, 249, 246, .92); color: #29422F; box-shadow: 0 3px 10px rgba(20, 40, 25, .22); pointer-events: none; }
+    .reloj { position: absolute; left: 12px; top: 12px; z-index: 6; display: flex; align-items: center; border-radius: 999px; font-size: .74rem; font-weight: 700; font-variant-numeric: tabular-nums;
+      background: rgba(252, 249, 246, .72); color: #29422F; backdrop-filter: blur(4px); box-shadow: 0 2px 8px rgba(20, 40, 25, .16); }
+    .reloj__h { padding: 5px 11px; border: 0; border-radius: 999px; background: transparent; color: inherit; font: inherit; cursor: pointer; }
+    .reloj__mando { display: none; align-items: center; gap: 6px; padding: 0 4px 0 0; }
+    .reloj.abierto .reloj__mando, .reloj:hover .reloj__mando { display: flex; }
+    .reloj input { width: 110px; accent-color: #29422F; cursor: pointer; }
+    .reloj__mando button { width: 24px; height: 24px; border: 0; border-radius: 50%; background: #29422F; color: #fcf9f6; font-size: .65rem; cursor: pointer; }
+    .reloj button:focus-visible, .reloj input:focus-visible { outline: 3px solid #66AA33; outline-offset: 2px; }
     .ayuda { position: absolute; left: 50%; bottom: 10px; transform: translateX(-50%); max-width: calc(100% - 24px); margin: 0; padding: 5px 14px; border-radius: 999px; text-align: center; font-size: .72rem; font-weight: 600; color: #29422F; background: rgba(252, 249, 246, .88); box-shadow: 0 2px 8px rgba(20, 40, 25, .2); pointer-events: none; }
     :host(.tema-oscuro) h1 { color: #eaf3e4; }
     :host(.tema-oscuro) .titulo__ojo { color: #a9cf8f; }
@@ -339,6 +408,9 @@ export class PuebloComponent implements AfterViewInit {
   readonly elegido = signal<Resumen | null>(null);
   readonly sobre = signal(false);
   readonly hora = signal('☀ 10:00');
+  readonly relojAbierto = signal(false);
+  /** el tooltip como lista de uno: así cada pin nuevo vuelve a estrenar la animación de entrada */
+  readonly tipLista = computed(() => { const t = this.tip(); return t ? [t] : []; });
   readonly leyenda = signal(false);
   readonly tip = signal<{ r: Resumen; x: number; y: number } | null>(null);
 
@@ -353,6 +425,11 @@ export class PuebloComponent implements AfterViewInit {
   private edificios: Edificio[] = [];
   private aura: Aura | null = null;
   private nubes: Nube[] = [];
+  private rotores: THREE.Object3D[] = [];
+  /** farolas sueltas (las del parqueadero): puntos de luz xyz y charcos de luz sobre el asfalto */
+  private lucesExtra: number[] = [];
+  private charcosExtra: { x: number; z: number; hx: number; hz: number; y?: number }[] = [];
+  private nieblas: { sprite: THREE.Sprite; x: number; z: number; x0: number; z0: number; dy: number; y: number; ancho: number; fase: number }[] = [];
   private listo = false;
   private vistaPuesta = false;
   private construido = false;
@@ -442,9 +519,15 @@ export class PuebloComponent implements AfterViewInit {
     this.controles.maxPolarAngle = Math.PI / 2 - 0.04;
     this.controles.minDistance = 90;
     this.controles.autoRotate = false;
+    // igual que en el mapa 3D: la manito arrastra y desplaza, el clic derecho inclina y gira, y la rueda acerca con suavidad
+    this.controles.screenSpacePanning = false;
+    this.controles.mouseButtons = { LEFT: THREE.MOUSE.PAN, RIGHT: THREE.MOUSE.ROTATE };
+    this.controles.touches = { ONE: THREE.TOUCH.PAN, TWO: THREE.TOUCH.DOLLY_ROTATE };
+    this.controles.enableZoom = false;
     this.controles.target.set(0, 40, 0);
     this.camara.position.set(1190, 720, 1300);
-    this.controles.addEventListener('start', () => { this.controles.autoRotate = false; this.vuelo = null; this.tip.set(null); });
+    this.controles.addEventListener('start', () => { this.controles.autoRotate = false; this.vuelo = null; this.tip.set(null); this.movido = Infinity; });
+    this.controles.addEventListener('end', () => { this.movido = performance.now(); });
 
     const ajustar = () => {
       const { clientWidth: w, clientHeight: h } = el;
@@ -466,6 +549,15 @@ export class PuebloComponent implements AfterViewInit {
     ajustar();
 
     const dom = this.renderer.domElement;
+    const rueda = (e: WheelEvent) => {
+      e.preventDefault();
+      this.vuelo = null;
+      this.tip.set(null);
+      this.zoomPendiente += e.deltaY * 0.0022;
+    };
+    dom.addEventListener('wheel', rueda, { passive: false });
+    const medio = (e: MouseEvent) => { if (e.button === 1) e.preventDefault(); };
+    dom.addEventListener('mousedown', medio);
     let abajo: { x: number; y: number } | null = null;
     const alBajar = (e: PointerEvent) => { abajo = { x: e.clientX, y: e.clientY }; };
     const alSubir = (e: PointerEvent) => {
@@ -474,6 +566,11 @@ export class PuebloComponent implements AfterViewInit {
       if (id) this.elegir(id); else this.soltar();
     };
     const alMover = (e: PointerEvent) => {
+      if (e.buttons & 4) {                      // rueda presionada: gira el mapa en horizontal y lo inclina
+        this.vuelo = null;
+        this.giroPendiente -= e.movementX * 0.006;
+        this.inclinacionPendiente += e.movementY * 0.006;
+      }
       if (e.buttons) { this.tip.set(null); return; }
       const id = this.buscar(e);
       this.sobre.set(!!id);
@@ -495,7 +592,9 @@ export class PuebloComponent implements AfterViewInit {
       this.animacion = requestAnimationFrame(bucle);
       const dt = Math.min(this.reloj.getDelta(), 0.1);
       this.animar(dt, this.reloj.elapsedTime);
+      this.aplicarGiroYZoom();
       this.controles.update();
+      this.mantenerEnElMapa();
       this.renderer.render(this.escena, this.camara);
     };
     bucle();
@@ -503,6 +602,8 @@ export class PuebloComponent implements AfterViewInit {
     this.destroyRef.onDestroy(() => {
       cancelAnimationFrame(this.animacion);
       obs.disconnect();
+      dom.removeEventListener('wheel', rueda);
+      dom.removeEventListener('mousedown', medio);
       dom.removeEventListener('pointerdown', alBajar);
       dom.removeEventListener('pointerup', alSubir);
       dom.removeEventListener('pointermove', alMover);
@@ -515,7 +616,54 @@ export class PuebloComponent implements AfterViewInit {
       for (const d of this.desechables) d.dispose();
       this.renderer.dispose();
       RELIEVE = null;
+      PLATAFORMAS = [];
+      ZONAS_PUENTE = [];
     });
+  }
+
+  private zoomPendiente = 0;
+  private giroPendiente = 0;
+  private inclinacionPendiente = 0;
+  private limite: [number, number] = [650, 500];
+  /** instante en que el usuario soltó el mapa (Infinity mientras lo arrastra) y altura de la mira sobre el suelo */
+  private movido = 0;
+  private alzaMira = 40;
+
+  /** Gasta poco a poco el giro, la inclinación y el zoom acumulados por la rueda, para que se sienta suave. */
+  private aplicarGiroYZoom(): void {
+    const mira = this.controles.target, cam = this.camara.position;
+    if (Math.abs(this.giroPendiente) > 1e-4) {
+      const a = this.giroPendiente * 0.2;
+      this.giroPendiente -= a;
+      const girado = cam.clone().sub(mira).applyAxisAngle(new THREE.Vector3(0, 1, 0), -a);
+      cam.copy(mira).add(girado);
+    }
+    if (Math.abs(this.inclinacionPendiente) > 1e-4) {
+      const a = this.inclinacionPendiente * 0.2;
+      this.inclinacionPendiente -= a;
+      const d = cam.clone().sub(mira), r = d.length();
+      const phi = Math.min(Math.PI / 2 - 0.04, Math.max(0.05, Math.acos(Math.min(1, Math.max(-1, d.y / r))) - a)), theta = Math.atan2(d.x, d.z);
+      cam.copy(mira).add(d.set(r * Math.sin(phi) * Math.sin(theta), r * Math.cos(phi), r * Math.sin(phi) * Math.cos(theta)));
+    }
+    if (Math.abs(this.zoomPendiente) > 1e-4) {
+      const a = this.zoomPendiente * 0.2;
+      this.zoomPendiente -= a;
+      const d = cam.clone().sub(mira);
+      cam.copy(mira).add(d.setLength(Math.min(this.controles.maxDistance, Math.max(this.controles.minDistance, d.length() * Math.exp(a)))));
+    }
+  }
+
+  /** El punto de mira no se sale del terreno y sigue su relieve al desplazarse; la cámara nunca baja del suelo que tiene debajo. */
+  private mantenerEnElMapa(): void {
+    const t = this.controles.target, c = this.camara.position;
+    const x = Math.min(this.limite[0], Math.max(-this.limite[0], t.x)), z = Math.min(this.limite[1], Math.max(-this.limite[1], t.z));
+    if (x !== t.x || z !== t.z) { c.x += x - t.x; c.z += z - t.z; t.x = x; t.z = z; }
+    if (!this.vuelo && performance.now() - this.movido < 1500) {
+      const dy = (alturaTerreno(t.x, t.z) + this.alzaMira - t.y) * 0.12;
+      t.y += dy; c.y += dy;
+    }
+    const piso = alturaTerreno(c.x, c.z) + 14;
+    if (c.y < piso) c.y = piso;
   }
 
   /** Arma el pueblo cuando ya están el plan y los datos del casco urbano. */
@@ -524,8 +672,12 @@ export class PuebloComponent implements AfterViewInit {
     if (!this.listo || this.construido || !d || !rs.length) return;
     this.construido = true;
     RELIEVE = d;
+    this.limite = [d.ancho / 2 * 0.85, d.fondo / 2 * 0.85];
+    this.alzaMira = 40 - alturaTerreno(0, 0);
     this.indexarCaminos(d);
     this.reubicarSitios(d);
+    this.crearAccesos(d);
+    ZONAS_PUENTE = this.crucesDeRio(d).map(c => ({ x: c.x, z: c.z, r: c.largo / 2 + 34 }));
     this.construirTerreno(d);
     this.construirCamino(d);
     this.construirPuentes(d);
@@ -536,6 +688,7 @@ export class PuebloComponent implements AfterViewInit {
     this.construirPajaros(d);
     this.construirFarolas(d);
     this.construirEstrellas();
+    this.construirNiebla(d);
   }
 
   private material(color: string): THREE.MeshStandardMaterial {
@@ -550,10 +703,10 @@ export class PuebloComponent implements AfterViewInit {
   /** Isla de maqueta: el relieve real del casco urbano, cortado en bloque, con paredes de tierra por estratos y un fondo que se angosta. */
   private construirTerreno(d: Diorama): void {
     const W = d.ancho, H = d.fondo;
-    const g = new THREE.PlaneGeometry(W, H, d.nx - 1, d.nz - 1).rotateX(-Math.PI / 2);
+    const g = new THREE.PlaneGeometry(W, H, Math.ceil(W / 6), Math.ceil(H / 6)).rotateX(-Math.PI / 2);
     const pos = g.attributes['position'] as THREE.BufferAttribute;
     const col = new Float32Array(pos.count * 3);
-    const c = new THREE.Color(), pasto = new THREE.Color('#8fd175'), monte = new THREE.Color('#5aa84a'), pizarra = new THREE.Color('#8fa35a'), roca = new THREE.Color('#b0a088');
+    const c = new THREE.Color(), pasto = new THREE.Color('#8fd175'), monte = new THREE.Color('#5aa84a'), pizarra = new THREE.Color('#8fa35a'), roca = new THREE.Color('#b0a088'), tierra = new THREE.Color('#d9772e');
     for (let i = 0; i < pos.count; i++) {
       const x = pos.getX(i), z = pos.getZ(i);
       const h = alturaTerreno(x, z);
@@ -563,6 +716,9 @@ export class PuebloComponent implements AfterViewInit {
       else if (h < 120) c.copy(pasto).lerp(monte, (h - 30) / 90);
       else if (h < 230) c.copy(monte).lerp(pizarra, (h - 120) / 110);
       else c.copy(pizarra).lerp(roca, Math.min(1, (h - 230) / 120));
+      // talud: donde la explanada cortó o rellenó la ladera queda tierra naranja
+      const cambio = Math.abs(h - alturaTerreno(x, z, false));
+      if (cambio > 0.15) c.lerp(tierra, Math.min(1, cambio / 2.2));
       col.set([c.r * v, c.g * v, c.b * v], i * 3);
     }
     g.setAttribute('color', new THREE.BufferAttribute(col, 3));
@@ -739,7 +895,8 @@ export class PuebloComponent implements AfterViewInit {
   }
 
   /** Un puente del catálogo del mapa 3D en cada cruce de una vía principal o local con el río o una quebrada ancha. */
-  private construirPuentes(d: Diorama): void {
+  /** Dónde una vía importante cruza el río o un cauce ancho, sin dos puentes a menos de 55 m. */
+  private crucesDeRio(d: Diorama) {
     const cauces: { pts: number[]; ancho: number }[] = [];
     const eje: number[] = [];
     for (let x = -d.ancho / 2 + 2; x <= d.ancho / 2 - 2; x += 14) eje.push(x, zRio(x));
@@ -780,6 +937,11 @@ export class PuebloComponent implements AfterViewInit {
       if (hechos.some(o => Math.hypot(o.x - c.x, o.z - c.z) < 55)) continue;
       hechos.push(c);
     }
+    return hechos;
+  }
+
+  private construirPuentes(d: Diorama): void {
+    const hechos = this.crucesDeRio(d);
     const modelo = modelarEquipamiento('vias', 'Vía', 'puente', this.rnd);
     // se descartan del modelo el suelo y el agua de su maqueta, y los terraplenes: el relieve y el río ya están
     const piezas = modelo.piezas.filter(p => !['#d3e2a6', '#4db3e6', '#7fa468'].includes(p.color));
@@ -890,7 +1052,7 @@ export class PuebloComponent implements AfterViewInit {
     const ids = Object.keys(d.sitios);
     const ok = (id: string, x: number, z: number) => {
       if (Math.abs(x) > d.ancho / 2 - 70 || Math.abs(z) > d.fondo / 2 - 70) return false;
-      if (this.sobreCamino(x, z, id === 'inf' ? 44 : 30)) return false;
+      if (this.sobreCamino(x, z, id === 'inf' ? 44 : Math.max(30, (PADS[id] ?? 30) * 0.8))) return false;
       if (ids.some(o => o !== id && Math.hypot(x - d.sitios[o][0], z - d.sitios[o][1]) < 190)) return false;
       let lo = Infinity, hi = -Infinity;
       for (const [a, b] of [[-14, -14], [14, -14], [-14, 14], [14, 14], [0, 0]]) { const h = alturaTerreno(x + a, z + b); lo = Math.min(lo, h); hi = Math.max(hi, h); }
@@ -907,12 +1069,64 @@ export class PuebloComponent implements AfterViewInit {
         }
       }
     }
+    // servicios administrativos y agricultura intercambian de lugar
+    if (d.sitios['adm'] && d.sitios['agri']) [d.sitios['adm'], d.sitios['agri']] = [d.sitios['agri'], d.sitios['adm']];
+    PLATAFORMAS = Object.entries(d.sitios).map(([id, [x, z]]) => ({ x, z, r: PADS[id] ?? 30, y: alturaTerreno(x, z, false) - 0.1 }));
+  }
+
+  /** ¿Está el punto sobre el río o una quebrada, o a menos de `margen` m de su orilla? */
+  private cercaDeAgua(d: Diorama, x: number, z: number, margen: number): boolean {
+    if (Math.abs(z - zRio(x)) * 0.8 < ANCHO_RIO / 2 + margen) return true;
+    for (const [w, pts] of d.rios) {
+      const mitad = Math.max(6, w * 1.4) / 2 + margen;
+      for (let i = 0; i + 3 < pts.length; i += 2) {
+        const dx = pts[i + 2] - pts[i], dz = pts[i + 3] - pts[i + 1], L = dx * dx + dz * dz;
+        const t = L === 0 ? 0 : Math.max(0, Math.min(1, ((x - pts[i]) * dx + (z - pts[i + 1]) * dz) / L));
+        if (Math.hypot(x - (pts[i] + t * dx), z - (pts[i + 1] + t * dz)) < mitad) return true;
+      }
+    }
+    return false;
+  }
+
+  /** Cada edificio de responsable sale de su explanada con una vía de acceso hasta el punto más cercano de la red vial. */
+  private crearAccesos(d: Diorama): void {
+    const nuevas: [number, number[]][] = [];
+    for (const [id, [x, z]] of Object.entries(d.sitios)) {
+      // candidatos: el punto más cercano de cada tramo de calle; se toma el primero cuyo recorrido no cruce ni bordee el agua
+      const cand: { dist: number; px: number; pz: number }[] = [];
+      for (const [, pts] of d.vias) {
+        for (let i = 0; i + 3 < pts.length; i += 2) {
+          const dx = pts[i + 2] - pts[i], dz = pts[i + 3] - pts[i + 1], L = dx * dx + dz * dz;
+          const t = L === 0 ? 0 : Math.max(0, Math.min(1, ((x - pts[i]) * dx + (z - pts[i + 1]) * dz) / L));
+          const qx = pts[i] + t * dx, qz = pts[i + 1] + t * dz;
+          cand.push({ dist: Math.hypot(x - qx, z - qz), px: qx, pz: qz });
+        }
+      }
+      cand.sort((p, q) => p.dist - q.dist);
+      const sinAgua = (c: { dist: number; px: number; pz: number }) => {
+        const n = Math.ceil(c.dist / 8);
+        for (let k = 0; k <= n; k++) if (this.cercaDeAgua(d, x + (c.px - x) * k / n, z + (c.pz - z) * k / n, 10)) return false;
+        return true;
+      };
+      const elegido = cand.slice(0, 80).find(sinAgua) ?? cand[0];
+      const mejor = elegido ? elegido.dist : Infinity, px = elegido?.px ?? 0, pz = elegido?.pz ?? 0;
+      const salida = (PADS[id] ?? 30) * 0.5;
+      if (!isFinite(mejor) || mejor <= salida + 4) continue;           // ya hay una calle pegada al edificio
+      const ux = (px - x) / mejor, uz = (pz - z) / mejor, pts: number[] = [];
+      const n = Math.max(2, Math.ceil((mejor - salida) / 15));
+      for (let k = 0; k <= n; k++) { const e = salida + (mejor - salida) * k / n; pts.push(x + ux * e, z + uz * e); }
+      nuevas.push([1, pts]);
+    }
+    if (!nuevas.length) return;
+    d.vias.push(...nuevas);
+    this.segmentos.clear();
+    this.indexarCaminos(d);
   }
 
   /** Las casas y edificios reales del casco urbano, uno por huella, con paredes de colores alegres y techo de teja. */
   private construirCasas(d: Diorama): void {
-    const sitios = Object.values(d.sitios);
-    const lejos = (x: number, z: number) => sitios.every(s => Math.hypot(x - s[0], z - s[1]) > 52);
+    const sitios = Object.entries(d.sitios);
+    const lejos = (x: number, z: number) => sitios.every(([id, s]) => Math.hypot(x - s[0], z - s[1]) > Math.max(52, (PADS[id] ?? 30) + TALUD + 4));
     const medio = (area: number) => Math.min(16, Math.max(4.5, Math.sqrt(area / 1.35))) / 2 + 1;
     const lista = d.casas.filter(c => lejos(c[0], c[1]) && !this.sobreCamino(c[0], c[1], medio(c[2])));
     const caja = new THREE.BoxGeometry(1, 1, 1).translate(0, 0.5, 0);
@@ -1017,7 +1231,10 @@ export class PuebloComponent implements AfterViewInit {
 
   /** Bosque en las laderas y árboles sueltos por el pueblo: todos los del catálogo (samán, guayacán amarillo, yarumo, ceiba y el del bosque). */
   private sembrarArboles(d: Diorama): void {
-    for (const s of Object.values(d.sitios)) for (let a = -2; a <= 2; a++) for (let b = -2; b <= 2; b++) this.marcar(s[0] + a * 24, s[1] + b * 24);
+    for (const [id, s] of Object.entries(d.sitios)) {
+      const n = Math.ceil(((PADS[id] ?? 30) + TALUD) / 24);
+      for (let a = -n; a <= n; a++) for (let b = -n; b <= n; b++) this.marcar(s[0] + a * 24, s[1] + b * 24);
+    }
     const especies = [
       { nombre: 'Árbol', peso: 4 }, { nombre: 'Samán', peso: 1.5 }, { nombre: 'Guayacán', peso: 2.5 }, { nombre: 'Yarumo', peso: 2 }, { nombre: 'Ceiba', peso: 1.2 },
     ];
@@ -1203,12 +1420,14 @@ export class PuebloComponent implements AfterViewInit {
       im.castShadow = true;
       this.escena.add(im);
     });
+    luces.push(...this.lucesExtra);
+    charcos.push(...this.charcosExtra);
     this.brillo(luces, '#ffe2a0', 9, 0.7);
     this.estelasDeLuz(charcos);
   }
 
   /** Cada farola ilumina la vía: un charco de luz cálida sobre el asfalto y un cono tenue que baja desde la lámpara. */
-  private estelasDeLuz(pts: { x: number; z: number; hx: number; hz: number }[]): void {
+  private estelasDeLuz(pts: { x: number; z: number; hx: number; hz: number; y?: number }[]): void {
     if (!pts.length) return;
     const c = document.createElement('canvas');
     c.width = c.height = 128;
@@ -1224,7 +1443,7 @@ export class PuebloComponent implements AfterViewInit {
     const suelo = new THREE.InstancedMesh(plano, charco, pts.length), conos = new THREE.InstancedMesh(cono, haz, pts.length);
     const m = new THREE.Matrix4(), q = new THREE.Quaternion(), p = new THREE.Vector3(), sc = new THREE.Vector3();
     pts.forEach((u, i) => {
-      suelo.setMatrixAt(i, m.compose(p.set(u.x, alturaTerreno(u.x, u.z) + 2.75, u.z), q, sc.set(38, 1, 38)));
+      suelo.setMatrixAt(i, m.compose(p.set(u.x, u.y ?? alturaTerreno(u.x, u.z) + 2.75, u.z), q, sc.set(38, 1, 38)));
       conos.setMatrixAt(i, m.compose(p.set(u.hx, alturaTerreno(u.hx, u.hz) + 2.3 + 10.4, u.hz), q, sc.set(1, 1, 1)));
     });
     for (const im of [suelo, conos]) { im.frustumCulled = false; im.visible = false; im.renderOrder = 4; this.escena.add(im); }
@@ -1257,13 +1476,25 @@ export class PuebloComponent implements AfterViewInit {
   private estrellasGrandes: THREE.Points | null = null;
 
   /** Un día de 24 h en 3 min: el sol cruza el cielo, el cielo y las luces cambian, y al anochecer se encienden farolas y ventanas. */
+  /** hora simulada (0–24): avanza sola, un día en 3 minutos, salvo que se pause o se elija a mano */
+  horaSim = 10;
+  enPausa = false;
+
+  fijarHora(v: string): void {
+    this.horaSim = Math.min(24, Math.max(0, Number(v))) % 24;
+    this.enPausa = true;
+  }
+
+  alternarCiclo(): void { this.enPausa = !this.enPausa; }
+
   private animarCiclo(t: number, dt: number): void {
-    const hh = (10 + t * 24 / 180) % 24;
+    if (!this.enPausa) this.horaSim = (this.horaSim + dt * 24 / 180) % 24;
+    const hh = this.horaSim;
     const a = (hh - 6) / 12 * Math.PI, alto = Math.sin(a);                 // alto > 0: de día
     const dia = THREE.MathUtils.smoothstep(alto, -0.3, 0.12), noche = 1 - dia;
-    // las luces artificiales se encienden a las 18:00 y se apagan a las 6:00 (con una rampa corta)
+    // las luces artificiales se encienden a las 17:00 y se apagan a las 6:00 (con una rampa corta)
     const rampa = (v: number) => { const u = Math.min(1, Math.max(0, v)); return u * u * (3 - 2 * u); };
-    const luz = hh >= 12 ? rampa((hh - 17.8) / 0.5) : 1 - rampa((hh - 5.8) / 0.5);
+    const luz = hh >= 12 ? rampa((hh - 16.8) / 0.5) : 1 - rampa((hh - 5.8) / 0.5);
     const ocaso = Math.exp(-Math.pow(alto / 0.22, 2));                       // tinte cálido al amanecer y al atardecer
     const mezcla = (d: string, o: string, n: string) => new THREE.Color(d).lerp(new THREE.Color(o), ocaso * dia + ocaso * noche * 0.5).lerp(new THREE.Color(n), noche);
     this.sol.position.set(Math.cos(a) * 640, Math.max(alto, 0.05) * 560 + 30, 230);
@@ -1291,7 +1522,9 @@ export class PuebloComponent implements AfterViewInit {
       capa.visible = noche > 0.4;
       (capa.material as THREE.PointsMaterial).opacity = Math.min(1, brilloEstrella) * (vivo ? 0.65 + 0.35 * Math.sin(t * 2.3) : 0.85);
     }
+    for (const ro of this.rotores) ro.rotation.z += dt * 1.1;
     this.animarNubes(dt, dia, ocaso);
+    this.animarNiebla(dt, dia);
     // el cielo es el degradado del recuadro del mapa
     const arriba = mezcla('#a9cdee', '#e9936a', '#0a1230'), abajo = mezcla('#e6eff7', '#f7c98b', '#222f5a');
     if (!this.fondoMapa) this.fondoMapa = this.lienzo.nativeElement.parentElement;
@@ -1459,7 +1692,7 @@ export class PuebloComponent implements AfterViewInit {
   /** Cúmulos que aparecen al azar en el cielo del fondo durante el día, derivan con el viento y se deshacen. */
   private construirNubes(): void {
     const texturas = [11, 23, 37, 51].map(sm => this.texturaBocanada(sm));
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 4; i++) {
       const puffs: Nube['puffs'] = [];
       for (let k = 0; k < 15; k++) {
         const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: texturas[Math.floor(this.rnd() * 4)], transparent: true, depthWrite: false, opacity: 0, fog: false }));
@@ -1499,6 +1732,57 @@ export class PuebloComponent implements AfterViewInit {
     });
   }
 
+  /** Bandas de niebla muy tenues y dispersas, a ras del terreno: se juntan en lo bajo (cerca del río y los hundimientos), derivan con el viento y se funden al irse. */
+  private construirNiebla(d: Diorama): void {
+    const tex = [5, 17, 29, 43].map(sm => this.texturaBocanada(sm));
+    const cand: { x: number; z: number; h: number }[] = [];
+    for (let x = -d.ancho / 2 + 60; x <= d.ancho / 2 - 60; x += 70) {
+      for (let z = -d.fondo / 2 + 60; z <= d.fondo / 2 - 60; z += 70) {
+        const h = alturaTerreno(x, z);
+        let ent = 0;
+        for (let k = 0; k < 8; k++) ent += alturaTerreno(x + Math.cos(k * 0.785) * 180, z + Math.sin(k * 0.785) * 180);
+        cand.push({ x, z, h: ent / 8 - h });
+      }
+    }
+    cand.sort((a, b) => b.h - a.h);
+    const puestos: typeof cand = [];
+    for (const c of cand.slice(0, 160)) {
+      if (puestos.length >= 5) break;
+      if (puestos.every(e => Math.hypot(e.x - c.x, e.z - c.z) > 230)) puestos.push(c);
+    }
+    for (const c of puestos) {
+      for (let k = 0; k < 3; k++) {
+        const mat = new THREE.SpriteMaterial({ map: tex[Math.floor(this.rnd() * 4)], color: '#f1f6fc', transparent: true, depthWrite: false, opacity: 0, fog: false });
+        const sprite = new THREE.Sprite(mat);
+        sprite.renderOrder = 4;
+        this.escena.add(sprite);
+        this.desechables.push(mat);
+        const x = c.x + (this.rnd() - 0.5) * 220, z = c.z + (this.rnd() - 0.5) * 220, dy = 8 + this.rnd() * 22;
+        this.nieblas.push({ sprite, x, z, x0: x, z0: z, dy, y: alturaTerreno(x, z) + dy, ancho: 260 + this.rnd() * 220, fase: this.rnd() * 6.28 });
+      }
+    }
+  }
+
+  private animarNiebla(dt: number, dia: number): void {
+    const t = this.reloj.elapsedTime, cam = this.camara.position;
+    const color = new THREE.Color('#f1f6fc').lerp(new THREE.Color('#5a6f93'), 1 - dia);
+    for (const n of this.nieblas) {
+      n.x += 2.6 * dt; n.z += 0.9 * dt;
+      const lejos = Math.hypot(n.x - n.x0, n.z - n.z0);
+      if (lejos > 300) { n.x = n.x0; n.z = n.z0; }
+      const h = alturaTerreno(n.x, n.z);
+      n.y += (h + n.dy - n.y) * Math.min(1, dt * 2);
+      n.sprite.position.set(n.x + Math.sin(t * 0.05 + n.fase) * 14, n.y, n.z + Math.cos(t * 0.04 + n.fase) * 10);
+      n.sprite.scale.set(n.ancho, n.ancho * 0.4, 1);
+      const respira = 0.7 + 0.3 * Math.sin(t * 0.12 + n.fase * 2);
+      const ciclo = 1 - Math.min(1, Math.max(0, (lejos - 190) / 110)), nace = Math.min(1, 0.35 + lejos / 70);
+      const cerca = Math.min(1, Math.max(0, (cam.distanceTo(n.sprite.position) - 220) / 500));
+      const mt = n.sprite.material as THREE.SpriteMaterial;
+      mt.opacity = 0.4 * respira * ciclo * nace * cerca * (0.55 + 0.45 * dia);
+      mt.color.copy(color);
+    }
+  }
+
   private animarNubes(dt: number, dia: number, ocaso: number): void {
     if (!this.vistaPuesta) return;
     const base = new THREE.Color('#c4dcf5'), blanco = new THREE.Color('#fffdf9'), calido = new THREE.Color('#ffc59a'), c = new THREE.Color();
@@ -1529,11 +1813,24 @@ export class PuebloComponent implements AfterViewInit {
       if (!def || !sitio) continue;
       const [x, z, ry] = sitio;
       const m = r.dep.id === 'amb' ? granjaSolar() : modelarEquipamiento(def.cat, def.tipo, def.nombre, this.rnd);
+      let faroPq: [number, number][] = [];
+      const fijas = r.dep.id === 'tra'
+        ? (() => {
+          const res = this.agregarParqueadero(m, (lx, lz) => this.sobreCamino(x + (lx * Math.cos(ry) + lz * Math.sin(ry)) * 0.85, z + (-lx * Math.sin(ry) + lz * Math.cos(ry)) * 0.85, 4) ? 1 : 0);
+          faroPq = res.faroles;
+          return res.fijas;
+        })()
+        : new Set<THREE.BufferGeometry>();
       const ESC = 0.85;
       const y0 = alturaTerreno(x, z);
+      for (const [lx, lz] of faroPq) {
+        const wx = x + (lx * Math.cos(ry) + lz * Math.sin(ry)) * ESC, wz = z + (-lx * Math.sin(ry) + lz * Math.cos(ry)) * ESC;
+        this.lucesExtra.push(wx, y0 + 0.3 + 10 * ESC, wz);
+        this.charcosExtra.push({ x: wx, z: wz, hx: wx, hz: wz, y: y0 + 0.3 + 0.3 * ESC + 0.5 });
+      }
       const grupo = new THREE.Group();
       grupo.position.set(x, y0 + 0.3, z);
-      const radio = m.radio * ESC + 8;
+      const radio = PADS[r.dep.id] ?? m.radio * ESC + 8;
       // explanada que asienta el edificio en la ladera
       const base = new THREE.Mesh(new THREE.CylinderGeometry(radio, radio + 3, 14, 40).translate(0, -7, 0), new THREE.MeshStandardMaterial({ color: '#d7dcc0', roughness: 1 }));
       base.receiveShadow = true;
@@ -1546,7 +1843,7 @@ export class PuebloComponent implements AfterViewInit {
       const caja = new THREE.Box3();
       const tinte = PALETA[rs.indexOf(r) % PALETA.length];
       for (const p of m.piezas) {
-        const mt = new THREE.MeshStandardMaterial({ color: r.dep.id !== 'amb' && esNeutro(p.color) ? tinte : p.color, roughness: 0.85, metalness: 0.05, side: THREE.DoubleSide });
+        const mt = new THREE.MeshStandardMaterial({ color: r.dep.id !== 'amb' && !fijas.has(p.g) && esNeutro(p.color) ? tinte : p.color, roughness: 0.85, metalness: 0.05, side: THREE.DoubleSide });
         mats.push(mt);
         const malla = new THREE.Mesh(p.g, mt);
         malla.castShadow = true; malla.receiveShadow = true;
@@ -1555,10 +1852,21 @@ export class PuebloComponent implements AfterViewInit {
         caja.union(p.g.boundingBox!);
       }
       grupo.add(cuerpo);
+      if (r.dep.id === 'amb') {
+        const rotor = new THREE.Group();
+        rotor.position.set(EOLICA.x, EOLICA.alto - 3, EOLICA.z - 5);
+        const aspa = new THREE.BoxGeometry(1.2, 17, 0.35).translate(0, 9.5, 0), buje = new THREE.SphereGeometry(1.5, 12, 8);
+        const blanco = new THREE.MeshStandardMaterial({ color: '#f4f6f8', roughness: 0.6 });
+        this.desechables.push(aspa, buje, blanco);
+        for (let k = 0; k < 3; k++) { const a = new THREE.Mesh(aspa, blanco); a.rotation.z = k * Math.PI * 2 / 3; a.castShadow = true; rotor.add(a); }
+        rotor.add(new THREE.Mesh(buje, blanco));
+        cuerpo.add(rotor);
+        this.rotores.push(rotor);
+      }
       if (r.dep.id !== 'amb') {
         // ventanas encendidas repartidas por las fachadas del edificio
         const bb = new THREE.Box3();
-        for (const pz of m.piezas) { pz.g.computeBoundingBox(); bb.union(pz.g.boundingBox!); }
+        for (const pz of m.piezas) { if (fijas.has(pz.g)) continue; pz.g.computeBoundingBox(); bb.union(pz.g.boundingBox!); }
         const cs = Math.cos(ry), sn = Math.sin(ry);
         for (let k = 0; k < 9; k++) {
           const cara = Math.floor(this.rnd() * 4);
@@ -1584,6 +1892,83 @@ export class PuebloComponent implements AfterViewInit {
     this.brillo(this.ventanasEd, '#ffd08a', 4.2, 0.75);
     this.aura = crearAuras(itemsAura);
     this.escena.add(this.aura.grupo);
+  }
+
+  /** Parqueadero junto a la estación: asfalto con borde y vehículos del catálogo (autos, taxis, camperos, motos, buses y camiones), fundidos por color para no multiplicar mallas. */
+  private agregarParqueadero(m: Modelo, penal: (lx: number, lz: number) => number): { fijas: Set<THREE.BufferGeometry>; faroles: [number, number][] } {
+    const porColor = new Map<string, THREE.BufferGeometry[]>();
+    const poner = (g: THREE.BufferGeometry, color: string) => {
+      const n = g.index ? g.toNonIndexed() : g.clone();
+      n.deleteAttribute('uv');
+      if (!n.attributes['normal']) n.computeVertexNormals();
+      if (!porColor.has(color)) porColor.set(color, []);
+      porColor.get(color)!.push(n);
+    };
+    const caja = (w: number, h: number, d: number, color: string, x: number, y: number, z: number) => poner(new THREE.BoxGeometry(w, h, d).translate(x, y, z), color);
+    const cx = m.radio + 28, zc = 2.5, ancho = 56, fondo = 53;
+    caja(ancho, 0.3, fondo, '#4a4f55', cx, 0.15, zc);
+    for (const dz of [-1, 1]) caja(ancho + 0.8, 0.4, 0.6, '#d6d3c8', cx, 0.2, zc + dz * fondo / 2);
+    for (const dx of [-1, 1]) caja(0.6, 0.4, fondo, '#d6d3c8', cx + dx * ancho / 2, 0.2, zc);
+    const pintura = ['#e63946', '#f4c542', '#2a6fdb', '#f4f4f2', '#2f2f33', '#2e9e5b', '#f08a24', '#9aa3ad'];
+    const vehiculo = (nombre: string, escala: number, ry: number): { ancho: number; poner: (x: number, z: number) => void } => {
+      const mod = modelarEquipamiento('vehiculos', 'Vehículo', nombre, this.rnd);
+      const bb = new THREE.Box3();
+      for (const pz of mod.piezas) { pz.g.computeBoundingBox(); bb.union(pz.g.boundingBox!); }
+      const cenX = (bb.min.x + bb.max.x) / 2, cenZ = (bb.min.z + bb.max.z) / 2, col = pintura[Math.floor(this.rnd() * pintura.length)];
+      const lateral = bb.max.z - bb.min.z;
+      return {
+        ancho: lateral * escala,
+        poner: (x, z) => {
+          const M = new THREE.Matrix4().makeTranslation(x, 0.3, z).multiply(new THREE.Matrix4().makeRotationY(ry)).multiply(new THREE.Matrix4().makeScale(escala, escala, escala)).multiply(new THREE.Matrix4().makeTranslation(-cenX, 0, -cenZ));
+          for (const pz of mod.piezas) poner(pz.g.clone().applyMatrix4(M), pz.color === '#ff2d2d' ? col : pz.color);
+        },
+      };
+    };
+    const fila = (z: number, ry: number, nombres: string[]) => {
+      let x = cx - ancho / 2 + 2;
+      for (let k = 0; k < 40; k++) {
+        const nombre = nombres[Math.floor(this.rnd() * nombres.length)];
+        const v = vehiculo(nombre, nombre === 'Bus' || nombre.startsWith('Camión') ? 0.59 : 0.65, ry);
+        if (x + v.ancho > cx + ancho / 2 - 1) break;
+        v.poner(x + v.ancho / 2, z);
+        x += v.ancho + 1.1;
+      }
+    };
+    fila(-16, -Math.PI / 2, ['Auto', 'Auto', 'Taxi', 'Campero FJ']);
+    fila(-6.5, Math.PI / 2, ['Auto', 'Auto', 'Taxi', 'Campero FJ']);
+    fila(0.5, Math.PI / 2, ['Moto']);
+    fila(15.5, -Math.PI / 2, ['Bus', 'Camión con tráiler', 'Bus']);
+    // postes de luz en el borde y en el medio de los costados largos, con el brazo hacia el lote
+    const postes: [number, number][] = [[cx - ancho / 2 + 1.5, zc - fondo / 2 + 1.5], [cx + ancho / 2 - 1.5, zc - fondo / 2 + 1.5], [cx - ancho / 2 + 1.5, zc + fondo / 2 - 1.5], [cx + ancho / 2 - 1.5, zc + fondo / 2 - 1.5], [cx, zc - fondo / 2 + 1.5], [cx, zc + fondo / 2 - 1.5]];
+    const cabezas: [number, number][] = [];
+    for (const [px, pz] of postes) {
+      const dx = px === cx ? 0 : Math.sign(cx - px), dz = px === cx ? Math.sign(zc - pz) : 0;
+      caja(0.4, 10, 0.4, '#6b7280', px, 0.3, pz);
+      caja(dx ? 2.4 : 0.3, 0.3, dz ? 2.4 : 0.3, '#6b7280', px + dx * 1.2, 10.1, pz + dz * 1.2);
+      caja(1.1, 0.35, 0.7, '#f5e9c8', px + dx * 2.4, 9.95, pz + dz * 2.4);
+      cabezas.push([px + dx * 2.4, pz + dz * 2.4]);
+    }
+    // el lote se gira alrededor de la estación hacia el lado más libre de quebradas y calles
+    let giro = 0, peor = Infinity;
+    for (let k = 0; k < 16; k++) {
+      const th = k * Math.PI / 8;
+      let malo = 0;
+      for (let i = -3; i <= 3; i++) for (let j = -3; j <= 3; j++) {
+        const px = cx + i * (ancho / 6), pz = zc + j * (fondo / 6);
+        malo += penal(px * Math.cos(th) + pz * Math.sin(th), -px * Math.sin(th) + pz * Math.cos(th));
+      }
+      if (malo < peor) { peor = malo; giro = th; }
+    }
+    const fijas = new Set<THREE.BufferGeometry>();
+    for (const [color, gs] of porColor) {
+      const g = mergeGeometries(gs, false);
+      if (!g) continue;
+      g.rotateY(giro);
+      m.piezas.push({ g, color });
+      fijas.add(g);
+    }
+    m.radio = cx + 34;
+    return { fijas, faroles: cabezas.map(([hx, hz]) => [hx * Math.cos(giro) + hz * Math.sin(giro), -hx * Math.sin(giro) + hz * Math.cos(giro)] as [number, number]) };
   }
 
   /** Pin de mapa con el icono del responsable adentro; la punta queda sobre el techo del edificio. */
