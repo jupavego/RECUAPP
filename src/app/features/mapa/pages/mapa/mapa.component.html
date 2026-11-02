@@ -1,31 +1,11 @@
 <section class="mapa">
   <header class="mapa__barra" aria-label="Filtros del mapa">
     <div class="mapa__titulo">
-      <h1>Mapa de Antioquia</h1>
-      <p>Croquis por subregión. Los puntos de interés solo están cargados para Girardota.</p>
+      <h1>Mapa de Girardota</h1>
+      <p>Corregimientos, veredas y puntos de interés del municipio.</p>
     </div>
 
     <div class="mapa__filtros">
-      <div class="campo">
-        <label for="f-subregion">Subregión</label>
-        <select id="f-subregion" (change)="onSubregion($any($event.target).value)" [disabled]="!data()">
-          <option value="" [selected]="!subregion()">Todas las subregiones</option>
-          @for (s of subregiones(); track s.nombre) {
-            <option [value]="s.nombre" [selected]="s.nombre === subregion()">{{ s.nombre }} ({{ s.n }})</option>
-          }
-        </select>
-      </div>
-
-      <div class="campo">
-        <label for="f-municipio">Municipio</label>
-        <select id="f-municipio" (change)="onMunicipio($any($event.target).value)" [disabled]="!data()">
-          <option value="" [selected]="muniId() == null">Todos los municipios</option>
-          @for (m of municipios(); track m.id) {
-            <option [value]="m.id" [selected]="m.id === muniId()">{{ m.n }}</option>
-          }
-        </select>
-      </div>
-
       <div class="campo">
         <label for="f-corregimiento">Corregimiento o cabecera</label>
         <select id="f-corregimiento" (change)="onCorregimiento($any($event.target).value)"
@@ -54,36 +34,79 @@
       <button type="button" class="mapa__limpiar" (click)="limpiar()" [disabled]="!hayFiltro()">
         Quitar filtros
       </button>
+      <button type="button" class="mapa__ley" [class.is-activa]="leyenda()" [attr.aria-expanded]="leyenda()"
+              (click)="leyenda.set(!leyenda())">
+        ☰ {{ leyenda() ? 'Ocultar la leyenda' : 'Ver la leyenda' }}
+      </button>
     </div>
 
     @if (error(); as msg) {
       <p class="mapa__error" role="alert">{{ msg }}</p>
     }
 
-    <div class="mapa__fila">
-      <ul class="mapa__leyenda" aria-label="Subregiones">
-        @for (s of subregiones(); track s.nombre) {
-          <li>
-            <button type="button" [class.is-activa]="s.nombre === subregion()"
-                    (click)="onSubregion(s.nombre === subregion() ? '' : s.nombre)">
-              {{ s.nombre }}
-            </button>
-          </li>
+    @if (municipio(); as m) {
+      <p class="mapa__resumen">
+        <b>{{ m.n }}</b>
+        @if (territorio()) {
+          · {{ corregimientos().length }} corregimientos · {{ territorio()!.v.length }} veredas y zonas
         }
-      </ul>
-
-      @if (municipio(); as m) {
-        <p class="mapa__resumen">
-          <b>{{ m.n }}</b>
-          @if (territorio()) {
-            · {{ corregimientos().length }} corregimientos · {{ territorio()!.v.length }} veredas y zonas
-          }
-          @if (nombreCorr(); as c) { · <b>{{ c }}</b> }
-          @if (nombreVereda(); as v) { · <b>{{ v }}</b> }
-        </p>
-      }
-    </div>
+        @if (nombreCorr(); as c) { · <b>{{ c }}</b> }
+        @if (nombreVereda(); as v) { · <b>{{ v }}</b> }
+      </p>
+    }
   </header>
+
+  <div class="mapa__cuerpo" [class.mapa__cuerpo--ley]="leyenda()">
+  @if (leyenda()) {
+  <aside class="mapa__controles" aria-label="Leyenda y controles del mapa">
+    <section class="ley">
+      <h2>Vista</h2>
+      <div class="mapa__tipos" role="radiogroup" aria-label="Tipo de mapa">
+        @for (t of [['roadmap', 'Mapa'], ['terrain', 'Relieve'], ['satellite', 'Satélite']]; track t[0]) {
+          <button type="button" role="radio" [attr.aria-checked]="tipoMapa() === t[0]"
+                  [class.is-activa]="tipoMapa() === t[0]" (click)="onTipoMapa($any(t[0]))">{{ t[1] }}</button>
+        }
+      </div>
+    </section>
+
+    <section class="ley">
+      <h2>Capas</h2>
+      <label class="ley__fila">
+        <input type="checkbox" class="ley__sw" [checked]="verCorregimientos()" (change)="verCorregimientos.set($any($event.target).checked)">
+        <span class="ley__nombre">Corregimientos</span>
+      </label>
+      <label class="ley__fila">
+        <input type="checkbox" class="ley__sw" [checked]="verVeredas()" (change)="verVeredas.set($any($event.target).checked)">
+        <span class="ley__nombre">Veredas</span>
+      </label>
+    </section>
+
+    @if (puntos().length) {
+      <section class="ley">
+        <h2>Puntos de interés</h2>
+        @for (c of categorias; track c.id) {
+          @if (cuentaPuntos().get(c.id); as n) {
+            <label class="ley__fila ley__fila--punto" [style.--c]="c.color">
+              <input type="checkbox" class="ley__sw" [checked]="!catsOcultas().has(c.id)"
+                     (change)="onCategoria(c.id, $any($event.target).checked)">
+              <span class="ley__nombre">{{ c.nombre }}</span>
+              <small>{{ n }}</small>
+            </label>
+          }
+        }
+      </section>
+    }
+
+    <section class="ley">
+      <label class="mapa__deslizador">
+        <span><h2>Relleno</h2> <b>{{ relleno() }}%</b></span>
+        <input type="range" min="0" max="100" step="2" [value]="relleno()" (input)="onRelleno($any($event.target).value)">
+      </label>
+    </section>
+
+    <button type="button" class="mapa__centrar" (click)="centrar()">Centrar vista</button>
+  </aside>
+  }
 
   <div class="mapa__mapa">
     <div class="mapa__lienzo" #lienzo role="img"
@@ -123,45 +146,6 @@
       </aside>
     }
 
-    <div class="mapa__controles" role="group" aria-label="Controles del mapa">
-      <div class="mapa__tipos" role="radiogroup" aria-label="Tipo de mapa">
-        @for (t of [['roadmap', 'Mapa'], ['terrain', 'Relieve'], ['satellite', 'Satélite']]; track t[0]) {
-          <button type="button" role="radio" [attr.aria-checked]="tipoMapa() === t[0]"
-                  [class.is-activa]="tipoMapa() === t[0]" (click)="onTipoMapa($any(t[0]))">{{ t[1] }}</button>
-        }
-      </div>
-
-      <label class="mapa__opcion">
-        <input type="checkbox" [checked]="verCorregimientos()" (change)="verCorregimientos.set($any($event.target).checked)">
-        Corregimientos
-      </label>
-      <label class="mapa__opcion">
-        <input type="checkbox" [checked]="verVeredas()" (change)="verVeredas.set($any($event.target).checked)">
-        Veredas
-      </label>
-
-      @if (puntos().length) {
-        <fieldset class="mapa__puntos">
-          <legend>Puntos de interés</legend>
-          @for (c of categorias; track c.id) {
-            @if (cuentaPuntos().get(c.id); as n) {
-              <label class="mapa__opcion">
-                <input type="checkbox" [checked]="!catsOcultas().has(c.id)"
-                       (change)="onCategoria(c.id, $any($event.target).checked)">
-                <span class="mapa__punto" [style.background]="c.color"></span>
-                {{ c.nombre }} <small>{{ n }}</small>
-              </label>
-            }
-          }
-        </fieldset>
-      }
-
-      <label class="mapa__deslizador">
-        <span>Relleno <b>{{ relleno() }}%</b></span>
-        <input type="range" min="0" max="100" step="2" [value]="relleno()" (input)="onRelleno($any($event.target).value)">
-      </label>
-
-      <button type="button" class="mapa__centrar" (click)="centrar()">Centrar vista</button>
-    </div>
+  </div>
   </div>
 </section>

@@ -105,6 +105,8 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
   readonly verVeredas = signal(true);
   readonly verCorregimientos = signal(true);
   readonly tipoMapa = signal<'roadmap' | 'satellite' | 'terrain'>('roadmap');
+  /** la leyenda y los controles viven en un panel aparte, junto al mapa */
+  readonly leyenda = signal(true);
 
   // ── Puntos de interés (instituciones, cultura, justicia…) ─────────────────
   readonly categorias = CATEGORIAS;
@@ -167,7 +169,7 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
     const vi = this.verIdx();
     return vi == null ? null : this.territorio()?.v[vi]?.n ?? null;
   });
-  readonly hayFiltro = computed(() => this.subregion() != null || this.muniId() != null);
+  readonly hayFiltro = computed(() => this.corrIdx() != null || this.verIdx() != null);
 
   // ── Mapa (Google Maps corre fuera de la zona de Angular) ───────────────────
   private mapa?: google.maps.Map;
@@ -335,10 +337,10 @@ export class MapaComponent implements AfterViewInit, OnDestroy {
     if (e) this.zone.runOutsideAngular(() => this.encuadrar(e, true));
   }
 
+  /** Quita el corregimiento y la vereda; el municipio (Girardota) se queda. */
   limpiar(): void {
-    this.subregion.set(null);
-    this.limpiarMunicipio();
-    this.cargarContexto();
+    this.corrIdx.set(null);
+    this.verIdx.set(null);
   }
 
   /** Carga los puntos del municipio; todos vienen ya como coordenadas. */

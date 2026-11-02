@@ -3,8 +3,8 @@
   <div class="footer__panel">
     <div class="footer__inner">
       <div class="footer__brand">
-        <p class="footer__eyebrow">{{ site.tagline }}</p>
         <h3 class="footer__logo">{{ site.name }}</h3>
+        <p class="footer__eyebrow">{{ site.tagline }}</p>
         @if (site.contact.email) {
           <a class="footer__mail" [href]="'mailto:' + site.contact.email">
             <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>

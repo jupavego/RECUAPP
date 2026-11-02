@@ -39,7 +39,7 @@
 }
 
 /* ── Marca ── */
-.footer__brand { display: flex; align-items: center; flex-wrap: wrap; gap: .4rem .9rem; }
+.footer__brand { display: flex; justify-content: flex-start; text-align: left; align-items: center; flex-wrap: wrap; gap: .4rem .9rem; }
 
 .footer__eyebrow {
   display: inline-block;
