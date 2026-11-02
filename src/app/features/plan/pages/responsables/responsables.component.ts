@@ -10,6 +10,10 @@ const ENTIDAD_PILOTO = '05308';
 const ANIOS = ['2024', '2025', '2026', '2027'];
 
 export type Orden = 'productos' | 'avance' | 'nombre';
+export type Pestana = 'panorama' | 'productos' | 'equipo';
+
+/** Circunferencia del anillo de avance (radio 52 del viewBox). */
+const ANILLO = 2 * Math.PI * 52;
 
 /** Un producto del plan visto desde un responsable, con su avance en el informe de seguimiento. */
 export interface FilaProducto {
@@ -80,6 +84,7 @@ export class ResponsablesComponent {
   /** responsable de la ruta /responsables/:dep; null en el listado */
   readonly depId = toSignal(this.ruta.paramMap.pipe(map(p => p.get('dep'))), { initialValue: this.ruta.snapshot.paramMap.get('dep') });
   readonly soloConAvance = signal(false);
+  readonly pestana = signal<Pestana>('panorama');
   readonly anios = ANIOS;
 
   private readonly deps = computed(() => new Map((this.plan()?.dependencias ?? []).map(d => [d.id, d])));
@@ -217,6 +222,18 @@ export class ResponsablesComponent {
   /** ¿la ficha del informe y su tabla resumen dicen cosas distintas de este indicador? */
   hayDiferencia(f: FilaProducto): boolean {
     return Object.values(f.s?.por_anio ?? {}).some(a => !!a.ficha);
+  }
+
+  /** matiz estable por dependencia (verdes y dorados del tema), para que héroe, anillo y acentos compartan identidad */
+  acentoH(id: string): number {
+    let h = 0;
+    for (const c of id) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+    return 70 + (h % 90); // 70–160: del lima al verde azulado
+  }
+
+  /** desplazamiento del trazo del anillo para un % de avance (topado en 100) */
+  anilloOffset(p: number | null): number {
+    return ANILLO * (1 - Math.min(100, Math.max(0, p ?? 0)) / 100);
   }
 
   claseAvance(p: number | null): string {
