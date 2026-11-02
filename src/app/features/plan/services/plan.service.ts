@@ -144,6 +144,22 @@ export interface AvanceNivel {
   plan_accion: number | null;
 }
 
+/** indicador cuyo informe de seguimiento nombra una vereda; generado por scripts/plan_desarrollo/zonas_indicadores.py */
+export interface ProyectoZona {
+  ip: string;
+  indicador: string;
+  dep: string | null;
+  dep_nombre: string | null;
+  pct: number | null;
+  anio_pct: number | null;
+  menciones: { anio: string; texto: string }[];
+}
+
+export interface ZonasPlan {
+  fuente: string;
+  zonas: Record<string, ProyectoZona[]>;
+}
+
 /** seguimiento por id de producto (IP-xx); generado por scripts/plan_desarrollo/seguimiento_json.py */
 export interface Seguimiento {
   /** último año informado */
@@ -166,6 +182,11 @@ export class PlanService {
   /** Datos de una entidad, generados por scripts/plan_desarrollo/tarjetas_app.py. */
   entidad(dane: string): Observable<PlanEntidad> {
     return this.http.get<PlanEntidad>(`/data/plan/${dane}.json`);
+  }
+
+  /** Veredas nombradas en los informes de seguimiento; falla (404) si la entidad no las tiene. */
+  zonas(dane: string): Observable<ZonasPlan> {
+    return this.http.get<ZonasPlan>(`/data/plan/${dane}-zonas.json`);
   }
 
   /** Seguimiento del último año informado; falla (404) si la entidad aún no tiene informe. */

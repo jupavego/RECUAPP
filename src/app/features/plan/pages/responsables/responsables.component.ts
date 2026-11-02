@@ -3,7 +3,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { catchError, map, of, switchMap } from 'rxjs';
 import { TemaService } from '../../../../core/services/tema.service';
-import { AvanceDependencia, AvanceIndicador, Confianza, Dependencia, Funcionario, PlanEntidad, PlanService, ProductoPlan, Seguimiento } from '../../services/plan.service';
+import { AvanceDependencia, AvanceIndicador, Confianza, Dependencia, Funcionario, PlanEntidad, PlanService, ProductoPlan, ProyectoZona, Seguimiento, ZonasPlan } from '../../services/plan.service';
 
 /** Entidad que se abre cuando la ruta no trae código DANE (mientras dure el piloto). */
 const ENTIDAD_PILOTO = '05308';
@@ -46,6 +46,46 @@ export interface Resumen {
   oficial: Record<string, AvanceDependencia> | null;
 }
 
+/** Matiz (70–160: del lima al verde azulado) estable por dependencia, compartido con el pueblo 3D. */
+export function matizDe(id: string): number {
+  let h = 0;
+  for (const c of id) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+  return 70 + (h % 90);
+}
+
+/** Un resumen por dependencia de primer nivel (las externas, como el INDER, no suman a su secretaría). */
+export function construirResumenes(p: PlanEntidad, seguimiento: Seguimiento | null): Resumen[] {
+  const seg = seguimiento?.indicadores ?? {};
+  const deps = new Map(p.dependencias.map(d => [d.id, d]));
+  const raices = p.dependencias.filter(d => !d.padre && !d.vinculo);
+  return raices.map(dep => {
+    const grupo = [dep, ...p.dependencias.filter(d => d.padre === dep.id)];
+    const filas: FilaProducto[] = [];
+    for (const x of p.productos) {
+      for (const r of x.resp) {
+        const d = deps.get(r.dep);
+        if (!d || !grupo.includes(d)) continue;
+        const s = seg[x.id];
+        filas.push({ x, dep: d, conf: r.conf, pct: s?.pct ?? null, programada: s?.programada ?? null, avance: s?.avance ?? null, s: s ?? null });
+      }
+    }
+    // un producto con dos subsecretarías del mismo grupo cuenta una vez
+    const unicos = [...new Map(filas.map(f => [f.x.id, f])).values()];
+    const con = unicos.filter(f => f.pct !== null);
+    return {
+      dep, grupo, filas,
+      alta: unicos.filter(f => f.conf === 'alta').length,
+      sugerida: unicos.filter(f => f.conf !== 'alta').length,
+      conSeguimiento: con.length,
+      avance: con.length ? con.reduce((a, f) => a + Math.min(100, f.pct!), 0) / con.length : null,
+      cumplidos: con.filter(f => f.pct! >= 100).length,
+      atrasados: con.filter(f => f.pct! < 50).length,
+      equipo: grupo.reduce((a, d) => a + (d.equipo?.length ?? 0), 0),
+      oficial: seguimiento?.dependencias[dep.id] ?? null,
+    };
+  });
+}
+
 @Component({
   selector: 'app-responsables',
   standalone: true,
@@ -76,6 +116,15 @@ export class ResponsablesComponent {
     { initialValue: null },
   );
 
+  /** null si la entidad no tiene veredas nombradas en sus informes */
+  readonly zonas = toSignal<ZonasPlan | null>(
+    this.ruta.paramMap.pipe(
+      map(p => p.get('dane') ?? ENTIDAD_PILOTO),
+      switchMap(d => this.servicio.zonas(d).pipe(catchError(() => of(null)))),
+    ),
+    { initialValue: null },
+  );
+
   @HostBinding('class.tema-botanico') get botanico(): boolean { return this.tema.botanico(); }
   @HostBinding('class.tema-oscuro') get oscuro(): boolean { return this.tema.oscuro(); }
 
@@ -87,41 +136,10 @@ export class ResponsablesComponent {
   readonly pestana = signal<Pestana>('panorama');
   readonly anios = ANIOS;
 
-  private readonly deps = computed(() => new Map((this.plan()?.dependencias ?? []).map(d => [d.id, d])));
-
   /** Un resumen por dependencia de primer nivel (las externas, como el INDER, no suman a su secretaría). */
   readonly resumenes = computed<Resumen[]>(() => {
     const p = this.plan();
-    if (!p) return [];
-    const seg = this.seguimiento()?.indicadores ?? {};
-    const deps = this.deps();
-    const raices = p.dependencias.filter(d => !d.padre && !d.vinculo);
-    return raices.map(dep => {
-      const grupo = [dep, ...p.dependencias.filter(d => d.padre === dep.id)];
-      const filas: FilaProducto[] = [];
-      for (const x of p.productos) {
-        for (const r of x.resp) {
-          const d = deps.get(r.dep);
-          if (!d || !grupo.includes(d)) continue;
-          const s = seg[x.id];
-          filas.push({ x, dep: d, conf: r.conf, pct: s?.pct ?? null, programada: s?.programada ?? null, avance: s?.avance ?? null, s: s ?? null });
-        }
-      }
-      // un producto con dos subsecretarías del mismo grupo cuenta una vez
-      const unicos = [...new Map(filas.map(f => [f.x.id, f])).values()];
-      const con = unicos.filter(f => f.pct !== null);
-      return {
-        dep, grupo, filas,
-        alta: unicos.filter(f => f.conf === 'alta').length,
-        sugerida: unicos.filter(f => f.conf !== 'alta').length,
-        conSeguimiento: con.length,
-        avance: con.length ? con.reduce((a, f) => a + Math.min(100, f.pct!), 0) / con.length : null,
-        cumplidos: con.filter(f => f.pct! >= 100).length,
-        atrasados: con.filter(f => f.pct! < 50).length,
-        equipo: grupo.reduce((a, d) => a + (d.equipo?.length ?? 0), 0),
-        oficial: this.seguimiento()?.dependencias[dep.id] ?? null,
-      };
-    });
+    return p ? construirResumenes(p, this.seguimiento()) : [];
   });
 
   readonly lista = computed(() => {
@@ -160,6 +178,23 @@ export class ResponsablesComponent {
     const nombres = new Map(p.sectores.map(s => [s.cod, s.nombre]));
     return [...this.agrupar(r, f => f.x.sector)].map(([c, s]) => ({ nombre: nombres.get(c) ?? c, n: s.size })).sort((a, b) => b.n - a.n);
   });
+
+  /** veredas que el informe nombra al hablar de los indicadores del responsable, con esos indicadores */
+  readonly veredasActual = computed(() => {
+    const r = this.actual();
+    const z = this.zonas();
+    if (!r || !z) return [];
+    const ids = new Set(r.filas.map(f => f.x.id));
+    const porVereda: { vereda: string; proyectos: ProyectoZona[] }[] = [];
+    for (const [vereda, lista] of Object.entries(z.zonas)) {
+      const proyectos = lista.filter(p => ids.has(p.ip));
+      if (proyectos.length) porVereda.push({ vereda, proyectos });
+    }
+    return porVereda.sort((a, b) => b.proyectos.length - a.proyectos.length || a.vereda.localeCompare(b.vereda, 'es'));
+  });
+
+  /** indicadores distintos del responsable que el informe ubica en alguna vereda */
+  readonly indicadoresConVereda = computed(() => new Set(this.veredasActual().flatMap(v => v.proyectos.map(p => p.ip))).size);
 
   /** cifras de la vista general */
   readonly general = computed(() => {
@@ -226,9 +261,7 @@ export class ResponsablesComponent {
 
   /** matiz estable por dependencia (verdes y dorados del tema), para que héroe, anillo y acentos compartan identidad */
   acentoH(id: string): number {
-    let h = 0;
-    for (const c of id) h = (h * 31 + c.charCodeAt(0)) >>> 0;
-    return 70 + (h % 90); // 70–160: del lima al verde azulado
+    return matizDe(id);
   }
 
   /** desplazamiento del trazo del anillo para un % de avance (topado en 100) */

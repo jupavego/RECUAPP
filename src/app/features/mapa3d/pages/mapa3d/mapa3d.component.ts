@@ -386,6 +386,16 @@ interface ProyeccionVereda {
   infra: InfraZona;
 }
 
+/** public/data/plan/<DANE>-zonas.json (scripts/plan_desarrollo/zonas_indicadores.py): indicadores del plan por vereda nombrada. */
+interface ProyectoZona {
+  ip: string; indicador: string;
+  /** id de la dependencia que lo reporta, y su nombre */
+  dep: string | null; dep_nombre: string | null;
+  pct: number | null; anio_pct: number | null;
+  menciones: { anio: string; texto: string }[];
+}
+interface ZonasPlan { fuente: string; zonas: Record<string, ProyectoZona[]>; }
+
 /** Infraestructura que cae dentro de una zona, agrupada por categoría (incluye las industrias). */
 interface InfraZona {
   total: number;
@@ -614,8 +624,27 @@ const TIPOS_ZONA: Record<string, string> = {
             <p class="vacio">No hay infraestructura registrada en esta zona.</p>
           }
 
-          <h3>Proyectos y responsables</h3>
-          <p class="vacio">Próximamente: aquí aparecerán los proyectos de la zona con su responsable.</p>
+          @let ps = proyectosDe(z);
+          <h3>Proyectos y responsables <small>{{ ps.length }}</small></h3>
+          @if (ps.length) {
+            <ul class="proyectos">
+              @for (p of ps; track p.ip) {
+                <li>
+                  <details>
+                    <summary>
+                      <span class="proyectos__ind">{{ p.indicador }}</span>
+                      @if (p.pct !== null) { <b class="proyectos__pct" [class.bajo]="p.pct < 50" [class.alto]="p.pct >= 100" [title]="'Avance ' + p.anio_pct + ' según el informe'">{{ p.pct | number:'1.0-0' }} %</b> }
+                    </summary>
+                    @if (p.dep) { <p class="proyectos__resp">Responsable: <a [routerLink]="['/responsables', p.dep]">{{ p.dep_nombre }}</a></p> }
+                    @for (m of p.menciones; track m.anio) { <p class="proyectos__cita"><b>{{ m.anio }}</b> «…{{ m.texto }}…»</p> }
+                  </details>
+                </li>
+              }
+            </ul>
+            <p class="pin-fuente">Indicadores del plan cuyo informe de seguimiento nombra esta vereda. Es una mención en el texto, no la ubicación exacta de la obra.</p>
+          } @else {
+            <p class="vacio">Ningún informe de seguimiento nombra esta zona.</p>
+          }
           <p class="pin-fuente">Estimación: {{ pr.fuente }}</p>
         </aside>
       }
@@ -798,6 +827,16 @@ const TIPOS_ZONA: Record<string, string> = {
       border-top: 1px solid rgba(38,66,90,.12); font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: #6b8294; }
     .zona-panel h3 small { font-size: .8rem; font-weight: 700; color: #26425a; letter-spacing: 0; }
     .zona-panel .vacio { margin: 0; font-size: .8rem; color: #6b8294; }
+    .zona-panel .proyectos { list-style: none; margin: 0 0 4px; padding: 0; display: grid; gap: 2px; }
+    .zona-panel .proyectos summary { cursor: pointer; display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font-size: .82rem; padding: 4px 0; }
+    .zona-panel .proyectos__ind { color: #26425a; }
+    .zona-panel .proyectos__pct { flex: none; font-size: .74rem; padding: 1px 7px; border-radius: 999px; background: #fdf0c8; color: #6d5410; }
+    .zona-panel .proyectos__pct.alto { background: #d9efd4; color: #2c6a2a; }
+    .zona-panel .proyectos__pct.bajo { background: #f6d8d0; color: #8a3520; }
+    .zona-panel .proyectos__resp { margin: 2px 0 4px; font-size: .78rem; color: #6b8294; }
+    .zona-panel .proyectos__resp a { color: #26425a; font-weight: 600; }
+    .zona-panel .proyectos__cita { margin: 0 0 6px; font-size: .76rem; line-height: 1.45; color: #4a6072; }
+    .zona-panel .proyectos__cita b { margin-right: 4px; color: #26425a; }
     .zona-panel details.infra { margin-bottom: 2px; }
     .zona-panel summary { display: flex; align-items: center; gap: 8px; padding: 4px 0; font-size: .86rem; cursor: pointer; list-style: none; }
     .zona-panel summary::-webkit-details-marker { display: none; }
@@ -1037,6 +1076,7 @@ export class Mapa3dComponent implements AfterViewInit {
   private edificiosBase: Compacto | null = null;
   private readonly celdasUrbanas = new Map<number, number>();
   private poblacion: PoblacionVeredas | null = null;
+  private zonasPlan: ZonasPlan | null = null;
   private capasEdificios: Capa[] = [];
   /** vereda (índice) → población y viviendas del año elegido */
   private datosPorVereda = new Map<number, { pob: number; viv: number }>();
@@ -1073,10 +1113,12 @@ export class Mapa3dComponent implements AfterViewInit {
       industrias: this.http.get<Industria[]>(`data/mapa3d/industrias-${ID_MUNICIPIO}.json`).pipe(catchError(() => of([] as Industria[]))),
       poblacion: this.http.get<PoblacionVeredas>(`data/mapa/poblacion/veredas-${CODIGO_DANE}.geojson`).pipe(catchError(() => of(null))),
       puntos: this.mapa.puntos(ID_MUNICIPIO),
+      zonasPlan: this.http.get<ZonasPlan>(`data/plan/${CODIGO_DANE}-zonas.json`).pipe(catchError(() => of(null))),
     }).subscribe({
-      next: ({ relieve, muni, terr, foto, vias, viasEstado, edificios, cauces, poblacion, industrias, puntos }) => {
+      next: ({ relieve, muni, terr, foto, vias, viasEstado, edificios, cauces, poblacion, industrias, puntos, zonasPlan }) => {
         try {
           this.foto = foto;
+          this.zonasPlan = zonasPlan;
           this.construir(relieve, muni.municipios, terr.v);
           this.fabricas = this.ubicarIndustrias(industrias, vias);
           this.equipamientos = this.ubicarEquipamientos(puntos, vias);
@@ -5357,6 +5399,11 @@ export class Mapa3dComponent implements AfterViewInit {
   }
 
   cerrarZona(): void { this.deseleccionar(); }
+
+  /** Indicadores del plan cuyo informe de seguimiento nombra esta zona (ver scripts/plan_desarrollo/zonas_indicadores.py). */
+  proyectosDe(z: Zona): ProyectoZona[] {
+    return this.zonasPlan?.zonas[z.n] ?? [];
+  }
 
   /** Población y viviendas de una vereda en todos los años del estudio; null si la zona no tiene datos. */
   proyeccion(z: Zona): ProyeccionVereda | null {

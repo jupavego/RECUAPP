@@ -6,6 +6,7 @@
       <h1>{{ p.municipio }}</h1>
       <p class="resp__sub">Qué le toca a cada dependencia de la alcaldía: quién la dirige, su equipo, los productos del plan a su cargo y cómo van en el seguimiento{{ seguimiento() ? ' ' + seguimiento()!.anio : '' }}.</p>
       <a class="resp__volver" routerLink="/plan">← Plan de desarrollo</a>
+      <a class="resp__pueblo" routerLink="/responsables/pueblo">Ver los responsables como un pueblo 3D →</a>
     </header>
 
     @let g = general();
@@ -170,6 +171,41 @@
               </ul>
             </div>
           </div>
+        }
+
+        @if (veredasActual().length) {
+          <section class="zonas">
+            <h3>Dónde, según el informe <span class="cuenta">{{ veredasActual().length }} veredas · {{ indicadoresConVereda() }} indicadores</span></h3>
+            <ul class="zonas__lista">
+              @for (v of veredasActual(); track v.vereda) {
+                <li>
+                  <details>
+                    <summary>
+                      <span class="zonas__n">{{ v.vereda }}</span>
+                      <span class="zonas__c">{{ v.proyectos.length }}</span>
+                    </summary>
+                    <ul class="zonas__proy">
+                      @for (p of v.proyectos; track p.ip) {
+                        <li>
+                          <div class="zonas__cab">
+                            <b>{{ p.ip }}</b>
+                            <span>{{ p.indicador }}</span>
+                            @if (p.pct !== null) {
+                              <span class="zonas__pct" [class]="claseAvance(p.pct)">{{ entero(p.pct) }}%{{ p.anio_pct ? ' · ' + p.anio_pct : '' }}</span>
+                            }
+                          </div>
+                          @for (m of p.menciones; track m.texto) {
+                            <blockquote><small>{{ m.anio }}</small> «…{{ m.texto }}…»</blockquote>
+                          }
+                        </li>
+                      }
+                    </ul>
+                  </details>
+                </li>
+              }
+            </ul>
+            <p class="nota">Indicadores de este responsable cuyo informe de seguimiento nombra la vereda. Es una mención en el texto, no la ubicación exacta de la obra. <a routerLink="/mapa3d">Ver en el mapa 3D</a>.</p>
+          </section>
         }
         }
         @if (pestana() === 'productos') {
