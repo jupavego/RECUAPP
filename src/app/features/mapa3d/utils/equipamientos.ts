@@ -407,7 +407,7 @@ export function modelarEquipamiento(c: CategoriaCatalogo, tipo: string, nombre: 
   const t = `${tipo} ${nombre}`.toLowerCase();
   switch (c) {
     case 'industria': return fabrica(e);
-    case 'vivienda': return vivienda(e);
+    case 'vivienda': return /edificio/.test(t) ? edificioUrbano(e) : vivienda(e);
     case 'vehiculos': return /avi[oó]n/.test(t) ? { piezas: [], radio: 42 } : vehiculo(e, t);    // el avión es un modelo .glb que carga el catálogo
     case 'vias':
       for (const k of ['autopista', 'troncal', 'secundaria', 'mixta', 'afirmada', 'carreteable', 'restringida'] as const) if (t.includes(k)) return carretera(e, k);
@@ -459,10 +459,71 @@ function fabrica(e: Ensamble): Modelo {
   return { piezas: e.piezas, radio: 52, losa: [largo + 14, fondo + 12] };
 }
 
-/** Vivienda típica del mapa: la huella del predio extruida, con paredes claras y un techo plano de color. */
+/**
+ * Vivienda típica de la región: muros de ladrillo de barro pegado con cemento sobre un zócalo de concreto, techo a dos aguas
+ * de teja de barro en V (canales y cubiertas alternadas), puerta y ventanas de madera, chimenea de cocina y alero amplio.
+ */
 function vivienda(e: Ensamble): Modelo {
-  e.caja(10, 6, 8, '#f3e8d6', 0, 0, 0).caja(10.2, 0.5, 8.2, '#c8704f', 0, 6, 0);
-  return { piezas: e.piezas, radio: 8, losa: [12, 10] };
+  const ladrillo = '#b9603e', cemento = '#d6cbb8', madera = '#6b4a2f', paredes = 4.2;
+  const ancho = 10, fondo = 8, vuelo = 0.8, subida = 3, medio = fondo / 2 + vuelo;
+  // zócalo, muros y juntas de cemento (una losa fina por hilada, se ve en las cuatro caras)
+  e.caja(ancho + 0.4, 0.5, fondo + 0.4, '#9ca3af', 0, 0, 0).caja(ancho, paredes, fondo, ladrillo, 0, 0.5, 0);
+  for (let y = 0.95; y < paredes + 0.4; y += 0.45) e.caja(ancho + 0.06, 0.08, fondo + 0.06, cemento, 0, y, 0);
+  // frontón de ladrillo en los extremos
+  const alto = paredes + 0.5;
+  for (const sx of [-1, 1]) e.dosAguas(fondo, subida - 0.5, 0.3, ladrillo, sx * (ancho / 2 + vuelo), alto, 0, Math.PI / 2);
+  // techo: faldones de teja y cumbrera; las canales (claras) y las cubiertas (oscuras) forman las V
+  e.dosAguas(medio * 2, subida, ancho + vuelo * 2, '#9e4527', 0, alto, 0, Math.PI / 2);
+  const inclinado = Math.atan2(subida, medio), largo = Math.hypot(medio, subida);
+  for (const lado of [-1, 1]) {
+    for (let x = -ancho / 2 - vuelo + 0.3; x <= ancho / 2 + vuelo - 0.2; x += 0.55) {
+      const g = new THREE.BoxGeometry(0.24, 0.16, largo).rotateX(lado * inclinado).translate(x, alto + subida / 2 + 0.1, lado * medio / 2);
+      e.piezas.push({ g, color: '#c6683c' });
+    }
+  }
+  e.caja(ancho + vuelo * 2 + 0.3, 0.3, 0.7, '#7a3520', 0, alto + subida - 0.1, 0);
+  // chimenea de cocina
+  e.caja(1, 3.4, 1, ladrillo, -3, paredes + 0.4, -1.4).caja(1.3, 0.3, 1.3, '#9ca3af', -3, paredes + 3.8, -1.4);
+  // fachada (+z): puerta y dos ventanas con marco de madera, escalón de cemento
+  e.caja(1.5, 2.6, 0.35, madera, 0, 0.5, fondo / 2 + 0.05).caja(0.12, 0.2, 0.1, '#e5c04a', 0.5, 1.7, fondo / 2 + 0.28)
+    .caja(2.6, 0.2, 1.1, '#b5b0a6', 0, 0, fondo / 2 + 0.5);
+  for (const x of [-3, 3]) {
+    e.caja(2, 1.6, 0.3, madera, x, 1.9, fondo / 2 + 0.05).ventanas(1.6, 1.2, VIDRIO, x, 2.1, fondo / 2 + 0.05)
+      .caja(0.1, 1.2, 0.1, madera, x, 2.1, fondo / 2 + 0.3);
+  }
+  e.caja(2, 1.6, 0.3, madera, 0, 1.9, -fondo / 2 - 0.05).ventanas(1.6, 1.2, VIDRIO, 0, 2.1, -fondo / 2 - 0.05, true);
+  return { piezas: e.piezas, radio: 8, losa: [13, 11] };
+}
+
+/**
+ * Edificio del casco urbano: cinco pisos de concreto con fachada pintada y franjas de ladrillo, local comercial con vitrina y
+ * toldo en la planta baja, balcones con baranda en cada piso, y terraza con tanque de agua y cuarto de máquinas.
+ */
+function edificioUrbano(e: Ensamble): Modelo {
+  const ancho = 14, fondo = 12, piso = 3.2, pisos = 5, alto = piso * pisos;
+  const pared = '#ece3d0', ladrillo = '#b9603e', concreto = '#a8aeb5', oscuro = '#374151';
+  e.caja(ancho, alto, fondo, pared, 0, 0, 0)
+    .caja(ancho + 0.4, 0.3, fondo + 0.4, concreto, 0, alto, 0)           // placa de cubierta
+    .caja(ancho + 0.2, 0.9, 0.3, concreto, 0, alto + 0.3, fondo / 2).caja(ancho + 0.2, 0.9, 0.3, concreto, 0, alto + 0.3, -fondo / 2)
+    .caja(0.3, 0.9, fondo, concreto, ancho / 2, alto + 0.3, 0).caja(0.3, 0.9, fondo, concreto, -ancho / 2, alto + 0.3, 0); // antepecho
+  // columnas de ladrillo a vista en las esquinas de la fachada
+  for (const x of [-ancho / 2, ancho / 2]) e.caja(1.2, alto, 1.2, ladrillo, x, 0, fondo / 2 - 0.2);
+  // planta baja: local comercial con vitrina, puerta del portal y toldo
+  e.caja(ancho - 3, 2.4, 0.3, VIDRIO, -0.8, 0.5, fondo / 2 + 0.05).caja(2.4, 2.8, 0.3, oscuro, 4.8, 0, fondo / 2 + 0.1)
+    .caja(ancho - 3, 0.6, 2.2, '#c0392b', -0.8, 3, fondo / 2 + 1);
+  // pisos altos: ventanas y balcones con baranda
+  for (let k = 1; k < pisos; k++) {
+    const y = piso * k;
+    e.caja(ancho + 0.3, 0.25, 0.3, concreto, 0, y, fondo / 2)                // losa vista
+      .caja(ancho - 4, 2, 0.3, VIDRIO, 0, y + 0.8, fondo / 2 + 0.05)
+      .caja(ancho - 3, 0.2, 1.6, concreto, 0, y, fondo / 2 + 0.8).caja(ancho - 3, 1, 0.1, oscuro, 0, y + 0.2, fondo / 2 + 1.5)
+      .ventanas(ancho - 4, 1.6, VIDRIO, 0, y + 1, -fondo / 2, true);
+    for (const z of [-3, 3]) e.caja(0.3, 1.6, 2.2, VIDRIO, ancho / 2 + 0.05, y + 1, z).caja(0.3, 1.6, 2.2, VIDRIO, -ancho / 2 - 0.05, y + 1, z);
+  }
+  // terraza: tanque de agua y cuarto de máquinas
+  e.cil(1.4, 1.4, 2.2, '#2f6f9f', -3.5, alto + 0.3, -2, 14).caja(0.3, 1.4, 0.3, concreto, -4.4, alto + 0.3, -2).caja(4, 2.6, 3.4, pared, 3, alto + 0.3, -2)
+    .caja(4.4, 0.3, 3.8, concreto, 3, alto + 2.9, -2);
+  return { piezas: e.piezas, radio: 12, losa: [18, 16] };
 }
 
 /** Rueda con el eje a lo largo de z: llanta oscura, rin claro y tapa central. `y` es el suelo. */
@@ -909,6 +970,7 @@ export interface Variante { categoria: CategoriaCatalogo; etiqueta: string; tipo
 export const VARIANTES: Variante[] = [
   { categoria: 'industria', etiqueta: 'Fábrica', tipo: 'Industria', nombre: 'Fábrica' },
   { categoria: 'vivienda', etiqueta: 'Vivienda típica', tipo: 'Vivienda', nombre: 'Vivienda' },
+  { categoria: 'vivienda', etiqueta: 'Edificio del casco urbano', tipo: 'Edificio', nombre: 'Edificio' },
   { categoria: 'vehiculos', etiqueta: 'Auto', tipo: 'Vehículo', nombre: 'Auto' },
   { categoria: 'vehiculos', etiqueta: 'Moto', tipo: 'Vehículo', nombre: 'Moto' },
   { categoria: 'vehiculos', etiqueta: 'Taxi', tipo: 'Vehículo', nombre: 'Taxi' },

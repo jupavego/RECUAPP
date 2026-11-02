@@ -162,6 +162,12 @@ const SOLAPE_EQUIPAMIENTOS = 0.75;
 const SOLAPE_DEPORTE = 0.4;
 /** Las canchas y placas están pegadas a la calle en las manzanas angostas: piden menos holgura a las vías (fracción de su radio) que el resto. */
 const HOLGURA_DEPORTE = 0.3;
+/** En el tejido urbano los edificios quedan al menos a esta distancia (m) del borde de la calzada. */
+const MARGEN_VIA = 1.5;
+/** Tejido urbano (se contrasta con la foto satelital): celdas de CELDA_URBANA m y mínimo de edificios en la celda y sus 8 vecinas. */
+const CELDA_URBANA = 40, MIN_URBANO = 20;
+/** Canchas y placas de un mismo conjunto: distancia máxima entre ellas (m), holgura a la calle y separación entre una y otra. */
+const CONJUNTO_DEPORTE = 60, ORILLA_DEPORTE = 4, SEPARACION_DEPORTE = 4;
 const COLORES_AUTOS = ['#ff2d2d', '#ff8a00', '#ffd400', '#00d26a', '#00c2ff', '#2f6bff', '#e040fb', '#ff4fa3'];
 /**
  * Vehículos del tráfico (modelos del catálogo): el auto es el único que cambia de color; el camión y el bus solo van por
@@ -947,7 +953,7 @@ export class Mapa3dComponent implements AfterViewInit {
   private fabricaElegida = -1;
   private fabricaHover = -1;
   /** Puntos de interés (colegios, hospitales, canchas...) con el edificio que los representa. */
-  private equipamientos: { x: number; z: number; lon: number; lat: number; n: string; r: number; datos: { p: Punto; modelo: Modelo } }[] = [];
+  private equipamientos: { x: number; z: number; lon: number; lat: number; n: string; r: number; yaw?: number; datos: { p: Punto; modelo: Modelo } }[] = [];
   private mallaEquip: THREE.Mesh | null = null;
   private geoEquip: THREE.BufferGeometry | null = null;
   private matEquip: THREE.Material | null = null;
@@ -1029,6 +1035,7 @@ export class Mapa3dComponent implements AfterViewInit {
   private cajasEquip: { x: number; z: number; r: number; top: number; id: number }[] = [];
   // edificios dibujados según la población del año elegido
   private edificiosBase: Compacto | null = null;
+  private readonly celdasUrbanas = new Map<number, number>();
   private poblacion: PoblacionVeredas | null = null;
   private capasEdificios: Capa[] = [];
   /** vereda (índice) → población y viviendas del año elegido */
@@ -1060,7 +1067,8 @@ export class Mapa3dComponent implements AfterViewInit {
       foto: this.cargarImagen(`data/mapa3d/ortofoto-${ID_MUNICIPIO}.jpg`),
       vias: this.http.get<Compacto>(`data/mapa3d/vias-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
       viasEstado: this.http.get<Compacto>(`data/mapa3d/vias-estado-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
-      edificios: this.http.get<Compacto>(`data/mapa3d/edificios-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
+      edificios: this.http.get<Compacto>(`data/mapa3d/edificios-ordenados-${ID_MUNICIPIO}.json`).pipe(
+        catchError(() => this.http.get<Compacto>(`data/mapa3d/edificios-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))))),
       cauces: this.http.get<Cauces>(`data/mapa3d/cauces-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
       industrias: this.http.get<Industria[]>(`data/mapa3d/industrias-${ID_MUNICIPIO}.json`).pipe(catchError(() => of([] as Industria[]))),
       poblacion: this.http.get<PoblacionVeredas>(`data/mapa/poblacion/veredas-${CODIGO_DANE}.geojson`).pipe(catchError(() => of(null))),
@@ -1080,7 +1088,7 @@ export class Mapa3dComponent implements AfterViewInit {
           if (vias?.v) this.construirTrafico(vias);
           this.construirIndustrias();
           this.construirEquipamientos();
-          this.edificiosBase = this.sinIndustrias(edificios);
+          this.edificiosBase = this.sinIndustrias(edificios, vias);
           this.poblacion = poblacion;
           this.hayPoblacion.set(!!(edificios?.e && poblacion));
           const dibujados = this.edificiosParaAnio(this.anio());
@@ -2134,7 +2142,7 @@ export class Mapa3dComponent implements AfterViewInit {
       if (anillo.length < 3) return;
       const lon = anillo.reduce((a, q) => a + q[0], 0) / anillo.length, lat = anillo.reduce((a, q) => a + q[1], 0) / anillo.length;
       const id = this.idEn(lon, lat);
-      if (!cupo.has(id)) return;
+      if (!cupo.has(id) || this.esUrbano(lon, lat)) return;   // el tejido urbano denso se dibuja completo
       const doble = anillo.reduce((a, q, i) => { const r = anillo[(i + 1) % anillo.length]; return a + q[0] * r[1] - r[0] * q[1]; }, 0);
       const area = Math.abs(doble) / 2 * this.mLon * this.mLat;
       if (area < AREA_VIVIENDA[0]) quitar.add(n);
@@ -2188,6 +2196,11 @@ export class Mapa3dComponent implements AfterViewInit {
   private construirEdificios(d: Compacto): void {
     const PAREDES = ['#f3e8d6', '#efe0c9', '#f6f0e6', '#ead7bd'].map(c => new THREE.Color(c));
     const TECHOS = ['#c8704f', '#b9825f', '#d6cfc0', '#a3a9ae', '#c98f6a'].map(c => new THREE.Color(c));
+    // viviendas de la región: ladrillo de barro con techo a dos aguas de teja de barro; en el casco urbano, edificios de varios pisos pintados
+    const LADRILLOS = ['#b9603e', '#a9532f', '#c26a45', '#b25a3a'].map(c => new THREE.Color(c));
+    const TEJAS = ['#9e4527', '#b0552f', '#c6683c'].map(c => new THREE.Color(c));
+    const URBANOS = ['#efe6d2', '#e4d3b4', '#d9e2e8', '#e9d2cf', '#cfd9c9'].map(c => new THREE.Color(c));
+    const LOSA = new THREE.Color('#8e959c');
     // una malla por tesela: así la GPU descarta las que quedan fuera de cámara y solo proyectan sombra las del recuadro de la luz
     type Tesela = { pos: number[]; col: number[]; idx: number[]; ids: number[]; pesos: number[] };
     const teselas = new Map<number, Tesela>();
@@ -2196,13 +2209,20 @@ export class Mapa3dComponent implements AfterViewInit {
       const ring = this.desdeDeltas(e, d.k, 1);
       if (ring.length < 3) return;
       const hash = (((n + 1) * 2654435761) >>> 0) % 1000 / 1000;
-      const h = (e[0] || 4.5 + hash * 4) * ESCALA_EDIFICIOS;
       const xs = ring.map(q => this.aX(q[0])), zs = ring.map(q => this.aZ(q[1]));
-      const suelo = Math.min(...ring.map(q => this.alturaEn(q[0], q[1]))) - 4, techo = suelo + 4 + h;
       const cLon = ring.reduce((a, q) => a + q[0], 0) / ring.length, cLat = ring.reduce((a, q) => a + q[1], 0) / ring.length;
       const id = this.idEn(cLon, cLat);
+      const doble = ring.reduce((a, q, i) => { const r = ring[(i + 1) % ring.length]; return a + q[0] * r[1] - r[0] * q[1]; }, 0);
+      const area = Math.abs(doble) / 2 * this.mLon * this.mLat;
+      // tejido urbano: casas de 1 a 3 pisos con teja; los predios grandes o algunos al azar son edificios de 3 a 5 pisos
+      const denso = this.esUrbano(cLon, cLat);
+      const urbano = denso && (area > AREA_VIVIENDA[1] || (area > 120 && hash > 0.85));
+      const casa = area <= AREA_VIVIENDA[1] && !urbano;
+      const h = (urbano ? 3 * (3 + Math.floor(hash * 2.2)) * 0.6 : denso ? 3 * (1 + Math.floor(hash * 3)) * 0.6 : e[0] || 4.5 + hash * 4) * ESCALA_EDIFICIOS;
+      const suelo = Math.min(...ring.map(q => this.alturaEn(q[0], q[1]))) - 4, techo = suelo + 4 + h;
       const peso = id >= 0 ? this.pesoBorde(cLon, cLat, id) : 0;
-      const pared = PAREDES[n % PAREDES.length], tejado = TECHOS[(n * 7 + Math.floor(hash * 10)) % TECHOS.length];
+      const pared = urbano ? URBANOS[n % URBANOS.length] : casa ? (denso && n % 2 ? URBANOS[n % URBANOS.length] : LADRILLOS[n % LADRILLOS.length]) : PAREDES[n % PAREDES.length];
+      const tejado = urbano ? LOSA : casa ? TEJAS[n % TEJAS.length] : TECHOS[(n * 7 + Math.floor(hash * 10)) % TECHOS.length];
       const clave = this.claveTesela(this.aX(cLon), this.aZ(cLat));
       let t = teselas.get(clave);
       if (!t) teselas.set(clave, t = { pos: [], col: [], idx: [], ids: [], pesos: [] });
@@ -2222,6 +2242,24 @@ export class Mapa3dComponent implements AfterViewInit {
         const a = poner(xs[i], suelo, zs[i], pared), b = poner(xs[j], suelo, zs[j], pared);
         const c = poner(xs[j], techo, zs[j], pared), dd = poner(xs[i], techo, zs[i], pared);
         idx.push(a, b, c, a, c, dd);
+      }
+      if (casa) {
+        // huella de cuatro lados: techo a dos aguas con la cumbrera a lo largo del lado mayor y frontones de ladrillo
+        const cuadro = ring.length === 5 && xs[0] === xs[4] && zs[0] === zs[4] ? ring.slice(0, 4).map((_, i) => i) : ring.length === 4 ? [0, 1, 2, 3] : null;
+        if (cuadro) {
+          const largo = (i: number, j: number) => Math.hypot(xs[cuadro[j]] - xs[cuadro[i]], zs[cuadro[j]] - zs[cuadro[i]]);
+          const q = largo(0, 1) >= largo(1, 2) ? cuadro : [cuadro[1], cuadro[2], cuadro[3], cuadro[0]];
+          const sube = Math.min(largo(1, 2), largo(0, 1)) * 0.3 * ESCALA_EDIFICIOS / 2;
+          const m1 = [(xs[q[1]] + xs[q[2]]) / 2, (zs[q[1]] + zs[q[2]]) / 2], m2 = [(xs[q[3]] + xs[q[0]]) / 2, (zs[q[3]] + zs[q[0]]) / 2];
+          const P = (i: number, c: THREE.Color) => poner(xs[q[i]], techo, zs[q[i]], c);
+          const a0 = P(0, tejado), a1 = P(1, tejado), a2 = poner(m1[0], techo + sube, m1[1], tejado), a3 = poner(m2[0], techo + sube, m2[1], tejado);
+          const b2 = P(2, tejado), b3 = P(3, tejado), c2 = poner(m1[0], techo + sube, m1[1], tejado), c3 = poner(m2[0], techo + sube, m2[1], tejado);
+          idx.push(a0, a1, a2, a0, a2, a3, b2, b3, c3, b2, c3, c2);
+          const f1 = P(1, pared), f2 = P(2, pared), f3 = poner(m1[0], techo + sube, m1[1], pared);
+          const g3 = P(3, pared), g0 = P(0, pared), g1 = poner(m2[0], techo + sube, m2[1], pared);
+          idx.push(f1, f2, f3, g3, g0, g1);
+          return;
+        }
       }
       const base = pos.length / 3;
       ring.forEach((_, i) => poner(xs[i], techo, zs[i], tejado));
@@ -2986,8 +3024,14 @@ export class Mapa3dComponent implements AfterViewInit {
     const previos = (x: number, z: number, r: number, deporte: boolean) =>
       this.fabricas.every(f => Math.hypot(f.x - x, f.z - z) > RADIO_FABRICA + r + 4)
       && out.every(o => Math.hypot(o.x - x, o.z - z) > (o.r + r) * (deporte && o.datos.p.c === 'deporte' ? SOLAPE_DEPORTE : SOLAPE_EQUIPAMIENTOS));
+    const conjuntos = this.conjuntosDeporte(lista, holgura);
     lista.forEach((p, i) => {
       if (p.lat == null || p.lng == null) return;
+      const c = conjuntos.get(p);
+      if (c) {
+        out.push({ x: c.x, z: c.z, lon: this.lon0 + c.x / this.mLon, lat: this.lat0 - c.z / this.mLat, n: p.n, r: c.modelo.radio, yaw: c.yaw, datos: { p, modelo: c.modelo } });
+        return;
+      }
       const modelo = modelarEquipamiento(p.c, p.t, p.n, mulberry32(9100 + i));
       const esc = ESCALA_MANUAL.get(p.n);
       if (esc) {
@@ -3005,6 +3049,59 @@ export class Mapa3dComponent implements AfterViewInit {
       }
     });
     return out;
+  }
+
+  /**
+   * Canchas y placas que comparten punto (a menos de CONJUNTO_DEPORTE m): se acomodan una al lado de la otra, alineadas con las
+   * calles, dentro de la manzana. Se mide cuánto espacio libre de calles hay desde el centro del conjunto, se busca el eje más
+   * largo y se reduce la escala de los modelos hasta que quepan en fila con una separación entre ellos.
+   */
+  private conjuntosDeporte(lista: Punto[], holgura: (x: number, z: number) => number): Map<Punto, { x: number; z: number; yaw: number; modelo: Modelo }> {
+    const res = new Map<Punto, { x: number; z: number; yaw: number; modelo: Modelo }>();
+    const dep = lista.map((p, i) => ({ p, i })).filter(({ p }) => p.c === 'deporte' && p.lat != null && p.lng != null);
+    const pos = (p: Punto) => [this.aX(p.lng!), this.aZ(p.lat!)];
+    const visto = new Set<Punto>();
+    for (const a of dep) {
+      if (visto.has(a.p)) continue;
+      const grupo = dep.filter(b => !visto.has(b.p) && Math.hypot(pos(a.p)[0] - pos(b.p)[0], pos(a.p)[1] - pos(b.p)[1]) < CONJUNTO_DEPORTE);
+      grupo.forEach(g => visto.add(g.p));
+      if (grupo.length < 2) continue;
+      let cx = grupo.reduce((m, g) => m + pos(g.p)[0], 0) / grupo.length, cz = grupo.reduce((m, g) => m + pos(g.p)[1], 0) / grupo.length;
+      // espacio libre desde un punto en una dirección, hasta topar con una calle
+      const libre = (x: number, z: number, ang: number) => {
+        let d = 0;
+        while (d < 160 && holgura(x + Math.cos(ang) * d, z + Math.sin(ang) * d) >= ORILLA_DEPORTE) d += 2;
+        return d;
+      };
+      if (holgura(cx, cz) < ORILLA_DEPORTE) continue;          // el centro cae en una calle: se deja el reparto de siempre
+      let mejor = 0, largo = 0;
+      for (let k = 0; k < 18; k++) {
+        const ang = k * Math.PI / 18, l = libre(cx, cz, ang) + libre(cx, cz, ang + Math.PI);
+        if (l > largo) { largo = l; mejor = ang; }
+      }
+      // se centra en el hueco, en el eje largo y en el transversal
+      for (const ang of [mejor, mejor + Math.PI / 2]) {
+        const dif = (libre(cx, cz, ang) - libre(cx, cz, ang + Math.PI)) / 2;
+        cx += Math.cos(ang) * dif; cz += Math.sin(ang) * dif;
+      }
+      const ancho = libre(cx, cz, mejor) + libre(cx, cz, mejor + Math.PI), fondo = libre(cx, cz, mejor + Math.PI / 2) + libre(cx, cz, mejor - Math.PI / 2);
+      const modelos = grupo.map(g => ({ ...g, modelo: modelarEquipamiento(g.p.c, g.p.t, g.p.n, mulberry32(9100 + g.i)) }));
+      modelos.sort((m, n) => (n.modelo.losa?.[0] ?? 0) - (m.modelo.losa?.[0] ?? 0));
+      const medidas = modelos.map(m => m.modelo.losa ?? [m.modelo.radio * 2, m.modelo.radio * 2]);
+      const sumaAncho = medidas.reduce((t, m) => t + m[0], 0) + SEPARACION_DEPORTE * (modelos.length - 1), maxFondo = Math.max(...medidas.map(m => m[1]));
+      const esc = Math.max(0.35, Math.min(1, (ancho - 2 * ORILLA_DEPORTE) / sumaAncho, (fondo - 2 * ORILLA_DEPORTE) / maxFondo));
+      const yaw = -mejor, ux = Math.cos(mejor), uz = Math.sin(mejor);
+      let desde = -(sumaAncho * esc) / 2;
+      modelos.forEach((m, k) => {
+        m.modelo.piezas.forEach(pz => pz.g.scale(esc, esc, esc));
+        m.modelo.radio *= esc;
+        if (m.modelo.losa) m.modelo.losa = [m.modelo.losa[0] * esc, m.modelo.losa[1] * esc];
+        const mitad = medidas[k][0] * esc / 2, t = desde + mitad;
+        res.set(m.p, { x: cx + ux * t, z: cz + uz * t, yaw, modelo: m.modelo });
+        desde += medidas[k][0] * esc + SEPARACION_DEPORTE * esc;
+      });
+    }
+    return res;
   }
 
   /** Función (x, z) → distancia al borde de la vía más cercana (principales y locales; los senderos no cuentan). */
@@ -3037,16 +3134,53 @@ export class Mapa3dComponent implements AfterViewInit {
     };
   }
 
+  /** Cuenta los edificios por celda: donde hay muchos juntos es tejido urbano, como lo muestra la foto satelital (techos de teja). */
+  private medirDensidad(e: Compacto): void {
+    this.celdasUrbanas.clear();
+    for (const b of e.e!) {
+      const q = this.desdeDeltas(b, e.k, 1);
+      const c = this.claveUrbana(q.reduce((m, p) => m + p[0], 0) / q.length, q.reduce((m, p) => m + p[1], 0) / q.length);
+      this.celdasUrbanas.set(c, (this.celdasUrbanas.get(c) ?? 0) + 1);
+    }
+  }
+
+  private claveUrbana(lon: number, lat: number): number {
+    return Math.floor((this.aX(lon) + this.ancho / 2) / CELDA_URBANA) * 100003 + Math.floor((this.aZ(lat) + this.alto / 2) / CELDA_URBANA);
+  }
+
+  /** ¿Cae en tejido urbano denso? Suma de la celda y sus vecinas. */
+  private esUrbano(lon: number, lat: number): boolean {
+    const c = this.claveUrbana(lon, lat);
+    let n = 0;
+    for (let i = -1; i <= 1; i++) for (let j = -1; j <= 1; j++) n += this.celdasUrbanas.get(c + i * 100003 + j) ?? 0;
+    return n >= MIN_URBANO;
+  }
+
+  /** En el tejido urbano, un edificio cuyo contorno pisa la calle o su acera (a menos de MARGEN_VIA de la calzada) no se dibuja. */
+  private cruzaVia(anillo: number[][], lon: number, lat: number, holgura: (x: number, z: number) => number): boolean {
+    if (!this.esUrbano(lon, lat)) return false;
+    const p = anillo.map(q => [this.aX(q[0]), this.aZ(q[1])]);
+    if (holgura((p.reduce((m, q) => m + q[0], 0)) / p.length, (p.reduce((m, q) => m + q[1], 0)) / p.length) < MARGEN_VIA) return true;
+    for (let i = 0; i < p.length; i++) {
+      const [ax, az] = p[i], [bx, bz] = p[(i + 1) % p.length];
+      const n = Math.max(1, Math.ceil(Math.hypot(bx - ax, bz - az) / 2.5));
+      for (let t = 0; t < n; t++) if (holgura(ax + (bx - ax) * t / n, az + (bz - az) * t / n) < MARGEN_VIA) return true;
+    }
+    return false;
+  }
+
   /** Quita los edificios de OpenStreetMap que quedarían debajo de una fábrica o de un equipamiento (dentro de su radio). */
-  private sinIndustrias(e: Compacto | null): Compacto | null {
-    if (!e?.e || !(this.fabricas.length || this.equipamientos.length)) return e;
-    const k = e.k;
+  private sinIndustrias(e: Compacto | null, vias: Compacto | null): Compacto | null {
+    if (!e?.e) return e;
+    const k = e.k, holgura = this.holguraVias(vias);
+    this.medirDensidad(e);
     return {
       ...e,
       e: e.e.filter(b => {
         const q = this.desdeDeltas(b, k, 1);
         const lon = q.reduce((m, p) => m + p[0], 0) / q.length, lat = q.reduce((m, p) => m + p[1], 0) / q.length;
         const x = this.aX(lon), z = this.aZ(lat);
+        if (this.cruzaVia(q, lon, lat, holgura)) return false;
         return this.fabricas.every(f => Math.hypot(f.x - x, f.z - z) > RADIO_FABRICA + 5)
           && this.equipamientos.every(q => Math.hypot(q.x - x, q.z - z) > q.r + 3);
       }),
@@ -3069,7 +3203,7 @@ export class Mapa3dComponent implements AfterViewInit {
     for (const q of this.equipamientos) {
       this.inicioEquip.push(ids.length);
       const { modelo } = q.datos;
-      const yaw = rnd() * Math.PI * 2, cos = Math.cos(yaw), sin = Math.sin(yaw);
+      const azar = rnd() * Math.PI * 2, yaw = q.yaw ?? azar, cos = Math.cos(yaw), sin = Math.sin(yaw);
       const [lw, ld] = modelo.losa ?? [0, 0];
       const alturas = [[0, 0], [1, 1], [-1, 1], [1, -1], [-1, -1]].map(([a, b]) =>
         this.alturaXZ(q.x + a * (lw / 2) * cos + b * (ld / 2) * sin, q.z - a * (lw / 2) * sin + b * (ld / 2) * cos));
