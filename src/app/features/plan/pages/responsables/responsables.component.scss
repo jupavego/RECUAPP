@@ -1,4 +1,4 @@
-:host { display: block; --av-ok: #3d8a3a; --av-medio: #c99a1c; --av-bajo: #b5523b; }
+:host { display: block; --av-ok: #2F7A3A; --av-medio: #66AA33; --av-bajo: #b5523b; }
 
 // Misma paleta botánica de la página del plan (claro y oscuro).
 :host(.tema-botanico) {
@@ -51,7 +51,7 @@
   --plan-barra-sug: #D4E88A;
   --plan-amarillo-claro: #3A3418;
   --av-ok: #7cc24f;
-  --av-medio: #e0b33a;
+  --av-medio: #99CC33;
   --av-bajo: #e07a5f;
 
   .cuenta { color: #F0DC8A; }
@@ -120,7 +120,8 @@
   &__ico { position: absolute; left: 16px; top: 14px; width: 84px; height: 84px; object-fit: contain; filter: drop-shadow(0 5px 8px rgb(0 0 0 / .22)); transition: transform .25s; }
   &__vacio { position: absolute; left: 16px; top: 14px; display: grid; place-items: center; width: 76px; height: 76px; border-radius: 22px; font-size: 1.8rem; font-style: normal; font-weight: 600; background: var(--color-background-primary); color: var(--acento); }
   &__anillo { position: absolute; right: 14px; top: 14px; width: 72px; height: 72px; }
-  &__pct { position: absolute; inset: 0; display: grid; place-items: center; font-weight: 700; font-size: 1.05rem; color: var(--dark-900, #0f172a); font-variant-numeric: tabular-nums; }
+  &__pct { position: absolute; inset: 0; display: flex; justify-content: center; align-items: center; font-weight: 700; font-size: 1.05rem; color: var(--dark-900, #0f172a); font-variant-numeric: tabular-nums; }
+  &__pct small { font-size: .6rem; margin-left: 1px; align-self: center; }
   &__nombre { font-weight: 600; font-size: 1.05rem; line-height: 1.25; color: var(--dark-900, #0f172a); }
   &__quien { display: grid; gap: 1px; font-size: .85rem; b { color: var(--dark-800, #1e293b); } em { font-style: normal; font-size: .76rem; color: var(--neutral-600, #52525b); } }
   &__datos { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: .78rem; color: var(--neutral-600, #52525b); b { font-size: 1.05rem; color: var(--acento); } }
@@ -324,4 +325,15 @@ h3 { margin: 0 0 8px; font-size: .9rem; color: var(--dark-700, #334155); }
 .detalle > [class^='oficial'], .detalle > .reparto2, .detalle > .equipo, .detalle > .personas, .detalle > .tabla-marco, .detalle > .prod-cab { margin-top: 2px; }
 @media (max-width: 720px) {
   .heroe { grid-template-columns: auto 1fr; .anillo { grid-column: 1 / -1; justify-self: center; } }
+}
+
+/* ── Fuentes de referencia ── */
+.fuentes {
+  h2 { margin: 0 0 4px; font-size: 1.15rem; color: var(--dark-900, #0f172a); }
+  &__lista { list-style: none; margin: 12px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; counter-reset: fuente;
+    li { counter-increment: fuente; position: relative; display: grid; gap: 4px; align-content: start; padding: 14px 14px 14px 52px; font-size: .82rem; border-radius: var(--plan-radio-s, 14px);
+      background: var(--color-brand-surface, #f0fdfa); border: 1px solid var(--color-brand-border, #99f6e4); color: var(--neutral-600, #52525b);
+      &::before { content: counter(fuente); position: absolute; left: 14px; top: 14px; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; font-weight: 700; font-size: .8rem; background: var(--color-brand-primary); color: var(--color-background-primary, #fff); } }
+    b { font-size: .9rem; line-height: 1.25; color: var(--dark-900, #0f172a); }
+    a { color: var(--color-brand-primary); overflow-wrap: anywhere; } }
 }

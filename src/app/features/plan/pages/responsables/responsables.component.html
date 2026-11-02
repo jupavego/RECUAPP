@@ -46,7 +46,7 @@
             <span class="ficha__anillo anillo" [class]="'ficha__anillo anillo ' + claseAvance(r.avance)" role="img"
               [attr.aria-label]="r.avance !== null ? entero(r.avance) + ' % de avance' : 'Sin indicadores en el informe'">
               <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="anillo__pista" cx="60" cy="60" r="52" /><circle class="anillo__valor" cx="60" cy="60" r="52" [style.stroke-dashoffset]="anilloOffset(r.avance)" /></svg>
-              <span class="ficha__pct">{{ r.avance !== null ? entero(r.avance) : '—' }}</span>
+              <span class="ficha__pct">{{ r.avance !== null ? entero(r.avance) : '—' }}<small>{{ r.avance !== null ? '%' : '' }}</small></span>
             </span>
           }
           <span class="ficha__nombre">{{ r.dep.nombre }}</span>
@@ -298,6 +298,35 @@
       <p class="vacio">No existe ese responsable. <a class="resp__volver" routerLink="/responsables">Ver todos</a></p>
     }
     }
+
+    <section class="fuentes tarjeta" aria-labelledby="fuentes-t">
+      <h2 id="fuentes-t">Fuentes de referencia</h2>
+      <p class="nota">De dónde sale cada dato de esta vista. Los datos del plan se consultaron el {{ p.fuente.fecha }}.</p>
+      <ol class="fuentes__lista">
+        <li>
+          <b>{{ p.plan }} · {{ p.municipio }} 2024-2027 (PDF oficial)</b>
+          <span>Productos, indicadores, metas y el responsable que el propio plan indica para cada producto («según el PDF»).</span>
+        </li>
+        <li>
+          <b>DNP · SisPT, plan indicativo</b>
+          <span>Códigos de producto e indicador y su programación anual 2024-2027. Sirve de llave para cruzar el plan con el seguimiento.</span>
+        </li>
+        <li>
+          <b>Informes de seguimiento de la alcaldía{{ seguimiento() ? ' · ' + seguimiento()!.anios.join(' y ') : '' }}</b>
+          <span>Avance por indicador, fichas con la narrativa y cuadros por dependencia (plan de acción y avance al cuatrienio). Publicados como imagen y transcritos; son cifras reportadas por la alcaldía, sin auditar.
+            @if (seguimiento(); as sg) { Fichas sin código SisPT, que quedan fuera del cruce: {{ sg.sin_codigo }} en {{ sg.anio }}. }</span>
+        </li>
+        <li>
+          <b>Sitio web de la alcaldía de {{ p.municipio }}</b>
+          <span>Quién dirige cada dependencia, su equipo y los datos de contacto, tomados del directorio institucional.
+            <a href="https://www.girardota.gov.co/NuestraAlcaldia/Dependencias" target="_blank" rel="noopener">girardota.gov.co · Dependencias</a></span>
+        </li>
+        <li>
+          <b>Criterio propio de RECUAPP</b>
+          <span>Cuando el PDF no nombra responsable, el producto se sugiere por su sector (se marca «sugerida por sector»). El avance de cada responsable es el promedio del % de sus indicadores, cada uno topado en 100.</span>
+        </li>
+      </ol>
+    </section>
   </main>
 } @else if (plan() === null) {
   <main class="resp"><p class="vacio">No hay datos del plan para esta entidad.</p></main>
