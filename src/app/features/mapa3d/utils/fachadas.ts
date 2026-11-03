@@ -429,11 +429,12 @@ function pintarFrenteNegocio(x: CanvasRenderingContext2D, W: number, H: number, 
  * y por paleta; a la derecha los frentes de negocio (8,8 × 6,6 m, 256 × 192 px) con letrero y mercancía. Todos los edificios
  * comparten esta textura, así que el costo es una sola imagen y una sola malla por tesela.
  */
-export const CELDA_W = 128, CELDA_H = 192, LOCAL_W = 256;
-export const ATLAS_W = 2048, ATLAS_H = 1152;
+const ESC_ATLAS = 1.5;                                  // píxeles reales por píxel de dibujo: celdas más nítidas sin cambiar los trazos
+export const CELDA_W = 128 * ESC_ATLAS, CELDA_H = 192 * ESC_ATLAS, LOCAL_W = 256 * ESC_ATLAS;
+export const ATLAS_W = 2048 * ESC_ATLAS, ATLAS_H = 1152 * ESC_ATLAS;
 export const TIPOS_BAHIA = ['ventanaBaja', 'puerta', 'garaje', 'ventana', 'balcon', 'persiana', 'doble', 'ciego'] as const;
 export const COLUMNAS_LOCAL = 4;
-const X_LOCAL = 1024;
+const X_LOCAL = 1024 * ESC_ATLAS;
 
 /** Cinco paletas de la región: cal y ladrillo, añil, amarillo y rojo, rosa y verde, y gris de edificio. */
 export const PALETAS_ATLAS: EstiloFachada[] = [
@@ -472,14 +473,24 @@ export function celdaLocal(i: number): [number, number, number, number] {
   return [(x0 + m) / ATLAS_W, 1 - (y0 + CELDA_H - m) / ATLAS_H, (x0 + LOCAL_W - m) / ATLAS_W, 1 - (y0 + m) / ATLAS_H];
 }
 
+/** Textura de teja de barro que se repite sobre los techos del mapa (3 tejas por repetición). */
+export function crearTexturaTeja(): THREE.CanvasTexture {
+  const [c, x] = lienzo(288, 288);
+  pintarTeja(x, 288, 7);
+  const t = aTextura(c);
+  t.anisotropy = 8;
+  return t;
+}
+
 export function crearAtlasFachadas(): THREE.CanvasTexture {
   const [c, x] = lienzo(ATLAS_W, ATLAS_H);
   x.fillStyle = '#d8d2c4'; x.fillRect(0, 0, ATLAS_W, ATLAS_H);
-  const W = CELDA_W, H = CELDA_H;
+  const W = 128, H = 192;                                // tamaño de dibujo de una celda
   PALETAS_ATLAS.forEach((e, p) => {
     TIPOS_BAHIA.forEach((tipo, t) => {
       x.save();
-      x.translate(t * W, p * H);
+      x.translate(t * CELDA_W, p * CELDA_H);
+      x.scale(ESC_ATLAS, ESC_ATLAS);
       x.beginPath(); x.rect(0, 0, W, H); x.clip();
       revoque(x, W, H, e.pared, p * 17 + t * 5);
       const baja = tipo === 'ventanaBaja' || tipo === 'puerta' || tipo === 'garaje';
@@ -510,8 +521,9 @@ export function crearAtlasFachadas(): THREE.CanvasTexture {
       const e = PALETAS_ATLAS[(t + v * 2) % PALETAS_ATLAS.length];
       x.save();
       x.translate(X_LOCAL + (i % COLUMNAS_LOCAL) * LOCAL_W, Math.floor(i / COLUMNAS_LOCAL) * CELDA_H);
-      x.beginPath(); x.rect(0, 0, LOCAL_W, CELDA_H); x.clip();
-      pintarFrenteNegocio(x, LOCAL_W, CELDA_H, { nombre: n.nombres[(t + v) % n.nombres.length], subtitulo: n.subtitulo, fondo, tinta, frente: n.frente, interior: n.interior, bandera: n.bandera }, e, t * 7 + v);
+      x.scale(ESC_ATLAS, ESC_ATLAS);
+      x.beginPath(); x.rect(0, 0, 256, 192); x.clip();
+      pintarFrenteNegocio(x, 256, 192, { nombre: n.nombres[(t + v) % n.nombres.length], subtitulo: n.subtitulo, fondo, tinta, frente: n.frente, interior: n.interior, bandera: n.bandera }, e, t * 7 + v);
       x.restore();
     }
   });

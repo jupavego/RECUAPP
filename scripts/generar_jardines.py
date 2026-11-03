@@ -1,6 +1,6 @@
 """Jardines y patios del casco urbano: lo que queda libre de cada predio una vez descontadas las construcciones.
 
-Fuente: catastro de Girardota (capas 4 «Construcciones Urbanas» y 6 «Predios Urbanos» del servicio del Área Metropolitana del
+Fuente: catastro de Girardota (capas 4 y 5 «Construcciones» y 6 y 7 «Predios» (urbanos y rurales) del servicio del Área Metropolitana del
 Valle de Aburrá, © Alcaldía de Girardota, Catastro). Las construcciones se toman de la descarga que deja
 generar_catastro_3d.py en insumos/catastro/; los predios se bajan aquí (y se guardan en la misma carpeta).
 
@@ -38,14 +38,16 @@ FRANJA = 1.0              # m: se quitan las franjas de menos de 2 m (abrir con 
 SIMPLIFICAR = 0.4
 MAX_ARBOLES, MAX_MATAS = 2, 6
 M2_POR_ARBOL, M2_POR_MATA = 70, 14
+RADIO_FINCA = 18          # m alrededor de las construcciones de un predio rural
+MAX_ARBOLES_FINCA = 3
 
 relieve = json.loads((RAIZ / f'public/data/mapa3d/relieve-{MUNICIPIO}.json').read_text(encoding='utf-8'))
 oeste, sur, este, norte = relieve['bbox']
 M_LON, M_LAT = 111320 * math.cos(math.radians((sur + norte) / 2)), 110574
 
 
-def predios():
-    destino = CRUDO / f'predios-urbanos-{MUNICIPIO}.geojson'
+def predios(capa=6, nombre='urbanos'):
+    destino = CRUDO / f'predios-{nombre}-{MUNICIPIO}.geojson'
     if destino.exists():
         return json.loads(destino.read_text(encoding='utf-8'))['features']
     feats, desde = [], 0
@@ -54,14 +56,14 @@ def predios():
             'where': '1=1', 'geometry': f'{oeste},{sur},{este},{norte}', 'geometryType': 'esriGeometryEnvelope', 'inSR': 4326,
             'outSR': 4326, 'spatialRel': 'esriSpatialRelIntersects', 'outFields': 'PK_PREDIOS', 'geometryPrecision': 7,
             'resultOffset': desde, 'resultRecordCount': 1000, 'f': 'geojson'})
-        req = urllib.request.Request(f'{SERVICIO}/6/query?{q}', headers={'User-Agent': 'recuapp-poc/0.1'})
+        req = urllib.request.Request(f'{SERVICIO}/{capa}/query?{q}', headers={'User-Agent': 'recuapp-poc/0.1'})
         lote = json.loads(urllib.request.urlopen(req, timeout=120).read()).get('features', [])
         feats += lote
         if len(lote) < 1000:
             break
         desde += 1000
     destino.write_text(json.dumps({'type': 'FeatureCollection', 'features': feats}, separators=(',', ':')), encoding='utf-8')
-    print(f'predios urbanos: {len(feats)} -> {destino.relative_to(RAIZ)}')
+    print(f'predios {nombre}: {len(feats)} -> {destino.relative_to(RAIZ)}')
     return feats
 
 
@@ -74,14 +76,15 @@ def codificar(x, y):
 
 
 huellas = defaultdict(list)
-for f in json.loads((CRUDO / f'construcciones-urbanas-{MUNICIPIO}.geojson').read_text(encoding='utf-8'))['features']:
-    if f.get('geometry'):
-        huellas[f['properties']['PK_PREDIOS']].append(make_valid(a_metros(shape(f['geometry']))))
+for nombre in ('urbanas', 'rurales'):
+    for f in json.loads((CRUDO / f'construcciones-{nombre}-{MUNICIPIO}.geojson').read_text(encoding='utf-8'))['features']:
+        if f.get('geometry'):
+            huellas[f['properties']['PK_PREDIOS']].append(make_valid(a_metros(shape(f['geometry']))))
 
 azar = random.Random(20251102)
 jardines, arboles, matas = [], [], []
 sin_construccion = 0
-for f in predios():
+for rural, f in [(False, f) for f in predios()] + [(True, f) for f in predios(7, 'rurales')]:
     if not f.get('geometry'):
         continue
     lote = make_valid(a_metros(shape(f['geometry']))).buffer(0)
@@ -89,6 +92,8 @@ for f in predios():
     if not construido:
         sin_construccion += 1          # lote sin construir: se deja a la vegetación general, no es un jardín
         continue
+    if rural:                          # finca: el patio es el entorno de la casa (RADIO_FINCA m), el resto del predio queda al paisaje
+        lote = lote.intersection(unary_union([c.buffer(RADIO_FINCA) for c in construido]))
     libre = lote.buffer(-0.2).difference(unary_union([c.buffer(MARGEN) for c in construido])).buffer(-FRANJA).buffer(FRANJA)
     for parte in (libre.geoms if hasattr(libre, 'geoms') else [libre]):
         if parte.is_empty or parte.geom_type != 'Polygon' or parte.area < AREA_MINIMA:
@@ -117,8 +122,8 @@ for f in predios():
                         break
             return res
 
-        n_arb = min(MAX_ARBOLES, int(parte.area // M2_POR_ARBOL))
-        n_mat = min(MAX_MATAS, max(1, int(parte.area // M2_POR_MATA)))
+        n_arb = min(MAX_ARBOLES_FINCA if rural else MAX_ARBOLES, int(parte.area // (M2_POR_ARBOL * (3 if rural else 1))))
+        n_mat = min(3 if rural else MAX_MATAS, max(1, int(parte.area // M2_POR_MATA)))
         a = puntos(parte.buffer(-2.5), n_arb)
         m = puntos(parte.buffer(-0.6), n_mat)
         jardines.append(contorno)

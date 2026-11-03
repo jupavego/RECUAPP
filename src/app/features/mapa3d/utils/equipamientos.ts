@@ -483,7 +483,7 @@ export function modelarEquipamiento(c: CategoriaCatalogo, tipo: string, nombre: 
   const e = new Ensamble();
   const t = `${tipo} ${nombre}`.toLowerCase();
   switch (c) {
-    case 'industria': return fabrica(e);
+    case 'industria': return /parque/.test(t) ? parqueIndustrial() : fabrica(e);
     case 'vivienda':
       if (tipo === 'Tipología') return tipologia(nombre, Math.floor(rnd() * 1e9));
       return /edificio/.test(t) ? edificioUrbano(e) : vivienda(e);
@@ -536,6 +536,61 @@ function fabrica(e: Ensamble): Modelo {
   for (let k = 0; k < bandas; k++) e.cil(4.4 - 2 * ((k + 1) / bandas), 4.4 - 2 * (k / bandas), seg, k % 2 ? '#d8d8d8' : '#c4342d', cx, seg * k, cz);
   e.cil(2.7, 2.4, 2, '#2b2f36', cx, ch, cz);
   return { piezas: e.piezas, radio: 52, losa: [largo + 14, fondo + 12] };
+}
+
+/** Medidas y colores de una unidad de parque industrial (bodega modular). */
+export interface UnidadParque { largo: number; fondo: number; alto: number; pared: string; acento: string; ch: number; porteria?: boolean; }
+/** Posición de la chimenea de una unidad de parque, en coordenadas locales. */
+export const chimeneaParque = (u: Pick<UnidadParque, 'largo' | 'fondo'>) => ({ cx: -u.largo / 2 + 4, cz: -u.fondo / 2 - 1.5 });
+const PAREDES_PARQUE = ['#e3e0d8', '#d9d2c3', '#cfd8de', '#e1e4e7'];
+const ACENTOS_PARQUE = ['#c4342d', '#1f6f8b', '#e0a526', '#3f7d4e', '#6b4fa0'];
+/** Pared y color de acento de una unidad de parque, por un número cualquiera (cada unidad lleva su color corporativo). */
+export const colorParque = (n: number) => ({ pared: PAREDES_PARQUE[n % PAREDES_PARQUE.length], acento: ACENTOS_PARQUE[(n * 3 + 1) % ACENTOS_PARQUE.length] });
+
+/**
+ * Unidad de un parque industrial: bodega modular de lámina con cubierta a dos aguas, franja de color corporativo, portones
+ * enrollables con muelle, franja de ventanas de oficina, chimenea corta, parqueadero con rayas, luminarias y árboles. Con
+ * `porteria`, la unidad lleva además el pórtico de entrada del parque con garita y pluma. Centrada en el origen; la fachada
+ * con portones da a +z. Es la misma pieza que usa el mapa 3D para las fábricas que comparten predio.
+ */
+export function unidadParque(u: UnidadParque): Modelo['piezas'] {
+  const e = new Ensamble(), { largo, fondo, alto } = u, { cx, cz } = chimeneaParque(u);
+  e.caja(largo, alto, fondo, u.pared, 0, 0, 0)
+    .dosAguas(fondo + 1.2, 3.2, largo + 1.2, '#8a949e', 0, alto, 0, Math.PI / 2)
+    .caja(largo + 0.4, 1.5, fondo + 0.4, u.acento, 0, alto - 2.4, 0);               // franja de color de la empresa
+  const n = Math.max(3, Math.round(largo / 12)), w = largo / n;
+  for (let k = 0; k < n; k++) {
+    const x = -largo / 2 + w * (k + 0.5);
+    e.caja(w * 0.62, 5.2, 0.5, '#cdd5da', x, 0, fondo / 2 + 0.2).caja(w * 0.7, 0.5, 0.6, '#4b5563', x, 5.2, fondo / 2 + 0.25)
+      .caja(w * 0.7, 0.9, 2, '#9aa0a6', x, 0, fondo / 2 + 1.3);                     // portón y muelle de carga
+  }
+  e.caja(largo - 4, 1.8, 0.3, '#7fb7d6', 0, 6.4, fondo / 2 + 0.1);                  // oficinas sobre los portones
+  e.cil(1.1, 1.3, u.ch, '#8d949b', cx, 0, cz, 10).cil(1.6, 1.6, 0.8, '#2b2f36', cx, u.ch, cz, 10);
+  for (let k = 0; k < 6; k++) e.caja(0.35, 0.12, 4.2, '#f3f4f6', -largo / 2 + 3 + k * (largo - 6) / 5, 0.02, fondo / 2 + 6.5);
+  for (const sx of [-1, 1]) {
+    e.cil(0.25, 0.3, 9, '#4b5563', sx * (largo / 2 - 1), 0, fondo / 2 + 10, 6).caja(2.2, 0.35, 0.7, '#f5e6a8', sx * (largo / 2 - 1), 9, fondo / 2 + 10);
+    e.arbol(sx * (largo / 2 + 3), fondo / 2 + 5, 6);
+  }
+  if (u.porteria) {
+    const z = fondo / 2 + 11;
+    for (const sx of [-1, 1]) e.caja(1.6, 7, 1.6, '#9aa0a6', sx * 7, 0, z);
+    e.caja(16.4, 2.2, 1.4, '#1f4e79', 0, 7, z).caja(11, 0.6, 1.5, '#f3f4f6', 0, 7.8, z)
+      .caja(6, 0.35, 0.35, '#c4342d', -3.6, 1.2, z).caja(3.6, 3, 3.6, '#e9e5dc', 10.5, 0, z).caja(4.6, 0.4, 4.6, '#6b7280', 10.5, 3, z);
+  }
+  return e.piezas;
+}
+
+/** Parque industrial del catálogo: tres bodegas modulares en hilera sobre una plataforma de asfalto, con su pórtico de entrada. */
+function parqueIndustrial(): Modelo {
+  const largo = 54, fondo = 32, paso = largo + 12, piezas: Modelo['piezas'] = [];
+  [-1, 0, 1].forEach((k, i) => {
+    const c = colorParque(i + 2);
+    for (const p of unidadParque({ largo, fondo, alto: 11, pared: c.pared, acento: c.acento, ch: 28 + i * 4, porteria: k === 0 })) {
+      p.g.translate(k * paso, 0, 0);
+      piezas.push(p);
+    }
+  });
+  return { piezas, radio: paso * 1.5, losa: [paso * 3 + 4, fondo + 24] };
 }
 
 /**
@@ -1046,6 +1101,7 @@ export type CategoriaCatalogo = CategoriaPunto | 'industria' | 'vivienda' | 'veh
 export interface Variante { categoria: CategoriaCatalogo; etiqueta: string; tipo: string; nombre: string; }
 export const VARIANTES: Variante[] = [
   { categoria: 'industria', etiqueta: 'Fábrica', tipo: 'Industria', nombre: 'Fábrica' },
+  { categoria: 'industria', etiqueta: 'Parque industrial (unidades modulares)', tipo: 'Industria', nombre: 'Parque industrial' },
   { categoria: 'vivienda', etiqueta: 'Vivienda típica', tipo: 'Vivienda', nombre: 'Vivienda' },
   { categoria: 'vivienda', etiqueta: 'Edificio del casco urbano', tipo: 'Edificio', nombre: 'Edificio' },
   ...TIPOLOGIAS.map(t => ({ categoria: 'vivienda' as const, etiqueta: `${t.etiqueta} · fachada detallada`, tipo: 'Tipología', nombre: t.id })),
