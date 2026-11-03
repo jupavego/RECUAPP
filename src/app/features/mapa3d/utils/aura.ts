@@ -3,11 +3,25 @@ import { CategoriaPunto } from '../../mapa/services/mapa.service';
 
 /** Símbolo de cada tipo de infraestructura, para el icono flotante. */
 /** Las industrias son una categoría más del mapa 3D, con su propio color, símbolo y neón. */
-export type CategoriaIcono = CategoriaPunto | 'industria';
+export type CategoriaIcono = CategoriaPunto | 'industria' | CategoriaServicio;
 export const COLOR_INDUSTRIA = '#f97316';
+
+/** Los edificios de servicios públicos son una categoría con subtipos; cada subtipo tiene su pin (el glifo se cambia por un icono propio). */
+export const SERVICIOS_GRUPO = { nombre: 'Servicios públicos', color: '#0891b2', glifo: '🏗️' };
+export const SERVICIOS = [
+  { id: 'srv-subestacion', nombre: 'Subestaciones eléctricas', color: '#f59e0b', glifo: '⚡' },
+  { id: 'srv-central', nombre: 'Centrales hidroeléctricas', color: '#3b82f6', glifo: '🌊' },
+  { id: 'srv-bocatoma', nombre: 'Bocatomas de acueductos', color: '#0ea5e9', glifo: '💧' },
+  { id: 'srv-tratamiento', nombre: 'Tratamiento de agua', color: '#14b8a6', glifo: '♻️' },
+  { id: 'srv-tanque', nombre: 'Tanques de agua', color: '#64748b', glifo: '🛢️' },
+  { id: 'srv-ptar', nombre: 'PTAR urbana (proyecto)', color: '#2bb3bf', glifo: '🚧' },
+  { id: 'srv-eca', nombre: 'ECA (proyecto)', color: '#e0903f', glifo: '📦' },
+] as const;
+export type CategoriaServicio = typeof SERVICIOS[number]['id'];
 
 export const GLIFO: Record<CategoriaIcono, string> = {
   educacion: '🎓', cultura: '🎭', salud: '🏥', turismo: '🧭', deporte: '⚽', justicia: '🛡️', patrimonio: '🏺', industria: '🏭',
+  ...(Object.fromEntries(SERVICIOS.map(s => [s.id, s.glifo])) as Record<CategoriaServicio, string>),
 };
 
 /** Fracción de la altura del domo que sí lleva luz: solo el borde de abajo, sin techo. */
@@ -162,7 +176,7 @@ export interface Icono {
   cat: CategoriaIcono; color: string;
   x: number; cima: number; z: number;
   /** a qué edificio pertenece (para el clic) */
-  ref?: { tipo: 'equip' | 'fabrica'; i: number };
+  ref?: { tipo: 'equip' | 'fabrica' | 'servicio'; i: number };
   /** zona (vereda) en que cae el edificio; -1 si ninguna */
   zona?: number;
   /** pone el sprite sobre su edificio con el tamaño `tam` (m); `visible` false lo esconde */

@@ -25,7 +25,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 from shapely import make_valid
-from shapely.geometry import Polygon, box, shape
+from shapely.geometry import LineString, Polygon, box, shape
 from shapely.strtree import STRtree
 from shapely.geometry.polygon import orient
 from shapely.ops import unary_union
@@ -171,9 +171,57 @@ def centro_delta(a, k):
     return (sum(xs) / len(xs) / k - oeste) * M_LON, (sum(ys) / len(ys) / k - sur) * M_LAT
 
 
-# Zonas con propiedad horizontal que el catastro no trae como construcciones (unidades residenciales Llano Azul, junto a la unidad deportiva):
-# ahí se toman las huellas de Overture/OSM aunque la celda esté cubierta. (oeste, este, sur, norte) en grados; se dibujan de 2 pisos.
-ZONAS_COMPLEMENTO = [(-75.4515, -75.4495, 6.3705, 6.3728)]
+# Urbanizaciones en propiedad horizontal que el catastro no trae como construcciones (Llano Azul, junto a la unidad deportiva). Ahí no se
+# toman las huellas de Overture/OSM (agrupan las hileras en bloques informes): se arman los bloques de casas adosadas de 2 pisos a ambos lados
+# de las calles locales de la zona, como en la imagen satelital. (oeste, este, sur, norte) en grados.
+ZONAS_URBANIZACION = [(-75.4513, -75.4486, 6.3705, 6.3727)]
+ANCHO_VIA = [34, 13, 6]    # m, ancho con que el mapa dibuja las vías de cada clase (ANCHO_VIA en mapa3d.component.ts)
+RETIRO, FONDO_CASA = 3.0, 10.0
+LARGO_BLOQUE, PASAJE = (28, 44), (4, 6)   # m: largo de un bloque de casas adosadas y pasaje entre bloques
+
+
+def bloques_de_urbanizacion(zona):
+    """Rectángulos (en metros) de bloques de casas adosadas frente a las calles locales de la zona, sin pisar vías ni otros bloques."""
+    from shapely.ops import substring
+    import random
+    d = json.loads((RAIZ / f'public/data/mapa3d/vias-{MUNICIPIO}.json').read_text(encoding='utf-8'))
+    lineas = []
+    for v in d['v']:
+        x, y, pts = v[1], v[2], [(v[1], v[2])]
+        for i in range(3, len(v), 2):
+            x += v[i]; y += v[i + 1]; pts.append((x, y))
+        if len(pts) > 1:
+            lineas.append((v[0], LineString([((px / d['k'] - oeste) * M_LON, (py / d['k'] - sur) * M_LAT) for px, py in pts])))
+    recinto = box((zona[0] - oeste) * M_LON, (zona[2] - sur) * M_LAT, (zona[1] - oeste) * M_LON, (zona[3] - sur) * M_LAT)
+    calzadas = unary_union([l.buffer(ANCHO_VIA[c] / 2 + 1.5) for c, l in lineas])
+    azar, bloques = random.Random(2025), []
+    desplazamiento = ANCHO_VIA[1] / 2 + RETIRO + FONDO_CASA / 2
+    for clase, linea in lineas:
+        if clase != 1 or not linea.intersects(recinto):
+            continue
+        tramo = linea.intersection(recinto)
+        for parte in (tramo.geoms if hasattr(tramo, 'geoms') else [tramo]):
+            if parte.geom_type != 'LineString' or parte.length < LARGO_BLOQUE[0]:
+                continue
+            for lado in ('left', 'right'):
+                paralela = parte.parallel_offset(desplazamiento, lado)
+                for frente in (paralela.geoms if hasattr(paralela, 'geoms') else [paralela]):
+                    if frente.geom_type != 'LineString' or frente.length < LARGO_BLOQUE[0]:
+                        continue
+                    s = azar.uniform(0, PASAJE[1])
+                    while True:
+                        largo = azar.uniform(*LARGO_BLOQUE)
+                        if s + largo > frente.length:
+                            break
+                        casa = substring(frente, s, s + largo).buffer(FONDO_CASA / 2, cap_style=2, join_style=2).simplify(0.3)
+                        s += largo + azar.uniform(*PASAJE)
+                        if casa.geom_type != 'Polygon' or not casa.within(recinto) or casa.intersects(calzadas):
+                            continue
+                        if any(casa.buffer(1.5).intersects(o) for o in bloques):
+                            continue
+                        bloques.append(casa)
+    return bloques
+
 
 por_celda = Counter()
 for b in edificios:
@@ -183,8 +231,9 @@ nuevos, en_cubierta = 0, 0
 for b in overture['e']:
     cx, cy = centro_delta(b, overture['k'])
     lon_c, lat_c = cx / M_LON + oeste, cy / M_LAT + sur
-    en_zona = any(z[0] < lon_c < z[1] and z[2] < lat_c < z[3] for z in ZONAS_COMPLEMENTO)
-    if por_celda[celda(cx, cy)] >= MIN_COBERTURA and not en_zona:
+    if any(z[0] < lon_c < z[1] and z[2] < lat_c < z[3] for z in ZONAS_URBANIZACION):
+        continue                       # las urbanizaciones se arman aparte (bloques_de_urbanizacion)
+    if por_celda[celda(cx, cy)] >= MIN_COBERTURA:
         en_cubierta += 1
         continue
     pts, x, y = [], b[1], b[2]
@@ -192,9 +241,15 @@ for b in overture['e']:
     for i in range(3, len(b), 2):
         x += b[i]; y += b[i + 1]; pts.append((x, y))
     anillo = [((px / overture['k'] - oeste) * M_LON, (py / overture['k'] - sur) * M_LAT) for px, py in pts]
-    edificios.append([6.0 if en_zona else b[0]] + deltas(anillo))      # en la zona, 2 pisos de 3 m (Overture no trae altura)
-    pisos_l.append(2 if en_zona else 0); usos_l.append(0); rural_l.append(2)
+    edificios.append([b[0]] + deltas(anillo))
+    pisos_l.append(0); usos_l.append(0); rural_l.append(2)
     nuevos += 1
+for zona in ZONAS_URBANIZACION:
+    casas = bloques_de_urbanizacion(zona)
+    for g in casas:
+        edificios.append([2 * ALTO_PISO] + deltas(list(orient(g, 1.0).exterior.coords)[:-1]))
+        pisos_l.append(2); usos_l.append(0); rural_l.append(2)
+    print(f'urbanización {zona}: {len(casas)} bloques de casas adosadas (2 pisos)')
 print(f'complemento: {nuevos} huellas de Overture fuera de la cobertura del catastro ({en_cubierta} dentro de ella, ignoradas)')
 
 SALIDA.write_text(json.dumps({'k': K, 'e': edificios, 'p': pisos_l, 'u': usos_l, 'r': rural_l}, separators=(',', ':')), encoding='utf-8')
