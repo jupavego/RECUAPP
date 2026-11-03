@@ -148,6 +148,18 @@ FUENTE_OBS = "Observación sobre imagen satelital (Google Maps), sin registro en
 agregar(c="deporte", t="Coliseo", n="Coliseo Metropolitano de Girardota", lat=6.372864, lng=-75.451106, f=FUENTE_OBS,
         e="Responsable: INDER / Alcaldía de Girardota")
 
+# Plaza de mercado y centrales de transporte veredal: ubicadas con el pin de Google Maps y la imagen satelital.
+for _n, _t, _x, _lat, _lng in [
+    ("Plaza de Mercado", "Economía campesina / mercado local", "Plaza de mercado de Girardota, entre la carrera 16, la calle 6 y la calle 5B, junto al parque principal.", 6.3780336, -75.4454482),
+    ("Central de transporte veredal (calle 5b)", "Transporte público veredal", "Paradero de los camperos de ruta que salen hacia las veredas, sobre la calle 5B junto a la plaza de mercado.", 6.378196, -75.445186),
+    ("Parqueadero de buses veredal", "Transporte público veredal", "Parqueadero de los buses y camperos veredales, al oriente de la carrera 15.", 6.37779, -75.444644),
+]:
+    agregar(c="turismo", t=_t, n=_n, x=_x, lat=_lat, lng=_lng, f=FUENTE_OBS, e="Ubicación tomada del pin de Google Maps y de la imagen satelital.", v="Cabecera municipal")
+agregar(c="turismo", t="Centro comercial", n="Centro comercial (manzana del parque)", lat=6.37709, lng=-75.446718, f=FUENTE_OBS, v="Cabecera municipal",
+        x="Edificio comercial de dos pisos con cubierta plana blanca, en la manzana de las carreras 16 y 15, junto al parque principal.", e="Ubicación tomada de la imagen satelital.")
+agregar(c="turismo", t="Parqueadero público", n="Parqueadero Santa Ana", lat=6.376837, lng=-75.447134, f=FUENTE_OBS, v="Cabecera municipal",
+        x="Parqueadero público a cielo abierto, con portón sobre la carrera 16, en el interior de la manzana entre las carreras 16 y 15.", e="Ubicación tomada de la imagen satelital y de Street View.")
+
 # ── Justicia (el Excel no trae coordenadas: se geocodifican en la app) ─────────
 for r in hoja("justicia/Directorio_Personerias_Defensoria_Antioquia_125_municipios.xlsx", 0).iter_rows(min_row=5, values_only=True):
     if r[1] and norm(r[1]) == "girardota":

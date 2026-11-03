@@ -74,6 +74,103 @@ class Ensamble {
   }
 }
 
+/** Torre de celosía de cuatro patas (afinada hacia arriba) con dos pares de crucetas trianguladas y cadenas de aisladores colgantes. */
+function torreAltaTension(e: Ensamble): Modelo {
+  const acero = '#d9dde0', H = 38, base = 4.4, cima = 0.7;
+  const barra = (a: THREE.Vector3, b: THREE.Vector3, r = 0.14, color = acero) => {
+    const dir = b.clone().sub(a), l = dir.length();
+    const g = new THREE.CylinderGeometry(r, r, l, 5).rotateX(Math.PI / 2);
+    const q = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 0, 1), dir.normalize());
+    g.applyQuaternion(q).translate((a.x + b.x) / 2, (a.y + b.y) / 2, (a.z + b.z) / 2);
+    e.piezas.push({ g, color });
+  };
+  const ancho = (y: number) => base + (cima - base) * Math.min(y / H, 1);
+  const V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
+  const esquinas = (y: number) => { const w = ancho(y); return [V(-w, y, -w), V(w, y, -w), V(w, y, w), V(-w, y, w)]; };
+  const niveles = 10;
+  for (let k = 0; k < niveles; k++) {
+    const y0 = H * k / niveles, y1 = H * (k + 1) / niveles, c0 = esquinas(y0), c1 = esquinas(y1);
+    for (let i = 0; i < 4; i++) {
+      barra(c0[i], c1[i], 0.26);                                       // patas
+      const j = (i + 1) % 4;
+      barra(c1[i], c1[j], 0.12);                                       // anillos horizontales
+      barra(c0[i], c1[j], 0.09); barra(c0[j], c1[i], 0.09);             // diagonales en X
+    }
+  }
+  // crucetas: armadura triangular a cada lado en dos niveles, con una cadena de aisladores en cada punta
+  for (const [y, largo] of [[H * 0.68, 8.4], [H * 0.84, 7.2]] as const) {
+    const w = ancho(y);
+    for (const lado of [-1, 1]) {
+      const punta = V(lado * (w + largo), y + 0.4, 0), arriba = V(lado * w, y + 3.2, 0), abajo = V(lado * w, y - 0.8, 0);
+      barra(abajo, punta, 0.16); barra(arriba, punta, 0.16); barra(arriba, abajo, 0.12);
+      for (let t = 1; t < 4; t++) {
+        const f = t / 4, ps = V(lado * (w + largo * f), y + 0.4 * f + (3.2 - 3.2 * f) * 0.0 - 0.8 * (1 - f) , 0), pa = V(lado * (w + largo * f), y + 3.2 - 2.8 * f, 0);
+        barra(ps, pa, 0.09);
+      }
+      barra(V(lado * w, y, 1.2), V(lado * w, y, -1.2), 0.12);
+      for (const dz of [-1, 1]) barra(V(lado * w, y - 0.8, dz * w * 0.9), punta.clone().setZ(0), 0.07);
+      e.cil(0.2, 0.2, 2.6, '#c8b79b', punta.x, punta.y - 2.9, 0, 6);        // cadena de aisladores
+      e.cil(0.5, 0.5, 0.5, '#5b6168', punta.x, punta.y - 3.3, 0, 6);        // grapa y conductor
+    }
+  }
+  // cabeza con el cable de guarda
+  barra(V(0, H, 0), V(0, H + 3.5, 0), 0.16);
+  barra(V(-5.5, H - 1, 0), V(0, H + 3.5, 0), 0.08); barra(V(5.5, H - 1, 0), V(0, H + 3.5, 0), 0.08);
+  return { piezas: e.piezas, radio: 16 };
+}
+
+/** Servicios públicos: subestación, torre de alta tensión, central, bocatoma, tratamiento, tanque, PTAR y ECA (proyectos como huella). */
+function servicio(e: Ensamble, t: string): Modelo {
+  const concreto = '#c9ccc9', metal = '#8d949b', loza = '#a8a393';
+  if (/subestaci/.test(t)) {
+    const w = 70, d = 48;
+    e.caja(w, 0.3, d, loza, 0, 0, 0).caja(13, 5.5, 30, '#e6e3da', -w / 2 + 9, 0.3, 0).caja(13.8, 0.6, 30.8, '#b4b8ba', -w / 2 + 9, 5.8, 0)
+      .caja(7, 4, 7, '#e0ddd2', -w / 2 + 9, 0.3, 19).caja(7.6, 0.5, 7.6, '#b4b8ba', -w / 2 + 9, 4.3, 19);
+    for (let k = 0; k < 5; k++) {
+      const x = -w / 2 + 22 + k * 7;
+      for (const z of [-14, 0, 14]) {
+        if (k % 3 === 0) e.caja(0.95, 12, 0.95, concreto, x, 0.3, z - 5).caja(0.95, 12, 0.95, concreto, x, 0.3, z + 5).caja(0.9, 0.8, 11, metal, x, 12, z);
+        else if (k % 3 === 1) for (const dz of [-3.5, 0, 3.5]) e.cil(0.3, 0.35, 4.2, '#cdb9a3', x, 0.3, z + dz, 8).caja(1.8, 1.2, 1.4, '#7c8a96', x, 0.3, z + dz);
+        else e.caja(0.35, 0.35, 11, metal, x, 6.4, z).caja(0.6, 6, 0.6, concreto, x, 0.3, z - 5).caja(0.6, 6, 0.6, concreto, x, 0.3, z + 5);
+      }
+    }
+    for (const z of [-15, 0, 15]) {
+      e.caja(7, 5.5, 5, '#6d7f8c', w / 2 - 9, 0.3, z).caja(1.4, 4.5, 4.4, '#5d6e7a', w / 2 - 13.4, 0.3, z).caja(1.4, 4.5, 4.4, '#5d6e7a', w / 2 - 4.6, 0.3, z);
+      for (const dz of [-1.6, 0, 1.6]) e.cil(0.3, 0.38, 2.6, '#cdb9a3', w / 2 - 9, 5.8, z + dz, 8);
+    }
+    for (const x of [-w / 2, w / 2]) for (let z = -d / 2; z <= d / 2; z += 6) e.caja(0.16, 2.5, 0.16, '#595f66', x, 0.3, z);
+    for (const z of [-d / 2, d / 2]) for (let x = -w / 2; x <= w / 2; x += 6) e.caja(0.16, 2.5, 0.16, '#595f66', x, 0.3, z);
+    return { piezas: e.piezas, radio: 46, losa: [w + 4, d + 4] };
+  }
+  if (/torre/.test(t)) return torreAltaTension(e);
+  if (/central/.test(t)) {
+    e.caja(60, 0.3, 40, loza, 0, 0, 0).caja(46, 12, 20, '#d6d3ca', 0, 0.3, 0).caja(47.5, 0.8, 21.5, '#4f6f8a', 0, 12.3, 0)
+      .caja(46.2, 1.4, 20.2, '#7b9db8', 0, 8, 0);
+    e.cil(1.8, 1.8, 30, '#6b7480', -14, 12, -12, 12).caja(5, 3, 5, concreto, -14, 0.3, -12);       // tubería forzada
+    for (const x of [-12, 0, 12]) e.cil(2.2, 2.2, 3, '#4aa3a8', x, 12.3, 5, 16);
+    for (const x of [-14, 14]) e.caja(8, 6, 6, '#e0ddd2', x, 0.3, 17);
+    return { piezas: e.piezas, radio: 40, losa: [60, 40] };
+  }
+  if (/bocatoma/.test(t)) {
+    e.cil(8, 8, 0.5, '#ffd23f', 0, 0, 0, 28).cil(8.5, 8.5, 0.25, '#2f8fff', 0, 0.5, 0, 28).caja(4, 2.4, 3.2, concreto, 0, 0.5, 0).caja(4.6, 0.4, 3.8, '#7d6f63', 0, 2.9, 0)
+      .cil(0.35, 0.35, 14, '#2f8fff', 0, 0.5, 0, 8);
+    return { piezas: e.piezas, radio: 9 };
+  }
+  if (/tratamiento/.test(t)) {
+    for (const x of [-5.5, 5.5]) e.cil(4, 4, 3, '#4aa3a8', x, 0, 0, 20);
+    e.caja(5, 3.4, 4, '#d9d4c7', 0, 0, 7).caja(5.6, 0.5, 4.6, '#7d6f63', 0, 3.4, 7).cil(0.35, 0.35, 12, '#4aa3a8', 0, 0, -6, 8);
+    return { piezas: e.piezas, radio: 12 };
+  }
+  if (/tanque/.test(t)) {
+    e.cil(5, 5, 7, '#dfe6ea', 0, 0, 0, 24).cil(5.2, 5.2, 0.5, '#9aa4ad', 0, 7, 0, 24).caja(1.4, 2.4, 1.4, concreto, 6.5, 0, 0);
+    return { piezas: e.piezas, radio: 9 };
+  }
+  // proyectos aún sin construir: huella translúcida simulada con losa y borde
+  const color = /eca/.test(t) ? '#e0903f' : '#2bb3bf';
+  e.cil(26, 26, 0.5, color, 0, 0, 0, 40).cil(26.5, 26.5, 0.9, '#ffffff', 0, 0, 0, 40).cil(25.5, 25.5, 1.1, color, 0, 0, 0, 40);
+  return { piezas: e.piezas, radio: 28 };
+}
+
 /** Escuela o colegio: urbano en L de dos pisos con patio y bandera; rural de un piso con techo a dos aguas. */
 function escuela(e: Ensamble, rural: boolean): Modelo {
   if (rural) {
@@ -102,6 +199,25 @@ function escuela(e: Ensamble, rural: boolean): Modelo {
     .caja(0.2, 0.2, 14, '#fff', 9, 0.2, 14).caja(10, 0.2, 0.2, '#fff', 9, 0.2, 14)
     .mastil(12, 24, 6, AZUL).arbol(-22, 18, 8).arbol(22, 18, 7);
   return { piezas: e.piezas, radio: 32, losa: [50, 32] };
+}
+
+/**
+ * I. E. Colombia: ala larga de aulas de dos pisos con techo de teja a lo largo de la calle 5 (+z), una segunda ala
+ * perpendicular en un extremo, y entre ambas el patio de concreto con cancha pintada, mástil y árboles. Frente hacia −z.
+ */
+function colegioUrbano(e: Ensamble, [W, D]: [number, number]): Modelo {
+  const MURO = '#efe2c6', LADRILLO = '#a8553a';
+  e.caja(W, 0.2, D, '#d2d5d8', 0, 0, 0);
+  const largo = W - 4, ala = D - 6;
+  e.caja(largo, 9, 11, MURO, 0, 0.2, D / 2 - 7).caja(largo + 0.8, 0.8, 11.8, LADRILLO, 0, 9.2, D / 2 - 7).dosAguas(13, 3.4, largo + 1, TEJA, 0, 10, D / 2 - 7, Math.PI / 2);
+  e.ventanas(largo - 4, 1.5, VIDRIO, 0, 1.8, D / 2 - 12.5, true).ventanas(largo - 4, 1.5, VIDRIO, 0, 5.8, D / 2 - 12.5, true);
+  e.caja(11, 9, ala, MURO, -W / 2 + 7, 0.2, -3).caja(11.8, 0.8, ala + 0.8, LADRILLO, -W / 2 + 7, 9.2, -3).dosAguas(12, 3.4, ala + 1, TEJA, -W / 2 + 7, 10, -3);
+  for (let k = 0; k < 4; k++) e.caja(0.3, 1.6, 3.2, VIDRIO, -W / 2 + 12.7, 2.2, -12 + k * 6).caja(0.3, 1.6, 3.2, VIDRIO, -W / 2 + 12.7, 6, -12 + k * 6);
+  e.caja(34, 0.25, 15, '#c4c9ce', 10, 0.2, -2).caja(28, 0.1, 11, '#3b6ea8', 10, 0.45, -2)                         // patio con cancha pintada
+    .caja(0.25, 0.05, 11, '#f5f5f4', 10, 0.55, -2).oval(2.4, 2.4, 0.05, '#f5f5f4', 10, 0.55, -2, 0.9);
+  e.caja(4, 3, 0.4, '#374151', -W / 2 + 13, 0.2, D / 2 - 12.7).caja(8, 0.5, 3, AZUL, -W / 2 + 13, 3.4, D / 2 - 14);   // portería de acceso
+  e.mastil(12, W / 2 - 6, -D / 2 + 5, AZUL).arbol(W / 2 - 4, -D / 2 + 3, 8).arbol(-4, -D / 2 + 2, 7).arbol(W / 2 - 3, 4, 7);
+  return { piezas: e.piezas, radio: Math.max(W, D) / 2, losa: [W, D], huella: [W, D] };
 }
 
 /**
@@ -205,6 +321,10 @@ function salud(e: Ensamble, tipo: string): Modelo {
 
 /** Sitios de interés: iglesia, kiosco de parque, mirador, pabellón de mercado o cabaña con estanque, según de qué se trate. */
 function turismo(e: Ensamble, texto: string, rnd: () => number): Modelo {
+  if (/plaza de mercado/.test(texto)) return plazaMercado(e);
+  if (/centro comercial/.test(texto)) return centroComercial(e, [44, 36]);
+  if (/parqueadero santa ana/.test(texto)) return parqueaderoPublico(e, [56, 46], rnd);
+  if (/central de transporte|parqueadero de buses/.test(texto)) return centralVeredal(e, /parqueadero/.test(texto) ? [60, 44] : [40, 36], rnd);
   if (/arqueol|petrogl/.test(texto)) return patrimonio(e, 'sitio arqueológico', rnd);
   if (/catedral/.test(texto)) return catedral(e);
   if (/parque principal/.test(texto)) return parquePrincipal(e, rnd);
@@ -298,6 +418,123 @@ function catedral(e: Ensamble): Modelo {
   // gradas del atrio, que bajan hasta la plaza
   for (let k = 0; k < 4; k++) e.caja(30, 3 - 0.25 * k - 0.15, 1, '#c8b99c', 0, -3, -30.2 - k);
   return { piezas: e.piezas, radio: 34, losa: [26, 62], huella: [26, 62] };
+}
+
+/**
+ * Centro comercial de la manzana del parque: un volumen de dos pisos con cubierta plana blanca y antepecho, vitrinas corridas en la planta baja,
+ * franja de ventanas arriba, marquesina de acceso sobre la carrera (−z), aviso, y equipos de aire y escalera en la azotea.
+ */
+function centroComercial(e: Ensamble, [W, D]: [number, number]): Modelo {
+  const MURO = '#e9e6df', ANTEPECHO = '#f5f5f4', OSCURO = '#2b2f36';
+  e.caja(W, 0.2, D, '#b9bcc0', 0, 0, 0);
+  e.caja(W - 2, 13, D - 2, MURO, 0, 0.2, 0);                                                  // dos pisos (exagerados como el resto de edificios)
+  e.caja(W - 1.2, 0.9, D - 1.2, ANTEPECHO, 0, 13.2, 0);                                       // cubierta plana blanca con antepecho
+  e.caja(W - 4, 0.15, D - 4, '#fafafa', 0, 14.1, 0);
+  for (let k = 0; k < 8; k++) {                                                               // vitrinas de la planta baja y ventanas del segundo piso
+    const x = -W / 2 + 4 + k * ((W - 8) / 7);
+    e.caja(4, 4.2, 0.3, VIDRIO, x, 0.8, -D / 2 + 0.05).caja(4, 3.2, 0.3, VIDRIO, x, 7.6, -D / 2 + 0.05);
+    e.caja(4.4, 0.7, 0.9, ['#dc2626', '#2563eb', '#f59e0b', '#16a34a'][k % 4], x, 5.2, -D / 2 - 0.3);   // rótulos de los locales
+  }
+  for (let k = 0; k < 5; k++) e.caja(0.3, 3.2, 4, VIDRIO, W / 2 - 0.9, 7.6, -D / 2 + 5 + k * 6);
+  e.caja(10, 0.5, 4.5, OSCURO, 0, 5.8, -D / 2 - 2.2);                                         // marquesina de acceso
+  for (const x of [-4.4, 4.4]) e.cil(0.25, 0.25, 5.6, '#6b7280', x, 0.2, -D / 2 - 4, 6);
+  e.caja(14, 2.2, 0.5, '#2563eb', 0, 15.2, -D / 2 + 1.2);                                     // aviso en la azotea
+  e.caja(5, 2.4, 4, '#cbd5e1', -W / 4, 14.2, 4).caja(4, 2, 3, '#cbd5e1', W / 4, 14.2, -3).caja(3, 3.2, 3, MURO, W / 2 - 5, 14.2, D / 2 - 5);   // aire acondicionado y salida de escalera
+  return { piezas: e.piezas, radio: Math.max(W, D) / 2, losa: [W, D], huella: [W, D] };
+}
+
+/**
+ * Parqueadero público a cielo abierto (el Santa Ana de la carrera 16): lote asfaltado con bahías en dos hileras a los lados de un pasillo
+ * central, autos estacionados a la escala de los del tráfico, portón con cerca amarilla y negra y aviso amarillo sobre la carrera 16 (−z).
+ */
+function parqueaderoPublico(e: Ensamble, [W, D]: [number, number], rnd: () => number): Modelo {
+  const COLORES = ['#e5e7eb', '#9ca3af', '#1f2937', '#b91c1c', '#1d4ed8', '#f1f5f9', '#6b7280', '#a16207'];
+  e.caja(W, 0.12, D, '#5f656d', 0, 0, 0);
+  const L = 4.5 * ESCALA_ACTIVOS, A = 1.9 * ESCALA_ACTIVOS;
+  const auto = (x: number, z: number, color: string, giro: number): void => {
+    const c = (lx: number, ly: number, lz: number, w: number, h: number, d: number, col: string): void => {
+      const gx = x + lx * Math.cos(giro) + lz * Math.sin(giro), gz = z - lx * Math.sin(giro) + lz * Math.cos(giro);
+      e.piezas.push({ g: new THREE.BoxGeometry(w, h, d).rotateY(giro).translate(gx, ly + h / 2, gz), color: col });
+    };
+    c(0, 0.5, 0, L, 1.6, A, color);
+    c(-0.4, 2.1, 0, L * 0.5, 1.4, A * 0.92, VIDRIO);
+    c(-0.4, 3.5, 0, L * 0.46, 0.15, A * 0.9, color);
+  };
+  const filas = [-D / 2 + 9, D / 2 - 9], porFila = Math.floor((W - 8) / (A + 0.9));
+  for (const z of filas) for (let k = 0; k < porFila; k++) {
+    const x = -W / 2 + 5 + k * (A + 0.9);
+    e.caja(0.2, 0.15, L + 0.6, '#e5e7eb', x + (A + 0.9) / 2, 0.12, z);
+    if (rnd() < 0.66) auto(x, z, COLORES[Math.floor(rnd() * COLORES.length)], Math.PI / 2 + (rnd() - 0.5) * 0.06);
+  }
+  for (let k = 0; k < 6; k++) if (rnd() < 0.7) auto(-W / 2 + 7 + k * 8, 0, COLORES[Math.floor(rnd() * COLORES.length)], rnd() < 0.5 ? 0 : Math.PI);
+  for (let k = -3; k <= 3; k++) if (k) e.caja(0.5, 1.4, 0.5, k % 2 ? '#facc15' : '#1f2937', k * 3.6, 0.12, -D / 2 + 0.6);    // cerca amarilla y negra
+  e.caja(0.6, 5.2, 0.6, '#facc15', -3.2, 0.12, -D / 2 + 0.4).caja(0.6, 5.2, 0.6, '#facc15', 3.2, 0.12, -D / 2 + 0.4);   // postes del portón
+  e.caja(16, 3.4, 0.4, '#facc15', 0, 5.4, -D / 2 + 0.3).caja(13, 1.2, 0.5, '#1f2937', 0, 6.6, -D / 2 + 0.3);           // aviso
+  e.caja(4, 3, 3, '#e5e7eb', W / 2 - 4, 0.12, -D / 2 + 4).caja(4.4, 0.3, 3.4, '#8b3a1f', W / 2 - 4, 3.12, -D / 2 + 4);   // caseta del cuidandero
+  return { piezas: e.piezas, radio: Math.max(W, D) / 2, losa: [W, D], huella: [W, D] };
+}
+
+/** Colores de la carrocería de los camperos veredales (el rojo con techo blanco es el de las rutas de Girardota). */
+export const COLORES_RURALES = ['#b91c1c', '#b91c1c', '#b91c1c', '#1d4ed8', '#15803d', '#c2410c', '#a16207'];
+
+/**
+ * Plaza de mercado de Girardota: la manzana entre la carrera 16, la calle 6 y la calle 5B (62 × 58 m). Ala blanca de locales de cubierta
+ * plana a lo largo de la carrera 16 (−z), galpón central de lámina acanalada sobre columnas con los puestos abiertos, y el edificio
+ * grande de cubierta gris hacia la calle 6 (+z, −x).
+ */
+function plazaMercado(e: Ensamble): Modelo {
+  const W = 62, D = 58, GRIS = '#9aa3ad', BLANCO = '#e8ebee';
+  e.caja(W, 0.2, D, '#b8bcc2', 0, 0, 0);
+  e.caja(W - 4, 8.5, 15, BLANCO, 0, 0.2, -D / 2 + 9).caja(W - 3.4, 0.6, 15.6, '#cfd4d9', 0, 8.7, -D / 2 + 9);       // ala de locales sobre la carrera 16
+  for (let k = 0; k < 7; k++) e.caja(5.6, 3.4, 0.3, VIDRIO, -24 + k * 8, 1.2, -D / 2 + 1.4).caja(5.8, 0.5, 1.6, ['#dc2626', '#f59e0b', '#16a34a', '#2563eb'][k % 4], -24 + k * 8, 4.8, -D / 2 + 1.9);
+  e.caja(25, 11, 26, '#c7ccd2', -17, 0.2, 14).caja(25.6, 0.7, 26.6, '#aeb4bb', -17, 11.2, 14);                       // edificio grande de cubierta gris
+  e.caja(0.3, 3, 20, VIDRIO, -4.3, 2, 14).caja(8, 2.2, 0.3, '#2b2f36', -17, 0.2, 27.2);
+  const px = 16, pz = 6;                                                                                            // galpón central abierto
+  for (const x of [-12, -4, 4, 12]) for (const z of [-9, 9]) e.cil(0.28, 0.28, 5.6, '#6b7280', px + x, 0.2, pz + z, 6);
+  e.dosAguas(31, 3.6, 22, GRIS, px, 5.6, pz, Math.PI / 2);
+  ['#dc2626', '#f59e0b', '#16a34a', '#2563eb', '#dc2626', '#f59e0b', '#16a34a', '#2563eb'].forEach((c, k) => {      // puestos con toldo
+    const x = px - 11 + (k % 4) * 7.4, z = pz - 5 + Math.floor(k / 4) * 10;
+    e.caja(5.4, 1.1, 2.2, '#e5e7eb', x, 0.2, z).caja(5.8, 0.2, 2.8, c, x, 2.7, z);
+  });
+  e.caja(14, 0.8, 0.4, '#fff', -17, 12.3, 27).caja(2.4, 1.2, 8, '#f1f5f9', 26, 0.2, -4);
+  return { piezas: e.piezas, radio: 36, losa: [W, D], huella: [W, D] };
+}
+
+/** Un campero veredal estacionado (caja simplificada del FJ): carrocería de color, techo blanco, vidrios y parrilla de techo. Mira hacia +x. */
+function jeepVeredal(e: Ensamble, x: number, z: number, color: string, giro = 0): void {
+  const c = Math.cos(giro), s = Math.sin(giro);
+  const r = (lx: number, lz: number): [number, number] => [x + lx * c + lz * s, z - lx * s + lz * c];
+  const pieza = (w: number, h: number, d: number, col: string, lx: number, y: number, lz: number): void => {
+    const [wx, wz] = r(lx, lz);
+    const g = new THREE.BoxGeometry(w, h, d).rotateY(giro).translate(wx, y + h / 2, wz);
+    e.piezas.push({ g, color: col });
+  };
+  pieza(7.5, 1.8, 3.2, color, 0, 0.7, 0);
+  pieza(2.4, 0.3, 3.2, color, 2.6, 2.5, 0);
+  pieza(5.2, 1.7, 3.0, VIDRIO, -0.8, 2.5, 0);
+  pieza(5.8, 0.25, 3.2, '#f1f5f9', -0.8, 4.2, 0);
+  pieza(0.2, 0.9, 2.6, '#2b2f36', 3.8, 1.0, 0);
+  for (const dx of [-2.4, 2.4]) for (const dz of [-1.6, 1.6]) pieza(1.0, 1.0, 0.4, '#1f2328', dx, 0, dz);
+}
+
+/**
+ * Central de transporte veredal: lote pavimentado con bahías pintadas, cubierta metálica con taquilla y camperos de ruta en fila
+ * (rojos con techo blanco y otros colores), más algún bus de línea. Los camperos de la simulación salen de aquí hacia las veredas.
+ */
+function centralVeredal(e: Ensamble, [W, D]: [number, number], rnd: () => number): Modelo {
+  e.caja(W, 0.15, D, '#6b7078', 0, 0, 0);
+  e.caja(W - 3, 0.2, 0.25, '#e5e7eb', 0, 0.15, -D / 2 + 1.6).caja(W - 3, 0.2, 0.25, '#e5e7eb', 0, 0.15, D / 2 - 1.6);
+  const filas = D > 40 ? 3 : 2, porFila = Math.floor((W - 12) / 8.6);
+  for (let f = 0; f < filas; f++) for (let k = 0; k < porFila; k++) {
+    const x = -W / 2 + 8 + k * 8.6, z = -D / 2 + 7 + f * ((D - 18) / Math.max(1, filas - 1)) + (filas === 2 ? f * 2 : 0);
+    e.caja(0.2, 0.2, 4.4, '#e5e7eb', x + 4.3, 0.15, z);
+    if (rnd() < 0.78) jeepVeredal(e, x, z, COLORES_RURALES[Math.floor(rnd() * COLORES_RURALES.length)], Math.PI / 2 * (f % 2 ? 1 : -1) + (rnd() - 0.5) * 0.08);
+  }
+  e.caja(W - 14, 0.3, 6, '#2563eb', 0, 5.2, D / 2 - 5);                                   // cubierta metálica de la zona de espera
+  for (const x of [-(W - 18) / 2, 0, (W - 18) / 2]) e.cil(0.2, 0.2, 5, '#6b7280', x, 0.15, D / 2 - 7.6, 6).cil(0.2, 0.2, 5, '#6b7280', x, 0.15, D / 2 - 2.4, 6);
+  e.caja(4, 2.6, 3, '#f1f5f9', -W / 2 + 5, 0.15, D / 2 - 5).caja(4.4, 0.25, 3.4, '#b91c1c', -W / 2 + 5, 2.75, D / 2 - 5);   // taquilla
+  e.caja(5, 0.5, 1.2, '#7c5a3a', 2, 0.15, D / 2 - 4).caja(5, 0.5, 1.2, '#7c5a3a', -6, 0.15, D / 2 - 4);
+  return { piezas: e.piezas, radio: Math.max(W, D) / 2, losa: [W, D], huella: [W, D] };
 }
 
 /**
@@ -519,6 +756,7 @@ export function modelarEquipamiento(c: CategoriaCatalogo, tipo: string, nombre: 
   const e = new Ensamble();
   const t = `${tipo} ${nombre}`.toLowerCase();
   switch (c) {
+    case 'servicios': return servicio(e, t);
     case 'industria': return /parque/.test(t) ? parqueIndustrial() : fabrica(e);
     case 'vivienda':
       if (tipo === 'Tipología') return tipologia(nombre, Math.floor(rnd() * 1e9));
@@ -536,7 +774,7 @@ export function modelarEquipamiento(c: CategoriaCatalogo, tipo: string, nombre: 
       if (/ceiba/.test(t)) return arbolRegional(e, 'ceiba');
       return arbol(e);
     case 'gente': return persona(e, t);
-    case 'educacion': return escuela(e, /rural/i.test(tipo));
+    case 'educacion': return /i\. e\. colombia/.test(t) ? colegioUrbano(e, [68, 30]) : escuela(e, /rural/i.test(tipo));
     case 'cultura': return cultura(e, t);
     case 'salud': return salud(e, t);
     case 'turismo': return turismo(e, t, rnd);
@@ -1131,11 +1369,19 @@ function personaMuneco(e: Ensamble, t: string): Modelo {
   return { piezas: p, radio: 0.9 };
 }
 
-export type CategoriaCatalogo = CategoriaPunto | 'industria' | 'vivienda' | 'vehiculos' | 'vias' | 'agua' | 'naturaleza' | 'gente';
+export type CategoriaCatalogo = CategoriaPunto | 'servicios' | 'industria' | 'vivienda' | 'vehiculos' | 'vias' | 'agua' | 'naturaleza' | 'gente';
 
 /** Un ejemplo de cada edificio distinto, con un punto real de Girardota como muestra, para el catálogo. */
-export interface Variante { categoria: CategoriaCatalogo; etiqueta: string; tipo: string; nombre: string; }
+export interface Variante { categoria: CategoriaCatalogo; etiqueta: string; tipo: string; nombre: string; /** subtipo de servicio público (pin del mapa) */ srv?: string; }
 export const VARIANTES: Variante[] = [
+  { categoria: 'servicios', etiqueta: 'Subestación eléctrica (patio, caseta y transformadores)', tipo: 'Servicio', nombre: 'subestación', srv: 'srv-subestacion' },
+  { categoria: 'servicios', etiqueta: 'Torre de alta tensión', tipo: 'Servicio', nombre: 'torre', srv: 'srv-subestacion' },
+  { categoria: 'servicios', etiqueta: 'Central hidroeléctrica (casa de máquinas)', tipo: 'Servicio', nombre: 'central', srv: 'srv-central' },
+  { categoria: 'servicios', etiqueta: 'Bocatoma de acueducto veredal', tipo: 'Servicio', nombre: 'bocatoma', srv: 'srv-bocatoma' },
+  { categoria: 'servicios', etiqueta: 'Sistema de tratamiento de agua (rural)', tipo: 'Servicio', nombre: 'tratamiento', srv: 'srv-tratamiento' },
+  { categoria: 'servicios', etiqueta: 'Tanque de agua', tipo: 'Servicio', nombre: 'tanque', srv: 'srv-tanque' },
+  { categoria: 'servicios', etiqueta: 'PTAR urbana (proyecto)', tipo: 'Servicio', nombre: 'ptar', srv: 'srv-ptar' },
+  { categoria: 'servicios', etiqueta: 'ECA: clasificación y aprovechamiento (proyecto)', tipo: 'Servicio', nombre: 'eca', srv: 'srv-eca' },
   { categoria: 'industria', etiqueta: 'Fábrica', tipo: 'Industria', nombre: 'Fábrica' },
   { categoria: 'industria', etiqueta: 'Parque industrial (unidades modulares)', tipo: 'Industria', nombre: 'Parque industrial' },
   { categoria: 'vivienda', etiqueta: 'Vivienda típica', tipo: 'Vivienda', nombre: 'Vivienda' },
@@ -1188,6 +1434,8 @@ export const VARIANTES: Variante[] = [
   { categoria: 'turismo', etiqueta: 'Parque', tipo: 'Espacio público / encuentro ciudadano', nombre: 'Parque principal' },
   { categoria: 'turismo', etiqueta: 'Mirador', tipo: 'Atractivo natural / ecoturismo', nombre: 'Cascada' },
   { categoria: 'turismo', etiqueta: 'Mercado', tipo: 'Economía campesina / mercado local', nombre: 'Mercado agroverde' },
+  { categoria: 'turismo', etiqueta: 'Plaza de mercado', tipo: 'Economía campesina / mercado local', nombre: 'Plaza de Mercado' },
+  { categoria: 'turismo', etiqueta: 'Central de transporte veredal', tipo: 'Transporte público veredal', nombre: 'Central de transporte veredal' },
   { categoria: 'turismo', etiqueta: 'Truchera', tipo: 'Turismo rural / pesca deportiva', nombre: 'Truchera' },
   { categoria: 'turismo', etiqueta: 'Petroglifos', tipo: 'Patrimonio arqueológico / cultural', nombre: 'Petroglifos' },
   { categoria: 'deporte', etiqueta: 'Cancha de fútbol', tipo: 'Cancha de fútbol', nombre: 'Cancha' },

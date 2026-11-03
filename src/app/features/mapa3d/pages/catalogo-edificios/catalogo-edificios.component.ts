@@ -4,7 +4,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { CATEGORIAS } from '../../../mapa/utils/puntos';
 import { VARIANTES, Variante, modelarEquipamiento } from '../../utils/equipamientos';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { Aura, CategoriaIcono, COLOR_INDUSTRIA, crearAura, crearIcono, tamanoIcono } from '../../utils/aura';
+import { Aura, CategoriaIcono, COLOR_INDUSTRIA, SERVICIOS, SERVICIOS_GRUPO, crearAura, crearIcono, tamanoIcono } from '../../utils/aura';
 
 /** Lo que no es un punto de interés ni una fábrica no lleva neón ni icono. */
 const SIN_AURA: string[] = ['vivienda', 'vehiculos', 'vias', 'agua', 'naturaleza', 'gente'];
@@ -73,6 +73,7 @@ export class CatalogoEdificiosComponent implements AfterViewInit {
   readonly total = VARIANTES.length;
   readonly grupos = [
     ...CATEGORIAS.map(c => ({ id: c.id as string, nombre: c.nombre, color: c.color })),
+    { id: 'servicios', nombre: SERVICIOS_GRUPO.nombre, color: SERVICIOS_GRUPO.color },
     { id: 'industria', nombre: 'Industria', color: COLOR_INDUSTRIA },
     { id: 'vivienda', nombre: 'Viviendas', color: '#c8704f' },
     { id: 'vehiculos', nombre: 'Vehículos', color: '#ff2d2d' },
@@ -234,10 +235,11 @@ export class CatalogoEdificiosComponent implements AfterViewInit {
     for (const p of m.piezas) { this.triangulos += (p.g.index?.count ?? p.g.attributes['position'].count) / 3; p.g.computeBoundingBox(); caja.union(p.g.boundingBox!); }
     const tam = caja.getSize(new THREE.Vector3());
     if (this.conAura() && !SIN_AURA.includes(v.categoria)) {
-      const color = this.grupos.find(g => g.id === v.categoria)!.color;
+      const sv = SERVICIOS.find(x => x.id === v.srv);
+      const color = sv?.color ?? this.grupos.find(g => g.id === v.categoria)!.color;
       this.aura = crearAura(r, tam.y * 1.15 + 4, color);
       grupo.add(this.aura.grupo);
-      this.icono = crearIcono(v.categoria as CategoriaIcono, color, 0, tam.y, 0);
+      this.icono = crearIcono((sv?.id ?? v.categoria) as CategoriaIcono, color, 0, tam.y, 0);
       grupo.add(this.icono.sprite);
     }
     this.escena.add(grupo);
