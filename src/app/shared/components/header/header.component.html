@@ -8,6 +8,7 @@
       <a routerLink="/mapa" routerLinkActive="is-active">Mapa</a>
       <a routerLink="/mapa3d" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">Modelo 3D</a>
       <a routerLink="/mapa3d/catalogo" routerLinkActive="is-active">Catálogo</a>
+      <a routerLink="/documentos" routerLinkActive="is-active">Documentos</a>
       @if (session.isLoggedIn()) {
         <a routerLink="/app" routerLinkActive="is-active">Mi espacio</a>
         @if (session.isAdmin()) {

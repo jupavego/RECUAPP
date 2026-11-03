@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RECUAPP · Sistema documental</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Nunito:wght@700;800&display=swap">
+<style>
+  /* Paleta «Earthy Botanical» de la app (src/styles.scss) y su variante oscura */
+  :root {
+    --bg:#F5F0EA; --card:#FCF9F6; --surface:#EAF2D6; --surface2:#E0EAD8; --border:#C8D9C0;
+    --text:#1A1A1A; --muted:#5C6B5F;
+    --brand:#29422F; --ink:#29422F; --accent:#66AA33; --lima:#99CC33; --gold:#E0B33A; --gold-t:#8A6A0A; --down:#B5483A;
+    --f-h:"Nunito","Inter",system-ui,sans-serif; --f-b:"Inter",system-ui,sans-serif;
+  }
+  :root.oscuro {
+    --bg:#121A14; --card:#1A261D; --surface:#22331F; --surface2:#233229; --border:#2F4533;
+    --text:#E8EFE4; --muted:#8FA08C;
+    --brand:#66AA33; --ink:#99CC33; --accent:#99CC33; --lima:#99CC33; --gold:#E0B33A; --gold-t:#E0B33A; --down:#E07A6A;
+    color-scheme:dark;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:15px/1.55 var(--f-b); }
+  header, section { max-width:1120px; margin:0 auto; padding:28px 16px; }
+  h1,h2 { font-family:var(--f-h); margin:0; color:var(--ink); }
+  h1 { font-size:32px; font-weight:800; }
+  h2 { font-size:22px; font-weight:800; margin-bottom:4px; }
+  h3 { font:700 12px var(--f-b); color:var(--gold-t); letter-spacing:.12em; text-transform:uppercase; margin:24px 0 8px; }
+  .sub { color:var(--muted); margin:0 0 14px; }
+  .num { font-variant-numeric:tabular-nums; font-weight:700; }
+  nav { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+  nav a { padding:6px 14px; border:1px solid var(--border); background:var(--card); color:var(--ink); text-decoration:none; font-weight:600; font-size:13px; border-radius:99px; }
+  nav a:hover { background:var(--surface); }
+  .hero { display:flex; gap:20px; align-items:center; flex-wrap:wrap; }
+  .hero svg { width:120px; height:120px; flex:none; }
+  .lema { font-family:var(--f-h); font-weight:700; color:var(--brand); font-size:17px; margin:6px 0 0; max-width:640px; }
+  .warn { border:1px solid var(--gold); background:color-mix(in srgb,var(--gold) 12%,transparent); border-radius:10px; padding:10px 14px; font-size:13px; color:var(--muted); margin-top:16px; }
+  .warn b { color:var(--gold-t); }
+  .panel { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:14px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:10px; }
+  .box { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:12px; font-size:13px; position:relative; }
+  .box h4 { margin:6px 0 4px; font:700 13px var(--f-h); color:var(--ink); }
+  .box ul { margin:0; padding-left:16px; color:var(--muted); }
+  .box.hl { background:var(--surface); border-color:var(--accent); }
+  .ic { width:26px; height:26px; fill:none; stroke:var(--accent); stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+  .ic.k-g { stroke:var(--gold-t); } .ic.k-d { stroke:var(--down); } .ic.k-b { stroke:var(--accent); } .ic.k-m { stroke:var(--muted); }
+  .n { position:absolute; top:8px; right:10px; font-size:11px; font-weight:700; color:var(--muted); }
+  .var { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:8px; }
+  .var div { border:1px dashed var(--border); border-radius:10px; padding:8px 10px; font-size:12px; color:var(--muted); background:var(--card); }
+  .var b { display:block; color:var(--ink); font-size:12px; }
+  /* SVG */
+  svg.diag { width:100%; height:auto; display:block; }
+  svg text { font-family:var(--f-b); }
+  .hd { fill:var(--ink); font-weight:700; } .mu { fill:var(--muted); } .tx { fill:var(--text); }
+  .c { fill:var(--card); stroke:var(--border); stroke-width:1.5; } .c.sw2 { stroke:var(--accent); stroke-width:2; }
+  .ln { stroke:var(--border); stroke-width:2; stroke-dasharray:4 5; fill:none; }
+  .core { fill:var(--surface); stroke:var(--accent); stroke-width:2; } .ring { fill:none; stroke:var(--border); }
+  .ar { stroke:var(--accent); stroke-width:2; fill:none; } .ar2 { stroke:var(--gold); stroke-width:2; fill:none; stroke-dasharray:5 5; } .mk { fill:var(--accent); }
+  .u { fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+  .k-b { color:var(--accent); } .k-g { color:var(--gold-t); } .k-m { color:var(--muted); } .k-d { color:var(--down); }
+  .ld1 { fill:var(--surface2); stroke:var(--border); } .ld2 { fill:color-mix(in srgb,var(--gold) 18%,var(--card)); stroke:var(--gold); }
+  .ld3 { fill:color-mix(in srgb,var(--lima) 22%,var(--card)); stroke:var(--accent); } .ld4 { fill:color-mix(in srgb,var(--accent) 30%,var(--card)); stroke:var(--brand); }
+  .bar { fill:var(--accent); } .bar2 { fill:var(--brand); } :root.oscuro .bar2 { fill:var(--lima); }
+  .rl { stroke:var(--border); stroke-width:3; } .rl2 { stroke:var(--accent); stroke-width:3; }
+  /* Canvas */
+  .bmc { display:grid; grid-template-columns:repeat(10,1fr); gap:8px; }
+  .a1{grid-column:1/3;grid-row:1/3} .a2{grid-column:3/5;grid-row:1} .a6{grid-column:3/5;grid-row:2}
+  .a3{grid-column:5/7;grid-row:1/3} .a4{grid-column:7/9;grid-row:1} .a7{grid-column:7/9;grid-row:2}
+  .a5{grid-column:9/11;grid-row:1/3} .a8{grid-column:1/6;grid-row:3} .a9{grid-column:6/11;grid-row:3}
+  /* Carriles */
+  .lane { display:grid; grid-template-columns:160px 1fr; gap:8px; margin-bottom:8px; }
+  .lane > b { border:1px solid var(--accent); background:var(--surface); color:var(--ink); border-radius:10px; padding:10px; font-size:12px; display:flex; align-items:center; gap:8px; }
+  .items { display:flex; flex-wrap:wrap; gap:8px; }
+  .items span { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:8px 10px; font-size:13px; flex:1 1 130px; }
+  .dash { border-top:2px dashed var(--gold); text-align:center; font-size:11px; color:var(--gold-t); margin:4px 0 8px; }
+  /* One-pager */
+  .op { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+  .op .big { grid-column:1/4; }
+  .stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:10px; margin:12px 0; }
+  .stat { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:10px; text-align:center; }
+  .stat b { display:block; font:800 26px var(--f-h); color:var(--ink); }
+  .stat span { font-size:12px; color:var(--muted); }
+  @media (max-width:760px) {
+    .bmc { grid-template-columns:1fr; } .bmc .box { grid-column:auto !important; grid-row:auto !important; }
+    .lane { grid-template-columns:1fr; } .op { grid-template-columns:1fr; } .op .big { grid-column:auto; }
+    h1 { font-size:24px; }
+  }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-plan" viewBox="0 0 24 24"><path d="M6 2h9l4 4v16H6z"/><path d="M15 2v4h4M9 11h7M9 15h7M9 19h4"/></symbol><symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6M16 5a3.5 3.5 0 010 6.5M18 14c2.2.6 3.5 2.6 3.5 5"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol><symbol id="i-cube" viewBox="0 0 24 24"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5L16 9.5"/></symbol><symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 4C9 4 4 9.5 4 15c0 1.7.5 3 1.2 4C6 14 10 10.5 15 9c-4 2.5-7 6-8 11 1 .6 2.2 1 3.5 1C17 21 20 13 20 4z"/></symbol><symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 20h18M6 17v-5M11 17V8M16 17v-8M21 17V5"/></symbol><symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5C10 8.5 11 8 12 8c1.5 0 2.5.8 2.5 2s-1 1.7-2.5 2-2.5.8-2.5 2 1 2 2.5 2c1 0 2-.5 2.5-1.5M12 6v2M12 16v2"/></symbol><symbol id="i-org" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="9" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-5h14v5M12 12v5"/></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol><symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></symbol><symbol id="i-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h12l-2 4 2 4H5"/></symbol><symbol id="i-building" viewBox="0 0 24 24"><path d="M4 21V5l8-3 8 3v16M2 21h20M9 9h2M13 9h2M9 13h2M13 13h2M10 21v-4h4v4"/></symbol><symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.5"/></symbol><symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1"/></symbol><symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></symbol><symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l3 3M14 9l2 2"/></symbol><symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 8h14l-4-4M20 16H6l4 4"/></symbol><symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol></defs></svg>
+
+<header>
+  <div class="hero">
+    <svg viewBox="0 0 120 120" aria-label="Emblema RECUAPP">
+      <circle cx="60" cy="60" r="54" fill="var(--surface)" stroke="var(--accent)" stroke-width="2.5"/>
+      <path d="M60 100s26-24 26-44a26 26 0 10-52 0c0 20 26 44 26 44z" fill="var(--card)" stroke="var(--brand)" stroke-width="3"/>
+      <path d="M46 56l10 10 20-22" fill="none" stroke="var(--accent)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="96" cy="26" r="6" fill="var(--gold)"/><path d="M20 90q10-8 20-2" fill="none" stroke="var(--lima)" stroke-width="4" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <h1>RECUAPP · Sistema documental</h1>
+      <p class="lema">Un territorio se transforma cuando su gente conoce el camino.</p>
+      <p class="sub" style="max-width:660px;margin-top:6px">Cinco piezas para presentar RECUAPP: hacer visible lo que se prometió en el plan de desarrollo, quién responde por ello y cómo avanza. Piloto: Girardota.</p>
+    </div>
+  </div>
+  <div class="warn"><b>Regla de honestidad:</b> las cifras del plan (productos, programas, indicadores, inversión) salen de los datos reales cargados en la app (<code>public/data/plan/05308.json</code>, fuente: DNP-SisPT y PDF del plan). Todo lo comercial (mercado, precios, tracción, ronda) es «[por definir]»: hoy RECUAPP es un piloto en un solo municipio.</div>
+  <nav><a href="#sistema">Sistema</a><a href="#deck">01 Deck</a><a href="#bmc">02 Canvas</a><a href="#blueprint">03 Blueprint</a><a href="#im">04 Memorandum</a><a href="#onepager">05 One-Pager</a><a href="#roadmap">Ruta</a></nav>
+</header>
+
+<section id="sistema">
+  <h2>Arquitectura documental</h2>
+  <p class="sub">Un núcleo de datos alimenta los cinco documentos para que ninguno contradiga a otro.</p>
+  <div class="panel"><svg class="diag" viewBox="0 0 900 330" role="img" aria-label="Núcleo de datos conectado a cinco documentos"><path d="M450 210L120 82" class="ln"/><path d="M450 210L285 82" class="ln"/><path d="M450 210L450 82" class="ln"/><path d="M450 210L615 82" class="ln"/><path d="M450 210L780 82" class="ln"/><g transform="translate(120,40)" text-anchor="middle" font-size="12"><rect x="-72" y="-38" width="144" height="82" rx="10" class="c"/><use href="#i-flag" x="-11" y="-33" width="22" height="22" class="u k-g"/><text class="hd" y="8">01 CAPTACIÓN</text><text class="mu" y="28">Pitch Deck</text></g><g transform="translate(285,40)" text-anchor="middle" font-size="12"><rect x="-72" y="-38" width="144" height="82" rx="10" class="c"/><use href="#i-coin" x="-11" y="-33" width="22" height="22" class="u k-g"/><text class="hd" y="8">02 MODELO</text><text class="mu" y="28">Business Canvas</text></g><g transform="translate(450,40)" text-anchor="middle" font-size="12"><rect x="-72" y="-38" width="144" height="82" rx="10" class="c"/><use href="#i-org" x="-11" y="-33" width="22" height="22" class="u k-g"/><text class="hd" y="8">03 INGENIERÍA</text><text class="mu" y="28">Blueprint</text></g><g transform="translate(615,40)" text-anchor="middle" font-size="12"><rect x="-72" y="-38" width="144" height="82" rx="10" class="c"/><use href="#i-plan" x="-11" y="-33" width="22" height="22" class="u k-g"/><text class="hd" y="8">04 EVALUACIÓN</text><text class="mu" y="28">Memorandum</text></g><g transform="translate(780,40)" text-anchor="middle" font-size="12"><rect x="-72" y="-38" width="144" height="82" rx="10" class="c"/><use href="#i-eye" x="-11" y="-33" width="22" height="22" class="u k-g"/><text class="hd" y="8">05 DIVULGACIÓN</text><text class="mu" y="28">One-Pager</text></g><circle cx="450" cy="226" r="76" class="core"/><circle cx="450" cy="226" r="58" class="ring"/><use href="#i-leaf" x="438" y="170" width="24" height="24" class="u k-b"/><text class="hd" x="450" y="221" text-anchor="middle" font-size="13">NÚCLEO</text><text class="mu" x="450" y="239" text-anchor="middle" font-size="11">plan · responsables</text><text class="mu" x="450" y="254" text-anchor="middle" font-size="11">avance · territorio</text></svg></div>
+  <h3>Del plan a la ciudadanía</h3>
+  <div class="panel"><svg class="diag" viewBox="0 0 900 235" role="img" aria-label="Del plan a la ciudadanía"><defs><marker id="m1" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" class="mk"/></marker></defs><g transform="translate(75,70)" text-anchor="middle" font-size="11"><circle r="36" class="c sw2"/><use href="#i-plan" x="-14" y="-14" width="28" height="28" class="u k-b"/><text class="hd" y="60">PLAN</text><text class="mu" y="76">PDF y SisPT</text></g><path d="M115 70H185" class="ar" marker-end="url(#m1)"/><g transform="translate(225,70)" text-anchor="middle" font-size="11"><circle r="36" class="c sw2"/><use href="#i-db" x="-14" y="-14" width="28" height="28" class="u k-b"/><text class="hd" y="60">DATOS</text><text class="mu" y="76">estructurados</text></g><path d="M265 70H335" class="ar" marker-end="url(#m1)"/><g transform="translate(375,70)" text-anchor="middle" font-size="11"><circle r="36" class="c sw2"/><use href="#i-org" x="-14" y="-14" width="28" height="28" class="u k-b"/><text class="hd" y="60">RESPONSABLES</text><text class="mu" y="76">24 dependencias</text></g><path d="M415 70H485" class="ar" marker-end="url(#m1)"/><g transform="translate(525,70)" text-anchor="middle" font-size="11"><circle r="36" class="c sw2"/><use href="#i-chart" x="-14" y="-14" width="28" height="28" class="u k-g"/><text class="hd" y="60">AVANCE</text><text class="mu" y="76">seguimiento</text></g><path d="M565 70H635" class="ar" marker-end="url(#m1)"/><g transform="translate(675,70)" text-anchor="middle" font-size="11"><circle r="36" class="c sw2"/><use href="#i-cube" x="-14" y="-14" width="28" height="28" class="u k-b"/><text class="hd" y="60">TERRITORIO</text><text class="mu" y="76">mapa y modelo 3D</text></g><path d="M715 70H785" class="ar" marker-end="url(#m1)"/><g transform="translate(825,70)" text-anchor="middle" font-size="11"><circle r="36" class="c sw2"/><use href="#i-users" x="-14" y="-14" width="28" height="28" class="u k-g"/><text class="hd" y="60">CIUDADANÍA</text><text class="mu" y="76">lee y acompaña</text></g><path d="M825 112V205H75V112" class="ar2" marker-end="url(#m1)"/><text class="mu" x="450" y="226" font-size="11" text-anchor="middle">la ciudadanía opina y el plan se ajusta: el ciclo vuelve a empezar</text></svg></div>
+  <h3>Qué tan firme es cada dato</h3>
+  <div class="panel"><svg class="diag" viewBox="0 0 900 270" role="img" aria-label="Escalera de confianza de los datos"><rect x="30" y="190" width="205" height="60" rx="8" class="ld1"/><use href="#i-db" x="120" y="158" width="24" height="24" class="u k-m"/><text class="hd" x="132" y="216" text-anchor="middle" font-size="12">Dato oficial publicado</text><text class="mu" x="132" y="234" text-anchor="middle" font-size="11">plan y SisPT, tal cual</text><rect x="245" y="150" width="205" height="100" rx="8" class="ld2"/><use href="#i-plan" x="335" y="118" width="24" height="24" class="u k-g"/><text class="hd" x="347" y="176" text-anchor="middle" font-size="12">Reportado por la entidad</text><text class="mu" x="347" y="194" text-anchor="middle" font-size="11">informes de seguimiento</text><rect x="460" y="110" width="205" height="140" rx="8" class="ld3"/><use href="#i-link" x="550" y="78" width="24" height="24" class="u k-b"/><text class="hd" x="562" y="136" text-anchor="middle" font-size="12">Contrastado con otra fuente</text><text class="mu" x="562" y="154" text-anchor="middle" font-size="11">catastro, DANE, cartografía</text><rect x="675" y="70" width="205" height="180" rx="8" class="ld4"/><use href="#i-pin" x="765" y="38" width="24" height="24" class="u k-b"/><text class="hd" x="777" y="96" text-anchor="middle" font-size="12">Verificado en territorio</text><text class="mu" x="777" y="114" text-anchor="middle" font-size="11">visita y evidencia</text><text class="mu" x="30" y="14" font-size="11">menos firme  →  más firme</text></svg></div>
+  <p class="sub" style="margin-top:8px;font-size:13px">Cada cifra que RECUAPP muestra debe decir en qué escalón está: publicada por el plan, reportada por la entidad, contrastada con otra fuente o verificada en terreno.</p>
+</section>
+
+<section id="deck">
+  <h2>01 · Pitch Deck</h2>
+  <p class="sub">Doce láminas, un símbolo por mensaje: problema → solución → evidencia → negocio → petición.</p>
+  <div class="grid"><div class="box "><span class="n">01</span><svg class="ic " aria-hidden="true"><use href="#i-flag"/></svg><h4>Portada</h4>RECUAPP · Edición Girardota</div><div class="box "><span class="n">02</span><svg class="ic k-d" aria-hidden="true"><use href="#i-alert"/></svg><h4>Problema</h4>El plan de desarrollo es un documento largo; casi nadie sabe qué se prometió ni quién responde</div><div class="box "><span class="n">03</span><svg class="ic k-b" aria-hidden="true"><use href="#i-leaf"/></svg><h4>Solución</h4>Hacer visible qué se hará, quién responde y cómo avanza</div><div class="box "><span class="n">04</span><svg class="ic " aria-hidden="true"><use href="#i-plan"/></svg><h4>Producto</h4>Plan, fichas de responsables y organigrama</div><div class="box "><span class="n">05</span><svg class="ic " aria-hidden="true"><use href="#i-pin"/></svg><h4>Territorio</h4>Mapa 2D y modelo 3D con catastro real</div><div class="box "><span class="n">06</span><svg class="ic k-b" aria-hidden="true"><use href="#i-chart"/></svg><h4>Evidencia</h4>244 productos, 49 programas y 228 indicadores con seguimiento</div><div class="box "><span class="n">07</span><svg class="ic k-b" aria-hidden="true"><use href="#i-shield"/></svg><h4>Confianza</h4>Cada dato dice su fuente y su nivel de verificación</div><div class="box "><span class="n">08</span><svg class="ic k-g" aria-hidden="true"><use href="#i-coin"/></svg><h4>Modelo de ingresos</h4>Suscripción por entidad y módulos [por definir]</div><div class="box "><span class="n">09</span><svg class="ic " aria-hidden="true"><use href="#i-building"/></svg><h4>Mercado</h4>Municipios y gobernaciones de Colombia [por definir]</div><div class="box "><span class="n">10</span><svg class="ic " aria-hidden="true"><use href="#i-swap"/></svg><h4>Competencia</h4>Hojas de cálculo, tableros genéricos y portales de transparencia</div><div class="box "><span class="n">11</span><svg class="ic " aria-hidden="true"><use href="#i-users"/></svg><h4>Equipo y gobierno</h4>Roles, seguridad y transparencia</div><div class="box "><span class="n">12</span><svg class="ic k-g" aria-hidden="true"><use href="#i-target"/></svg><h4>Ronda y hitos</h4>Monto, uso de fondos y fases [por definir]</div></div>
+  <h3>Evidencia real del piloto · productos por línea estratégica</h3>
+  <div class="panel"><svg class="diag" viewBox="0 0 900 190" role="img" aria-label="Productos por línea estratégica"><text class="hd" x="0" y="28" font-size="12">LE-1</text><text class="mu" x="44" y="28" font-size="11">Justicia e inclusión social y bienestar</text><rect x="360" y="10" width="430" height="26" rx="5" class="bar"/><text class="tx num" x="798" y="28" font-size="13">107</text><text class="hd" x="0" y="72" font-size="12">LE-2</text><text class="mu" x="44" y="72" font-size="11">Gobernanza y participación</text><rect x="360" y="54" width="261" height="26" rx="5" class="bar"/><text class="tx num" x="629" y="72" font-size="13">65</text><text class="hd" x="0" y="116" font-size="12">LE-3</text><text class="mu" x="44" y="116" font-size="11">Integración regional y desarrollo</text><rect x="360" y="98" width="249" height="26" rx="5" class="bar"/><text class="tx num" x="617" y="116" font-size="13">62</text><text class="hd" x="0" y="160" font-size="12">LE-4</text><text class="mu" x="44" y="160" font-size="11">Conocimiento e innovación</text><rect x="360" y="142" width="40" height="26" rx="5" class="bar"/><text class="tx num" x="408" y="160" font-size="13">10</text></svg></div>
+  <h3>Cinco enfoques narrativos</h3>
+  <div class="var">
+    <div><b>Simplicidad</b>Una frase por lámina: «el plan, en claro».</div>
+    <div><b>Transparencia</b>De un PDF de cientos de páginas a una ficha que cualquiera entiende.</div>
+    <div><b>Territorio</b>Abrir con el modelo 3D de Girardota: el plan sobre el pueblo.</div>
+    <div><b>Red</b>Más entidades y más datos hacen mejor cada comparación.</div>
+    <div><b>Madurez</b>Piloto, seguimiento, otros municipios, región.</div>
+  </div>
+</section>
+
+<section id="bmc">
+  <h2>02 · Business Model Canvas</h2>
+  <p class="sub">Cómo RECUAPP crea, entrega y captura valor. La ciudadanía es usuaria; la entidad es quien paga.</p>
+  <div class="bmc">
+    <div class="box a1"><svg class="ic " aria-hidden="true"><use href="#i-link"/></svg><h4>Socios clave</h4><ul><li>Alcaldías y sus dependencias</li><li>DNP (SisPT), DANE e IGAC</li><li>Concejos y veedurías</li><li>Universidades</li><li>Supabase y Vercel</li></ul></div>
+    <div class="box a2"><svg class="ic " aria-hidden="true"><use href="#i-bolt"/></svg><h4>Actividades</h4><ul><li>Convertir el plan en datos</li><li>Fichas por responsable</li><li>Seguimiento y rendición</li><li>Cartografía y modelo 3D</li></ul></div>
+    <div class="box a3 hl"><svg class="ic k-b" aria-hidden="true"><use href="#i-leaf"/></svg><h4>Propuesta de valor</h4><ul><li>Un plan legible, con responsable y avance visibles</li><li>El territorio a la vista: mapa y modelo 3D con catastro real</li><li>Cada dato con su fuente y su nivel de verificación</li></ul></div>
+    <div class="box a4"><svg class="ic " aria-hidden="true"><use href="#i-eye"/></svg><h4>Relación</h4><ul><li>Acompañamiento a la entidad</li><li>Acceso público de la ciudadanía</li><li>Canal de observaciones</li></ul></div>
+    <div class="box a5"><svg class="ic " aria-hidden="true"><use href="#i-users"/></svg><h4>Segmentos</h4><ul><li>Municipios (Girardota, piloto)</li><li>Gobernaciones</li><li>Concejos y veedurías</li><li>Ciudadanía: usuaria, no pagadora</li></ul></div>
+    <div class="box a6"><svg class="ic " aria-hidden="true"><use href="#i-key"/></svg><h4>Recursos</h4><ul><li>Plataforma Angular + Supabase</li><li>Datos del plan, catastro y cartografía</li><li>Modelo 3D y su catálogo</li></ul></div>
+    <div class="box a7"><svg class="ic " aria-hidden="true"><use href="#i-plan"/></svg><h4>Canales</h4><ul><li>Convenio o venta directa</li><li>Sitio público</li><li>Demostración con los datos del propio municipio</li></ul></div>
+    <div class="box a8"><svg class="ic k-d" aria-hidden="true"><use href="#i-alert"/></svg><h4>Costos</h4><ul><li>Desarrollo y mantenimiento</li><li>Datos y cartografía</li><li>Infraestructura en la nube</li><li>Soporte y capacitación</li></ul></div>
+    <div class="box a9"><svg class="ic k-g" aria-hidden="true"><use href="#i-coin"/></svg><h4>Ingresos</h4><ul><li>Suscripción anual por entidad [por definir]</li><li>Implementación inicial [por definir]</li><li>Módulos: modelo 3D, seguimiento [por definir]</li></ul></div>
+  </div>
+  <h3>Ciclo cívico (variante del lienzo)</h3>
+  <div class="panel"><svg class="diag" viewBox="0 0 900 235" role="img" aria-label="Ciclo cívico"><defs><marker id="m2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" class="mk"/></marker></defs><g transform="translate(90,70)" text-anchor="middle" font-size="11"><circle r="36" class="c sw2"/><use href="#i-plan" x="-14" y="-14" width="28" height="28" class="u k-b"/><text class="hd" y="60">COMPROMISO</text><text class="mu" y="76">lo que se prometió</text></g><path d="M130 70H230" class="ar" marker-end="url(#m2)"/><g transform="translate(270,70)" text-anchor="middle" font-size="11"><circle r="36" class="c sw2"/><use href="#i-org" x="-14" y="-14" width="28" height="28" class="u k-b"/><text class="hd" y="60">RESPONSABLE</text><text class="mu" y="76">quién responde</text></g><path d="M310 70H410" class="ar" marker-end="url(#m2)"/><g transform="translate(450,70)" text-anchor="middle" font-size="11"><circle r="36" class="c sw2"/><use href="#i-chart" x="-14" y="-14" width="28" height="28" class="u k-g"/><text class="hd" y="60">AVANCE</text><text class="mu" y="76">cuánto se ha hecho</text></g><path d="M490 70H590" class="ar" marker-end="url(#m2)"/><g transform="translate(630,70)" text-anchor="middle" font-size="11"><circle r="36" class="c sw2"/><use href="#i-eye" x="-14" y="-14" width="28" height="28" class="u k-b"/><text class="hd" y="60">RENDICIÓN</text><text class="mu" y="76">se muestra a todos</text></g><path d="M670 70H770" class="ar" marker-end="url(#m2)"/><g transform="translate(810,70)" text-anchor="middle" font-size="11"><circle r="36" class="c sw2"/><use href="#i-users" x="-14" y="-14" width="28" height="28" class="u k-g"/><text class="hd" y="60">PARTICIPACIÓN</text><text class="mu" y="76">la gente opina</text></g><path d="M810 112V205H90V112" class="ar2" marker-end="url(#m2)"/><text class="mu" x="450" y="226" font-size="11" text-anchor="middle">lo aprendido ajusta el compromiso</text></svg></div>
+  <h3>Otras variantes</h3>
+  <div class="var">
+    <div><b>Doble mercado</b>La entidad paga; la ciudadanía aporta uso y observaciones.</div>
+    <div><b>SaaS recurrente</b>Suscripción por entidad, con renovación anual.</div>
+    <div><b>Datos abiertos</b>Parte pública gratuita; módulos avanzados de pago.</div>
+  </div>
+</section>
+
+<section id="blueprint">
+  <h2>03 · Technical &amp; Business Blueprint</h2>
+  <p class="sub">Cómo está construido RECUAPP y cómo opera, por capas. Las rutas son las de la app.</p>
+  <h3>Arquitectura por capas</h3>
+  <div class="lane"><b><svg class="ic " aria-hidden="true"><use href="#i-shield"/></svg>Estrategia y gobierno</b><div class="items"><span>Roles user / admin</span><span>Seguridad por filas (RLS)</span><span>Revisión mensual de seguridad</span></div></div>
+  <div class="lane"><b><svg class="ic " aria-hidden="true"><use href="#i-users"/></svg>Negocio y procesos</b><div class="items"><span>Cargar el plan de la entidad</span><span>Asignar productos a responsables</span><span>Actualizar avance</span><span>Publicar y rendir cuentas</span></div></div>
+  <div class="lane"><b><svg class="ic " aria-hidden="true"><use href="#i-cube"/></svg>Aplicaciones</b><div class="items"><span>/plan</span><span>/responsables</span><span>/plan/:dane/organigrama</span><span>/mapa</span><span>/mapa3d</span><span>/mapa3d/catalogo</span><span>Panel admin y perfil</span></div></div>
+  <div class="lane"><b><svg class="ic " aria-hidden="true"><use href="#i-db"/></svg>Datos</b><div class="items"><span>Plan, seguimiento y zonas (JSON)</span><span>Catastro, vías, cauces, relieve, ortofoto</span><span>Postgres en Supabase</span></div></div>
+  <div class="lane"><b><svg class="ic " aria-hidden="true"><use href="#i-key"/></svg>Infraestructura</b><div class="items"><span>Angular 19</span><span>Three.js (modelo 3D)</span><span>Supabase: auth y RLS</span><span>Vercel con CSP y HSTS</span><span>Sentry opcional</span></div></div>
+  <h3>Service blueprint · lo visible y lo que ocurre detrás</h3>
+  <div class="lane"><b><svg class="ic " aria-hidden="true"><use href="#i-users"/></svg>Ciudadano</b><div class="items"><span>Consulta el plan</span><span>Ve las fichas de responsables</span><span>Recorre el pueblo en 3D</span></div></div>
+  <div class="dash">línea de interacción</div>
+  <div class="lane"><b><svg class="ic " aria-hidden="true"><use href="#i-eye"/></svg>Frente visible</b><div class="items"><span>Plan y organigrama</span><span>Mapa y modelo 3D</span><span>Ficha del responsable</span></div></div>
+  <div class="dash">línea de visibilidad</div>
+  <div class="lane"><b><svg class="ic " aria-hidden="true"><use href="#i-org"/></svg>Funcionario y administración</b><div class="items"><span>Actualiza avance</span><span>Gestiona usuarios y roles</span><span>Revisa fuentes</span></div></div>
+  <div class="dash">línea de soporte</div>
+  <div class="lane"><b><svg class="ic " aria-hidden="true"><use href="#i-db"/></svg>Sistemas</b><div class="items"><span>Datos del plan</span><span>Base de datos y autenticación</span><span>Visor 3D</span></div></div>
+</section>
+
+<section id="im">
+  <h2>04 · Information Memorandum</h2>
+  <p class="sub">Cinco memorandos en un documento, más el mapa de riesgos.</p>
+  <div class="grid">
+    <div class="box hl"><svg class="ic " aria-hidden="true"><use href="#i-plan"/></svg><h4>Ejecutivo</h4><ul><li>Tesis y oportunidad</li><li>Piloto en Girardota</li><li>Condiciones de participación</li></ul></div>
+    <div class="box hl"><svg class="ic k-b" aria-hidden="true"><use href="#i-chart"/></svg><h4>Financiero</h4><ul><li>Escenarios base, adverso y extremo</li><li>Costos y punto de equilibrio</li><li>Capital requerido [por definir]</li></ul></div>
+    <div class="box hl"><svg class="ic " aria-hidden="true"><use href="#i-cube"/></svg><h4>Tesis tecnológica</h4><ul><li>Plan como datos estructurados</li><li>Territorio 3D con catastro real</li><li>Límites: calidad de las fuentes</li></ul></div>
+    <div class="box hl"><svg class="ic k-g" aria-hidden="true"><use href="#i-shield"/></svg><h4>Debida diligencia</h4><ul><li>Protección de datos personales</li><li>Propiedad intelectual y licencias de datos</li><li>Seguridad y controles</li></ul></div>
+    <div class="box hl"><svg class="ic k-g" aria-hidden="true"><use href="#i-coin"/></svg><h4>Asignación de capital</h4><ul><li>Cuánto y para qué [por definir]</li><li>Hitos financiados</li><li>Escenarios de crecimiento</li></ul></div>
+  </div>
+  <h3>Inversión plurianual del plan de Girardota (contexto del mercado, no ingresos de RECUAPP)</h3>
+  <div class="panel"><svg class="diag" viewBox="0 0 900 220" role="img" aria-label="Inversión plurianual del plan"><rect x="90" y="72" width="120" height="103" rx="6" class="bar2"/><text class="tx num" x="150" y="63" text-anchor="middle" font-size="13">$72.1 mil M</text><text class="mu" x="150" y="198" text-anchor="middle" font-size="12">2024</text><rect x="290" y="61" width="120" height="114" rx="6" class="bar2"/><text class="tx num" x="350" y="52" text-anchor="middle" font-size="13">$79.3 mil M</text><text class="mu" x="350" y="198" text-anchor="middle" font-size="12">2025</text><rect x="490" y="53" width="120" height="122" rx="6" class="bar2"/><text class="tx num" x="550" y="44" text-anchor="middle" font-size="13">$84.9 mil M</text><text class="mu" x="550" y="198" text-anchor="middle" font-size="12">2026</text><rect x="690" y="45" width="120" height="130" rx="6" class="bar2"/><text class="tx num" x="750" y="36" text-anchor="middle" font-size="13">$90.8 mil M</text><text class="mu" x="750" y="198" text-anchor="middle" font-size="12">2027</text></svg></div>
+  <p class="sub" style="margin-top:6px;font-size:12px">Pesos corrientes, miles de millones. Fuente: plan plurianual de inversiones del PDF del plan.</p>
+  <h3>Mapa de riesgos</h3>
+  <div class="grid">
+    <div class="box"><svg class="ic k-d" aria-hidden="true"><use href="#i-building"/></svg><h4>Dependencia pública</h4>Ciclos electorales y decisiones de compra de la entidad</div>
+    <div class="box"><svg class="ic k-d" aria-hidden="true"><use href="#i-db"/></svg><h4>Calidad de los datos</h4>Fuentes desactualizadas o incompletas (hay indicadores sin código)</div>
+    <div class="box"><svg class="ic k-d" aria-hidden="true"><use href="#i-users"/></svg><h4>Adopción</h4>Que los funcionarios mantengan el avance al día</div>
+    <div class="box"><svg class="ic k-d" aria-hidden="true"><use href="#i-shield"/></svg><h4>Datos personales</h4>Cumplimiento de la normativa colombiana de protección de datos</div>
+    <div class="box"><svg class="ic k-d" aria-hidden="true"><use href="#i-cube"/></svg><h4>Técnico</h4>Rendimiento del 3D en equipos modestos y escalabilidad</div>
+  </div>
+</section>
+
+<section id="onepager">
+  <h2>05 · One-Pager</h2>
+  <p class="sub">La propuesta completa en una página.</p>
+  <div class="op">
+    <div class="box hl big"><svg class="ic " aria-hidden="true"><use href="#i-leaf"/></svg><h4>RECUAPP · Edición Girardota</h4><b style="font:800 20px var(--f-h);color:var(--ink)">El plan de desarrollo, a la vista de todos</b><div style="color:var(--muted);margin-top:4px">Qué se va a hacer, quién responde y cómo avanza, sobre el mapa y el modelo 3D del propio territorio.</div></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><b class="num">244</b><span>productos del plan</span></div>
+    <div class="stat"><b class="num">49</b><span>programas</span></div>
+    <div class="stat"><b class="num">24</b><span>dependencias</span></div>
+    <div class="stat"><b class="num">228</b><span>indicadores con seguimiento 2024–2025</span></div>
+    <div class="stat"><b class="num">4</b><span>líneas estratégicas</span></div>
+  </div>
+  <div class="op">
+    <div class="box"><svg class="ic k-d" aria-hidden="true"><use href="#i-alert"/></svg><h4>Problema</h4><ul><li>Plan extenso y estático</li><li>Responsables difusos</li><li>Poca visibilidad del avance</li></ul></div>
+    <div class="box"><svg class="ic " aria-hidden="true"><use href="#i-leaf"/></svg><h4>Solución</h4><ul><li>Plan como datos y fichas</li><li>Responsable y avance por producto</li><li>Territorio en mapa y 3D</li></ul></div>
+    <div class="box"><svg class="ic " aria-hidden="true"><use href="#i-shield"/></svg><h4>Confianza</h4><ul><li>Fuente y nivel de verificación en cada dato</li><li>Roles y seguridad por filas</li></ul></div>
+    <div class="box"><svg class="ic " aria-hidden="true"><use href="#i-building"/></svg><h4>Mercado</h4><ul><li>Municipios y gobernaciones</li><li>Tamaño <span class="num">[por definir]</span></li></ul></div>
+    <div class="box"><svg class="ic k-g" aria-hidden="true"><use href="#i-coin"/></svg><h4>Modelo de negocio</h4><ul><li>Suscripción por entidad</li><li>Implementación y módulos <span class="num">[por definir]</span></li></ul></div>
+    <div class="box"><svg class="ic " aria-hidden="true"><use href="#i-target"/></svg><h4>Oportunidad</h4><ul><li>Piloto en curso en Girardota</li><li>Ronda y uso de fondos <span class="num">[por definir]</span></li><li>Contacto: jpvelasquez18@gmail.com</li></ul></div>
+  </div>
+</section>
+
+<section id="roadmap">
+  <h2>Hoja de ruta</h2>
+  <p class="sub">Cada fase se supera con evidencia, no con fechas.</p>
+  <div class="panel"><svg class="diag" viewBox="0 0 900 170" role="img" aria-label="Hoja de ruta"><path d="M50 60H850" class="rl"/><path d="M50 60H280" class="rl2"/><g transform="translate(90,60)" text-anchor="middle" font-size="11"><circle r="24" class="c sw2"/><use href="#i-pin" x="-11" y="-11" width="22" height="22" class="u k-b"/><text class="hd" y="48">PILOTO</text><text class="mu" y="64">Girardota: plan y mapa</text></g><g transform="translate(270,60)" text-anchor="middle" font-size="11"><circle r="24" class="c sw2"/><use href="#i-org" x="-11" y="-11" width="22" height="22" class="u k-b"/><text class="hd" y="48">RESPONSABLES</text><text class="mu" y="64">fichas por dependencia</text></g><g transform="translate(450,60)" text-anchor="middle" font-size="11"><circle r="24" class="c "/><use href="#i-chart" x="-11" y="-11" width="22" height="22" class="u k-g"/><text class="hd" y="48">SEGUIMIENTO</text><text class="mu" y="64">trimestral con evidencia</text></g><g transform="translate(630,60)" text-anchor="middle" font-size="11"><circle r="24" class="c "/><use href="#i-building" x="-11" y="-11" width="22" height="22" class="u k-m"/><text class="hd" y="48">OTROS MUNICIPIOS</text><text class="mu" y="64">replicar el modelo</text></g><g transform="translate(810,60)" text-anchor="middle" font-size="11"><circle r="24" class="c "/><use href="#i-users" x="-11" y="-11" width="22" height="22" class="u k-m"/><text class="hd" y="48">REGIÓN</text><text class="mu" y="64">red de territorios</text></g></svg></div>
+</section>
+
+<script>
+  // Sigue el tema de la app (clave «plan-tema» en localStorage, mismo origen); suelto, usa el del sistema.
+  (function () {
+    var KEY = 'plan-tema', root = document.documentElement;
+    function apply() {
+      var v = null;
+      try { v = localStorage.getItem(KEY); } catch (e) {}
+      var dark = v ? v === 'oscuro' : (window.parent === window && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      root.classList.toggle('oscuro', dark);
+    }
+    apply();
+    window.addEventListener('storage', function (e) { if (!e.key || e.key === KEY) apply(); });
+  })();
+</script>
+</body>
+</html>

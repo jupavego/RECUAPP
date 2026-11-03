@@ -53,6 +53,13 @@ export const routes: Routes = [
       import('./features/mapa3d/pages/mapa3d/mapa3d.component').then(m => m.Mapa3dComponent),
   },
 
+  // ── Sistema documental (deck, canvas, blueprint, memorandum, one-pager) ──
+  {
+    path: 'documentos',
+    loadComponent: () =>
+      import('./features/documentos/pages/documentos/documentos.component').then(m => m.DocumentosComponent),
+  },
+
   {
     path: 'mapa3d/catalogo',
     loadComponent: () =>
