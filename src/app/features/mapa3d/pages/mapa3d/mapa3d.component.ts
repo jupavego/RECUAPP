@@ -69,6 +69,19 @@ const VELOCIDAD_AGUA = 0.6;
 /** Separación media entre árboles, en metros. */
 const PASO_ARBOLES = 38;
 const OPACIDAD_ARBOLES = 0.72;
+const ALTO_ANTEPECHO = 0.8;
+const MEMBRANAS = ['#7d8388', '#5f6469', '#8e8a84', '#6b6560', '#9aa0a5'].map(c => new THREE.Color(c));
+const REMATE = new THREE.Color('#d9d5cc');
+const TINACO_NEGRO = new THREE.Color('#1d1f22'), TINACO_AZUL = new THREE.Color('#2f6f9f');
+
+/** ¿El punto cae dentro del polígono (xs, zs)? Trazado de rayo. */
+function puntoEnPoligono(x: number, z: number, xs: number[], zs: number[]): boolean {
+  let dentro = false;
+  for (let i = 0, j = xs.length - 1; i < xs.length; j = i++) {
+    if ((zs[i] > z) !== (zs[j] > z) && x < (xs[j] - xs[i]) * (z - zs[i]) / (zs[j] - zs[i]) + xs[i]) dentro = !dentro;
+  }
+  return dentro;
+}
 const MARGEN_TRANSPARENCIA = 9;      // m: los árboles a menos de esto de una construcción se ven semitransparentes
 /** Altitud (m) desde la que el pino empieza a aparecer entre las demás especies, y a partir de la cual es el único árbol. */
 const PINO_DESDE = 1900, PINO_TOTAL = 2100;
@@ -312,9 +325,16 @@ const GIRO_CASCO = 0.6946;
  * Sitios cuya coordenada en la capa de puntos cae fuera de su lugar real (la catedral figura dentro del parque): se asientan donde
  * están en la realidad, con la orientación de las calles, sin buscar un hueco libre. El modelo reemplaza al catastro bajo su huella.
  */
-const SITIOS_FIJOS = new Map<string, { lat: number; lng: number; yaw: number }>([
+const SITIOS_FIJOS = new Map<string, { lat: number; lng: number; yaw: number; dim?: [number, number] }>([
   ['Catedral Nuestra Señora del Rosario', { lat: 6.376837, lng: -75.445853, yaw: GIRO_CASCO }],
   ['Parque principal', { lat: 6.377512, lng: -75.446118, yaw: GIRO_CASCO }],
+  // Unidad deportiva del INDER (carrera 14 con calle 12A). El estadio va en el centro de su óvalo vial (eje a 22,5°, 142 × 76 m) y las demás unidades
+  // a las distancias que da la imagen satelital desde él: centro, giro y huella [largo, ancho] en m.
+  ['Pista de patinaje', { lat: 6.373581, lng: -75.451523, yaw: 0.14, dim: [80, 46] }],
+  ['Cancha engramada Inder', { lat: 6.373735, lng: -75.450293, yaw: -0.39, dim: [96, 70] }],
+  ['Coliseo Metropolitano de Girardota', { lat: 6.373157, lng: -75.450519, yaw: -0.55, dim: [62, 44] }],
+  ['Cancha sintetica Inder', { lat: 6.372871, lng: -75.451405, yaw: -0.5, dim: [64, 56] }],
+  ['Piscina del inder', { lat: 6.374005, lng: -75.451497, yaw: 0.09, dim: [50, 34] }],
 ]);
 /** Puntos que son parte de otro sitio: no llevan edificio propio; su descripción se suma a la del sitio que los contiene. */
 const FUSIONES = new Map<string, string>([['Señor caído', 'Catedral Nuestra Señora del Rosario'], ['Mercado agroverde', 'Parque principal']]);
@@ -442,9 +462,44 @@ function enPoligono(x: number, z: number, poly: number[][]): boolean {
 /** scripts/generar_tanques.py: tanques de almacenamiento [lon, lat, radio (m), alto (m)]. */
 type Tanque = [number, number, number, number];
 /** scripts/generar_infraestructura.py: líneas de alta tensión [kV, puntos], subestaciones [nombre, kV, polígono] y plantas [tipo, nombre, puntos] (OSM). */
-/** scripts/generar_redes_agua.py: tuberías [tipo, diámetro mm, profundidad m, puntos] y puntos [tipo, lon, lat, dato] de EPM. */
-interface RedesAgua { t: [string, number, number, [number, number][]][]; p: [string, number, number, number][] }
-interface Infraestructura { lineas: [number, [number, number][]][]; subs: [string, number, [number, number][]][]; plantas: [string, string, [number, number][]][] }
+/** scripts/generar_redes_agua.py: tuberías [tipo, diámetro mm, profundidad m, puntos, material, estado, nombre] y puntos [tipo, lon, lat, dato] de EPM. */
+/** Tubería o línea eléctrica (polilínea 3D) o equipo (un punto) que se puede señalar y elegir como un río. */
+interface ElementoRed { nombre: string; detalle: string; pts: THREE.Vector3[]; radio: number }
+const TOLERANCIA_RED_PX = 8;
+const NOMBRE_TUBERIA: Record<string, string> = {
+  a1: 'Acueducto · red primaria', a2: 'Acueducto · red secundaria', rs: 'Alcantarillado sanitario', rl: 'Alcantarillado de aguas lluvias',
+};
+/**
+ * Hace que un material engorde con la distancia a la cámara para que tuberías, conductores y torres se vean de lejos (a ~1,5 px de
+ * radio): los vértices se separan de su eje a lo largo de la normal, o cada instancia crece sobre sí misma. De cerca no cambia nada.
+ */
+function engrosar<M extends THREE.Material>(m: M, k: number, tope: number, instanciado = false): M {
+  m.onBeforeCompile = sh => {
+    const ref = instanciado ? 'instanceMatrix[3].xyz' : 'position';
+    sh.vertexShader = sh.vertexShader.replace('#include <begin_vertex>', `#include <begin_vertex>
+      float dEngrosar = distance(cameraPosition, (modelMatrix * vec4(${ref}, 1.0)).xyz);
+      ${instanciado ? `transformed *= 1.0 + min(dEngrosar * ${k.toFixed(5)}, ${tope.toFixed(1)});` : `transformed += normal * min(dEngrosar * ${k.toFixed(5)}, ${tope.toFixed(1)});`}`);
+  };
+  m.customProgramCacheKey = () => `engrosar-${k}-${tope}-${instanciado}`;
+  return m;
+}
+/** Prisma de sección cuadrada entre dos puntos 3D: se agrega a los arreglos de una malla indexada (color opcional). */
+function prisma(a: THREE.Vector3, b: THREE.Vector3, r: number, pos: number[], idx: number[], col?: number[], c?: THREE.Color): void {
+  const dx = b.x - a.x, dz = b.z - a.z, L = Math.hypot(dx, dz);
+  const nx = L > 0.01 ? -dz / L : 1, nz = L > 0.01 ? dx / L : 0, base = pos.length / 3;
+  for (const p of [a, b]) for (const [u, v] of [[1, 0], [0, 1], [-1, 0], [0, -1]]) {
+    pos.push(p.x + nx * u * r, p.y + v * r, p.z + nz * u * r);
+    if (col && c) col.push(c.r, c.g, c.b);
+  }
+  for (let k = 0; k < 4; k++) {
+    const k2 = (k + 1) % 4;
+    idx.push(base + k, base + 4 + k, base + 4 + k2, base + k, base + 4 + k2, base + k2);
+  }
+}
+interface RedesAgua { t: [string, number, number, [number, number][], string, string, string][]; p: [string, number, number, number][] }
+/** scripts/generar_instalaciones_agua.py: [tipo, nombre, lon, lat, estado, radio m] ubicadas sobre el mapa del PBOT (± ~25 m). */
+type InstalacionAgua = [string, string, number, number, string, number];
+interface Infraestructura { lineas: [number, [number, number][], number?][]; subs: [string, number, [number, number][]][]; plantas: [string, string, [number, number][]][] }
 interface AjusteIndustria { lon: number; lat: number; yaw: number; largo: number; fondo: number; pisos: number; parque: string | null; poly: number[][] }
 interface FabricaMapa { x: number; z: number; lon: number; lat: number; n: string; datos: Industria; r: number; esc: number; parque: boolean; yaw: number; lider: boolean; cat?: AjusteIndustria }
 interface Industria {
@@ -626,10 +681,15 @@ const TIPOS_ZONA: Record<string, string> = {
             <span class="dato fuente">Inventario de emisiones atmosféricas · Corantioquia 2021</span>
           </div>
         } @else {
-        @if (rioSeleccion(); as r) {
+        @if (redSeleccion(); as rd) {
           <div class="ficha">
-            <span class="tipo">{{ r.detalle }}</span>
-            <strong>{{ r.nombre }}</strong>
+            <span class="tipo">{{ rd.detalle }}</span>
+            <strong>{{ rd.nombre }}</strong>
+          </div>
+        } @else if (rioSeleccion()) {
+          <div class="ficha">
+            <span class="tipo">{{ rioSeleccion()!.detalle }}</span>
+            <strong>{{ rioSeleccion()!.nombre }}</strong>
           </div>
         } @else {
           @if (seleccion(); as z) {
@@ -662,22 +722,32 @@ const TIPOS_ZONA: Record<string, string> = {
             </button>
           }
         </div>
-        <button type="button" [attr.aria-pressed]="subterraneo()" [disabled]="cargandoRedesAgua()" (click)="alternarSubterraneo()">{{ cargandoRedesAgua() ? 'Cargando redes…' : 'Subterráneo: ' + (subterraneo() ? 'sí' : 'no') }}</button>
+        <div class="capas-extra">
+          <button type="button" class="tog" [class.on]="subterraneo()" [attr.aria-pressed]="subterraneo()" [disabled]="cargandoRedesAgua()" (click)="alternarSubterraneo()">{{ cargandoRedesAgua() ? 'Cargando…' : 'Subterráneo' }}</button>
+          @if (hayRedes) {
+            <button type="button" class="tog" [class.on]="redesVisibles()" [attr.aria-pressed]="redesVisibles()" (click)="alternarRedes()">Redes</button>
+          }
+        </div>
+        @if (hayRedes && redesVisibles() && !subterraneo()) {
+          <div class="leyenda" role="group" aria-label="Redes y servicios">
+            <span class="leyenda-t">Redes y servicios</span>
+            @for (l of leyendaRedes; track l.nombre) {
+              <span class="ley activa" [style.--c]="l.color"><span class="medalla-ley" [style.background]="l.color"></span><span class="ley-t">{{ l.nombre }}<small>{{ l.nota }}</small></span></span>
+            }
+          </div>
+        }
         @if (subterraneo()) {
           <div class="leyenda" role="group" aria-label="Redes subterráneas">
             <span class="leyenda-t">Redes de EPM</span>
             @for (l of leyendaSub; track l.nombre) {
-              <span class="ley activa" [style.--c]="l.color"><span class="medalla-ley" [style.background]="l.color"></span>{{ l.nombre }}</span>
+              <span class="ley activa" [style.--c]="l.color"><span class="medalla-ley" [style.background]="l.color"></span><span class="ley-t">{{ l.nombre }}</span></span>
             }
           </div>
         }
-        @if (hayRedes) {
-          <button type="button" [attr.aria-pressed]="redesVisibles()" (click)="alternarRedes()">Redes: {{ redesVisibles() ? 'sí' : 'no' }}</button>
-        }
-        <button type="button" (click)="vistaGeneral()">Vista general</button>
+        <button type="button" class="vista" (click)="vistaGeneral()">Vista general</button>
         <p class="ayuda">Arrastra para desplazarte · rueda para acercar · rueda presionada para girar e inclinar · clic derecho para inclinar</p>
-      } @else if (fabricaSeleccion() || rioSeleccion() || seleccion()) {
-        <p class="resumen">{{ fabricaSeleccion()?.nombre ?? rioSeleccion()?.nombre ?? seleccion()!.n }}</p>
+      } @else if (fabricaSeleccion() || rioSeleccion() || redSeleccion() || seleccion()) {
+        <p class="resumen">{{ fabricaSeleccion()?.nombre ?? redSeleccion()?.nombre ?? rioSeleccion()?.nombre ?? seleccion()!.n }}</p>
       }
     </div>
 
@@ -877,7 +947,7 @@ const TIPOS_ZONA: Record<string, string> = {
     .zoom button:hover { background: #fff; }
     .panel { position: absolute; z-index: 10; top: 16px; left: 16px; width: 260px; padding: 14px 16px; border-radius: 16px;
       background: rgba(255,255,255,.82); backdrop-filter: blur(8px); box-shadow: 0 6px 24px rgba(30,60,90,.2);
-      font: .9rem system-ui; color: #26425a; }
+      font: .9rem system-ui; color: #26425a; box-sizing: border-box; max-width: calc(100% - 32px); max-height: calc(100% - 32px); overflow-y: auto; overscroll-behavior: contain; }
     .panel .cabecera { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
     .panel.cerrado { width: auto; min-width: 190px; padding-bottom: 10px; }
     .panel.cerrado .cabecera { margin-bottom: 0; }
@@ -966,6 +1036,9 @@ const TIPOS_ZONA: Record<string, string> = {
       background: rgba(38,66,90,.08); color: #6b8294; }
     .leyenda .ley .medalla-ley { flex: none; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center;
       font-size: .75rem; background: #cbd5df; filter: grayscale(1); opacity: .7; }
+    .leyenda .ley { min-width: 0; line-height: 1.25; }
+    .leyenda .ley-t { min-width: 0; overflow-wrap: anywhere; }
+    .leyenda .ley-t small { display: block; font-weight: 400; font-size: .68rem; color: #6b8294; }
     .leyenda .ley.activa { background: rgba(38,66,90,.16); color: #26425a; font-weight: 600; }
     .leyenda .ley.activa .medalla-ley { background: var(--c); filter: none; opacity: 1; }
     .anios { display: flex; align-items: center; gap: 4px; margin-bottom: 10px; font-size: .78rem; color: #6b8294; }
@@ -973,6 +1046,13 @@ const TIPOS_ZONA: Record<string, string> = {
     .anios button { padding: 4px 9px; font-size: .75rem; background: rgba(38,66,90,.12); color: #26425a; }
     .anios button:hover { background: rgba(38,66,90,.22); }
     .anios button.activo { background: #26425a; color: #fff; }
+    .capas-extra { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 6px; margin-bottom: 10px; }
+    .capas-extra .tog { padding: 6px 8px; background: rgba(38,66,90,.12); color: #26425a; }
+    .capas-extra .tog:hover { background: rgba(38,66,90,.22); }
+    .capas-extra .tog.on { background: #26425a; color: #fff; }
+    .capas-extra .tog:disabled { opacity: .6; cursor: progress; }
+    .panel .vista { display: block; width: 100%; background: transparent; color: #26425a; box-shadow: inset 0 0 0 1.5px #26425a; }
+    .panel .vista:hover { background: rgba(38,66,90,.1); }
     button { border: 0; border-radius: 10px; padding: 7px 14px; background: #26425a; color: #fff;
       font: 600 .82rem system-ui; cursor: pointer; }
     button:hover { background: #35597a; }
@@ -1115,6 +1195,7 @@ export class Mapa3dComponent implements AfterViewInit {
   readonly redesVisibles = signal(true);
   private grupoRedes: THREE.Group | null = null;
   alternarRedes(): void {
+    this.soltarRed();
     this.redesVisibles.update(v => !v);
     if (this.grupoRedes) this.grupoRedes.visible = this.redesVisibles();
   }
@@ -1239,10 +1320,11 @@ export class Mapa3dComponent implements AfterViewInit {
       cercas: this.http.get<Cercas>(`data/mapa3d/cercas-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
       industriasCat: this.http.get<Record<string, AjusteIndustria>>(`data/mapa3d/industrias-catastro-${ID_MUNICIPIO}.json`).pipe(catchError(() => of({} as Record<string, AjusteIndustria>))),
       infra: this.http.get<Infraestructura | null>(`data/mapa3d/infraestructura-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
+      instalaciones: this.http.get<InstalacionAgua[]>(`data/mapa3d/instalaciones-agua-${ID_MUNICIPIO}.json`).pipe(catchError(() => of([] as InstalacionAgua[]))),
       tanques: this.http.get<Tanque[]>(`data/mapa3d/tanques-${ID_MUNICIPIO}.json`).pipe(catchError(() => of([] as Tanque[]))),
       ajustes: this.http.get<Record<string, AjusteCatastro>>(`data/mapa3d/equipamientos-catastro-${ID_MUNICIPIO}.json`).pipe(catchError(() => of({} as Record<string, AjusteCatastro>))),
     }).subscribe({
-      next: ({ relieve, muni, terr, foto, vias, viasEstado, edificios, cauces, poblacion, industrias, puntos, zonasPlan, jardines, cercas, ajustes, industriasCat, tanques, infra }) => {
+      next: ({ relieve, muni, terr, foto, vias, viasEstado, edificios, cauces, poblacion, industrias, puntos, zonasPlan, jardines, cercas, ajustes, industriasCat, tanques, infra, instalaciones }) => {
         try {
           this.foto = foto;
           this.zonasPlan = zonasPlan;
@@ -1260,6 +1342,7 @@ export class Mapa3dComponent implements AfterViewInit {
           this.tanques = tanques;
           this.construirTanques();
           this.construirInfraestructura(infra);
+          this.construirInstalacionesAgua(instalaciones);
           this.edificiosBase = this.sinIndustrias(edificios, vias);
           this.poblacion = poblacion;
           this.hayPoblacion.set(!!(edificios?.e && poblacion));
@@ -2321,7 +2404,7 @@ export class Mapa3dComponent implements AfterViewInit {
 
   /** Elige (o suelta, con null) un río: marca todos sus tramos, muestra su nombre y encuadra la cámara. */
   private seleccionarRio(clave: string | null, volar = true): void {
-    if (clave) this.seleccionarFabrica(-1, false);
+    if (clave) { this.seleccionarFabrica(-1, false); this.soltarRed(); }
     this.rioElegido = clave;
     const rio = clave ? this.rios.get(clave) : null;
     if (!rio) {
@@ -2480,9 +2563,11 @@ export class Mapa3dComponent implements AfterViewInit {
       const denso = real ? d.r?.[n] === 0 : this.esUrbano(cLon, cLat);
       // bodegas: uso industrial, o una huella rural grande de uno o dos pisos sin otro uso (hileras de módulos de los parques industriales, galpones)
       const industria = real && (uso === 2 || (uso === 0 && d.r?.[n] === 1 && area >= AREA_BODEGA && pisos <= 2));
-      const urbano = real ? !industria && (pisos >= 4 || area > 900 || (uso === 1 && area > 400))
+      // hileras de casas adosadas de las urbanizaciones (propiedad horizontal) que el catastro no trae: complemento de 2 pisos, siempre con teja
+      const hilera = real && d.r?.[n] === 2;
+      const urbano = real ? !hilera && !industria && (pisos >= 4 || area > 900 || (uso === 1 && area > 400))
         : denso && (area > AREA_VIVIENDA[1] || (area > 120 && hash > 0.85));
-      const casa = real ? !urbano && !industria && area <= 400 : area <= AREA_VIVIENDA[1] && !urbano;
+      const casa = real ? hilera || (!urbano && !industria && area <= 400) : area <= AREA_VIVIENDA[1] && !urbano;
       const h = real ? e[0] * ESCALA_CATASTRO : (urbano ? 3 * (3 + Math.floor(hash * 2.2)) * 0.6 : denso ? 3 * (1 + Math.floor(hash * 3)) * 0.6 : e[0] || 4.5 + hash * 4) * ESCALA_EDIFICIOS;
       const suelo = Math.min(...ring.map(q => this.alturaEn(q[0], q[1]))) - 4, techo = suelo + 4 + h;
       const peso = id >= 0 ? this.pesoBorde(cLon, cLat, id) : 0;
@@ -2565,8 +2650,36 @@ export class Mapa3dComponent implements AfterViewInit {
         return;
       }
       const base = pos.length / 3;
-      ring.forEach((_, i) => poner(xs[i], techo, zs[i], tejado));
+      const membrana = !industria && tejado === LOSA ? MEMBRANAS[n % MEMBRANAS.length] : tejado;       // la placa no es toda del mismo gris: manto asfáltico, concreto, pintura
+      ring.forEach((_, i) => poner(xs[i], techo, zs[i], membrana));
       for (const [a, b, c] of THREE.ShapeUtils.triangulateShape(contorno, [])) idx.push(base + a, base + b, base + c);
+      // placa de concreto: antepecho de mampostería con remate claro y, en algunas, el tinaco sobre la losa (la caja de cartón no existe en la vida real)
+      if (!industria && area > 30 && area < 4000) {
+        for (let i = 0; i < ring.length; i++) {
+          const j = (i + 1) % ring.length;
+          const a = poner(xs[i], techo, zs[i], pared), b = poner(xs[j], techo, zs[j], pared);
+          const c = poner(xs[j], techo + ALTO_ANTEPECHO, zs[j], REMATE), dd = poner(xs[i], techo + ALTO_ANTEPECHO, zs[i], REMATE);
+          idx.push(a, b, c, a, c, dd);
+        }
+        // tapa del antepecho: una franja de ~25 cm hacia adentro, para que el borde tenga grosor
+        const cx0 = xs.reduce((s2, v) => s2 + v, 0) / xs.length, cz0 = zs.reduce((s2, v) => s2 + v, 0) / zs.length;
+        const adentro = ring.map((_, i) => {
+          const dx = cx0 - xs[i], dz = cz0 - zs[i], L = Math.hypot(dx, dz) || 1;
+          return poner(xs[i] + dx / L * 0.35, techo + ALTO_ANTEPECHO, zs[i] + dz / L * 0.35, REMATE);
+        });
+        const afuera = ring.map((_, i) => poner(xs[i], techo + ALTO_ANTEPECHO, zs[i], REMATE));
+        for (let i = 0; i < ring.length; i++) { const j = (i + 1) % ring.length; idx.push(afuera[i], afuera[j], adentro[j], afuera[i], adentro[j], adentro[i]); }
+        const mx = xs.reduce((s, v) => s + v, 0) / xs.length, mz = zs.reduce((s, v) => s + v, 0) / zs.length;
+        const dentro = ring.length <= 8 && xs.every((x, i) => Math.hypot(x - mx, zs[i] - mz) > 2.5) && puntoEnPoligono(mx, mz, xs, zs);
+        if (dentro && area > 50 && hash > 0.25) {
+          const k = hash > 0.7 ? TINACO_AZUL : TINACO_NEGRO, R = 0.55, H = 1.1;
+          const y0 = techo + 0.05, y1 = y0 + H;
+          const aro0 = [0, 1, 2, 3, 4, 5].map(s => poner(mx + Math.cos(s * Math.PI / 3) * R, y0, mz + Math.sin(s * Math.PI / 3) * R, k));
+          const aro1 = [0, 1, 2, 3, 4, 5].map(s => poner(mx + Math.cos(s * Math.PI / 3) * R, y1, mz + Math.sin(s * Math.PI / 3) * R, k));
+          const tapa = poner(mx, y1 + 0.2, mz, k);
+          for (let s = 0; s < 6; s++) { const u = (s + 1) % 6; idx.push(aro0[s], aro0[u], aro1[u], aro0[s], aro1[u], aro1[s], aro1[s], aro1[u], tapa); }
+        }
+      }
     });
     const material = new THREE.MeshStandardMaterial({
       vertexColors: true, flatShading: true, roughness: 1, side: THREE.DoubleSide,
@@ -3773,6 +3886,7 @@ export class Mapa3dComponent implements AfterViewInit {
     const conjuntos = this.conjuntosDeporte(lista, holgura);
     // un punto que es parte de otro sitio (el Señor caído está en la catedral) no lleva edificio propio: su ficha se suma a la del sitio
     const incluidos = new Map<string, Punto[]>();
+    const ocupadas: { x: number; z: number; yaw: number; dim: [number, number] }[] = [];   // huellas de los sitios fijos ya puestos
     for (const p of lista) { const sitio = FUSIONES.get(p.n); if (sitio) incluidos.set(sitio, [...(incluidos.get(sitio) ?? []), p]); }
     lista.forEach((p, i) => {
       if (p.lat == null || p.lng == null || FUSIONES.has(p.n)) return;
@@ -3784,9 +3898,44 @@ export class Mapa3dComponent implements AfterViewInit {
       const modelo = modelarEquipamiento(p.c, p.t, p.n, mulberry32(9100 + i));
       const fijo = SITIOS_FIJOS.get(p.n);
       if (fijo) {
+        let px = this.aX(fijo.lng), pz = this.aZ(fijo.lat);
+        if (fijo.dim) {
+          // a la medida real del lugar: la huella ocupa su sitio y reemplaza al catastro que caiga dentro
+          const [lw, ld] = modelo.losa ?? [modelo.radio * 2, modelo.radio * 2];
+          // sin tapar vías: si la huella toca una calzada (o queda a menos de 1,5 m) se corre hasta 30 m y, si no basta, se reduce de a 5 %
+          const x0 = px, z0 = pz, cy = Math.cos(fijo.yaw), sn = Math.sin(fijo.yaw);
+          const libre = (f: number, ox: number, oz: number): boolean => {
+            for (let i = -6; i <= 6; i++) for (let j = -6; j <= 6; j++) {
+              const a = i / 6 * fijo.dim![0] / 2 * f, b = j / 6 * fijo.dim![1] / 2 * f;
+              const wx = x0 + ox + a * cy + b * sn, wz = z0 + oz - a * sn + b * cy;
+              if (holgura(wx, wz) < 1.5) return false;
+              // ni pisar a otro sitio fijo: el punto, en los ejes de ese sitio, no cae dentro de su huella (con 2 m de margen)
+              if (ocupadas.some(o => {
+                const dx = wx - o.x, dz = wz - o.z, lx = dx * Math.cos(o.yaw) - dz * Math.sin(o.yaw), lz = dx * Math.sin(o.yaw) + dz * Math.cos(o.yaw);
+                return Math.abs(lx) < o.dim[0] / 2 + 2 && Math.abs(lz) < o.dim[1] / 2 + 2;
+              })) return false;
+            }
+            return true;
+          };
+          const desplazamientos: [number, number][] = [[0, 0]];
+          for (const r of [8, 16, 24, 30]) for (let k = 0; k < 12; k++) desplazamientos.push([r * Math.cos(k * Math.PI / 6), r * Math.sin(k * Math.PI / 6)]);
+          let ajuste = 1;
+          for (; ajuste > 0.5; ajuste -= 0.05) {
+            const d = desplazamientos.find(([ox, oz]) => libre(ajuste, ox, oz));
+            if (d) { px += d[0]; pz += d[1]; break; }
+          }
+          const dim: [number, number] = [fijo.dim[0] * ajuste, fijo.dim[1] * ajuste];
+          const sx = dim[0] / lw, sz = dim[1] / ld, sy = Math.max(0.8, Math.min(1.3, Math.min(sx, sz)));
+          modelo.piezas.forEach(pz => pz.g.scale(sx, sy, sz));
+          modelo.radio *= Math.max(sx, sz);
+          modelo.losa = dim;
+          modelo.huella = dim;
+          ocupadas.push({ x: px, z: pz, yaw: fijo.yaw, dim });
+          if (ajuste < 1 || px !== x0) console.info(`[mapa3d] ${p.n}: huella al ${Math.round(ajuste * 100)} % y corrida ${Math.round(Math.hypot(px - x0, pz - z0))} m para no tapar vías`);
+        }
         const dentro = incluidos.get(p.n) ?? [];
         const ficha: Punto = dentro.length ? { ...p, x: [p.x, ...dentro.map(q => `${q.n}: ${q.x ?? q.t}`)].filter(Boolean).join(' · ') } : p;
-        out.push({ x: this.aX(fijo.lng), z: this.aZ(fijo.lat), lon: fijo.lng, lat: fijo.lat, n: p.n, r: modelo.radio, yaw: fijo.yaw, datos: { p: ficha, modelo } });
+        out.push({ x: px, z: pz, lon: this.lon0 + px / this.mLon, lat: this.lat0 - pz / this.mLat, n: p.n, r: modelo.radio, yaw: fijo.yaw, datos: { p: ficha, modelo } });
         return;
       }
       const aj = ajustes[p.n];
@@ -3828,7 +3977,7 @@ export class Mapa3dComponent implements AfterViewInit {
    */
   private conjuntosDeporte(lista: Punto[], holgura: (x: number, z: number) => number): Map<Punto, { x: number; z: number; yaw: number; modelo: Modelo }> {
     const res = new Map<Punto, { x: number; z: number; yaw: number; modelo: Modelo }>();
-    const dep = lista.map((p, i) => ({ p, i })).filter(({ p }) => p.c === 'deporte' && p.lat != null && p.lng != null);
+    const dep = lista.map((p, i) => ({ p, i })).filter(({ p }) => p.c === 'deporte' && p.lat != null && p.lng != null && !SITIOS_FIJOS.has(p.n));
     const pos = (p: Punto) => [this.aX(p.lng!), this.aZ(p.lat!)];
     const visto = new Set<Punto>();
     for (const a of dep) {
@@ -3994,9 +4143,13 @@ export class Mapa3dComponent implements AfterViewInit {
       const { modelo } = q.datos;
       const azar = rnd() * Math.PI * 2, yaw = q.yaw ?? azar, cos = Math.cos(yaw), sin = Math.sin(yaw);
       const [lw, ld] = modelo.losa ?? [0, 0];
-      const alturas = [[0, 0], [1, 1], [-1, 1], [1, -1], [-1, -1]].map(([a, b]) =>
-        this.alturaXZ(q.x + a * (lw / 2) * cos + b * (ld / 2) * sin, q.z - a * (lw / 2) * sin + b * (ld / 2) * cos));
-      const base = (modelo.losa ? Math.max(...alturas) : alturas[0]) + 1, minimo = Math.min(...alturas);
+      // cuadrícula de 5 × 5 sobre la losa (no solo el centro y las esquinas): una loma entre ellas la enterraría
+      const alturas: number[] = [];
+      for (let i = -2; i <= 2; i++) for (let j = -2; j <= 2; j++) {
+        const a = i / 2, b = j / 2;
+        alturas.push(this.alturaXZ(q.x + a * (lw / 2) * cos + b * (ld / 2) * sin, q.z - a * (lw / 2) * sin + b * (ld / 2) * cos));
+      }
+      const base = (modelo.losa ? Math.max(...alturas) : alturas[12]) + 1, minimo = Math.min(...alturas);
       const id = this.idEn(q.lon, q.lat), peso = id >= 0 ? this.pesoBorde(q.lon, q.lat, id) : 0;
       giro.makeRotationY(yaw);
       const poner = (g: THREE.BufferGeometry, color: THREE.Color) => {
@@ -4088,6 +4241,102 @@ export class Mapa3dComponent implements AfterViewInit {
 
   hayRedes = false;
 
+  // ---- selección de tuberías y líneas eléctricas (igual que los ríos: cursor la ilumina, clic la elige y abre su ficha)
+  private elementosAgua: ElementoRed[] = [];
+  private elementosEnergia: ElementoRed[] = [];
+  private redHover: ElementoRed | null = null;
+  private redElegida: ElementoRed | null = null;
+  private tRedHover = 0;
+  private haloRed: THREE.Group | null = null;
+  readonly redSeleccion = signal<{ nombre: string; detalle: string } | null>(null);
+
+  /** Elementos que se pueden señalar ahora: las tuberías en modo subterráneo y las líneas eléctricas cuando se ven. */
+  private elementosActivos(): ElementoRed[] {
+    if (this.subterraneo()) return this.elementosAgua;
+    return this.grupoRedes?.visible ? this.elementosEnergia : [];
+  }
+
+  /** Elemento más cercano al cursor, medido en pantalla porque de lejos una tubería mide menos de un píxel. */
+  private redBajoCursor(ev: PointerEvent): ElementoRed | null {
+    const lista = this.elementosActivos();
+    if (!lista.length) return null;
+    const r = this.renderer.domElement.getBoundingClientRect();
+    const mx = ev.clientX - r.left, my = ev.clientY - r.top, v = new THREE.Vector3();
+    const pantalla = (p: THREE.Vector3): [number, number, boolean] => {
+      v.copy(p).project(this.camara);
+      return [(v.x * 0.5 + 0.5) * r.width, (-v.y * 0.5 + 0.5) * r.height, v.z < 1];
+    };
+    let mejor: ElementoRed | null = null, mejorD = TOLERANCIA_RED_PX;
+    for (const e of lista) {
+      if (e.pts.length === 1) {
+        const [x, y, ok] = pantalla(e.pts[0]);
+        const d = ok ? Math.hypot(mx - x, my - y) - 6 : Infinity;
+        if (d < mejorD) { mejorD = d; mejor = e; }
+        continue;
+      }
+      let [ax, ay, aok] = pantalla(e.pts[0]);
+      for (let i = 1; i < e.pts.length; i++) {
+        const [bx, by, bok] = pantalla(e.pts[i]);
+        if (aok && bok) {
+          const dx = bx - ax, dy = by - ay, l2 = dx * dx + dy * dy;
+          const u = l2 ? Math.max(0, Math.min(1, ((mx - ax) * dx + (my - ay) * dy) / l2)) : 0;
+          const d = Math.hypot(mx - (ax + dx * u), my - (ay + dy * u));
+          if (d < mejorD) { mejorD = d; mejor = e; }
+        }
+        ax = bx; ay = by; aok = bok;
+      }
+    }
+    return mejor;
+  }
+
+  /** Geometría que ilumina un elemento: un tubo más grueso que él, o un haz vertical para un equipo. */
+  private geometriaHalo(e: ElementoRed): THREE.BufferGeometry {
+    if (e.pts.length === 1) {
+      const p = e.pts[0];
+      return new THREE.CylinderGeometry(e.radio, e.radio, 90, 24, 1, true).translate(p.x, p.y + 25, p.z);
+    }
+    const pos: number[] = [], idx: number[] = [];
+    for (let i = 0; i < e.pts.length - 1; i++) prisma(e.pts[i], e.pts[i + 1], e.radio * 1.9 + 0.5, pos, idx);
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    g.setIndex(idx);
+    g.computeVertexNormals();
+    return g;
+  }
+
+  private pintarHalosRed(): void {
+    if (!this.haloRed) {
+      this.haloRed = new THREE.Group();
+      for (const [color, opacidad] of [['#fff2a6', 0.8], ['#ffb300', 0.95]] as const) {
+        const m = new THREE.Mesh(new THREE.BufferGeometry(), engrosar(new THREE.MeshBasicMaterial({ color, transparent: true, opacity: opacidad, depthWrite: false, side: THREE.DoubleSide }), 0.0028, 40));
+        m.renderOrder = 6;
+        m.frustumCulled = false;
+        this.haloRed.add(m);
+      }
+      this.escena.add(this.haloRed);
+    }
+    const [hover, elegido] = this.haloRed.children as THREE.Mesh[];
+    hover.geometry.dispose();
+    elegido.geometry.dispose();
+    hover.geometry = this.redHover && this.redHover !== this.redElegida ? this.geometriaHalo(this.redHover) : new THREE.BufferGeometry();
+    elegido.geometry = this.redElegida ? this.geometriaHalo(this.redElegida) : new THREE.BufferGeometry();
+  }
+
+  private seleccionarRed(e: ElementoRed | null): void {
+    if (e) {
+      this.seleccionarFabrica(-1, false);
+      this.seleccionarRio(null, false);
+      this.deseleccionar();
+    }
+    this.redElegida = e;
+    this.redSeleccion.set(e ? { nombre: e.nombre, detalle: e.detalle } : null);
+    this.pintarHalosRed();
+  }
+
+  private soltarRed(): void {
+    if (this.redElegida || this.redHover) { this.redHover = null; this.seleccionarRed(null); }
+  }
+
   /**
    * Redes de servicios públicos con la geografía real de OpenStreetMap: torres y conductores de las líneas de alta tensión (con
    * flecha entre torres), subestaciones con patio y transformadores, la central hidroeléctrica, la planta de tratamiento y los
@@ -4100,7 +4349,7 @@ export class Mapa3dComponent implements AfterViewInit {
     const grupo = new THREE.Group();
     // --- líneas: una torre cada ~160 m y tres conductores con flecha de catenaria
     const cond: number[] = [], torres: { x: number; y: number; z: number; ang: number; alto: number }[] = [];
-    for (const [kv, ps] of d.lineas) {
+    for (const [kv, ps, circuitos] of d.lineas) {
       const alto = kv >= 200 ? 42 : 30, sep = kv >= 200 ? 7 : 4.5, vano = 160;
       const pts = ps.map(([lon, lat]) => new THREE.Vector2(this.aX(lon), this.aZ(lat)));
       const puestos: { x: number; z: number; ang: number }[] = [];
@@ -4113,6 +4362,13 @@ export class Mapa3dComponent implements AfterViewInit {
       if (pts.length > 1) puestos.push({ x: u.x, z: u.y, ang: puestos[puestos.length - 1].ang });
       const ts = puestos.filter(p => dentro(p.x, p.z)).map(p => ({ ...p, y: this.alturaXZ(p.x, p.z), alto }));
       ts.forEach(t => torres.push(t));
+      if (ts.length > 1) {
+        this.elementosEnergia.push({
+          nombre: `Línea de transmisión · ${kv} kV`,
+          detalle: `Red eléctrica aérea · ${circuitos ?? 1} circuito${(circuitos ?? 1) > 1 ? 's' : ''} · torre cada ~160 m · OpenStreetMap`,
+          pts: ts.map(t => new THREE.Vector3(t.x, t.y + t.alto, t.z)), radio: 1.6,
+        });
+      }
       for (let i = 0; i < ts.length - 1; i++) {
         const a = ts[i], b = ts[i + 1], L = Math.hypot(b.x - a.x, b.z - a.z);
         if (L > vano * 2.5) continue;       // un salto largo es un tramo que sale del mapa
@@ -4151,10 +4407,15 @@ export class Mapa3dComponent implements AfterViewInit {
       for (const o of [im, ic]) { o.castShadow = true; grupo.add(o); }
     }
     // --- subestaciones: patio de grava, transformadores y aisladores
-    for (const [, , ps] of d.subs) {
+    for (const [nombreSub, kvSub, ps] of d.subs) {
       const xz = ps.map(([lon, lat]) => [this.aX(lon), this.aZ(lat)]);
       const cx = xz.reduce((s, p) => s + p[0], 0) / xz.length, cz = xz.reduce((s, p) => s + p[1], 0) / xz.length;
       if (!dentro(cx, cz)) continue;
+      this.elementosEnergia.push({
+        nombre: /subestaci/i.test(nombreSub) ? nombreSub : `Subestación ${nombreSub}`,
+        detalle: `Subestación eléctrica${kvSub ? ` · ${kvSub} kV` : ''} · OpenStreetMap`,
+        pts: [new THREE.Vector3(cx, this.alturaXZ(cx, cz) + 4, cz)], radio: 18,
+      });
       const y0 = Math.max(...xz.map(p => this.alturaXZ(p[0], p[1]))) + 0.2;
       const forma = new THREE.Shape(xz.map(p => new THREE.Vector2(p[0], -p[1])));
       const patio = new THREE.Mesh(new THREE.ExtrudeGeometry(forma, { depth: 0.5, bevelEnabled: false }).rotateX(-Math.PI / 2), new THREE.MeshStandardMaterial({ color: 0x9a9d92, roughness: 1 }));
@@ -4176,10 +4437,15 @@ export class Mapa3dComponent implements AfterViewInit {
     }
     // --- plantas y tanques
     const COLOR: Record<string, number> = { hidro: 0x5f8fb4, ptap: 0x4aa3a8, tanque: 0xdfe6ea };
-    for (const [tipo, , ps] of d.plantas) {
+    for (const [tipo, nombrePlanta, ps] of d.plantas) {
       const xz = ps.map(([lon, lat]) => [this.aX(lon), this.aZ(lat)]);
       const cx = xz.reduce((s, p) => s + p[0], 0) / xz.length, cz = xz.reduce((s, p) => s + p[1], 0) / xz.length;
       if (!dentro(cx, cz)) continue;
+      this.elementosEnergia.push({
+        nombre: nombrePlanta,
+        detalle: `${{ hidro: 'Central hidroeléctrica', ptap: 'Planta de tratamiento de agua', tanque: 'Tanque de agua' }[tipo] ?? 'Instalación'} · OpenStreetMap`,
+        pts: [new THREE.Vector3(cx, this.alturaXZ(cx, cz) + 4, cz)], radio: 14,
+      });
       const mat = new THREE.MeshStandardMaterial({ color: COLOR[tipo] ?? 0xcccccc, roughness: 0.6, metalness: 0.2 });
       let obj: THREE.Mesh;
       if (xz.length >= 3) {
@@ -4203,6 +4469,15 @@ export class Mapa3dComponent implements AfterViewInit {
    */
   readonly subterraneo = signal(false);
   readonly cargandoRedesAgua = signal(false);
+  readonly leyendaRedes = [
+    { nombre: 'Línea de alta tensión', nota: '110 a 230 kV · OpenStreetMap', color: '#80878e' },
+    { nombre: 'Subestación eléctrica', nota: 'OpenStreetMap', color: '#7c8a96' },
+    { nombre: 'Central hidroeléctrica', nota: 'La Tasajera · EPM', color: '#5f8fb4' },
+    { nombre: 'Bocatoma de acueducto veredal', nota: 'PBOT · ubicación aproximada', color: '#2f8fff' },
+    { nombre: 'Tratamiento de agua residual rural', nota: 'PBOT · ubicación aproximada', color: '#4aa3a8' },
+    { nombre: 'Área de la PTAR urbana', nota: 'Proyecto, aún no construida', color: '#2bb3bf' },
+    { nombre: 'Predio de la ECA', nota: 'Proyecto, aún no construido', color: '#e0903f' },
+  ];
   readonly leyendaSub = [
     { nombre: 'Acueducto · primaria', color: '#2f8fff' }, { nombre: 'Acueducto · secundaria', color: '#7fd4ff' },
     { nombre: 'Alcantarillado sanitario', color: '#e0903f' }, { nombre: 'Alcantarillado lluvias', color: '#4cc79a' },
@@ -4226,6 +4501,7 @@ export class Mapa3dComponent implements AfterViewInit {
   }
 
   private aplicarSubterraneo(activar: boolean): void {
+    this.soltarRed();
     this.subterraneo.set(activar);
     if (this.grupoSub) this.grupoSub.visible = activar;
     if (this.grupoRedes) this.grupoRedes.visible = !activar && this.redesVisibles();
@@ -4260,26 +4536,22 @@ export class Mapa3dComponent implements AfterViewInit {
     };
     const PROF: Record<string, number> = { a1: 2.5, a2: 1.8, rs: 3, rl: 3 };
     const pos: number[] = [], col: number[] = [], idx: number[] = [];
-    const cuadros: [number, number][] = [[1, 0], [0, 1], [-1, 0], [0, -1]];
-    for (const [tipo, diam, prof, ps] of d.t) {
+    for (const [tipo, diam, prof, ps, material, estado, circuito] of d.t) {
       const r = 0.25 + diam / 1000 * 1.2, c = COLOR[tipo] ?? COLOR['a2'];
       const hondo = Math.max(1.5, (prof > 0 ? prof : PROF[tipo] ?? 2) * 1.8);
       const puntos = ps.map(([lon, lat]) => { const x = this.aX(lon), z = this.aZ(lat); return new THREE.Vector3(x, this.alturaXZ(x, z) - hondo, z); });
+      const visibles = puntos.filter(p => dentro(p.x, p.z));
       for (let i = 0; i < puntos.length - 1; i++) {
         const a = puntos[i], b = puntos[i + 1];
-        if (!dentro(a.x, a.z) || !dentro(b.x, b.z)) continue;
-        const dx = b.x - a.x, dz = b.z - a.z, L = Math.hypot(dx, dz);
-        if (L < 0.01) continue;
-        // sección cuadrada perpendicular al tramo (en planta), con la normal hacia fuera para la luz
-        const nx = -dz / L, nz = dx / L, base = pos.length / 3;
-        for (const p of [a, b]) for (const [u, v] of cuadros) {
-          pos.push(p.x + (nx * u) * r, p.y + v * r, p.z + (nz * u) * r);
-          col.push(c.r, c.g, c.b);
-        }
-        for (let k = 0; k < 4; k++) {
-          const k2 = (k + 1) % 4;
-          idx.push(base + k, base + 4 + k, base + 4 + k2, base + k, base + 4 + k2, base + k2);
-        }
+        if (dentro(a.x, a.z) && dentro(b.x, b.z)) prisma(a, b, r, pos, idx, col, c);
+      }
+      if (visibles.length > 1) {
+        const cap = tipo === 'a1' || tipo === 'a2' ? 'Red subterránea de acueducto' : 'Red subterránea de alcantarillado';
+        this.elementosAgua.push({
+          nombre: `${NOMBRE_TUBERIA[tipo] ?? 'Tubería'}${diam ? ` · Ø ${Math.round(diam)} mm` : ''}`,
+          detalle: [cap, material.toLowerCase(), prof ? `a ${prof.toFixed(1).replace('.', ',')} m de profundidad` : '', estado.toLowerCase(), circuito ? circuito.toLowerCase() : '', 'geoportal EPM'].filter(Boolean).join(' · '),
+          pts: visibles, radio: r,
+        });
       }
     }
     const grupo = new THREE.Group();
@@ -4288,7 +4560,7 @@ export class Mapa3dComponent implements AfterViewInit {
     geo.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
     geo.setIndex(idx);
     geo.computeVertexNormals();
-    const tubos = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.45, metalness: 0.1, emissive: 0x223344, emissiveIntensity: 0.6, side: THREE.DoubleSide }));
+    const tubos = new THREE.Mesh(geo, engrosar(new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.45, metalness: 0.1, emissive: 0x334455, emissiveIntensity: 0.9, side: THREE.DoubleSide }), 0.003, 34));
     tubos.frustumCulled = false;
     grupo.add(tubos);
     // puntos: cámaras (pozo vertical hasta la superficie), válvulas, hidrantes, descargas y tanques
@@ -4317,10 +4589,61 @@ export class Mapa3dComponent implements AfterViewInit {
     this.escena.add(grupo);
   }
 
+  /**
+   * Instalaciones de agua del PBOT: bocatomas (caja de captación con mástil azul para ubicarlas de lejos), sistemas de tratamiento rural
+   * (dos tanques circulares y caseta), y las áreas proyectadas de la PTAR urbana y de la ECA (huella translúcida, aún sin construir).
+   * Van en el grupo de redes y se eligen como el resto.
+   */
+  private construirInstalacionesAgua(items: InstalacionAgua[]): void {
+    if (!items.length) return;
+    if (!this.grupoRedes) { this.grupoRedes = new THREE.Group(); this.escena.add(this.grupoRedes); this.hayRedes = true; }
+    const grupo = this.grupoRedes;
+    const mat = (c: number, extra: Partial<THREE.MeshStandardMaterialParameters> = {}) => new THREE.MeshStandardMaterial({ color: c, roughness: 0.65, ...extra });
+    const concreto = mat(0xb9bdc0), azul = mat(0x2f8fff, { emissive: 0x1d5fb0, emissiveIntensity: 0.5 }), teal = mat(0x4aa3a8), caseta = mat(0xd9d4c7), techo = mat(0x7d6f63);
+    const ROTULO: Record<string, string> = {
+      bocatoma: 'Bocatoma de acueducto veredal', ptar_rural: 'Sistema de tratamiento de agua residual rural',
+      ptar_urbana: 'Área para la PTAR urbana', eca: 'Estación de clasificación y aprovechamiento (ECA)',
+    };
+    const poner = (g: THREE.BufferGeometry, m: THREE.Material, x: number, y: number, z: number) => {
+      const o = new THREE.Mesh(g, m);
+      o.position.set(x, y, z);
+      o.castShadow = o.receiveShadow = true;
+      grupo.add(o);
+    };
+    for (const [tipo, nombre, lon, lat, estado, radio] of items) {
+      const x = this.aX(lon), z = this.aZ(lat), y = this.alturaXZ(x, z);
+      if (Math.abs(x) > this.ancho / 2 || Math.abs(z) > this.alto / 2) continue;
+      if (tipo === 'bocatoma') {
+        poner(new THREE.BoxGeometry(4, 2.4, 3.2), concreto, x, y + 1.2, z);
+        poner(new THREE.BoxGeometry(4.6, 0.4, 3.8), techo, x, y + 2.6, z);
+        poner(new THREE.CylinderGeometry(0.35, 0.35, 14, 8), azul, x, y + 7, z);
+        poner(new THREE.SphereGeometry(1.1, 12, 8), azul, x, y + 14.4, z);
+      } else if (tipo === 'ptar_rural') {
+        for (const dx of [-5.5, 5.5]) poner(new THREE.CylinderGeometry(4, 4, 3, 20), teal, x + dx, y + 1.5, z);
+        poner(new THREE.BoxGeometry(5, 3.4, 4), caseta, x, y + 1.7, z + 7);
+        poner(new THREE.BoxGeometry(5.6, 0.5, 4.6), techo, x, y + 3.6, z + 7);
+        poner(new THREE.CylinderGeometry(0.35, 0.35, 12, 8), mat(0x4aa3a8, { emissive: 0x2a7a7f, emissiveIntensity: 0.5 }), x, y + 6, z - 6);
+      } else {
+        const color = tipo === 'eca' ? 0xe0903f : 0x2bb3bf;
+        const disco = new THREE.Mesh(new THREE.CylinderGeometry(radio, radio, 0.6, 40), new THREE.MeshStandardMaterial({ color, transparent: true, opacity: 0.4, roughness: 1, depthWrite: false }));
+        disco.position.set(x, y + 0.6, z);
+        grupo.add(disco);
+        const aro = new THREE.Mesh(new THREE.TorusGeometry(radio, 0.7, 6, 48).rotateX(Math.PI / 2), new THREE.MeshBasicMaterial({ color }));
+        aro.position.set(x, y + 0.9, z);
+        grupo.add(aro);
+      }
+      this.elementosEnergia.push({
+        nombre,
+        detalle: `${ROTULO[tipo] ?? 'Instalación'} · ${estado === 'proyecto' ? 'proyecto, aún no construida' : 'en operación'} · PBOT de Girardota (ubicación aproximada)`,
+        pts: [new THREE.Vector3(x, y + 4, z)], radio: Math.max(14, radio * 0.6),
+      });
+    }
+  }
+
   /** El neón pulsa y los iconos flotan sin tapar su edificio. */
   /** Objetos 3D de marcación que el modo fotografía esconde (anillos, halos de río y el borde del municipio). */
   private marcaciones(): THREE.Object3D[] {
-    return [this.anilloHover, this.anilloFabrica, this.haloHover, this.haloElegido, ...this.bordeMunicipio].filter((o): o is THREE.Object3D => !!o);
+    return [this.anilloHover, this.anilloFabrica, this.haloHover, this.haloElegido, this.haloRed, ...this.bordeMunicipio].filter((o): o is THREE.Object3D => !!o);
   }
 
   alternarConduccion(): void {
@@ -6314,6 +6637,18 @@ export class Mapa3dComponent implements AfterViewInit {
       this.lienzo.nativeElement.style.cursor = 'pointer';
       return;
     }
+    // tuberías y líneas eléctricas, antes que los cauces y las veredas
+    if (ahora - this.tRedHover > 40) {
+      this.tRedHover = ahora;
+      const red = this.redBajoCursor(ev);
+      if (red !== this.redHover) { this.redHover = red; this.pintarHalosRed(); }
+    }
+    if (this.redHover) {
+      if (this.hover !== -1) { this.hover = -1; this.pintarResalte(); }
+      if (this.rioHover) { this.rioHover = null; this.pintarHalos(); }
+      this.lienzo.nativeElement.style.cursor = 'pointer';
+      return;
+    }
     // los cauces tienen prioridad sobre la vereda que los rodea
     const rio = this.rioBajoCursor(ev);
     if (rio !== this.rioHover) { this.rioHover = rio; this.pintarHalos(); }
@@ -6332,6 +6667,7 @@ export class Mapa3dComponent implements AfterViewInit {
     this.marcarEquipHover(-1);
     this.hover = -1;
     this.rioHover = null;
+    if (this.redHover) { this.redHover = null; this.pintarHalosRed(); }
     this.pintarHalos();
     this.pintarResalte();
   }
@@ -6379,12 +6715,18 @@ export class Mapa3dComponent implements AfterViewInit {
     if (fab >= 0) { this.irAPin({ tipo: 'fabrica', i: fab }); return; }
     const eq = this.equipBajoCursor(ev);
     if (eq >= 0) { this.irAPin({ tipo: 'equip', i: eq }); return; }
+    const red = this.redBajoCursor(ev);
+    if (red) {                                           // clic en una tubería o línea eléctrica: la elige; otro clic en la misma, la suelta
+      this.seleccionarRed(red === this.redElegida ? null : red);
+      return;
+    }
     const rio = this.rioBajoCursor(ev);
     if (rio) {                                           // clic en un cauce: lo elige; otro clic en el mismo, lo suelta
       this.seleccionarRio(rio === this.rioElegido ? null : rio);
       return;
     }
     this.seleccionarFabrica(-1);
+    this.soltarRed();
     const id = this.idBajoCursor(ev);
     // un clic en la zona ya elegida, o fuera de toda zona, la deselecciona y la baja
     if (id < 0 || id === this.elegida) {
@@ -6403,6 +6745,7 @@ export class Mapa3dComponent implements AfterViewInit {
   }
 
   private elegir(id: number): void {
+    this.soltarRed();
     this.seleccionarFabrica(-1, false);
     this.seleccionarRio(null, false);
     this.elegida = id;
@@ -6512,6 +6855,7 @@ export class Mapa3dComponent implements AfterViewInit {
     if (this.anilloFabrica) this.anilloFabrica.visible = false;
     if (i < 0) { this.fabricaSeleccion.set(null); return; }
     this.deseleccionar();
+    this.soltarRed();
     this.rioElegido = null;
     this.rioSeleccion.set(null);
     this.pintarHalos();

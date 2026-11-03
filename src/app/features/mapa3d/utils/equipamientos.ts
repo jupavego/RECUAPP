@@ -337,8 +337,27 @@ function parquePrincipal(e: Ensamble, rnd: () => number): Modelo {
 /** Escenarios deportivos: cancha de fútbol con graderías, placa cubierta con cubierta en arco, pista de patinaje o de bicrós. */
 function deporte(e: Ensamble, tipo: string): Modelo {
   const linea = '#f5f5f4';
+  if (/coliseo/.test(tipo)) {
+    // coliseo cubierto: caja con zócalo y franja azul, cubierta metálica en arco con testeros, acceso con pórtico y ventanería
+    const w = 54, d = 34, h = 9, r = d / 2 + 1, alto = r * 0.5;
+    e.caja(w + 8, 0.3, d + 10, '#9aa0a6', 0, 0, 0).caja(w, h, d, '#d9dde1', 0, 0.3, 0).caja(w + 0.4, 1.2, d + 0.4, '#6b7280', 0, 0.3, 0)
+      .caja(w + 0.2, 1, d + 0.2, '#1f6f8b', 0, h - 1.4, 0);
+    const arco = new THREE.CylinderGeometry(r, r, w + 2, 20, 1, true, Math.PI / 2, Math.PI).rotateX(Math.PI / 2).rotateY(Math.PI / 2);
+    arco.scale(1, 0.5, 1).translate(0, h + 0.3, 0);
+    e.piezas.push({ g: arco, color: '#8e99a4' });
+    for (const s of [-1, 1]) {
+      const testero = new THREE.Shape();
+      testero.absellipse(0, 0, r, alto, 0, Math.PI, false, 0);
+      e.piezas.push({ g: new THREE.ExtrudeGeometry(testero, { depth: 0.4, bevelEnabled: false }).translate(0, 0, -0.2).rotateY(Math.PI / 2).translate(s * (w / 2 + 1), h + 0.3, 0), color: '#cfd5da' });
+      e.caja(0.3, 4.5, d - 8, VIDRIO, s * (w / 2 + 0.1), 2.6, 0);
+    }
+    e.caja(w - 10, 1.8, 0.3, VIDRIO, 0, 3.4, d / 2 + 0.1).caja(w - 10, 1.8, 0.3, VIDRIO, 0, 3.4, -d / 2 - 0.1)
+      .caja(14, 6, 4, '#e5e7eb', 0, 0.3, d / 2 + 2).caja(15, 0.5, 5, '#1f6f8b', 0, 6.3, d / 2 + 2.2).caja(8, 3.6, 0.3, '#2b4c5c', 0, 0.3, d / 2 + 4.1)
+      .arbol(-w / 2 - 2, d / 2 + 5, 8).arbol(w / 2 + 2, d / 2 + 5, 8);
+    return { piezas: e.piezas, radio: 38, losa: [w + 8, d + 10] };
+  }
   if (/f[uú]tbol|sint[eé]tica/.test(tipo)) {
-    const w = 62, d = 38;
+    const est = /engramada/.test(tipo), w = est ? 88 : 62, d = est ? 46 : 38;
     e.caja(w + 6, 0.3, d + 6, '#9aa0a6', 0, 0, 0).caja(w, 0.2, d, /sint/.test(tipo) ? '#2f9a4a' : '#4d9a3a', 0, 0.3, 0)
       .caja(w, 0.05, 0.4, linea, 0, 0.5, d / 2 - 0.2).caja(w, 0.05, 0.4, linea, 0, 0.5, -d / 2 + 0.2)
       .caja(0.4, 0.05, d, linea, w / 2 - 0.2, 0.5, 0).caja(0.4, 0.05, d, linea, -w / 2 + 0.2, 0.5, 0)
@@ -347,6 +366,13 @@ function deporte(e: Ensamble, tipo: string): Modelo {
     for (const s of [-1, 1]) {
       const x = s * (w / 2);
       e.caja(0.3, 2.4, 0.3, linea, x, 0.5, -3.7).caja(0.3, 2.4, 0.3, linea, x, 0.5, 3.7).caja(0.3, 0.3, 7.7, linea, x, 2.6, 0);
+    }
+    if (/engramada/.test(tipo)) {
+      // estadio: graderío de 6 filas a lo largo del costado, con cubierta azul sobre columnas
+      for (let k = 0; k < 6; k++) e.caja(w - 4, 0.9, 1.7, k % 2 ? '#d4d4d8' : '#a8afb7', 0, 0.3 + k * 0.9, -d / 2 - 3 - k * 1.7);
+      e.caja(w - 2, 0.35, 11, '#2563eb', 0, 7.4, -d / 2 - 8);
+      for (const x of [-w / 2 + 2, -w / 4, 0, w / 4, w / 2 - 2]) e.caja(0.4, 7.1, 0.4, '#6b7280', x, 0.3, -d / 2 - 12.5);
+      return { piezas: e.piezas, radio: 40, losa: [w + 8, d + 24] };
     }
     for (let k = 0; k < 3; k++) e.caja(40, 0.7, 1.6, '#9ca3af', 0, 0.3 + k * 0.7, -d / 2 - 3 - k * 1.6);
     e.caja(42, 0.25, 6, LIMA, 0, 4.2, -d / 2 - 5.6).caja(0.3, 3.9, 0.3, '#6b7280', -19, 0.3, -d / 2 - 8).caja(0.3, 3.9, 0.3, '#6b7280', 19, 0.3, -d / 2 - 8);
@@ -482,8 +508,8 @@ function aEscalaReal(m: Modelo, largoReal: number): Modelo {
 function vehiculo(e: Ensamble, t: string): Modelo {
   if (/moto/.test(t)) return aEscalaReal(moto(e), LARGO_REAL.moto);
   if (/taxi/.test(t)) return aEscalaReal(taxi(e), LARGO_REAL.taxi);
-  if (/fj/.test(t)) return aEscalaReal(fj80(e), LARGO_REAL.campero);
-  if (/bus/.test(t)) return aEscalaReal(bus(e), LARGO_REAL.bus);
+  if (/\bfj\b/.test(t)) return aEscalaReal(fj80(e), LARGO_REAL.campero);
+  if (/\bbus\b/.test(t)) return aEscalaReal(bus(e), LARGO_REAL.bus);
   if (/cami[oó]n|tr[aá]iler/.test(t)) return aEscalaReal(camion(e), LARGO_REAL.camion);
   return aEscalaReal(auto(e), LARGO_REAL.auto);
 }
@@ -1165,6 +1191,7 @@ export const VARIANTES: Variante[] = [
   { categoria: 'turismo', etiqueta: 'Truchera', tipo: 'Turismo rural / pesca deportiva', nombre: 'Truchera' },
   { categoria: 'turismo', etiqueta: 'Petroglifos', tipo: 'Patrimonio arqueológico / cultural', nombre: 'Petroglifos' },
   { categoria: 'deporte', etiqueta: 'Cancha de fútbol', tipo: 'Cancha de fútbol', nombre: 'Cancha' },
+  { categoria: 'deporte', etiqueta: 'Coliseo', tipo: 'Coliseo', nombre: 'Coliseo Metropolitano' },
   { categoria: 'deporte', etiqueta: 'Cancha sintética', tipo: 'Cancha sintética', nombre: 'Cancha' },
   { categoria: 'deporte', etiqueta: 'Placa polideportiva', tipo: 'Placa polideportiva', nombre: 'Placa' },
   { categoria: 'deporte', etiqueta: 'Pista de patinaje', tipo: 'Pista de patinaje', nombre: 'Pista' },

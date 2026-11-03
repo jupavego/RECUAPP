@@ -143,6 +143,11 @@ FUENTE_OSM = "OpenStreetMap · colaboradores (ODbL), sin verificar por Mindeport
 for o in json.loads((INSUMOS / "deporte" / "osm_escenarios_girardota.json").read_text(encoding="utf-8")):
     agregar(c="deporte", t=o["t"] + " (OSM)", n=o["n"] or o["t"], lat=o["lat"], lng=o["lng"], f=FUENTE_OSM)
 
+# Coliseo de la unidad deportiva del INDER: no está en el consolidado de Mindeporte ni en OSM; se ubica sobre la imagen satelital.
+FUENTE_OBS = "Observación sobre imagen satelital (Google Maps), sin registro en Mindeporte"
+agregar(c="deporte", t="Coliseo", n="Coliseo Metropolitano de Girardota", lat=6.372864, lng=-75.451106, f=FUENTE_OBS,
+        e="Responsable: INDER / Alcaldía de Girardota")
+
 # ── Justicia (el Excel no trae coordenadas: se geocodifican en la app) ─────────
 for r in hoja("justicia/Directorio_Personerias_Defensoria_Antioquia_125_municipios.xlsx", 0).iter_rows(min_row=5, values_only=True):
     if r[1] and norm(r[1]) == "girardota":

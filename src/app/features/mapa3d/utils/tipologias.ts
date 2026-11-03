@@ -438,6 +438,9 @@ export function tipologia(id: string, semilla: number): Modelo {
       a.caja(X2 * 2, 0.08, 0.1, '#6b4226', 0, alto - 0.12, s * (fondo / 2 + alero * 0.97));
       for (let x = -X2 + 0.25; x < X2; x += 0.5) a.caja(0.07, 0.09, alero, '#8a5a32', x, alto - 0.2, s * (fondo / 2 + alero / 2));
     }
+    // canoa de lámina en el borde del alero del frente y bajante blanca hasta el andén
+    a.caja(X2 * 2, 0.1, 0.14, '#aeb4ba', 0, y0 - 0.1, D2 + 0.05);
+    for (const s of [-1, 1]) a.cilindro(0.045, y0 - 0.1, '#e6e6e0', s * (ancho / 2 - 0.1), 0, fondo / 2 + 0.07);
   } else if (techo === 'dosAguas') {
     const alero = 0.6, extremo = 0.4, W2 = ancho / 2 + alero, L2 = fondo / 2 + extremo, subida = ancho * 0.26;
     const y0 = alto - subida * alero / W2, yc = y0 + subida;
@@ -445,13 +448,37 @@ export function tipologia(id: string, semilla: number): Modelo {
     a.cuadro([W2, y0, L2], [W2, y0, -L2], [0, yc, -L2], [0, yc, L2], tex.teja, 0.9);
     const hf = subida * (ancho / 2) / W2;
     for (const s of [-1, 1]) a.triangulo([-ancho / 2, alto, s * (fondo / 2 + 0.02)], [ancho / 2, alto, s * (fondo / 2 + 0.02)], [0, alto + hf, s * (fondo / 2 + 0.02)], paleta.pared);
-    a.caja(0.2, 0.18, L2 * 2, '#7a3520', 0, yc - 0.05, 0);                 // cumbrera  } else {
+    a.caja(0.2, 0.18, L2 * 2, '#7a3520', 0, yc - 0.05, 0);                 // cumbrera
+    // canoas de lámina en los dos aleros y bajante blanca al frente
+    for (const s of [-1, 1]) a.caja(0.14, 0.1, L2 * 2, '#aeb4ba', s * (W2 + 0.05), y0 - 0.1, 0);
+    a.cilindro(0.045, y0 - 0.1, '#e6e6e0', ancho / 2 + 0.08, 0, fondo / 2 - 0.15);
+  } else {
     const p = 0.85;
     a.caja(ancho + 0.1, p, 0.2, paleta.pared, 0, alto, fondo / 2).caja(ancho + 0.1, p, 0.2, paleta.pared, 0, alto, -fondo / 2)
       .caja(0.2, p, fondo, paleta.pared, ancho / 2, alto, 0).caja(0.2, p, fondo, paleta.pared, -ancho / 2, alto, 0);
     a.caja(ancho + 0.34, 0.2, 0.36, CLARO, 0, alto + p, fondo / 2).caja(ancho + 0.34, 0.2, 0.36, CLARO, 0, alto + p, -fondo / 2)
       .caja(0.36, 0.2, fondo, CLARO, ancho / 2, alto + p, 0).caja(0.36, 0.2, fondo, CLARO, -ancho / 2, alto + p, 0);
     a.caja(ancho - 0.2, 0.12, fondo - 0.2, '#8e959c', 0, alto, 0);
+    // bajantes de PVC por las esquinas del frente y gárgolas por el antepecho
+    for (const s of [-1, 1]) {
+      a.cilindro(0.05, alto - 0.1, '#e6e6e0', s * (ancho / 2 - 0.08), 0, fondo / 2 + 0.08);
+      a.caja(0.16, 0.12, 0.3, '#8e959c', s * (ancho / 2 - 0.08), alto + 0.05, fondo / 2 + 0.1);
+    }
+    // la placa de concreto lleva lo de siempre: tinaco negro sobre su base, antena de TV, varillas de la próxima planta y la salida de la escalera
+    const tx = ancho * (r() < 0.5 ? -0.2 : 0.2), tz = -fondo * 0.2;
+    if (!patron.tanque) a.cilindro(0.55, 1.1, '#1d1f22', tx, alto + 0.12, tz).cilindro(0.2, 0.12, '#1d1f22', tx, alto + 1.22, tz).caja(1.3, 0.12, 1.3, '#9aa0a6', tx, alto + 0.12, tz - 0.0).cilindro(0.04, 0.12, '#9aa0a6', tx, alto, tz);
+    if (r() < 0.55) {
+      for (const [dx, dz] of [[-1, -1], [1, -1], [1, 1], [-1, 1]]) {
+        const vx = dx * (ancho / 2 - 0.35), vz = dz * (fondo / 2 - 0.35);
+        a.caja(0.5, 0.5, 0.5, '#8e8a84', vx, alto, vz);
+        for (const [ox, oz] of [[-0.15, -0.15], [0.15, -0.15], [0.15, 0.15], [-0.15, 0.15]]) a.cilindro(0.015, 0.9, '#5a3a24', vx + ox, alto + 0.5, vz + oz);
+      }
+    }
+    if (r() < 0.5) {
+      const ax = -ancho * 0.3, az = fondo * 0.25;
+      a.cilindro(0.025, 2.4, '#9aa0a6', ax, alto, az).caja(1.0, 0.04, 0.04, '#9aa0a6', ax, alto + 2.0, az).caja(0.7, 0.04, 0.04, '#9aa0a6', ax, alto + 1.6, az);
+    }
+    if (!patron.tanque && pisos > 1 && r() < 0.6) a.caja(1.6, 2.2, 1.8, paleta.pared, ancho * 0.25, alto, fondo * 0.22).caja(1.8, 0.14, 2.0, CLARO, ancho * 0.25, alto + 2.2, fondo * 0.22);
     if (patron.tanque) {
       a.cilindro(1.1, 1.9, '#2f6f9f', -ancho * 0.22, alto + 0.6, -fondo * 0.2);
       for (const [dx, dz] of [[-0.8, -0.8], [0.8, -0.8], [-0.8, 0.8], [0.8, 0.8]]) a.caja(0.12, 0.6, 0.12, '#6b7280', -ancho * 0.22 + dx, alto, -fondo * 0.2 + dz);

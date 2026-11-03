@@ -171,6 +171,10 @@ def centro_delta(a, k):
     return (sum(xs) / len(xs) / k - oeste) * M_LON, (sum(ys) / len(ys) / k - sur) * M_LAT
 
 
+# Zonas con propiedad horizontal que el catastro no trae como construcciones (unidades residenciales Llano Azul, junto a la unidad deportiva):
+# ahí se toman las huellas de Overture/OSM aunque la celda esté cubierta. (oeste, este, sur, norte) en grados; se dibujan de 2 pisos.
+ZONAS_COMPLEMENTO = [(-75.4515, -75.4495, 6.3705, 6.3728)]
+
 por_celda = Counter()
 for b in edificios:
     por_celda[celda(*centro_delta(b, K))] += 1
@@ -178,7 +182,9 @@ overture = json.loads((RAIZ / f'public/data/mapa3d/edificios-{MUNICIPIO}.json').
 nuevos, en_cubierta = 0, 0
 for b in overture['e']:
     cx, cy = centro_delta(b, overture['k'])
-    if por_celda[celda(cx, cy)] >= MIN_COBERTURA:
+    lon_c, lat_c = cx / M_LON + oeste, cy / M_LAT + sur
+    en_zona = any(z[0] < lon_c < z[1] and z[2] < lat_c < z[3] for z in ZONAS_COMPLEMENTO)
+    if por_celda[celda(cx, cy)] >= MIN_COBERTURA and not en_zona:
         en_cubierta += 1
         continue
     pts, x, y = [], b[1], b[2]
@@ -186,8 +192,8 @@ for b in overture['e']:
     for i in range(3, len(b), 2):
         x += b[i]; y += b[i + 1]; pts.append((x, y))
     anillo = [((px / overture['k'] - oeste) * M_LON, (py / overture['k'] - sur) * M_LAT) for px, py in pts]
-    edificios.append([b[0]] + deltas(anillo))
-    pisos_l.append(0); usos_l.append(0); rural_l.append(2)
+    edificios.append([6.0 if en_zona else b[0]] + deltas(anillo))      # en la zona, 2 pisos de 3 m (Overture no trae altura)
+    pisos_l.append(2 if en_zona else 0); usos_l.append(0); rural_l.append(2)
     nuevos += 1
 print(f'complemento: {nuevos} huellas de Overture fuera de la cobertura del catastro ({en_cubierta} dentro de ella, ignoradas)')
 

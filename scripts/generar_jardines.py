@@ -22,7 +22,7 @@ from pathlib import Path
 import numpy as np
 from shapely import transform
 from shapely import make_valid
-from shapely.geometry import Point, Polygon, shape
+from shapely.geometry import LineString, Point, Polygon, shape
 from shapely.geometry.polygon import orient
 from shapely.ops import unary_union
 
@@ -33,6 +33,7 @@ CRUDO = RAIZ / 'insumos/catastro'
 SALIDA = RAIZ / f'public/data/mapa3d/jardines-{MUNICIPIO}.json'
 K = 1_000_000
 AREA_MINIMA = 12          # m²
+AREA_MAXIMA = 20000       # m²: un resto mayor es un lote grande, parque o potrero, no un jardín (el césped taparía las vías que lo cruzan)
 MARGEN = 0.4              # m entre la construcción y el patio
 FRANJA = 1.0              # m: se quitan las franjas de menos de 2 m (abrir con -1 y +1)
 SIMPLIFICAR = 0.4
@@ -67,6 +68,24 @@ def predios(capa=6, nombre='urbanos'):
     return feats
 
 
+# Calzadas del mapa 3D (vias-<id>.json, clases 0 principal, 1 local y 2 sendero) con el ancho con que se dibujan (ANCHO_VIA en mapa3d.component.ts)
+# más un margen: el césped de un predio nunca las cubre.
+ANCHO_VIA, MARGEN_VIA = [34, 13, 6], 2.0
+
+
+def calzadas():
+    d = json.loads((RAIZ / f'public/data/mapa3d/vias-{MUNICIPIO}.json').read_text(encoding='utf-8'))
+    franjas = []
+    for v in d['v']:
+        x, y, pts = v[1], v[2], []
+        pts.append((x, y))
+        for i in range(3, len(v), 2):
+            x += v[i]; y += v[i + 1]; pts.append((x, y))
+        if len(pts) > 1:
+            franjas.append(LineString([((px / d['k'] - oeste) * M_LON, (py / d['k'] - sur) * M_LAT) for px, py in pts]).buffer(ANCHO_VIA[v[0]] / 2 + MARGEN_VIA))
+    return unary_union(franjas)
+
+
 def a_metros(g):
     return transform(g, lambda c: np.column_stack(((c[:, 0] - oeste) * M_LON, (c[:, 1] - sur) * M_LAT)))
 
@@ -81,6 +100,7 @@ for nombre in ('urbanas', 'rurales'):
         if f.get('geometry'):
             huellas[f['properties']['PK_PREDIOS']].append(make_valid(a_metros(shape(f['geometry']))))
 
+VIAS = calzadas()
 azar = random.Random(20251102)
 jardines, arboles, matas = [], [], []
 sin_construccion = 0
@@ -95,8 +115,9 @@ for rural, f in [(False, f) for f in predios()] + [(True, f) for f in predios(7,
     if rural:                          # finca: el patio es el entorno de la casa (RADIO_FINCA m), el resto del predio queda al paisaje
         lote = lote.intersection(unary_union([c.buffer(RADIO_FINCA) for c in construido]))
     libre = lote.buffer(-0.2).difference(unary_union([c.buffer(MARGEN) for c in construido])).buffer(-FRANJA).buffer(FRANJA)
+    libre = libre.difference(VIAS).buffer(-FRANJA).buffer(FRANJA)           # sin cubrir calzadas
     for parte in (libre.geoms if hasattr(libre, 'geoms') else [libre]):
-        if parte.is_empty or parte.geom_type != 'Polygon' or parte.area < AREA_MINIMA:
+        if parte.is_empty or parte.geom_type != 'Polygon' or parte.area < AREA_MINIMA or parte.area > AREA_MAXIMA:
             continue
         s = parte.simplify(SIMPLIFICAR, preserve_topology=True)
         if s.is_empty or s.geom_type != 'Polygon':
