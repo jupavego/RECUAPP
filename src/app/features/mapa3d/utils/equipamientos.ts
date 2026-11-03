@@ -10,6 +10,8 @@ export interface Modelo {
   radio: number;
   /** losa de cimentación [ancho, fondo] que se asienta en la ladera; sin ella el edificio se apoya en su centro */
   losa?: [number, number];
+  /** huella real [ancho, fondo] que ocupa en el terreno: las construcciones del catastro que caen dentro de ella se reemplazan por el modelo */
+  huella?: [number, number];
 }
 
 const AZUL = '#1d4ed8', ROSA = '#be185d', CIAN = '#0e7490', VERDE = '#047857', LIMA = '#4d7c0f', ROJO = '#b91c1c', CAFE = '#92400e';
@@ -203,7 +205,9 @@ function salud(e: Ensamble, tipo: string): Modelo {
 /** Sitios de interés: iglesia, kiosco de parque, mirador, pabellón de mercado o cabaña con estanque, según de qué se trate. */
 function turismo(e: Ensamble, texto: string, rnd: () => number): Modelo {
   if (/arqueol|petrogl/.test(texto)) return patrimonio(e, 'sitio arqueológico', rnd);
-  if (/religios|catedral|se[ñn]or|iglesia/.test(texto)) {
+  if (/catedral/.test(texto)) return catedral(e);
+  if (/parque principal/.test(texto)) return parquePrincipal(e, rnd);
+  if (/religios|se[ñn]or|iglesia/.test(texto)) {
     const mayor = /catedral/.test(texto);
     e.caja(14, 10, 30, '#efe6d6', 0, 0, 4)
       .dosAguas(16, 5.5, 31, TEJA, 0, 10, 4)
@@ -255,6 +259,78 @@ function turismo(e: Ensamble, texto: string, rnd: () => number): Modelo {
     .caja(7, 0.4, 1.4, '#a9763f', 0, 5, 4.6).mastil(5, 4.2, -4.2, VERDE).arbol(-9, 6, 9).arbol(9, 4, 8)
     .monticulo(8, 2.4, '#7a8b5a', 0, 0, 0);
   return { piezas: e.piezas, radio: 14 };
+}
+
+/**
+ * Catedral Nuestra Señora del Rosario de Girardota, a la medida de su huella en el catastro (24 × 59 m). La fachada, con las gradas del
+ * atrio, da hacia −z (el parque principal); la torre del reloj, con su remate verde de cobre, queda en el extremo +x de la fachada.
+ */
+function catedral(e: Ensamble): Modelo {
+  const ladrillo = '#b0654a', claro = '#e3d3b4', oscuro = '#3b2a1f', cobre = '#6aa38f';
+  const disco = (r: number, color: string, x: number, y: number, z: number) =>
+    e.piezas.push({ g: new THREE.CylinderGeometry(r, r, 0.3, 18).rotateX(Math.PI / 2).translate(x, y, z), color });
+  // nave central con naves laterales más bajas, techos de teja
+  e.caja(15, 13, 52, ladrillo, 0, 0, 3.5).dosAguas(16.6, 6.2, 52, TEJA, 0, 13, 3.5);
+  for (const s of [-1, 1]) {
+    e.caja(4.6, 8, 52, ladrillo, s * 9.9, 0, 3.5).dosAguas(5, 1.8, 52, TEJA, s * 9.9, 8, 3.5);
+    for (let k = 0; k < 6; k++) e.caja(0.3, 3.4, 1.4, oscuro, s * 12.25, 2.6, -14 + k * 8);
+  }
+  // cuerpo de la fachada con su frontón y cornisa
+  e.caja(24.4, 16, 6, ladrillo, 0, 0, -25.5).dosAguas(24.4, 6, 6, ladrillo, 0, 16, -25.5).caja(25.2, 0.5, 6.8, claro, 0, 15.6, -25.5);
+  disco(1.5, claro, -4.2, 17.6, -28.55);
+  disco(1.1, oscuro, -4.2, 17.6, -28.6);
+  // dos portadas en arco, la de la derecha bajo la torre
+  for (const x of [-4.2, 7.4]) {
+    e.caja(3.8, 5.4, 0.4, claro, x, 0, -28.5).caja(2.8, 5, 0.5, oscuro, x, 0, -28.6);
+    disco(1.9, claro, x, 5.4, -28.5);
+    disco(1.4, oscuro, x, 5.4, -28.6);
+  }
+  // torre del reloj: fuste, cornisa, campanario con arcos, pirámide verde y cruz
+  e.caja(9.2, 31, 9.2, ladrillo, 7.4, 0, -25).caja(9.8, 0.6, 9.8, claro, 7.4, 22, -25)
+    .caja(8, 7, 8, ladrillo, 7.4, 31, -25).caja(8.8, 0.5, 8.8, claro, 7.4, 38, -25)
+    .cuatroAguas(9.6, 10, 9.6, cobre, 7.4, 38.5, -25)
+    .cil(0.2, 0.2, 3, '#d4d4d8', 7.4, 48.5, -25, 6).caja(1.6, 0.3, 0.3, '#d4d4d8', 7.4, 50.3, -25);
+  for (const x of [5.7, 9.1]) e.caja(1.5, 4, 0.3, oscuro, x, 31.8, -29.05);
+  e.caja(0.3, 4, 1.5, oscuro, 11.95, 31.8, -25).caja(0.3, 4, 1.5, oscuro, 2.85, 31.8, -25)
+    .caja(1.4, 3.6, 0.3, oscuro, 7.4, 11, -29.65).caja(1.4, 3.6, 0.3, oscuro, 7.4, 16.5, -29.65);
+  disco(1.7, '#f5f5f4', 7.4, 26.5, -29.65);
+  // gradas del atrio, que bajan hasta la plaza
+  for (let k = 0; k < 4; k++) e.caja(30, 3 - 0.25 * k - 0.15, 1, '#c8b99c', 0, -3, -30.2 - k);
+  return { piezas: e.piezas, radio: 34, losa: [26, 62], huella: [26, 62] };
+}
+
+/**
+ * Parque principal de Girardota: la manzana entera entre las calles 6 y 7 y las carreras 16 y 15 (75 × 77 m). Jardín arbolado hacia la
+ * calle 7 y el lado noroeste (−z), plaza adoquinada con palmas y fuente hacia la carrera 15 (+z), y dentro de ella los toldos del
+ * mercado agroverde, el kiosco del café y la cubierta del costado este.
+ */
+function parquePrincipal(e: Ensamble, rnd: () => number): Modelo {
+  const W = 75, D = 77.5, camino = '#d3c5aa';
+  const copas = ['#2f7d3a', '#3f8f45', '#256b34', '#4b9a4a'];
+  e.caja(W, 0.15, D, '#c4b49a', 0, 0, 0);
+  e.caja(44, 0.3, 54, '#5d9648', -14.5, 0.1, -10.5);                       // jardín
+  e.caja(2.8, 0.4, 54, camino, -14.5, 0.1, -10.5).caja(44, 0.4, 2.8, camino, -14.5, 0.1, -10.5);
+  for (let k = 0; k < 40; k++) {                                           // arbolado del jardín
+    const x = -35.5 + rnd() * 42, z = -36.5 + rnd() * 52;
+    if (Math.abs(x + 14.5) < 2.6 || Math.abs(z + 10.5) < 2.6) continue;
+    const h = 9 + rnd() * 6;
+    e.cil(0.3, 0.45, h * 0.6, '#6b4423', x, 0, z, 6);
+    e.piezas.push({ g: new THREE.SphereGeometry(h * 0.34, 8, 6).scale(1, 0.85, 1).translate(x, h * 0.72, z), color: copas[Math.floor(rnd() * copas.length)] });
+  }
+  for (const x of [6, 13, 20, 27, 34]) e.cil(0.25, 0.35, 9, '#8a7355', x, 0, 20, 6).cono(3, 1.6, '#3a8f3f', x, 8.6, 20, 7);   // palmas
+  e.cil(3.2, 3.4, 0.7, '#9ca3af', 20, 0.15, 6, 16).cil(2.6, 2.6, 0.4, '#7fc4e3', 20, 0.85, 6, 16).cil(0.4, 0.4, 2.4, '#cbd5e1', 20, 0.85, 6, 8);
+  e.caja(11, 3.4, 7, '#e8dcc3', 22, 0, -31).caja(12.4, 0.4, 8.4, '#8b3a1f', 22, 3.4, -31);        // kiosco del café y el turismo
+  ['#dc2626', '#f59e0b', '#16a34a', '#2563eb', '#dc2626', '#f59e0b'].forEach((c, k) => {          // toldos del mercado agroverde
+    const x = 6 + k * 5.2, z = 28;
+    e.caja(3.8, 0.25, 3, c, x, 2.9, z).caja(3.2, 1.1, 1.2, '#e5e7eb', x, 0.15, z + 0.4)
+      .cil(0.08, 0.08, 2.8, '#6b7280', x - 1.7, 0.15, z - 1.3, 5).cil(0.08, 0.08, 2.8, '#6b7280', x + 1.7, 0.15, z - 1.3, 5);
+  });
+  for (const x of [-4, 4]) for (const z of [-4, 4]) e.cil(0.25, 0.25, 4.4, '#6b7280', 31 + x * 1.4, 0.15, 6 + z * 1.4, 6);   // cubierta metálica del costado este
+  e.caja(10, 0.35, 8, '#64748b', 31, 4.5, 6);
+  for (const [x, z] of [[-14.5, -20], [-14.5, 0], [5, -10.5], [-25, -10.5], [20, 14], [34, 6]]) e.caja(2.2, 0.5, 0.7, '#7c5a3a', x, 0.15, z).caja(2.2, 0.5, 0.15, '#7c5a3a', x, 0.65, z - 0.3);
+  for (const [x, z] of [[-14.5, -10.5], [0, 0], [20, 0], [20, 22], [-14.5, 12], [-30, -10.5], [36, 20]]) e.cil(0.12, 0.12, 4.5, '#374151', x, 0.15, z, 5).caja(0.5, 0.35, 0.5, '#fde68a', x, 4.6, z);
+  e.caja(0.9, 0.8, 70, '#9c8a6e', -36.8, 0.15, 0);                         // jardinera de piedra sobre la calle 7
+  return { piezas: e.piezas, radio: 32, losa: [W, D], huella: [W, D] };
 }
 
 /** Escenarios deportivos: cancha de fútbol con graderías, placa cubierta con cubierta en arco, pista de patinaje o de bicrós. */

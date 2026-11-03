@@ -299,6 +299,18 @@ interface Relieve {
 
 /** Datos horneados por scripts/generar_vias_edificios.py: enteros × k, primera pareja absoluta y el resto diferencias. */
 interface Compacto {
+/** Giro (rad) de la cuadrícula del casco urbano de Girardota: el parque y la catedral siguen la dirección de sus calles. */
+const GIRO_CASCO = 0.6946;
+/**
+ * Sitios cuya coordenada en la capa de puntos cae fuera de su lugar real (la catedral figura dentro del parque): se asientan donde
+ * están en la realidad, con la orientación de las calles, sin buscar un hueco libre. El modelo reemplaza al catastro bajo su huella.
+ */
+const SITIOS_FIJOS = new Map<string, { lat: number; lng: number; yaw: number }>([
+  ['Catedral Nuestra Señora del Rosario', { lat: 6.376837, lng: -75.445853, yaw: GIRO_CASCO }],
+  ['Parque principal', { lat: 6.377512, lng: -75.446118, yaw: GIRO_CASCO }],
+]);
+/** Puntos que son parte de otro sitio: no llevan edificio propio; su descripción se suma a la del sitio que los contiene. */
+const FUSIONES = new Map<string, string>([['Señor caído', 'Catedral Nuestra Señora del Rosario'], ['Mercado agroverde', 'Parque principal']]);
   k: number;
   v?: number[][];
   e?: number[][];
@@ -3327,7 +3339,7 @@ export class Mapa3dComponent implements AfterViewInit {
       && out.every(o => Math.hypot(o.x - x, o.z - z) > (o.r + r) * (deporte && o.datos.p.c === 'deporte' ? SOLAPE_DEPORTE : SOLAPE_EQUIPAMIENTOS));
     const conjuntos = this.conjuntosDeporte(lista, holgura);
     lista.forEach((p, i) => {
-      if (p.lat == null || p.lng == null) return;
+      if (p.lat == null || p.lng == null || FUSIONES.has(p.n)) return;
       const c = conjuntos.get(p);
       if (c) {
         out.push({ x: c.x, z: c.z, lon: this.lon0 + c.x / this.mLon, lat: this.lat0 - c.z / this.mLat, n: p.n, r: c.modelo.radio, yaw: c.yaw, datos: { p, modelo: c.modelo } });
@@ -3482,7 +3494,13 @@ export class Mapa3dComponent implements AfterViewInit {
       // una construcción del catastro es real: solo se quita si su centro cae sobre la calzada; las demás, si su contorno pisa la calle
       if ((e.p?.[n] ?? 0) > 0 ? holgura(x, z) < 0 : this.cruzaVia(q, lon, lat, holgura)) return false;
       return this.fabricas.every(f => Math.hypot(f.x - x, f.z - z) > f.r + 5)
-        && this.equipamientos.every(q => Math.hypot(q.x - x, q.z - z) > q.r + 3);
+        && this.equipamientos.every(q => {
+          const h = q.datos.modelo.huella;
+          if (!h) return Math.hypot(q.x - x, q.z - z) > q.r + 3;
+          // con huella real (catedral, parque) solo se reemplaza lo que cae dentro de ese rectángulo girado, no lo que hay alrededor
+          const dx = x - q.x, dz = z - q.z, yaw = q.yaw ?? 0;
+          return Math.abs(dx * Math.cos(yaw) - dz * Math.sin(yaw)) > h[0] / 2 + 1 || Math.abs(dx * Math.sin(yaw) + dz * Math.cos(yaw)) > h[1] / 2 + 1;
+        });
     });
     const sin = <T>(a?: T[]) => a?.filter((_, n) => quedan[n]);
     return { ...e, e: sin(e.e), p: sin(e.p), u: sin(e.u), r: sin(e.r) };
@@ -3688,6 +3706,9 @@ export class Mapa3dComponent implements AfterViewInit {
     const rnd = mulberry32(4242);
     const geos: THREE.BufferGeometry[] = [], ids: number[] = [], pesos: number[] = [];
     const paredes = ['#d9d2c3', '#cbbba3', '#bfd0dc', '#e1e4e7', '#d8c3b0'];
+    // un punto que es parte de otro sitio (el Señor caído está en la catedral) no lleva edificio propio: su ficha se suma a la del sitio
+    const incluidos = new Map<string, Punto[]>();
+    for (const p of lista) { const sitio = FUSIONES.get(p.n); if (sitio) incluidos.set(sitio, [...(incluidos.get(sitio) ?? []), p]); }
     const lechos = new THREE.Matrix4();
     const itemsAura: ItemAura[] = [];
 
@@ -3696,6 +3717,13 @@ export class Mapa3dComponent implements AfterViewInit {
       const esc = f.esc;
       const largo = 48 + rnd() * 20, fondo = 30 + rnd() * 10, alto = 13 + rnd() * 3;
       const yaw = rnd() * Math.PI * 2, cos = Math.cos(yaw), sin = Math.sin(yaw);
+      const fijo = SITIOS_FIJOS.get(p.n);
+      if (fijo) {
+        const dentro = incluidos.get(p.n) ?? [];
+        const ficha: Punto = dentro.length ? { ...p, x: [p.x, ...dentro.map(q => `${q.n}: ${q.x ?? q.t}`)].filter(Boolean).join(' · ') } : p;
+        out.push({ x: this.aX(fijo.lng), z: this.aZ(fijo.lat), lon: fijo.lng, lat: fijo.lat, n: p.n, r: modelo.radio, yaw: fijo.yaw, datos: { p: ficha, modelo } });
+        return;
+      }
       const alturas = [[0, 0], [1, 1], [-1, 1], [1, -1], [-1, -1]].map(([a, b]) => this.alturaXZ(f.x + (a * (largo / 2 + 20) * esc) * cos + (b * (fondo / 2 + 15) * esc) * sin, f.z - (a * (largo / 2 + 20) * esc) * sin + (b * (fondo / 2 + 15) * esc) * cos));
       const base = Math.max(...alturas) + 1, minimo = Math.min(...alturas);
       const id = this.idEn(f.lon, f.lat), peso = id >= 0 ? this.pesoBorde(f.lon, f.lat, id) : 0;
