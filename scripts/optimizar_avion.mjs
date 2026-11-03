@@ -10,16 +10,20 @@ const raiz = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const THREE = await import(pathToFileURL(path.join(raiz, 'node_modules/three/build/three.module.js')).href);
 const { GLTFLoader } = await import(pathToFileURL(path.join(raiz, 'node_modules/three/examples/jsm/loaders/GLTFLoader.js')).href);
 const { GLTFExporter } = await import(pathToFileURL(path.join(raiz, 'node_modules/three/examples/jsm/exporters/GLTFExporter.js')).href);
-const { mergeGeometries } = await import(pathToFileURL(path.join(raiz, 'node_modules/three/examples/jsm/utils/BufferGeometryUtils.js')).href);
+const { mergeGeometries, mergeVertices } = await import(pathToFileURL(path.join(raiz, 'node_modules/three/examples/jsm/utils/BufferGeometryUtils.js')).href);
+const { MeshoptSimplifier } = await import(pathToFileURL(path.join(raiz, 'node_modules/meshoptimizer/meshopt_simplifier.js')).href);
+await MeshoptSimplifier.ready;
 
 globalThis.FileReader = class {
   readAsArrayBuffer(blob) { blob.arrayBuffer().then(r => { this.result = r; this.onloadend?.(); }); }
 };
 
 const ORIGEN = path.join(raiz, 'insumos/modelos 3d/boeing_787.glb');
-const DESTINO = path.join(raiz, 'public/data/mapa3d/boeing-787.glb');
+const DESTINO = process.env.SALIDA ?? path.join(raiz, 'public/data/mapa3d/boeing-787.glb');
 const PULGADA = 0.0254;
-const PIEZA_MIN = 1.0;
+const PIEZA_MIN = Number(process.env.PIEZA_MIN ?? 3.0);
+const RATIO = Number(process.env.RATIO ?? 0.3);          // fracción de triángulos que se conserva tras soldar vértices
+const ERROR = Number(process.env.ERROR ?? 0.01);         // error máximo de la simplificación, relativo al tamaño de la malla
 const SIN_LUCES = new Set(['beacon', 'StrobeR', 'Strobe_L', 'Landing_light_gear']);
 
 const buf = fs.readFileSync(ORIGEN);
@@ -51,13 +55,35 @@ gltf.scene.traverse(o => {
   porMaterial.get(o.material).push(g);
 });
 
+/** Suelda los vértices repetidos y quita triángulos que casi no se ven; las normales se conservan por vértice. */
+function simplificar(geo) {
+  const g = mergeVertices(geo, 1e-3);
+  const indices = Uint32Array.from(g.index.array);
+  const pos = g.attributes.position.array, nor = g.attributes.normal.array;
+  const objetivo = Math.floor(indices.length * RATIO / 3) * 3;
+  const [nuevo] = MeshoptSimplifier.simplify(indices, pos, 3, objetivo, ERROR, ['Prune']);
+  const [mapa, total] = MeshoptSimplifier.compactMesh(nuevo);
+  const p = new Float32Array(total * 3), n = new Float32Array(total * 3);
+  for (let i = 0; i < mapa.length; i++) {
+    if (mapa[i] === 0xffffffff) continue;
+    p.set(pos.subarray(i * 3, i * 3 + 3), mapa[i] * 3);
+    n.set(nor.subarray(i * 3, i * 3 + 3), mapa[i] * 3);
+  }
+  const salida = new THREE.BufferGeometry();
+  salida.setAttribute('position', new THREE.BufferAttribute(p, 3));
+  salida.setAttribute('normal', new THREE.BufferAttribute(n, 3));
+  salida.setIndex(new THREE.BufferAttribute(nuevo.map(i => mapa[i]), 1));
+  console.log('  vértices', geo.attributes.position.count, '→', total, '· triángulos', (geo.index?.count ?? geo.attributes.position.count) / 3, '→', nuevo.length / 3);
+  return salida;
+}
+
 const salida = new THREE.Group();
 for (const [original, geos] of porMaterial) {
   const material = new THREE.MeshStandardMaterial({
     name: original.name, color: original.color, metalness: 0, roughness: 0.6,
     transparent: original.transparent, opacity: original.opacity, side: original.side,
   });
-  const malla = new THREE.Mesh(mergeGeometries(geos, false), material);
+  const malla = new THREE.Mesh(simplificar(mergeGeometries(geos, false)), material);
   malla.name = original.name;
   salida.add(malla);
 }

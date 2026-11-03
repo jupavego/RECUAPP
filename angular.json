@@ -31,7 +31,13 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "public",
+                "ignore": [
+                  "data/mapa3d/edificios-49.json",
+                  "data/mapa3d/edificios-ordenados-49.json",
+                  "data/mapa3d/red-vial-49*",
+                  "img/responsables/**"
+                ]
               }
             ],
             "styles": [

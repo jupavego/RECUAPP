@@ -1253,6 +1253,19 @@ export class Mapa3dComponent implements AfterViewInit {
   readonly fabricaSeleccion = signal<FichaFabrica | null>(null);
   private humos: Humo[] = [];
   private miraTmp = new THREE.Vector3();
+  /** Objetos de trabajo de los animadores de gente y tráfico: se reutilizan en cada cuadro para no generar basura. */
+  private readonly tmpGente = {
+    m4: new THREE.Matrix4(), q: new THREE.Quaternion(), pos: new THREE.Vector3(), escala: new THREE.Vector3(),
+    arriba: new THREE.Vector3(0, 1, 0), adelante: new THREE.Vector3(0, 0, 1), derecha: new THREE.Vector3(1, 0, 0),
+    tinte: new THREE.Color(), ladeo: new THREE.Quaternion(),
+  };
+  private readonly cuentaGente: number[] = [];
+  private readonly tmpTrafico = {
+    m4: new THREE.Matrix4(), q: new THREE.Quaternion(), qz: new THREE.Quaternion(),
+    arriba: new THREE.Vector3(0, 1, 0), lateral: new THREE.Vector3(0, 0, 1), pos: new THREE.Vector3(), escala: new THREE.Vector3(1, 1, 1),
+  };
+  private firmaRotulos: (number | string | null)[] = [];
+  private cuadrosRotulos = 0;
   private medidasRotulos: ({ w: number; h: number } | undefined)[] = [];
   /** Cápsulas de zona visibles en pantalla, de mayor a menor prioridad: tapan lo que tengan detrás al pasar o hacer clic. */
   private cajasRotulos: { id: number; x0: number; y0: number; x1: number; y1: number }[] = [];
@@ -1347,9 +1360,7 @@ export class Mapa3dComponent implements AfterViewInit {
       foto: this.cargarImagen(`data/mapa3d/ortofoto-${ID_MUNICIPIO}.jpg`),
       vias: this.http.get<Compacto>(`data/mapa3d/vias-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
       viasEstado: this.http.get<Compacto>(`data/mapa3d/vias-estado-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
-      edificios: this.http.get<Compacto>(`data/mapa3d/catastro-${ID_MUNICIPIO}.json`).pipe(
-        catchError(() => this.http.get<Compacto>(`data/mapa3d/edificios-ordenados-${ID_MUNICIPIO}.json`).pipe(
-          catchError(() => this.http.get<Compacto>(`data/mapa3d/edificios-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))))))),
+      edificios: this.http.get<Compacto>(`data/mapa3d/catastro-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
       cauces: this.http.get<Cauces>(`data/mapa3d/cauces-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
       industrias: this.http.get<Industria[]>(`data/mapa3d/industrias-${ID_MUNICIPIO}.json`).pipe(catchError(() => of([] as Industria[]))),
       poblacion: this.http.get<PoblacionVeredas>(`data/mapa/poblacion/veredas-${CODIGO_DANE}.geojson`).pipe(catchError(() => of(null))),
@@ -3655,10 +3666,11 @@ export class Mapa3dComponent implements AfterViewInit {
       return;
     }
     this.gentePintada = true;
-    const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), pos = new THREE.Vector3(), escala = new THREE.Vector3();
-    const arriba = new THREE.Vector3(0, 1, 0), adelante = new THREE.Vector3(0, 0, 1), derecha = new THREE.Vector3(1, 0, 0);
-    const tinte = new THREE.Color(), ladeo = new THREE.Quaternion();
-    const cuenta = this.mallasGente.map(() => 0);
+    const { m4, q, pos, escala, arriba, adelante, derecha, tinte, ladeo } = this.tmpGente;
+    escala.set(0, 0, 0);
+    const cuenta = this.cuentaGente;
+    cuenta.length = this.mallasGente.length;
+    cuenta.fill(0);
     const borde = GENTE_RADIO * 0.25, t = performance.now() / 1000;
     for (const a of this.gente) {
       let e = this.aristas[a.arista];
@@ -3732,9 +3744,8 @@ export class Mapa3dComponent implements AfterViewInit {
 
   private animarTrafico(dt: number): void {
     if (!this.flota.length) return;
-    const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), qz = new THREE.Quaternion();
-    const arriba = new THREE.Vector3(0, 1, 0), lateral = new THREE.Vector3(0, 0, 1);
-    const pos = new THREE.Vector3(), escala = new THREE.Vector3(1, 1, 1);
+    const { m4, q, qz, arriba, lateral, pos, escala } = this.tmpTrafico;
+    escala.set(1, 1, 1);
     /**
      * Coloca el auto n sobre la polilínea `c` a `s` metros, mirando en el sentido `dir`, a `carril` metros a su derecha.
      * La pose real sigue a la del trazado con un retraso corto: así los giros en los cruces, el cambio de carril y la vuelta
@@ -4436,18 +4447,35 @@ export class Mapa3dComponent implements AfterViewInit {
       grupo.add(new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color: 0x80878e, transparent: true, opacity: 0.9 })));
     }
     if (torres.length) {
-      // torre: cuerpo cónico de celosía simplificado + crucetas
-      const cuerpo = new THREE.CylinderGeometry(0.5, 2.2, 1, 4, 1, true).translate(0, 0.5, 0).rotateY(Math.PI / 4);
-      const cruceta = new THREE.BoxGeometry(1, 0.5, 0.5);
+      // torre de celosía: cuatro patas afinadas con anillos y diagonales (alto unitario, se estira con la torre) y crucetas triangulares
+      const barra = (a: THREE.Vector3, b: THREE.Vector3, r: number): THREE.BufferGeometry => {
+        const dir = b.clone().sub(a), l = dir.length();
+        const g = new THREE.BoxGeometry(r, r, l);
+        g.applyQuaternion(new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 0, 1), dir.normalize()));
+        return g.translate((a.x + b.x) / 2, (a.y + b.y) / 2, (a.z + b.z) / 2);
+      };
+      const ancho = (y: number) => 2.2 + (0.5 - 2.2) * y, V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
+      const cuerpoGs: THREE.BufferGeometry[] = [], NIV = 7;
+      const anillo = (y: number) => { const w = ancho(y); return [V(-w, y, -w), V(w, y, -w), V(w, y, w), V(-w, y, w)]; };
+      for (let k = 0; k < NIV; k++) {
+        const c0 = anillo(k / NIV), c1 = anillo((k + 1) / NIV);
+        for (let i = 0; i < 4; i++) {
+          const j = (i + 1) % 4;
+          cuerpoGs.push(barra(c0[i], c1[i], 0.3), barra(c1[i], c1[j], 0.14), barra(c0[i], c1[j], 0.1), barra(c0[j], c1[i], 0.1));
+        }
+      }
+      const cuerpo = mergeGeometries(cuerpoGs, false);
+      const brazoGs = [barra(V(0.12, -0.6, 0), V(1, 0, 0), 0.22), barra(V(0.12, 1.8, 0), V(1, 0, 0), 0.22), barra(V(0.12, -0.6, 0), V(0.12, 1.8, 0), 0.18), barra(V(0.55, -0.3, 0), V(0.55, 0.9, 0), 0.12), barra(V(0.12, -0.6, 0), V(0.55, 0.9, 0), 0.1)];
+      const cruceta = mergeGeometries([...brazoGs, ...brazoGs.map(g => g.clone().scale(-1, 1, 1))], false);
       const mat = new THREE.MeshStandardMaterial({ color: 0x8d949b, roughness: 0.7, metalness: 0.5, side: THREE.DoubleSide });
       const im = new THREE.InstancedMesh(cuerpo, mat, torres.length), ic = new THREE.InstancedMesh(cruceta, mat, torres.length * 2);
       const m = new THREE.Matrix4(), q = new THREE.Quaternion(), e = new THREE.Vector3(), pos = new THREE.Vector3();
       torres.forEach((t, i) => {
         q.setFromAxisAngle(new THREE.Vector3(0, 1, 0), t.ang);
         im.setMatrixAt(i, m.compose(pos.set(t.x, t.y, t.z), q, e.set(1, t.alto, 1)));
-        const ancho = t.alto > 36 ? 16 : 10;
-        ic.setMatrixAt(i * 2, m.compose(pos.set(t.x, t.y + t.alto, t.z), q, e.set(ancho, 1, 1)));
-        ic.setMatrixAt(i * 2 + 1, m.compose(pos.set(t.x, t.y + t.alto - 3, t.z), q, e.set(ancho * 0.7, 1, 1)));
+        const brazo = (t.alto > 36 ? 16 : 10) / 2;
+        ic.setMatrixAt(i * 2, m.compose(pos.set(t.x, t.y + t.alto, t.z), q, e.set(brazo, 1, 1)));
+        ic.setMatrixAt(i * 2 + 1, m.compose(pos.set(t.x, t.y + t.alto - 3, t.z), q, e.set(brazo * 0.7, 1, 1)));
       });
       for (const o of [im, ic]) { o.castShadow = true; grupo.add(o); }
     }
@@ -5381,7 +5409,9 @@ export class Mapa3dComponent implements AfterViewInit {
     const tCentro = -(desde.x * dx + desde.z * dz);
     this.tiempoAvion = (tCentro - t0) / VELOCIDAD_AVION - 20;
 
-    new GLTFLoader().load('data/mapa3d/boeing-787.glb', gltf => grupo.add(gltf.scene));
+    // el avión tarda ~20 s en llegar: su modelo (3,6 MB) se pide cuando ya terminó de bajar el resto de la escena
+    const pedir = setTimeout(() => new GLTFLoader().load('data/mapa3d/boeing-787.glb', gltf => grupo.add(gltf.scene)), 5000);
+    this.destroyRef.onDestroy(() => clearTimeout(pedir));
     this.construirEstela(tCentro + 1800);
   }
 
@@ -6716,6 +6746,7 @@ export class Mapa3dComponent implements AfterViewInit {
 
   private actualizarRotulos(): void {
     const w = this.lienzo.nativeElement.clientWidth, h = this.lienzo.nativeElement.clientHeight;
+    if (!this.rotulosCambiaron(w, h)) return;
     const ocupados: { x0: number; y0: number; x1: number; y1: number }[] = [];
     this.cajasRotulos = [];
     const v = new THREE.Vector3();
@@ -6762,6 +6793,22 @@ export class Mapa3dComponent implements AfterViewInit {
     this.actualizarRotuloRio(w, h, Math.max(0.9, escala));
     this.actualizarRotuloFabrica(w, h, Math.max(0.9, escala));
     this.actualizarRotuloEquip(w, h, Math.max(0.9, escala));
+  }
+
+  /**
+   * Con la cámara quieta y sin cambios de selección, los rótulos ya están donde deben: se salta ordenarlos, proyectarlos
+   * y reescribir sus estilos. Durante el primer segundo se recalcula siempre, mientras se miden y se completa la escena.
+   */
+  private rotulosCambiaron(w: number, h: number): boolean {
+    const f = this.firmaRotulos, m = this.camara.matrixWorld.elements, p = this.camara.projectionMatrix.elements;
+    const estado = [w, h, p[0], p[5], this.elegida, this.hover, this.fabricaHover, this.equipHover, this.servicioHover, this.rioElegido];
+    let igual = this.cuadrosRotulos++ > 60 && f.length === 16 + estado.length;
+    for (let i = 0; i < 16 && igual; i++) if (f[i] !== m[i]) igual = false;
+    for (let i = 0; i < estado.length && igual; i++) if (f[16 + i] !== estado[i]) igual = false;
+    if (igual) return false;
+    for (let i = 0; i < 16; i++) f[i] = m[i];
+    estado.forEach((v, i) => f[16 + i] = v);
+    return true;
   }
 
   private actualizarRotuloFabrica(w: number, h: number, escala: number): void {
