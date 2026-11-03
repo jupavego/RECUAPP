@@ -1,4 +1,5 @@
 import { DecimalPipe } from '@angular/common';
+import { NEGOCIOS_ATLAS, PALETAS_ATLAS, celdaBahia, celdaLocal, crearAtlasFachadas } from '../../utils/fachadas';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import {
@@ -106,6 +107,14 @@ const TESELA = 1500;
 const TESELA_TERRENO = 64;
 /** de más lejos que esto los árboles se dibujan con una versión simple (a esa distancia miden ~3 píxeles) */
 const DISTANCIA_ARBOL_SIMPLE = 10000;
+/** fachadas detalladas: lado (m) de la tesela, distancia de la cámara a la que se dibujan, ancho de un hueco y lado mínimo */
+const TESELA_FACHADA = 400;
+const DISTANCIA_FACHADA = 900;
+const ANCHO_BAHIA = 4.4;
+const LARGO_FACHADA_MIN = 5;
+const PALETAS_COLOR = PALETAS_ATLAS.map(p => new THREE.Color(p.pared));
+interface LadoFachada { i: number; j: number; x0: number; z0: number; dx: number; dz: number; nx: number; nz: number; largo: number }
+interface TeselaFachada { pos: number[]; uv: number[]; nor: number[]; idx: number[]; ids: number[]; pesos: number[]; sx: number; sz: number; k: number }
 /** Ancho dibujado de las vías por clase (principal, local, sendero), en metros del modelo. */
 const ANCHO_VIA = [34, 13, 6];
 /** Arbolado de calle: separación media entre árboles (m) a cada lado y fracción de sitios que se siembran. */
@@ -147,7 +156,8 @@ const CONTAMINANTES: [string, string][] = [
   ['CO', 'CO'], ['COV', 'COV'], ['CH4', 'CH₄'], ['CO2', 'CO₂'],
 ];
 const RADIO_FABRICA = 55;
-const INDUSTRIA_SEPARACION = 2 * RADIO_FABRICA + 6;
+/** Escalas con que cabe una fábrica en su predio: de la nave completa a la mitad. */
+const ESCALAS_FABRICA = [1, 0.85, 0.72, 0.6, 0.5];
 const HUMO_BOCANADAS = 28;
 const HUMO_CICLO = 34;
 const HUMO_ALTURA = 140;
@@ -1001,7 +1011,7 @@ export class Mapa3dComponent implements AfterViewInit {
   private nieblas: Neblina[] = [];
   private calzadas: Calzada[] = [];
   private autos: Auto[] = [];
-  private fabricas: { x: number; z: number; lon: number; lat: number; n: string; datos: Industria }[] = [];
+  private fabricas: { x: number; z: number; lon: number; lat: number; n: string; datos: Industria; r: number; esc: number }[] = [];
   private mallaIndustrias: THREE.Mesh | null = null;
   private inicioFabrica: number[] = [];
   private anilloFabrica: THREE.Mesh | null = null;
@@ -1085,6 +1095,9 @@ export class Mapa3dComponent implements AfterViewInit {
   /** por nube: x, z de su sombra sobre el terreno, radio y opacidad (el shader del terreno los lee) */
   private readonly sombrasNubes = Array.from({ length: NUBES }, () => new THREE.Vector4(0, 0, 1, 0));
   private mallasEdificios: THREE.Mesh[] = [];
+  private mallasFachadas: { malla: THREE.Mesh; centro: THREE.Vector3 }[] = [];
+  private atlasFachadas?: THREE.CanvasTexture;
+  private matFachadas?: THREE.MeshStandardMaterial;
   /** árboles del casco urbano (de jardín y de calle) que se suman a la vegetación general */
   private arbolesUrbanos: { lon: number; lat: number; x: number; z: number }[] = [];
   /** Cajas de las viviendas por tesela y círculos de los equipamientos: la cámara no los atraviesa. */
@@ -2246,6 +2259,8 @@ export class Mapa3dComponent implements AfterViewInit {
     if (!nuevos?.e) return;
     if (this.mallasEdificios.length) {
       for (const m of this.mallasEdificios) { this.escena.remove(m); m.geometry.dispose(); }
+      for (const f of this.mallasFachadas) { this.escena.remove(f.malla); f.malla.geometry.dispose(); }
+      this.mallasFachadas = [];
       (this.mallasEdificios[0].material as THREE.Material).dispose();
       this.capas = this.capas.filter(c => !this.capasEdificios.includes(c));
     }
@@ -2274,6 +2289,7 @@ export class Mapa3dComponent implements AfterViewInit {
     // una malla por tesela: así la GPU descarta las que quedan fuera de cámara y solo proyectan sombra las del recuadro de la luz
     type Tesela = { pos: number[]; col: number[]; idx: number[]; ids: number[]; pesos: number[] };
     const teselas = new Map<number, Tesela>();
+    const fachadas = new Map<number, TeselaFachada>();
     this.cajasViv.clear();
     d.e!.forEach((e, n) => {
       const ring = this.desdeDeltas(e, d.k, 1);
@@ -2295,8 +2311,15 @@ export class Mapa3dComponent implements AfterViewInit {
       const h = real ? e[0] * ESCALA_CATASTRO : (urbano ? 3 * (3 + Math.floor(hash * 2.2)) * 0.6 : denso ? 3 * (1 + Math.floor(hash * 3)) * 0.6 : e[0] || 4.5 + hash * 4) * ESCALA_EDIFICIOS;
       const suelo = Math.min(...ring.map(q => this.alturaEn(q[0], q[1]))) - 4, techo = suelo + 4 + h;
       const peso = id >= 0 ? this.pesoBorde(cLon, cLat, id) : 0;
-      const pared = industria ? INDUSTRIAL : real && uso === 1 && !casa ? COMERCIALES[n % COMERCIALES.length] : urbano ? URBANOS[n % URBANOS.length] : casa ? (denso && n % 2 ? URBANOS[n % URBANOS.length] : LADRILLOS[n % LADRILLOS.length]) : PAREDES[n % PAREDES.length];
+      let pared = industria ? INDUSTRIAL : real && uso === 1 && !casa ? COMERCIALES[n % COMERCIALES.length] : urbano ? URBANOS[n % URBANOS.length] : casa ? (denso && n % 2 ? URBANOS[n % URBANOS.length] : LADRILLOS[n % LADRILLOS.length]) : PAREDES[n % PAREDES.length];
       const tejado = industria ? METAL : urbano ? LOSA : casa ? TEJAS[n % TEJAS.length] : TECHOS[(n * 7 + Math.floor(hash * 10)) % TECHOS.length];
+      // fachada con ventanas, puertas, balcones o letrero en el lado más largo de los edificios del casco urbano del catastro
+      const lados = real && d.r?.[n] === 0 && !industria ? this.ladosDeFachada(xs, zs) : [];
+      if (lados.length) {
+        const pal = urbano ? 4 : Math.floor(hash * 4);
+        pared = PALETAS_COLOR[pal];
+        lados.forEach((lado, q) => this.agregarFachada(fachadas, lado, { n: n + q, hash: (hash + q * 0.37) % 1, pisos, uso, pal, suelo: Math.min(this.alturaEn(ring[lado.i][0], ring[lado.i][1]), this.alturaEn(ring[lado.j][0], ring[lado.j][1])) - 0.3, techo, id, peso }));
+      }
       const clave = this.claveTesela(this.aX(cLon), this.aZ(cLat));
       let t = teselas.get(clave);
       if (!t) teselas.set(clave, t = { pos: [], col: [], idx: [], ids: [], pesos: [] });
@@ -2357,6 +2380,93 @@ export class Mapa3dComponent implements AfterViewInit {
       this.mallasEdificios.push(malla);
       this.registrarCapa(geo.getAttribute('position') as THREE.BufferAttribute, t.ids, t.pesos);
       this.capasEdificios.push(this.capas[this.capas.length - 1]);
+    }
+    this.montarFachadas(fachadas);
+  }
+
+  /** Los dos lados más largos del contorno (≥ 5 m), con su normal hacia afuera; ahí se ponen las fachadas. */
+  private ladosDeFachada(xs: number[], zs: number[]): LadoFachada[] {
+    const cx = xs.reduce((a, v) => a + v, 0) / xs.length, cz = zs.reduce((a, v) => a + v, 0) / zs.length;
+    const lados: LadoFachada[] = [];
+    for (let i = 0; i < xs.length; i++) {
+      const j = (i + 1) % xs.length, largo = Math.hypot(xs[j] - xs[i], zs[j] - zs[i]);
+      if (largo < LARGO_FACHADA_MIN) continue;
+      const dx = (xs[j] - xs[i]) / largo, dz = (zs[j] - zs[i]) / largo;
+      let nx = dz, nz = -dx;
+      if (nx * ((xs[i] + xs[j]) / 2 - cx) + nz * ((zs[i] + zs[j]) / 2 - cz) < 0) { nx = -nx; nz = -nz; }
+      lados.push({ i, j, x0: xs[i], z0: zs[i], dx, dz, nx, nz, largo });
+    }
+    return lados.sort((a, b) => b.largo - a.largo).slice(0, 2);
+  }
+
+  /**
+   * Pone los cuadros de fachada de un edificio: un cuadro por hueco y por piso, con la celda del atlas que le toca. La planta baja
+   * de un local comercial es un solo frente con letrero; la de una casa lleva puerta al centro y ventanas con reja.
+   */
+  private agregarFachada(mapa: Map<number, TeselaFachada>, l: LadoFachada, b: { n: number; hash: number; pisos: number; uso: number; pal: number; suelo: number; techo: number; id: number; peso: number }): void {
+    const cx = l.x0 + l.dx * l.largo / 2, cz = l.z0 + l.dz * l.largo / 2;
+    const clave = Math.floor((cx + this.ancho / 2) / TESELA_FACHADA) + Math.floor((cz + this.alto / 2) / TESELA_FACHADA) * 1000;
+    let t = mapa.get(clave);
+    if (!t) mapa.set(clave, t = { pos: [], uv: [], nor: [], idx: [], ids: [], pesos: [], sx: 0, sz: 0, k: 0 });
+    t.sx += cx; t.sz += cz; t.k++;
+    const pisos = Math.max(1, b.pisos), alto = (b.techo - b.suelo) / pisos, eps = 0.4;
+    const nb = Math.max(1, Math.round(l.largo / ANCHO_BAHIA)), w = l.largo / nb;
+    const local = b.uso === 1 && b.pisos >= 1;
+    const estiloAlto = Math.floor(b.hash * 4 * 97) % 4;                       // ventana, balcón, persiana o doble
+    const TIPO_ALTO = [3, 4, 5, 6][estiloAlto === 1 && pisos < 2 ? 0 : estiloAlto];
+    const cuadro = (u: [number, number, number, number], a: number, c: number, y0: number, y1: number) => {
+      const ax = l.x0 + l.dx * a + l.nx * eps, az = l.z0 + l.dz * a + l.nz * eps, bx = l.x0 + l.dx * c + l.nx * eps, bz = l.z0 + l.dz * c + l.nz * eps;
+      const v = t!.pos.length / 3;
+      t!.pos.push(ax, y0, az, bx, y0, bz, bx, y1, bz, ax, y1, az);
+      t!.uv.push(u[0], u[1], u[2], u[1], u[2], u[3], u[0], u[3]);
+      for (let q = 0; q < 4; q++) { t!.nor.push(l.nx, 0, l.nz); t!.ids.push(b.id); t!.pesos.push(b.peso); }
+      t!.idx.push(v, v + 2, v + 1, v, v + 3, v + 2);
+    };
+    for (let f = 0; f < pisos; f++) {
+      const y0 = b.suelo + f * alto, y1 = y0 + alto;
+      if (f === 0 && local) {
+        const tipo = Math.floor(b.hash * 12 * 31) % NEGOCIOS_ATLAS.length;
+        cuadro(celdaLocal(tipo * 2 + (b.n % 2)), 0, l.largo, y0, y1);
+        continue;
+      }
+      for (let k = 0; k < nb; k++) {
+        let tipo: number;
+        if (f === 0) tipo = k === Math.floor(nb / 2) ? 1 : nb > 1 && k === 0 && b.hash > 0.8 ? 2 : 0;
+        else tipo = b.hash * 10 % 1 > 0.88 && k % 2 ? 7 : TIPO_ALTO;
+        cuadro(celdaBahia(tipo, b.pal), k * w, (k + 1) * w, y0, y1);
+      }
+    }
+  }
+
+  /** Una malla de fachadas por tesela: solo se dibuja cuando la cámara está cerca. */
+  private montarFachadas(mapa: Map<number, TeselaFachada>): void {
+    this.mallasFachadas = [];
+    if (!mapa.size) return;
+    this.atlasFachadas ??= crearAtlasFachadas();
+    this.matFachadas ??= new THREE.MeshStandardMaterial({ map: this.atlasFachadas, roughness: 0.95, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: -1, polygonOffsetUnits: -1 });
+    for (const t of mapa.values()) {
+      const geo = new THREE.BufferGeometry();
+      geo.setAttribute('position', new THREE.Float32BufferAttribute(t.pos, 3));
+      geo.setAttribute('uv', new THREE.Float32BufferAttribute(t.uv, 2));
+      geo.setAttribute('normal', new THREE.Float32BufferAttribute(t.nor, 3));
+      geo.setIndex(t.pos.length / 3 > 65535 ? new THREE.Uint32BufferAttribute(t.idx, 1) : new THREE.Uint16BufferAttribute(t.idx, 1));
+      this.acolchar(geo);
+      const malla = new THREE.Mesh(geo, this.matFachadas);
+      malla.receiveShadow = true;
+      malla.visible = false;
+      this.escena.add(malla);
+      this.registrarCapa(geo.getAttribute('position') as THREE.BufferAttribute, t.ids, t.pesos);
+      this.capasEdificios.push(this.capas[this.capas.length - 1]);
+      this.mallasFachadas.push({ malla, centro: new THREE.Vector3(t.sx / t.k, 0, t.sz / t.k) });
+    }
+  }
+
+  /** Las fachadas detalladas solo existen para la cámara que está cerca de la tesela. */
+  private actualizarFachadas(): void {
+    const cam = this.camara.position;
+    for (const f of this.mallasFachadas) {
+      const dx = cam.x - f.centro.x, dz = cam.z - f.centro.z;
+      f.malla.visible = Math.hypot(dx, cam.y * 0.5, dz) < DISTANCIA_FACHADA;
     }
   }
 
@@ -2463,7 +2573,7 @@ export class Mapa3dComponent implements AfterViewInit {
             const x = ax + (bx - ax) * t / largo + nx * lado * sg, z = az + (bz - az) * t / largo + nz * lado * sg;
             const lon = this.lon0 + x / this.mLon, lat = this.lat0 - z / this.mLat;
             if (!this.esUrbano(lon, lat) || holgura(x, z) < 2 || sobreEdificio(x, z, 1.5)) continue;
-            if (this.fabricas.some(f => Math.hypot(f.x - x, f.z - z) < RADIO_FABRICA + 4) || this.equipamientos.some(q => Math.hypot(q.x - x, q.z - z) < q.r + 3)) continue;
+            if (this.fabricas.some(f => Math.hypot(f.x - x, f.z - z) < f.r + 4) || this.equipamientos.some(q => Math.hypot(q.x - x, q.z - z) < q.r + 3)) continue;
             res.push({ lon, lat, x, z });
           }
         }
@@ -3175,22 +3285,26 @@ export class Mapa3dComponent implements AfterViewInit {
   /**
    * Fábricas del inventario de emisiones de Corantioquia (insumos/ambiente/Base_Datos_Inventario-2021.xlsx, filtradas a
    * Girardota en public/data/mapa3d/industrias-49.json). Se descartan las que caen fuera del mapa o sin coordenadas, y
-   * las que quedan a menos de INDUSTRIA_SEPARACION de otra ya puesta (varias comparten predio).
+   * las que no caben ni al 50 % junto a otra ya puesta; si el predio está compartido, la fábrica se encoge para caber.
    */
-  private ubicarIndustrias(lista: Industria[], vias: Compacto | null): { x: number; z: number; lon: number; lat: number; n: string; datos: Industria }[] {
+  private ubicarIndustrias(lista: Industria[], vias: Compacto | null): { x: number; z: number; lon: number; lat: number; n: string; datos: Industria; r: number; esc: number }[] {
     const holgura = this.holguraVias(vias);
     const intentos: [number, number][] = [[0, 0]];
     for (const r of [25, 50, 75, 100, 130, 160]) for (let k = 0; k < 12; k++) intentos.push([Math.cos(k * Math.PI / 6) * r, Math.sin(k * Math.PI / 6) * r]);
-    const out: { x: number; z: number; lon: number; lat: number; n: string; datos: Industria }[] = [];
+    const out: { x: number; z: number; lon: number; lat: number; n: string; datos: Industria; r: number; esc: number }[] = [];
     for (const f of lista) {
       const x0 = this.aX(f.lon), z0 = this.aZ(f.lat);
-      for (const [dx, dz] of intentos) {
+      colocada: for (const [dx, dz] of intentos) {
         const x = x0 + dx, z = z0 + dz;
         if (Math.abs(x) > this.ancho / 2 - 150 || Math.abs(z) > this.alto / 2 - 150) continue;
-        // sin pisar a otra fábrica ni una vía: se corre hasta encontrar un sitio libre cerca del punto del inventario
-        if (holgura(x, z) < RADIO_FABRICA || !out.every(o => Math.hypot(o.x - x, o.z - z) > INDUSTRIA_SEPARACION)) continue;
-        out.push({ x, z, lon: this.lon0 + x / this.mLon, lat: this.lat0 - z / this.mLat, n: f.n, datos: f });
-        break;
+        // sin pisar a otra fábrica ni una vía: en el sitio más cercano que dé, y si el predio es estrecho o está compartido,
+        // la nave se encoge (hasta ESCALA_MIN_FABRICA) para que quepan todas
+        for (const esc of ESCALAS_FABRICA) {
+          const r = RADIO_FABRICA * esc;
+          if (holgura(x, z) < r || !out.every(o => Math.hypot(o.x - x, o.z - z) > o.r + r + 6)) continue;
+          out.push({ x, z, lon: this.lon0 + x / this.mLon, lat: this.lat0 - z / this.mLat, n: f.n, datos: f, r, esc });
+          break colocada;
+        }
       }
     }
     return out;
@@ -3209,7 +3323,7 @@ export class Mapa3dComponent implements AfterViewInit {
     }
     const out: typeof this.equipamientos = [];
     const previos = (x: number, z: number, r: number, deporte: boolean) =>
-      this.fabricas.every(f => Math.hypot(f.x - x, f.z - z) > RADIO_FABRICA + r + 4)
+      this.fabricas.every(f => Math.hypot(f.x - x, f.z - z) > f.r + r + 4)
       && out.every(o => Math.hypot(o.x - x, o.z - z) > (o.r + r) * (deporte && o.datos.p.c === 'deporte' ? SOLAPE_DEPORTE : SOLAPE_EQUIPAMIENTOS));
     const conjuntos = this.conjuntosDeporte(lista, holgura);
     lista.forEach((p, i) => {
@@ -3367,7 +3481,7 @@ export class Mapa3dComponent implements AfterViewInit {
       const x = this.aX(lon), z = this.aZ(lat);
       // una construcción del catastro es real: solo se quita si su centro cae sobre la calzada; las demás, si su contorno pisa la calle
       if ((e.p?.[n] ?? 0) > 0 ? holgura(x, z) < 0 : this.cruzaVia(q, lon, lat, holgura)) return false;
-      return this.fabricas.every(f => Math.hypot(f.x - x, f.z - z) > RADIO_FABRICA + 5)
+      return this.fabricas.every(f => Math.hypot(f.x - x, f.z - z) > f.r + 5)
         && this.equipamientos.every(q => Math.hypot(q.x - x, q.z - z) > q.r + 3);
     });
     const sin = <T>(a?: T[]) => a?.filter((_, n) => quedan[n]);
@@ -3579,16 +3693,18 @@ export class Mapa3dComponent implements AfterViewInit {
 
     this.fabricas.forEach((f, n) => {
       this.inicioFabrica.push(ids.length);
+      const esc = f.esc;
       const largo = 48 + rnd() * 20, fondo = 30 + rnd() * 10, alto = 13 + rnd() * 3;
       const yaw = rnd() * Math.PI * 2, cos = Math.cos(yaw), sin = Math.sin(yaw);
-      const alturas = [[0, 0], [1, 1], [-1, 1], [1, -1], [-1, -1]].map(([a, b]) => this.alturaXZ(f.x + (a * (largo / 2 + 20)) * cos + (b * (fondo / 2 + 15)) * sin, f.z - (a * (largo / 2 + 20)) * sin + (b * (fondo / 2 + 15)) * cos));
+      const alturas = [[0, 0], [1, 1], [-1, 1], [1, -1], [-1, -1]].map(([a, b]) => this.alturaXZ(f.x + (a * (largo / 2 + 20) * esc) * cos + (b * (fondo / 2 + 15) * esc) * sin, f.z - (a * (largo / 2 + 20) * esc) * sin + (b * (fondo / 2 + 15) * esc) * cos));
       const base = Math.max(...alturas) + 1, minimo = Math.min(...alturas);
       const id = this.idEn(f.lon, f.lat), peso = id >= 0 ? this.pesoBorde(f.lon, f.lat, id) : 0;
       const pared = paredes[Math.floor(rnd() * paredes.length)];
       /** Pone una pieza (centrada en su origen) en (lx, ly, lz) locales de la fábrica, con su color. */
-      const poner = (g: THREE.BufferGeometry, color: string, lx: number, ly: number, lz: number) => {
+      const poner = (g: THREE.BufferGeometry, color: string, lx: number, ly: number, lz: number, escalar = true) => {
         const geo = g.index ? g.toNonIndexed() : g;
         geo.translate(lx, ly, lz);
+        if (escalar) geo.scale(esc, esc, esc);
         geo.applyMatrix4(lechos.makeRotationY(yaw));
         geo.translate(f.x, base, f.z);
         const c = new THREE.Color(color), cnt = geo.getAttribute('position').count, col = new Float32Array(cnt * 3);
@@ -3601,7 +3717,7 @@ export class Mapa3dComponent implements AfterViewInit {
       const caja = (w: number, h: number, d: number) => new THREE.BoxGeometry(w, h, d);
 
       const losa = base - minimo + 3;
-      poner(caja(largo + 14, losa, fondo + 12), '#9aa0a6', 0, -losa / 2, 0);                  // losa que se asienta en la ladera
+      poner(caja((largo + 14) * esc, losa, (fondo + 12) * esc), '#9aa0a6', 0, -losa / 2, 0, false);                  // losa que se asienta en la ladera
       poner(caja(largo, alto, fondo), pared, 0, alto / 2, 0);                                  // nave
       // techo en diente de sierra: cada diente es un prisma de perfil trapecial con su cara vertical vidriada
       const dientes = Math.max(3, Math.round(fondo / 9)), w = fondo / dientes, h = 6;
@@ -3632,15 +3748,15 @@ export class Mapa3dComponent implements AfterViewInit {
         poner(new THREE.CylinderGeometry(r1, r0, seg, 14), k % 2 ? '#d8d8d8' : '#c4342d', cx, seg * (k + 0.5), cz);
       }
       poner(new THREE.CylinderGeometry(2.7, 2.4, 2, 14), '#2b2f36', cx, ch + 1, cz);
-      const hx = f.x + cx * cos + cz * sin, hz = f.z - cx * sin + cz * cos;
+      const hx = f.x + (cx * cos + cz * sin) * esc, hz = f.z - (cx * sin + cz * cos) * esc;
       const fase = rnd();
       const puffs: Humo['puffs'] = [];
       for (let k = 0; k < HUMO_BOCANADAS; k++) {
         puffs.push({ tex: Math.floor(rnd() * 4), theta: rnd() * Math.PI * 2, giro: (rnd() - 0.5) * 0.3, tam: 0.8 + rnd() * 0.5, desv: rnd() });
       }
-      this.humos.push({ x: hx, y: base + ch + 2, z: hz, fase, ini: this.humos.length * HUMO_BOCANADAS, puffs });
-      itemsAura.push({ x: f.x, y: base, z: f.z, radio: RADIO_FABRICA * 0.95, alto: alto + 22, color: COLOR_INDUSTRIA });
-      const icono = crearIcono('industria', COLOR_INDUSTRIA, f.x, base + ch * 0.6, f.z);
+      this.humos.push({ x: hx, y: base + (ch + 2) * esc, z: hz, fase, ini: this.humos.length * HUMO_BOCANADAS, puffs });
+      itemsAura.push({ x: f.x, y: base, z: f.z, radio: f.r * 0.95, alto: (alto + 22) * esc, color: COLOR_INDUSTRIA });
+      const icono = crearIcono('industria', COLOR_INDUSTRIA, f.x, base + ch * 0.6 * esc, f.z);
       icono.ref = { tipo: 'fabrica', i: n };
       icono.zona = this.idEn(f.datos.lon, f.datos.lat);
       this.iconosEquip.push(icono);
@@ -4390,6 +4506,7 @@ export class Mapa3dComponent implements AfterViewInit {
         this.animarAlzado();
         this.actualizarSombras();
         this.actualizarArboles();
+        this.actualizarFachadas();
         this.animarNubes(dt);
         this.animarNiebla(dt);
         this.animarPajaros(dt);
@@ -4812,7 +4929,7 @@ export class Mapa3dComponent implements AfterViewInit {
     for (const f of this.fabricas) {                          // ni árboles dentro de una fábrica
       const [px, py] = aPx(f.lon, f.lat);
       xm.beginPath();
-      xm.arc(px, py, (RADIO_FABRICA + 4) / (this.ancho / W), 0, Math.PI * 2);
+      xm.arc(px, py, (f.r + 4) / (this.ancho / W), 0, Math.PI * 2);
       xm.fill();
     }
     for (const q of this.equipamientos) {                     // ni dentro de un equipamiento
@@ -5446,6 +5563,7 @@ export class Mapa3dComponent implements AfterViewInit {
     }
     const f = this.fabricas[i];
     this.anilloHover.position.set(f.x, this.alturaXZ(f.x, f.z) + 5, f.z);
+    this.anilloHover.scale.setScalar(f.esc);
     this.anilloHover.visible = true;
     if (!this.rotuloFabrica) {
       this.rotuloFabrica = document.createElement('div');
@@ -5490,6 +5608,7 @@ export class Mapa3dComponent implements AfterViewInit {
       this.escena.add(this.anilloFabrica);
     }
     this.anilloFabrica.position.set(f.x, this.alturaXZ(f.x, f.z) + 6, f.z);
+    this.anilloFabrica.scale.setScalar(f.esc);
     this.anilloFabrica.visible = true;
     if (volar) {
       const objetivo = new THREE.Vector3(f.x, this.alturaXZ(f.x, f.z) + 40, f.z);

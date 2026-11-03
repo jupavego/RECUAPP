@@ -1,10 +1,11 @@
 import * as THREE from 'three';
 import { CategoriaPunto } from '../../mapa/services/mapa.service';
+import { TIPOLOGIAS, tipologia } from './tipologias';
 
 /** Un edificio listo para ponerse en el mapa: piezas con su color, en metros y con el origen en el suelo, en el centro. */
 export interface Modelo {
   /** `mov` (solo la gente): [sentido del vaivén (0 = fija), altura de la articulación (m), amplitud (rad)] */
-  piezas: { g: THREE.BufferGeometry; color: string; mov?: [number, number, number] }[];
+  piezas: { g: THREE.BufferGeometry; color: string; mov?: [number, number, number]; mapa?: THREE.Texture; calado?: boolean }[];
   /** radio que ocupa en planta (m) */
   radio: number;
   /** losa de cimentación [ancho, fondo] que se asienta en la ladera; sin ella el edificio se apoya en su centro */
@@ -407,7 +408,9 @@ export function modelarEquipamiento(c: CategoriaCatalogo, tipo: string, nombre: 
   const t = `${tipo} ${nombre}`.toLowerCase();
   switch (c) {
     case 'industria': return fabrica(e);
-    case 'vivienda': return /edificio/.test(t) ? edificioUrbano(e) : vivienda(e);
+    case 'vivienda':
+      if (tipo === 'Tipología') return tipologia(nombre, Math.floor(rnd() * 1e9));
+      return /edificio/.test(t) ? edificioUrbano(e) : vivienda(e);
     case 'vehiculos': return /avi[oó]n/.test(t) ? { piezas: [], radio: 42 } : vehiculo(e, t);    // el avión es un modelo .glb que carga el catálogo
     case 'vias':
       for (const k of ['autopista', 'troncal', 'secundaria', 'mixta', 'afirmada', 'carreteable', 'restringida'] as const) if (t.includes(k)) return carretera(e, k);
@@ -461,7 +464,7 @@ function fabrica(e: Ensamble): Modelo {
 
 /**
  * Vivienda típica de la región: muros de ladrillo de barro pegado con cemento sobre un zócalo de concreto, techo a dos aguas
- * de teja de barro en V (canales y cubiertas alternadas), puerta y ventanas de madera, chimenea de cocina y alero amplio.
+ * de teja de barro en V (canales y cubiertas alternadas), puerta y ventanas de madera y alero amplio.
  */
 function vivienda(e: Ensamble): Modelo {
   const ladrillo = '#b9603e', cemento = '#d6cbb8', madera = '#6b4a2f', paredes = 4.2;
@@ -482,8 +485,6 @@ function vivienda(e: Ensamble): Modelo {
     }
   }
   e.caja(ancho + vuelo * 2 + 0.3, 0.3, 0.7, '#7a3520', 0, alto + subida - 0.1, 0);
-  // chimenea de cocina
-  e.caja(1, 3.4, 1, ladrillo, -3, paredes + 0.4, -1.4).caja(1.3, 0.3, 1.3, '#9ca3af', -3, paredes + 3.8, -1.4);
   // fachada (+z): puerta y dos ventanas con marco de madera, escalón de cemento
   e.caja(1.5, 2.6, 0.35, madera, 0, 0.5, fondo / 2 + 0.05).caja(0.12, 0.2, 0.1, '#e5c04a', 0.5, 1.7, fondo / 2 + 0.28)
     .caja(2.6, 0.2, 1.1, '#b5b0a6', 0, 0, fondo / 2 + 0.5);
@@ -971,6 +972,7 @@ export const VARIANTES: Variante[] = [
   { categoria: 'industria', etiqueta: 'Fábrica', tipo: 'Industria', nombre: 'Fábrica' },
   { categoria: 'vivienda', etiqueta: 'Vivienda típica', tipo: 'Vivienda', nombre: 'Vivienda' },
   { categoria: 'vivienda', etiqueta: 'Edificio del casco urbano', tipo: 'Edificio', nombre: 'Edificio' },
+  ...TIPOLOGIAS.map(t => ({ categoria: 'vivienda' as const, etiqueta: `${t.etiqueta} · fachada detallada`, tipo: 'Tipología', nombre: t.id })),
   { categoria: 'vehiculos', etiqueta: 'Auto', tipo: 'Vehículo', nombre: 'Auto' },
   { categoria: 'vehiculos', etiqueta: 'Moto', tipo: 'Vehículo', nombre: 'Moto' },
   { categoria: 'vehiculos', etiqueta: 'Taxi', tipo: 'Vehículo', nombre: 'Taxi' },

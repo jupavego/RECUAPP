@@ -6,7 +6,8 @@ Urbanas) y 5 (Construcciones Rurales), © Alcaldía de Girardota, Catastro.
 
 Cada huella se conserva con su contorno real y sus pisos. Solo se unen las huellas de un mismo predio que se tocan y tienen
 los mismos pisos y uso (así una casa de 3 pisos con un patio de 1 piso conserva sus dos alturas). Se descartan las menores de
-AREA_MINIMA m² (balcones, escaleras, anexos) y se simplifica el contorno a SIMPLIFICAR m.
+AREA_MINIMA m² (balcones, escaleras, anexos) y se simplifica el contorno a SIMPLIFICAR m. Donde dos huellas se montan una sobre
+otra, a la más baja se le resta lo que cubre la más alta, para no dibujar dos volúmenes en el mismo sitio.
 
     insumos/catastro/construcciones-<capa>-<id>.geojson   copia cruda de la descarga (se reutiliza; --refrescar la baja de nuevo)
     public/data/mapa3d/catastro-<id>.json
@@ -23,7 +24,9 @@ import json, math, sys, urllib.parse, urllib.request
 from collections import Counter, defaultdict
 from pathlib import Path
 
-from shapely.geometry import Polygon, shape
+from shapely import make_valid
+from shapely.geometry import Polygon, box, shape
+from shapely.strtree import STRtree
 from shapely.geometry.polygon import orient
 from shapely.ops import unary_union
 
@@ -43,6 +46,7 @@ AREA_MINIMA = 10          # m²
 CELDA_COBERTURA = 250     # m, celda con al menos MIN_COBERTURA construcciones del catastro = zona cubierta
 MIN_COBERTURA = 2
 SIMPLIFICAR = 0.35        # m
+TRASLAPE_MINIMO = 2        # m², traslapes menores se ignoran
 UNIR = 0.1                # m, huellas del mismo predio a menos de esto se funden
 USOS = {'C': 1, 'I': 2}
 
@@ -88,8 +92,28 @@ def deltas(anillo):
     return sal
 
 
+def sin_huecos(g):
+    """Un polígono con huecos (un zócalo con la torre adentro) se parte con una línea que cruza cada hueco: el visor solo dibuja contornos."""
+    pendientes, listos = [g], []
+    while pendientes:
+        q = pendientes.pop()
+        if q.is_empty or q.geom_type != 'Polygon':
+            for sub in (getattr(q, 'geoms', [])):
+                pendientes.append(sub)
+            continue
+        if not q.interiors:
+            listos.append(q)
+            continue
+        hx = Polygon(q.interiors[0]).centroid.x
+        x0, y0, x1, y1 = q.bounds
+        for mitad in (box(x0 - 1, y0 - 1, hx, y1 + 1), box(hx, y0 - 1, x1 + 1, y1 + 1)):
+            pendientes.append(q.intersection(mitad))
+    return listos
+
+
 edificios, pisos_l, usos_l, rural_l = [], [], [], []
 descartadas = Counter()
+huellas = []                       # (polígono en metros, pisos, uso, origen)
 for nombre, capa in CAPAS.items():
     feats = descargar(nombre, capa)
     grupos = defaultdict(list)
@@ -98,25 +122,37 @@ for nombre, capa in CAPAS.items():
             continue
         p = f['properties']
         pisos = min(max(int(p.get('NO_PISOS') or 1), 1), MAX_PISOS)
-        grupos[(p['PK_PREDIOS'], pisos, USOS.get(p.get('USO'), 0))].append(a_metros(shape(f['geometry'])))
+        grupos[(p['PK_PREDIOS'], pisos, USOS.get(p.get('USO'), 0))].append(make_valid(a_metros(shape(f['geometry']))))
     for (_, pisos, uso), gs in grupos.items():
         fundida = unary_union([g.buffer(UNIR) for g in gs]).buffer(-UNIR)
         for parte in (fundida.geoms if hasattr(fundida, 'geoms') else [fundida]):
-            if parte.is_empty or parte.geom_type != 'Polygon':
-                continue
-            if parte.area < AREA_MINIMA:
+            if parte.is_empty or parte.geom_type != 'Polygon' or parte.area < AREA_MINIMA:
                 descartadas[nombre] += 1
                 continue
-            s = parte.simplify(SIMPLIFICAR, preserve_topology=True)
-            if s.is_empty or s.geom_type != 'Polygon' or s.area < AREA_MINIMA:
-                descartadas[nombre] += 1
-                continue
-            anillo = list(orient(Polygon(s.exterior), 1.0).exterior.coords)[:-1]
-            if len(anillo) < 3:
-                continue
-            edificios.append([round(pisos * ALTO_PISO, 1)] + deltas(anillo))
-            pisos_l.append(pisos); usos_l.append(uso); rural_l.append(1 if nombre == 'rurales' else 0)
-    print(f'{nombre}: {sum(1 for r in rural_l if r == (nombre == "rurales"))} construcciones (descartadas por pequeñas: {descartadas[nombre]})')
+            huellas.append((parte, pisos, uso, 1 if nombre == 'rurales' else 0))
+
+# ── traslapes: el catastro guarda huellas montadas unas sobre otras (un zócalo de 1 piso con una torre dentro, por ejemplo).
+# Dibujarlas completas pone dos volúmenes en el mismo sitio, así que a la más baja se le resta lo que cubre la más alta.
+arbol = STRtree([h[0] for h in huellas])
+recortadas = 0
+for i, (g, pisos, uso, origen) in enumerate(huellas):
+    resta = [huellas[j][0] for j in arbol.query(g)
+             if j != i and (huellas[j][1] > pisos or (huellas[j][1] == pisos and j < i)) and huellas[j][0].intersection(g).area > TRASLAPE_MINIMO]
+    if resta:
+        g = g.difference(unary_union(resta))
+        recortadas += 1
+    for parte in sin_huecos(g):
+        if parte.area < AREA_MINIMA:
+            continue
+        s = parte.simplify(SIMPLIFICAR, preserve_topology=True)
+        if s.is_empty or s.geom_type != 'Polygon' or s.area < AREA_MINIMA:
+            continue
+        anillo = list(orient(Polygon(s.exterior), 1.0).exterior.coords)[:-1]
+        if len(anillo) < 3:
+            continue
+        edificios.append([round(pisos * ALTO_PISO, 1)] + deltas(anillo))
+        pisos_l.append(pisos); usos_l.append(uso); rural_l.append(origen)
+print(f'catastro: {len(edificios)} construcciones ({recortadas} recortadas por traslape; descartadas por pequeñas: {dict(descartadas)})')
 
 # ── complemento: huellas de Overture/OSM solo donde el catastro no llega ──────────────────────────────
 def celda(x, y):

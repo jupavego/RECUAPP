@@ -26,6 +26,9 @@ const SIN_AURA: string[] = ['vivienda', 'vehiculos', 'vias', 'agua', 'naturaleza
           }
         </div>
       }
+      @if (actual().tipo === 'Tipología') {
+        <button type="button" class="variar" (click)="variar()">🎲 Otra variación ({{ variacion() }})</button>
+      }
       <label class="giro"><input type="checkbox" [checked]="girando()" (change)="alternarGiro()"> Girar solo</label>
       <label class="giro"><input type="checkbox" [checked]="conAura()" (change)="alternarAura()"> Aura de neón e icono</label>
     </aside>
@@ -52,6 +55,7 @@ const SIN_AURA: string[] = ['vivienda', 'vehiculos', 'vias', 'agua', 'naturaleza
       font: inherit; color: inherit; cursor: pointer; }
     button:hover { background: #e8f1f7; }
     button.activo { background: #243746; color: #fff; }
+    button.variar { margin-top: 12px; background: #e8f1f7; font-weight: 800; }
     .giro { display: block; margin-top: 12px; font-size: 12px; }
     .titulo { position: absolute; left: 50%; bottom: 40px; transform: translateX(-50%); text-align: center;
       padding: 8px 18px; border-radius: 14px; background: rgba(255,255,255,.88); box-shadow: 0 4px 14px rgba(15,35,55,.25);
@@ -81,6 +85,7 @@ export class CatalogoEdificiosComponent implements AfterViewInit {
   readonly girando = signal(true);
   readonly medida = signal('');
   readonly conAura = signal(true);
+  readonly variacion = signal(1);
 
   private renderer!: THREE.WebGLRenderer;
   private escena = new THREE.Scene();
@@ -164,6 +169,11 @@ export class CatalogoEdificiosComponent implements AfterViewInit {
     this.mostrar(v);
   }
 
+  variar(): void {
+    this.variacion.update(n => n + 1);
+    this.mostrar(this.actual());
+  }
+
   alternarGiro(): void {
     this.girando.update(g => !g);
     this.controles.autoRotate = this.girando();
@@ -188,7 +198,12 @@ export class CatalogoEdificiosComponent implements AfterViewInit {
     if (!this.modelo) return;
     this.escena.remove(this.modelo);
     this.modelo.traverse(o => {
-      if (o instanceof THREE.Mesh) { o.geometry.dispose(); (o.material as THREE.Material).dispose(); }
+      if (o instanceof THREE.Mesh) {
+        o.geometry.dispose();
+        const mat = o.material as THREE.MeshStandardMaterial;
+        mat.map?.dispose();
+        mat.dispose();
+      }
     });
     this.modelo = null;
   }
@@ -196,7 +211,7 @@ export class CatalogoEdificiosComponent implements AfterViewInit {
   /** Arma el edificio sobre una plataforma de pasto y encuadra la cámara según su tamaño. */
   private mostrar(v: Variante): void {
     this.quitar();
-    let semilla = 7;
+    let semilla = 7 + this.variacion() * 7919;
     const m = modelarEquipamiento(v.categoria, v.tipo, v.nombre, () => ((semilla = (semilla * 16807) % 2147483647) / 2147483647));
     const grupo = new THREE.Group();
     const r = m.radio + (m.radio < 4 ? 1.2 : 8);
@@ -209,7 +224,7 @@ export class CatalogoEdificiosComponent implements AfterViewInit {
       grupo.add(losa);
     }
     for (const p of m.piezas) {
-      const malla = new THREE.Mesh(p.g, new THREE.MeshStandardMaterial({ color: p.color, roughness: 0.85, metalness: 0.05, side: THREE.DoubleSide }));
+      const malla = new THREE.Mesh(p.g, new THREE.MeshStandardMaterial({ color: p.color, map: p.mapa, alphaTest: p.calado ? 0.5 : 0, roughness: 0.85, metalness: 0.05, side: THREE.DoubleSide }));
       malla.castShadow = true;
       malla.receiveShadow = true;
       grupo.add(malla);
