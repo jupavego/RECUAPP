@@ -1,8 +1,9 @@
 import * as THREE from 'three';
+import { ESCALA_ACTIVOS } from './escala';
 
 const GRAVEDAD = 22;
 const DISTANCIA_EJES = 2.8;
-const ESCALA = 1.4;                 // el carro se agranda un poco para que se lea desde la cámara de persecución
+const ESCALA = ESCALA_ACTIVOS;      // la misma que los autos del tráfico
 const VELOCIDAD_MAX = 45;           // m/s (162 km/h)
 const VELOCIDAD_TURBO = 120;
 const VELOCIDAD_REVERSA = 15;
@@ -13,9 +14,16 @@ export const ALTURA_ABISMO = -150;
 /** Altura del suelo en (x, z) del mundo, o -Infinity fuera del territorio (ahí no hay nada que pise). */
 export type FuncionSuelo = (x: number, z: number) => number;
 
+/** Si el carro (círculo de `radio` m en `p`) topa con algo sólido, lo saca por el lado más corto y devuelve true. */
+export type FuncionObstaculo = (p: THREE.Vector3, radio: number) => boolean;
+
+/** Radio con el que el carro choca contra edificios y equipamientos (m del mundo). */
+const RADIO_CHOQUE = 3;
+
 /**
- * Carro de conducción libre: sin colisiones con edificios, árboles ni agua, sigue el relieve mientras haya terreno, sale
- * disparado por las crestas y, si se sale del mapa o se despeña, cae al vacío.
+ * Carro de conducción libre: va sobre la calzada (el suelo que recibe ya la incluye), choca contra edificios y equipamientos
+ * (rebota y pierde velocidad), sigue el relieve mientras haya terreno, sale disparado por las crestas y, si se sale del mapa
+ * o se despeña, cae al vacío. Árboles y agua no estorban.
  */
 export class Conduccion {
   readonly objeto = new THREE.Group();
@@ -35,7 +43,7 @@ export class Conduccion {
   private rumboInicio = 0;
   private camaraLista = false;
 
-  constructor(private readonly suelo: FuncionSuelo) {
+  constructor(private readonly suelo: FuncionSuelo, private readonly obstaculo?: FuncionObstaculo) {
     this.objeto.add(this.construirCarro());
     this.objeto.scale.setScalar(ESCALA);
     this.objeto.visible = false;
@@ -97,6 +105,10 @@ export class Conduccion {
     const y0 = this.pos.y;
     this.pos.x += dx;
     this.pos.z += dz;
+    if (this.obstaculo?.(this.pos, RADIO_CHOQUE)) {
+      // choque: rebota un poco y pierde casi toda la velocidad
+      if (Math.abs(this.velocidad) > 4) this.velocidad *= -0.3; else this.velocidad = 0;
+    }
     const g = this.suelo(this.pos.x, this.pos.z);
 
     if (this.enSuelo) {

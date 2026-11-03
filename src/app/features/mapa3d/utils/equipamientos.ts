@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { CategoriaPunto } from '../../mapa/services/mapa.service';
 import { TIPOLOGIAS, tipologia } from './tipologias';
+import { ESCALA_ACTIVOS, LARGO_REAL } from './escala';
 
 /** Un edificio listo para ponerse en el mapa: piezas con su color, en metros y con el origen en el suelo, en el centro. */
 export interface Modelo {
@@ -468,14 +469,23 @@ function patrimonio(e: Ensamble, tipo: string, rnd: () => number): Modelo {
   return { piezas: e.piezas, radio: 16 };
 }
 
-/** El vehículo del catálogo según su nombre (el auto rojo es el de siempre). */
+/** Lleva el modelo a `largoReal` × ESCALA_ACTIVOS de largo (eje x): los modelos se dibujaron a ojo, entre 3 y 5 veces más grandes que el vehículo real. */
+function aEscalaReal(m: Modelo, largoReal: number): Modelo {
+  const caja = new THREE.Box3();
+  for (const p of m.piezas) { p.g.computeBoundingBox(); caja.union(p.g.boundingBox!); }
+  const f = largoReal * ESCALA_ACTIVOS / (caja.max.x - caja.min.x);
+  for (const p of m.piezas) p.g.scale(f, f, f);
+  return { ...m, radio: m.radio * f };
+}
+
+/** El vehículo del catálogo según su nombre (el auto rojo es el de siempre), a la escala común de los activos. */
 function vehiculo(e: Ensamble, t: string): Modelo {
-  if (/moto/.test(t)) return moto(e);
-  if (/taxi/.test(t)) return taxi(e);
-  if (/\bfj\b/.test(t)) return fj80(e);
-  if (/\bbus\b/.test(t)) return bus(e);
-  if (/cami[oó]n|tr[aá]iler/.test(t)) return camion(e);
-  return auto(e);
+  if (/moto/.test(t)) return aEscalaReal(moto(e), LARGO_REAL.moto);
+  if (/taxi/.test(t)) return aEscalaReal(taxi(e), LARGO_REAL.taxi);
+  if (/fj/.test(t)) return aEscalaReal(fj80(e), LARGO_REAL.campero);
+  if (/bus/.test(t)) return aEscalaReal(bus(e), LARGO_REAL.bus);
+  if (/cami[oó]n|tr[aá]iler/.test(t)) return aEscalaReal(camion(e), LARGO_REAL.camion);
+  return aEscalaReal(auto(e), LARGO_REAL.auto);
 }
 
 /** El edificio que representa a un punto de interés según su categoría y su tipo de lugar. */

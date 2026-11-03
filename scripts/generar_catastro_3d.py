@@ -49,6 +49,8 @@ SIMPLIFICAR = 0.35        # m
 TRASLAPE_MINIMO = 2        # m², traslapes menores se ignoran
 UNIR = 0.1                # m, huellas del mismo predio a menos de esto se funden
 USOS = {'C': 1, 'I': 2}
+MODULOS_MINIMOS = 3       # huellas de un predio que, con área mediana de AREA_MODULO m² o más, se dejan como módulos sueltos (bodegas en hilera)
+AREA_MODULO = 150
 
 relieve = json.loads((RAIZ / f'public/data/mapa3d/relieve-{MUNICIPIO}.json').read_text(encoding='utf-8'))
 oeste, sur, este, norte = relieve['bbox']
@@ -124,8 +126,10 @@ for nombre, capa in CAPAS.items():
         pisos = min(max(int(p.get('NO_PISOS') or 1), 1), MAX_PISOS)
         grupos[(p['PK_PREDIOS'], pisos, USOS.get(p.get('USO'), 0))].append(make_valid(a_metros(shape(f['geometry']))))
     for (_, pisos, uso), gs in grupos.items():
-        fundida = unary_union([g.buffer(UNIR) for g in gs]).buffer(-UNIR)
-        for parte in (fundida.geoms if hasattr(fundida, 'geoms') else [fundida]):
+        # una hilera de bodegas de un mismo predio (parque industrial en propiedad horizontal) se queda en módulos, uno al lado del otro
+        modulos = len(gs) >= MODULOS_MINIMOS and sorted(g.area for g in gs)[len(gs) // 2] >= AREA_MODULO
+        fundida = unary_union([g.buffer(0) for g in gs]) if modulos else unary_union([g.buffer(UNIR) for g in gs]).buffer(-UNIR)
+        for parte in ([g.buffer(0) for g in gs] if modulos else (fundida.geoms if hasattr(fundida, 'geoms') else [fundida])):
             if parte.is_empty or parte.geom_type != 'Polygon' or parte.area < AREA_MINIMA:
                 descartadas[nombre] += 1
                 continue
