@@ -98,6 +98,8 @@ const FACTOR_VIVIENDAS = 1.15;
 const AREA_VIVIENDA: [number, number] = [30, 250];
 /** Los edificios son diminutos frente al municipio: se agrandan en vertical para que se lean. */
 const ESCALA_EDIFICIOS = 3.2;
+/** Las construcciones del catastro llevan pisos reales (3 m cada uno): con la misma exageración se verían como torres, así que se agrandan menos. */
+const ESCALA_CATASTRO = 2.2;
 /** lado (m) de las teselas en que se parten edificios, árboles y terreno para descartar lo que no se ve */
 const TESELA = 1500;
 /** celdas (de unos 23 m) por lado de cada tesela del terreno */
@@ -106,6 +108,8 @@ const TESELA_TERRENO = 64;
 const DISTANCIA_ARBOL_SIMPLE = 10000;
 /** Ancho dibujado de las vías por clase (principal, local, sendero), en metros del modelo. */
 const ANCHO_VIA = [34, 13, 6];
+/** Arbolado de calle: separación media entre árboles (m) a cada lado y fracción de sitios que se siembran. */
+const PASO_ARBOL_CALLE = 20, FRACCION_ARBOL_CALLE = 0.4;
 /** Repinta de grava o tierra las vías que la red oficial (IGAC) dice que no están pavimentadas (vias-estado-<id>.json). */
 const USAR_ESTADO_VIAL = true;
 /** Los cauces se dibujan a su ancho real × este factor (el Río Medellín: 30 m → 66 m), con un mínimo para que se lean. */
@@ -288,6 +292,18 @@ interface Compacto {
   k: number;
   v?: number[][];
   e?: number[][];
+  /** catastro (scripts/generar_catastro_3d.py), alineados con `e`: pisos (0 = se desconoce), uso (0 residencial, 1 comercial, 2 industrial) y origen (0 catastro urbano, 1 catastro rural, 2 complemento de Overture/OSM) */
+  p?: number[];
+  u?: number[];
+  r?: number[];
+}
+
+/** scripts/generar_jardines.py: contornos de patios y jardines del casco urbano (j) y puntos de árboles (a) y matas (m) de cada uno. */
+interface Jardines {
+  k: number;
+  j: number[][];
+  a: number[][];
+  m: number[][];
 }
 
 interface GrupoCinta { pos: number[]; idx: number[]; ids: number[]; uv: number[]; pesos: number[]; }
@@ -1069,6 +1085,8 @@ export class Mapa3dComponent implements AfterViewInit {
   /** por nube: x, z de su sombra sobre el terreno, radio y opacidad (el shader del terreno los lee) */
   private readonly sombrasNubes = Array.from({ length: NUBES }, () => new THREE.Vector4(0, 0, 1, 0));
   private mallasEdificios: THREE.Mesh[] = [];
+  /** árboles del casco urbano (de jardín y de calle) que se suman a la vegetación general */
+  private arbolesUrbanos: { lon: number; lat: number; x: number; z: number }[] = [];
   /** Cajas de las viviendas por tesela y círculos de los equipamientos: la cámara no los atraviesa. */
   private cajasViv = new Map<number, { x0: number; x1: number; z0: number; z1: number; top: number; id: number }[]>();
   private cajasEquip: { x: number; z: number; r: number; top: number; id: number }[] = [];
@@ -1107,15 +1125,17 @@ export class Mapa3dComponent implements AfterViewInit {
       foto: this.cargarImagen(`data/mapa3d/ortofoto-${ID_MUNICIPIO}.jpg`),
       vias: this.http.get<Compacto>(`data/mapa3d/vias-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
       viasEstado: this.http.get<Compacto>(`data/mapa3d/vias-estado-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
-      edificios: this.http.get<Compacto>(`data/mapa3d/edificios-ordenados-${ID_MUNICIPIO}.json`).pipe(
-        catchError(() => this.http.get<Compacto>(`data/mapa3d/edificios-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))))),
+      edificios: this.http.get<Compacto>(`data/mapa3d/catastro-${ID_MUNICIPIO}.json`).pipe(
+        catchError(() => this.http.get<Compacto>(`data/mapa3d/edificios-ordenados-${ID_MUNICIPIO}.json`).pipe(
+          catchError(() => this.http.get<Compacto>(`data/mapa3d/edificios-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))))))),
       cauces: this.http.get<Cauces>(`data/mapa3d/cauces-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
       industrias: this.http.get<Industria[]>(`data/mapa3d/industrias-${ID_MUNICIPIO}.json`).pipe(catchError(() => of([] as Industria[]))),
       poblacion: this.http.get<PoblacionVeredas>(`data/mapa/poblacion/veredas-${CODIGO_DANE}.geojson`).pipe(catchError(() => of(null))),
       puntos: this.mapa.puntos(ID_MUNICIPIO),
       zonasPlan: this.http.get<ZonasPlan>(`data/plan/${CODIGO_DANE}-zonas.json`).pipe(catchError(() => of(null))),
+      jardines: this.http.get<Jardines>(`data/mapa3d/jardines-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
     }).subscribe({
-      next: ({ relieve, muni, terr, foto, vias, viasEstado, edificios, cauces, poblacion, industrias, puntos, zonasPlan }) => {
+      next: ({ relieve, muni, terr, foto, vias, viasEstado, edificios, cauces, poblacion, industrias, puntos, zonasPlan, jardines }) => {
         try {
           this.foto = foto;
           this.zonasPlan = zonasPlan;
@@ -1135,6 +1155,8 @@ export class Mapa3dComponent implements AfterViewInit {
           this.hayPoblacion.set(!!(edificios?.e && poblacion));
           const dibujados = this.edificiosParaAnio(this.anio());
           if (dibujados?.e) this.construirEdificios(dibujados);
+          this.construirJardines(jardines);
+          this.arbolesUrbanos = [...this.arbolesDeJardin(jardines), ...this.arbolesDeCalle(vias)];
           this.construirVegetacion(vias, dibujados, cauces);
           this.abrirPuntoDeLaRuta();
         } catch (e) {
@@ -2165,7 +2187,7 @@ export class Mapa3dComponent implements AfterViewInit {
    * al año elegido con la proyección de la vereda. Se eligen huellas de vivienda al azar (siempre las mismas); las
    * casetas se quitan y las bodegas y demás edificios grandes se conservan. Fuera de las veredas no se toca nada.
    */
-  private ajustarAPoblacion(edificios: number[][], k: number, datos: PoblacionVeredas, anio: number): number[][] {
+  private ajustarAPoblacion(edificios: number[][], k: number, datos: PoblacionVeredas, anio: number, origen?: number[]): Set<number> {
     const norma = (t: string) => t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
     const cupo = new Map<number, number>();
     this.datosPorVereda.clear();
@@ -2180,6 +2202,7 @@ export class Mapa3dComponent implements AfterViewInit {
     const candidatas = new Map<number, [number, number][]>();   // vereda → [orden aleatorio, índice]
     const quitar = new Set<number>();
     edificios.forEach((e, n) => {
+      if (origen?.[n] === 0) return;   // el catastro urbano es la ciudad real: se dibuja completo
       const anillo = this.desdeDeltas(e, k, 1);
       if (anillo.length < 3) return;
       const lon = anillo.reduce((a, q) => a + q[0], 0) / anillo.length, lat = anillo.reduce((a, q) => a + q[1], 0) / anillo.length;
@@ -2197,14 +2220,16 @@ export class Mapa3dComponent implements AfterViewInit {
       lista.sort((a, b) => a[0] - b[0]);
       for (const [, n] of lista.slice(cupo.get(id)!)) quitar.add(n);
     }
-    return edificios.filter((_, n) => !quitar.has(n));
+    return quitar;
   }
 
   /** Edificios del año elegido (los originales si no hay datos de población). */
   private edificiosParaAnio(anio: number): Compacto | null {
     const base = this.edificiosBase;
     if (!base?.e || !this.poblacion) return base;
-    return { ...base, e: this.ajustarAPoblacion(base.e, base.k, this.poblacion, anio) };
+    const quitar = this.ajustarAPoblacion(base.e, base.k, this.poblacion, anio, base.r);
+    const sin = <T>(a?: T[]) => a?.filter((_, n) => !quitar.has(n));
+    return { ...base, e: sin(base.e), p: sin(base.p), u: sin(base.u), r: sin(base.r) };
   }
 
   /** Población y viviendas dibujadas de una vereda en el año elegido. */
@@ -2243,6 +2268,9 @@ export class Mapa3dComponent implements AfterViewInit {
     const TEJAS = ['#9e4527', '#b0552f', '#c6683c'].map(c => new THREE.Color(c));
     const URBANOS = ['#efe6d2', '#e4d3b4', '#d9e2e8', '#e9d2cf', '#cfd9c9'].map(c => new THREE.Color(c));
     const LOSA = new THREE.Color('#8e959c');
+    // catastro: bodegas e industrias de cubierta metálica; locales y edificios comerciales en tonos sobrios
+    const INDUSTRIAL = new THREE.Color('#c9cdd0'), METAL = new THREE.Color('#7f878e');
+    const COMERCIALES = ['#f3e3c3', '#e9d8b8', '#d9e4ea', '#f1d9c4'].map(c => new THREE.Color(c));
     // una malla por tesela: así la GPU descarta las que quedan fuera de cámara y solo proyectan sombra las del recuadro de la luz
     type Tesela = { pos: number[]; col: number[]; idx: number[]; ids: number[]; pesos: number[] };
     const teselas = new Map<number, Tesela>();
@@ -2257,14 +2285,18 @@ export class Mapa3dComponent implements AfterViewInit {
       const doble = ring.reduce((a, q, i) => { const r = ring[(i + 1) % ring.length]; return a + q[0] * r[1] - r[0] * q[1]; }, 0);
       const area = Math.abs(doble) / 2 * this.mLon * this.mLat;
       // tejido urbano: casas de 1 a 3 pisos con teja; los predios grandes o algunos al azar son edificios de 3 a 5 pisos
-      const denso = this.esUrbano(cLon, cLat);
-      const urbano = denso && (area > AREA_VIVIENDA[1] || (area > 120 && hash > 0.85));
-      const casa = area <= AREA_VIVIENDA[1] && !urbano;
-      const h = (urbano ? 3 * (3 + Math.floor(hash * 2.2)) * 0.6 : denso ? 3 * (1 + Math.floor(hash * 3)) * 0.6 : e[0] || 4.5 + hash * 4) * ESCALA_EDIFICIOS;
+      // catastro: pisos, uso y origen reales; el complemento (Overture/OSM) se estima como siempre
+      const pisos = d.p?.[n] ?? 0, uso = d.u?.[n] ?? 0, real = pisos > 0;
+      const denso = real ? d.r?.[n] === 0 : this.esUrbano(cLon, cLat);
+      const industria = real && uso === 2;
+      const urbano = real ? !industria && (pisos >= 4 || area > 900 || (uso === 1 && area > 400))
+        : denso && (area > AREA_VIVIENDA[1] || (area > 120 && hash > 0.85));
+      const casa = real ? !urbano && !industria && area <= 400 : area <= AREA_VIVIENDA[1] && !urbano;
+      const h = real ? e[0] * ESCALA_CATASTRO : (urbano ? 3 * (3 + Math.floor(hash * 2.2)) * 0.6 : denso ? 3 * (1 + Math.floor(hash * 3)) * 0.6 : e[0] || 4.5 + hash * 4) * ESCALA_EDIFICIOS;
       const suelo = Math.min(...ring.map(q => this.alturaEn(q[0], q[1]))) - 4, techo = suelo + 4 + h;
       const peso = id >= 0 ? this.pesoBorde(cLon, cLat, id) : 0;
-      const pared = urbano ? URBANOS[n % URBANOS.length] : casa ? (denso && n % 2 ? URBANOS[n % URBANOS.length] : LADRILLOS[n % LADRILLOS.length]) : PAREDES[n % PAREDES.length];
-      const tejado = urbano ? LOSA : casa ? TEJAS[n % TEJAS.length] : TECHOS[(n * 7 + Math.floor(hash * 10)) % TECHOS.length];
+      const pared = industria ? INDUSTRIAL : real && uso === 1 && !casa ? COMERCIALES[n % COMERCIALES.length] : urbano ? URBANOS[n % URBANOS.length] : casa ? (denso && n % 2 ? URBANOS[n % URBANOS.length] : LADRILLOS[n % LADRILLOS.length]) : PAREDES[n % PAREDES.length];
+      const tejado = industria ? METAL : urbano ? LOSA : casa ? TEJAS[n % TEJAS.length] : TECHOS[(n * 7 + Math.floor(hash * 10)) % TECHOS.length];
       const clave = this.claveTesela(this.aX(cLon), this.aZ(cLat));
       let t = teselas.get(clave);
       if (!t) teselas.set(clave, t = { pos: [], col: [], idx: [], ids: [], pesos: [] });
@@ -2326,6 +2358,119 @@ export class Mapa3dComponent implements AfterViewInit {
       this.registrarCapa(geo.getAttribute('position') as THREE.BufferAttribute, t.ids, t.pesos);
       this.capasEdificios.push(this.capas[this.capas.length - 1]);
     }
+  }
+
+  /** Patios y jardines de los predios urbanos: césped o patio a ras del terreno, con matas y flores repartidas. */
+  private construirJardines(d: Jardines | null): void {
+    if (!d?.j.length) return;
+    const CESPED = ['#6fb050', '#78b857', '#68a84b', '#82c061'].map(c => new THREE.Color(c));
+    const PATIO = ['#b9a98a', '#a8a79f', '#c2b59b'].map(c => new THREE.Color(c));
+    const VERDES = ['#2f7d32', '#3c8d40', '#4a9a45', '#2a7030'].map(c => new THREE.Color(c));
+    const FLORES = ['#e53935', '#ec407a', '#fdd835', '#ab47bc', '#ff7043', '#f5f5f5'].map(c => new THREE.Color(c));
+    const ALZA = 1.6;
+    type Tesela = { pos: number[]; col: number[]; idx: number[]; ids: number[]; pesos: number[] };
+    const teselas = new Map<number, Tesela>();
+    d.j.forEach((c, n) => {
+      const ring = this.desdeDeltas(c, d.k, 0);
+      if (ring.length < 3) return;
+      const xs = ring.map(q => this.aX(q[0])), zs = ring.map(q => this.aZ(q[1]));
+      const cLon = ring.reduce((a, q) => a + q[0], 0) / ring.length, cLat = ring.reduce((a, q) => a + q[1], 0) / ring.length;
+      const id = this.idEn(cLon, cLat), peso = id >= 0 ? this.pesoBorde(cLon, cLat, id) : 0;
+      const azar = (((n + 1) * 2654435761) >>> 0) % 1000 / 1000;
+      const patio = azar > 0.8;
+      const suelo = patio ? PATIO[n % PATIO.length] : CESPED[n % CESPED.length];
+      const clave = this.claveTesela(this.aX(cLon), this.aZ(cLat));
+      let t = teselas.get(clave);
+      if (!t) teselas.set(clave, t = { pos: [], col: [], idx: [], ids: [], pesos: [] });
+      const { pos, col, idx, ids, pesos } = t;
+      const poner = (x: number, y: number, z: number, k: THREE.Color) => {
+        pos.push(x, y, z); col.push(k.r, k.g, k.b); ids.push(id); pesos.push(peso);
+        return pos.length / 3 - 1;
+      };
+      const base = pos.length / 3;
+      ring.forEach(([lo, la], i) => poner(xs[i], this.alturaEn(lo, la) + ALZA, zs[i], suelo));
+      for (const [a, b, c2] of THREE.ShapeUtils.triangulateShape(ring.map((_, i) => new THREE.Vector2(xs[i], zs[i])), [])) idx.push(base + a, base + b, base + c2);
+      if (patio) return;
+      // matas: una pirámide baja y abierta por debajo; cerca de un tercio llevan flores
+      const m = d.m[n] ?? [];
+      for (let i = 0; i < m.length; i += 2) {
+        const lo = m[i] / d.k, la = m[i + 1] / d.k, x = this.aX(lo), z = this.aZ(la), y = this.alturaEn(lo, la) + ALZA;
+        const h = (((n * 31 + i) * 2654435761) >>> 0) % 1000 / 1000;
+        const flor = h > 0.66, r = flor ? 1.1 : 1.5 + h * 1.2, alto = flor ? 1.5 : 2.6 + h * 1.5;
+        const cima = flor ? FLORES[Math.floor(h * 100) % FLORES.length] : VERDES[Math.floor(h * 100) % VERDES.length];
+        const aro = VERDES[(n + i) % VERDES.length];
+        const v0 = poner(x, y + alto, z, cima);
+        const giro = h * Math.PI;
+        const anillo = [0, 1, 2, 3].map(q => poner(x + Math.cos(giro + q * Math.PI / 2) * r, y, z + Math.sin(giro + q * Math.PI / 2) * r, aro));
+        for (let q = 0; q < 4; q++) idx.push(v0, anillo[q], anillo[(q + 1) % 4]);
+      }
+    });
+    const material = new THREE.MeshStandardMaterial({ vertexColors: true, flatShading: true, roughness: 1, side: THREE.DoubleSide });
+    for (const t of teselas.values()) {
+      const geo = new THREE.BufferGeometry();
+      geo.setAttribute('position', new THREE.Float32BufferAttribute(t.pos, 3));
+      geo.setAttribute('color', new THREE.Float32BufferAttribute(t.col, 3));
+      geo.setIndex(t.pos.length / 3 > 65535 ? new THREE.Uint32BufferAttribute(t.idx, 1) : new THREE.Uint16BufferAttribute(t.idx, 1));
+      this.acolchar(geo);
+      const malla = new THREE.Mesh(geo, material);
+      malla.receiveShadow = true;
+      this.escena.add(malla);
+      this.registrarCapa(geo.getAttribute('position') as THREE.BufferAttribute, t.ids, t.pesos);
+    }
+  }
+
+  /** Árboles de los patios: puntos ya calculados con el catastro. */
+  private arbolesDeJardin(d: Jardines | null): { lon: number; lat: number; x: number; z: number }[] {
+    const res: { lon: number; lat: number; x: number; z: number }[] = [];
+    for (const a of d?.a ?? []) {
+      for (let i = 0; i < a.length; i += 2) {
+        const lon = a[i] / d!.k, lat = a[i + 1] / d!.k;
+        res.push({ lon, lat, x: this.aX(lon), z: this.aZ(lat) });
+      }
+    }
+    return res;
+  }
+
+  /** Arbolado de calle: a ambos lados de las vías del tejido urbano, con huecos, sin pisar edificios, calzadas ni equipamientos. */
+  private arbolesDeCalle(vias: Compacto | null): { lon: number; lat: number; x: number; z: number }[] {
+    if (!vias?.v) return [];
+    const holgura = this.holguraVias(vias), rnd = mulberry32(777);
+    // cuadrícula de 40 m con las cajas de los edificios para saber rápido si un punto cae sobre uno
+    const CELDA = 40, rejilla = new Map<number, { x0: number; x1: number; z0: number; z1: number }[]>();
+    for (const cajas of this.cajasViv.values()) {
+      for (const c of cajas) {
+        for (let i = Math.floor(c.x0 / CELDA); i <= Math.floor(c.x1 / CELDA); i++) {
+          for (let j = Math.floor(c.z0 / CELDA); j <= Math.floor(c.z1 / CELDA); j++) (rejilla.get(i * 100003 + j) ?? rejilla.set(i * 100003 + j, []).get(i * 100003 + j)!).push(c);
+        }
+      }
+    }
+    const sobreEdificio = (x: number, z: number, m: number) =>
+      (rejilla.get(Math.floor(x / CELDA) * 100003 + Math.floor(z / CELDA)) ?? []).some(c => x > c.x0 - m && x < c.x1 + m && z > c.z0 - m && z < c.z1 + m);
+    const res: { lon: number; lat: number; x: number; z: number }[] = [];
+    for (const v of vias.v) {
+      if (v[0] > 1) continue;
+      const pts = this.desdeDeltas(v, vias.k, 1).map(q => [this.aX(q[0]), this.aZ(q[1])]);
+      const lado = ANCHO_VIA[v[0]] / 2 + 2.6;
+      let falta = rnd() * PASO_ARBOL_CALLE;
+      for (let i = 1; i < pts.length; i++) {
+        const [ax, az] = pts[i - 1], [bx, bz] = pts[i], largo = Math.hypot(bx - ax, bz - az);
+        if (!largo) continue;
+        const nx = -(bz - az) / largo, nz = (bx - ax) / largo;
+        let t = falta;
+        for (; t < largo; t += PASO_ARBOL_CALLE * (0.75 + rnd() * 0.5)) {
+          for (const sg of [-1, 1]) {
+            if (rnd() > FRACCION_ARBOL_CALLE) continue;
+            const x = ax + (bx - ax) * t / largo + nx * lado * sg, z = az + (bz - az) * t / largo + nz * lado * sg;
+            const lon = this.lon0 + x / this.mLon, lat = this.lat0 - z / this.mLat;
+            if (!this.esUrbano(lon, lat) || holgura(x, z) < 2 || sobreEdificio(x, z, 1.5)) continue;
+            if (this.fabricas.some(f => Math.hypot(f.x - x, f.z - z) < RADIO_FABRICA + 4) || this.equipamientos.some(q => Math.hypot(q.x - x, q.z - z) < q.r + 3)) continue;
+            res.push({ lon, lat, x, z });
+          }
+        }
+        falta = t - largo;
+      }
+    }
+    return res;
   }
 
   /** Tesela (cuadrícula de TESELA metros) a la que pertenece un punto del modelo. */
@@ -3216,17 +3361,17 @@ export class Mapa3dComponent implements AfterViewInit {
     if (!e?.e) return e;
     const k = e.k, holgura = this.holguraVias(vias);
     this.medirDensidad(e);
-    return {
-      ...e,
-      e: e.e.filter(b => {
-        const q = this.desdeDeltas(b, k, 1);
-        const lon = q.reduce((m, p) => m + p[0], 0) / q.length, lat = q.reduce((m, p) => m + p[1], 0) / q.length;
-        const x = this.aX(lon), z = this.aZ(lat);
-        if (this.cruzaVia(q, lon, lat, holgura)) return false;
-        return this.fabricas.every(f => Math.hypot(f.x - x, f.z - z) > RADIO_FABRICA + 5)
-          && this.equipamientos.every(q => Math.hypot(q.x - x, q.z - z) > q.r + 3);
-      }),
-    };
+    const quedan = e.e.map((b, n) => {
+      const q = this.desdeDeltas(b, k, 1);
+      const lon = q.reduce((m, p) => m + p[0], 0) / q.length, lat = q.reduce((m, p) => m + p[1], 0) / q.length;
+      const x = this.aX(lon), z = this.aZ(lat);
+      // una construcción del catastro es real: solo se quita si su centro cae sobre la calzada; las demás, si su contorno pisa la calle
+      if ((e.p?.[n] ?? 0) > 0 ? holgura(x, z) < 0 : this.cruzaVia(q, lon, lat, holgura)) return false;
+      return this.fabricas.every(f => Math.hypot(f.x - x, f.z - z) > RADIO_FABRICA + 5)
+        && this.equipamientos.every(q => Math.hypot(q.x - x, q.z - z) > q.r + 3);
+    });
+    const sin = <T>(a?: T[]) => a?.filter((_, n) => quedan[n]);
+    return { ...e, e: sin(e.e), p: sin(e.p), u: sin(e.u), r: sin(e.r) };
   }
 
   /**
@@ -4723,6 +4868,15 @@ export class Mapa3dComponent implements AfterViewInit {
       [bajos[k], bajos[j]] = [bajos[j], bajos[k]];
     }
     bajos.slice(0, GUAYACANES).forEach(i => lista[i].especie = 4);
+    // árboles del casco urbano (patios y calles): más bajos que los del bosque; samán, yarumo y algún guayacán florecido (la ceiba, que es enorme, no)
+    for (const u of this.arbolesUrbanos) {
+      const id = this.idEn(u.lon, u.lat), r = azar();
+      lista.push({
+        x: u.x, z: u.z, y: this.alturaEn(u.lon, u.lat) - 1, sxz: 8, sy: 11 + azar() * 5, tono: azar(),
+        id, peso: id >= 0 ? this.pesoBorde(u.lon, u.lat, id) : 0,
+        elev: this.alturaEn(u.lon, u.lat) / EXAGERACION + this.relieve.min, especie: r < 0.4 ? 1 : r < 0.8 ? 2 : 4,
+      });
+    }
 
     // árbol de dibujo animado: tronco y dos conos de copa, de altura unitaria ~1,9
     const parte = (g: THREE.BufferGeometry, y: number, color: string) => {
