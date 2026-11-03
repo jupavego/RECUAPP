@@ -45,7 +45,7 @@ interface Diorama {
   sitios: Record<string, [number, number, number]>;
   vias: [number, number[]][];
   rios: [number, number[]][];
-  casas: [number, number, number, number][];
+  casas: number[][];
 }
 
 /** Exageración vertical del relieve, para que las laderas se lean como montaña. */
@@ -54,6 +54,26 @@ const EXA = 2.3;
 const FONDO = 90;
 const PALETA = ['#f4c542', '#e86a5f', '#5aa9e6', '#f29ac0', '#8fd175', '#f59e42', '#9b8de0', '#4fc3b5', '#f3e3c3'];
 const TEJAS = ['#b5532f', '#c26a45', '#9e4527', '#a9532f'];
+/** Paredes de los locales comerciales del catastro: tonos más sobrios que el resto. */
+const COMERCIAL = ['#f3e3c3', '#e9d8b8', '#d9e4ea', '#f1d9c4'];
+const ALTO_PISO = 3.1;
+const MAX_PISOS = 12;
+
+/**
+ * Medidas de una casa del diorama. Las del catastro traen pisos, uso y el rectángulo que envuelve la huella
+ * `[x, z, área, giro, pisos, uso, corto, largo]`; si faltan (datos antiguos) se estiman del área.
+ */
+function medidasCasa(c: number[], i: number): { alto: number; corto: number; largo: number; grande: boolean; uso: number } {
+  const area = c[2], pisos = c[4], uso = c[5] ?? 0;
+  if (pisos && c[6] && c[7]) {
+    const corto = Math.min(30, Math.max(3.5, c[6])), largo = Math.min(60, Math.max(corto, c[7]));
+    const alto = Math.min(pisos, MAX_PISOS) * ALTO_PISO;
+    return { alto, corto, largo, grande: uso === 2 || pisos >= 4 || area > 380, uso };
+  }
+  const h = hash(i * 3.7, 11), alto = area > 380 ? 12 + 6 * h : area > 160 ? 6.5 + 3 * h : 4.5 + 2 * h;
+  const corto = Math.min(16, Math.max(4.5, Math.sqrt(area / 1.35)));
+  return { alto, corto, largo: Math.min(26, Math.max(corto, area / corto)), grande: area > 380, uso };
+}
 /** ¿Es un color neutro y claro (paredes, concreto)? Esos son los que se repintan; ventanas, techos y vidrios se quedan. */
 const esNeutro = (hex: string): boolean => { const c = new THREE.Color(hex), h = { h: 0, s: 0, l: 0 }; c.getHSL(h); return h.s < 0.3 && h.l > 0.45; };
 
@@ -1194,15 +1214,13 @@ export class PuebloComponent implements AfterViewInit {
     const paredes = new THREE.InstancedMesh(caja, blanco, lista.length);
     const techos = new THREE.InstancedMesh(techo, blanco, lista.length);
     const m = new THREE.Matrix4(), q = new THREE.Quaternion(), p = new THREE.Vector3(), s = new THREE.Vector3(), eje = new THREE.Vector3(0, 1, 0), c = new THREE.Color();
-    lista.forEach(([x, z, area, ry], i) => {
-      const h = hash(i * 3.7, 11), alto = area > 380 ? 12 + 6 * h : area > 160 ? 6.5 + 3 * h : 4.5 + 2 * h;
-      const corto = Math.min(16, Math.max(4.5, Math.sqrt(area / 1.35))), largo = Math.min(26, Math.max(corto, area / corto));
+    lista.forEach((c0, i) => {
+      const [x, z, , ry] = c0, { alto, corto, largo, grande, uso } = medidasCasa(c0, i);
       const y = alturaTerreno(x, z) - 0.3;
       this.marcar(x, z);
       q.setFromAxisAngle(eje, ry);
       paredes.setMatrixAt(i, m.compose(p.set(x, y, z), q, s.set(corto, alto, largo)));
-      paredes.setColorAt(i, c.set(PALETA[Math.floor(hash(i * 1.3, 5) * PALETA.length)]));
-      const grande = area > 380;
+      paredes.setColorAt(i, c.set(uso === 2 ? '#b9bdc0' : uso === 1 ? COMERCIAL[Math.floor(hash(i * 1.3, 5) * COMERCIAL.length)] : PALETA[Math.floor(hash(i * 1.3, 5) * PALETA.length)]));
       if (hash(i * 5.3, 17) < 0.22) this.ventanas.push(x + Math.cos(ry) * (corto / 2 + 0.5), y + alto * 0.45, z - Math.sin(ry) * (corto / 2 + 0.5));
       techos.setMatrixAt(i, m.compose(p.set(x, y + alto, z), q, s.set(corto * 1.12, grande ? 0.8 : Math.min(corto * 0.42, 3.6), largo * 1.08)));
       techos.setColorAt(i, c.set(grande ? '#8b9096' : TEJAS[Math.floor(hash(i * 2.1, 9) * TEJAS.length)]));
@@ -1217,10 +1235,9 @@ export class PuebloComponent implements AfterViewInit {
     type Pieza = { m: THREE.Matrix4; c: string };
     const g: Record<'zocalo' | 'puerta' | 'marco' | 'vidrio' | 'chimenea', Pieza[]> = { zocalo: [], puerta: [], marco: [], vidrio: [], chimenea: [] };
     const q = new THREE.Quaternion(), eje = new THREE.Vector3(0, 1, 0), pos = new THREE.Vector3(), sc = new THREE.Vector3(), v = new THREE.Vector3();
-    lista.forEach(([x, z, area, ry], i) => {
-      const h = hash(i * 3.7, 11), alto = area > 380 ? 12 + 6 * h : area > 160 ? 6.5 + 3 * h : 4.5 + 2 * h;
-      const corto = Math.min(16, Math.max(4.5, Math.sqrt(area / 1.35))), largo = Math.min(26, Math.max(corto, area / corto));
-      const y = alturaTerreno(x, z) - 0.3, grande = area > 380;
+    lista.forEach((c0, i) => {
+      const [x, z, , ry] = c0, { alto, corto, largo, grande } = medidasCasa(c0, i);
+      const y = alturaTerreno(x, z) - 0.3;
       q.setFromAxisAngle(eje, ry);
       const poner = (k: keyof typeof g, lx: number, ly: number, lz: number, sx: number, sy: number, sz: number, c: string) => {
         pos.copy(v.set(lx, ly, lz).applyQuaternion(q)).add(sc.set(x, y, z));
