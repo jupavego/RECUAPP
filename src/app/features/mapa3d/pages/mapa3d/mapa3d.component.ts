@@ -16,7 +16,7 @@ import { CATEGORIA, CATEGORIAS } from '../../../mapa/utils/puntos';
 import { Aura, CategoriaServicio, COLOR_INDUSTRIA, GLIFO, Icono, ItemAura, SERVICIOS, SERVICIOS_GRUPO, crearAgrupador, crearAuras, crearIcono } from '../../utils/aura';
 import { Conduccion } from '../../utils/conduccion';
 import { ESCALA_ACTIVOS } from '../../utils/escala';
-import { Modelo, chimeneaParque, colorParque, modelarEquipamiento, unidadParque } from '../../utils/equipamientos';
+import { COLORES_RURALES, Modelo, chimeneaParque, colorParque, modelarEquipamiento, unidadParque } from '../../utils/equipamientos';
 import { coloresPorMunicipio, hex } from '../../../mapa/utils/paleta';
 import { Geometria, decodeGeometria } from '../../../mapa/utils/polyline';
 
@@ -122,10 +122,20 @@ const ESCALA_EDIFICIOS = 3.2;
 const ESCALA_CATASTRO = 2.2;
 /** lado (m) de las teselas en que se parten edificios, árboles y terreno para descartar lo que no se ve */
 const TESELA = 1500;
+/** lado (m) de las teselas de árboles: más chicas que TESELA para que la GPU descarte los que quedan fuera del encuadre */
+const TESELA_ARBOL = 750;
 /** celdas (de unos 23 m) por lado de cada tesela del terreno */
 const TESELA_TERRENO = 64;
 /** de más lejos que esto los árboles se dibujan con una versión simple (a esa distancia miden ~3 píxeles) */
 const DISTANCIA_ARBOL_SIMPLE = 10000;
+
+/** Geometría nueva que reutiliza los buffers de `g` (posición, normal, color, índice): cada tesela añade solo sus atributos por instancia. */
+function compartirGeometria(g: THREE.BufferGeometry): THREE.BufferGeometry {
+  const nueva = new THREE.BufferGeometry();
+  for (const nombre of Object.keys(g.attributes)) nueva.setAttribute(nombre, g.getAttribute(nombre));
+  if (g.index) nueva.setIndex(g.index);
+  return nueva;
+}
 /** fachadas detalladas: lado (m) de la tesela, distancia de la cámara a la que se dibujan, ancho de un hueco y lado mínimo */
 const TESELA_FACHADA = 400;
 const DISTANCIA_FACHADA = 900;
@@ -229,6 +239,11 @@ const [AUTO, TAXI, FJ, BUS, CAMION, MOTO] = [0, 1, 2, 3, 4, 5];
 const MEZCLA_FLOTA: [number, number][] = [[CAMION, 0.1], [BUS, 0.04], [TAXI, 0.15], [FJ, 0.2], [MOTO, 0.3]];
 /** Color de la carrocería del auto en su modelo: las piezas de este color toman el del vehículo. */
 const COLOR_CARROCERIA_AUTO = '#ff2d2d';
+/** Color de la carrocería del campero FJ en su modelo: toma uno de COLORES_RURALES (rojo con techo blanco, azul, verde...), distintos a los de los autos. */
+const COLOR_CARROCERIA_FJ = '#d8c9a0';
+/** Camperos de ruta que salen de cada central de transporte veredal, y personas que se concentran en la plaza de mercado y en las centrales. */
+const CAMPEROS_POR_CENTRAL = 12;
+const FOCOS_GENTE: [string, number][] = [['Plaza de Mercado', 36], ['Central de transporte veredal (calle 5b)', 24], ['Parqueadero de buses veredal', 24]];
 /**
  * Gente a pie (modelos "Personas" del catálogo): camina por las aceras de la red del pueblo, a la misma escala exagerada de los
  * vehículos. Solo se dibuja la que está a menos de GENTE_RADIO metros del punto que se mira, y solo si la cámara está a menos
@@ -343,6 +358,19 @@ const SITIOS_FIJOS = new Map<string, { lat: number; lng: number; yaw: number; di
   ['Estación Girardota', { lat: 6.3742, lng: -75.449181, yaw: -0.85, dim: [40, 48] }],
   ['Placa Inder 1', { lat: 6.373247, lng: -75.44966, yaw: -0.6, dim: [34, 24] }],
   ['Placa Inder 2', { lat: 6.373581, lng: -75.449489, yaw: -0.6, dim: [34, 24] }],
+  // Manzana de la plaza de mercado (carrera 16, calle 6 y calle 5B) y las centrales de transporte veredal, medidas sobre la imagen satelital con el
+  // pin de Google Maps; todas con el giro de la cuadrícula del casco. De las centrales salen los camperos de ruta hacia las veredas.
+  ['Plaza de Mercado', { lat: 6.3780336, lng: -75.4454482, yaw: GIRO_CASCO, dim: [62, 58] }],
+  ['Central de transporte veredal (calle 5b)', { lat: 6.378196, lng: -75.445186, yaw: GIRO_CASCO, dim: [40, 36] }],
+  ['Parqueadero de buses veredal', { lat: 6.37779, lng: -75.444644, yaw: GIRO_CASCO, dim: [60, 44] }],
+  // Manzana de las carreras 16 y 15 con la calle 7: su interior es el parqueadero Santa Ana (lote asfaltado con portón sobre la carrera 16).
+  ['Centro comercial (manzana del parque)', { lat: 6.37709, lng: -75.446718, yaw: GIRO_CASCO, dim: [44, 36] }],
+  // Barrio Aurelio Mejía: colegio sobre la calle 5 (ala larga de aulas) y, al otro lado de la calle, la placa cubierta y la cancha sintética con su costado
+  // de graderías hacia la placa. Posición y giro tomados de las huellas del catastro y de la imagen satelital.
+  ['I. E. COLOMBIA', { lat: 6.378315, lng: -75.443862, yaw: -1.171, dim: [68, 30] }],
+  ['Placa barrio Aurelio Mejia', { lat: 6.378671, lng: -75.443635, yaw: 2.175, dim: [32, 20] }],
+  ['Cancha sintetica Aurelio Mejia', { lat: 6.378833, lng: -75.443341, yaw: 2.15, dim: [56, 40] }],
+  ['Parqueadero Santa Ana', { lat: 6.376837, lng: -75.447134, yaw: GIRO_CASCO, dim: [56, 46] }],
   // Colegio Nuestra Señora del Rosario: manzana de la carrera 14 con calle 9, ubicada con el pin de Google Maps y la cuadrícula del casco.
   ['COLEGIO NUESTRA SEÑORA DEL ROSARIO (P)', { lat: 6.37558, lng: -75.446358, yaw: GIRO_CASCO, dim: [58, 46] }],
 ]);
@@ -449,9 +477,10 @@ interface PoseAuto { px?: number; pz?: number; yaw?: number; vi?: number; vivo?:
 interface Auto extends PoseAuto { calzada: number; s: number; i: number; v: number; carril: number; tipo: number; k: number; }
 /** Tramo de vía entre dos cruces de la red del pueblo; `unico` = solo se circula de `ini` a `fin`; `rural` = cae en una vereda. */
 interface Arista extends Calzada { unico: boolean; vf: number; ini: string; fin: string; rural: boolean; }
-interface AutoRed extends PoseAuto { lider?: AutoRed; arista: number; s: number; i: number; dir: 1 | -1; v: number; carril: number; tipo: number; k: number; }
+/** `ruta` = tramos (arista, sentido) que le faltan al campero de ruta; `central` = de cuál sale; `ida` = va hacia una vereda (si no, de vuelta a la central). */
+interface AutoRed extends PoseAuto { lider?: AutoRed; arista: number; s: number; i: number; dir: 1 | -1; v: number; carril: number; tipo: number; k: number; ruta?: [number, 1 | -1][]; central?: number; ida?: boolean; }
 /** Persona a pie: `tipo` = índice en GENTE, `lado` = distancia (con signo) de la acera al eje de la vía, `tinte` = índice en TINTES_GENTE. */
-interface Peaton { arista: number; s: number; i: number; dir: 1 | -1; v: number; lado: number; tipo: number; tinte: number; fase: number; }
+interface Peaton { ancla?: boolean; arista: number; s: number; i: number; dir: 1 | -1; v: number; lado: number; tipo: number; tinte: number; fase: number; }
 
 /** Área de un polígono (lista de [x, z]). */
 function areaPoligono(poly: number[][]): number {
@@ -737,6 +766,9 @@ const TIPOS_ZONA: Record<string, string> = {
               <span class="medalla-ley">{{ l.glifo }}</span>{{ l.nombre }}
             </button>
           }
+          <button type="button" class="ley" [class.activa]="sistemaHidrico()" [attr.aria-pressed]="sistemaHidrico()" style="--c:#ffb300" (click)="alternarSistemaHidrico()">
+            <span class="medalla-ley">≈</span><span class="ley-t">Ríos y quebradas<small>ríos, quebradas, lagos y embalses, resaltados</small></span>
+          </button>
           <div class="ley-fila">
             <button type="button" class="ley" [class.activa]="serviciosActivos() === subtiposServicios.length" [attr.aria-pressed]="serviciosActivos() === subtiposServicios.length"
                     [style.--c]="grupoServicios.color" (click)="alternarServicios()">
@@ -1228,7 +1260,7 @@ export class Mapa3dComponent implements AfterViewInit {
   ];
   /** con una zona elegida solo se ven los pines de esa zona, y solo de los tipos activados en la leyenda */
   private readonly pinVisible = (ic: Icono): boolean =>
-    !this.modoFoto() && this.capasActivas().has(ic.cat) && (this.aisladas.size ? ic.zona !== undefined && this.aisladas.has(ic.zona) : (this.elegida < 0 || ic.zona === this.elegida));
+    !this.modoFoto() && (this.capasActivas().has(ic.cat) || (this.subterraneo() && ic.cat.startsWith('srv-'))) && (this.aisladas.size ? ic.zona !== undefined && this.aisladas.has(ic.zona) : (this.elegida < 0 || ic.zona === this.elegida));
 
   /** Redes de servicios (alta tensión, subestaciones, plantas): un grupo que la barra de controles enciende y apaga. */
   readonly redesVisibles = signal(true);
@@ -1340,6 +1372,15 @@ export class Mapa3dComponent implements AfterViewInit {
   private aguaPos: THREE.BufferAttribute | null = null;
   private haloHover: THREE.Mesh | null = null;
   private haloElegido: THREE.Mesh | null = null;
+  private haloSistema: THREE.Mesh | null = null;
+  private halosLagos: THREE.Mesh[] = [];
+  /** Capa de la leyenda que deja resaltados (como seleccionados) todos los ríos y quebradas a la vez. */
+  readonly sistemaHidrico = signal(false);
+  alternarSistemaHidrico(): void {
+    this.sistemaHidrico.update(v => !v);
+    this.pintarHalos();
+    for (const h of this.halosLagos) h.visible = this.sistemaHidrico();
+  }
   private rioHover: string | null = null;
   private rioElegido: string | null = null;
   private rotuloRio: HTMLElement | null = null;
@@ -2103,6 +2144,24 @@ export class Mapa3dComponent implements AfterViewInit {
       m.renderOrder = 2;
       this.escena.add(m);
       this.registrarCapa(geo.getAttribute('position') as THREE.BufferAttribute, ids, pesos);
+      // marco ámbar de la capa «Ríos y quebradas»: el mismo contorno, agrandado desde su centro, asoma bajo el agua
+      const cx = xs.reduce((a, b) => a + b, 0) / xs.length, cz = zs.reduce((a, b) => a + b, 0) / zs.length;
+      const radio = Math.max(10, Math.sqrt(xs.reduce((a, x, i) => a + (x - cx) ** 2 + (zs[i] - cz) ** 2, 0) / xs.length));
+      const f = 1 + 5 / radio, posH: number[] = [];
+      ring.forEach((_, i) => posH.push(cx + (xs[i] - cx) * f, y - 0.1, cz + (zs[i] - cz) * f));
+      const geoH = new THREE.BufferGeometry();
+      geoH.setAttribute('position', new THREE.Float32BufferAttribute(posH, 3));
+      geoH.setIndex(idx);
+      const h = new THREE.Mesh(geoH, new THREE.MeshBasicMaterial({
+        color: '#ffb300', transparent: true, opacity: 0.9, depthWrite: false, side: THREE.DoubleSide,
+        polygonOffset: true, polygonOffsetFactor: -3, polygonOffsetUnits: -3,
+      }));
+      h.renderOrder = 1;
+      h.visible = this.sistemaHidrico();
+      h.frustumCulled = false;
+      this.halosLagos.push(h);
+      this.escena.add(h);
+      this.registrarCapa(geoH.getAttribute('position') as THREE.BufferAttribute, ids, pesos);
     }
   }
 
@@ -2399,6 +2458,7 @@ export class Mapa3dComponent implements AfterViewInit {
     };
     this.haloHover = hacer('#fff2a6', 0.85, 1);
     this.haloElegido = hacer('#ffb300', 0.95, 1);
+    this.haloSistema = hacer('#ffb300', 0.85, 1);
   }
 
   /** Triángulos de las cintas que pertenecen a un río (mismo orden de vértices que agregarCinta). */
@@ -2417,6 +2477,7 @@ export class Mapa3dComponent implements AfterViewInit {
   private pintarHalos(): void {
     this.haloHover?.geometry.setIndex(this.rioHover && this.rioHover !== this.rioElegido ? this.indicesDeRio(this.rioHover) : []);
     this.haloElegido?.geometry.setIndex(this.indicesDeRio(this.rioElegido));
+    this.haloSistema?.geometry.setIndex(this.sistemaHidrico() ? [...this.rios.keys()].flatMap(k => this.indicesDeRio(k)) : []);
   }
 
   /**
@@ -3013,6 +3074,7 @@ export class Mapa3dComponent implements AfterViewInit {
       if (ring.length < 3) return;
       const xs = ring.map(q => this.aX(q[0])), zs = ring.map(q => this.aZ(q[1]));
       const cLon = ring.reduce((a, q) => a + q[0], 0) / ring.length, cLat = ring.reduce((a, q) => a + q[1], 0) / ring.length;
+      if (this.bajoHuellaEquipamiento(this.aX(cLon), this.aZ(cLat))) return;      // el césped no cubre el modelo que reemplaza a esa parte de la manzana
       const id = this.idEn(cLon, cLat), peso = id >= 0 ? this.pesoBorde(cLon, cLat, id) : 0;
       const azar = (((n + 1) * 2654435761) >>> 0) % 1000 / 1000;
       const patio = azar > 0.8;
@@ -3057,13 +3119,24 @@ export class Mapa3dComponent implements AfterViewInit {
     }
   }
 
+  /** Si el punto cae dentro de la huella (rectángulo girado) de un equipamiento que reemplaza al catastro, como un parque o un parqueadero. */
+  private bajoHuellaEquipamiento(x: number, z: number): boolean {
+    return this.equipamientos.some(q => {
+      const h = q.datos.modelo.huella;
+      if (!h) return false;
+      const dx = x - q.x, dz = z - q.z, yaw = q.yaw ?? 0;
+      return Math.abs(dx * Math.cos(yaw) - dz * Math.sin(yaw)) <= h[0] / 2 && Math.abs(dx * Math.sin(yaw) + dz * Math.cos(yaw)) <= h[1] / 2;
+    });
+  }
+
   /** Árboles de los patios: puntos ya calculados con el catastro. */
   private arbolesDeJardin(d: Jardines | null): { lon: number; lat: number; x: number; z: number }[] {
     const res: { lon: number; lat: number; x: number; z: number }[] = [];
     for (const a of d?.a ?? []) {
       for (let i = 0; i < a.length; i += 2) {
         const lon = a[i] / d!.k, lat = a[i + 1] / d!.k;
-        res.push({ lon, lat, x: this.aX(lon), z: this.aZ(lat) });
+        const x = this.aX(lon), z = this.aZ(lat);
+        if (!this.bajoHuellaEquipamiento(x, z)) res.push({ lon, lat, x, z });
       }
     }
     return res;
@@ -3560,6 +3633,7 @@ export class Mapa3dComponent implements AfterViewInit {
         tipo, k: porTipo[tipo]++,
       });
     }
+    this.crearRutasVeredales(rnd, porTipo);
     if (!this.autos.length && !this.autosRed.length) return;
 
     // un juego de mallas instanciadas por tipo de vehículo, con los modelos del catálogo (color por vértice); en el auto,
@@ -3572,8 +3646,10 @@ export class Mapa3dComponent implements AfterViewInit {
       const cuenta = porTipo[t];
       if (!cuenta) return [];
       const piezas = modelarEquipamiento('vehiculos', 'Vehículo', nombre, () => 0.5).piezas;
-      const pintadas = t === AUTO ? piezas.filter(p => p.color === COLOR_CARROCERIA_AUTO).map(p => ({ ...p, color: '#ffffff' })) : [];
-      const fijas = t === AUTO ? piezas.filter(p => p.color !== COLOR_CARROCERIA_AUTO) : piezas;
+      const tinta = t === AUTO ? COLOR_CARROCERIA_AUTO : t === FJ ? COLOR_CARROCERIA_FJ : '';
+      const paleta = t === FJ ? COLORES_RURALES : COLORES_AUTOS;
+      const pintadas = tinta ? piezas.filter(p => p.color === tinta).map(p => ({ ...p, color: '#ffffff' })) : [];
+      const fijas = tinta ? piezas.filter(p => p.color !== tinta) : piezas;
       return [pintadas, fijas].flatMap(grupo => {
         const g = fusionarColoreado(grupo);
         if (!g) return [];
@@ -3581,7 +3657,7 @@ export class Mapa3dComponent implements AfterViewInit {
         const malla = new THREE.InstancedMesh(g, material, cuenta);
         malla.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
         malla.frustumCulled = false;
-        if (grupo === pintadas) for (let i = 0; i < cuenta; i++) malla.setColorAt(i, color.set(COLORES_AUTOS[Math.floor(rnd() * COLORES_AUTOS.length)]));
+        if (grupo === pintadas) for (let i = 0; i < cuenta; i++) malla.setColorAt(i, color.set(paleta[Math.floor(rnd() * paleta.length)]));
         this.escena.add(malla);
         return [malla];
       });
@@ -3617,6 +3693,32 @@ export class Mapa3dComponent implements AfterViewInit {
         lado: (rnd() < 0.5 ? -1 : 1) * GENTE_ACERA[e.vf < 1 ? 1 : 0],
         tipo, tinte: Math.floor(rnd() * TINTES_GENTE.length), fase: rnd() * Math.PI * 2,
       });
+    }
+    // concentración de gente en la plaza de mercado y en las centrales de transporte: recorre las aceras vecinas sin alejarse de ellas
+    const campesino = GENTE.indexOf('Campesino');
+    for (const [nombre, cuantos] of FOCOS_GENTE) {
+      const f = SITIOS_FIJOS.get(nombre);
+      if (!f) continue;
+      const fx = this.aX(f.lng), fz = this.aZ(f.lat);
+      const cerca: [number, number][] = [];
+      for (const i of aceras) {
+        const e = this.aristas[i];
+        let m = Infinity, kq = 0;
+        for (let q = 0; q < e.x.length; q++) { const d = Math.hypot(e.x[q] - fx, e.z[q] - fz); if (d < m) { m = d; kq = q; } }
+        if (m < 55) cerca.push([i, e.cum[kq]]);
+      }
+      for (let a = 0; cerca.length && a < cuantos; a++) {
+        const [arista, s0] = cerca[Math.floor(rnd() * cerca.length)], e = this.aristas[arista];
+        let r = rnd(), tipo = r < 0.4 && campesino >= 0 ? campesino : HOMBRE;
+        if (tipo === HOMBRE) for (const [t, p] of MEZCLA_GENTE) { if (r < p) { tipo = t; break; } r -= p; }
+        porTipo[tipo]++;
+        this.gente.push({
+          ancla: true, arista, s: Math.min(e.largo, Math.max(0, s0 + (rnd() - 0.5) * 40)), i: 0, dir: rnd() < 0.5 ? 1 : -1,
+          v: (GENTE_VELOCIDAD[0] + rnd() * (GENTE_VELOCIDAD[1] - GENTE_VELOCIDAD[0])) * 0.6,
+          lado: (rnd() < 0.5 ? -1 : 1) * GENTE_ACERA[e.vf < 1 ? 1 : 0],
+          tipo, tinte: Math.floor(rnd() * TINTES_GENTE.length), fase: rnd() * Math.PI * 2,
+        });
+      }
     }
     const material = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.85, metalness: 0, side: THREE.DoubleSide });
     this.matGente = material;
@@ -3685,7 +3787,7 @@ export class Mapa3dComponent implements AfterViewInit {
           if (o.ini === nodo) opciones.push([j, 1]);
           if (o.fin === nodo) opciones.push([j, -1]);
         }
-        if (opciones.length) {
+        if (opciones.length && !a.ancla) {
           const [j, d] = opciones[Math.floor(Math.random() * opciones.length)];
           a.arista = j;
           a.dir = d;
@@ -3729,6 +3831,98 @@ export class Mapa3dComponent implements AfterViewInit {
       if (m.instanceColor) m.instanceColor.needsUpdate = true;
       m.geometry.getAttribute('aFase').needsUpdate = true;
     });
+  }
+
+  private centrales: { x: number; z: number; nodo: string }[] = [];
+  private destinosVeredales: string[] = [];
+  private proximoDestino = 0;
+
+  /** Cruce de la red más cercano a un punto. */
+  private cruceCerca(x: number, z: number): string {
+    let mejor = '', d2 = Infinity;
+    for (const e of this.aristas) for (const [k, i] of [[e.ini, 0], [e.fin, e.x.length - 1]] as [string, number][]) {
+      const d = (e.x[i] - x) ** 2 + (e.z[i] - z) ** 2;
+      if (d < d2) { d2 = d; mejor = k; }
+    }
+    return mejor;
+  }
+
+  /** Camino más corto (por largo de vía) entre dos cruces, respetando las vías de un solo sentido; null si no hay. */
+  private rutaEntre(desde: string, hasta: string): [number, 1 | -1][] | null {
+    if (desde === hasta) return [];
+    const dist = new Map<string, number>([[desde, 0]]), previo = new Map<string, [string, number, 1 | -1]>();
+    const abiertos = new Set<string>([desde]), hechos = new Set<string>();
+    while (abiertos.size) {
+      let n = '', dn = Infinity;
+      for (const k of abiertos) { const d = dist.get(k)!; if (d < dn) { dn = d; n = k; } }
+      if (n === hasta) break;
+      abiertos.delete(n);
+      hechos.add(n);
+      for (const j of this.nodos.get(n) ?? []) {
+        const o = this.aristas[j];
+        const pasos: [string, 1 | -1][] = [];
+        if (o.ini === n) pasos.push([o.fin, 1]);
+        if (o.fin === n && !o.unico) pasos.push([o.ini, -1]);
+        for (const [m, d] of pasos) {
+          if (hechos.has(m)) continue;
+          const nd = dn + o.largo;
+          if (nd < (dist.get(m) ?? Infinity)) { dist.set(m, nd); previo.set(m, [n, j, d]); abiertos.add(m); }
+        }
+      }
+    }
+    if (!previo.has(hasta)) return null;
+    const ruta: [number, 1 | -1][] = [];
+    for (let k = hasta; k !== desde;) { const [p, j, d] = previo.get(k)!; ruta.unshift([j, d]); k = p; }
+    return ruta;
+  }
+
+  /** Al terminar su trayecto: el campero que llegó a una vereda vuelve a su central y el que llegó a la central sale hacia otra vereda. */
+  private siguienteTramo(a: AutoRed, nodo: string): [number, 1 | -1] | undefined {
+    const base = this.centrales[a.central ?? 0]?.nodo;
+    let ruta: [number, 1 | -1][] | null = null;
+    if (a.ida && base) { a.ida = false; ruta = this.rutaEntre(nodo, base); }
+    else if (this.destinosVeredales.length) {
+      a.ida = true;
+      for (let i = 0; i < 4 && !ruta; i++) ruta = this.rutaEntre(nodo, this.destinosVeredales[this.proximoDestino++ % this.destinosVeredales.length]);
+    }
+    a.ruta = ruta ?? undefined;
+    return a.ruta?.shift();
+  }
+
+  /**
+   * Camperos de ruta: salen de las centrales de transporte veredal (Calle 5B y el parqueadero de buses) hacia una vereda tras otra, por el
+   * camino más corto de la red, y regresan. Cada vereda con vías es un destino; se reparten de a una por viaje.
+   */
+  private crearRutasVeredales(rnd: () => number, porTipo: number[]): void {
+    const sitios = ['Central de transporte veredal (calle 5b)', 'Parqueadero de buses veredal'].flatMap(n => { const f = SITIOS_FIJOS.get(n); return f ? [{ x: this.aX(f.lng), z: this.aZ(f.lat) }] : []; });
+    if (!sitios.length || !this.aristas.length) return;
+    const porVereda = new Map<number, string[]>();
+    for (const e of this.aristas) {
+      if (!e.rural || e.largo < 40) continue;
+      const m = e.x.length >> 1, id = this.idEn(this.lon0 + e.x[m] / this.mLon, this.lat0 - e.z[m] / this.mLat);
+      if (id >= 0) (porVereda.get(id) ?? porVereda.set(id, []).get(id)!).push(e.fin);
+    }
+    const destinos = [...porVereda.values()].map(l => l[Math.floor(rnd() * l.length)]);
+    for (let i = destinos.length - 1; i > 0; i--) { const j = Math.floor(rnd() * (i + 1)); [destinos[i], destinos[j]] = [destinos[j], destinos[i]]; }
+    this.destinosVeredales = destinos;
+    this.centrales = sitios.map(c => ({ ...c, nodo: this.cruceCerca(c.x, c.z) }));
+    let salieron = 0;
+    this.centrales.forEach((c, central) => {
+      const salidas = (this.nodos.get(c.nodo) ?? []).filter(j => this.aristas[j].ini === c.nodo || !this.aristas[j].unico);
+      for (let n = 0; salidas.length && n < CAMPEROS_POR_CENTRAL; n++) {
+        const j = salidas[n % salidas.length], o = this.aristas[j], dir: 1 | -1 = o.ini === c.nodo ? 1 : -1;
+        const t = 6 + rnd() * Math.min(o.largo * 0.7, 70);
+        const ruta = this.rutaEntre(dir > 0 ? o.fin : o.ini, destinos[this.proximoDestino++ % Math.max(1, destinos.length)] ?? c.nodo);
+        if (!ruta) continue;
+        this.autosRed.push({
+          arista: j, s: dir > 0 ? Math.min(t, o.largo) : Math.max(0, o.largo - t), i: 0, dir,
+          v: TRAFICO_VELOCIDAD[0] + rnd() * (TRAFICO_VELOCIDAD[1] - TRAFICO_VELOCIDAD[0]), carril: [-8, 0, 8][Math.floor(rnd() * 3)],
+          tipo: FJ, k: porTipo[FJ]++, ruta, central, ida: true,
+        });
+        salieron++;
+      }
+    });
+    console.info(`[mapa3d] camperos de ruta: ${salieron} en ${this.centrales.length} centrales, ${destinos.length} veredas de destino`);
   }
 
   /** Si un vehículo de ese tipo puede circular por la vía: el camión solo en principales y el FJ solo en veredas. */
@@ -3824,16 +4018,17 @@ export class Mapa3dComponent implements AfterViewInit {
       if (a.s > e.largo || a.s < 0) {
         // llegó a un cruce: elige entre las vías que salen de él (en la doble calzada, solo en su sentido)
         const nodo = a.s > e.largo ? e.fin : e.ini;
+        const paso = a.ruta ? a.ruta.shift() ?? this.siguienteTramo(a, nodo) : undefined;      // el campero de ruta sigue su trayecto
         const opciones: [number, 1 | -1][] = [];
-        for (const j of this.nodos.get(nodo) ?? []) {
+        if (!paso) for (const j of this.nodos.get(nodo) ?? []) {
           if (j === a.arista) continue;
           const o = this.aristas[j];
           if (!this.admite(a.tipo, o)) continue;
           if (o.ini === nodo) opciones.push([j, 1]);
           if (o.fin === nodo && !o.unico) opciones.push([j, -1]);
         }
-        if (opciones.length) {
-          const [j, d] = opciones[Math.floor(Math.random() * opciones.length)];
+        if (paso || opciones.length) {
+          const [j, d] = paso ?? opciones[Math.floor(Math.random() * opciones.length)];
           const resto = Math.abs(a.s > e.largo ? a.s - e.largo : a.s);       // lo que sobró del paso, para no perder el avance
           a.arista = j;
           a.dir = d;
@@ -4290,8 +4485,10 @@ export class Mapa3dComponent implements AfterViewInit {
     malla.castShadow = true;
     malla.receiveShadow = true;
     this.escena.add(malla);
+    this.mallaTanques = malla;
     this.registrarCapa(geo.getAttribute('position') as THREE.BufferAttribute, ids, pesos);
   }
+  private mallaTanques: THREE.Mesh | null = null;
 
   hayRedes = false;
 
@@ -4447,28 +4644,64 @@ export class Mapa3dComponent implements AfterViewInit {
       grupo.add(new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color: 0x80878e, transparent: true, opacity: 0.9 })));
     }
     if (torres.length) {
-      // torre de celosía: cuatro patas afinadas con anillos y diagonales (alto unitario, se estira con la torre) y crucetas triangulares
-      const barra = (a: THREE.Vector3, b: THREE.Vector3, r: number): THREE.BufferGeometry => {
-        const dir = b.clone().sub(a), l = dir.length();
-        const g = new THREE.BoxGeometry(r, r, l);
-        g.applyQuaternion(new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 0, 1), dir.normalize()));
-        return g.translate((a.x + b.x) / 2, (a.y + b.y) / 2, (a.z + b.z) / 2);
+      // torre de celosía barata: cuatro caras de un tronco de pirámide y dos láminas de cruceta con la trama dibujada en una textura calada
+      // (patas, anillos y diagonales en X); 8 + 4 triángulos por torre en vez de cientos de barras
+      const trama = (dibujar: (g: CanvasRenderingContext2D, w: number, h: number) => void, w: number, h: number): THREE.CanvasTexture => {
+        const cv = document.createElement('canvas');
+        cv.width = w; cv.height = h;
+        const g = cv.getContext('2d')!;
+        g.strokeStyle = '#fff'; g.lineCap = 'square';
+        dibujar(g, w, h);
+        const tx = new THREE.CanvasTexture(cv);
+        tx.anisotropy = 4;
+        return tx;
       };
-      const ancho = (y: number) => 2.2 + (0.5 - 2.2) * y, V = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z);
-      const cuerpoGs: THREE.BufferGeometry[] = [], NIV = 7;
-      const anillo = (y: number) => { const w = ancho(y); return [V(-w, y, -w), V(w, y, -w), V(w, y, w), V(-w, y, w)]; };
-      for (let k = 0; k < NIV; k++) {
-        const c0 = anillo(k / NIV), c1 = anillo((k + 1) / NIV);
-        for (let i = 0; i < 4; i++) {
-          const j = (i + 1) % 4;
-          cuerpoGs.push(barra(c0[i], c1[i], 0.3), barra(c1[i], c1[j], 0.14), barra(c0[i], c1[j], 0.1), barra(c0[j], c1[i], 0.1));
+      const texCuerpo = trama((g, w, h) => {
+        const NIV = 7;
+        g.lineWidth = 9; g.beginPath(); g.moveTo(5, h); g.lineTo(5, 0); g.moveTo(w - 5, h); g.lineTo(w - 5, 0); g.stroke();
+        g.lineWidth = 5;
+        for (let k = 0; k <= NIV; k++) { const y = (h * k) / NIV; g.beginPath(); g.moveTo(0, y); g.lineTo(w, y); g.stroke(); }
+        for (let k = 0; k < NIV; k++) {
+          const y0 = (h * k) / NIV, y1 = (h * (k + 1)) / NIV;
+          g.beginPath(); g.moveTo(5, y0); g.lineTo(w - 5, y1); g.moveTo(w - 5, y0); g.lineTo(5, y1); g.stroke();
         }
-      }
-      const cuerpo = mergeGeometries(cuerpoGs, false);
-      const brazoGs = [barra(V(0.12, -0.6, 0), V(1, 0, 0), 0.22), barra(V(0.12, 1.8, 0), V(1, 0, 0), 0.22), barra(V(0.12, -0.6, 0), V(0.12, 1.8, 0), 0.18), barra(V(0.55, -0.3, 0), V(0.55, 0.9, 0), 0.12), barra(V(0.12, -0.6, 0), V(0.55, 0.9, 0), 0.1)];
-      const cruceta = mergeGeometries([...brazoGs, ...brazoGs.map(g => g.clone().scale(-1, 1, 1))], false);
-      const mat = new THREE.MeshStandardMaterial({ color: 0x8d949b, roughness: 0.7, metalness: 0.5, side: THREE.DoubleSide });
-      const im = new THREE.InstancedMesh(cuerpo, mat, torres.length), ic = new THREE.InstancedMesh(cruceta, mat, torres.length * 2);
+      }, 64, 256);
+      const texBrazo = trama((g, w, h) => {
+        // cruceta triangulada (de -1 a 1 m, y de -0,7 a 1,9 m): cordones inferior y superior hacia la punta, montantes y diagonales
+        const tip = h * 0.73, c = w / 2;
+        g.lineWidth = 7;
+        g.beginPath();
+        for (const [x, lado] of [[0, 1], [w, -1]] as const) {
+          g.moveTo(c + lado * -w * 0.06, h * 0.96); g.lineTo(x, tip);
+          g.moveTo(c + lado * -w * 0.06, h * 0.04); g.lineTo(x, tip);
+        }
+        g.stroke();
+        g.lineWidth = 4;
+        g.beginPath();
+        for (const f of [0.18, 0.34]) {
+          for (const x of [c - c * (1 - f) , c + c * (1 - f)]) { g.moveTo(x, tip - (tip - h * 0.04) * f * 0.0 - (tip - h * 0.04) * (1 - f) * 0.9); g.lineTo(x, tip + (h * 0.96 - tip) * (1 - f) * 0.9); }
+        }
+        g.moveTo(c * 0.4, h * 0.2); g.lineTo(c * 0.7, h * 0.6); g.moveTo(w - c * 0.4, h * 0.2); g.lineTo(w - c * 0.7, h * 0.6);
+        g.stroke();
+      }, 128, 64);
+      const wb = 2.2, wt = 0.5, pos4: number[] = [], uv4: number[] = [], idx4: number[] = [];
+      const esq: [number, number][] = [[-1, -1], [1, -1], [1, 1], [-1, 1]];
+      esq.forEach(([x0, z0], i) => {
+        const [x1, z1] = esq[(i + 1) % 4], o = pos4.length / 3;
+        pos4.push(x0 * wb, 0, z0 * wb, x1 * wb, 0, z1 * wb, x1 * wt, 1, z1 * wt, x0 * wt, 1, z0 * wt);
+        uv4.push(0, 0, 1, 0, 1, 1, 0, 1);
+        idx4.push(o, o + 1, o + 2, o, o + 2, o + 3);
+      });
+      const cuerpo = new THREE.BufferGeometry();
+      cuerpo.setAttribute('position', new THREE.Float32BufferAttribute(pos4, 3));
+      cuerpo.setAttribute('uv', new THREE.Float32BufferAttribute(uv4, 2));
+      cuerpo.setIndex(idx4);
+      cuerpo.computeVertexNormals();
+      // cruceta: lámina vertical (vista de frente) y otra horizontal con la misma trama (vista desde arriba), para que se lea desde cualquier ángulo
+      const cruceta = mergeGeometries([new THREE.PlaneGeometry(2, 2.6).translate(0, 0.6, 0), new THREE.PlaneGeometry(2, 1.8).rotateX(-Math.PI / 2).translate(0, 0.2, 0)], false);
+      const matCuerpo = new THREE.MeshStandardMaterial({ color: 0xb4bac0, map: texCuerpo, alphaTest: 0.5, roughness: 0.7, metalness: 0.5, side: THREE.DoubleSide });
+      const mat = new THREE.MeshStandardMaterial({ color: 0xb4bac0, map: texBrazo, alphaTest: 0.5, roughness: 0.7, metalness: 0.5, side: THREE.DoubleSide });
+      const im = new THREE.InstancedMesh(cuerpo, matCuerpo, torres.length), ic = new THREE.InstancedMesh(cruceta, mat, torres.length * 2);
       const m = new THREE.Matrix4(), q = new THREE.Quaternion(), e = new THREE.Vector3(), pos = new THREE.Vector3();
       torres.forEach((t, i) => {
         q.setFromAxisAngle(new THREE.Vector3(0, 1, 0), t.ang);
@@ -4477,7 +4710,20 @@ export class Mapa3dComponent implements AfterViewInit {
         ic.setMatrixAt(i * 2, m.compose(pos.set(t.x, t.y + t.alto, t.z), q, e.set(brazo, 1, 1)));
         ic.setMatrixAt(i * 2 + 1, m.compose(pos.set(t.x, t.y + t.alto - 3, t.z), q, e.set(brazo * 0.7, 1, 1)));
       });
-      for (const o of [im, ic]) { o.castShadow = true; grupo.add(o); }
+      // cadenas de aisladores colgando de las cuatro puntas de cruceta de cada torre
+      const matAis = new THREE.MeshStandardMaterial({ color: 0xcdb9a3, roughness: 0.5 });
+      const ia = new THREE.InstancedMesh(new THREE.CylinderGeometry(0.22, 0.22, 2.4, 6).translate(0, -1.2, 0), matAis, torres.length * 4);
+      const puntaLocal = new THREE.Vector3();
+      torres.forEach((t, i) => {
+        q.setFromAxisAngle(new THREE.Vector3(0, 1, 0), t.ang);
+        const brazo = (t.alto > 36 ? 16 : 10) / 2;
+        let k = 0;
+        for (const [dy, f] of [[0, 1], [-3, 0.7]] as const) for (const lado of [-1, 1]) {
+          puntaLocal.set(lado * brazo * f, 0, 0).applyQuaternion(q);
+          ia.setMatrixAt(i * 4 + k++, m.compose(pos.set(t.x + puntaLocal.x, t.y + t.alto + dy, t.z + puntaLocal.z), new THREE.Quaternion(), e.set(1, 1, 1)));
+        }
+      });
+      for (const o of [im, ic, ia]) { o.castShadow = true; grupo.add(o); }
     }
     // --- subestaciones: patio de grava, transformadores y aisladores
     for (const [nombreSub, kvSub, ps] of d.subs) {
@@ -4569,10 +4815,10 @@ export class Mapa3dComponent implements AfterViewInit {
     this.soltarRed();
     this.subterraneo.set(activar);
     if (this.grupoSub) this.grupoSub.visible = activar;
-    if (this.grupoRedes) this.grupoRedes.visible = !activar && this.redesVisibles();
+    if (this.grupoRedes) this.grupoRedes.visible = activar || this.redesVisibles();      // en el subterráneo siguen a la vista los modelos de agua y electricidad
     if (activar) {
       this.escena.traverse(o => {
-        if (!(o instanceof THREE.Mesh || o instanceof THREE.Points) || this.dentroDe(o, this.grupoSub)) return;
+        if (!(o instanceof THREE.Mesh || o instanceof THREE.Points) || this.dentroDe(o, this.grupoSub) || this.dentroDe(o, this.grupoRedes) || o === this.mallaTanques) return;
         for (const m of Array.isArray(o.material) ? o.material : [o.material]) {
           if (m instanceof THREE.ShaderMaterial || this.superficieOriginal.has(m)) continue;
           this.superficieOriginal.set(m, { transparent: m.transparent, opacity: m.opacity, depthWrite: m.depthWrite });
@@ -4901,7 +5147,7 @@ export class Mapa3dComponent implements AfterViewInit {
   /** El neón pulsa y los iconos flotan sin tapar su edificio. */
   /** Objetos 3D de marcación que el modo fotografía esconde (anillos, halos de río y el borde del municipio). */
   private marcaciones(): THREE.Object3D[] {
-    return [this.anilloHover, this.anilloFabrica, this.haloHover, this.haloElegido, this.haloRed, ...this.bordeMunicipio].filter((o): o is THREE.Object3D => !!o);
+    return [this.anilloHover, this.anilloFabrica, this.haloHover, this.haloElegido, this.haloSistema, this.haloRed, ...this.bordeMunicipio].filter((o): o is THREE.Object3D => !!o);
   }
 
   alternarConduccion(): void {
@@ -5842,14 +6088,38 @@ export class Mapa3dComponent implements AfterViewInit {
         : (o as THREE.Mesh).isMesh ? 'mallas' : (o as THREE.Line).isLine ? 'líneas' : '';
       if (k) tipos[k] = (tipos[k] ?? 0) + 1;
     });
+    // triángulos dibujados por capa (solo lo visible): dónde se va el trabajo de la GPU
+    const capas = new Map<THREE.Object3D, string>();
+    const marcar = (nombre: string, objs: Iterable<THREE.Object3D | null | undefined>) => { for (const o of objs) if (o) capas.set(o, nombre); };
+    marcar('edificios', this.mallasEdificios);
+    marcar('fachadas', this.mallasFachadas.map(f => f.malla));
+    marcar('cercas', this.mallasCercas.map(f => f.malla));
+    marcar('árboles', this.teselasArboles.flatMap(t => [t.cerca, t.lejos]));
+    marcar('gente', this.mallasGente);
+    marcar('tráfico', this.flota.flat());
+    const porCapa: Record<string, number> = {};
+    const sinCapa: { tris: number; txt: string }[] = [];
+    this.escena.traverseVisible(o => {
+      const m = o as THREE.Mesh;
+      if (!m.isMesh || !m.geometry) return;
+      const g = m.geometry;
+      const base = (g.index ? g.index.count : g.getAttribute('position')?.count ?? 0) / 3;
+      const tris = base * ((o as THREE.InstancedMesh).isInstancedMesh ? (o as THREE.InstancedMesh).count : 1);
+      const nombre = capas.get(o) ?? 'otras';
+      porCapa[nombre] = (porCapa[nombre] ?? 0) + tris;
+      if (nombre === 'otras' && tris > 20000) sinCapa.push({ tris, txt: `${(o as THREE.InstancedMesh).isInstancedMesh ? 'inst' : 'malla'} ${((m.material as THREE.MeshStandardMaterial).color?.getHexString() ?? '-')} x${(o as THREE.InstancedMesh).count ?? 1}` });
+    });
+    sinCapa.sort((u, v) => v.tris - u.tris);
     p.el.textContent = [
+      'triángulos por capa: ' + Object.entries(porCapa).sort((u, v) => v[1] - u[1]).map(([k, v]) => `${k} ${(v / 1000).toFixed(0)}k`).join(' · '),
+      sinCapa.length ? 'mayores sin clasificar: ' + sinCapa.slice(0, 4).map(x => `${(x.tris / 1000).toFixed(0)}k ${x.txt}`).join(' | ') : '',
       Object.entries(tipos).map(([k, v]) => `${k} ${v}`).join(' · '),
       `${(p.cuadros / p.acumulado).toFixed(0)} fps · ${(p.acumulado / p.cuadros * 1000).toFixed(1)} ms/cuadro`,
       `CPU actualizar ${(p.msActualizar / p.cuadros).toFixed(2)} ms · render ${(p.msRender / p.cuadros).toFixed(2)} ms`,
       `llamadas ${i.render.calls} · triángulos ${(i.render.triangles / 1000).toFixed(0)} k`,
       `geometrías ${i.memory.geometries} · texturas ${i.memory.textures}`,
       `ratio ${this.renderer.getPixelRatio()}${this.degradado ? ' (bajado)' : ''} · mapas de sombra ${(p.sombras / p.acumulado).toFixed(1)}/s`,
-    ].join('\n');
+    ].filter(Boolean).join('\n');
     p.acumulado = p.cuadros = p.sombras = p.msActualizar = p.msRender = 0;
   }
 
@@ -6573,7 +6843,8 @@ export class Mapa3dComponent implements AfterViewInit {
     // una malla instanciada por tesela, por especie y por nivel de detalle: la GPU descarta las que no se ven
     const porTesela = new Map<number, typeof lista>();
     for (const a of lista) {
-      const clave = (this.claveTesela(a.x, a.z) * 8 + a.especie) * 2 + (a.junto ? 1 : 0);
+      const celda = Math.floor((a.x + this.ancho / 2) / TESELA_ARBOL) + Math.floor((a.z + this.alto / 2) / TESELA_ARBOL) * 1000;
+      const clave = (celda * 8 + a.especie) * 2 + (a.junto ? 1 : 0);
       if (!porTesela.has(clave)) porTesela.set(clave, []);
       porTesela.get(clave)!.push(a);
     }
@@ -6584,7 +6855,7 @@ export class Mapa3dComponent implements AfterViewInit {
       const sp = especies[grupo[0].especie];
       const aZona = new Float32Array(grupo.length), aPeso = new Float32Array(grupo.length);
       const mat = grupo[0].junto ? sp.velado : sp.material;
-      const cerca = new THREE.InstancedMesh(sp.cerca.clone(), mat, grupo.length);
+      const cerca = new THREE.InstancedMesh(compartirGeometria(sp.cerca), mat, grupo.length);
       grupo.forEach((a, i) => {
         // el pino conserva su escala; las demás especies se escalan parejo (con la variación de tamaño del pino)
         if (a.especie === 0) esc.set(a.sxz, a.sy, a.sxz); else esc.setScalar(a.sy / 21);
@@ -6599,7 +6870,7 @@ export class Mapa3dComponent implements AfterViewInit {
       cerca.geometry.setAttribute('aZona', atributos[0]);
       cerca.geometry.setAttribute('aPeso', atributos[1]);
       // la versión simple comparte matrices, colores y atributos con la completa
-      const lejos = new THREE.InstancedMesh(sp.lejos.clone(), mat, grupo.length);
+      const lejos = new THREE.InstancedMesh(compartirGeometria(sp.lejos), mat, grupo.length);
       lejos.instanceMatrix = cerca.instanceMatrix;
       lejos.instanceColor = cerca.instanceColor;
       lejos.geometry.setAttribute('aZona', atributos[0]);
@@ -7109,7 +7380,7 @@ export class Mapa3dComponent implements AfterViewInit {
     tex.needsUpdate = true;
     this.uMascara.uMascCaja.value.set(-this.ancho / 2, -this.alto / 2, this.ancho, this.alto);
     // lo que marca (halos, anillos, muros de borde) se dibuja siempre
-    for (const o of [this.anilloHover, this.anilloFabrica, this.haloHover, this.haloElegido, this.haloRed]) o?.traverse(c => { c.userData['sinMascara'] = true; });
+    for (const o of [this.anilloHover, this.anilloFabrica, this.haloHover, this.haloElegido, this.haloSistema, this.haloRed]) o?.traverse(c => { c.userData['sinMascara'] = true; });
     for (const g of this.bordesHover.values()) g.traverse(c => { c.userData['sinMascara'] = true; });
     this.escena.traverse(o => {
       if (o.userData['sinMascara'] || !(o instanceof THREE.Mesh || o instanceof THREE.Line)) return;
