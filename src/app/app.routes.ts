@@ -60,6 +60,13 @@ export const routes: Routes = [
       import('./features/documentos/pages/documentos/documentos.component').then(m => m.DocumentosComponent),
   },
 
+  // ── Biblioteca: fuentes consultadas, con enlace y cita ───────────────────
+  {
+    path: 'biblioteca',
+    loadComponent: () =>
+      import('./shared/pages/biblioteca/biblioteca.component').then(m => m.BibliotecaComponent),
+  },
+
   {
     path: 'mapa3d/catalogo',
     loadComponent: () =>
