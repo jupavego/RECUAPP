@@ -705,6 +705,39 @@ const TIPOS_ZONA: Record<string, string> = {
 
     <div #rotulos class="rotulos" [hidden]="modoFoto()"></div>
 
+    <div #barraLey class="barra-ley" role="group" aria-label="Leyenda: tipos de edificio">
+      <div class="pista">
+        @for (l of leyenda; track l.id) {
+          <button type="button" class="ley" [class.activa]="capasActivas().has(l.id)" [attr.aria-pressed]="capasActivas().has(l.id)"
+                  [attr.aria-label]="l.nombre" [style.--c]="l.color" (click)="alternarCapa(l.id)">
+            <span class="medalla-ley" aria-hidden="true">{{ l.glifo }}</span>
+            <span class="ley-nombre" aria-hidden="true"><b>{{ l.nombre }}</b><i>{{ capasActivas().has(l.id) ? 'en el mapa · clic para ocultar' : 'oculto · clic para mostrar' }}</i></span>
+          </button>
+        }
+        <button type="button" class="ley" [class.activa]="sistemaHidrico()" [attr.aria-pressed]="sistemaHidrico()" style="--c:#ffb300"
+                aria-label="Ríos y quebradas" (click)="alternarSistemaHidrico()">
+          <span class="medalla-ley" aria-hidden="true">≈</span>
+          <span class="ley-nombre" aria-hidden="true"><b>Ríos y quebradas</b><i>ríos, quebradas, lagos y embalses</i></span>
+        </button>
+        <span class="sep" aria-hidden="true"></span>
+        <button type="button" class="ley" [class.activa]="serviciosActivos() === subtiposServicios.length" [attr.aria-pressed]="serviciosActivos() === subtiposServicios.length"
+                [attr.aria-label]="grupoServicios.nombre" [style.--c]="grupoServicios.color" (click)="alternarServicios()">
+          <span class="medalla-ley" aria-hidden="true">{{ grupoServicios.glifo }}</span>
+          <span class="cuenta" aria-hidden="true">{{ serviciosActivos() }}</span>
+          <span class="ley-nombre" aria-hidden="true"><b>{{ grupoServicios.nombre }}</b><i>{{ serviciosActivos() }} de {{ subtiposServicios.length }} tipos en el mapa</i></span>
+        </button>
+        <span class="ley-hijos" role="group" aria-label="Tipos de servicios públicos">
+          @for (l of subtiposServicios; track l.id) {
+            <button type="button" class="ley hijo" [class.activa]="capasActivas().has(l.id)" [attr.aria-pressed]="capasActivas().has(l.id)"
+                    [attr.aria-label]="l.nombre" [style.--c]="l.color" (click)="alternarCapa(l.id)">
+              <span class="medalla-ley" aria-hidden="true">{{ l.glifo }}</span>
+              <span class="ley-nombre" aria-hidden="true"><b>{{ l.nombre }}</b><i>servicios públicos</i></span>
+            </button>
+          }
+        </span>
+      </div>
+    </div>
+
     <div class="panel" [class.cerrado]="!panelAbierto()">
       <div class="cabecera">
         <h1>Girardota <small>en 3D · prueba de concepto</small></h1>
@@ -766,36 +799,6 @@ const TIPOS_ZONA: Record<string, string> = {
             }
           </div>
         }
-        <div class="leyenda" role="group" aria-label="Tipos de edificio">
-          <span class="leyenda-t">Leyenda</span>
-          @for (l of leyenda; track l.id) {
-            <button type="button" class="ley" [class.activa]="capasActivas().has(l.id)" [attr.aria-pressed]="capasActivas().has(l.id)"
-                    [style.--c]="l.color" (click)="alternarCapa(l.id)">
-              <span class="medalla-ley">{{ l.glifo }}</span>{{ l.nombre }}
-            </button>
-          }
-          <button type="button" class="ley" [class.activa]="sistemaHidrico()" [attr.aria-pressed]="sistemaHidrico()" style="--c:#ffb300" (click)="alternarSistemaHidrico()">
-            <span class="medalla-ley">≈</span><span class="ley-t">Ríos y quebradas<small>ríos, quebradas, lagos y embalses, resaltados</small></span>
-          </button>
-          <div class="ley-fila">
-            <button type="button" class="ley" [class.activa]="serviciosActivos() === subtiposServicios.length" [attr.aria-pressed]="serviciosActivos() === subtiposServicios.length"
-                    [style.--c]="grupoServicios.color" (click)="alternarServicios()">
-              <span class="medalla-ley">{{ grupoServicios.glifo }}</span><span class="ley-t">{{ grupoServicios.nombre }}<small>{{ serviciosActivos() }} de {{ subtiposServicios.length }} tipos en el mapa</small></span>
-            </button>
-            <button type="button" class="ley-plegar" [class.abierto]="serviciosAbierto()" [attr.aria-expanded]="serviciosAbierto()"
-                    [attr.aria-label]="serviciosAbierto() ? 'Plegar los tipos de servicios públicos' : 'Desplegar los tipos de servicios públicos'" (click)="serviciosAbierto.set(!serviciosAbierto())">▾</button>
-          </div>
-          @if (serviciosAbierto()) {
-            <div class="ley-hijos">
-              @for (l of subtiposServicios; track l.id) {
-                <button type="button" class="ley" [class.activa]="capasActivas().has(l.id)" [attr.aria-pressed]="capasActivas().has(l.id)"
-                        [style.--c]="l.color" (click)="alternarCapa(l.id)">
-                  <span class="medalla-ley">{{ l.glifo }}</span><span class="ley-t">{{ l.nombre }}</span>
-                </button>
-              }
-            </div>
-          }
-        </div>
         <div class="capas-extra">
           <button type="button" class="tog" [class.on]="subterraneo()" [attr.aria-pressed]="subterraneo()" [disabled]="cargandoRedesAgua()" (click)="alternarSubterraneo()">{{ cargandoRedesAgua() ? 'Cargando…' : 'Subterráneo' }}</button>
           <button type="button" class="tog" [class.on]="barriosVisibles()" [attr.aria-pressed]="barriosVisibles()" [disabled]="cargandoBarrios()" (click)="alternarBarrios()">{{ cargandoBarrios() ? 'Cargando…' : 'Barrios' }}</button>
@@ -1020,9 +1023,54 @@ const TIPOS_ZONA: Record<string, string> = {
     .zoom button { width: 38px; height: 38px; padding: 0; border-radius: 12px; font: 700 1.3rem/1 system-ui;
       background: rgba(255,255,255,.9); color: #26425a; box-shadow: 0 3px 12px rgba(30,60,90,.25); }
     .zoom button:hover { background: #fff; }
-    .panel { position: absolute; z-index: 10; top: 16px; left: 16px; width: 260px; padding: 14px 16px; border-radius: 16px;
+    /* Leyenda horizontal en la parte superior del mapa; los paneles van debajo. */
+    :host { --alto-ley: 52px; }
+    /* Solo íconos; el nombre brota del ícono al pasar el cursor (o con el foco del teclado), sin mover la fila. */
+    .barra-ley { position: absolute; z-index: 11; top: 12px; left: 0; right: 0; margin-inline: auto; width: fit-content; max-width: calc(100% - 32px); box-sizing: border-box;
+      border-radius: 999px; background: rgba(255,255,255,.82); backdrop-filter: blur(8px); box-shadow: 0 6px 24px rgba(30,60,90,.2);
+      font: .9rem system-ui; color: #26425a; }
+    .barra-ley .pista { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2px; padding: 5px 8px; }
+    .barra-ley .sep { width: 1px; height: 22px; margin: 0 5px; background: rgba(38,66,90,.18); }
+    .barra-ley .ley { position: relative; flex: none; width: 36px; height: 36px; padding: 0; display: grid; place-items: center;
+      border-radius: 50%; background: transparent; color: #26425a; }
+    .barra-ley .ley:hover, .barra-ley .ley:focus-visible { background: transparent; z-index: 2; }
+    .barra-ley .medalla-ley { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; font-size: .95rem;
+      background: #dfe6ec; filter: grayscale(1); opacity: .55; transition: transform .14s ease-out, opacity .1s, filter .1s, box-shadow .1s; }
+    /* Subtipos de servicios públicos: en la misma barra, agrupados en una cápsula más clara tras su ícono de grupo. */
+    .barra-ley .ley-hijos { display: flex; align-items: center; gap: 0; margin-left: 2px; padding: 0 3px; border-radius: 999px; background: rgba(38,66,90,.07); }
+    .barra-ley .ley.hijo { width: 32px; }
+    .barra-ley .ley.hijo .medalla-ley { width: 26px; height: 26px; font-size: .82rem; }
+    .barra-ley .ley.activa .medalla-ley { background: var(--c); filter: none; opacity: 1; box-shadow: 0 0 0 2px #fff, 0 0 0 3.5px var(--c); }
+    .barra-ley .ley:hover .medalla-ley, .barra-ley .ley:focus-visible .medalla-ley { transform: translateY(-3px) scale(1.18) rotate(-8deg); opacity: 1; filter: none; }
+    .barra-ley .cuenta { position: absolute; right: 0; bottom: 0; min-width: 16px; height: 16px; padding: 0 3px; box-sizing: border-box; border-radius: 999px;
+      background: #26425a; color: #fff; font: 700 .62rem/16px system-ui; text-align: center; pointer-events: none; }
+    /* Etiqueta: una cinta del color de la capa que brota del ícono al instante y desliza el nombre. */
+    .barra-ley .ley-nombre { position: absolute; top: calc(100% + 8px); left: 50%; display: flex; flex-direction: column; align-items: center; gap: 1px;
+      padding: 6px 12px; border-radius: 10px; white-space: nowrap; pointer-events: none;
+      background: #26425a; color: #fff; box-shadow: 0 8px 22px rgba(20,40,60,.3); border-bottom: 3px solid var(--c);
+      opacity: 0; transform: translate(-50%, -6px) scale(.85); transform-origin: 50% -8px;
+      transition: opacity .08s, transform .16s cubic-bezier(.3,1.5,.6,1); }
+    .barra-ley .ley-nombre::before { content: ''; position: absolute; top: -5px; left: 50%; width: 10px; height: 10px; background: #26425a;
+      transform: translateX(-50%) rotate(45deg); border-radius: 2px; }
+    .barra-ley .ley-nombre b { position: relative; font-size: .8rem; font-weight: 700; letter-spacing: .01em;
+      clip-path: inset(0 100% 0 0); transition: clip-path .18s ease-out .03s; }
+    .barra-ley .ley-nombre i { position: relative; font-style: normal; font-size: .66rem; color: #b9cbd8; opacity: 0;
+      transition: opacity .12s .1s; }
+    .barra-ley .ley:hover .ley-nombre, .barra-ley .ley:focus-visible .ley-nombre { opacity: 1; transform: translate(-50%, 0) scale(1); }
+    .barra-ley .ley:hover .ley-nombre b, .barra-ley .ley:focus-visible .ley-nombre b { clip-path: inset(0 0 0 0); }
+    .barra-ley .ley:hover .ley-nombre i, .barra-ley .ley:focus-visible .ley-nombre i { opacity: 1; }
+    .barra-ley .pista > .ley:first-child .ley-nombre { left: 0; transform: translate(0, -6px) scale(.85); transform-origin: 20px -8px; }
+    .barra-ley .pista > .ley:first-child:hover .ley-nombre, .barra-ley .pista > .ley:first-child:focus-visible .ley-nombre { transform: translate(0, 0) scale(1); }
+    .barra-ley .pista > .ley:first-child .ley-nombre::before { left: 20px; }
+    .barra-ley .ley-hijos > .ley:last-child .ley-nombre { left: auto; right: 0; transform: translate(0, -6px) scale(.85); transform-origin: calc(100% - 16px) -8px; }
+    .barra-ley .ley-hijos > .ley:last-child:hover .ley-nombre, .barra-ley .ley-hijos > .ley:last-child:focus-visible .ley-nombre { transform: translate(0, 0) scale(1); }
+    .barra-ley .ley-hijos > .ley:last-child .ley-nombre::before { left: auto; right: 11px; transform: rotate(45deg); }
+    @media (prefers-reduced-motion: reduce) {
+      .barra-ley .medalla-ley, .barra-ley .ley-nombre, .barra-ley .ley-nombre b, .barra-ley .ley-nombre i { transition: none; }
+    }
+    .panel { position: absolute; z-index: 10; top: calc(var(--alto-ley) + 24px); left: 16px; width: 260px; padding: 14px 16px; border-radius: 16px;
       background: rgba(255,255,255,.82); backdrop-filter: blur(8px); box-shadow: 0 6px 24px rgba(30,60,90,.2);
-      font: .9rem system-ui; color: #26425a; box-sizing: border-box; max-width: calc(100% - 32px); max-height: calc(100% - 32px); overflow-y: auto; overscroll-behavior: contain; }
+      font: .9rem system-ui; color: #26425a; box-sizing: border-box; max-width: calc(100% - 32px); max-height: calc(100% - var(--alto-ley) - 40px); overflow-y: auto; overscroll-behavior: contain; }
     .panel .cabecera { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
     .panel.cerrado { width: auto; min-width: 190px; padding-bottom: 10px; }
     .panel.cerrado .cabecera { margin-bottom: 0; }
@@ -1035,7 +1083,7 @@ const TIPOS_ZONA: Record<string, string> = {
     .panel h1 small { display: block; font-weight: 500; font-size: .75rem; color: #6b8294; }
     .panel p { margin: 0 0 10px; }
     .panel .ayuda { font-size: .72rem; color: #6b8294; margin: 10px 0 0; }
-    .pin-panel { position: absolute; z-index: 10; top: 16px; right: 16px; width: 300px; max-height: calc(100% - 96px); overflow: auto;
+    .pin-panel { position: absolute; z-index: 10; top: calc(var(--alto-ley) + 24px); right: 16px; width: 300px; max-height: calc(100% - var(--alto-ley) - 104px); overflow: auto;
       padding: 16px 18px; border-radius: 16px; background: rgba(255,255,255,.9); backdrop-filter: blur(8px);
       box-shadow: 0 6px 24px rgba(30,60,90,.22); border-top: 5px solid var(--c); font: .9rem system-ui; color: #26425a; }
     .pin-panel .cerrar { position: absolute; top: 8px; right: 8px; width: 28px; height: 28px; padding: 0; border-radius: 50%;
@@ -1141,6 +1189,8 @@ const TIPOS_ZONA: Record<string, string> = {
 export class Mapa3dComponent implements AfterViewInit {
   @ViewChild('lienzo', { static: true }) private lienzo!: ElementRef<HTMLDivElement>;
   @ViewChild('rotulos', { static: true }) private contenedorRotulos!: ElementRef<HTMLDivElement>;
+  @ViewChild('barraLey', { static: true }) private barraLey!: ElementRef<HTMLDivElement>;
+  private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
 
   private readonly http = inject(HttpClient);
   private readonly ruta = inject(ActivatedRoute);
@@ -1411,6 +1461,12 @@ export class Mapa3dComponent implements AfterViewInit {
       vias: this.http.get<Compacto>(`data/mapa3d/vias-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
       viasEstado: this.http.get<Compacto>(`data/mapa3d/vias-estado-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
       edificios: this.http.get<Compacto>(`data/mapa3d/catastro-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
+    // La leyenda superior puede ocupar una o varias filas: los paneles se ubican debajo de su altura real.
+    const obsLey = new ResizeObserver(() =>
+      this.host.nativeElement.style.setProperty('--alto-ley', `${this.barraLey.nativeElement.offsetHeight}px`));
+    obsLey.observe(this.barraLey.nativeElement);
+    this.destroyRef.onDestroy(() => obsLey.disconnect());
+
       cauces: this.http.get<Cauces>(`data/mapa3d/cauces-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
       industrias: this.http.get<Industria[]>(`data/mapa3d/industrias-${ID_MUNICIPIO}.json`).pipe(catchError(() => of([] as Industria[]))),
       poblacion: this.http.get<PoblacionVeredas>(`data/mapa/poblacion/veredas-${CODIGO_DANE}.geojson`).pipe(catchError(() => of(null))),
