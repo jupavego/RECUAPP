@@ -847,12 +847,11 @@ const TIPOS_ZONA: Record<string, string> = {
       @if (proyeccion(z); as pr) {
         <aside class="pin-panel zona-panel" aria-label="Proyección de población de la vereda">
           <button type="button" class="cerrar" (click)="cerrarZona()" aria-label="Cerrar detalle">×</button>
-          <section class="col col-cab">
-          <div class="pin-cab">
-            <div><span class="tipo">{{ pr.tipo }} · proyección de población</span><strong>{{ pr.nombre }}</strong></div>
-          </div>
-          </section>
-          <!-- Acordeón horizontal: la categoría elegida se despliega a lo ancho; las demás quedan como pestañas verticales -->
+          <header class="zona-tit">
+            <strong>{{ pr.nombre }}</strong><span class="tipo">{{ pr.tipo }} · proyección de población</span>
+          </header>
+          <!-- Acordeón horizontal: la categoría elegida se despliega a lo ancho; las demás quedan como pestañas -->
+          <div class="acc-fila">
           @let ps = proyectosDe(z);
           @for (s of seccionesDet; track s.id; let i = $index) {
             <section class="acc" [class.abierta]="seccionDet() === i">
@@ -866,16 +865,7 @@ const TIPOS_ZONA: Record<string, string> = {
                 <div class="acc-cuerpo" [id]="'acc-' + s.id">
                   @switch (s.id) {
                     @case ('pob') {
-          <div class="acc-dos acc-tres">
-          <div class="barras" role="group" aria-label="Población por año">
-            @for (a of pr.anios; track a.anio) {
-              <button type="button" class="barra" [class.activa]="a.actual" [attr.aria-pressed]="a.actual" (click)="cambiarAnio(a.anio)">
-                <b>{{ a.pob | number:'1.0-0' }}</b>
-                <i [style.height.%]="a.alto"></i>
-                <span>{{ a.anio }}</span>
-              </button>
-            }
-          </div>
+          <div class="acc-dos">
           <div>
           <table>
             <thead><tr><th>Año</th><th>Personas</th><th>Viviendas</th></tr></thead>
@@ -936,6 +926,7 @@ const TIPOS_ZONA: Record<string, string> = {
               }
             </section>
           }
+          </div>
         </aside>
       }
     }
@@ -1146,12 +1137,14 @@ const TIPOS_ZONA: Record<string, string> = {
     .pin-panel .col > h3:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
     /* Las columnas se reparten el ancho disponible (sin scroll lateral); el texto se ajusta dentro de cada una. */
     /* Zona: cabecera fija + acordeón horizontal. La categoría abierta crece a lo ancho; las cerradas son pestañas verticales. */
-    .zona-panel { display: flex; gap: 8px; padding-left: 8px; }
-    .zona-panel .col-cab { flex: 0 0 clamp(150px, 15%, 200px); display: flex; align-items: center; }
-    .zona-panel .col-cab .pin-cab { margin-bottom: 0; }
-    .zona-panel .col-cab strong { font-size: 1.2rem; overflow-wrap: anywhere; }
-    .zona-panel .acc-tres { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-    .zona-panel .acc-tres .barras { margin: 2px 0 0; }
+    /* Título de la vereda arriba, en una línea; debajo, las cápsulas del acordeón ocupan todo el ancho. */
+    .zona-panel { display: flex; flex-direction: column; gap: 8px; padding: 10px 12px 12px; }
+    .zona-panel .zona-tit { flex: none; display: flex; align-items: baseline; gap: 12px; min-width: 0; padding: 0 44px 0 4px; }
+    .zona-panel .zona-tit strong { font-size: 1.15rem; line-height: 1.2; white-space: nowrap; }
+    .zona-panel .zona-tit .tipo { font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: #6b8294;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+    .zona-panel .acc-fila { flex: 1; min-height: 0; display: flex; gap: 8px; }
+    .zona-panel .acc { min-height: 0; }
     .zona-panel .acc { display: flex; min-width: 0; flex: 0 0 114px; border-radius: 12px; background: rgba(38,66,90,.05);
       transition: flex-grow .32s cubic-bezier(.3,.9,.3,1), background .2s; overflow: hidden; }
     .zona-panel .acc.abierta { flex-grow: 1; background: rgba(38,66,90,.035); }
