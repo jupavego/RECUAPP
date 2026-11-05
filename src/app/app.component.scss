@@ -14,6 +14,11 @@
   &__vista { min-width: 0; padding-top: var(--alto-barra); }
 }
 
+// Mapa 3D en escritorio: ocupa toda la altura, sin la franja libre de arriba
+@media (min-width: 768px) {
+  .shell__vista--plena { padding-top: 0; --alto-barra: 0px; }
+}
+
 @media (max-width: 767.98px) {
   .shell { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 1fr; }
   .shell__vista { padding-top: 0; }

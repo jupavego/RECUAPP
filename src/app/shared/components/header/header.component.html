@@ -59,8 +59,8 @@
     @if (session.isLoggedIn()) {
       <div class="lado__usuario"><app-user-widget /></div>
     } @else {
-      <a routerLink="/auth/login" class="lado__btn lado__solo-escritorio">Ingresar</a>
-      <a routerLink="/auth/register" class="lado__btn lado__btn--cta lado__solo-escritorio">Registrarse</a>
+      <!-- un solo acceso: la pantalla de ingreso enlaza al registro para quien aún no tiene cuenta -->
+      <a routerLink="/auth/login" class="lado__btn lado__btn--cta lado__solo-escritorio" title="Ingresa o crea tu cuenta">Ingresar</a>
     }
     <button type="button" class="lado__tema" [class.is-dark]="tema.oscuro()" (click)="tema.alternar()"
             [attr.aria-label]="'Tema de color: ' + (tema.oscuro() ? 'oscuro' : 'claro')"

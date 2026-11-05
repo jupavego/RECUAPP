@@ -847,9 +847,26 @@ const TIPOS_ZONA: Record<string, string> = {
       @if (proyeccion(z); as pr) {
         <aside class="pin-panel zona-panel" aria-label="Proyección de población de la vereda">
           <button type="button" class="cerrar" (click)="cerrarZona()" aria-label="Cerrar detalle">×</button>
+          <section class="col col-cab">
           <div class="pin-cab">
             <div><span class="tipo">{{ pr.tipo }} · proyección de población</span><strong>{{ pr.nombre }}</strong></div>
           </div>
+          </section>
+          <!-- Acordeón horizontal: la categoría elegida se despliega a lo ancho; las demás quedan como pestañas verticales -->
+          @let ps = proyectosDe(z);
+          @for (s of seccionesDet; track s.id; let i = $index) {
+            <section class="acc" [class.abierta]="seccionDet() === i">
+              <button type="button" class="acc-tab" [attr.aria-expanded]="seccionDet() === i" [attr.aria-controls]="'acc-' + s.id"
+                      (click)="seccionDet.set(i)" [title]="s.nombre">
+                <span class="acc-ico" aria-hidden="true">{{ s.glifo }}</span>
+                <b class="acc-num">{{ i === 0 ? (poblacionActual(pr.anios) | number:'1.0-0') : i === 1 ? pr.infra.total : ps.length }}</b>
+                <span class="acc-t">{{ s.nombre }}</span>
+              </button>
+              @if (seccionDet() === i) {
+                <div class="acc-cuerpo" [id]="'acc-' + s.id">
+                  @switch (s.id) {
+                    @case ('pob') {
+          <div class="acc-dos acc-tres">
           <div class="barras" role="group" aria-label="Población por año">
             @for (a of pr.anios; track a.anio) {
               <button type="button" class="barra" [class.activa]="a.actual" [attr.aria-pressed]="a.actual" (click)="cambiarAnio(a.anio)">
@@ -859,6 +876,7 @@ const TIPOS_ZONA: Record<string, string> = {
               </button>
             }
           </div>
+          <div>
           <table>
             <thead><tr><th>Año</th><th>Personas</th><th>Viviendas</th></tr></thead>
             <tbody>
@@ -867,10 +885,16 @@ const TIPOS_ZONA: Record<string, string> = {
               }
             </tbody>
           </table>
+          </div>
+          <div>
           <p class="variacion">{{ pr.variacion }}</p>
-
-          <h3>Infraestructura en la zona <small>{{ pr.infra.total }}</small></h3>
+          <p class="pin-fuente">Estimación: {{ pr.fuente }}</p>
+          </div>
+          </div>
+                    }
+                    @case ('infra') {
           @if (pr.infra.grupos.length) {
+            <div class="acc-grupos">
             @for (g of pr.infra.grupos; track g.id; let primero = $first) {
               <details class="infra" [open]="primero">
                 <summary><span class="medalla" [style.background]="g.color">{{ g.glifo }}</span>{{ g.nombre }}<b>{{ g.items.length }}</b></summary>
@@ -881,12 +905,12 @@ const TIPOS_ZONA: Record<string, string> = {
                 </ul>
               </details>
             }
+            </div>
           } @else {
             <p class="vacio">No hay infraestructura registrada en esta zona.</p>
           }
-
-          @let ps = proyectosDe(z);
-          <h3>Proyectos y responsables <small>{{ ps.length }}</small></h3>
+                    }
+                    @case ('proy') {
           @if (ps.length) {
             <ul class="proyectos">
               @for (p of ps; track p.ip) {
@@ -906,32 +930,41 @@ const TIPOS_ZONA: Record<string, string> = {
           } @else {
             <p class="vacio">Ningún informe de seguimiento nombra esta zona.</p>
           }
-          <p class="pin-fuente">Estimación: {{ pr.fuente }}</p>
+                    }
+                  }
+                </div>
+              }
+            </section>
+          }
         </aside>
       }
     }
 
     @if (pinFicha(); as p) {
-      <aside class="pin-panel" [style.--c]="p.color" aria-label="Detalle del lugar">
+      <aside class="pin-panel lugar-panel" [style.--c]="p.color" aria-label="Detalle del lugar">
         <button type="button" class="cerrar" (click)="cerrarPin()" aria-label="Cerrar detalle">×</button>
-        @if (seleccion(); as z) {
-          <button type="button" class="volver-zona" (click)="cerrarPin()">← Volver a {{ z.n }}</button>
-        }
-        <div class="pin-cab">
-          <span class="pin-glifo">{{ p.glifo }}</span>
-          <div><span class="tipo">{{ p.categoria }}</span><strong>{{ p.titulo }}</strong></div>
-        </div>
-        <dl>
-          @for (f of p.filas; track f.k) { <div><dt>{{ f.k }}</dt><dd>{{ f.v }}</dd></div> }
-        </dl>
-        @if (p.mapa2d; as q) {
-          <a class="pin-mapa" routerLink="/mapa" [queryParams]="q">
-            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.500a2.5 2.5 0 0 1 0 5z" fill="currentColor"/></svg>
-            Ver en el mapa 2D
-          </a>
-        }
-        @if (p.aproximada) { <p class="pin-fuente">La ubicación de este punto es aproximada.</p> }
-        <p class="pin-fuente">{{ p.fuente }}</p>
+        <section class="col col-cab">
+          @if (seleccion(); as z) {
+            <button type="button" class="volver-zona" (click)="cerrarPin()">← Volver a {{ z.n }}</button>
+          }
+          <div class="pin-cab">
+            <span class="pin-glifo">{{ p.glifo }}</span>
+            <div><span class="tipo">{{ p.categoria }}</span><strong>{{ p.titulo }}</strong></div>
+          </div>
+          @if (p.mapa2d; as q) {
+            <a class="pin-mapa" routerLink="/mapa" [queryParams]="q">
+              <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.500a2.5 2.5 0 0 1 0 5z" fill="currentColor"/></svg>
+              Ver en el mapa 2D
+            </a>
+          }
+          @if (p.aproximada) { <p class="pin-fuente">La ubicación de este punto es aproximada.</p> }
+          <p class="pin-fuente">{{ p.fuente }}</p>
+        </section>
+        <section class="col col-datos">
+          <dl>
+            @for (f of p.filas; track f.k) { <div><dt>{{ f.k }}</dt><dd>{{ f.v }}</dd></div> }
+          </dl>
+        </section>
       </aside>
     }
 
@@ -1043,6 +1076,8 @@ const TIPOS_ZONA: Record<string, string> = {
     .barra-ley { position: absolute; z-index: 11; top: 12px; left: 0; right: 0; margin-inline: auto; width: fit-content; max-width: calc(100% - 32px); box-sizing: border-box;
       border-radius: 999px; background: rgba(255,255,255,.82); backdrop-filter: blur(8px); box-shadow: 0 6px 24px rgba(30,60,90,.2);
       font: .9rem system-ui; color: #26425a; }
+    /* En escritorio la cápsula de cuenta y tema flota en la esquina superior derecha: la leyenda se centra en el espacio restante. */
+    @media (min-width: 768px) { .barra-ley { right: 230px; max-width: calc(100% - 246px); } }
     .barra-ley .pista { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2px; padding: 5px 8px; }
     .barra-ley .sep { width: 1px; height: 22px; margin: 0 5px; background: rgba(38,66,90,.18); }
     .barra-ley .ley { position: relative; flex: none; width: 36px; height: 36px; padding: 0; display: grid; place-items: center;
@@ -1097,9 +1132,57 @@ const TIPOS_ZONA: Record<string, string> = {
     .panel h1 small { display: block; font-weight: 500; font-size: .75rem; color: #6b8294; }
     .panel p { margin: 0 0 10px; }
     .panel .ayuda { font-size: .72rem; color: #6b8294; margin: 10px 0 0; }
-    .pin-panel { position: absolute; z-index: 10; top: calc(var(--alto-ley) + 24px); right: 16px; width: 300px; max-height: calc(100% - var(--alto-ley) - 104px); overflow: auto;
-      padding: 16px 18px; border-radius: 16px; background: rgba(255,255,255,.9); backdrop-filter: blur(8px);
-      box-shadow: 0 6px 24px rgba(30,60,90,.22); border-top: 5px solid var(--c); font: .9rem system-ui; color: #26425a; }
+    /* Detalle de zona o lugar: franja horizontal en la parte inferior del mapa, organizada en columnas. */
+    :host { --alto-det: clamp(190px, 34%, 290px); }
+    .pin-panel { position: absolute; z-index: 12; left: 16px; right: 16px; bottom: 16px; height: var(--alto-det); box-sizing: border-box;
+      display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 0; overflow: hidden; overscroll-behavior: contain;
+      padding: 14px 44px 12px 6px; border-radius: 16px; background: rgba(255,255,255,.92); backdrop-filter: blur(8px);
+      box-shadow: 0 -4px 24px rgba(30,60,90,.22); border-top: 5px solid var(--c, #26425a); font: .9rem system-ui; color: #26425a;
+      animation: subir-det .22s ease-out; }
+    @keyframes subir-det { from { opacity: 0; transform: translateY(14px); } }
+    @media (prefers-reduced-motion: reduce) { .pin-panel { animation: none; } }
+    .pin-panel .col { min-width: 0; overflow-y: auto; padding: 0 14px; border-left: 1px solid rgba(38,66,90,.12); scrollbar-width: thin; }
+    .pin-panel .col:first-of-type { border-left: 0; }
+    .pin-panel .col > h3:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+    /* Las columnas se reparten el ancho disponible (sin scroll lateral); el texto se ajusta dentro de cada una. */
+    /* Zona: cabecera fija + acordeón horizontal. La categoría abierta crece a lo ancho; las cerradas son pestañas verticales. */
+    .zona-panel { display: flex; gap: 8px; padding-left: 8px; }
+    .zona-panel .col-cab { flex: 0 0 clamp(150px, 15%, 200px); display: flex; align-items: center; }
+    .zona-panel .col-cab .pin-cab { margin-bottom: 0; }
+    .zona-panel .col-cab strong { font-size: 1.2rem; overflow-wrap: anywhere; }
+    .zona-panel .acc-tres { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    .zona-panel .acc-tres .barras { margin: 2px 0 0; }
+    .zona-panel .acc { display: flex; min-width: 0; flex: 0 0 114px; border-radius: 12px; background: rgba(38,66,90,.05);
+      transition: flex-grow .32s cubic-bezier(.3,.9,.3,1), background .2s; overflow: hidden; }
+    .zona-panel .acc.abierta { flex-grow: 1; background: rgba(38,66,90,.035); }
+    .zona-panel .acc-tab { flex: 0 0 114px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; padding: 10px 6px;
+      border-radius: 12px; background: transparent; color: #26425a; cursor: pointer; transition: background .2s, color .2s; }
+    .zona-panel .acc-tab:hover { background: rgba(38,66,90,.1); }
+    .zona-panel .acc-tab:focus-visible { outline: 2px solid #e0b33a; outline-offset: -2px; }
+    .zona-panel .acc.abierta .acc-tab { background: #26425a; color: #fff; }
+    .zona-panel .acc-ico { font-size: 1.35rem; line-height: 1; transition: transform .25s cubic-bezier(.34,1.6,.5,1); }
+    .zona-panel .acc-tab:hover .acc-ico { transform: scale(1.15); }
+    .zona-panel .acc-num { font-size: 1.05rem; font-weight: 800; line-height: 1; }
+    /* nombre de la categoría en horizontal y completo: se parte en líneas dentro de la pestaña, sin puntos suspensivos */
+    .zona-panel .acc-t { font-size: .74rem; font-weight: 600; line-height: 1.25; text-align: center; text-wrap: balance; overflow-wrap: normal; hyphens: none; }
+    .zona-panel .acc-cuerpo { flex: 1; min-width: 0; overflow-y: auto; padding: 4px 14px 4px 14px; scrollbar-width: thin;
+      animation: acc-entrar .28s ease-out .08s both; }
+    @keyframes acc-entrar { from { opacity: 0; transform: translateX(-10px); } }
+    @media (prefers-reduced-motion: reduce) { .zona-panel .acc { transition: none; } .zona-panel .acc-cuerpo { animation: none; } }
+    .zona-panel .acc-dos { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 6px 22px; align-items: start; }
+    .zona-panel .acc-dos .variacion { margin-top: 2px; }
+    .zona-panel .acc-grupos { columns: 240px; column-gap: 22px; }
+    .zona-panel .acc-grupos details { break-inside: avoid; }
+    .zona-panel .acc-cuerpo .proyectos { columns: 300px; column-gap: 22px; display: block; }
+    .zona-panel .acc-cuerpo .proyectos li { break-inside: avoid; }
+    .zona-panel .proyectos__ind { overflow-wrap: anywhere; }
+    .zona-panel .barra b { font-size: .68rem; }
+    .lugar-panel { grid-template-columns: minmax(0, 1fr) minmax(0, 2.4fr); grid-auto-flow: row; }
+    .lugar-panel .col-datos dl { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); column-gap: 18px; }
+    /* Con el detalle abierto, los controles suben por encima de la franja y el panel lateral se acorta. */
+    :host:has(.pin-panel) .zoom, :host:has(.pin-panel) .foto, :host:has(.pin-panel) .conducir { bottom: calc(var(--alto-det) + 28px); }
+    :host:has(.pin-panel) .panel { max-height: calc(100% - var(--alto-ley) - var(--alto-det) - 52px); }
+    :host:has(.pin-panel) .creditos { display: none; }
     .pin-panel .cerrar { position: absolute; top: 8px; right: 8px; width: 28px; height: 28px; padding: 0; border-radius: 50%;
       background: rgba(38,66,90,.1); color: #26425a; font-size: 1.2rem; line-height: 1; }
     .pin-panel .cerrar:hover { background: rgba(38,66,90,.2); }
@@ -1114,7 +1197,7 @@ const TIPOS_ZONA: Record<string, string> = {
     .pin-mapa { display: inline-flex; align-items: center; gap: 6px; margin-top: 14px; padding: 8px 14px; border-radius: 10px;
       background: #26425a; color: #fff; font-weight: 600; font-size: .85rem; text-decoration: none; }
     .pin-mapa:hover { background: #35597a; }
-    .zona-panel .barras { display: flex; align-items: flex-end; gap: 8px; height: 130px; margin: 4px 0 12px; }
+    .zona-panel .barras { display: flex; align-items: flex-end; gap: 8px; height: 96px; margin: 4px 0 8px; }
     .zona-panel .barra { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 3px;
       height: 100%; padding: 0; background: none; color: #26425a; font: inherit; cursor: pointer; }
     .zona-panel .barra b { font-size: .74rem; font-weight: 700; }
@@ -1217,6 +1300,16 @@ export class Mapa3dComponent implements AfterViewInit {
   readonly error = signal('');
   readonly seleccion = signal<Zona | null>(null);
   readonly pinFicha = signal<FichaPin | null>(null);
+  /** Franja inferior de la zona: categorías del acordeón horizontal y la que está desplegada. */
+  readonly seccionesDet = [
+    { id: 'pob', glifo: '👥', nombre: 'Población y viviendas' },
+    { id: 'infra', glifo: '🏛️', nombre: 'Infraestructura' },
+    { id: 'proy', glifo: '📋', nombre: 'Proyectos y responsables' },
+  ] as const;
+  readonly seccionDet = signal(0);
+  poblacionActual(anios: readonly { actual: boolean; pob: number }[]): number {
+    return (anios.find(a => a.actual) ?? anios[anios.length - 1])?.pob ?? 0;
+  }
   /** modo fotografía: sin rótulos, pines ni aros de luz */
   readonly modoFoto = signal(false);
   readonly conduciendo = signal(false);
@@ -1479,6 +1572,12 @@ export class Mapa3dComponent implements AfterViewInit {
   private vistaInicial = { pos: new THREE.Vector3(), objetivo: new THREE.Vector3() };
 
   ngAfterViewInit(): void {
+    // La leyenda superior puede ocupar una o varias filas: los paneles se ubican debajo de su altura real.
+    const obsLey = new ResizeObserver(() =>
+      this.host.nativeElement.style.setProperty('--alto-ley', `${this.barraLey.nativeElement.offsetHeight}px`));
+    obsLey.observe(this.barraLey.nativeElement);
+    this.destroyRef.onDestroy(() => obsLey.disconnect());
+
     forkJoin({
       relieve: this.http.get<Relieve>(`data/mapa3d/relieve-${ID_MUNICIPIO}.json`),
       muni: this.mapa.municipios$,
@@ -1487,12 +1586,6 @@ export class Mapa3dComponent implements AfterViewInit {
       vias: this.http.get<Compacto>(`data/mapa3d/vias-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
       viasEstado: this.http.get<Compacto>(`data/mapa3d/vias-estado-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
       edificios: this.http.get<Compacto>(`data/mapa3d/catastro-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
-    // La leyenda superior puede ocupar una o varias filas: los paneles se ubican debajo de su altura real.
-    const obsLey = new ResizeObserver(() =>
-      this.host.nativeElement.style.setProperty('--alto-ley', `${this.barraLey.nativeElement.offsetHeight}px`));
-    obsLey.observe(this.barraLey.nativeElement);
-    this.destroyRef.onDestroy(() => obsLey.disconnect());
-
       cauces: this.http.get<Cauces>(`data/mapa3d/cauces-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
       industrias: this.http.get<Industria[]>(`data/mapa3d/industrias-${ID_MUNICIPIO}.json`).pipe(catchError(() => of([] as Industria[]))),
       poblacion: this.http.get<PoblacionVeredas>(`data/mapa/poblacion/veredas-${CODIGO_DANE}.geojson`).pipe(catchError(() => of(null))),
