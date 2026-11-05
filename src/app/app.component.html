@@ -1,11 +1,15 @@
 @if (showChrome()) {
-  <app-header />
-}
-
-<router-outlet />
-
-@if (showChrome()) {
+  <!-- Navegación maestro-detalle: panel lateral con los módulos (maestro) y la vista abierta a la derecha (detalle) -->
+  <div class="shell">
+    <app-header class="shell__lado" />
+    <div class="shell__vista">
+      <router-outlet />
+    </div>
+  </div>
+  <!-- el pie va fuera del marco: ocupa todo el ancho de la ventana -->
   <app-footer />
+} @else {
+  <router-outlet />
 }
 
 <app-consent-banner />

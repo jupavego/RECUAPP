@@ -1,34 +1,75 @@
-<header class="topbar">
-  <div class="topbar__inner">
-    <a routerLink="/" class="topbar__logo">{{ site.name }}</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="nav-home" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h5v-6h4v6h5V10"/></symbol>
+  <symbol id="nav-plan" viewBox="0 0 24 24"><path d="M6 2h9l4 4v16H6z"/><path d="M15 2v4h4M9 11h7M9 15h7M9 19h4"/></symbol>
+  <symbol id="nav-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6M16 5a3.5 3.5 0 010 6.5M18 14c2.2.6 3.5 2.6 3.5 5"/></symbol>
+  <symbol id="nav-org" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="9" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-5h14v5M12 12v5"/></symbol>
+  <symbol id="nav-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="nav-cube" viewBox="0 0 24 24"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></symbol>
+  <symbol id="nav-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="nav-db" viewBox="0 0 24 24"><path d="M4 5h6a2 2 0 012 2v13a2 2 0 00-2-2H4zM20 5h-6a2 2 0 00-2 2v13a2 2 0 012-2h6z"/></symbol>
+  <symbol id="nav-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h12l-2 4 2 4H5"/></symbol>
+  <symbol id="nav-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l3 3M14 9l2 2"/></symbol>
+  <symbol id="nav-shield" viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="nav-login" viewBox="0 0 24 24"><path d="M14 4h4a2 2 0 012 2v12a2 2 0 01-2 2h-4"/><path d="M10 16l4-4-4-4M14 12H4"/></symbol>
+  <symbol id="nav-plegar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M9 4v16M15 10l-2 2 2 2"/></symbol>
+  <symbol id="nav-leaf" viewBox="0 0 24 24"><path d="M20 4C9 4 4 9.5 4 15c0 1.7.5 3 1.2 4C6 14 10 10.5 15 9c-4 2.5-7 6-8 11 1 .6 2.2 1 3.5 1C17 21 20 13 20 4z"/></symbol>
+</defs></svg>
 
-    <nav class="topbar__nav">
-      <a routerLink="/plan" routerLinkActive="is-active">Plan</a>
-      <a routerLink="/responsables" routerLinkActive="is-active">Responsables</a>
-      <a routerLink="/mapa" routerLinkActive="is-active">Mapa</a>
-      <a routerLink="/mapa3d" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }">Modelo 3D</a>
-      <a routerLink="/mapa3d/catalogo" routerLinkActive="is-active">Catálogo</a>
-      <a routerLink="/documentos" routerLinkActive="is-active">Documentos</a>
-      <a routerLink="/biblioteca" routerLinkActive="is-active">Biblioteca</a>
-      @if (session.isLoggedIn()) {
-        <a routerLink="/app" routerLinkActive="is-active">Mi espacio</a>
-        @if (session.isAdmin()) {
-          <a routerLink="/admin/dashboard" routerLinkActive="is-active">Admin</a>
-        }
-        <app-user-widget />
-      } @else {
-        <a routerLink="/auth/login">Ingresar</a>
-        <a routerLink="/auth/register" class="topbar__cta">Registrarse</a>
+<ng-template #item let-m>
+  <a class="it" [routerLink]="m.r" [style.--c]="m.c"
+     [class.is-on]="m.activo(url())" [attr.aria-current]="m.activo(url()) ? 'page' : null" [title]="m.t">
+    <span class="it__insig"><svg class="ico" aria-hidden="true"><use [attr.href]="'#nav-' + m.g"/></svg></span>
+    <span class="it__t">{{ m.t }}</span>
+  </a>
+</ng-template>
+
+<aside class="lado" aria-label="Navegación principal">
+  <a routerLink="/" class="lado__marca" [title]="site.name + ' · Inicio'">
+    <i><svg class="ico" aria-hidden="true"><use href="#nav-leaf"/></svg></i>
+    <span>{{ site.name }}<small>{{ site.tagline }}</small></span>
+  </a>
+
+  <nav class="lado__nav">
+    <ng-container *ngTemplateOutlet="item; context: { $implicit: inicio }" />
+    @for (g of grupos; track g.nombre) {
+      <p class="lado__grupo">{{ g.nombre }}</p>
+      @for (m of g.items; track m.r) {
+        <ng-container *ngTemplateOutlet="item; context: { $implicit: m }" />
       }
-      <button type="button" class="topbar__tema" [class.is-dark]="tema.oscuro()" (click)="tema.alternar()"
-              [attr.aria-label]="'Tema de color: ' + (tema.oscuro() ? 'oscuro' : 'claro')"
-              [title]="'Tema de color: ' + (tema.oscuro() ? 'oscuro' : 'claro') + ' (clic para cambiar)'">
-        @if (tema.oscuro()) {
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>
-        } @else {
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4C9 4 4 9.5 4 15c0 1.7.5 3 1.2 4C6 14 10 10.5 15 9c-4 2.5-7 6-8 11 1 .6 2.2 1 3.5 1C17 21 20 13 20 4z"/></svg>
-        }
-      </button>
-    </nav>
+    }
+    @if (cuenta().length) {
+      <p class="lado__grupo">Cuenta</p>
+      @for (m of cuenta(); track m.r) {
+        <ng-container *ngTemplateOutlet="item; context: { $implicit: m }" />
+      }
+    }
+    @if (!session.isLoggedIn()) {
+      <!-- solo en la barra de móvil: el ingreso va en la misma fila de módulos -->
+      <span class="lado__solo-movil"><ng-container *ngTemplateOutlet="item; context: { $implicit: ingresar }" /></span>
+    }
+  </nav>
+
+  <button type="button" class="lado__plegar" (click)="alternarPlegado()" [attr.aria-pressed]="plegado()"
+          [title]="plegado() ? 'Desplegar el menú' : 'Plegar el menú y dar más ancho al contenido'">
+    <svg class="ico" aria-hidden="true"><use href="#nav-plegar"/></svg>
+    <span>{{ plegado() ? 'Desplegar menú' : 'Plegar menú' }}</span>
+  </button>
+
+  <div class="lado__pie">
+    @if (session.isLoggedIn()) {
+      <div class="lado__usuario"><app-user-widget /></div>
+    } @else {
+      <a routerLink="/auth/login" class="lado__btn lado__solo-escritorio">Ingresar</a>
+      <a routerLink="/auth/register" class="lado__btn lado__btn--cta lado__solo-escritorio">Registrarse</a>
+    }
+    <button type="button" class="lado__tema" [class.is-dark]="tema.oscuro()" (click)="tema.alternar()"
+            [attr.aria-label]="'Tema de color: ' + (tema.oscuro() ? 'oscuro' : 'claro')"
+            [title]="'Tema de color: ' + (tema.oscuro() ? 'oscuro' : 'claro') + ' (clic para cambiar)'">
+      @if (tema.oscuro()) {
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>
+      } @else {
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4C9 4 4 9.5 4 15c0 1.7.5 3 1.2 4C6 14 10 10.5 15 9c-4 2.5-7 6-8 11 1 .6 2.2 1 3.5 1C17 21 20 13 20 4z"/></svg>
+      }
+    </button>
   </div>
-</header>
+</aside>

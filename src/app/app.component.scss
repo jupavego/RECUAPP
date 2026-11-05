@@ -1,3 +1,20 @@
 :host {
   display: block;
 }
+
+// Maestro-detalle: panel lateral fijo + vista. Bajo 768px el panel pasa a barra superior.
+// El pie queda fuera de la rejilla, a todo el ancho; el panel se queda pegado hasta que llega el pie.
+.shell {
+  display: grid;
+  grid-template-columns: var(--ancho-lado, 264px) minmax(0, 1fr);
+  min-height: 100dvh;
+  transition: grid-template-columns .28s ease;
+
+  // franja libre arriba para la cápsula de cuenta y tema (fija en la esquina superior derecha)
+  &__vista { min-width: 0; padding-top: var(--alto-barra); }
+}
+
+@media (max-width: 767.98px) {
+  .shell { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 1fr; }
+  .shell__vista { padding-top: 0; }
+}

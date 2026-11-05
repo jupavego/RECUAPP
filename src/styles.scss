@@ -35,7 +35,9 @@ html, body {
   font-family: var(--font-body);
   background: var(--color-page-bg);
   color: var(--color-text-primary);
-  overflow-x: hidden;
+  // clip (no hidden): corta el desborde lateral sin volver a <body> un contenedor de scroll,
+  // que rompería position: sticky (el panel lateral de navegación)
+  overflow-x: clip;
   width: 100%;
   max-width: 100%;
 }
@@ -457,7 +459,7 @@ html, body {
   }
 }
 
-/* ── Tema opcional "Earthy Botanical": se activa desde el botón del panel superior y vale para cualquier vista ──*/
+/* ── Tema opcional "Earthy Botanical": se activa desde el botón del panel lateral y vale para cualquier vista ──*/
 html.tema-botanico {
   --color-brand-primary:     #29422F;
   --color-brand-primary-rgb: 41, 66, 47;
@@ -500,3 +502,7 @@ html.tema-botanico.tema-oscuro {
   --dark-50: #121A14; --dark-100: #1A261D; --dark-200: #233229; --dark-300: #2F4533; --dark-400: #6F8470;
   --dark-500: #8FA08C; --dark-600: #A9B8A5; --dark-700: #C3CFBF; --dark-800: #D8E1D4; --dark-900: #E8EFE4;
 }
+
+/* ── Navegación maestro-detalle: alto de la franja superior. En escritorio es la franja libre donde flota la cápsula de cuenta y tema; en móvil, la barra de módulos ──*/
+:root { --alto-barra: 56px; }
+@media (max-width: 767.98px) { :root { --alto-barra: 60px; } }

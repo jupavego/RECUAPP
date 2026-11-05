@@ -2,7 +2,7 @@
 
 // Tema "Earthy Botanical" (earthy-botanical-theme.json). Se activa con ?tema=botanico; sin eso, la paleta de la app.
 :host(.tema-botanico) {
-  min-height: calc(100dvh - 64px);
+  min-height: calc(100dvh - var(--alto-barra));
   background: #F5F0EA;
   --color-background-primary: #FCF9F6;
   --color-border-tertiary: #C8D9C0;

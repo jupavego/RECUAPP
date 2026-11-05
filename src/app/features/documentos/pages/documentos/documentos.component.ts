@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   template: `<iframe class="documentos" src="/sistema-documental.html" title="Sistema documental de RECUAPP"></iframe>`,
   styles: [`
     :host { display: block; }
-    .documentos { display: block; width: 100%; height: calc(100vh - 64px); min-height: 480px; border: 0; background: var(--color-page-bg, #F5F0EA); }
+    .documentos { display: block; width: 100%; height: calc(100dvh - var(--alto-barra)); min-height: 480px; border: 0; background: var(--color-page-bg, #F5F0EA); }
   `],
 })
 export class DocumentosComponent {}

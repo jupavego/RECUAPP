@@ -380,6 +380,14 @@ const FUSIONES = new Map<string, string>([['Señor caído', 'Catedral Nuestra Se
 /** Cuánto se levanta (metros del modelo) una vereda al elegirla; al pasar el cursor solo se le dibuja el borde. */
 const ALZA_ELEGIDA = 170;
 
+/** scripts/generar_barrios.py: barrios del casco urbano (GeoJSON lon/lat). */
+interface Barrios {
+  features: {
+    geometry: { type: 'Polygon'; coordinates: number[][][] } | { type: 'MultiPolygon'; coordinates: number[][][][] };
+    properties: { codigo: string; nombre: string | null; confianza: string; rotulo?: [number, number] };
+  }[];
+}
+
 interface Relieve {
   bbox: [number, number, number, number];
   nx: number;
@@ -790,6 +798,7 @@ const TIPOS_ZONA: Record<string, string> = {
         </div>
         <div class="capas-extra">
           <button type="button" class="tog" [class.on]="subterraneo()" [attr.aria-pressed]="subterraneo()" [disabled]="cargandoRedesAgua()" (click)="alternarSubterraneo()">{{ cargandoRedesAgua() ? 'Cargando…' : 'Subterráneo' }}</button>
+          <button type="button" class="tog" [class.on]="barriosVisibles()" [attr.aria-pressed]="barriosVisibles()" [disabled]="cargandoBarrios()" (click)="alternarBarrios()">{{ cargandoBarrios() ? 'Cargando…' : 'Barrios' }}</button>
           @if (hayRedes) {
             <button type="button" class="tog" [class.on]="redesVisibles()" [attr.aria-pressed]="redesVisibles()" (click)="alternarRedes()">Redes</button>
           }
@@ -957,7 +966,7 @@ const TIPOS_ZONA: Record<string, string> = {
     </div>
   `,
   styles: [`
-    :host { position: relative; display: block; height: calc(100dvh - 64px); min-height: 520px;
+    :host { position: relative; display: block; height: calc(100dvh - var(--alto-barra)); min-height: 520px;
       background: linear-gradient(#8ec8f2, #e4f2fb 70%); overflow: hidden; }
     .lienzo { position: absolute; inset: 0; }
     .estado { position: absolute; inset: 0; display: grid; place-items: center; font: 600 1.1rem system-ui;
@@ -4796,6 +4805,92 @@ export class Mapa3dComponent implements AfterViewInit {
   ];
   private grupoSub: THREE.Group | null = null;
   private superficieOriginal = new Map<THREE.Material, { transparent: boolean; opacity: number; depthWrite: boolean }>();
+
+  /**
+   * Barrios del casco urbano (scripts/generar_barrios.py: manzanas del catastro unidas por código de barrio, con los
+   * nombres del PBOT 2020). Se cargan al encenderlos: una cinta de color sobre el borde de cada barrio y su nombre encima.
+   */
+  readonly barriosVisibles = signal(false);
+  readonly cargandoBarrios = signal(false);
+  private grupoBarrios: THREE.Group | null = null;
+
+  alternarBarrios(): void {
+    if (!this.grupoBarrios) {
+      if (this.cargandoBarrios()) return;
+      this.cargandoBarrios.set(true);
+      this.http.get<Barrios>(`data/mapa3d/barrios-${ID_MUNICIPIO}.geojson`).subscribe({
+        next: d => { this.construirBarrios(d); this.cargandoBarrios.set(false); this.barriosVisibles.set(true); },
+        error: () => this.cargandoBarrios.set(false),
+      });
+      return;
+    }
+    this.barriosVisibles.update(v => !v);
+    this.grupoBarrios.visible = this.barriosVisibles();
+  }
+
+  private construirBarrios(d: Barrios): void {
+    const grupo = new THREE.Group();
+    const PASO = 8, ALTO = 10;                // m entre muestras del borde sobre el relieve · alto de la cinta
+    d.features.forEach((f, i) => {
+      const { nombre, rotulo } = f.properties;
+      const color = nombre ? new THREE.Color().setHSL((i * 0.618034) % 1, 0.75, 0.5) : new THREE.Color('#8a9099');
+      const cinta: number[] = [], borde: number[] = [];
+      const poligonos = f.geometry.type === 'Polygon' ? [f.geometry.coordinates] : f.geometry.coordinates;
+      for (const anillo of poligonos.map(p => p[0])) {
+        const puntos: THREE.Vector3[] = [];
+        for (let k = 0; k < anillo.length - 1; k++) {
+          const [lo0, la0] = anillo[k], [lo1, la1] = anillo[k + 1];
+          const L = Math.hypot((lo1 - lo0) * this.mLon, (la1 - la0) * this.mLat), n = Math.max(1, Math.ceil(L / PASO));
+          for (let s = 0; s < n; s++) {
+            const lo = lo0 + (lo1 - lo0) * s / n, la = la0 + (la1 - la0) * s / n;
+            puntos.push(new THREE.Vector3(this.aX(lo), this.alturaEn(lo, la) + 0.5, this.aZ(la)));
+          }
+        }
+        puntos.push(puntos[0]);
+        for (let k = 0; k < puntos.length - 1; k++) {
+          const a = puntos[k], b = puntos[k + 1];
+          cinta.push(a.x, a.y, a.z, b.x, b.y, b.z, b.x, b.y + ALTO, b.z, a.x, a.y, a.z, b.x, b.y + ALTO, b.z, a.x, a.y + ALTO, a.z);
+          borde.push(a.x, a.y + ALTO, a.z, b.x, b.y + ALTO, b.z);
+        }
+      }
+      const gc = new THREE.BufferGeometry();
+      gc.setAttribute('position', new THREE.Float32BufferAttribute(cinta, 3));
+      const mc = new THREE.Mesh(gc, new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0.6, side: THREE.DoubleSide, depthWrite: false }));
+      mc.renderOrder = 3;
+      grupo.add(mc);
+      const gb = new THREE.BufferGeometry();
+      gb.setAttribute('position', new THREE.Float32BufferAttribute(borde, 3));
+      grupo.add(new THREE.LineSegments(gb, new THREE.LineBasicMaterial({ color })));
+      if (nombre && rotulo) grupo.add(this.rotuloBarrio(nombre, color, rotulo));
+    });
+    grupo.visible = true;
+    this.grupoBarrios = grupo;
+    this.escena.add(grupo);
+  }
+
+  /** Nombre del barrio en una etiqueta que mira a la cámara, sobre su punto interior; no la tapan los techos. */
+  private rotuloBarrio(nombre: string, color: THREE.Color, [lon, lat]: [number, number]): THREE.Sprite {
+    const c = document.createElement('canvas'), x = c.getContext('2d')!;
+    const fuente = '600 44px system-ui, sans-serif';
+    x.font = fuente;
+    const w = Math.ceil(x.measureText(nombre).width) + 44, h = 72;
+    c.width = w; c.height = h;
+    x.font = fuente;
+    x.fillStyle = 'rgba(255,255,255,.92)';
+    x.beginPath(); x.roundRect(2, 2, w - 4, h - 4, 18); x.fill();
+    x.lineWidth = 5; x.strokeStyle = `#${color.getHexString()}`; x.stroke();
+    x.fillStyle = '#1f2d3a'; x.textAlign = 'center'; x.textBaseline = 'middle';
+    x.fillText(nombre, w / 2, h / 2 + 2);
+    const t = new THREE.CanvasTexture(c);
+    t.colorSpace = THREE.SRGBColorSpace;
+    // tamaño fijo en pantalla (sin perspectiva): se lee igual de lejos que de cerca
+    const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: t, transparent: true, depthTest: false, depthWrite: false, sizeAttenuation: false }));
+    const alto = 0.032;                       // fracción del alto de la vista
+    s.scale.set(alto * w / h, alto, 1);
+    s.position.set(this.aX(lon), this.alturaEn(lon, lat) + 15, this.aZ(lat));
+    s.renderOrder = 12;
+    return s;
+  }
 
   alternarSubterraneo(): void {
     const activar = !this.subterraneo();

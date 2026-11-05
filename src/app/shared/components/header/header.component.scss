@@ -1,94 +1,232 @@
-.topbar {
+// Panel lateral (variante D «Maestro-detalle» de public/propuestas/home-variantes.html), en versión liviana:
+// sin cajas ni bordes por ítem; cada módulo es un brote de su color y el activo se marca con una hoja.
+// Escritorio: columna fija a la izquierda. Bajo 768px: barra superior con los módulos en fila desplazable.
+
+:host {
+  --lado-bg: #FBF8F3;
+  --lado-borde: rgba(41, 66, 47, .09);
+  --lado-texto: #2A3A2D;
+  --lado-tenue: #7D8A7F;
+  --lado-mezcla: #1A1A1A;   // con qué se oscurece el color del módulo para el texto activo
+  --lado-hover: rgba(41, 66, 47, .045);
+  display: block;
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--neutral-0, #fff);
-  border-bottom: 1px solid var(--neutral-200, #e4e4e7);
+  height: 100dvh;
+}
 
-  &__inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 16px;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
+:host-context(body.tema-oscuro) {
+  --lado-bg: #121A15;
+  --lado-borde: rgba(232, 239, 228, .07);
+  --lado-texto: #DCE5D8;
+  --lado-tenue: #7F907E;
+  --lado-mezcla: #FFFFFF;
+  --lado-hover: rgba(232, 239, 228, .04);
+}
+
+.ico { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+
+.lado {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 22px 14px 14px;
+  background:
+    radial-gradient(120% 40% at 0% 0%, rgba(102, 170, 51, .10), transparent 70%),
+    radial-gradient(90% 30% at 100% 100%, rgba(224, 179, 58, .09), transparent 70%),
+    var(--lado-bg);
+  border-right: 1px solid var(--lado-borde);
+  color: var(--lado-texto);
+
+  // brote decorativo al pie del panel: dos tallos con hojas, muy tenue
+  &::after {
+    content: ''; position: absolute; z-index: -1; right: -18px; bottom: 54px; width: 170px; height: 210px; pointer-events: none;
+    opacity: .5;
+    background: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 170 210' fill='none' stroke='%2366AA33' stroke-width='1.4' stroke-linecap='round' opacity='.45'%3E%3Cpath d='M120 210C118 160 104 120 70 86'/%3E%3Cpath d='M70 86c-22 2-38-10-44-30 22-4 38 8 44 30z' fill='%2366AA33' fill-opacity='.10'/%3E%3Cpath d='M98 132c4-22 22-34 44-32-2 22-20 34-44 32z' fill='%2366AA33' fill-opacity='.10'/%3E%3Cpath d='M112 168c-18-6-28-22-24-42 18 6 28 22 24 42z' fill='%23E0B33A' fill-opacity='.14' stroke='%23E0B33A'/%3E%3Cpath d='M150 210c0-30 4-52 14-70'/%3E%3Cpath d='M164 140c-14-4-20-16-18-30 14 4 20 16 18 30z' fill='%2366AA33' fill-opacity='.10'/%3E%3C/svg%3E");
   }
 
-  &__logo {
-    font-weight: 800;
-    font-size: 1.2rem;
-    color: var(--primary-700, #0f766e);
-    text-decoration: none;
+  &__marca {
+    display: flex; align-items: center; gap: 11px; padding: 0 8px 14px; text-decoration: none; color: var(--lado-texto);
+    i {
+      width: 34px; height: 34px; flex: none; display: grid; place-items: center; color: #fff;
+      border-radius: 4px 50% 50% 50%;   // forma de hoja
+      background: linear-gradient(140deg, #8CC63F, #3F8A3A 70%);
+      box-shadow: 0 4px 12px rgba(63, 138, 58, .28);
+      .ico { width: 17px; height: 17px; }
+    }
+    span { display: flex; flex-direction: column; font: 800 1.12rem/1.05 var(--font-heading); letter-spacing: -.01em; }
+    small { font: 500 .7rem/1.4 var(--font-body); color: var(--lado-tenue); letter-spacing: .03em; }
   }
 
   &__nav {
+    position: relative;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
     display: flex;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+    flex-direction: column;
+    gap: 1px;
+    padding: 2px;
+    scrollbar-width: none;
+    &::-webkit-scrollbar { display: none; }
+  }
 
-    a {
-      white-space: nowrap;
-      color: var(--neutral-700, #475569);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: .95rem;
+  &__grupo {
+    display: flex; align-items: center; gap: 8px;
+    margin: 16px 0 4px 12px;
+    font: 700 .64rem var(--font-body);
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--lado-tenue);
+    // línea que se desvanece: separa sin pesar
+    &::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--lado-borde), transparent); margin-right: 8px; }
+  }
 
-      &:hover,
-      &.is-active { color: var(--primary-600, #0d9488); }
+  // cuenta y tema: flotan en la esquina superior derecha de la ventana, en una cápsula translúcida
+  &__pie {
+    position: fixed; top: 12px; right: 16px; z-index: 110;
+    display: flex; align-items: center; gap: 4px;
+    padding: 4px; border-radius: 999px;
+    background: color-mix(in srgb, var(--lado-bg) 78%, transparent);
+    border: 1px solid var(--lado-borde);
+    box-shadow: 0 6px 22px rgba(41, 66, 47, .10);
+    backdrop-filter: blur(10px) saturate(1.2);
+    -webkit-backdrop-filter: blur(10px) saturate(1.2);
+  }
+
+  &__usuario {
+    min-width: 0; border-radius: 999px; background: linear-gradient(135deg, #2F5A36, #29422F); color: #fff;
+  }
+
+  &__btn {
+    flex: none; text-align: center; white-space: nowrap; text-decoration: none; font: 600 .82rem var(--font-body);
+    padding: 8px 10px; border-radius: 999px; color: var(--lado-texto);
+    transition: background .15s, color .15s;
+    &:hover { background: var(--lado-hover); }
+    &--cta {
+      color: #fff; background: linear-gradient(135deg, #4F9A35, #2F6B3F);
+      box-shadow: 0 3px 10px rgba(47, 107, 63, .25);
+      &:hover { background: linear-gradient(135deg, #458C2E, #285C36); }
     }
   }
 
   &__tema {
-    display: grid; place-items: center; width: 36px; height: 36px; padding: 0; cursor: pointer; border-radius: 50%;
-    color: #29422F; border: 1px solid #C8D9C0; background: linear-gradient(180deg, #FFFFFF, #F0F5EA);
-    box-shadow: 0 1px 2px rgba(41, 66, 47, .12);
-    transition: background .2s, color .2s, border-color .2s, box-shadow .2s, transform .1s;
-    svg { width: 18px; height: 18px; }
-    &:hover { border-color: #29422F; box-shadow: 0 2px 8px rgba(41, 66, 47, .22); }
-    &:active { transform: scale(.94); }
+    flex: none; display: grid; place-items: center; width: 34px; height: 34px; padding: 0; cursor: pointer; border-radius: 50%;
+    color: var(--lado-tenue); border: 0; background: transparent;
+    transition: background .2s, color .2s, transform .1s;
+    svg { width: 17px; height: 17px; }
+    &:hover { background: var(--lado-hover); color: #4F9A35; }
+    &:active { transform: scale(.92); }
     &:focus-visible { outline: 2px solid #E0B33A; outline-offset: 2px; }
-    &.is-on { color: #99CC33; border-color: #66AA33; background: linear-gradient(180deg, #3D5C3D, #29422F); box-shadow: 0 0 0 2px rgba(153, 204, 51, .35); }
-  }
-
-  &__tema.is-dark { color: #99CC33; border-color: #66AA33; background: linear-gradient(180deg, #1F3324, #121A14); }
-
-  &__cta {
-    background: var(--primary-600, #0d9488);
-    color: #fff !important;
-    padding: 8px 16px;
-    border-radius: 999px;
-
-    &:hover { background: var(--primary-700, #0f766e); }
+    &.is-dark { color: #A6D65A; }
   }
 }
 
-// Tema Earthy Botanical (vista previa del plan: /plan?tema=botanico). Ver features/plan.
-:host-context(body.tema-botanico) .topbar {
-  background: #FCF9F6;
-  border-bottom-color: #C8D9C0;
+// Ítem: sin caja. Brote de color + nombre; el activo se tiñe suave y lleva una hoja a la izquierda.
+.it {
+  --tinta: color-mix(in srgb, var(--c) 72%, var(--lado-mezcla));
+  position: relative;
+  display: flex; align-items: center; gap: 11px; flex: none;
+  padding: 7px 12px 7px 9px; border-radius: 12px;
+  color: var(--lado-texto); text-decoration: none; font: 500 .89rem var(--font-body);
+  transition: background .18s, color .18s;
 
-  &__logo { color: #66AA33; }
+  &__insig {
+    width: 30px; height: 30px; flex: none; display: grid; place-items: center;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--c) 13%, transparent);
+    color: var(--c);
+    transition: border-radius .25s, background .2s, color .2s, transform .25s;
+  }
+  &__t { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
-  &__nav a {
-    color: #2A3D2A;
-    text-underline-offset: 6px;
-    text-decoration-thickness: 2px;
-    &:hover, &.is-active { color: #29422F; text-decoration: underline; text-decoration-color: #E0B33A; }
+  &:hover {
+    background: var(--lado-hover);
+    .it__insig { border-radius: 4px 50% 50% 50%; transform: rotate(-8deg); }
+  }
+  &:focus-visible { outline: 2px solid var(--c); outline-offset: 1px; }
+
+  // hoja indicadora
+  &::before {
+    content: ''; position: absolute; left: -2px; top: 50%; width: 7px; height: 14px;
+    border-radius: 0 100% 0 100%; background: var(--c);
+    transform: translateY(-50%) scale(0); transform-origin: left center;
+    transition: transform .25s cubic-bezier(.3, 1.4, .5, 1);
   }
 
-  &__cta { background: linear-gradient(135deg, #29422F, #4F8A2E); &:hover { background: #1F3324; text-decoration: none; } }
+  &.is-on {
+    background: color-mix(in srgb, var(--c) 11%, transparent);
+    color: var(--tinta); font-weight: 700;
+    &::before { transform: translateY(-50%) scale(1); }
+    .it__insig {
+      background: var(--c); color: #fff; border-radius: 4px 50% 50% 50%;
+      box-shadow: 0 3px 10px color-mix(in srgb, var(--c) 35%, transparent);
+    }
+  }
 }
 
-:host-context(body.tema-oscuro) .topbar {
-  background: #16201A;
-  border-bottom-color: #2F4533;
-  &__logo { color: #99CC33; }
-  &__nav a {
-    color: #C3CFBF;
-    &:hover, &.is-active { color: #99CC33; text-decoration-color: #99CC33; }
+:host-context(body.tema-oscuro) .it__insig { background: color-mix(in srgb, var(--c) 20%, transparent); }
+:host-context(body.tema-oscuro) .it.is-on { background: color-mix(in srgb, var(--c) 16%, transparent); }
+
+.lado__solo-movil { display: none; }
+
+.lado__plegar {
+  display: flex; align-items: center; gap: 11px; padding: 8px 12px 8px 15px; margin-top: 4px;
+  border: 0; border-top: 1px solid var(--lado-borde); border-radius: 0; background: transparent; cursor: pointer;
+  color: var(--lado-tenue); font: 500 .8rem var(--font-body); text-align: left;
+  transition: color .15s;
+  .ico { transition: transform .3s; }
+  &:hover { color: var(--lado-texto); }
+  &:focus-visible { outline: 2px solid #E0B33A; outline-offset: 2px; }
+}
+
+// ── Plegado: riel de íconos (solo escritorio) ──────────────────────────────
+@media (min-width: 768px) {
+  :host.is-plegado {
+    .lado { padding-left: 10px; padding-right: 10px; &::after { display: none; } }
+    .lado__marca { justify-content: center; padding-left: 0; padding-right: 0; span { display: none; } }
+    .lado__grupo { margin: 10px 6px 4px; font-size: 0; &::after { margin: 0; } }
+    .it { justify-content: center; padding: 7px 0; gap: 0; }
+    .it__t { display: none; }
+    .it::before { left: -6px; }
+    .lado__plegar { justify-content: center; padding-left: 0; padding-right: 0; span { display: none; } .ico { transform: scaleX(-1); } }
   }
+}
+
+// ── Móvil y tableta: barra superior ─────────────────────────────────────────
+@media (max-width: 767.98px) {
+  :host { height: auto; }
+
+  .lado {
+    flex-direction: row; align-items: center; gap: 6px;
+    height: var(--alto-barra, 60px); padding: 0 10px;
+    border-right: 0; border-bottom: 1px solid var(--lado-borde);
+    &::after { display: none; }
+
+    &__marca { padding: 0; span { display: none; } }
+    &__nav {
+      flex-direction: row; align-items: center; gap: 2px; overflow-x: auto; overflow-y: hidden;
+      // las puntas se desvanecen para insinuar que hay más
+      mask-image: linear-gradient(90deg, transparent, #000 12px, #000 calc(100% - 16px), transparent);
+    }
+    &__grupo { display: none; }
+    // en la barra, la cápsula vuelve a la fila (a la derecha de los módulos)
+    &__pie { position: static; padding: 0; border: 0; background: none; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; }
+    &__usuario {
+      flex: none;
+      ::ng-deep .user-widget__info, ::ng-deep .user-widget__chevron { display: none; }
+      ::ng-deep .user-widget__dropdown { top: calc(100% + 10px); bottom: auto; left: auto; right: 0; }
+    }
+    &__solo-escritorio { display: none; }
+    &__plegar { display: none; }
+    &__solo-movil { display: contents; }
+  }
+
+  .it { padding: 4px 10px 4px 4px; font-size: .82rem; border-radius: 999px; &::before { display: none; } }
+  .it__insig { width: 28px; height: 28px; }
 }

@@ -2,7 +2,7 @@
 
 // Misma paleta botánica de la página del plan (claro y oscuro).
 :host(.tema-botanico) {
-  min-height: calc(100dvh - 64px);
+  min-height: calc(100dvh - var(--alto-barra));
   background: #F5F0EA;
   --color-background-primary: #FCF9F6;
   --color-border-tertiary: #C8D9C0;

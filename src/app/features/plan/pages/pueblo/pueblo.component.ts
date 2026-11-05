@@ -290,7 +290,7 @@ interface Pin { sprite: THREE.Sprite; aspecto: number; tex: THREE.CanvasTexture;
     .titulo__ley:focus-visible { outline: 3px solid #66AA33; outline-offset: 2px; }
     h1 { margin: 2px 0 0; font-size: clamp(1.25rem, 2.6vw, 1.75rem); line-height: 1.15; color: #243746; }
     .titulo p { margin: 2px 0 0; font-size: .82rem; color: #3D5C3D; }
-    :host { display: flex; flex-direction: column; height: calc(100dvh - 64px); }
+    :host { display: flex; flex-direction: column; height: calc(100dvh - var(--alto-barra)); }
     .cuerpo { flex: 1; min-height: 420px; display: grid; grid-template-columns: 1fr; gap: 12px; padding: 12px 12px 0; }
     .cuerpo--ley { grid-template-columns: 280px 1fr; }
     .leyenda { min-height: 0; overflow-y: auto; padding: 2px 4px 2px 0; display: flex; flex-direction: column; gap: 2px; scrollbar-width: thin; }
@@ -389,7 +389,7 @@ interface Pin { sprite: THREE.Sprite; aspecto: number; tex: THREE.CanvasTexture;
     :host(.tema-oscuro) .leyenda button.on { background: hsl(var(--h) 28% 26%); box-shadow: inset 3px 0 0 hsl(var(--h) 50% 60%); }
     :host(.tema-oscuro) .mapa { border-color: #2f4a35; }
     @media (max-width: 860px) {
-      :host { height: auto; min-height: calc(100dvh - 64px); overflow: visible; }
+      :host { height: auto; min-height: calc(100dvh - var(--alto-barra)); overflow: visible; }
       .titulo { flex-direction: column; align-items: flex-start; padding: 10px 14px 2px; }
       .titulo p { display: none; }
       .cuerpo { flex: none; }

@@ -3,7 +3,7 @@
 .mapa {
   display: grid;
   grid-template-rows: auto 1fr;
-  height: calc(100dvh - 64px);
+  height: calc(100dvh - var(--alto-barra));
   min-height: 520px;
 
   // Barra superior de filtros, a lo ancho.

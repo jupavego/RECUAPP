@@ -40,7 +40,7 @@ const SIN_AURA: string[] = ['vivienda', 'vehiculos', 'vias', 'agua', 'naturaleza
     <p class="ayuda">Arrastra para girar · rueda para acercar · clic derecho para desplazar</p>
   `,
   styles: [`
-    :host { position: relative; display: block; height: calc(100dvh - 64px); min-height: 520px;
+    :host { position: relative; display: block; height: calc(100dvh - var(--alto-barra)); min-height: 520px;
       background: linear-gradient(#8ec8f2, #e4f2fb 70%); overflow: hidden; }
     .lienzo { position: absolute; inset: 0; }
     .panel { position: absolute; top: 12px; left: 12px; max-height: calc(100% - 24px); overflow: auto; width: 230px;
