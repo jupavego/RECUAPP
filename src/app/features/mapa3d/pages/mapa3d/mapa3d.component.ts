@@ -124,10 +124,22 @@ const ESCALA_CATASTRO = 2.2;
 const TESELA = 1500;
 /** lado (m) de las teselas de árboles: más chicas que TESELA para que la GPU descarte los que quedan fuera del encuadre */
 const TESELA_ARBOL = 750;
+/**
+ * teselas por lado de un bloque de árboles lejanos (4 × 750 m = 3 km). Cuando todo el bloque queda lejos se dibuja con
+ * una sola malla simple por especie en vez de una por tesela: unas 16 veces menos llamadas de dibujo en la vista general.
+ */
+const TESELAS_POR_BLOQUE = 4;
 /** celdas (de unos 23 m) por lado de cada tesela del terreno */
 const TESELA_TERRENO = 64;
-/** de más lejos que esto los árboles se dibujan con una versión simple (a esa distancia miden ~3 píxeles) */
-const DISTANCIA_ARBOL_SIMPLE = 10000;
+/**
+ * de más lejos que esto los árboles se dibujan con una versión simple. A 10 km la vista inicial (a ~9,5 km) dibujaba
+ * casi todos completos: 14 millones de triángulos para árboles de 2 o 3 píxeles. A 3,5 km un árbol mide ~5 píxeles
+ * y la copa simple no se distingue del modelo completo.
+ */
+const DISTANCIA_ARBOL_SIMPLE = 3500;
+
+/** bloque de árboles lejanos: una malla simple con todas sus teselas, y la esfera que la contiene */
+type BloqueArboles = { lejos: THREE.InstancedMesh; centro: THREE.Vector3; radio: number };
 
 /** Geometría nueva que reutiliza los buffers de `g` (posición, normal, color, índice): cada tesela añade solo sus atributos por instancia. */
 function compartirGeometria(g: THREE.BufferGeometry): THREE.BufferGeometry {
@@ -258,6 +270,8 @@ const GENTE_ESPACIO = 60;
 const GENTE_MAX = 3000;
 const GENTE_RADIO = 350;
 const GENTE_DISTANCIA_MAX = 1000;
+/** con la cámara más lejos que esto del centro de la vista, los autos (de menos de un píxel) ni se mueven ni se dibujan */
+const TRAFICO_DISTANCIA_MAX = 4000;
 const GENTE_VELOCIDAD = [1.3, 2.1].map(v => v * ESCALA_ACTIVOS);   // paso real de 4,7 a 7,5 km/h
 /** Distancia de la acera al eje de la vía (justo fuera de su calzada, de ANCHO_VIA / 2): en vías principales y en calles locales. */
 const GENTE_ACERA = [19.5, 8.5];
@@ -697,7 +711,7 @@ const TIPOS_ZONA: Record<string, string> = {
   imports: [DecimalPipe, RouterLink],
   template: `
     <div #lienzo class="lienzo"
-         (pointermove)="alMover($event)" (mousedown)="alRatonAbajo($event)" (pointerdown)="alPulsar($event)" (pointerup)="alSoltar($event)"
+         (mousedown)="alRatonAbajo($event)" (pointerdown)="alPulsar($event)" (pointerup)="alSoltar($event)"
          (pointerleave)="alSalir()"></div>
 
     @if (cargando()) { <div class="estado">Levantando el territorio…</div> }
@@ -1284,10 +1298,19 @@ export class Mapa3dComponent implements AfterViewInit {
   private piezasMovidas = new Set<number>();
   private claveSombra = '';
   private sombraSucia = true;
+  private centroSombra = new THREE.Vector3();
   // resolución dinámica: baja mientras la cámara se mueve y la máquina no da abasto
   private ratioMax = 1;
   private degradado = false;
   private ultimoMovimiento = 0;
+  // ritmo de cuadros: 60 por segundo mientras se usa el mapa, 30 en reposo y ninguno si el lienzo no se ve
+  private ultimaActividad = 0;
+  private proximoCuadro = 0;
+  private lienzoVisible = true;
+  private camaraRitmo = new THREE.Vector3();
+  private objetivoRitmo = new THREE.Vector3();
+  // último movimiento del cursor sin atender: el hover (pines, rótulos, veredas, ríos) se calcula una vez por cuadro
+  private moverPendiente: PointerEvent | null = null;
   private promedioMs = 16;
   private camaraAnterior = new THREE.Vector3();
   private objetivoAnterior = new THREE.Vector3();
@@ -1379,6 +1402,7 @@ export class Mapa3dComponent implements AfterViewInit {
   private geoGente: THREE.BufferGeometry[] = [];
   private matGente: THREE.Material | null = null;
   private gentePintada = false;
+  private traficoVisible = true;
   private pajaros: Pajaro[] = [];
   private avion: Avion | null = null;
   private tiempoAvion = 0;
@@ -1425,7 +1449,9 @@ export class Mapa3dComponent implements AfterViewInit {
   /** vereda (índice) → población y viviendas del año elegido */
   private datosPorVereda = new Map<number, { pob: number; viv: number }>();
   /** un grupo por tesela: con detalle completo y con la versión simple que se usa de lejos */
-  private teselasArboles: { cerca: THREE.InstancedMesh; lejos: THREE.InstancedMesh; centro: THREE.Vector3 }[] = [];
+  private teselasArboles: { cerca: THREE.InstancedMesh; lejos: THREE.InstancedMesh; centro: THREE.Vector3; bloque?: BloqueArboles }[] = [];
+  /** bloques de 3 × 3 km con la versión simple de todas sus teselas en una malla: se usan cuando ninguna está cerca */
+  private bloquesArboles: BloqueArboles[] = [];
   private texturaRio: THREE.CanvasTexture | null = null;
   private readonly rios = new Map<string, Rio>();
   private aguaPos: THREE.BufferAttribute | null = null;
@@ -1579,8 +1605,10 @@ export class Mapa3dComponent implements AfterViewInit {
 
   private iniciarRender(): void {
     const el = this.lienzo.nativeElement;
-    this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     this.ratioMax = Math.min(window.devicePixelRatio, 2);
+    // con densidad ≥ 1,5 los píxeles ya son tan finos que el suavizado por hardware (MSAA) casi no se nota y
+    // multiplica la memoria y el ancho de banda de cada cuadro; solo se pide en pantallas de densidad baja
+    this.renderer = new THREE.WebGLRenderer({ antialias: this.ratioMax < 1.5, alpha: true });
     this.renderer.setPixelRatio(this.ratioMax);
     this.renderer.setSize(el.clientWidth, el.clientHeight);
     this.renderer.shadowMap.enabled = true;
@@ -1609,9 +1637,19 @@ export class Mapa3dComponent implements AfterViewInit {
       ev.preventDefault();
       this.vuelo = null;
       this.zoomPendiente += ev.deltaY * 0.0022;
+      this.ultimaActividad = performance.now();
     };
-    this.renderer.domElement.addEventListener('wheel', rueda, { passive: false });
-    this.destroyRef.onDestroy(() => this.renderer.domElement.removeEventListener('wheel', rueda));
+    // fuera de Angular: cada evento del ratón dentro de la zona dispararía una revisión de cambios de toda la vista
+    // (un ratón de 1000 Hz manda mil por segundo); el bucle de dibujo los atiende una vez por cuadro
+    const mover = (ev: PointerEvent) => this.alMover(ev);
+    this.zona.runOutsideAngular(() => {
+      this.renderer.domElement.addEventListener('wheel', rueda, { passive: false });
+      el.addEventListener('pointermove', mover);
+    });
+    this.destroyRef.onDestroy(() => {
+      this.renderer.domElement.removeEventListener('wheel', rueda);
+      el.removeEventListener('pointermove', mover);
+    });
 
     const redim = () => {
       this.renderer.setSize(el.clientWidth, el.clientHeight);
@@ -4003,6 +4041,13 @@ export class Mapa3dComponent implements AfterViewInit {
 
   private animarTrafico(dt: number): void {
     if (!this.flota.length) return;
+    // de lejos los autos miden menos de un píxel: se apagan y se congela su recorrido (al acercarse siguen donde iban)
+    const visible = this.conduciendo() || this.camara.position.distanceTo(this.controles.target) < TRAFICO_DISTANCIA_MAX;
+    if (visible !== this.traficoVisible) {
+      this.traficoVisible = visible;
+      for (const m of this.flota.flat()) m.visible = visible;
+    }
+    if (!visible) return;
     const { m4, q, qz, arriba, lateral, pos, escala } = this.tmpTrafico;
     escala.set(1, 1, 1);
     /**
@@ -6060,20 +6105,27 @@ export class Mapa3dComponent implements AfterViewInit {
    */
   private actualizarSombras(): void {
     const dist = this.camara.position.distanceTo(this.controles.target);
-    const mitad = Math.min(11000, Math.max(2200, dist * 0.85));
+    // el encuadre de la sombra cambia por saltos y no con cada centímetro que se mueve la cámara: su tamaño sube o baja
+    // en escalones de 25 % y su centro se pega a una cuadrícula de 1/8 de ese tamaño. Así, al desplazarse o acercarse,
+    // el mapa de sombras (4096², todo lo que proyecta sombra se vuelve a dibujar) se repinta unas pocas veces y no en
+    // cada cuadro. El 7 % extra cubre lo que el centro pegado se aparta del punto que se mira.
+    const necesaria = Math.min(11000, Math.max(2200, dist * 0.85 * 1.07));
+    const mitad = Math.min(11000, 2200 * Math.pow(1.25, Math.ceil(Math.log(necesaria / 2200) / Math.log(1.25) - 1e-6)));
+    const paso = mitad / 8, t = this.controles.target;
+    const centro = this.centroSombra.set(Math.round(t.x / paso) * paso, Math.round(t.y / paso) * paso, Math.round(t.z / paso) * paso);
     const c = this.sol.shadow.camera;
     c.left = -mitad; c.right = mitad; c.top = mitad; c.bottom = -mitad;
     c.updateProjectionMatrix();
-    this.sol.target.position.copy(this.controles.target);
-    this.sol.position.copy(this.controles.target).add(SOL_DIRECCION);
+    this.sol.target.position.copy(centro);
+    this.sol.position.copy(centro).add(SOL_DIRECCION);
     this.sol.shadow.normalBias = (mitad * 2 / 4096) * 4;
     // los árboles y edificios solo proyectan sombra cuando se ven de cerca (ahorra mucho trabajo a la GPU)
     const cerca = dist < DISTANCIA_SOMBRAS;
     for (const m of this.mallasEdificios) m.castShadow = cerca;
     for (const t of this.teselasArboles) t.cerca.castShadow = t.lejos.castShadow = cerca;
+    for (const b of this.bloquesArboles) b.lejos.castShadow = cerca;
     // el mapa de sombras solo se repinta si la luz se movió, cambió su alcance o algo que proyecta sombra se alzó
-    const t = this.controles.target;
-    const clave = `${t.x.toFixed(1)}|${t.y.toFixed(1)}|${t.z.toFixed(1)}|${mitad.toFixed(1)}|${cerca}`;
+    const clave = `${centro.x}|${centro.y}|${centro.z}|${mitad}|${cerca}`;
     if (clave !== this.claveSombra) { this.claveSombra = clave; this.sombraSucia = true; }
   }
 
@@ -6179,10 +6231,15 @@ export class Mapa3dComponent implements AfterViewInit {
     normal.needsUpdate = true;
   }
 
-  /** De lejos cada tesela de árboles usa la versión simple; de cerca, la completa. */
+  /**
+   * De lejos cada tesela de árboles usa la versión simple; de cerca, la completa. Si ninguna tesela de un bloque puede
+   * estar cerca (su punto más próximo queda más allá del umbral), el bloque entero se dibuja con una sola malla.
+   */
   private actualizarArboles(): void {
     const cam = this.camara.position;
+    for (const b of this.bloquesArboles) b.lejos.visible = cam.distanceTo(b.centro) - b.radio > DISTANCIA_ARBOL_SIMPLE;
     for (const t of this.teselasArboles) {
+      if (t.bloque?.lejos.visible) { t.cerca.visible = t.lejos.visible = false; continue; }
       const lejos = cam.distanceTo(t.centro) > DISTANCIA_ARBOL_SIMPLE;
       t.cerca.visible = !lejos;
       t.lejos.visible = lejos;
@@ -6250,7 +6307,7 @@ export class Mapa3dComponent implements AfterViewInit {
     marcar('edificios', this.mallasEdificios);
     marcar('fachadas', this.mallasFachadas.map(f => f.malla));
     marcar('cercas', this.mallasCercas.map(f => f.malla));
-    marcar('árboles', this.teselasArboles.flatMap(t => [t.cerca, t.lejos]));
+    marcar('árboles', [...this.teselasArboles.flatMap(t => [t.cerca, t.lejos]), ...this.bloquesArboles.map(b => b.lejos)]);
     marcar('gente', this.mallasGente);
     marcar('tráfico', this.flota.flat());
     const porCapa: Record<string, number> = {};
@@ -6311,10 +6368,27 @@ export class Mapa3dComponent implements AfterViewInit {
     this.zona.runOutsideAngular(() => {
       let anterior = performance.now();
       const inicio = anterior;
+      // con el lienzo fuera de la vista (página desplazada, otra pestaña del panel) no se dibuja nada
+      const obs = new IntersectionObserver(([e]) => this.lienzoVisible = e.isIntersecting);
+      obs.observe(this.lienzo.nativeElement);
+      this.destroyRef.onDestroy(() => obs.disconnect());
       const bucle = (t: number) => {
         this.animacion = requestAnimationFrame(bucle);
+        if (!this.lienzoVisible) return;
         // durante los primeros segundos la escena aún se completa (capas que llegan después): sombra siempre fresca
-        if (t - inicio < 4000) this.sombraSucia = true;
+        const cargando = t - inicio < 4000;
+        if (cargando) this.sombraSucia = true;
+        // ritmo: 60 cuadros por segundo como tope (en pantallas de 120–144 Hz no se dibuja de más) y 30 cuando nadie
+        // toca el mapa desde hace un segundo; nubes, autos y gente se ven igual de fluidos y la GPU trabaja la mitad
+        const camaraQuieta = this.camara.position.distanceToSquared(this.camaraRitmo) < 1e-4
+          && this.controles.target.distanceToSquared(this.objetivoRitmo) < 1e-4;
+        if (!camaraQuieta || this.vuelo || this.conduciendo() || this.moverPendiente || cargando) this.ultimaActividad = t;
+        this.camaraRitmo.copy(this.camara.position);
+        this.objetivoRitmo.copy(this.controles.target);
+        const intervalo = t - this.ultimaActividad > 1000 ? 1000 / 30 : 1000 / 60;
+        if (t + 2 < this.proximoCuadro) return;           // 2 ms de holgura: los cuadros de 60 Hz no llegan exactos
+        this.proximoCuadro = t - this.proximoCuadro > intervalo ? t + intervalo : this.proximoCuadro + intervalo;
+        this.atenderMover();
         const dt = Math.min(0.1, (t - anterior) / 1000);
         anterior = t;
         const t0 = this.perf ? performance.now() : 0;
@@ -7007,6 +7081,7 @@ export class Mapa3dComponent implements AfterViewInit {
     const m4 = new THREE.Matrix4(), color = new THREE.Color();
     const eje = new THREE.Vector3(0, 1, 0), q = new THREE.Quaternion(), p = new THREE.Vector3(), esc = new THREE.Vector3();
     this.teselasArboles = [];
+    const porBloque = new Map<number, { geo: THREE.BufferGeometry; mat: THREE.Material; hijos: number[]; zona: Float32Array[]; peso: Float32Array[] }>();
     for (const grupo of porTesela.values()) {
       const sp = especies[grupo[0].especie];
       const aZona = new Float32Array(grupo.length), aPeso = new Float32Array(grupo.length);
@@ -7039,6 +7114,43 @@ export class Mapa3dComponent implements AfterViewInit {
       }
       lejos.visible = false;
       this.teselasArboles.push({ cerca, lejos, centro: cerca.boundingSphere!.center.clone() });
+      // la tesela cae entera dentro de un bloque (los dos parten del mismo borde y 3 km es múltiplo de 750 m)
+      const tx = Math.floor((grupo[0].x + this.ancho / 2) / TESELA_ARBOL), tz = Math.floor((grupo[0].z + this.alto / 2) / TESELA_ARBOL);
+      const claveBloque = ((Math.floor(tx / TESELAS_POR_BLOQUE) + Math.floor(tz / TESELAS_POR_BLOQUE) * 1000) * 8 + grupo[0].especie) * 2 + (grupo[0].junto ? 1 : 0);
+      const b = porBloque.get(claveBloque) ?? porBloque.set(claveBloque, { geo: sp.lejos, mat, hijos: [], zona: [], peso: [] }).get(claveBloque)!;
+      b.hijos.push(this.teselasArboles.length - 1);
+      b.zona.push(aZona);
+      b.peso.push(aPeso);
+    }
+
+    // bloques: copian (en orden) matrices, colores y atributos de sus teselas en una sola malla simple
+    this.bloquesArboles = [];
+    for (const b of porBloque.values()) {
+      if (b.hijos.length < 2) continue;                    // un bloque de una sola tesela no ahorra nada
+      const hijos = b.hijos.map(i => this.teselasArboles[i]);
+      const total = hijos.reduce((s, t) => s + t.cerca.count, 0);
+      const malla = new THREE.InstancedMesh(compartirGeometria(b.geo), b.mat, total);
+      const matrices = malla.instanceMatrix.array as Float32Array;
+      const colores = new Float32Array(total * 3), zona = new Float32Array(total), peso = new Float32Array(total);
+      let k = 0;
+      hijos.forEach((t, j) => {
+        matrices.set(t.cerca.instanceMatrix.array as Float32Array, k * 16);
+        colores.set(t.cerca.instanceColor!.array as Float32Array, k * 3);
+        zona.set(b.zona[j], k);
+        peso.set(b.peso[j], k);
+        k += t.cerca.count;
+      });
+      malla.instanceColor = new THREE.InstancedBufferAttribute(colores, 3);
+      malla.geometry.setAttribute('aZona', new THREE.InstancedBufferAttribute(zona, 1));
+      malla.geometry.setAttribute('aPeso', new THREE.InstancedBufferAttribute(peso, 1));
+      malla.receiveShadow = true;
+      malla.computeBoundingSphere();
+      malla.boundingSphere!.radius += ALZA_ELEGIDA + 30;
+      malla.visible = false;
+      this.escena.add(malla);
+      const bloque: BloqueArboles = { lejos: malla, centro: malla.boundingSphere!.center.clone(), radio: malla.boundingSphere!.radius };
+      for (const t of hijos) t.bloque = bloque;
+      this.bloquesArboles.push(bloque);
     }
   }
 
@@ -7297,14 +7409,28 @@ export class Mapa3dComponent implements AfterViewInit {
     return this.agrupadorIconos?.bajoCursor(this.camara, ev.clientX - r.left, ev.clientY - r.top, r.width, r.height) ?? null;
   }
 
+  /** Llega fuera de Angular con cada evento del ratón; solo acumula. El hover se resuelve en el bucle, una vez por cuadro. */
   alMover(ev: PointerEvent): void {
-    if (ev.buttons & 4) {                      // rueda presionada: gira el mapa en horizontal
+    this.ultimaActividad = performance.now();
+    if (ev.buttons & 4) {                      // rueda presionada: gira el mapa en horizontal (los giros se suman, no se descartan)
       this.vuelo = null;
       this.giroPendiente -= ev.movementX * 0.006;
       this.inclinacionPendiente += ev.movementY * 0.006;
       return;
     }
     if (ev.buttons) return;
+    this.moverPendiente = ev;
+  }
+
+  /** Atiende el último movimiento del cursor dentro de Angular, para que la vista refleje el hover. */
+  private atenderMover(): void {
+    const ev = this.moverPendiente;
+    if (!ev) return;
+    this.moverPendiente = null;
+    this.zona.run(() => this.resolverHover(ev));
+  }
+
+  private resolverHover(ev: PointerEvent): void {
     const pin = this.pinBajoCursor(ev);
     if (pin) {                                           // un pin tapa todo lo que tenga detrás (ríos, veredas, edificios)
       const ref = pin.icono?.ref;
@@ -7379,6 +7505,7 @@ export class Mapa3dComponent implements AfterViewInit {
   }
 
   alSalir(): void {
+    this.moverPendiente = null;                          // un movimiento atrasado no debe volver a encender el hover
     this.marcarServicioHover(-1);
     this.marcarFabricaHover(-1);
     this.marcarEquipHover(-1);
