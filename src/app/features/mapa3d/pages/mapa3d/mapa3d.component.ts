@@ -4885,9 +4885,14 @@ export class Mapa3dComponent implements AfterViewInit {
     t.colorSpace = THREE.SRGBColorSpace;
     // tamaño fijo en pantalla (sin perspectiva): se lee igual de lejos que de cerca
     const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: t, transparent: true, depthTest: false, depthWrite: false, sizeAttenuation: false }));
-    const alto = 0.032;                       // fracción del alto de la vista
+    const alto = 0.026;                       // fracción del alto de la vista
     s.scale.set(alto * w / h, alto, 1);
     s.position.set(this.aX(lon), this.alturaEn(lon, lat) + 15, this.aZ(lat));
+    // de lejos los 17 nombres se montan unos sobre otros: aparecen al acercarse (de 2,6 km a 1,6 km de la cámara)
+    const material = s.material;
+    s.onBeforeRender = (_r, _e, cam) => {
+      material.opacity = Math.min(1, Math.max(0, (2600 - cam.position.distanceTo(s.position)) / 1000));
+    };
     s.renderOrder = 12;
     return s;
   }
