@@ -7349,6 +7349,10 @@ export class Mapa3dComponent implements AfterViewInit {
     this.pulsado = null;
     this.lienzo.nativeElement.style.cursor = 'grab';
     if (!p || Math.hypot(ev.clientX - p.x, ev.clientY - p.y) > 5) return;
+    // el segundo clic de un doble clic en una zona va primero: tras el primero la cámara vuela y lo que quede bajo el
+    // cursor (un río, un pin) ya no es la zona
+    const doble = this.zonaDobleClic(ev);
+    if (doble >= 0) { this.alternarAislada(doble); return; }
     const pin = this.pinBajoCursor(ev);
     if (pin?.grupo) {                                    // clic en un grupo: la cámara se acerca para separarlo
       const objetivo = new THREE.Vector3(pin.x, this.alturaXZ(pin.x, pin.z) + 10, pin.z);
@@ -7368,16 +7372,9 @@ export class Mapa3dComponent implements AfterViewInit {
     const rot = this.rotuloBajoCursor(ev);
     if (rot >= 0) {                                      // clic en la cápsula de una zona: manda sobre lo que haya detrás
       this.seleccionarFabrica(-1);
-      // doble clic: aísla la zona (el segundo clic llega con la zona ya elegida por el primero); con zonas aisladas, un clic suma o quita la zona
-      const ahora = performance.now();
-      const doble = rot === this.ultimoRotulo.id && ahora - this.ultimoRotulo.t < 350;
-      this.ultimoRotulo = { id: rot, t: doble ? 0 : ahora };
-      if (this.aisladas.size) { if (!doble) this.alternarAislada(rot); return; }
-      if (doble) {
-        if (this.elegida !== rot) this.elegir(rot);
-        this.alternarAislada(rot);
-        return;
-      }
+      this.anotarClic(ev, rot);                          // por si llega el segundo clic de un doble clic
+      // con zonas aisladas, un clic en la cápsula de una zona desvanecida espera al segundo clic
+      if (this.aisladas.size && !this.aisladas.has(rot)) return;
       if (rot === this.elegida) { this.deseleccionar(); this.seleccionarRio(null); } else this.elegir(rot);
       return;
     }
@@ -7399,7 +7396,8 @@ export class Mapa3dComponent implements AfterViewInit {
     this.seleccionarFabrica(-1);
     this.soltarRed();
     const id = this.idBajoCursor(ev);
-    if (this.aisladas.size && !this.aisladas.has(id)) return;   // con zonas aisladas, lo oculto no se toca
+    this.anotarClic(ev, id);
+    if (this.aisladas.size && !this.aisladas.has(id)) return;   // con zonas aisladas, lo desvanecido solo responde al doble clic
     // un clic en la zona ya elegida, o fuera de toda zona, la deselecciona y la baja
     if (id < 0 || id === this.elegida) {
       this.deseleccionar();
@@ -7409,12 +7407,29 @@ export class Mapa3dComponent implements AfterViewInit {
     }
   }
 
-  // ── Aislar zonas con doble clic en su cápsula ─────────────────────────────────────────────────────
-  // Con alguna zona aislada, el resto del mapa (terreno, edificios, árboles, vías, gente…) deja de dibujarse y solo quedan
-  // las cápsulas de todas las zonas, para sumar otra o quitar una con un clic. La máscara se evalúa en la GPU con el mismo
-  // croquis de identificadores que usa el cursor, así que no hay que tocar cada capa por separado.
+  // ── Aislar zonas con doble clic (en su cápsula o en el terreno) ─────────────────────────────────────
+  // Con alguna zona aislada, el resto del mapa se desvanece: el terreno, las vías y los cauces quedan como un velo claro, y
+  // los edificios, árboles y demás piezas repetidas de afuera ni se dibujan (alivia la GPU). Las
+  // cápsulas de todas las zonas siguen a la vista: doble clic en otra la suma, doble clic en una aislada la quita. La
+  // máscara se evalúa en la GPU con el mismo croquis de identificadores que usa el cursor, así que no hay que tocar cada
+  // capa por separado.
   private readonly aisladas = new Set<number>();
-  private ultimoRotulo = { id: -1, t: 0 };
+  private ultimoClic = { id: -1, t: 0, x: 0, y: 0 };
+
+  /**
+   * Si este clic completa un doble clic sobre una zona, devuelve la zona del primero (su cápsula pudo moverse entre
+   * ambos, porque el primer clic elige la zona y la cámara vuela hacia ella); si no, devuelve -1.
+   */
+  private zonaDobleClic(ev: PointerEvent): number {
+    const u = this.ultimoClic;
+    this.ultimoClic = { id: -1, t: 0, x: 0, y: 0 };
+    return u.id >= 0 && performance.now() - u.t < 500 && Math.hypot(ev.clientX - u.x, ev.clientY - u.y) < 14 ? u.id : -1;
+  }
+
+  /** Anota un clic sobre una zona (su cápsula o su terreno) para reconocer el doble clic. */
+  private anotarClic(ev: PointerEvent, id: number): void {
+    this.ultimoClic = { id, t: performance.now(), x: ev.clientX, y: ev.clientY };
+  }
   private readonly uMascara = { uMasc: { value: null as THREE.Texture | null }, uMascCaja: { value: new THREE.Vector4() }, uMascOn: { value: 0 } };
   private readonly parcheados = new WeakSet<THREE.Material>();
   private teselas: { malla: THREE.Mesh; i0: number; i1: number; j0: number; j1: number }[] = [];
@@ -7443,23 +7458,83 @@ export class Mapa3dComponent implements AfterViewInit {
     const activo = this.aisladas.size > 0;
     if (activo) this.prepararMascara();
     this.uMascara.uMascOn.value = activo ? 1 : 0;
-    // las teselas del terreno sin una sola celda en las zonas aisladas ni se envían a la GPU
-    for (const t of this.teselas) t.malla.visible = !activo || this.teselaToca(t);
+    // la neblina de las cañadas no pasa por la máscara: sobre la bruma clara se vería como manchas grises
+    for (const n of this.nieblas) n.sprite.visible = !activo;
+    this.descartarFuera(activo);
     this.bordeClaves = '';
     this.sombraSucia = true;
   }
 
-  private teselaToca(t: { i0: number; i1: number; j0: number; j1: number }): boolean {
-    const uv = this.terreno.geometry.getAttribute('uv') as THREE.BufferAttribute;
-    const W = this.lienzoIds.width, H = this.lienzoIds.height, filas = this.filasTerreno, cy = uv.count / filas - 1;
-    for (let j = Math.max(0, t.j0 - 1); j <= Math.min(cy, t.j1 + 1); j++) {
-      for (let i = Math.max(0, t.i0 - 1); i <= Math.min(filas - 1, t.i1 + 1); i++) {
-        const k = j * filas + i;
-        const x = Math.min(W - 1, Math.round(uv.getX(k) * (W - 1))), y = Math.min(H - 1, Math.round((1 - uv.getY(k)) * (H - 1)));
-        if (this.aisladas.has(this.mapaIds[y * W + x] - 1)) return true;
+  /** Capa de la cámara que nunca se dibuja: ahí van los objetos que caen enteros fuera de las zonas aisladas. */
+  private static readonly CAPA_FUERA = 5;
+  private readonly descartados = new Set<THREE.Object3D>();
+  private readonly zonasDeObjeto = new WeakMap<THREE.Object3D, Set<number>>();
+
+  /**
+   * Lo que cae entero fuera de las zonas aisladas (teselas de árboles, edificios, cercas, fachadas…) se pasa a una capa
+   * que la cámara no ve: ni se envía a la GPU, ni proyecta sombra, ni se puede tocar con el cursor. Lo que cruza una zona
+   * aislada se queda y la máscara del sombreado lava su parte de afuera. El terreno sigue como velo, y lo que se mueve
+   * por todo el mapa (tráfico, gente, avión, pájaros, nubes) no se toca porque su caja de hoy no vale mañana.
+   */
+  private descartarFuera(activo: boolean): void {
+    for (const o of this.descartados) o.layers.set(0);
+    this.descartados.clear();
+    if (!activo) return;
+    const fijos = new Set<THREE.Object3D>();
+    const todo = (o: THREE.Object3D | null | undefined) => o?.traverse(c => { fijos.add(c); });
+    for (const t of this.teselas) fijos.add(t.malla);
+    for (const m of this.flota.flat()) fijos.add(m);
+    for (const m of this.mallasGente) if (m) fijos.add(m);
+    for (const p of this.pajaros) todo(p.grupo);
+    todo(this.avion?.grupo);
+    todo(this.grupoBarrios);
+    // nubes y disco solar cruzan todo el mapa; la neblina ya se apaga aparte. El humo de las chimeneas sí se descarta
+    for (const nube of this.nubes) for (const b of nube.bocanadas) fijos.add(b.sprite);
+    for (const n of this.nieblas) fijos.add(n.sprite);
+    if (this.disco) fijos.add(this.disco);
+    const caja = new THREE.Box3();
+    this.escena.updateMatrixWorld();
+    this.escena.traverse(o => {
+      const g = (o as THREE.Mesh).geometry as THREE.BufferGeometry | undefined;
+      if (!g || fijos.has(o) || o.userData['sinMascara'] || !o.layers.isEnabled(0)) return;
+      let zonas = this.zonasDeObjeto.get(o);
+      if (!zonas) {
+        const im = o as THREE.InstancedMesh;
+        if (im.isInstancedMesh) {
+          if (!im.count) return;
+          im.computeBoundingBox();
+          caja.copy(im.boundingBox!);
+        } else {
+          if (!g.boundingBox) g.computeBoundingBox();
+          caja.copy(g.boundingBox!);
+        }
+        zonas = this.zonasEnCaja(caja.applyMatrix4(o.matrixWorld));
+        this.zonasDeObjeto.set(o, zonas);
+      }
+      for (const z of zonas) if (this.aisladas.has(z)) return;
+      o.layers.set(Mapa3dComponent.CAPA_FUERA);
+      this.descartados.add(o);
+    });
+  }
+
+  /** Zonas que toca una caja del modelo, leídas en el croquis de identificadores (a lo sumo unas 40 mil celdas). */
+  private zonasEnCaja(caja: THREE.Box3): Set<number> {
+    const [o, s, e, n] = this.relieve.bbox;
+    const W = this.lienzoIds.width, H = this.lienzoIds.height;
+    const px = (x: number) => (this.lon0 + x / this.mLon - o) / (e - o) * W;
+    const py = (z: number) => (n - (this.lat0 - z / this.mLat)) / (n - s) * H;
+    const x0 = Math.max(0, Math.floor(px(caja.min.x))), x1 = Math.min(W - 1, Math.ceil(px(caja.max.x)));
+    const y0 = Math.max(0, Math.floor(py(caja.min.z))), y1 = Math.min(H - 1, Math.ceil(py(caja.max.z)));
+    const zonas = new Set<number>();
+    if (x1 < x0 || y1 < y0) return zonas;
+    const paso = Math.max(1, Math.floor(Math.sqrt((x1 - x0 + 1) * (y1 - y0 + 1) / 40000)));
+    for (let y = y0; y <= y1; y += paso) {
+      for (let x = x0; x <= x1; x += paso) {
+        const id = this.mapaIds[y * W + x] - 1;
+        if (id >= 0) zonas.add(id);
       }
     }
-    return false;
+    return zonas;
   }
 
   /** Textura de una banda con 255 donde hay una zona aislada (mismas filas que el croquis de identificadores) y parche de los materiales. */
@@ -7510,19 +7585,20 @@ export class Mapa3dComponent implements AfterViewInit {
         .replace('#include <common>', `#include <common>\n${decl}`)
         .replace(ancla, `${ancla}
           #ifdef USE_INSTANCING
-            vMascW = (modelMatrix * vec4(instanceMatrix[3].xyz, 1.0)).xyz;
+            vMascW = (modelMatrix * vec4(instanceMatrix[3].xyz, 1.0)).xyz;   // la pieza entera según su centro
+            // edificios, árboles y demás piezas repetidas de las zonas excluidas no se dibujan: es lo que más pesa en la GPU
             if (uMascOn > 0.5 && mascaraEn(vMascW) < 0.5) gl_Position = vec4(2.0, 2.0, 2.0, 1.0);
           #else
             vMascW = (modelMatrix * vec4(transformed, 1.0)).xyz;
           #endif`);
-      sh.fragmentShader = sh.fragmentShader
-        .replace('#include <common>', `#include <common>\n${decl}`)
-        .replace('void main() {', `void main() {
-          #ifndef USE_INSTANCING
-            if (uMascOn > 0.5 && mascaraEn(vMascW) < 0.5) discard;
-          #endif`);
+      sh.fragmentShader = sh.fragmentShader.replace('#include <common>', `#include <common>\n${decl}`);
+      // fuera de las zonas aisladas el terreno, las vías y los cauces se lavan hacia una bruma clara: queda un velo muy tenue del contexto
+      const lavar = `if (uMascOn > 0.5 && mascaraEn(vMascW) < 0.5) gl_FragColor.rgb = mix(gl_FragColor.rgb, vec3(0.93, 0.95, 0.97), 0.9);`;
+      sh.fragmentShader = sh.fragmentShader.includes('#include <dithering_fragment>')
+        ? sh.fragmentShader.replace('#include <dithering_fragment>', `#include <dithering_fragment>\n${lavar}`)
+        : sh.fragmentShader.replace('void main() {', 'void main() {\nif (uMascOn > 0.5 && mascaraEn(vMascW) < 0.5) discard;');
     };
-    m.customProgramCacheKey = () => `${clavePrevia}|mascara`;
+    m.customProgramCacheKey = () => `${clavePrevia}|mascara3`;
     m.needsUpdate = true;
   }
 
