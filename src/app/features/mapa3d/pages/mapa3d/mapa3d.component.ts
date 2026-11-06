@@ -749,6 +749,25 @@ const TIPOS_ZONA: Record<string, string> = {
             </button>
           }
         </span>
+        <span class="sep" aria-hidden="true"></span>
+        <!-- capas de contexto: vista subterránea, barrios del casco urbano y redes de servicios -->
+        <button type="button" class="ley" [class.activa]="subterraneo()" [class.cargando]="cargandoRedesAgua()" [attr.aria-pressed]="subterraneo()"
+                [disabled]="cargandoRedesAgua()" aria-label="Subterráneo" style="--c:#a1887f" (click)="alternarSubterraneo()">
+          <span class="medalla-ley" aria-hidden="true">🕳️</span>
+          <span class="ley-nombre" aria-hidden="true"><b>Subterráneo</b><i>{{ cargandoRedesAgua() ? 'cargando las redes…' : 'redes de EPM bajo el terreno' }}</i></span>
+        </button>
+        <button type="button" class="ley" [class.activa]="barriosVisibles()" [class.cargando]="cargandoBarrios()" [attr.aria-pressed]="barriosVisibles()"
+                [disabled]="cargandoBarrios()" aria-label="Barrios" style="--c:#ce93d8" (click)="alternarBarrios()">
+          <span class="medalla-ley" aria-hidden="true">🏘️</span>
+          <span class="ley-nombre" aria-hidden="true"><b>Barrios</b><i>{{ cargandoBarrios() ? 'cargando los límites…' : 'límites del casco urbano' }}</i></span>
+        </button>
+        @if (hayRedes) {
+          <button type="button" class="ley" [class.activa]="redesVisibles()" [attr.aria-pressed]="redesVisibles()"
+                  aria-label="Redes" style="--c:#4db6ac" (click)="alternarRedes()">
+            <span class="medalla-ley" aria-hidden="true">🔌</span>
+            <span class="ley-nombre" aria-hidden="true"><b>Redes</b><i>redes y servicios en superficie</i></span>
+          </button>
+        }
       </div>
     </div>
 
@@ -813,13 +832,6 @@ const TIPOS_ZONA: Record<string, string> = {
             }
           </div>
         }
-        <div class="capas-extra">
-          <button type="button" class="tog" [class.on]="subterraneo()" [attr.aria-pressed]="subterraneo()" [disabled]="cargandoRedesAgua()" (click)="alternarSubterraneo()">{{ cargandoRedesAgua() ? 'Cargando…' : 'Subterráneo' }}</button>
-          <button type="button" class="tog" [class.on]="barriosVisibles()" [attr.aria-pressed]="barriosVisibles()" [disabled]="cargandoBarrios()" (click)="alternarBarrios()">{{ cargandoBarrios() ? 'Cargando…' : 'Barrios' }}</button>
-          @if (hayRedes) {
-            <button type="button" class="tog" [class.on]="redesVisibles()" [attr.aria-pressed]="redesVisibles()" (click)="alternarRedes()">Redes</button>
-          }
-        </div>
         @if (hayRedes && redesVisibles() && !subterraneo()) {
           <div class="leyenda" role="group" aria-label="Redes y servicios">
             <span class="leyenda-t">Redes y servicios</span>
@@ -1102,9 +1114,6 @@ const TIPOS_ZONA: Record<string, string> = {
     .barra-ley .pista > .ley:first-child .ley-nombre { left: 0; transform: translate(0, -6px) scale(.85); transform-origin: 20px -8px; }
     .barra-ley .pista > .ley:first-child:hover .ley-nombre, .barra-ley .pista > .ley:first-child:focus-visible .ley-nombre { transform: translate(0, 0) scale(1); }
     .barra-ley .pista > .ley:first-child .ley-nombre::before { left: 20px; }
-    .barra-ley .ley-hijos > .ley:last-child .ley-nombre { left: auto; right: 0; transform: translate(0, -6px) scale(.85); transform-origin: calc(100% - 16px) -8px; }
-    .barra-ley .ley-hijos > .ley:last-child:hover .ley-nombre, .barra-ley .ley-hijos > .ley:last-child:focus-visible .ley-nombre { transform: translate(0, 0) scale(1); }
-    .barra-ley .ley-hijos > .ley:last-child .ley-nombre::before { left: auto; right: 11px; transform: rotate(45deg); }
     @media (prefers-reduced-motion: reduce) {
       .barra-ley .medalla-ley, .barra-ley .ley-nombre, .barra-ley .ley-nombre b, .barra-ley .ley-nombre i { transition: none; }
     }
@@ -1264,11 +1273,15 @@ const TIPOS_ZONA: Record<string, string> = {
     .anios button { padding: 4px 9px; font-size: .75rem; background: rgba(38,66,90,.12); color: #26425a; }
     .anios button:hover { background: rgba(38,66,90,.22); }
     .anios button.activo { background: #26425a; color: #fff; }
-    .capas-extra { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 6px; margin-bottom: 10px; }
-    .capas-extra .tog { padding: 6px 8px; background: rgba(38,66,90,.12); color: #26425a; }
-    .capas-extra .tog:hover { background: rgba(38,66,90,.22); }
-    .capas-extra .tog.on { background: #26425a; color: #fff; }
-    .capas-extra .tog:disabled { opacity: .6; cursor: progress; }
+    /* capa que aún carga: aro que gira alrededor del ícono */
+    .barra-ley .ley.cargando { cursor: progress; }
+    .barra-ley .ley.cargando::after { content: ''; position: absolute; inset: 2px; border-radius: 50%;
+      border: 2px solid transparent; border-top-color: var(--c); animation: girar-ley .8s linear infinite; }
+    @keyframes girar-ley { to { transform: rotate(360deg); } }
+    /* el último ícono de la fila abre su nombre hacia la izquierda, para no salirse por el borde */
+    .barra-ley .pista > .ley:last-child .ley-nombre { left: auto; right: 0; transform: translate(0, -6px) scale(.85); transform-origin: calc(100% - 18px) -8px; }
+    .barra-ley .pista > .ley:last-child:hover .ley-nombre, .barra-ley .pista > .ley:last-child:focus-visible .ley-nombre { transform: translate(0, 0) scale(1); }
+    .barra-ley .pista > .ley:last-child .ley-nombre::before { left: auto; right: 13px; transform: rotate(45deg); }
     .panel .vista { display: block; width: 100%; background: transparent; color: #26425a; box-shadow: inset 0 0 0 1.5px #26425a; }
     .panel .vista:hover { background: rgba(38,66,90,.1); }
     button { border: 0; border-radius: 10px; padding: 7px 14px; background: #26425a; color: #fff;
