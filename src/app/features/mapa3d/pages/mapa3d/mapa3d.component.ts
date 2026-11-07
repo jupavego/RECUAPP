@@ -16,6 +16,7 @@ import { CATEGORIA, CATEGORIAS } from '../../../mapa/utils/puntos';
 import { Aura, CategoriaServicio, COLOR_INDUSTRIA, GLIFO, Icono, ItemAura, SERVICIOS, SERVICIOS_GRUPO, crearAgrupador, crearAuras, crearIcono } from '../../utils/aura';
 import { Conduccion } from '../../utils/conduccion';
 import { ESCALA_ACTIVOS } from '../../utils/escala';
+import { DatosRasante, Rasante, TramoRasante } from '../../utils/rasante';
 import { COLORES_RURALES, Modelo, PARTES_COMFAMA, chimeneaParque, colorParque, modelarEquipamiento, unidadParque } from '../../utils/equipamientos';
 import { coloresPorMunicipio, hex } from '../../../mapa/utils/paleta';
 import { Geometria, decodeGeometria } from '../../../mapa/utils/polyline';
@@ -432,6 +433,8 @@ interface Compacto {
   p?: number[];
   u?: number[];
   r?: number[];
+  /** catastro asentado (scripts/asentar_vias_edificios.py): piso de cada construcción, el nivel de la acera frente a ella (cm sobre el mínimo del relieve, sin exagerar), o null */
+  n?: (number | null)[];
 }
 
 /** scripts/generar_jardines.py: contornos de patios y jardines del casco urbano (j) y puntos de árboles (a) y matas (m) de cada uno. */
@@ -503,7 +506,8 @@ interface Bocanada {
   rot0: number;
 }
 
-interface Calzada { x: number[]; z: number[]; y: number[]; cum: number[]; largo: number; }
+/** Polilínea de tráfico. Con rasante, por punto: media calzada y borde de acera a la izquierda (`lp`, `ap`) y a la derecha (`ln`, `an`) del sentido del trazado. */
+interface Calzada { x: number[]; z: number[]; y: number[]; cum: number[]; largo: number; lp?: number[]; ln?: number[]; ap?: number[]; an?: number[]; }
 /** `tipo` = índice en FLOTA; `k` = su lugar dentro de las mallas instanciadas de ese tipo. */
 /** Pose suavizada de un vehículo (`vivo` = ya tiene pose; se apaga al saltar de vía para que no barra el mapa) y su velocidad actual `vi`. */
 interface PoseAuto { px?: number; pz?: number; yaw?: number; vi?: number; vivo?: boolean; }
@@ -1509,6 +1513,8 @@ export class Mapa3dComponent implements AfterViewInit {
   private conduccion?: Conduccion;
   /** distancia al borde de la calzada más cercana (negativa sobre ella), para que el carro suba al asfalto */
   private holguraConduccion?: (x: number, z: number) => [number, number, number, number, number];
+  /** Ancho y altura de las calles ajustados a las fachadas y al relieve (scripts/asentar_vias_edificios.py); null = vías de ancho fijo. */
+  private rasante: Rasante | null = null;
   private antesDeConducir?: { pos: THREE.Vector3; objetivo: THREE.Vector3; fov: number };
   @ViewChild('hudVelocidad') private hudVelocidad?: ElementRef<HTMLElement>;
   @ViewChild('hudZona') private hudZona?: ElementRef<HTMLElement>;
@@ -1857,7 +1863,10 @@ export class Mapa3dComponent implements AfterViewInit {
       foto: this.cargarImagen(`data/mapa3d/ortofoto-${ID_MUNICIPIO}.jpg`),
       vias: this.http.get<Compacto>(`data/mapa3d/vias-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
       viasEstado: this.http.get<Compacto>(`data/mapa3d/vias-estado-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
-      edificios: this.http.get<Compacto>(`data/mapa3d/catastro-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
+      // el catastro asentado trae las casas alineadas con su calle y el piso al nivel de la acera; si falta, el crudo
+      edificios: this.http.get<Compacto>(`data/mapa3d/catastro-asentado-${ID_MUNICIPIO}.json`).pipe(
+        catchError(() => this.http.get<Compacto>(`data/mapa3d/catastro-${ID_MUNICIPIO}.json`)), catchError(() => of(null))),
+      rasante: this.http.get<DatosRasante>(`data/mapa3d/rasante-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
       cauces: this.http.get<Cauces>(`data/mapa3d/cauces-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
       industrias: this.http.get<Industria[]>(`data/mapa3d/industrias-${ID_MUNICIPIO}.json`).pipe(catchError(() => of([] as Industria[]))),
       poblacion: this.http.get<PoblacionVeredas>(`data/mapa/poblacion/veredas-${CODIGO_DANE}.geojson`).pipe(catchError(() => of(null))),
@@ -1871,11 +1880,12 @@ export class Mapa3dComponent implements AfterViewInit {
       tanques: this.http.get<Tanque[]>(`data/mapa3d/tanques-${ID_MUNICIPIO}.json`).pipe(catchError(() => of([] as Tanque[]))),
       ajustes: this.http.get<Record<string, AjusteCatastro>>(`data/mapa3d/equipamientos-catastro-${ID_MUNICIPIO}.json`).pipe(catchError(() => of({} as Record<string, AjusteCatastro>))),
     }).subscribe({
-      next: ({ relieve, muni, terr, foto, vias, viasEstado, edificios, cauces, poblacion, industrias, puntos, zonasPlan, jardines, cercas, ajustes, industriasCat, tanques, infra, instalaciones }) => {
+      next: ({ relieve, muni, terr, foto, vias, viasEstado, edificios, rasante, cauces, poblacion, industrias, puntos, zonasPlan, jardines, cercas, ajustes, industriasCat, tanques, infra, instalaciones }) => {
         try {
           this.foto = foto;
           this.zonasPlan = zonasPlan;
           this.construir(relieve, muni.municipios, terr.v);
+          this.rasante = rasante?.v?.length ? new Rasante(rasante, lon => this.aX(lon), lat => this.aZ(lat), EXAGERACION) : null;
           this.fabricas = this.ubicarIndustrias(industrias, vias, industriasCat);
           this.equipamientos = this.ubicarEquipamientos(puntos, vias, ajustes);
           if (vias?.v) { this.construirVias(vias); this.holguraConduccion = this.medirVias(vias); }
@@ -2430,7 +2440,7 @@ export class Mapa3dComponent implements AfterViewInit {
    * Agrega al grupo una cinta de `ancho` metros (el ancho total) pegada al relieve a lo largo de la línea
    * [lon, lat]. `periodo` es el largo de un ciclo de la textura a lo largo de la cinta.
    */
-  private agregarCinta(g: GrupoCinta, linea: [number, number][], ancho: number, periodo: number): void {
+  private agregarCinta(g: GrupoCinta, linea: [number, number][], ancho: number, periodo: number, sobreRasante = false): void {
     // las líneas que cruzan el borde del terreno se recortan: fuera de él quedarían flotando
     const [bo, bs, be, bn] = this.relieve.bbox;
     const crudo = linea.filter(q => q[0] >= bo && q[0] <= be && q[1] >= bs && q[1] <= bn);
@@ -2458,9 +2468,18 @@ export class Mapa3dComponent implements AfterViewInit {
         const ex = xs[i] - xs[i - 1], ez = zs[i] - zs[i - 1], el = Math.hypot(ex, ez) || 1;
         ancho1 = mitad / Math.max(0.6, (dx * ex + dz * ez) / el);
       }
-      const y = this.alturaEn(q[0], q[1]) + 3;
+      let ya = this.alturaEn(q[0], q[1]) + 3, yb = ya, ma = ancho1, mb = ancho1;
+      // encima de una vía de la rasante (estado del pavimento): su mismo ancho y su misma superficie, apenas por encima
+      const c = sobreRasante ? this.rasante?.consultar(xs[i], zs[i]) : null;
+      if (c && c.d < 3) {
+        const mismo = dx * c.tx + dz * c.tz >= 0, eje = this.rasante!.alturaEje(c);
+        ma = Math.min(ancho1, mismo ? c.wa : c.wb);
+        mb = Math.min(ancho1, mismo ? c.wb : c.wa);
+        ya = (this.rasante!.altura(xs[i] - dz * ma, zs[i] + dx * ma) ?? eje) + 0.05;
+        yb = (this.rasante!.altura(xs[i] + dz * mb, zs[i] - dx * mb) ?? eje) + 0.05;
+      }
       const id = this.idEn(q[0], q[1]);
-      g.pos.push(xs[i] - dz * ancho1, y, zs[i] + dx * ancho1, xs[i] + dz * ancho1, y, zs[i] - dx * ancho1);
+      g.pos.push(xs[i] - dz * ma, ya, zs[i] + dx * ma, xs[i] + dz * mb, yb, zs[i] - dx * mb);
       g.ids.push(id, id);
       const peso = id >= 0 ? this.pesoBorde(q[0], q[1], id) : 0;
       g.pesos.push(peso, peso);
@@ -2471,6 +2490,54 @@ export class Mapa3dComponent implements AfterViewInit {
         g.idx.push(a0, a0 + 2, a0 + 1, a0 + 1, a0 + 2, a0 + 3);
       }
     });
+  }
+
+  /**
+   * Calzada y aceras de un tramo de la rasante: la calzada va de borde a borde con su peralte (cada borde a su altura y a su
+   * ancho, el que cabe entre las fachadas) y cada acera es una franja aparte, del borde de la calzada (un bordillo más arriba)
+   * al borde de la acera, que sube con el terreno hacia la fachada.
+   */
+  private agregarCintaRasante(calzada: GrupoCinta, acera: GrupoCinta, t: TramoRasante): void {
+    const n = t.x.length, periodo = ANCHO_VIA[t.clase] * 1.8, bord = this.rasante!.bordillo;
+    const ini = calzada.pos.length / 3, iniA = acera.pos.length / 3;
+    let recorrido = 0;
+    for (let i = 0; i < n; i++) {
+      const a = Math.max(0, i - 1), b = Math.min(n - 1, i + 1);
+      let dx = t.x[b] - t.x[a], dz = t.z[b] - t.z[a];
+      const l = Math.hypot(dx, dz) || 1;
+      dx /= l;
+      dz /= l;
+      // inglete en las curvas, como en agregarCinta
+      let f = 1;
+      if (i > 0 && i < n - 1) {
+        const ex = t.x[i] - t.x[i - 1], ez = t.z[i] - t.z[i - 1], el = Math.hypot(ex, ez) || 1;
+        f = 1 / Math.max(0.6, (dx * ex + dz * ez) / el);
+      }
+      const id = this.idEn(t.lon[i], t.lat[i]), peso = id >= 0 ? this.pesoBorde(t.lon[i], t.lat[i], id) : 0;
+      const nx = -dz * f, nz = dx * f;          // lado a
+      const x = t.x[i], z = t.z[i];
+      calzada.pos.push(x + nx * t.wa[i], t.ya[i], z + nz * t.wa[i], x - nx * t.wb[i], t.yb[i], z - nz * t.wb[i]);
+      calzada.ids.push(id, id);
+      calzada.pesos.push(peso, peso);
+      if (i) recorrido += Math.hypot(x - t.x[i - 1], z - t.z[i - 1]);
+      calzada.uv.push(0, recorrido / periodo, 1, recorrido / periodo);
+      // aceras: [interior a, exterior a, interior b, exterior b]
+      acera.pos.push(
+        x + nx * t.wa[i], t.ya[i] + bord, z + nz * t.wa[i], x + nx * t.aa[i], t.yaa[i], z + nz * t.aa[i],
+        x - nx * t.wb[i], t.yb[i] + bord, z - nz * t.wb[i], x - nx * t.ab[i], t.yab[i], z - nz * t.ab[i]);
+      for (let k = 0; k < 4; k++) { acera.ids.push(id); acera.pesos.push(peso); acera.uv.push(0.5, 0.5); }
+      if (i) {
+        const c0 = ini + (i - 1) * 2, a0 = iniA + (i - 1) * 4;
+        calzada.idx.push(c0, c0 + 2, c0 + 1, c0 + 1, c0 + 2, c0 + 3);
+        acera.idx.push(a0, a0 + 4, a0 + 1, a0 + 1, a0 + 4, a0 + 5, a0 + 2, a0 + 6, a0 + 3, a0 + 3, a0 + 6, a0 + 7);
+      }
+    }
+  }
+
+  /** Altura de la calzada en (x, z) del modelo: la de la rasante si hay una vía ahí, o 3 m sobre el terreno como antes. */
+  private calzadaXZ(x: number, z: number): number {
+    const c = this.rasante?.consultar(x, z);
+    return c && c.d < 3 ? this.rasante!.alturaEje(c) : this.alturaXZ(x, z) + 3;
   }
 
   /** Malla de un grupo de cintas; `bajar` la hunde unos metros (para bordes) y `orden` decide qué se pinta encima. */
@@ -2495,27 +2562,45 @@ export class Mapa3dComponent implements AfterViewInit {
   /** Vías como cintas pegadas al relieve: principales con borde oscuro, locales claras, senderos finos. */
   private construirVias(d: Compacto): void {
     const grupos = [this.nuevoGrupo(), this.nuevoGrupo(), this.nuevoGrupo()];
+    const ras = this.rasante;
+    const aceraP = this.nuevoGrupo(), aceraL = this.nuevoGrupo();
     for (const v of d.v!) {
-      if (v[0] > 2) continue;
+      // con rasante, las principales y locales salen de ella (ancho entre fachadas y altura asentada); los senderos, de siempre
+      if (v[0] > 2 || (ras && v[0] < 2)) continue;
       this.agregarCinta(grupos[v[0]], this.desdeDeltas(v, d.k, 1), ANCHO_VIA[v[0]], ANCHO_VIA[v[0]] * 1.8);
     }
+    if (ras) for (const t of ras.tramos) this.agregarCintaRasante(grupos[t.clase], t.clase === 0 ? aceraP : aceraL, t);
     const [principal, local, sendero] = grupos;
     // remates: un disco de asfalto en cada cruce (une las cintas que llegan con distinto rumbo) y una media luna que cierra
     // cada vía sin salida; el mismo disco, más ancho y debajo, hace de acera
-    const nodos = this.nodosViales(d);
-    const asfaltoP = this.nuevoGrupo(), asfaltoL = this.nuevoGrupo(), aceraP = this.nuevoGrupo(), aceraL = this.nuevoGrupo();
+    const nodos = this.nodosViales(ras ? ras.datos : d);
+    const asfaltoP = this.nuevoGrupo(), asfaltoL = this.nuevoGrupo();
     for (const n of nodos) {
       const [dest, acera] = n.clase === 0 ? [asfaltoP, aceraP] : [asfaltoL, aceraL];
-      const r = ANCHO_VIA[n.clase] / 2;
       const a0 = n.cierre === null ? 0 : n.cierre - Math.PI / 2, a1 = n.cierre === null ? Math.PI * 2 : n.cierre + Math.PI / 2;
+      const c = ras?.consultar(n.x, n.z);
+      if (ras && c) {
+        // el cruce toma el ancho de las calles que llegan y se pega a su superficie, no a una cota fija sobre el terreno
+        const centro = ras.alturaEje(c), altura = (x: number, z: number) => ras.altura(x, z) ?? centro;
+        this.agregarDisco(dest, n.x, n.z, Math.max(c.wa, c.wb) * 1.02, a0, a1, altura);
+        this.agregarDisco(acera, n.x, n.z, Math.max(c.aa, c.ab), a0, a1, (x, z) => altura(x, z) - 0.05);
+        continue;
+      }
+      const r = ANCHO_VIA[n.clase] / 2;
       this.agregarDisco(dest, n.x, n.z, r * 1.02, a0, a1);
       this.agregarDisco(acera, n.x, n.z, r * (n.clase === 0 ? 1.3 : 1.35), a0, a1);
     }
-    // acera / cuneta: la misma cinta, más ancha y apenas por debajo, en gris claro
-    this.crearCinta({ ...principal, pos: this.ensanchar(principal.pos, 1.3) }, '#a9aaa8', 1, 0);
-    this.crearCinta({ ...local, pos: this.ensanchar(local.pos, 1.35) }, '#b4b5b2', 1, 0);
-    this.crearCinta(aceraP, '#a9aaa8', 1, 0);
-    this.crearCinta(aceraL, '#b4b5b2', 1, 0);
+    if (ras) {
+      // aceras: franjas propias a cada lado, un bordillo por encima de la calzada
+      this.crearCinta(aceraP, '#a9aaa8', 0, 0);
+      this.crearCinta(aceraL, '#b4b5b2', 0, 0);
+    } else {
+      // acera / cuneta: la misma cinta, más ancha y apenas por debajo, en gris claro
+      this.crearCinta({ ...principal, pos: this.ensanchar(principal.pos, 1.3) }, '#a9aaa8', 1, 0);
+      this.crearCinta({ ...local, pos: this.ensanchar(local.pos, 1.35) }, '#b4b5b2', 1, 0);
+      this.crearCinta(aceraP, '#a9aaa8', 1, 0);
+      this.crearCinta(aceraL, '#b4b5b2', 1, 0);
+    }
     // asfalto con sus rayas
     this.crearCinta(principal, '', 0, 1, this.texturaVia('principal'));
     this.crearCinta(local, '', 0, 1, this.texturaVia('local'));
@@ -2558,12 +2643,12 @@ export class Mapa3dComponent implements AfterViewInit {
   }
 
   /** Abanico plano pegado al relieve: sector de círculo de `radio` m entre los ángulos `a0` y `a1` (un círculo si abarcan 2π). */
-  private agregarDisco(g: GrupoCinta, x: number, z: number, radio: number, a0: number, a1: number): void {
+  private agregarDisco(g: GrupoCinta, x: number, z: number, radio: number, a0: number, a1: number, altura?: (x: number, z: number) => number): void {
     const ini = g.pos.length / 3, pasos = Math.max(6, Math.round(24 * (a1 - a0) / (Math.PI * 2)));
     const punto = (px: number, pz: number) => {
       const lon = this.lon0 + px / this.mLon, lat = this.lat0 - pz / this.mLat;
       const id = this.idEn(lon, lat);
-      g.pos.push(px, this.alturaEn(lon, lat) + 3, pz);
+      g.pos.push(px, altura ? altura(px, pz) : this.alturaEn(lon, lat) + 3, pz);
       g.ids.push(id);
       g.pesos.push(id >= 0 ? this.pesoBorde(lon, lat, id) : 0);
       g.uv.push(0.5, 0.5);
@@ -2585,7 +2670,7 @@ export class Mapa3dComponent implements AfterViewInit {
     for (const v of d.v!) {
       const [estado, clase] = v;
       if (!porEstado.has(estado)) porEstado.set(estado, this.nuevoGrupo());
-      this.agregarCinta(porEstado.get(estado)!, this.desdeDeltas(v, d.k, 2), ANCHO_VIA[clase], ANCHO_VIA[clase] * 1.8);
+      this.agregarCinta(porEstado.get(estado)!, this.desdeDeltas(v, d.k, 2), ANCHO_VIA[clase], ANCHO_VIA[clase] * 1.8, true);
     }
     const colores: Record<number, string> = { 1: '#a8996f', 2: '#7a5c3a' };      // cuneta: afirmado / tierra
     for (const [estado, g] of porEstado) {
@@ -2883,13 +2968,15 @@ export class Mapa3dComponent implements AfterViewInit {
 
       // perfil: de la cota de la vía en una orilla a la de la otra, siempre sobre el terreno que cruza; se suaviza
       const suelo = pts.map(q => this.alturaXZ(q[0], q[1]));
-      const y0 = suelo[0] + 3.2, y1 = suelo[n - 1] + 3.2;
+      // los extremos quedan enrasados con la calzada de la vía (la de la rasante, o 3 m sobre el terreno sin ella)
+      const enrase = pts.map((q, k) => (k < 2 || k > n - 3) ? this.calzadaXZ(q[0], q[1]) + 0.2 : suelo[k] + 3.2);
+      const y0 = enrase[0], y1 = enrase[n - 1];
       let perfil = pts.map((_, k) => Math.max(y0 + (y1 - y0) * (arco[k] / arco[n - 1]), suelo[k] + 3.2 + 2.5 * Math.sin(Math.PI * arco[k] / arco[n - 1])));
       for (let pasada = 0; pasada < 4; pasada++) {
         const previo = perfil;
         perfil = previo.map((v, k) => (k < 2 || k > n - 3) ? v : (previo[k - 1] + 2 * v + previo[k + 1]) / 4);
       }
-      perfil = perfil.map((v, k) => (k < 2 || k > n - 3) ? suelo[k] + 3.2 : Math.max(v, suelo[k] + 3.2));
+      perfil = perfil.map((v, k) => (k < 2 || k > n - 3) ? enrase[k] : Math.max(v, suelo[k] + 3.2));
 
       const ancho = b.anchoVia * 1.15, acera = Math.max(2.4, ancho * 0.08), kerb = 1.2, viga = 4.5;
       /** Cinta que sigue el eje: de (lat0, h0) a (lat1, h1), con la altura relativa al perfil. */
@@ -3173,7 +3260,7 @@ export class Mapa3dComponent implements AfterViewInit {
     if (!base?.e || !this.poblacion) return base;
     const quitar = this.ajustarAPoblacion(base.e, base.k, this.poblacion, anio, base.r);
     const sin = <T>(a?: T[]) => a?.filter((_, n) => !quitar.has(n));
-    return { ...base, e: sin(base.e), p: sin(base.p), u: sin(base.u), r: sin(base.r) };
+    return { ...base, e: sin(base.e), p: sin(base.p), u: sin(base.u), r: sin(base.r), n: sin(base.n) };
   }
 
   /** Población y viviendas dibujadas de una vereda en el año elegido. */
@@ -3246,7 +3333,11 @@ export class Mapa3dComponent implements AfterViewInit {
         : denso && (area > AREA_VIVIENDA[1] || (area > 120 && hash > 0.85));
       const casa = real ? hilera || (!urbano && !industria && area <= 400) : area <= AREA_VIVIENDA[1] && !urbano;
       const h = real ? e[0] * ESCALA_CATASTRO : (urbano ? 3 * (3 + Math.floor(hash * 2.2)) * 0.6 : denso ? 3 * (1 + Math.floor(hash * 3)) * 0.6 : e[0] || 4.5 + hash * 4) * ESCALA_EDIFICIOS;
-      const suelo = Math.min(...ring.map(q => this.alturaEn(q[0], q[1]))) - 4, techo = suelo + 4 + h;
+      // piso: el nivel de la acera frente a la casa (catastro asentado), para que la puerta quede al ras de la calle y no tapada;
+      // sin él, el punto más bajo de la huella. Las paredes bajan siempre hasta 4 m bajo el terreno más bajo (zócalo en ladera).
+      const bajo = Math.min(...ring.map(q => this.alturaEn(q[0], q[1])));
+      const nivel = d.n?.[n], piso = nivel != null ? nivel / 100 * EXAGERACION : bajo;
+      const suelo = Math.min(bajo, piso) - 4, techo = piso + h;
       const peso = id >= 0 ? this.pesoBorde(cLon, cLat, id) : 0;
       let pared = industria ? BODEGAS[n % BODEGAS.length] : real && uso === 1 && !casa ? COMERCIALES[n % COMERCIALES.length] : urbano ? URBANOS[n % URBANOS.length] : casa ? (denso && n % 2 ? URBANOS[n % URBANOS.length] : LADRILLOS[n % LADRILLOS.length]) : PAREDES[n % PAREDES.length];
       const tejado = industria ? CUBIERTAS[(n * 5 + Math.floor(hash * 7)) % CUBIERTAS.length] : urbano ? LOSA : casa ? TEJAS[n % TEJAS.length] : TECHOS[(n * 7 + Math.floor(hash * 10)) % TECHOS.length];
@@ -3255,7 +3346,7 @@ export class Mapa3dComponent implements AfterViewInit {
       if (lados.length) {
         const pal = urbano ? 4 : Math.floor(hash * 4);
         pared = PALETAS_COLOR[pal];
-        lados.forEach((lado, q) => pendientes.push({ lado, a: ring[lado.i], c: ring[lado.j], b: { n: n + q, hash: (hash + q * 0.37) % 1, pisos, uso, pal, suelo: 0, techo, id, peso } }));
+        lados.forEach((lado, q) => pendientes.push({ lado, a: ring[lado.i], c: ring[lado.j], b: { n: n + q, hash: (hash + q * 0.37) % 1, pisos, uso, pal, suelo: nivel != null ? piso : NaN, techo, id, peso } }));
       }
       const clave = this.claveTesela(this.aX(cLon), this.aZ(cLat));
       let t = teselas.get(clave);
@@ -3410,7 +3501,8 @@ export class Mapa3dComponent implements AfterViewInit {
       const t0 = performance.now();
       while (i < pendientes.length && performance.now() - t0 < 5) {
         const p = pendientes[i++];
-        p.b.suelo = Math.min(this.alturaEn(p.a[0], p.a[1]), this.alturaEn(p.c[0], p.c[1])) - 0.3;
+        // con piso asentado la fachada arranca en él (la puerta al ras de la acera); sin él, en el terreno más bajo del lado
+        if (Number.isNaN(p.b.suelo)) p.b.suelo = Math.min(this.alturaEn(p.a[0], p.a[1]), this.alturaEn(p.c[0], p.c[1])) - 0.3;
         this.agregarFachada(mapa, p.lado, p.b);
       }
       if (i < pendientes.length) setTimeout(paso, 0);
@@ -3734,9 +3826,19 @@ export class Mapa3dComponent implements AfterViewInit {
         for (; t < largo; t += PASO_ARBOL_CALLE * (0.75 + rnd() * 0.5)) {
           for (const sg of [-1, 1]) {
             if (rnd() > FRACCION_ARBOL_CALLE) continue;
-            const x = ax + (bx - ax) * t / largo + nx * lado * sg, z = az + (bz - az) * t / largo + nz * lado * sg;
+            let l = lado;
+            if (this.rasante) {
+              // con rasante, a mitad de la acera de ese lado; si la acera es muy angosta para un árbol, no va
+              const px = ax + (bx - ax) * t / largo, pz = az + (bz - az) * t / largo;
+              const w = this.rasante.anchos(px, pz, (bx - ax) / largo, (bz - az) / largo);
+              if (!w) continue;
+              const [cal, ace] = sg > 0 ? [w[0], w[2]] : [w[1], w[3]];
+              if (ace - cal < 1.6) continue;
+              l = (cal + ace) / 2;
+            }
+            const x = ax + (bx - ax) * t / largo + nx * l * sg, z = az + (bz - az) * t / largo + nz * l * sg;
             const lon = this.lon0 + x / this.mLon, lat = this.lat0 - z / this.mLat;
-            if (!this.esUrbano(lon, lat) || holgura(x, z) < 2 || sobreEdificio(x, z, 1.5)) continue;
+            if (!this.esUrbano(lon, lat) || holgura(x, z) < (this.rasante ? 0.5 : 2) || sobreEdificio(x, z, this.rasante ? 0.8 : 1.5)) continue;
             if (this.fabricas.some(f => Math.hypot(f.x - x, f.z - z) < f.r + 4) || this.equipamientos.some(q => Math.hypot(q.x - x, q.z - z) < q.r + 3)) continue;
             res.push({ lon, lat, x, z });
           }
@@ -4106,14 +4208,24 @@ export class Mapa3dComponent implements AfterViewInit {
       let recorrido = 0;
       const agregar = (px: number, pz: number) => {
         if (x.length) recorrido += Math.hypot(px - x[x.length - 1], pz - z[z.length - 1]);
-        x.push(px); z.push(pz); y.push(this.alturaXZ(px, pz) + 3); cum.push(recorrido);
+        x.push(px); z.push(pz); y.push(this.calzadaXZ(px, pz)); cum.push(recorrido);
       };
       agregar(l[0][0], l[0][1]);
       for (let i = 1; i < l.length; i++) {
         const n = Math.max(1, Math.ceil(Math.hypot(l[i][0] - l[i - 1][0], l[i][1] - l[i - 1][1]) / 15));
         for (let j = 1; j <= n; j++) agregar(l[i - 1][0] + (l[i][0] - l[i - 1][0]) * j / n, l[i - 1][1] + (l[i][1] - l[i - 1][1]) * j / n);
       }
-      return { x, z, y, cum, largo: recorrido };
+      const c: Calzada = { x, z, y, cum, largo: recorrido };
+      if (this.rasante) {
+        // anchos por punto: los carriles y las aceras se acomodan a la calle angosta
+        c.lp = []; c.ln = []; c.ap = []; c.an = [];
+        for (let i = 0; i < x.length; i++) {
+          const a = Math.max(0, i - 1), b = Math.min(x.length - 1, i + 1), L = Math.hypot(x[b] - x[a], z[b] - z[a]) || 1;
+          const w = this.rasante.anchos(x[i], z[i], (x[b] - x[a]) / L, (z[b] - z[a]) / L);
+          c.lp.push(w?.[0] ?? Infinity); c.ln.push(w?.[1] ?? Infinity); c.ap.push(w?.[2] ?? Infinity); c.an.push(w?.[3] ?? Infinity);
+        }
+      }
+      return c;
     };
 
     // ── red del pueblo ──
@@ -4368,10 +4480,16 @@ export class Mapa3dComponent implements AfterViewInit {
       a.i = i;
       const seg = e.cum[i + 1] - e.cum[i] || 1, k = Math.min(1, Math.max(0, (a.s - e.cum[i]) / seg));
       const tx = a.dir * (e.x[i + 1] - e.x[i]) / seg, tz = a.dir * (e.z[i + 1] - e.z[i]) / seg;
-      const x = e.x[i] + (e.x[i + 1] - e.x[i]) * k - tz * a.lado, z = e.z[i] + (e.z[i + 1] - e.z[i]) * k + tx * a.lado;
+      // con rasante, camina por la mitad de la acera de su lado (la que cabe entre la calzada y la fachada), un bordillo más arriba
+      let lado = a.lado, sobre = 0;
+      if (e.lp) {
+        const izq = a.lado * a.dir > 0, w = izq ? e.lp[i] : e.ln![i], ac = izq ? e.ap![i] : e.an![i];
+        if (Number.isFinite(w) && Number.isFinite(ac)) { lado = Math.sign(a.lado) * (w + ac) / 2; sobre = this.rasante!.bordillo; }
+      }
+      const x = e.x[i] + (e.x[i + 1] - e.x[i]) * k - tz * lado, z = e.z[i] + (e.z[i + 1] - e.z[i]) * k + tx * lado;
       const dx = x - centro.x, dz = z - centro.z, d2 = dx * dx + dz * dz;
       if (d2 > GENTE_RADIO * GENTE_RADIO) continue;
-      let y = e.y[i] + (e.y[i + 1] - e.y[i]) * k;
+      let y = e.y[i] + (e.y[i + 1] - e.y[i]) * k + sobre;
       const lon = this.lon0 + x / this.mLon, lat = this.lat0 - z / this.mLat, id = this.idEn(lon, lat);
       if (id >= 0 && this.alzado[id] > 0.5) y += this.alzado[id] * this.pesoBorde(lon, lat, id);
       // el paso: rebote al apoyar cada pie y tumbo de lado a lado, sin animar piernas (solo cambia la matriz de la instancia)
@@ -4515,10 +4633,15 @@ export class Mapa3dComponent implements AfterViewInit {
      * La pose real sigue a la del trazado con un retraso corto: así los giros en los cruces, el cambio de carril y la vuelta
      * en U salen como arcos y no como quiebres, y el auto mira hacia donde de verdad se mueve.
      */
-    const colocar = (a: PoseAuto, tipo: number, n: number, c: { x: number[]; z: number[]; y: number[]; cum: number[] }, indice: number, s: number, dir: number, carril: number): number => {
+    const colocar = (a: PoseAuto, tipo: number, n: number, c: Pick<Calzada, 'x' | 'z' | 'y' | 'cum' | 'lp' | 'ln'>, indice: number, s: number, dir: number, carril: number): number => {
       let i = indice;
       while (i > 0 && s < c.cum[i]) i--;
       while (i < c.cum.length - 2 && s > c.cum[i + 1]) i++;
+      // en una calle angosta el carril se corre hacia el eje para que el carro (≈1,6 m de medio ancho a escala) no pise la acera
+      if (c.lp && carril) {
+        const lim = (carril * dir > 0 ? c.lp[i] : c.ln![i]) - 0.9 * ESCALA_ACTIVOS;
+        carril = Math.sign(carril) * Math.max(0, Math.min(Math.abs(carril), lim));
+      }
       const seg = c.cum[i + 1] - c.cum[i] || 1, t = Math.min(1, Math.max(0, (s - c.cum[i]) / seg));
       const tx = dir * (c.x[i + 1] - c.x[i]) / seg, tz = dir * (c.z[i + 1] - c.z[i]) / seg;
       const ox = c.x[i] + (c.x[i + 1] - c.x[i]) * t - tz * carril, oz = c.z[i] + (c.z[i + 1] - c.z[i]) * t + tx * carril;
@@ -4866,25 +4989,34 @@ export class Mapa3dComponent implements AfterViewInit {
   private medirVias(vias: Compacto | null): (x: number, z: number) => [number, number, number, number, number] {
     const REJ = 200;
     const segs = new Map<number, number[][]>();
-    for (const v of vias?.v ?? []) {
-      if (v[0] > 1) continue;                      // principales y locales; los senderos no cuentan
-      const l = this.desdeDeltas(v, vias!.k, 1).map(q => [this.aX(q[0]), this.aZ(q[1])]);
-      for (let i = 1; i < l.length; i++) {
-        const sg = [l[i - 1][0], l[i - 1][1], l[i][0], l[i][1], ANCHO_VIA[v[0]] / 2];
-        const i0 = Math.floor(Math.min(sg[0], sg[2]) / REJ), i1 = Math.floor(Math.max(sg[0], sg[2]) / REJ);
-        const j0 = Math.floor(Math.min(sg[1], sg[3]) / REJ), j1 = Math.floor(Math.max(sg[1], sg[3]) / REJ);
-        for (let a = i0; a <= i1; a++) for (let c = j0; c <= j1; c++) (segs.get(a * 100003 + c) ?? segs.set(a * 100003 + c, []).get(a * 100003 + c)!).push(sg);
+    // [ax, az, bx, bz, media calzada del lado a (-sz, sx), la del otro lado]: con rasante, el ancho que cabe entre fachadas
+    const lista: number[][] = [];
+    if (this.rasante) {
+      for (const t of this.rasante.tramos) {
+        for (let i = 1; i < t.x.length; i++) lista.push([t.x[i - 1], t.z[i - 1], t.x[i], t.z[i], (t.wa[i - 1] + t.wa[i]) / 2, (t.wb[i - 1] + t.wb[i]) / 2]);
       }
+    } else {
+      for (const v of vias?.v ?? []) {
+        if (v[0] > 1) continue;                      // principales y locales; los senderos no cuentan
+        const l = this.desdeDeltas(v, vias!.k, 1).map(q => [this.aX(q[0]), this.aZ(q[1])]);
+        for (let i = 1; i < l.length; i++) lista.push([l[i - 1][0], l[i - 1][1], l[i][0], l[i][1], ANCHO_VIA[v[0]] / 2, ANCHO_VIA[v[0]] / 2]);
+      }
+    }
+    for (const sg of lista) {
+      const i0 = Math.floor(Math.min(sg[0], sg[2]) / REJ), i1 = Math.floor(Math.max(sg[0], sg[2]) / REJ);
+      const j0 = Math.floor(Math.min(sg[1], sg[3]) / REJ), j1 = Math.floor(Math.max(sg[1], sg[3]) / REJ);
+      for (let a = i0; a <= i1; a++) for (let c = j0; c <= j1; c++) (segs.get(a * 100003 + c) ?? segs.set(a * 100003 + c, []).get(a * 100003 + c)!).push(sg);
     }
     return (x: number, z: number) => {
       let m = Infinity, qx = x, qz = z, tx = 0, tz = 1;
       const ci = Math.floor(x / REJ), cj = Math.floor(z / REJ);
       for (let di = -1; di <= 1; di++) {
         for (let dj = -1; dj <= 1; dj++) {
-          for (const [ax, az, bx, bz, mitad] of segs.get((ci + di) * 100003 + cj + dj) ?? []) {
+          for (const [ax, az, bx, bz, wa, wb] of segs.get((ci + di) * 100003 + cj + dj) ?? []) {
             const sx = bx - ax, sz = bz - az, ll = sx * sx + sz * sz;
             const t = ll > 0 ? Math.min(1, Math.max(0, ((x - ax) * sx + (z - az) * sz) / ll)) : 0;
-            const d = Math.hypot(x - ax - sx * t, z - az - sz * t) - mitad;
+            const ex = x - ax - sx * t, ez = z - az - sz * t;
+            const d = Math.hypot(ex, ez) - (ex * -sz + ez * sx >= 0 ? wa : wb);
             if (d < m) { m = d; qx = ax + sx * t; qz = az + sz * t; const l = Math.sqrt(ll) || 1; tx = sx / l; tz = sz / l; }
           }
         }
@@ -4956,7 +5088,7 @@ export class Mapa3dComponent implements AfterViewInit {
         });
     });
     const sin = <T>(a?: T[]) => a?.filter((_, n) => quedan[n]);
-    return { ...e, e: sin(e.e), p: sin(e.p), u: sin(e.u), r: sin(e.r) };
+    return { ...e, e: sin(e.e), p: sin(e.p), u: sin(e.u), r: sin(e.r), n: sin(e.n) };
   }
 
   /**
@@ -5879,8 +6011,10 @@ export class Mapa3dComponent implements AfterViewInit {
     this.conduccion ??= new Conduccion((x, z) => {
       if (Math.abs(x) > this.ancho / 2 || Math.abs(z) > this.alto / 2) return -Infinity;
       const h = this.alturaEn(this.lon0 + x / this.mLon, this.lat0 - z / this.mLat);
-      // la calzada es una cinta plana a 3 m sobre el terreno de su eje (en laderas, su borde queda aún más alto que el suelo de
-      // al lado): sobre ella el carro va a esa altura, y fuera sube o baja por una rampa de 4 m
+      // con rasante, el carro va sobre la superficie real de la calzada o la acera (con su peralte y su bordillo)
+      if (this.rasante) return this.rasante.altura(x, z) ?? h;
+      // sin ella, la calzada es una cinta plana a 3 m sobre el terreno de su eje (en laderas, su borde queda aún más alto que el
+      // suelo de al lado): sobre ella el carro va a esa altura, y fuera sube o baja por una rampa de 4 m
       const [d, qx, qz] = this.holguraConduccion?.(x, z) ?? [Infinity, x, z, 0, 1];
       if (d >= 4) return h;
       const calzada = this.alturaXZ(qx, qz) + 3;
