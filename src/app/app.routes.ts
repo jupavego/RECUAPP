@@ -1,4 +1,5 @@
-import { Routes } from '@angular/router';
+import { inject } from '@angular/core';
+import { Router, Routes } from '@angular/router';
 import { authGuard, publicOnlyGuard, roleGuard } from './core';
 
 export const routes: Routes = [
@@ -28,10 +29,10 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./features/plan/pages/responsables/responsables.component').then(m => m.ResponsablesComponent),
   },
+  // el organigrama ahora vive debajo del pueblo de responsables; los enlaces viejos llevan a esa sección
   {
     path: 'plan/:dane/organigrama',
-    loadComponent: () =>
-      import('./features/plan/pages/organigrama/organigrama.component').then(m => m.OrganigramaComponent),
+    redirectTo: () => inject(Router).createUrlTree(['/responsables'], { fragment: 'organigrama' }),
   },
   {
     path: 'plan/:dane',

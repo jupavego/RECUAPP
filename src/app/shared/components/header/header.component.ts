@@ -57,7 +57,6 @@ export class HeaderComponent {
     { nombre: 'Plan', items: [
       { t: 'El plan en claro', r: '/plan', c: '#4FA22E', g: 'plan', activo: u => /^\/plan(\/\d+)?$/.test(u) },
       { t: 'Responsables', r: '/responsables', c: '#D99A14', g: 'users', activo: u => u.startsWith('/responsables') },
-      { t: 'Organigrama', r: '/plan/05308/organigrama', c: '#7FA83A', g: 'org', activo: u => /^\/plan\/\d+\/organigrama/.test(u) },
     ] },
     { nombre: 'Territorio', items: [
       { t: 'Mapa territorial', r: '/mapa', c: '#16A085', g: 'pin', activo: u => u === '/mapa' },

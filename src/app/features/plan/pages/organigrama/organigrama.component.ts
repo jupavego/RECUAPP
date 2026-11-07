@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, inject, input, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { catchError, map, of, switchMap } from 'rxjs';
@@ -87,6 +87,8 @@ const madre = (d: Dependencia): string | null | undefined => d.padre ?? d.vincul
 export class OrganigramaComponent {
   private readonly servicio = inject(PlanService);
   private readonly ruta = inject(ActivatedRoute);
+  /** dentro de otra vista (Responsables): el título lo pone la sección que lo contiene */
+  readonly incrustado = input(false);
 
   readonly dane = toSignal(this.ruta.paramMap.pipe(map(p => p.get('dane') ?? ENTIDAD_PILOTO)), { initialValue: ENTIDAD_PILOTO });
   /** undefined mientras carga, null si no hay datos de la entidad */

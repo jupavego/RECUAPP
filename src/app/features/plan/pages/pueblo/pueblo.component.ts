@@ -10,6 +10,7 @@ import { mergeGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils.js
 import { Aura, crearAuras } from '../../../mapa3d/utils/aura';
 import { CategoriaCatalogo, Modelo, modelarEquipamiento } from '../../../mapa3d/utils/equipamientos';
 import { PlanEntidad, PlanService, Seguimiento } from '../../services/plan.service';
+import { OrganigramaComponent } from '../organigrama/organigrama.component';
 import { Resumen, construirResumenes, matizDe } from '../responsables/responsables.component';
 
 const ENTIDAD_PILOTO = '05308';
@@ -204,8 +205,9 @@ interface Pin { sprite: THREE.Sprite; aspecto: number; tex: THREE.CanvasTexture;
 @Component({
   selector: 'app-pueblo',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, OrganigramaComponent],
   template: `
+    <div class="vista">
     <header class="titulo">
       <div class="titulo__txt">
         <span class="titulo__ojo">{{ plan()?.municipio ?? 'Girardota' }} · Plan de desarrollo 2024-2027</span>
@@ -278,6 +280,22 @@ interface Pin { sprite: THREE.Sprite; aspecto: number; tex: THREE.CanvasTexture;
         <p class="ayuda">Arrastra para desplazar · clic derecho para girar · rueda para acercar</p>
       </div>
     </div>
+    </div>
+
+    <!-- Debajo del pueblo: cómo se organiza la alcaldía (antes era su propia vista en el menú) -->
+    <section class="org-sec" id="organigrama" aria-labelledby="org-sec-t">
+      <header class="org-sec__cab">
+        <span class="org-sec__insignia" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="9" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-5h14v5M12 12v5"/></svg>
+        </span>
+        <div>
+          <span class="org-sec__ojo">¿Quién responde a quién?</span>
+          <h2 id="org-sec-t">Así se organiza la alcaldía</h2>
+        </div>
+        <span class="org-sec__rama" aria-hidden="true"></span>
+      </header>
+      <app-organigrama [incrustado]="true" />
+    </section>
   `,
   styles: [`
     :host {
@@ -290,7 +308,27 @@ interface Pin { sprite: THREE.Sprite; aspecto: number; tex: THREE.CanvasTexture;
     .titulo__ley:focus-visible { outline: 3px solid #66AA33; outline-offset: 2px; }
     h1 { margin: 2px 0 0; font-size: clamp(1.25rem, 2.6vw, 1.75rem); line-height: 1.15; color: #243746; }
     .titulo p { margin: 2px 0 0; font-size: .82rem; color: #3D5C3D; }
-    :host { display: flex; flex-direction: column; height: calc(100dvh - var(--alto-barra)); }
+    /* el pueblo ocupa la pantalla; debajo, al desplazarse, sigue el organigrama */
+    :host { display: block; }
+    .vista { display: flex; flex-direction: column; height: calc(100dvh - var(--alto-barra)); }
+    .org-sec { padding: 40px 8px 24px; }
+    .org-sec__cab { display: flex; align-items: center; gap: 16px; padding: 0 16px 4px; }
+    /* insignia del organigrama: hoja con degradé verde y el ícono del menú, que se mece al pasar el cursor */
+    .org-sec__insignia { flex: none; width: 54px; height: 54px; display: grid; place-items: center; color: #fff;
+      border-radius: 6px 50% 50% 50%; background: linear-gradient(140deg, #A6D65A, #7FA83A 45%, #3F7A35);
+      box-shadow: 0 8px 20px rgba(127, 168, 58, .35), inset 0 -3px 0 rgba(0,0,0,.08);
+      transition: transform .35s cubic-bezier(.3,1.6,.5,1); }
+    .org-sec__cab:hover .org-sec__insignia { transform: rotate(-8deg) scale(1.05); }
+    .org-sec__insignia svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+    .org-sec__ojo { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #7FA83A; }
+    .org-sec h2 { margin: 2px 0 0; font-size: clamp(1.3rem, 2.6vw, 1.8rem); line-height: 1.15; color: #243746; }
+    /* rama que sale del título y se desvanece: une la cabecera con el árbol de dependencias */
+    .org-sec__rama { flex: 1; align-self: center; height: 2px; margin-left: 8px; border-radius: 2px;
+      background: linear-gradient(90deg, #7FA83A, rgba(127,168,58,.35) 40%, transparent); position: relative; }
+    .org-sec__rama::after { content: ''; position: absolute; left: 34%; top: -9px; width: 10px; height: 16px; border-radius: 0 100% 0 100%;
+      background: #A6D65A; opacity: .7; transform: rotate(-20deg); }
+    :host(.tema-oscuro) .org-sec h2 { color: #eaf3e4; }
+    :host(.tema-oscuro) .org-sec__ojo { color: #a9cf8f; }
     .cuerpo { flex: 1; min-height: 420px; display: grid; grid-template-columns: 1fr; gap: 12px; padding: 12px 12px 0; }
     .cuerpo--ley { grid-template-columns: 280px 1fr; }
     .leyenda { min-height: 0; overflow-y: auto; padding: 2px 4px 2px 0; display: flex; flex-direction: column; gap: 2px; scrollbar-width: thin; }
@@ -389,7 +427,8 @@ interface Pin { sprite: THREE.Sprite; aspecto: number; tex: THREE.CanvasTexture;
     :host(.tema-oscuro) .leyenda button.on { background: hsl(var(--h) 28% 26%); box-shadow: inset 3px 0 0 hsl(var(--h) 50% 60%); }
     :host(.tema-oscuro) .mapa { border-color: #2f4a35; }
     @media (max-width: 860px) {
-      :host { height: auto; min-height: calc(100dvh - var(--alto-barra)); overflow: visible; }
+      .vista { height: auto; min-height: calc(100dvh - var(--alto-barra)); overflow: visible; }
+      .org-sec__rama { display: none; }
       .titulo { flex-direction: column; align-items: flex-start; padding: 10px 14px 2px; }
       .titulo p { display: none; }
       .cuerpo { flex: none; }

@@ -2,7 +2,7 @@
   <section class="org">
     <header class="org__cab">
       <div>
-        <h1>Estructura organizacional · {{ p.municipio }}</h1>
+        @if (!incrustado()) { <h1>Estructura organizacional · {{ p.municipio }}</h1> }
         <p>Organigrama de la alcaldía: arriba el despacho del alcalde, luego las oficinas asesoras y las secretarías, y bajo cada una sus subsecretarías y unidades. El tamaño del nodo sigue los productos del plan. Pasa el cursor para ver el detalle y haz clic para fijarlo.</p>
       </div>
       <div class="org__acciones">
