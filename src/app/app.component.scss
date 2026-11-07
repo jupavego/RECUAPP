@@ -14,7 +14,7 @@
   &__vista { min-width: 0; padding-top: var(--alto-barra); }
 }
 
-// Mapa 3D en escritorio: ocupa toda la altura, sin la franja libre de arriba
+// Portada y mapa 3D en escritorio: ocupan toda la altura, sin la franja libre de arriba
 @media (min-width: 768px) {
   .shell__vista--plena { padding-top: 0; --alto-barra: 0px; }
 }

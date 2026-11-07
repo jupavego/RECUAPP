@@ -30,8 +30,11 @@ export class AppComponent {
     !this.currentUrl().startsWith('/auth')
   );
 
-  // Vistas a sangre completa (mapa 3D): sin franja superior; la cápsula de cuenta y tema flota sobre el mapa
-  readonly vistaPlena = computed(() => this.currentUrl().startsWith('/mapa3d'));
+  // Vistas a sangre completa (portada y mapa 3D): sin franja superior; la cápsula de cuenta y tema flota encima
+  readonly vistaPlena = computed(() => {
+    const ruta = this.currentUrl().split(/[?#]/)[0];
+    return ruta === '/' || ruta === '' || ruta.startsWith('/mapa3d');
+  });
 
   // Quita el padding-top del host cuando no hay chrome (páginas auth)
   @HostBinding('class.no-chrome')

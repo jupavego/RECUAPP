@@ -28,7 +28,10 @@ import { PinNetworkComponent } from '../../components/pin-network/pin-network.co
     </section>
   `,
   styles: [`
-    .home { position: relative; overflow: hidden; text-align: center; padding: 96px 16px; }
+    /* el relieve cubre toda la ventana (sin franjas arriba ni abajo) y el contenido queda centrado en ella */
+    .home { position: relative; overflow: hidden; text-align: center; padding: 96px 16px;
+      min-height: calc(100dvh - var(--alto-barra, 0px)); box-sizing: border-box;
+      display: flex; flex-direction: column; justify-content: center; }
     /* Relieve de Girardota en un solo plano que deriva despacio: de lado, arriba y abajo, y con zoom (profundidad).
        Una sola animación con transform, para que funcione igual en todos los navegadores. */
     .home__relieve {
