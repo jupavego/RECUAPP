@@ -713,6 +713,7 @@ const TIPOS_ZONA: Record<string, string> = {
     <div #lienzo class="lienzo"
          (mousedown)="alRatonAbajo($event)" (pointerdown)="capaInfo.set(null); alPulsar($event)" (pointerup)="alSoltar($event)"
          (pointerleave)="alSalir()"></div>
+    <div class="vineta" aria-hidden="true"></div>
 
     @if (cargando()) { <div class="estado">Levantando el territorio…</div> }
     @if (error()) { <div class="estado error">{{ error() }}</div> }
@@ -1076,6 +1077,10 @@ const TIPOS_ZONA: Record<string, string> = {
     :host { position: relative; display: block; height: calc(100dvh - var(--alto-barra)); min-height: 520px;
       background: linear-gradient(#8ec8f2, #e4f2fb 70%); overflow: hidden; }
     .lienzo { position: absolute; inset: 0; }
+    /* viñeta: oscurece apenas los bordes para llevar la mirada al centro; es CSS sobre el lienzo, no una pasada
+       de render, así que no le cuesta nada a la GPU de la escena */
+    .vineta { position: absolute; inset: 0; pointer-events: none;
+      background: radial-gradient(ellipse 78% 72% at 50% 46%, transparent 42%, rgba(14, 30, 46, .16) 70%, rgba(14, 30, 46, .48) 100%); }
     .estado { position: absolute; inset: 0; display: grid; place-items: center; font: 600 1.1rem system-ui;
       color: #36556b; pointer-events: none; }
     .estado.error { color: #b91c1c; }
@@ -1452,6 +1457,8 @@ export class Mapa3dComponent implements AfterViewInit {
   readonly aniosPoblacion = ANIOS_POBLACION;
 
   private renderer!: THREE.WebGLRenderer;
+  /** niebla que se acerca al bajar la cámara (perspectiva atmosférica); en false queda el rango fijo de siempre */
+  atmosfera = true;
   private escena = new THREE.Scene();
   private camara!: THREE.PerspectiveCamera;
   private controles!: OrbitControls;
@@ -6759,6 +6766,7 @@ export class Mapa3dComponent implements AfterViewInit {
           this.mantenerSobreElRelieve();
         }
         this.ajustarPlanoCercano();
+        this.ajustarAtmosfera();
         this.animarAlzado();
         this.actualizarSombras();
         this.actualizarArboles();
@@ -6854,6 +6862,23 @@ export class Mapa3dComponent implements AfterViewInit {
     if (Math.abs(near - this.camara.near) / near < 0.05) return;
     this.camara.near = near;
     this.camara.updateProjectionMatrix();
+  }
+
+  /**
+   * Perspectiva atmosférica: con la cámara cerca del suelo la niebla empieza a pocos kilómetros, así las lomas
+   * del otro lado del valle pierden contraste y se lee la distancia; al alejarse vuelve al rango de la vista
+   * general. Solo mueve dos números de la niebla que ya existe: no añade pasadas ni cambia los materiales.
+   */
+  private ajustarAtmosfera(): void {
+    const niebla = this.escena.fog as THREE.Fog;
+    const d = this.camara.position.distanceTo(this.controles.target);
+    if (!this.atmosfera) { niebla.near = 26000; niebla.far = 56000; return; }
+    const s = THREE.MathUtils.smoothstep(d, 400, 12000);
+    // de cerca la bruma empieza a 600 m; en la vista general, a 6 km (las montañas del otro lado del valle se aclaran)
+    const near = 600 + 5400 * s, far = 12000 + 22000 * s;
+    if (Math.abs(far - niebla.far) / far < 0.01) return;
+    niebla.near = near;
+    niebla.far = far;
   }
 
   /** Si la cámara quedó dentro de un edificio (o más baja que su techo sobre él), la saca por el lado más cercano. */
