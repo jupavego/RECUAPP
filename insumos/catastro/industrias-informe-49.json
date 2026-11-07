@@ -1,0 +1,330 @@
+{
+ "Abrasivos de Colombia S.A. (Abracol)": {
+  "parque": null,
+  "motivo": "coordenada dentro de la construcción",
+  "largo": 89.2,
+  "fondo": 75.4,
+  "area": 6309,
+  "pisos": 1,
+  "vertices": 10
+ },
+ "Colporón S.A.S.": {
+  "parque": "Parque Industrial El Trapiche",
+  "motivo": "coordenada dentro de la construcción",
+  "largo": 15.0,
+  "fondo": 34.8,
+  "area": 420,
+  "pisos": 1,
+  "vertices": 9
+ },
+ "Inversiones Maaca S.A.S.": {
+  "parque": null,
+  "motivo": "coordenada dentro de la construcción",
+  "largo": 39.2,
+  "fondo": 23.6,
+  "area": 840,
+  "pisos": 2,
+  "vertices": 12
+ },
+ "Invesa S.A.": {
+  "parque": null,
+  "motivo": "coordenada dentro de la construcción",
+  "largo": 28.2,
+  "fondo": 48.6,
+  "area": 933,
+  "pisos": 1,
+  "vertices": 14
+ },
+ "Metroaridos S.A.S.": {
+  "parque": null,
+  "motivo": "coordenada dentro de la construcción",
+  "largo": 16.8,
+  "fondo": 13.0,
+  "area": 175,
+  "pisos": 1,
+  "vertices": 12
+ },
+ "Papeles Impermeables Industriales S.A.S. (Papelim)": {
+  "parque": "Parque Industrial del Norte",
+  "motivo": "coordenada dentro de la construcción",
+  "largo": 17.4,
+  "fondo": 39.6,
+  "area": 684,
+  "pisos": 1,
+  "vertices": 4
+ },
+ "Productos Alimenticios Pan Árabe S.A.S.": {
+  "parque": "Parque Industrial del Norte",
+  "motivo": "coordenada dentro de la construcción",
+  "largo": 20.4,
+  "fondo": 39.8,
+  "area": 808,
+  "pisos": 1,
+  "vertices": 4
+ },
+ "Prolaquim S.A.S.": {
+  "parque": null,
+  "motivo": "coordenada dentro de la construcción",
+  "largo": 29.4,
+  "fondo": 17.0,
+  "area": 446,
+  "pisos": 1,
+  "vertices": 6
+ },
+ "Zincol S.A.S.": {
+  "parque": "Parque Industrial San Francisco de Asís",
+  "motivo": "coordenada dentro de la construcción",
+  "largo": 33.8,
+  "fondo": 24.6,
+  "area": 833,
+  "pisos": 1,
+  "vertices": 4
+ },
+ "Alsec Alimentos Secos S.A.S.": {
+  "parque": "Parque Empresarial Intercity",
+  "motivo": "coordenada dentro de la construcción",
+  "largo": 23.6,
+  "fondo": 36.0,
+  "area": 804,
+  "pisos": 1,
+  "vertices": 8
+ },
+ "Industrias Fantasía S.A.S.": {
+  "parque": "Parque Industrial San Francisco de Asís",
+  "motivo": "coordenada dentro de la construcción",
+  "largo": 75.2,
+  "fondo": 32.0,
+  "area": 1976,
+  "pisos": 2,
+  "vertices": 11
+ },
+ "Iprocom S.A.": {
+  "parque": "Parque Industrial del Norte",
+  "motivo": "construcción más cercana, a 1 m",
+  "largo": 19.8,
+  "fondo": 38.6,
+  "area": 763,
+  "pisos": 1,
+  "vertices": 4
+ },
+ "Flexform S.A.S.": {
+  "parque": null,
+  "motivo": "construcción más cercana, a 2 m",
+  "largo": 30.2,
+  "fondo": 12.0,
+  "area": 365,
+  "pisos": 1,
+  "vertices": 4
+ },
+ "C. I. Textiles Balalaika": {
+  "parque": null,
+  "motivo": "construcción más cercana, a 2 m",
+  "largo": 32.4,
+  "fondo": 28.2,
+  "area": 913,
+  "pisos": 2,
+  "vertices": 4
+ },
+ "Industria de Espumas Renacer S.A.S.": {
+  "parque": null,
+  "motivo": "construcción más cercana, a 2 m",
+  "largo": 30.2,
+  "fondo": 29.0,
+  "area": 815,
+  "pisos": 1,
+  "vertices": 8
+ },
+ "Nutri Grup S.A.S.": {
+  "parque": "Parque Empresarial Intercity",
+  "motivo": "construcción más cercana, a 3 m",
+  "largo": 20.0,
+  "fondo": 31.6,
+  "area": 585,
+  "pisos": 1,
+  "vertices": 6
+ },
+ "Galletas Galaxy S.A.S.": {
+  "parque": "Parque Industrial del Norte",
+  "motivo": "construcción más cercana, a 3 m",
+  "largo": 20.4,
+  "fondo": 40.0,
+  "area": 807,
+  "pisos": 1,
+  "vertices": 4
+ },
+ "Ecolformas S.A.S.": {
+  "parque": "Parque Industrial del Norte",
+  "motivo": "construcción más cercana, a 3 m",
+  "largo": 29.0,
+  "fondo": 18.2,
+  "area": 378,
+  "pisos": 1,
+  "vertices": 4
+ },
+ "Tortas Santa Teresa S.A.S.": {
+  "parque": "Parque Industrial San Francisco de Asís",
+  "motivo": "construcción más cercana, a 5 m",
+  "largo": 113.4,
+  "fondo": 72.0,
+  "area": 5754,
+  "pisos": 1,
+  "vertices": 6
+ },
+ "Procopal S.A.": {
+  "parque": null,
+  "motivo": "construcción más cercana, a 6 m",
+  "largo": 69.4,
+  "fondo": 24.0,
+  "area": 1545,
+  "pisos": 1,
+  "vertices": 8
+ },
+ "Compañía Colombiana de Resinas y Mármoles S.A.S.": {
+  "parque": "Parque Empresarial Intercity",
+  "motivo": "construcción más cercana, a 7 m",
+  "largo": 33.0,
+  "fondo": 21.2,
+  "area": 660,
+  "pisos": 1,
+  "vertices": 4
+ },
+ "Plastimundo S.A.S.": {
+  "parque": "Parque Industrial del Norte",
+  "motivo": "construcción más cercana, a 7 m",
+  "largo": 19.2,
+  "fondo": 38.2,
+  "area": 732,
+  "pisos": 1,
+  "vertices": 4
+ },
+ "Solenis Colombia S.A.S.": {
+  "parque": "Parque Industrial del Norte",
+  "motivo": "construcción más cercana, a 7 m",
+  "largo": 20.0,
+  "fondo": 42.2,
+  "area": 840,
+  "pisos": 1,
+  "vertices": 4
+ },
+ "Espumas e Insumos del Norte S.A.S.": {
+  "parque": null,
+  "motivo": "construcción más cercana, a 8 m",
+  "largo": 15.0,
+  "fondo": 24.2,
+  "area": 310,
+  "pisos": 1,
+  "vertices": 10
+ },
+ "Italcol de Occidente S.A. (Girardota)": {
+  "parque": null,
+  "motivo": "construcción más cercana, a 9 m",
+  "largo": 32.2,
+  "fondo": 24.4,
+  "area": 497,
+  "pisos": 1,
+  "vertices": 16
+ },
+ "Inversiones JA&CR S.A.S. (Ecoasfaltar)": {
+  "parque": null,
+  "motivo": "construcción más cercana, a 9 m",
+  "largo": 48.4,
+  "fondo": 19.8,
+  "area": 960,
+  "pisos": 1,
+  "vertices": 4
+ },
+ "Inversiones Agro Garcés S.A.S  antes Inversiones JA&CR S.A.S. (Ecoasfaltar)": {
+  "parque": null,
+  "motivo": "sus construcciones cercanas ya son de otra fábrica"
+ },
+ "Industrias Peláez Inpel S.A.S.": {
+  "parque": "Parque Industrial San Francisco de Asís",
+  "motivo": "construcción más cercana, a 9 m",
+  "largo": 25.2,
+  "fondo": 61.8,
+  "area": 1561,
+  "pisos": 1,
+  "vertices": 4
+ },
+ "Plásticos Correa S.A.S.": {
+  "parque": null,
+  "motivo": "construcción más cercana, a 9 m",
+  "largo": 43.4,
+  "fondo": 49.8,
+  "area": 1922,
+  "pisos": 2,
+  "vertices": 6
+ },
+ "Industrias de Galletas Greco Ltda": {
+  "parque": null,
+  "motivo": "construcción más cercana, a 10 m",
+  "largo": 15.4,
+  "fondo": 26.4,
+  "area": 409,
+  "pisos": 2,
+  "vertices": 4
+ },
+ "Maderas y Aserríos Nariño": {
+  "parque": null,
+  "motivo": "construcción más cercana, a 11 m",
+  "largo": 36.8,
+  "fondo": 23.6,
+  "area": 726,
+  "pisos": 1,
+  "vertices": 6
+ },
+ "Agregados El Trapiche S.A.S.": {
+  "parque": null,
+  "motivo": "sus construcciones cercanas ya son de otra fábrica"
+ },
+ "Galvaceros S.A.": {
+  "parque": null,
+  "motivo": "construcción más cercana, a 12 m",
+  "largo": 112.4,
+  "fondo": 29.6,
+  "area": 3334,
+  "pisos": 2,
+  "vertices": 4
+ },
+ "Manufacturas de Pino S.A.S.": {
+  "parque": null,
+  "motivo": "construcción más cercana, a 16 m",
+  "largo": 62.0,
+  "fondo": 38.0,
+  "area": 1937,
+  "pisos": 1,
+  "vertices": 6
+ },
+ "Drinks de Colombia S.A.S.": {
+  "parque": null,
+  "motivo": "sin construcción del catastro a menos de 17 m"
+ },
+ "Incolmotos Yamaha S.A.": {
+  "parque": null,
+  "motivo": "sin construcción del catastro a menos de 17 m"
+ },
+ "Interdoors S.A.S.": {
+  "parque": null,
+  "motivo": "sin construcción del catastro a menos de 17 m"
+ },
+ "Mincivil S.A.": {
+  "parque": null,
+  "motivo": "sin construcción del catastro a menos de 17 m"
+ },
+ "PaisaPan J.J. S.A.S.": {
+  "parque": "Centro Logístico Industrial del Norte",
+  "motivo": "sin construcción del catastro a menos de 17 m"
+ },
+ "Productos Químicos Panamericanos S.A. (PQP)": {
+  "parque": null,
+  "motivo": "sin construcción del catastro a menos de 17 m"
+ },
+ "Titán Manufactura de Cemento S.A. ": {
+  "parque": null,
+  "motivo": "sin construcción del catastro a menos de 17 m"
+ },
+ "Clara Rosa Cadavid Cadavid": {
+  "parque": null,
+  "motivo": "sin construcción del catastro a menos de 17 m"
+ }
+}

@@ -16,7 +16,7 @@ import { CATEGORIA, CATEGORIAS } from '../../../mapa/utils/puntos';
 import { Aura, CategoriaServicio, COLOR_INDUSTRIA, GLIFO, Icono, ItemAura, SERVICIOS, SERVICIOS_GRUPO, crearAgrupador, crearAuras, crearIcono } from '../../utils/aura';
 import { Conduccion } from '../../utils/conduccion';
 import { ESCALA_ACTIVOS } from '../../utils/escala';
-import { COLORES_RURALES, Modelo, chimeneaParque, colorParque, modelarEquipamiento, unidadParque } from '../../utils/equipamientos';
+import { COLORES_RURALES, Modelo, PARTES_COMFAMA, chimeneaParque, colorParque, modelarEquipamiento, unidadParque } from '../../utils/equipamientos';
 import { coloresPorMunicipio, hex } from '../../../mapa/utils/paleta';
 import { Geometria, decodeGeometria } from '../../../mapa/utils/polyline';
 
@@ -346,8 +346,6 @@ const TOLERANCIA_CAUCE_PX = 9;
 const VELO_VEREDA = 0.2;
 /** Ajuste de tono de la foto satelital: más clara, sin desenfoque. */
 const TONO_FOTO = 'brightness(1.4) contrast(0.95) saturate(1.1)';
-/** Edificios que se achican para que quepan donde corresponde (junto a la piscina de Comfama, sin invadir la vía). */
-const ESCALA_MANUAL = new Map<string, number>([['COLEGIO COMFAMA', 0.7], ['Centro Integral de Salud Comfama Girardota', 0.7]]);
 /** Giro (rad) de la cuadrícula del casco urbano de Girardota: el parque y la catedral siguen la dirección de sus calles. */
 const GIRO_CASCO = 0.6946;
 /**
@@ -387,9 +385,22 @@ const SITIOS_FIJOS = new Map<string, { lat: number; lng: number; yaw: number; di
   ['Parqueadero Santa Ana', { lat: 6.376837, lng: -75.447134, yaw: GIRO_CASCO, dim: [56, 46] }],
   // Colegio Nuestra Señora del Rosario: manzana de la carrera 14 con calle 9, ubicada con el pin de Google Maps y la cuadrícula del casco.
   ['COLEGIO NUESTRA SEÑORA DEL ROSARIO (P)', { lat: 6.37558, lng: -75.446358, yaw: GIRO_CASCO, dim: [58, 46] }],
+  // Sede Comfama (carrera 18 Bis con calle 5AA): un solo edificio con el colegio, la piscina y el centro de salud; centro de los predios
+  // 0110-00013 y 0110-00014 del catastro. El modelo lo lleva el centro de salud y las otras dos partes van en PARTES.
+  ['Centro Integral de Salud Comfama Girardota', { lat: 6.3797616, lng: -75.4462567, yaw: GIRO_CASCO, dim: [59, 27] }],
 ]);
 /** Puntos que son parte de otro sitio: no llevan edificio propio; su descripción se suma a la del sitio que los contiene. */
 const FUSIONES = new Map<string, string>([['Señor caído', 'Catedral Nuestra Señora del Rosario'], ['Mercado agroverde', 'Parque principal']]);
+/**
+ * Lugares que comparten un mismo edificio y conservan cada uno su icono y su ficha: `sitio` es el punto de SITIOS_FIJOS que lleva el modelo
+ * y (x, z, alto) dónde va el icono en los ejes del modelo; `nivel`, entre qué alturas sobre la losa queda su piso. Al tocar el edificio se abre
+ * la parte del piso tocado o, si no hay pisos, la más cercana.
+ */
+const PARTES = new Map<string, { sitio: string; x: number; z: number; alto: number; nivel?: [number, number] }>([
+  ['Centro Integral de Salud Comfama Girardota', { sitio: 'Centro Integral de Salud Comfama Girardota', ...PARTES_COMFAMA.salud }],
+  ['COLEGIO COMFAMA', { sitio: 'Centro Integral de Salud Comfama Girardota', ...PARTES_COMFAMA.colegio }],
+  ['Piscina de confama', { sitio: 'Centro Integral de Salud Comfama Girardota', ...PARTES_COMFAMA.piscina }],
+]);
 
 /** Cuánto se levanta (metros del modelo) una vereda al elegirla; al pasar el cursor solo se le dibuja el borde. */
 const ALZA_ELEGIDA = 170;
@@ -710,15 +721,16 @@ const TIPOS_ZONA: Record<string, string> = {
   standalone: true,
   imports: [DecimalPipe, RouterLink],
   template: `
-    <div #lienzo class="lienzo"
+    <div #lienzo class="lienzo" [class.eligiendo]="eligiendoSalida()"
          (mousedown)="alRatonAbajo($event)" (pointerdown)="capaInfo.set(null); alPulsar($event)" (pointerup)="alSoltar($event)"
-         (pointerleave)="alSalir()"></div>
+         (pointerleave)="alSalir()" (contextmenu)="conduciendo() && $event.preventDefault()"></div>
+    <div #tilt class="tilt" aria-hidden="true"></div>
     <div class="vineta" aria-hidden="true"></div>
 
     @if (cargando()) { <div class="estado">Levantando el territorio…</div> }
     @if (error()) { <div class="estado error">{{ error() }}</div> }
 
-    <div #rotulos class="rotulos" [hidden]="modoFoto()"></div>
+    <div #rotulos class="rotulos" [hidden]="modoFoto() && !conduciendo()" [class.solo-zonas]="conduciendo()"></div>
 
     <div #barraLey class="barra-ley" role="group" aria-label="Leyenda: tipos de edificio">
       <div class="pista">
@@ -1034,9 +1046,10 @@ const TIPOS_ZONA: Record<string, string> = {
       </svg>
     </button>
 
-    <button type="button" class="conducir" [class.activa]="conduciendo()" (click)="alternarConduccion()"
-            [attr.aria-pressed]="conduciendo()" [attr.title]="conduciendo() ? 'Salir de la conducción (Esc)' : 'Conducir libremente por el mapa'"
-            [attr.aria-label]="conduciendo() ? 'Salir de la conducción' : 'Conducir'">
+    <button type="button" class="conducir" [class.activa]="conduciendo() || eligiendoSalida()" (click)="alternarConduccion()"
+            [attr.aria-pressed]="conduciendo() || eligiendoSalida()"
+            [attr.title]="conduciendo() ? 'Salir de la conducción (Esc)' : eligiendoSalida() ? 'Cancelar (Esc)' : 'Conducir: elige en el mapa dónde empezar'"
+            [attr.aria-label]="conduciendo() ? 'Salir de la conducción' : eligiendoSalida() ? 'Cancelar la conducción' : 'Conducir'">
       <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
         <path d="M3 15.500v-3a1.600 1.600 0 0 1 1.200-1.500L7 10.200l1.900-3a1.600 1.600 0 0 1 1.400-.8h3.600a1.600 1.600 0 0 1 1.300.7l2.200 3.100 2.100.6a1.600 1.600 0 0 1 1.100 1.500v2.700h-2M5 15.500H3M16 15.500H9M7 10.200h10.500M12.200 6.200v4" fill="none" stroke="currentColor" stroke-width="1.700" stroke-linecap="round" stroke-linejoin="round"/>
         <circle cx="7" cy="16.500" r="2" fill="none" stroke="currentColor" stroke-width="1.700"/>
@@ -1044,11 +1057,22 @@ const TIPOS_ZONA: Record<string, string> = {
       </svg>
     </button>
 
+    @if (eligiendoSalida()) {
+      <div class="aviso-salida" role="status">
+        <b>¿Dónde quieres empezar a conducir?</b>
+        <span>Haz clic en el mapa; el carro aparece en la vía más cercana. Puedes mover el mapa para buscar el sitio.</span>
+        <span class="aviso-salida__acciones">
+          <button type="button" (click)="cancelarSalida(); empezarEnCentro()">Empezar en el centro <kbd>Enter</kbd></button>
+          <button type="button" (click)="cancelarSalida()">Cancelar <kbd>Esc</kbd></button>
+        </span>
+      </div>
+    }
+
     @if (conduciendo()) {
       <div class="hud-conduccion">
         <div class="velocimetro"><b #hudVelocidad>0</b> km/h</div>
         <div class="zona-hud" #hudZona></div>
-        <p>W A S D o flechas · Shift turbo · Espacio freno · R reaparecer · Esc salir</p>
+        <p>W A S D o flechas · Shift turbo · Espacio freno · Arrastrar mirar · Rueda distancia · C o 5 recentrar · R reaparecer · Esc salir</p>
       </div>
       @if (cayo()) {
         <div class="caida"><strong>Caíste al vacío</strong><button type="button" (click)="reaparecerCarro()">Reaparecer</button></div>
@@ -1077,10 +1101,31 @@ const TIPOS_ZONA: Record<string, string> = {
     :host { position: relative; display: block; height: calc(100dvh - var(--alto-barra)); min-height: 520px;
       background: linear-gradient(#8ec8f2, #e4f2fb 70%); overflow: hidden; }
     .lienzo { position: absolute; inset: 0; }
+    /* eligiendo dónde conducir: mira en vez de mano (el código escribe el cursor en línea, por eso el !important) */
+    .lienzo.eligiendo { cursor: crosshair !important; }
+    .aviso-salida { position: absolute; left: 50%; bottom: 36px; transform: translateX(-50%); z-index: 6; display: grid; gap: 6px;
+      max-width: min(460px, calc(100% - 32px)); padding: 12px 16px; border-radius: 14px; text-align: center;
+      background: rgba(255,255,255,.92); backdrop-filter: blur(8px); box-shadow: 0 6px 24px rgba(30,60,90,.22);
+      font: .82rem/1.35 system-ui; color: #26425a; animation: aviso-entra .18s ease-out; }
+    .aviso-salida b { font-size: .95rem; }
+    .aviso-salida__acciones { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 2px; }
+    .aviso-salida button { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border: 0; border-radius: 999px;
+      background: #e8f0f6; color: #26425a; font: 600 .78rem system-ui; cursor: pointer; }
+    .aviso-salida button:first-child { background: #2C88C8; color: #fff; }
+    .aviso-salida button:hover { filter: brightness(1.06); }
+    .aviso-salida kbd { padding: 0 5px; border-radius: 4px; background: rgba(0,0,0,.12); font: 600 .68rem ui-monospace, monospace; }
+    @keyframes aviso-entra { from { opacity: 0; transform: translate(-50%, 6px); } }
+    /* tilt-shift: desenfoca arriba y abajo y deja nítida la franja del centro, como una foto de maqueta. Lo hace el
+       compositor del navegador sobre el lienzo ya dibujado (no es una pasada de three.js); los rótulos van encima y
+       no se desenfocan. Sin desenfoque queda oculto para no costar nada. */
+    .tilt { position: absolute; inset: 0; pointer-events: none; display: none;
+      backdrop-filter: blur(var(--tilt, 0px)); -webkit-backdrop-filter: blur(var(--tilt, 0px));
+      -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 36%, transparent 62%, #000 100%);
+      mask-image: linear-gradient(to bottom, #000 0%, transparent 36%, transparent 62%, #000 100%); }
     /* viñeta: oscurece apenas los bordes para llevar la mirada al centro; es CSS sobre el lienzo, no una pasada
        de render, así que no le cuesta nada a la GPU de la escena */
     .vineta { position: absolute; inset: 0; pointer-events: none;
-      background: radial-gradient(ellipse 78% 72% at 50% 46%, transparent 42%, rgba(14, 30, 46, .16) 70%, rgba(14, 30, 46, .48) 100%); }
+      background: radial-gradient(ellipse 78% 72% at 50% 46%, transparent 46%, rgba(14, 30, 46, .12) 72%, rgba(14, 30, 46, .38) 100%); }
     .estado { position: absolute; inset: 0; display: grid; place-items: center; font: 600 1.1rem system-ui;
       color: #36556b; pointer-events: none; }
     .estado.error { color: #b91c1c; }
@@ -1103,6 +1148,8 @@ const TIPOS_ZONA: Record<string, string> = {
     .rotulos ::ng-deep .rot.agua.activo { z-index: 1; }
     .rotulos ::ng-deep .rot.agua i { background: #2c88c8; }
     .rotulos ::ng-deep .rot.fabrica { background: #fff7e0; z-index: 4; }
+    /* al conducir (modo foto) solo quedan los nombres de las zonas; el código escribe display en línea, de ahí el !important */
+    .rotulos.solo-zonas ::ng-deep .rot.agua, .rotulos.solo-zonas ::ng-deep .rot.fabrica { display: none !important; }
     .rotulos ::ng-deep .rot.fabrica i { background: #6b7280; }
     .creditos { position: absolute; left: 16px; bottom: 8px; margin: 0; max-width: calc(100% - 90px); pointer-events: none;
       font: 600 10px/1.3 system-ui; color: rgba(255,255,255,.92); text-shadow: 0 1px 3px rgba(0,0,0,.7); }
@@ -1416,6 +1463,16 @@ const TIPOS_ZONA: Record<string, string> = {
 })
 export class Mapa3dComponent implements AfterViewInit {
   @ViewChild('lienzo', { static: true }) private lienzo!: ElementRef<HTMLDivElement>;
+  @ViewChild('tilt', { static: true }) private capaTilt!: ElementRef<HTMLDivElement>;
+  /** tilt-shift al acercarse; en false nunca se desenfoca */
+  tiltShift = true;
+  /** fuerza actual del tilt-shift (0–1, se suaviza hacia la deseada) y desenfoque escrito en el CSS */
+  private tiltK = 0;
+  private tiltPx = 0;
+  /** flechas pulsadas para desplazar el mapa, si va con Shift y la velocidad actual (se acelera y frena suave) */
+  private readonly flechas = new Set<string>();
+  private flechaRapida = false;
+  private readonly velFlechas = new THREE.Vector2();
   @ViewChild('rotulos', { static: true }) private contenedorRotulos!: ElementRef<HTMLDivElement>;
   @ViewChild('barraLey', { static: true }) private barraLey!: ElementRef<HTMLDivElement>;
   private readonly host = inject<ElementRef<HTMLElement>>(ElementRef);
@@ -1444,6 +1501,10 @@ export class Mapa3dComponent implements AfterViewInit {
   /** modo fotografía: sin rótulos, pines ni aros de luz */
   readonly modoFoto = signal(false);
   readonly conduciendo = signal(false);
+  /** tras pulsar el carro: el próximo clic en el mapa marca dónde empezar a conducir */
+  readonly eligiendoSalida = signal(false);
+  /** si el modo foto lo encendió la conducción (para apagarlo al salir) */
+  private fotoPorConducir = false;
   readonly cayo = signal(false);
   private conduccion?: Conduccion;
   /** distancia al borde de la calzada más cercana (negativa sobre ella), para que el carro suba al asfalto */
@@ -1552,7 +1613,8 @@ export class Mapa3dComponent implements AfterViewInit {
   private fabricaElegida = -1;
   private fabricaHover = -1;
   /** Puntos de interés (colegios, hospitales, canchas...) con el edificio que los representa. */
-  private equipamientos: { x: number; z: number; lon: number; lat: number; n: string; r: number; yaw?: number; datos: { p: Punto; modelo: Modelo } }[] = [];
+  /** `pin`: dónde va el icono (y su altura sobre la losa) cuando el lugar es parte de un edificio compartido (PARTES), que se nombra en `sitio`. */
+  private equipamientos: { x: number; z: number; lon: number; lat: number; n: string; r: number; yaw?: number; pin?: { x: number; z: number; alto: number; nivel?: [number, number]; base?: number }; sitio?: string; datos: { p: Punto; modelo: Modelo } }[] = [];
   private mallaEquip: THREE.Mesh | null = null;
   private geoEquip: THREE.BufferGeometry | null = null;
   private matEquip: THREE.Material | null = null;
@@ -1877,6 +1939,7 @@ export class Mapa3dComponent implements AfterViewInit {
       texto: 'El mapa responde como un juego de estrategia: arrastra, acerca y gira la cámara hasta encontrar el mejor ángulo.',
       controles: [
         { teclas: ['Arrastrar'], accion: 'Desplazarte por el territorio' },
+        { teclas: ['W A S D', '↑ ← ↓ →'], accion: 'Desplazarte con el teclado (Shift para ir más rápido)' },
         { teclas: ['Rueda'], accion: 'Acercar y alejar' },
         { teclas: ['Rueda presionada'], accion: 'Girar e inclinar la cámara' },
         { teclas: ['Clic derecho'], accion: 'Inclinar la vista' },
@@ -1899,7 +1962,7 @@ export class Mapa3dComponent implements AfterViewInit {
       texto: 'Abajo a la derecha están tus herramientas: toma fotos limpias del paisaje o maneja un carro por las vías del municipio.',
       controles: [
         { teclas: ['📷'], accion: 'Modo foto: oculta rótulos e íconos' },
-        { teclas: ['🚗'], accion: 'Conducir: W A S D o flechas, Shift turbo, Espacio freno, R reaparecer, Esc salir' },
+        { teclas: ['🚗'], accion: 'Conducir: haz clic donde quieras empezar; W A S D o flechas, Shift turbo, Espacio freno, arrastra para mirar, C o 5 recentra la cámara, R reaparecer, Esc salir' },
         { teclas: ['⌂'], accion: 'Vista general: volver a ver todo el municipio' },
       ] },
   ];
@@ -1999,6 +2062,8 @@ export class Mapa3dComponent implements AfterViewInit {
     this.controles.enableZoom = false;
     const rueda = (ev: WheelEvent) => {
       ev.preventDefault();
+      // al conducir la rueda acerca o aleja la cámara del carro (no se acumula zoom para cuando se sale)
+      if (this.conduciendo()) { this.conduccion?.alejar(Math.exp(ev.deltaY * 0.0012)); return; }
       this.vuelo = null;
       this.zoomPendiente += ev.deltaY * 0.0022;
       this.ultimaActividad = performance.now();
@@ -2013,6 +2078,37 @@ export class Mapa3dComponent implements AfterViewInit {
     this.destroyRef.onDestroy(() => {
       this.renderer.domElement.removeEventListener('wheel', rueda);
       el.removeEventListener('pointermove', mover);
+    });
+
+    // flechas y W A S D: desplazan el mapa mientras se mantienen pulsadas (el bucle las gasta cuadro a cuadro). Al conducir las
+    // maneja el carro, con el tutorial abierto pasan sus tarjetas y en un campo de texto mueven el cursor.
+    // W A S D hacen lo mismo que las flechas (como en los juegos)
+    const comoFlecha: Record<string, string> = {
+      ArrowUp: 'ArrowUp', ArrowDown: 'ArrowDown', ArrowLeft: 'ArrowLeft', ArrowRight: 'ArrowRight',
+      KeyW: 'ArrowUp', KeyS: 'ArrowDown', KeyA: 'ArrowLeft', KeyD: 'ArrowRight',
+    };
+    const tecla = (ev: KeyboardEvent) => {
+      if (/^Shift/.test(ev.code)) { this.flechaRapida = ev.type === 'keydown'; return; }
+      const dir = comoFlecha[ev.code];
+      if (!dir) return;
+      if (ev.type === 'keyup') { this.flechas.delete(dir); return; }
+      const t = ev.target as HTMLElement | null;
+      if (ev.ctrlKey || ev.metaKey || ev.altKey || this.conduciendo() || this.tutorialAbierto() || !this.lienzoVisible
+        || t?.closest?.('input, textarea, select, [contenteditable]')) return;
+      ev.preventDefault();
+      this.flechaRapida = ev.shiftKey;
+      this.flechas.add(dir);
+    };
+    const soltarTodo = () => this.flechas.clear();
+    this.zona.runOutsideAngular(() => {
+      window.addEventListener('keydown', tecla);
+      window.addEventListener('keyup', tecla);
+      window.addEventListener('blur', soltarTodo);
+    });
+    this.destroyRef.onDestroy(() => {
+      window.removeEventListener('keydown', tecla);
+      window.removeEventListener('keyup', tecla);
+      window.removeEventListener('blur', soltarTodo);
     });
 
     const redim = () => {
@@ -4610,8 +4706,17 @@ export class Mapa3dComponent implements AfterViewInit {
     const incluidos = new Map<string, Punto[]>();
     const ocupadas: { x: number; z: number; yaw: number; dim: [number, number] }[] = [];   // huellas de los sitios fijos ya puestos
     for (const p of lista) { const sitio = FUSIONES.get(p.n); if (sitio) incluidos.set(sitio, [...(incluidos.get(sitio) ?? []), p]); }
+    // partes de un edificio compartido (Comfama): se ponen al final, sobre el modelo de su sitio, cada una con su icono
+    const partes: Punto[] = [];
+    const sitiosPuestos = new Map<string, { x: number; z: number; yaw: number; f: number }>();
+    const enSitio = (s: { x: number; z: number; yaw: number; f: number }, lx: number, lz: number) => {
+      const c = Math.cos(s.yaw), sn = Math.sin(s.yaw);
+      return { x: s.x + (lx * c + lz * sn) * s.f, z: s.z + (-lx * sn + lz * c) * s.f };
+    };
     lista.forEach((p, i) => {
       if (p.lat == null || p.lng == null || FUSIONES.has(p.n)) return;
+      const parte = PARTES.get(p.n);
+      if (parte && parte.sitio !== p.n) { partes.push(p); return; }
       const c = conjuntos.get(p);
       if (c) {
         out.push({ x: c.x, z: c.z, lon: this.lon0 + c.x / this.mLon, lat: this.lat0 - c.z / this.mLat, n: p.n, r: c.modelo.radio, yaw: c.yaw, datos: { p, modelo: c.modelo } });
@@ -4657,7 +4762,11 @@ export class Mapa3dComponent implements AfterViewInit {
         }
         const dentro = incluidos.get(p.n) ?? [];
         const ficha: Punto = dentro.length ? { ...p, x: [p.x, ...dentro.map(q => `${q.n}: ${q.x ?? q.t}`)].filter(Boolean).join(' · ') } : p;
-        out.push({ x: px, z: pz, lon: this.lon0 + px / this.mLon, lat: this.lat0 - pz / this.mLat, n: p.n, r: modelo.radio, yaw: fijo.yaw, datos: { p: ficha, modelo } });
+        // el modelo se arma a la medida de `dim`: si el ajustador lo redujo, las partes se acercan en la misma proporción
+        const puesto = { x: px, z: pz, yaw: fijo.yaw, f: fijo.dim ? (modelo.losa?.[0] ?? fijo.dim[0]) / fijo.dim[0] : 1 };
+        sitiosPuestos.set(p.n, puesto);
+        const pin = parte ? { ...enSitio(puesto, parte.x, parte.z), alto: parte.alto, nivel: parte.nivel } : undefined;
+        out.push({ x: px, z: pz, lon: this.lon0 + px / this.mLon, lat: this.lat0 - pz / this.mLat, n: p.n, r: modelo.radio, yaw: fijo.yaw, pin, sitio: parte?.sitio, datos: { p: ficha, modelo } });
         return;
       }
       const aj = ajustes[p.n];
@@ -4674,12 +4783,6 @@ export class Mapa3dComponent implements AfterViewInit {
         out.push({ x: this.aX(aj.lon), z: this.aZ(aj.lat), lon: aj.lon, lat: aj.lat, n: p.n, r: modelo.radio, yaw: aj.yaw, datos: { p, modelo } });
         return;
       }
-      const esc = ESCALA_MANUAL.get(p.n);
-      if (esc) {
-        modelo.piezas.forEach(pz => pz.g.scale(esc, esc, esc));
-        modelo.radio *= esc;
-        if (modelo.losa) modelo.losa = [modelo.losa[0] * esc, modelo.losa[1] * esc];
-      }
       const x0 = this.aX(p.lng), z0 = this.aZ(p.lat);
       for (const [dx, dz] of intentos) {
         const x = x0 + dx, z = z0 + dz;
@@ -4689,6 +4792,14 @@ export class Mapa3dComponent implements AfterViewInit {
         return;
       }
     });
+    // sin edificio propio: el modelo del sitio ya las dibuja; van al final para que el clic sobre la malla no las confunda con el sitio
+    for (const p of partes) {
+      const parte = PARTES.get(p.n)!, s = sitiosPuestos.get(parte.sitio);
+      if (!s) continue;
+      const { x, z } = enSitio(s, parte.x, parte.z);
+      out.push({ x, z, lon: this.lon0 + x / this.mLon, lat: this.lat0 - z / this.mLat, n: p.n, r: 8, yaw: s.yaw, pin: { x, z, alto: parte.alto, nivel: parte.nivel }, sitio: parte.sitio,
+        datos: { p, modelo: { piezas: [], radio: 8 } } });
+    }
     return out;
   }
 
@@ -4699,7 +4810,7 @@ export class Mapa3dComponent implements AfterViewInit {
    */
   private conjuntosDeporte(lista: Punto[], holgura: (x: number, z: number) => number): Map<Punto, { x: number; z: number; yaw: number; modelo: Modelo }> {
     const res = new Map<Punto, { x: number; z: number; yaw: number; modelo: Modelo }>();
-    const dep = lista.map((p, i) => ({ p, i })).filter(({ p }) => p.c === 'deporte' && p.lat != null && p.lng != null && !SITIOS_FIJOS.has(p.n));
+    const dep = lista.map((p, i) => ({ p, i })).filter(({ p }) => p.c === 'deporte' && p.lat != null && p.lng != null && !SITIOS_FIJOS.has(p.n) && !PARTES.has(p.n));
     const pos = (p: Punto) => [this.aX(p.lng!), this.aZ(p.lat!)];
     const visto = new Set<Punto>();
     for (const a of dep) {
@@ -4860,6 +4971,7 @@ export class Mapa3dComponent implements AfterViewInit {
     const giro = new THREE.Matrix4();
     const losaColor = new THREE.Color('#9aa0a6');
     const items: ItemAura[] = [];
+    const basesSitio = new Map<string, number>();
 
     for (const q of this.equipamientos) {
       this.inicioEquip.push(ids.length);
@@ -4896,10 +5008,16 @@ export class Mapa3dComponent implements AfterViewInit {
         p.g.computeBoundingBox();
         alto = Math.max(alto, p.g.boundingBox!.max.y);
       }
-      this.cajasEquip.push({ x: q.x, z: q.z, r: q.r, top: base + alto, id });
+      // una parte de un edificio compartido se apoya en la losa de su sitio (puesto antes) y su icono va sobre su ala, no en el centro
+      if (q.sitio === q.n) basesSitio.set(q.n, base);
+      const b = (q.sitio ? basesSitio.get(q.sitio) : undefined) ?? base, cima = q.pin ? b + q.pin.alto : base + alto;
+      if (q.pin) q.pin.base = b;
+      const parteSuelta = !!q.sitio && q.sitio !== q.n;
+      this.cajasEquip.push({ x: q.x, z: q.z, r: q.r, top: parteSuelta ? cima : base + alto, id });
       const color = CATEGORIA.get(q.datos.p.c)?.color ?? '#ffffff';
-      items.push({ x: q.x, y: base, z: q.z, radio: q.r + 2, alto: alto * 1.15 + 4, color });
-      const icono = crearIcono(q.datos.p.c, color, q.x, base + alto, q.z);
+      items.push(q.pin && parteSuelta ? { x: q.x, y: b, z: q.z, radio: q.r + 2, alto: q.pin.alto * 1.15 + 4, color }
+        : { x: q.x, y: base, z: q.z, radio: q.r + 2, alto: alto * 1.15 + 4, color });
+      const icono = crearIcono(q.datos.p.c, color, q.pin?.x ?? q.x, cima, q.pin?.z ?? q.z);
       icono.ref = { tipo: 'equip', i: items.length - 1 };
       icono.zona = this.idEn(q.datos.p.lng ?? q.lon, q.datos.p.lat ?? q.lat);
       this.iconosEquip.push(icono);
@@ -5716,8 +5834,48 @@ export class Mapa3dComponent implements AfterViewInit {
     return [this.anilloHover, this.anilloFabrica, this.haloHover, this.haloElegido, this.haloSistema, this.haloRed, ...this.bordeMunicipio].filter((o): o is THREE.Object3D => !!o);
   }
 
+  /**
+   * El botón del carro no arranca de una vez: primero se elige dónde empezar con un clic en el mapa (se puede seguir
+   * moviendo la cámara para buscar el sitio). Enter arranca en el centro de la pantalla y Esc cancela.
+   */
   alternarConduccion(): void {
     if (this.conduciendo()) { this.salirDeConducir(); return; }
+    if (this.eligiendoSalida()) { this.cancelarSalida(); return; }
+    this.vuelo = null;
+    this.cerrarPin();
+    this.eligiendoSalida.set(true);
+    window.addEventListener('keydown', this.alTeclaSalida);
+  }
+
+  empezarEnCentro(): void { this.empezarAConducir(); }
+
+  cancelarSalida(): void {
+    window.removeEventListener('keydown', this.alTeclaSalida);
+    this.eligiendoSalida.set(false);
+  }
+
+  private readonly alTeclaSalida = (e: KeyboardEvent): void => {
+    if (e.code === 'Escape') { e.preventDefault(); this.zona.run(() => this.cancelarSalida()); }
+    else if (e.code === 'Enter' || e.code === 'NumpadEnter') {
+      e.preventDefault();
+      this.zona.run(() => { this.cancelarSalida(); this.empezarAConducir(); });
+    }
+  };
+
+  /** Punto del suelo bajo el cursor (x, z del modelo), o null si el clic cae fuera del terreno. */
+  private sueloBajoCursor(ev: PointerEvent): { x: number; z: number } | null {
+    if (!this.proxy) return null;
+    const r = this.renderer.domElement.getBoundingClientRect();
+    this.raycaster.setFromCamera(new THREE.Vector2(((ev.clientX - r.left) / r.width) * 2 - 1, -((ev.clientY - r.top) / r.height) * 2 + 1), this.camara);
+    const hit = this.raycaster.intersectObject(this.proxy)[0];
+    return hit ? { x: hit.point.x, z: hit.point.z } : null;
+  }
+
+  /**
+   * Arranca la conducción en (x, z) o, sin punto, en el punto de mira. Si hay una vía cerca (120 m del clic, 80 m del
+   * punto de mira) el carro aparece sobre ella, mirando en el sentido más parecido al de la cámara.
+   */
+  private empezarAConducir(punto?: { x: number; z: number }): void {
     this.conduccion ??= new Conduccion((x, z) => {
       if (Math.abs(x) > this.ancho / 2 || Math.abs(z) > this.alto / 2) return -Infinity;
       const h = this.alturaEn(this.lon0 + x / this.mLon, this.lat0 - z / this.mLat);
@@ -5734,16 +5892,19 @@ export class Mapa3dComponent implements AfterViewInit {
     this.antesDeConducir = { pos: p.clone(), objetivo: t.clone(), fov: this.camara.fov };
     if (!this.conduccion.objeto.parent) this.escena.add(this.conduccion.objeto);
     this.conduccion.teclas.clear();
-    // si hay una vía a menos de 80 m del punto de mira, el carro arranca sobre ella
-    const [dVia, vx, vz, tx, tz] = this.holguraConduccion?.(t.x, t.z) ?? [Infinity, t.x, t.z, 0, 1];
-    const sobre = dVia < 80;
+    const o = punto ?? { x: t.x, z: t.z };
+    const [dVia, vx, vz, tx, tz] = this.holguraConduccion?.(o.x, o.z) ?? [Infinity, o.x, o.z, 0, 1];
+    const sobre = dVia < (punto ? 120 : 80);
     // mira la vía en el sentido más parecido al de la cámara
     const mx = t.x - p.x, mz = t.z - p.z, sentido = mx * tx + mz * tz < 0 ? -1 : 1;
-    this.conduccion.aparecer(sobre ? vx : t.x, sobre ? vz : t.z, sobre ? Math.atan2(tx * sentido, tz * sentido) : Math.atan2(mx, mz));
+    this.conduccion.aparecer(sobre ? vx : o.x, sobre ? vz : o.z, sobre ? Math.atan2(tx * sentido, tz * sentido) : Math.atan2(mx, mz));
     this.controles.enabled = false;
     this.camara.fov = 62;
     this.camara.updateProjectionMatrix();
     this.cayo.set(false);
+    // al conducir la vista queda limpia (modo foto), pero conserva los nombres de las zonas para orientarse
+    this.fotoPorConducir = !this.modoFoto();
+    if (this.fotoPorConducir) this.alternarFoto();
     this.conduciendo.set(true);
     window.addEventListener('keydown', this.alTecla);
     window.addEventListener('keyup', this.alTecla);
@@ -5766,6 +5927,8 @@ export class Mapa3dComponent implements AfterViewInit {
     }
     this.controles.enabled = true;
     this.controles.update();
+    if (this.fotoPorConducir && this.modoFoto()) this.alternarFoto();
+    this.fotoPorConducir = false;
     this.conduciendo.set(false);
     this.cayo.set(false);
   }
@@ -5784,6 +5947,7 @@ export class Mapa3dComponent implements AfterViewInit {
     if (e.type === 'keydown') {
       if (e.code === 'Escape') { this.zona.run(() => this.salirDeConducir()); return; }
       if (e.code === 'KeyR') { this.zona.run(() => this.reaparecerCarro()); return; }
+      if (e.code === 'KeyC' || e.code === 'Digit5' || e.code === 'Numpad5') { e.preventDefault(); this.conduccion?.recentrar(); return; }
     }
     if (/^(Key[WASD]|Arrow(Up|Down|Left|Right)|Space|Shift(Left|Right))$/.test(e.code)) {
       e.preventDefault();
@@ -6759,6 +6923,7 @@ export class Mapa3dComponent implements AfterViewInit {
         const t0 = this.perf ? performance.now() : 0;
         if (this.conduciendo()) this.conducirFotograma(dt);
         else {
+          this.desplazarConFlechas(dt);
           if (this.vuelo) this.avanzarVuelo(t);
           this.aplicarGiroYZoom();
           this.controles.update();
@@ -6767,6 +6932,7 @@ export class Mapa3dComponent implements AfterViewInit {
         }
         this.ajustarPlanoCercano();
         this.ajustarAtmosfera();
+        this.ajustarTiltShift(dt);
         this.animarAlzado();
         this.actualizarSombras();
         this.actualizarArboles();
@@ -6796,6 +6962,30 @@ export class Mapa3dComponent implements AfterViewInit {
       };
       this.animacion = requestAnimationFrame(bucle);
     });
+  }
+
+  /**
+   * Desplaza cámara y punto de mira sobre el suelo según las flechas, en el sentido en que mira la cámara (↑ avanza
+   * hacia el fondo de la pantalla). La velocidad crece con la distancia al punto de mira, así de lejos se cruza el
+   * municipio en pocos segundos y de cerca se recorre la cuadra con precisión; arranca y frena con suavidad.
+   */
+  private desplazarConFlechas(dt: number): void {
+    const f = this.flechas;
+    let ax = (f.has('ArrowRight') ? 1 : 0) - (f.has('ArrowLeft') ? 1 : 0);
+    let ay = (f.has('ArrowUp') ? 1 : 0) - (f.has('ArrowDown') ? 1 : 0);
+    if (ax && ay) { ax *= Math.SQRT1_2; ay *= Math.SQRT1_2; }
+    const t = this.controles.target, p = this.camara.position;
+    const rapidez = Math.max(60, p.distanceTo(t) * 0.5) * (this.flechaRapida ? 2.5 : 1);
+    this.velFlechas.lerp(new THREE.Vector2(ax * rapidez, ay * rapidez), Math.min(1, dt * 8));
+    if (this.velFlechas.lengthSq() < 1) { this.velFlechas.set(0, 0); return; }
+    if (ax || ay) this.vuelo = null;   // tomar el mando corta un vuelo en curso
+    // adelante = hacia donde mira la cámara, aplanado sobre el suelo; derecha = perpendicular
+    const fx = t.x - p.x, fz = t.z - p.z, l = Math.hypot(fx, fz) || 1;
+    const adX = fx / l, adZ = fz / l;
+    const dx = (adX * this.velFlechas.y - adZ * this.velFlechas.x) * dt;
+    const dz = (adZ * this.velFlechas.y + adX * this.velFlechas.x) * dt;
+    t.x += dx; t.z += dz;
+    p.x += dx; p.z += dz;
   }
 
   /** Gasta poco a poco el giro y el zoom acumulados por la rueda, para que se sienta suave. */
@@ -6874,11 +7064,36 @@ export class Mapa3dComponent implements AfterViewInit {
     const d = this.camara.position.distanceTo(this.controles.target);
     if (!this.atmosfera) { niebla.near = 26000; niebla.far = 56000; return; }
     const s = THREE.MathUtils.smoothstep(d, 400, 12000);
-    // de cerca la bruma empieza a 600 m; en la vista general, a 6 km (las montañas del otro lado del valle se aclaran)
-    const near = 600 + 5400 * s, far = 12000 + 22000 * s;
+    // de cerca la bruma empieza a 800 m; en la vista general, a 9 km (solo se aclaran las montañas del otro lado del valle)
+    const near = 800 + 8200 * s, far = 14000 + 30000 * s;
     if (Math.abs(far - niebla.far) / far < 0.01) return;
     niebla.near = near;
     niebla.far = far;
+  }
+
+  /**
+   * Tilt-shift tipo maqueta: entra al acercarse (pleno por debajo de 1,2 km del punto de mira, nada por encima de
+   * 4,5 km) y solo con la cámara mirando hacia abajo; casi a ras del horizonte se desvanece. Mientras se inspecciona
+   * algo (ficha abierta, capa encendida, vuelo, conducción) la imagen queda nítida. Las transiciones son suaves y el
+   * CSS solo se toca cuando el desenfoque cambia de verdad.
+   */
+  private ajustarTiltShift(dt: number): void {
+    const inspeccionando = !!this.vuelo || this.conduciendo() || !!this.seleccion() || !!this.pinFicha()
+      || !!this.fabricaSeleccion() || !!this.rioSeleccion() || !!this.redSeleccion() || this.capasActivas().size > 0
+      || this.sistemaHidrico() || this.barriosVisibles() || this.subterraneo();
+    let meta = 0;
+    if (this.tiltShift && !inspeccionando) {
+      const d = this.camara.position.distanceTo(this.controles.target);
+      const polar = this.controles.getPolarAngle() * 180 / Math.PI;
+      meta = (1 - THREE.MathUtils.smoothstep(d, 1200, 4500)) * (1 - THREE.MathUtils.smoothstep(polar, 66, 80));
+    }
+    this.tiltK += (meta - this.tiltK) * Math.min(1, dt * 5);
+    const px = Math.round(this.tiltK * 3.5 * 10) / 10;
+    if (px === this.tiltPx) return;
+    this.tiltPx = px;
+    const el = this.capaTilt.nativeElement;
+    el.style.display = px > 0 ? 'block' : 'none';
+    el.style.setProperty('--tilt', `${px}px`);
   }
 
   /** Si la cámara quedó dentro de un edificio (o más baja que su techo sobre él), la saca por el lado más cercano. */
@@ -7538,6 +7753,7 @@ export class Mapa3dComponent implements AfterViewInit {
   }
 
   private liberar(): void {
+    window.removeEventListener('keydown', this.alTeclaSalida);
     this.salirDeConducir();
     cancelAnimationFrame(this.animacion);
     this.controles?.dispose();
@@ -7795,6 +8011,10 @@ export class Mapa3dComponent implements AfterViewInit {
   /** Llega fuera de Angular con cada evento del ratón; solo acumula. El hover se resuelve en el bucle, una vez por cuadro. */
   alMover(ev: PointerEvent): void {
     this.ultimaActividad = performance.now();
+    if (this.conduciendo()) {                  // al conducir, arrastrar (cualquier botón) mira alrededor del carro
+      if (ev.buttons) this.conduccion?.mirar(ev.movementX, ev.movementY);
+      return;
+    }
     if (ev.buttons & 4) {                      // rueda presionada: gira el mapa en horizontal (los giros se suman, no se descartan)
       this.vuelo = null;
       this.giroPendiente -= ev.movementX * 0.006;
@@ -7915,6 +8135,11 @@ export class Mapa3dComponent implements AfterViewInit {
     this.pulsado = null;
     this.lienzo.nativeElement.style.cursor = 'grab';
     if (!p || Math.hypot(ev.clientX - p.x, ev.clientY - p.y) > 5) return;
+    if (this.eligiendoSalida()) {                        // eligiendo dónde conducir: el clic solo marca la salida
+      const s = this.sueloBajoCursor(ev);
+      if (s) { this.cancelarSalida(); this.empezarAConducir(s); }
+      return;
+    }
     // el segundo clic de un doble clic en una zona va primero: tras el primero la cámara vuela y lo que quede bajo el
     // cursor (un río, un pin) ya no es la zona
     const doble = this.zonaDobleClic(ev);
@@ -8214,6 +8439,17 @@ export class Mapa3dComponent implements AfterViewInit {
     const v = hit.faceIndex * 3;
     let i = this.inicioEquip.length - 1;
     while (i > 0 && this.inicioEquip[i] > v) i--;
+    // edificio compartido (Comfama): se abre la parte del piso tocado; si ninguna lo cubre, la de icono más cercano
+    const sitio = this.equipamientos[i]?.sitio;
+    if (sitio) {
+      let d = Infinity;
+      this.equipamientos.forEach((e, k) => {
+        if (e.sitio !== sitio || !e.pin) return;
+        const h = hit.point.y - (e.pin.base ?? hit.point.y), enPiso = e.pin.nivel && h >= e.pin.nivel[0] && h < e.pin.nivel[1];
+        const dk = Math.hypot(e.pin.x - hit.point.x, e.pin.z - hit.point.z) - (enPiso ? 1e4 : 0);
+        if (dk < d) { d = dk; i = k; }
+      });
+    }
     const q = this.equipamientos[i];
     return q && !this.visibleEnXZ(q.x, q.z) ? -1 : i;
   }

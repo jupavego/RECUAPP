@@ -319,6 +319,60 @@ function salud(e: Ensamble, tipo: string): Modelo {
   return { piezas: e.piezas, radio: 34, losa: [58, 34] };
 }
 
+/**
+ * Sede Comfama Girardota (carrera 18 # 5A-65): un bloque de 3 pisos con un servicio por piso — 1.º la piscina (vestuarios y acceso, con la
+ * lámina descubierta al lado del bloque), 2.º el centro integral de salud y 3.º el colegio — medido sobre el catastro (predios 0110-00013
+ * y 0110-00014) y la imagen satelital. Ejes de la cuadrícula del casco: x a lo largo de la carrera 18 Bis (hacia el noreste) y el frente
+ * (−z) sobre ella. Al noreste de la piscina, el edificio de atención de 2 pisos. Huella de 59 × 27 m, sin tocar las vías del mapa (que se
+ * dibujan más anchas que las reales). En `PARTES_COMFAMA`, dónde va el icono de cada servicio y entre qué alturas queda su piso.
+ */
+const PISO_COMFAMA = 3.6;
+export const PARTES_COMFAMA: Record<'piscina' | 'salud' | 'colegio', { x: number; z: number; alto: number; nivel: [number, number] }> = {
+  piscina: { x: 8, z: 3, alto: 1, nivel: [-5, 0.2 + PISO_COMFAMA] },
+  salud: { x: -22, z: -14, alto: 0.2 + PISO_COMFAMA * 1.5, nivel: [0.2 + PISO_COMFAMA, 0.2 + PISO_COMFAMA * 2] },
+  colegio: { x: -6, z: -14, alto: 0.2 + PISO_COMFAMA * 2.5, nivel: [0.2 + PISO_COMFAMA * 2, 30] },
+};
+function sedeComfama(e: Ensamble): Modelo {
+  const MAGENTA = '#d6197a', MURO = '#f1ece2', TECHO = '#b98a63', AGUA = '#38bdf8', BORDE = '#f1f5f9', LOSA = '#cfd3d8';
+  const P = PISO_COMFAMA, y1 = 0.2, y2 = y1 + P, y3 = y2 + P, cima = y3 + P;
+  const BX = -13.75, BW = 31.5, BZ = -2.25, BD = 22.5, frente = BZ - BD / 2, fondo = BZ + BD / 2;
+  e.caja(59, 0.2, 27, '#d2d5d8', 0, 0, 0);
+  // piso 1, piscina: vestuarios y acceso con fachada de vidrio hacia la lámina y franja cian
+  e.caja(BW, P, BD, '#e6f4f8', BX, y1, BZ).caja(BW + 0.2, 0.5, BD + 0.2, CIAN, BX, y2 - 0.6, BZ)
+    .caja(0.3, 2.6, BD - 4, VIDRIO, BX + BW / 2 + 0.1, y1 + 0.4, BZ)
+    .ventanas(BW - 6, 1.6, VIDRIO, BX, y1 + 1, frente, true).caja(4, 2.8, 0.3, '#374151', BX + 6, y1, frente - 0.1);
+  // piso 2, salud: blanco con franja cian, cruz roja hacia la carrera
+  e.caja(BW + 0.6, 0.35, BD + 0.6, LOSA, BX, y2, BZ).caja(BW, P - 0.35, BD, '#f7f8fa', BX, y2 + 0.35, BZ)
+    .ventanas(BW - 4, 1.4, VIDRIO, BX, y2 + 1, frente, true).ventanas(BW - 4, 1.4, VIDRIO, BX, y2 + 1, fondo)
+    .caja(1.1, 2.6, 0.3, '#d11f2e', BX - BW / 2 + 4, y2 + 0.5, frente - 0.3).caja(2.6, 1.1, 0.3, '#d11f2e', BX - BW / 2 + 4, y2 + 1.25, frente - 0.3);
+  // piso 3, colegio: paneles de colores (preescolar), cubierta y letrero Comfama
+  e.caja(BW + 0.6, 0.35, BD + 0.6, LOSA, BX, y3, BZ).caja(BW, P - 0.35, BD, MURO, BX, y3 + 0.35, BZ)
+    .ventanas(BW - 4, 1.4, VIDRIO, BX, y3 + 1, frente, true).ventanas(BW - 4, 1.4, VIDRIO, BX, y3 + 1, fondo);
+  ['#f59e0b', '#16a34a', MAGENTA, '#0ea5e9', '#f59e0b'].forEach((c, k) => e.caja(2.2, P - 0.6, 0.25, c, BX - 12 + k * 6, y3 + 0.4, frente - 0.25));
+  e.caja(BW + 0.6, 0.6, BD + 0.6, TECHO, BX, cima, BZ).caja(11, 1.4, 0.3, MAGENTA, BX + 8, cima + 0.6, frente - 0.1)
+    .caja(3, 1.2, 2, '#d1d5db', BX - 8, cima + 0.6, BZ).caja(3, 1.2, 2, '#d1d5db', BX - 2, cima + 0.6, BZ)
+    .caja(8, 0.4, 2.4, MAGENTA, BX + 6, y2 - 0.4, frente - 1.3);                                   // marquesina de la entrada
+  // patio infantil del colegio detrás del bloque
+  e.caja(BW, 0.15, 4.3, '#7cc47f', BX, 0.2, 11.3);
+  for (const [x, c] of [[-25, '#ef4444'], [-18, '#f59e0b'], [-11, '#0ea5e9']] as const) e.caja(2, 1.3, 2, c, x, 0.35, 11.3);
+  // piscina descubierta al lado del bloque, al nivel del primer piso: lámina de 7 × 16 m, carriles, piscina infantil con sombrío
+  e.caja(12, 0.35, 26, '#e8e2d4', 8.5, 0.2, 0)
+    .caja(7, 0.5, 16, AGUA, 8, 0.4, 3)
+    .caja(8.4, 0.6, 0.7, BORDE, 8, 0.4, 11.35).caja(8.4, 0.6, 0.7, BORDE, 8, 0.4, -5.35)
+    .caja(0.7, 0.6, 16, BORDE, 4.15, 0.4, 3).caja(0.7, 0.6, 16, BORDE, 11.85, 0.4, 3);
+  for (const x of [6.25, 8, 9.75]) e.caja(0.15, 0.05, 15, '#1d4ed8', x, 0.92, 3);
+  e.caja(5, 0.55, 4, BORDE, 8, 0.4, -9.5).caja(4.2, 0.6, 3.2, '#67e8f9', 8, 0.4, -9.5).caja(6.5, 0.25, 5, MAGENTA, 8, 3.2, -9.5);
+  for (const [x, z] of [[5, -11.8], [11, -11.8], [5, -7.2], [11, -7.2]]) e.cil(0.12, 0.12, 2.8, '#9ca3af', x, 0.55, z, 6);
+  for (let k = 0; k < 3; k++) e.caja(1.4, 0.5, 3.4, '#fef3c7', 13.2, 0.55, -1 + k * 4);
+  // edificio de atención al noreste (2 pisos), con tanque en la azotea
+  e.caja(14, 7.2, 22.5, '#f4f6f8', 22.5, 0.2, -2.25).caja(14.5, 0.6, 23, '#9ca3af', 22.5, 7.4, -2.25)
+    .caja(14.2, 0.8, 22.7, MAGENTA, 22.5, 5.6, -2.25);
+  for (const y of [1.4, 4]) e.ventanas(11, 1.4, VIDRIO, 22.5, y, -13.5, true).ventanas(11, 1.4, VIDRIO, 22.5, y, 9);
+  e.caja(3, 2.8, 0.3, '#374151', 20, 0.2, -13.6).cil(2, 2, 2.6, '#374151', 26.5, 8, 4, 16)
+    .caja(14, 0.15, 4.3, '#9aa0a6', 22.5, 0.2, 11.3).arbol(17, 12, 6).arbol(28, 12, 6);
+  return { piezas: e.piezas, radio: 32, losa: [59, 27], huella: [59, 27] };
+}
+
 /** Sitios de interés: iglesia, kiosco de parque, mirador, pabellón de mercado o cabaña con estanque, según de qué se trate. */
 function turismo(e: Ensamble, texto: string, rnd: () => number): Modelo {
   if (/plaza de mercado/.test(texto)) return plazaMercado(e);
@@ -776,7 +830,7 @@ export function modelarEquipamiento(c: CategoriaCatalogo, tipo: string, nombre: 
     case 'gente': return persona(e, t);
     case 'educacion': return /i\. e\. colombia/.test(t) ? colegioUrbano(e, [68, 30]) : escuela(e, /rural/i.test(tipo));
     case 'cultura': return cultura(e, t);
-    case 'salud': return salud(e, t);
+    case 'salud': return /comfama/.test(t) ? sedeComfama(e) : salud(e, t);
     case 'turismo': return turismo(e, t, rnd);
     case 'deporte': return deporte(e, t);
     case 'justicia': return justicia(e, t);
@@ -1430,6 +1484,7 @@ export const VARIANTES: Variante[] = [
   { categoria: 'cultura', etiqueta: 'Emisora', tipo: 'Emisora comunitaria', nombre: 'Radio Alternativa' },
   { categoria: 'salud', etiqueta: 'Hospital', tipo: 'Hospital / IPS pública', nombre: 'Hospital San Rafael' },
   { categoria: 'salud', etiqueta: 'Centro de salud', tipo: 'Optometría', nombre: 'Centro de salud' },
+  { categoria: 'salud', etiqueta: 'Sede Comfama (piscina, salud y colegio en 3 pisos)', tipo: 'Centro integral de salud / IPS', nombre: 'Comfama Girardota' },
   { categoria: 'turismo', etiqueta: 'Iglesia', tipo: 'Patrimonio religioso / arquitectónico', nombre: 'Catedral' },
   { categoria: 'turismo', etiqueta: 'Parque', tipo: 'Espacio público / encuentro ciudadano', nombre: 'Parque principal' },
   { categoria: 'turismo', etiqueta: 'Mirador', tipo: 'Atractivo natural / ecoturismo', nombre: 'Cascada' },

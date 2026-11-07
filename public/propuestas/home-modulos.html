@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RECUAPP · Propuesta de home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@700;800;900&display=swap">
+<style>
+  /* Hoja de prueba: no está conectada a la app. Paleta «Earthy Botanical» + un acento por módulo. */
+  :root {
+    --bg:#F5F0EA; --card:#FCF9F6; --surface:#EAF2D6; --border:#C8D9C0; --text:#1A1A1A; --muted:#5C6B5F;
+    --brand:#29422F; --accent:#66AA33; --lima:#99CC33; --gold:#E0B33A; --gold-t:#8A6A0A;
+    --sky1:#FBEFD2; --sky2:#EAF2D6; --hill1:#C9DDA5; --hill2:#A9CC7C; --hill3:#7FB04C; --hill4:#4F8A3A; --river:#7DB7C9; --sun:#E0B33A;
+    --sombra:0 10px 28px rgba(41,66,47,.14);
+    --f-h:"Nunito","Inter",system-ui,sans-serif; --f-b:"Inter",system-ui,sans-serif;
+  }
+  :root.oscuro {
+    --bg:#121A14; --card:#1A261D; --surface:#22331F; --border:#2F4533; --text:#E8EFE4; --muted:#8FA08C;
+    --brand:#99CC33; --accent:#66AA33; --gold-t:#E0B33A;
+    --sky1:#23301f; --sky2:#14201a; --hill1:#27412a; --hill2:#2d5030; --hill3:#2f6034; --hill4:#2a5230; --river:#2b5f70; --sun:#E0B33A;
+    --sombra:0 10px 28px rgba(0,0,0,.45); color-scheme:dark;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:15px/1.55 var(--f-b); }
+  main { max-width:1180px; margin:0 auto; padding:20px 16px 56px; }
+  .barra { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+  .marca { display:flex; align-items:center; gap:10px; font:900 20px var(--f-h); color:var(--brand); }
+  .marca i { width:34px; height:34px; border-radius:50%; background:var(--surface); border:2px solid var(--accent); display:grid; place-items:center; }
+  .marca svg { width:18px; height:18px; stroke:var(--accent); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+  .acciones { display:flex; gap:8px; flex-wrap:wrap; }
+  .pill { border:1px solid var(--border); background:var(--card); color:var(--brand); font:600 13px var(--f-b); padding:7px 14px; border-radius:99px; cursor:pointer; }
+  .pill[aria-pressed="true"] { background:var(--brand); color:var(--card); border-color:var(--brand); }
+  :root.oscuro .pill[aria-pressed="true"] { color:#121A14; }
+  .aviso { margin:14px 0 0; font-size:12.5px; color:var(--muted); background:color-mix(in srgb,var(--gold) 13%,transparent); border:1px solid var(--gold); border-radius:10px; padding:8px 12px; }
+
+  .hero { text-align:center; margin:30px auto 8px; max-width:760px; }
+  .hero small { font:700 12px var(--f-b); letter-spacing:.14em; text-transform:uppercase; color:var(--gold-t); }
+  .hero h1 { font:900 clamp(28px,5vw,46px)/1.08 var(--f-h); color:var(--brand); margin:8px 0 10px; }
+  .hero p { margin:0 auto; color:var(--muted); max-width:620px; font-size:16px; }
+
+  /* Panorama */
+  .pano { position:relative; margin-top:22px; border-radius:26px; overflow:hidden; border:1px solid var(--border); box-shadow:var(--sombra); background:linear-gradient(var(--sky1),var(--sky2)); }
+  .pano svg.paisaje { display:block; width:100%; height:auto; }
+  .est { cursor:pointer; outline:none; }
+  .est .halo { fill:var(--c); opacity:.0; transition:opacity .2s, r .2s; }
+  .est .disco { fill:var(--c); stroke:var(--card); stroke-width:4; transition:transform .2s; transform-box:fill-box; transform-origin:center; filter:drop-shadow(0 6px 8px rgba(0,0,0,.22)); }
+  .est .glifo { fill:none; stroke:#fff; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; pointer-events:none; }
+  .est .rot { font:800 15px var(--f-h); fill:var(--brand); paint-order:stroke; stroke:var(--card); stroke-width:5px; stroke-linejoin:round; pointer-events:none; }
+  .est .num { font:800 11px var(--f-b); fill:#fff; pointer-events:none; }
+  .est:hover .halo, .est:focus-visible .halo, .est.on .halo { opacity:.28; }
+  .est:hover .disco, .est:focus-visible .disco, .est.on .disco { transform:scale(1.12); }
+  .est.grande .rot { font-size:17px; }
+  .camino { fill:none; stroke:var(--card); stroke-width:5; stroke-linecap:round; stroke-dasharray:1 13; opacity:.95; }
+  .nube { fill:#fff; opacity:.75; } :root.oscuro .nube { fill:#8FA08C; opacity:.18; }
+  .nubes { animation:deriva 60s linear infinite alternate; }
+  @keyframes deriva { to { transform:translateX(70px); } }
+  @media (prefers-reduced-motion:reduce) { .nubes { animation:none; } }
+
+  .ficha { display:grid; grid-template-columns:auto 1fr auto; gap:16px; align-items:center; padding:16px 20px; background:var(--card); border-top:1px solid var(--border); min-height:96px; }
+  .ficha .ins { width:54px; height:54px; border-radius:16px; background:var(--c,var(--accent)); display:grid; place-items:center; }
+  .ficha .ins svg { width:28px; height:28px; stroke:#fff; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+  .ficha h2 { margin:0; font:800 19px var(--f-h); color:var(--brand); }
+  .ficha p { margin:2px 0 0; color:var(--muted); font-size:13.5px; }
+  .ficha code { font-size:12px; background:var(--surface); padding:1px 7px; border-radius:6px; color:var(--brand); }
+  .ir { text-decoration:none; background:var(--c,var(--accent)); color:#fff; font:700 14px var(--f-b); padding:10px 18px; border-radius:99px; white-space:nowrap; }
+  .ir:hover { filter:brightness(1.08); }
+
+  /* Cifras */
+  .cifras { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin:22px 0 6px; }
+  .cifra { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:12px 14px; display:flex; align-items:baseline; gap:10px; }
+  .cifra b { font:900 28px var(--f-h); color:var(--brand); font-variant-numeric:tabular-nums; }
+  .cifra span { font-size:12.5px; color:var(--muted); line-height:1.25; }
+
+  /* Mosaico */
+  h3.t { font:800 13px var(--f-b); letter-spacing:.12em; text-transform:uppercase; color:var(--gold-t); margin:34px 0 12px; }
+  .mosaico { display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:150px; gap:12px; }
+  .tile { position:relative; overflow:hidden; text-decoration:none; color:var(--text); background:var(--card); border:1px solid var(--border); border-radius:22px; padding:16px; display:flex; flex-direction:column; justify-content:flex-end; transition:transform .18s, box-shadow .18s; isolation:isolate; }
+  .tile::before { content:""; position:absolute; inset:0; z-index:-2; background:linear-gradient(150deg,color-mix(in srgb,var(--c) 26%,var(--card)),var(--card) 70%); }
+  .tile .fondo { position:absolute; right:-14px; top:-14px; width:120px; height:120px; z-index:-1; stroke:var(--c); opacity:.22; fill:none; stroke-width:1.4; stroke-linecap:round; stroke-linejoin:round; }
+  .tile:hover, .tile:focus-visible { transform:translateY(-4px) rotate(-.4deg); box-shadow:var(--sombra); outline:none; }
+  .tile .ins { position:absolute; top:14px; left:14px; width:42px; height:42px; border-radius:13px; background:var(--c); display:grid; place-items:center; }
+  .tile .ins svg { width:22px; height:22px; stroke:#fff; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+  .tile h4 { margin:0; font:800 17px var(--f-h); color:var(--brand); }
+  .tile p { margin:2px 0 0; font-size:12.5px; color:var(--muted); line-height:1.35; }
+  .tile .estado { position:absolute; top:16px; right:14px; font:700 10.5px var(--f-b); padding:2px 9px; border-radius:99px; background:var(--card); border:1px solid var(--c); color:var(--brand); }
+  .tile.g { grid-column:span 2; grid-row:span 2; }
+  .tile.g h4 { font-size:24px; } .tile.g p { font-size:14px; max-width:340px; }
+  .tile.a { grid-column:span 2; }
+  .tile .mini { position:absolute; right:18px; width:32%; top:52px; }
+  .tile.a p { max-width:62%; }
+  .barras { display:flex; align-items:flex-end; gap:6px; height:60px; }
+  .barras i { flex:1; background:var(--c); border-radius:6px 6px 2px 2px; opacity:.85; }
+  .iso { position:absolute; right:12px; top:12px; width:62%; height:auto; }
+  .ver { display:none; }
+  body.mosaico-on .pano, body.mosaico-on .ficha-w { display:none; }
+  @media (max-width:900px) { .mosaico { grid-template-columns:repeat(2,1fr); } .tile.g { grid-column:span 2; } .ficha { grid-template-columns:auto 1fr; } .ficha .ir { grid-column:1/-1; text-align:center; } }
+  @media (max-width:520px) { .mosaico { grid-auto-rows:136px; } .est .rot { font-size:19px; } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="g-plan" viewBox="0 0 24 24"><path d="M6 2h9l4 4v16H6z"/><path d="M15 2v4h4M9 11h7M9 15h7M9 19h4"/></symbol>
+  <symbol id="g-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6M16 5a3.5 3.5 0 010 6.5M18 14c2.2.6 3.5 2.6 3.5 5"/></symbol>
+  <symbol id="g-org" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="9" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-5h14v5M12 12v5"/></symbol>
+  <symbol id="g-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="g-cube" viewBox="0 0 24 24"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></symbol>
+  <symbol id="g-db" viewBox="0 0 24 24"><path d="M4 5h6a2 2 0 012 2v13a2 2 0 00-2-2H4zM20 5h-6a2 2 0 00-2 2v13a2 2 0 012-2h6z"/></symbol>
+  <symbol id="g-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h12l-2 4 2 4H5"/></symbol>
+  <symbol id="g-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l3 3M14 9l2 2"/></symbol>
+  <symbol id="g-leaf" viewBox="0 0 24 24"><path d="M20 4C9 4 4 9.5 4 15c0 1.7.5 3 1.2 4C6 14 10 10.5 15 9c-4 2.5-7 6-8 11 1 .6 2.2 1 3.5 1C17 21 20 13 20 4z"/></symbol>
+  <symbol id="g-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="g-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 01-12 0c0-4.5 6-11 6-11z"/></symbol>
+  <symbol id="g-sliders" viewBox="0 0 24 24"><path d="M4 6h8M18 6h2M4 12h2M12 12h8M4 18h10M20 18h0"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/></symbol>
+</defs></svg>
+
+<main>
+  <div class="barra">
+    <div class="marca"><i><svg viewBox="0 0 24 24"><use href="#g-leaf"/></svg></i>RECUAPP</div>
+    <div class="acciones">
+      <button class="pill" id="vPano" aria-pressed="true" type="button">Panorama</button>
+      <button class="pill" id="vMos" aria-pressed="false" type="button">Mosaico</button>
+      <button class="pill" id="tema" type="button" aria-label="Cambiar tema claro u oscuro">Tema</button>
+    </div>
+  </div>
+  <p class="aviso"><b>Hoja de prueba.</b> Es una propuesta de home para explorar ideas; no está conectada a la app ni reemplaza el home actual. Los enlaces sí llevan a las rutas reales.</p>
+
+  <section class="hero">
+    <small>Edición Girardota</small>
+    <h1>Un territorio se transforma cuando su gente conoce el camino</h1>
+    <p>Recorre RECUAPP como se recorre un pueblo: cada lugar del camino es un módulo. Toca uno para ver qué encuentras allí.</p>
+  </section>
+
+  <div class="pano" id="pano">
+    <svg class="paisaje" viewBox="0 0 1000 440" role="group" aria-label="Panorama de los módulos de RECUAPP">
+      <circle cx="905" cy="62" r="34" fill="var(--sun)" opacity=".9"/><circle cx="905" cy="62" r="52" fill="var(--sun)" opacity=".16"/>
+      <g class="nubes"><path class="nube" d="M120 70q10-26 38-20 12-22 42-10 26-6 30 18 24 2 22 22H110q-14-4-10-10z"/><path class="nube" d="M560 48q8-20 30-14 10-16 34-8 22-3 24 14 18 2 16 16H552q-10-3-6-8z"/></g>
+      <path d="M0 250Q120 150 240 215T470 190T700 220T1000 150V440H0Z" fill="var(--hill1)"/>
+      <path d="M0 300Q150 215 300 270T560 250T820 285T1000 235V440H0Z" fill="var(--hill2)"/>
+      <path d="M0 345Q180 285 360 330T700 320T1000 300V440H0Z" fill="var(--hill3)"/>
+      <path d="M-20 392Q200 350 420 385T820 380T1020 360V440H-20Z" fill="var(--hill4)"/>
+      <path d="M-10 332C170 296 270 372 450 340S760 300 1010 346" fill="none" stroke="var(--river)" stroke-width="16" stroke-linecap="round" opacity=".75"/>
+      <g fill="var(--hill4)" opacity=".85"><path d="M30 300l9-26 9 26zM48 304l8-22 8 22z"/><path d="M930 296l9-26 9 26zM948 300l8-22 8 22z"/><path d="M455 230l7-20 7 20zM470 233l6-17 6 17z"/></g>
+      <path class="camino" id="ruta" d=""/>
+      <g id="estaciones"></g>
+    </svg>
+  </div>
+
+  <div class="ficha-w">
+    <div class="ficha" id="ficha" style="--c:var(--accent)">
+      <div class="ins"><svg viewBox="0 0 24 24"><use id="fIco" href="#g-leaf"/></svg></div>
+      <div><h2 id="fTit">Elige un lugar del camino</h2><p id="fTxt">Pasa el cursor o toca un módulo del panorama para ver qué contiene y entrar.</p></div>
+      <a class="ir" id="fIr" href="#" hidden>Entrar</a>
+    </div>
+  </div>
+
+  <div class="cifras" aria-label="RECUAPP en cifras">
+    <div class="cifra"><b>125</b><span>municipios de Antioquia en el mapa</span></div>
+    <div class="cifra"><b>244</b><span>productos del plan de Girardota</span></div>
+    <div class="cifra"><b>49</b><span>programas en 17 sectores</span></div>
+    <div class="cifra"><b>228</b><span>indicadores con seguimiento 2024–2025</span></div>
+    <div class="cifra"><b>2035</b><span>horizonte de población en el 3D</span></div>
+  </div>
+
+  <h3 class="t">Todos los módulos</h3>
+  <div class="mosaico" id="mosaico"></div>
+</main>
+
+<script>
+  var MOD = [
+    { id:'plan',  n:1, t:'El plan en claro', r:'/plan', c:'#66AA33', g:'plan', x:80,  y:262, d:'Líneas estratégicas, sectores, programas, indicadores, financiación y calidad del dato; con buscador de productos.', e:'En la app' },
+    { id:'resp',  n:2, t:'Responsables', r:'/responsables', c:'#E0B33A', g:'users', x:215, y:150, d:'Un pueblo en 3D donde cada pin es una dependencia de la alcaldía; ficha con panorama, productos y equipo.', e:'En la app' },
+    { id:'org',   n:3, t:'Organigrama', r:'/plan/05308/organigrama', c:'#8FBF3A', g:'org', x:340, y:268, d:'La estructura de la alcaldía en vista de loto o de árbol, con sus entidades externas.', e:'En la app' },
+    { id:'mapa',  n:4, t:'Mapa territorial', r:'/mapa', c:'#2E9C8F', g:'pin', x:470, y:160, d:'125 municipios en 9 subregiones; veredas, corregimientos y puntos de interés por categoría.', e:'En la app' },
+    { id:'m3d',   n:5, t:'Mapa 3D de Girardota', r:'/mapa3d', c:'#3B82A0', g:'cube', x:600, y:262, big:true, d:'El territorio completo: catastro, relieve, ríos, redes de servicios públicos, industria y población proyectada por vereda.', e:'En la app' },
+    { id:'bib',   n:6, t:'Biblioteca', r:'/biblioteca', c:'#C0623F', g:'db', x:735, y:150, d:'Las fuentes con que se construyó RECUAPP, cada una con su enlace y su cita.', e:'En la app' },
+    { id:'doc',   n:7, t:'Documentos', r:'/documentos', c:'#9A6FB0', g:'flag', x:860, y:262, d:'El sistema documental: pitch, canvas, blueprint, guía, arquitectura y especificación.', e:'En la app' },
+    { id:'sim',   n:8, t:'Escenarios', r:null, c:'#B8A03A', g:'sliders', x:925, y:158, d:'Cambiar supuestos y comparar estrategias sobre el modelo 3D. Es la siguiente etapa.', e:'Siguiente etapa', pend:true },
+  ];
+  var NS = 'http://www.w3.org/2000/svg';
+  var ruta = MOD.map(function (m, i) { return (i ? 'L' : 'M') + m.x + ' ' + m.y; }).join(' ');
+  // curva suave por los puntos
+  var d = 'M' + MOD[0].x + ' ' + MOD[0].y;
+  for (var i = 1; i < MOD.length; i++) { var a = MOD[i - 1], b = MOD[i], mx = (a.x + b.x) / 2; d += ' C' + mx + ' ' + a.y + ' ' + mx + ' ' + b.y + ' ' + b.x + ' ' + b.y; }
+  document.getElementById('ruta').setAttribute('d', d);
+
+  var est = document.getElementById('estaciones');
+  var ficha = { box: document.getElementById('ficha'), ico: document.getElementById('fIco'), tit: document.getElementById('fTit'), txt: document.getElementById('fTxt'), ir: document.getElementById('fIr') };
+  function mostrar(m) {
+    ficha.box.style.setProperty('--c', m.c);
+    ficha.ico.setAttribute('href', '#g-' + m.g);
+    ficha.tit.textContent = m.t;
+    ficha.txt.innerHTML = m.d + (m.r ? ' <code>' + m.r + '</code>' : ' <code>siguiente etapa</code>');
+    if (m.r) { ficha.ir.hidden = false; ficha.ir.href = m.r; } else ficha.ir.hidden = true;
+    document.querySelectorAll('.est').forEach(function (e) { e.classList.toggle('on', e.dataset.id === m.id); });
+  }
+  MOD.forEach(function (m) {
+    var r = m.big ? 40 : 32;
+    var g = document.createElementNS(NS, 'g');
+    g.setAttribute('class', 'est' + (m.big ? ' grande' : ''));
+    g.dataset.id = m.id; g.setAttribute('tabindex', '0'); g.setAttribute('role', 'link'); g.setAttribute('aria-label', m.t);
+    g.style.setProperty('--c', m.c);
+    g.setAttribute('transform', 'translate(' + m.x + ',' + m.y + ')');
+    g.innerHTML = '<circle class="halo" r="' + (r + 16) + '"/>' +
+      '<circle class="disco" r="' + r + '" ' + (m.pend ? 'stroke-dasharray="6 5"' : '') + '/>' +
+      '<g transform="translate(' + (-r * .5) + ',' + (-r * .5) + ') scale(' + (r / 24) + ')"><use class="glifo" href="#g-' + m.g + '" width="24" height="24" style="stroke-width:' + (2.2 / (r / 24)) + 'px"/></g>' +
+      '<circle cx="' + (r * .72) + '" cy="' + (-r * .72) + '" r="10" fill="var(--brand)"/><text class="num" x="' + (r * .72) + '" y="' + (-r * .72 + 4) + '" text-anchor="middle">' + m.n + '</text>' +
+      '<text class="rot" y="' + (r + 22) + '" text-anchor="middle">' + m.t + '</text>';
+    g.addEventListener('mouseenter', function () { mostrar(m); });
+    g.addEventListener('focus', function () { mostrar(m); });
+    g.addEventListener('click', function () { mostrar(m); if (m.r) location.href = m.r; });
+    g.addEventListener('keydown', function (e) { if ((e.key === 'Enter' || e.key === ' ') && m.r) { e.preventDefault(); location.href = m.r; } });
+    est.appendChild(g);
+  });
+  mostrar(MOD[4]);
+
+  // Mosaico
+  var mos = document.getElementById('mosaico');
+  var clases = { plan:'a', m3d:'g', resp:'', org:'', mapa:'a', bib:'', doc:'', sim:'' };
+  var orden = ['m3d', 'plan', 'resp', 'org', 'mapa', 'bib', 'doc', 'sim'];
+  orden.forEach(function (id) {
+    var m = MOD.filter(function (x) { return x.id === id; })[0];
+    var el = document.createElement(m.r ? 'a' : 'div');
+    el.className = 'tile ' + (clases[id] || '');
+    el.style.setProperty('--c', m.c);
+    if (m.r) el.href = m.r;
+    var extra = '';
+    if (id === 'plan') extra = '<div class="mini"><div class="barras"><i style="height:100%"></i><i style="height:62%"></i><i style="height:58%"></i><i style="height:10%"></i></div></div>';
+    if (id === 'm3d') extra = '<svg class="iso" viewBox="0 0 220 140" aria-hidden="true"><path d="M110 8L210 62L110 116L10 62Z" fill="var(--card)" stroke="var(--c)" stroke-width="2"/><path d="M110 28L168 62L110 96L52 62Z" fill="var(--surface)" stroke="var(--c)" stroke-opacity=".6"/><path d="M110 42L142 62L110 80L78 62Z" fill="var(--c)" fill-opacity=".5" stroke="var(--c)" stroke-width="2"/><path d="M20 90Q70 70 110 112T200 84" fill="none" stroke="var(--river)" stroke-width="5" stroke-linecap="round"/><circle cx="64" cy="58" r="4" fill="#E0B33A"/><circle cx="150" cy="70" r="4" fill="#C0623F"/><circle cx="118" cy="40" r="4" fill="#2E9C8F"/></svg>';
+    el.innerHTML = '<svg class="fondo" viewBox="0 0 24 24" aria-hidden="true"><use href="#g-' + m.g + '"/></svg>' +
+      '<span class="ins"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#g-' + m.g + '"/></svg></span>' +
+      '<span class="estado">' + m.e + '</span>' + extra + '<h4>' + m.t + '</h4><p>' + m.d + '</p>';
+    mos.appendChild(el);
+  });
+
+  // Vistas y tema
+  var pano = document.getElementById('vPano'), mosb = document.getElementById('vMos');
+  function vista(m) {
+    document.body.classList.toggle('mosaico-on', m);
+    pano.setAttribute('aria-pressed', String(!m)); mosb.setAttribute('aria-pressed', String(m));
+  }
+  pano.onclick = function () { vista(false); }; mosb.onclick = function () { vista(true); };
+  var root = document.documentElement;
+  try { if (localStorage.getItem('plan-tema') === 'oscuro') root.classList.add('oscuro'); } catch (e) {}
+  if (!root.classList.contains('oscuro') && matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('plan-tema')) root.classList.add('oscuro');
+  document.getElementById('tema').onclick = function () { root.classList.toggle('oscuro'); };
+  if (location.hash === '#mosaico') vista(true);
+</script>
+</body>
+</html>

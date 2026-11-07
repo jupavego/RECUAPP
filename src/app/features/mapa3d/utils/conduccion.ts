@@ -42,6 +42,12 @@ export class Conduccion {
   private readonly inicio = new THREE.Vector3();
   private rumboInicio = 0;
   private camaraLista = false;
+  /** mando de la cámara con el ratón: giro alrededor del carro, inclinación extra y alejamiento (1 = normal) */
+  private giroMando = 0;
+  private inclinacionMando = 0;
+  private distanciaMando = 1;
+  private ultimoMando = -Infinity;
+  private recentrando = false;
 
   constructor(private readonly suelo: FuncionSuelo, private readonly obstaculo?: FuncionObstaculo) {
     this.objeto.add(this.construirCarro());
@@ -66,6 +72,9 @@ export class Conduccion {
     this.volante = this.cabeceo = this.alabeo = 0;
     this.rumboCamara = rumbo;
     this.camaraLista = false;
+    this.giroMando = this.inclinacionMando = 0;
+    this.distanciaMando = 1;
+    this.recentrando = false;
     this.objeto.visible = true;
     this.colocar();
   }
@@ -150,14 +159,51 @@ export class Conduccion {
     this.colocar();
   }
 
-  /** Cámara de persecución: detrás y arriba, suavizada, y sin meterse bajo el terreno. */
+  /** Mirar alrededor arrastrando el ratón: dx gira la cámara en torno al carro, dy la sube o la baja (en píxeles). */
+  mirar(dx: number, dy: number): void {
+    this.giroMando -= dx * 0.006;
+    this.inclinacionMando = Math.max(-0.3, Math.min(1, this.inclinacionMando + dy * 0.004));
+    this.ultimoMando = performance.now();
+    this.recentrando = false;
+  }
+
+  /** Rueda: f > 1 aleja la cámara del carro, f < 1 la acerca. */
+  alejar(f: number): void {
+    this.distanciaMando = Math.max(0.45, Math.min(3, this.distanciaMando * f));
+  }
+
+  /** Vuelve la cámara a su sitio de siempre: detrás del carro, a la altura y distancia normales. */
+  recentrar(): void {
+    this.recentrando = true;
+  }
+
+  /**
+   * Cámara de persecución: detrás y arriba, suavizada, y sin meterse bajo el terreno. El ratón la gira e inclina
+   * alrededor del carro; si va en marcha y nadie la toca en 2,5 s, vuelve sola detrás (como en los juegos).
+   */
   seguir(camara: THREE.PerspectiveCamera, dt: number): void {
     let d = this.rumbo - this.rumboCamara;
     d = Math.atan2(Math.sin(d), Math.cos(d));
     this.rumboCamara += d * (this.camaraLista ? 1 - Math.exp(-3.5 * dt) : 1);
-    const atras = 17 + Math.min(10, this.kmh / 12);
+    this.giroMando = Math.atan2(Math.sin(this.giroMando), Math.cos(this.giroMando));   // por el lado más corto
+    const suelto = this.kmh > 8 && performance.now() - this.ultimoMando > 2500;
+    if (this.recentrando || suelto) {
+      const k = 1 - Math.exp(-(this.recentrando ? 6 : 1.8) * dt);
+      this.giroMando -= this.giroMando * k;
+      this.inclinacionMando -= this.inclinacionMando * k;
+      if (this.recentrando) this.distanciaMando += (1 - this.distanciaMando) * k;
+      if (this.recentrando && Math.abs(this.giroMando) + Math.abs(this.inclinacionMando) + Math.abs(this.distanciaMando - 1) < 0.01) {
+        this.giroMando = this.inclinacionMando = 0;
+        this.distanciaMando = 1;
+        this.recentrando = false;
+      }
+    }
+    const atras = 17 + Math.min(10, this.kmh / 12), arriba = 6.5 + this.kmh / 40;
+    const radio = Math.hypot(atras, arriba) * this.distanciaMando;
+    const inclinacion = Math.max(0.03, Math.min(1.35, Math.atan2(arriba, atras) + this.inclinacionMando));
+    const rumbo = this.rumboCamara + this.giroMando, horizontal = radio * Math.cos(inclinacion);
     const deseada = new THREE.Vector3(
-      this.pos.x - Math.sin(this.rumboCamara) * atras, this.pos.y + 6.5 + this.kmh / 40, this.pos.z - Math.cos(this.rumboCamara) * atras);
+      this.pos.x - Math.sin(rumbo) * horizontal, this.pos.y + radio * Math.sin(inclinacion), this.pos.z - Math.cos(rumbo) * horizontal);
     const s = this.suelo(deseada.x, deseada.z);
     if (Number.isFinite(s)) deseada.y = Math.max(deseada.y, s + 2.5);
     if (this.camaraLista) this.posCamara.lerp(deseada, 1 - Math.exp(-7 * dt)); else this.posCamara.copy(deseada);

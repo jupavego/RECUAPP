@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RECUAPP · Variantes de la vista del responsable</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Nunito:wght@700;800;900&display=swap">
+<style>
+  /* Hoja de prueba: alternativas de interfaz para cada sección de /responsables/:dep, con los datos reales de Girardota. No está conectada a la app. */
+  :root {
+    --bg:#F5F0EA; --card:#FCF9F6; --surface:#EAF2D6; --border:#C8D9C0; --text:#1A1A1A; --muted:#5C6B5F;
+    --brand:#29422F; --lima:#99CC33; --gold:#E0B33A; --gold-t:#8A6A0A; --sombra:0 10px 26px rgba(41,66,47,.14);
+    --ok:#3F8F2A; --cur:#B98A00; --bajo:#B5483A; --nd:#8A948C;
+    --ac:hsl(var(--h,110) 42% 34%); --ac-s:hsl(var(--h,110) 45% 92%); --ac-m:hsl(var(--h,110) 45% 55%);
+    --f-h:"Nunito","Inter",system-ui,sans-serif; --f-b:"Inter",system-ui,sans-serif;
+  }
+  :root.oscuro { --bg:#0E1510; --card:#1A261D; --surface:#22331F; --border:#2F4533; --text:#E8EFE4; --muted:#8FA08C; --brand:#99CC33; --gold-t:#E0B33A; --sombra:0 10px 26px rgba(0,0,0,.45);
+    --ok:#6FCB55; --cur:#E0B33A; --bajo:#E88070; --nd:#8FA08C; --ac:hsl(var(--h,110) 50% 62%); --ac-s:hsl(var(--h,110) 25% 18%); --ac-m:hsl(var(--h,110) 45% 48%); color-scheme:dark; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:15px/1.5 var(--f-b); }
+  main { max-width:1180px; margin:0 auto; padding:16px 16px 80px; }
+  .barra { display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; }
+  .marca { font:900 20px var(--f-h); color:var(--brand); }
+  .pill { border:1px solid var(--border); background:var(--card); color:var(--brand); font:600 13px var(--f-b); padding:7px 14px; border-radius:99px; cursor:pointer; text-decoration:none; }
+  select.pill { padding-right:10px; max-width:100%; }
+  .aviso { margin:12px 0 0; font-size:12.5px; color:var(--muted); background:color-mix(in srgb,var(--gold) 13%,transparent); border:1px solid var(--gold); border-radius:10px; padding:7px 12px; }
+  .indice { position:sticky; top:0; z-index:30; display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; padding:10px 0; background:linear-gradient(var(--bg) 70%,transparent); }
+  .indice a { flex:none; white-space:nowrap; font:700 12.5px var(--f-b); padding:6px 12px; border-radius:99px; border:1px solid var(--border); background:var(--card); color:var(--brand); text-decoration:none; }
+  .indice a b { color:var(--gold-t); margin-right:4px; }
+  section.s { margin-top:44px; scroll-margin-top:56px; }
+  section.s > h2 { margin:0; font:900 26px var(--f-h); color:var(--brand); } section.s > h2 small { display:block; font:800 11px var(--f-b); color:var(--gold-t); letter-spacing:.14em; }
+  .hoy { margin:2px 0 16px; color:var(--muted); font-size:13.5px; max-width:780px; }
+  .v { margin:0 0 26px; } .vh { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; margin-bottom:8px; }
+  .vh h3 { margin:0; font:800 16px var(--f-h); color:var(--brand); } .vh h3 b { color:var(--gold-t); margin-right:6px; }
+  .rec { font:800 10.5px var(--f-b); background:var(--gold); color:#2b2200; border-radius:99px; padding:2px 9px; }
+  .vh p { margin:0; flex-basis:100%; font-size:12.5px; color:var(--muted); } .vh p b { color:var(--brand); }
+  .demo { background:var(--card); border:1px solid var(--border); border-radius:20px; padding:16px; overflow:hidden; }
+  .demo.raso { background:transparent; border:0; padding:0; }
+  code { font-size:11.5px; background:var(--surface); padding:0 5px; border-radius:5px; color:var(--brand); }
+  .muted { color:var(--muted); } .num { font-variant-numeric:tabular-nums; }
+  .chip { display:inline-block; font:700 11px var(--f-b); padding:2px 9px; border-radius:99px; background:var(--ac-s); color:var(--brand); border:1px solid transparent; }
+  .chip.sug { background:transparent; border:1px dashed var(--muted); color:var(--muted); }
+  .chip.pdf { border-color:var(--ac-m); }
+  .e-ok { color:var(--ok); } .e-cur { color:var(--cur); } .e-bajo { color:var(--bajo); } .e-nd { color:var(--nd); }
+  .est { display:inline-flex; align-items:center; gap:5px; font:700 12px var(--f-b); }
+  .est i { font-style:normal; width:18px; height:18px; border-radius:50%; display:grid; place-items:center; border:2px solid currentColor; font-size:10px; line-height:1; }
+  .bg-ok { background:var(--ok); } .bg-cur { background:var(--cur); } .bg-bajo { background:var(--bajo); } .bg-nd { background:var(--nd); opacity:.55; }
+  .barra-p { height:8px; border-radius:99px; background:color-mix(in srgb,var(--muted) 20%,transparent); overflow:hidden; } .barra-p i { display:block; height:100%; border-radius:99px; }
+  .ico { width:64px; height:64px; object-fit:contain; flex:none; } .ico.v0 { display:grid; place-items:center; background:var(--ac-s); color:var(--ac); border-radius:18px; font:900 28px var(--f-h); }
+  .ring { position:relative; width:120px; height:120px; flex:none; } .ring svg { width:100%; height:100%; transform:rotate(-90deg); } .ring circle { fill:none; stroke-width:10; } .ring .p { stroke:color-mix(in srgb,var(--muted) 22%,transparent); } .ring .v { stroke-linecap:round; transition:stroke-dashoffset 1s ease; }
+  .ring figcaption { position:absolute; inset:0; display:grid; place-content:center; text-align:center; } .ring b { font:900 28px/1 var(--f-h); color:var(--brand); } .ring small { font-size:11px; color:var(--muted); }
+  figure { margin:0; }
+
+  /* Héroe */
+  .h1 { display:flex; gap:18px; align-items:center; flex-wrap:wrap; padding:20px; border-radius:20px; background:linear-gradient(120deg,var(--ac-s),var(--card)); border:1px solid var(--border); position:relative; overflow:hidden; }
+  .h1::after { content:""; position:absolute; right:-40px; top:-40px; width:200px; height:200px; border-radius:50%; background:radial-gradient(circle,var(--ac-m),transparent 65%); opacity:.25; }
+  .h1 .ico { width:96px; height:96px; } .h1 .tx { flex:1; min-width:220px; } .tipo { font:800 11px var(--f-b); color:var(--gold-t); letter-spacing:.1em; text-transform:uppercase; }
+  .h1 h4, .h2 h4 { margin:2px 0 6px; font:900 24px/1.1 var(--f-h); color:var(--brand); }
+  .quien b { display:block; font-size:16px; } .quien span { color:var(--muted); font-size:13px; } .cont { display:flex; gap:6px 12px; flex-wrap:wrap; margin-top:6px; font-size:12.5px; } .cont a { color:var(--brand); }
+  .h2 { width:300px; max-width:100%; margin:0 auto; background:var(--card); border:1px solid var(--border); border-radius:26px; overflow:hidden; box-shadow:var(--sombra); text-align:center; }
+  .h2 .ban { background:linear-gradient(160deg,var(--ac-m),var(--ac)); padding:20px 20px 46px; } .h2 .ban .tipo { color:#fff; opacity:.9; }
+  .h2 .av { width:96px; height:96px; border-radius:50%; background:var(--card); display:grid; place-items:center; margin:-48px auto 0; border:4px solid var(--card); box-shadow:0 6px 16px rgba(0,0,0,.18); } .h2 .av .ico { width:68px; height:68px; }
+  .h2 .cu { padding:10px 18px 18px; } .h2 .planta { margin:10px auto 0; display:block; width:150px; }
+  .h3w { display:grid; gap:12px; } .h3b { display:flex; align-items:center; gap:12px; background:var(--card); border:1px solid var(--border); border-radius:14px; padding:8px 14px; box-shadow:0 4px 12px rgba(0,0,0,.08); } .h3b .ico { width:34px; height:34px; } .h3b b { font:800 14px var(--f-h); color:var(--brand); flex:1; } .h3b .ring { width:38px; height:38px; } .h3b .ring circle { stroke-width:14; } .h3b .ring figcaption { display:none; }
+  .etq { font:800 11px var(--f-b); color:var(--muted); letter-spacing:.08em; text-transform:uppercase; margin:0 0 4px; }
+
+  /* Cifras */
+  .tira { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:10px; } .tira > div { background:var(--ac-s); border-radius:14px; padding:10px 12px; } .tira dt { font-size:12px; color:var(--muted); } .tira dd { margin:0; font:900 32px/1.1 var(--f-h); color:var(--brand); } .tira .est { margin-top:2px; }
+  .apil { display:flex; height:30px; border-radius:99px; overflow:hidden; gap:2px; } .apil i { display:block; min-width:6px; }
+  .leyP { display:flex; gap:6px 18px; flex-wrap:wrap; margin-top:10px; font-size:12.5px; } .leyP span { display:flex; gap:6px; align-items:center; } .leyP i { width:12px; height:12px; border-radius:4px; display:inline-block; }
+  .waffle { display:flex; flex-wrap:wrap; gap:5px; } .waffle i { width:20px; height:20px; border-radius:6px; display:block; } .waffle i.s { background:transparent !important; border:2px dashed var(--nd); }
+
+  /* Informe */
+  .anios { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px; } .anio { background:var(--ac-s); border-radius:16px; padding:12px 14px; } .anio h4 { margin:0 0 6px; font:900 20px var(--f-h); color:var(--brand); } .anio dl { margin:0; display:grid; gap:8px; } .anio dt { font-size:12px; color:var(--muted); } .anio dd { margin:0; font:800 20px var(--f-h); color:var(--brand); } .anio small { display:block; font-size:11.5px; color:var(--muted); font-weight:500; }
+  .bl { display:grid; grid-template-columns:150px 1fr 56px; gap:6px 10px; align-items:center; font-size:12.5px; margin:8px 0; } .bl .pista { position:relative; height:16px; border-radius:8px; background:color-mix(in srgb,var(--muted) 18%,transparent); } .bl .pista i { position:absolute; left:0; top:0; bottom:0; border-radius:8px; background:var(--ac); } .bl .pista u { position:absolute; top:-4px; bottom:-4px; width:3px; background:var(--gold); border-radius:2px; }
+  .tl { position:relative; display:grid; grid-template-columns:repeat(4,1fr); gap:8px; padding-top:30px; } .tl::before { content:""; position:absolute; left:6%; right:6%; top:14px; height:4px; background:var(--border); border-radius:2px; }
+  .tl .h { position:relative; text-align:center; background:var(--ac-s); border-radius:14px; padding:20px 8px 10px; } .tl .h::before { content:""; position:absolute; top:-26px; left:50%; width:18px; height:18px; margin-left:-9px; border-radius:50%; background:var(--ac); border:4px solid var(--card); } .tl .h.f { background:transparent; border:2px dashed var(--border); } .tl .h.f::before { background:var(--border); }
+  .tl b { display:block; font:900 20px var(--f-h); color:var(--brand); } .tl .v1 { font:800 18px var(--f-h); color:var(--brand); } .tl small { color:var(--muted); font-size:11.5px; display:block; }
+
+  /* Reparto */
+  .mini { list-style:none; margin:0; padding:0; display:grid; gap:8px; } .mini li { display:grid; grid-template-columns:minmax(120px,1.2fr) 2fr 30px; gap:10px; align-items:center; font-size:13px; } .mini .b { height:10px; border-radius:99px; background:color-mix(in srgb,var(--muted) 18%,transparent); } .mini .b i { display:block; height:100%; border-radius:99px; background:var(--ac); }
+  .dos { display:grid; grid-template-columns:1fr 1fr; gap:22px; } .dos h5 { margin:0 0 8px; font:800 12px var(--f-b); letter-spacing:.1em; text-transform:uppercase; color:var(--gold-t); }
+  .tree { display:flex; flex-wrap:wrap; gap:6px; } .tree div { border-radius:12px; padding:10px 12px; color:#fff; min-height:78px; display:flex; flex-direction:column; justify-content:space-between; font-size:12.5px; line-height:1.2; } .tree b { font:900 24px var(--f-h); }
+  .dona { display:flex; gap:22px; align-items:center; flex-wrap:wrap; } .dona svg { width:190px; height:190px; transform:rotate(-90deg); flex:none; } .dona ul { list-style:none; margin:0; padding:0; flex:1; min-width:240px; display:grid; gap:10px; font-size:13px; } .dona li i { display:inline-block; width:12px; height:12px; border-radius:4px; margin-right:8px; } .dona li small { display:block; margin:2px 0 0 20px; color:var(--muted); font-size:11.5px; }
+
+  /* Veredas */
+  .ver details { border:1px solid var(--border); border-radius:12px; margin-bottom:6px; background:var(--card); } .ver summary { cursor:pointer; padding:9px 14px; display:flex; justify-content:space-between; font-weight:700; color:var(--brand); } .ver summary b { background:var(--ac-s); border-radius:99px; padding:0 10px; font-size:12px; }
+  .ver li { margin:6px 0; font-size:13px; } .ver ul { margin:0; padding:0 14px 10px 30px; } .ver blockquote { margin:3px 0 0; padding-left:10px; border-left:3px solid var(--ac-m); font-size:12px; color:var(--muted); }
+  .nube { display:flex; flex-wrap:wrap; gap:8px; align-items:center; } .nube button { border:0; border-radius:99px; background:var(--ac-s); color:var(--brand); font-family:var(--f-h); font-weight:800; cursor:pointer; padding:5px 14px; } .nube button[aria-pressed="true"] { background:var(--ac); color:#fff; }
+  .panelv { margin-top:12px; background:var(--ac-s); border-radius:14px; padding:12px 16px; font-size:13px; } .panelv h5 { margin:0 0 6px; font:900 16px var(--f-h); color:var(--brand); }
+
+  /* Productos */
+  .tabla-marco { overflow-x:auto; } table.t { width:100%; border-collapse:collapse; font-size:12.5px; min-width:760px; } .t th { text-align:left; background:var(--ac-s); color:var(--brand); padding:7px 10px; font-size:12px; } .t td { padding:8px 10px; border-top:1px solid var(--border); vertical-align:top; } .t td b { color:var(--brand); display:block; } .t .cod { font-weight:700; white-space:nowrap; } .t .pct { min-width:120px; }
+  .filt { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; } .filt button { border:1px solid var(--border); background:var(--card); color:var(--brand); border-radius:99px; padding:5px 12px; font:700 12.5px var(--f-b); cursor:pointer; } .filt button[aria-pressed="true"] { background:var(--brand); color:var(--card); }
+  .pgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:10px; } .pc { text-align:left; background:var(--card); border:1px solid var(--border); border-radius:16px; padding:12px 14px; cursor:pointer; display:flex; flex-direction:column; gap:6px; font:inherit; color:var(--text); border-top:5px solid var(--cc); transition:transform .15s, box-shadow .15s; } .pc:hover { transform:translateY(-3px); box-shadow:var(--sombra); } .pc.s { border-style:dashed; border-top-style:solid; } .pc small { color:var(--muted); font-size:11.5px; } .pc b { font:800 13.5px/1.3 var(--f-h); color:var(--brand); }
+  .lin details { border:1px solid var(--border); border-radius:14px; margin-bottom:8px; overflow:hidden; } .lin summary { cursor:pointer; padding:10px 14px; background:var(--ac-s); display:flex; gap:12px; align-items:center; font-weight:800; color:var(--brand); } .lin summary .barra-p { flex:0 0 120px; } .lin summary span.n { margin-left:auto; font-size:12px; color:var(--muted); }
+  .lin .fila { display:grid; grid-template-columns:70px 1fr 120px; gap:10px; align-items:center; padding:8px 14px; border-top:1px solid var(--border); background:var(--card); cursor:pointer; width:100%; text-align:left; font:inherit; color:var(--text); border-left:0; border-right:0; border-bottom:0; } .lin .fila:hover { background:var(--ac-s); } .lin .fila .cod { font-weight:700; font-size:12px; color:var(--muted); } .lin .fila span.i { font-size:13px; }
+  .rk { display:grid; gap:6px; } .rk button { display:grid; grid-template-columns:180px 1fr 70px; gap:10px; align-items:center; background:transparent; border:0; padding:4px 0; cursor:pointer; text-align:left; font:inherit; color:var(--text); } .rk button:hover b { text-decoration:underline; } .rk b { font:700 12.5px/1.25 var(--f-b); color:var(--brand); display:block; overflow:hidden; text-overflow:ellipsis; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; } .rk .barra-p { height:14px; } .rk .v { text-align:right; font:800 13px var(--f-h); }
+  .drawer-bg { position:fixed; inset:0; background:rgba(0,0,0,.4); z-index:60; opacity:0; pointer-events:none; transition:opacity .25s; } .drawer-bg.on { opacity:1; pointer-events:auto; }
+  .drawer { position:fixed; top:0; right:0; bottom:0; width:min(460px,100%); background:var(--card); z-index:61; transform:translateX(105%); transition:transform .3s cubic-bezier(.3,.8,.3,1); overflow:auto; padding:20px; box-shadow:-10px 0 30px rgba(0,0,0,.3); }
+  .drawer.on { transform:none; } .drawer h4 { margin:6px 0 4px; font:900 20px/1.2 var(--f-h); color:var(--brand); } .drawer .x { float:right; border:1px solid var(--border); background:var(--card); border-radius:99px; width:36px; height:36px; cursor:pointer; color:var(--brand); font-size:16px; }
+  .drawer h5 { margin:16px 0 6px; font:800 11px var(--f-b); letter-spacing:.1em; text-transform:uppercase; color:var(--gold-t); } .drawer p { margin:4px 0; font-size:13.5px; } .prog4 { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; } .prog4 div { background:var(--ac-s); border-radius:10px; padding:6px 8px; text-align:center; font-size:12px; } .prog4 b { display:block; font:800 16px var(--f-h); color:var(--brand); }
+  .drawer details { margin-top:8px; border:1px solid var(--border); border-radius:10px; padding:6px 12px; } .drawer summary { cursor:pointer; font-weight:700; color:var(--brand); font-size:13px; }
+
+  /* Equipo */
+  .pers { display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:10px; } .pe { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:12px 14px; display:flex; flex-direction:column; gap:2px; font-size:12.5px; } .pe.sub { border-style:dashed; } .pe .c { font:700 11px var(--f-b); color:var(--gold-t); text-transform:uppercase; letter-spacing:.06em; } .pe b { font:800 15px var(--f-h); color:var(--brand); } .pe a { color:var(--brand); word-break:break-all; }
+  .const { display:grid; grid-template-columns:1fr 260px; gap:14px; align-items:start; } .const svg { width:100%; height:auto; background:radial-gradient(circle,var(--ac-s),transparent 70%); border-radius:20px; } .const .nd { cursor:pointer; } .const .nd circle { fill:var(--card); stroke:var(--ac); stroke-width:2.5; transition:r .15s; } .const .nd:hover circle, .const .nd.on circle { fill:var(--ac); } .const .nd text { font:800 9px var(--f-b); fill:var(--brand); text-anchor:middle; pointer-events:none; } .const .nd:hover text, .const .nd.on text { fill:#fff; }
+  .const .info { background:var(--ac-s); border-radius:14px; padding:12px 14px; font-size:13px; min-height:130px; } .const .info b { font:900 16px var(--f-h); color:var(--brand); display:block; } .solo-movil { display:none; }
+  .arb ul { list-style:none; margin:0; padding-left:22px; position:relative; } .arb > ul { padding-left:0; } .arb li { position:relative; padding:4px 0 4px 18px; font-size:13px; } .arb li::before { content:""; position:absolute; left:0; top:0; bottom:0; border-left:2px solid var(--border); } .arb li::after { content:""; position:absolute; left:0; top:16px; width:14px; border-top:2px solid var(--border); } .arb li:last-child::before { bottom:auto; height:16px; }
+  .arb .raiz { font:900 16px var(--f-h); color:var(--brand); } .arb .sd { font:800 14px var(--f-h); color:var(--brand); } .arb small { color:var(--muted); }
+
+  /* Fuentes */
+  .fl { margin:0; padding:0; list-style:none; display:grid; gap:10px; counter-reset:f; } .fl li { counter-increment:f; display:grid; grid-template-columns:30px 1fr; gap:10px; font-size:13px; } .fl li::before { content:counter(f); width:26px; height:26px; border-radius:50%; background:var(--ac-s); color:var(--brand); display:grid; place-items:center; font:800 12px var(--f-b); } .fl b { display:block; color:var(--brand); } .fl span { color:var(--muted); }
+  .esc { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; align-items:end; } .esc > div { border-radius:14px 14px 4px 4px; padding:10px 12px; background:color-mix(in srgb,var(--ac-m) calc(var(--n)*18%),var(--card)); border:1px solid var(--border); font-size:12.5px; } .esc h5 { margin:0 0 4px; font:800 12px var(--f-h); color:var(--brand); } .esc ul { margin:0; padding-left:16px; color:var(--muted); } .esc .vac { background:transparent; border-style:dashed; color:var(--muted); }
+  .pie { margin-top:12px; display:flex; gap:6px; flex-wrap:wrap; font-size:11.5px; color:var(--muted); align-items:center; } .pie button { border:1px solid var(--border); background:var(--card); color:var(--brand); border-radius:99px; padding:2px 10px; font:700 11px var(--f-b); cursor:pointer; }
+
+  @media (max-width:760px) { .dos, .const { grid-template-columns:1fr; } .const svg { display:none; } .solo-movil { display:block; } .esc { grid-template-columns:1fr 1fr; } .bl { grid-template-columns:90px 1fr 48px; } .rk button { grid-template-columns:110px 1fr 60px; } .lin .fila { grid-template-columns:56px 1fr; } .lin .fila .est { grid-column:2; } .tl { grid-template-columns:1fr 1fr; } .tl::before { display:none; } .tl .h::before { display:none; } .tl .h { padding-top:10px; } }
+  @media (prefers-reduced-motion: reduce) { * { transition:none !important; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="barra">
+    <div class="marca">RECUAPP · La vista del responsable</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+      <label class="muted" for="sel" style="font-size:12.5px">Probar con:</label>
+      <select id="sel" class="pill" aria-label="Elegir responsable"></select>
+      <button class="pill" id="tema" type="button">Día / noche</button>
+    </div>
+  </div>
+  <p class="aviso"><b>Hoja de prueba.</b> Alternativas de interfaz para cada sección de la vista de un responsable, con los <b>datos reales</b> de Girardota (plan, seguimiento y zonas). No está conectada a la app ni cambia la vista actual. Cambia de responsable arriba y todas las propuestas se redibujan. Convención: <span class="chip pdf">según el PDF</span> es sólido; <span class="chip sug">sugerida por sector</span> va punteado; lo que no tiene informe dice «sin informe», nunca 0 %.</p>
+  <nav class="indice" id="indice" aria-label="Secciones"></nav>
+  <div id="out"><p class="muted">Cargando datos…</p></div>
+</main>
+<div class="drawer-bg" id="dbg"></div>
+<aside class="drawer" id="drawer" aria-label="Detalle del producto" aria-hidden="true"></aside>
+
+<script>
+var ANIOS = ['2024', '2025', '2026', '2027'];
+var $ = function (s, r) { return (r || document).querySelector(s); };
+var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+var num = function (v) { return v == null ? '—' : (Math.round(v * 100) / 100).toLocaleString('es-CO'); };
+var ent = function (v) { return v == null ? '—' : Math.round(v).toLocaleString('es-CO'); };
+var est = function (p) { return p == null ? { k: 'nd', i: '–', t: 'Sin informe' } : p >= 100 ? { k: 'ok', i: '✓', t: 'Cumplido' } : p >= 50 ? { k: 'cur', i: '◔', t: 'En curso' } : { k: 'bajo', i: '!', t: 'Atrasado' }; };
+var estH = function (p) { var e = est(p); return '<span class="est e-' + e.k + '"><i aria-hidden="true">' + e.i + '</i>' + e.t + '</span>'; };
+var matiz = function (id) { var h = 0; for (var i = 0; i < id.length; i++) h = (h * 31 + id.charCodeAt(i)) >>> 0; return 70 + (h % 90); };
+var P, S, Z, deps, RS = {};
+
+function resumen(id) {
+  var dep = deps.get(id), grupo = [dep].concat(P.dependencias.filter(function (d) { return d.padre === id; })), filas = [];
+  P.productos.forEach(function (x) { x.resp.forEach(function (r) { var d = deps.get(r.dep); if (!d || grupo.indexOf(d) < 0) return; var s = S.indicadores[x.id]; filas.push({ x: x, dep: d, conf: r.conf, pct: s && s.pct != null ? s.pct : null, s: s || null }); }); });
+  var m = new Map(); filas.forEach(function (f) { if (!m.has(f.x.id)) m.set(f.x.id, f); });
+  var un = Array.from(m.values()), con = un.filter(function (f) { return f.pct != null; });
+  return { dep: dep, grupo: grupo, un: un, alta: un.filter(function (f) { return f.conf === 'alta'; }).length, sug: un.filter(function (f) { return f.conf !== 'alta'; }).length, con: con.length,
+    avance: con.length ? con.reduce(function (a, f) { return a + Math.min(100, f.pct); }, 0) / con.length : null,
+    cum: con.filter(function (f) { return f.pct >= 100; }).length, atr: con.filter(function (f) { return f.pct < 50; }).length,
+    equipo: grupo.reduce(function (a, d) { return a + (d.equipo ? d.equipo.length : 0); }, 0), oficial: S.dependencias[id] || null, externas: P.dependencias.filter(function (d) { return d.vinculo === id; }) };
+}
+function icono(d, cls) { return d.icono ? '<img class="ico ' + (cls || '') + '" src="/img/iconos/' + d.icono + '.png" alt="" width="64" height="64">' : '<i class="ico v0 ' + (cls || '') + '">' + esc(d.nombre.charAt(0)) + '</i>'; }
+function anillo(av, cap) { var C = 2 * Math.PI * 52; return '<figure class="ring" role="img" aria-label="' + (av == null ? 'Sin indicadores en el informe' : ent(av) + ' % de avance') + '"><svg viewBox="0 0 120 120" aria-hidden="true"><circle class="p" cx="60" cy="60" r="52"/><circle class="v" cx="60" cy="60" r="52" stroke="' + (av == null ? 'transparent' : 'var(--ac)') + '" stroke-dasharray="' + C.toFixed(1) + '" stroke-dashoffset="' + (av == null ? C : C * (1 - Math.min(100, av) / 100)).toFixed(1) + '"/></svg><figcaption><b>' + (av == null ? '—' : ent(av)) + '</b><small>' + (av == null ? 'sin informe' : '% avance ' + S.anio) + '</small></figcaption></figure>'; }
+function quien(r) { var q = r.dep.responsable; return q ? '<p class="quien"><b>' + esc(q.nombre) + '</b><span>' + esc(q.cargo) + '</span></p><div class="cont">' + (q.correo ? '<a href="mailto:' + esc(q.correo) + '">' + esc(q.correo) + '</a>' : '') + (q.telefono ? '<span>Tel. ' + esc(q.telefono) + (q.extension ? ' ext. ' + esc(q.extension) : '') + '</span>' : '') + '<a href="' + esc(q.url) + '" target="_blank" rel="noopener">Sitio de la alcaldía</a></div>' : '<p class="quien"><span>La alcaldía no publica quién la dirige.</span></p>'; }
+function tipo(r) { return esc(r.dep.tipo) + (r.grupo.length > 1 ? ' · con ' + (r.grupo.length - 1) + (r.grupo.length === 2 ? ' subdependencia' : ' subdependencias') : ''); }
+function sectorN(c) { var s = P.sectores.filter(function (z) { return z.cod === c; })[0]; return s ? s.nombre : c; }
+function lineaN(c) { var s = P.lineas.filter(function (z) { return z.id === c; })[0]; return s ? s.nombre : c; }
+function agrupar(r, key) { var m = new Map(); r.un.forEach(function (f) { var k = key(f); m.set(k, (m.get(k) || 0) + 1); }); return Array.from(m).sort(function (a, b) { return b[1] - a[1]; }); }
+function chipConf(f) { return f.conf === 'alta' ? '<span class="chip pdf">según el PDF</span>' : '<span class="chip sug">sugerida por sector</span>'; }
+
+/* ───── drawer de producto ───── */
+function abrirProducto(f) {
+  var x = f.x, s = f.s, d = $('#drawer');
+  var anios = s ? ANIOS.filter(function (a) { return s.por_anio && s.por_anio[a]; }) : [];
+  d.innerHTML = '<button class="x" type="button" aria-label="Cerrar" id="dx">✕</button><span class="tipo">' + esc(x.id) + '</span><h4>' + esc(x.indicador) + '</h4><p class="muted">' + esc(x.producto) + '</p><p>' + chipConf(f) + ' <span class="chip">' + esc(sectorN(x.sector)) + '</span>' + (x.ods ? ' <span class="chip">ODS · ' + esc(x.ods) + '</span>' : '') + (x.pdf ? ' <span class="chip">PDF p. ' + x.pdf.pagina + '</span>' : '') + '</p>' +
+    '<h5>Programación del cuatrienio · meta ' + num(x.meta) + ' ' + esc(x.unidad) + '</h5><div class="prog4">' + ANIOS.map(function (a, i) { return '<div>' + a + '<b>' + num(x.prog[i]) + '</b></div>'; }).join('') + '</div>' +
+    '<h5>Avance según el informe</h5>' + (anios.length ? anios.map(function (a) { var y = s.por_anio[a], e = est(y.pct); return '<div style="margin:8px 0"><div style="display:flex;justify-content:space-between;font-size:13px"><b>' + a + '</b>' + estH(y.pct) + '</div><div class="barra-p"><i class="bg-' + e.k + '" style="width:' + Math.min(100, y.pct || 0) + '%"></i></div><small class="muted">' + num(y.avance) + ' de ' + num(y.programada) + ' programado' + (y.pct != null ? ' · ' + ent(y.pct) + ' %' : '') + '</small></div>'; }).join('') : '<p>' + estH(null) + ' <span class="muted">Este indicador no aparece en los informes.</span></p>') +
+    (s && s.proyecto ? '<h5>Proyecto</h5><p>' + esc(s.proyecto) + (s.bpin ? ' · BPIN ' + esc(s.bpin) : '') + '</p>' : '') +
+    (x.detalle ? '<h5>En el plan</h5><p>' + esc(x.detalle) + '</p>' : '') +
+    (s && s.narrativas ? Object.keys(s.narrativas).map(function (a) { return '<details><summary>Lo que reportó la alcaldía · ' + a + '</summary><p>' + esc(s.narrativas[a]) + '</p></details>'; }).join('') : '');
+  d.classList.add('on'); $('#dbg').classList.add('on'); d.setAttribute('aria-hidden', 'false'); $('#dx').focus();
+  $('#dx').onclick = cerrar;
+}
+function cerrar() { $('#drawer').classList.remove('on'); $('#dbg').classList.remove('on'); $('#drawer').setAttribute('aria-hidden', 'true'); }
+$('#dbg').onclick = cerrar; document.addEventListener('keydown', function (e) { if (e.key === 'Escape') cerrar(); });
+var FILAS = [];
+function ligar(el) { el.querySelectorAll('[data-p]').forEach(function (b) { b.onclick = function () { abrirProducto(FILAS[b.dataset.p]); }; }); }
+function reg(f) { FILAS.push(f); return FILAS.length - 1; }
+
+/* ───── secciones ───── */
+var SEC = [];
+function seccion(id, titulo, hoy, vars) { SEC.push({ id: id, titulo: titulo, hoy: hoy, vars: vars }); }
+function V(k, t, ideal, cuidado, rec, html, init, raso) { return { k: k, t: t, ideal: ideal, cuidado: cuidado, rec: rec, html: html, init: init, raso: raso }; }
+
+seccion('s1', 'Héroe: quién es y cómo va', 'Hoy: banda con el ícono, el tipo, el nombre, la persona a cargo con su contacto y el anillo de avance.', [
+  V('A', 'Banda de marca con anillo', 'Es la evolución directa de lo que hay: reconocible y rápida de construir.', 'Si el anillo y los datos de contacto compiten, en móvil se apilan.', true, function (r) {
+    return '<div class="h1">' + icono(r.dep) + '<div class="tx"><span class="tipo">' + tipo(r) + '</span><h4>' + esc(r.dep.nombre) + '</h4>' + quien(r) + '</div>' + anillo(r.avance) + '</div>';
+  }, null, true),
+  V('B', 'Credencial con planta que crece', 'Dar personalidad: cada responsable es un «personaje» con su color y una planta que se llena.', 'La planta es la única metáfora de avance: no mezclarla con anillos en la misma vista.', false, function (r) {
+    var av = r.avance, n = 6, ll = av == null ? 0 : Math.round(Math.min(100, av) / 100 * n), hojas = '';
+    for (var i = 0; i < n; i++) { var y = 118 - i * 17, lado = i % 2 ? 1 : -1, on = i < ll; hojas += '<path d="M75 ' + y + 'q' + (lado * 34) + ' -4 ' + (lado * 40) + ' -26q' + (-lado * 30) + ' 2 ' + (-lado * 40) + ' 26z" fill="' + (on ? 'var(--ac)' : 'none') + '" stroke="' + (on ? 'var(--ac)' : 'var(--nd)') + '" stroke-width="2" stroke-dasharray="' + (on ? '0' : '4 4') + '"/>'; }
+    return '<div class="h2"><div class="ban"><span class="tipo">' + tipo(r) + '</span></div><div class="av">' + icono(r.dep) + '</div><div class="cu"><h4>' + esc(r.dep.nombre) + '</h4>' + quien(r) + '<svg class="planta" viewBox="0 0 150 130" role="img" aria-label="' + (av == null ? 'Sin indicadores en el informe' : ll + ' de ' + n + ' hojas: ' + ent(av) + ' % de avance') + '"><path d="M75 124V30" stroke="var(--ac)" stroke-width="4" stroke-linecap="round"/>' + hojas + '</svg><p class="num" style="margin:6px 0 0"><b style="font:900 22px var(--f-h);color:var(--brand)">' + (av == null ? '—' : ent(av) + ' %') + '</b> <span class="muted">avance ' + S.anio + '</span></p></div></div>';
+  }, null, true),
+  V('C', 'Barra compacta que acompaña al hacer scroll', 'Mantener a la vista quién es el responsable mientras se leen productos largos.', 'Ocupa espacio fijo: en móvil debe ser muy baja.', false, function (r) {
+    return '<div class="h3w"><div><p class="etq">Al inicio de la página</p><div class="h1">' + icono(r.dep) + '<div class="tx"><span class="tipo">' + tipo(r) + '</span><h4>' + esc(r.dep.nombre) + '</h4></div>' + anillo(r.avance) + '</div></div><div><p class="etq">Al bajar: se encoge y queda fija arriba</p><div class="h3b">' + icono(r.dep) + '<b>' + esc(r.dep.nombre) + '</b><span class="muted" style="font-size:12.5px">' + (r.dep.responsable ? esc(r.dep.responsable.nombre) : 'Sin persona publicada') + '</span>' + anillo(r.avance) + '</div></div></div>';
+  }, null, true),
+]);
+
+seccion('s2', 'Cifras: cuánto le toca y cómo va', 'Hoy: seis números (productos, según el PDF, sugeridos, cumplidos, menos de 50 %, equipo).', [
+  V('A', 'Tira de números con semáforo', 'Lectura inmediata de seis cifras; es lo más parecido a lo actual.', 'Los números sin contexto no dicen si son «muchos» o «pocos».', false, function (r) {
+    var it = [['Productos a cargo', r.un.length, ''], ['Según el PDF', r.alta, ''], ['Sugeridos por sector', r.sug, ''], ['Cumplidos (≥ 100 %)', r.cum, estH(100)], ['Con menos de 50 %', r.atr, estH(10)], ['Equipo', r.equipo, '']];
+    return '<dl class="tira">' + it.map(function (x) { return '<div><dt>' + x[0] + '</dt><dd class="num">' + x[1] + '</dd>' + x[2] + '</div>'; }).join('') + '</dl>';
+  }),
+  V('B', 'Barra de composición', 'Ver de una vez cómo se reparten los productos entre cumplidos, en curso, atrasados y sin informe.', 'Segmentos muy pequeños se pierden: conviene mostrar la cuenta en la leyenda.', true, function (r) {
+    var c = { ok: 0, cur: 0, bajo: 0, nd: 0 }; r.un.forEach(function (f) { c[est(f.pct).k]++; }); var t = r.un.length || 1, tx = { ok: 'Cumplidos', cur: 'En curso', bajo: 'Atrasados', nd: 'Sin informe' };
+    return '<div class="apil" role="img" aria-label="Composición de los ' + r.un.length + ' productos por estado">' + ['ok', 'cur', 'bajo', 'nd'].map(function (k) { return c[k] ? '<i class="bg-' + k + '" style="flex:' + c[k] + '" title="' + tx[k] + ': ' + c[k] + '"></i>' : ''; }).join('') + '</div><div class="leyP">' + ['ok', 'cur', 'bajo', 'nd'].map(function (k) { return '<span><i class="bg-' + k + '"></i>' + tx[k] + ' <b class="num">' + c[k] + '</b></span>'; }).join('') + '</div><p class="muted" style="font-size:12.5px;margin:10px 0 0">De los ' + r.un.length + ' productos, <b>' + r.alta + '</b> los asigna el PDF y <b>' + r.sug + '</b> son sugeridos por sector.</p>';
+  }),
+  V('C', 'Mosaico de puntos (un punto = un producto)', 'Hacer tangible la carga de trabajo: cada producto es un punto de su color de estado.', 'Con cientos de productos conviene agrupar; aquí hay decenas.', false, function (r) {
+    var o = { ok: 0, cur: 1, bajo: 2, nd: 3 }, l = r.un.slice().sort(function (a, b) { return o[est(a.pct).k] - o[est(b.pct).k]; });
+    return '<div class="waffle" role="img" aria-label="Un punto por cada uno de los ' + r.un.length + ' productos, coloreado por estado">' + l.map(function (f) { var e = est(f.pct); return '<i class="bg-' + e.k + (f.conf !== 'alta' ? ' s' : '') + '" title="' + esc(f.x.id) + ' · ' + e.t + (f.conf !== 'alta' ? ' · sugerida por sector' : '') + '"></i>'; }).join('') + '</div><div class="leyP"><span><i class="bg-ok"></i>Cumplido</span><span><i class="bg-cur"></i>En curso</span><span><i class="bg-bajo"></i>Atrasado</span><span><i class="bg-nd"></i>Sin informe</span><span><i style="border:2px dashed var(--nd)"></i>Borde punteado: sugerido por sector</span></div>';
+  }),
+]);
+
+seccion('s3', 'Lo que dice el informe de seguimiento', 'Hoy: una tarjeta por año con plan de acción, avance al cuatrienio y metas, comparado con el plan completo.', [
+  V('A', 'Tarjetas por año', 'Es lo que existe; claro cuando hay pocos años.', 'Con cuatro años (2024–2027) se llena de tarjetas, y dos están vacías hoy.', false, function (r) {
+    var o = r.oficial; if (!o) return '<p class="muted">Esta dependencia no tiene cuadros en el informe.</p>';
+    return '<div class="anios">' + Object.keys(o).sort().map(function (a) { var y = o[a], g = (S.global[a] || []).filter(function (z) { return z.nivel === 'global'; })[0] || {}; return '<article class="anio"><h4>' + a + '</h4><dl><div><dt>Plan de acción</dt><dd>' + (y.plan_accion != null ? num(y.plan_accion) + ' %' : '—') + (g.plan_accion != null ? '<small>plan completo: ' + num(g.plan_accion) + ' %</small>' : '') + '</dd></div>' + (y.cuatrienio != null ? '<div><dt>Avance al cuatrienio</dt><dd>' + num(y.cuatrienio) + ' %' + (g.cuatrienio != null ? '<small>plan completo: ' + num(g.cuatrienio) + ' %</small>' : '') + '</dd></div>' : '') + '<div><dt>Metas en el informe</dt><dd>' + (y.metas != null ? y.metas : '—') + '</dd></div></dl></article>'; }).join('') + '</div>';
+  }, null, true),
+  V('B', 'Barras contra el plan completo', 'Comparar de golpe a la dependencia con el promedio del plan: la marca dorada es el plan completo.', 'Dos medidas distintas (plan de acción y cuatrienio) deben explicarse con una nota.', true, function (r) {
+    var o = r.oficial; if (!o) return '<p class="muted">Esta dependencia no tiene cuadros en el informe.</p>';
+    var out = '';
+    Object.keys(o).sort().forEach(function (a) { var y = o[a], g = (S.global[a] || []).filter(function (z) { return z.nivel === 'global'; })[0] || {};
+      [['Plan de acción', y.plan_accion, g.plan_accion], ['Avance al cuatrienio', y.cuatrienio, g.cuatrienio]].forEach(function (m) { if (m[1] == null) return; out += '<div class="bl"><span><b>' + a + '</b> · ' + m[0] + '</span><div class="pista" role="img" aria-label="' + a + ' ' + m[0] + ': ' + num(m[1]) + ' %' + (m[2] != null ? ', plan completo ' + num(m[2]) + ' %' : '') + '"><i style="width:' + Math.min(100, m[1]) + '%"></i>' + (m[2] != null ? '<u style="left:' + Math.min(100, m[2]) + '%"></u>' : '') + '</div><b class="num">' + num(m[1]) + ' %</b></div>'; }); });
+    return (out || '<p class="muted">Sin datos.</p>') + '<p class="muted" style="font-size:12px;margin:8px 0 0"><span style="color:var(--gold-t)">▌</span> marca dorada = plan completo de la alcaldía.</p>';
+  }),
+  V('C', 'Línea de tiempo del cuatrienio', 'Mostrar que el plan va de 2024 a 2027 y en qué punto estamos; los años sin informe se ven como pendientes.', 'Pide explicar que «pendiente» no es «cero».', false, function (r) {
+    var o = r.oficial || {};
+    return '<div class="tl">' + ANIOS.map(function (a) { var y = o[a]; return y ? '<div class="h"><b>' + a + '</b><span class="v1">' + (y.plan_accion != null ? num(y.plan_accion) + ' %' : '—') + '</span><small>plan de acción</small>' + (y.cuatrienio != null ? '<small>cuatrienio: ' + num(y.cuatrienio) + ' %</small>' : '') + '</div>' : '<div class="h f"><b>' + a + '</b><small>' + (+a > +S.anio ? 'aún no llega' : 'sin informe') + '</small></div>'; }).join('') + '</div>';
+  }),
+]);
+
+seccion('s4', 'Reparto por línea estratégica y sector', 'Hoy: dos listas de barras (por línea y por sector) con el número de productos.', [
+  V('A', 'Barras en dos columnas', 'Exacto y fácil de comparar; es lo que hay.', 'Con muchos sectores la lista se alarga.', false, function (r) {
+    var li = agrupar(r, function (f) { return f.x.linea; }), se = agrupar(r, function (f) { return f.x.sector; }), t = r.un.length || 1;
+    var lst = function (a, fn) { return '<ul class="mini">' + a.map(function (z) { return '<li><span>' + esc(fn(z[0])) + '</span><span class="b"><i style="width:' + (100 * z[1] / t) + '%"></i></span><b class="num">' + z[1] + '</b></li>'; }).join('') + '</ul>'; };
+    return '<div class="dos"><div><h5>Por línea estratégica</h5>' + lst(li, lineaN) + '</div><div><h5>Por sector</h5>' + lst(se, sectorN) + '</div></div>';
+  }, null, true),
+  V('B', 'Mapa de rectángulos (treemap)', 'Ver de un vistazo en qué sectores se concentra el trabajo: el área es la cantidad.', 'Los rectángulos pequeños no caben con texto; hay que abreviar.', true, function (r) {
+    var se = agrupar(r, function (f) { return f.x.sector; });
+    return '<div class="tree" role="list">' + se.map(function (z, i) { return '<div role="listitem" style="flex:' + z[1] + ' 1 ' + (70 + z[1] * 14) + 'px;background:hsl(' + ((+document.documentElement.style.getPropertyValue('--h') || 110) + i * 14) % 360 + ' 38% ' + (i % 2 ? 34 : 28) + '%)"><span>' + esc(sectorN(z[0])) + '</span><b class="num">' + z[1] + '</b></div>'; }).join('') + '</div>';
+  }),
+  V('C', 'Dona por línea con sectores debajo', 'Una sola figura para el reparto principal (líneas) y el detalle como lista.', 'Más de cinco o seis porciones dejan de leerse.', false, function (r) {
+    var li = agrupar(r, function (f) { return f.x.linea; }), t = r.un.length || 1, C = 2 * Math.PI * 40, acc = 0, h0 = +document.documentElement.style.getPropertyValue('--h') || 110;
+    var arcs = li.map(function (z, i) { var len = C * z[1] / t, s = '<circle cx="60" cy="60" r="40" fill="none" stroke="hsl(' + (h0 + i * 40) % 360 + ' 42% 42%)" stroke-width="22" stroke-dasharray="' + len.toFixed(1) + ' ' + (C - len).toFixed(1) + '" stroke-dashoffset="' + (-acc).toFixed(1) + '"/>'; acc += len; return s; }).join('');
+    return '<div class="dona"><svg viewBox="0 0 120 120" role="img" aria-label="Productos por línea estratégica">' + arcs + '</svg><ul>' + li.map(function (z, i) { var ss = agrupar({ un: r.un.filter(function (f) { return f.x.linea === z[0]; }) }, function (f) { return f.x.sector; }); return '<li><i style="background:hsl(' + (h0 + i * 40) % 360 + ' 42% 42%)"></i><b>' + esc(lineaN(z[0])) + '</b> · <span class="num">' + z[1] + '</span><small>' + ss.map(function (s) { return esc(sectorN(s[0])) + ' (' + s[1] + ')'; }).join(' · ') + '</small></li>'; }).join('') + '</ul></div>';
+  }),
+]);
+
+function veredasDe(r) { var ids = new Set(r.un.map(function (f) { return f.x.id; })), out = []; Object.keys(Z.zonas).forEach(function (v) { var ps = Z.zonas[v].filter(function (p) { return ids.has(p.ip); }); if (ps.length) out.push({ v: v, ps: ps }); }); return out.sort(function (a, b) { return b.ps.length - a.ps.length || a.v.localeCompare(b.v, 'es'); }); }
+function proyHtml(ps) { return '<ul>' + ps.map(function (p) { var e = est(p.pct); return '<li><b>' + esc(p.ip) + '</b> ' + esc(p.indicador) + (p.pct != null ? ' <span class="est e-' + e.k + '"><i aria-hidden="true">' + e.i + '</i>' + ent(p.pct) + ' %' + (p.anio_pct ? ' · ' + p.anio_pct : '') + '</span>' : '') + (p.menciones || []).slice(0, 1).map(function (m) { return '<blockquote><small>' + m.anio + '</small> «…' + esc(m.texto) + '…»</blockquote>'; }).join('') + '</li>'; }).join('') + '</ul>'; }
+seccion('s5', 'Dónde, según el informe', 'Hoy: lista de veredas que el informe nombra, cada una desplegable con sus indicadores y menciones.', [
+  V('A', 'Lista desplegable', 'Ordenada y accesible; es lo que hay.', 'Con muchas veredas obliga a abrir una por una.', false, function (r) {
+    var vs = veredasDe(r); if (!vs.length) return '<p class="muted">El informe no nombra veredas para los indicadores de este responsable.</p>';
+    return '<div class="ver">' + vs.map(function (v) { return '<details><summary>' + esc(v.v) + '<b>' + v.ps.length + '</b></summary>' + proyHtml(v.ps) + '</details>'; }).join('') + '</div>';
+  }, null, true),
+  V('B', 'Nube de veredas con panel', 'Ver cuáles veredas concentran más menciones (tamaño = cantidad) y abrir el detalle al lado.', 'La nube no es un mapa: no insinúa ubicación, solo cuántas menciones hay.', true, function (r) {
+    var vs = veredasDe(r); if (!vs.length) return '<p class="muted">El informe no nombra veredas para los indicadores de este responsable.</p>';
+    var mx = vs[0].ps.length;
+    return '<div class="nube" id="nb">' + vs.map(function (v, i) { return '<button type="button" data-i="' + i + '" aria-pressed="' + (i === 0) + '" style="font-size:' + (12 + 14 * v.ps.length / mx) + 'px">' + esc(v.v) + ' <small>' + v.ps.length + '</small></button>'; }).join('') + '</div><div class="panelv ver" id="nbp"><h5>' + esc(vs[0].v) + '</h5>' + proyHtml(vs[0].ps) + '</div><p class="muted" style="font-size:12px;margin:8px 0 0">Es una mención en el texto del informe, no la ubicación exacta de la obra.</p>';
+  }, function (el, r) { var vs = veredasDe(r); el.querySelectorAll('#nb button').forEach(function (b) { b.onclick = function () { el.querySelectorAll('#nb button').forEach(function (x) { x.setAttribute('aria-pressed', 'false'); }); b.setAttribute('aria-pressed', 'true'); var v = vs[b.dataset.i]; $('#nbp', el).innerHTML = '<h5>' + esc(v.v) + '</h5>' + proyHtml(v.ps); }; }); }),
+]);
+
+seccion('s6', 'Productos e indicadores', 'Hoy: una tabla ancha con código, indicador y chips, meta a cuatro años, programación 2024–2027 y avance por año, con la narrativa plegada.', [
+  V('A', 'Tabla compacta con estado', 'Máxima densidad para quien audita: todo visible a la vez.', 'En móvil exige scroll horizontal; hay que apilar columnas.', false, function (r) {
+    var fs = r.un.slice().sort(function (a, b) { return a.x.id.localeCompare(b.x.id, 'es', { numeric: true }); }).slice(0, 12);
+    return '<p class="muted" style="font-size:12px;margin:0 0 8px">Primeros 12 de ' + r.un.length + ' productos.</p><div class="tabla-marco"><table class="t"><thead><tr><th>Código</th><th>Indicador</th><th>Meta</th><th>Estado</th><th>Avance ' + S.anio + '</th></tr></thead><tbody>' + fs.map(function (f) { var y = f.s && f.s.por_anio && f.s.por_anio[S.anio], e = est(f.pct); return '<tr><td class="cod">' + esc(f.x.id) + '</td><td><b>' + esc(f.x.indicador) + '</b><span class="muted">' + esc(f.x.producto) + '</span><br>' + chipConf(f) + ' <span class="chip">' + esc(sectorN(f.x.sector)) + '</span></td><td class="num">' + num(f.x.meta) + ' <small class="muted">' + esc(f.x.unidad) + '</small></td><td>' + estH(f.pct) + '</td><td class="pct">' + (f.pct != null ? '<div class="barra-p"><i class="bg-' + e.k + '" style="width:' + Math.min(100, f.pct) + '%"></i></div><small class="muted">' + ent(f.pct) + ' %' + (y ? ' · ' + num(y.avance) + ' de ' + num(y.programada) : '') + '</small>' : '<span class="muted">sin informe</span>') + '</td></tr>'; }).join('') + '</tbody></table></div>';
+  }, null, true),
+  V('B', 'Tarjetas filtrables con panel lateral', 'Explorar sin abrumar: tarjetas con estado y un panel lateral con el detalle completo.', 'Para comparar muchos a la vez, la tabla sigue siendo mejor.', true, function (r) {
+    return '<div class="filt" id="pf"><button type="button" aria-pressed="true" data-k="">Todos ' + r.un.length + '</button>' + ['ok', 'cur', 'bajo', 'nd'].map(function (k) { var n = r.un.filter(function (f) { return est(f.pct).k === k; }).length; return n ? '<button type="button" aria-pressed="false" data-k="' + k + '">' + { ok: 'Cumplidos', cur: 'En curso', bajo: 'Atrasados', nd: 'Sin informe' }[k] + ' ' + n + '</button>' : ''; }).join('') + '</div><div class="pgrid" id="pg"></div>';
+  }, function (el, r) {
+    var k = '', pg = $('#pg', el);
+    function pintar() { pg.innerHTML = r.un.filter(function (f) { return !k || est(f.pct).k === k; }).map(function (f) { var e = est(f.pct), i = reg(f); return '<button type="button" class="pc' + (f.conf !== 'alta' ? ' s' : '') + '" style="--cc:var(--' + e.k + ')" data-p="' + i + '"><small>' + esc(f.x.id) + ' · ' + esc(sectorN(f.x.sector)) + '</small><b>' + esc(f.x.indicador) + '</b><div class="barra-p"><i class="bg-' + e.k + '" style="width:' + Math.min(100, f.pct || 0) + '%"></i></div><span style="display:flex;justify-content:space-between;align-items:center">' + estH(f.pct) + chipConf(f) + '</span></button>'; }).join(''); ligar(pg); }
+    el.querySelectorAll('#pf button').forEach(function (b) { b.onclick = function () { el.querySelectorAll('#pf button').forEach(function (x) { x.setAttribute('aria-pressed', 'false'); }); b.setAttribute('aria-pressed', 'true'); k = b.dataset.k; pintar(); }; }); pintar();
+  }),
+  V('C', 'Agrupado por línea estratégica', 'Seguir la lógica del plan: línea → productos, con el avance promedio de cada línea en el encabezado.', 'Añade un nivel de apertura; conviene dejar abierta la primera línea.', false, function (r) {
+    var li = agrupar(r, function (f) { return f.x.linea; });
+    return '<div class="lin" id="ln">' + li.map(function (z, i) { var fs = r.un.filter(function (f) { return f.x.linea === z[0]; }).sort(function (a, b) { return a.x.id.localeCompare(b.x.id, 'es', { numeric: true }); }), con = fs.filter(function (f) { return f.pct != null; }), av = con.length ? con.reduce(function (a, f) { return a + Math.min(100, f.pct); }, 0) / con.length : null;
+      return '<details' + (i === 0 ? ' open' : '') + '><summary>' + esc(lineaN(z[0])) + '<span class="barra-p"><i style="width:' + (av || 0) + '%;background:var(--ac)"></i></span><span class="n">' + z[1] + ' productos · ' + (av == null ? 'sin informe' : ent(av) + ' % prom.') + '</span></summary>' + fs.map(function (f) { var j = reg(f); return '<button class="fila" type="button" data-p="' + j + '"><span class="cod">' + esc(f.x.id) + '</span><span class="i">' + esc(f.x.indicador) + (f.conf !== 'alta' ? ' <span class="chip sug">sugerida</span>' : '') + '</span>' + estH(f.pct) + '</button>'; }).join('') + '</details>'; }).join('') + '</div>';
+  }, function (el) { ligar(el); }),
+  V('D', 'Ranking: lo atrasado primero', 'Para quien prioriza: ordena de menor a mayor avance y deja «sin informe» al final, con su propio estado.', 'Puede leerse como «lista de culpables»: usar un tono neutro.', false, function (r) {
+    var fs = r.un.slice().sort(function (a, b) { return (a.pct == null ? 1e9 : a.pct) - (b.pct == null ? 1e9 : b.pct); }).slice(0, 14);
+    return '<div class="rk" role="list">' + fs.map(function (f) { var e = est(f.pct), j = reg(f); return '<button type="button" role="listitem" data-p="' + j + '"><b title="' + esc(f.x.indicador) + '">' + esc(f.x.indicador) + '</b><div class="barra-p"><i class="bg-' + e.k + '" style="width:' + Math.min(100, f.pct || 0) + '%"></i></div><span class="v e-' + e.k + '">' + (f.pct != null ? ent(f.pct) + ' %' : '—') + '</span></button>'; }).join('') + '</div><p class="muted" style="font-size:12px;margin:8px 0 0">Se muestran 14 de ' + r.un.length + '. Barra vacía + «—» = sin informe, no cero.</p>';
+  }, function (el) { ligar(el); }),
+]);
+
+seccion('s7', 'Equipo y personas', 'Hoy: tarjetas de las personas a cargo (dependencia y subdependencias) y una lista de funcionarios con su contacto.', [
+  V('A', 'Tarjetas de personas', 'Lo más claro para contactar: nombre, cargo y contacto.', 'Con 15 o más funcionarios se vuelve un muro de tarjetas.', false, function (r) {
+    return '<div class="pers">' + r.grupo.map(function (d) { var q = d.responsable, sub = d.id !== r.dep.id; return '<article class="pe' + (sub ? ' sub' : '') + '">' + (sub ? '<span class="c">' + esc(d.nombre) + '</span>' : '') + (q ? '<span class="c">' + esc(q.cargo) + '</span><b>' + esc(q.nombre) + '</b>' + (q.correo ? '<a href="mailto:' + esc(q.correo) + '">' + esc(q.correo) + '</a>' : '') : '<span class="c">' + (sub ? 'Subdependencia' : 'Dependencia') + '</span><em class="muted">La alcaldía no publica quién la dirige.</em>') + '</article>'; }).join('') + r.externas.map(function (e) { return '<article class="pe sub"><span class="c">' + esc(e.nombre) + ' · entidad externa</span><em class="muted">' + esc(e.nota || 'Se muestra bajo esta secretaría, sin sumar a sus productos.') + '</em></article>'; }).join('') + '</div>';
+  }, null, true),
+  V('B', 'Constelación', 'Mostrar la estructura de un vistazo: el responsable al centro y su equipo alrededor; el detalle aparece al lado.', 'Pide mucho espacio: en móvil se degrada a lista.', true, function (r) {
+    var gente = []; r.grupo.forEach(function (d, gi) { (d.equipo || []).forEach(function (p) { gente.push({ p: p, gi: gi, d: d }); }); });
+    var cx = 350, cy = 230, subs = r.grupo.slice(1), svg = '', pos = {};
+    subs.forEach(function (d, i) { var a = -Math.PI / 2 + i * 2 * Math.PI / Math.max(1, subs.length); pos[d.id] = [cx + Math.cos(a) * 105, cy + Math.sin(a) * 85]; });
+    pos[r.dep.id] = [cx, cy];
+    gente.forEach(function (g, i) { var a = -Math.PI / 2 + i * 2 * Math.PI / gente.length, x = cx + Math.cos(a) * 200, y = cy + Math.sin(a) * 175, q = pos[g.d.id] || [cx, cy]; g.x = x; g.y = y; svg += '<path d="M' + q[0].toFixed(0) + ' ' + q[1].toFixed(0) + 'L' + x.toFixed(0) + ' ' + y.toFixed(0) + '" stroke="var(--border)" stroke-width="1.5"/>'; });
+    subs.forEach(function (d) { svg += '<path d="M' + cx + ' ' + cy + 'L' + pos[d.id][0].toFixed(0) + ' ' + pos[d.id][1].toFixed(0) + '" stroke="var(--ac-m)" stroke-width="2.5"/>'; });
+    gente.forEach(function (g, i) { var ini = g.p.nombre.split(' ').slice(0, 2).map(function (z) { return z.charAt(0); }).join(''); svg += '<g class="nd" tabindex="0" role="button" aria-label="' + esc(g.p.nombre) + ', ' + esc(g.p.cargo || '') + '" data-i="' + i + '" transform="translate(' + g.x.toFixed(0) + ',' + g.y.toFixed(0) + ')"><circle r="14"/><text y="3">' + esc(ini) + '</text><title>' + esc(g.p.nombre) + '</title></g>'; });
+    subs.forEach(function (d) { svg += '<g class="nd" transform="translate(' + pos[d.id][0].toFixed(0) + ',' + pos[d.id][1].toFixed(0) + ')"><circle r="22" style="stroke-width:3.5"/><text y="3">Sub</text><title>' + esc(d.nombre) + '</title></g>'; });
+    svg += '<circle cx="' + cx + '" cy="' + cy + '" r="40" fill="var(--card)" stroke="var(--ac)" stroke-width="4"/>' + (r.dep.icono ? '<image href="/img/iconos/' + r.dep.icono + '.png" x="' + (cx - 26) + '" y="' + (cy - 26) + '" width="52" height="52"/>' : '<text x="' + cx + '" y="' + (cy + 8) + '" text-anchor="middle" style="font:900 24px var(--f-h);fill:var(--brand)">' + esc(r.dep.nombre.charAt(0)) + '</text>');
+    r._g = gente;
+    var lista = '<ul style="margin:0;padding-left:18px;font-size:13px">' + gente.map(function (g) { return '<li><b>' + esc(g.p.nombre) + '</b> <span class="muted">' + esc(g.p.cargo || '') + '</span></li>'; }).join('') + '</ul>';
+    return '<div class="const"><svg viewBox="0 0 700 460" role="group" aria-label="Constelación del equipo: ' + gente.length + ' personas">' + svg + '</svg><div class="info" id="ci"><b>' + esc(r.dep.nombre) + '</b><span class="muted">' + gente.length + ' funcionarios' + (subs.length ? ' en ' + subs.length + ' subdependencias' : '') + '. Pasa el cursor o toca un nodo.</span></div><div class="solo-movil" style="grid-column:1/-1">' + lista + '</div></div>';
+  }, function (el, r) { var g = r._g || []; function mostrar(n) { var z = g[n.dataset.i]; el.querySelectorAll('.nd').forEach(function (x) { x.classList.toggle('on', x === n); }); $('#ci', el).innerHTML = '<b>' + esc(z.p.nombre) + '</b><span class="muted">' + esc(z.p.cargo || '') + '</span><br><span class="muted">' + esc(z.d.nombre) + '</span>' + (z.p.correo ? '<br><a href="mailto:' + esc(z.p.correo) + '">' + esc(z.p.correo) + '</a>' : '') + (z.p.telefono ? '<br>Tel. ' + esc(z.p.telefono) + (z.p.extension ? ' ext. ' + esc(z.p.extension) : '') : ''); } el.querySelectorAll('.nd[data-i]').forEach(function (n) { n.onmouseenter = n.onfocus = n.onclick = function () { mostrar(n); }; }); }),
+  V('C', 'Árbol con conectores', 'Lectura jerárquica clásica: dependencia → subdependencias → personas.', 'Poco visual; sirve de respaldo accesible a la constelación.', false, function (r) {
+    return '<div class="arb"><ul><li class="raiz">' + esc(r.dep.nombre) + (r.dep.responsable ? ' <small>· ' + esc(r.dep.responsable.nombre) + '</small>' : '') + '<ul>' + r.grupo.map(function (d) { var sub = d.id !== r.dep.id; return (d.equipo && d.equipo.length || sub) ? '<li><span class="sd">' + (sub ? esc(d.nombre) : 'Equipo directo') + '</span> <small>' + (d.equipo ? d.equipo.length : 0) + ' personas</small><ul>' + (d.equipo || []).slice(0, 6).map(function (p) { return '<li>' + esc(p.nombre) + ' <small>' + esc(p.cargo || '') + '</small></li>'; }).join('') + ((d.equipo || []).length > 6 ? '<li><small>y ' + (d.equipo.length - 6) + ' más…</small></li>' : '') + '</ul></li>' : ''; }).join('') + '</ul></li></ul></div>';
+  }),
+]);
+
+seccion('s8', 'Fuentes de referencia', 'Hoy: lista numerada al final de la página con las seis fuentes y su uso.', [
+  V('A', 'Lista numerada', 'Completa y simple; es lo que hay.', 'Queda lejos de cada dato que respalda.', false, function () {
+    return '<ol class="fl"><li><div><b>' + esc(P.plan) + ' · ' + esc(P.municipio) + ' 2024-2027 (PDF oficial)</b><span>Productos, indicadores, metas y el responsable que el propio plan indica («según el PDF»).</span></div></li><li><div><b>DNP · SisPT, plan indicativo</b><span>Códigos de producto e indicador y su programación anual; es la llave para cruzar con el seguimiento.</span></div></li><li><div><b>Informes de seguimiento de la alcaldía · ' + S.anios.join(' y ') + '</b><span>Avance por indicador, fichas y cuadros por dependencia; cifras reportadas por la alcaldía.</span></div></li><li><div><b>Sitio web de la alcaldía</b><span>Quién dirige cada dependencia, su equipo y el contacto institucional.</span></div></li><li><div><b>Criterio propio de RECUAPP</b><span>Cuando el PDF no nombra responsable, el producto se sugiere por su sector y se marca como tal.</span></div></li></ol>';
+  }, null, true),
+  V('B', 'Escalera de confianza + pie contextual', 'Que cada dato diga qué tan firme es: las fuentes se ubican en la escalera y cada sección lleva su «pie» de fuente.', 'Obliga a clasificar bien cada fuente; no inflar el nivel.', true, function () {
+    var col = function (n, t, items) { return '<div style="--n:' + n + '"><h5>' + t + '</h5><ul>' + items.map(function (i) { return '<li>' + i + '</li>'; }).join('') + '</ul></div>'; };
+    return '<div class="esc">' + col(1, 'Dato oficial publicado', ['Plan de desarrollo (PDF)', 'SisPT del DNP', 'Directorio de la alcaldía']) + col(2, 'Reportado por la entidad', ['Informes de seguimiento ' + S.anios.join(' y ')]) + col(3, 'Contrastado con otra fuente', ['Aún sin fuentes en esta vista']).replace('<div ', '<div class="vac" ') + '<div class="vac"><h5>Criterio propio</h5><ul><li>Responsable sugerido por sector (borde punteado)</li></ul></div></div><div class="pie"><span>Así se vería el pie de cada sección:</span><button type="button">Productos · fuente: Plan PDF + SisPT</button><button type="button">Avance · fuente: informes de seguimiento (reportado)</button><button type="button">Equipo · fuente: sitio de la alcaldía</button></div>';
+  }),
+]);
+
+/* ───── montaje ───── */
+function montar(id) {
+  var r = RS[id]; FILAS = [];
+  document.documentElement.style.setProperty('--h', matiz(id));
+  var out = $('#out'); out.innerHTML = '';
+  var idx = $('#indice'); idx.innerHTML = '';
+  SEC.forEach(function (s, n) {
+    idx.insertAdjacentHTML('beforeend', '<a href="#' + s.id + '"><b>' + (n + 1) + '</b>' + s.titulo.split(':')[0] + '</a>');
+    var h = '<section class="s" id="' + s.id + '"><h2><small>SECCIÓN ' + (n + 1) + ' DE ' + SEC.length + '</small>' + s.titulo + '</h2><p class="hoy">' + s.hoy + '</p>';
+    s.vars.forEach(function (v, i) { h += '<div class="v" id="' + s.id + v.k + '"><div class="vh"><h3><b>' + v.k + '</b>' + v.t + '</h3>' + (v.rec ? '<span class="rec">★ Mi recomendación</span>' : '') + '<p><b>Ideal para:</b> ' + v.ideal + ' <b>Cuidado:</b> ' + v.cuidado + '</p></div><div class="demo' + (v.raso ? '' : '') + '">' + v.html(r) + '</div></div>'; });
+    out.insertAdjacentHTML('beforeend', h + '</section>');
+    s.vars.forEach(function (v) { var el = $('#' + s.id + v.k + ' .demo'); if (v.init) v.init(el, r); ligar(el); });
+  });
+}
+
+Promise.all(['05308.json', '05308-seguimiento.json', '05308-zonas.json'].map(function (f) { return fetch('/data/plan/' + f).then(function (r) { return r.json(); }); })).then(function (d) {
+  P = d[0]; S = d[1]; Z = d[2]; deps = new Map(P.dependencias.map(function (x) { return [x.id, x]; }));
+  P.dependencias.filter(function (x) { return !x.padre && !x.vinculo; }).forEach(function (x) { var r = resumen(x.id); if (r.un.length) RS[x.id] = r; });
+  var sel = $('#sel'), ids = Object.keys(RS).sort(function (a, b) { return RS[b].un.length - RS[a].un.length; });
+  sel.innerHTML = ids.map(function (i) { return '<option value="' + i + '">' + esc(RS[i].dep.nombre) + ' (' + RS[i].un.length + ' productos)</option>'; }).join('');
+  var q = new URLSearchParams(location.search).get('dep'); sel.value = RS[q] ? q : (RS.inf ? 'inf' : ids[0]);
+  sel.onchange = function () { montar(sel.value); };
+  montar(sel.value);
+  if (location.hash && $(location.hash)) $(location.hash).scrollIntoView();
+}).catch(function (e) { $('#out').innerHTML = '<p>No se pudieron cargar los datos del plan. Abre esta hoja desde el servidor de la app (<code>/propuestas/responsable-variantes.html</code>).</p>'; console.error(e); });
+
+var root = document.documentElement;
+try { var t = localStorage.getItem('plan-tema'); if (t === 'oscuro' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) root.classList.add('oscuro'); } catch (e) {}
+$('#tema').onclick = function () { root.classList.toggle('oscuro'); };
+</script>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RECUAPP · Variantes de home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@700;800;900&display=swap">
+<style>
+  /* Hoja de prueba: ocho formas de exponer los módulos. No está conectada a la app; los enlaces sí van a rutas reales. */
+  :root {
+    --bg:#F5F0EA; --card:#FCF9F6; --surface:#EAF2D6; --border:#C8D9C0; --text:#1A1A1A; --muted:#5C6B5F;
+    --brand:#29422F; --accent:#66AA33; --gold:#E0B33A; --gold-t:#8A6A0A; --sombra:0 10px 26px rgba(41,66,47,.14);
+    --f-h:"Nunito","Inter",system-ui,sans-serif; --f-b:"Inter",system-ui,sans-serif;
+  }
+  :root.oscuro { --bg:#0E1510; --card:#1A261D; --surface:#22331F; --border:#2F4533; --text:#E8EFE4; --muted:#8FA08C; --brand:#99CC33; --gold-t:#E0B33A; --sombra:0 10px 26px rgba(0,0,0,.45); color-scheme:dark; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:15px/1.55 var(--f-b); }
+  main { max-width:1180px; margin:0 auto; padding:16px 16px 70px; }
+  .barra { display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; }
+  .marca { display:flex; align-items:center; gap:10px; font:900 20px var(--f-h); color:var(--brand); }
+  .marca i { width:34px; height:34px; border-radius:50%; background:var(--surface); border:2px solid var(--accent); display:grid; place-items:center; }
+  .marca svg { width:18px; height:18px; stroke:var(--accent); fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+  .pill { border:1px solid var(--border); background:var(--card); color:var(--brand); font:600 13px var(--f-b); padding:7px 14px; border-radius:99px; cursor:pointer; text-decoration:none; }
+  .pill:hover { background:var(--surface); }
+  .aviso { margin:12px 0 0; font-size:12.5px; color:var(--muted); background:color-mix(in srgb,var(--gold) 13%,transparent); border:1px solid var(--gold); border-radius:10px; padding:7px 12px; }
+  .indice { position:sticky; top:0; z-index:20; display:flex; gap:6px; flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; padding:10px 0; margin:6px 0 0; background:linear-gradient(var(--bg) 70%,transparent); }
+  .indice a { flex:none; white-space:nowrap; font:700 12.5px var(--f-b); padding:6px 12px; border-radius:99px; border:1px solid var(--border); background:var(--card); color:var(--brand); text-decoration:none; }
+  .indice a b { color:var(--gold-t); margin-right:4px; }
+  section.v { margin-top:38px; scroll-margin-top:56px; }
+  section.v > h2 { margin:0; font:900 24px var(--f-h); color:var(--brand); }
+  section.v > h2 small { font:800 12px var(--f-b); color:var(--gold-t); letter-spacing:.12em; margin-right:8px; }
+  .nota { margin:4px 0 14px; display:flex; gap:8px 18px; flex-wrap:wrap; font-size:13px; color:var(--muted); }
+  .nota b { color:var(--brand); }
+
+  .ico { width:24px; height:24px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+  .tag { display:inline-block; font:700 10.5px var(--f-b); padding:2px 9px; border-radius:99px; background:var(--card); border:1px solid var(--c); color:var(--brand); white-space:nowrap; }
+  .tag.p { border-style:dashed; }
+  .btn { display:inline-flex; align-items:center; gap:6px; text-decoration:none; background:var(--c); color:#fff; font:800 13px var(--f-b); padding:8px 16px; border-radius:99px; border:0; cursor:pointer; }
+  .btn.off { background:transparent; color:var(--muted); border:1px dashed var(--muted); cursor:default; }
+  .insig { width:42px; height:42px; border-radius:13px; background:var(--c); color:#fff; display:grid; place-items:center; flex:none; }
+
+  /* A · Bento */
+  .bento { display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:150px; gap:12px; grid-auto-flow:dense; }
+  .bt { position:relative; overflow:hidden; isolation:isolate; text-decoration:none; color:var(--text); border:1px solid var(--border); border-radius:22px; padding:16px; display:flex; flex-direction:column; justify-content:flex-end; background:linear-gradient(150deg,color-mix(in srgb,var(--c) 26%,var(--card)),var(--card) 72%); transition:transform .18s, box-shadow .18s; }
+  .bt:hover, .bt:focus-visible { transform:translateY(-4px); box-shadow:var(--sombra); outline:none; }
+  .bt .insig { position:absolute; top:14px; left:14px; }
+  .bt .tag { position:absolute; top:16px; right:14px; }
+  .bt .fondo { position:absolute; right:-16px; top:-16px; width:130px; height:130px; z-index:-1; color:var(--c); opacity:.16; stroke-width:1.2; }
+  .bt h3 { margin:0; font:800 17px var(--f-h); color:var(--brand); } .bt p { margin:2px 0 0; font-size:12.5px; color:var(--muted); line-height:1.35; }
+  .bt.g { grid-column:span 2; grid-row:span 2; } .bt.g h3 { font-size:24px; } .bt.g p { font-size:14px; max-width:320px; }
+  .bt.a { grid-column:span 2; } .bt.a p { max-width:62%; }
+  .bt.sim { border-style:dashed; border-color:var(--c); }
+
+  /* B · Tarjetas con pantalla */
+  .tp { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:14px; }
+  .tc { background:var(--card); border:1px solid var(--border); border-radius:20px; overflow:hidden; display:flex; flex-direction:column; transition:transform .18s, box-shadow .18s; }
+  .tc:hover { transform:translateY(-3px); box-shadow:var(--sombra); }
+  .tc .pan { background:color-mix(in srgb,var(--c) 14%,var(--bg)); padding:14px 14px 0; }
+  .tc .pan svg { display:block; width:100%; height:auto; border-radius:10px 10px 0 0; border:1px solid var(--border); border-bottom:0; background:var(--bg); }
+  .tc .cu { padding:12px 16px 16px; display:flex; flex-direction:column; gap:6px; flex:1; }
+  .tc h3 { margin:0; font:800 17px var(--f-h); color:var(--brand); display:flex; justify-content:space-between; gap:8px; align-items:center; }
+  .tc p { margin:0; font-size:13px; color:var(--muted); flex:1; }
+  .tc .btn { align-self:flex-start; margin-top:6px; }
+
+  /* C · Rail */
+  .rw { position:relative; }
+  .rail { display:flex; gap:14px; overflow-x:auto; scroll-snap-type:x mandatory; padding:4px 2px 14px; scrollbar-width:thin; }
+  .rc { position:relative; flex:none; width:248px; height:340px; scroll-snap-align:start; border-radius:26px; padding:18px; color:#fff; text-decoration:none; display:flex; flex-direction:column; justify-content:flex-end; overflow:hidden; background:linear-gradient(165deg,var(--c),color-mix(in srgb,var(--c) 55%,#10200f)); transition:transform .2s; }
+  .rc:hover { transform:translateY(-5px); }
+  .rc .num { position:absolute; left:14px; top:2px; font:900 120px/1 var(--f-h); color:transparent; -webkit-text-stroke:2px rgba(255,255,255,.35); }
+  .rc .ico { position:absolute; right:16px; top:18px; width:34px; height:34px; opacity:.95; }
+  .rc h3 { margin:0 0 4px; font:900 22px/1.1 var(--f-h); } .rc p { margin:0 0 12px; font-size:13px; opacity:.92; }
+  .rc .go { align-self:flex-start; background:#fff; color:var(--c); font:800 12.5px var(--f-b); padding:7px 14px; border-radius:99px; }
+  .rc.sim { background:repeating-linear-gradient(135deg,color-mix(in srgb,var(--c) 70%,#fff) 0 12px,var(--c) 12px 24px); color:#2b2200; }
+  .flecha { position:absolute; top:50%; transform:translateY(-60%); width:40px; height:40px; border-radius:50%; border:1px solid var(--border); background:var(--card); color:var(--brand); font:800 18px var(--f-b); cursor:pointer; box-shadow:var(--sombra); z-index:3; }
+  .flecha.i { left:-12px; } .flecha.d { right:-12px; }
+
+  /* D · Maestro-detalle */
+  .md { display:grid; grid-template-columns:270px 1fr; gap:14px; }
+  .md .lista { display:flex; flex-direction:column; gap:6px; }
+  .md .it { display:flex; align-items:center; gap:10px; text-align:left; border:1px solid var(--border); background:var(--card); border-radius:14px; padding:8px 12px 8px 8px; font:700 14px var(--f-b); color:var(--brand); cursor:pointer; }
+  .md .it .insig { width:34px; height:34px; border-radius:10px; } .md .it .ico { width:18px; height:18px; }
+  .md .it[aria-selected="true"] { background:var(--c); color:#fff; border-color:var(--c); } .md .it[aria-selected="true"] .insig { background:#fff; color:var(--c); }
+  .det { background:var(--card); border:1px solid var(--border); border-radius:22px; overflow:hidden; }
+  .det .cab { background:linear-gradient(120deg,var(--c),color-mix(in srgb,var(--c) 60%,#12220f)); color:#fff; padding:18px 22px; display:flex; gap:14px; align-items:center; }
+  .det .cab .insig { background:rgba(255,255,255,.2); width:50px; height:50px; } .det .cab h3 { margin:0; font:900 24px var(--f-h); } .det .cab span { font-size:12.5px; opacity:.9; }
+  .det .cu { padding:18px 22px 22px; display:grid; grid-template-columns:1fr 1fr; gap:18px; align-items:start; }
+  .det p { margin:0 0 10px; color:var(--muted); } .det ul { margin:0 0 14px; padding-left:18px; } .det li { margin:3px 0; }
+  .det code { font-size:12px; background:var(--surface); padding:1px 7px; border-radius:6px; color:var(--brand); }
+  .det .pan svg { width:100%; height:auto; border:1px solid var(--border); border-radius:12px; background:var(--bg); display:block; }
+
+  /* E · Acordeón */
+  .ac { display:flex; gap:8px; height:380px; }
+  .ap { position:relative; flex:1; min-width:56px; border-radius:22px; overflow:hidden; color:#fff; background:linear-gradient(170deg,var(--c),color-mix(in srgb,var(--c) 55%,#10200f)); cursor:pointer; transition:flex .45s cubic-bezier(.3,.8,.3,1); border:0; text-align:left; padding:0; font:inherit; }
+  .ap.on { flex:6; }
+  .ap .tira { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:space-between; padding:16px 0; transition:opacity .2s; }
+  .ap .tira b { writing-mode:vertical-rl; transform:rotate(180deg); font:800 15px var(--f-h); letter-spacing:.02em; }
+  .ap .tira i { font:900 14px var(--f-h); opacity:.8; font-style:normal; }
+  .ap.on .tira { opacity:0; pointer-events:none; }
+  .ap .abre { position:absolute; inset:0; padding:22px; display:flex; flex-direction:column; justify-content:flex-end; opacity:0; transition:opacity .25s .12s; }
+  .ap.on .abre { opacity:1; }
+  .ap .abre .ico { position:absolute; top:20px; right:20px; width:40px; height:40px; }
+  .ap .abre h3 { margin:0 0 6px; font:900 26px var(--f-h); } .ap .abre p { margin:0 0 14px; max-width:420px; font-size:14px; }
+  .ap .abre .btn { background:#fff; color:var(--c); align-self:flex-start; }
+  .ap.sim { background:repeating-linear-gradient(135deg,color-mix(in srgb,var(--c) 70%,#fff) 0 12px,var(--c) 12px 24px); color:#2b2200; }
+
+  /* F · Hub radial */
+  .rd { display:grid; grid-template-columns:1.2fr 1fr; gap:14px; align-items:center; }
+  .rd svg.hub { width:100%; height:auto; background:radial-gradient(circle at 50% 50%,var(--surface),transparent 70%); border-radius:24px; }
+  .rd .nd { cursor:pointer; outline:none; } .rd .nd circle.d { fill:var(--c); stroke:var(--card); stroke-width:4; transition:transform .2s; transform-box:fill-box; transform-origin:center; }
+  .rd .nd:hover circle.d, .rd .nd:focus-visible circle.d, .rd .nd.on circle.d { transform:scale(1.15); }
+  .rd .nd text { font:800 12.5px var(--f-h); fill:var(--brand); text-anchor:middle; paint-order:stroke; stroke:var(--bg); stroke-width:4px; }
+  .rd .nd use { color:#fff; pointer-events:none; }
+  .rd .orb { fill:none; stroke:var(--border); stroke-dasharray:3 7; }
+
+  /* G · ¿Qué quieres hacer? */
+  .qh .buscar { display:flex; gap:8px; align-items:center; background:var(--card); border:2px solid var(--border); border-radius:99px; padding:6px 8px 6px 18px; max-width:640px; }
+  .qh .buscar:focus-within { border-color:var(--accent); }
+  .qh input { flex:1; border:0; background:transparent; font:600 16px var(--f-b); color:var(--text); outline:none; min-width:0; }
+  .qh .sug { display:flex; gap:8px; flex-wrap:wrap; margin:12px 0 16px; }
+  .qh .sug button { border:1px solid var(--border); background:var(--card); color:var(--brand); border-radius:99px; padding:6px 13px; font:600 13px var(--f-b); cursor:pointer; }
+  .qh .sug button[aria-pressed="true"] { background:var(--brand); color:var(--card); }
+  .qh .res { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:10px; }
+  .qr { display:flex; gap:12px; align-items:center; text-decoration:none; color:var(--text); background:var(--card); border:1px solid var(--border); border-left:6px solid var(--c); border-radius:14px; padding:10px 14px 10px 12px; transition:opacity .2s, transform .15s; }
+  .qr:hover { transform:translateX(3px); } .qr.no { opacity:.28; } .qr b { font:800 15px var(--f-h); color:var(--brand); display:block; } .qr span { font-size:12.5px; color:var(--muted); line-height:1.3; display:block; }
+  .qh .vacio { color:var(--muted); font-size:13.5px; margin:8px 0 0; }
+
+  /* H · Tabla periódica */
+  .tp2 .filtros { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; }
+  .tp2 .filtros button { border:1px solid var(--border); background:var(--card); color:var(--brand); border-radius:99px; padding:6px 14px; font:700 12.5px var(--f-b); cursor:pointer; }
+  .tp2 .filtros button[aria-pressed="true"] { background:var(--brand); color:var(--card); }
+  .per { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:10px; }
+  .el { position:relative; aspect-ratio:1/1; border:2px solid var(--c); border-radius:16px; background:color-mix(in srgb,var(--c) 14%,var(--card)); color:var(--brand); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; cursor:pointer; transition:transform .15s, opacity .2s, background .2s; font-family:var(--f-b); padding:6px; }
+  .el:hover, .el[aria-pressed="true"] { transform:scale(1.05); background:var(--c); color:#fff; }
+  .el .n { position:absolute; left:10px; top:7px; font:800 12px var(--f-b); opacity:.8; } .el .s { font:900 38px/1 var(--f-h); } .el .t { font:700 12px/1.2 var(--f-b); text-align:center; }
+  .el .e { position:absolute; right:8px; top:8px; width:9px; height:9px; border-radius:50%; background:var(--c); } .el:hover .e, .el[aria-pressed="true"] .e { background:#fff; }
+  .el.p { border-style:dashed; } .el.no { opacity:.2; }
+  .tp2 .det { margin-top:14px; }
+
+  /* I · Tarjetas con profundidad */
+  .t3g { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:20px; perspective:1000px; }
+  .t3 { position:relative; display:block; height:214px; text-decoration:none; color:#fff; border-radius:22px; padding:18px; transform-style:preserve-3d; transition:transform .18s ease-out, box-shadow .2s; background:linear-gradient(155deg,var(--c),color-mix(in srgb,var(--c) 55%,#10200f)); box-shadow:0 14px 28px rgba(0,0,0,.18); will-change:transform; }
+  .t3:hover { box-shadow:0 26px 40px rgba(0,0,0,.28); }
+  .t3 .n { position:absolute; left:16px; top:4px; font:900 72px/1 var(--f-h); color:transparent; -webkit-text-stroke:2px rgba(255,255,255,.3); transform:translateZ(8px); }
+  .t3 .ico { position:absolute; right:18px; top:16px; width:54px; height:54px; transform:translateZ(64px); filter:drop-shadow(0 10px 8px rgba(0,0,0,.3)); }
+  .t3 h3 { position:absolute; left:18px; right:18px; bottom:68px; margin:0; font:900 21px/1.1 var(--f-h); transform:translateZ(38px); }
+  .t3 p { position:absolute; left:18px; right:18px; bottom:16px; margin:0; font-size:12.5px; line-height:1.35; opacity:.93; transform:translateZ(18px); }
+  .t3 .brillo { position:absolute; inset:0; border-radius:22px; background:radial-gradient(circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.34),transparent 55%); pointer-events:none; transform:translateZ(2px); }
+  .t3.sim { background:repeating-linear-gradient(135deg,color-mix(in srgb,var(--c) 70%,#fff) 0 12px,var(--c) 12px 24px); color:#2b2200; }
+
+  /* J · Coverflow */
+  .cf { position:relative; height:360px; perspective:1300px; overflow:hidden; }
+  .cfc { position:absolute; left:50%; top:22px; width:240px; height:300px; margin-left:-120px; border-radius:26px; color:#fff; padding:18px; display:flex; flex-direction:column; justify-content:flex-end; background:linear-gradient(165deg,var(--c),color-mix(in srgb,var(--c) 55%,#10200f)); cursor:pointer; box-shadow:0 18px 36px rgba(0,0,0,.25); transition:transform .55s cubic-bezier(.3,.8,.3,1),opacity .4s,filter .4s; }
+  .cfc .num { position:absolute; left:14px; top:2px; font:900 110px/1 var(--f-h); color:transparent; -webkit-text-stroke:2px rgba(255,255,255,.3); }
+  .cfc .ico { position:absolute; right:16px; top:18px; width:36px; height:36px; }
+  .cfc h3 { margin:0 0 4px; font:900 22px/1.1 var(--f-h); } .cfc p { margin:0 0 12px; font-size:13px; opacity:.92; }
+  .cfc .go { align-self:flex-start; background:#fff; color:var(--c); font:800 12.5px var(--f-b); padding:7px 14px; border-radius:99px; text-decoration:none; }
+  .cfc.sim { background:repeating-linear-gradient(135deg,color-mix(in srgb,var(--c) 70%,#fff) 0 12px,var(--c) 12px 24px); color:#2b2200; }
+  .cfc:not(.act) { filter:brightness(.82) saturate(.85); } .cfc:not(.act) .go { display:none; }
+  .cfp { display:flex; gap:6px; justify-content:center; margin-top:6px; } .cfp button { width:10px; height:10px; border-radius:50%; border:0; background:var(--border); cursor:pointer; padding:0; } .cfp button[aria-current="true"] { background:var(--brand); width:26px; border-radius:6px; }
+
+  /* K · Cubos giratorios */
+  .kb { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:22px 12px; }
+  .kw { display:flex; justify-content:center; perspective:900px; height:204px; }
+  .cube { position:relative; width:210px; height:190px; transform-style:preserve-3d; transform:translateZ(-105px); transition:transform .75s cubic-bezier(.3,.8,.3,1); }
+  .kw:hover .cube, .kw:focus-within .cube, .kw.on .cube { transform:translateZ(-105px) rotateY(-90deg); }
+  .cara { position:absolute; inset:0; border-radius:18px; padding:16px; backface-visibility:hidden; display:flex; flex-direction:column; }
+  .cara.f1 { transform:rotateY(0) translateZ(105px); justify-content:flex-end; color:#fff; background:linear-gradient(160deg,var(--c),color-mix(in srgb,var(--c) 55%,#10200f)); cursor:pointer; box-shadow:inset 0 0 0 1px rgba(255,255,255,.2); }
+  .cara.f2 { transform:rotateY(90deg) translateZ(105px); background:var(--card); border:2px solid var(--c); justify-content:space-between; }
+  .cara .ico { width:38px; height:38px; position:absolute; right:14px; top:14px; } .cara.f1 h3 { margin:0; font:900 20px/1.1 var(--f-h); }
+  .cara.f1 span.n { position:absolute; left:14px; top:6px; font:900 54px/1 var(--f-h); color:transparent; -webkit-text-stroke:2px rgba(255,255,255,.3); }
+  .cara.f2 b { font:800 15px var(--f-h); color:var(--brand); } .cara.f2 p { margin:4px 0 8px; font-size:12.5px; color:var(--muted); }
+  .cara.f1.sim { background:repeating-linear-gradient(135deg,color-mix(in srgb,var(--c) 70%,#fff) 0 12px,var(--c) 12px 24px); color:#2b2200; }
+
+  @media (max-width:900px) {
+    .bento { grid-template-columns:repeat(2,1fr); } .bt.g, .bt.a { grid-column:span 2; }
+    .md { grid-template-columns:1fr; } .md .lista { flex-direction:row; overflow-x:auto; } .md .it { flex:none; }
+    .det .cu { grid-template-columns:1fr; }
+    .rd { grid-template-columns:1fr; }
+    .ac { flex-direction:column; height:auto; } .ap { min-height:56px; flex:none; transition:min-height .4s; } .ap.on { min-height:300px; }
+    .ap .tira { flex-direction:row; padding:0 16px; } .ap .tira b { writing-mode:horizontal-tb; transform:none; }
+    .flecha { display:none; }
+  }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="g-plan" viewBox="0 0 24 24"><path d="M6 2h9l4 4v16H6z"/><path d="M15 2v4h4M9 11h7M9 15h7M9 19h4"/></symbol>
+  <symbol id="g-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6M16 5a3.5 3.5 0 010 6.5M18 14c2.2.6 3.5 2.6 3.5 5"/></symbol>
+  <symbol id="g-org" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="9" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v5M5 17v-5h14v5M12 12v5"/></symbol>
+  <symbol id="g-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="g-cube" viewBox="0 0 24 24"><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></symbol>
+  <symbol id="g-db" viewBox="0 0 24 24"><path d="M4 5h6a2 2 0 012 2v13a2 2 0 00-2-2H4zM20 5h-6a2 2 0 00-2 2v13a2 2 0 012-2h6z"/></symbol>
+  <symbol id="g-flag" viewBox="0 0 24 24"><path d="M5 21V4M5 4h12l-2 4 2 4H5"/></symbol>
+  <symbol id="g-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l3 3M14 9l2 2"/></symbol>
+  <symbol id="g-leaf" viewBox="0 0 24 24"><path d="M20 4C9 4 4 9.5 4 15c0 1.7.5 3 1.2 4C6 14 10 10.5 15 9c-4 2.5-7 6-8 11 1 .6 2.2 1 3.5 1C17 21 20 13 20 4z"/></symbol>
+  <symbol id="g-sliders" viewBox="0 0 24 24"><path d="M4 6h8M18 6h2M4 12h2M12 12h8M4 18h10M20 18h0"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/></symbol>
+  <symbol id="g-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+</defs></svg>
+
+<main>
+  <div class="barra">
+    <div class="marca"><i><svg viewBox="0 0 24 24"><use href="#g-leaf"/></svg></i>RECUAPP · Variantes de home</div>
+    <div><a class="pill" href="home-modulos.html">Primera propuesta</a> <button class="pill" id="tema" type="button">Día / noche</button></div>
+  </div>
+  <p class="aviso"><b>Hoja de prueba.</b> Once formas de exponer los mismos módulos, para comparar: ocho planas y tres con profundidad 3D en CSS (I, J y K). No está conectada a la app ni reemplaza el home; los botones «Entrar» llevan a las rutas reales. «Escenarios» va con trazo punteado porque es la siguiente etapa.</p>
+  <nav class="indice" id="indice" aria-label="Variantes"></nav>
+  <div id="vars"></div>
+</main>
+
+<script>
+var MOD = [
+  { id:'plan', n:1, t:'El plan en claro', cat:'Plan', sym:'Pl', r:'/plan', c:'#66AA33', g:'plan', e:'En la app', d:'Lo que se prometió, en claro: líneas, sectores, programas, indicadores y financiación.',
+    pue:['Abrir líneas, sectores, programas y ODS','Buscar un producto y ver su ficha','Ver la financiación y la calidad del dato'], kw:'plan promesas productos programas indicadores inversion presupuesto metas sectores ods' },
+  { id:'resp', n:2, t:'Responsables', cat:'Plan', sym:'Re', r:'/responsables', c:'#E0B33A', g:'users', e:'En la app', d:'Un pueblo donde cada pin es una dependencia de la alcaldía y quién la dirige.',
+    pue:['Ver quién dirige cada dependencia','Abrir su ficha: panorama, productos y equipo','Ver su avance según los informes 2024–2025'], kw:'responsables quien responde dependencias secretarias avance equipo funcionarios' },
+  { id:'org', n:3, t:'Organigrama', cat:'Plan', sym:'Or', r:'/plan/05308/organigrama', c:'#8FBF3A', g:'org', e:'En la app', d:'La estructura de la alcaldía en vista de loto o de árbol.',
+    pue:['Alternar entre loto y árbol','Ver las entidades externas vinculadas'], kw:'organigrama estructura alcaldia jerarquia dependencias quien responde' },
+  { id:'mapa', n:4, t:'Mapa territorial', cat:'Territorio', sym:'Mp', r:'/mapa', c:'#2E9C8F', g:'pin', e:'En la app', d:'125 municipios de Antioquia: veredas, corregimientos y puntos de interés.',
+    pue:['Elegir subregión, municipio y vereda','Cambiar entre mapa, satélite y relieve','Filtrar siete categorías de puntos'], kw:'mapa territorio veredas municipios antioquia corregimientos puntos interes escuelas salud donde' },
+  { id:'m3d', n:5, t:'Mapa 3D de Girardota', cat:'Territorio', sym:'3D', r:'/mapa3d', c:'#3B82A0', g:'cube', e:'En la app', d:'El territorio completo: relieve, ríos, redes, industria y población proyectada.',
+    pue:['Elegir el año: 2018, 2025, 2030 o 2035','Aislar zonas con doble clic en su cápsula','Ver redes bajo tierra o conducir por las vías'], kw:'mapa 3d girardota vereda poblacion proyeccion rios redes servicios publicos industria como esta mi vereda' },
+  { id:'bib', n:6, t:'Biblioteca', cat:'Confianza', sym:'Bi', r:'/biblioteca', c:'#C0623F', g:'db', e:'En la app', d:'Las fuentes con que se construyó RECUAPP, con su enlace y su cita.',
+    pue:['Buscar por título, entidad o uso','Copiar una cita o todas'], kw:'biblioteca fuentes datos citas normas de donde salen confianza' },
+  { id:'doc', n:7, t:'Documentos', cat:'Confianza', sym:'Do', r:'/documentos', c:'#9A6FB0', g:'flag', e:'En la app', d:'El sistema documental: pitch, canvas, guía, arquitectura y especificación.',
+    pue:['Recorrer pitch, canvas y blueprint','Leer la guía, la arquitectura y el FSD'], kw:'documentos pitch canvas blueprint guia arquitectura especificacion entender proyecto' },
+  { id:'cta', n:8, t:'Cuenta y administración', cat:'Cuenta', sym:'Ct', r:'/auth/login', c:'#5C6B5F', g:'key', e:'En la app', d:'Ingreso, perfil y, para administradores, usuarios y roles.',
+    pue:['Registrarte o ingresar','Editar tu perfil','Administrar usuarios y roles (solo admin)'], kw:'cuenta ingresar login registro perfil administrador usuarios roles' },
+  { id:'sim', n:9, t:'Escenarios', cat:'Próximo', sym:'Es', r:null, c:'#D9A92E', g:'sliders', e:'Siguiente etapa', pend:true, d:'Cambiar supuestos y comparar estrategias sobre el modelo. Aún no existe.',
+    pue:['Mover supuestos de población, vivienda y cobertura','Comparar estrategias por sector'], kw:'escenarios simulacion simular estrategias supuestos probar' },
+];
+var $ = function (s, r) { return (r || document).querySelector(s); };
+var ico = function (g, c) { return '<svg class="ico ' + (c || '') + '" aria-hidden="true" viewBox="0 0 24 24"><use href="#g-' + g + '"/></svg>'; };
+var tag = function (m) { return '<span class="tag' + (m.pend ? ' p' : '') + '">' + m.e + '</span>'; };
+var btn = function (m, tx) { return m.r ? '<a class="btn" href="' + m.r + '">' + (tx || 'Entrar') + ' →</a>' : '<span class="btn off">Próximamente</span>'; };
+
+/* pantallita esquemática de cada módulo */
+function pantalla(m) {
+  var c = 'var(--c)', f = 'var(--border)', b = '<rect width="200" height="14" fill="var(--card)"/><circle cx="8" cy="7" r="2.4" fill="#B5483A"/><circle cx="16" cy="7" r="2.4" fill="#E0B33A"/><circle cx="24" cy="7" r="2.4" fill="#66AA33"/>', x = '';
+  if (m.id === 'plan') x = [0, 1, 2, 3].map(function (i) { return '<rect x="' + (8 + i * 48) + '" y="22" width="42" height="22" rx="5" fill="var(--card)" stroke="' + f + '"/><rect x="' + (14 + i * 48) + '" y="28" width="16" height="6" rx="3" fill="' + c + '"/>'; }).join('') + [0, 1, 2].map(function (i) { return '<rect x="8" y="' + (52 + i * 16) + '" width="184" height="12" rx="4" fill="var(--card)" stroke="' + f + '"/><rect x="14" y="' + (56 + i * 16) + '" width="' + (70 + i * 25) + '" height="4" rx="2" fill="' + c + '"/>'; }).join('');
+  if (m.id === 'resp') x = '<ellipse cx="120" cy="66" rx="70" ry="28" fill="color-mix(in srgb,' + c + ' 22%,var(--card))" stroke="' + f + '"/>' + [[90, 58], [120, 48], [150, 60], [105, 76], [140, 78]].map(function (p) { return '<path d="M' + p[0] + ' ' + p[1] + 'v12" stroke="' + c + '" stroke-width="2"/><circle cx="' + p[0] + '" cy="' + p[1] + '" r="5.5" fill="' + c + '"/>'; }).join('') + [0, 1, 2, 3].map(function (i) { return '<rect x="8" y="' + (22 + i * 17) + '" width="36" height="13" rx="4" fill="var(--card)" stroke="' + f + '"/>'; }).join('');
+  if (m.id === 'org') x = [0, 1, 2, 3, 4, 5, 6].map(function (i) { var a = i / 7 * 6.28, X = 100 + Math.cos(a) * 52, Y = 54 + Math.sin(a) * 26; return '<path d="M100 54L' + X.toFixed(0) + ' ' + Y.toFixed(0) + '" stroke="' + f + '" stroke-width="2"/><ellipse cx="' + X.toFixed(0) + '" cy="' + Y.toFixed(0) + '" rx="13" ry="8" fill="var(--card)" stroke="' + c + '" stroke-width="2"/>'; }).join('') + '<circle cx="100" cy="54" r="12" fill="' + c + '"/>';
+  if (m.id === 'mapa') x = '<path d="M14 30L70 22L108 42L96 80L40 86Z" fill="var(--card)" stroke="' + f + '"/><path d="M70 22L128 18L150 40L108 42Z" fill="var(--card)" stroke="' + f + '"/><path d="M108 42L150 40L168 66L134 88L96 80Z" fill="' + c + '" opacity=".55" stroke="' + c + '"/>' + [[50, 50, '#2563eb'], [92, 36, '#9333ea'], [130, 62, '#06b6d4'], [150, 52, '#16a34a']].map(function (p) { return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="3.5" fill="' + p[2] + '"/>'; }).join('');
+  if (m.id === 'm3d') x = '<path d="M100 26L174 60L100 94L26 60Z" fill="var(--card)" stroke="' + c + '" stroke-width="2"/><path d="M100 40L142 60L100 80L58 60Z" fill="color-mix(in srgb,' + c + ' 18%,var(--card))" stroke="' + c + '"/><path d="M100 50L120 60L100 70L80 60Z" fill="' + c + '" opacity=".7"/><path d="M34 70Q76 54 100 90T170 66" fill="none" stroke="#7DB7C9" stroke-width="4" stroke-linecap="round"/>';
+  if (m.id === 'bib') x = '<rect x="8" y="22" width="130" height="12" rx="6" fill="var(--card)" stroke="' + f + '"/>' + [0, 1, 2].map(function (i) { return '<rect x="8" y="' + (42 + i * 20) + '" width="184" height="16" rx="5" fill="var(--card)" stroke="' + f + '"/><rect x="14" y="' + (47 + i * 20) + '" width="' + (80 + i * 22) + '" height="5" rx="2.5" fill="' + c + '"/><rect x="152" y="' + (46 + i * 20) + '" width="34" height="8" rx="4" fill="none" stroke="' + c + '"/>'; }).join('');
+  if (m.id === 'doc') x = [0, 1, 2, 3].map(function (i) { return '<rect x="' + (36 + i * 10) + '" y="' + (26 + i * 4) + '" width="86" height="56" rx="5" fill="' + (i % 2 ? 'var(--card)' : 'color-mix(in srgb,' + c + ' 30%,var(--card))') + '" stroke="' + (i % 2 ? f : c) + '" transform="rotate(' + (i * 4 - 6) + ' 100 60)"/>'; }).join('');
+  if (m.id === 'cta') x = '<rect x="50" y="22" width="100" height="68" rx="10" fill="var(--card)" stroke="' + f + '"/><circle cx="100" cy="42" r="10" fill="' + c + '"/><rect x="64" y="58" width="72" height="8" rx="4" fill="none" stroke="' + f + '"/><rect x="74" y="74" width="52" height="10" rx="5" fill="' + c + '"/>';
+  if (m.id === 'sim') x = [0, 1, 2].map(function (i) { return '<path d="M30 ' + (36 + i * 20) + 'H170" stroke="' + c + '" stroke-width="3" stroke-dasharray="5 5"/><circle cx="' + (60 + i * 38) + '" cy="' + (36 + i * 20) + '" r="7" fill="' + c + '"/>'; }).join('');
+  return '<svg viewBox="0 0 200 100" role="img" aria-label="Esquema de ' + m.t + '">' + b + x + '</svg>';
+}
+
+var V = [];
+function reg(id, titulo, ideal, cuidado, html, init) { V.push({ id: id, titulo: titulo, ideal: ideal, cuidado: cuidado, html: html, init: init }); }
+
+/* A · Bento */
+reg('A', 'Bento asimétrico', 'Un home que se entiende de un vistazo y da protagonismo a lo importante.', 'Pide jerarquía: hay que decidir qué módulos van grandes.',
+  function () {
+    var cl = { m3d: 'g', plan: 'a', mapa: 'a', cta: 'a', sim: 'a sim' };
+    return '<div class="bento">' + ['plan', 'resp', 'org', 'm3d', 'mapa', 'bib', 'doc', 'cta', 'sim'].map(function (id) {
+      var m = MOD.filter(function (z) { return z.id === id; })[0], tg = m.r ? 'a' : 'div';
+      return '<' + tg + ' class="bt ' + (cl[id] || '') + '" style="--c:' + m.c + '"' + (m.r ? ' href="' + m.r + '"' : '') + '>' + ico(m.g, 'fondo') + '<span class="insig">' + ico(m.g) + '</span>' + tag(m) + '<h3>' + m.t + '</h3><p>' + m.d + '</p></' + tg + '>';
+    }).join('') + '</div>';
+  });
+
+/* B · Tarjetas con pantalla */
+reg('B', 'Tarjetas con vista previa', 'Mostrar qué se va a encontrar antes de entrar; buen puente entre marketing y producto.', 'Las pantallitas hay que mantenerlas al día; aquí son esquemas.',
+  function () {
+    return '<div class="tp">' + MOD.map(function (m) {
+      return '<article class="tc" style="--c:' + m.c + '"><div class="pan">' + pantalla(m) + '</div><div class="cu"><h3>' + m.t + '</h3>' + tag(m) + '<p>' + m.d + '</p>' + btn(m, 'Abrir') + '</div></article>';
+    }).join('') + '</div>';
+  });
+
+/* C · Rail */
+reg('C', 'Carrusel de historias', 'Recorrido narrativo en móvil; cada módulo es una «historia» con su color.', 'Oculta lo que está fuera de pantalla: conviene flechas y puntos.',
+  function () {
+    return '<div class="rw"><button class="flecha i" type="button" aria-label="Anterior" data-d="-1">‹</button><div class="rail" id="rail">' + MOD.map(function (m) {
+      var tg = m.r ? 'a' : 'div';
+      return '<' + tg + ' class="rc' + (m.pend ? ' sim' : '') + '" style="--c:' + m.c + '"' + (m.r ? ' href="' + m.r + '"' : '') + '><span class="num">' + m.n + '</span>' + ico(m.g) + '<h3>' + m.t + '</h3><p>' + m.d + '</p><span class="go">' + (m.r ? 'Entrar →' : 'Próximamente') + '</span></' + tg + '>';
+    }).join('') + '</div><button class="flecha d" type="button" aria-label="Siguiente" data-d="1">›</button></div>';
+  },
+  function (r) { r.querySelectorAll('.flecha').forEach(function (b) { b.onclick = function () { $('#rail', r).scrollBy({ left: b.dataset.d * 270, behavior: 'smooth' }); }; }); });
+
+/* D · Maestro-detalle */
+function detalleHTML(m) {
+  return '<div class="det" style="--c:' + m.c + '"><div class="cab"><span class="insig">' + ico(m.g) + '</span><div><h3>' + m.n + '. ' + m.t + '</h3><span>' + m.cat + ' · ' + m.e + '</span></div></div><div class="cu"><div><p>' + m.d + '</p><ul>' + m.pue.map(function (p) { return '<li>' + p + '</li>'; }).join('') + '</ul>' + (m.r ? '<code>' + m.r + '</code><br><br>' : '') + btn(m) + '</div><div class="pan">' + pantalla(m) + '</div></div></div>';
+}
+reg('D', 'Maestro-detalle', 'Explorar muchos módulos sin salir de la página; ideal para escritorio.', 'En móvil la lista pasa a una barra horizontal.',
+  function () {
+    return '<div class="md"><div class="lista" role="tablist" id="mdl">' + MOD.map(function (m, i) {
+      return '<button class="it" role="tab" type="button" data-i="' + i + '" style="--c:' + m.c + '" aria-selected="' + (i === 0) + '"><span class="insig">' + ico(m.g) + '</span>' + m.t + '</button>';
+    }).join('') + '</div><div id="mdd">' + detalleHTML(MOD[0]) + '</div></div>';
+  },
+  function (r) { r.querySelectorAll('.it').forEach(function (b) { b.onclick = function () { r.querySelectorAll('.it').forEach(function (x) { x.setAttribute('aria-selected', 'false'); }); b.setAttribute('aria-selected', 'true'); $('#mdd', r).innerHTML = detalleHTML(MOD[b.dataset.i]); }; }); });
+
+/* E · Acordeón */
+reg('E', 'Acordeón expansivo', 'Mucho impacto con poco espacio; el módulo activo se abre y los demás quedan como pestañas de color.', 'Con más de nueve módulos las tiras se vuelven muy angostas.',
+  function () {
+    return '<div class="ac" id="ac">' + MOD.map(function (m, i) {
+      return '<button type="button" class="ap' + (i === 4 ? ' on' : '') + (m.pend ? ' sim' : '') + '" style="--c:' + m.c + '" aria-expanded="' + (i === 4) + '" data-i="' + i + '"><span class="tira"><i>' + m.n + '</i><b>' + m.t + '</b>' + ico(m.g) + '</span><span class="abre">' + ico(m.g) + '<h3>' + m.t + '</h3><p>' + m.d + '</p>' + (m.r ? '<a class="btn" href="' + m.r + '">Entrar →</a>' : '<span class="btn off">Próximamente</span>') + '</span></button>';
+    }).join('') + '</div>';
+  },
+  function (r) { r.querySelectorAll('.ap').forEach(function (b) { function on() { r.querySelectorAll('.ap').forEach(function (x) { x.classList.remove('on'); x.setAttribute('aria-expanded', 'false'); }); b.classList.add('on'); b.setAttribute('aria-expanded', 'true'); } b.addEventListener('click', on); b.addEventListener('mouseenter', function () { if (matchMedia('(hover:hover)').matches) on(); }); }); });
+
+/* F · Hub radial */
+reg('F', 'Hub radial', 'Contar que todo parte de un núcleo: RECUAPP en el centro y los módulos a su alrededor.', 'Más difícil de leer en pantallas angostas; conviene tener el detalle debajo.',
+  function () {
+    var nodes = MOD.map(function (m, i) {
+      var a = -Math.PI / 2 + i * 2 * Math.PI / MOD.length, x = 300 + Math.cos(a) * 215, y = 245 + Math.sin(a) * 175;
+      return '<g class="nd" tabindex="0" role="button" aria-label="' + m.t + '" data-i="' + i + '" style="--c:' + m.c + '" transform="translate(' + x.toFixed(0) + ',' + y.toFixed(0) + ')"><path d="M0 0L' + ((300 - x) * 0.74).toFixed(0) + ' ' + ((245 - y) * 0.74).toFixed(0) + '" stroke="var(--border)" stroke-width="2" stroke-dasharray="3 6"/><circle class="d" r="32"' + (m.pend ? ' stroke-dasharray="6 5"' : '') + '/><use href="#g-' + m.g + '" x="-12" y="-12" width="24" height="24" style="fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"/><text y="50">' + m.t + '</text></g>';
+    }).join('');
+    return '<div class="rd"><svg class="hub" viewBox="0 0 600 500" role="group" aria-label="Módulos alrededor de RECUAPP"><ellipse class="orb" cx="300" cy="245" rx="215" ry="175"/>' + nodes + '<circle cx="300" cy="245" r="62" fill="var(--card)" stroke="var(--accent)" stroke-width="3"/><svg x="278" y="205" width="44" height="44" viewBox="0 0 24 24" style="fill:none;stroke:var(--accent);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round"><use href="#g-leaf"/></svg><text x="300" y="268" text-anchor="middle" style="font:900 17px var(--f-h);fill:var(--brand)">RECUAPP</text><text x="300" y="285" text-anchor="middle" style="font:600 11px var(--f-b);fill:var(--muted)">edición Girardota</text></svg><div id="rdd">' + detalleHTML(MOD[1]) + '</div></div>';
+  },
+  function (r) { var s = function (n) { r.querySelectorAll('.nd').forEach(function (x) { x.classList.toggle('on', x === n); }); $('#rdd', r).innerHTML = detalleHTML(MOD[n.dataset.i]); }; r.querySelectorAll('.nd').forEach(function (n) { n.onclick = function () { s(n); }; n.onkeydown = function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); s(n); } }; }); r.querySelector('.nd[data-i="1"]').classList.add('on'); });
+
+/* G · ¿Qué quieres hacer? */
+var INT = ['Saber qué prometió el plan', '¿Quién responde por esto?', '¿Cómo está mi vereda?', '¿De dónde salen los datos?', 'Entender el proyecto', 'Ingresar a mi cuenta', 'Probar escenarios'];
+var INTM = { 'Saber qué prometió el plan': ['plan'], '¿Quién responde por esto?': ['resp', 'org'], '¿Cómo está mi vereda?': ['m3d', 'mapa'], '¿De dónde salen los datos?': ['bib', 'doc'], 'Entender el proyecto': ['doc'], 'Ingresar a mi cuenta': ['cta'], 'Probar escenarios': ['sim'] };
+reg('G', '¿Qué quieres hacer?', 'Orientar por intención, no por nombre de módulo: la gente llega con una pregunta, no con un menú en la cabeza.', 'Exige buenos sinónimos y textos; conviene medir qué se busca.',
+  function () {
+    return '<div class="qh"><label class="buscar" for="qi">' + ico('search') + '<input id="qi" type="search" placeholder="Escribe: plan, responsable, vereda, fuentes…" autocomplete="off"></label><div class="sug" id="qs">' + INT.map(function (t) { return '<button type="button" aria-pressed="false">' + t + '</button>'; }).join('') + '</div><div class="res" id="qr"></div><p class="vacio" id="qv" hidden>Nada coincide todavía. Prueba con «plan», «mapa» o «fuentes».</p></div>';
+  },
+  function (r) {
+    var inp = $('#qi', r), cont = $('#qr', r), vac = $('#qv', r), act = null;
+    cont.innerHTML = MOD.map(function (m) { var tg = m.r ? 'a' : 'div'; return '<' + tg + ' class="qr" data-id="' + m.id + '" style="--c:' + m.c + '"' + (m.r ? ' href="' + m.r + '"' : '') + '><span class="insig">' + ico(m.g) + '</span><div><b>' + m.t + '</b><span>' + m.d + '</span></div></' + tg + '>'; }).join('');
+    function filtrar() {
+      var q = inp.value.trim().toLowerCase(), hay = 0;
+      cont.querySelectorAll('.qr').forEach(function (e) { var m = MOD.filter(function (z) { return z.id === e.dataset.id; })[0], ok = true;
+        if (act) ok = INTM[act].indexOf(m.id) > -1; else if (q) ok = (m.t + ' ' + m.kw).toLowerCase().indexOf(q) > -1;
+        e.classList.toggle('no', !ok); if (ok) hay++; });
+      vac.hidden = hay > 0;
+    }
+    inp.oninput = function () { act = null; r.querySelectorAll('#qs button').forEach(function (b) { b.setAttribute('aria-pressed', 'false'); }); filtrar(); };
+    r.querySelectorAll('#qs button').forEach(function (b) { b.onclick = function () { var on = b.getAttribute('aria-pressed') === 'true'; r.querySelectorAll('#qs button').forEach(function (x) { x.setAttribute('aria-pressed', 'false'); }); act = on ? null : b.textContent; b.setAttribute('aria-pressed', String(!on)); inp.value = ''; filtrar(); }; });
+  });
+
+/* H · Tabla periódica */
+reg('H', 'Tabla periódica de módulos', 'Dar sensación de sistema completo y ordenado; fácil de filtrar por familia.', 'Los símbolos de dos letras son un guiño: hay que ponerles nombre debajo.',
+  function () {
+    var cats = ['Todos'].concat(MOD.map(function (m) { return m.cat; }).filter(function (c, i, a) { return a.indexOf(c) === i; }));
+    return '<div class="tp2"><div class="filtros" id="pf">' + cats.map(function (c, i) { return '<button type="button" aria-pressed="' + (i === 0) + '">' + c + '</button>'; }).join('') + '</div><div class="per" id="pe">' + MOD.map(function (m, i) {
+      return '<button type="button" class="el' + (m.pend ? ' p' : '') + '" data-i="' + i + '" style="--c:' + m.c + '" aria-pressed="' + (i === 4) + '"><span class="n">' + m.n + '</span><span class="e"></span><span class="s">' + m.sym + '</span><span class="t">' + m.t + '</span></button>';
+    }).join('') + '</div><div id="pd">' + detalleHTML(MOD[4]) + '</div></div>';
+  },
+  function (r) {
+    r.querySelectorAll('.el').forEach(function (b) { b.onclick = function () { r.querySelectorAll('.el').forEach(function (x) { x.setAttribute('aria-pressed', 'false'); }); b.setAttribute('aria-pressed', 'true'); $('#pd', r).innerHTML = detalleHTML(MOD[b.dataset.i]); }; });
+    r.querySelectorAll('#pf button').forEach(function (b) { b.onclick = function () { r.querySelectorAll('#pf button').forEach(function (x) { x.setAttribute('aria-pressed', 'false'); }); b.setAttribute('aria-pressed', 'true'); r.querySelectorAll('.el').forEach(function (e) { e.classList.toggle('no', b.textContent !== 'Todos' && MOD[e.dataset.i].cat !== b.textContent); }); }; });
+  });
+
+/* I · Tarjetas con profundidad */
+reg('I', 'Tarjetas con profundidad (3D)', 'Dar tacto y vida al home: la tarjeta se inclina con el cursor y el ícono flota por delante.', 'En pantallas táctiles no hay cursor: se ven planas, y conviene respetar «reducir movimiento».',
+  function () {
+    return '<div class="t3g">' + MOD.map(function (m) {
+      var tg = m.r ? 'a' : 'div';
+      return '<' + tg + ' class="t3' + (m.pend ? ' sim' : '') + '" style="--c:' + m.c + '"' + (m.r ? ' href="' + m.r + '"' : '') + '><span class="n">' + m.n + '</span>' + ico(m.g) + '<h3>' + m.t + '</h3><p>' + m.d + '</p><span class="brillo"></span></' + tg + '>';
+    }).join('') + '</div>';
+  },
+  function (r) {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    r.querySelectorAll('.t3').forEach(function (c) {
+      c.addEventListener('pointermove', function (e) { if (e.pointerType === 'touch') return; var b = c.getBoundingClientRect(), x = (e.clientX - b.left) / b.width, y = (e.clientY - b.top) / b.height; c.style.transform = 'rotateX(' + ((0.5 - y) * 16) + 'deg) rotateY(' + ((x - 0.5) * 18) + 'deg) translateY(-4px)'; c.style.setProperty('--mx', (x * 100) + '%'); c.style.setProperty('--my', (y * 100) + '%'); });
+      c.addEventListener('pointerleave', function () { c.style.transform = ''; });
+    });
+  });
+
+/* J · Coverflow */
+reg('J', 'Carrusel en perspectiva (coverflow)', 'Recorrer los módulos uno a uno con una sensación de profundidad; sirve como cabecera del home.', 'Solo uno está «al frente»: los demás se ven atenuados, así que conviene acompañarlo de puntos o lista.',
+  function () {
+    return '<div class="cf" id="cf" tabindex="0" aria-label="Carrusel de módulos; usa las flechas del teclado">' + MOD.map(function (m, i) {
+      return '<div class="cfc' + (m.pend ? ' sim' : '') + '" data-i="' + i + '" style="--c:' + m.c + '"><span class="num">' + m.n + '</span>' + ico(m.g) + '<h3>' + m.t + '</h3><p>' + m.d + '</p>' + (m.r ? '<a class="go" href="' + m.r + '">Entrar →</a>' : '<span class="go" style="opacity:.7">Próximamente</span>') + '</div>';
+    }).join('') + '</div><div class="cfp" id="cfp">' + MOD.map(function (m, i) { return '<button type="button" aria-label="Ir a ' + m.t + '" data-i="' + i + '"></button>'; }).join('') + '</div>';
+  },
+  function (r) {
+    var a = 4, cs = r.querySelectorAll('.cfc'), ps = r.querySelectorAll('#cfp button'), box = $('#cf', r), w = function () { return box.clientWidth < 560 ? 120 : 175; };
+    function pintar() { cs.forEach(function (c, i) { var o = i - a, ab = Math.abs(o); c.style.transform = 'translateX(' + (o * w()) + 'px) translateZ(' + (-ab * 130) + 'px) rotateY(' + (-Math.sign(o) * Math.min(ab, 2) * 36) + 'deg)'; c.style.zIndex = 20 - ab; c.style.opacity = ab > 3 ? 0 : 1; c.style.pointerEvents = ab > 3 ? 'none' : 'auto'; c.classList.toggle('act', i === a); }); ps.forEach(function (p, i) { p.setAttribute('aria-current', String(i === a)); }); }
+    cs.forEach(function (c, i) { c.addEventListener('click', function (e) { if (i !== a) { e.preventDefault(); a = i; pintar(); } }); });
+    ps.forEach(function (p, i) { p.onclick = function () { a = i; pintar(); }; });
+    box.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight') { a = Math.min(MOD.length - 1, a + 1); pintar(); e.preventDefault(); } if (e.key === 'ArrowLeft') { a = Math.max(0, a - 1); pintar(); e.preventDefault(); } });
+    addEventListener('resize', pintar); pintar();
+  });
+
+/* K · Cubos giratorios */
+reg('K', 'Cubos giratorios (3D)', 'Una pieza lúdica y compacta: por fuera el nombre, al girar el detalle y el botón para entrar.', 'En táctil se gira con un toque; el contenido de la cara lateral debe ser breve.',
+  function () {
+    return '<div class="kb">' + MOD.map(function (m) {
+      return '<div class="kw" style="--c:' + m.c + '"><div class="cube"><div class="cara f1' + (m.pend ? ' sim' : '') + '" role="button" tabindex="0" aria-label="Ver detalle de ' + m.t + '"><span class="n">' + m.n + '</span>' + ico(m.g) + '<h3>' + m.t + '</h3></div><div class="cara f2"><div><b>' + m.t + '</b><p>' + m.d + '</p></div>' + (m.r ? '<a class="btn" href="' + m.r + '" style="align-self:flex-start">Entrar →</a>' : '<span class="btn off" style="align-self:flex-start">Próximamente</span>') + '</div></div></div>';
+    }).join('') + '</div>';
+  },
+  function (r) { r.querySelectorAll('.kw').forEach(function (k) { var f = k.querySelector('.f1'); function t() { k.classList.toggle('on'); } f.onclick = t; f.onkeydown = function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); t(); } }; }); });
+
+/* montar */
+var cont = $('#vars'), idx = $('#indice');
+V.forEach(function (v) {
+  idx.insertAdjacentHTML('beforeend', '<a href="#v' + v.id + '"><b>' + v.id + '</b>' + v.titulo + '</a>');
+  cont.insertAdjacentHTML('beforeend', '<section class="v" id="v' + v.id + '"><h2><small>VARIANTE ' + v.id + '</small>' + v.titulo + '</h2><p class="nota"><span><b>Ideal para:</b> ' + v.ideal + '</span><span><b>Cuidado:</b> ' + v.cuidado + '</span></p><div class="demo">' + v.html() + '</div></section>');
+  if (v.init) v.init($('#v' + v.id));
+});
+var root = document.documentElement;
+try { var t = localStorage.getItem('plan-tema'); if (t === 'oscuro' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) root.classList.add('oscuro'); } catch (e) {}
+$('#tema').onclick = function () { root.classList.toggle('oscuro'); };
+</script>
+</body>
+</html>
