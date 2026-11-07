@@ -24,10 +24,17 @@
 </ng-template>
 
 <aside class="lado" aria-label="Navegación principal">
-  <a routerLink="/" class="lado__marca" [title]="site.name + ' · Inicio'">
-    <i><svg class="ico" aria-hidden="true"><use href="#nav-leaf"/></svg></i>
-    <span>{{ site.name }}<small>{{ site.tagline }}</small></span>
-  </a>
+  <div class="lado__cab">
+    <a routerLink="/" class="lado__marca" [title]="site.name + ' · Inicio'">
+      <i><svg class="ico" aria-hidden="true"><use href="#nav-leaf"/></svg></i>
+      <span>{{ site.name }}<small>{{ site.tagline }}</small></span>
+    </a>
+    <button type="button" class="lado__plegar" (click)="alternarPlegado()" [attr.aria-pressed]="plegado()"
+            [attr.aria-label]="plegado() ? 'Desplegar el menú' : 'Plegar el menú'"
+            [title]="plegado() ? 'Desplegar el menú' : 'Plegar el menú y dar más ancho al contenido'">
+      <svg class="ico" aria-hidden="true"><use href="#nav-plegar"/></svg>
+    </button>
+  </div>
 
   <nav class="lado__nav">
     <ng-container *ngTemplateOutlet="item; context: { $implicit: inicio }" />
@@ -49,18 +56,15 @@
     }
   </nav>
 
-  <button type="button" class="lado__plegar" (click)="alternarPlegado()" [attr.aria-pressed]="plegado()"
-          [title]="plegado() ? 'Desplegar el menú' : 'Plegar el menú y dar más ancho al contenido'">
-    <svg class="ico" aria-hidden="true"><use href="#nav-plegar"/></svg>
-    <span>{{ plegado() ? 'Desplegar menú' : 'Plegar menú' }}</span>
-  </button>
-
+  <!-- pie del panel: cuenta y tema de color -->
   <div class="lado__pie">
     @if (session.isLoggedIn()) {
       <div class="lado__usuario"><app-user-widget /></div>
     } @else {
       <!-- un solo acceso: la pantalla de ingreso enlaza al registro para quien aún no tiene cuenta -->
-      <a routerLink="/auth/login" class="lado__btn lado__btn--cta lado__solo-escritorio" title="Ingresa o crea tu cuenta">Ingresar</a>
+      <a routerLink="/auth/login" class="lado__btn lado__btn--cta lado__solo-escritorio" title="Ingresa o crea tu cuenta" aria-label="Ingresar">
+        <svg class="ico" aria-hidden="true"><use href="#nav-login"/></svg><span>Ingresar</span>
+      </a>
     }
     <button type="button" class="lado__tema" [class.is-dark]="tema.oscuro()" (click)="tema.alternar()"
             [attr.aria-label]="'Tema de color: ' + (tema.oscuro() ? 'oscuro' : 'claro')"

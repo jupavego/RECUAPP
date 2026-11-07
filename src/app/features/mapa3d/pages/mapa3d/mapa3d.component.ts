@@ -1079,8 +1079,6 @@ const TIPOS_ZONA: Record<string, string> = {
     .barra-ley { position: absolute; z-index: 11; top: 12px; left: 0; right: 0; margin-inline: auto; width: fit-content; max-width: calc(100% - 32px); box-sizing: border-box;
       border-radius: 999px; background: rgba(255,255,255,.82); backdrop-filter: blur(8px); box-shadow: 0 6px 24px rgba(30,60,90,.2);
       font: .9rem system-ui; color: #26425a; }
-    /* En escritorio la cápsula de cuenta y tema flota en la esquina superior derecha: la leyenda se centra en el espacio restante. */
-    @media (min-width: 768px) { .barra-ley { right: 230px; max-width: calc(100% - 246px); } }
     .barra-ley .pista { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2px; padding: 5px 8px; }
     .barra-ley .sep { width: 1px; height: 22px; margin: 0 5px; background: rgba(38,66,90,.18); }
     .barra-ley .ley { position: relative; flex: none; width: 36px; height: 36px; padding: 0; display: grid; place-items: center;

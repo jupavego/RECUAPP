@@ -503,6 +503,6 @@ html.tema-botanico.tema-oscuro {
   --dark-500: #8FA08C; --dark-600: #A9B8A5; --dark-700: #C3CFBF; --dark-800: #D8E1D4; --dark-900: #E8EFE4;
 }
 
-/* ── Navegación maestro-detalle: alto de la franja superior. En escritorio es la franja libre donde flota la cápsula de cuenta y tema; en móvil, la barra de módulos ──*/
-:root { --alto-barra: 56px; }
+/* ── Navegación maestro-detalle: alto de la franja superior. En escritorio no hay franja (cuenta y tema van al pie del panel lateral); en móvil, la barra de módulos ──*/
+:root { --alto-barra: 0px; }
 @media (max-width: 767.98px) { :root { --alto-barra: 60px; } }

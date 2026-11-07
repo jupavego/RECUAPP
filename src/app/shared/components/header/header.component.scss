@@ -30,7 +30,6 @@
 .lado {
   position: relative;
   isolation: isolate;
-  overflow: hidden;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -45,13 +44,16 @@
 
   // brote decorativo al pie del panel: dos tallos con hojas, muy tenue
   &::after {
-    content: ''; position: absolute; z-index: -1; right: -18px; bottom: 54px; width: 170px; height: 210px; pointer-events: none;
+    content: ''; position: absolute; z-index: -1; right: 0; bottom: 64px; width: 170px; height: 210px; pointer-events: none;
     opacity: .5;
     background: no-repeat center / contain url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 170 210' fill='none' stroke='%2366AA33' stroke-width='1.4' stroke-linecap='round' opacity='.45'%3E%3Cpath d='M120 210C118 160 104 120 70 86'/%3E%3Cpath d='M70 86c-22 2-38-10-44-30 22-4 38 8 44 30z' fill='%2366AA33' fill-opacity='.10'/%3E%3Cpath d='M98 132c4-22 22-34 44-32-2 22-20 34-44 32z' fill='%2366AA33' fill-opacity='.10'/%3E%3Cpath d='M112 168c-18-6-28-22-24-42 18 6 28 22 24 42z' fill='%23E0B33A' fill-opacity='.14' stroke='%23E0B33A'/%3E%3Cpath d='M150 210c0-30 4-52 14-70'/%3E%3Cpath d='M164 140c-14-4-20-16-18-30 14 4 20 16 18 30z' fill='%2366AA33' fill-opacity='.10'/%3E%3C/svg%3E");
   }
 
+  // cabecera: marca y, a su lado, el ícono para plegar el menú
+  &__cab { display: flex; align-items: center; gap: 4px; padding-bottom: 14px; }
+
   &__marca {
-    display: flex; align-items: center; gap: 11px; padding: 0 8px 14px; text-decoration: none; color: var(--lado-texto);
+    flex: 1; min-width: 0; display: flex; align-items: center; gap: 11px; padding: 0 0 0 8px; text-decoration: none; color: var(--lado-texto);
     i {
       width: 34px; height: 34px; flex: none; display: grid; place-items: center; color: #fff;
       border-radius: 4px 50% 50% 50%;   // forma de hoja
@@ -87,31 +89,35 @@
     &::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--lado-borde), transparent); margin-right: 8px; }
   }
 
-  // cuenta y tema: flotan en la esquina superior derecha de la ventana, en una cápsula translúcida
+  // cuenta y tema: al pie del panel, separados de los módulos por una línea tenue
   &__pie {
-    position: fixed; top: 12px; right: 16px; z-index: 110;
-    display: flex; align-items: center; gap: 4px;
-    padding: 4px; border-radius: 999px;
-    background: color-mix(in srgb, var(--lado-bg) 78%, transparent);
-    border: 1px solid var(--lado-borde);
-    box-shadow: 0 6px 22px rgba(41, 66, 47, .10);
-    backdrop-filter: blur(10px) saturate(1.2);
-    -webkit-backdrop-filter: blur(10px) saturate(1.2);
+    display: flex; align-items: center; justify-content: space-between; gap: 6px;
+    padding-top: 12px; margin-top: 4px; border-top: 1px solid var(--lado-borde);
   }
 
   &__usuario {
-    min-width: 0; border-radius: 999px; background: linear-gradient(135deg, #2F5A36, #29422F); color: #fff;
+    flex: 1; min-width: 0; border-radius: 999px; background: linear-gradient(135deg, #2F5A36, #29422F); color: #fff;
   }
 
   &__btn {
-    flex: none; text-align: center; white-space: nowrap; text-decoration: none; font: 600 .82rem var(--font-body);
-    padding: 8px 10px; border-radius: 999px; color: var(--lado-texto);
+    flex: 1; min-width: 0; display: flex; align-items: center; justify-content: center; gap: 8px;
+    text-align: center; white-space: nowrap; text-decoration: none; font: 600 .86rem var(--font-body);
+    padding: 9px 12px; border-radius: 999px; color: var(--lado-texto);
     transition: background .15s, color .15s;
     &:hover { background: var(--lado-hover); }
+    // Ingresar: sin bloque de color; un brote en degradé con el ícono y el texto en verde, como un módulo más
     &--cta {
-      color: #fff; background: linear-gradient(135deg, #4F9A35, #2F6B3F);
-      box-shadow: 0 3px 10px rgba(47, 107, 63, .25);
-      &:hover { background: linear-gradient(135deg, #458C2E, #285C36); }
+      flex: 0 1 auto; justify-content: flex-start; gap: 10px; padding: 5px 14px 5px 5px;
+      color: #3F7F35; background: transparent; font-weight: 700;
+      .ico {
+        box-sizing: content-box; width: 15px; height: 15px; padding: 7px; flex: none; color: #fff;
+        border-radius: 4px 50% 50% 50%;   // forma de hoja, como la marca
+        background: linear-gradient(140deg, #8CC63F, #3F8A3A 70%);
+        box-shadow: 0 3px 9px rgba(63, 138, 58, .28);
+        transition: transform .25s cubic-bezier(.3, 1.5, .5, 1);
+      }
+      &:hover { background: rgba(102, 170, 51, .1); .ico { transform: rotate(-10deg) scale(1.06); } }
+      &:focus-visible { outline: 2px solid #E0B33A; outline-offset: 2px; }
     }
   }
 
@@ -143,7 +149,7 @@
     color: var(--c);
     transition: border-radius .25s, background .2s, color .2s, transform .25s;
   }
-  &__t { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  &__t { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; animation: lado-aparecer .18s ease-out; }
 
   &:hover {
     background: var(--lado-hover);
@@ -170,31 +176,64 @@
   }
 }
 
+:host-context(body.tema-oscuro) .lado__btn--cta { color: #A6D65A; &:hover { background: rgba(166, 214, 90, .1); } }
 :host-context(body.tema-oscuro) .it__insig { background: color-mix(in srgb, var(--c) 20%, transparent); }
 :host-context(body.tema-oscuro) .it.is-on { background: color-mix(in srgb, var(--c) 16%, transparent); }
 
 .lado__solo-movil { display: none; }
 
+// al desplegar el menú, los textos entran con un fundido corto (solo opacidad y desplazamiento: no recalcula la página)
+@keyframes lado-aparecer { from { opacity: 0; transform: translateX(-4px); } }
+.lado__marca span, .lado__grupo, .lado__btn span { animation: lado-aparecer .18s ease-out; }
+@media (prefers-reduced-motion: reduce) { .it__t, .lado__marca span, .lado__grupo, .lado__btn span { animation: none; } }
+
+// ícono para plegar el menú, junto a la marca
 .lado__plegar {
-  display: flex; align-items: center; gap: 11px; padding: 8px 12px 8px 15px; margin-top: 4px;
-  border: 0; border-top: 1px solid var(--lado-borde); border-radius: 0; background: transparent; cursor: pointer;
-  color: var(--lado-tenue); font: 500 .8rem var(--font-body); text-align: left;
-  transition: color .15s;
+  flex: none; display: grid; place-items: center; width: 32px; height: 32px; padding: 0;
+  border: 0; border-radius: 10px; background: transparent; cursor: pointer; color: var(--lado-tenue);
+  transition: color .15s, background .15s;
   .ico { transition: transform .3s; }
-  &:hover { color: var(--lado-texto); }
+  &:hover { color: var(--lado-texto); background: var(--lado-hover); }
   &:focus-visible { outline: 2px solid #E0B33A; outline-offset: 2px; }
 }
 
 // ── Plegado: riel de íconos (solo escritorio) ──────────────────────────────
 @media (min-width: 768px) {
+  // la cuenta está al pie: su menú se abre hacia arriba
+  .lado__usuario ::ng-deep .user-widget__dropdown { top: auto; bottom: calc(100% + 10px); left: 0; right: auto; }
+  :host.is-plegado .lado__usuario ::ng-deep .user-widget__dropdown { bottom: 0; left: calc(100% + 12px); }
+
   :host.is-plegado {
     .lado { padding-left: 10px; padding-right: 10px; &::after { display: none; } }
-    .lado__marca { justify-content: center; padding-left: 0; padding-right: 0; span { display: none; } }
+    // en el riel solo se ve el logo; al pasar el cursor, el logo se cambia por la opción de desplegar el menú
+    .lado__cab { position: relative; justify-content: center; }
+    .lado__marca { flex: none; justify-content: center; padding: 0; span { display: none; } }
+    .lado__marca i { transition: opacity .15s, transform .2s; }
+    .lado__plegar {
+      position: absolute; top: 0; left: 50%; width: 34px; height: 34px;
+      border-radius: 4px 50% 50% 50%; color: #fff;
+      background: linear-gradient(140deg, #3F8A3A, #2F6B3F 70%);
+      box-shadow: 0 4px 12px rgba(63, 138, 58, .28);
+      opacity: 0; pointer-events: none; transform: translateX(-50%) scale(.8);
+      transition: opacity .15s, transform .2s cubic-bezier(.3, 1.5, .5, 1);
+      .ico { transform: scaleX(-1); }
+      &:hover { color: #fff; background: linear-gradient(140deg, #458C2E, #285C36 70%); }
+    }
+    .lado__cab:hover, .lado__cab:focus-within {
+      .lado__plegar { opacity: 1; pointer-events: auto; transform: translateX(-50%) scale(1); }
+      .lado__marca i { opacity: 0; transform: scale(.8); }
+    }
     .lado__grupo { margin: 10px 6px 4px; font-size: 0; &::after { margin: 0; } }
     .it { justify-content: center; padding: 7px 0; gap: 0; }
     .it__t { display: none; }
     .it::before { left: -6px; }
-    .lado__plegar { justify-content: center; padding-left: 0; padding-right: 0; span { display: none; } .ico { transform: scaleX(-1); } }
+    // pie en el riel: Ingresar queda solo como ícono, con el tema debajo
+    .lado__pie { flex-direction: column; }
+    .lado__btn { flex: none; justify-content: center; width: 38px; height: 38px; padding: 0; span { display: none; } }
+    .lado__usuario {
+      flex: none;
+      ::ng-deep .user-widget__info, ::ng-deep .user-widget__chevron { display: none; }
+    }
   }
 }
 
@@ -208,6 +247,7 @@
     border-right: 0; border-bottom: 1px solid var(--lado-borde);
     &::after { display: none; }
 
+    &__cab { padding: 0; flex: none; }
     &__marca { padding: 0; span { display: none; } }
     &__nav {
       flex-direction: row; align-items: center; gap: 2px; overflow-x: auto; overflow-y: hidden;
@@ -216,7 +256,7 @@
     }
     &__grupo { display: none; }
     // en la barra, la cápsula vuelve a la fila (a la derecha de los módulos)
-    &__pie { position: static; padding: 0; border: 0; background: none; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; }
+    &__pie { flex: none; padding: 0; margin: 0; border: 0; }
     &__usuario {
       flex: none;
       ::ng-deep .user-widget__info, ::ng-deep .user-widget__chevron { display: none; }

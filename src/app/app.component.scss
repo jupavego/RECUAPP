@@ -8,15 +8,10 @@
   display: grid;
   grid-template-columns: var(--ancho-lado, 264px) minmax(0, 1fr);
   min-height: 100dvh;
-  transition: grid-template-columns .28s ease;
+  // sin transición del ancho: animar la columna recalculaba toda la página en cada cuadro (y redimensionaba
+  // mapas y lienzos 0,28 s seguidos); el cambio es inmediato y solo los textos del panel aparecen con un fundido
 
-  // franja libre arriba para la cápsula de cuenta y tema (fija en la esquina superior derecha)
-  &__vista { min-width: 0; padding-top: var(--alto-barra); }
-}
-
-// Portada y mapa 3D en escritorio: ocupan toda la altura, sin la franja libre de arriba
-@media (min-width: 768px) {
-  .shell__vista--plena { padding-top: 0; --alto-barra: 0px; }
+  &__vista { min-width: 0; }
 }
 
 @media (max-width: 767.98px) {
