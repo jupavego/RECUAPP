@@ -13,6 +13,13 @@
       "runtimeArgs": ["run", "start", "--", "--port", "4210"],
       "port": 4210,
       "autoPort": false
+    },
+    {
+      "name": "recuapp-dev-4220",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start", "--", "--port", "4220"],
+      "port": 4220,
+      "autoPort": false
     }
   ]
 }
