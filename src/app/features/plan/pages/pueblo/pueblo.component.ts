@@ -2163,6 +2163,9 @@ export class PuebloComponent implements AfterViewInit {
     const aObj = new THREE.Vector3(b.x, b.y + Math.min(b.cima * 0.4, 14), b.z);
     const a = aObj.clone().add(dir.multiplyScalar(dist)).setY(b.y + dist * 0.6 + 10);
     this.vuelo = { t: 0, de: this.camara.position.clone(), deObj: this.controles.target.clone(), a, aObj };
+    // el clic también cuenta como «soltar el mapa» para los controles: sin esto, al terminar el vuelo la mira
+    // volvía a pegarse al terreno y la cámara se iba por debajo del edificio elegido
+    this.movido = 0;
   }
 
   soltar(): void {
@@ -2184,7 +2187,7 @@ export class PuebloComponent implements AfterViewInit {
       const k = 1 - Math.pow(1 - this.vuelo.t, 3);
       this.camara.position.lerpVectors(this.vuelo.de, this.vuelo.a, k);
       this.controles.target.lerpVectors(this.vuelo.deObj, this.vuelo.aObj, k);
-      if (this.vuelo.t >= 1) this.vuelo = null;
+      if (this.vuelo.t >= 1) { this.vuelo = null; this.movido = 0; }   // al llegar, la mira se queda en el edificio
     }
     // los pines mantienen casi el mismo tamaño en pantalla sin importar la distancia
     const activo = this.elegido()?.dep.id;
