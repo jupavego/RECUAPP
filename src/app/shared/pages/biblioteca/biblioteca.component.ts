@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, input, signal } from '@angular/core';
 import { CATEGORIAS, CategoriaFuente, FUENTES, Fuente, citar } from '../../../data/biblioteca.data';
 
 /** Minúsculas y sin tildes, para que «planeacion» encuentre «Planeación». */
@@ -10,7 +10,7 @@ const sinTildes = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLo
   template: `
     <article class="bib">
       <header class="bib__head">
-        <h1>Biblioteca</h1>
+        @if (!incrustado()) { <h1>Biblioteca</h1> }
         <p>
           Las {{ total }} fuentes con las que se construyó RECUAPP: normas, guías oficiales, datos abiertos,
           cartografía y software. Cada una trae su enlace, su cita y para qué se usó.
@@ -72,6 +72,8 @@ const sinTildes = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLo
   styleUrl: './biblioteca.component.scss',
 })
 export class BibliotecaComponent {
+  /** dentro de Quiénes somos la sección ya trae su título */
+  readonly incrustado = input(false);
   readonly categorias = CATEGORIAS;
   readonly total = FUENTES.length;
   readonly q = signal('');

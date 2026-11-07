@@ -5,11 +5,18 @@ import { authGuard, publicOnlyGuard, roleGuard } from './core';
 export const routes: Routes = [
 
   // ── Público ──────────────────────────────────────────────────────────────
+  // el inicio es el mapa 3D de Girardota
   {
     path: '',
     pathMatch: 'full',
     loadComponent: () =>
-      import('./shared/pages/home/home.component').then(m => m.HomeComponent),
+      import('./features/mapa3d/pages/mapa3d/mapa3d.component').then(m => m.Mapa3dComponent),
+  },
+  // la presentación (antes el inicio), con los documentos y la biblioteca debajo
+  {
+    path: 'quienes-somos',
+    loadComponent: () =>
+      import('./shared/pages/quienes-somos/quienes-somos.component').then(m => m.QuienesSomosComponent),
   },
 
   // ── Plan de desarrollo por entidad (público; piloto) ─────────────────────
@@ -47,25 +54,15 @@ export const routes: Routes = [
       import('./features/mapa/pages/mapa/mapa.component').then(m => m.MapaComponent),
   },
 
-  // ── Mapa 3D (prueba de concepto) ─────────────────────────────────────────
-  {
-    path: 'mapa3d',
-    loadComponent: () =>
-      import('./features/mapa3d/pages/mapa3d/mapa3d.component').then(m => m.Mapa3dComponent),
-  },
-
-  // ── Sistema documental (deck, canvas, blueprint, memorandum, one-pager) ──
+  // ── Rutas viejas: el mapa 3D ahora es el inicio (conserva ?punto=…) y documentos y biblioteca viven en Quiénes somos ──
+  { path: 'mapa3d', pathMatch: 'full', redirectTo: '' },
   {
     path: 'documentos',
-    loadComponent: () =>
-      import('./features/documentos/pages/documentos/documentos.component').then(m => m.DocumentosComponent),
+    redirectTo: () => inject(Router).createUrlTree(['/quienes-somos'], { fragment: 'documentos' }),
   },
-
-  // ── Biblioteca: fuentes consultadas, con enlace y cita ───────────────────
   {
     path: 'biblioteca',
-    loadComponent: () =>
-      import('./shared/pages/biblioteca/biblioteca.component').then(m => m.BibliotecaComponent),
+    redirectTo: () => inject(Router).createUrlTree(['/quienes-somos'], { fragment: 'biblioteca' }),
   },
 
   {

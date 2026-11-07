@@ -8,7 +8,7 @@ import { SessionService } from '../../../core/services/session.service';
 import { UserWidgetComponent } from '../user-widget/user-widget.component';
 import { SITE } from '../../../data/site.data';
 
-type Glifo = 'home' | 'plan' | 'users' | 'org' | 'pin' | 'cube' | 'grid' | 'db' | 'flag' | 'key' | 'shield' | 'login';
+type Glifo = 'home' | 'plan' | 'users' | 'org' | 'pin' | 'cube' | 'grid' | 'db' | 'flag' | 'key' | 'shield' | 'login' | 'leaf' | 'nosotros';
 
 interface ItemNav {
   t: string;
@@ -28,7 +28,7 @@ const leerPlegado = () => { try { return localStorage.getItem(CLAVE_PLEGADO) ===
 
 /**
  * Panel lateral de navegación (variante D «Maestro-detalle»): la lista de módulos a la izquierda
- * y la vista abierta a la derecha. «Inicio» abre el home. Bajo 768px se vuelve barra superior.
+ * y la vista abierta a la derecha. «Inicio» abre el mapa 3D. Bajo 768px se vuelve barra superior.
  */
 @Component({
   selector: 'app-header',
@@ -49,7 +49,8 @@ export class HeaderComponent {
     { initialValue: ruta(this.router.url) },
   );
 
-  readonly inicio: ItemNav = { t: 'Inicio', r: '/', c: '#2F7D45', g: 'home', activo: u => u === '/' };
+  // el inicio es el mapa 3D de Girardota
+  readonly inicio: ItemNav = { t: 'Inicio', r: '/', c: '#2E86C1', g: 'cube', activo: u => u === '/' };
 
   readonly ingresar: ItemNav = { t: 'Ingresar', r: '/auth/login', c: '#6B7F6E', g: 'login', activo: () => false };
 
@@ -60,12 +61,11 @@ export class HeaderComponent {
     ] },
     { nombre: 'Territorio', items: [
       { t: 'Mapa territorial', r: '/mapa', c: '#16A085', g: 'pin', activo: u => u === '/mapa' },
-      { t: 'Modelo 3D', r: '/mapa3d', c: '#2E86C1', g: 'cube', activo: u => u === '/mapa3d' },
       { t: 'Catálogo 3D', r: '/mapa3d/catalogo', c: '#7B68C8', g: 'grid', activo: u => u.startsWith('/mapa3d/catalogo') },
     ] },
-    { nombre: 'Confianza', items: [
-      { t: 'Biblioteca', r: '/biblioteca', c: '#D35C37', g: 'db', activo: u => u.startsWith('/biblioteca') },
-      { t: 'Documentos', r: '/documentos', c: '#B0549A', g: 'flag', activo: u => u.startsWith('/documentos') },
+    // la presentacion de RECUAPP, con los documentos y la biblioteca
+    { nombre: 'Nosotros', items: [
+      { t: 'Quiénes somos', r: '/quienes-somos', c: '#2F7D45', g: 'nosotros', activo: u => u.startsWith('/quienes-somos') },
     ] },
   ];
 
