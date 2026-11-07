@@ -711,7 +711,7 @@ const TIPOS_ZONA: Record<string, string> = {
   imports: [DecimalPipe, RouterLink],
   template: `
     <div #lienzo class="lienzo"
-         (mousedown)="alRatonAbajo($event)" (pointerdown)="alPulsar($event)" (pointerup)="alSoltar($event)"
+         (mousedown)="alRatonAbajo($event)" (pointerdown)="capaInfo.set(null); alPulsar($event)" (pointerup)="alSoltar($event)"
          (pointerleave)="alSalir()"></div>
 
     @if (cargando()) { <div class="estado">Levantando el territorio…</div> }
@@ -723,19 +723,19 @@ const TIPOS_ZONA: Record<string, string> = {
       <div class="pista">
         @for (l of leyenda; track l.id) {
           <button type="button" class="ley" [class.activa]="capasActivas().has(l.id)" [attr.aria-pressed]="capasActivas().has(l.id)"
-                  [attr.aria-label]="l.nombre" [style.--c]="l.color" (click)="alternarCapa(l.id)">
+                  [attr.aria-label]="l.nombre" [style.--c]="l.color" (click)="alternarCapa(l.id); mostrarCapa($event, l.id)">
             <span class="medalla-ley" aria-hidden="true">{{ l.glifo }}</span>
             <span class="ley-nombre" aria-hidden="true"><b>{{ l.nombre }}</b><i>{{ capasActivas().has(l.id) ? 'en el mapa · clic para ocultar' : 'oculto · clic para mostrar' }}</i></span>
           </button>
         }
         <button type="button" class="ley" [class.activa]="sistemaHidrico()" [attr.aria-pressed]="sistemaHidrico()" style="--c:#ffb300"
-                aria-label="Ríos y quebradas" (click)="alternarSistemaHidrico()">
+                aria-label="Ríos y quebradas" (click)="alternarSistemaHidrico(); mostrarCapa($event, 'rios')">
           <span class="medalla-ley" aria-hidden="true">≈</span>
           <span class="ley-nombre" aria-hidden="true"><b>Ríos y quebradas</b><i>ríos, quebradas, lagos y embalses</i></span>
         </button>
         <span class="sep" aria-hidden="true"></span>
         <button type="button" class="ley" [class.activa]="serviciosActivos() === subtiposServicios.length" [attr.aria-pressed]="serviciosActivos() === subtiposServicios.length"
-                [attr.aria-label]="grupoServicios.nombre" [style.--c]="grupoServicios.color" (click)="alternarServicios()">
+                [attr.aria-label]="grupoServicios.nombre" [style.--c]="grupoServicios.color" (click)="alternarServicios(); mostrarCapa($event, 'servicios')">
           <span class="medalla-ley" aria-hidden="true">{{ grupoServicios.glifo }}</span>
           <span class="cuenta" aria-hidden="true">{{ serviciosActivos() }}</span>
           <span class="ley-nombre" aria-hidden="true"><b>{{ grupoServicios.nombre }}</b><i>{{ serviciosActivos() }} de {{ subtiposServicios.length }} tipos en el mapa</i></span>
@@ -743,7 +743,7 @@ const TIPOS_ZONA: Record<string, string> = {
         <span class="ley-hijos" role="group" aria-label="Tipos de servicios públicos">
           @for (l of subtiposServicios; track l.id) {
             <button type="button" class="ley hijo" [class.activa]="capasActivas().has(l.id)" [attr.aria-pressed]="capasActivas().has(l.id)"
-                    [attr.aria-label]="l.nombre" [style.--c]="l.color" (click)="alternarCapa(l.id)">
+                    [attr.aria-label]="l.nombre" [style.--c]="l.color" (click)="alternarCapa(l.id); mostrarCapa($event, l.id)">
               <span class="medalla-ley" aria-hidden="true">{{ l.glifo }}</span>
               <span class="ley-nombre" aria-hidden="true"><b>{{ l.nombre }}</b><i>servicios públicos</i></span>
             </button>
@@ -752,110 +752,161 @@ const TIPOS_ZONA: Record<string, string> = {
         <span class="sep" aria-hidden="true"></span>
         <!-- capas de contexto: vista subterránea, barrios del casco urbano y redes de servicios -->
         <button type="button" class="ley" [class.activa]="subterraneo()" [class.cargando]="cargandoRedesAgua()" [attr.aria-pressed]="subterraneo()"
-                [disabled]="cargandoRedesAgua()" aria-label="Subterráneo" style="--c:#a1887f" (click)="alternarSubterraneo()">
+                [disabled]="cargandoRedesAgua()" aria-label="Subterráneo" style="--c:#a1887f" (click)="alternarSubterraneo(); mostrarCapa($event, 'sub')">
           <span class="medalla-ley" aria-hidden="true">🕳️</span>
           <span class="ley-nombre" aria-hidden="true"><b>Subterráneo</b><i>{{ cargandoRedesAgua() ? 'cargando las redes…' : 'redes de EPM bajo el terreno' }}</i></span>
         </button>
         <button type="button" class="ley" [class.activa]="barriosVisibles()" [class.cargando]="cargandoBarrios()" [attr.aria-pressed]="barriosVisibles()"
-                [disabled]="cargandoBarrios()" aria-label="Barrios" style="--c:#ce93d8" (click)="alternarBarrios()">
+                [disabled]="cargandoBarrios()" aria-label="Barrios" style="--c:#ce93d8" (click)="alternarBarrios(); mostrarCapa($event, 'barrios')">
           <span class="medalla-ley" aria-hidden="true">🏘️</span>
           <span class="ley-nombre" aria-hidden="true"><b>Barrios</b><i>{{ cargandoBarrios() ? 'cargando los límites…' : 'límites del casco urbano' }}</i></span>
         </button>
         @if (hayRedes) {
           <button type="button" class="ley" [class.activa]="redesVisibles()" [attr.aria-pressed]="redesVisibles()"
-                  aria-label="Redes" style="--c:#4db6ac" (click)="alternarRedes()">
+                  aria-label="Redes" style="--c:#4db6ac" (click)="alternarRedes(); mostrarCapa($event, 'redes')">
             <span class="medalla-ley" aria-hidden="true">🔌</span>
             <span class="ley-nombre" aria-hidden="true"><b>Redes</b><i>redes y servicios en superficie</i></span>
           </button>
         }
       </div>
     </div>
-
-    <div class="panel" [class.cerrado]="!panelAbierto()">
-      <div class="cabecera">
-        <h1>Girardota <small>en 3D · prueba de concepto</small></h1>
-        <button type="button" class="plegar" (click)="alternarPanel()"
-                [attr.aria-expanded]="panelAbierto()" [attr.aria-label]="panelAbierto() ? 'Contraer panel' : 'Expandir panel'">
-          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
+    <!-- tarjeta de la capa tocada: qué contiene, cuántos hay, de qué tipos y de dónde salen los datos -->
+    @if (capaInfo(); as ci) {
+      @let rc = resumenCapa(ci.id);
+      <div class="capa-info" [style.--x.px]="ci.x" [style.--c]="rc.color" role="status">
+        <button type="button" class="capa-info__x" (click)="capaInfo.set(null)" aria-label="Cerrar">×</button>
+        <div class="capa-info__cab">
+          <span class="capa-info__glifo" aria-hidden="true">{{ rc.glifo }}</span>
+          <div>
+            <strong>{{ rc.nombre }}</strong>
+            <span class="capa-info__estado" [class.on]="rc.activa">{{ rc.activa ? 'Encendida en el mapa' : 'Apagada' }}</span>
+          </div>
+          @if (rc.total !== null) { <b class="capa-info__total">{{ rc.total | number:'1.0-0' }}<small>{{ rc.unidad }}</small></b> }
+        </div>
+        <p class="capa-info__txt">{{ rc.texto }}</p>
+        @if (rc.tipos.length) {
+          <ul class="capa-info__tipos">
+            @for (t of rc.tipos; track t.t) { <li><span>{{ t.t }}</span><b>{{ t.n }}</b></li> }
+          </ul>
+        }
+        <p class="capa-info__fuente"><b>Fuente:</b> {{ rc.fuentes.join(' · ') }}</p>
       </div>
-      @if (panelAbierto()) {
-        @if (fabricaSeleccion(); as f) {
-          <div class="ficha fab">
-            <span class="tipo">Industria · {{ f.sector }}</span>
-            <strong>{{ f.nombre }}</strong>
-            @if (f.direccion) { <span class="dato">{{ f.direccion }}</span> }
-            <span class="dato">{{ f.resumen }}</span>
-            <span class="dato"><b>Combustibles:</b> {{ f.combustibles }}</span>
-            <span class="dato"><b>Control de emisiones:</b> {{ f.control }}</span>
-            @if (f.emisiones.length) {
-              <div class="emisiones">
-                <span class="tipo">Emisiones estimadas</span>
-                @for (e of f.emisiones; track e.k) { <div><span>{{ e.k }}</span><b>{{ e.v }}</b></div> }
-              </div>
-            } @else {
-              <span class="dato">Sin emisiones estimadas en el inventario.</span>
-            }
-            @if (f.flujos) { <span class="dato"><b>Medido en chimenea:</b> {{ f.flujos }}</span> }
-            <span class="dato fuente">Inventario de emisiones atmosféricas · Corantioquia 2021</span>
+    }
+
+    <!-- Ayuda: un solo ícono abre el tutorial del mapa (antes era un panel fijo con el texto de ayuda) -->
+    <button type="button" class="ayuda-btn" [class.nueva]="!tutorialVisto()" (click)="abrirTutorial()"
+            aria-label="Cómo se usa el mapa" title="Cómo se usa el mapa">
+      <span aria-hidden="true">?</span>
+    </button>
+
+    <!-- Leyendas de las capas de redes: flotan bajo el ícono de ayuda mientras la capa está encendida -->
+    @if (hayRedes && redesVisibles() && !subterraneo()) {
+      <div class="ley-flot" role="group" aria-label="Redes y servicios">
+        <span class="ley-flot__t">🔌 Redes y servicios</span>
+        @for (l of leyendaRedes; track l.nombre) {
+          <span class="ley-flot__i"><i [style.background]="l.color"></i>{{ l.nombre }}<small>{{ l.nota }}</small></span>
+        }
+      </div>
+    }
+    @if (subterraneo()) {
+      <div class="ley-flot" role="group" aria-label="Redes subterráneas">
+        <span class="ley-flot__t">🕳️ Redes de EPM</span>
+        @for (l of leyendaSub; track l.nombre) {
+          <span class="ley-flot__i"><i [style.background]="l.color"></i>{{ l.nombre }}</span>
+        }
+      </div>
+    }
+
+    <!-- Fichas de lo seleccionado que no es una vereda con proyección: industria, red, río o zona sin datos -->
+    @if (fabricaSeleccion(); as f) {
+      <aside class="pin-panel fab-panel" style="--c:#6b7280" aria-label="Detalle de la industria">
+        <button type="button" class="cerrar" (click)="cerrarSeleccion()" aria-label="Cerrar detalle">×</button>
+        <section class="col col-cab">
+          <div class="pin-cab">
+            <span class="pin-glifo">🏭</span>
+            <div><span class="tipo">Industria · {{ f.sector }}</span><strong>{{ f.nombre }}</strong></div>
           </div>
-        } @else {
-        @if (redSeleccion(); as rd) {
-          <div class="ficha">
-            <span class="tipo">{{ rd.detalle }}</span>
-            <strong>{{ rd.nombre }}</strong>
-          </div>
-        } @else if (rioSeleccion()) {
-          <div class="ficha">
-            <span class="tipo">{{ rioSeleccion()!.detalle }}</span>
-            <strong>{{ rioSeleccion()!.nombre }}</strong>
-          </div>
-        } @else {
-          @if (seleccion(); as z) {
-            <div class="ficha">
-              <span class="tipo">{{ tipoDe(z) }}</span>
-              <strong>{{ z.n }}</strong>
-              @if (datosDe(z); as d) {
-                <span class="dato">{{ d.pob | number:'1.0-0' }} personas · {{ d.viv | number:'1.0-0' }} viviendas ({{ anio() }})</span>
-              }
+          @if (f.direccion) { <p class="fab-dato">{{ f.direccion }}</p> }
+          <p class="fab-dato">{{ f.resumen }}</p>
+          <p class="pin-fuente">Inventario de emisiones atmosféricas · Corantioquia 2021</p>
+        </section>
+        <section class="col">
+          <dl>
+            <div><dt>Combustibles</dt><dd>{{ f.combustibles }}</dd></div>
+            <div><dt>Control de emisiones</dt><dd>{{ f.control }}</dd></div>
+            @if (f.flujos) { <div><dt>Medido en chimenea</dt><dd>{{ f.flujos }}</dd></div> }
+          </dl>
+        </section>
+        <section class="col">
+          <h3>Emisiones estimadas</h3>
+          @if (f.emisiones.length) {
+            <div class="fab-emis">
+              @for (e of f.emisiones; track e.k) { <div><span>{{ e.k }}</span><b>{{ e.v }}</b></div> }
             </div>
           } @else {
-            <p>Pasa el cursor sobre una vereda o un río y haz clic para seleccionarlo.</p>
+            <p class="vacio">Sin emisiones estimadas en el inventario.</p>
           }
+        </section>
+      </aside>
+    } @else if (redSeleccion() || rioSeleccion() || (seleccion() && !proyeccion(seleccion()!) && !pinFicha())) {
+      <aside class="sel-chip" aria-live="polite">
+        @let rd = redSeleccion();
+        @let rio = rioSeleccion();
+        @let z = seleccion();
+        @if (rd) {
+          <span class="tipo">{{ rd.detalle }}</span><strong>{{ rd.nombre }}</strong>
+        } @else if (rio) {
+          <span class="tipo">{{ rio.detalle }}</span><strong>{{ rio.nombre }}</strong>
+        } @else if (z) {
+          <span class="tipo">{{ tipoDe(z) }}</span><strong>{{ z.n }}</strong>
+          @if (datosDe(z); as d) { <span class="dato">{{ d.pob | number:'1.0-0' }} personas · {{ d.viv | number:'1.0-0' }} viviendas ({{ anio() }})</span> }
         }
-        }
-        @if (hayPoblacion() && !fabricaSeleccion()) {
-          <div class="anios" role="group" aria-label="Año de la población">
-            <span>Año</span>
-            @for (a of aniosPoblacion; track a) {
-              <button type="button" [class.activo]="a === anio()" [attr.aria-pressed]="a === anio()" (click)="cambiarAnio(a)">{{ a }}</button>
-            }
-          </div>
-        }
-        @if (hayRedes && redesVisibles() && !subterraneo()) {
-          <div class="leyenda" role="group" aria-label="Redes y servicios">
-            <span class="leyenda-t">Redes y servicios</span>
-            @for (l of leyendaRedes; track l.nombre) {
-              <span class="ley activa" [style.--c]="l.color"><span class="medalla-ley" [style.background]="l.color"></span><span class="ley-t">{{ l.nombre }}<small>{{ l.nota }}</small></span></span>
-            }
-          </div>
-        }
-        @if (subterraneo()) {
-          <div class="leyenda" role="group" aria-label="Redes subterráneas">
-            <span class="leyenda-t">Redes de EPM</span>
-            @for (l of leyendaSub; track l.nombre) {
-              <span class="ley activa" [style.--c]="l.color"><span class="medalla-ley" [style.background]="l.color"></span><span class="ley-t">{{ l.nombre }}</span></span>
-            }
-          </div>
-        }
-        <button type="button" class="vista" (click)="vistaGeneral()">Vista general</button>
-        <p class="ayuda">Arrastra para desplazarte · rueda para acercar · rueda presionada para girar e inclinar · clic derecho para inclinar</p>
-      } @else if (fabricaSeleccion() || rioSeleccion() || redSeleccion() || seleccion()) {
-        <p class="resumen">{{ fabricaSeleccion()?.nombre ?? redSeleccion()?.nombre ?? rioSeleccion()?.nombre ?? seleccion()!.n }}</p>
-      }
-    </div>
+        <button type="button" class="cerrar" (click)="redSeleccion() || rioSeleccion() ? cerrarSeleccion() : cerrarZona()" aria-label="Cerrar">×</button>
+      </aside>
+    }
 
-    @if (!pinFicha() && seleccion(); as z) {
+    <!-- Tutorial al estilo de un juego: niveles, barra de progreso y controles dibujados -->
+    @if (tutorialAbierto()) {
+      @let paso = pasosTutorial[pasoTutorial()];
+      <div class="tuto" role="dialog" aria-modal="true" aria-labelledby="tuto-t" (keydown)="teclaTutorial($event)" (click)="cerrarTutorial()">
+        <div class="tuto__carta" [style.--c]="paso.color" (click)="$event.stopPropagation()" tabindex="-1" #cartaTuto>
+          <div class="tuto__barra" aria-hidden="true"><i [style.width.%]="(pasoTutorial() + 1) / pasosTutorial.length * 100"></i></div>
+          <div class="tuto__cab">
+            <span class="tuto__nivel">Nivel {{ pasoTutorial() + 1 }} de {{ pasosTutorial.length }}</span>
+            <span class="tuto__xp">+{{ (pasoTutorial() + 1) * 50 }} XP</span>
+            <button type="button" class="tuto__saltar" (click)="cerrarTutorial()">Saltar ✕</button>
+          </div>
+          @for (p of [paso]; track pasoTutorial()) {
+            <div class="tuto__cuerpo">
+              <span class="tuto__emblema" aria-hidden="true">{{ p.emblema }}</span>
+              <h2 id="tuto-t">{{ p.titulo }}</h2>
+              <p>{{ p.texto }}</p>
+              <ul class="tuto__controles">
+                @for (c of p.controles; track c.accion) {
+                  <li>
+                    <span class="tuto__teclas">@for (k of c.teclas; track $index) { <kbd>{{ k }}</kbd> }</span>
+                    <span>{{ c.accion }}</span>
+                  </li>
+                }
+              </ul>
+            </div>
+          }
+          <div class="tuto__pie">
+            <div class="tuto__puntos" aria-hidden="true">
+              @for (p of pasosTutorial; track $index; let i = $index) { <i [class.on]="i <= pasoTutorial()"></i> }
+            </div>
+            @if (pasoTutorial() > 0) { <button type="button" class="tuto__atras" (click)="moverTutorial(-1)">◀ Atrás</button> }
+            @if (pasoTutorial() < pasosTutorial.length - 1) {
+              <button type="button" class="tuto__sig" (click)="moverTutorial(1)">Siguiente ▶</button>
+            } @else {
+              <button type="button" class="tuto__sig tuto__sig--fin" (click)="cerrarTutorial()">¡A explorar! 🚀</button>
+            }
+          </div>
+        </div>
+      </div>
+    }
+
+    @if (!pinFicha() && !fabricaSeleccion() && seleccion(); as z) {
       @if (proyeccion(z); as pr) {
         <aside class="pin-panel zona-panel" aria-label="Proyección de población de la vereda">
           <button type="button" class="cerrar" (click)="cerrarZona()" aria-label="Cerrar detalle">×</button>
@@ -883,7 +934,7 @@ const TIPOS_ZONA: Record<string, string> = {
             <thead><tr><th>Año</th><th>Personas</th><th>Viviendas</th></tr></thead>
             <tbody>
               @for (a of pr.anios; track a.anio) {
-                <tr [class.activa]="a.actual"><td>{{ a.anio }}</td><td>{{ a.pob | number:'1.0-0' }}</td><td>{{ a.viv | number:'1.0-0' }}</td></tr>
+                <tr [class.activa]="a.actual"><td><button type="button" class="anio-btn" [attr.aria-pressed]="a.actual" (click)="cambiarAnio(a.anio)" [title]="'Ver la población de ' + a.anio + ' en el mapa'">{{ a.anio }}</button></td><td>{{ a.pob | number:'1.0-0' }}</td><td>{{ a.viv | number:'1.0-0' }}</td></tr>
               }
             </tbody>
           </table>
@@ -1014,6 +1065,9 @@ const TIPOS_ZONA: Record<string, string> = {
     }
 
     <div class="zoom">
+      <button type="button" class="zoom__casa" (click)="vistaGeneral()" aria-label="Vista general" title="Vista general: ver todo el municipio">
+        <svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true"><path d="M3 11l9-7 9 7M5 10v10h5v-6h4v6h5V10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
       <button type="button" (click)="acercar(0.75)" aria-label="Acercar">+</button>
       <button type="button" (click)="acercar(1.33)" aria-label="Alejar">−</button>
     </div>
@@ -1076,7 +1130,7 @@ const TIPOS_ZONA: Record<string, string> = {
     /* Leyenda horizontal en la parte superior del mapa; los paneles van debajo. */
     :host { --alto-ley: 52px; }
     /* Solo íconos; el nombre brota del ícono al pasar el cursor (o con el foco del teclado), sin mover la fila. */
-    .barra-ley { position: absolute; z-index: 11; top: 12px; left: 0; right: 0; margin-inline: auto; width: fit-content; max-width: calc(100% - 32px); box-sizing: border-box;
+    .barra-ley { position: absolute; z-index: 11; top: 12px; left: 0; right: 0; margin-inline: auto; width: fit-content; max-width: calc(100% - 156px); box-sizing: border-box;
       border-radius: 999px; background: rgba(255,255,255,.82); backdrop-filter: blur(8px); box-shadow: 0 6px 24px rgba(30,60,90,.2);
       font: .9rem system-ui; color: #26425a; }
     .barra-ley .pista { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2px; padding: 5px 8px; }
@@ -1115,21 +1169,123 @@ const TIPOS_ZONA: Record<string, string> = {
     @media (prefers-reduced-motion: reduce) {
       .barra-ley .medalla-ley, .barra-ley .ley-nombre, .barra-ley .ley-nombre b, .barra-ley .ley-nombre i { transition: none; }
     }
-    .panel { position: absolute; z-index: 10; top: calc(var(--alto-ley) + 24px); left: 16px; width: 260px; padding: 14px 16px; border-radius: 16px;
-      background: rgba(255,255,255,.82); backdrop-filter: blur(8px); box-shadow: 0 6px 24px rgba(30,60,90,.2);
-      font: .9rem system-ui; color: #26425a; box-sizing: border-box; max-width: calc(100% - 32px); max-height: calc(100% - var(--alto-ley) - 40px); overflow-y: auto; overscroll-behavior: contain; }
-    .panel .cabecera { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
-    .panel.cerrado { width: auto; min-width: 190px; padding-bottom: 10px; }
-    .panel.cerrado .cabecera { margin-bottom: 0; }
-    .panel .resumen { margin: 6px 0 0; font-weight: 700; }
-    .panel .plegar { flex: none; width: 28px; height: 28px; padding: 0; display: grid; place-items: center;
-      border-radius: 50%; background: rgba(38,66,90,.1); color: #26425a; transition: transform .2s; }
-    .panel .plegar:hover { background: rgba(38,66,90,.2); }
-    .panel.cerrado .plegar { transform: rotate(180deg); }
-    .panel h1 { margin: 0; font-size: 1.15rem; }
-    .panel h1 small { display: block; font-weight: 500; font-size: .75rem; color: #6b8294; }
-    .panel p { margin: 0 0 10px; }
-    .panel .ayuda { font-size: .72rem; color: #6b8294; margin: 10px 0 0; }
+    /* Tarjeta de la capa tocada: abajo a la izquierda, translúcida y liviana, sin tapar el mapa */
+    .capa-info { position: absolute; z-index: 12; left: 16px; bottom: 30px; width: 270px; box-sizing: border-box;
+      padding: 10px 12px 10px 14px; border-radius: 14px; background: rgba(255,255,255,.58);
+      backdrop-filter: blur(12px) saturate(1.3); -webkit-backdrop-filter: blur(12px) saturate(1.3);
+      border: 1px solid rgba(255,255,255,.6); box-shadow: 0 4px 18px rgba(20,40,60,.14); font: .78rem system-ui; color: #23394d;
+      animation: capa-info .2s ease-out; }
+    /* hilo de color de la capa a la izquierda, en lugar de un borde pesado */
+    .capa-info::before { content: ''; position: absolute; left: 0; top: 12px; bottom: 12px; width: 3px; border-radius: 0 3px 3px 0; background: var(--c); }
+    @keyframes capa-info { from { opacity: 0; transform: translateY(8px); } }
+    /* si abajo hay una franja de detalle o una cápsula de selección, la tarjeta se ubica encima */
+    :host:has(.pin-panel) .capa-info { bottom: calc(var(--alto-det) + 28px); }
+    :host:has(.sel-chip) .capa-info { bottom: 130px; }
+    .barra-ley:has(~ .capa-info) .ley-nombre { display: none; }
+    .capa-info__x { position: absolute; top: 6px; right: 6px; width: 22px; height: 22px; padding: 0; border-radius: 50%; background: transparent; color: #6b8294; font-size: .95rem; line-height: 1; }
+    .capa-info__x:hover { background: rgba(38,66,90,.1); color: #23394d; }
+    .capa-info__cab { display: flex; align-items: center; gap: 8px; padding-right: 20px; }
+    .capa-info__glifo { flex: none; width: 26px; height: 26px; display: grid; place-items: center; border-radius: 50%; font-size: .85rem;
+      background: color-mix(in srgb, var(--c) 30%, transparent); }
+    .capa-info__cab strong { display: block; font-size: .86rem; font-weight: 650; line-height: 1.2; }
+    .capa-info__estado { font-size: .66rem; color: #7b8f9e; }
+    .capa-info__estado.on { color: #3F8A3A; }
+    .capa-info__total { margin-left: auto; text-align: right; font-size: 1.1rem; font-weight: 700; line-height: 1; }
+    .capa-info__total small { display: block; font-size: .58rem; font-weight: 500; color: #6b8294; }
+    .capa-info__txt { margin: 6px 0 4px; line-height: 1.38; color: #3f5a6e; }
+    .capa-info__tipos { list-style: none; margin: 0 0 4px; padding: 0; display: grid; gap: 0; }
+    .capa-info__tipos li { display: flex; justify-content: space-between; gap: 10px; padding: 2px 0; font-size: .74rem; }
+    .capa-info__tipos span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #3f5a6e; }
+    .capa-info__tipos b { font-weight: 600; }
+    .capa-info__fuente { margin: 4px 0 0; padding-top: 4px; border-top: 1px solid rgba(38,66,90,.1); font-size: .66rem; color: #6b8294; }
+    .capa-info__fuente b { font-weight: 600; color: #3f5a6e; }
+    @media (prefers-reduced-motion: reduce) { .capa-info { animation: none; } }
+
+    /* Botón de ayuda: arriba a la derecha, a la altura de la barra de capas. La primera vez late para invitar a abrirlo. */
+    .ayuda-btn { position: absolute; z-index: 11; top: 12px; right: 16px; width: 46px; height: 46px; padding: 0; display: grid; place-items: center;
+      border-radius: 50%; background: rgba(255,255,255,.86); color: #26425a; backdrop-filter: blur(8px);
+      box-shadow: 0 6px 24px rgba(30,60,90,.2); font: 800 1.25rem/1 system-ui; transition: transform .2s cubic-bezier(.3,1.6,.5,1), background .15s; }
+    .ayuda-btn:hover { background: #fff; transform: scale(1.08) rotate(-8deg); }
+    /* el «?» en el verde degradado del jardín (el mismo de la marca y de Ingresar) */
+    .ayuda-btn span { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; color: #fff;
+      background: linear-gradient(140deg, #8CC63F, #3F8A3A 70%); box-shadow: 0 3px 9px rgba(63, 138, 58, .32); }
+    .ayuda-btn:hover span { background: linear-gradient(140deg, #9BD24A, #458C2E 70%); }
+    .ayuda-btn.nueva::after { content: ''; position: absolute; inset: -4px; border-radius: 50%; border: 3px solid #f5b400; animation: latir 1.6s ease-out infinite; }
+    @keyframes latir { from { opacity: .9; transform: scale(.9); } to { opacity: 0; transform: scale(1.35); } }
+    /* leyenda de redes encendidas, bajo el botón de ayuda */
+    .ley-flot { position: absolute; z-index: 10; top: 70px; right: 16px; width: 230px; display: grid; gap: 4px; padding: 10px 12px; border-radius: 14px;
+      background: rgba(255,255,255,.86); backdrop-filter: blur(8px); box-shadow: 0 6px 24px rgba(30,60,90,.18); font: .78rem system-ui; color: #26425a; }
+    .ley-flot__t { font-weight: 700; font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; color: #6b8294; margin-bottom: 2px; }
+    .ley-flot__i { display: grid; grid-template-columns: 14px 1fr; column-gap: 8px; align-items: center; font-weight: 600; }
+    .ley-flot__i i { width: 14px; height: 14px; border-radius: 50%; box-shadow: 0 0 0 2px #fff; }
+    .ley-flot__i small { grid-column: 2; font-weight: 400; font-size: .68rem; color: #6b8294; }
+    /* ficha corta (río, red o zona sin proyección): cápsula abajo a la izquierda */
+    .sel-chip { position: absolute; z-index: 12; left: 16px; bottom: 30px; max-width: min(420px, calc(100% - 200px)); display: flex; flex-direction: column; gap: 1px;
+      padding: 10px 44px 10px 16px; border-radius: 14px; background: rgba(255,255,255,.92); backdrop-filter: blur(8px);
+      box-shadow: 0 6px 24px rgba(30,60,90,.22); border-left: 5px solid #26425a; font: .9rem system-ui; color: #26425a; animation: subir-det .2s ease-out; }
+    .sel-chip .tipo { font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: #6b8294; }
+    .sel-chip strong { font-size: 1.05rem; }
+    .sel-chip .dato { font-size: .78rem; color: #4d6a80; }
+    .sel-chip .cerrar { position: absolute; top: 8px; right: 8px; width: 28px; height: 28px; padding: 0; border-radius: 50%; background: rgba(38,66,90,.1); color: #26425a; font-size: 1.2rem; line-height: 1; }
+    /* ficha de industria en la franja inferior */
+    .fab-panel { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr); grid-auto-flow: row; }
+    .fab-panel .fab-dato { margin: 0 0 6px; font-size: .8rem; color: #4d6a80; }
+    .fab-panel h3 { margin: 0 0 6px; font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: #6b8294; }
+    .fab-panel .fab-emis { display: grid; gap: 2px; font-size: .82rem; }
+    .fab-panel .fab-emis div { display: flex; justify-content: space-between; gap: 10px; padding: 3px 0; border-top: 1px solid rgba(38,66,90,.1); }
+    .fab-panel .fab-emis b { font-weight: 700; }
+    .fab-panel .vacio { margin: 0; font-size: .8rem; color: #6b8294; }
+    /* año de la población: se elige en la tabla de la vereda */
+    .anio-btn { padding: 2px 8px; border-radius: 999px; background: rgba(38,66,90,.08); color: #26425a; font: inherit; font-size: .8rem; }
+    .anio-btn:hover { background: rgba(38,66,90,.18); }
+    .anio-btn[aria-pressed="true"] { background: #26425a; color: #fff; }
+    .zoom .zoom__casa { display: grid; place-items: center; margin-bottom: 4px; }
+
+    /* Tutorial: carta de juego con barra de experiencia, niveles y controles en teclas */
+    .tuto { position: absolute; inset: 0; z-index: 30; display: grid; place-items: center; padding: 16px;
+      background: radial-gradient(circle at 50% 40%, rgba(10,25,40,.35), rgba(10,25,40,.72)); backdrop-filter: blur(3px); animation: tuto-fondo .2s ease-out; }
+    @keyframes tuto-fondo { from { opacity: 0; } }
+    .tuto__carta { position: relative; width: min(520px, 100%); max-height: calc(100% - 16px); overflow: auto; box-sizing: border-box; outline: none;
+      padding: 18px 22px 18px; border-radius: 22px; background: linear-gradient(170deg, #fffdf8, #f2f6fa); color: #1f3346;
+      box-shadow: 0 24px 60px rgba(0,0,0,.4), 0 0 0 3px var(--c), 0 0 34px color-mix(in srgb, var(--c) 55%, transparent);
+      font: .92rem system-ui; animation: tuto-carta .32s cubic-bezier(.3,1.5,.5,1); transition: box-shadow .3s; }
+    @keyframes tuto-carta { from { opacity: 0; transform: translateY(16px) scale(.94); } }
+    .tuto__barra { height: 8px; border-radius: 999px; background: rgba(31,51,70,.1); overflow: hidden; margin-bottom: 12px; }
+    .tuto__barra i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #f5b400, var(--c));
+      transition: width .4s cubic-bezier(.3,1.2,.5,1); }
+    .tuto__cab { display: flex; align-items: center; gap: 10px; }
+    .tuto__nivel { font: 800 .72rem system-ui; letter-spacing: .1em; text-transform: uppercase; color: var(--c); }
+    .tuto__xp { padding: 2px 8px; border-radius: 999px; background: #fff3c4; color: #8a5a00; font: 800 .72rem system-ui; }
+    .tuto__saltar { margin-left: auto; padding: 4px 10px; background: transparent; color: #6b8294; font-size: .78rem; }
+    .tuto__saltar:hover { background: rgba(31,51,70,.08); }
+    .tuto__cuerpo { text-align: center; padding: 6px 4px 2px; animation: tuto-paso .3s ease-out; }
+    @keyframes tuto-paso { from { opacity: 0; transform: translateX(14px); } }
+    .tuto__emblema { display: grid; place-items: center; width: 74px; height: 74px; margin: 6px auto 8px; font-size: 2.3rem; border-radius: 22px;
+      background: color-mix(in srgb, var(--c) 16%, #fff); box-shadow: inset 0 -4px 0 color-mix(in srgb, var(--c) 30%, transparent);
+      animation: tuto-emblema .5s cubic-bezier(.3,1.8,.5,1); }
+    @keyframes tuto-emblema { from { transform: scale(.3) rotate(-25deg); } }
+    .tuto h2 { margin: 0 0 6px; font-size: 1.3rem; }
+    .tuto__cuerpo > p { margin: 0 auto 12px; max-width: 44ch; color: #4a6072; line-height: 1.45; }
+    .tuto__controles { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; text-align: left; }
+    .tuto__controles li { display: grid; grid-template-columns: minmax(0, auto) 1fr; align-items: center; gap: 12px; padding: 7px 10px; border-radius: 12px;
+      background: rgba(31,51,70,.05); font-size: .84rem; }
+    .tuto__teclas { display: flex; flex-wrap: wrap; gap: 4px; }
+    .tuto kbd { display: inline-block; padding: 3px 8px; border-radius: 7px; background: #fff; color: #1f3346; white-space: nowrap;
+      font: 700 .74rem system-ui; border: 1px solid rgba(31,51,70,.2); box-shadow: 0 2px 0 rgba(31,51,70,.25); }
+    .tuto__pie { display: flex; align-items: center; gap: 8px; margin-top: 16px; }
+    .tuto__puntos { display: flex; gap: 5px; margin-right: auto; }
+    .tuto__puntos i { width: 9px; height: 9px; border-radius: 50%; background: rgba(31,51,70,.18); transition: background .2s, transform .2s; }
+    .tuto__puntos i.on { background: var(--c); transform: scale(1.15); }
+    .tuto__atras { background: transparent; color: #26425a; box-shadow: inset 0 0 0 1.5px rgba(38,66,90,.3); }
+    .tuto__atras:hover { background: rgba(38,66,90,.08); }
+    .tuto__sig { background: var(--c); color: #fff; padding: 9px 18px; box-shadow: 0 4px 0 color-mix(in srgb, var(--c) 60%, #000); transition: transform .1s, box-shadow .1s; }
+    .tuto__sig:hover { background: var(--c); filter: brightness(1.08); }
+    .tuto__sig:active { transform: translateY(3px); box-shadow: 0 1px 0 color-mix(in srgb, var(--c) 60%, #000); }
+    .tuto__sig--fin { background: linear-gradient(135deg, #f5b400, #e07b00); box-shadow: 0 4px 0 #a35700; }
+    @media (prefers-reduced-motion: reduce) {
+      .tuto, .tuto__carta, .tuto__cuerpo, .tuto__emblema, .ayuda-btn.nueva::after { animation: none; }
+    }
+
     /* Detalle de zona o lugar: franja horizontal en la parte inferior del mapa, organizada en columnas. */
     :host { --alto-det: clamp(190px, 34%, 290px); }
     .pin-panel { position: absolute; z-index: 12; left: 16px; right: 16px; bottom: 16px; height: var(--alto-det); box-sizing: border-box;
@@ -1181,7 +1337,6 @@ const TIPOS_ZONA: Record<string, string> = {
     .lugar-panel .col-datos dl { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); column-gap: 18px; }
     /* Con el detalle abierto, los controles suben por encima de la franja y el panel lateral se acorta. */
     :host:has(.pin-panel) .zoom, :host:has(.pin-panel) .foto, :host:has(.pin-panel) .conducir { bottom: calc(var(--alto-det) + 28px); }
-    :host:has(.pin-panel) .panel { max-height: calc(100% - var(--alto-ley) - var(--alto-det) - 52px); }
     :host:has(.pin-panel) .creditos { display: none; }
     .pin-panel .cerrar { position: absolute; top: 8px; right: 8px; width: 28px; height: 28px; padding: 0; border-radius: 50%;
       background: rgba(38,66,90,.1); color: #26425a; font-size: 1.2rem; line-height: 1; }
@@ -1240,37 +1395,6 @@ const TIPOS_ZONA: Record<string, string> = {
     .pin-panel .volver-zona:hover { text-decoration: underline; background: none; }
     .zona-panel details li button:hover { background: rgba(38,66,90,.1); }
     .pin-fuente { margin: 12px 0 0; font-size: .72rem; color: #6b8294; }
-    .ficha { display: flex; flex-direction: column; gap: 2px; margin-bottom: 10px; }
-    .ficha .tipo { font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: #6b8294; }
-    .ficha strong { font-size: 1.1rem; }
-    .ficha.fab { max-height: 46dvh; overflow: auto; padding-right: 4px; }
-    .ficha .emisiones { display: grid; gap: 1px; margin: 4px 0 2px; font-size: .78rem; }
-    .ficha .emisiones div { display: flex; justify-content: space-between; gap: 10px; }
-    .ficha .emisiones b { font-weight: 700; color: #26425a; }
-    .ficha .dato b { font-weight: 700; color: #26425a; }
-    .ficha .dato.fuente { font-size: .66rem; color: #8aa0b0; margin-top: 4px; }
-    .ficha .dato { font-size: .78rem; color: #4d6a80; }
-    .leyenda { display: flex; flex-direction: column; gap: 4px; margin-bottom: 10px; }
-    .leyenda-t { font-size: .78rem; color: #6b8294; }
-    .leyenda .ley { display: flex; align-items: center; gap: 8px; padding: 4px 8px; font-size: .78rem; text-align: left;
-      background: rgba(38,66,90,.08); color: #6b8294; }
-    .leyenda .ley .medalla-ley { flex: none; width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center;
-      font-size: .75rem; background: #cbd5df; filter: grayscale(1); opacity: .7; }
-    .leyenda .ley { min-width: 0; line-height: 1.25; }
-    .leyenda .ley-fila { display: flex; gap: 4px; }
-    .leyenda .ley-fila .ley { flex: 1; }
-    .leyenda .ley-plegar { flex: none; width: 30px; padding: 0; background: rgba(38,66,90,.12); color: #26425a; font-size: .9rem; transition: transform .15s; }
-    .leyenda .ley-plegar.abierto { transform: rotate(180deg); }
-    .leyenda .ley-hijos { display: flex; flex-direction: column; gap: 4px; margin-left: 14px; padding-left: 8px; border-left: 2px solid rgba(38,66,90,.2); }
-    .leyenda .ley-t { min-width: 0; overflow-wrap: anywhere; }
-    .leyenda .ley-t small { display: block; font-weight: 400; font-size: .68rem; color: #6b8294; }
-    .leyenda .ley.activa { background: rgba(38,66,90,.16); color: #26425a; font-weight: 600; }
-    .leyenda .ley.activa .medalla-ley { background: var(--c); filter: none; opacity: 1; }
-    .anios { display: flex; align-items: center; gap: 4px; margin-bottom: 10px; font-size: .78rem; color: #6b8294; }
-    .anios span { margin-right: 2px; }
-    .anios button { padding: 4px 9px; font-size: .75rem; background: rgba(38,66,90,.12); color: #26425a; }
-    .anios button:hover { background: rgba(38,66,90,.22); }
-    .anios button.activo { background: #26425a; color: #fff; }
     /* capa que aún carga: aro que gira alrededor del ícono */
     .barra-ley .ley.cargando { cursor: progress; }
     .barra-ley .ley.cargando::after { content: ''; position: absolute; inset: 2px; border-radius: 50%;
@@ -1280,8 +1404,6 @@ const TIPOS_ZONA: Record<string, string> = {
     .barra-ley .pista > .ley:last-child .ley-nombre { left: auto; right: 0; transform: translate(0, -6px) scale(.85); transform-origin: calc(100% - 18px) -8px; }
     .barra-ley .pista > .ley:last-child:hover .ley-nombre, .barra-ley .pista > .ley:last-child:focus-visible .ley-nombre { transform: translate(0, 0) scale(1); }
     .barra-ley .pista > .ley:last-child .ley-nombre::before { left: auto; right: 13px; transform: rotate(45deg); }
-    .panel .vista { display: block; width: 100%; background: transparent; color: #26425a; box-shadow: inset 0 0 0 1.5px #26425a; }
-    .panel .vista:hover { background: rgba(38,66,90,.1); }
     button { border: 0; border-radius: 10px; padding: 7px 14px; background: #26425a; color: #fff;
       font: 600 .82rem system-ui; cursor: pointer; }
     button:hover { background: #35597a; }
@@ -1453,6 +1575,78 @@ export class Mapa3dComponent implements AfterViewInit {
   alternarCapa(id: string): void {
     this.capasActivas.update(s => { const n = new Set(s); n.has(id) ? n.delete(id) : n.add(id); return n; });
   }
+
+  // ───────────────── tarjeta de la capa tocada en la barra ─────────────────
+  /** capa cuya tarjeta de resumen está abierta y centro horizontal de su ícono dentro de la barra */
+  readonly capaInfo = signal<{ id: string; x: number } | null>(null);
+  private tCapaInfo = 0;
+  private nBarrios = 0;
+
+  mostrarCapa(ev: Event, id: string): void {
+    clearTimeout(this.tCapaInfo);
+    // se llama después de alternar la capa: si quedó apagada no hay nada que resumir
+    if (!this.resumenCapa(id).activa) { this.capaInfo.set(null); return; }
+    const boton = (ev.currentTarget ?? ev.target) as HTMLElement;
+    const caja = boton.getBoundingClientRect(), barra = this.barraLey.nativeElement.getBoundingClientRect();
+    this.capaInfo.set({ id, x: caja.left + caja.width / 2 - barra.left });
+    // se cierra sola a los 8 s, o al tocar el mapa u otra capa
+    clearTimeout(this.tCapaInfo);
+    this.tCapaInfo = window.setTimeout(() => this.capaInfo.set(null), 8000);
+  }
+
+  /** Resumen de una capa con lo que ya está cargado: cuántos elementos, de qué tipos y de qué fuente salen. */
+  resumenCapa(id: string): { nombre: string; glifo: string; color: string; activa: boolean; total: number | null; unidad: string; texto: string; tipos: { t: string; n: number }[]; fuentes: string[] } {
+    const contar = (vals: string[]) => {
+      const m = new Map<string, number>();
+      for (const v of vals) if (v) m.set(v, (m.get(v) ?? 0) + 1);
+      return [...m].sort((a, b) => b[1] - a[1]).slice(0, 4).map(([t, n]) => ({ t, n }));
+    };
+    const unicas = (vals: (string | undefined)[]) => [...new Set(vals.filter((v): v is string => !!v))].slice(0, 3);
+    const cat = CATEGORIA.get(id as never) as { nombre: string; color: string } | undefined;
+    if (cat) {
+      const qs = this.equipamientos.filter(q => q.datos.p.c === id);
+      return { nombre: cat.nombre, glifo: GLIFO[id as keyof typeof GLIFO], color: cat.color, activa: this.capasActivas().has(id),
+        total: qs.length, unidad: qs.length === 1 ? 'lugar' : 'lugares',
+        texto: 'Lugares registrados en el municipio. Toca un pin en el mapa para ver su ficha completa.',
+        tipos: contar(qs.map(q => q.datos.p.t)), fuentes: unicas(qs.map(q => q.datos.p.f)) };
+    }
+    const srv = SERVICIOS.find(s => s.id === id);
+    if (srv || id === 'servicios') {
+      const es = this.servicios.filter(e => (srv ? e.pin!.cat === id : true));
+      const grupo = srv ?? SERVICIOS_GRUPO;
+      return { nombre: grupo.nombre, glifo: grupo.glifo, color: grupo.color,
+        activa: srv ? this.capasActivas().has(id) : this.serviciosActivos() === this.subtiposServicios.length,
+        total: es.length, unidad: es.length === 1 ? 'instalación' : 'instalaciones',
+        texto: srv ? 'Instalaciones de este servicio público en el municipio.' : 'Energía, acueducto, alcantarillado, gas y demás instalaciones de servicios públicos.',
+        tipos: contar(es.map(e => e.pin!.tipo)), fuentes: unicas(es.map(e => e.pin!.fuente)) };
+    }
+    switch (id) {
+      case 'industria':
+        return { nombre: 'Industrias', glifo: GLIFO.industria, color: COLOR_INDUSTRIA, activa: this.capasActivas().has(id),
+          total: this.fabricas.length, unidad: this.fabricas.length === 1 ? 'industria' : 'industrias',
+          texto: 'Empresas con fuentes fijas de emisión: qué queman, cómo controlan el humo y cuánto emiten al año.',
+          tipos: contar(this.fabricas.map(f => SECTORES[f.datos.c] ?? f.datos.c)), fuentes: ['Inventario de emisiones atmosféricas · Corantioquia 2021'] };
+      case 'rios':
+        return { nombre: 'Ríos y quebradas', glifo: '≈', color: '#ffb300', activa: this.sistemaHidrico(), total: null, unidad: '',
+          texto: 'Resalta el río Medellín (Aburrá), las quebradas, los lagos y los embalses. Toca un cauce para ver su nombre.',
+          tipos: [], fuentes: ['IGAC, drenajes 1:100.000', 'OpenStreetMap'] };
+      case 'sub':
+        return { nombre: 'Subterráneo', glifo: '🕳️', color: '#a1887f', activa: this.subterraneo() || this.cargandoRedesAgua(),
+          total: this.elementosAgua.length || null, unidad: 'tramos y puntos',
+          texto: 'Vuelve el terreno transparente para ver las redes de acueducto y alcantarillado bajo el suelo.',
+          tipos: contar(this.elementosAgua.map(e => e.detalle.split(' · ')[0])), fuentes: ['Redes de acueducto y alcantarillado de EPM'] };
+      case 'barrios':
+        return { nombre: 'Barrios', glifo: '🏘️', color: '#ce93d8', activa: this.barriosVisibles() || this.cargandoBarrios(),
+          total: this.nBarrios || null, unidad: 'barrios',
+          texto: 'Límites de los barrios del casco urbano, con su nombre.',
+          tipos: [], fuentes: ['Catastro AMVA (límites)', 'PBOT de Girardota 2020 (nombres)'] };
+      default:
+        return { nombre: 'Redes', glifo: '🔌', color: '#4db6ac', activa: this.redesVisibles(),
+          total: this.elementosEnergia.length || null, unidad: 'elementos',
+          texto: 'Líneas de alta tensión, subestaciones y plantas visibles sobre el terreno.',
+          tipos: contar(this.elementosEnergia.map(e => e.detalle.split(' · ')[0])), fuentes: ['OpenStreetMap'] };
+    }
+  }
   private auraIndustrias: Aura | null = null;
   private agrupadorIconos: ReturnType<typeof crearAgrupador> | null = null;
   private equipHover = -1;
@@ -1576,6 +1770,11 @@ export class Mapa3dComponent implements AfterViewInit {
   private vistaInicial = { pos: new THREE.Vector3(), objetivo: new THREE.Vector3() };
 
   ngAfterViewInit(): void {
+    // la primera visita abre el tutorial (mientras el territorio termina de cargar); después queda en el ícono de ayuda
+    let visto = false;
+    try { visto = localStorage.getItem('mapa3d-tutorial-visto') === '1'; } catch { /* sin almacenamiento */ }
+    if (!visto) { this.tutorialVisto.set(false); setTimeout(() => this.abrirTutorial(), 600); }
+
     // La leyenda superior puede ocupar una o varias filas: los paneles se ubican debajo de su altura real.
     const obsLey = new ResizeObserver(() =>
       this.host.nativeElement.style.setProperty('--alto-ley', `${this.barraLey.nativeElement.offsetHeight}px`));
@@ -1654,10 +1853,71 @@ export class Mapa3dComponent implements AfterViewInit {
     });
   }
 
-  readonly panelAbierto = signal(true);
+  /** Cierra la industria, el río o la red seleccionados (sus fichas tienen el mismo botón de cerrar). */
+  cerrarSeleccion(): void {
+    this.seleccionarFabrica(-1, false);
+    this.seleccionarRio(null, false);
+    this.soltarRed();
+  }
 
-  alternarPanel(): void {
-    this.panelAbierto.update(v => !v);
+  // ───────────────────────── tutorial ─────────────────────────
+  /** Niveles del tutorial: qué se puede hacer en el mapa y con qué teclas o gestos. */
+  readonly pasosTutorial: readonly { emblema: string; color: string; titulo: string; texto: string; controles: { teclas: string[]; accion: string }[] }[] = [
+    { emblema: '🗺️', color: '#4F9A35', titulo: 'Bienvenido a Girardota en 3D',
+      texto: 'Tu misión: recorrer el municipio y descubrir sus veredas, su gente, sus lugares y lo que el plan de desarrollo promete en cada una.',
+      controles: [{ teclas: ['?'], accion: 'Vuelve a este tutorial cuando quieras con el botón de ayuda' }] },
+    { emblema: '🖱️', color: '#2C88C8', titulo: 'Muévete por el mapa',
+      texto: 'El mapa responde como un juego de estrategia: arrastra, acerca y gira la cámara hasta encontrar el mejor ángulo.',
+      controles: [
+        { teclas: ['Arrastrar'], accion: 'Desplazarte por el territorio' },
+        { teclas: ['Rueda'], accion: 'Acercar y alejar' },
+        { teclas: ['Rueda presionada'], accion: 'Girar e inclinar la cámara' },
+        { teclas: ['Clic derecho'], accion: 'Inclinar la vista' },
+      ] },
+    { emblema: '🏞️', color: '#C0841A', titulo: 'Explora las veredas',
+      texto: 'Cada vereda guarda su población, su infraestructura y los proyectos del plan que la nombran.',
+      controles: [
+        { teclas: ['Cursor encima'], accion: 'Resaltar una vereda o un río' },
+        { teclas: ['Clic'], accion: 'Abrir su ficha en la franja de abajo' },
+        { teclas: ['Doble clic'], accion: 'Aislar la zona y desvanecer el resto' },
+      ] },
+    { emblema: '🧭', color: '#8E5BB5', titulo: 'Enciende capas',
+      texto: 'La barra de íconos de arriba es tu inventario: colegios, salud, parques, ríos, servicios públicos, barrios y redes.',
+      controles: [
+        { teclas: ['Cursor encima'], accion: 'Ver el nombre de la capa' },
+        { teclas: ['Clic'], accion: 'Mostrarla u ocultarla en el mapa' },
+        { teclas: ['Clic en un pin'], accion: 'Abrir la ficha de ese lugar' },
+      ] },
+    { emblema: '🚗', color: '#D84F3F', titulo: 'Modos especiales',
+      texto: 'Abajo a la derecha están tus herramientas: toma fotos limpias del paisaje o maneja un carro por las vías del municipio.',
+      controles: [
+        { teclas: ['📷'], accion: 'Modo foto: oculta rótulos e íconos' },
+        { teclas: ['🚗'], accion: 'Conducir: W A S D o flechas, Shift turbo, Espacio freno, R reaparecer, Esc salir' },
+        { teclas: ['⌂'], accion: 'Vista general: volver a ver todo el municipio' },
+      ] },
+  ];
+  readonly tutorialAbierto = signal(false);
+  readonly pasoTutorial = signal(0);
+  readonly tutorialVisto = signal(true);
+  @ViewChild('cartaTuto') private cartaTuto?: ElementRef<HTMLElement>;
+
+  abrirTutorial(): void {
+    this.pasoTutorial.set(0);
+    this.tutorialAbierto.set(true);
+    setTimeout(() => this.cartaTuto?.nativeElement.focus());
+  }
+  cerrarTutorial(): void {
+    this.tutorialAbierto.set(false);
+    this.tutorialVisto.set(true);
+    try { localStorage.setItem('mapa3d-tutorial-visto', '1'); } catch { /* sin almacenamiento: se volverá a ofrecer */ }
+  }
+  moverTutorial(d: number): void {
+    this.pasoTutorial.update(p => Math.min(this.pasosTutorial.length - 1, Math.max(0, p + d)));
+  }
+  teclaTutorial(ev: KeyboardEvent): void {
+    if (ev.key === 'Escape') { this.cerrarTutorial(); ev.stopPropagation(); }
+    else if (ev.key === 'ArrowRight') this.moverTutorial(1);
+    else if (ev.key === 'ArrowLeft') this.moverTutorial(-1);
   }
 
   tipoDe(z: Zona): string { return TIPOS_ZONA[z.t ?? 'VE'] ?? 'Zona'; }
@@ -5027,6 +5287,7 @@ export class Mapa3dComponent implements AfterViewInit {
   }
 
   private construirBarrios(d: Barrios): void {
+    this.nBarrios = d.features.length;
     const grupo = new THREE.Group();
     const PASO = 8, ALTO = 10;                // m entre muestras del borde sobre el relieve · alto de la cinta
     d.features.forEach((f, i) => {
