@@ -406,6 +406,27 @@ const PARTES = new Map<string, { sitio: string; x: number; z: number; alto: numb
 /** Cuánto se levanta (metros del modelo) una vereda al elegirla; al pasar el cursor solo se le dibuja el borde. */
 const ALZA_ELEGIDA = 170;
 
+/** scripts/estimar_trafico_vias.py: vehículos por día estimados en cada tramo (escenario medio y rango bajo–alto). */
+interface TraficoRed {
+  anio: number; unidad: string; peaje: { obs: number };
+  tramos: { id: string; t: string; vd: number; min: number; max: number; c: string; conf: string; dc: boolean; g: [number, number][] }[];
+}
+/** scripts/proyectar_trafico_trapiche.py: serie del peaje El Trapiche, su modelo y los escenarios a 2035. */
+interface TraficoPeaje {
+  lat: number; lon: number;
+  base: { anio: number; tpd: number; pesados_pct: number };
+  modelo: { crec_tendencia: number; validacion: { mape: number } };
+  escenarios: Record<string, Record<string, { tpd: number; crec: number }>>;
+}
+/** Clases de tráfico (vehículos por día): color y grosor de la cinta sobre la vía. */
+const CLASES_TRAFICO = [
+  { c: 'muy alto', nombre: 'Muy alto', nota: 'más de 10,000', color: '#d32f2f', radio: 5, lejos: 0.0026 },
+  { c: 'alto', nombre: 'Alto', nota: '3,000 a 10,000', color: '#fb8c00', radio: 3.6, lejos: 0.0019 },
+  { c: 'medio', nombre: 'Medio', nota: '1,000 a 3,000', color: '#fdd835', radio: 2.6, lejos: 0.0013 },
+  { c: 'bajo', nombre: 'Bajo', nota: '300 a 1,000', color: '#c0ca33', radio: 1.8, lejos: 0.0008 },
+  { c: 'muy bajo', nombre: 'Muy bajo', nota: 'menos de 300', color: '#66bb6a', radio: 1.2, lejos: 0.0004 },
+] as const;
+
 /** scripts/generar_barrios.py: barrios del casco urbano (GeoJSON lon/lat). */
 interface Barrios {
   features: {
@@ -778,6 +799,11 @@ const TIPOS_ZONA: Record<string, string> = {
           <span class="medalla-ley" aria-hidden="true">🏘️</span>
           <span class="ley-nombre" aria-hidden="true"><b>Barrios</b><i>{{ cargandoBarrios() ? 'cargando los límites…' : 'límites del casco urbano' }}</i></span>
         </button>
+        <button type="button" class="ley" [class.activa]="flujoVisible()" [class.cargando]="cargandoFlujo()" [attr.aria-pressed]="flujoVisible()"
+                [disabled]="cargandoFlujo()" aria-label="Tráfico estimado" style="--c:#ef6c00" (click)="alternarFlujo(); mostrarCapa($event, 'trafico')">
+          <span class="medalla-ley" aria-hidden="true">🚗</span>
+          <span class="ley-nombre" aria-hidden="true"><b>Tráfico estimado</b><i>{{ cargandoFlujo() ? 'calculando la red…' : 'vehículos por día en cada vía' }}</i></span>
+        </button>
         @if (hayRedes) {
           <button type="button" class="ley" [class.activa]="redesVisibles()" [attr.aria-pressed]="redesVisibles()"
                   aria-label="Redes" style="--c:#4db6ac" (click)="alternarRedes(); mostrarCapa($event, 'redes')">
@@ -823,6 +849,15 @@ const TIPOS_ZONA: Record<string, string> = {
         @for (l of leyendaRedes; track l.nombre) {
           <span class="ley-flot__i"><i [style.background]="l.color"></i>{{ l.nombre }}<small>{{ l.nota }}</small></span>
         }
+      </div>
+    }
+    @if (flujoVisible() && !subterraneo() && !(hayRedes && redesVisibles())) {
+      <div class="ley-flot" role="group" aria-label="Tráfico estimado">
+        <span class="ley-flot__t">🚗 Vehículos por día</span>
+        @for (l of leyendaFlujo; track l.nombre) {
+          <span class="ley-flot__i"><i [style.background]="l.color"></i>{{ l.nombre }}<small>{{ l.nota }}</small></span>
+        }
+        <span class="ley-flot__nota">Estimación de modelo calibrada con el peaje El Trapiche ({{ flujoPeaje() | number:'1.0-0' }} veh/día). Sin motos. Toca una vía para ver su rango.</span>
       </div>
     }
     @if (subterraneo()) {
@@ -1275,6 +1310,7 @@ const TIPOS_ZONA: Record<string, string> = {
     .ley-flot__i { display: grid; grid-template-columns: 14px 1fr; column-gap: 8px; align-items: center; font-weight: 600; }
     .ley-flot__i i { width: 14px; height: 14px; border-radius: 50%; box-shadow: 0 0 0 2px #fff; }
     .ley-flot__i small { grid-column: 2; font-weight: 400; font-size: .68rem; color: #6b8294; }
+    .ley-flot__nota { margin-top: 4px; font-size: .66rem; line-height: 1.35; color: #6b8294; }
     /* ficha corta (río, red o zona sin proyección): cápsula abajo a la izquierda */
     .sel-chip { position: absolute; z-index: 12; left: 16px; bottom: 30px; max-width: min(420px, calc(100% - 200px)); display: flex; flex-direction: column; gap: 1px;
       padding: 10px 44px 10px 16px; border-radius: 14px; background: rgba(255,255,255,.92); backdrop-filter: blur(8px);
@@ -1715,6 +1751,20 @@ export class Mapa3dComponent implements AfterViewInit {
           total: this.nBarrios || null, unidad: 'barrios',
           texto: 'Límites de los barrios del casco urbano, con su nombre.',
           tipos: [], fuentes: ['Catastro AMVA (límites)', 'PBOT de Girardota 2020 (nombres)'] };
+      case 'trafico': {
+        const p = this.datosFlujo?.proy;
+        const medio = p?.escenarios['medio'];
+        return { nombre: 'Tráfico estimado', glifo: '🚗', color: '#ef6c00', activa: this.flujoVisible() || this.cargandoFlujo(),
+          total: this.flujoPeaje() || null, unidad: 'veh/día en el peaje',
+          texto: p && medio
+            ? `Vehículos por día en cada vía (sin motos), con un modelo calibrado con el conteo del peaje El Trapiche en ${p.base.anio}. `
+              + `El peaje crece ${(p.modelo.crec_tendencia * 100).toFixed(1)} % al año; en el escenario medio llegaría a `
+              + `${(Math.round(medio['2030'].tpd / 100) * 100).toLocaleString('en-US')} veh/día en 2030 y `
+            + `${(Math.round(medio['2035'].tpd / 100) * 100).toLocaleString('en-US')} en 2035.`
+            : 'Vehículos por día en cada vía (sin motos), con un modelo calibrado con el conteo del peaje El Trapiche.',
+          tipos: this.datosFlujo ? contar(this.datosFlujo.red.tramos.map(t => `confianza ${t.conf}`)) : [],
+          fuentes: ['ANI · peaje El Trapiche', 'Catastro AMVA', 'DANE · proyección 2025', 'Modelo RECUAPP'] };
+      }
       default:
         return { nombre: 'Redes', glifo: '🔌', color: '#4db6ac', activa: this.redesVisibles(),
           total: this.elementosEnergia.length || null, unidad: 'elementos',
@@ -5228,7 +5278,8 @@ export class Mapa3dComponent implements AfterViewInit {
   /** Elementos que se pueden señalar ahora: las tuberías en modo subterráneo y las líneas eléctricas cuando se ven. */
   private elementosActivos(): ElementoRed[] {
     if (this.subterraneo()) return this.elementosAgua;
-    return this.grupoRedes?.visible ? this.elementosEnergia : [];
+    const energia = this.grupoRedes?.visible ? this.elementosEnergia : [];
+    return this.flujoVisible() ? [...energia, ...this.elementosFlujo] : energia;
   }
 
   /** Elemento más cercano al cursor, medido en pantalla porque de lejos una tubería mide menos de un píxel. */
@@ -5611,6 +5662,93 @@ export class Mapa3dComponent implements AfterViewInit {
     };
     s.renderOrder = 12;
     return s;
+  }
+
+  /**
+   * Tráfico estimado (scripts/estimar_trafico_vias.py y proyectar_trafico_trapiche.py): vehículos por día en cada tramo,
+   * de un modelo gravitacional calibrado con el conteo del peaje El Trapiche (ANI). Una cinta sobre la calzada, más
+   * gruesa y más roja cuanto más tráfico; al tocarla dice la cifra, su rango entre escenarios y su confianza.
+   */
+  readonly flujoVisible = signal(false);
+  readonly cargandoFlujo = signal(false);
+  readonly flujoPeaje = signal(0);
+  readonly leyendaFlujo = CLASES_TRAFICO.map(c => ({ nombre: c.nombre, color: c.color, nota: c.nota }));
+  private grupoFlujo: THREE.Group | null = null;
+  private elementosFlujo: ElementoRed[] = [];
+  private datosFlujo: { red: TraficoRed; proy: TraficoPeaje } | null = null;
+
+  alternarFlujo(): void {
+    if (!this.grupoFlujo) {
+      if (this.cargandoFlujo()) return;
+      this.cargandoFlujo.set(true);
+      forkJoin({
+        red: this.http.get<TraficoRed>(`data/mapa3d/trafico-${ID_MUNICIPIO}.json`),
+        proy: this.http.get<TraficoPeaje>(`data/mapa3d/trafico-trapiche-${ID_MUNICIPIO}.json`),
+      }).subscribe({
+        next: d => {
+          this.datosFlujo = d;
+          this.construirFlujo(d.red, d.proy);
+          this.flujoPeaje.set(d.proy.base.tpd);
+          this.cargandoFlujo.set(false);
+          this.flujoVisible.set(true);
+        },
+        error: () => this.cargandoFlujo.set(false),
+      });
+      return;
+    }
+    this.flujoVisible.update(v => !v);
+    this.grupoFlujo.visible = this.flujoVisible();
+    if (!this.flujoVisible()) this.soltarRed();
+  }
+
+  private construirFlujo(d: TraficoRed, p: TraficoPeaje): void {
+    const PASO = 12;                                       // m entre muestras sobre la calzada
+    const fmt = (n: number) => Math.round(n).toLocaleString('en-US');      // como el pipe `number` del resto de la app
+    // una malla por clase: de lejos cada una engorda distinto, para que la jerarquía se lea en la vista general
+    const mallas = new Map(CLASES_TRAFICO.map(c => [c.c, { pos: [] as number[], idx: [] as number[], col: [] as number[] }]));
+    for (const t of d.tramos) {
+      const cl = CLASES_TRAFICO.find(c => c.c === t.c) ?? CLASES_TRAFICO[CLASES_TRAFICO.length - 1];
+      const color = new THREE.Color(cl.color);
+      const { pos, idx, col } = mallas.get(cl.c)!;
+      const pts: THREE.Vector3[] = [];
+      const punto = (lo: number, la: number) => {
+        const x = this.aX(lo), z = this.aZ(la);
+        return new THREE.Vector3(x, this.calzadaXZ(x, z) + cl.radio + 0.6, z);
+      };
+      for (let k = 0; k < t.g.length - 1; k++) {
+        const [lo0, la0] = t.g[k], [lo1, la1] = t.g[k + 1];
+        const n = Math.max(1, Math.ceil(Math.hypot((lo1 - lo0) * this.mLon, (la1 - la0) * this.mLat) / PASO));
+        for (let s = 0; s < n; s++) pts.push(punto(lo0 + (lo1 - lo0) * s / n, la0 + (la1 - la0) * s / n));
+      }
+      pts.push(punto(...t.g[t.g.length - 1]));
+      for (let k = 0; k < pts.length - 1; k++) prisma(pts[k], pts[k + 1], cl.radio, pos, idx, col, color);
+      this.elementosFlujo.push({
+        nombre: `≈ ${fmt(t.vd)} vehículos por día`,
+        detalle: t.conf === 'medida'
+          ? `Conteo del peaje El Trapiche · ANI ${d.anio} · ambas calzadas`
+          : `Tráfico ${t.c} estimado · rango ${fmt(t.min)}–${fmt(t.max)} · confianza ${t.conf}${t.dc ? ' · suma de ambas calzadas' : ''}`,
+        pts, radio: cl.radio,
+      });
+    }
+    const grupo = new THREE.Group();
+    // de menos a más tráfico: las cintas gruesas se pintan encima de las delgadas en los cruces
+    [...CLASES_TRAFICO].reverse().forEach((cl, orden) => {
+      const { pos, idx, col } = mallas.get(cl.c)!;
+      if (!pos.length) return;
+      const g = new THREE.BufferGeometry();
+      g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+      g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+      g.setIndex(idx);
+      g.computeVertexNormals();
+      const malla = new THREE.Mesh(g, engrosar(new THREE.MeshBasicMaterial({ vertexColors: true, transparent: true, opacity: 0.9, depthWrite: false }), cl.lejos, 30));
+      malla.renderOrder = 4 + orden * 0.01;
+      malla.frustumCulled = false;
+      grupo.add(malla);
+    });
+    grupo.add(this.rotuloBarrio(`Peaje El Trapiche · ${fmt(p.base.tpd)} veh/día`, new THREE.Color('#d32f2f'), [p.lon, p.lat]));
+    grupo.visible = true;
+    this.grupoFlujo = grupo;
+    this.escena.add(grupo);
   }
 
   alternarSubterraneo(): void {
@@ -7214,7 +7352,7 @@ export class Mapa3dComponent implements AfterViewInit {
   private ajustarTiltShift(dt: number): void {
     const inspeccionando = !!this.vuelo || this.conduciendo() || !!this.seleccion() || !!this.pinFicha()
       || !!this.fabricaSeleccion() || !!this.rioSeleccion() || !!this.redSeleccion() || this.capasActivas().size > 0
-      || this.sistemaHidrico() || this.barriosVisibles() || this.subterraneo();
+      || this.sistemaHidrico() || this.barriosVisibles() || this.flujoVisible() || this.subterraneo();
     let meta = 0;
     if (this.tiltShift && !inspeccionando) {
       const d = this.camara.position.distanceTo(this.controles.target);
