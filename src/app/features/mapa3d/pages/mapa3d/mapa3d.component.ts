@@ -2106,6 +2106,13 @@ export class Mapa3dComponent implements AfterViewInit {
           this.arbolesUrbanos = [...this.arbolesDeJardin(jardines), ...this.arbolesDeCalle(vias)];
           this.construirVegetacion(vias, dibujados, cauces);
           this.abrirPuntoDeLaRuta();
+          // dentro del recorrido la vista ya existe al volver del mapa 2D: el punto llega como un cambio de la dirección
+          let primera = true;
+          const sub = this.ruta.queryParamMap.subscribe(q => {
+            if (primera) { primera = false; return; }
+            if (q.get('punto')) this.abrirPuntoDeLaRuta();
+          });
+          this.destroyRef.onDestroy(() => sub.unsubscribe());
         } catch (e) {
           console.error(e);
           this.error.set('No se pudo iniciar la vista 3D en este navegador.');

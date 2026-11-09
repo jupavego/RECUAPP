@@ -116,20 +116,40 @@ export class InicioComponent implements OnInit, AfterViewInit {
     const s = seccionDe(url);
     if (!s) return;
     const ancla = url.includes('#') ? decodeURIComponent(url.split('#')[1]) : '';
-    this.saltandoHasta = Date.now() + 1500;
-    const el = document.getElementById(s.id);
-    if (s.ruta === '' && !ancla) window.scrollTo({ top: 0 });
-    else el?.scrollIntoView({ block: 'start' });
+    // 'instant' a propósito: la app declara scroll-behavior: smooth en <html> y un salto largo pasaría por (y cargaría) todo lo de en medio
+    const alinear = () => {
+      if (s.ruta === '' && !ancla) window.scrollTo({ top: 0, behavior: 'instant' });
+      else document.getElementById(s.id)?.scrollIntoView({ block: 'start', behavior: 'instant' });
+    };
+    this.saltando(alinear);
     if (!ancla) return;
     // el ancla vive dentro de una vista que se carga al llegar: se espera a que aparezca
     let intentos = 0;
     const buscar = () => {
       const a = document.getElementById(ancla);
-      if (a) { this.saltandoHasta = Date.now() + 1500; a.scrollIntoView({ block: 'start' }); return; }
-      if (++intentos < 40) this.relojes.push(setTimeout(buscar, 100));
+      if (a) { this.saltando(() => a.scrollIntoView({ block: 'start', behavior: 'instant' })); return; }
+      if (++intentos < 50) this.relojes.push(setTimeout(buscar, 100));
     };
     buscar();
   }
+
+  /**
+   * Salta y vuelve a alinear un par de veces: las vistas que terminan de cargarse justo después del salto cambian de alto
+   * y mueven el destino. Si la persona empieza a desplazarse por su cuenta, se le deja de corregir.
+   */
+  private saltando(alinear: () => void): void {
+    this.cancelarAjuste?.();
+    let vivo = true;
+    const soltar = () => { vivo = false; this.saltandoHasta = 0; };
+    const eventos = ['wheel', 'touchstart', 'keydown', 'mousedown'] as const;
+    eventos.forEach(ev => window.addEventListener(ev, soltar, { once: true, passive: true }));
+    this.cancelarAjuste = () => { vivo = false; eventos.forEach(ev => window.removeEventListener(ev, soltar)); };
+    this.saltandoHasta = Date.now() + 1500;
+    alinear();
+    [150, 450, 900, 1400].forEach(ms => this.relojes.push(setTimeout(() => { if (vivo) alinear(); }, ms)));
+    this.relojes.push(setTimeout(() => this.cancelarAjuste?.(), 1500));
+  }
+  private cancelarAjuste: (() => void) | null = null;
 
   readonly secciones = SECCIONES;
   readonly verbos = VERBOS;

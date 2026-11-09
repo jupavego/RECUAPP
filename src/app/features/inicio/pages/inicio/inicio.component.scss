@@ -227,7 +227,9 @@ h2 { margin: 0; font: 800 clamp(16px, 1.45vw, 19px)/1.18 var(--f-h); letter-spac
 @keyframes baja { 0%, 100% { translate: 0 0; } 50% { translate: 0 4px; } }
 
 // ── secciones con las vistas reales ──
-.sec { position: relative; scroll-margin-top: 0; border-top: 1px solid color-mix(in srgb, var(--text) 7%, transparent); }
+// en el celular el menú es una barra fija arriba: los saltos dejan la sección justo debajo de ella
+.portada { scroll-margin-top: var(--alto-barra, 0px); }
+.sec { position: relative; scroll-margin-top: var(--alto-barra, 0px); border-top: 1px solid color-mix(in srgb, var(--text) 7%, transparent); }
 .sec__espera--pantalla { min-height: calc(100dvh - var(--alto-barra, 0px)) !important; }
 .sec__espera { min-height: 70dvh; display: grid; place-items: center; color: var(--muted); font: 600 14px var(--f-b); }
 // cubre solo la escena 3D (la primera pantalla de la sección); lo de abajo, como el organigrama, queda libre
