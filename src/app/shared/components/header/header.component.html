@@ -40,6 +40,7 @@
 
   <nav class="lado__nav">
     <ng-container *ngTemplateOutlet="item; context: { $implicit: inicio }" />
+    <ng-container *ngTemplateOutlet="item; context: { $implicit: mapa3d }" />
     @for (g of grupos; track g.nombre) {
       <p class="lado__grupo">{{ g.nombre }}</p>
       @for (m of g.items; track m.r) {

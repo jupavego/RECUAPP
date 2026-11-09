@@ -6,7 +6,7 @@ import { DocumentosComponent } from '../../../features/documentos/pages/document
 
 /**
  * Quiénes somos: la presentación de RECUAPP (lo que antes era el inicio) y, debajo, las dos secciones de confianza:
- * el sistema documental y la biblioteca de fuentes. El inicio de la app ahora es el mapa 3D.
+ * el sistema documental y la biblioteca de fuentes. El inicio de la app es la portada (features/inicio) y el mapa 3D vive en /mapa3d.
  */
 @Component({
   selector: 'app-quienes-somos',

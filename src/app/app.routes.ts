@@ -1,35 +1,21 @@
 import { inject } from '@angular/core';
 import { Router, Routes } from '@angular/router';
 import { authGuard, publicOnlyGuard, roleGuard } from './core';
+import { recorridoMatcher } from './core/recorrido';
 
 export const routes: Routes = [
 
   // ── Público ──────────────────────────────────────────────────────────────
-  // el inicio es el mapa 3D de Girardota
+  // El recorrido: una sola página con las secciones del menú en su orden (inicio, mapa 3D, plan, responsables,
+  // mapa territorial, catálogo 3D y quiénes somos). Cada sección conserva su ruta; todas abren esta página en
+  // su sección y, al desplazarse, la ruta cambia a la de la sección visible (core/recorrido.ts).
   {
-    path: '',
-    pathMatch: 'full',
+    matcher: recorridoMatcher,
     loadComponent: () =>
-      import('./features/mapa3d/pages/mapa3d/mapa3d.component').then(m => m.Mapa3dComponent),
-  },
-  // la presentación (antes el inicio), con los documentos y la biblioteca debajo
-  {
-    path: 'quienes-somos',
-    loadComponent: () =>
-      import('./shared/pages/quienes-somos/quienes-somos.component').then(m => m.QuienesSomosComponent),
+      import('./features/inicio/pages/inicio/inicio.component').then(m => m.InicioComponent),
   },
 
   // ── Plan de desarrollo por entidad (público; piloto) ─────────────────────
-  {
-    path: 'plan',
-    loadComponent: () =>
-      import('./features/plan/pages/plan/plan.component').then(m => m.PlanComponent),
-  },
-  {
-    path: 'responsables',
-    loadComponent: () =>
-      import('./features/plan/pages/pueblo/pueblo.component').then(m => m.PuebloComponent),
-  },
   { path: 'responsables/pueblo', redirectTo: 'responsables', pathMatch: 'full' },
   {
     path: 'responsables/:dep',
@@ -47,15 +33,7 @@ export const routes: Routes = [
       import('./features/plan/pages/plan/plan.component').then(m => m.PlanComponent),
   },
 
-  // ── Mapa territorial (público) ───────────────────────────────────────────
-  {
-    path: 'mapa',
-    loadComponent: () =>
-      import('./features/mapa/pages/mapa/mapa.component').then(m => m.MapaComponent),
-  },
-
-  // ── Rutas viejas: el mapa 3D ahora es el inicio (conserva ?punto=…) y documentos y biblioteca viven en Quiénes somos ──
-  { path: 'mapa3d', pathMatch: 'full', redirectTo: '' },
+  // ── Rutas viejas: documentos y biblioteca viven en Quiénes somos ──
   {
     path: 'documentos',
     redirectTo: () => inject(Router).createUrlTree(['/quienes-somos'], { fragment: 'documentos' }),
@@ -63,12 +41,6 @@ export const routes: Routes = [
   {
     path: 'biblioteca',
     redirectTo: () => inject(Router).createUrlTree(['/quienes-somos'], { fragment: 'biblioteca' }),
-  },
-
-  {
-    path: 'mapa3d/catalogo',
-    loadComponent: () =>
-      import('./features/mapa3d/pages/catalogo-edificios/catalogo-edificios.component').then(m => m.CatalogoEdificiosComponent),
   },
 
   // ── Área de usuario (cualquier rol logueado) ─────────────────────────────

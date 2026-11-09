@@ -1,0 +1,144 @@
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="in-plan" viewBox="0 0 24 24"><path d="M9 4h6l1 2h3v14H5V6h3z"/><path d="m9 13 2 2 4-4"/></symbol>
+  <symbol id="in-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c.6-3.4 3-5.4 6-5.4s5.4 2 6 5.4"/><circle cx="17" cy="9" r="2.4"/><path d="M16 14.6c2.6.1 4.4 1.9 5 4.4"/></symbol>
+  <symbol id="in-org" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="5" rx="1"/><rect x="3" y="16" width="6" height="5" rx="1"/><rect x="15" y="16" width="6" height="5" rx="1"/><path d="M12 8v4M6 16v-4h12v4"/></symbol>
+  <symbol id="in-cube" viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></symbol>
+  <symbol id="in-book" viewBox="0 0 24 24"><path d="M4 5c3-1 5.5-.6 8 1v14c-2.5-1.6-5-2-8-1z"/><path d="M20 5c-3-1-5.5-.6-8 1v14c2.5-1.6 5-2 8-1z"/></symbol>
+  <symbol id="in-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/></symbol>
+  <symbol id="in-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="in-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="in-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+</svg>
+
+<section class="portada" id="sec-inicio" aria-label="Inicio">
+<!-- fondo: las curvas de nivel reales de Girardota, en una sola capa que deriva despacio y se tiñe con la paleta de los módulos -->
+<div class="fondo" aria-hidden="true">
+  <div class="capa capa--1" [style.animation-delay.s]="fase" [style.--rel-y.%]="altura"></div>
+</div>
+
+<div class="marco">
+<section class="accion" aria-labelledby="inicio-titulo">
+
+  <h1 id="inicio-titulo">
+    El lugar para <span class="esc" [style.color]="colorEscrito()">{{ escrito() }}</span> tu administración y tu territorio.
+  </h1>
+  <p class="accion__sub">Lo que se prometió, quién responde y cómo es el municipio, en un solo lugar.</p>
+
+  <div class="verbos" role="group" aria-label="Qué quieres hacer">
+    @for (v of verbos; track v.v; let k = $index) {
+      <button type="button" class="verbo" [class.on]="fijo() === k" [attr.aria-pressed]="fijo() === k" [style.--c]="v.c" (click)="elegir(k)">
+        <span class="insig"><svg class="ico"><use [attr.href]="'#in-' + v.g"/></svg></span><span>{{ v.boton }}</span>
+      </button>
+    }
+  </div>
+</section>
+
+<a class="pob" routerLink="/mapa3d" title="Ver la población en el mapa 3D">
+  <span class="insig" aria-hidden="true">
+    @if (pob(); as p) {
+      <span class="pir">
+        @for (g of p.pir; track $index) {
+          <span><b [style.width.%]="ancho(g[0])"></b><s [style.width.%]="ancho(g[1])"></s></span>
+        }
+      </span>
+    }
+  </span>
+  <span><small>Población</small><b>{{ pobTexto() }}</b> habitantes en <b>{{ pob()?.anio ?? '—' }}</b></span>
+</a>
+
+<div class="contenido">
+<div class="tarjetas">
+  @for (s of secciones; track s.id) {
+    <a class="tile" [routerLink]="s.r" [fragment]="s.frag" [class.si]="resaltada(s.id)"
+       [style.--c]="s.c" [style.--v]="verboActivo()?.c ?? 'transparent'">
+      <div class="tile__top">
+        <span class="insig"><svg class="ico"><use [attr.href]="'#in-' + s.g"/></svg></span>
+        <span class="para">{{ resaltada(s.id) ? 'Para ' + verboActivo()!.boton.toLowerCase() : '' }}</span>
+        <span class="ir" aria-hidden="true"><svg class="ico"><use href="#in-arrow"/></svg></span>
+      </div>
+
+      <div class="viz" aria-hidden="true">
+        @switch (s.id) {
+          @case ('plan') {
+            <div class="aros">
+              @for (a of [72, 48, 86]; track $index) {
+                <svg viewBox="0 0 40 40"><circle class="f" cx="20" cy="20" r="15.9"/><circle class="a" cx="20" cy="20" r="15.9" pathLength="100" [style.--v]="100 - a" [style.--w]="($index * .6) + 's'"/></svg>
+              }
+            </div>
+          }
+          @case ('resp') {
+            <div class="dupla">
+              <div class="caras">@for (i of [0, 1, 2]; track i) { <i [style.--w]="(i * .5) + 's'"></i> }</div>
+              <svg class="arbol" viewBox="0 0 120 70" width="78"><rect x="48" y="4" width="24" height="12" rx="3"/><path d="M60 16v12M20 40V28h80v12M60 28v12"/><rect x="8" y="42" width="24" height="12" rx="3"/><rect x="48" y="42" width="24" height="12" rx="3"/><rect x="88" y="42" width="24" height="12" rx="3"/></svg>
+            </div>
+          }
+          @case ('m3d') {
+            <div class="cubo"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          }
+          @case ('bib') {
+            <div class="libros">@for (h of [34, 46, 30, 42, 50]; track $index) { <i [style.--h]="h + 'px'" [style.--w]="($index * .6) + 's'"></i> }</div>
+          }
+        }
+      </div>
+
+      <div class="tile__txt">
+        <h2>{{ s.t }}</h2>
+        <p>{{ s.d }}</p>
+      </div>
+    </a>
+  }
+</div>
+</div>
+</div>
+
+<button type="button" class="baja" (click)="bajar()" aria-label="Seguir a las secciones">
+  <span>Sigue bajando</span><svg class="ico" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+</button>
+</section>
+
+<!-- las secciones del menú, en su mismo orden; cada una conserva su ruta y la página la sigue al desplazarse.
+     Cada vista se descarga solo cuando se acerca a la pantalla. Las que usan la rueda del ratón para acercarse
+     (mapas, pueblo y catálogo) quedan tras un cerrojo: se activan con un clic y se sueltan al salir el ratón. -->
+<section class="sec" id="sec-mapa3d" aria-label="Mapa 3D" (mouseleave)="activa.set(null)">
+  @defer (on viewport) { <app-mapa3d /> } @placeholder { <div class="sec__espera sec__espera--pantalla">Mapa 3D…</div> }
+  @if (activa() !== 'm3d') {
+    <button type="button" class="cerrojo" (click)="activa.set('m3d')">
+      <span><svg class="ico" aria-hidden="true"><use href="#in-cube"/></svg>Haz clic para explorar el mapa 3D</span>
+    </button>
+  }
+</section>
+
+<section class="sec" id="sec-plan" aria-label="El plan en claro">
+  @defer (on viewport) { <app-plan /> } @placeholder { <div class="sec__espera">El plan en claro…</div> }
+</section>
+
+<section class="sec" id="sec-responsables" aria-label="Responsables" (mouseleave)="activa.set(null)">
+  @defer (on viewport) { <app-pueblo /> } @placeholder { <div class="sec__espera sec__espera--pantalla">Responsables…</div> }
+  @if (activa() !== 'resp') {
+    <button type="button" class="cerrojo" (click)="activa.set('resp')">
+      <span><svg class="ico" aria-hidden="true"><use href="#in-users"/></svg>Haz clic para recorrer el pueblo</span>
+    </button>
+  }
+</section>
+
+<section class="sec" id="sec-mapa" aria-label="Mapa territorial" (mouseleave)="activa.set(null)">
+  @defer (on viewport) { <app-mapa /> } @placeholder { <div class="sec__espera sec__espera--pantalla">Mapa territorial…</div> }
+  @if (activa() !== 'mapa') {
+    <button type="button" class="cerrojo" (click)="activa.set('mapa')">
+      <span><svg class="ico" aria-hidden="true"><use href="#in-pin"/></svg>Haz clic para explorar el mapa territorial</span>
+    </button>
+  }
+</section>
+
+<section class="sec" id="sec-catalogo" aria-label="Catálogo 3D" (mouseleave)="activa.set(null)">
+  @defer (on viewport) { <app-catalogo-edificios /> } @placeholder { <div class="sec__espera sec__espera--pantalla">Catálogo 3D…</div> }
+  @if (activa() !== 'cat') {
+    <button type="button" class="cerrojo" (click)="activa.set('cat')">
+      <span><svg class="ico" aria-hidden="true"><use href="#in-grid"/></svg>Haz clic para girar los edificios</span>
+    </button>
+  }
+</section>
+
+<section class="sec" id="sec-nosotros" aria-label="Quiénes somos">
+  @defer (on viewport) { <app-quienes-somos /> } @placeholder { <div class="sec__espera sec__espera--pantalla">Quiénes somos…</div> }
+</section>

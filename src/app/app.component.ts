@@ -6,6 +6,7 @@ import { ConsentBannerComponent } from './shared/components/consent-banner/conse
 import { CommonModule } from '@angular/common';
 import { filter, map } from 'rxjs/operators';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { esRecorrido } from './core/recorrido';
 
 @Component({
   selector: 'app-root',
@@ -33,4 +34,13 @@ export class AppComponent {
   // Quita el padding-top del host cuando no hay chrome (páginas auth)
   @HostBinding('class.no-chrome')
   get isNoChrome(): boolean { return !this.showChrome(); }
+
+  constructor() {
+    // Cada página nueva arranca arriba, como antes, salvo las secciones del recorrido (las desplaza la propia página)
+    // y los enlaces con fragmento (los baja el enrutador hasta su ancla).
+    this.router.events.pipe(filter((e): e is NavigationEnd => e instanceof NavigationEnd)).subscribe(e => {
+      const url = e.urlAfterRedirects;
+      if (!esRecorrido(url) && !url.includes('#')) window.scrollTo(0, 0);
+    });
+  }
 }

@@ -101,12 +101,11 @@
       </article>
 
       <!-- Resultado -->
-      <article id="resultado" class="tarjeta tarjeta--resultado" [class.tarjeta--abierta]="abierta() === 'resultado'">
+      <!-- a todo el ancho, en dos columnas y con su propio desplazamiento: todos a la vista, sin «Ver los …» -->
+      <article id="resultado" class="tarjeta tarjeta--ancha tarjeta--resultado">
         <h2>Indicadores de resultado <span class="cuenta">{{ p.resultado.length }}</span></h2>
-        @if (abierta() === 'resultado') {
-          <input class="buscar" type="search" placeholder="Buscar un indicador" aria-label="Buscar un indicador de resultado" [value]="buscaRes()" (input)="buscaRes.set($any($event.target).value)" />
-        }
-        <ul class="metas">
+        <input class="buscar" type="search" placeholder="Buscar un indicador" aria-label="Buscar un indicador de resultado" [value]="buscaRes()" (input)="buscaRes.set($any($event.target).value)" />
+        <ul class="metas metas--todas" tabindex="0" aria-label="Indicadores de resultado">
           @for (r of resultadoVisible(); track r.id) {
             <li [style.--eje]="matizLinea(r.linea)">
               <span class="metas__ind">{{ r.indicador }}</span>
@@ -114,9 +113,6 @@
             </li>
           } @empty { <li class="nota">Ningún indicador coincide con la búsqueda.</li> }
         </ul>
-        <button type="button" class="mas" (click)="alternar('resultado')">
-          {{ abierta() === 'resultado' ? 'Ver menos' : 'Ver los ' + p.resultado.length }}
-        </button>
       </article>
 
       <!-- Responsables -->

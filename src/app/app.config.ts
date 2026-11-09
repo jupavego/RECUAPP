@@ -14,8 +14,10 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(
       routes,
-      // anchorScrolling: un enlace con fragmento (p. ej. /responsables#organigrama) baja hasta esa sección
-      withInMemoryScrolling({ scrollPositionRestoration: 'top', anchorScrolling: 'enabled' })
+      // anchorScrolling: un enlace con fragmento (p. ej. /quienes-somos#biblioteca) baja hasta esa sección.
+      // La subida al inicio en cada navegación la hace app.component, salvo dentro del recorrido (core/recorrido.ts),
+      // que se desplaza a la sección pedida en vez de saltar arriba.
+      withInMemoryScrolling({ scrollPositionRestoration: 'disabled', anchorScrolling: 'enabled' })
     ),
     provideHttpClient(withInterceptors([errorInterceptor])),
     // Reporta a Sentry cualquier error no capturado (bugs de runtime,

@@ -1,6 +1,7 @@
 import { Injectable, computed, effect, inject, signal } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
+import { esRecorrido } from '../recorrido';
 
 const CLAVE = 'plan-tema';
 
@@ -34,7 +35,8 @@ export class TemaService {
   }
 
   private esMapa(url: string): boolean {
-    return /^\/mapa(3d)?([/?#]|$)/.test(url);
+    // los mapas viven ahora dentro del recorrido, junto a secciones que sí se tiñen: ahí el tema no cambia al pasar por ellos
+    return /^\/mapa(3d)?([/?#]|$)/.test(url) && !esRecorrido(url);
   }
 
   /** botánico → botánico oscuro → botánico */

@@ -108,11 +108,10 @@ export class PlanComponent {
     this.gruposProg.set(act.includes(id) ? act.filter(x => x !== id) : [...act, id]);
   }
 
-  // Indicadores de resultado: 5 a la vista; al abrir, todos con buscador
+  // Indicadores de resultado: todos a la vista (dos columnas con desplazamiento propio) y un buscador
   readonly buscaRes = signal('');
   readonly resultadoVisible = computed(() => {
     const todos = this.plan()?.resultado ?? [];
-    if (this.abierta() !== 'resultado') return todos.slice(0, 5);
     const q = this.buscaRes().trim().toLowerCase();
     return q ? todos.filter(r => r.indicador.toLowerCase().includes(q)) : todos;
   });

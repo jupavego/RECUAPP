@@ -28,7 +28,7 @@ const leerPlegado = () => { try { return localStorage.getItem(CLAVE_PLEGADO) ===
 
 /**
  * Panel lateral de navegación (variante D «Maestro-detalle»): la lista de módulos a la izquierda
- * y la vista abierta a la derecha. «Inicio» abre el mapa 3D. Bajo 768px se vuelve barra superior.
+ * y la vista abierta a la derecha. «Inicio» abre la portada y «Mapa 3D», justo debajo, el modelo del municipio. Bajo 768px se vuelve barra superior.
  */
 @Component({
   selector: 'app-header',
@@ -49,8 +49,9 @@ export class HeaderComponent {
     { initialValue: ruta(this.router.url) },
   );
 
-  // el inicio es el mapa 3D de Girardota
-  readonly inicio: ItemNav = { t: 'Inicio', r: '/', c: '#2E86C1', g: 'cube', activo: u => u === '/' };
+  // el inicio es la portada; el mapa 3D va justo debajo, con su sección propia
+  readonly inicio: ItemNav = { t: 'Inicio', r: '/', c: '#4FA22E', g: 'home', activo: u => u === '/' };
+  readonly mapa3d: ItemNav = { t: 'Mapa 3D', r: '/mapa3d', c: '#2E86C1', g: 'cube', activo: u => u === '/mapa3d' };
 
   readonly ingresar: ItemNav = { t: 'Ingresar', r: '/auth/login', c: '#6B7F6E', g: 'login', activo: () => false };
 
