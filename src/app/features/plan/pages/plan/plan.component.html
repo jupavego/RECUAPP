@@ -339,5 +339,5 @@
 } @else if (plan() === null) {
   <main class="plan"><p class="vacio">Todavía no hay datos del plan de esta entidad.</p></main>
 } @else {
-  <main class="plan"><p class="vacio">Cargando el plan…</p></main>
+  <main class="plan"><app-cargador tipo="plan" style="min-height: 60dvh" /></main>
 }

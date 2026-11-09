@@ -142,8 +142,14 @@ export class CatalogoEdificiosComponent implements AfterViewInit {
     ajustar();
 
     this.mostrar(this.actual());
+    // fuera de la pantalla (página desplazada a otra sección) no se dibuja: ahorra CPU y batería
+    let visible = true;
+    const vista = new IntersectionObserver(([e]) => visible = e.isIntersecting);
+    vista.observe(el);
+    this.destroyRef.onDestroy(() => vista.disconnect());
     const bucle = () => {
       this.animacion = requestAnimationFrame(bucle);
+      if (!visible) return;
       this.controles.update();
       this.animarAura();
       this.renderer.render(this.escena, this.camara);

@@ -100,7 +100,9 @@
      Cada vista se descarga solo cuando se acerca a la pantalla. Las que usan la rueda del ratón para acercarse
      (mapas, pueblo y catálogo) quedan tras un cerrojo: se activan con un clic y se sueltan al salir el ratón. -->
 <section class="sec" id="sec-mapa3d" aria-label="Mapa 3D" (mouseleave)="activa.set(null)">
-  @defer (on viewport) { <app-mapa3d /> } @placeholder { <div class="sec__espera sec__espera--pantalla">Mapa 3D…</div> }
+  @defer (on viewport) { <app-mapa3d /> }
+  @placeholder { <app-cargador class="sec__espera sec__espera--pantalla" tipo="mapa3d" /> }
+  @loading (minimum 600ms) { <app-cargador class="sec__espera sec__espera--pantalla" tipo="mapa3d" /> }
   @if (activa() !== 'm3d') {
     <button type="button" class="cerrojo" (click)="activa.set('m3d')">
       <span><svg class="ico" aria-hidden="true"><use href="#in-cube"/></svg>Haz clic para explorar el mapa 3D</span>
@@ -109,11 +111,15 @@
 </section>
 
 <section class="sec" id="sec-plan" aria-label="El plan en claro">
-  @defer (on viewport) { <app-plan /> } @placeholder { <div class="sec__espera">El plan en claro…</div> }
+  @defer (on viewport) { <app-plan /> }
+  @placeholder { <app-cargador class="sec__espera" tipo="plan" /> }
+  @loading (minimum 600ms) { <app-cargador class="sec__espera" tipo="plan" /> }
 </section>
 
 <section class="sec" id="sec-responsables" aria-label="Responsables" (mouseleave)="activa.set(null)">
-  @defer (on viewport) { <app-pueblo /> } @placeholder { <div class="sec__espera sec__espera--pantalla">Responsables…</div> }
+  @defer (on viewport) { <app-pueblo /> }
+  @placeholder { <app-cargador class="sec__espera sec__espera--pantalla" tipo="resp" /> }
+  @loading (minimum 600ms) { <app-cargador class="sec__espera sec__espera--pantalla" tipo="resp" /> }
   @if (activa() !== 'resp') {
     <button type="button" class="cerrojo" (click)="activa.set('resp')">
       <span><svg class="ico" aria-hidden="true"><use href="#in-users"/></svg>Haz clic para recorrer el pueblo</span>
@@ -122,7 +128,9 @@
 </section>
 
 <section class="sec" id="sec-mapa" aria-label="Mapa territorial" (mouseleave)="activa.set(null)">
-  @defer (on viewport) { <app-mapa /> } @placeholder { <div class="sec__espera sec__espera--pantalla">Mapa territorial…</div> }
+  @defer (on viewport) { <app-mapa /> }
+  @placeholder { <app-cargador class="sec__espera sec__espera--pantalla" tipo="mapa" /> }
+  @loading (minimum 600ms) { <app-cargador class="sec__espera sec__espera--pantalla" tipo="mapa" /> }
   @if (activa() !== 'mapa') {
     <button type="button" class="cerrojo" (click)="activa.set('mapa')">
       <span><svg class="ico" aria-hidden="true"><use href="#in-pin"/></svg>Haz clic para explorar el mapa territorial</span>
@@ -131,7 +139,9 @@
 </section>
 
 <section class="sec" id="sec-catalogo" aria-label="Catálogo 3D" (mouseleave)="activa.set(null)">
-  @defer (on viewport) { <app-catalogo-edificios /> } @placeholder { <div class="sec__espera sec__espera--pantalla">Catálogo 3D…</div> }
+  @defer (on viewport) { <app-catalogo-edificios /> }
+  @placeholder { <app-cargador class="sec__espera sec__espera--pantalla" tipo="catalogo" /> }
+  @loading (minimum 600ms) { <app-cargador class="sec__espera sec__espera--pantalla" tipo="catalogo" /> }
   @if (activa() !== 'cat') {
     <button type="button" class="cerrojo" (click)="activa.set('cat')">
       <span><svg class="ico" aria-hidden="true"><use href="#in-grid"/></svg>Haz clic para girar los edificios</span>
@@ -140,5 +150,7 @@
 </section>
 
 <section class="sec" id="sec-nosotros" aria-label="Quiénes somos">
-  @defer (on viewport) { <app-quienes-somos /> } @placeholder { <div class="sec__espera sec__espera--pantalla">Quiénes somos…</div> }
+  @defer (on viewport) { <app-quienes-somos /> }
+  @placeholder { <app-cargador class="sec__espera sec__espera--pantalla" tipo="nosotros" /> }
+  @loading (minimum 600ms) { <app-cargador class="sec__espera sec__espera--pantalla" tipo="nosotros" /> }
 </section>

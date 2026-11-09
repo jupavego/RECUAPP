@@ -4,6 +4,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Router } from '@angular/router';
 import { catchError, map, of, switchMap } from 'rxjs';
 import { matizDe } from '../responsables/responsables.component';
+import { CargadorComponent } from '../../../../shared/components/cargador/cargador.component';
 import { Confianza, Dependencia, PlanEntidad, PlanService, ProductoPlan } from '../../services/plan.service';
 
 /** Entidad que se abre cuando la ruta no trae código DANE (mientras dure el piloto). */
@@ -34,7 +35,7 @@ type Tarjeta = 'lineas' | 'sectores' | 'programas' | 'resultado' | 'responsables
 @Component({
   selector: 'app-plan',
   standalone: true,
-  imports: [],
+  imports: [CargadorComponent],
   templateUrl: './plan.component.html',
   styleUrl: './plan.component.scss',
 })

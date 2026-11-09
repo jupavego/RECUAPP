@@ -231,6 +231,8 @@ h2 { margin: 0; font: 800 clamp(16px, 1.45vw, 19px)/1.18 var(--f-h); letter-spac
 .portada { scroll-margin-top: var(--alto-barra, 0px); }
 .sec { position: relative; scroll-margin-top: var(--alto-barra, 0px); border-top: 1px solid color-mix(in srgb, var(--text) 7%, transparent); }
 .sec__espera--pantalla { min-height: calc(100dvh - var(--alto-barra, 0px)) !important; }
+// secciones sin escena 3D: fuera de la pantalla el navegador ni las dibuja ni las acomoda (content-visibility)
+#sec-plan, #sec-nosotros { content-visibility: auto; contain-intrinsic-size: auto 100dvh; }
 .sec__espera { min-height: 70dvh; display: grid; place-items: center; color: var(--muted); font: 600 14px var(--f-b); }
 // cubre solo la escena 3D (la primera pantalla de la sección); lo de abajo, como el organigrama, queda libre
 .cerrojo { position: absolute; top: 0; left: 0; right: 0; height: calc(100dvh - var(--alto-barra, 0px)); z-index: 5; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 28px;

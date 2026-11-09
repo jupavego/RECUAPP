@@ -647,8 +647,14 @@ export class PuebloComponent implements AfterViewInit {
     this.listo = true;
     this.intentar();
 
+    // con el pueblo fuera de la pantalla (página desplazada a otra sección) no se dibuja: ahorra CPU y batería
+    let visible = true;
+    const vista = new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible) this.reloj.getDelta(); });
+    vista.observe(el);
+    this.destroyRef.onDestroy(() => vista.disconnect());
     const bucle = () => {
       this.animacion = requestAnimationFrame(bucle);
+      if (!visible) return;
       const dt = Math.min(this.reloj.getDelta(), 0.1);
       this.animar(dt, this.reloj.elapsedTime);
       this.aplicarGiroYZoom();

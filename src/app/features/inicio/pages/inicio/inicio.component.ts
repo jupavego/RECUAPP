@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, DestroyRef, OnInit, computed, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NavigationEnd, Router, RouterLink } from '@angular/router';
+import { CargadorComponent } from '../../../../shared/components/cargador/cargador.component';
 import { filter } from 'rxjs/operators';
 import { SECCIONES_RECORRIDO, esRecorrido, rutaDe, seccionDe } from '../../../../core/recorrido';
 import { PlanComponent } from '../../../plan/pages/plan/plan.component';
@@ -59,7 +60,7 @@ const ANIOS_POB = [2018, 2025, 2030, 2035, 2042, 2050];
   selector: 'app-inicio',
   standalone: true,
   // las vistas solo se usan dentro de @defer: Angular las separa en trozos que se descargan al llegar a ellas
-  imports: [RouterLink, Mapa3dComponent, PlanComponent, PuebloComponent, MapaComponent, CatalogoEdificiosComponent, QuienesSomosComponent],
+  imports: [RouterLink, CargadorComponent, Mapa3dComponent, PlanComponent, PuebloComponent, MapaComponent, CatalogoEdificiosComponent, QuienesSomosComponent],
   templateUrl: './inicio.component.html',
   styleUrl: './inicio.component.scss',
 })
