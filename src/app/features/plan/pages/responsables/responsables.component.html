@@ -343,9 +343,68 @@
         @if (pestana() === 'productos') {
         <div class="prod-cab">
           <h3>Productos e indicadores <span class="cuenta">{{ filasActual().length }}</span></h3>
-          @if (seguimiento()) {
-            <label class="chk"><input type="checkbox" [checked]="soloConAvance()" (change)="soloConAvance.set($any($event.target).checked)" /> Solo los que tienen avance en el informe</label>
-          }
+        </div>
+
+        <!-- filtros: texto libre y, debajo, estado, línea, sector, origen y subdependencia -->
+        <div class="filtros" role="search" aria-label="Filtrar productos">
+          <label class="buscar">
+            <span class="sr">Buscar productos</span>
+            <svg class="buscar__ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" /><path d="m20 20-4.2-4.2" /></svg>
+            <input type="search" [value]="busca()" (input)="busca.set($any($event.target).value)" autocomplete="off" spellcheck="false"
+              placeholder="Buscar producto, palabra o código" title="Ejemplos: cámaras, víctimas, IP-131" />
+            @if (busca()) { <button type="button" class="buscar__x" (click)="busca.set('')" aria-label="Borrar la búsqueda">×</button> }
+          </label>
+
+          <div class="filtros__fila">
+            @if (seguimiento()) {
+              <div class="filtros__estados" role="group" aria-label="Estado en el informe">
+                @for (e of estadosFiltro; track e.k) {
+                  <button type="button" [class]="'festado estados__' + e.k" [class.on]="fEstado() === e.k" [attr.aria-pressed]="fEstado() === e.k"
+                    [disabled]="!cuentaEstados()[e.k]" (click)="fEstado.set(fEstado() === e.k ? null : e.k)">
+                    <i aria-hidden="true">{{ e.g }}</i>{{ e.t }} <span class="festado__n">{{ cuentaEstados()[e.k] }}</span>
+                  </button>
+                }
+              </div>
+            }
+            <div class="filtros__listas">
+              @if (opcionesLinea().length > 1) {
+                <label class="fsel"><span class="sr">Línea estratégica</span>
+                  <select [value]="fLinea()" (change)="fLinea.set($any($event.target).value)" [class.on]="fLinea()">
+                    <option value="">Todas las líneas</option>
+                    @for (l of opcionesLinea(); track l.id) { <option [value]="l.id">{{ l.nombre }}</option> }
+                  </select></label>
+              }
+              @if (opcionesSector().length > 1) {
+                <label class="fsel"><span class="sr">Sector</span>
+                  <select [value]="fSector()" (change)="fSector.set($any($event.target).value)" [class.on]="fSector()">
+                    <option value="">Todos los sectores</option>
+                    @for (s of opcionesSector(); track s.cod) { <option [value]="s.cod">{{ s.nombre }}</option> }
+                  </select></label>
+              }
+              @if (r.alta && r.sugerida) {
+                <label class="fsel"><span class="sr">Origen de la asignación</span>
+                  <select [value]="fOrigen()" (change)="fOrigen.set($any($event.target).value)" [class.on]="fOrigen()">
+                    <option value="">Según el PDF y sugeridos</option>
+                    <option value="alta">Solo según el PDF</option>
+                    <option value="sugerida">Solo sugeridos por sector</option>
+                  </select></label>
+              }
+              @if (r.grupo.length > 1) {
+                <label class="fsel"><span class="sr">Dependencia</span>
+                  <select [value]="fDep()" (change)="fDep.set($any($event.target).value)" [class.on]="fDep()">
+                    <option value="">Toda la secretaría</option>
+                    @for (d of r.grupo; track d.id) { <option [value]="d.id">{{ d.nombre }}</option> }
+                  </select></label>
+              }
+            </div>
+          </div>
+
+          <p class="filtros__res" aria-live="polite">
+            @if (hayFiltros()) {
+              Mostrando <b>{{ filasActual().length }}</b> de {{ r.filas.length }} productos
+              <button type="button" class="filtros__limpiar" (click)="limpiarFiltros()">Limpiar filtros</button>
+            }
+          </p>
         </div>
         @if (filasActual().length) {
           <div class="tabla-marco">
@@ -420,7 +479,11 @@
             </table>
           </div>
         } @else {
-          <p class="vacio">Este responsable no tiene productos asignados en el plan{{ soloConAvance() ? ' con avance en el informe' : '' }}.</p>
+          @if (hayFiltros()) {
+            <p class="vacio">Ningún producto coincide con la búsqueda o los filtros. <button type="button" class="filtros__limpiar" (click)="limpiarFiltros()">Limpiar filtros</button></p>
+          } @else {
+            <p class="vacio">Este responsable no tiene productos asignados en el plan.</p>
+          }
         }
         }
         @if (pestana() === 'equipo') {

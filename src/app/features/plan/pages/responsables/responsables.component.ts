@@ -12,6 +12,8 @@ const ANIOS = ['2024', '2025', '2026', '2027'];
 const ANIO_PLAN_ACCION = 2026;
 
 export type Pestana = 'panorama' | 'plan' | 'productos' | 'equipo';
+/** estado de un producto en el informe: cumplido, en curso, con menos de 50 % o sin informe */
+export type EstadoProducto = 'ok' | 'medio' | 'bajo' | 'nd';
 
 /** Pestañas de la vista, en el orden de las tarjetas de la portada; el equipo se abre desde la tarjeta del secretario. */
 const SECCIONES: { p: Pestana; pestana: string; color: string; d: string }[] = [
@@ -200,14 +202,28 @@ export class ResponsablesComponent {
 
   /** responsable de la ruta /responsables/:dep */
   readonly depId = toSignal(this.ruta.paramMap.pipe(map(p => p.get('dep'))), { initialValue: this.ruta.snapshot.paramMap.get('dep') });
-  readonly soloConAvance = signal(false);
   readonly pestana = signal<Pestana>('panorama');
   readonly anios = ANIOS;
+
+  // ── filtros de la pestaña Productos ──
+  /** texto libre: código (IP-23), indicador, producto, detalle, sector o subdependencia; sin importar tildes ni mayúsculas */
+  readonly busca = signal('');
+  readonly fEstado = signal<EstadoProducto | null>(null);
+  readonly fLinea = signal('');
+  readonly fSector = signal('');
+  readonly fOrigen = signal<'' | 'alta' | 'sugerida'>('');
+  readonly fDep = signal('');
+  readonly hayFiltros = computed(() => !!(this.busca().trim() || this.fEstado() || this.fLinea() || this.fSector() || this.fOrigen() || this.fDep()));
+
+  limpiarFiltros(): void {
+    this.busca.set(''); this.fEstado.set(null); this.fLinea.set(''); this.fSector.set(''); this.fOrigen.set(''); this.fDep.set('');
+  }
 
   // ── portada ──
   readonly secciones = SECCIONES;
   constructor() {
-    effect(() => { this.depId(); untracked(() => this.pestana.set('panorama')); });
+    // al cambiar de dependencia se vuelve al panorama y los filtros arrancan limpios
+    effect(() => { this.depId(); untracked(() => { this.pestana.set('panorama'); this.limpiarFiltros(); }); });
   }
   private readonly poco = typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -294,12 +310,60 @@ export class ResponsablesComponent {
       .sort((a, b) => Number(!!a.dep.vinculo) - Number(!!b.dep.vinculo) || this.cantidad(b) - this.cantidad(a));
   });
 
-  /** productos del responsable elegido, por código */
+  /** estado de un producto en el informe más reciente (el mismo criterio de las tarjetas) */
+  estadoDe(f: FilaProducto): EstadoProducto {
+    return f.pct === null ? 'nd' : f.pct >= 100 ? 'ok' : f.pct >= 50 ? 'medio' : 'bajo';
+  }
+
+  /** texto en el que busca la barra, normalizado una sola vez por responsable */
+  private readonly textoBusqueda = computed(() => {
+    const m = new Map<FilaProducto, string>();
+    for (const f of this.actual()?.filas ?? []) {
+      m.set(f, this.sinTildes([f.x.id, f.x.indicador, f.x.producto, f.x.detalle ?? '', this.sectorNombre(f.x.sector), f.dep.nombre, f.x.ods ?? ''].join(' ')));
+    }
+    return m;
+  });
+
+  /** productos del responsable que pasan los filtros, por código */
   readonly filasActual = computed(() => {
     const r = this.actual();
     if (!r) return [];
-    const fs = this.soloConAvance() ? r.filas.filter(f => f.pct !== null) : r.filas;
+    const palabras = this.sinTildes(this.busca().trim()).split(/\s+/).filter(Boolean);
+    const textos = this.textoBusqueda();
+    const e = this.fEstado(), l = this.fLinea(), s = this.fSector(), o = this.fOrigen(), d = this.fDep();
+    const fs = r.filas.filter(f =>
+      (!e || this.estadoDe(f) === e) &&
+      (!l || f.x.linea === l) &&
+      (!s || f.x.sector === s) &&
+      (!o || (o === 'alta' ? f.conf === 'alta' : f.conf !== 'alta')) &&
+      (!d || f.dep.id === d) &&
+      // cada palabra debe aparecer en algún campo del producto
+      palabras.every(w => textos.get(f)!.includes(w)));
     return [...fs].sort((a, b) => a.x.id.localeCompare(b.x.id, 'es', { numeric: true }));
+  });
+
+  /** cuántos productos hay en cada estado (sobre todos los del responsable) */
+  readonly cuentaEstados = computed(() => {
+    const c: Record<EstadoProducto, number> = { ok: 0, medio: 0, bajo: 0, nd: 0 };
+    for (const f of this.actual()?.filas ?? []) c[this.estadoDe(f)]++;
+    return c;
+  });
+
+  readonly estadosFiltro: { k: EstadoProducto; t: string; g: string }[] = [
+    { k: 'ok', t: 'Cumplidos', g: '✓' },
+    { k: 'medio', t: 'En curso', g: '◐' },
+    { k: 'bajo', t: 'Menos de 50 %', g: '!' },
+    { k: 'nd', t: 'Sin informe', g: '○' },
+  ];
+
+  /** líneas y sectores presentes en los productos del responsable, para las listas de los filtros */
+  readonly opcionesLinea = computed(() => {
+    const ids = new Set((this.actual()?.filas ?? []).map(f => f.x.linea));
+    return (this.plan()?.lineas ?? []).filter(l => ids.has(l.id));
+  });
+  readonly opcionesSector = computed(() => {
+    const ids = new Set((this.actual()?.filas ?? []).map(f => f.x.sector));
+    return (this.plan()?.sectores ?? []).filter(s => ids.has(s.cod)).sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'));
   });
 
   /** reparto de los productos del responsable por línea estratégica */
@@ -385,7 +449,7 @@ export class ResponsablesComponent {
 
   /** abre un producto del plan desde el plan de acción */
   verProducto(ip: string): void {
-    this.soloConAvance.set(false);
+    this.limpiarFiltros();
     this.abrir('productos');
     setTimeout(() => document.getElementById('prod-' + ip)?.scrollIntoView({ behavior: 'smooth', block: 'center' }));
   }
