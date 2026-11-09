@@ -157,6 +157,10 @@ for _n, _t, _x, _lat, _lng in [
     agregar(c="turismo", t=_t, n=_n, x=_x, lat=_lat, lng=_lng, f=FUENTE_OBS, e="Ubicación tomada del pin de Google Maps y de la imagen satelital.", v="Cabecera municipal")
 agregar(c="turismo", t="Centro comercial", n="Centro comercial (manzana del parque)", lat=6.37709, lng=-75.446718, f=FUENTE_OBS, v="Cabecera municipal",
         x="Edificio comercial de dos pisos con cubierta plana blanca, en la manzana de las carreras 16 y 15, junto al parque principal.", e="Ubicación tomada de la imagen satelital.")
+agregar(c="turismo", t="Peaje (Autopista Norte)", n="Peaje El Trapiche", lat=6.399593, lng=-75.43296, v="Vereda San Andres",
+        f="ANI · Tráfico vehicular en peajes (datos.gov.co 8yi9-t44c); ubicación sobre la red vial (OSM)",
+        x="Peaje de la Autopista Norte (Ruta 62), km 25, con casetas en las dos calzadas. En 2025 pasaron en promedio 19 268 vehículos por día (sin motos, que no pagan).",
+        e="Ubicación: tramos en que OpenStreetMap corta las calzadas en las casetas, a 10 m de la coordenada de la ANI.")
 agregar(c="turismo", t="Parqueadero público", n="Parqueadero Santa Ana", lat=6.376837, lng=-75.447134, f=FUENTE_OBS, v="Cabecera municipal",
         x="Parqueadero público a cielo abierto, con portón sobre la carrera 16, en el interior de la manzana entre las carreras 16 y 15.", e="Ubicación tomada de la imagen satelital y de Street View.")
 

@@ -13,6 +13,8 @@ export interface Modelo {
   losa?: [number, number];
   /** huella real [ancho, fondo] que ocupa en el terreno: las construcciones del catastro que caen dentro de ella se reemplazan por el modelo */
   huella?: [number, number];
+  /** se pone sobre la vía (un peaje): se apoya en la calzada, sin losa en la ladera, y no se corre para dejar libres las vías */
+  sobreVia?: boolean;
 }
 
 const AZUL = '#1d4ed8', ROSA = '#be185d', CIAN = '#0e7490', VERDE = '#047857', LIMA = '#4d7c0f', ROJO = '#b91c1c', CAFE = '#92400e';
@@ -374,7 +376,60 @@ function sedeComfama(e: Ensamble): Modelo {
 }
 
 /** Sitios de interés: iglesia, kiosco de parque, mirador, pabellón de mercado o cabaña con estanque, según de qué se trate. */
+/**
+ * Peaje El Trapiche (Autopista Norte, Ruta 62, km 25): plaza de cobro en las dos calzadas, con separador central. El eje x va a lo
+ * largo de la vía: por el lado +z se va hacia el noreste (avanza hacia +x) y por el −z hacia el suroeste (hacia −x); z va a lo ancho.
+ * La plaza se ensancha desde el ancho de la autopista hasta los carriles de cobro, con islas de concreto, casetas, talanqueras,
+ * semáforos de carril sobre la marquesina, bandas sonoras y pórticos de aviso. Carriles, casetas y marquesina van a la escala de
+ * los vehículos (ESCALA_ACTIVOS) para que los camiones de la simulación quepan y pasen por debajo.
+ */
+function peaje(e: Ensamble): Modelo {
+  const K = ESCALA_ACTIVOS, L = 96, CARRIL = 4.6, ISLA = 2, CARRILES = 4, MED = 3, VIA = 17;   // VIA: media autopista donde empieza el ensanche
+  const lado = CARRILES * CARRIL + (CARRILES + 1) * ISLA, W = MED + 2 * lado, H = 6 * K;          // H: gálibo de la marquesina
+  const ASF = '#3e4146', LINEA = '#f1f5f9', AMARILLO = '#facc15', NEGRO = '#111827', CONC = '#d9d5cc', BLANCO = '#f3f4f6';
+  const AZUL_VIA = '#1e4f91', VERDE_AVISO = '#166534', ROJO_T = '#dc2626', VERDE_LUZ = '#22c55e';
+  // plaza pavimentada: del ancho de la autopista se abre en ~22 m al ancho de los carriles de cobro; un faldón la baja al terreno
+  const contorno = ([[-L / 2, -VIA], [-24, -W / 2], [24, -W / 2], [L / 2, -VIA], [L / 2, VIA], [24, W / 2], [-24, W / 2], [-L / 2, VIA]] as const)
+    .map(([x, z]) => new THREE.Vector2(x, -z));
+  e.piezas.push({ g: new THREE.ExtrudeGeometry(new THREE.Shape(contorno), { depth: 1.7, bevelEnabled: false }).rotateX(-Math.PI / 2).translate(0, -1.5, 0), color: ASF });
+  e.caja(L, 0.5, MED, CONC, 0, 0.2, 0).caja(L, 0.12, 0.3, AMARILLO, 0, 0.7, 0);                     // separador central
+  for (const s of [1, -1]) {
+    const isla = (k: number) => s * (MED / 2 + ISLA / 2 + k * (CARRIL + ISLA)), carril = (k: number) => s * (MED / 2 + ISLA + k * (CARRIL + ISLA) + CARRIL / 2);
+    for (let k = 0; k <= CARRILES; k++) {
+      const z = isla(k);
+      e.caja(18, 0.3, ISLA, CONC, 0, 0.2, z);
+      for (const x of [-9.6, 9.6]) e.caja(1.2, 0.9 * K, ISLA * 0.9, AMARILLO, x, 0.2, z).caja(1.25, 0.22 * K, ISLA * 0.92, NEGRO, x, 0.2 + 0.45 * K, z);
+      // líneas de carril en la aproximación y la salida
+      if (k > 0 && k < CARRILES) for (const x of [-17, 17]) e.caja(13, 0.04, 0.2, LINEA, x, 0.2, z);
+      if (k === CARRILES) continue;
+      // caseta de cobro a la izquierda de cada carril, con su ventanilla y techo; columna de la marquesina en las islas pares
+      e.caja(3.2, 2.4 * K, 1.6, BLANCO, 0, 0.5, z).caja(3.3, 0.8 * K, 1.7, VIDRIO, 0, 0.5 + 1.1 * K, z).caja(3.8, 0.25, 2.1, AZUL_VIA, 0, 0.5 + 2.4 * K, z);
+      if (k % 2 === 0) for (const x of [-5.5, 5.5]) e.cil(0.35, 0.35, H, '#9ca3af', x, 0.5, z, 8);
+      // talanquera a la salida de la caseta (poste amarillo y brazo rojo y blanco sobre el carril)
+      const xb = s * 3.4, zc = carril(k);
+      e.caja(0.45, 1.1 * K, 0.45, AMARILLO, xb, 0.5, z).caja(0.22, 0.22, CARRIL - 0.4, ROJO_T, xb, 0.5 + K, zc);
+      for (const f of [-0.25, 0.25]) e.caja(0.24, 0.24, 0.6, LINEA, xb, 0.5 + K - 0.01, zc + f * CARRIL);
+      // semáforo del carril en el borde de la marquesina que mira a quien llega
+      e.caja(0.2, 1.1, 1.1, VERDE_LUZ, -s * 8.4, H - 1.6, zc);
+    }
+    // bandas sonoras amarillas antes de la plaza y pórtico de aviso de peaje sobre la aproximación
+    for (const x of [-28, -31, -34]) e.caja(0.6, 0.05, lado - 2 * ISLA, AMARILLO, s * x, 0.2, s * (MED / 2 + lado / 2));
+    const xp = -s * 44, ancho = VIA - MED / 2;
+    for (const z of [MED / 2 + 0.6, VIA - 0.4]) e.cil(0.3, 0.3, 6.4 * K, '#9ca3af', xp, 0.2, s * z, 8);
+    e.caja(0.35, 2.6 * K, ancho - 1.4, VERDE_AVISO, xp, 5.2 * K, s * (MED / 2 + ancho / 2)).caja(0.4, 0.5 * K, ancho - 4, LINEA, xp, 6.4 * K, s * (MED / 2 + ancho / 2));
+  }
+  // marquesina blanca de lado a lado con franja azul en sus dos frentes (el aviso «PEAJE EL TRAPICHE»)
+  e.caja(16, 1.2, W + 2, BLANCO, 0, H, 0);
+  for (const x of [-8.2, 8.2]) e.caja(0.4, 2, W + 2, AZUL_VIA, x, H - 0.4, 0).caja(0.45, 0.5, 18, LINEA, x, H + 0.35, 0);
+  // oficina de la concesión y su parqueadero, por fuera de la plaza del lado sureste
+  e.caja(16, 0.2, 12, '#8e959c', -36, 0.2, W / 2 - 4).caja(12, 3.4 * K * 0.75, 7, BLANCO, -38, 0.4, W / 2 - 3)
+    .caja(12.6, 0.4, 7.6, AZUL_VIA, -38, 0.4 + 3.4 * K * 0.75, W / 2 - 3).caja(10, 1.6, 0.3, VIDRIO, -38, 1.6, W / 2 - 6.6);
+  for (const x of [-46, 24, 46]) for (const z of [-W / 2 + 1, W / 2 - 1]) if (!(x === -46 && z > 0)) e.cil(0.15, 0.2, 7 * K, '#9ca3af', x, 0.2, z, 6).caja(2.4, 0.3, 0.6, '#e5e7eb', x, 7 * K, z - Math.sign(z) * 1);
+  return { piezas: e.piezas, radio: L / 2, losa: [L, W], huella: [L, W], sobreVia: true };
+}
+
 function turismo(e: Ensamble, texto: string, rnd: () => number): Modelo {
+  if (/peaje/.test(texto)) return peaje(e);
   if (/plaza de mercado/.test(texto)) return plazaMercado(e);
   if (/centro comercial/.test(texto)) return centroComercial(e, [44, 36]);
   if (/parqueadero santa ana/.test(texto)) return parqueaderoPublico(e, [56, 46], rnd);

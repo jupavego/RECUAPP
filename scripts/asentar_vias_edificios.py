@@ -53,6 +53,9 @@ K = 1_000_000
 ANCHO_VIA = [34, 13]          # m, ancho de calzada dibujado de siempre (ANCHO_VIA del mapa 3D): es el tope
 ANDEN = [5.1, 2.3]            # m, acera de siempre (la cinta 1,3× / 1,35× del mapa): también es tope
 MEDIA_MINIMA = [4.5, 3.0]     # m, media calzada mínima: dos carros a escala caben (ESCALA_ACTIVOS = 1,8)
+MEDIA_DOBLE = 8.5             # m, media calzada de cada sentido en una doble calzada (la mitad del ancho de una principal)
+SEPARADOR = 0.6               # m que cada calzada deja libre a su lado del separador central
+DOBLE_ALCANCE = 40.0          # m: otra principal paralela a menos de esto es la otra calzada de la misma vía
 ANDEN_MINIMO = 0.9            # m que se dejan para acera entre la calzada y la fachada cuando hay sitio
 HOLGURA_FACHADA = 0.25        # la acera termina a esto de la fachada
 TALUD_ANCHO = 0.2             # m de ancho que puede cambiar por cada m de vía (1:5), para que no haga dientes
@@ -220,6 +223,36 @@ def diferencias(m):
     return np.r_[m[:1], np.diff(m, axis=0)].ravel().tolist()
 
 
+principales = [k for k, (c, _) in enumerate(vias) if c == 0]
+arbol_principales = STRtree([vias[k][1] for k in principales])
+
+
+def otra_calzada(P, N, propia):
+    """Distancia, desde cada punto del eje y hacia el lado N, a otra vía principal paralela (la otra calzada); inf si no hay."""
+    d = np.full(len(P), np.inf)
+    rayos = shapely.linestrings(np.stack([P, P + N * DOBLE_ALCANCE], axis=1))
+    ri, li = arbol_principales.query(rayos, predicate='intersects')
+    for r, l in zip(ri, li):
+        k = principales[l]
+        if k == propia:
+            continue
+        L = vias[k][1]
+        corte = rayos[r].intersection(L)
+        if corte.is_empty:
+            continue
+        q = corte if corte.geom_type == 'Point' else min(getattr(corte, 'geoms', [corte]), key=lambda g: g.distance(shapely.points(P[r])))
+        dist = shapely.points(P[r]).distance(q)
+        if dist < 3:                       # la misma vía partida en otro trazo, no la otra calzada
+            continue
+        t = L.project(q)
+        a, b = L.interpolate(max(0, t - 3)), L.interpolate(min(L.length, t + 3))
+        tx, ty = b.x - a.x, b.y - a.y
+        # paralela si su rumbo es casi perpendicular al rayo (|cos| < 0,35, unos 20°)
+        if abs(tx * N[r, 0] + ty * N[r, 1]) / (math.hypot(tx, ty) or 1) < 0.35:
+            d[r] = min(d[r], dist)
+    return d
+
+
 def suavizar_ancho(w, s):
     """Mínimo en una ventana de ±1 punto (tapa los huecos cortos entre casas) y cambio de ancho limitado a TALUD_ANCHO por m."""
     w = np.minimum(w, np.minimum(np.r_[w[1:], w[-1]], np.r_[w[0], w[:-1]]))
@@ -243,7 +276,8 @@ for clase, L in vias:
     NA = np.c_[T[:, 1], -T[:, 0]]           # lado a (derecha del sentido del trazado)
     alcance = ANCHO_VIA[clase] / 2 + ANDEN[clase] + 1
     # distancia a la primera fachada a cada lado
-    libre = {}
+    libre, separador = {}, {}
+    propia = len(rasantes)
     for lado, N in (('a', NA), ('b', -NA)):
         rayos = shapely.linestrings(np.stack([P, P + N * alcance], axis=1))
         ri, pi = arbol_fachadas.query(rayos, predicate='intersects')
@@ -253,12 +287,18 @@ for clase, L in vias:
             dist = shapely.distance(shapely.points(P[ri]), cortes)
             np.minimum.at(d, ri, dist)
         libre[lado] = d
+        separador[lado] = otra_calzada(P, N, propia) if clase == 0 else np.full(n, np.inf)
+    # doble calzada: con la otra calzada al lado, esta toma la mitad del ancho de una principal y no invade el separador
+    doble = np.isfinite(separador['a']) | np.isfinite(separador['b'])
+    tope = np.where(doble, MEDIA_DOBLE, ANCHO_VIA[clase] / 2)
     W, A = {}, {}
     for lado in ('a', 'b'):
         d = libre[lado]
-        w = np.clip(d - ANDEN_MINIMO - HOLGURA_FACHADA, MEDIA_MINIMA[clase], ANCHO_VIA[clase] / 2)
+        w = np.clip(d - ANDEN_MINIMO - HOLGURA_FACHADA, MEDIA_MINIMA[clase], tope)
+        w = np.minimum(w, np.maximum(MEDIA_MINIMA[clase], separador[lado] / 2 - SEPARADOR))
         w = suavizar_ancho(w, s)
         a = np.clip(d - HOLGURA_FACHADA, w, w + ANDEN[clase])
+        a = np.where(np.isfinite(separador[lado]), w, a)            # hacia el separador no hay acera
         a = np.maximum(suavizar_ancho(a, s), w)
         W[lado], A[lado] = w, a
     total += s[-1]

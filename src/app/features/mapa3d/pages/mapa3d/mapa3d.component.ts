@@ -389,6 +389,10 @@ const SITIOS_FIJOS = new Map<string, { lat: number; lng: number; yaw: number; di
   // Sede Comfama (carrera 18 Bis con calle 5AA): un solo edificio con el colegio, la piscina y el centro de salud; centro de los predios
   // 0110-00013 y 0110-00014 del catastro. El modelo lo lleva el centro de salud y las otras dos partes van en PARTES.
   ['Centro Integral de Salud Comfama Girardota', { lat: 6.3797616, lng: -75.4462567, yaw: GIRO_CASCO, dim: [59, 27] }],
+  // Peaje El Trapiche (Autopista Norte, km 25): centro entre los dos tramos de 12 m en que OSM corta las calzadas en las casetas
+  // (vías 3142 y 3143 de vias-49.json, alineados a lo ancho), que concuerda a 10 m con la coordenada de la ANI. Rumbo de la autopista
+  // 39° desde el este; calzadas a 15 m entre ejes. Va sobre la vía (modelo.sobreVia): no se corre.
+  ['Peaje El Trapiche', { lat: 6.399593, lng: -75.43296, yaw: 0.6807, dim: [96, 59.8] }],
 ]);
 /** Puntos que son parte de otro sitio: no llevan edificio propio; su descripción se suma a la del sitio que los contiene. */
 const FUSIONES = new Map<string, string>([['Señor caído', 'Catedral Nuestra Señora del Rosario'], ['Mercado agroverde', 'Parque principal']]);
@@ -2550,6 +2554,13 @@ export class Mapa3dComponent implements AfterViewInit {
   private agregarCintaRasante(calzada: GrupoCinta, acera: GrupoCinta, t: TramoRasante): void {
     const n = t.x.length, periodo = ANCHO_VIA[t.clase] * 1.8, bord = this.rasante!.bordillo;
     const ini = calzada.pos.length / 3, iniA = acera.pos.length / 3;
+    // bajo una plaza que va sobre la vía (el peaje) la cinta se corta: la dibuja el pavimento de la plaza, con sus carriles
+    const plazas = this.equipamientos.filter(q => q.datos.modelo.sobreVia && q.datos.modelo.losa);
+    const bajoPlaza = (x: number, z: number) => plazas.some(q => {
+      const dx = x - q.x, dz = z - q.z, yaw = q.yaw ?? 0, [L, W] = q.datos.modelo.losa!;
+      return Math.abs(dx * Math.cos(yaw) - dz * Math.sin(yaw)) < L / 2 - 2 && Math.abs(dx * Math.sin(yaw) + dz * Math.cos(yaw)) < W / 2;
+    });
+    const fuera = t.x.map((x, i) => !bajoPlaza(x, t.z[i]));
     let recorrido = 0;
     for (let i = 0; i < n; i++) {
       const a = Math.max(0, i - 1), b = Math.min(n - 1, i + 1);
@@ -2576,7 +2587,7 @@ export class Mapa3dComponent implements AfterViewInit {
         x + nx * t.wa[i], t.ya[i] + bord, z + nz * t.wa[i], x + nx * t.aa[i], t.yaa[i], z + nz * t.aa[i],
         x - nx * t.wb[i], t.yb[i] + bord, z - nz * t.wb[i], x - nx * t.ab[i], t.yab[i], z - nz * t.ab[i]);
       for (let k = 0; k < 4; k++) { acera.ids.push(id); acera.pesos.push(peso); acera.uv.push(0.5, 0.5); }
-      if (i) {
+      if (i && (fuera[i] || fuera[i - 1])) {
         const c0 = ini + (i - 1) * 2, a0 = iniA + (i - 1) * 4;
         calzada.idx.push(c0, c0 + 2, c0 + 1, c0 + 1, c0 + 2, c0 + 3);
         acera.idx.push(a0, a0 + 4, a0 + 1, a0 + 1, a0 + 4, a0 + 5, a0 + 2, a0 + 6, a0 + 3, a0 + 3, a0 + 6, a0 + 7);
@@ -2662,11 +2673,12 @@ export class Mapa3dComponent implements AfterViewInit {
   /**
    * Cruces y extremos de las vías principales y locales: un vértice compartido por dos o más trazos es un cruce (`cierre` nulo,
    * disco completo, con el radio de la vía más ancha) y el extremo de un solo trazo es un fin de vía (`cierre` = rumbo hacia
-   * afuera, media luna). Los vértices de una curva, que solo aparecen una vez, no cuentan.
+   * afuera, media luna). Los vértices de una curva, que solo aparecen una vez, no cuentan, ni el punto donde OSM solo corta una vía
+   * en dos que siguen derecho (en una caseta de peaje, un puente o un cambio de nombre): ahí no hay cruce y el disco sería una mancha.
    */
   private nodosViales(d: Compacto): { x: number; z: number; clase: number; cierre: number | null }[] {
     const [bo, bs, be, bn] = this.relieve.bbox;
-    const acc = new Map<string, { x: number; z: number; clase: number; n: number; cierre: number | null }>();
+    const acc = new Map<string, { x: number; z: number; clase: number; n: number; cierre: number | null; brazos: number[] }>();
     for (const v of d.v!) {
       if (v[0] > 1) continue;
       const l = this.desdeDeltas(v, d.k, 1);
@@ -2680,16 +2692,21 @@ export class Mapa3dComponent implements AfterViewInit {
           const o = l[i === 0 ? 1 : i - 1];
           cierre = Math.atan2(z - this.aZ(o[1]), x - this.aX(o[0]));
         }
+        // rumbo de cada brazo que sale del vértice por esta vía
+        const brazos = [i - 1, i + 1].filter(j => j >= 0 && j < l.length).map(j => Math.atan2(this.aZ(l[j][1]) - z, this.aX(l[j][0]) - x));
         const previo = acc.get(k);
         if (previo) {
           previo.n++;
           previo.clase = Math.min(previo.clase, v[0]);
           previo.cierre = null;
-        } else acc.set(k, { x, z, clase: v[0], n: 1, cierre });
+          previo.brazos.push(...brazos);
+        } else acc.set(k, { x, z, clase: v[0], n: 1, cierre, brazos });
       });
     }
+    // dos brazos casi opuestos (±25°): la misma vía que sigue, cortada en dos trazos
+    const sigue = (b: number[]) => b.length === 2 && Math.abs(Math.abs(Math.atan2(Math.sin(b[0] - b[1]), Math.cos(b[0] - b[1]))) - Math.PI) < 0.44;
     // un vértice de curva (n = 1 y no es extremo) no es nodo; el extremo suelto sí, como cierre
-    return [...acc.values()].filter(a => a.n > 1 || a.cierre !== null);
+    return [...acc.values()].filter(a => a.cierre !== null || (a.n > 1 && !sigue(a.brazos)));
   }
 
   /** Abanico plano pegado al relieve: sector de círculo de `radio` m entre los ángulos `a0` y `a1` (un círculo si abarcan 2π). */
@@ -4920,7 +4937,8 @@ export class Mapa3dComponent implements AfterViewInit {
           const desplazamientos: [number, number][] = [[0, 0]];
           for (const r of [8, 16, 24, 30]) for (let k = 0; k < 12; k++) desplazamientos.push([r * Math.cos(k * Math.PI / 6), r * Math.sin(k * Math.PI / 6)]);
           let ajuste = 1;
-          for (; ajuste > 0.5; ajuste -= 0.05) {
+          // lo que va sobre la vía (el peaje) se queda donde está: ocupar la calzada es su oficio
+          for (; ajuste > 0.5 && !modelo.sobreVia; ajuste -= 0.05) {
             const d = desplazamientos.find(([ox, oz]) => libre(ajuste, ox, oz));
             if (d) { px += d[0]; pz += d[1]; break; }
           }
@@ -5166,7 +5184,10 @@ export class Mapa3dComponent implements AfterViewInit {
         const a = i / 2, b = j / 2;
         alturas.push(this.alturaXZ(q.x + a * (lw / 2) * cos + b * (ld / 2) * sin, q.z - a * (lw / 2) * sin + b * (ld / 2) * cos));
       }
-      const base = (modelo.losa ? Math.max(...alturas) : alturas[12]) + 1, minimo = Math.min(...alturas);
+      // lo que va sobre la vía se apoya en la calzada (la más alta de las que cruzan su eje transversal), no en una losa en la ladera
+      const sobreVia = modelo.sobreVia
+        ? Math.max(...[-ld / 4, -ld / 8, ld / 8, ld / 4].map(b => this.calzadaXZ(q.x + b * sin, q.z + b * cos))) + 0.05 : null;
+      const base = sobreVia ?? (modelo.losa ? Math.max(...alturas) : alturas[12]) + 1, minimo = Math.min(...alturas);
       const id = this.idEn(q.lon, q.lat), peso = id >= 0 ? this.pesoBorde(q.lon, q.lat, id) : 0;
       giro.makeRotationY(yaw);
       const poner = (g: THREE.BufferGeometry, color: THREE.Color) => {
@@ -5180,7 +5201,7 @@ export class Mapa3dComponent implements AfterViewInit {
         geos.push(geo);
         for (let i = 0; i < cnt; i++) { ids.push(id); pesos.push(peso); }
       };
-      if (modelo.losa) {                                          // losa que se asienta en la ladera
+      if (modelo.losa && sobreVia === null) {                     // losa que se asienta en la ladera
         const prof = base - minimo + 2;
         poner(new THREE.BoxGeometry(lw, prof, ld).translate(0, -prof / 2, 0), losaColor);
       }
