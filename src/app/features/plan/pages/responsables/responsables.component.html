@@ -3,53 +3,127 @@
     @if (actual(); as r) {
       <section id="detalle" class="detalle" [style.--acento-h]="acentoH(r.dep.id)">
         <a class="resp__volver" routerLink="/responsables">← Todos los responsables</a>
-        <header class="heroe">
-          <span class="heroe__hojas" aria-hidden="true"></span>
-          @if (urlIcono(r.dep); as u) { <img class="heroe__ico" [src]="u" alt="" width="96" height="96" /> } @else { <i class="heroe__ico heroe__ico--vacio">{{ r.dep.nombre.charAt(0) }}</i> }
-          <div class="heroe__texto">
-            <span class="heroe__tipo">{{ r.dep.tipo }}@if (r.grupo.length > 1) { · con {{ r.grupo.length - 1 }} {{ r.grupo.length === 2 ? 'subdependencia' : 'subdependencias' }} }</span>
-            <h2>{{ r.dep.nombre }}</h2>
-            @if (r.dep.responsable; as q) {
-              <p class="heroe__quien"><b>{{ q.nombre }}</b><span>{{ q.cargo }}</span></p>
-              <p class="heroe__contacto">
-                @if (q.correo) { <a [href]="'mailto:' + q.correo">{{ q.correo }}</a> }
-                @if (q.telefono) { <span>Tel. {{ q.telefono }}{{ q.extension ? ' ext. ' + q.extension : '' }}</span> }
-                <a [href]="q.url" target="_blank" rel="noopener">Sitio de la alcaldía</a>
-              </p>
-            } @else {
-              <p class="heroe__quien"><span>La alcaldía no publica quién la dirige.</span></p>
-            }
+        <!-- Portada de la secretaría: su nombre y quien la dirige arriba; debajo tres tarjetas translúcidas que empaquetan
+             cómo va, qué prometió y qué viene. Cada tarjeta abre su pestaña de abajo; la del secretario abre el equipo. -->
+        @let atm = atmosfera(r.dep.id);
+        <header class="portada" [style.--at1]="atm[0]" [style.--at2]="atm[1]" [style.--at3]="atm[2]">
+          <div class="portada__fondo" aria-hidden="true"><div class="portada__capa"></div></div>
+          <div class="portada__cab">
+            <div class="portada__id">
+              @if (urlIcono(r.dep); as u) { <img class="portada__ico" [src]="u" alt="" width="96" height="96" /> } @else { <i class="portada__ico portada__ico--vacio" aria-hidden="true">{{ r.dep.nombre.charAt(0) }}</i> }
+              <span class="portada__tipo">{{ r.dep.tipo }}@if (r.grupo.length > 1) { · con {{ r.grupo.length - 1 }} {{ r.grupo.length === 2 ? 'subdependencia' : 'subdependencias' }} }</span>
+              <h2 class="portada__nombre">{{ r.dep.nombre }}</h2>
+              <p class="portada__sub">Quién la dirige, cómo va, qué prometió y qué viene, en una sola vista.</p>
+            </div>
+
+            <!-- quien la dirige: retrato, cargo, contacto y la puerta al equipo -->
+            <aside class="sec" aria-label="Quién la dirige" [class.on]="pestana() === 'equipo'">
+              @if (r.dep.responsable; as q) {
+                <div class="sec__foto">
+                  @if (retrato(r.dep); as f) { <img [src]="f" [alt]="'Retrato de ' + q.nombre" width="400" height="479" /> }
+                  @else { <span class="sec__ini" aria-hidden="true">{{ iniciales(q.nombre) }}</span> }
+                </div>
+                <div class="sec__txt">
+                  <span class="sec__cargo">{{ q.cargo }}</span>
+                  <b class="sec__nombre">{{ q.nombre }}</b>
+                  <ul class="sec__contacto">
+                    @if (q.correo) { <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4zM4 7l8 6 8-6" /></svg><a [href]="'mailto:' + q.correo">{{ q.correo }}</a></li> }
+                    @if (q.telefono) { <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h3l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2z" /></svg><span>{{ q.telefono }}{{ q.extension ? ' · ext. ' + q.extension : '' }}</span></li> }
+                    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z" /></svg><a [href]="q.url" target="_blank" rel="noopener">Sitio de la alcaldía</a></li>
+                  </ul>
+                  <button type="button" class="sec__ir" (click)="abrir('equipo', true)">
+                    {{ r.equipo ? 'Equipo de ' + r.equipo : 'Equipo' }}@if (r.grupo.length > 1) { · {{ r.grupo.length - 1 }} {{ r.grupo.length === 2 ? 'subdependencia' : 'subdependencias' }} }&nbsp;<span aria-hidden="true">→</span>
+                  </button>
+                </div>
+              } @else {
+                <div class="sec__foto"><span class="sec__ini" aria-hidden="true">?</span></div>
+                <div class="sec__txt">
+                  <span class="sec__cargo">Quién la dirige</span>
+                  <span class="sec__nada">La alcaldía no publica quién la dirige.</span>
+                  <button type="button" class="sec__ir" (click)="abrir('equipo', true)">Ver el equipo <span aria-hidden="true">→</span></button>
+                </div>
+              }
+            </aside>
           </div>
-          @if (seguimiento()) {
-            <figure class="anillo" [class]="'anillo ' + claseAvance(r.avance)" role="img"
-              [attr.aria-label]="r.avance !== null ? r.dep.nombre + ', ' + entero(r.avance) + ' % de avance ' + seguimiento()!.anio : r.dep.nombre + ', sin indicadores en el informe'">
-              <svg viewBox="0 0 120 120" aria-hidden="true">
-                <circle class="anillo__pista" cx="60" cy="60" r="52" />
-                <circle class="anillo__valor" cx="60" cy="60" r="52" [style.stroke-dashoffset]="anilloOffset(r.avance)" />
-              </svg>
-              <figcaption><b>{{ r.avance !== null ? entero(r.avance) : '—' }}<small>{{ r.avance !== null ? '%' : '' }}</small></b><span>avance {{ seguimiento()!.anio }}</span></figcaption>
-            </figure>
-          }
+
+          <div class="tarjetas">
+            <!-- cómo va: anillo de avance, informe oficial y estados de los productos -->
+            <article class="tarj v-vigilar" [class.on]="pestana() === 'panorama'">
+              <h3>Cómo va</h3>
+              <div class="tarj__fila">
+                @if (seguimiento()) {
+                  <figure [class]="'anillo ' + claseAvance(r.avance)" role="img"
+                    [attr.aria-label]="r.avance !== null ? r.dep.nombre + ', ' + entero(r.avance) + ' % de avance ' + seguimiento()!.anio : r.dep.nombre + ', sin indicadores en el informe'">
+                    <svg viewBox="0 0 120 120" aria-hidden="true">
+                      <circle class="anillo__pista" cx="60" cy="60" r="52" />
+                      <circle class="anillo__valor" cx="60" cy="60" r="52" [style.stroke-dashoffset]="anilloOffset(r.avance)" />
+                    </svg>
+                    <figcaption><b>{{ r.avance !== null ? entero(r.avance) : '—' }}<small>{{ r.avance !== null ? '%' : '' }}</small></b><span>avance {{ seguimiento()!.anio }}</span></figcaption>
+                  </figure>
+                }
+                <dl class="tarj__datos">
+                  @if (ultimoOficial(r); as o) {
+                    <div><dt>Plan de acción {{ o.anio }}</dt><dd>{{ o.plan !== null ? entero(o.plan) + ' %' : '—' }}</dd></div>
+                    @if (o.cuatrienio !== null) { <div><dt>Avance al cuatrienio</dt><dd>{{ entero(o.cuatrienio) }} %</dd></div> }
+                  } @else {
+                    <div><dt>Informe de la alcaldía</dt><dd class="nd">sin cuadro</dd></div>
+                  }
+                </dl>
+              </div>
+              @if (seguimiento()) {
+                <div class="estados" role="img" [attr.aria-label]="estadosTexto(r)">
+                  @for (e of estados(r); track e.k) { @if (e.n) { <i [class]="'estados__' + e.k" [style.flex-grow]="e.n"></i> } }
+                </div>
+                <ul class="estados__ley">
+                  @for (e of estados(r); track e.k) { @if (e.n) { <li [class]="'estados__' + e.k"><i aria-hidden="true">{{ e.g }}</i>{{ e.n }} {{ e.t }}</li> } }
+                </ul>
+              }
+              <button type="button" class="tarj__ir" (click)="abrir('panorama', true)">Ver el panorama <span aria-hidden="true">→</span></button>
+            </article>
+
+            <!-- qué prometió: productos a cargo, de dónde sale la asignación, líneas y veredas -->
+            <article class="tarj v-entender" [class.on]="pestana() === 'productos'">
+              <h3>Qué prometió</h3>
+              <span class="tarj__big">{{ cantidad(r) }}<small>{{ cantidad(r) === 1 ? 'producto del plan' : 'productos del plan' }}</small></span>
+              <span class="tarj__origen"><span class="tarj__pdf">{{ r.alta }} según el PDF</span><span class="tarj__sug">{{ r.sugerida }} sugeridos por sector</span></span>
+              @if (porLinea().length) {
+                <ul class="tarj__lineas" aria-label="Productos por línea estratégica">
+                  @for (l of porLinea(); track l.nombre) {
+                    <li [title]="l.nombre"><span class="tarj__ln">{{ l.nombre }}</span><span class="tarj__lb"><i [style.width.%]="pct(l.n, porLinea()[0].n)"></i></span><b>{{ l.n }}</b></li>
+                  }
+                </ul>
+              }
+              @if (veredasActual().length) { <span class="tarj__pie">El informe la nombra en {{ veredasActual().length }} {{ veredasActual().length === 1 ? 'vereda' : 'veredas' }}</span> }
+              <button type="button" class="tarj__ir" (click)="abrir('productos', true)">Ver los productos <span aria-hidden="true">→</span></button>
+            </article>
+
+            <!-- qué viene: lo que programó para el año en su plan de acción -->
+            <article class="tarj v-seguir" [class.on]="pestana() === 'plan'" [class.tarj--vacia]="!planResumen()">
+              <h3>Qué viene en {{ anioPlanAccion }}</h3>
+              @if (planResumen(); as pr) {
+                <span class="tarj__big">{{ millones(pr.total) }}<small>de presupuesto apropiado</small></span>
+                <span class="tarj__sub">{{ pr.proyectos }} {{ pr.proyectos === 1 ? 'proyecto' : 'proyectos' }} · {{ pr.acciones }} acciones · {{ pr.indicadores }} indicadores</span>
+                <div class="tarj__trim" role="img" [attr.aria-label]="'Acciones con meta por trimestre: ' + pr.trimestres.join(', ')">
+                  @for (n of pr.trimestres; track $index) { <span><i [style.height.%]="pct(n, pr.maxTrimestre)"></i><small>T{{ $index + 1 }}</small></span> }
+                </div>
+                <button type="button" class="tarj__ir" (click)="abrir('plan', true)">Ver el plan {{ anioPlanAccion }} <span aria-hidden="true">→</span></button>
+              } @else {
+                <span class="tarj__sub">La alcaldía no publicó plan de acción {{ anioPlanAccion }} para esta dependencia.</span>
+              }
+            </article>
+          </div>
         </header>
 
-        <dl class="kpis">
-          <div><dt>Productos a cargo</dt><dd>{{ cantidad(r) }}</dd></div>
-          <div class="kpis__pdf"><dt>Según el PDF</dt><dd>{{ r.alta }}</dd></div>
-          <div class="kpis__sug"><dt>Sugeridos por sector</dt><dd>{{ r.sugerida }}</dd></div>
-          @if (seguimiento()) {
-            <div class="av--ok"><dt>Cumplidos (≥ 100 %)</dt><dd>{{ r.cumplidos }}</dd></div>
-            <div class="av--bajo"><dt>Con menos de 50 %</dt><dd>{{ r.atrasados }}</dd></div>
+        <div class="pestanas" id="secciones" role="tablist" aria-label="Secciones del responsable">
+          @for (s of secciones; track s.p) {
+            @if (s.p !== 'plan' || planResumen()) {
+              <button type="button" role="tab" [attr.aria-selected]="pestana() === s.p" [class.on]="pestana() === s.p" (click)="abrir(s.p)">
+                {{ s.pestana }}
+                @if (s.p === 'productos') { <span class="cuenta">{{ cantidad(r) }}</span> }
+                @if (s.p === 'plan' && planResumen()) { <span class="cuenta">{{ planResumen()!.acciones }}</span> }
+              </button>
+            }
           }
-          <div><dt>Equipo</dt><dd>{{ r.equipo }}</dd></div>
-        </dl>
-
-        <div class="pestanas" role="tablist" aria-label="Secciones del responsable">
-          <button type="button" role="tab" [attr.aria-selected]="pestana() === 'panorama'" [class.on]="pestana() === 'panorama'" (click)="pestana.set('panorama')">Panorama</button>
-          @if (planResumen(); as pr) {
-            <button type="button" role="tab" [attr.aria-selected]="pestana() === 'plan'" [class.on]="pestana() === 'plan'" (click)="pestana.set('plan')">Plan {{ anioPlanAccion }} <span class="cuenta">{{ pr.acciones }}</span></button>
-          }
-          <button type="button" role="tab" [attr.aria-selected]="pestana() === 'productos'" [class.on]="pestana() === 'productos'" (click)="pestana.set('productos')">Productos <span class="cuenta">{{ cantidad(r) }}</span></button>
-          <button type="button" role="tab" [attr.aria-selected]="pestana() === 'equipo'" [class.on]="pestana() === 'equipo'" (click)="pestana.set('equipo')">Equipo</button>
         </div>
 
         @if (pestana() === 'panorama') {
@@ -355,46 +429,6 @@
     } @else {
       <p class="vacio">No existe ese responsable. <a class="resp__volver" routerLink="/responsables">Ver todos</a></p>
     }
-
-    <section class="fuentes tarjeta" aria-labelledby="fuentes-t">
-      <h2 id="fuentes-t">Fuentes de referencia</h2>
-      <p class="nota">De dónde sale cada dato de esta vista. Los datos del plan se consultaron el {{ p.fuente.fecha }}.</p>
-      <ol class="fuentes__lista">
-        <li>
-          <b>{{ p.plan }} · {{ p.municipio }} 2024-2027 (PDF oficial)</b>
-          <span>Productos, indicadores, metas y el responsable que el propio plan indica para cada producto («según el PDF»).</span>
-        </li>
-        <li>
-          <b>DNP · SisPT, plan indicativo</b>
-          <span>Códigos de producto e indicador y su programación anual 2024-2027. Sirve de llave para cruzar el plan con el seguimiento.</span>
-        </li>
-        <li>
-          <b>Informes de seguimiento de la alcaldía{{ seguimiento() ? ' · ' + seguimiento()!.anios.join(' y ') : '' }}</b>
-          <span>Avance por indicador, fichas con la narrativa y cuadros por dependencia (plan de acción y avance al cuatrienio). Publicados como imagen y transcritos; son cifras reportadas por la alcaldía, sin auditar.
-            @if (seguimiento(); as sg) { Fichas sin código SisPT, que quedan fuera del cruce: {{ sg.sin_codigo }} en {{ sg.anio }}. }</span>
-        </li>
-        @if (planAccion(); as pa) {
-          <li>
-            <b>Planes de acción {{ pa.anio }} de la alcaldía</b>
-            <span>Proyectos con su BPIN, acciones programadas por trimestre y presupuesto apropiado por fuente, uno por dependencia, publicados en Transparencia · Planeación, Gestión y Control. Es programación: la sección de seguimiento del formato viene sin diligenciar.
-              <a href="https://www.girardota.gov.co/Transparencia/Paginas/Planeacion-Gestion-y-Control.aspx" target="_blank" rel="noopener">girardota.gov.co · Planeación, Gestión y Control</a></span>
-          </li>
-        }
-        <li>
-          <b>Sitio web de la alcaldía de {{ p.municipio }}</b>
-          <span>Quién dirige cada dependencia, su equipo y los datos de contacto, tomados del directorio institucional.
-            <a href="https://www.girardota.gov.co/NuestraAlcaldia/Dependencias" target="_blank" rel="noopener">girardota.gov.co · Dependencias</a></span>
-        </li>
-        <li>
-          <b>Catastro de Girardota · Alcaldía de Girardota</b>
-          <span>Construcciones (pisos, uso, área) y predios con sus linderos, del servicio «Girardota_Catastro» publicado por el Área Metropolitana del Valle de Aburrá. Con ellos se modelan las casas del Pueblo 3D y las construcciones, fachadas y cercas del Mapa 3D. Datos © Alcaldía de Girardota, Catastro, consultados el 2 de noviembre de 2026; la representación 3D es ilustrativa y no tiene valor catastral.</span>
-        </li>
-        <li>
-          <b>Criterio propio de RECUAPP</b>
-          <span>Cuando el PDF no nombra responsable, el producto se sugiere por su sector (se marca «sugerida por sector»). El avance de cada responsable es el promedio del % de sus indicadores, cada uno topado en 100.</span>
-        </li>
-      </ol>
-    </section>
   </main>
 } @else if (plan() === null) {
   <main class="resp"><p class="vacio">No hay datos del plan para esta entidad.</p></main>

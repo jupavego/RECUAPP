@@ -13,6 +13,18 @@ const ANIO_PLAN_ACCION = 2026;
 
 export type Pestana = 'panorama' | 'plan' | 'productos' | 'equipo';
 
+/** Pestañas de la vista, en el orden de las tarjetas de la portada; el equipo se abre desde la tarjeta del secretario. */
+const SECCIONES: { p: Pestana; pestana: string }[] = [
+  { p: 'panorama', pestana: 'Panorama' },
+  { p: 'productos', pestana: 'Productos' },
+  { p: 'plan', pestana: 'Plan ' + ANIO_PLAN_ACCION },
+  { p: 'equipo', pestana: 'Equipo' },
+];
+
+/** Dependencias con retrato de quien la dirige en /img/retratos/<dane>/<id>.webp (fotos oficiales de la alcaldía). */
+const RETRATOS = new Set(['des', 'agri', 'amb', 'gob', 'hac', 'inf', 'pla', 'sal', 'adm', 'tra', 'edu', 'com', 'jur', 'cid', 'cia',
+  'sub_cul', 'sub_part', 'sub_prot', 'sub_seg', 'sub_dec']);
+
 /** fuentes de financiación del plan de acción, en el orden del formato de la alcaldía */
 const FUENTES_PA = [
   { k: 'propios', n: 'Recursos propios' },
@@ -67,6 +79,36 @@ export function matizDe(id: string): number {
   let h = 0;
   for (const c of id) h = (h * 31 + c.charCodeAt(0)) >>> 0;
   return 70 + (h % 90);
+}
+
+/**
+ * Atmósfera de color de cada dependencia: tres matices (0–360) que tiñen las curvas de nivel y el velo de su portada.
+ * Salen del icono y del oficio de cada una (el bus azul y ámbar de Tránsito, el escudo azul y dorado de Gobierno…).
+ */
+const ATMOSFERAS: Record<string, [number, number, number]> = {
+  agri: [92, 42, 150],   // verde cultivo, ocre, hoja
+  amb: [152, 186, 96],   // esmeralda, agua, brote
+  gob: [224, 44, 258],   // azul escudo, dorado, índigo
+  hac: [40, 152, 18],    // oro, verde billete, cobre
+  inf: [20, 204, 38],    // terracota, acero, arena
+  pla: [190, 84, 232],   // cian, lima, azul plano
+  sal: [352, 176, 18],   // rosa, verde quirófano, coral
+  adm: [212, 174, 250],  // pizarra, aguamarina, lavanda
+  tra: [216, 40, 190],   // azul bus, ámbar semáforo, cian
+  edu: [228, 272, 44],   // azul birrete, violeta, dorado
+  com: [12, 328, 42],    // coral, ciruela, miel
+  jur: [345, 32, 220],   // vino, arena, tinta
+  cid: [262, 300, 200],  // violeta, magenta, azul
+  cia: [170, 208, 140],  // turquesa, azul, verde
+  des: [44, 140, 205],   // dorado, verde, cielo
+};
+
+export function atmosferaDe(id: string): [number, number, number] {
+  if (ATMOSFERAS[id]) return ATMOSFERAS[id];
+  let h = 0;
+  for (const c of id) h = (h * 31 + c.charCodeAt(0)) >>> 0;
+  const a = h % 360;
+  return [a, (a + 140) % 360, (a + 50) % 360];
 }
 
 /** Un resumen por dependencia de primer nivel (las externas, como el INDER, no suman a su secretaría). */
@@ -158,6 +200,54 @@ export class ResponsablesComponent {
   readonly soloConAvance = signal(false);
   readonly pestana = signal<Pestana>('panorama');
   readonly anios = ANIOS;
+
+  // ── portada ──
+  readonly secciones = SECCIONES;
+  private readonly poco = typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /** abre una pestaña; desde una tarjeta de la portada además baja hasta las pestañas */
+  abrir(p: Pestana, bajar = false): void {
+    this.pestana.set(p);
+    if (bajar) setTimeout(() => document.getElementById('secciones')?.scrollIntoView({ behavior: this.poco ? 'auto' : 'smooth', block: 'start' }));
+  }
+
+  /** retrato de quien dirige la dependencia, o null si no hay foto */
+  retrato(d: Dependencia): string | null {
+    return RETRATOS.has(d.id) ? `/img/retratos/${this.plan()?.dane ?? ENTIDAD_PILOTO}/${d.id}.webp` : null;
+  }
+
+  /** iniciales para cuando no hay foto */
+  iniciales(nombre: string): string {
+    return nombre.split(/\s+/).filter(w => w.length > 2).slice(0, 2).map(w => w[0]).join('').toUpperCase();
+  }
+
+  atmosfera(id: string): [number, number, number] {
+    return atmosferaDe(id);
+  }
+
+  /** cuadro oficial más reciente del informe para el responsable */
+  ultimoOficial(r: Resumen): { anio: string; plan: number | null; cuatrienio: number | null } | null {
+    const a = this.aniosOficiales(r)[0];
+    if (!a) return null;
+    const o = r.oficial![a];
+    return { anio: a, plan: o.plan_accion, cuatrienio: o.cuatrienio };
+  }
+
+  /** productos por estado en el informe: color + símbolo + texto, y «sin informe» aparte (nunca 0 %) */
+  estados(r: Resumen): { k: string; n: number; g: string; t: string }[] {
+    const total = this.cantidad(r);
+    const enCurso = r.conSeguimiento - r.cumplidos - r.atrasados;
+    return [
+      { k: 'ok', n: r.cumplidos, g: '✓', t: r.cumplidos === 1 ? 'cumplido' : 'cumplidos' },
+      { k: 'medio', n: enCurso, g: '◐', t: 'en curso' },
+      { k: 'bajo', n: r.atrasados, g: '!', t: 'con menos de 50 %' },
+      { k: 'nd', n: total - r.conSeguimiento, g: '○', t: 'sin informe' },
+    ];
+  }
+
+  estadosTexto(r: Resumen): string {
+    return 'Productos: ' + this.estados(r).map(e => e.n + ' ' + e.t).join(', ');
+  }
 
   /** Un resumen por dependencia de primer nivel (las externas, como el INDER, no suman a su secretaría). */
   readonly resumenes = computed<Resumen[]>(() => {
@@ -259,7 +349,7 @@ export class ResponsablesComponent {
   /** abre un producto del plan desde el plan de acción */
   verProducto(ip: string): void {
     this.soloConAvance.set(false);
-    this.pestana.set('productos');
+    this.abrir('productos');
     setTimeout(() => document.getElementById('prod-' + ip)?.scrollIntoView({ behavior: 'smooth', block: 'center' }));
   }
 
