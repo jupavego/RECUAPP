@@ -45,6 +45,9 @@
 
         <div class="pestanas" role="tablist" aria-label="Secciones del responsable">
           <button type="button" role="tab" [attr.aria-selected]="pestana() === 'panorama'" [class.on]="pestana() === 'panorama'" (click)="pestana.set('panorama')">Panorama</button>
+          @if (planResumen(); as pr) {
+            <button type="button" role="tab" [attr.aria-selected]="pestana() === 'plan'" [class.on]="pestana() === 'plan'" (click)="pestana.set('plan')">Plan {{ anioPlanAccion }} <span class="cuenta">{{ pr.acciones }}</span></button>
+          }
           <button type="button" role="tab" [attr.aria-selected]="pestana() === 'productos'" [class.on]="pestana() === 'productos'" (click)="pestana.set('productos')">Productos <span class="cuenta">{{ cantidad(r) }}</span></button>
           <button type="button" role="tab" [attr.aria-selected]="pestana() === 'equipo'" [class.on]="pestana() === 'equipo'" (click)="pestana.set('equipo')">Equipo</button>
         </div>
@@ -135,6 +138,92 @@
           </section>
         }
         }
+        @if (pestana() === 'plan') {
+        @if (planResumen(); as pr) {
+          <section class="pa" [attr.aria-label]="'Plan de acción ' + anioPlanAccion">
+            <div class="pa__cab">
+              <div>
+                <h3>Lo que programó para {{ anioPlanAccion }}</h3>
+                <p class="nota">Plan de acción publicado por la alcaldía: proyectos, acciones por trimestre y presupuesto apropiado. Es programación; el avance de {{ anioPlanAccion }} todavía no está publicado.</p>
+              </div>
+            </div>
+
+            <dl class="pa__cifras">
+              <div class="pa__plata"><dt>Presupuesto apropiado</dt><dd>{{ millones(pr.total) }}</dd></div>
+              <div><dt>Proyectos</dt><dd>{{ pr.proyectos }}</dd></div>
+              <div><dt>Indicadores</dt><dd>{{ pr.indicadores }}</dd></div>
+              <div><dt>Acciones</dt><dd>{{ pr.acciones }}</dd></div>
+            </dl>
+
+            <div class="pa__graf">
+              @if (pr.fuentes.length) {
+                <figure class="pa__fuentes">
+                  <figcaption>¿Con qué plata?</figcaption>
+                  <div class="pa__barra" role="img" [attr.aria-label]="'Reparto del presupuesto por fuente'">
+                    @for (f of pr.fuentes; track f.nombre) { <i [class]="'pa__f' + $index" [style.width.%]="pct(f.valor, pr.sumaFuentes)" [title]="f.nombre + ': ' + millones(f.valor)"></i> }
+                  </div>
+                  <ul class="pa__ley">
+                    @for (f of pr.fuentes; track f.nombre) { <li><i [class]="'pa__f' + $index"></i>{{ f.nombre }} <b>{{ millones(f.valor) }}</b> <small>{{ pct(f.valor, pr.sumaFuentes) }} %</small></li> }
+                  </ul>
+                </figure>
+              }
+              <figure class="pa__trim">
+                <figcaption>¿Cuándo? <small>acciones con meta en cada trimestre</small></figcaption>
+                <div class="pa__cols">
+                  @for (n of pr.trimestres; track $index) {
+                    <div class="pa__col"><span class="pa__colb"><i [style.height.%]="pct(n, pr.maxTrimestre)"></i></span><b>{{ n }}</b><small>T{{ $index + 1 }}</small></div>
+                  }
+                </div>
+              </figure>
+            </div>
+
+            @for (pl of planesActual(); track pl.dep.id) {
+              @if (planesActual().length > 1) { <h4 class="pa__dep">{{ pl.dep.nombre }} <span class="cuenta">{{ millones(pl.pa.presupuesto) }}</span></h4> }
+              <ul class="pa__proyectos">
+                @for (p of pl.pa.proyectos; track p.hoja) {
+                  <li>
+                    <details class="pa__proy" [class.pa__proy--revisar]="p.revisar">
+                      <summary>
+                        <span class="pa__nom"><b>{{ p.nombre }}</b>
+                          <small>{{ p.programa }}@if (p.bpin) { · BPIN {{ p.bpin }} }</small></span>
+                        <span class="pa__val">@if (p.revisar) { <em class="aviso">por confirmar</em> } @else { {{ millones(p.presupuesto.total) }} }<small>{{ accionesDe(p) }} {{ accionesDe(p) === 1 ? 'acción' : 'acciones' }}</small></span>
+                      </summary>
+                      @if (p.revisar) { <p class="narr narr--dif">{{ p.revisar }}</p> }
+                      @for (i of p.indicadores; track $index) {
+                        <div class="pa__ind">
+                          @if (i.indicador) {
+                            <p class="pa__indt">
+                              <b>{{ i.indicador }}</b>
+                              <span>Meta {{ anioPlanAccion }}: <b>{{ num(i.meta_anio) }}</b>@if (i.meta_cuatrienio !== null) { de {{ num(i.meta_cuatrienio) }} en el cuatrienio }@if (i.unidad) { · {{ i.unidad }} }</span>
+                              @if (i.ip) { <button type="button" class="chip chip--meta pa__ip" (click)="verProducto(i.ip)" title="Ver el producto del plan">{{ i.ip }} →</button> }
+                            </p>
+                          }
+                          @if (i.acciones.length) {
+                            <table class="pa__acc">
+                              <thead><tr><th>Acción</th><th class="num">Meta</th><th>T1</th><th>T2</th><th>T3</th><th>T4</th></tr></thead>
+                              <tbody>
+                                @for (a of i.acciones; track $index) {
+                                  <tr>
+                                    <td>{{ a.accion }}@if (a.responsable) { <small>{{ a.responsable }}</small> }</td>
+                                    <td class="num">{{ num(a.meta) }}@if (a.unidad) { <small>{{ a.unidad }}</small> }</td>
+                                    @for (t of a.trimestres; track $index) { <td class="pa__t" [class.pa__t--on]="(t ?? 0) > 0">{{ t ? num(t) : '' }}</td> }
+                                  </tr>
+                                }
+                              </tbody>
+                            </table>
+                          }
+                        </div>
+                      }
+                    </details>
+                  </li>
+                }
+              </ul>
+              @if (pl.pa.url) { <p class="nota">Archivo de la alcaldía: <a [href]="pl.pa.url" target="_blank" rel="noopener">{{ pl.pa.archivo }}</a></p> }
+            }
+            <p class="nota">{{ pr.cruzados }} de {{ pr.indicadores }} indicadores se cruzaron con un producto del plan por su nombre.@if (pr.revisar) { {{ pr.revisar === 1 ? 'Un proyecto trae' : pr.revisar + ' proyectos traen' }} un valor atípico que no se suma al total. } El formato tiene una sección de seguimiento que la alcaldía publicó sin diligenciar.</p>
+          </section>
+        }
+        }
         @if (pestana() === 'productos') {
         <div class="prod-cab">
           <h3>Productos e indicadores <span class="cuenta">{{ filasActual().length }}</span></h3>
@@ -155,7 +244,7 @@
               </thead>
               <tbody>
                 @for (f of filasActual(); track f.x.id + f.dep.id) {
-                  <tr>
+                  <tr [id]="'prod-' + f.x.id">
                     <td class="cod">{{ f.x.id }}</td>
                     <td class="ind">
                       <b>{{ f.x.indicador }}</b><span>{{ f.x.producto }}</span>
@@ -163,6 +252,7 @@
                         @if (r.grupo.length > 1) { <em>{{ f.dep.nombre }}</em> }
                         <span class="chip" [class.chip--sugerida]="f.conf !== 'alta'">{{ f.conf === 'alta' ? 'según el PDF' : 'sugerida por sector' }}</span>
                         <span class="chip chip--meta" title="Sector">{{ sectorNombre(f.x.sector) }}</span>
+                        @if (metaPlanAccion().has(f.x.id)) { <span class="chip chip--pa" [title]="'Aparece en el plan de acción ' + anioPlanAccion + ' de la alcaldía'">plan {{ anioPlanAccion }} · meta {{ num(metaPlanAccion().get(f.x.id) ?? null) }}</span> }
                         @if (f.x.ods) { <span class="chip chip--meta" title="Objetivo de Desarrollo Sostenible">ODS · {{ f.x.ods }}</span> }
                         @if (f.x.pdf) { <span class="chip chip--meta" title="Dónde aparece en el PDF del plan">PDF p. {{ f.x.pdf.pagina }}@if (f.x.pdf.linea_base) {, línea base {{ f.x.pdf.linea_base }}}</span> }
                       </span>
@@ -283,6 +373,13 @@
           <span>Avance por indicador, fichas con la narrativa y cuadros por dependencia (plan de acción y avance al cuatrienio). Publicados como imagen y transcritos; son cifras reportadas por la alcaldía, sin auditar.
             @if (seguimiento(); as sg) { Fichas sin código SisPT, que quedan fuera del cruce: {{ sg.sin_codigo }} en {{ sg.anio }}. }</span>
         </li>
+        @if (planAccion(); as pa) {
+          <li>
+            <b>Planes de acción {{ pa.anio }} de la alcaldía</b>
+            <span>Proyectos con su BPIN, acciones programadas por trimestre y presupuesto apropiado por fuente, uno por dependencia, publicados en Transparencia · Planeación, Gestión y Control. Es programación: la sección de seguimiento del formato viene sin diligenciar.
+              <a href="https://www.girardota.gov.co/Transparencia/Paginas/Planeacion-Gestion-y-Control.aspx" target="_blank" rel="noopener">girardota.gov.co · Planeación, Gestión y Control</a></span>
+          </li>
+        }
         <li>
           <b>Sitio web de la alcaldía de {{ p.municipio }}</b>
           <span>Quién dirige cada dependencia, su equipo y los datos de contacto, tomados del directorio institucional.

@@ -175,6 +175,60 @@ export interface Seguimiento {
   global: Record<string, AvanceNivel[]>;
 }
 
+/** acción programada en el plan de acción, con su meta por trimestre */
+export interface AccionPlan {
+  accion: string;
+  unidad: string | null;
+  meta: number | null;
+  /** meta de los trimestres I a IV; null si el trimestre va vacío */
+  trimestres: (number | null)[];
+  responsable: string | null;
+}
+
+export interface IndicadorPlanAccion {
+  indicador: string | null;
+  tipo: string | null;
+  unidad: string | null;
+  linea_base: number | null;
+  meta_cuatrienio: number | null;
+  meta_anio: number | null;
+  /** producto del plan (IP-xx) con el que se cruzó por nombre; falta si no se encontró */
+  ip?: string;
+  acciones: AccionPlan[];
+}
+
+export interface ProyectoPlanAccion {
+  nombre: string;
+  bpin: string | null;
+  linea: string;
+  sector: string;
+  programa: string;
+  hoja: string;
+  /** presupuesto apropiado del año por fuente, en pesos */
+  presupuesto: { propios: number; regalias: number; otros: number; sgp: number; cofinanciacion: number; total: number };
+  /** el valor del archivo es atípico (posible error de digitación) y no se suma */
+  revisar?: string;
+  indicadores: IndicadorPlanAccion[];
+}
+
+export interface PlanAccionDependencia {
+  archivo: string | null;
+  url: string | null;
+  presupuesto: number;
+  acciones: number;
+  indicadores: number;
+  cruzados: number;
+  proyectos: ProyectoPlanAccion[];
+}
+
+/** planes de acción del año por dependencia; generado por scripts/plan_desarrollo/planes_accion.py */
+export interface PlanAccion {
+  anio: number;
+  fuente: string;
+  nota: string;
+  dependencias: Record<string, PlanAccionDependencia>;
+}
+
 @Injectable({ providedIn: 'root' })
 export class PlanService {
   private readonly http = inject(HttpClient);
@@ -192,5 +246,10 @@ export class PlanService {
   /** Seguimiento del último año informado; falla (404) si la entidad aún no tiene informe. */
   seguimiento(dane: string): Observable<Seguimiento> {
     return this.http.get<Seguimiento>(`/data/plan/${dane}-seguimiento.json`);
+  }
+
+  /** Planes de acción del año publicados por la alcaldía; falla (404) si la entidad no los tiene. */
+  planAccion(dane: string, anio: number): Observable<PlanAccion> {
+    return this.http.get<PlanAccion>(`/data/plan/${dane}-plan-accion-${anio}.json`);
   }
 }

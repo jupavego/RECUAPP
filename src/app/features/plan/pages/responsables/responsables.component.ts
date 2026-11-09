@@ -3,13 +3,30 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { catchError, map, of, switchMap } from 'rxjs';
 import { TemaService } from '../../../../core/services/tema.service';
-import { AvanceDependencia, AvanceIndicador, Confianza, Dependencia, Funcionario, PlanEntidad, PlanService, ProductoPlan, ProyectoZona, Seguimiento, ZonasPlan } from '../../services/plan.service';
+import { AvanceDependencia, AvanceIndicador, Confianza, Dependencia, Funcionario, PlanAccion, PlanAccionDependencia, PlanEntidad, PlanService, ProductoPlan, ProyectoPlanAccion, ProyectoZona, Seguimiento, ZonasPlan } from '../../services/plan.service';
 
 /** Entidad que se abre cuando la ruta no trae código DANE (mientras dure el piloto). */
 const ENTIDAD_PILOTO = '05308';
 const ANIOS = ['2024', '2025', '2026', '2027'];
+/** año de los planes de acción publicados que se muestran en la ficha */
+const ANIO_PLAN_ACCION = 2026;
 
-export type Pestana = 'panorama' | 'productos' | 'equipo';
+export type Pestana = 'panorama' | 'plan' | 'productos' | 'equipo';
+
+/** fuentes de financiación del plan de acción, en el orden del formato de la alcaldía */
+const FUENTES_PA = [
+  { k: 'propios', n: 'Recursos propios' },
+  { k: 'sgp', n: 'SGP' },
+  { k: 'regalias', n: 'Regalías' },
+  { k: 'cofinanciacion', n: 'Cofinanciación' },
+  { k: 'otros', n: 'Otros' },
+] as const;
+
+/** plan de acción de una dependencia del grupo del responsable */
+export interface PlanAccionDe {
+  dep: Dependencia;
+  pa: PlanAccionDependencia;
+}
 
 /** Circunferencia del anillo de avance (radio 52 del viewBox). */
 const ANILLO = 2 * Math.PI * 52;
@@ -124,6 +141,15 @@ export class ResponsablesComponent {
     { initialValue: null },
   );
 
+  /** null si la entidad no tiene planes de acción del año cargados */
+  readonly planAccion = toSignal<PlanAccion | null>(
+    this.ruta.paramMap.pipe(
+      map(p => p.get('dane') ?? ENTIDAD_PILOTO),
+      switchMap(d => this.servicio.planAccion(d, ANIO_PLAN_ACCION).pipe(catchError(() => of(null)))),
+    ),
+    { initialValue: null },
+  );
+
   @HostBinding('class.tema-botanico') get botanico(): boolean { return this.tema.botanico(); }
   @HostBinding('class.tema-oscuro') get oscuro(): boolean { return this.tema.oscuro(); }
 
@@ -182,6 +208,66 @@ export class ResponsablesComponent {
 
   /** indicadores distintos del responsable que el informe ubica en alguna vereda */
   readonly indicadoresConVereda = computed(() => new Set(this.veredasActual().flatMap(v => v.proyectos.map(p => p.ip))).size);
+
+  /** planes de acción del año de la dependencia y sus subsecretarías (solo las que lo publicaron) */
+  readonly planesActual = computed<PlanAccionDe[]>(() => {
+    const r = this.actual();
+    const pa = this.planAccion();
+    if (!r || !pa) return [];
+    return r.grupo.filter(d => pa.dependencias[d.id]).map(d => ({ dep: d, pa: pa.dependencias[d.id] }));
+  });
+
+  /** cifras del plan de acción sumadas para el grupo: presupuesto (sin valores por revisar), por fuente y por trimestre */
+  readonly planResumen = computed(() => {
+    const planes = this.planesActual();
+    if (!planes.length) return null;
+    const proyectos = planes.flatMap(p => p.pa.proyectos);
+    const validos = proyectos.filter(p => !p.revisar);
+    const total = validos.reduce((a, p) => a + p.presupuesto.total, 0);
+    const fuentes = FUENTES_PA.map(f => ({ nombre: f.n, valor: validos.reduce((a, p) => a + p.presupuesto[f.k], 0) }))
+      .filter(f => f.valor > 0);
+    const acciones = proyectos.flatMap(p => p.indicadores.flatMap(i => i.acciones));
+    const trimestres = [0, 1, 2, 3].map(t => acciones.filter(a => (a.trimestres[t] ?? 0) > 0).length);
+    return {
+      total,
+      fuentes,
+      sumaFuentes: fuentes.reduce((a, f) => a + f.valor, 0),
+      proyectos: proyectos.length,
+      indicadores: planes.reduce((a, p) => a + p.pa.indicadores, 0),
+      cruzados: planes.reduce((a, p) => a + p.pa.cruzados, 0),
+      acciones: acciones.length,
+      trimestres,
+      maxTrimestre: Math.max(1, ...trimestres),
+      revisar: proyectos.filter(p => p.revisar).length,
+    };
+  });
+
+  /** productos del plan (IP-xx) que aparecen en el plan de acción del año, con su meta del año */
+  readonly metaPlanAccion = computed(() => {
+    const m = new Map<string, number | null>();
+    for (const p of this.planesActual()) for (const pr of p.pa.proyectos) for (const i of pr.indicadores) if (i.ip) m.set(i.ip, i.meta_anio);
+    return m;
+  });
+
+  readonly anioPlanAccion = ANIO_PLAN_ACCION;
+
+  /** acciones de un proyecto */
+  accionesDe(pr: ProyectoPlanAccion): number {
+    return pr.indicadores.reduce((a, i) => a + i.acciones.length, 0);
+  }
+
+  /** abre un producto del plan desde el plan de acción */
+  verProducto(ip: string): void {
+    this.soloConAvance.set(false);
+    this.pestana.set('productos');
+    setTimeout(() => document.getElementById('prod-' + ip)?.scrollIntoView({ behavior: 'smooth', block: 'center' }));
+  }
+
+  /** pesos en millones, con un decimal cuando hace falta */
+  millones(v: number): string {
+    const m = v / 1e6;
+    return m.toLocaleString('es-CO', { maximumFractionDigits: m < 100 ? 1 : 0 }) + ' M';
+  }
 
   /** productos distintos del responsable */
   cantidad(r: Resumen): number {
