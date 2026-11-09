@@ -109,7 +109,8 @@ const DIRECCIONES: [number, number][] = [
 ];
 /** Código DANE del municipio y años de población con que se fija cuántas viviendas se dibujan en cada vereda. */
 const CODIGO_DANE = '05308';
-const ANIOS_POBLACION = [2018, 2025, 2030, 2035];
+/** Años que se listan en la ficha; con el deslizador se puede ir a cualquiera entre el primero y el último. */
+const ANIOS_POBLACION = [2018, 2025, 2030, 2035, 2042, 2050];
 const ANIO_INICIAL = 2025;
 /** Margen (+15 %) sobre las viviendas estimadas por vereda: solo cambia cuántas se dibujan; los datos no se alteran. */
 const FACTOR_VIVIENDAS = 1.15;
@@ -519,6 +520,52 @@ interface PoblacionVeredas {
   features: { properties: { nombre: string; viv2018: number } & Record<string, number | string> }[];
 }
 
+/**
+ * public/data/poblacion/<DANE>-edad.json (scripts/proyectar_poblacion_edad.py): personas por sexo y grupo de 5 años de
+ * la cabecera y de cada vereda, año por año. Hasta `oficial_hasta` es la serie del DANE; después, extrapolación.
+ */
+interface PoblacionEdad {
+  metadata: { anios: number[]; oficial_hasta: number; grupos: string[]; metodo: string; fuente: string; referencia_2043_2050: string };
+  zonas: {
+    id: string; nombre: string; tipo: 'cabecera' | 'vereda';
+    /** [año][grupo] */
+    H: number[][]; M: number[][];
+    indicadores: { edad_mediana: number; dependencia: number; envejecimiento: number }[];
+  }[];
+}
+
+/**
+ * Grupos de edad por curso de vida (los de la política pública en Colombia: primera infancia, niñez y adolescencia,
+ * juventud —Ley 1622 de 2013—, adultez y persona mayor —Ley 1251 de 2008, desde los 60—), armados con los grupos
+ * quinquenales de la proyección: `desde` y `hasta` son índices de esos grupos (0 = 0–4 años … 16 = 80 y más).
+ */
+const GRUPOS_VIDA = [
+  { nombre: 'Primera infancia', rango: '0 a 4 años', desde: 0, hasta: 0 },
+  { nombre: 'Niñez y adolescencia', rango: '5 a 14 años', desde: 1, hasta: 2 },
+  { nombre: 'Jóvenes', rango: '15 a 29 años', desde: 3, hasta: 5 },
+  { nombre: 'Adultos jóvenes', rango: '30 a 44 años', desde: 6, hasta: 8 },
+  { nombre: 'Adultos', rango: '45 a 59 años', desde: 9, hasta: 11 },
+  { nombre: 'Personas mayores', rango: '60 años y más', desde: 12, hasta: 16 },
+] as const;
+
+/** Población de una zona en un año por grupo de edad, con su peso y su cambio frente al primer año de la serie. */
+interface Piramide {
+  anio: number; extrapolado: boolean;
+  /** primer año de la serie, con el que se compara */
+  base: number;
+  total: number; hombres: number; mujeres: number;
+  grupos: {
+    nombre: string; rango: string; total: number; hombres: number; mujeres: number;
+    /** % del total de la zona en el año */
+    peso: number;
+    /** % de cambio frente al año base (null si en el año base no había nadie) */
+    cambio: number | null;
+    /** anchos de la barra (en % del grupo más grande de toda la serie) y del contorno del año base */
+    ah: number; am: number; base: number;
+  }[];
+  indicadores: { edad_mediana: number; dependencia: number; envejecimiento: number };
+}
+
 interface Bocanada {
   sprite: THREE.Sprite;
   /** desplazamiento respecto del centro de la nube (m) */
@@ -630,9 +677,13 @@ interface FichaPin {
 /** Proyección de población de una vereda en todos los años, para el panel de la zona elegida. */
 interface ProyeccionVereda {
   nombre: string; tipo: string;
-  anios: { anio: number; pob: number; viv: number; alto: number; actual: boolean }[];
+  /** viv es null en la cabecera: allí se dibuja el catastro completo y no se estiman viviendas */
+  anios: { anio: number; pob: number; viv: number | null; alto: number; actual: boolean; extrapolado: boolean }[];
   variacion: string; fuente: string;
   infra: InfraZona;
+  piramide: Piramide | null;
+  /** primer y último año de la serie, y último año oficial */
+  rango: { desde: number; hasta: number; oficial: number } | null;
 }
 
 /** public/data/plan/<DANE>-zonas.json (scripts/plan_desarrollo/zonas_indicadores.py): indicadores del plan por vereda nombrada. */
@@ -977,28 +1028,73 @@ const TIPOS_ZONA: Record<string, string> = {
               <button type="button" class="acc-tab" [attr.aria-expanded]="seccionDet() === i" [attr.aria-controls]="'acc-' + s.id"
                       (click)="seccionDet.set(i)" [title]="s.nombre">
                 <span class="acc-ico" aria-hidden="true">{{ s.glifo }}</span>
-                <b class="acc-num">{{ i === 0 ? (poblacionActual(pr.anios) | number:'1.0-0') : i === 1 ? pr.infra.total : ps.length }}</b>
+                <b class="acc-num">{{ i === 0 ? cifra(poblacionActual(pr.anios)) : i === 1 ? pr.infra.total : ps.length }}</b>
                 <span class="acc-t">{{ s.nombre }}</span>
               </button>
               @if (seccionDet() === i) {
                 <div class="acc-cuerpo" [id]="'acc-' + s.id">
                   @switch (s.id) {
                     @case ('pob') {
-          <div class="acc-dos">
+          <div class="acc-dos" [class.con-piramide]="pr.piramide">
           <div>
+          @if (pr.rango; as r) {
+            <label class="anio-desliza">
+              <span>Año <b>{{ anioVista() ?? anio() }}</b>@if ((anioVista() ?? anio()) > r.oficial) { <em class="extrap">extrapolación</em> }</span>
+              <input type="range" [min]="r.desde" [max]="r.hasta" step="1" [value]="anio()"
+                     [style.--oficial]="(r.oficial - r.desde) / (r.hasta - r.desde) * 100 + '%'"
+                     (input)="verAnio($any($event.target).value, false)" (change)="verAnio($any($event.target).value, true)"
+                     aria-label="Año de la proyección de población">
+              <span class="escala"><span>{{ r.desde }}</span><span>oficial hasta {{ r.oficial }}</span><span>{{ r.hasta }}</span></span>
+            </label>
+            <div class="anios-clave" role="group" aria-label="Ir a un año">
+              @for (a of aniosPoblacion; track a) {
+                <button type="button" class="anio-btn" [attr.aria-pressed]="a === (anioVista() ?? anio())" (click)="cambiarAnio(a)">{{ a }}{{ a > r.oficial ? '*' : '' }}</button>
+              }
+            </div>
+          }
           <table>
-            <thead><tr><th>Año</th><th>Personas</th><th>Viviendas</th></tr></thead>
+            <thead><tr><th>Año</th><th>Personas</th>@if (pr.anios[0].viv !== null) { <th>Viviendas</th> }</tr></thead>
             <tbody>
               @for (a of pr.anios; track a.anio) {
-                <tr [class.activa]="a.actual"><td><button type="button" class="anio-btn" [attr.aria-pressed]="a.actual" (click)="cambiarAnio(a.anio)" [title]="'Ver la población de ' + a.anio + ' en el mapa'">{{ a.anio }}</button></td><td>{{ a.pob | number:'1.0-0' }}</td><td>{{ a.viv | number:'1.0-0' }}</td></tr>
+                <tr [class.activa]="a.actual" [class.extrap]="a.extrapolado"><td>@if (pr.rango) { {{ a.anio }}{{ a.extrapolado ? '*' : '' }} } @else { <button type="button" class="anio-btn" [attr.aria-pressed]="a.actual" (click)="cambiarAnio(a.anio)" [title]="'Ver la población de ' + a.anio + ' en el mapa'">{{ a.anio }}</button> }</td><td>{{ cifra(a.pob) }}</td>@if (a.viv !== null) { <td>{{ cifra(a.viv) }}</td> }</tr>
               }
             </tbody>
           </table>
+          @if (pr.rango) { <p class="variacion">{{ pr.variacion }}</p> }
           </div>
+          @if (pr.piramide; as py) {
+            <section class="edades" [attr.aria-label]="'Población por grupo de edad en ' + py.anio">
+              <h4>Por grupo de edad · {{ py.anio }}{{ py.extrapolado ? '*' : '' }}</h4>
+              <p class="edades-sexo"><span class="h">■ Hombres {{ cifra(py.hombres) }}</span> <span class="m">■ Mujeres {{ cifra(py.mujeres) }}</span></p>
+              <ul>
+                @for (g of py.grupos; track g.nombre) {
+                  <li [title]="cifra(g.hombres) + ' hombres y ' + cifra(g.mujeres) + ' mujeres'">
+                    <b class="ge-nom">{{ g.nombre }}</b>
+                    <span class="ge-rango">{{ g.rango }}</span>
+                    <span class="ge-num"><b>{{ cifra(g.total) }}</b> · {{ cifra(g.peso) }} %</span>
+                    <span class="ge-barra"><i class="h" [style.width.%]="g.ah"></i><i class="m" [style.width.%]="g.am"></i><i class="b" [style.left.%]="g.base" [title]="'En ' + py.base"></i></span>
+                    @if (g.cambio !== null && py.anio !== py.base) {
+                      <span class="ge-cambio" [class.sube]="g.cambio >= 0">{{ g.cambio >= 0 ? '+' : '−' }}{{ cifra(g.cambio < 0 ? -g.cambio : g.cambio) }} % desde {{ py.base }}</span>
+                    }
+                  </li>
+                }
+              </ul>
+            </section>
+          }
           <div>
-          <p class="variacion">{{ pr.variacion }}</p>
-          <p class="pin-fuente">Estimación: {{ pr.fuente }}</p>
+          @if (pr.piramide; as py) {
+            <dl class="indic">
+              <div><dt>Edad mediana</dt><dd>{{ cifra(py.indicadores.edad_mediana) }} años<small>la mitad es menor de esa edad</small></dd></div>
+              <div><dt>Mayores de 65 por cada 100 niños</dt><dd>{{ cifra(py.indicadores.envejecimiento) }}<small>{{ py.indicadores.envejecimiento >= 100 ? 'ya hay más mayores que niños' : 'aún hay más niños que mayores' }}</small></dd></div>
+              <div><dt>Dependientes por cada 100 de 15 a 64</dt><dd>{{ cifra(py.indicadores.dependencia) }}<small>niños y mayores de 65</small></dd></div>
+            </dl>
+          }
+          @if (!pr.rango) { <p class="variacion">{{ pr.variacion }}</p> }
+          @if (!pr.piramide) { <p class="pin-fuente">Estimación: {{ pr.fuente }}</p> }
           </div>
+          @if (pr.piramide; as py) {
+            <p class="pin-fuente pob-fuente">Estimación: {{ pr.fuente }} * extrapolación, no dato oficial. En las barras, la raya vertical marca el grupo en {{ py.base }}.</p>
+          }
           </div>
                     }
                     @case ('infra') {
@@ -1423,6 +1519,44 @@ const TIPOS_ZONA: Record<string, string> = {
     @media (prefers-reduced-motion: reduce) { .zona-panel .acc { transition: none; } .zona-panel .acc-cuerpo { animation: none; } }
     .zona-panel .acc-dos { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 6px 22px; align-items: start; }
     .zona-panel .acc-dos .variacion { margin-top: 2px; }
+    /* tres columnas que se acomodan al ancho: nunca más anchas que la franja, así no aparece desplazamiento horizontal */
+    /* año y tabla a la izquierda (angosta), grupos de edad al centro (lo más ancho) e indicadores a la derecha */
+    .zona-panel .acc-dos.con-piramide { grid-template-columns: minmax(170px, .75fr) minmax(0, 2.2fr) minmax(180px, .9fr); }
+    @media (max-width: 1100px) { .zona-panel .acc-dos.con-piramide { grid-template-columns: minmax(170px, .8fr) minmax(0, 2fr); } }
+    @media (max-width: 700px) { .zona-panel .acc-dos.con-piramide { grid-template-columns: minmax(0, 1fr); } }
+    .zona-panel .pob-fuente { grid-column: 1 / -1; margin: 2px 0 0; }
+    .anios-clave { display: flex; flex-wrap: wrap; gap: 4px; margin: 0 0 8px; }
+    .anios-clave .anio-btn { font-size: .72rem; padding: 1px 7px; }
+    .zona-panel .acc-dos > * { min-width: 0; }
+    .zona-panel .acc-cuerpo { overflow-x: hidden; }
+    .zona-panel .pin-fuente { overflow-wrap: anywhere; }
+    .zona-panel tr.extrap td { color: #6b8294; }
+    .anio-desliza { display: grid; gap: 2px; margin: 0 0 8px; font-size: .8rem; color: #26425a; }
+    .anio-desliza b { font-size: .95rem; }
+    .anio-desliza .extrap { margin-left: 6px; padding: 1px 6px; border-radius: 999px; background: #f3e3c3; color: #7a5410; font-style: normal; font-size: .68rem; }
+    .anio-desliza input { width: 100%; margin: 4px 0; accent-color: #26425a;
+      /* la franja oficial se ve más oscura que la extrapolada */
+      background: linear-gradient(90deg, rgba(38,66,90,.35) var(--oficial), rgba(201,145,60,.35) var(--oficial)); border-radius: 999px; height: 4px; }
+    .anio-desliza .escala { display: flex; justify-content: space-between; gap: 6px; font-size: .66rem; color: #6b8294; }
+    .edades h4 { margin: 0 0 2px; font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: #6b8294; }
+    .edades-sexo { display: flex; flex-wrap: wrap; gap: 2px 14px; margin: 0 0 6px; font-size: .72rem; font-weight: 600; }
+    .edades .h { color: #3f6f97; } .edades .m { color: #b0614a; }
+    .edades ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px 16px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 140px), 1fr)); }
+    .edades li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1px 8px; font-size: .76rem; color: #26425a; }
+    .edades .ge-nom { grid-column: 1 / -1; min-width: 0; color: #26425a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .edades .ge-rango { min-width: 0; color: #6b8294; font-size: .7rem; }
+    .edades .ge-num { text-align: right; white-space: nowrap; }
+    .edades .ge-barra { grid-column: 1 / -1; position: relative; display: flex; height: 7px; border-radius: 4px; background: rgba(38,66,90,.07); overflow: hidden; }
+    .edades .ge-barra .h { background: #6f9cc2; transition: width .25s ease; }
+    .edades .ge-barra .m { background: #d98f78; transition: width .25s ease; }
+    .edades .ge-barra .b { position: absolute; top: -1px; bottom: -1px; width: 2px; margin-left: -1px; background: #26425a; }
+    .edades .ge-cambio { grid-column: 1 / -1; font-size: .68rem; color: #a5532f; }
+    .edades .ge-cambio.sube { color: #2f7a4f; }
+    .indic { display: grid; gap: 8px; margin: 0 0 8px; }
+    .indic dt { font-size: .68rem; text-transform: uppercase; letter-spacing: .04em; color: #6b8294; }
+    .indic dd { margin: 0; font-size: 1rem; font-weight: 700; color: #26425a; }
+    .indic dd small { display: block; font-size: .68rem; font-weight: 400; color: #6b8294; }
+    @media (prefers-reduced-motion: reduce) { .edades .ge-barra i { transition: none; } }
     .zona-panel .acc-grupos { columns: 240px; column-gap: 22px; }
     .zona-panel .acc-grupos details { break-inside: avoid; }
     .zona-panel .acc-cuerpo .proyectos { columns: 300px; column-gap: 22px; display: block; }
@@ -1865,6 +1999,10 @@ export class Mapa3dComponent implements AfterViewInit {
   private edificiosBase: Compacto | null = null;
   private readonly celdasUrbanas = new Map<number, number>();
   private poblacion: PoblacionVeredas | null = null;
+  /** proyección por sexo y edad de la cabecera y cada vereda (2018–2050) */
+  private edad: PoblacionEdad | null = null;
+  /** año que se está viendo con el deslizador, antes de soltarlo (el mapa se redibuja al soltar) */
+  readonly anioVista = signal<number | null>(null);
   private zonasPlan: ZonasPlan | null = null;
   private capasEdificios: Capa[] = [];
   /** vereda (índice) → población y viviendas del año elegido */
@@ -1925,6 +2063,7 @@ export class Mapa3dComponent implements AfterViewInit {
       cauces: this.http.get<Cauces>(`data/mapa3d/cauces-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
       industrias: this.http.get<Industria[]>(`data/mapa3d/industrias-${ID_MUNICIPIO}.json`).pipe(catchError(() => of([] as Industria[]))),
       poblacion: this.http.get<PoblacionVeredas>(`data/mapa/poblacion/veredas-${CODIGO_DANE}.geojson`).pipe(catchError(() => of(null))),
+      edad: this.http.get<PoblacionEdad>(`data/poblacion/${CODIGO_DANE}-edad.json`).pipe(catchError(() => of(null))),
       puntos: this.mapa.puntos(ID_MUNICIPIO),
       zonasPlan: this.http.get<ZonasPlan>(`data/plan/${CODIGO_DANE}-zonas.json`).pipe(catchError(() => of(null))),
       jardines: this.http.get<Jardines>(`data/mapa3d/jardines-${ID_MUNICIPIO}.json`).pipe(catchError(() => of(null))),
@@ -1935,7 +2074,7 @@ export class Mapa3dComponent implements AfterViewInit {
       tanques: this.http.get<Tanque[]>(`data/mapa3d/tanques-${ID_MUNICIPIO}.json`).pipe(catchError(() => of([] as Tanque[]))),
       ajustes: this.http.get<Record<string, AjusteCatastro>>(`data/mapa3d/equipamientos-catastro-${ID_MUNICIPIO}.json`).pipe(catchError(() => of({} as Record<string, AjusteCatastro>))),
     }).subscribe({
-      next: ({ relieve, muni, terr, foto, vias, viasEstado, edificios, rasante, cauces, poblacion, industrias, puntos, zonasPlan, jardines, cercas, ajustes, industriasCat, tanques, infra, instalaciones }) => {
+      next: ({ relieve, muni, terr, foto, vias, viasEstado, edificios, rasante, cauces, poblacion, edad, industrias, puntos, zonasPlan, jardines, cercas, ajustes, industriasCat, tanques, infra, instalaciones }) => {
         try {
           this.foto = foto;
           this.zonasPlan = zonasPlan;
@@ -1958,6 +2097,7 @@ export class Mapa3dComponent implements AfterViewInit {
           this.construirPinesServicios();
           this.edificiosBase = this.sinIndustrias(edificios, vias);
           this.poblacion = poblacion;
+          this.edad = edad;
           this.hayPoblacion.set(!!(edificios?.e && poblacion));
           const dibujados = this.edificiosParaAnio(this.anio());
           if (dibujados?.e) this.construirEdificios(dibujados);
@@ -3363,7 +3503,11 @@ export class Mapa3dComponent implements AfterViewInit {
     this.datosPorVereda.clear();
     for (const f of datos.features) {
       const p = f.properties, id = this.piezas.findIndex(z => z.zona.t === 'VE' && norma(z.zona.n) === norma(p.nombre));
-      const actual = Number(p[`pob${anio}`]), base = Number(p['pob2018']);
+      // con la proyección por edad, la población es la de toda la vereda (rural disperso y centros poblados) y las
+      // viviendas del censo crecen al mismo ritmo; si no está, la serie vieja de rural disperso
+      const ze = this.zonaEdad(p.nombre, 'vereda');
+      const actual = ze ? this.totalEdad(ze, anio) : Number(p[`pob${anio}`]);
+      const base = ze ? this.totalEdad(ze, 2018) : Number(p['pob2018']);
       if (id < 0 || !(base > 0) || !Number.isFinite(actual)) continue;
       const estimadas = Math.round(p.viv2018 * actual / base);
       cupo.set(id, Math.round(estimadas * FACTOR_VIVIENDAS));
@@ -3391,6 +3535,51 @@ export class Mapa3dComponent implements AfterViewInit {
       for (const [, n] of lista.slice(cupo.get(id)!)) quitar.add(n);
     }
     return quitar;
+  }
+
+  private zonaEdad(nombre: string, tipo: 'cabecera' | 'vereda'): PoblacionEdad['zonas'][number] | undefined {
+    const norma = (t: string) => t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
+    return this.edad?.zonas.find(z => z.tipo === tipo && (tipo === 'cabecera' || norma(z.nombre) === norma(nombre)));
+  }
+
+  /** Personas de una zona en un año (NaN si el año no está en la serie). */
+  private totalEdad(z: PoblacionEdad['zonas'][number], anio: number): number {
+    const i = this.edad!.metadata.anios.indexOf(anio);
+    if (i < 0) return NaN;
+    return z.H[i].reduce((a, b) => a + b, 0) + z.M[i].reduce((a, b) => a + b, 0);
+  }
+
+  /** Población de la zona en el año pedido por grupo de edad; los anchos usan la escala de toda la serie para comparar años. */
+  private piramideDe(z: PoblacionEdad['zonas'][number], anio: number): Piramide | null {
+    const m = this.edad!.metadata, i = m.anios.indexOf(anio);
+    if (i < 0) return null;
+    const suma = (v: number[], g: (typeof GRUPOS_VIDA)[number]) => v.slice(g.desde, g.hasta + 1).reduce((a, x) => a + x, 0);
+    let maximo = 1;
+    for (let t = 0; t < m.anios.length; t++) for (const g of GRUPOS_VIDA) maximo = Math.max(maximo, suma(z.H[t], g) + suma(z.M[t], g));
+    const hombres = z.H[i].reduce((a, v) => a + v, 0), mujeres = z.M[i].reduce((a, v) => a + v, 0), total = hombres + mujeres;
+    return {
+      anio, extrapolado: anio > m.oficial_hasta, base: m.anios[0], total, hombres, mujeres,
+      grupos: GRUPOS_VIDA.map(g => {
+        const h = suma(z.H[i], g), mu = suma(z.M[i], g), antes = suma(z.H[0], g) + suma(z.M[0], g);
+        return {
+          nombre: g.nombre, rango: g.rango, total: h + mu, hombres: h, mujeres: mu,
+          peso: total ? (h + mu) / total * 100 : 0, cambio: antes ? ((h + mu) / antes - 1) * 100 : null,
+          ah: h / maximo * 100, am: mu / maximo * 100, base: antes / maximo * 100,
+        };
+      }),
+      indicadores: z.indicadores[i],
+    };
+  }
+
+  /** Número entero con punto de miles, como se escribe en Colombia (la app no carga el locale es-CO en Angular). */
+  cifra(v: number): string { return Math.round(v).toLocaleString('es-CO'); }
+
+  /** Mientras se arrastra el deslizador solo cambia la ficha; al soltarlo se redibujan las viviendas. */
+  verAnio(valor: string, soltar: boolean): void {
+    const anio = Number(valor);
+    if (!Number.isFinite(anio)) return;
+    if (soltar) { this.anioVista.set(null); this.cambiarAnio(anio); }
+    else this.anioVista.set(anio);
   }
 
   /** Edificios del año elegido (los originales si no hay datos de población). */
@@ -8995,7 +9184,9 @@ export class Mapa3dComponent implements AfterViewInit {
 
   /** Población y viviendas de una vereda en todos los años del estudio; null si la zona no tiene datos. */
   proyeccion(z: Zona): ProyeccionVereda | null {
-    this.anio();
+    const anio = this.anio(), vista = this.anioVista() ?? anio;
+    const ze = this.edad && (z.t === 'VE' || z.t === 'CM') ? this.zonaEdad(z.n, z.t === 'CM' ? 'cabecera' : 'vereda') : undefined;
+    if (ze) return this.proyeccionEdad(z, ze, anio, vista);
     const datos = this.poblacion;
     if (!datos || z.t !== 'VE') return null;
     const norma = (t: string) => t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
@@ -9012,10 +9203,40 @@ export class Mapa3dComponent implements AfterViewInit {
       nombre: z.n, tipo: this.tipoDe(z),
       anios: serie.map(a => ({
         ...a, viv: Math.round(p.viv2018 * a.pob / base), alto: maximo > 0 ? Math.max(4, a.pob / maximo * 78) : 4, actual: a.anio === this.anio(),
+        extrapolado: false,
       })),
       variacion: `Variación ${primero.anio}–${ultimo.anio}: ${pct} (${ultimo.pob - primero.pob >= 0 ? '+' : '−'}${Math.abs(ultimo.pob - primero.pob).toLocaleString('es-CO')} personas)`,
       fuente: datos.metadata?.fuente ?? 'DANE, Censo 2018 y proyecciones',
       infra: this.infraDe(this.piezas.findIndex(q => q.zona === z)),
+      piramide: null, rango: null,
+    };
+  }
+
+  /** Ficha de una vereda o de la cabecera con la proyección por sexo y edad. */
+  private proyeccionEdad(z: Zona, ze: PoblacionEdad['zonas'][number], anio: number, vista: number): ProyeccionVereda {
+    const m = this.edad!.metadata, cabecera = ze.tipo === 'cabecera';
+    const f = cabecera ? undefined : this.poblacion?.features.find(x => this.zonaEdad(x.properties.nombre, 'vereda') === ze);
+    const viv2018 = f ? Number(f.properties.viv2018) : NaN, base = this.totalEdad(ze, m.anios[0]);
+    // la tabla muestra el año que se está viendo y, para comparar, el primero de la serie
+    const lista = [...new Set([m.anios[0], vista])].filter(a => m.anios.includes(a)).sort((a, b) => a - b);
+    const serie = lista.map(a => ({ anio: a, pob: this.totalEdad(ze, a) }));
+    const maximo = Math.max(...serie.map(a => a.pob));
+    const primero = { anio: m.anios[0], pob: base }, ultimo = { anio: m.anios[m.anios.length - 1], pob: this.totalEdad(ze, m.anios[m.anios.length - 1]) };
+    const dif = ultimo.pob - primero.pob, cambio = dif / primero.pob * 100;
+    const signo = (v: number) => (v >= 0 ? '+' : '−');
+    return {
+      nombre: cabecera ? 'Cabecera municipal' : z.n, tipo: this.tipoDe(z),
+      anios: serie.map(a => ({
+        ...a, viv: Number.isFinite(viv2018) && base > 0 ? Math.round(viv2018 * a.pob / base) : null,
+        alto: maximo > 0 ? Math.max(4, a.pob / maximo * 78) : 4, actual: a.anio === vista, extrapolado: a.anio > m.oficial_hasta,
+      })),
+      variacion: `Variación ${primero.anio}–${ultimo.anio}: ${signo(cambio)}${Math.abs(cambio).toFixed(1).replace('.', ',')} % ` +
+        `(${signo(dif)}${Math.abs(dif).toLocaleString('es-CO')} personas)`,
+      fuente: `DANE, proyección municipal por sexo y edad hasta ${m.oficial_hasta} (la misma de la Gobernación de Antioquia); ` +
+        `${cabecera ? '' : 'reparto por vereda con el Censo 2018 y las viviendas; '}después de ${m.oficial_hasta}, extrapolación con la ${m.referencia_2043_2050}.`,
+      infra: this.infraDe(this.piezas.findIndex(q => q.zona === z)),
+      piramide: this.piramideDe(ze, vista),
+      rango: { desde: m.anios[0], hasta: m.anios[m.anios.length - 1], oficial: m.oficial_hasta },
     };
   }
 
