@@ -15,6 +15,8 @@ export interface Modelo {
   huella?: [number, number];
   /** se pone sobre la vía (un peaje): se apoya en la calzada, sin losa en la ladera, y no se corre para dejar libres las vías */
   sobreVia?: boolean;
+  /** contorno [x, z] del pavimento propio de una plaza sobre la vía: bajo él (y solo bajo él) se corta la cinta de las vías */
+  plaza?: [number, number][];
 }
 
 const AZUL = '#1d4ed8', ROSA = '#be185d', CIAN = '#0e7490', VERDE = '#047857', LIMA = '#4d7c0f', ROJO = '#b91c1c', CAFE = '#92400e';
@@ -389,8 +391,8 @@ function peaje(e: Ensamble): Modelo {
   const ASF = '#3e4146', LINEA = '#f1f5f9', AMARILLO = '#facc15', NEGRO = '#111827', CONC = '#d9d5cc', BLANCO = '#f3f4f6';
   const AZUL_VIA = '#1e4f91', VERDE_AVISO = '#166534', ROJO_T = '#dc2626', VERDE_LUZ = '#22c55e';
   // plaza pavimentada: del ancho de la autopista se abre en ~22 m al ancho de los carriles de cobro; un faldón la baja al terreno
-  const contorno = ([[-L / 2, -VIA], [-24, -W / 2], [24, -W / 2], [L / 2, -VIA], [L / 2, VIA], [24, W / 2], [-24, W / 2], [-L / 2, VIA]] as const)
-    .map(([x, z]) => new THREE.Vector2(x, -z));
+  const plaza: [number, number][] = [[-L / 2, -VIA], [-24, -W / 2], [24, -W / 2], [L / 2, -VIA], [L / 2, VIA], [24, W / 2], [-24, W / 2], [-L / 2, VIA]];
+  const contorno = plaza.map(([x, z]) => new THREE.Vector2(x, -z));
   e.piezas.push({ g: new THREE.ExtrudeGeometry(new THREE.Shape(contorno), { depth: 1.7, bevelEnabled: false }).rotateX(-Math.PI / 2).translate(0, -1.5, 0), color: ASF });
   e.caja(L, 0.5, MED, CONC, 0, 0.2, 0).caja(L, 0.12, 0.3, AMARILLO, 0, 0.7, 0);                     // separador central
   for (const s of [1, -1]) {
@@ -425,7 +427,7 @@ function peaje(e: Ensamble): Modelo {
   e.caja(16, 0.2, 12, '#8e959c', -36, 0.2, W / 2 - 4).caja(12, 3.4 * K * 0.75, 7, BLANCO, -38, 0.4, W / 2 - 3)
     .caja(12.6, 0.4, 7.6, AZUL_VIA, -38, 0.4 + 3.4 * K * 0.75, W / 2 - 3).caja(10, 1.6, 0.3, VIDRIO, -38, 1.6, W / 2 - 6.6);
   for (const x of [-46, 24, 46]) for (const z of [-W / 2 + 1, W / 2 - 1]) if (!(x === -46 && z > 0)) e.cil(0.15, 0.2, 7 * K, '#9ca3af', x, 0.2, z, 6).caja(2.4, 0.3, 0.6, '#e5e7eb', x, 7 * K, z - Math.sign(z) * 1);
-  return { piezas: e.piezas, radio: L / 2, losa: [L, W], huella: [L, W], sobreVia: true };
+  return { piezas: e.piezas, radio: L / 2, losa: [L, W], huella: [L, W], sobreVia: true, plaza };
 }
 
 function turismo(e: Ensamble, texto: string, rnd: () => number): Modelo {

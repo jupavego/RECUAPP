@@ -1660,7 +1660,8 @@ export class Mapa3dComponent implements AfterViewInit {
   private fabricaHover = -1;
   /** Puntos de interés (colegios, hospitales, canchas...) con el edificio que los representa. */
   /** `pin`: dónde va el icono (y su altura sobre la losa) cuando el lugar es parte de un edificio compartido (PARTES), que se nombra en `sitio`. */
-  private equipamientos: { x: number; z: number; lon: number; lat: number; n: string; r: number; yaw?: number; pin?: { x: number; z: number; alto: number; nivel?: [number, number]; base?: number }; sitio?: string; datos: { p: Punto; modelo: Modelo } }[] = [];
+  /** `cota`: altura de la plaza nivelada de lo que va sobre la vía (nivelarPlazas) */
+  private equipamientos: { x: number; z: number; lon: number; lat: number; n: string; r: number; yaw?: number; pin?: { x: number; z: number; alto: number; nivel?: [number, number]; base?: number }; sitio?: string; cota?: number; datos: { p: Punto; modelo: Modelo } }[] = [];
   private mallaEquip: THREE.Mesh | null = null;
   private geoEquip: THREE.BufferGeometry | null = null;
   private matEquip: THREE.Material | null = null;
@@ -2036,6 +2037,7 @@ export class Mapa3dComponent implements AfterViewInit {
   @ViewChild('cartaTuto') private cartaTuto?: ElementRef<HTMLElement>;
 
   abrirTutorial(): void {
+          this.nivelarPlazas();
     this.pasoTutorial.set(0);
     this.tutorialAbierto.set(true);
     setTimeout(() => this.cartaTuto?.nativeElement.focus());
@@ -2555,10 +2557,14 @@ export class Mapa3dComponent implements AfterViewInit {
     const n = t.x.length, periodo = ANCHO_VIA[t.clase] * 1.8, bord = this.rasante!.bordillo;
     const ini = calzada.pos.length / 3, iniA = acera.pos.length / 3;
     // bajo una plaza que va sobre la vía (el peaje) la cinta se corta: la dibuja el pavimento de la plaza, con sus carriles
-    const plazas = this.equipamientos.filter(q => q.datos.modelo.sobreVia && q.datos.modelo.losa);
+    // (solo dentro del contorno de su pavimento, que se angosta hacia los extremos: las vías vecinas que pasan al lado se conservan)
+    const plazas = this.equipamientos.filter(q => q.datos.modelo.sobreVia && q.datos.modelo.plaza).map(q => {
+      const c = q.datos.modelo.plaza!, f = 0.97;                  // 3 % hacia adentro: el borde de la cinta queda bajo el pavimento
+      return { x: q.x, z: q.z, yaw: q.yaw ?? 0, xs: c.map(p => p[0] * f), zs: c.map(p => p[1] * f) };
+    });
     const bajoPlaza = (x: number, z: number) => plazas.some(q => {
-      const dx = x - q.x, dz = z - q.z, yaw = q.yaw ?? 0, [L, W] = q.datos.modelo.losa!;
-      return Math.abs(dx * Math.cos(yaw) - dz * Math.sin(yaw)) < L / 2 - 2 && Math.abs(dx * Math.sin(yaw) + dz * Math.cos(yaw)) < W / 2;
+      const dx = x - q.x, dz = z - q.z;
+      return puntoEnPoligono(dx * Math.cos(q.yaw) - dz * Math.sin(q.yaw), dx * Math.sin(q.yaw) + dz * Math.cos(q.yaw), q.xs, q.zs);
     });
     const fuera = t.x.map((x, i) => !bajoPlaza(x, t.z[i]));
     let recorrido = 0;
@@ -2690,6 +2696,72 @@ export class Mapa3dComponent implements AfterViewInit {
         let cierre: number | null = null;
         if (extremo) {
           const o = l[i === 0 ? 1 : i - 1];
+  /**
+   * Plazas que van sobre la vía (el peaje): se nivelan como en la obra. La plaza queda plana a la cota de la calzada en su centro;
+   * el terreno bajo su pavimento se rebaja a esa cota y, hasta NIVELA m afuera, empalma suave con el de siempre (si no, el
+   * césped de la ladera asoma por encima del pavimento). Las vías que llegan bajan con el mismo empalme para entrar a ras de la
+   * plaza. Se cambian el relieve (que usa alturaEn), la malla del terreno y la rasante, antes de dibujar vías y edificios.
+   */
+  private nivelarPlazas(): void {
+    const NIVELA = 40;
+    const suave = (d: number) => { const t = Math.min(1, d / NIVELA); return t * t * (3 - 2 * t); };
+    let cambio = false;
+    for (const q of this.equipamientos) {
+      const m = q.datos.modelo;
+      if (!m.sobreVia || !m.plaza || !m.losa) continue;
+      const yaw = q.yaw ?? 0, co = Math.cos(yaw), si = Math.sin(yaw), ld = m.losa[1];
+      const cota = Math.max(...[-ld / 4, -ld / 8, ld / 8, ld / 4].map(b => this.calzadaXZ(q.x + b * si, q.z + b * co))) + 0.05;
+      q.cota = cota;
+      const xs = m.plaza.map(p => p[0]), zs = m.plaza.map(p => p[1]);
+      // distancia (m) de un punto del modelo al pavimento de la plaza: 0 adentro
+      const afuera = (x: number, z: number): number => {
+        const dx = x - q.x, dz = z - q.z, lx = dx * co - dz * si, lz = dx * si + dz * co;
+        if (puntoEnPoligono(lx, lz, xs, zs)) return 0;
+        let d = Infinity;
+        for (let i = 0; i < xs.length; i++) {
+          const j = (i + 1) % xs.length, sx = xs[j] - xs[i], sz = zs[j] - zs[i], ll = sx * sx + sz * sz;
+          const t = Math.max(0, Math.min(1, ((lx - xs[i]) * sx + (lz - zs[i]) * sz) / ll));
+          d = Math.min(d, Math.hypot(lx - xs[i] - sx * t, lz - zs[i] - sz * t));
+        }
+        return d;
+      };
+      const bajar = (y: number, d: number, piso: number) => Math.min(y, piso + (y - piso) * suave(d));
+      // relieve y malla del terreno: un vértice de la malla por punto del relieve (k = j·nx + i)
+      const { nx, ny, bbox: [o, s, e, n], min } = this.relieve;
+      const alcance = m.radio + NIVELA + 30, pos = this.capaTerreno.atributo, base = this.capaTerreno.base;
+      const lon0 = this.lon0 + (q.x - alcance) / this.mLon, lon1 = this.lon0 + (q.x + alcance) / this.mLon;
+      const lat0 = this.lat0 - (q.z + alcance) / this.mLat, lat1 = this.lat0 - (q.z - alcance) / this.mLat;
+      const i0 = Math.max(0, Math.floor((lon0 - o) / (e - o) * (nx - 1))), i1 = Math.min(nx - 1, Math.ceil((lon1 - o) / (e - o) * (nx - 1)));
+      const j0 = Math.max(0, Math.floor((n - lat1) / (n - s) * (ny - 1))), j1 = Math.min(ny - 1, Math.ceil((n - lat0) / (n - s) * (ny - 1)));
+      for (let j = j0; j <= j1; j++) {
+        for (let i = i0; i <= i1; i++) {
+          const k = j * nx + i, x = pos.getX(k), z = pos.getZ(k), d = afuera(x, z);
+          if (d >= NIVELA) continue;
+          const y = pos.getY(k), nuevo = bajar(y, d, cota - 0.35);
+          if (nuevo >= y) continue;
+          pos.setY(k, nuevo);
+          base[k] = nuevo;
+          this.alturas[k] = Math.round((nuevo / EXAGERACION + min) * 10);
+          cambio = true;
+        }
+      }
+      // vías de la rasante que llegan: mismo empalme, a ras de la plaza
+      for (const t of this.rasante?.tramos ?? []) {
+        for (let i = 0; i < t.x.length; i++) {
+          if (Math.abs(t.x[i] - q.x) > alcance || Math.abs(t.z[i] - q.z) > alcance) continue;
+          const d = afuera(t.x[i], t.z[i]);
+          if (d >= NIVELA) continue;
+          t.ya[i] = bajar(t.ya[i], d, cota + 0.05); t.yb[i] = bajar(t.yb[i], d, cota + 0.05);
+          t.yaa[i] = bajar(t.yaa[i], d, cota + 0.2); t.yab[i] = bajar(t.yab[i], d, cota + 0.2);
+        }
+      }
+    }
+    if (!cambio) return;
+    this.capaTerreno.atributo.needsUpdate = true;
+    this.terreno.geometry.computeVertexNormals();
+    (this.terreno.geometry.getAttribute('normal') as THREE.BufferAttribute).needsUpdate = true;
+  }
+
           cierre = Math.atan2(z - this.aZ(o[1]), x - this.aX(o[0]));
         }
         // rumbo de cada brazo que sale del vértice por esta vía
@@ -5186,7 +5258,7 @@ export class Mapa3dComponent implements AfterViewInit {
       }
       // lo que va sobre la vía se apoya en la calzada (la más alta de las que cruzan su eje transversal), no en una losa en la ladera
       const sobreVia = modelo.sobreVia
-        ? Math.max(...[-ld / 4, -ld / 8, ld / 8, ld / 4].map(b => this.calzadaXZ(q.x + b * sin, q.z + b * cos))) + 0.05 : null;
+        ? q.cota ?? Math.max(...[-ld / 4, -ld / 8, ld / 8, ld / 4].map(b => this.calzadaXZ(q.x + b * sin, q.z + b * cos))) + 0.05 : null;
       const base = sobreVia ?? (modelo.losa ? Math.max(...alturas) : alturas[12]) + 1, minimo = Math.min(...alturas);
       const id = this.idEn(q.lon, q.lat), peso = id >= 0 ? this.pesoBorde(q.lon, q.lat, id) : 0;
       giro.makeRotationY(yaw);
