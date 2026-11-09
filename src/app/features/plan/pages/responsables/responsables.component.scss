@@ -231,10 +231,36 @@ h3 { margin: 0 0 8px; font-size: .9rem; color: var(--dark-700, #334155); }
   @keyframes llenar { from { stroke-dashoffset: 326.73; } }
   @keyframes brotar { from { opacity: 0; transform: translateY(8px); } }
 }
-.pestanas { scroll-margin-top: calc(var(--alto-barra, 64px) + 12px); display: flex; gap: 6px; flex-wrap: wrap; border-bottom: 1px solid var(--color-border-tertiary, #e4e4e7);
-  button { min-height: 44px; padding: 0 16px; border: 0; border-bottom: 3px solid transparent; background: none; font: inherit; font-weight: 500; color: var(--neutral-600, #52525b); cursor: pointer;
-    &.on { color: var(--acento); border-bottom-color: var(--acento); }
-    &:focus-visible { outline: 2px solid var(--acento); outline-offset: -2px; } } }
+// Pestañas con el mismo lenguaje del menú lateral: ítem sin caja, brote de color en círculo y nombre; la activa se tiñe
+// suave, su brote pasa a hoja sólida y lleva la hoja indicadora a la izquierda. Cada una con el color de su tarjeta.
+.pestanas { scroll-margin-top: calc(var(--alto-barra, 64px) + 12px); display: flex; gap: 4px; flex-wrap: wrap; padding: 4px 0 10px;
+  border-bottom: 1px solid color-mix(in srgb, var(--dark-900, #0f172a) 8%, transparent); }
+.pest {
+  --tinta: color-mix(in srgb, var(--c) 72%, var(--dark-900, #0f172a));
+  position: relative; display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 6px 14px 6px 8px;
+  border: 0; border-radius: 12px; background: none; font: inherit; font-size: .9rem; font-weight: 500; color: var(--dark-700, #334155); cursor: pointer;
+  transition: background .18s, color .18s;
+  &__insig { width: 30px; height: 30px; flex: none; display: grid; place-items: center; border-radius: 50%;
+    background: color-mix(in srgb, var(--c) 13%, transparent); color: var(--c);
+    transition: border-radius .25s, background .2s, color .2s, transform .25s;
+    svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; } }
+  &__n { padding: 1px 8px; border-radius: 999px; font-size: .72rem; font-weight: 600; font-variant-numeric: tabular-nums;
+    background: color-mix(in srgb, var(--c) 12%, transparent); color: var(--tinta); }
+  // hoja indicadora
+  &::before { content: ''; position: absolute; left: -2px; top: 50%; width: 7px; height: 14px; border-radius: 0 100% 0 100%; background: var(--c);
+    transform: translateY(-50%) scale(0); transform-origin: left center; transition: transform .25s cubic-bezier(.3, 1.4, .5, 1); }
+  &:hover { background: color-mix(in srgb, var(--c) 7%, transparent); .pest__insig { border-radius: 4px 50% 50% 50%; transform: rotate(-8deg); } }
+  &:focus-visible { outline: 2px solid var(--c); outline-offset: 1px; }
+  &.on { background: color-mix(in srgb, var(--c) 11%, transparent); color: var(--tinta); font-weight: 700;
+    &::before { transform: translateY(-50%) scale(1); }
+    .pest__insig { background: var(--c); color: #fff; border-radius: 4px 50% 50% 50%; box-shadow: 0 3px 10px color-mix(in srgb, var(--c) 35%, transparent); } }
+}
+:host(.tema-oscuro) .pest {
+  --tinta: color-mix(in srgb, var(--c) 80%, #fff);
+  .pest__insig { background: color-mix(in srgb, var(--c) 20%, transparent); }
+  &.on { background: color-mix(in srgb, var(--c) 16%, transparent); .pest__insig { background: var(--c); color: #121A14; } }
+}
+@media (prefers-reduced-motion: reduce) { .pest, .pest__insig, .pest::before { transition: none; } }
 .detalle > [class^='oficial'], .detalle > .reparto2, .detalle > .equipo, .detalle > .personas, .detalle > .tabla-marco, .detalle > .prod-cab { margin-top: 2px; }
 
 /* ── Portada de un responsable: nombre y quien la dirige arriba, tres tarjetas translúcidas que abren sus pestañas ──
@@ -400,6 +426,50 @@ h3 { margin: 0 0 8px; font-size: .9rem; color: var(--dark-700, #334155); }
 }
 
 :host(.tema-oscuro) .tarj { border-color: rgb(255 255 255 / .08); }
+
+// migas: Responsables / Secretaría / Subsecretaría
+.migas { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; font-size: .82rem; color: var(--neutral-600, #52525b);
+  a { color: var(--color-brand-primary); text-decoration: none; &:hover { text-decoration: underline; } }
+  [aria-current] { color: var(--dark-800, #1e293b); font-weight: 500; } }
+
+// enlace a la secretaría de la que depende
+.portada__padre { display: inline-flex; align-items: center; gap: 8px; margin-top: -2px; padding: 4px 12px 4px 6px; border-radius: 999px;
+  font-size: .78rem; font-weight: 500; color: var(--dark-700, #334155); text-decoration: none;
+  background: color-mix(in srgb, var(--color-background-primary, #fff) 50%, transparent); border: 1px solid color-mix(in srgb, var(--dark-900, #0f172a) 8%, transparent);
+  img { width: 22px; height: 22px; object-fit: contain; }
+  &:hover { border-color: hsl(var(--at1, 140) 45% 45% / .5); } }
+
+// subdependencias: tarjetas pequeñas y translúcidas que llevan a su propia vista
+.subs { display: grid; gap: 10px;
+  h3 { margin: 0; display: flex; align-items: center; gap: 7px; font-size: .74rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--neutral-600, #52525b);
+    &::before { content: ''; width: 7px; height: 14px; border-radius: 0 100% 0 100%; background: hsl(var(--at1, 140) 45% 45%); } }
+  &__lista { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 10px; }
+}
+.sub { position: relative; display: grid; grid-template-columns: 52px minmax(0, 1fr) auto; gap: 12px; align-items: center; height: 100%; padding: 8px 14px 8px 8px;
+  border-radius: 16px; text-decoration: none; color: inherit;
+  background: color-mix(in srgb, var(--color-background-primary, #fff) 38%, transparent);
+  border: 1px solid color-mix(in srgb, var(--dark-900, #0f172a) 8%, transparent);
+  transition: translate .4s cubic-bezier(.2, .8, .2, 1), box-shadow .4s, border-color .4s;
+  &:hover { translate: 0 -2px; box-shadow: 0 12px 28px rgb(20 30 20 / .09); border-color: hsl(var(--at1, 140) 45% 45% / .4); .sub__ir { transform: translateX(3px); } }
+  &:focus-visible { outline: 2px solid hsl(var(--at1, 140) 45% 40%); outline-offset: 2px; }
+  &--ext { border-style: dashed; }
+  &__foto { width: 52px; height: 62px; border-radius: 12px; overflow: hidden; display: grid; place-items: center;
+    background: linear-gradient(160deg, hsl(var(--at1, 140) 45% 86%), hsl(var(--at2, 45) 50% 89%));
+    img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 12%; }
+    .sub__ico { width: 36px; height: 36px; object-fit: contain; } }
+  &__txt { display: grid; gap: 1px; min-width: 0;
+    > b { font-size: .86rem; font-weight: 600; line-height: 1.25; color: var(--dark-900, #0f172a); }
+    small { font-size: .74rem; color: var(--neutral-600, #52525b); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; } }
+  &__cifras { font-size: .72rem; color: var(--neutral-600, #52525b); font-variant-numeric: tabular-nums;
+    b { font-weight: 700; } .av--ok { color: var(--av-ok); } .av--medio { color: color-mix(in srgb, var(--av-medio) 70%, #000); } .av--bajo { color: var(--av-bajo); } }
+  &__ir { color: hsl(var(--at1, 140) 45% 38%); transition: transform .25s; }
+}
+:host(.tema-oscuro) {
+  .portada__padre, .sub { border-color: rgb(255 255 255 / .08); }
+  .sub__foto { background: linear-gradient(160deg, hsl(var(--at1, 140) 30% 22%), hsl(var(--at2, 45) 30% 20%)); }
+  .sub__ir { color: hsl(var(--at1, 140) 50% 68%); }
+  .sub__cifras .av--medio { color: var(--av-medio); }
+}
 @container portada (max-width: 760px) {
   .portada__cab { grid-template-columns: 1fr; }
 }

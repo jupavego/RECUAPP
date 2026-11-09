@@ -1,4 +1,4 @@
-import { Component, HostBinding, computed, inject, signal } from '@angular/core';
+import { Component, HostBinding, computed, effect, inject, signal, untracked } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { catchError, map, of, switchMap } from 'rxjs';
@@ -14,11 +14,12 @@ const ANIO_PLAN_ACCION = 2026;
 export type Pestana = 'panorama' | 'plan' | 'productos' | 'equipo';
 
 /** Pestañas de la vista, en el orden de las tarjetas de la portada; el equipo se abre desde la tarjeta del secretario. */
-const SECCIONES: { p: Pestana; pestana: string }[] = [
-  { p: 'panorama', pestana: 'Panorama' },
-  { p: 'productos', pestana: 'Productos' },
-  { p: 'plan', pestana: 'Plan ' + ANIO_PLAN_ACCION },
-  { p: 'equipo', pestana: 'Equipo' },
+const SECCIONES: { p: Pestana; pestana: string; color: string; d: string }[] = [
+  { p: 'panorama', pestana: 'Panorama', color: 'v-vigilar', d: 'M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12zM12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z' },
+  { p: 'productos', pestana: 'Productos', color: 'v-entender', d: 'M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z' },
+  { p: 'plan', pestana: 'Plan ' + ANIO_PLAN_ACCION, color: 'v-seguir', d: 'M4 6h16v14H4zM4 10h16M8 3v5M16 3v5M8 14h3M8 17h6' },
+  { p: 'equipo', pestana: 'Equipo', color: 'v-conocer',
+    d: 'M9 11.2a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4zM3 20c.6-3.4 3-5.4 6-5.4s5.4 2 6 5.4M17 11.4a2.4 2.4 0 1 0 0-4.8M16 14.6c2.6.1 4.4 1.9 5 4.4' },
 ];
 
 /** Dependencias con retrato de quien la dirige en /img/retratos/<dane>/<id>.webp (fotos oficiales de la alcaldía). */
@@ -111,37 +112,39 @@ export function atmosferaDe(id: string): [number, number, number] {
   return [a, (a + 140) % 360, (a + 50) % 360];
 }
 
-/** Un resumen por dependencia de primer nivel (las externas, como el INDER, no suman a su secretaría). */
-export function construirResumenes(p: PlanEntidad, seguimiento: Seguimiento | null): Resumen[] {
+/** Resumen de una dependencia cualquiera: ella y sus subdependencias directas (una subsecretaría, solo ella). */
+export function construirResumen(p: PlanEntidad, seguimiento: Seguimiento | null, dep: Dependencia): Resumen {
   const seg = seguimiento?.indicadores ?? {};
   const deps = new Map(p.dependencias.map(d => [d.id, d]));
-  const raices = p.dependencias.filter(d => !d.padre && !d.vinculo);
-  return raices.map(dep => {
-    const grupo = [dep, ...p.dependencias.filter(d => d.padre === dep.id)];
-    const filas: FilaProducto[] = [];
-    for (const x of p.productos) {
-      for (const r of x.resp) {
-        const d = deps.get(r.dep);
-        if (!d || !grupo.includes(d)) continue;
-        const s = seg[x.id];
-        filas.push({ x, dep: d, conf: r.conf, pct: s?.pct ?? null, programada: s?.programada ?? null, avance: s?.avance ?? null, s: s ?? null });
-      }
+  const grupo = [dep, ...p.dependencias.filter(d => d.padre === dep.id)];
+  const filas: FilaProducto[] = [];
+  for (const x of p.productos) {
+    for (const r of x.resp) {
+      const d = deps.get(r.dep);
+      if (!d || !grupo.includes(d)) continue;
+      const s = seg[x.id];
+      filas.push({ x, dep: d, conf: r.conf, pct: s?.pct ?? null, programada: s?.programada ?? null, avance: s?.avance ?? null, s: s ?? null });
     }
-    // un producto con dos subsecretarías del mismo grupo cuenta una vez
-    const unicos = [...new Map(filas.map(f => [f.x.id, f])).values()];
-    const con = unicos.filter(f => f.pct !== null);
-    return {
-      dep, grupo, filas,
-      alta: unicos.filter(f => f.conf === 'alta').length,
-      sugerida: unicos.filter(f => f.conf !== 'alta').length,
-      conSeguimiento: con.length,
-      avance: con.length ? con.reduce((a, f) => a + Math.min(100, f.pct!), 0) / con.length : null,
-      cumplidos: con.filter(f => f.pct! >= 100).length,
-      atrasados: con.filter(f => f.pct! < 50).length,
-      equipo: grupo.reduce((a, d) => a + (d.equipo?.length ?? 0), 0),
-      oficial: seguimiento?.dependencias[dep.id] ?? null,
-    };
-  });
+  }
+  // un producto con dos subsecretarías del mismo grupo cuenta una vez
+  const unicos = [...new Map(filas.map(f => [f.x.id, f])).values()];
+  const con = unicos.filter(f => f.pct !== null);
+  return {
+    dep, grupo, filas,
+    alta: unicos.filter(f => f.conf === 'alta').length,
+    sugerida: unicos.filter(f => f.conf !== 'alta').length,
+    conSeguimiento: con.length,
+    avance: con.length ? con.reduce((a, f) => a + Math.min(100, f.pct!), 0) / con.length : null,
+    cumplidos: con.filter(f => f.pct! >= 100).length,
+    atrasados: con.filter(f => f.pct! < 50).length,
+    equipo: grupo.reduce((a, d) => a + (d.equipo?.length ?? 0), 0),
+    oficial: seguimiento?.dependencias[dep.id] ?? null,
+  };
+}
+
+/** Un resumen por dependencia de primer nivel (las externas, como el INDER, no suman a su secretaría). */
+export function construirResumenes(p: PlanEntidad, seguimiento: Seguimiento | null): Resumen[] {
+  return p.dependencias.filter(d => !d.padre && !d.vinculo).map(dep => construirResumen(p, seguimiento, dep));
 }
 
 @Component({
@@ -203,6 +206,9 @@ export class ResponsablesComponent {
 
   // ── portada ──
   readonly secciones = SECCIONES;
+  constructor() {
+    effect(() => { this.depId(); untracked(() => this.pestana.set('panorama')); });
+  }
   private readonly poco = typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /** abre una pestaña; desde una tarjeta de la portada además baja hasta las pestañas */
@@ -221,8 +227,13 @@ export class ResponsablesComponent {
     return nombre.split(/\s+/).filter(w => w.length > 2).slice(0, 2).map(w => w[0]).join('').toUpperCase();
   }
 
-  atmosfera(id: string): [number, number, number] {
-    return atmosferaDe(id);
+  /** atmósfera de color: la propia, o para una subdependencia la de su secretaría girada un poco (se reconoce la familia) */
+  atmosfera(d: Dependencia): [number, number, number] {
+    const pid = d.padre ?? d.vinculo;
+    if (!pid) return atmosferaDe(d.id);
+    const [a, b, c] = atmosferaDe(pid);
+    const giro = 18 + (matizDe(d.id) % 4) * 8;
+    return [(a + giro) % 360, (b + 360 - giro) % 360, (c + giro * 2) % 360];
   }
 
   /** cuadro oficial más reciente del informe para el responsable */
@@ -255,7 +266,33 @@ export class ResponsablesComponent {
     return p ? construirResumenes(p, this.seguimiento()) : [];
   });
 
-  readonly actual = computed<Resumen | null>(() => this.resumenes().find(r => r.dep.id === this.depId()) ?? null);
+  /** la dependencia de la ruta: una de primer nivel o una subdependencia / entidad vinculada con su propia vista */
+  readonly actual = computed<Resumen | null>(() => {
+    const id = this.depId();
+    const p = this.plan();
+    if (!id || !p) return null;
+    const raiz = this.resumenes().find(r => r.dep.id === id);
+    if (raiz) return raiz;
+    const d = p.dependencias.find(x => x.id === id);
+    return d ? construirResumen(p, this.seguimiento(), d) : null;
+  });
+
+  /** secretaría de la que depende (padre) o a la que está vinculada (entidad externa) */
+  readonly padreActual = computed<Dependencia | null>(() => {
+    const d = this.actual()?.dep;
+    const pid = d?.padre ?? d?.vinculo;
+    return pid ? this.plan()?.dependencias.find(x => x.id === pid) ?? null : null;
+  });
+
+  /** subdependencias y entidades vinculadas de la dependencia, cada una con su resumen propio */
+  readonly subsActual = computed<Resumen[]>(() => {
+    const r = this.actual();
+    const p = this.plan();
+    if (!r || !p) return [];
+    return p.dependencias.filter(d => d.padre === r.dep.id || d.vinculo === r.dep.id)
+      .map(d => construirResumen(p, this.seguimiento(), d))
+      .sort((a, b) => Number(!!a.dep.vinculo) - Number(!!b.dep.vinculo) || this.cantidad(b) - this.cantidad(a));
+  });
 
   /** productos del responsable elegido, por código */
   readonly filasActual = computed(() => {

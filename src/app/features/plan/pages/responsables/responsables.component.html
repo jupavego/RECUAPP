@@ -2,16 +2,26 @@
   <main class="resp">
     @if (actual(); as r) {
       <section id="detalle" class="detalle" [style.--acento-h]="acentoH(r.dep.id)">
-        <a class="resp__volver" routerLink="/responsables">← Todos los responsables</a>
+        <nav class="migas" aria-label="Ruta">
+          <a routerLink="/responsables">Responsables</a>
+          @if (padreActual(); as pa) { <span aria-hidden="true">/</span><a [routerLink]="['/responsables', pa.id]">{{ pa.nombre }}</a> }
+          <span aria-hidden="true">/</span><span aria-current="page">{{ r.dep.nombre }}</span>
+        </nav>
         <!-- Portada de la secretaría: su nombre y quien la dirige arriba; debajo tres tarjetas translúcidas que empaquetan
              cómo va, qué prometió y qué viene. Cada tarjeta abre su pestaña de abajo; la del secretario abre el equipo. -->
-        @let atm = atmosfera(r.dep.id);
+        @let atm = atmosfera(r.dep);
         <header class="portada" [style.--at1]="atm[0]" [style.--at2]="atm[1]" [style.--at3]="atm[2]">
           <div class="portada__fondo" aria-hidden="true"><div class="portada__capa"></div></div>
           <div class="portada__cab">
             <div class="portada__id">
               @if (urlIcono(r.dep); as u) { <img class="portada__ico" [src]="u" alt="" width="96" height="96" /> } @else { <i class="portada__ico portada__ico--vacio" aria-hidden="true">{{ r.dep.nombre.charAt(0) }}</i> }
               <span class="portada__tipo">{{ r.dep.tipo }}@if (r.grupo.length > 1) { · con {{ r.grupo.length - 1 }} {{ r.grupo.length === 2 ? 'subdependencia' : 'subdependencias' }} }</span>
+              @if (padreActual(); as pa) {
+                <a class="portada__padre" [routerLink]="['/responsables', pa.id]">
+                  @if (urlIcono(pa); as u) { <img [src]="u" alt="" width="22" height="22" /> }
+                  {{ r.dep.vinculo ? 'Entidad vinculada a la ' + pa.nombre + ': sus productos no suman a la secretaría' : 'Parte de la ' + pa.nombre }}
+                </a>
+              }
               <h2 class="portada__nombre">{{ r.dep.nombre }}</h2>
               <p class="portada__sub">Quién la dirige, cómo va, qué prometió y qué viene, en una sola vista.</p>
             </div>
@@ -32,7 +42,7 @@
                     <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z" /></svg><a [href]="q.url" target="_blank" rel="noopener">Sitio de la alcaldía</a></li>
                   </ul>
                   <button type="button" class="sec__ir" (click)="abrir('equipo', true)">
-                    {{ r.equipo ? 'Equipo de ' + r.equipo : 'Equipo' }}@if (r.grupo.length > 1) { · {{ r.grupo.length - 1 }} {{ r.grupo.length === 2 ? 'subdependencia' : 'subdependencias' }} }&nbsp;<span aria-hidden="true">→</span>
+                    {{ r.equipo ? 'Equipo de ' + r.equipo : 'Ver el equipo' }}@if (r.grupo.length > 1) { · {{ r.grupo.length - 1 }} {{ r.grupo.length === 2 ? 'subdependencia' : 'subdependencias' }} }&nbsp;<span aria-hidden="true">→</span>
                   </button>
                 </div>
               } @else {
@@ -51,7 +61,7 @@
             <article class="tarj v-vigilar" [class.on]="pestana() === 'panorama'">
               <h3>Cómo va</h3>
               <div class="tarj__fila">
-                @if (seguimiento()) {
+                @if (seguimiento() && cantidad(r)) {
                   <figure [class]="'anillo ' + claseAvance(r.avance)" role="img"
                     [attr.aria-label]="r.avance !== null ? r.dep.nombre + ', ' + entero(r.avance) + ' % de avance ' + seguimiento()!.anio : r.dep.nombre + ', sin indicadores en el informe'">
                     <svg viewBox="0 0 120 120" aria-hidden="true">
@@ -70,7 +80,7 @@
                   }
                 </dl>
               </div>
-              @if (seguimiento()) {
+              @if (seguimiento() && cantidad(r)) {
                 <div class="estados" role="img" [attr.aria-label]="estadosTexto(r)">
                   @for (e of estados(r); track e.k) { @if (e.n) { <i [class]="'estados__' + e.k" [style.flex-grow]="e.n"></i> } }
                 </div>
@@ -85,7 +95,11 @@
             <article class="tarj v-entender" [class.on]="pestana() === 'productos'">
               <h3>Qué prometió</h3>
               <span class="tarj__big">{{ cantidad(r) }}<small>{{ cantidad(r) === 1 ? 'producto del plan' : 'productos del plan' }}</small></span>
-              <span class="tarj__origen"><span class="tarj__pdf">{{ r.alta }} según el PDF</span><span class="tarj__sug">{{ r.sugerida }} sugeridos por sector</span></span>
+              @if (cantidad(r)) {
+                <span class="tarj__origen"><span class="tarj__pdf">{{ r.alta }} según el PDF</span><span class="tarj__sug">{{ r.sugerida }} sugeridos por sector</span></span>
+              } @else {
+                <span class="tarj__sub">El plan de desarrollo no le asigna productos a esta dependencia.</span>
+              }
               @if (porLinea().length) {
                 <ul class="tarj__lineas" aria-label="Productos por línea estratégica">
                   @for (l of porLinea(); track l.nombre) {
@@ -112,15 +126,43 @@
               }
             </article>
           </div>
+
+          <!-- subdependencias y entidades vinculadas: cada una tiene su propia vista -->
+          @if (subsActual().length) {
+            <section class="subs" aria-labelledby="subs-t">
+              <h3 id="subs-t">{{ subsActual().length === 1 ? 'Su subdependencia' : 'Sus subdependencias' }}</h3>
+              <ul class="subs__lista">
+                @for (s of subsActual(); track s.dep.id) {
+                  <li>
+                    <a class="sub" [routerLink]="['/responsables', s.dep.id]" [class.sub--ext]="s.dep.vinculo">
+                      <span class="sub__foto">
+                        @if (retrato(s.dep); as f) { <img [src]="f" alt="" width="400" height="479" loading="lazy" /> }
+                        @else { @if (urlIcono(s.dep); as u) { <img class="sub__ico" [src]="u" alt="" width="48" height="48" loading="lazy" /> } }
+                      </span>
+                      <span class="sub__txt">
+                        <b>{{ s.dep.nombre }}</b>
+                        <small>{{ s.dep.responsable?.nombre ?? (s.dep.vinculo ? 'Entidad externa vinculada' : 'Quién la dirige: sin publicar') }}</small>
+                        <span class="sub__cifras">
+                          {{ cantidad(s) }} {{ cantidad(s) === 1 ? 'producto' : 'productos' }}
+                          @if (cantidad(s)) { · @if (s.avance !== null) { <b [class]="claseAvance(s.avance)">{{ entero(s.avance) }} %</b> avance } @else { sin informe } }
+                        </span>
+                      </span>
+                      <span class="sub__ir" aria-hidden="true">→</span>
+                    </a>
+                  </li>
+                }
+              </ul>
+            </section>
+          }
         </header>
 
         <div class="pestanas" id="secciones" role="tablist" aria-label="Secciones del responsable">
           @for (s of secciones; track s.p) {
             @if (s.p !== 'plan' || planResumen()) {
-              <button type="button" role="tab" [attr.aria-selected]="pestana() === s.p" [class.on]="pestana() === s.p" (click)="abrir(s.p)">
-                {{ s.pestana }}
-                @if (s.p === 'productos') { <span class="cuenta">{{ cantidad(r) }}</span> }
-                @if (s.p === 'plan' && planResumen()) { <span class="cuenta">{{ planResumen()!.acciones }}</span> }
+              <button type="button" role="tab" [class]="'pest ' + s.color" [attr.aria-selected]="pestana() === s.p" [class.on]="pestana() === s.p" (click)="abrir(s.p)">
+                <span class="pest__insig" aria-hidden="true"><svg viewBox="0 0 24 24"><path [attr.d]="s.d" /></svg></span>{{ s.pestana }}
+                @if (s.p === 'productos') { <span class="pest__n">{{ cantidad(r) }}</span> }
+                @if (s.p === 'plan' && planResumen()) { <span class="pest__n">{{ planResumen()!.acciones }}</span> }
               </button>
             }
           }
