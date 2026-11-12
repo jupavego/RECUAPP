@@ -93,12 +93,19 @@ h1, .sub { position: relative; left: calc(-0.25 * (clamp(20px, 3.8vw, 56px) + cl
 @keyframes holo-sale { to { opacity: 0; filter: blur(3px); letter-spacing: .05em; } }
 
 // escenas del mapa
-.capas { grid-column: 2; grid-row: 1; align-self: start; justify-self: end; display: flex; gap: 6px; padding: 6px; border-radius: 12px;
-  background: var(--glass); border: 1px solid var(--gl); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
-.capas button { display: flex; align-items: center; gap: 7px; padding: 6px 12px; border: 0; border-radius: 8px; cursor: pointer; background: transparent; color: var(--t); font: 600 clamp(12px, 1.9vh, 14px) var(--f-b); }
-.capas button i { width: 8px; height: 8px; border-radius: 50%; background: currentColor; opacity: .8; }
-.capas button[aria-pressed="true"] { background: var(--pill-on-bg); color: var(--pill-on-tx); }
-.capas button:focus-visible { outline: 2px solid #E0B33A; outline-offset: 2px; }
+// selector de escenas: discreto (cristal ligero, letra pequeña); la escena activa se marca con un tinte suave y un punto
+// de color, sin relleno sólido. Atenuado hasta que se pasa el cursor o se enfoca.
+.capas { grid-column: 2; grid-row: 1; align-self: start; justify-self: end; display: flex; gap: 2px; padding: 3px; border-radius: 999px;
+  background: var(--glass-strip); border: 1px solid var(--glass-edge); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  opacity: .82; transition: opacity .25s, background .25s; }
+.capas:hover, .capas:focus-within { opacity: 1; background: var(--glass); }
+.capas button { display: flex; align-items: center; gap: 6px; padding: 4px 11px; border: 0; border-radius: 999px; cursor: pointer; background: transparent;
+  color: var(--t2); font: 500 clamp(11px, 1.7vh, 12.5px) var(--f-b); text-shadow: var(--ts); transition: background .2s, color .2s; }
+.capas button i { width: 6px; height: 6px; border-radius: 50%; background: currentColor; opacity: .45; transition: background .2s, opacity .2s, transform .2s; }
+.capas button:hover { color: var(--t); background: color-mix(in srgb, var(--t) 6%, transparent); }
+.capas button[aria-pressed="true"] { color: var(--t); font-weight: 700; background: color-mix(in srgb, var(--t) 10%, transparent); }
+.capas button[aria-pressed="true"] i { background: var(--accent-ic); opacity: 1; transform: scale(1.25); }
+.capas button:focus-visible { outline: 2px solid #E0B33A; outline-offset: 1px; }
 // en una sola línea mientras quepa: solo se parte cuando la pantalla es más angosta que el texto
 .leyenda { grid-column: 1 / -1; grid-row: 2; justify-self: end; margin: 0; max-width: 100%; box-sizing: border-box; text-wrap: balance; padding: 7px 12px; border-radius: 10px; font-size: clamp(12px, 1.9vh, 13.5px); line-height: 1.4; color: var(--t);
   background: var(--glass); border: 1px solid var(--gl); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
