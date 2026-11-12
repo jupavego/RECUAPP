@@ -813,6 +813,20 @@ const TIPOS_ZONA: Record<string, string> = {
 
     <div #rotulos class="rotulos" [hidden]="modoFoto() && !conduciendo()" [class.solo-zonas]="conduciendo()"></div>
 
+    <!-- tooltip de una fuente hídrica: aparece junto al cursor al pasar sobre un río o quebrada -->
+    @if (tipRio(); as t) {
+      <div class="tip-rio" role="tooltip" [class.izq]="t.izq" [class.arriba]="t.arriba" [style.left.px]="t.x" [style.top.px]="t.y">
+        <div class="tip-rio__cab">
+          <span class="tip-rio__gota" aria-hidden="true">💧</span>
+          <div><span class="tip-rio__tipo">{{ t.tipo }}</span><strong>{{ t.nombre }}</strong></div>
+        </div>
+        <dl>
+          @for (f of t.filas; track f.k) { <div><dt>{{ f.k }}</dt><dd>{{ f.v }}</dd></div> }
+        </dl>
+        @if (t.nota) { <p>{{ t.nota }}</p> }
+      </div>
+    }
+
     <div #barraLey class="barra-ley" role="group" aria-label="Leyenda: tipos de edificio">
       <div class="pista">
         @for (l of leyenda; track l.id) {
@@ -826,6 +840,11 @@ const TIPOS_ZONA: Record<string, string> = {
                 aria-label="Ríos y quebradas" (click)="alternarSistemaHidrico(); mostrarCapa($event, 'rios')">
           <span class="medalla-ley" aria-hidden="true">≈</span>
           <span class="ley-nombre" aria-hidden="true"><b>Ríos y quebradas</b><i>ríos, quebradas, lagos y embalses</i></span>
+        </button>
+        <button type="button" class="ley" [class.activa]="nombresRios()" [attr.aria-pressed]="nombresRios()" style="--c:#2c88c8"
+                aria-label="Nombres de ríos" (click)="alternarNombresRios(); mostrarCapa($event, 'nombres-rios')">
+          <span class="medalla-ley" aria-hidden="true">🏷️</span>
+          <span class="ley-nombre" aria-hidden="true"><b>Nombres de ríos</b><i>{{ nombresRios() ? 'en el mapa · clic para ocultar' : 'oculto · clic para mostrar' }}</i></span>
         </button>
         <span class="sep" aria-hidden="true"></span>
         <button type="button" class="ley" [class.activa]="serviciosActivos() === subtiposServicios.length" [attr.aria-pressed]="serviciosActivos() === subtiposServicios.length"
@@ -1282,6 +1301,24 @@ const TIPOS_ZONA: Record<string, string> = {
     .estado { position: absolute; inset: 0; display: grid; place-items: center; font: 600 1.1rem system-ui;
       color: #36556b; pointer-events: none; }
     .estado.error { color: #b91c1c; }
+    .tip-rio { position: absolute; z-index: 9; pointer-events: none; width: 250px; padding: 10px 12px 9px; border-radius: 14px;
+      background: rgba(255,255,255,.96); color: #243746; border: 1px solid #bfe0f4; box-shadow: 0 8px 24px rgba(15,35,55,.28);
+      transform: translate(14px, 14px); font: 600 12px/1.35 'Nunito', system-ui, sans-serif; }
+    .tip-rio.izq { transform: translate(calc(-100% - 14px), 14px); }
+    .tip-rio.arriba { transform: translate(14px, calc(-100% - 14px)); }
+    .tip-rio.izq.arriba { transform: translate(calc(-100% - 14px), calc(-100% - 14px)); }
+    .tip-rio__cab { display: flex; align-items: center; gap: 9px; margin-bottom: 6px; }
+    .tip-rio__gota { flex: none; width: 32px; height: 32px; display: grid; place-items: center; font-size: 16px; border-radius: 4px 50% 50% 50%;
+      background: linear-gradient(140deg, #8fd0f2, #2c88c8); }
+    .tip-rio__tipo { display: block; font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #2c88c8; }
+    .tip-rio strong { display: block; font-size: 14px; line-height: 1.15; }
+    .tip-rio dl { margin: 0; display: grid; gap: 2px; }
+    .tip-rio dl div { display: flex; justify-content: space-between; gap: 10px; }
+    .tip-rio dt { color: #5b7284; font-weight: 600; white-space: nowrap; }
+    .tip-rio dd { margin: 0; font-weight: 800; text-align: right; }
+    .tip-rio p { margin: 6px 0 0; padding-top: 6px; border-top: 1px dashed #bfe0f4; color: #5b7284; font-size: 11px; font-weight: 600; }
+    :host-context(body.tema-oscuro) .tip-rio { background: rgba(22,34,28,.96); color: #eaf3e4; border-color: #2c5a78; }
+    :host-context(body.tema-oscuro) .tip-rio dt, :host-context(body.tema-oscuro) .tip-rio p { color: #a9c3d4; }
     .rotulos { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
     .rotulos ::ng-deep .rot { position: absolute; left: 0; top: 0; display: flex; align-items: center; gap: 4px;
       padding: 2px 8px 2px 5px; border-radius: 999px; white-space: nowrap; will-change: transform;
@@ -1306,7 +1343,7 @@ const TIPOS_ZONA: Record<string, string> = {
     .rotulos ::ng-deep .rot.fabrica i { background: #6b7280; }
     .creditos { position: absolute; left: 16px; bottom: 8px; margin: 0; max-width: calc(100% - 90px); pointer-events: none;
       font: 600 10px/1.3 system-ui; color: rgba(255,255,255,.92); text-shadow: 0 1px 3px rgba(0,0,0,.7); }
-    .foto { position: absolute; z-index: 10; right: 104px; bottom: 16px; width: 38px; height: 38px; padding: 0; display: grid; place-items: center;
+    .foto { position: absolute; z-index: 10; right: 148px; bottom: 16px; width: 38px; height: 38px; padding: 0; display: grid; place-items: center;
       border-radius: 12px; background: rgba(255,255,255,.85); color: #26425a; box-shadow: 0 2px 8px rgba(30,60,90,.25); backdrop-filter: blur(6px); }
     .foto:hover { background: #fff; }
     .conducir { position: absolute; z-index: 10; right: 60px; bottom: 16px; width: 38px; height: 38px; padding: 0; display: grid; place-items: center;
@@ -1898,8 +1935,14 @@ export class Mapa3dComponent implements AfterViewInit {
           tipos: contar(this.fabricas.map(f => SECTORES[f.datos.c] ?? f.datos.c)), fuentes: ['Inventario de emisiones atmosféricas · Corantioquia 2021'] };
       case 'rios':
         return { nombre: 'Ríos y quebradas', glifo: '≈', color: '#ffb300', activa: this.sistemaHidrico(), total: null, unidad: '',
-          texto: 'Resalta el río Medellín (Aburrá), las quebradas, los lagos y los embalses. Toca un cauce para ver su nombre.',
+          texto: 'Resalta el río Medellín (Aburrá), las quebradas, los lagos y los embalses, con el nombre de cada uno. Toca un cauce para ver su detalle.',
           tipos: [], fuentes: ['IGAC, drenajes 1:100.000', 'OpenStreetMap'] };
+      case 'nombres-rios': {
+        const n = this.riosConNombre().length;
+        return { nombre: 'Nombres de ríos', glifo: '🏷️', color: '#2c88c8', activa: this.nombresRios(), total: n || null, unidad: n === 1 ? 'río o quebrada' : 'ríos y quebradas',
+          texto: 'Pone el nombre sobre cada río y quebrada con nombre registrado; al acercarte aparecen los más pequeños. Los nombres deducidos de la red no se rotulan.',
+          tipos: [], fuentes: ['IGAC, drenajes 1:100.000', 'OpenStreetMap'] };
+      }
       case 'sub':
         return { nombre: 'Subterráneo', glifo: '🕳️', color: '#a1887f', activa: this.subterraneo() || this.cargandoRedesAgua(),
           total: this.elementosAgua.length || null, unidad: 'tramos y puntos',
@@ -2045,6 +2088,18 @@ export class Mapa3dComponent implements AfterViewInit {
     this.pintarHalos();
     for (const h of this.halosLagos) h.visible = this.sistemaHidrico();
   }
+  /** Capa de la leyenda que rotula con su nombre cada río y quebrada (los deducidos de la red no llevan). */
+  readonly nombresRios = signal(false);
+  alternarNombresRios(): void { this.nombresRios.update(v => !v); }
+  private rotulosRios = new Map<string, HTMLElement>();
+  private medidasRios = new Map<string, { w: number; h: number }>();
+  private riosConNombre(): Rio[] {
+    return [...this.rios.values()].filter(r => !r.derivado && r.nombre !== 'Cauce sin nombre registrado').sort((a, b) => b.largo - a.largo);
+  }
+  /** Tooltip junto al cursor con lo recolectado del cauce que se señala (null: ninguno). */
+  readonly tipRio = signal<{ x: number; y: number; izq: boolean; arriba: boolean; nombre: string; tipo: string;
+    filas: { k: string; v: string }[]; nota: string } | null>(null);
+  private veredasDeRio = new Map<string, string[]>();
   private rioHover: string | null = null;
   private rioElegido: string | null = null;
   private rotuloRio: HTMLElement | null = null;
@@ -7700,7 +7755,7 @@ export class Mapa3dComponent implements AfterViewInit {
   private ajustarTiltShift(dt: number): void {
     const inspeccionando = !!this.vuelo || this.conduciendo() || !!this.seleccion() || !!this.pinFicha()
       || !!this.fabricaSeleccion() || !!this.rioSeleccion() || !!this.redSeleccion() || this.capasActivas().size > 0
-      || this.sistemaHidrico() || this.barriosVisibles() || this.flujoVisible() || this.subterraneo();
+      || this.sistemaHidrico() || this.nombresRios() || this.barriosVisibles() || this.flujoVisible() || this.subterraneo();
     let meta = 0;
     if (this.tiltShift && !inspeccionando) {
       const d = this.camara.position.distanceTo(this.controles.target);
@@ -8513,6 +8568,7 @@ export class Mapa3dComponent implements AfterViewInit {
     if (Math.acos(mira.y / mira.length()) > ANGULO_OCULTAR_NOMBRES) {
       for (const p of this.piezas) p.rotulo!.style.display = 'none';
       if (this.rotuloRio) this.rotuloRio.style.display = 'none';
+      for (const el of this.rotulosRios.values()) el.style.display = 'none';
       return;
     }
     // los rótulos se encogen al alejar la cámara para que quepan todos, y crecen al acercarse
@@ -8548,6 +8604,7 @@ export class Mapa3dComponent implements AfterViewInit {
       el.classList.toggle('activo', activo);
       el.style.transform = `translate(${x - (activo ? el.offsetWidth : medida?.w ?? 0) / 2}px, ${y - (activo ? el.offsetHeight : medida?.h ?? 0) - 8 + dy}px) scale(${escala})`;
     }
+    this.actualizarNombresRios(w, h, Math.max(0.9, escala), ocupados);
     this.actualizarRotuloRio(w, h, Math.max(0.9, escala));
     this.actualizarRotuloFabrica(w, h, Math.max(0.9, escala));
     this.actualizarRotuloEquip(w, h, Math.max(0.9, escala));
@@ -8559,7 +8616,7 @@ export class Mapa3dComponent implements AfterViewInit {
    */
   private rotulosCambiaron(w: number, h: number): boolean {
     const f = this.firmaRotulos, m = this.camara.matrixWorld.elements, p = this.camara.projectionMatrix.elements;
-    const estado = [w, h, p[0], p[5], this.elegida, this.hover, this.fabricaHover, this.equipHover, this.servicioHover, this.rioElegido];
+    const estado = [w, h, p[0], p[5], this.elegida, this.hover, this.fabricaHover, this.equipHover, this.servicioHover, this.rioElegido, this.nombresRios() || this.sistemaHidrico() ? 1 : 0];
     let igual = this.cuadrosRotulos++ > 60 && f.length === 16 + estado.length;
     for (let i = 0; i < 16 && igual; i++) if (f[i] !== m[i]) igual = false;
     for (let i = 0; i < estado.length && igual; i++) if (f[16 + i] !== estado[i]) igual = false;
@@ -8579,6 +8636,48 @@ export class Mapa3dComponent implements AfterViewInit {
     const visible = v.z < 1 && x > 0 && x < w && y > 0 && y < h;
     el.style.display = visible ? '' : 'none';
     if (visible) el.style.transform = `translate(${x - el.offsetWidth / 2}px, ${y - el.offsetHeight - 8}px) scale(${escala})`;
+  }
+
+  /** Con "Nombres de ríos" o "Ríos y quebradas" encendida, cada río con nombre lleva su rótulo (los más largos primero; si chocan, se omite el menor). */
+  private actualizarNombresRios(w: number, h: number, escala: number, ocupados: { x0: number; y0: number; x1: number; y1: number }[]): void {
+    if (!this.nombresRios() && !this.sistemaHidrico()) { for (const el of this.rotulosRios.values()) el.style.display = 'none'; return; }
+    if (!this.rotulosRios.size) {
+      for (const rio of this.riosConNombre()) {
+        const el = document.createElement('div');
+        el.className = 'rot agua';
+        el.style.display = 'none';
+        const nombre = document.createElement('span');
+        nombre.textContent = rio.nombre;
+        el.append(document.createElement('i'), nombre);
+        this.contenedorRotulos.nativeElement.appendChild(el);
+        this.rotulosRios.set(rio.clave, el);
+      }
+    }
+    const v = new THREE.Vector3();
+    for (const [clave, el] of this.rotulosRios) {
+      const rio = this.rios.get(clave)!;
+      if (clave === this.rioElegido) { el.style.display = 'none'; continue; }   // el río elegido ya lleva su propio rótulo
+      const [lon, lat] = rio.ancla;
+      const px = this.aX(lon), pz = this.aZ(lat);
+      if (this.aisladas.size && !this.visibleEnXZ(px, pz)) { el.style.display = 'none'; continue; }
+      const id = this.idEn(lon, lat);
+      const alza = id >= 0 ? this.alzado[id] * this.pesoBorde(lon, lat, id) : 0;
+      v.set(px, this.alturaEn(lon, lat) + alza + 30, pz).project(this.camara);
+      const x = (v.x * 0.5 + 0.5) * w, y = (-v.y * 0.5 + 0.5) * h;
+      if (!(v.z < 1 && x > 0 && x < w && y > 0 && y < h)) { el.style.display = 'none'; continue; }
+      let m = this.medidasRios.get(clave);
+      if (!m) {
+        el.style.display = '';
+        if (!el.offsetWidth) { el.style.display = 'none'; continue; }
+        this.medidasRios.set(clave, m = { w: el.offsetWidth, h: el.offsetHeight });
+      }
+      const ancho = m.w * escala, alto = m.h * escala;
+      const caja = { x0: x - ancho / 2, y0: y - alto - 8, x1: x + ancho / 2, y1: y - 6 };
+      if (ocupados.some(o => caja.x0 < o.x1 && caja.x1 > o.x0 && caja.y0 < o.y1 && caja.y1 > o.y0)) { el.style.display = 'none'; continue; }
+      ocupados.push(caja);
+      el.style.display = '';
+      el.style.transform = `translate(${x - m.w / 2}px, ${y - m.h - 8}px) scale(${escala})`;
+    }
   }
 
   /** Nombre del río elegido: solo ese; los cauces no llevan rótulo mientras nadie los toca. */
@@ -8650,7 +8749,52 @@ export class Mapa3dComponent implements AfterViewInit {
     const ev = this.moverPendiente;
     if (!ev) return;
     this.moverPendiente = null;
-    this.zona.run(() => this.resolverHover(ev));
+    this.zona.run(() => { this.resolverHover(ev); this.actualizarTipRio(ev); });
+  }
+
+  /** Veredas por las que pasa un cauce, de la que más recorre a la que menos (se muestrea la línea y se guarda el resultado). */
+  private veredasPorDondePasa(rio: Rio): string[] {
+    const hecho = this.veredasDeRio.get(rio.clave);
+    if (hecho) return hecho;
+    const pos = this.aguaPos, cuenta = new Map<string, number>();
+    if (pos) {
+      for (const t of rio.tramos) {
+        const paso = Math.max(1, Math.floor(t.n / 14));
+        for (let p = 0; p < t.n; p += paso) {
+          const k = 2 * (t.ini + p);
+          const x = (pos.getX(k) + pos.getX(k + 1)) / 2, z = (pos.getZ(k) + pos.getZ(k + 1)) / 2;
+          const id = this.idEn(this.lon0 + x / this.mLon, this.lat0 - z / this.mLat);
+          if (id >= 0) { const n = this.piezas[id].zona.n; cuenta.set(n, (cuenta.get(n) ?? 0) + 1); }
+        }
+      }
+    }
+    const lista = [...cuenta].sort((a, b) => b[1] - a[1]).map(([n]) => n);
+    this.veredasDeRio.set(rio.clave, lista);
+    return lista;
+  }
+
+  /** Muestra o esconde el tooltip del cauce bajo el cursor, con los datos que se recogieron de él. */
+  private actualizarTipRio(ev: PointerEvent): void {
+    const rio = this.rioHover ? this.rios.get(this.rioHover) : null;
+    if (!rio || this.conduciendo()) { if (this.tipRio()) this.tipRio.set(null); return; }
+    const caja = this.lienzo.nativeElement.getBoundingClientRect();
+    const x = ev.clientX - caja.left, y = ev.clientY - caja.top;
+    const previo = this.tipRio();
+    if (previo && previo.nombre === rio.nombre && Math.abs(previo.x - x) < 2 && Math.abs(previo.y - y) < 2) return;
+    const sinNombre = rio.nombre === 'Cauce sin nombre registrado';
+    const veredas = this.veredasPorDondePasa(rio);
+    const filas = [
+      { k: 'Ancho', v: `≈ ${Math.round(rio.ancho)} m` },
+      { k: 'Longitud en el mapa', v: `${(rio.largo / 1000).toFixed(1)} km` },
+      { k: 'Pasa por', v: veredas.length ? veredas.slice(0, 3).join(', ') + (veredas.length > 3 ? ` y ${veredas.length - 3} más` : '') : '—' },
+      { k: 'Fuente', v: rio.igac ? 'IGAC 1:100.000' : 'OpenStreetMap' },
+    ];
+    const nota = /medell/i.test(rio.nombre)
+      ? 'Río principal del valle de Aburrá. Su color cambia junto a las industrias cercanas que vierten sobre él.'
+      : rio.derivado ? 'El nombre se dedujo de la red de drenaje (afluente de otro cauce); no es un nombre oficial.'
+      : sinNombre ? 'La fuente no registra un nombre para este cauce.' : 'Haz clic para seleccionarlo y ver su detalle completo.';
+    this.tipRio.set({ x, y, izq: x > caja.width - 290, arriba: y > caja.height - 190, nombre: rio.nombre,
+      tipo: /^r[ií]o/i.test(rio.nombre) ? 'Río' : /^(quebrada|arroyo|ca[ñn]o|zanj)/i.test(rio.nombre) ? 'Quebrada' : rio.ancho >= 10 ? 'Río' : 'Quebrada', filas, nota });
   }
 
   private resolverHover(ev: PointerEvent): void {
@@ -8734,6 +8878,7 @@ export class Mapa3dComponent implements AfterViewInit {
     this.marcarEquipHover(-1);
     this.hover = -1;
     this.rioHover = null;
+    this.tipRio.set(null);
     if (this.redHover) { this.redHover = null; this.pintarHalosRed(); }
     this.pintarHalos();
     this.pintarResalte();
