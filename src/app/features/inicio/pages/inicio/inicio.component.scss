@@ -51,7 +51,7 @@
   background:
     linear-gradient(0deg, rgba(var(--vl), .30) 0, rgba(var(--vl), .14) 14%, rgba(var(--vl), 0) 26%),
     linear-gradient(180deg, rgba(var(--vl), .55) 0, rgba(var(--vl), 0) 14%),
-    linear-gradient(90deg, rgba(var(--vl), var(--va)) 0, rgba(var(--vl), .88) 30%, rgba(var(--vl), .5) 46%, rgba(var(--vl), 0) 64%); }
+    linear-gradient(90deg, rgba(var(--vl), var(--va)) 0, rgba(var(--vl), .88) 15%, rgba(var(--vl), .5) 23%, rgba(var(--vl), 0) 32%); }
 
 // ── contenido ──
 .marco { position: relative; z-index: 4; height: 100%; box-sizing: border-box; display: grid; grid-template-rows: 1fr auto auto; grid-template-columns: minmax(0, 1fr) auto;

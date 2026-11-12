@@ -2225,38 +2225,55 @@ export class Mapa3dComponent implements AfterViewInit {
       tanques: this.http.get<Tanque[]>(`data/mapa3d/tanques-${ID_MUNICIPIO}.json`).pipe(catchError(() => of([] as Tanque[]))),
       ajustes: this.http.get<Record<string, AjusteCatastro>>(`data/mapa3d/equipamientos-catastro-${ID_MUNICIPIO}.json`).pipe(catchError(() => of({} as Record<string, AjusteCatastro>))),
     }).subscribe({
-      next: ({ relieve, muni, terr, foto, vias, viasEstado, edificios, rasante, cauces, poblacion, edad, industrias, puntos, zonasPlan, jardines, cercas, ajustes, industriasCat, tanques, infra, instalaciones }) => {
+      next: async ({ relieve, muni, terr, foto, vias, viasEstado, edificios, rasante, cauces, poblacion, edad, industrias, puntos, zonasPlan, jardines, cercas, ajustes, industriasCat, tanques, infra, instalaciones }) => {
         try {
           this.foto = foto;
           this.zonasPlan = zonasPlan;
           this.construir(relieve, muni.municipios, terr.v);
+          if (await this.ceder()) return;
           this.rasante = rasante?.v?.length ? new Rasante(rasante, lon => this.aX(lon), lat => this.aZ(lat), EXAGERACION) : null;
           this.fabricas = this.ubicarIndustrias(industrias, vias, industriasCat);
-          this.equipamientos = this.ubicarEquipamientos(puntos, vias, ajustes);
+          this.equipamientos = await this.ubicarEquipamientos(puntos, vias, ajustes);
+          if (this.destruido) return;
           this.nivelarPlazas();
-          if (vias?.v) { this.construirVias(vias); this.holguraConduccion = this.medirVias(vias); }
-          if (USAR_ESTADO_VIAL && viasEstado?.v) this.construirViasEstado(viasEstado);
+          if (await this.ceder()) return;
+          if (vias?.v) { await this.construirVias(vias); if (this.destruido) return; this.holguraConduccion = this.medirVias(vias); }
+          if (await this.ceder()) return;
+          if (USAR_ESTADO_VIAL && viasEstado?.v) { await this.construirViasEstado(viasEstado); if (this.destruido) return; }
           if (cauces?.c) this.construirCauces(cauces);
+          if (await this.ceder()) return;
           if (vias?.v && cauces?.c) this.construirPuentes(vias, cauces);
           if (cauces?.c) this.construirPajaros(cauces);
           if (vias?.v) this.construirTrafico(vias);
+          if (await this.ceder()) return;
           this.construirIndustrias();
           this.construirEquipamientos();
+          if (await this.ceder()) return;
           this.tanques = tanques;
           this.construirTanques();
           this.construirInfraestructura(infra);
           this.construirInstalacionesAgua(instalaciones);
           this.construirPinesServicios();
-          this.edificiosBase = this.sinIndustrias(edificios, vias);
+          if (await this.ceder()) return;
+          this.edificiosBase = await this.sinIndustrias(edificios, vias);
+          if (this.destruido) return;
           this.poblacion = poblacion;
           this.edad = edad;
           this.hayPoblacion.set(!!(edificios?.e && poblacion));
           const dibujados = this.edificiosParaAnio(this.anio());
-          if (dibujados?.e) this.construirEdificios(dibujados);
-          this.construirJardines(jardines);
+          if (dibujados?.e) await this.construirEdificiosEnTandas(dibujados);
+          if (await this.ceder()) return;
+          await this.construirJardines(jardines);
+          if (this.destruido) return;
           this.construirCercas(cercas);
-          this.arbolesUrbanos = [...this.arbolesDeJardin(jardines), ...this.arbolesDeCalle(vias)];
+          if (await this.ceder()) return;
+          const deJardin = await this.arbolesDeJardin(jardines);
+          const deCalle = await this.arbolesDeCalle(vias);
+          if (this.destruido) return;
+          this.arbolesUrbanos = [...deJardin, ...deCalle];
+          if (await this.ceder()) return;
           this.construirVegetacion(vias, dibujados, cauces);
+          this.construido = true;
           this.abrirPuntoDeLaRuta();
           // dentro del recorrido la vista ya existe al volver del mapa 2D: el punto llega como un cambio de la dirección
           let primera = true;
@@ -2273,7 +2290,20 @@ export class Mapa3dComponent implements AfterViewInit {
       },
       error: () => { this.error.set('No se pudieron cargar los datos del territorio.'); this.cargando.set(false); },
     });
-    this.destroyRef.onDestroy(() => { this.soltarPagina?.(); this.liberar(); });
+    this.destroyRef.onDestroy(() => { this.destruido = true; this.soltarPagina?.(); this.liberar(); });
+  }
+
+  /** la escena ya está completa: hasta entonces el bucle de dibujo no pinta (se construye por tandas) */
+  private construido = false;
+  private destruido = false;
+
+  /**
+   * Cede el hilo entre tandas de la construcción: levantar todo el territorio de una vez congelaba la página entera
+   * (ni el desplazamiento ni el tutorial respondían). Devuelve true si la vista se destruyó mientras tanto.
+   */
+  private async ceder(): Promise<boolean> {
+    await new Promise<void>(r => setTimeout(r, 0));
+    return this.destruido;
   }
 
   /** Imagen de fondo del terreno; si falta, el terreno queda en un color liso. */
@@ -2998,22 +3028,28 @@ export class Mapa3dComponent implements AfterViewInit {
   }
 
   /** Vías como cintas pegadas al relieve: principales con borde oscuro, locales claras, senderos finos. */
-  private construirVias(d: Compacto): void {
+  private async construirVias(d: Compacto): Promise<void> {
+    let t0 = performance.now();   // por tandas de ~25 ms, para no congelar la página
     const grupos = [this.nuevoGrupo(), this.nuevoGrupo(), this.nuevoGrupo()];
     const ras = this.rasante;
     const aceraP = this.nuevoGrupo(), aceraL = this.nuevoGrupo();
     for (const v of d.v!) {
+      if (performance.now() - t0 > 25) { if (await this.ceder()) return; t0 = performance.now(); }
       // con rasante, las principales y locales salen de ella (ancho entre fachadas y altura asentada); los senderos, de siempre
       if (v[0] > 2 || (ras && v[0] < 2)) continue;
       this.agregarCinta(grupos[v[0]], this.desdeDeltas(v, d.k, 1), ANCHO_VIA[v[0]], ANCHO_VIA[v[0]] * 1.8);
     }
-    if (ras) for (const t of ras.tramos) this.agregarCintaRasante(grupos[t.clase], t.clase === 0 ? aceraP : aceraL, t);
+    if (ras) for (const t of ras.tramos) {
+      if (performance.now() - t0 > 25) { if (await this.ceder()) return; t0 = performance.now(); }
+      this.agregarCintaRasante(grupos[t.clase], t.clase === 0 ? aceraP : aceraL, t);
+    }
     const [principal, local, sendero] = grupos;
     // remates: un disco de asfalto en cada cruce (une las cintas que llegan con distinto rumbo) y una media luna que cierra
     // cada vía sin salida; el mismo disco, más ancho y debajo, hace de acera
     const nodos = this.nodosViales(ras ? ras.datos : d);
     const asfaltoP = this.nuevoGrupo(), asfaltoL = this.nuevoGrupo();
     for (const n of nodos) {
+      if (performance.now() - t0 > 25) { if (await this.ceder()) return; t0 = performance.now(); }
       const [dest, acera] = n.clase === 0 ? [asfaltoP, aceraP] : [asfaltoL, aceraL];
       const a0 = n.cierre === null ? 0 : n.cierre - Math.PI / 2, a1 = n.cierre === null ? Math.PI * 2 : n.cierre + Math.PI / 2;
       const c = ras?.consultar(n.x, n.z);
@@ -3109,9 +3145,11 @@ export class Mapa3dComponent implements AfterViewInit {
    * Estado oficial de la superficie: sobre el asfalto de las vías que el IGAC marca como mixtas (afirmado con tramos
    * pavimentados) o sin pavimentar se pinta grava o tierra, con su cuneta. Mismo trazado y ancho que la vía de abajo.
    */
-  private construirViasEstado(d: Compacto): void {
+  private async construirViasEstado(d: Compacto): Promise<void> {
+    let t0 = performance.now();
     const porEstado = new Map<number, GrupoCinta>();
     for (const v of d.v!) {
+      if (performance.now() - t0 > 25) { if (await this.ceder()) return; t0 = performance.now(); }
       const [estado, clase] = v;
       if (!porEstado.has(estado)) porEstado.set(estado, this.nuevoGrupo());
       this.agregarCinta(porEstado.get(estado)!, this.desdeDeltas(v, d.k, 2), ANCHO_VIA[clase], ANCHO_VIA[clase] * 1.8, true);
@@ -3787,6 +3825,16 @@ export class Mapa3dComponent implements AfterViewInit {
 
   /** Huellas extruidas. Las alturas casi nunca vienen en los datos: se estiman entre 4,5 y 8,5 m. */
   private construirEdificios(d: Compacto): void {
+    for (const _ of this.edificiosPorTandas(d)) { /* de corrido: así se rehace al cambiar de año */ }
+  }
+
+  /** Lo mismo, pero cediendo el hilo entre tandas: al abrir el mapa son miles de huellas y de corrido congelaban la página. */
+  private async construirEdificiosEnTandas(d: Compacto): Promise<void> {
+    const g = this.edificiosPorTandas(d);
+    while (!g.next().done) { if (await this.ceder()) return; }
+  }
+
+  private *edificiosPorTandas(d: Compacto): Generator<void, void, void> {
     const PAREDES = ['#f3e8d6', '#efe0c9', '#f6f0e6', '#ead7bd'].map(c => new THREE.Color(c));
     const TECHOS = ['#c8704f', '#b9825f', '#d6cfc0', '#a3a9ae', '#c98f6a'].map(c => new THREE.Color(c));
     // viviendas de la región: ladrillo de barro con techo a dos aguas de teja de barro; en el casco urbano, edificios de varios pisos pintados
@@ -3805,7 +3853,7 @@ export class Mapa3dComponent implements AfterViewInit {
     const tejas = new Map<number, TeselaTeja>();
     const ROJIZOS = new Set([...TEJAS, TECHOS[0], TECHOS[1], TECHOS[4]]);
     this.cajasViv.clear();
-    d.e!.forEach((e, n) => {
+    const unEdificio = (e: NonNullable<Compacto['e']>[number], n: number): void => {
       const ring = this.desdeDeltas(e, d.k, 1);
       if (ring.length < 3) return;
       const hash = (((n + 1) * 2654435761) >>> 0) % 1000 / 1000;
@@ -3941,7 +3989,12 @@ export class Mapa3dComponent implements AfterViewInit {
           for (let s = 0; s < 6; s++) { const u = (s + 1) % 6; idx.push(aro0[s], aro0[u], aro1[u], aro0[s], aro1[u], aro1[s], aro1[s], aro1[u], tapa); }
         }
       }
-    });
+    };
+    let t0 = performance.now();
+    for (let n = 0; n < d.e!.length; n++) {
+      unEdificio(d.e![n], n);
+      if (performance.now() - t0 > 25) { yield; t0 = performance.now(); }
+    }
     const material = new THREE.MeshStandardMaterial({
       vertexColors: true, flatShading: true, roughness: 1, side: THREE.DoubleSide,
     });
@@ -4208,7 +4261,7 @@ export class Mapa3dComponent implements AfterViewInit {
   }
 
   /** Patios y jardines de los predios urbanos: césped o patio a ras del terreno, con matas y flores repartidas. */
-  private construirJardines(d: Jardines | null): void {
+  private async construirJardines(d: Jardines | null): Promise<void> {
     if (!d?.j.length) return;
     const CESPED = ['#6fb050', '#78b857', '#68a84b', '#82c061'].map(c => new THREE.Color(c));
     const PATIO = ['#b9a98a', '#a8a79f', '#c2b59b'].map(c => new THREE.Color(c));
@@ -4217,7 +4270,7 @@ export class Mapa3dComponent implements AfterViewInit {
     const ALZA = 1.6;
     type Tesela = { pos: number[]; col: number[]; idx: number[]; ids: number[]; pesos: number[] };
     const teselas = new Map<number, Tesela>();
-    d.j.forEach((c, n) => {
+    const unJardin = (c: (typeof d.j)[number], n: number): void => {
       const ring = this.desdeDeltas(c, d.k, 0);
       if (ring.length < 3) return;
       const xs = ring.map(q => this.aX(q[0])), zs = ring.map(q => this.aZ(q[1]));
@@ -4252,7 +4305,13 @@ export class Mapa3dComponent implements AfterViewInit {
         const anillo = [0, 1, 2, 3].map(q => poner(x + Math.cos(giro + q * Math.PI / 2) * r, y, z + Math.sin(giro + q * Math.PI / 2) * r, aro));
         for (let q = 0; q < 4; q++) idx.push(v0, anillo[q], anillo[(q + 1) % 4]);
       }
-    });
+    };
+    // por tandas de ~25 ms: son miles de predios y triangularlos de corrido congelaba la página varios segundos
+    let t0 = performance.now();
+    for (let n = 0; n < d.j.length; n++) {
+      unJardin(d.j[n], n);
+      if (performance.now() - t0 > 25) { if (await this.ceder()) return; t0 = performance.now(); }
+    }
     const material = new THREE.MeshStandardMaterial({ vertexColors: true, flatShading: true, roughness: 1, side: THREE.DoubleSide });
     for (const t of teselas.values()) {
       const geo = new THREE.BufferGeometry();
@@ -4278,9 +4337,11 @@ export class Mapa3dComponent implements AfterViewInit {
   }
 
   /** Árboles de los patios: puntos ya calculados con el catastro. */
-  private arbolesDeJardin(d: Jardines | null): { lon: number; lat: number; x: number; z: number }[] {
+  private async arbolesDeJardin(d: Jardines | null): Promise<{ lon: number; lat: number; x: number; z: number }[]> {
     const res: { lon: number; lat: number; x: number; z: number }[] = [];
+    let n = 0;
     for (const a of d?.a ?? []) {
+      if (++n % 120 === 0 && await this.ceder()) return res;   // por tandas: son miles de árboles y cada uno se compara con los equipamientos
       for (let i = 0; i < a.length; i += 2) {
         const lon = a[i] / d!.k, lat = a[i + 1] / d!.k;
         const x = this.aX(lon), z = this.aZ(lat);
@@ -4291,7 +4352,7 @@ export class Mapa3dComponent implements AfterViewInit {
   }
 
   /** Arbolado de calle: a ambos lados de las vías del tejido urbano, con huecos, sin pisar edificios, calzadas ni equipamientos. */
-  private arbolesDeCalle(vias: Compacto | null): { lon: number; lat: number; x: number; z: number }[] {
+  private async arbolesDeCalle(vias: Compacto | null): Promise<{ lon: number; lat: number; x: number; z: number }[]> {
     if (!vias?.v) return [];
     const holgura = this.holguraVias(vias), rnd = mulberry32(777);
     // cuadrícula de 40 m con las cajas de los edificios para saber rápido si un punto cae sobre uno
@@ -4306,7 +4367,9 @@ export class Mapa3dComponent implements AfterViewInit {
     const sobreEdificio = (x: number, z: number, m: number) =>
       (rejilla.get(Math.floor(x / CELDA) * 100003 + Math.floor(z / CELDA)) ?? []).some(c => x > c.x0 - m && x < c.x1 + m && z > c.z0 - m && z < c.z1 + m);
     const res: { lon: number; lat: number; x: number; z: number }[] = [];
+    let nv = 0;
     for (const v of vias.v) {
+      if (++nv % 25 === 0 && await this.ceder()) return res;
       if (v[0] > 1) continue;
       const pts = this.desdeDeltas(v, vias.k, 1).map(q => [this.aX(q[0]), this.aZ(q[1])]);
       const lado = ANCHO_VIA[v[0]] / 2 + 2.6;
@@ -5306,7 +5369,7 @@ export class Mapa3dComponent implements AfterViewInit {
    * Puntos de interés de Girardota (colegios, salud, canchas, sitios arqueológicos...), cada uno con su edificio. Se corren
    * hasta un sitio libre cerca de su coordenada: sin pisar una vía, una fábrica ni otro equipamiento.
    */
-  private ubicarEquipamientos(lista: Punto[], vias: Compacto | null, ajustes: Record<string, AjusteCatastro> = {}): typeof this.equipamientos {
+  private async ubicarEquipamientos(lista: Punto[], vias: Compacto | null, ajustes: Record<string, AjusteCatastro> = {}): Promise<typeof this.equipamientos> {
     const holgura = this.holguraVias(vias);
     const intentos: [number, number][] = [[0, 0]];
     for (let r = 5; r <= 160; r += 5) {                  // anillos cada 5 m, con un punto cada ~6 m: en las esquinas angostas el hueco útil es pequeño
@@ -5329,7 +5392,7 @@ export class Mapa3dComponent implements AfterViewInit {
       const c = Math.cos(s.yaw), sn = Math.sin(s.yaw);
       return { x: s.x + (lx * c + lz * sn) * s.f, z: s.z + (-lx * sn + lz * c) * s.f };
     };
-    lista.forEach((p, i) => {
+    const colocar = (p: Punto, i: number): void => {
       if (p.lat == null || p.lng == null || FUSIONES.has(p.n)) return;
       const parte = PARTES.get(p.n);
       if (parte && parte.sitio !== p.n) { partes.push(p); return; }
@@ -5408,7 +5471,12 @@ export class Mapa3dComponent implements AfterViewInit {
         out.push({ x, z, lon: this.lon0 + x / this.mLon, lat: this.lat0 - z / this.mLat, n: p.n, r: modelo.radio, datos: { p, modelo } });
         return;
       }
-    });
+    };
+    // por tandas de pocos sitios: cada uno busca su hueco libre de vías y el conjunto entero congelaba la página varios segundos
+    for (let i = 0; i < lista.length; i++) {
+      colocar(lista[i], i);
+      if (i % 6 === 5 && await this.ceder()) return out;
+    }
     // sin edificio propio: el modelo del sitio ya las dibuja; van al final para que el clic sobre la malla no las confunda con el sitio
     for (const p of partes) {
       const parte = PARTES.get(p.n)!, s = sitiosPuestos.get(parte.sitio);
@@ -5555,11 +5623,11 @@ export class Mapa3dComponent implements AfterViewInit {
   }
 
   /** Quita los edificios de OpenStreetMap que quedarían debajo de una fábrica o de un equipamiento (dentro de su radio). */
-  private sinIndustrias(e: Compacto | null, vias: Compacto | null): Compacto | null {
+  private async sinIndustrias(e: Compacto | null, vias: Compacto | null): Promise<Compacto | null> {
     if (!e?.e) return e;
     const k = e.k, holgura = this.holguraVias(vias);
     this.medirDensidad(e);
-    const quedan = e.e.map((b, n) => {
+    const decidir = (b: number[], n: number): boolean => {
       const q = this.desdeDeltas(b, k, 1);
       const lon = q.reduce((m, p) => m + p[0], 0) / q.length, lat = q.reduce((m, p) => m + p[1], 0) / q.length;
       const x = this.aX(lon), z = this.aZ(lat);
@@ -5580,7 +5648,14 @@ export class Mapa3dComponent implements AfterViewInit {
           const dx = x - q.x, dz = z - q.z, yaw = q.yaw ?? 0;
           return Math.abs(dx * Math.cos(yaw) - dz * Math.sin(yaw)) > h[0] / 2 + 1 || Math.abs(dx * Math.sin(yaw) + dz * Math.cos(yaw)) > h[1] / 2 + 1;
         });
-    });
+    };
+    // por tandas: cada construcción se compara con vías, fábricas, tanques y equipamientos
+    const quedan: boolean[] = [];
+    let t0 = performance.now();
+    for (let n = 0; n < e.e.length; n++) {
+      quedan.push(decidir(e.e[n], n));
+      if (performance.now() - t0 > 25) { if (await this.ceder()) return e; t0 = performance.now(); }
+    }
     const sin = <T>(a?: T[]) => a?.filter((_, n) => quedan[n]);
     return { ...e, e: sin(e.e), p: sin(e.p), u: sin(e.u), r: sin(e.r), n: sin(e.n) };
   }
@@ -7654,15 +7729,16 @@ export class Mapa3dComponent implements AfterViewInit {
   private arrancar(): void {
     this.zona.runOutsideAngular(() => {
       let anterior = performance.now();
-      const inicio = anterior;
+      let inicio = 0;   // se fija al terminar de construir la escena
       // con el lienzo fuera de la vista (página desplazada, otra pestaña del panel) no se dibuja nada
       const obs = new IntersectionObserver(([e]) => this.lienzoVisible = e.isIntersecting);
       obs.observe(this.lienzo.nativeElement);
       this.destroyRef.onDestroy(() => obs.disconnect());
       const bucle = (t: number) => {
         this.animacion = requestAnimationFrame(bucle);
-        if (!this.lienzoVisible) return;
+        if (!this.lienzoVisible || !this.construido) return;
         // durante los primeros segundos la escena aún se completa (capas que llegan después): sombra siempre fresca
+        if (!inicio) inicio = t;
         const cargando = t - inicio < 4000;
         if (cargando) this.sombraSucia = true;
         // ritmo: 60 cuadros por segundo como tope (en pantallas de 120–144 Hz no se dibuja de más) y 30 cuando nadie
