@@ -2142,7 +2142,7 @@ export class Mapa3dComponent implements AfterViewInit {
       },
       error: () => { this.error.set('No se pudieron cargar los datos del territorio.'); this.cargando.set(false); },
     });
-    this.destroyRef.onDestroy(() => this.liberar());
+    this.destroyRef.onDestroy(() => { this.soltarPagina?.(); this.liberar(); });
   }
 
   /** Imagen de fondo del terreno; si falta, el terreno queda en un color liso. */
@@ -6429,6 +6429,32 @@ export class Mapa3dComponent implements AfterViewInit {
     this.cerrarPin();
     this.eligiendoSalida.set(true);
     window.addEventListener('keydown', this.alTeclaSalida);
+    this.fijarPagina();
+  }
+
+  /**
+   * Mientras se elige el punto de salida y durante el vuelo o la conducción, las flechas, Espacio y Re Pág / Av Pág son del
+   * vehículo y no deben mover la página del recorrido (el mapa es una sección de una página larga). Se frenan en la fase de
+   * captura, antes que cualquier otro elemento, y si aun así la página se corre, se devuelve a donde estaba.
+   */
+  private soltarPagina?: () => void;
+
+  private fijarPagina(): void {
+    this.soltarPagina?.();
+    const y = window.scrollY;
+    const teclaPagina = (e: KeyboardEvent): void => {
+      if (!/^(Arrow(Up|Down|Left|Right)|Space|Page(Up|Down)|Home|End)$/.test(e.code)) return;
+      if ((e.target as HTMLElement | null)?.closest?.('input, textarea, select, [contenteditable]')) return;
+      e.preventDefault();
+    };
+    const alDesplazar = (): void => { if (window.scrollY !== y) window.scrollTo({ top: y, behavior: 'instant' }); };
+    window.addEventListener('keydown', teclaPagina, { capture: true });
+    window.addEventListener('scroll', alDesplazar, { passive: true });
+    this.soltarPagina = () => {
+      window.removeEventListener('keydown', teclaPagina, { capture: true });
+      window.removeEventListener('scroll', alDesplazar);
+      this.soltarPagina = undefined;
+    };
   }
 
   empezarEnCentro(): void { this.empezarAConducir(); }
@@ -6436,6 +6462,7 @@ export class Mapa3dComponent implements AfterViewInit {
   cancelarSalida(): void {
     window.removeEventListener('keydown', this.alTeclaSalida);
     this.eligiendoSalida.set(false);
+    if (!this.conduciendo()) this.soltarPagina?.();
   }
 
   private readonly alTeclaSalida = (e: KeyboardEvent): void => {
@@ -6498,12 +6525,14 @@ export class Mapa3dComponent implements AfterViewInit {
     window.addEventListener('keydown', this.alTecla);
     window.addEventListener('keyup', this.alTecla);
     window.addEventListener('blur', this.alPerderFoco);
+    this.fijarPagina();
   }
 
   private salirDeConducir(): void {
     window.removeEventListener('keydown', this.alTecla);
     window.removeEventListener('keyup', this.alTecla);
     window.removeEventListener('blur', this.alPerderFoco);
+    this.soltarPagina?.();
     if (!this.conduciendo()) return;
     this.conduccion?.ocultar();
     this.conduccion?.teclas.clear();
