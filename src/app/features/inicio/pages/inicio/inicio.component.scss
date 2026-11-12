@@ -17,7 +17,7 @@
   --vl: 245, 240, 234; --va: .95;
   --t: #29422F; --t2: #3E4F3B;
   --glass: rgba(252, 249, 246, .88); --glass-strip: rgba(252, 249, 246, .74); --glass-edge: rgba(255, 255, 255, .85); --ts: none;
-  --gl: #C8D9C0; --pill-on-bg: #29422F; --pill-on-tx: #fff; --accent-ic: #3F7A1E;
+  --panel-titulo: rgba(252, 249, 246, .72); --gl: #C8D9C0; --pill-on-bg: #29422F; --pill-on-tx: #fff; --accent-ic: #3F7A1E;
   display: block; color: var(--text); font-family: var(--f-b);
 }
 :host-context(html.tema-oscuro) {
@@ -26,7 +26,7 @@
   --vl: 12, 22, 15; --va: .94;
   --t: #F2F7EE; --t2: #D3E0CC;
   --glass: rgba(12, 22, 15, .82); --glass-strip: rgba(14, 28, 18, .30); --glass-edge: rgba(255, 255, 255, .22); --ts: 0 1px 3px rgba(12, 22, 15, .7), 0 0 14px rgba(12, 22, 15, .5);
-  --gl: #3E5A44; --pill-on-bg: #F2F7EE; --pill-on-tx: #29422F; --accent-ic: #99CC33;
+  --panel-titulo: rgba(12, 22, 15, .60); --gl: #3E5A44; --pill-on-bg: #F2F7EE; --pill-on-tx: #29422F; --accent-ic: #99CC33;
 }
 
 .ico { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
@@ -46,20 +46,21 @@
 .cp { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.07);
   transition: opacity 1.4s ease, transform 2.4s cubic-bezier(.2, .6, .2, 1); user-select: none; }
 .cp.on { opacity: 1; transform: scale(1); }
-// velo de color en forma de «U» tumbada (abierta a la derecha), simétrica: pegado al borde izquierdo, con brazos largos arriba y abajo
-// y una bahía cóncava a media altura por donde se ve el mapa. El color se desvanece hacia la derecha.
-.velo { position: absolute; top: 0; bottom: 0; left: 0; width: 60%; z-index: 2;
-  background: linear-gradient(90deg, rgba(var(--vl), var(--va)) 0, rgba(var(--vl), .9) 45%, rgba(var(--vl), .5) 78%, rgba(var(--vl), 0) 100%);
-  -webkit-mask: radial-gradient(ellipse 92% 44% at 100% 50%, transparent 0 22%, #000 100%);
-  mask: radial-gradient(ellipse 92% 44% at 100% 50%, transparent 0 22%, #000 100%); }
+// sin velo de color a lo ancho: el texto lleva su propio panel (ver .titulo). En el celular sí hay un velo vertical (más abajo).
+.velo { display: none; }
 
 // ── contenido ──
 .marco { position: relative; z-index: 4; height: 100%; box-sizing: border-box; display: grid; grid-template-rows: 1fr auto auto; grid-template-columns: minmax(0, 1fr) auto;
   gap: 12px 24px; padding: clamp(18px, 4.5vh, 56px) clamp(20px, 3.8vw, 56px) clamp(16px, 3vh, 30px); }
-.titulo { grid-column: 1; grid-row: 1; align-self: start; max-width: 560px; }
-h1 { margin: 0 0 clamp(8px, 1.6vh, 16px); font: 800 clamp(30px, min(3.8vw, 6.6vh), 56px)/1.04 var(--f-h); color: var(--t); text-wrap: balance; }
+.titulo { grid-column: 1; grid-row: 1; align-self: start; justify-self: start; width: fit-content; max-width: min(100%, 580px); box-sizing: border-box;
+  // panel de cristal tras el texto, con esquinas desiguales (a modo de hoja): redondo y amplio arriba a la izquierda y abajo a la derecha
+  padding: clamp(14px, 2.6vh, 26px) clamp(20px, 2.4vw, 34px) clamp(16px, 3vh, 30px); margin: 0 0 0 -6px;
+  background: var(--panel-titulo); border: 1px solid var(--glass-edge); border-radius: 38px 12px 68px 12px;
+  -webkit-backdrop-filter: blur(8px) saturate(1.1); backdrop-filter: blur(8px) saturate(1.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .22), 0 14px 36px rgba(0, 0, 0, .2); }
+h1 { margin: 0 0 clamp(6px, 1.2vh, 12px); font: 800 clamp(30px, min(3.8vw, 6.6vh), 56px)/1.04 var(--f-h); color: var(--t); text-wrap: balance; }
 h1 span { color: var(--accent-ic); }
-.sub { margin: 0 0 clamp(14px, 2.4vh, 22px); max-width: 32ch; font-size: clamp(15px, 2.3vh, 20px); line-height: 1.4; color: var(--t2); text-shadow: 0 1px 3px rgba(var(--vl), .7); }
+.sub { margin: 0; max-width: 32ch; font-size: clamp(15px, 2.3vh, 20px); line-height: 1.4; color: var(--t2); text-shadow: 0 1px 3px rgba(var(--vl), .7); }
 
 // verbo en holograma: una franja de escáner lo recorre y lo deja escrito con líneas finas de luz
 .esc { position: relative; display: inline-block; color: var(--c); font-weight: 700; text-shadow: none; }
@@ -143,6 +144,8 @@ h1 span { color: var(--accent-ic); }
 .pir s { background: color-mix(in srgb, var(--accent-ic) 55%, transparent); }
 
 // ventanas bajas: sin subtítulo
+
+// ventanas bajas: sin subtítulo
 @media (max-height: 640px) and (min-width: 768px) { .sub { display: none; } }
 // pantallas medianas: las puertas pasan a dos por dos
 @media (max-width: 1100px) {
@@ -155,9 +158,9 @@ h1 span { color: var(--accent-ic); }
 @media (max-width: 767px) {
   .portada { height: auto; min-height: 0; padding-top: var(--alto-barra, 0px); }
   // el velo cubre solo la zona del título; debajo, una ventana al mapa antes de los paneles
-  .velo { inset: 0; width: auto; -webkit-mask: none; mask: none; background: linear-gradient(180deg, rgba(var(--vl), .92) 0, rgba(var(--vl), .78) 22%, rgba(var(--vl), 0) 46%, rgba(var(--vl), 0) 100%); }
+  .velo { display: block; position: absolute; inset: 0; z-index: 2; background: linear-gradient(180deg, rgba(var(--vl), .92) 0, rgba(var(--vl), .78) 22%, rgba(var(--vl), 0) 46%, rgba(var(--vl), 0) 100%); }
   .marco { height: auto; display: flex; flex-direction: column; gap: 14px; padding: 28px 16px 52px; }
-  .titulo { max-width: none; padding-bottom: clamp(90px, 26vh, 220px); }
+  .titulo { max-width: none; width: auto; margin: 0; padding: 0 0 clamp(90px, 26vh, 220px); background: none; border: 0; border-radius: 0; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
   h1 { font-size: clamp(30px, 9vw, 40px); }
   .capas { align-self: stretch; justify-self: stretch; overflow-x: auto; scrollbar-width: none; }
   .capas button { flex: 1; justify-content: center; white-space: nowrap; padding: 8px 10px; }
