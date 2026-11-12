@@ -72,16 +72,20 @@
         <p class="nota">El tamaño de cada bloque es proporcional a sus productos e indicadores.</p>
       </article>
 
-      <!-- Programas: agrupados por línea estratégica -->
-      <article id="programas" class="tarjeta tarjeta--programas">
-        <h2>Programas <span class="cuenta">{{ p.programas.length }}</span></h2>
-        <input class="buscar" type="search" placeholder="Buscar un programa" aria-label="Buscar un programa" [value]="buscaProg()" (input)="buscaProg.set($any($event.target).value)" />
+      <!-- Programas por eje: a todo el ancho, un eje por columna y todos abiertos (vista panorámica);
+           en pantallas angostas los ejes se apilan y vuelven a ser acordeón -->
+      <article id="programas" class="tarjeta tarjeta--ancha tarjeta--programas">
+        <div class="prog-cab">
+          <h2>Programas por eje <span class="cuenta">{{ p.programas.length }}</span></h2>
+          <input class="buscar" type="search" placeholder="Buscar un programa" aria-label="Buscar un programa" [value]="buscaProg()" (input)="buscaProg.set($any($event.target).value)" />
+        </div>
+        <div class="ejes-prog">
         @for (g of programasPorLinea(); track g.id) {
           <section class="grupo" [style.--eje]="g.matiz">
-            <button type="button" class="grupo__cab" [attr.aria-expanded]="grupoAbierto(g.id)" (click)="alternarGrupo(g.id)">
+            <button type="button" class="grupo__cab" [attr.aria-expanded]="grupoAbierto(g.id)" [disabled]="panoramica()" (click)="alternarGrupo(g.id)">
               <span class="grupo__eje">Eje {{ g.n }}</span>
               <span class="grupo__nombre">{{ g.nombre }}</span>
-              <span class="grupo__cuenta">{{ g.items.length }} · {{ g.total }} prod.</span>
+              <span class="grupo__cuenta">{{ g.items.length }} {{ g.items.length === 1 ? 'programa' : 'programas' }} · {{ g.total }} prod.</span>
             </button>
             @if (grupoAbierto(g.id)) {
               <ul class="barras grupo__lista">
@@ -98,6 +102,7 @@
             }
           </section>
         } @empty { <p class="nota">Ningún programa coincide con la búsqueda.</p> }
+        </div>
       </article>
 
       <!-- Resultado -->

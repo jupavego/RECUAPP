@@ -700,8 +700,19 @@ html { scroll-behavior: smooth; }
 }
 :host(.tema-botanico.tema-oscuro) .tesela { --acento: hsl(var(--eje, 120), 55%, 62%); }
 
-// ── Programas agrupados por línea ──
-@media (min-width: 760px) { .tarjeta--programas { grid-column: span 2; } }
+// ── Programas por eje: a todo el ancho; un eje por columna en pantalla ancha (todos abiertos), acordeón en angosta ──
+.prog-cab { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; margin-bottom: 12px;
+  h2 { margin: 0; }
+  .buscar { flex: 0 1 340px; margin: 0; } }
+.ejes-prog { display: grid; gap: 12px; }
+@media (min-width: 760px) {
+  .ejes-prog { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); align-items: start; }
+  .ejes-prog .grupo { margin: 0; height: 100%; border-left-width: 1px; border-top: 4px solid var(--acento); }
+  .ejes-prog .grupo__cab { cursor: default; grid-template-columns: 1fr; align-items: start; gap: 2px; padding: 12px 14px 8px; }
+  .ejes-prog .grupo__cab:hover .grupo__nombre { text-decoration: none; }
+  .ejes-prog .grupo__nombre { line-height: 1.3; min-height: 2.6em; }
+  .ejes-prog .grupo__lista { padding-top: 6px; border-top: 1px solid var(--color-border-tertiary); margin: 0 14px; padding-left: 0; padding-right: 0; }
+}
 .buscar { width: 100%; box-sizing: border-box; min-height: 44px; margin: 0 0 12px; padding: 8px 14px; font: inherit; font-size: .85rem; border-radius: 999px;
   border: 1px solid var(--color-border-tertiary); background: var(--color-background-primary); color: var(--color-text-primary);
   &:focus-visible { outline: 2px solid var(--color-brand-primary); outline-offset: 1px; } }

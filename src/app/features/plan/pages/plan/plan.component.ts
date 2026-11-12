@@ -1,4 +1,4 @@
-import { Component, HostBinding, computed, inject, signal } from '@angular/core';
+import { Component, DestroyRef, HostBinding, computed, inject, signal } from '@angular/core';
 import { TemaService } from '../../../../core/services/tema.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -100,8 +100,17 @@ export class PlanComponent {
       return { id: l.id, n: i + 1, nombre: l.nombre, matiz: this.matiz(i), items, total: items.reduce((a, g) => a + g.productos, 0) };
     }).filter(g => g.items.length);
   });
+  /** pantalla ancha: los ejes van en columnas, todos abiertos (en angosta, acordeón) */
+  readonly panoramica = signal(typeof matchMedia === 'function' && matchMedia('(min-width: 760px)').matches);
+  private readonly _vigilaAncho = (() => {
+    if (typeof matchMedia !== 'function') return;
+    const mq = matchMedia('(min-width: 760px)');
+    const cambio = (e: MediaQueryListEvent) => this.panoramica.set(e.matches);
+    mq.addEventListener('change', cambio);
+    inject(DestroyRef).onDestroy(() => mq.removeEventListener('change', cambio));
+  })();
   grupoAbierto(id: string): boolean {
-    if (this.buscaProg().trim()) return true;
+    if (this.panoramica() || this.buscaProg().trim()) return true;
     return (this.gruposProg() ?? [this.plan()?.lineas[0]?.id ?? '']).includes(id);
   }
   alternarGrupo(id: string): void {
