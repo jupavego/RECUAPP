@@ -27,10 +27,13 @@
     <p class="sub">Un solo lugar para <span class="esc" [class.esc--sale]="saliendo()" [style.--c]="verbos[mostrado()].c">@for (p of [pasada()]; track p) {<span class="esc__v">{{ verbos[mostrado()].v }}</span><i class="esc__scan" aria-hidden="true"></i>}</span> tu administración y tu territorio.</p>
   </section>
 
-  <div class="capas" role="group" aria-label="Escenas del mapa">
-    @for (e of escenas; track e.id; let k = $index) {
-      <button type="button" [attr.aria-pressed]="escena() === k" (click)="elegirEscena(k)"><i></i>{{ e.n }}</button>
-    }
+  <!-- solo la escena que se ve; al tocarla pasa a la siguiente -->
+  <div class="capas">
+    @let sig = (escena() + 1) % escenas.length;
+    <button type="button" aria-pressed="true" (click)="elegirEscena(sig)"
+            [attr.aria-label]="'Escena: ' + escenas[escena()].n + '. Cambiar a ' + escenas[sig].n" [attr.title]="'Ver ' + escenas[sig].n">
+      <i></i>{{ escenas[escena()].n }}<svg class="capas__sig" viewBox="0 0 24 24" aria-hidden="true"><path d="m10 7 5 5-5 5"/></svg>
+    </button>
   </div>
 
   <p class="leyenda" aria-live="polite"><b>{{ escenas[escena()].n }}:</b> {{ escenas[escena()].t }}</p>

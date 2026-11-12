@@ -106,6 +106,8 @@ h1, .sub { position: relative; left: calc(-0.25 * (clamp(20px, 3.8vw, 56px) + cl
 .capas button[aria-pressed="true"] { color: var(--t); font-weight: 700; background: color-mix(in srgb, var(--t) 10%, transparent); }
 .capas button[aria-pressed="true"] i { background: var(--accent-ic); opacity: 1; transform: scale(1.25); }
 .capas button:focus-visible { outline: 2px solid #E0B33A; outline-offset: 1px; }
+.capas__sig { width: 14px; height: 14px; margin: 0 -4px 0 -1px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; opacity: .6; transition: transform .2s, opacity .2s; }
+.capas button:hover .capas__sig { opacity: 1; transform: translateX(2px); }
 // en una sola línea mientras quepa: solo se parte cuando la pantalla es más angosta que el texto
 .leyenda { grid-column: 1 / -1; grid-row: 2; justify-self: end; margin: 0; max-width: 100%; box-sizing: border-box; text-wrap: balance; padding: 7px 12px; border-radius: 10px; font-size: clamp(12px, 1.9vh, 13.5px); line-height: 1.4; color: var(--t);
   background: var(--glass); border: 1px solid var(--gl); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
@@ -185,8 +187,8 @@ h1, .sub { position: relative; left: calc(-0.25 * (clamp(20px, 3.8vw, 56px) + cl
   h1, .sub { left: 0; top: 0; }
   .sub { width: auto; min-height: 0; max-width: 34ch; }
   h1 { font-size: clamp(30px, 9vw, 40px); }
-  .capas { align-self: stretch; justify-self: stretch; overflow-x: auto; scrollbar-width: none; }
-  .capas button { flex: 1; justify-content: center; white-space: nowrap; padding: 8px 10px; }
+  .capas { align-self: start; justify-self: start; }
+  .capas button { white-space: nowrap; padding: 8px 14px; }
   .leyenda { align-self: stretch; max-width: none; }
   .cristal { grid-template-columns: 1fr; gap: 0; }
   .puertas a { padding: 14px 16px; }
@@ -196,7 +198,6 @@ h1, .sub { position: relative; left: calc(-0.25 * (clamp(20px, 3.8vw, 56px) + cl
   .puertas small { font-size: 13px; }
   .pob { padding: 14px 16px; border-left: 0; border-top: 1px solid var(--gl); }
 }
-@media (max-width: 440px) { .capas button i { display: none; } }
 
 // sin movimiento: la toma queda quieta
 @media (prefers-reduced-motion: reduce) {
