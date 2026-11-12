@@ -82,3 +82,6 @@ __pycache__/
 # Planes de desarrollo originales (fuente pesada, solo local)
 insumos/plan/**/*.pdf
 insumos/plan/*.pdf
+
+.vercel
+.env*

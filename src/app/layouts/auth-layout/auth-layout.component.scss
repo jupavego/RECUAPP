@@ -15,13 +15,17 @@
 .auth-sidebar {
   width: 400px;
   flex-shrink: 0;
-  // Mismo gradiente que el header pill, pero en columna
-  background: linear-gradient(160deg,
-    #0f766e                0%,
-    rgba(var(--color-brand-primary-rgb), .92) 40%,
-    rgba(var(--color-brand-primary-rgb), .75) 70%,
-    rgba(6, 182, 212, .65) 100%
-  );
+  // Captura del mapa 3D de Girardota casi al natural: solo un sombreado neutro
+  // arriba (logo) y abajo (mensaje y enlace) para que el texto blanco se lea.
+  background:
+    linear-gradient(180deg,
+      rgba(12, 22, 15, .55) 0%,
+      rgba(12, 22, 15, .10) 26%,
+      rgba(12, 22, 15, .10) 40%,
+      rgba(12, 22, 15, .78) 100%
+    ),
+    url('/img/login-fondo.jpg') 60% 60% / cover no-repeat,
+    #1e3223;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -33,7 +37,8 @@
   position: relative; // para las burbujas absolutas
 
   // ── Burbujas decorativas ──────────────────────────────────────────────────
-  &__deco { position: absolute; inset: 0; pointer-events: none; }
+  // Con la foto del mapa de fondo las burbujas sobran
+  &__deco { position: absolute; inset: 0; pointer-events: none; display: none; }
 
   &__bubble {
     position: absolute;
@@ -60,6 +65,11 @@
   }
 
   // ── Zona superior — logo + tagline ────────────────────────────────────────
+  // sombra suave: el texto blanco se lee también sobre las zonas claras de la foto
+  &__name, &__edicion, &__eyebrow, &__titular, &__texto, &__back {
+    text-shadow: 0 1px 8px rgba(8, 16, 10, .55);
+  }
+
   &__top {
     display: flex;
     flex-direction: column;
@@ -73,10 +83,19 @@
     gap: 0.75rem;
   }
 
+  // Misma hoja que el logo del menú lateral (forma, degradado y sombra)
   &__logo-icon {
     width: 38px;
     height: 38px;
     flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    border-radius: 4px 50% 50% 50%;
+    background: linear-gradient(140deg, #8CC63F, #3F8A3A 70%);
+    box-shadow: 0 4px 12px rgba(63, 138, 58, .28);
+
+    svg { width: 20px; height: 20px; }
   }
 
   &__name {
@@ -88,70 +107,81 @@
     line-height: 1.2;
   }
 
-  &__tagline {
+  &__edicion {
+    align-self: flex-start;
+    margin-left: 0.25rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 99px;
     font-family: var(--font-body);
-    font-weight: 500;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, .72);
-    line-height: 1.65;
-    margin: 0;
-    padding-left: 0.25rem;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: #fff;
+    background: rgba(255, 255, 255, .16);
+    border: 1px solid rgba(255, 255, 255, .28);
+    backdrop-filter: blur(6px);
   }
 
-  // ── Highlights centrales ──────────────────────────────────────────────────
-  &__highlights {
+  // ── Mensaje central ───────────────────────────────────────────────────────
+  &__mensaje {
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    position: relative;
+    gap: 0.9rem;
   }
 
-  &__highlight {
+  &__eyebrow {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: #C6E48B; // lima clara de la marca
+  }
+
+  &__titular {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: clamp(1.7rem, 2.4vw, 2.1rem);
+    line-height: 1.12;
+    letter-spacing: -.02em;
+    color: #fff;
+
+    em { font-style: normal; color: #C6E48B; }
+  }
+
+  &__texto {
+    margin: 0;
+    max-width: 34ch;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, .88);
+  }
+
+  &__cifras {
     display: flex;
-    align-items: center;
-    gap: 0.875rem;
-    background: rgba(255, 255, 255, .10);
-    border: 1px solid rgba(255, 255, 255, .16);
-    border-radius: 14px;
-    padding: 0.75rem 1rem;
-    backdrop-filter: blur(8px);
+    gap: 1.5rem;
+    margin: 0.6rem 0 0;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, .28);
 
-    div:last-child {
-      display: flex;
-      flex-direction: column;
-      gap: 0.1rem;
-    }
-
-    strong {
+    div { display: flex; flex-direction: column; gap: .1rem; }
+    dt {
       font-family: var(--font-heading);
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: #ffffff;
-      display: block;
+      font-weight: 800;
+      font-size: 1.5rem;
+      line-height: 1;
+      color: #fff;
     }
-
-    span {
+    dd {
+      margin: 0;
       font-family: var(--font-body);
-      font-size: 0.75rem;
-      color: rgba(255, 255, 255, .65);
-      line-height: 1.4;
-    }
-  }
-
-  &__highlight-icon {
-    width: 36px;
-    height: 36px;
-    flex-shrink: 0;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, .15);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-
-    svg {
-      width: 16px;
-      height: 16px;
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, .8);
     }
   }
 
@@ -167,7 +197,7 @@
     font-family: var(--font-body);
     font-size: 0.8125rem;
     font-weight: 600;
-    color: rgba(255, 255, 255, .60);
+    color: rgba(255, 255, 255, .85);
     text-decoration: none;
     transition: color var(--duration-normal);
 
@@ -213,8 +243,8 @@
     justify-content: space-between;
 
     &__deco,
-    &__highlights,
-    &__tagline { display: none; }
+    &__mensaje,
+    &__edicion { display: none; }
 
     &__top { gap: 0; }
     &__logo-icon { width: 28px; height: 28px; }

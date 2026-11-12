@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portada RECUAPP A+B</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@700;800&display=swap">
+<style>
+/* Documento: misma hoja que la v2. Maquetas de 1280×760 escaladas al ancho disponible. */
+:root{--bg:#F5F0EA;--surface:#FCF9F6;--ink:#1A1A1A;--mut:#4F5F4C;--line:#C8D9C0;--brand:#29422F;--brand-txt:#29422F;--accent:#3F7A1E;--head:'Nunito',system-ui,sans-serif;--body:'Inter',system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121A14;--surface:#1A261D;--ink:#E8EFE4;--mut:#B4C3B0;--line:#2F4533;--brand:#99CC33;--brand-txt:#C5E88A;--accent:#99CC33;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121A14;--surface:#1A261D;--ink:#E8EFE4;--mut:#B4C3B0;--line:#2F4533;--brand:#99CC33;--brand-txt:#C5E88A;--accent:#99CC33;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.w{max-width:1120px;margin:0 auto}
+h1,h2,h3{font-family:var(--head);font-weight:800;text-wrap:balance;margin:0}
+p{margin:0}
+.eyebrow{font:600 12px/1 var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+header.top{padding:56px 0 8px;display:grid;gap:16px}
+header.top h1{font-size:clamp(2rem,5vw,3rem);line-height:1.05;color:var(--brand-txt);max-width:20ch}
+.lede{max-width:68ch;color:var(--mut);font-size:1.0625rem}
+.mix{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin:20px 0 0;border-block:1px solid var(--line)}
+.mix>div{padding:18px 24px 18px 0;display:grid;gap:6px;align-content:start}
+.mix>div+div{padding-left:24px;border-left:1px solid var(--line)}
+.mix h3{font-size:1.05rem;color:var(--brand-txt)}
+.mix p{font-size:.95rem;color:var(--mut)}
+section.p{margin-top:56px;padding-top:28px;border-top:1px solid var(--line)}
+.ph{display:grid;grid-template-columns:auto 1fr;gap:4px 20px;align-items:baseline;margin-bottom:8px}
+.ph .k{grid-row:span 2;font:800 3.4rem/.9 var(--head);color:var(--accent)}
+.ph h2{font-size:clamp(1.5rem,3vw,2rem);color:var(--brand-txt)}
+.ph p{color:var(--mut);max-width:64ch}
+.stagebox{margin:20px 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.stage{position:relative;width:100%;overflow:hidden}
+.scr{position:absolute;left:0;top:0;width:1280px;height:760px;transform-origin:0 0;overflow:hidden}
+.cap{padding:10px 16px;border-top:1px solid var(--line);font-size:.8rem;color:var(--mut);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.facts div{display:grid;gap:4px;align-content:start;min-width:0}
+.facts h3{font:700 .75rem/1.2 var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.facts p{font-size:.95rem}
+.rec{margin:56px 0 0;padding:28px 32px;border-radius:12px;background:#29422F;color:#F5F0EA;display:grid;gap:10px}
+.rec h2{font-size:1.5rem}.rec p{max-width:70ch}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .rec{background:#233229;color:#E8EFE4}}
+:root[data-theme="dark"] .rec{background:#233229;color:#E8EFE4}
+footer{padding:28px 0 64px;color:var(--mut);font-size:.85rem}
+@media (max-width:640px){.ph{grid-template-columns:1fr}.ph .k{grid-row:auto}.mix>div+div{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
+
+/* ===== maquetas ===== */
+.scr{--g9:#29422F;--g7:#3F7A1E;--lima:#99CC33;--cream:#F5F0EA;--card:#FCF9F6;--sage:#EAF2D6;--ln:#C8D9C0;--gold:#E0B33A;--tx:#1A1A1A;--mu:#4F5F4C;font:400 16px/1.45 'Inter',system-ui,sans-serif;color:var(--tx)}
+.scr h1,.scr h2,.scr h3{font-family:'Nunito',system-ui,sans-serif;font-weight:800;margin:0}
+.scr svg{display:block}
+.ico{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.nav{height:64px;display:flex;align-items:center;gap:28px;padding:0 56px;font-size:15px;font-weight:500;position:relative;z-index:3}
+.nav .logo{display:flex;align-items:center;gap:10px;font:800 20px 'Nunito',sans-serif;margin-right:auto}
+.nav .logo i{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;font:800 15px 'Nunito';font-style:normal}
+.nav a.on{font-weight:700}
+.pyr{display:inline-flex;flex-direction:column;gap:2px;width:34px}
+.pyr span{display:flex;justify-content:center;height:4px}
+.pyr b{display:block;height:4px;border-radius:1px;background:currentColor;opacity:.85}
+.lbl{font:700 12px/1 'Inter';letter-spacing:.1em;text-transform:uppercase}
+.find{display:flex;height:60px;background:#fff;border:1.5px solid var(--g9);border-radius:12px;overflow:hidden}
+.find span{flex:1;display:flex;align-items:center;gap:12px;padding:0 20px;color:#5A6B57;font-size:17px}
+.find b{display:grid;place-items:center;padding:0 28px;background:var(--g9);color:#fff;font-weight:600;font-size:16px}
+.try{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:14px}
+.try span{border:1px solid var(--ln);border-radius:99px;padding:5px 14px;font-weight:500}
+.card{background:var(--card);color:var(--tx);border-radius:12px;padding:16px 18px;box-shadow:0 18px 40px #0006;position:absolute;z-index:3;width:290px}
+.card small{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--g7)}
+.card h3{font-size:20px;color:var(--g9);margin:4px 0 8px}
+.card ul{margin:0;padding:0;list-style:none;font-size:14px;color:var(--mu);display:grid;gap:4px}
+.layers{display:flex;gap:6px;border-radius:12px;padding:6px;position:absolute;z-index:3}
+.layers span{padding:8px 14px;border-radius:8px;font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px}
+.layers span i{width:8px;height:8px;border-radius:50%;background:currentColor;opacity:.8}
+.doors{display:grid;grid-template-columns:repeat(4,1fr)}
+.doors a{padding:20px 24px 20px 0;display:grid;grid-template-columns:auto 1fr auto;gap:2px 14px;align-items:start}
+.doors a+a{padding-left:24px}
+.doors .ico{width:26px;height:26px;margin-top:2px}
+.doors b{font:800 19px 'Nunito'}
+.doors small{grid-column:2;font-size:14px;line-height:1.4}
+.doors .go{grid-row:1;grid-column:3}
+
+/* AB-1 dividida */
+.S{background:var(--cream);display:grid;grid-template-rows:64px 1fr auto auto;color:var(--g9)}
+.S .nav .logo i{background:var(--g9);color:var(--lima)}
+.S .hero{display:grid;grid-template-columns:5fr 7fr;gap:40px;padding:24px 0 24px 56px;align-items:stretch}
+.S .tx{display:flex;flex-direction:column;justify-content:center}
+.S h1{font-size:56px;line-height:1.04;margin:14px 0 16px}
+.S h1 em{font-style:normal;color:var(--g7)}
+.S .sub{font-size:18px;color:var(--mu);max-width:36ch}
+.S .find{margin-top:26px}
+.S .try{margin-top:14px;color:var(--mu)}
+.S .try span{background:var(--card);color:var(--g9)}
+.S .map{position:relative;border-radius:20px 0 0 20px;overflow:hidden;background:linear-gradient(180deg,#1E3626,#162A1C);min-height:420px}
+.S .map svg.c{position:absolute;inset:0;width:100%;height:100%}
+.S .map .layers{left:20px;top:20px;background:#12200Dcc;border:1px solid #3E5A44;color:#D3E0CC}
+.S .map .layers span.on{background:#EEF4E9;color:var(--g9)}
+.S .map .card{right:150px;top:150px}
+.S .map .open{position:absolute;z-index:3;right:24px;bottom:22px;background:var(--lima);color:var(--g9);padding:13px 22px;border-radius:10px;font-weight:700;display:flex;gap:10px;align-items:center}
+.S .doors{margin:0 56px;border-top:1.5px solid var(--g9)}
+.S .doors a+a{border-left:1px solid var(--ln)}
+.S .doors .ico{color:var(--g7)}.S .doors small{color:var(--mu)}
+.S .foot{display:flex;align-items:center;gap:12px;padding:4px 56px 20px;color:var(--mu);font-size:14px}
+.S .foot b{color:var(--g9)}
+
+/* AB-2 mapa completo */
+.F{background:linear-gradient(180deg,#1E3626,#162A1C);color:#EEF4E9}
+.F .city{position:absolute;inset:0}.F .city svg{width:100%;height:100%}
+.F .nav{background:linear-gradient(180deg,#14240fcc,transparent)}
+.F .nav .logo i{background:var(--lima);color:var(--g9)}
+.F .ttl{position:absolute;left:56px;top:130px;width:560px;z-index:2}
+.F h1{font-size:60px;line-height:1.04;margin:0 0 16px}
+.F h1 span{color:var(--lima)}
+.F .ttl p{font-size:18px;color:#D3E0CC;max-width:38ch}
+.F .find{margin-top:26px;border-color:#fff;box-shadow:0 12px 32px #0005}
+.F .try{margin-top:14px;color:#D3E0CC}
+.F .try span{border-color:#4d6d54;background:#12200Dcc;color:#EEF4E9}
+.F .layers{right:56px;top:92px;background:#12200Dcc;border:1px solid #3E5A44;color:#D3E0CC}
+.F .layers span.on{background:#EEF4E9;color:var(--g9)}
+.F .card{right:170px;top:290px}
+.F .strip{position:absolute;z-index:3;left:56px;right:56px;bottom:30px;background:#12200Ddd;border:1px solid #3E5A44;border-radius:16px;padding:6px 24px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.F .doors .ico{color:var(--lima)}.F .doors b{color:#fff}.F .doors small{color:#D3E0CC}
+.F .doors a{padding-block:16px}
+.F .doors a+a{border-left:1px solid #3E5A44}
+.F .pp{display:flex;align-items:center;gap:12px;font-size:14px;color:#D3E0CC;padding-left:24px;border-left:1px solid #3E5A44}
+.F .pp b{color:#fff;font:800 20px 'Nunito'}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-plan" viewBox="0 0 24 24"><path d="M9 4h6l1 2h3v14H5V6h3z"/><path d="m9 13 2 2 4-4"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c.6-3.4 3-5.4 6-5.4s5.4 2 6 5.4"/><circle cx="17" cy="9" r="2.4"/><path d="M16 14.6c2.6.1 4.4 1.9 5 4.4"/></symbol>
+  <symbol id="i-cube" viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5c3-1 5.5-.6 8 1v14c-2.5-1.6-5-2-8-1z"/><path d="M20 5c-3-1-5.5-.6-8 1v14c2.5-1.6 5-2 8-1z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+</svg>
+
+<div class="w">
+<header class="top">
+  <p class="eyebrow">RECUAPP · Gobierno digital de Girardota · combinación A + B</p>
+  <h1>Buscador de A, mapa de B</h1>
+  <p class="lede">De la <strong>A (Serena)</strong> se toma la calma: titular fijo, buscador y los cuatro accesos en una fila. De la <strong>B (Mapa primero)</strong> se toma el protagonismo del 3D. Quedan dos maneras de mezclarlas, según cuánto del mapa quieras en la primera pantalla.</p>
+  <div class="mix">
+    <div><h3>Viene de A</h3><p>Crema y verde bosque, titular de una frase, buscador como único control, cuatro puertas iguales en línea y la población como dato de pie.</p></div>
+    <div><h3>Viene de B</h3><p>El modelo 3D de Girardota a la vista desde el primer segundo, con un edificio seleccionado y su ficha, y las capas del visor en lugar de las categorías.</p></div>
+    <div><h3>Se descarta</h3><p>Los verbos rotatorios, las tarjetas animadas, los nueve colores de sección y el dock inferior de B (lo reemplazan las cuatro puertas de A).</p></div>
+  </div>
+</header>
+
+<section class="p" id="ab1">
+  <div class="ph"><span class="k" aria-hidden="true">1</span><h2>Dividida</h2><p>Texto y buscador a la izquierda sobre crema; el 3D en un panel verde que sale por el borde derecho. Las cuatro puertas quedan debajo.</p></div>
+  <div class="stagebox"><div class="stage" data-w="1280" data-h="760"><div class="scr S">
+    <div class="nav"><span class="logo"><i>R</i>RECUAPP</span><a class="on">Inicio</a><a>Plan</a><a>Responsables</a><a>Girardota 3D</a><a>Biblioteca</a></div>
+    <div class="hero">
+      <div class="tx">
+        <span class="lbl" style="color:var(--mu)">Gobierno digital de Girardota</span>
+        <h1>Lo prometido, <em>a la vista</em> de todos.</h1>
+        <p class="sub">El plan, quién responde por cada tema y cómo es el municipio, en un solo lugar.</p>
+        <div class="find"><span><svg class="ico"><use href="#i-search"/></svg>Busca un programa, una dependencia o un lugar</span><b>Buscar</b></div>
+        <div class="try">Probar con <span>Vías</span><span>Educación</span><span>Parque principal</span></div>
+      </div>
+      <div class="map">
+        <svg class="c" id="cityS" viewBox="0 0 740 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
+        <div class="layers"><span class="on"><i></i>Edificios</span><span><i></i>Plan</span><span><i></i>Responsables</span></div>
+        <div class="card"><small>Institución educativa</small><h3>Sede Comfama Girardota</h3><ul><li>3 programas del plan</li><li>2 responsables</li></ul></div>
+        <span class="open"><svg class="ico"><use href="#i-cube"/></svg>Explorar el mapa</span>
+      </div>
+    </div>
+    <div class="doors">
+      <a><svg class="ico"><use href="#i-plan"/></svg><b>El plan en claro</b><svg class="ico go"><use href="#i-arrow"/></svg><small>Programas, metas e inversión</small></a>
+      <a><svg class="ico"><use href="#i-users"/></svg><b>Responsables</b><svg class="ico go"><use href="#i-arrow"/></svg><small>Quién dirige cada dependencia</small></a>
+      <a><svg class="ico"><use href="#i-cube"/></svg><b>Girardota en 3D</b><svg class="ico go"><use href="#i-arrow"/></svg><small>Edificios, redes y equipamientos</small></a>
+      <a><svg class="ico"><use href="#i-book"/></svg><b>Biblioteca</b><svg class="ico go"><use href="#i-arrow"/></svg><small>Las fuentes de cada dato</small></a>
+    </div>
+    <div class="foot"><span class="pyr" aria-hidden="true"><span><b style="width:22px"></b></span><span><b style="width:28px"></b></span><span><b style="width:30px"></b></span></span><span><b>XX.XXX</b> habitantes en Girardota (dato del censo)</span></div>
+  </div></div><div class="cap"><span>Maqueta a escala · ciudad esquemática y cifras de ejemplo</span><span>La puerta «Girardota en 3D» y el botón del panel llevan al mismo sitio</span></div></div>
+  <div class="facts">
+    <div><h3>Primera impresión</h3><p>Tranquila y clara: el ojo va al titular, luego al buscador y después al mapa. El 3D se ve sin ocupar toda la pantalla.</p></div>
+    <div><h3>Color</h3><p>Crema y verde bosque para la página; el panel del mapa en verde profundo, lima solo en el botón y dorado en el edificio elegido.</p></div>
+    <div><h3>Costo y riesgo</h3><p>Medio. El panel carga el 3D en un marco acotado, lo que pesa menos que pantalla completa y permite mostrar una imagen mientras llega.</p></div>
+  </div>
+</section>
+
+<section class="p" id="ab2">
+  <div class="ph"><span class="k" aria-hidden="true">2</span><h2>Mapa completo con buscador</h2><p>El 3D ocupa toda la pantalla como en B. El buscador de A sustituye al párrafo del titular y las cuatro puertas forman una franja de cristal al pie.</p></div>
+  <div class="stagebox"><div class="stage" data-w="1280" data-h="760"><div class="scr F">
+    <div class="city"><svg id="cityF" viewBox="0 0 1280 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg></div>
+    <div class="nav"><span class="logo"><i>R</i>RECUAPP</span><a class="on">Inicio</a><a>Plan</a><a>Responsables</a><a>Biblioteca</a></div>
+    <div class="ttl">
+      <h1>Girardota, <span>explicada</span> por dentro.</h1>
+      <p>Busca un tema o toca un edificio.</p>
+      <div class="find"><span><svg class="ico"><use href="#i-search"/></svg>Busca un programa, una dependencia o un lugar</span><b>Buscar</b></div>
+      <div class="try">Probar con <span>Vías</span><span>Educación</span><span>Parque principal</span></div>
+    </div>
+    <div class="layers"><span class="on"><i></i>Edificios</span><span><i></i>Plan</span><span><i></i>Responsables</span><span><i></i>Redes</span></div>
+    <div class="card"><small>Institución educativa</small><h3>Sede Comfama Girardota</h3><ul><li>3 programas del plan</li><li>2 responsables</li></ul></div>
+    <div class="strip">
+      <div class="doors">
+        <a><svg class="ico"><use href="#i-plan"/></svg><b>El plan en claro</b><small>Programas, metas e inversión</small></a>
+        <a><svg class="ico"><use href="#i-users"/></svg><b>Responsables</b><small>Quién dirige cada dependencia</small></a>
+        <a><svg class="ico"><use href="#i-cube"/></svg><b>Girardota en 3D</b><small>Explorar el mapa completo</small></a>
+        <a><svg class="ico"><use href="#i-book"/></svg><b>Biblioteca</b><small>Las fuentes de cada dato</small></a>
+      </div>
+      <div class="pp"><span class="pyr" aria-hidden="true"><span><b style="width:22px"></b></span><span><b style="width:28px"></b></span><span><b style="width:30px"></b></span></span><span><b>XX.XXX</b><br>habitantes</span></div>
+    </div>
+  </div></div><div class="cap"><span>Maqueta a escala · ciudad esquemática y cifras de ejemplo</span><span>Texto claro sobre verde profundo, todo sobre 4,5:1</span></div></div>
+  <div class="facts">
+    <div><h3>Primera impresión</h3><p>La de B, con una entrada más explícita: quien no quiere explorar el mapa tiene el buscador a mano desde el primer segundo.</p></div>
+    <div><h3>Color</h3><p>Todo el fondo es el verde de marca; lima para el buscador activo y la puerta principal, dorado para el edificio.</p></div>
+    <div><h3>Costo y riesgo</h3><p>Alto. Requiere el 3D a pantalla completa al abrir, y el contenido que va encima (titular, buscador, franja) debe leerse sobre un fondo que cambia al mover el mapa.</p></div>
+  </div>
+</section>
+
+<div class="rec">
+  <h2>Mi recomendación</h2>
+  <p>La <strong>Dividida (1)</strong>. Mantiene lo que más se pidió, menos saturación y menos invasión, y a la vez pone el 3D en la primera pantalla. Además es más fácil de hacer bien: el panel del mapa puede cargar aparte sin bloquear el texto ni el buscador.</p>
+  <p>Si el 3D va a ser la gran carta del producto, la 2 es el siguiente paso, cuando el rendimiento en móvil esté resuelto.</p>
+</div>
+<footer>Maquetas ilustrativas. Mismas tipografías y paleta de la app (<code>styles.scss</code>). Contrastes de texto calculados con la razón WCAG.</footer>
+</div>
+
+<script>
+(function(){
+  var st=[].slice.call(document.querySelectorAll('.stage'));
+  function fit(){st.forEach(function(s){var k=s.clientWidth/+s.dataset.w;s.style.height=(+s.dataset.h*k)+'px';s.firstElementChild.style.transform='scale('+k+')'})}
+  fit();
+  if(window.ResizeObserver){var ro=new ResizeObserver(fit);st.forEach(function(s){ro.observe(s)})}else{addEventListener('resize',fit)}
+})();
+function ciudad(id,o){
+  var svg=document.getElementById(id);if(!svg)return;
+  var w=o.w,h=o.w/2,s=o.seed,out='';
+  function rnd(){s=(s*9301+49297)%233280;return s/233280}
+  function P(p,f){return '<polygon points="'+p.join(' ')+'" fill="'+f+'"/>'}
+  var cells=[];
+  for(var i=0;i<o.n;i++)for(var j=0;j<o.n;j++){
+    if(i%4===3||j%4===3)continue;
+    var d=Math.hypot(i-o.n/2,j-o.n/2)/o.n;
+    cells.push({i:i,j:j,z:Math.max(4,(5+rnd()*22)*(1.25-d)*o.hk)});
+  }
+  cells.sort(function(a,b){return (a.i+a.j)-(b.i+b.j)});
+  cells.forEach(function(c){
+    var x=o.cx+(c.i-c.j)*w/2,y=o.cy+(c.i+c.j)*h/2,z=c.z,ww=w*.46,hh=h*.46,hi=(c.i===o.hi[0]&&c.j===o.hi[1]);
+    var T=[x,y-z-hh],R=[x+ww,y-z],B=[x,y-z+hh],L=[x-ww,y-z];
+    out+=P([L,B,[x,y+hh],[x-ww,y]],hi?'#B8902A':o.l);
+    out+=P([B,R,[x+ww,y],[x,y+hh]],hi?'#8F6E1C':o.r);
+    out+=P([T,R,B,L],hi?'#E0B33A':o.top);
+  });
+  svg.innerHTML=out;
+}
+ciudad('cityS',{w:40,n:24,cx:380,cy:70,seed:7,hk:1.3,top:'#5E8F4A',l:'#3A6A3C',r:'#274D2D',hi:[9,10]});
+ciudad('cityF',{w:46,n:26,cx:760,cy:230,seed:7,hk:1.35,top:'#5E8F4A',l:'#3A6A3C',r:'#274D2D',hi:[9,10]});
+</script>
+</body>
+</html>

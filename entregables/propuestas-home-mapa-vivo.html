@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portada RECUAPP con mapa vivo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@700;800&display=swap">
+<style>
+/* Documento: misma hoja de las propuestas anteriores. La maqueta usa tomas reales del visor 3D (2560×1520) y simula
+   con CSS la deriva lenta de la cámara que en la app haría el propio visor. */
+:root{--bg:#F5F0EA;--surface:#FCF9F6;--ink:#1A1A1A;--mut:#4F5F4C;--line:#C8D9C0;--brand:#29422F;--brand-txt:#29422F;--accent:#3F7A1E;--head:'Nunito',system-ui,sans-serif;--body:'Inter',system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121A14;--surface:#1A261D;--ink:#E8EFE4;--mut:#B4C3B0;--line:#2F4533;--brand:#99CC33;--brand-txt:#C5E88A;--accent:#99CC33;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121A14;--surface:#1A261D;--ink:#E8EFE4;--mut:#B4C3B0;--line:#2F4533;--brand:#99CC33;--brand-txt:#C5E88A;--accent:#99CC33;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.w{max-width:1120px;margin:0 auto}
+h1,h2,h3{font-family:var(--head);font-weight:800;text-wrap:balance;margin:0}
+p{margin:0}
+.eyebrow{font:600 12px/1 var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+header.top{padding:56px 0 8px;display:grid;gap:16px}
+header.top h1{font-size:clamp(2rem,5vw,3rem);line-height:1.05;color:var(--brand-txt);max-width:20ch}
+.lede{max-width:68ch;color:var(--mut);font-size:1.0625rem}
+.bar{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;margin:24px 0 0}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.seg button{font:600 .9rem var(--body);padding:9px 16px;border:0;background:transparent;color:var(--ink);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--brand);color:#fff}
+:root[data-theme="dark"] .seg button[aria-pressed="true"]{color:#14230f}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .seg button[aria-pressed="true"]{color:#14230f}}
+.seg button:focus-visible{outline:2px solid var(--brand);outline-offset:-3px}
+.hint{font-size:.88rem;color:var(--mut)}
+.stagebox{margin:12px 0 20px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.stage{position:relative;width:100%;overflow:hidden}
+.scr{position:absolute;left:0;top:0;width:1280px;height:760px;transform-origin:0 0;overflow:hidden}
+.cap{padding:10px 16px;border-top:1px solid var(--line);font-size:.8rem;color:var(--mut);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+h2.sec{font-size:1.4rem;color:var(--brand-txt);margin:48px 0 6px}
+.film{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:16px 0}
+.film figure{margin:0;display:grid;gap:8px;min-width:0}
+.film img{width:100%;aspect-ratio:1280/760;object-fit:cover;border-radius:10px;border:1px solid var(--line);display:block}
+.film figcaption b{display:block;font:800 1rem var(--head);color:var(--brand-txt)}
+.film figcaption span{font-size:.9rem;color:var(--mut)}
+.two{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px;align-items:start;margin-top:16px}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+table{border-collapse:collapse;width:100%;font-size:.93rem}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:700 .75rem/1.2 var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+td:first-child{font-weight:600;white-space:nowrap}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.diag{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:12px}
+.diag svg{width:100%;height:auto;display:block}
+.diag text{font:600 12px 'Inter',sans-serif;fill:var(--ink)}
+.diag .m{fill:var(--mut);font-weight:500}
+.opt{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px 28px;margin-top:12px}
+.opt div{display:grid;gap:4px;align-content:start;min-width:0}
+.opt h3{font:700 .75rem/1.2 var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.opt p{font-size:.95rem}
+.opt code{font-size:.85em}
+.rec{margin:48px 0 0;padding:28px 32px;border-radius:12px;background:#29422F;color:#F5F0EA;display:grid;gap:10px}
+.rec h2{font-size:1.5rem}.rec p{max-width:70ch}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .rec{background:#233229;color:#E8EFE4}}
+:root[data-theme="dark"] .rec{background:#233229;color:#E8EFE4}
+footer{padding:28px 0 64px;color:var(--mut);font-size:.85rem}
+
+/* ===== maqueta ===== */
+.scr{--vl:12,22,15;--va:.94;--t:#F2F7EE;--t2:#D3E0CC;--glass:rgba(12,22,15,.82);--glass-strip:rgba(14,28,18,.30);--glass-edge:rgba(255,255,255,.22);--gl:#3E5A44;--pill-on-bg:#F2F7EE;--pill-on-tx:#29422F;--accent-ic:#99CC33;--chip:rgba(12,22,15,.55);--chip-b:#4d6d54}
+.scr.claro{--vl:245,240,234;--va:.95;--t:#29422F;--t2:#3E4F3B;--glass:rgba(252,249,246,.88);--glass-strip:rgba(252,249,246,.42);--glass-edge:rgba(255,255,255,.7);--gl:#C8D9C0;--pill-on-bg:#29422F;--pill-on-tx:#fff;--accent-ic:#3F7A1E;--chip:rgba(252,249,246,.8);--chip-b:#C8D9C0}
+.scr{font:400 16px/1.45 'Inter',system-ui,sans-serif;color:var(--t);background:#1e3223}
+.scr h1{font-family:'Nunito',system-ui,sans-serif;font-weight:800;margin:0}
+.scr svg{display:block}
+.ico{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+.bg{position:absolute;inset:0;overflow:hidden;background:#1e3223}
+/* la cámara: todas las escenas comparten el mismo encuadre y derivan juntas */
+.cam{position:absolute;inset:-5%;transform-origin:50% 55%;animation:deriva 90s ease-in-out infinite alternate;will-change:transform}
+.fast .cam{animation-duration:18s}
+.quieto .cam{animation:none;transform:scale(1.04)}
+@keyframes deriva{
+  0%{transform:scale(1.06) translate3d(-2.2%,-.6%,0) rotate(-.35deg)}
+  100%{transform:scale(1.02) translate3d(2.2%,.8%,0) rotate(.35deg)}
+}
+@media (prefers-reduced-motion:reduce){.cam{animation:none;transform:scale(1.04)}}
+/* al cambiar de escena la cámara «vuela» a su ángulo: la toma saliente se aleja y la entrante llega acercándose */
+.cp{position:absolute;inset:0;opacity:0;transform:scale(1.07);transition:opacity 1.4s ease,transform 2.4s cubic-bezier(.2,.6,.2,1);background:#1e3223 center/cover no-repeat}
+.cp.on{opacity:1;transform:scale(1)}
+@media (prefers-reduced-motion:reduce){.cp{transition:opacity .6s ease;transform:none}}
+/* el velo cubre todo el alto del lado izquierdo, también detrás del panel inferior */
+.veil{position:absolute;inset:0;z-index:2;pointer-events:none;
+  /* tercer sombreado: un velo muy suave al pie; el desenfoque del panel hace el resto, así el mapa se ve a través sin iconos nítidos detrás */
+  background:
+    linear-gradient(0deg,rgba(var(--vl),.30) 0,rgba(var(--vl),.14) 14%,rgba(var(--vl),0) 26%),
+    linear-gradient(180deg,rgba(var(--vl),.55) 0,rgba(var(--vl),0) 14%),
+    linear-gradient(90deg,rgba(var(--vl),var(--va)) 0,rgba(var(--vl),.88) 30%,rgba(var(--vl),.5) 46%,rgba(var(--vl),0) 64%)}
+
+.nav{position:absolute;z-index:4;left:0;right:0;top:0;height:64px;display:flex;align-items:center;gap:28px;padding:0 56px;font-size:15px;font-weight:500}
+.nav .logo{display:flex;align-items:center;gap:10px;font:800 20px 'Nunito',sans-serif;margin-right:auto}
+.nav .logo i{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;font:800 15px 'Nunito';font-style:normal;background:#99CC33;color:#29422F}
+.scr.claro .nav .logo i{background:#29422F;color:#99CC33}
+.nav a{color:var(--t)}
+.nav .right{display:flex;gap:28px;padding:8px 18px;border-radius:99px;background:var(--glass);border:1px solid var(--gl);backdrop-filter:blur(8px)}
+.nav a.on{font-weight:700}
+.ttl{position:absolute;z-index:4;left:56px;top:122px;width:540px}
+.ttl h1{font-size:60px;line-height:1.04;margin:0 0 16px}
+.ttl h1 span{color:var(--accent-ic)}
+.ttl p{font-size:18px;color:var(--t2);max-width:36ch}
+.find{margin-top:26px;display:flex;height:60px;background:#fff;border:1.5px solid #fff;border-radius:12px;overflow:hidden;box-shadow:0 12px 32px rgba(0,0,0,.28)}
+.find span{flex:1;display:flex;align-items:center;gap:12px;padding:0 20px;color:#5A6B57;font-size:17px}
+.find b{display:grid;place-items:center;padding:0 28px;background:#29422F;color:#fff;font-weight:600;font-size:16px}
+.try{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:14px;color:var(--t2)}
+.try span{border:1px solid var(--chip-b);background:var(--chip);color:var(--t);border-radius:99px;padding:5px 14px;font-weight:500}
+.layers{position:absolute;z-index:4;right:56px;top:92px;display:flex;gap:6px;border-radius:12px;padding:6px;background:var(--glass);border:1px solid var(--gl);backdrop-filter:blur(8px)}
+.layers button{font:600 14px 'Inter',sans-serif;padding:8px 14px;border-radius:8px;border:0;background:transparent;color:var(--t);display:flex;align-items:center;gap:8px;cursor:pointer}
+.layers button i{width:8px;height:8px;border-radius:50%;background:currentColor;opacity:.8}
+.layers button[aria-pressed="true"]{background:var(--pill-on-bg);color:var(--pill-on-tx)}
+.layers button:focus-visible{outline:2px solid #E0B33A;outline-offset:2px}
+.leg{position:absolute;z-index:4;right:56px;bottom:152px;max-width:420px;padding:9px 14px;border-radius:10px;background:var(--glass);border:1px solid var(--gl);font-size:14px;color:var(--t);backdrop-filter:blur(8px)}
+.leg b{font-weight:700}
+.strip{position:absolute;z-index:4;left:56px;right:56px;bottom:30px;background:var(--glass-strip);border:1px solid var(--glass-edge);border-radius:16px;padding:4px 24px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;
+  /* efecto ventana: el mapa se ve a través, desenfocado y más vivo; el borde claro y el brillo interior dan el aspecto de cristal */
+  backdrop-filter:blur(7px) saturate(1.15);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 10px 30px rgba(0,0,0,.18);text-shadow:0 1px 3px rgba(var(--vl),.7),0 0 14px rgba(var(--vl),.5)}
+.doors{display:grid;grid-template-columns:repeat(4,1fr)}
+.doors a{padding:16px 24px 16px 0;display:grid;grid-template-columns:auto 1fr;gap:2px 14px;align-items:start;color:var(--t)}
+.doors a+a{padding-left:24px;border-left:1px solid var(--gl)}
+.doors .ico{width:26px;height:26px;margin-top:2px;color:var(--accent-ic)}
+.doors b{font:800 19px 'Nunito'}
+.doors small{grid-column:2;font-size:14px;line-height:1.4;color:var(--t2)}
+.pp{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--t2);padding-left:24px;border-left:1px solid var(--gl)}
+.pp b{color:var(--t);font:800 20px 'Nunito'}
+.pyr{display:inline-flex;flex-direction:column;gap:2px;width:34px}
+.pyr span{display:flex;justify-content:center;height:4px}
+.pyr i{display:block;height:4px;border-radius:1px;background:currentColor;opacity:.85}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-plan" viewBox="0 0 24 24"><path d="M9 4h6l1 2h3v14H5V6h3z"/><path d="m9 13 2 2 4-4"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c.6-3.4 3-5.4 6-5.4s5.4 2 6 5.4"/><circle cx="17" cy="9" r="2.4"/><path d="M16 14.6c2.6.1 4.4 1.9 5 4.4"/></symbol>
+  <symbol id="i-cube" viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5c3-1 5.5-.6 8 1v14c-2.5-1.6-5-2-8-1z"/><path d="M20 5c-3-1-5.5-.6-8 1v14c2.5-1.6 5-2 8-1z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/></symbol>
+</svg>
+
+<div class="w">
+<header class="top">
+  <p class="eyebrow">RECUAPP · Gobierno digital de Girardota · propuesta adicional</p>
+  <h1>El mapa 3D como fondo, con cámara lenta</h1>
+  <p class="lede">La portada es el propio visor 3D. Cada escena tiene su ángulo panorámico y, dentro de él, un margen de movimiento muy lento, solo como efecto. Al elegir una escena la cámara vuela a su ángulo y se encienden sus capas. Las imágenes de esta maqueta son tomas reales del visor, con sus iconos.</p>
+  <div class="bar">
+    <div class="seg" role="group" aria-label="Modo del sitio"><button type="button" id="mOsc" aria-pressed="true">Modo oscuro</button><button type="button" id="mCla" aria-pressed="false">Modo claro</button></div>
+    <div class="seg" role="group" aria-label="Velocidad de la cámara"><button type="button" id="vLen" aria-pressed="true">Cámara lenta (90 s)</button><button type="button" id="vRap" aria-pressed="false">Acelerada ×5 para verla</button><button type="button" id="vQui" aria-pressed="false">Quieta</button></div>
+  </div>
+  <p class="hint">En la maqueta el movimiento es una animación CSS sobre la toma. En la app lo hace la cámara real, con perspectiva de verdad.</p>
+</header>
+
+<div class="stagebox"><div class="stage" data-w="1280" data-h="760"><div class="scr" id="scr">
+  <div class="bg"><div class="cam" id="cam"></div><div class="veil"></div></div>
+  <div class="nav"><span class="logo"><i>R</i>RECUAPP</span><div class="right"><a class="on">Inicio</a><a>Plan</a><a>Responsables</a><a>Biblioteca</a></div></div>
+  <div class="ttl">
+    <h1>Girardota, <span>explicada</span> por dentro.</h1>
+    <p>Busca un tema o elige una escena del mapa.</p>
+    <div class="find"><span><svg class="ico"><use href="#i-search"/></svg>Busca un programa, una dependencia o un lugar</span><b>Buscar</b></div>
+    <div class="try">Probar con <span>Vías</span><span>Educación</span><span>Parque principal</span></div>
+  </div>
+  <div class="layers" id="layers" role="group" aria-label="Escenas del mapa"></div>
+  <div class="leg" id="leg"></div>
+  <div class="strip">
+    <div class="doors">
+      <a><svg class="ico"><use href="#i-plan"/></svg><b>El plan en claro</b><small>Programas, metas e inversión</small></a>
+      <a><svg class="ico"><use href="#i-users"/></svg><b>Responsables</b><small>Quién dirige cada dependencia</small></a>
+      <a><svg class="ico"><use href="#i-cube"/></svg><b>Girardota en 3D</b><small>Explorar el mapa completo</small></a>
+      <a><svg class="ico"><use href="#i-book"/></svg><b>Biblioteca</b><small>Las fuentes de cada dato</small></a>
+    </div>
+    <div class="pp"><span class="pyr" aria-hidden="true"><span><i style="width:22px"></i></span><span><i style="width:28px"></i></span><span><i style="width:30px"></i></span></span><span><b>XX.XXX</b><br>habitantes</span></div>
+  </div>
+</div></div><div class="cap"><span>Tomas reales del visor 3D (2560×1520) · cifra de población de ejemplo</span><span id="capEstado"></span></div></div>
+
+<h2 class="sec">Las escenas</h2>
+<p class="lede">Cada escena mira el municipio desde un lado distinto, para que se vea todo el territorio y no solo el casco urbano. Los iconos son los reales del visor.</p>
+<div class="film" id="film"></div>
+
+<h2 class="sec">Cámara: ángulo y margen</h2>
+<p class="lede">Valores leídos del visor en marcha. Cada escena guarda su ángulo; el margen es pequeño para que se note como atmósfera y no como navegación. El ángulo de abrir el mapa es el de Instituciones.</p>
+<div class="two">
+  <div class="tw"><table>
+    <thead><tr><th>Parámetro</th><th>Fijo (ángulo)</th><th>Margen del efecto</th></tr></thead>
+    <tbody>
+      <tr><td>Orientación por escena</td><td>Instituciones −90° · Industrias 135° · Agua −45° · Energía 90° (ángulos del visor)</td><td>±3° (unos ±500 m de lado)</td></tr>
+      <tr><td>Inclinación</td><td>58° desde la vertical, igual en las cuatro</td><td>±1,5°</td></tr>
+      <tr><td>Distancia al centro</td><td>unos 4 km del centro en las tomas (el visor abre a 9,5 km con otra lente)</td><td>±2 %</td></tr>
+      <tr><td>Cambio de escena</td><td colspan="2">vuelo de unos 2,5 s entre ángulos, con suavizado de entrada y salida; después empieza la deriva</td></tr>
+      <tr><td>Campo de visión</td><td>60° (el visor abre con 38°)</td><td>sin cambio</td></tr>
+      <tr><td>Tamaño de los iconos</td><td colspan="2">el visor los dibuja en proporción a la pantalla (5,8 % de la altura). Con la lente de 60° quedan en 3,5 %. En la app, un factor propio para la portada logra lo mismo sin tocar la lente.</td></tr>
+      <tr><td>Periodo</td><td colspan="2">90 a 120 s de ida y vuelta, con suavizado senoidal</td></tr>
+      <tr><td>Controles del usuario</td><td colspan="2">apagados en la portada; el mapa completo está en «Girardota en 3D»</td></tr>
+    </tbody></table></div>
+  <div class="diag"><svg viewBox="0 0 360 230" role="img" aria-label="Vista desde arriba: dentro de cada escena la cámara se mueve en un arco de 6 grados alrededor de su ángulo, mirando al centro del municipio">
+    <circle cx="300" cy="115" r="7" fill="#E0B33A"/><text x="278" y="140">Centro</text>
+    <path d="M60 115 L300 115" stroke="currentColor" stroke-opacity=".25" stroke-dasharray="4 4" fill="none" style="color:var(--ink)"/>
+    <path d="M62 101 A240 240 0 0 0 62 129" fill="none" stroke="#3F7A1E" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="58" cy="115" r="7" fill="#29422F"/>
+    <text x="14" y="80" class="m">Cámara fija</text>
+    <text x="14" y="160">Arco de ±3°</text>
+    <path d="M110 40 L300 115 L110 190" fill="none" stroke="currentColor" stroke-opacity=".18" style="color:var(--ink)"/>
+    <text x="118" y="30" class="m">Encuadre</text>
+    <text x="150" y="214" class="m">Vista desde arriba, sin escala</text>
+  </svg></div>
+</div>
+
+<h2 class="sec">Optimizaciones para que el fondo no pese</h2>
+<div class="opt">
+  <div><h3>Imagen de arranque</h3><p>La toma «Instituciones» se muestra al instante como cartel (en WebP, unos 350 KB). El 3D carga detrás, sin bloquear, y entra con un fundido.</p></div>
+  <div><h3>Carga diferida</h3><p>Iniciar el visor cuando la página queda en reposo (<code>@defer (on idle)</code>) y no antes del primer pintado, para no retrasar el texto ni el buscador.</p></div>
+  <div><h3>Menos píxeles</h3><p>El visor usa hasta el doble de densidad de píxeles. En la portada, tope de 1,25 y sin suavizado de bordes: con el velo y el movimiento lento no se nota.</p></div>
+  <div><h3>Menos cuadros</h3><p>La cámara se mueve tan despacio que 30 cuadros por segundo bastan. Se pinta uno de cada dos y se ahorra la mitad del trabajo de la tarjeta gráfica.</p></div>
+  <div><h3>Cámara sin controles</h3><p>Sin controles de órbita ni detección de clics sobre el mapa, y sin etiquetas de nombres que se reposicionan en cada cuadro. Solo el movimiento y las capas.</p></div>
+  <div><h3>Pausa inteligente</h3><p>Se detiene cuando la portada sale de pantalla (IntersectionObserver), cuando la pestaña no está visible y con «reducir movimiento» activado. En móvil o equipos lentos queda solo el cartel.</p></div>
+  <div><h3>Una sola instancia</h3><p>La sección «Girardota en 3D» de más abajo usa el mismo visor. Que portada y sección compartan una sola escena y un solo lienzo evita cargar el modelo dos veces.</p></div>
+  <div><h3>Sombras y nubes</h3><p>Las sombras ya se repintan solo cuando hace falta. En la portada se congelan: con la cámara casi quieta no cambia nada.</p></div>
+</div>
+
+<div class="rec">
+  <h2>Mi opinión</h2>
+  <p>Es la mejor versión de la idea: nítida a cualquier resolución, con los iconos reales y siempre al día con los datos. El riesgo es el peso: hay que probar la carga en un equipo modesto y en móvil antes de decidir, con el cartel como red de seguridad.</p>
+  <p>Si te gusta, el siguiente paso es un prototipo dentro de la app: un modo «portada» del visor con la cámara limitada y la deriva, sin tocar el modo normal.</p>
+</div>
+<footer>Las imágenes se tomaron del visor en marcha, cada una con su ángulo y sus capas (Instituciones, Industrias, Agua y Energía). Están en <code>entregables/img/</code>. Tipografías y paleta de la app.</footer>
+</div>
+
+<script>
+var ESC=[
+ {id:'instituciones',n:'Instituciones',f:'img/mapa-visor-instituciones.jpg',t:'Educación, cultura, salud, turismo, deporte, justicia y patrimonio.'},
+ {id:'industrias',n:'Industrias',f:'img/mapa-visor-industrias.jpg',t:'Empresas con fuentes fijas de emisión, según Corantioquia 2021. Vista a lo largo del valle.'},
+ {id:'agua',n:'Agua',f:'img/mapa-visor-agua.jpg',t:'Ríos y quebradas, bocatomas, tratamiento, tanques y PTAR. Vista sobre el cauce del río.'},
+ {id:'energia',n:'Energía',f:'img/mapa-visor-energia.jpg',t:'Subestaciones eléctricas y centrales hidroeléctricas. Panorámica de lado a lado del municipio.'}
+];
+var cam=document.getElementById('cam'),lay=document.getElementById('layers'),leg=document.getElementById('leg'),est=document.getElementById('capEstado');
+cam.innerHTML=ESC.map(function(e,i){return '<div class="cp'+(i===0?' on':'')+'" data-id="'+e.id+'" style="background-image:url(\''+e.f+'\')"></div>'}).join('');
+lay.innerHTML=ESC.map(function(e,i){return '<button type="button" data-id="'+e.id+'" aria-pressed="'+(i===0)+'"><i></i>'+e.n+'</button>'}).join('');
+function elegir(id){
+  var e=ESC.filter(function(x){return x.id===id})[0];
+  [].forEach.call(cam.children,function(c){c.classList.toggle('on',c.dataset.id===id)});
+  [].forEach.call(lay.children,function(b){b.setAttribute('aria-pressed',b.dataset.id===id)});
+  leg.innerHTML='<b>'+e.n+':</b> '+e.t;
+  est.textContent='Escena activa: '+e.n;
+}
+lay.addEventListener('click',function(ev){var b=ev.target.closest('button');if(b)elegir(b.dataset.id)});
+elegir('instituciones');
+document.getElementById('film').innerHTML=ESC.map(function(e){return '<figure><img src="'+e.f+'" alt="Toma del mapa 3D: '+e.n+'" loading="lazy"><figcaption><b>'+e.n+'</b><span>'+e.t+'</span></figcaption></figure>'}).join('');
+
+var scr=document.getElementById('scr');
+function modo(c){scr.classList.toggle('claro',c);document.getElementById('mOsc').setAttribute('aria-pressed',!c);document.getElementById('mCla').setAttribute('aria-pressed',c)}
+document.getElementById('mOsc').onclick=function(){modo(false)};
+document.getElementById('mCla').onclick=function(){modo(true)};
+function vel(k){
+  scr.classList.toggle('fast',k==='rap');scr.classList.toggle('quieto',k==='qui');
+  var ids={len:'vLen',rap:'vRap',qui:'vQui'};
+  Object.keys(ids).forEach(function(c){document.getElementById(ids[c]).setAttribute('aria-pressed',c===k)});
+}
+document.getElementById('vLen').onclick=function(){vel('len')};
+document.getElementById('vRap').onclick=function(){vel('rap')};
+document.getElementById('vQui').onclick=function(){vel('qui')};
+
+(function(){
+  var st=[].slice.call(document.querySelectorAll('.stage'));
+  function fit(){st.forEach(function(s){var k=s.clientWidth/+s.dataset.w;s.style.height=(+s.dataset.h*k)+'px';s.firstElementChild.style.transform='scale('+k+')'})}
+  fit();
+  if(window.ResizeObserver){var ro=new ResizeObserver(fit);st.forEach(function(s){ro.observe(s)})}else{addEventListener('resize',fit)}
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RECUAPP · 5 propuestas para el home</title>
+<style>
+:root{
+  --bg:#F5F0EA; --card:#FCF9F6; --ink:#1A1A1A; --mut:#5d6b5b; --line:#C8D9C0;
+  --g9:#29422F; --g6:#66AA33; --g4:#99CC33; --gold:#E0B33A; --sage:#EAF2D6;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#121A14; --card:#1A261D; --ink:#E8EFE4; --mut:#9db09a; --line:#2F4533}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,"Segoe UI",sans-serif}
+.w{max-width:1100px;margin:0 auto;padding:0 16px}
+header{padding:48px 0 24px}
+h1{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.1;margin:0 0 12px;color:var(--g9)}
+@media (prefers-color-scheme:dark){h1{color:var(--g4)}}
+h2{font-size:1.5rem;margin:0 0 4px}
+p{margin:0 0 10px}
+.lede{max-width:70ch;color:var(--mut)}
+.diag{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:24px 0 8px}
+.diag div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.diag b{display:block;margin-bottom:4px}
+.dots{display:flex;gap:4px;margin:6px 0}
+.dots i{width:18px;height:18px;border-radius:50%}
+nav.idx{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0}
+nav.idx a{padding:6px 12px;border:1px solid var(--line);border-radius:99px;color:inherit;text-decoration:none;font-size:.9rem;background:var(--card)}
+section.p{padding:44px 0 8px;border-top:1px solid var(--line);margin-top:36px}
+.tag{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:18px 0}
+.cols div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-size:.93rem}
+.cols b{display:block;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mut);margin-bottom:4px}
+.pal{display:flex;gap:6px;margin-top:6px}
+.pal i{width:26px;height:26px;border-radius:7px;border:1px solid #0002}
+
+/* ===== maquetas ===== */
+.m{border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:18px 0;aspect-ratio:16/10;position:relative;font-size:clamp(9px,1.35vw,14px);line-height:1.35}
+.m *{margin:0}
+.bar{display:flex;align-items:center;gap:1.2em;padding:.9em 1.6em;font-size:.85em}
+.bar b{margin-right:auto;font-size:1.1em}
+.ico{display:inline-grid;place-items:center;width:2.2em;height:2.2em;border-radius:.6em;font-size:1em}
+.ico svg{width:60%;height:60%;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* A · serena */
+.A{background:#F5F0EA;color:#1A1A1A;display:flex;flex-direction:column}
+.A .bar{color:#29422F}
+.A .hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 10%}
+.A h3{font:600 3em/1.1 Georgia,serif;color:#29422F;margin-bottom:.4em}
+.A h3 em{font-style:normal;color:#66AA33}
+.A .sub{color:#5d6b5b;margin-bottom:1.4em}
+.A .find{display:flex;align-items:center;gap:.8em;background:#fff;border:1px solid #C8D9C0;border-radius:99px;padding:.8em 1.3em;width:70%;color:#8a9a88;box-shadow:0 .4em 1.6em #29422f14}
+.A .chips{display:flex;gap:.6em;margin-top:.9em;font-size:.9em;color:#29422F}
+.A .chips span{border:1px solid #C8D9C0;border-radius:99px;padding:.25em .9em}
+.A .row{display:grid;grid-template-columns:repeat(4,1fr);gap:1em;padding:0 1.6em 1.6em}
+.A .row div{background:#FCF9F6;border:1px solid #C8D9C0;border-radius:1em;padding:1em}
+.A .row .ico{background:#EAF2D6;color:#29422F;margin-bottom:.6em}
+.A .row b{display:block;color:#29422F}
+.A .row small{color:#5d6b5b}
+
+/* B · mapa primero */
+.B{background:#0f1a12;color:#E8EFE4}
+.B .map{position:absolute;inset:0;background:
+  radial-gradient(ellipse at 50% 55%,#2b4a2f 0,#162419 62%),#162419}
+.B .map svg{position:absolute;inset:0;width:100%;height:100%;opacity:.55}
+.B .bar{position:relative;z-index:2}
+.B .ttl{position:absolute;z-index:2;left:6%;top:24%;max-width:48%}
+.B h3{font:700 3em/1.05 system-ui;margin-bottom:.4em}
+.B h3 span{color:#99CC33}
+.B .sub{color:#b5c6b0;max-width:34ch}
+.B .dock{position:absolute;z-index:2;left:50%;bottom:6%;transform:translateX(-50%);display:flex;gap:.5em;background:#0f1a12cc;backdrop-filter:blur(6px);border:1px solid #36503A;border-radius:1.2em;padding:.5em}
+.B .dock div{padding:.7em 1.3em;border-radius:.8em;text-align:center;color:#c9d8c4}
+.B .dock div:first-child{background:#99CC33;color:#14230f;font-weight:700}
+.B .pin{position:absolute;z-index:2;width:1em;height:1em;border-radius:50%;background:#E0B33A;box-shadow:0 0 0 .5em #e0b33a33}
+.B .pop{position:absolute;z-index:2;right:7%;top:30%;background:#1A261Dee;border:1px solid #36503A;border-radius:.9em;padding:.8em 1em;width:15em}
+.B .pop small{color:#99CC33}
+
+/* C · preguntas */
+.C{background:#FCF9F6;color:#1A1A1A;display:grid;grid-template-columns:.9fr 1.1fr}
+.C .l{background:#29422F;color:#EAF2D6;padding:2.2em;display:flex;flex-direction:column;justify-content:center}
+.C h3{font:600 2.5em/1.1 Georgia,serif;margin-bottom:.5em}
+.C .l p{color:#c3d3b8;max-width:30ch}
+.C .l .pob{margin-top:1.8em;padding-top:1em;border-top:1px solid #ffffff2a;font-size:.95em}
+.C .l .pob b{color:#E0B33A;font-size:1.5em}
+.C .q{padding:1.6em 2em;display:flex;flex-direction:column;justify-content:center}
+.C .q div{display:flex;align-items:center;gap:1em;padding:1em 0;border-bottom:1px solid #C8D9C0}
+.C .q div:last-child{border:0}
+.C .q span.n{font:600 1.6em Georgia,serif;color:#99CC33;width:1.4em}
+.C .q b{display:block;font-size:1.15em;color:#29422F}
+.C .q small{color:#5d6b5b}
+.C .q i{margin-left:auto;font-style:normal;color:#29422F}
+
+/* D · cifras */
+.D{background:#EAF2D6;color:#1A1A1A;padding:1.6em;display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:auto 1fr 1fr;gap:1em}
+.D>*{border-radius:1em;padding:1em 1.2em}
+.D .t{grid-column:1/-1;padding:0;display:flex;justify-content:space-between;align-items:end}
+.D h3{font:700 2.2em/1.05 system-ui;color:#29422F;max-width:16ch}
+.D .t p{color:#4d604a;max-width:30ch;text-align:right}
+.D .big{grid-column:span 3;grid-row:span 2;background:#29422F;color:#EAF2D6;position:relative;overflow:hidden}
+.D .big b{display:block;font:700 3.4em/1 system-ui;color:#99CC33;margin:.3em 0 .1em}
+.D .big svg{position:absolute;right:-5%;bottom:-8%;width:60%;opacity:.35}
+.D .c{background:#fff;border:1px solid #C8D9C0}
+.D .c b{display:block;font:700 1.9em/1 system-ui;color:#29422F}
+.D .c small{color:#5d6b5b}
+.D .go{grid-column:span 2;background:#E0B33A;color:#2a2205;font-weight:600;display:flex;align-items:center;justify-content:space-between}
+.D .n{position:absolute;bottom:.7em;right:1.2em;font-size:.75em;color:#ffffff88}
+
+/* E · recorrido */
+.E{background:#F5F0EA;color:#1A1A1A;display:grid;grid-template-columns:.8fr 1.2fr}
+.E .l{padding:2.4em;display:flex;flex-direction:column;justify-content:center}
+.E h3{font:700 2.6em/1.05 system-ui;color:#29422F;margin-bottom:.5em}
+.E .l p{color:#5d6b5b;max-width:28ch}
+.E .btn{margin-top:1.4em;display:inline-block;background:#29422F;color:#EAF2D6;padding:.7em 1.4em;border-radius:99px;align-self:flex-start}
+.E .r{padding:2em 2em 2em 0;display:flex;flex-direction:column;justify-content:center;position:relative}
+.E .r::before{content:"";position:absolute;left:1.35em;top:12%;bottom:12%;width:2px;background:#C8D9C0}
+.E .s{display:flex;gap:1.2em;align-items:flex-start;padding:.9em 0;position:relative}
+.E .s .k{flex:none;width:2.8em;height:2.8em;border-radius:50%;background:#FCF9F6;border:2px solid #99CC33;display:grid;place-items:center;font-weight:700;color:#29422F;z-index:1;margin-left:-.1em}
+.E .s:first-child .k{background:#99CC33}
+.E .s b{display:block;color:#29422F;font-size:1.1em}
+.E .s small{color:#5d6b5b}
+
+.note{font-size:.85rem;color:var(--mut);margin-top:-6px}
+.rec{background:var(--g9);color:#EAF2D6;border-radius:14px;padding:20px 24px;margin:48px 0}
+.rec b{color:var(--g4)}
+footer{padding:0 0 60px;color:var(--mut);font-size:.88rem}
+</style>
+</head>
+<body>
+<div class="w">
+<header>
+  <p class="tag">RECUAPP · Gobierno digital de Girardota · 12 nov 2026</p>
+  <h1>Cinco caminos para un home más calmado</h1>
+  <p class="lede">Hoy la portada compite por la atención con tres cosas a la vez: un titular que cambia de verbo, cuatro botones de color y cuatro tarjetas animadas que se encienden según el botón. Cada propuesta de abajo es una maqueta estática (no es la app real) para comparar el rumbo antes de tocar código.</p>
+
+  <div class="diag">
+    <div><b>Color: nueve tonos sin jerarquía</b>
+      Cuatro secciones (helecho, caléndula, cielo, terracota), cuatro verbos (verde, ocre, lavanda, azul) y la orquídea de población. Nada manda sobre nada, y ninguno es el verde institucional.
+      <div class="dots"><i style="background:#4FA22E"></i><i style="background:#D99A14"></i><i style="background:#2E86C1"></i><i style="background:#D35C37"></i><i style="background:#B0549A"></i><i style="background:#6A57B8"></i><i style="background:#29422F"></i></div></div>
+    <div><b>El selector invade</b>
+      El verbo rota solo, los cuatro botones piden elegir antes de entender, y al elegir las tarjetas cambian de etiqueta y de brillo. Es un filtro que quien llega no pidió.</div>
+    <div><b>Peso mal repartido</b>
+      El 3D, que es lo más diferencial, entra como una tarjeta más del mismo tamaño que la Biblioteca, y la población flota aparte como dato suelto.</div>
+  </div>
+  <p class="note">Principio común a las cinco: <b>un verde de marca + un acento</b>; la identidad de cada sección la dan el icono, la forma y el texto, no un color propio. El mapa 3D y el plan siguen debajo, en su mismo orden.</p>
+
+  <nav class="idx">
+    <a href="#a">A · Serena</a><a href="#b">B · Mapa primero</a><a href="#c">C · Preguntas</a><a href="#d">D · Cifras</a><a href="#e">E · Recorrido</a><a href="#rec">Mi recomendación</a>
+  </nav>
+</header>
+
+<!-- ============ A ============ -->
+<section class="p" id="a">
+  <p class="tag">Propuesta A</p>
+  <h2>Serena — buscador al centro, cuatro puertas iguales</h2>
+  <p class="lede">Un titular fijo y un único campo de búsqueda («¿qué quieres saber de Girardota?») que sustituye al selector de verbos. Las cuatro secciones quedan como tarjetas planas, todas en el mismo verde.</p>
+  <div class="m A">
+    <div class="bar"><b>RECUAPP</b><span>Plan</span><span>Responsables</span><span>Girardota 3D</span><span>Biblioteca</span></div>
+    <div class="hero">
+      <h3>Lo que se prometió,<br><em>a la vista</em> de todos.</h3>
+      <p class="sub">Plan, responsables y territorio de Girardota en un solo lugar.</p>
+      <div class="find">⌕&nbsp; Busca un programa, una dependencia o un lugar…</div>
+      <div class="chips"><span>Vías</span><span>Educación</span><span>Secretaría de Salud</span><span>Parque principal</span></div>
+    </div>
+    <div class="row">
+      <div><span class="ico"><svg viewBox="0 0 24 24"><path d="M9 4h6l1 2h3v14H5V6h3z"/><path d="m9 13 2 2 4-4"/></svg></span><b>El plan en claro</b><small>Programas, metas e inversión</small></div>
+      <div><span class="ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c.6-3.4 3-5.4 6-5.4s5.4 2 6 5.4"/></svg></span><b>Responsables</b><small>Quién dirige cada dependencia</small></div>
+      <div><span class="ico"><svg viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></svg></span><b>Girardota en 3D</b><small>Edificios, redes y equipamientos</small></div>
+      <div><span class="ico"><svg viewBox="0 0 24 24"><path d="M4 5c3-1 5.5-.6 8 1v14c-2.5-1.6-5-2-8-1z"/><path d="M20 5c-3-1-5.5-.6-8 1v14c2.5-1.6 5-2 8-1z"/></svg></span><b>Biblioteca</b><small>Fuentes con su cita</small></div>
+    </div>
+  </div>
+  <div class="cols">
+    <div><b>Color</b>Crema + verde bosque; lima solo en una palabra del titular.<div class="pal"><i style="background:#F5F0EA"></i><i style="background:#29422F"></i><i style="background:#66AA33"></i><i style="background:#EAF2D6"></i></div></div>
+    <div><b>El selector</b>Desaparece como filtro. La intención se expresa escribiendo; las sugerencias son atajos discretos.</div>
+    <div><b>A favor / en contra</b>Es la más limpia y barata de construir. Pierde el «wow» del 3D en primer plano y exige un buscador que realmente funcione sobre plan, responsables y lugares.</div>
+  </div>
+</section>
+
+<!-- ============ B ============ -->
+<section class="p" id="b">
+  <p class="tag">Propuesta B</p>
+  <h2>Mapa primero — el municipio ES la portada</h2>
+  <p class="lede">El modelo 3D de Girardota ocupa toda la pantalla, con el titular encima y un dock inferior de cuatro accesos. Las demás secciones se descubren al bajar. Al tocar un edificio aparece su ficha, que demuestra la idea de inmediato.</p>
+  <div class="m B">
+    <div class="map"><svg viewBox="0 0 800 500" fill="none" stroke="#66AA33" stroke-width="1"><ellipse cx="400" cy="270" rx="360" ry="190"/><ellipse cx="400" cy="270" rx="300" ry="155"/><ellipse cx="410" cy="265" rx="235" ry="120"/><ellipse cx="420" cy="260" rx="170" ry="85"/><ellipse cx="430" cy="255" rx="105" ry="52"/><ellipse cx="440" cy="250" rx="45" ry="22"/></svg></div>
+    <div class="bar"><b>RECUAPP</b><span>Plan</span><span>Responsables</span><span>Biblioteca</span></div>
+    <div class="ttl"><h3>Girardota,<br><span>explicada</span> por dentro.</h3><p class="sub">Toca un edificio y sabrás qué se prometió allí y quién responde.</p></div>
+    <i class="pin" style="left:62%;top:52%"></i><i class="pin" style="left:54%;top:64%;opacity:.7"></i>
+    <div class="pop"><small>Institución educativa</small><br><b>Colegio Comfama</b><br><small style="color:#b5c6b0">3 programas · 2 responsables</small></div>
+    <div class="dock"><div>Explorar el mapa</div><div>El plan</div><div>Responsables</div><div>Biblioteca</div></div>
+  </div>
+  <div class="cols">
+    <div><b>Color</b>Verde casi negro de fondo, lima como único protagonista y dorado solo en los puntos del mapa.<div class="pal"><i style="background:#0f1a12"></i><i style="background:#162419"></i><i style="background:#99CC33"></i><i style="background:#E0B33A"></i></div></div>
+    <div><b>El selector</b>Se funde con el mapa: las «categorías» pasan a ser capas del propio 3D (Plan, Responsables…), ya existentes en el visor.</div>
+    <div><b>A favor / en contra</b>La más memorable y la que mejor cuenta el producto. Cuesta rendimiento en móvil y en equipos modestos; hace falta una imagen o vídeo ligero mientras carga el 3D.</div>
+  </div>
+</section>
+
+<!-- ============ C ============ -->
+<section class="p" id="c">
+  <p class="tag">Propuesta C</p>
+  <h2>Preguntas — cuatro dudas ciudadanas en vez de cuatro verbos</h2>
+  <p class="lede">Se conserva la idea de «¿qué quieres hacer?» pero en lugar de un selector que cambia la pantalla, hay una lista fija y legible de preguntas. Cada una lleva a una sección. Sin rotación, sin filtros, sin tarjetas que se enciendan.</p>
+  <div class="m C">
+    <div class="l">
+      <h3>Pregúntale a tu municipio.</h3>
+      <p>Lo prometido, quién responde y cómo es Girardota, en lenguaje claro.</p>
+      <div class="pob"><b>—</b> habitantes · Girardota, censo vigente</div>
+    </div>
+    <div class="q">
+      <div><span class="n">1</span><span><b>¿Qué prometió la administración?</b><small>El plan en claro</small></span><i>→</i></div>
+      <div><span class="n">2</span><span><b>¿Quién responde por cada tema?</b><small>Responsables y organigrama</small></span><i>→</i></div>
+      <div><span class="n">3</span><span><b>¿Cómo es mi barrio y qué hay en él?</b><small>Girardota en 3D</small></span><i>→</i></div>
+      <div><span class="n">4</span><span><b>¿De dónde sale este dato?</b><small>Biblioteca de fuentes</small></span><i>→</i></div>
+    </div>
+  </div>
+  <div class="cols">
+    <div><b>Color</b>Mitad verde bosque, mitad crema; el dorado solo en la cifra de población.<div class="pal"><i style="background:#29422F"></i><i style="background:#FCF9F6"></i><i style="background:#99CC33"></i><i style="background:#E0B33A"></i></div></div>
+    <div><b>El selector</b>Se convierte en el contenido mismo: las preguntas son los enlaces. Cero estado que recordar.</div>
+    <div><b>A favor / en contra</b>Muy accesible y fiel al tono de transparencia; funciona bien en móvil. Es más textual y menos «tecnológica» que B o D.</div>
+  </div>
+</section>
+
+<!-- ============ D ============ -->
+<section class="p" id="d">
+  <p class="tag">Propuesta D</p>
+  <h2>Cifras al frente — un tablero editorial en bento</h2>
+  <p class="lede">La portada abre con un bloque grande (el 3D como imagen) y tres o cuatro cifras vivas del municipio: población, avance del plan, número de responsables, fuentes citadas. Quien llega entiende en segundos qué datos hay.</p>
+  <div class="m D">
+    <div class="t"><h3>Girardota en cifras y en mapa.</h3><p>Datos oficiales, con su fuente y su responsable.</p></div>
+    <div class="big"><small>Girardota en 3D</small><b>Explora</b><span>el municipio, sus edificios y redes</span>
+      <svg viewBox="0 0 120 120" fill="none" stroke="#99CC33" stroke-width="2"><path d="m60 10 44 25v50L60 110 16 85V35z"/><path d="m16 35 44 25 44-25M60 60v50"/></svg></div>
+    <div class="c"><b>—</b><small>habitantes</small></div>
+    <div class="c"><b>—</b><small>% de avance del plan</small></div>
+    <div class="c"><b>—</b><small>dependencias con responsable</small></div>
+    <div class="c"><b>—</b><small>fuentes citadas</small></div>
+    <div class="go">Ver el plan en claro <span>→</span></div>
+    <span class="n">cifras de ejemplo: se llenan con los datos reales</span>
+  </div>
+  <div class="cols">
+    <div><b>Color</b>Verde bosque como bloque ancla, lima para el número, dorado para la única acción. Fondo verde pálido.<div class="pal"><i style="background:#EAF2D6"></i><i style="background:#29422F"></i><i style="background:#99CC33"></i><i style="background:#E0B33A"></i></div></div>
+    <div><b>El selector</b>Sin selector. Cada cifra es un acceso directo a la sección que la explica.</div>
+    <div><b>A favor / en contra</b>Da credibilidad y refuerza «gobierno digital basado en datos». Obliga a tener cifras confiables y actualizadas en portada; una cifra errónea o vacía pesa más aquí que en otras opciones.</div>
+  </div>
+</section>
+
+<!-- ============ E ============ -->
+<section class="p" id="e">
+  <p class="tag">Propuesta E</p>
+  <h2>Recorrido — una ruta guiada de cuatro pasos</h2>
+  <p class="lede">En lugar de elegir categoría, la portada propone un orden: primero qué se prometió, luego quién responde, dónde ocurre y de dónde sale cada dato. Es una columna vertical con un solo botón principal; quien ya sabe adónde ir salta al paso que quiera.</p>
+  <div class="m E">
+    <div class="l">
+      <h3>Entiende tu municipio en cuatro pasos.</h3>
+      <p>Del compromiso al territorio, sin perderte.</p>
+      <span class="btn">Empezar el recorrido →</span>
+    </div>
+    <div class="r">
+      <div class="s"><span class="k">1</span><span><b>Qué se prometió</b><small>El plan en claro: programas, metas e inversión</small></span></div>
+      <div class="s"><span class="k">2</span><span><b>Quién responde</b><small>Responsables y organigrama</small></span></div>
+      <div class="s"><span class="k">3</span><span><b>Dónde ocurre</b><small>Girardota en 3D y mapa territorial</small></span></div>
+      <div class="s"><span class="k">4</span><span><b>De dónde sale el dato</b><small>Biblioteca de fuentes</small></span></div>
+    </div>
+  </div>
+  <div class="cols">
+    <div><b>Color</b>Crema, verde bosque y lima en el paso activo; ninguna otra.<div class="pal"><i style="background:#F5F0EA"></i><i style="background:#29422F"></i><i style="background:#99CC33"></i></div></div>
+    <div><b>El selector</b>Sustituido por una secuencia lineal con la que se puede seguir, no filtrar.</div>
+    <div><b>A favor / en contra</b>Excelente para quien llega por primera vez y para presentaciones al concejo. Menos directa para usuarios recurrentes, que tendrían que saltar pasos.</div>
+  </div>
+</section>
+
+<div class="rec" id="rec">
+  <h2 style="color:#EAF2D6">Mi recomendación</h2>
+  <p>Resuelve el color y el selector con la mínima obra: <b>C (Preguntas)</b> para la portada, con la mirada de <b>B</b> como fondo: el 3D tenue detrás del panel verde en lugar del degradado de curvas actual. La base de color (verde bosque + crema + un acento dorado) es la misma en las cinco y se puede adoptar ya, sin esperar a elegir diseño.</p>
+  <p style="margin:0">Dime cuál prefieres (o qué mezcla) y la llevo a código, retirando los nueve colores de sección y el selector rotatorio.</p>
+</div>
+<footer>Las maquetas son ilustrativas: las cifras son marcadores y el mapa es un esquema. Paleta tomada de <code>src/styles.scss</code>.</footer>
+</div>
+</body>
+</html>

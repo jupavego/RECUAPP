@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Propuestas de portada RECUAPP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@700;800&display=swap">
+<style>
+/* Documento: hoja de comparación, columna izquierda de lectura + maquetas a ancho completo.
+   Paleta y tipografías son las de la app (styles.scss: Inter + Nunito, verde bosque, lima, crema, dorado). */
+:root{
+  --bg:#F5F0EA; --surface:#FCF9F6; --ink:#1A1A1A; --mut:#4F5F4C; --line:#C8D9C0;
+  --brand:#29422F; --brand-txt:#29422F; --accent:#3F7A1E; --sage:#EAF2D6;
+  --head:'Nunito',system-ui,sans-serif; --body:'Inter',system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#121A14;--surface:#1A261D;--ink:#E8EFE4;--mut:#B4C3B0;--line:#2F4533;--brand:#99CC33;--brand-txt:#C5E88A;--accent:#99CC33;--sage:#233229;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#121A14;--surface:#1A261D;--ink:#E8EFE4;--mut:#B4C3B0;--line:#2F4533;--brand:#99CC33;--brand-txt:#C5E88A;--accent:#99CC33;--sage:#233229;color-scheme:dark}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--body);
+  padding-block:0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.w{max-width:1120px;margin:0 auto}
+h1,h2,h3{font-family:var(--head);font-weight:800;text-wrap:balance;margin:0}
+p{margin:0}
+.eyebrow{font:600 12px/1 var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+header.top{padding:56px 0 8px;display:grid;gap:16px}
+header.top h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.05;color:var(--brand-txt);max-width:18ch}
+.lede{max-width:66ch;color:var(--mut);font-size:1.0625rem}
+
+.diag{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0;margin:28px 0 8px;border-block:1px solid var(--line)}
+.diag>div{padding:20px 24px 20px 0;display:grid;gap:6px;align-content:start}
+.diag>div+div{padding-left:24px;border-left:1px solid var(--line)}
+.diag h3{font-size:1.05rem;color:var(--brand-txt)}
+.diag p{font-size:.95rem;color:var(--mut)}
+.sw{display:flex;gap:5px;margin-top:4px;flex-wrap:wrap}
+.sw i{width:20px;height:20px;border-radius:50%;box-shadow:inset 0 0 0 1px #0002}
+
+.idx{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0;padding:0;list-style:none}
+.idx a{display:block;padding:8px 14px;border:1px solid var(--line);border-radius:99px;color:var(--ink);text-decoration:none;font-size:.9rem;font-weight:500;background:var(--surface)}
+.idx a:hover,.idx a:focus-visible{border-color:var(--brand);outline:2px solid var(--brand);outline-offset:2px}
+
+section.p{margin-top:64px;padding-top:32px;border-top:1px solid var(--line)}
+.ph{display:grid;grid-template-columns:auto 1fr;gap:4px 20px;align-items:baseline;margin-bottom:8px}
+.ph .k{grid-row:span 2;font:800 4.5rem/.85 var(--head);color:var(--accent)}
+.ph h2{font-size:clamp(1.5rem,3vw,2rem);color:var(--brand-txt)}
+.ph p{color:var(--mut);max-width:62ch}
+
+.stagebox{margin:20px 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.stage{position:relative;width:100%;overflow:hidden}
+.scr{position:absolute;left:0;top:0;width:1280px;height:760px;transform-origin:0 0;overflow:hidden}
+.cap{padding:10px 16px;border-top:1px solid var(--line);font-size:.8rem;color:var(--mut);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin:8px 0 0}
+.facts div{display:grid;gap:4px;align-content:start;min-width:0}
+.facts h3{font:700 .75rem/1.2 var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.facts p{font-size:.95rem}
+.pal{display:flex;gap:6px;margin-top:6px}
+.pal i{width:28px;height:28px;border-radius:6px;box-shadow:inset 0 0 0 1px #0003}
+
+.tablewrap{overflow-x:auto;margin:20px 0;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:.92rem}
+th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:700 .75rem/1.2 var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+tr:last-child td{border-bottom:0}
+td:first-child{font-family:var(--head);font-weight:800;color:var(--brand-txt);white-space:nowrap}
+
+.rec{margin:56px 0 0;padding:28px 32px;border-radius:12px;background:var(--brand);color:#F5F0EA;display:grid;gap:10px}
+:root[data-theme="dark"] .rec,:root:not([data-theme="light"]) .rec{--rc:#14230f}
+.rec h2{font-size:1.5rem}
+.rec p{max-width:70ch}
+.rec a{color:inherit}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .rec{background:#233229;color:#E8EFE4}}
+:root[data-theme="dark"] .rec{background:#233229;color:#E8EFE4}
+footer{padding:28px 0 64px;color:var(--mut);font-size:.85rem}
+
+@media (max-width:640px){
+  .ph{grid-template-columns:1fr}.ph .k{grid-row:auto;font-size:3rem}
+  .diag>div+div{padding-left:0;border-left:0;border-top:1px solid var(--line)}
+}
+
+/* ========== MAQUETAS (pantallas de producto, tamaño real 1280×760) ========== */
+.scr{--g9:#29422F;--g7:#3F7A1E;--lima:#99CC33;--cream:#F5F0EA;--card:#FCF9F6;--sage:#EAF2D6;--ln:#C8D9C0;--gold:#E0B33A;--tx:#1A1A1A;--mu:#4F5F4C;
+  font:400 16px/1.45 'Inter',system-ui,sans-serif;color:var(--tx)}
+.scr h1,.scr h2,.scr h3,.scr .hd{font-family:'Nunito',system-ui,sans-serif;font-weight:800;margin:0}
+.scr svg{display:block}
+.ico{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.nav{height:64px;display:flex;align-items:center;gap:28px;padding:0 56px;font-size:15px;font-weight:500;position:relative;z-index:3}
+.nav .logo{display:flex;align-items:center;gap:10px;font:800 20px 'Nunito',sans-serif;margin-right:auto}
+.nav .logo i{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;font:800 15px 'Nunito';font-style:normal}
+.nav a{opacity:.85}
+.nav a.on{opacity:1;font-weight:700}
+.pop{font-size:15px}
+.pyr{display:inline-flex;flex-direction:column;gap:2px;width:34px}
+.pyr span{display:flex;justify-content:center;gap:2px;height:4px}
+.pyr b,.pyr s{display:block;height:4px;border-radius:1px;background:currentColor;opacity:.9}
+.pyr s{opacity:.5}
+
+/* A */
+.A{background:var(--cream);display:grid;grid-template-rows:64px 1fr auto}
+.A .nav .logo i{background:var(--g9);color:var(--lima)}
+.A .nav{color:var(--g9)}
+.A .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;padding:36px 56px 20px;align-items:center}
+.A .hero h1{font-size:62px;line-height:1.04;color:var(--g9);margin:14px 0 18px;max-width:13ch}
+.A .hero h1 em{font-style:normal;color:var(--g7)}
+.A .hero .sub{font-size:19px;color:var(--mu);max-width:44ch}
+.A .find{margin-top:30px;display:flex;height:60px;width:100%;max-width:600px;background:#fff;border:1.5px solid var(--g9);border-radius:12px;overflow:hidden}
+.A .find span{flex:1;display:flex;align-items:center;gap:12px;padding:0 20px;color:#5A6B57;font-size:17px}
+.A .find b{display:grid;place-items:center;padding:0 28px;background:var(--g9);color:#fff;font-weight:600;font-size:16px}
+.A .try{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:14px;color:var(--mu)}
+.A .try span{border:1px solid var(--ln);border-radius:99px;padding:5px 14px;color:var(--g9);background:var(--card);font-weight:500}
+.A .art{position:relative;height:100%;min-height:330px}
+.A .art svg{position:absolute;inset:0;width:100%;height:100%}
+.A .tag{position:absolute;left:52%;top:40%;background:var(--g9);color:#fff;border-radius:10px;padding:10px 14px;font-size:14px;line-height:1.3;box-shadow:0 8px 24px #29422f33}
+.A .tag small{display:block;color:var(--lima);font-weight:600;font-size:12px;letter-spacing:.04em}
+.A .list{display:grid;grid-template-columns:repeat(4,1fr);margin:0 56px;border-top:1.5px solid var(--g9)}
+.A .list a{padding:22px 24px 22px 0;display:grid;grid-template-columns:auto 1fr auto;gap:2px 14px;align-items:start}
+.A .list a+a{padding-left:24px;border-left:1px solid var(--ln)}
+.A .list .ico{color:var(--g7);width:26px;height:26px;margin-top:2px}
+.A .list b{font:800 19px 'Nunito';color:var(--g9)}
+.A .list small{grid-column:2;color:var(--mu);font-size:14px;line-height:1.4}
+.A .list .go{color:var(--g9);grid-row:1;grid-column:3}
+.A .foot{display:flex;align-items:center;gap:12px;padding:6px 56px 22px;color:var(--mu);font-size:14px}
+.A .foot b{color:var(--g9);font-weight:700}
+
+/* B */
+.B{background:linear-gradient(180deg,#1E3626 0,#162A1C 100%);color:#EEF4E9}
+.B .nav .logo i{background:var(--lima);color:var(--g9)}
+.B .city{position:absolute;inset:0}
+.B .city svg{position:absolute;inset:0;width:100%;height:100%}
+.B .nav{background:linear-gradient(180deg,#14240fcc,transparent)}
+.B .ttl{position:absolute;left:56px;top:150px;width:520px;z-index:2}
+.B h1{font-size:64px;line-height:1.04;margin-bottom:18px}
+.B h1 span{color:var(--lima)}
+.B .ttl p{font-size:19px;color:#D3E0CC;max-width:36ch}
+.B .layers{position:absolute;right:56px;top:92px;z-index:2;display:flex;gap:8px;background:#12200Dcc;border:1px solid #3E5A44;border-radius:12px;padding:6px;backdrop-filter:blur(8px)}
+.B .layers span{padding:8px 14px;border-radius:8px;font-size:14px;font-weight:600;color:#D3E0CC;display:flex;align-items:center;gap:8px}
+.B .layers span.on{background:#EEF4E9;color:var(--g9)}
+.B .layers span i{width:8px;height:8px;border-radius:50%;background:currentColor;opacity:.8}
+.B .card{position:absolute;z-index:3;right:150px;top:300px;width:300px;background:var(--card);color:var(--tx);border-radius:12px;padding:16px 18px;box-shadow:0 18px 40px #0007}
+.B .card small{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--g7)}
+.B .card h3{font-size:20px;color:var(--g9);margin:4px 0 8px}
+.B .card ul{margin:0;padding:0;list-style:none;font-size:14px;color:var(--mu);display:grid;gap:4px}
+.B .dock{position:absolute;z-index:3;left:56px;bottom:36px;display:flex;gap:6px;background:#12200Dd9;border:1px solid #3E5A44;border-radius:14px;padding:6px;backdrop-filter:blur(8px)}
+.B .dock a{padding:13px 22px;border-radius:9px;font-weight:600;font-size:15px;color:#E4EEDD;display:flex;gap:10px;align-items:center}
+.B .dock a:first-child{background:var(--lima);color:var(--g9);font-weight:700}
+.B .popu{position:absolute;z-index:3;right:56px;bottom:36px;display:flex;align-items:center;gap:12px;background:#12200Dd9;border:1px solid #3E5A44;border-radius:14px;padding:12px 18px;font-size:14px;color:#D3E0CC}
+.B .popu b{color:#fff;font-size:20px;font-family:'Nunito';font-weight:800}
+
+/* C */
+.C{background:var(--cream);display:grid;grid-template-columns:5fr 7fr}
+.C .l{background:var(--g9);color:#EEF4E9;position:relative;padding:56px;display:flex;flex-direction:column}
+.C .l .logo{display:flex;align-items:center;gap:10px;font:800 20px 'Nunito'}
+.C .l .logo i{width:28px;height:28px;border-radius:8px;background:var(--lima);color:var(--g9);display:grid;place-items:center;font:800 15px 'Nunito';font-style:normal}
+.C .l svg.bg{position:absolute;inset:0;width:100%;height:100%;opacity:.28}
+.C .l>*:not(svg){position:relative}
+.C .l h1{font-size:60px;line-height:1.04;margin:auto 0 18px}
+.C .l p{font-size:18px;color:#D3E0CC;max-width:30ch}
+.C .l .pb{margin-top:48px;padding-top:20px;border-top:1px solid #ffffff3a;display:flex;align-items:center;gap:16px}
+.C .l .pb b{font:800 38px/1 'Nunito';color:var(--gold)}
+.C .l .pb span{font-size:14px;color:#D3E0CC;line-height:1.3}
+.C .r{padding:64px 56px 40px 64px;display:flex;flex-direction:column}
+.C .r .nav2{display:flex;gap:26px;justify-content:flex-end;font-size:15px;font-weight:500;color:var(--g9);margin:-30px 0 38px}
+.C .r h2{font-size:15px;font-weight:700;font-family:'Inter';letter-spacing:.08em;text-transform:uppercase;color:var(--mu);margin-bottom:10px}
+.C .q{display:grid}
+.C .q a{display:grid;grid-template-columns:52px 1fr auto;gap:18px;align-items:center;padding:22px 20px;margin:0 -20px;border-bottom:1px solid var(--ln);border-radius:10px}
+.C .q a:last-child{border-bottom:0}
+.C .q a.on{background:var(--sage)}
+.C .q .ic{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--sage);color:var(--g7)}
+.C .q a.on .ic{background:var(--g9);color:var(--lima)}
+.C .q b{display:block;font:800 25px/1.2 'Nunito';color:var(--g9)}
+.C .q small{color:var(--mu);font-size:15px}
+.C .q .go{color:var(--g9)}
+.C .ask{margin-top:auto;display:flex;align-items:center;gap:12px;height:54px;border:1.5px solid var(--g9);border-radius:12px;padding:0 18px;background:#fff;color:#5A6B57;font-size:16px}
+
+/* D */
+.D{background:var(--sage);display:grid;grid-template-rows:64px auto 1fr auto;color:var(--g9)}
+.D .nav .logo i{background:var(--g9);color:var(--lima)}
+.D .head{display:flex;justify-content:space-between;align-items:end;padding:10px 56px 22px;gap:40px}
+.D h1{font-size:50px;line-height:1.04;max-width:16ch}
+.D .head p{max-width:34ch;color:var(--mu);font-size:17px;text-align:right}
+.D .grid{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:1fr 1fr;gap:16px;padding:0 56px;min-height:0}
+.D .t{border-radius:14px;padding:22px 24px;position:relative;overflow:hidden;min-width:0}
+.D .t.big{grid-column:span 6;grid-row:span 2;background:var(--g9);color:#EEF4E9}
+.D .t.big svg.c{position:absolute;inset:0;width:100%;height:100%}
+.D .t.big .cp{position:absolute;left:28px;bottom:26px;right:28px;display:flex;justify-content:space-between;align-items:end;z-index:2}
+.D .t.big h3{font-size:34px;line-height:1.05}
+.D .t.big .cp small{display:block;font-size:15px;color:#D3E0CC;margin-top:4px}
+.D .t.big .btn{background:var(--lima);color:var(--g9);padding:13px 22px;border-radius:10px;font-weight:700;display:flex;gap:10px;align-items:center}
+.D .t.big::after{content:"";position:absolute;inset:auto 0 0 0;height:50%;background:linear-gradient(0deg,#1d3324 10%,transparent);z-index:1}
+.D .t.w{background:var(--card);border:1px solid var(--ln)}
+.D .lbl{font:700 12px/1 'Inter';letter-spacing:.08em;text-transform:uppercase;color:var(--mu)}
+.D .ring{grid-column:span 3}
+.D .ring .rw{display:flex;align-items:center;gap:16px;margin-top:14px}
+.D .ring svg{width:96px;height:96px;flex:none;transform:rotate(-90deg)}
+.D .ring b{font:800 40px/1 'Nunito';color:var(--g9)}
+.D .ring small{display:block;font-size:14px;color:var(--mu);margin-top:4px;line-height:1.3}
+.D .popt{grid-column:span 3}
+.D .popt b{display:block;font:800 40px/1 'Nunito';margin:16px 0 6px;color:var(--g9)}
+.D .popt small{font-size:14px;color:var(--mu);display:flex;gap:10px;align-items:center}
+.D .bars{grid-column:span 6}
+.D .bars .row{display:grid;grid-template-columns:130px 1fr 44px;gap:14px;align-items:center;margin-top:13px;font-size:14px}
+.D .bars .tr{height:10px;background:var(--sage);border-radius:0 5px 5px 0;border-radius:5px}
+.D .bars .tr i{display:block;height:100%;background:var(--g7);border-radius:0 4px 4px 0}
+.D .bars .row b{text-align:right;font-weight:700;color:var(--g9)}
+.D .links{display:flex;gap:12px;align-items:center;padding:20px 56px 24px}
+.D .links a{padding:12px 20px;border:1.5px solid var(--g9);border-radius:10px;font-weight:600;font-size:15px;display:flex;gap:10px;align-items:center}
+.D .links a.cta{margin-left:auto;background:var(--gold);border-color:var(--gold);color:#1A1A1A;font-weight:700}
+.D .ej{font-size:12px;color:var(--mu);font-weight:500}
+
+/* E */
+.E{background:var(--cream);display:grid;grid-template-columns:5fr 7fr;color:var(--g9)}
+.E .l{padding:0 56px 56px;display:flex;flex-direction:column}
+.E .l .nav{padding:0;margin:0 0 auto}
+.E .l h1{font-size:56px;line-height:1.04;margin:0 0 20px}
+.E .l p{font-size:19px;color:var(--mu);max-width:30ch}
+.E .l .btn{margin-top:30px;align-self:flex-start;background:var(--g9);color:#fff;border-radius:12px;padding:16px 26px;font-weight:700;display:flex;gap:12px;align-items:center;font-size:16px}
+.E .l .btn2{margin-top:14px;font-size:14px;color:var(--mu)}
+.E .l .btn2 u{text-decoration-thickness:1.5px;text-underline-offset:3px;color:var(--g9);font-weight:600}
+.E .r{padding:64px 56px 40px 0;display:grid;align-content:center;gap:0;position:relative}
+.E .st{display:grid;grid-template-columns:56px 1fr 130px;gap:22px;align-items:center;padding:20px 22px;border-radius:14px;position:relative}
+.E .st+.st{margin-top:6px}
+.E .st .n{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--g7);font:800 22px 'Nunito';color:var(--g9);background:var(--cream);position:relative;z-index:1}
+.E .st:not(:last-child)::before{content:"";position:absolute;left:49px;top:76px;height:calc(100% - 16px);width:2px;background:var(--ln)}
+.E .st.on{background:var(--sage)}
+.E .st.on .n{background:var(--g9);color:var(--lima);border-color:var(--g9)}
+.E .st b{display:block;font:800 25px/1.2 'Nunito'}
+.E .st small{font-size:15px;color:var(--mu);display:block;margin-top:2px}
+.E .st .mini{height:64px;display:grid;place-items:center;color:var(--g7)}
+.E .st .mini svg{width:100%;height:100%}
+
+.noscript-note{display:none}
+</style>
+</head>
+<body>
+
+<!-- símbolos compartidos -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-plan" viewBox="0 0 24 24"><path d="M9 4h6l1 2h3v14H5V6h3z"/><path d="m9 13 2 2 4-4"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c.6-3.4 3-5.4 6-5.4s5.4 2 6 5.4"/><circle cx="17" cy="9" r="2.4"/><path d="M16 14.6c2.6.1 4.4 1.9 5 4.4"/></symbol>
+  <symbol id="i-cube" viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5c3-1 5.5-.6 8 1v14c-2.5-1.6-5-2-8-1z"/><path d="M20 5c-3-1-5.5-.6-8 1v14c2.5-1.6 5-2 8-1z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-org" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="5" rx="1"/><rect x="3" y="16" width="6" height="5" rx="1"/><rect x="15" y="16" width="6" height="5" rx="1"/><path d="M12 8v4M6 16v-4h12v4"/></symbol>
+</svg>
+
+<div class="w">
+<header class="top">
+  <p class="eyebrow">RECUAPP · Gobierno digital de Girardota · versión 2 · 12 nov 2026</p>
+  <h1>Cinco caminos para una portada más tranquila</h1>
+  <p class="lede">Rehice las propuestas aplicando una guía de diseño: maquetas a tamaño real de escritorio (1280 px) y no ilustraciones sueltas, tipografías de la app (Inter y Nunito), textos comprobados con la razón de contraste WCAG, y cifras con las reglas de visualización de datos. Siguen siendo maquetas estáticas, no la app.</p>
+
+  <div class="diag">
+    <div><h3>Color</h3><p>Hoy hay nueve tonos sin jerarquía: cuatro de sección, cuatro de verbo y la orquídea de población. Ninguno es el verde institucional.</p>
+      <div class="sw" aria-label="Colores actuales de la portada"><i style="background:#4FA22E"></i><i style="background:#D99A14"></i><i style="background:#2E86C1"></i><i style="background:#D35C37"></i><i style="background:#B0549A"></i><i style="background:#3F8A22"></i><i style="background:#B97F0A"></i><i style="background:#6A57B8"></i><i style="background:#2475AD"></i></div></div>
+    <div><h3>Selector</h3><p>El verbo rota solo, hay cuatro botones que piden elegir antes de entender y las tarjetas cambian de etiqueta y brillo. Es un filtro que quien llega no pidió.</p></div>
+    <div><h3>Peso</h3><p>El 3D, lo más diferencial del producto, es una tarjeta del mismo tamaño que la Biblioteca, y la población flota aparte como dato suelto.</p></div>
+  </div>
+  <p class="lede"><strong>Regla común:</strong> un verde de marca, un acento y nada más. Cada sección se reconoce por su icono y su texto, no por un color propio. Debajo de la portada siguen el mapa 3D, el plan y el resto, en el mismo orden que hoy.</p>
+
+  <ul class="idx">
+    <li><a href="#a">A · Serena</a></li><li><a href="#b">B · Mapa primero</a></li><li><a href="#c">C · Preguntas</a></li><li><a href="#d">D · Cifras</a></li><li><a href="#e">E · Recorrido</a></li><li><a href="#comparar">Comparar</a></li>
+  </ul>
+</header>
+
+<!-- ================= A ================= -->
+<section class="p" id="a">
+  <div class="ph"><span class="k" aria-hidden="true">A</span><h2>Serena</h2><p>Un titular fijo, un buscador y cuatro accesos en una sola fila. El selector de verbos se reemplaza por escribir lo que se busca.</p></div>
+  <div class="stagebox"><div class="stage" data-w="1280" data-h="760"><div class="scr A">
+    <div class="nav"><span class="logo"><i>R</i>RECUAPP</span><a class="on">Inicio</a><a>Plan</a><a>Responsables</a><a>Girardota 3D</a><a>Biblioteca</a></div>
+    <div class="hero">
+      <div>
+        <span class="lbl" style="font:700 12px 'Inter';letter-spacing:.1em;text-transform:uppercase;color:var(--mu)">Gobierno digital de Girardota</span>
+        <h1>Lo prometido, <em>a la vista</em> de todos.</h1>
+        <p class="sub">El plan, quién responde por cada tema y cómo es el municipio, en un solo lugar.</p>
+        <div class="find"><span><svg class="ico"><use href="#i-search"/></svg>Busca un programa, una dependencia o un lugar</span><b>Buscar</b></div>
+        <div class="try">Probar con <span>Vías</span><span>Educación</span><span>Secretaría de Salud</span><span>Parque principal</span></div>
+      </div>
+      <div class="art"><svg viewBox="0 0 480 400" fill="none" stroke="#3F7A1E" stroke-width="1.3" stroke-opacity=".55" aria-hidden="true"><path d="M30 210C20 120 130 40 250 52s210 70 200 160-90 150-200 138S42 300 30 210z"/><path d="M62 210c-8-84 84-140 188-130s170 56 162 128-74 118-162 108S70 280 62 210z"/><path d="M100 208c-6-62 60-102 146-96s132 42 126 98-60 90-130 82-136-30-142-84z"/><path d="M142 206c-4-42 40-70 104-66s94 28 90 66-44 62-96 56-94-18-98-56z"/><path d="M186 204c-2-24 22-40 62-36s56 18 52 38-26 38-62 34-50-14-52-36z"/></svg>
+        <div class="tag"><small>PARQUE PRINCIPAL</small>3 programas · 2 responsables</div></div>
+    </div>
+    <div>
+      <div class="list">
+        <a><svg class="ico"><use href="#i-plan"/></svg><b>El plan en claro</b><svg class="ico go"><use href="#i-arrow"/></svg><small>Programas, metas e inversión</small></a>
+        <a><svg class="ico"><use href="#i-users"/></svg><b>Responsables</b><svg class="ico go"><use href="#i-arrow"/></svg><small>Quién dirige cada dependencia</small></a>
+        <a><svg class="ico"><use href="#i-cube"/></svg><b>Girardota en 3D</b><svg class="ico go"><use href="#i-arrow"/></svg><small>Edificios, redes y equipamientos</small></a>
+        <a><svg class="ico"><use href="#i-book"/></svg><b>Biblioteca</b><svg class="ico go"><use href="#i-arrow"/></svg><small>Las fuentes de cada dato</small></a>
+      </div>
+      <div class="foot"><span class="pyr" aria-hidden="true"><span><b style="width:22px"></b></span><span><b style="width:28px"></b></span><span><b style="width:30px"></b></span><span><b style="width:24px"></b></span></span><span><b>XX.XXX</b> habitantes en Girardota (dato del censo)</span></div>
+    </div>
+  </div></div><div class="cap"><span>Maqueta a escala · cifras de ejemplo</span><span>Curvas de nivel: el motivo que ya usa la portada actual</span></div></div>
+  <div class="facts">
+    <div><h3>Qué cambia</h3><p>Se van los verbos y las tarjetas animadas. Entra un buscador sobre plan, responsables y lugares. La población queda como línea de pie.</p></div>
+    <div><h3>Color</h3><p>Crema, verde bosque y un verde más oscuro (#3F7A1E) para el texto de acento. El lima de la marca no se usa en texto sobre crema porque da 2,5:1 y no se lee.</p><div class="pal"><i style="background:#F5F0EA"></i><i style="background:#29422F"></i><i style="background:#3F7A1E"></i><i style="background:#EAF2D6"></i></div></div>
+    <div><h3>Costo y riesgo</h3><p>El más barato. Solo funciona si el buscador responde bien; con resultados pobres, la portada queda vacía.</p></div>
+  </div>
+</section>
+
+<!-- ================= B ================= -->
+<section class="p" id="b">
+  <div class="ph"><span class="k" aria-hidden="true">B</span><h2>Mapa primero</h2><p>El modelo 3D es la portada. El titular flota encima y un dock inferior da acceso a lo demás. Las capas del propio mapa reemplazan a las categorías.</p></div>
+  <div class="stagebox"><div class="stage" data-w="1280" data-h="760"><div class="scr B">
+    <div class="city"><svg id="cityB" viewBox="0 0 1280 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg></div>
+    <div class="nav"><span class="logo"><i>R</i>RECUAPP</span><a class="on">Inicio</a><a>Plan</a><a>Responsables</a><a>Biblioteca</a></div>
+    <div class="ttl"><h1>Girardota, <span>explicada</span> por dentro.</h1><p>Toca un edificio y verás qué se prometió allí y quién responde.</p></div>
+    <div class="layers"><span class="on"><i></i>Edificios</span><span><i></i>Plan</span><span><i></i>Responsables</span><span><i></i>Redes</span></div>
+    <div class="card"><small>Institución educativa</small><h3>Sede Comfama Girardota</h3><ul><li>3 programas del plan</li><li>2 responsables</li><li>Fuente: catastro AMVA</li></ul></div>
+    <div class="dock"><a><svg class="ico"><use href="#i-cube"/></svg>Explorar el mapa</a><a>El plan</a><a>Responsables</a><a>Biblioteca</a></div>
+    <div class="popu"><span class="pyr" aria-hidden="true"><span><b style="width:22px"></b></span><span><b style="width:28px"></b></span><span><b style="width:30px"></b></span></span><span><b>XX.XXX</b><br>habitantes</span></div>
+  </div></div><div class="cap"><span>Maqueta a escala · ciudad esquemática, no el modelo real</span><span>Fondo en verde de marca, sin negro</span></div></div>
+  <div class="facts">
+    <div><h3>Qué cambia</h3><p>Las secciones se descubren con el mapa y con el dock. Las «categorías» pasan a ser capas del visor, que ya existen en el 3D.</p></div>
+    <div><h3>Color</h3><p>Verde bosque profundo de fondo, lima solo para la acción principal y dorado reservado para el edificio seleccionado.</p><div class="pal"><i style="background:#1E3626"></i><i style="background:#3F7A1E"></i><i style="background:#99CC33"></i><i style="background:#E0B33A"></i></div></div>
+    <div><h3>Costo y riesgo</h3><p>La más memorable, y la que mejor cuenta el producto. Cargar el 3D completo al abrir pesa en móvil; haría falta una imagen ligera mientras llega.</p></div>
+  </div>
+</section>
+
+<!-- ================= C ================= -->
+<section class="p" id="c">
+  <div class="ph"><span class="k" aria-hidden="true">C</span><h2>Preguntas</h2><p>Se conserva la idea de «¿qué quieres hacer?» pero como una lista fija de dudas ciudadanas. Sin rotación, sin filtros, sin estado.</p></div>
+  <div class="stagebox"><div class="stage" data-w="1280" data-h="760"><div class="scr C">
+    <div class="l">
+      <svg class="bg" viewBox="0 0 520 760" fill="none" stroke="#99CC33" stroke-width="1.2" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M-40 560C20 420 140 380 260 420s200 20 330-60"/><path d="M-40 610C30 470 150 430 262 470s190 30 320-50"/><path d="M-40 660C40 520 160 480 264 520s180 40 310-40"/><path d="M-40 710C50 570 170 530 266 570s170 50 300-30"/><path d="M-40 760C60 620 180 580 268 620s160 60 290-20"/><path d="M-40 510C10 370 130 330 258 370s210 10 340-70"/><path d="M-40 460C0 320 120 280 256 320s220 0 350-80"/></svg>
+      <div class="logo"><i>R</i>RECUAPP</div>
+      <h1>Pregúntale a tu municipio.</h1>
+      <p>Lo prometido, quién responde y cómo es Girardota, en lenguaje claro.</p>
+      <div class="pb"><b>XX.XXX</b><span>habitantes<br>según el censo vigente</span></div>
+    </div>
+    <div class="r">
+      <div class="nav2"><span>Plan</span><span>Responsables</span><span>Girardota 3D</span><span>Biblioteca</span></div>
+      <h2>Empieza por lo que quieres saber</h2>
+      <div class="q">
+        <a class="on"><span class="ic"><svg class="ico"><use href="#i-plan"/></svg></span><span><b>¿Qué prometió la administración?</b><small>El plan en claro: programas, metas e inversión</small></span><svg class="ico go"><use href="#i-arrow"/></svg></a>
+        <a><span class="ic"><svg class="ico"><use href="#i-users"/></svg></span><span><b>¿Quién responde por cada tema?</b><small>Responsables y organigrama</small></span><svg class="ico go"><use href="#i-arrow"/></svg></a>
+        <a><span class="ic"><svg class="ico"><use href="#i-cube"/></svg></span><span><b>¿Cómo es mi barrio y qué hay en él?</b><small>Girardota en 3D</small></span><svg class="ico go"><use href="#i-arrow"/></svg></a>
+        <a><span class="ic"><svg class="ico"><use href="#i-book"/></svg></span><span><b>¿De dónde sale este dato?</b><small>Biblioteca de fuentes</small></span><svg class="ico go"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="ask"><svg class="ico"><use href="#i-search"/></svg>O escribe tu propia pregunta</div>
+    </div>
+  </div></div><div class="cap"><span>Maqueta a escala · la fila resaltada muestra el estado al pasar el cursor</span><span>Sin numeración: las preguntas no son una secuencia</span></div></div>
+  <div class="facts">
+    <div><h3>Qué cambia</h3><p>Los verbos pasan a ser preguntas y se vuelven enlaces directos. La población se muestra una vez, en el panel verde.</p></div>
+    <div><h3>Color</h3><p>Mitad verde bosque, mitad crema. El dorado aparece solo en la cifra de población (5,6:1 sobre el verde).</p><div class="pal"><i style="background:#29422F"></i><i style="background:#F5F0EA"></i><i style="background:#EAF2D6"></i><i style="background:#E0B33A"></i></div></div>
+    <div><h3>Costo y riesgo</h3><p>Bajo. Es muy accesible y funciona bien en móvil. Es más textual y menos «tecnológica» que B o D.</p></div>
+  </div>
+</section>
+
+<!-- ================= D ================= -->
+<section class="p" id="d">
+  <div class="ph"><span class="k" aria-hidden="true">D</span><h2>Cifras al frente</h2><p>Un tablero con el 3D como bloque grande y los datos vivos del municipio al lado. Cada cifra lleva a la sección que la explica.</p></div>
+  <div class="stagebox"><div class="stage" data-w="1280" data-h="760"><div class="scr D">
+    <div class="nav"><span class="logo"><i>R</i>RECUAPP</span><a class="on">Inicio</a><a>Plan</a><a>Responsables</a><a>Girardota 3D</a><a>Biblioteca</a></div>
+    <div class="head"><h1>Girardota, en datos y en mapa.</h1><p>Cada cifra tiene su fuente y su responsable.</p></div>
+    <div class="grid">
+      <div class="t big"><svg class="c" id="cityD" viewBox="0 0 640 460" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
+        <div class="cp"><div><h3>Girardota en 3D</h3><small>Edificios, redes y equipamientos</small></div><span class="btn">Explorar<svg class="ico"><use href="#i-arrow"/></svg></span></div></div>
+      <div class="t w ring"><span class="lbl">Avance del plan</span>
+        <div class="rw"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="15.9" fill="none" stroke="#EAF2D6" stroke-width="5"/><circle cx="20" cy="20" r="15.9" fill="none" stroke="#3F7A1E" stroke-width="5" stroke-linecap="round" pathLength="100" stroke-dasharray="64 100"/></svg>
+        <div><b>64 %</b><small>de las metas<br>con reporte<br><span class="ej">ejemplo</span></small></div></div></div>
+      <div class="t w popt"><span class="lbl">Población</span><b>XX.XXX</b><small><span class="pyr" aria-hidden="true"><span><b style="width:22px"></b></span><span><b style="width:28px"></b></span><span><b style="width:30px"></b></span></span>habitantes · <span class="ej">ejemplo</span></small></div>
+      <div class="t w bars"><span class="lbl">Avance por sector · ejemplo</span>
+        <div class="row"><span>Educación</span><div class="tr"><i style="width:72%"></i></div><b>72 %</b></div>
+        <div class="row"><span>Infraestructura</span><div class="tr"><i style="width:58%"></i></div><b>58 %</b></div>
+        <div class="row"><span>Salud</span><div class="tr"><i style="width:66%"></i></div><b>66 %</b></div>
+        <div class="row"><span>Medio ambiente</span><div class="tr"><i style="width:41%"></i></div><b>41 %</b></div></div>
+    </div>
+    <div class="links"><a><svg class="ico"><use href="#i-users"/></svg>Responsables</a><a><svg class="ico"><use href="#i-book"/></svg>Biblioteca</a><a class="cta"><svg class="ico"><use href="#i-plan"/></svg>Ver el plan en claro<svg class="ico"><use href="#i-arrow"/></svg></a></div>
+  </div></div><div class="cap"><span>Maqueta a escala · todos los valores son de ejemplo</span><span>Un solo matiz de verde para magnitud; cada barra con su valor al lado</span></div></div>
+  <div class="facts">
+    <div><h3>Qué cambia</h3><p>Se va el selector y las cuatro tarjetas. El 3D se mantiene grande y las cifras sirven de acceso a plan, responsables y fuentes.</p></div>
+    <div><h3>Color</h3><p>Verde pálido de fondo, verde bosque como ancla, un solo verde para toda magnitud y dorado únicamente en el botón principal.</p><div class="pal"><i style="background:#EAF2D6"></i><i style="background:#29422F"></i><i style="background:#3F7A1E"></i><i style="background:#E0B33A"></i></div></div>
+    <div><h3>Costo y riesgo</h3><p>Medio. Da credibilidad, pero una cifra vacía o desactualizada pesa más aquí que en cualquier otra. Hay que decidir qué cifras son confiables antes de ponerlas.</p></div>
+  </div>
+</section>
+
+<!-- ================= E ================= -->
+<section class="p" id="e">
+  <div class="ph"><span class="k" aria-hidden="true">E</span><h2>Recorrido</h2><p>La portada propone un orden: qué se prometió, quién responde, dónde ocurre y de dónde sale el dato. Quien ya sabe adónde ir salta al paso que quiera.</p></div>
+  <div class="stagebox"><div class="stage" data-w="1280" data-h="760"><div class="scr E">
+    <div class="l">
+      <div class="nav"><span class="logo"><i style="background:#29422F;color:#99CC33">R</i>RECUAPP</span></div>
+      <h1>Entiende tu municipio en cuatro pasos.</h1>
+      <p>Del compromiso al territorio, sin perderte.</p>
+      <span class="btn">Empezar por el plan<svg class="ico"><use href="#i-arrow"/></svg></span>
+      <p class="btn2">¿Ya sabes qué buscas? <u>Ir directo al mapa 3D</u></p>
+    </div>
+    <div class="r">
+      <div class="st on"><span class="n">1</span><span><b>Qué se prometió</b><small>El plan en claro: programas, metas e inversión</small></span>
+        <span class="mini"><svg viewBox="0 0 120 64" fill="none" stroke="#29422F" stroke-width="2" stroke-linecap="round"><path d="M10 54V30M34 54V18M58 54V36M82 54V10M106 54V24" stroke="#3F7A1E" stroke-width="10"/></svg></span></div>
+      <div class="st"><span class="n">2</span><span><b>Quién responde</b><small>Responsables y organigrama</small></span>
+        <span class="mini"><svg viewBox="0 0 120 64" fill="none" stroke="#3F7A1E" stroke-width="2"><rect x="44" y="4" width="32" height="14" rx="3"/><path d="M60 18v10M20 44V28h80v16M60 28v16"/><rect x="4" y="44" width="32" height="14" rx="3"/><rect x="44" y="44" width="32" height="14" rx="3"/><rect x="84" y="44" width="32" height="14" rx="3"/></svg></span></div>
+      <div class="st"><span class="n">3</span><span><b>Dónde ocurre</b><small>Girardota en 3D y mapa territorial</small></span>
+        <span class="mini"><svg viewBox="0 0 120 64" fill="none" stroke="#3F7A1E" stroke-width="2" stroke-linejoin="round"><path d="m60 4 36 18v22L60 62 24 44V22z"/><path d="m24 22 36 18 36-18M60 40v22"/></svg></span></div>
+      <div class="st"><span class="n">4</span><span><b>De dónde sale el dato</b><small>Biblioteca de fuentes, con su cita</small></span>
+        <span class="mini"><svg viewBox="0 0 120 64" fill="none" stroke="#3F7A1E" stroke-width="2" stroke-linejoin="round"><path d="M14 10c16-5 30-3 46 5v44c-16-8-30-10-46-5zM106 10c-16-5-30-3-46 5v44c16-8 30-10 46-5z"/></svg></span></div>
+    </div>
+  </div></div><div class="cap"><span>Maqueta a escala · el paso 1 aparece activo</span><span>Aquí la numeración sí significa algo: es un orden de lectura</span></div></div>
+  <div class="facts">
+    <div><h3>Qué cambia</h3><p>El selector se convierte en una secuencia que se sigue en vez de un filtro. El paso activo cambia al bajar por la página.</p></div>
+    <div><h3>Color</h3><p>Crema, verde bosque y verde pálido para el paso activo. Sin acentos extra.</p><div class="pal"><i style="background:#F5F0EA"></i><i style="background:#29422F"></i><i style="background:#3F7A1E"></i><i style="background:#EAF2D6"></i></div></div>
+    <div><h3>Costo y riesgo</h3><p>Medio-bajo. Muy buena para primera visita y para presentar al concejo. Quien vuelve cada semana querrá saltarse los pasos.</p></div>
+  </div>
+</section>
+
+<!-- ================= comparar ================= -->
+<section class="p" id="comparar">
+  <div class="ph"><span class="k" aria-hidden="true" style="font-size:2.4rem;line-height:1">≈</span><h2>Comparar</h2><p>Lo que cada propuesta cambia respecto a la portada de hoy.</p></div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Propuesta</th><th>Colores de sección</th><th>Selector de verbos</th><th>Peso del 3D</th><th>Esfuerzo</th><th>Depende de</th></tr></thead>
+    <tbody>
+      <tr><td>A · Serena</td><td>Ninguno</td><td>Buscador</td><td>Bajo, un acceso</td><td>Bajo</td><td>Que el buscador funcione bien</td></tr>
+      <tr><td>B · Mapa primero</td><td>Ninguno</td><td>Capas del mapa</td><td>Máximo</td><td>Alto</td><td>Rendimiento del 3D en móvil</td></tr>
+      <tr><td>C · Preguntas</td><td>Ninguno</td><td>Lista fija de preguntas</td><td>Medio, un acceso</td><td>Bajo</td><td>Redactar bien las preguntas</td></tr>
+      <tr><td>D · Cifras</td><td>Ninguno</td><td>Ninguno</td><td>Alto, bloque grande</td><td>Medio</td><td>Cifras confiables y al día</td></tr>
+      <tr><td>E · Recorrido</td><td>Ninguno</td><td>Secuencia de pasos</td><td>Medio, un paso</td><td>Medio-bajo</td><td>Que el paso activo siga el desplazamiento</td></tr>
+    </tbody></table></div>
+</section>
+
+<div class="rec">
+  <h2>Mi recomendación</h2>
+  <p>Empezar por <strong>C (Preguntas)</strong> y tomar de <strong>B</strong> la idea de tener el 3D como fondo del panel verde, en lugar de las curvas de nivel de hoy. La base de color (verde bosque, crema y un acento dorado) es común a las cinco y se puede aplicar de inmediato, sin esperar a elegir la composición.</p>
+  <p>Dime cuál prefieres, o qué mezcla, y la paso a la app quitando los nueve colores de sección y el selector rotatorio.</p>
+</div>
+<footer>Maquetas ilustrativas: las cifras son marcadores y la ciudad es un esquema. Paleta y tipografías tomadas de la app (<code>styles.scss</code>, <code>index.html</code>). Contrastes de texto calculados con la razón WCAG: todos los textos de las maquetas superan 4,5:1.</footer>
+</div>
+
+<script>
+/* Escala cada pantalla de 1280×760 al ancho disponible. */
+(function(){
+  var stages=[].slice.call(document.querySelectorAll('.stage'));
+  function fit(){
+    stages.forEach(function(s){
+      var w=+s.dataset.w,h=+s.dataset.h,k=s.clientWidth/w;
+      s.style.height=(h*k)+'px';
+      s.firstElementChild.style.transform='scale('+k+')';
+    });
+  }
+  fit();
+  if(window.ResizeObserver){var ro=new ResizeObserver(fit);stages.forEach(function(s){ro.observe(s)})}else{addEventListener('resize',fit)}
+})();
+
+/* Ciudad isométrica esquemática (determinista). */
+function ciudad(id,o){
+  var svg=document.getElementById(id);if(!svg)return;
+  var NS='http://www.w3.org/2000/svg',w=o.w,h=o.w/2,s=o.seed,out='';
+  function rnd(){s=(s*9301+49297)%233280;return s/233280}
+  function P(pts,f,op){return '<polygon points="'+pts.join(' ')+'" fill="'+f+'"'+(op?' fill-opacity="'+op+'"':'')+'/>'}
+  var cells=[];
+  for(var i=0;i<o.n;i++)for(var j=0;j<o.n;j++){
+    if(i%4===3||j%4===3)continue;               // calles
+    var d=Math.hypot(i-o.n/2,j-o.n/2)/o.n;       // más alto hacia el centro
+    var z=(5+rnd()*22)*(1.25-d)*o.hk;
+    cells.push({i:i,j:j,z:Math.max(4,z)});
+  }
+  cells.sort(function(a,b){return (a.i+a.j)-(b.i+b.j)});
+  cells.forEach(function(c){
+    var x=o.cx+(c.i-c.j)*w/2,y=o.cy+(c.i+c.j)*h/2,z=c.z,ww=w*.46,hh=h*.46,hi=(c.i===o.hi[0]&&c.j===o.hi[1]);
+    var top=hi?'#E0B33A':o.top,l=o.l,r=o.r;
+    var T=[x,y-z-hh],R=[x+ww,y-z],B=[x,y-z+hh],L=[x-ww,y-z];
+    out+=P([L.join(','),B.join(','),[x,y+hh].join(','),[x-ww,y].join(',')],hi?'#B8902A':l);
+    out+=P([B.join(','),R.join(','),[x+ww,y].join(','),[x,y+hh].join(',')],hi?'#8F6E1C':r);
+    out+=P([T.join(','),R.join(','),B.join(','),L.join(',')],top);
+  });
+  svg.innerHTML=out;
+}
+ciudad('cityB',{w:46,n:26,cx:760,cy:230,seed:7,hk:1.35,top:'#5E8F4A',l:'#3A6A3C',r:'#274D2D',hi:[9,10]});
+ciudad('cityD',{w:36,n:22,cx:330,cy:90,seed:11,hk:1.2,top:'#6FA05A',l:'#46784A',r:'#2F5A37',hi:[8,9]});
+</script>
+</body>
+</html>

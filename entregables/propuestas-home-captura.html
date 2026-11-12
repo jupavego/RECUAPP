@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portada RECUAPP con capturas del mapa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@700;800&display=swap">
+<style>
+/* Documento: misma hoja que las versiones anteriores. La maqueta (1280×760) cambia entre modo oscuro y claro del sitio. */
+:root{--bg:#F5F0EA;--surface:#FCF9F6;--ink:#1A1A1A;--mut:#4F5F4C;--line:#C8D9C0;--brand:#29422F;--brand-txt:#29422F;--accent:#3F7A1E;--head:'Nunito',system-ui,sans-serif;--body:'Inter',system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121A14;--surface:#1A261D;--ink:#E8EFE4;--mut:#B4C3B0;--line:#2F4533;--brand:#99CC33;--brand-txt:#C5E88A;--accent:#99CC33;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121A14;--surface:#1A261D;--ink:#E8EFE4;--mut:#B4C3B0;--line:#2F4533;--brand:#99CC33;--brand-txt:#C5E88A;--accent:#99CC33;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--body);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.w{max-width:1120px;margin:0 auto}
+h1,h2,h3{font-family:var(--head);font-weight:800;text-wrap:balance;margin:0}
+p{margin:0}
+.eyebrow{font:600 12px/1 var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+header.top{padding:56px 0 8px;display:grid;gap:16px}
+header.top h1{font-size:clamp(2rem,5vw,3rem);line-height:1.05;color:var(--brand-txt);max-width:20ch}
+.lede{max-width:68ch;color:var(--mut);font-size:1.0625rem}
+.bar{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;margin:28px 0 0}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.seg button{font:600 .9rem var(--body);padding:9px 18px;border:0;background:transparent;color:var(--ink);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--brand);color:#fff}
+:root[data-theme="dark"] .seg button[aria-pressed="true"]{color:#14230f}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .seg button[aria-pressed="true"]{color:#14230f}}
+.seg button:focus-visible{outline:2px solid var(--brand);outline-offset:-3px}
+.hint{font-size:.88rem;color:var(--mut)}
+.stagebox{margin:12px 0 20px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.stage{position:relative;width:100%;overflow:hidden}
+.scr{position:absolute;left:0;top:0;width:1280px;height:760px;transform-origin:0 0;overflow:hidden}
+.cap{padding:10px 16px;border-top:1px solid var(--line);font-size:.8rem;color:var(--mut);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+h2.sec{font-size:1.4rem;color:var(--brand-txt);margin:48px 0 6px}
+.film{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:16px 0}
+.film figure{margin:0;display:grid;gap:8px;min-width:0}
+.film figcaption b{display:block;font:800 1rem var(--head);color:var(--brand-txt)}
+.film figcaption span{font-size:.9rem;color:var(--mut)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:8px}
+.facts div{display:grid;gap:4px;align-content:start;min-width:0}
+.facts h3{font:700 .75rem/1.2 var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+.facts p{font-size:.95rem}
+.spec{margin:24px 0 0;padding:20px 24px;border:1px solid var(--line);border-radius:12px;background:var(--surface);display:grid;gap:8px}
+.spec h3{font-size:1.1rem;color:var(--brand-txt)}
+.spec ul{margin:0;padding-left:1.2em;display:grid;gap:4px;font-size:.95rem}
+.rec{margin:48px 0 0;padding:28px 32px;border-radius:12px;background:#29422F;color:#F5F0EA;display:grid;gap:10px}
+.rec h2{font-size:1.5rem}.rec p{max-width:70ch}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .rec{background:#233229;color:#E8EFE4}}
+:root[data-theme="dark"] .rec{background:#233229;color:#E8EFE4}
+footer{padding:28px 0 64px;color:var(--mut);font-size:.85rem}
+
+/* ===== maqueta ===== */
+.scr,.mini{
+  /* modo oscuro del sitio (el de la propuesta); el velo es el sombreado del login */
+  --vl:12,22,15; --va:.94; --t:#F2F7EE; --t2:#D3E0CC; --glass:rgba(12,22,15,.82); --gl:#3E5A44; --pill-on-bg:#F2F7EE; --pill-on-tx:#29422F;
+  --accent-ic:#99CC33; --find-b:#fff; --chip:rgba(12,22,15,.55); --chip-b:#4d6d54;
+}
+.scr.claro,.mini.claro{
+  --vl:245,240,234; --va:.95; --t:#29422F; --t2:#4F5F4C; --glass:rgba(252,249,246,.88); --gl:#C8D9C0; --pill-on-bg:#29422F; --pill-on-tx:#fff;
+  --accent-ic:#3F7A1E; --chip:rgba(252,249,246,.8); --chip-b:#C8D9C0;
+}
+.scr{font:400 16px/1.45 'Inter',system-ui,sans-serif;color:var(--t);background:#1e3223}
+.scr h1,.scr h3{font-family:'Nunito',system-ui,sans-serif;font-weight:800;margin:0}
+.scr svg{display:block}
+.ico{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* fondo: cuatro capturas apiladas, una visible; velo solo a la izquierda */
+.bg{position:absolute;inset:0;container-type:inline-size;overflow:hidden;background:#1e3223}
+.bg .cp{position:absolute;inset:0;opacity:0;transition:opacity .7s ease;background:#1e3223 url('../public/img/login-fondo.jpg') 0 var(--y)/100% auto no-repeat}
+.bg .cp.on{opacity:1}
+.bg::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:
+    linear-gradient(180deg,rgba(var(--vl),.55) 0,rgba(var(--vl),0) 14%),
+    linear-gradient(90deg,rgba(var(--vl),var(--va)) 0,rgba(var(--vl),.88) 30%,rgba(var(--vl),.5) 46%,rgba(var(--vl),0) 64%)}
+.mk{position:absolute;z-index:1;width:3.1cqw;height:3.1cqw;margin:-1.55cqw 0 0 -1.55cqw;border-radius:50%;background:#fff;color:#29422F;display:grid;place-items:center;box-shadow:0 0 0 .5cqw rgba(224,179,58,.55),0 .5cqw 1.2cqw rgba(0,0,0,.45)}
+.mk svg{width:1.7cqw;height:1.7cqw;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.mk.sel{background:#E0B33A;box-shadow:0 0 0 .7cqw rgba(224,179,58,.4),0 .5cqw 1.2cqw rgba(0,0,0,.5)}
+.lb{position:absolute;z-index:3;left:calc(100% + 1.2cqw);top:50%;transform:translateY(-50%);width:max-content;background:#FCF9F6;color:#1A1A1A;border-radius:.9cqw;padding:.9cqw 1.3cqw;box-shadow:0 1.4cqw 3cqw rgba(0,0,0,.4);font:700 1.1cqw/1.3 'Inter',sans-serif}
+.lb small{display:block;font-weight:600;font-size:.9cqw;letter-spacing:.05em;text-transform:uppercase;color:#3F7A1E}
+.lb b{display:block;font:800 1.5cqw/1.2 'Nunito',sans-serif;color:#29422F}
+
+.nav{position:absolute;z-index:4;left:0;right:0;top:0;height:64px;display:flex;align-items:center;gap:28px;padding:0 56px;font-size:15px;font-weight:500}
+.nav .logo{display:flex;align-items:center;gap:10px;font:800 20px 'Nunito',sans-serif;margin-right:auto}
+.nav .logo i{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;font:800 15px 'Nunito';font-style:normal;background:#99CC33;color:#29422F}
+.scr.claro .nav .logo i{background:#29422F;color:#99CC33}
+.nav a{color:var(--t)}
+.nav .right{display:flex;gap:28px;padding:8px 18px;border-radius:99px;background:var(--glass);border:1px solid var(--gl);backdrop-filter:blur(8px)}
+.nav a.on{font-weight:700}
+.ttl{position:absolute;z-index:4;left:56px;top:122px;width:540px}
+.ttl h1{font-size:60px;line-height:1.04;margin:0 0 16px}
+.ttl h1 span{color:var(--accent-ic)}
+.ttl p{font-size:18px;color:var(--t2);max-width:36ch}
+.find{margin-top:26px;display:flex;height:60px;background:#fff;border:1.5px solid var(--find-b);border-radius:12px;overflow:hidden;box-shadow:0 12px 32px rgba(0,0,0,.28)}
+.find span{flex:1;display:flex;align-items:center;gap:12px;padding:0 20px;color:#5A6B57;font-size:17px}
+.find b{display:grid;place-items:center;padding:0 28px;background:#29422F;color:#fff;font-weight:600;font-size:16px}
+.try{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:14px;color:var(--t2)}
+.try span{border:1px solid var(--chip-b);background:var(--chip);color:var(--t);border-radius:99px;padding:5px 14px;font-weight:500}
+.layers{position:absolute;z-index:4;right:56px;top:92px;display:flex;gap:6px;border-radius:12px;padding:6px;background:var(--glass);border:1px solid var(--gl);backdrop-filter:blur(8px)}
+.layers button{font:600 14px 'Inter',sans-serif;padding:8px 14px;border-radius:8px;border:0;background:transparent;color:var(--t);display:flex;align-items:center;gap:8px;cursor:pointer}
+.layers button i{width:8px;height:8px;border-radius:50%;background:currentColor;opacity:.8}
+.layers button[aria-pressed="true"]{background:var(--pill-on-bg);color:var(--pill-on-tx)}
+.layers button:focus-visible{outline:2px solid #E0B33A;outline-offset:2px}
+.leg{position:absolute;z-index:4;right:56px;bottom:152px;display:flex;align-items:center;gap:10px;padding:8px 14px;border-radius:10px;background:var(--glass);border:1px solid var(--gl);font-size:14px;color:var(--t);backdrop-filter:blur(8px)}
+.leg .mk{position:static;margin:0;width:26px;height:26px;box-shadow:0 0 0 4px rgba(224,179,58,.45)}
+.leg .mk svg{width:15px;height:15px}
+.strip{position:absolute;z-index:4;left:56px;right:56px;bottom:30px;background:var(--glass);border:1px solid var(--gl);border-radius:16px;padding:4px 24px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;backdrop-filter:blur(8px)}
+.doors{display:grid;grid-template-columns:repeat(4,1fr)}
+.doors a{padding:16px 24px 16px 0;display:grid;grid-template-columns:auto 1fr;gap:2px 14px;align-items:start;color:var(--t)}
+.doors a+a{padding-left:24px;border-left:1px solid var(--gl)}
+.doors .ico{width:26px;height:26px;margin-top:2px;color:var(--accent-ic)}
+.doors b{font:800 19px 'Nunito'}
+.doors small{grid-column:2;font-size:14px;line-height:1.4;color:var(--t2)}
+.pp{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--t2);padding-left:24px;border-left:1px solid var(--gl)}
+.pp b{color:var(--t);font:800 20px 'Nunito'}
+.pyr{display:inline-flex;flex-direction:column;gap:2px;width:34px}
+.pyr span{display:flex;justify-content:center;height:4px}
+.pyr i{display:block;height:4px;border-radius:1px;background:currentColor;opacity:.85}
+
+/* miniaturas */
+.mini{position:relative;aspect-ratio:1280/760;border-radius:10px;overflow:hidden;border:1px solid var(--line);container-type:inline-size}
+.mini .bg{position:absolute;inset:0}
+.mini .tt{position:absolute;z-index:3;left:4.4cqw;top:36%;width:34cqw;font:800 4cqw/1.05 'Nunito',sans-serif;color:var(--t)}
+.mini .tt span{color:var(--accent-ic)}
+.mini .tt i{display:block;margin-top:2.2cqw;height:4.2cqw;width:30cqw;border-radius:.9cqw;background:#fff;opacity:.95}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-plan" viewBox="0 0 24 24"><path d="M9 4h6l1 2h3v14H5V6h3z"/><path d="m9 13 2 2 4-4"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c.6-3.4 3-5.4 6-5.4s5.4 2 6 5.4"/><circle cx="17" cy="9" r="2.4"/><path d="M16 14.6c2.6.1 4.4 1.9 5 4.4"/></symbol>
+  <symbol id="i-cube" viewBox="0 0 24 24"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5c3-1 5.5-.6 8 1v14c-2.5-1.6-5-2-8-1z"/><path d="M20 5c-3-1-5.5-.6-8 1v14c2.5-1.6 5-2 8-1z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/></symbol>
+  <symbol id="i-build" viewBox="0 0 24 24"><path d="M5 21V8l7-4 7 4v13z"/><path d="M9 21v-5h6v5M9 11h.01M15 11h.01"/></symbol>
+  <symbol id="i-road" viewBox="0 0 24 24"><path d="M9 3 5 21M15 3l4 18M12 5v3M12 11v3M12 17v3"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3s6 6.5 6 11a6 6 0 11-12 0c0-4.500 6-11 6-11z"/></symbol>
+</svg>
+
+<div class="w">
+<header class="top">
+  <p class="eyebrow">RECUAPP · Gobierno digital de Girardota · propuesta adicional</p>
+  <h1>Mapa completo, con una captura por capa</h1>
+  <p class="lede">La portada usa como fondo capturas panorámicas del propio mapa 3D, como ya hace el login. Al elegir una capa (Edificios, Plan, Responsables, Redes) el fondo cambia a otra captura donde solo se ven los iconos de esa capa. El velo de color cubre únicamente el lado izquierdo, donde van el titular y el buscador.</p>
+  <div class="bar">
+    <div class="seg" role="group" aria-label="Modo del sitio"><button type="button" id="mOsc" aria-pressed="true">Modo oscuro</button><button type="button" id="mCla" aria-pressed="false">Modo claro</button></div>
+    <p class="hint">Haz clic en las capas de la maqueta para ver cómo cambia el fondo. No rota sola.</p>
+  </div>
+</header>
+
+<div class="stagebox"><div class="stage" data-w="1280" data-h="760"><div class="scr" id="scr">
+  <div class="bg" id="bgMain"></div>
+  <div class="nav"><span class="logo"><i>R</i>RECUAPP</span><div class="right"><a class="on">Inicio</a><a>Plan</a><a>Responsables</a><a>Biblioteca</a></div></div>
+  <div class="ttl">
+    <h1>Girardota, <span>explicada</span> por dentro.</h1>
+    <p>Busca un tema o elige una capa del mapa.</p>
+    <div class="find"><span><svg class="ico"><use href="#i-search"/></svg>Busca un programa, una dependencia o un lugar</span><b>Buscar</b></div>
+    <div class="try">Probar con <span>Vías</span><span>Educación</span><span>Parque principal</span></div>
+  </div>
+  <div class="layers" id="layers" role="group" aria-label="Capas del mapa"></div>
+  <div class="leg" id="leg"></div>
+  <div class="strip">
+    <div class="doors">
+      <a><svg class="ico"><use href="#i-plan"/></svg><b>El plan en claro</b><small>Programas, metas e inversión</small></a>
+      <a><svg class="ico"><use href="#i-users"/></svg><b>Responsables</b><small>Quién dirige cada dependencia</small></a>
+      <a><svg class="ico"><use href="#i-cube"/></svg><b>Girardota en 3D</b><small>Explorar el mapa completo</small></a>
+      <a><svg class="ico"><use href="#i-book"/></svg><b>Biblioteca</b><small>Las fuentes de cada dato</small></a>
+    </div>
+    <div class="pp"><span class="pyr" aria-hidden="true"><span><i style="width:22px"></i></span><span><i style="width:28px"></i></span><span><i style="width:30px"></i></span></span><span><b>XX.XXX</b><br>habitantes</span></div>
+  </div>
+</div></div><div class="cap"><span>Maqueta a escala · capturas de ejemplo recortadas de la imagen del login · cifras de ejemplo</span><span id="capEstado">Capa activa: Edificios</span></div></div>
+
+<h2 class="sec">Las cuatro capturas</h2>
+<p class="lede">Así se vería el fondo en cada capa. Cada captura es una toma distinta del mismo mapa, con la cámara en otra zona y solo los iconos de su capa.</p>
+<div class="film" id="film"></div>
+
+<div class="facts">
+  <div><h3>Velo solo a la izquierda</h3><p>Un degradado horizontal del color del sitio (verde casi negro en oscuro, crema en claro) cubre el texto y se desvanece hacia el centro. El mapa de la derecha queda a todo color, igual que en el login.</p></div>
+  <div><h3>Cambio de capa</h3><p>Fundido de 0,7 s entre capturas. Sin giro automático: es el usuario quien elige, y el selector queda como una sola píldora arriba a la derecha.</p></div>
+  <div><h3>Dos modos</h3><p>El modo oscuro usa el sombreado del login. El claro cambia el velo a crema y el texto a verde bosque, sin tocar la captura. Usa el interruptor de arriba para compararlos.</p></div>
+</div>
+
+<div class="spec">
+  <h3>Qué hay que preparar para hacerlo real</h3>
+  <ul>
+    <li><strong>Capturas:</strong> 4, apaisadas, de 2560×1440 como mínimo. La imagen del login mide 900×1455 y es vertical, por eso aquí se ve borrosa y es solo un sustituto.</li>
+    <li><strong>Tomas:</strong> una por capa, con la cámara en una zona distinta y los iconos de esa capa activos, sin interfaz del visor.</li>
+    <li><strong>Peso:</strong> en WebP de unos 250 KB cada una. Se carga primero la de Edificios y las otras tres en segundo plano.</li>
+    <li><strong>Móvil:</strong> la captura se recorta y se desplaza hacia el lado derecho; el velo pasa a cubrir la parte superior en lugar de la izquierda.</li>
+    <li><strong>Los iconos:</strong> van dibujados sobre la captura (no horneados), para que cada capa pueda llevar etiquetas y enlaces reales a su ficha.</li>
+  </ul>
+</div>
+
+<div class="rec">
+  <h2>Mi opinión</h2>
+  <p>Resuelve lo que más molestaba, porque el selector deja de filtrar tarjetas y pasa a cambiar de escena, y no necesita ningún color de sección. Costos: hay que producir las capturas y mantenerlas al día si el modelo cambia.</p>
+  <p>Si te gusta, el siguiente paso es tomar las cuatro capturas reales desde el visor 3D y montar esta portada en la app, con modo claro y oscuro.</p>
+</div>
+<footer>Maqueta ilustrativa. Mismas tipografías y paleta de la app (<code>styles.scss</code>). Las imágenes se leen de <code>public/img/login-fondo.jpg</code>.</footer>
+</div>
+
+<script>
+var CAPAS=[
+ {id:'edif',n:'Edificios',y:42,ic:'build',leyenda:'Instituciones y edificios representativos',desc:'Instituciones, equipamientos y edificios del casco urbano.',
+  lab:{s:'Institución educativa',t:'Sede Comfama Girardota'},pts:[[60,48],[68,42],[73,57],[81,47],[89,38]]},
+ {id:'plan',n:'Plan',y:72,ic:'plan',leyenda:'Proyectos del plan de desarrollo',desc:'Dónde se ejecutan los programas y proyectos del plan.',
+  lab:{s:'Proyecto del plan',t:'Parque principal · 3 programas'},pts:[[62,57],[71,73],[79,33],[89,58]]},
+ {id:'resp',n:'Responsables',y:28,ic:'users',leyenda:'Dependencias y su responsable',desc:'La dependencia a cargo de cada zona y equipamiento.',
+  lab:{s:'Dependencia',t:'Secretaría de Salud · 1 responsable'},pts:[[63,47],[72,33],[76,68],[83,45],[90,22]]},
+ {id:'redes',n:'Redes',y:88,ic:'road',leyenda:'Vías, quebradas y redes',desc:'Vías, ríos y quebradas con su trazado.',
+  lab:{s:'Río y vía',t:'Río Medellín'},pts:[[56,53],[64,30],[78,71],[90,40]]}
+];
+var ICONO={edif:'i-build',plan:'i-plan',resp:'i-users',redes:'i-drop'};
+function marcas(c){
+  return c.pts.map(function(p,i){
+    var ic=(c.id==='redes'&&i%2)?'i-road':ICONO[c.id];
+    return '<div class="mk'+(i===0?' sel':'')+'" style="left:'+p[0]+'%;top:'+p[1]+'%"><svg><use href="#'+ic+'"/></svg>'+
+      (i===0?'<div class="lb"><small>'+c.lab.s+'</small><b>'+c.lab.t+'</b></div>':'')+'</div>';
+  }).join('');
+}
+function capa(c,on){return '<div class="cp'+(on?' on':'')+'" data-id="'+c.id+'" style="--y:'+c.y+'%">'+marcas(c)+'</div>'}
+
+/* fondo principal con las cuatro capturas */
+var bg=document.getElementById('bgMain');
+bg.innerHTML=CAPAS.map(function(c,i){return capa(c,i===0)}).join('');
+var lay=document.getElementById('layers'),leg=document.getElementById('leg'),est=document.getElementById('capEstado');
+lay.innerHTML=CAPAS.map(function(c,i){return '<button type="button" data-id="'+c.id+'" aria-pressed="'+(i===0)+'"><i></i>'+c.n+'</button>'}).join('');
+function elegir(id){
+  var c=CAPAS.filter(function(x){return x.id===id})[0];
+  [].forEach.call(bg.children,function(e){e.classList.toggle('on',e.dataset.id===id)});
+  [].forEach.call(lay.children,function(b){b.setAttribute('aria-pressed',b.dataset.id===id)});
+  leg.innerHTML='<span class="mk"><svg><use href="#'+ICONO[id]+'"/></svg></span>'+c.leyenda;
+  est.textContent='Capa activa: '+c.n;
+}
+lay.addEventListener('click',function(e){var b=e.target.closest('button');if(b)elegir(b.dataset.id)});
+elegir('edif');
+
+/* tira de las cuatro capturas */
+document.getElementById('film').innerHTML=CAPAS.map(function(c){
+  return '<figure><div class="mini"><div class="bg">'+capa(c,true)+'</div><div class="tt">Girardota, <span>explicada</span> por dentro.<i></i></div></div>'+
+   '<figcaption><b>'+c.n+'</b><span>'+c.desc+'</span></figcaption></figure>';
+}).join('');
+
+/* modo oscuro / claro */
+function modo(claro){
+  [].forEach.call(document.querySelectorAll('.scr,.mini'),function(e){e.classList.toggle('claro',claro)});
+  document.getElementById('mOsc').setAttribute('aria-pressed',!claro);
+  document.getElementById('mCla').setAttribute('aria-pressed',claro);
+}
+document.getElementById('mOsc').onclick=function(){modo(false)};
+document.getElementById('mCla').onclick=function(){modo(true)};
+
+/* escala de la pantalla de 1280×760 */
+(function(){
+  var st=[].slice.call(document.querySelectorAll('.stage'));
+  function fit(){st.forEach(function(s){var k=s.clientWidth/+s.dataset.w;s.style.height=(+s.dataset.h*k)+'px';s.firstElementChild.style.transform='scale('+k+')'})}
+  fit();
+  if(window.ResizeObserver){var ro=new ResizeObserver(fit);st.forEach(function(s){ro.observe(s)})}else{addEventListener('resize',fit)}
+})();
+</script>
+</body>
+</html>
