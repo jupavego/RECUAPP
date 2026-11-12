@@ -29,30 +29,34 @@ import { CargadorComponent } from '../../components/cargador/cargador.component'
     </nav>
 
     <section class="sec" id="documentos" aria-labelledby="sec-doc-t" style="--c:#B0549A; --c2:#D98BC4">
-      <header class="sec__cab">
+      <button type="button" class="sec__cab" [attr.aria-expanded]="docAbierto()" aria-controls="doc-cuerpo" (click)="docAbierto.set(!docAbierto())">
         <span class="sec__insignia" aria-hidden="true">
           <svg viewBox="0 0 24 24"><path d="M5 21V4M5 4h12l-2 4 2 4H5"/></svg>
         </span>
-        <div>
+        <span class="sec__tit">
           <span class="sec__ojo">Lo que proponemos, por escrito</span>
           <h2 id="sec-doc-t">Documentos</h2>
-        </div>
+        </span>
         <span class="sec__rama" aria-hidden="true"></span>
-      </header>
-      <app-documentos class="sec__doc" />
+        <span class="sec__accion">{{ docAbierto() ? 'Cerrar' : 'Abrir' }}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+      </button>
+      @if (docAbierto()) { <app-documentos id="doc-cuerpo" class="sec__doc" /> }
     </section>
 
     <section class="sec" id="biblioteca" aria-labelledby="sec-bib-t" style="--c:#D35C37; --c2:#EFA07F">
-      <header class="sec__cab">
+      <button type="button" class="sec__cab" [attr.aria-expanded]="bibAbierta()" aria-controls="bib-cuerpo" (click)="bibAbierta.set(!bibAbierta())">
         <span class="sec__insignia" aria-hidden="true">
           <svg viewBox="0 0 24 24"><path d="M4 5h6a2 2 0 012 2v13a2 2 0 00-2-2H4zM20 5h-6a2 2 0 00-2 2v13a2 2 0 012-2h6z"/></svg>
         </span>
-        <div>
+        <span class="sec__tit">
           <span class="sec__ojo">De dónde sale cada dato</span>
           <h2 id="sec-bib-t">Biblioteca</h2>
-        </div>
+        </span>
         <span class="sec__rama" aria-hidden="true"></span>
-      </header>
+        <span class="sec__accion">{{ bibAbierta() ? 'Cerrar' : 'Abrir' }}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+      </button>
+      @if (bibAbierta()) {
+      <div id="bib-cuerpo">
       <app-biblioteca [incrustado]="true" />
 
       <!-- Catálogo 3D: subsección de la biblioteca, cerrada; el visor 3D solo se crea (y se carga) al abrirla y se libera al cerrarla -->
@@ -72,6 +76,8 @@ import { CargadorComponent } from '../../components/cargador/cargador.component'
           @loading (minimum 400ms) { <app-cargador class="cat3d__espera" tipo="catalogo" /> }
         }
       </details>
+      </div>
+      }
     </section>
   `,
   styles: [`
@@ -87,13 +93,19 @@ import { CargadorComponent } from '../../components/cargador/cargador.component'
     .saltos svg, .sec__insignia svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
 
     .sec { padding: 40px 8px 24px; scroll-margin-top: var(--alto-barra, 0px); }
-    .sec__cab { display: flex; align-items: center; gap: 16px; padding: 0 16px 12px; max-width: 1180px; margin: 0 auto; }
+    .sec__cab { width: 100%; background: none; border: 0; font: inherit; color: inherit; text-align: left; cursor: pointer; display: flex; align-items: center; gap: 16px; padding: 0 16px 12px; max-width: 1180px; margin: 0 auto; }
     /* insignia en hoja, como la del organigrama, en el color de cada sección */
     .sec__insignia { flex: none; width: 54px; height: 54px; display: grid; place-items: center; color: #fff;
       border-radius: 6px 50% 50% 50%; background: linear-gradient(140deg, var(--c2), var(--c) 70%);
       box-shadow: 0 8px 20px color-mix(in srgb, var(--c) 35%, transparent), inset 0 -3px 0 rgba(0,0,0,.08);
       transition: transform .35s cubic-bezier(.3,1.6,.5,1); }
     .sec__insignia svg { width: 26px; height: 26px; }
+    .sec__tit { display: block; }
+    .sec__cab:focus-visible { outline: 2px solid var(--c); outline-offset: 2px; border-radius: 16px; }
+    .sec__accion { flex: none; display: inline-flex; align-items: center; gap: 4px; padding: 6px 12px; border-radius: 999px;
+      font-size: .82rem; font-weight: 700; color: var(--c); background: color-mix(in srgb, var(--c) 10%, transparent); }
+    .sec__accion svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; transition: transform .25s; }
+    .sec__cab[aria-expanded="true"] .sec__accion svg { transform: rotate(180deg); }
     .sec__cab:hover .sec__insignia { transform: rotate(-8deg) scale(1.05); }
     .sec__ojo { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--c); }
     .sec h2 { margin: 2px 0 0; font-size: clamp(1.3rem, 2.6vw, 1.8rem); line-height: 1.15; color: #243746; }
@@ -138,10 +150,18 @@ export class QuienesSomosComponent {
   private readonly router = inject(Router);
   /** catálogo 3D abierto: arranca cerrado salvo que la url apunte a él (/quienes-somos#catalogo o la ruta vieja) */
   readonly catAbierto = signal(this.pideCatalogo(this.router.url));
+  /** documentos y biblioteca arrancan plegados; el menú o un enlace con #documentos / #biblioteca / #catalogo los abre */
+  readonly docAbierto = signal(this.fragmento(this.router.url) === 'documentos');
+  readonly bibAbierta = signal(['biblioteca', 'catalogo'].includes(this.fragmento(this.router.url)));
 
   constructor() {
     this.router.events.pipe(filter((e): e is NavigationEnd => e instanceof NavigationEnd), takeUntilDestroyed())
-      .subscribe(e => { if (this.pideCatalogo(e.urlAfterRedirects)) { this.catAbierto.set(true); this.mostrarCatalogo(); } });
+      .subscribe(e => {
+        const f = this.fragmento(e.urlAfterRedirects);
+        if (f === 'documentos') { this.docAbierto.set(true); this.bajarA('documentos'); }
+        else if (f === 'biblioteca') { this.bibAbierta.set(true); this.bajarA('biblioteca'); }
+        else if (f === 'catalogo') { this.bibAbierta.set(true); this.catAbierto.set(true); this.mostrarCatalogo(); }
+      });
     // esta vista se carga tarde dentro del recorrido: si la url pedía el catálogo, se baja hasta él cuando ya existe
     if (this.catAbierto()) afterNextRender(() => this.mostrarCatalogo());
   }
@@ -151,6 +171,14 @@ export class QuienesSomosComponent {
   }
 
   private pideCatalogo(url: string): boolean {
-    return url.split('#')[1] === 'catalogo';
+    return this.fragmento(url) === 'catalogo';
+  }
+
+  private fragmento(url: string): string {
+    return url.split('#')[1] ?? '';
+  }
+
+  private bajarA(id: string): void {
+    setTimeout(() => document.getElementById(id)?.scrollIntoView({ block: 'start', behavior: 'smooth' }), 60);
   }
 }
