@@ -272,6 +272,11 @@ h2 { margin: 0; font: 800 clamp(16px, 1.45vw, 19px)/1.18 var(--f-h); letter-spac
   background: color-mix(in srgb, #29422F 82%, transparent); box-shadow: 0 8px 24px rgba(0, 0, 0, .2); transition: translate .3s; }
 .cerrojo span .ico { width: 16px; height: 16px; }
 .cerrojo:hover span { translate: 0 -2px; }
+// en móvil la columna de controles del mapa ocupa la esquina derecha: la píldora se centra en lo que queda libre
+@media (max-width: 640px) {
+  .cerrojo { padding: 0 64px 28px 8px; }
+  .cerrojo span { padding: 8px 14px; font-size: 12px; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }

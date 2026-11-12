@@ -1,4 +1,4 @@
-import { Component, ElementRef, computed, effect, inject, signal } from '@angular/core';
+import { Component, computed, effect, inject, signal } from '@angular/core';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { NgTemplateOutlet } from '@angular/common';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -36,7 +36,7 @@ const leerPlegado = () => { try { return localStorage.getItem(CLAVE_PLEGADO) ===
   imports: [RouterModule, NgTemplateOutlet, UserWidgetComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
-  host: { '[class.is-plegado]': 'plegado()' },
+  host: { '[class.is-plegado]': 'plegado()', '(document:keydown.escape)': 'cerrarMenu()' },
 })
 export class HeaderComponent {
   readonly session = inject(SessionService);
@@ -77,8 +77,6 @@ export class HeaderComponent {
     return it;
   });
 
-  private readonly el = inject(ElementRef<HTMLElement>);
-
   /** panel plegado a riel de íconos: la vista gana el ancho (se recuerda en el navegador) */
   readonly plegado = signal(leerPlegado());
 
@@ -87,19 +85,23 @@ export class HeaderComponent {
     try { localStorage.setItem(CLAVE_PLEGADO, this.plegado() ? '1' : '0'); } catch { /* sin almacenamiento */ }
   }
 
+  /** móvil: panel de módulos desplegado bajo la barra superior */
+  readonly menuAbierto = signal(false);
+  alternarMenu(): void { this.menuAbierto.update(v => !v); }
+  cerrarMenu(): void { this.menuAbierto.set(false); }
+
+  /** el módulo abierto, para mostrarlo en la barra superior de móvil */
+  readonly actual = computed<ItemNav | null>(() => {
+    const u = this.url();
+    const todos = [this.inicio, this.mapa3d, ...this.grupos.flatMap(g => g.items), ...this.cuenta()];
+    return todos.find(m => m.activo(u)) ?? null;
+  });
+
   constructor() {
     // el ancho de la columna lo lee la rejilla de app.component (.shell)
     effect(() => document.documentElement.style.setProperty('--ancho-lado', this.plegado() ? '72px' : '264px'));
 
-    // en la barra superior (móvil) los módulos van en fila: se centra el activo para que se vea
-    effect(() => {
-      this.url();
-      setTimeout(() => {
-        const nav = this.el.nativeElement.querySelector('.lado__nav') as HTMLElement | null;
-        const on = nav?.querySelector('.it.is-on') as HTMLElement | null;
-        if (!nav || !on || nav.scrollWidth <= nav.clientWidth) return;
-        nav.scrollTo({ left: on.offsetLeft - (nav.clientWidth - on.offsetWidth) / 2, behavior: 'smooth' });
-      });
-    });
+    // al navegar se cierra el panel de móvil
+    effect(() => { this.url(); this.menuAbierto.set(false); });
   }
 }

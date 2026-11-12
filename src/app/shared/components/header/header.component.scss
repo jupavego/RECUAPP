@@ -181,6 +181,9 @@
 :host-context(body.tema-oscuro) .it.is-on { background: color-mix(in srgb, var(--c) 16%, transparent); }
 
 .lado__solo-movil { display: none; }
+// escritorio: el panel y el botón de móvil no existen; los hijos del panel cuentan como hijos directos del aside
+.lado__panel { display: contents; }
+.lado__actual, .lado__menu, .lado__velo { display: none; }
 
 // al desplegar el menú, los textos entran con un fundido corto (solo opacidad y desplazamiento: no recalcula la página)
 @keyframes lado-aparecer { from { opacity: 0; transform: translateX(-4px); } }
@@ -249,24 +252,58 @@
 
     &__cab { padding: 0; flex: none; }
     &__marca { padding: 0; span { display: none; } }
-    &__nav {
-      flex-direction: row; align-items: center; gap: 2px; overflow-x: auto; overflow-y: hidden;
-      // las puntas se desvanecen para insinuar que hay más
-      mask-image: linear-gradient(90deg, transparent, #000 12px, #000 calc(100% - 16px), transparent);
-    }
-    &__grupo { display: none; }
-    // en la barra, la cápsula vuelve a la fila (a la derecha de los módulos)
-    &__pie { flex: none; padding: 0; margin: 0; border: 0; }
-    &__usuario {
-      flex: none;
-      ::ng-deep .user-widget__info, ::ng-deep .user-widget__chevron { display: none; }
-      ::ng-deep .user-widget__dropdown { top: calc(100% + 10px); bottom: auto; left: auto; right: 0; }
-    }
-    &__solo-escritorio { display: none; }
-    &__plegar { display: none; }
+    &__plegar, &__solo-escritorio { display: none; }
     &__solo-movil { display: contents; }
+
+    // módulo abierto, a la izquierda del botón
+    &__actual {
+      flex: 1; min-width: 0; display: flex; align-items: center; gap: 9px; padding: 0 4px;
+      font: 700 .95rem var(--font-body); color: color-mix(in srgb, var(--c) 72%, var(--lado-mezcla));
+    }
+    &__actual-t { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    &__actual .it__insig { background: var(--c); color: #fff; border-radius: 4px 50% 50% 50%; width: 30px; height: 30px; }
+
+    // botón ☰ que se vuelve ✕
+    &__menu {
+      display: grid; place-items: center; flex: none; margin-left: auto; width: 42px; height: 42px; padding: 0;
+      border: 0; border-radius: 12px; background: var(--lado-hover); color: var(--lado-texto); cursor: pointer;
+      svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+      svg path { transform-box: fill-box; transform-origin: center; transition: transform .25s, opacity .2s; }
+      &.abierto .l1 { transform: translateY(5px) rotate(45deg); }
+      &.abierto .l2 { opacity: 0; }
+      &.abierto .l3 { transform: translateY(-5px) rotate(-45deg); }
+      &:focus-visible { outline: 2px solid #E0B33A; outline-offset: 2px; }
+    }
+
+    // fondo que atenúa el contenido mientras el panel está abierto
+    &__velo {
+      display: block; position: fixed; inset: var(--alto-barra, 60px) 0 0 0; z-index: 1;
+      background: rgba(15, 25, 18, .38); opacity: 0; visibility: hidden; transition: opacity .2s, visibility .2s;
+      &.abierto { opacity: 1; visibility: visible; }
+    }
+
+    // panel desplegable: módulos agrupados y, al pie, la cuenta y el tema
+    &__panel {
+      position: fixed; z-index: 2; top: var(--alto-barra, 60px); left: 0; right: 0;
+      max-height: calc(100dvh - var(--alto-barra, 60px)); overflow-y: auto; overscroll-behavior: contain;
+      display: flex; flex-direction: column; gap: 4px; padding: 6px 12px 14px;
+      background: var(--lado-bg); border-bottom: 1px solid var(--lado-borde); box-shadow: 0 18px 40px rgba(15, 25, 18, .22);
+      opacity: 0; visibility: hidden; transform: translateY(-8px);
+      transition: opacity .2s, transform .22s, visibility .22s;
+      &.abierto { opacity: 1; visibility: visible; transform: none; }
+    }
+    &__nav { flex: none; overflow: visible; }
+    &__pie { flex: none; padding-top: 12px; margin-top: 8px; }
+    &__usuario {
+      flex: 1;
+      ::ng-deep .user-widget__dropdown { top: auto; bottom: calc(100% + 10px); left: 0; right: auto; }
+    }
   }
 
-  .it { padding: 4px 10px 4px 4px; font-size: .82rem; border-radius: 999px; &::before { display: none; } }
-  .it__insig { width: 28px; height: 28px; }
+  // en el panel, los módulos son filas amplias y fáciles de tocar
+  .lado__panel .it { padding: 9px 12px 9px 9px; font-size: .95rem; }
+  .lado__panel .it__insig { width: 32px; height: 32px; }
+}
+@media (max-width: 767.98px) and (prefers-reduced-motion: reduce) {
+  .lado__panel, .lado__velo, .lado__menu svg path { transition: none; }
 }

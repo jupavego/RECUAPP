@@ -4,7 +4,7 @@ import { NEGOCIOS_ATLAS, PALETAS_ATLAS, celdaBahia, celdaLocal, crearAtlasFachad
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import {
-  AfterViewInit, Component, DestroyRef, ElementRef, NgZone, ViewChild, inject, signal,
+  AfterViewInit, Component, DestroyRef, ElementRef, NgZone, ViewChild, effect, inject, signal,
 } from '@angular/core';
 import { Observable, catchError, forkJoin, of } from 'rxjs';
 import * as THREE from 'three';
@@ -800,6 +800,8 @@ const TIPOS_ZONA: Record<string, string> = {
 @Component({
   selector: 'app-mapa3d',
   standalone: true,
+  // en móvil los controles y modos arrancan plegados; al conducir o elegir salida siempre se ven (hay que poder salir)
+  host: { '[class.ctl-plegado]': '!controlesAbiertos() && !conduciendo() && !eligiendoSalida()' },
   imports: [DecimalPipe, RouterLink],
   template: `
     <div #lienzo class="lienzo" [class.eligiendo]="eligiendoSalida()"
@@ -1268,6 +1270,17 @@ const TIPOS_ZONA: Record<string, string> = {
       <button type="button" (click)="acercar(0.75)" aria-label="Acercar">+</button>
       <button type="button" (click)="acercar(1.33)" aria-label="Alejar">−</button>
     </div>
+
+    <!-- solo en móvil: pliega o despliega la columna de controles y modos -->
+    <button type="button" class="ctl-toggle" [class.abierto]="controlesAbiertos()" (click)="controlesAbiertos.set(!controlesAbiertos())"
+            [attr.aria-expanded]="controlesAbiertos()" [attr.aria-label]="controlesAbiertos() ? 'Ocultar controles del mapa' : 'Mostrar controles del mapa'"
+            [attr.title]="controlesAbiertos() ? 'Ocultar controles' : 'Controles y modos del mapa'">
+      @if (controlesAbiertos()) {
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+      } @else {
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10M4 12h4M12 12h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="7" r="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8" cy="17" r="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="12" r="2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      }
+    </button>
   `,
   styles: [`
     :host { position: relative; display: block; height: calc(100dvh - var(--alto-barra)); min-height: 520px;
@@ -1484,6 +1497,8 @@ const TIPOS_ZONA: Record<string, string> = {
     .anio-btn:hover { background: rgba(38,66,90,.18); }
     .anio-btn[aria-pressed="true"] { background: #26425a; color: #fff; }
     .zoom .zoom__casa { display: grid; place-items: center; margin-bottom: 4px; }
+    .ctl-toggle { display: none; }
+    @media (max-width: 640px) { .ctl-toggle { display: grid; } }
 
     /* Tutorial: carta de juego con barra de experiencia, niveles y controles en teclas */
     .tuto { position: absolute; inset: 0; z-index: 30; display: grid; place-items: center; padding: 16px;
@@ -1689,6 +1704,59 @@ const TIPOS_ZONA: Record<string, string> = {
     button { border: 0; border-radius: 10px; padding: 7px 14px; background: #26425a; color: #fff;
       font: 600 .82rem system-ui; cursor: pointer; }
     button:hover { background: #35597a; }
+
+    /* Móvil: la leyenda es una sola fila que se desliza (no una masa que tapa el mapa), los controles de la
+       esquina se apilan en una columna (sin pisar los créditos) y la ficha de la vereda pasa a acordeón vertical. */
+    @media (max-width: 640px) {
+      :host { --alto-det: min(58%, 440px); --base: 10px; }
+      :host:has(.pin-panel) { --base: calc(var(--alto-det) + 22px); }
+      .barra-ley { top: 8px; left: 8px; right: auto; margin-inline: 0; width: auto; max-width: calc(100% - 66px); }
+      .barra-ley .pista { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; overscroll-behavior-x: contain;
+        scrollbar-width: none; padding: 4px 8px; }
+      .barra-ley .pista::-webkit-scrollbar { display: none; }
+      .barra-ley .ley-nombre { display: none; }
+      .ayuda-btn { top: 8px; right: 8px; width: 42px; height: 42px; }
+      .ley-flot { top: 58px; right: 8px; width: min(230px, calc(100% - 16px)); }
+      .capa-info { left: 8px; width: min(270px, calc(100% - 68px)); }
+      .sel-chip { left: 8px; max-width: calc(100% - 68px); }
+      .creditos { left: 8px; bottom: 4px; max-width: calc(100% - 64px); font-size: 9px; }
+      /* el botón de plegar ocupa la base de la columna; zoom y modos se apilan encima */
+      :host { --pila: calc(var(--base) + 46px); }
+      :host:has(.pin-panel) { --pila: calc(var(--base) + 46px); }
+      .ctl-toggle { position: absolute; z-index: 10; right: 10px; bottom: var(--base); width: 38px; height: 38px; padding: 0;
+        display: grid; place-items: center; border-radius: 12px; background: rgba(255,255,255,.92); color: #26425a;
+        box-shadow: 0 3px 12px rgba(30,60,90,.25); backdrop-filter: blur(6px); }
+      .ctl-toggle:hover { background: #fff; }
+      .ctl-toggle.abierto { background: #26425a; color: #fff; }
+      :host(.ctl-plegado) .zoom, :host(.ctl-plegado) .foto, :host(.ctl-plegado) .conducir { display: none; }
+      :host .zoom, :host:has(.pin-panel) .zoom { right: 10px; bottom: var(--pila); }
+      :host .foto, :host:has(.pin-panel) .foto,
+      :host .conducir, :host:has(.pin-panel) .conducir,
+      :host .conducir.volar, :host:has(.pin-panel) .conducir.volar { right: 10px; }
+      :host .conducir, :host:has(.pin-panel) .conducir { bottom: calc(var(--pila) + 142px); }
+      :host .conducir.volar, :host:has(.pin-panel) .conducir.volar { bottom: calc(var(--pila) + 186px); }
+      :host .foto, :host:has(.pin-panel) .foto { bottom: calc(var(--pila) + 230px); }
+      /* con la ficha abierta no cabe la columna completa: se quedan solo los controles de zoom */
+      :host:has(.pin-panel) .foto, :host:has(.pin-panel) .conducir { display: none; }
+
+      .pin-panel { left: 8px; right: 8px; bottom: 8px; padding: 12px 40px 10px 4px; }
+      .pin-panel:not(.zona-panel) { grid-auto-flow: row; grid-auto-columns: minmax(0, 1fr); align-content: start; overflow-y: auto; }
+      .pin-panel .col { border-left: 0; padding: 0 10px 10px; overflow: visible; }
+      .lugar-panel, .fab-panel { grid-template-columns: minmax(0, 1fr); }
+      .lugar-panel .col-datos dl { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+
+      .zona-panel { padding: 10px 8px 8px; gap: 6px; }
+      .zona-panel .zona-tit { flex-wrap: wrap; gap: 0 8px; padding: 0 40px 0 4px; }
+      .zona-panel .zona-tit strong { white-space: normal; font-size: 1.05rem; }
+      .zona-panel .zona-tit .tipo { flex-basis: 100%; white-space: normal; }
+      .zona-panel .acc-fila { flex-direction: column; gap: 6px; overflow: hidden; }
+      .zona-panel .acc { flex: 0 0 auto; flex-direction: column; }
+      .zona-panel .acc.abierta { flex: 1 1 0; min-height: 0; }
+      .zona-panel .acc-tab { flex: 0 0 auto; flex-direction: row; justify-content: flex-start; gap: 10px; padding: 10px 12px; }
+      .zona-panel .acc-t { flex: 1; text-align: left; text-wrap: wrap; }
+      .zona-panel .acc-num { order: 3; }
+      .zona-panel .acc-cuerpo { flex: 1 1 0; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 6px 12px 12px; }
+    }
   `],
 })
 export class Mapa3dComponent implements AfterViewInit {
@@ -1730,6 +1798,14 @@ export class Mapa3dComponent implements AfterViewInit {
   }
   /** modo fotografía: sin rótulos, pines ni aros de luz */
   readonly modoFoto = signal(false);
+  /** controles (zoom, vista general) y modos (foto, volar, conducir): en pantallas angostas arrancan plegados */
+  readonly controlesAbiertos = signal(typeof matchMedia === 'function' ? !matchMedia('(max-width: 640px)').matches : true);
+  /** al abrirse una tarjeta o ficha (capa, vereda, lugar, industria, río, red) los controles se pliegan para dejarle el espacio;
+   *  se pueden volver a abrir con el botón */
+  private readonly plegarAlAbrirFicha = effect(() => {
+    const abierta = !!(this.capaInfo() || this.seleccion() || this.pinFicha() || this.fabricaSeleccion() || this.redSeleccion() || this.rioSeleccion());
+    if (abierta) this.controlesAbiertos.set(false);
+  });
   readonly conduciendo = signal(false);
   /** tras pulsar el carro: el próximo clic en el mapa marca dónde empezar a conducir */
   readonly eligiendoSalida = signal(false);
@@ -2400,12 +2476,19 @@ export class Mapa3dComponent implements AfterViewInit {
     });
 
     const redim = () => {
+      if (!el.clientWidth || !el.clientHeight) return;
       this.renderer.setSize(el.clientWidth, el.clientHeight);
       this.camara.aspect = el.clientWidth / el.clientHeight;
       this.camara.updateProjectionMatrix();
     };
     window.addEventListener('resize', redim);
-    this.destroyRef.onDestroy(() => window.removeEventListener('resize', redim));
+    // el contenedor también cambia sin que cambie la ventana (p. ej. al plegar o abrir el menú lateral)
+    const obsCont = new ResizeObserver(redim);
+    obsCont.observe(el);
+    this.destroyRef.onDestroy(() => {
+      window.removeEventListener('resize', redim);
+      obsCont.disconnect();
+    });
   }
 
   private aX(lon: number): number { return (lon - this.lon0) * this.mLon; }

@@ -38,6 +38,23 @@
     </button>
   </div>
 
+  <!-- solo en móvil: el módulo abierto y el botón que despliega el panel con todos los módulos -->
+  @if (actual(); as a) {
+    <span class="lado__actual" [style.--c]="a.c">
+      <span class="it__insig"><svg class="ico" aria-hidden="true"><use [attr.href]="'#nav-' + a.g"/></svg></span>
+      <span class="lado__actual-t">{{ a.t }}</span>
+    </span>
+  }
+  <button type="button" class="lado__menu" [class.abierto]="menuAbierto()" (click)="alternarMenu()"
+          [attr.aria-expanded]="menuAbierto()" aria-controls="menu-movil"
+          [attr.aria-label]="menuAbierto() ? 'Cerrar el menú' : 'Abrir el menú'">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path class="l1" d="M4 7h16"/><path class="l2" d="M4 12h16"/><path class="l3" d="M4 17h16"/>
+    </svg>
+  </button>
+  <div class="lado__velo" [class.abierto]="menuAbierto()" (click)="cerrarMenu()" aria-hidden="true"></div>
+
+  <div class="lado__panel" id="menu-movil" [class.abierto]="menuAbierto()">
   <nav class="lado__nav">
     <ng-container *ngTemplateOutlet="item; context: { $implicit: inicio }" />
     <ng-container *ngTemplateOutlet="item; context: { $implicit: mapa3d }" />
@@ -78,5 +95,6 @@
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4C9 4 4 9.5 4 15c0 1.7.5 3 1.2 4C6 14 10 10.5 15 9c-4 2.5-7 6-8 11 1 .6 2.2 1 3.5 1C17 21 20 13 20 4z"/></svg>
       }
     </button>
+  </div>
   </div>
 </aside>
