@@ -1,4 +1,4 @@
-import { Component, computed, input } from '@angular/core';
+import { Component, DestroyRef, computed, inject, input, signal } from '@angular/core';
 
 export type TipoCargador = 'mapa3d' | 'plan' | 'resp' | 'mapa' | 'catalogo' | 'nosotros';
 
@@ -11,6 +11,28 @@ const CARGADORES: Record<TipoCargador, { c: string; texto: string }> = {
   catalogo: { c: '#7B68C8', texto: 'Armando los edificios' },
   nosotros: { c: '#2F7D45', texto: 'Sembrando la confianza' },
 };
+
+/** Mientras se arma el mapa 3D, frases de obra que cambian al azar (como si el municipio se construyera en vivo). */
+const FRASES_OBRA: Partial<Record<TipoCargador, string[]>> = {
+  mapa3d: [
+    'Estamos vaciando el terreno',
+    'Estamos dándole forma a las montañas',
+    'Estamos construyendo las casas',
+    'Estamos tendiendo las vías',
+    'Estamos cavando el cauce del río Medellín',
+    'Estamos llenando las quebradas',
+    'Estamos sembrando los árboles',
+    'Estamos trazando las veredas',
+    'Estamos pintando los techos de teja',
+    'Estamos levantando la catedral',
+    'Estamos ubicando colegios y puestos de salud',
+    'Estamos instalando el peaje El Trapiche',
+    'Estamos encendiendo el alumbrado',
+    'Estamos poniendo a andar los carros',
+  ],
+};
+/** cada cuánto cambia la frase */
+const CADA_FRASE_MS = 2600;
 
 /**
  * Cargador animado de cada sección del recorrido: un dibujo alusivo a lo que se está cargando
@@ -93,7 +115,7 @@ const CARGADORES: Record<TipoCargador, { c: string; texto: string }> = {
           }
         }
       </div>
-      <p>{{ cfg().texto }}<span class="puntos"><i>.</i><i>.</i><i>.</i></span></p>
+      <p aria-live="polite">@for (t of [texto()]; track t) {<span class="frase">{{ t }}</span>}<span class="puntos"><i>.</i><i>.</i><i>.</i></span></p>
       @if (progreso() !== null) {
         <div class="avance" role="progressbar" aria-valuemin="0" aria-valuemax="100" [attr.aria-valuenow]="pct()">
           <i [style.width.%]="pct()"></i>
@@ -111,6 +133,9 @@ const CARGADORES: Record<TipoCargador, { c: string; texto: string }> = {
     .avance { width: 150px; height: 5px; border-radius: 3px; overflow: hidden; background: color-mix(in srgb, var(--c) 18%, transparent); }
     .avance i { display: block; height: 100%; border-radius: 3px; background: var(--c); transition: width .35s ease-out; }
     .pct { font: 700 13px/1 var(--font-body, Inter, system-ui, sans-serif); font-variant-numeric: tabular-nums; color: var(--c); }
+    /* cada frase nueva entra con un fundido corto desde abajo */
+    .frase { display: inline-block; animation: frase .45s ease-out both; }
+    @keyframes frase { from { opacity: 0; translate: 0 6px; } }
     .puntos i { font-style: normal; animation: punto 1.4s infinite; opacity: .2; }
     .puntos i:nth-child(2) { animation-delay: .2s; } .puntos i:nth-child(3) { animation-delay: .4s; }
     @keyframes punto { 40% { opacity: 1; } }
@@ -180,4 +205,26 @@ export class CargadorComponent {
   readonly progreso = input<number | null>(null);
   readonly pct = computed(() => Math.max(0, Math.min(100, Math.round(this.progreso() ?? 0))));
   readonly cfg = computed(() => CARGADORES[this.tipo()]);
+
+  /** frase en pantalla: la fija del tipo o, si tiene frases de obra, una de ellas al azar sin repetir hasta agotarlas */
+  private readonly frase = signal<string | null>(null);
+  readonly texto = computed(() => this.frase() ?? this.cfg().texto);
+
+  constructor() {
+    let bolsa: string[] = [];
+    let anterior = '';
+    const siguiente = () => {
+      const lista = FRASES_OBRA[this.tipo()];
+      if (!lista?.length) return;
+      if (!bolsa.length) bolsa = [...lista].sort(() => Math.random() - .5);
+      let f = bolsa.pop()!;
+      if (f === anterior && bolsa.length) { bolsa.unshift(f); f = bolsa.pop()!; }   // nunca la misma dos veces seguidas
+      anterior = f;
+      this.frase.set(f);
+    };
+    // el input llega después del constructor: la primera frase sale en el siguiente turno y luego rota
+    const primera = setTimeout(siguiente);
+    const reloj = setInterval(siguiente, CADA_FRASE_MS);
+    inject(DestroyRef).onDestroy(() => { clearTimeout(primera); clearInterval(reloj); });
+  }
 }

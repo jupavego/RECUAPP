@@ -802,7 +802,7 @@ const TIPOS_ZONA: Record<string, string> = {
   selector: 'app-mapa3d',
   standalone: true,
   // en móvil los controles y modos arrancan plegados; al conducir o elegir salida siempre se ven (hay que poder salir)
-  host: { '[class.ctl-plegado]': '!controlesAbiertos() && !conduciendo() && !eligiendoSalida()' },
+  host: { '[class.ctl-plegado]': '!controlesAbiertos() && !conduciendo() && !eligiendoSalida()', '[class.conduce]': 'conduciendo()' },
   imports: [DecimalPipe, RouterLink, CargadorComponent],
   template: `
     <div #lienzo class="lienzo" [class.eligiendo]="eligiendoSalida()"
@@ -1252,14 +1252,33 @@ const TIPOS_ZONA: Record<string, string> = {
       @if (cayo()) {
         <div class="caida"><strong>{{ vehiculo() === 'avion' ? 'Te estrellaste' : 'Caíste al vacío' }}</strong><button type="button" (click)="reaparecerCarro()">Reaparecer</button></div>
       }
-      <div class="mando" aria-hidden="true">
+      <!-- única salida mientras se conduce o vuela (todo lo demás se oculta) -->
+      <button type="button" class="salir-conduccion" (click)="alternarConduccion(vehiculo())"
+              [attr.aria-label]="vehiculo() === 'avion' ? 'Salir del vuelo' : 'Salir de la conducción'" title="Salir (Esc)">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <span>Salir</span>
+      </button>
+      <!-- mando táctil: a la izquierda el giro; a la derecha, como en un control de consola, ✕ acelera y ○ frena -->
+      <div class="mando" aria-hidden="true" (contextmenu)="$event.preventDefault()">
         <div class="giro">
-          <button type="button" (pointerdown)="pulsarTecla('KeyA', true)" (pointerup)="pulsarTecla('KeyA', false)" (pointerleave)="pulsarTecla('KeyA', false)">◀</button>
-          <button type="button" (pointerdown)="pulsarTecla('KeyD', true)" (pointerup)="pulsarTecla('KeyD', false)" (pointerleave)="pulsarTecla('KeyD', false)">▶</button>
+          <!-- brazo horizontal de una cruceta: dos teclas en punta hacia el centro, cada una con su triángulo -->
+          <button type="button" class="mando__giro" (pointerdown)="pulsarTecla('KeyA', true)" (pointerup)="pulsarTecla('KeyA', false)" (pointerleave)="pulsarTecla('KeyA', false)" (pointercancel)="pulsarTecla('KeyA', false)">
+            <svg viewBox="0 0 72 60" aria-hidden="true"><path class="tecla" d="M6 4h40l20 26-20 26H6z"/><path class="flecha" d="M18 30l13-9v18z"/></svg>
+          </button>
+          <span class="cruceta__centro" aria-hidden="true"></span>
+          <button type="button" class="mando__giro" (pointerdown)="pulsarTecla('KeyD', true)" (pointerup)="pulsarTecla('KeyD', false)" (pointerleave)="pulsarTecla('KeyD', false)" (pointercancel)="pulsarTecla('KeyD', false)">
+            <svg viewBox="0 0 72 60" aria-hidden="true" style="transform: scaleX(-1)"><path class="tecla" d="M6 4h40l20 26-20 26H6z"/><path class="flecha" d="M18 30l13-9v18z"/></svg>
+          </button>
         </div>
         <div class="pedales">
-          <button type="button" (pointerdown)="pulsarTecla('KeyW', true)" (pointerup)="pulsarTecla('KeyW', false)" (pointerleave)="pulsarTecla('KeyW', false)">▲</button>
-          <button type="button" (pointerdown)="pulsarTecla('KeyS', true)" (pointerup)="pulsarTecla('KeyS', false)" (pointerleave)="pulsarTecla('KeyS', false)">▼</button>
+          <button type="button" class="mando__frena" (pointerdown)="pulsarTecla('KeyS', true)" (pointerup)="pulsarTecla('KeyS', false)" (pointerleave)="pulsarTecla('KeyS', false)" (pointercancel)="pulsarTecla('KeyS', false)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="6.5" fill="none" stroke="currentColor" stroke-width="2.6"/></svg>
+            <small>Frenar</small>
+          </button>
+          <button type="button" class="mando__acelera" (pointerdown)="pulsarTecla('KeyW', true)" (pointerup)="pulsarTecla('KeyW', false)" (pointerleave)="pulsarTecla('KeyW', false)" (pointercancel)="pulsarTecla('KeyW', false)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+            <small>{{ vehiculo() === 'avion' ? 'Empuje' : 'Acelerar' }}</small>
+          </button>
         </div>
       </div>
     }
@@ -1374,11 +1393,44 @@ const TIPOS_ZONA: Record<string, string> = {
     .caida { position: absolute; z-index: 11; top: 40%; left: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 10px;
       padding: 16px 26px; border-radius: 16px; background: rgba(20,30,40,.8); color: #fff; font: 1.1rem system-ui; }
     .caida button { padding: 8px 18px; border-radius: 10px; background: #fff; color: #26425a; font-weight: 700; }
-    .mando { position: absolute; z-index: 10; left: 16px; right: 16px; bottom: 90px; display: none; justify-content: space-between; pointer-events: none; }
-    .mando .giro, .mando .pedales { display: flex; gap: 10px; pointer-events: auto; }
-    .mando .pedales { flex-direction: column; }
-    .mando button { width: 56px; height: 56px; border-radius: 50%; background: rgba(255,255,255,.7); color: #26425a; font-size: 1.3rem; touch-action: none; }
-    @media (pointer: coarse) { .mando { display: flex; } }
+    /* conduciendo o volando solo quedan el vehículo, el HUD, el mando y la salida: lo demás del mapa se oculta */
+    :host(.conduce) .barra-ley, :host(.conduce) .ley-flot, :host(.conduce) .ayuda-btn, :host(.conduce) .foto, :host(.conduce) .conducir,
+    :host(.conduce) .zoom, :host(.conduce) .ctl-toggle, :host(.conduce) .capa-info, :host(.conduce) .sel-chip,
+    :host(.conduce) .pin-panel, :host(.conduce) .tip-rio, :host(.conduce) .creditos { display: none !important; }
+    .salir-conduccion { position: absolute; z-index: 12; top: 12px; right: 16px; display: inline-flex; align-items: center; gap: 6px; min-height: 42px; padding: 0 16px 0 12px;
+      border: 0; border-radius: 999px; cursor: pointer; font: 700 .9rem system-ui; color: #fff; background: rgba(20, 32, 44, .72);
+      box-shadow: 0 4px 14px rgba(0,0,0,.3); backdrop-filter: blur(6px); }
+    .salir-conduccion:hover { background: rgba(20, 32, 44, .9); }
+    .salir-conduccion:focus-visible { outline: 2px solid #E0B33A; outline-offset: 2px; }
+    /* mando táctil: giro a la izquierda; ✕ (acelerar) y ○ (frenar) a la derecha, en diagonal como en un control de consola */
+    .mando { position: absolute; z-index: 10; left: 18px; right: 18px; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); display: none;
+      justify-content: space-between; align-items: flex-end; pointer-events: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
+    .mando .giro { display: flex; align-items: center; gap: 0; margin-bottom: 18px; pointer-events: auto; }
+    /* cruceta: las teclas no son círculos sino pentágonos de esquinas suaves (relleno y borde del mismo trazo redondeado) */
+    .mando .mando__giro { width: 76px; height: 64px; border-radius: 0; background: none; box-shadow: none; backdrop-filter: none;
+      filter: drop-shadow(0 5px 10px rgba(0,0,0,.3)); color: #fff; }
+    .mando .mando__giro svg { width: 100%; height: 100%; overflow: visible; }
+    .mando__giro .tecla { fill: rgba(20, 32, 44, .6); stroke: rgba(20, 32, 44, .6); stroke-width: 8; stroke-linejoin: round; }
+    .mando__giro .flecha { fill: #dfe5ec; stroke: #dfe5ec; stroke-width: 3; stroke-linejoin: round; }
+    .mando .mando__giro:active { transform: scale(.94); background: none; }
+    .mando__giro:active .tecla { fill: rgba(20, 32, 44, .8); stroke: rgba(20, 32, 44, .8); }
+    .cruceta__centro { width: 14px; height: 14px; margin: 0 -4px; border-radius: 50%; background: rgba(20, 32, 44, .45); z-index: 1; }
+    .mando .pedales { position: relative; width: 168px; height: 150px; pointer-events: auto; }
+    .mando button { display: grid; place-items: center; padding: 0; border: 0; border-radius: 50%; touch-action: none; cursor: pointer;
+      background: rgba(20, 32, 44, .55); box-shadow: 0 6px 18px rgba(0,0,0,.28), inset 0 0 0 1.5px rgba(255,255,255,.22); backdrop-filter: blur(4px);
+      transition: transform .08s, background .12s; -webkit-tap-highlight-color: transparent; }
+    .mando button:active { transform: scale(.92); background: rgba(20, 32, 44, .75); }
+    .mando button svg { width: 46%; height: 46%; }
+    .mando button small { position: absolute; bottom: -17px; font: 700 10px system-ui; letter-spacing: .04em; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,.7); }
+    .mando__acelera { position: absolute; left: 0; bottom: 14px; width: 80px; height: 80px; color: #8ab8f0; }
+    .mando__frena { position: absolute; right: 0; top: 0; width: 66px; height: 66px; color: #ff7a7a; }
+    .mando__acelera:active { color: #b9d6ff; } .mando__frena:active { color: #ffadad; }
+    @media (pointer: coarse) {
+      .mando { display: flex; }
+      /* con el mando en pantalla: velocímetro arriba y sin la ayuda de teclado */
+      .hud-conduccion { top: 64px; bottom: auto; }
+      .hud-conduccion p { display: none; }
+    }
     .foto.activa { background: #26425a; color: #fff; }
     .zoom { position: absolute; z-index: 10; right: 16px; bottom: 16px; display: flex; flex-direction: column; gap: 6px; }
     .zoom button { width: 38px; height: 38px; padding: 0; border-radius: 12px; font: 700 1.3rem/1 system-ui;
