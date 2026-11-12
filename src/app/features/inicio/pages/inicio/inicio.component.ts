@@ -13,16 +13,18 @@ import { QuienesSomosComponent } from '../../../../shared/pages/quienes-somos/qu
 /** Una sección de la portada: a dónde lleva y cómo se dibuja. */
 interface Seccion {
   id: 'plan' | 'resp' | 'm3d' | 'bib';
-  t: string;
-  d: string;
+  n: string;
+  s: string;
   r: string;
   frag?: string;
-  c: string;
   g: 'plan' | 'users' | 'cube' | 'book';
 }
 
 /** Lo que la gente puede hacer y en qué secciones se hace. */
-interface Verbo { v: string; boton: string; g: 'search' | 'users' | 'org' | 'cube'; c: string; ms: Seccion['id'][]; }
+interface Verbo { v: string; c: string; ms: Seccion['id'][]; }
+
+/** Una escena del fondo: toma real del visor 3D con sus capas y su ángulo. */
+interface Escena { id: string; n: string; f: string; t: string; }
 
 /** Proyección de población por edad (public/data/poblacion/05308-edad.json). */
 interface ProyeccionEdad {
@@ -33,17 +35,25 @@ interface ProyeccionEdad {
 interface CortePob { anio: number; total: number; pir: [number, number][] }
 
 const SECCIONES: Seccion[] = [
-  { id: 'plan', t: 'El plan en claro', d: 'Lo que se prometió: programas, metas e inversión.', r: '/plan', c: 'var(--s-plan)', g: 'plan' },
-  { id: 'resp', t: 'Responsables y organigrama', d: 'Quién dirige cada dependencia y cómo se organiza la alcaldía.', r: '/responsables', c: 'var(--s-resp)', g: 'users' },
-  { id: 'm3d', t: 'Girardota en 3D', d: 'El municipio con sus edificios, redes y equipamientos.', r: '/mapa3d', c: 'var(--s-m3d)', g: 'cube' },
-  { id: 'bib', t: 'Biblioteca', d: 'Las fuentes de cada dato, con su enlace y su cita.', r: '/quienes-somos', frag: 'biblioteca', c: 'var(--s-bib)', g: 'book' },
+  { id: 'plan', n: 'El plan en claro', s: 'Programas, metas e inversión', r: '/plan', g: 'plan' },
+  { id: 'resp', n: 'Responsables', s: 'Quién dirige cada dependencia', r: '/responsables', g: 'users' },
+  { id: 'm3d', n: 'Girardota en 3D', s: 'Explorar el mapa completo', r: '/mapa3d', g: 'cube' },
+  { id: 'bib', n: 'Biblioteca', s: 'Las fuentes de cada dato', r: '/quienes-somos', frag: 'biblioteca', g: 'book' },
 ];
 
 const VERBOS: Verbo[] = [
-  { v: 'conocer', boton: 'Conocer', g: 'search', c: 'var(--v-conocer)', ms: ['plan', 'resp', 'm3d'] },
-  { v: 'vigilar', boton: 'Vigilar', g: 'users', c: 'var(--v-vigilar)', ms: ['plan', 'resp', 'bib'] },
-  { v: 'entender', boton: 'Entender', g: 'org', c: 'var(--v-entender)', ms: ['resp', 'bib'] },
-  { v: 'interactuar con', boton: 'Interactuar', g: 'cube', c: 'var(--v-interactuar)', ms: ['m3d', 'plan'] },
+  { v: 'conocer', c: 'var(--v-conocer)', ms: ['plan', 'resp', 'm3d'] },
+  { v: 'vigilar', c: 'var(--v-vigilar)', ms: ['plan', 'resp', 'bib'] },
+  { v: 'entender', c: 'var(--v-entender)', ms: ['resp', 'bib'] },
+  { v: 'interactuar con', c: 'var(--v-interactuar)', ms: ['m3d', 'plan'] },
+];
+
+/** Escenas del fondo (capturas del visor 3D en public/img/portada): cada una mira el municipio desde un ángulo y con capas distintas. */
+const ESCENAS: Escena[] = [
+  { id: 'instituciones', n: 'Instituciones', f: '/img/portada/instituciones.jpg', t: 'Educación, cultura, salud, turismo, deporte, justicia y patrimonio.' },
+  { id: 'industrias', n: 'Industrias', f: '/img/portada/industrias.jpg', t: 'Empresas con fuentes fijas de emisión, según Corantioquia 2021. Vista a lo largo del valle.' },
+  { id: 'agua', n: 'Agua', f: '/img/portada/agua.jpg', t: 'Ríos y quebradas, bocatomas, tratamiento, tanques y PTAR. Vista sobre el cauce del río.' },
+  { id: 'zonas', n: 'Zonas', f: '/img/portada/zonas.jpg', t: 'Veredas y cabecera con sus nombres y límites. Panorámica del municipio entero.' },
 ];
 
 /** años que recorre la cápsula de población */
@@ -67,9 +77,10 @@ export class InicioComponent implements OnInit, AfterViewInit {
   private readonly http = inject(HttpClient);
   private readonly destroy = inject(DestroyRef);
 
-  /** el relieve arranca en un punto cualquiera de su recorrido (como en Quiénes somos) */
-  readonly fase = -Math.random() * 360;
-  readonly altura = Math.random() * 100;
+  /** escena del fondo y si la portada está a la vista (fuera de pantalla la deriva se detiene) */
+  readonly escenas = ESCENAS;
+  readonly escena = signal(0);
+  readonly heroVisible = signal(true);
 
   /** vista con la rueda activa (mapas, pueblo o catálogo): se activa con un clic y se suelta al salir el ratón */
   readonly activa = signal<'m3d' | 'resp' | 'mapa' | null>(null);
@@ -98,7 +109,14 @@ export class InicioComponent implements OnInit, AfterViewInit {
     el.scrollIntoView({ block: 'start', behavior: this.poco ? 'auto' : 'smooth' });
   }
 
+  elegirEscena(k: number): void { this.escena.set(k); }
+
   ngAfterViewInit(): void {
+    const hero = document.getElementById('sec-inicio');
+    const obsHero = hero ? new IntersectionObserver(es => this.heroVisible.set(es.some(e => e.isIntersecting))) : null;
+    if (hero) obsHero?.observe(hero);
+    this.destroy.onDestroy(() => obsHero?.disconnect());
+
     // al llegar por una ruta (/plan, /mapa3d…), la página abre en esa sección
     this.irA(this.router.url);
 
@@ -177,9 +195,6 @@ export class InicioComponent implements OnInit, AfterViewInit {
   readonly saliendo = signal(false);
   /** verbo que resalta secciones: el que se está mostrando o el que la persona eligió */
   readonly activo = signal(-1);
-  /** verbo elegido a mano (-1: ninguno) */
-  readonly fijo = signal(-1);
-
   readonly verboActivo = computed(() => (this.activo() >= 0 ? VERBOS[this.activo()] : null));
 
   private cortes: CortePob[] = [];
@@ -188,11 +203,10 @@ export class InicioComponent implements OnInit, AfterViewInit {
 
   private relojes: ReturnType<typeof setTimeout>[] = [];
   private intervalo: ReturnType<typeof setInterval> | null = null;
-  private auto = !this.poco;
 
   ngOnInit(): void {
     this.destroy.onDestroy(() => { this.relojes.forEach(clearTimeout); if (this.intervalo) clearInterval(this.intervalo); });
-    if (this.auto) this.mostrar(0);
+    if (!this.poco) this.mostrar(0);
     this.cargarPoblacion();
   }
 
@@ -201,29 +215,17 @@ export class InicioComponent implements OnInit, AfterViewInit {
     return !!v && v.ms.includes(id);
   }
 
-  elegir(k: number): void {
-    this.auto = false;
-    this.relojes.forEach(clearTimeout);
-    const nuevo = this.fijo() === k ? -1 : k; // tocar el mismo verbo otra vez lo suelta
-    this.fijo.set(nuevo);
-    this.activo.set(nuevo);
-    this.saliendo.set(false);
-    this.mostrado.set(nuevo < 0 ? 0 : nuevo);
-    this.pasada.update(n => n + 1);
-  }
-
   /**
    * Holograma: una franja de escáner recorre el verbo y lo deja escrito, tenue y con leve brillo; tras unos segundos
    * resaltando sus secciones, se disuelve y entra el siguiente.
    */
   private mostrar(i: number): void {
-    if (!this.auto) return;
     this.saliendo.set(false);
     this.mostrado.set(i);
     this.pasada.update(n => n + 1);
     this.relojes.push(
-      setTimeout(() => { if (this.auto) this.activo.set(i); }, 900),
-      setTimeout(() => { if (this.auto) { this.saliendo.set(true); this.activo.set(-1); } }, 5100),
+      setTimeout(() => this.activo.set(i), 900),
+      setTimeout(() => { this.saliendo.set(true); this.activo.set(-1); }, 5100),
       setTimeout(() => this.mostrar((i + 1) % VERBOS.length), 5650),
     );
   }

@@ -1,91 +1,72 @@
-// Portada (variante G): el mismo lenguaje del panel lateral (insignias redondas con el color de cada módulo,
-// fondo suave al 13 %, la activa en sólido con forma de hoja) y todo dentro de una pantalla.
+// Portada: el mapa 3D de Girardota como fondo, con una cámara que deriva despacio. Velo de color solo a la izquierda,
+// cuatro escenas (capas y ángulo propios) y un panel de cristal al pie con las secciones y la población.
 :host {
   --bg: var(--color-page-bg, #F5F0EA);
   --card: var(--color-background-primary, #FCF9F6);
-  --border: var(--color-border-tertiary, #C8D9C0);
   --text: var(--color-text-primary, #1A1A1A);
   --muted: #5C6B5F;
   --brand: #29422F;
-  --accent: #66AA33;
-  // paleta de jardín de los módulos, la misma del panel lateral (header.component.ts)
-  --s-plan: #4FA22E;          // helecho: El plan en claro
-  --s-resp: #D99A14;          // caléndula: Responsables
-  --s-m3d: #2E86C1;           // cielo: Mapa 3D
-  --s-bib: #D35C37;           // terracota: Biblioteca (como en Quiénes somos)
-  --s-pob: #B0549A;           // orquídea: la población, aparte
-  // verbos: los mismos tonos, un poco más hondos para leerse como texto sobre crema
+  // verbos: los mismos tonos de la app, más hondos en claro y luminosos en oscuro
   --v-conocer: #3F8A22;
   --v-vigilar: #B97F0A;
-  --v-entender: #6A57B8;      // lavanda
+  --v-entender: #6A57B8;
   --v-interactuar: #2475AD;
   --f-h: "Nunito", "Inter", system-ui, sans-serif;
   --f-b: "Inter", system-ui, sans-serif;
-
-  // todo cabe en la pantalla: la portada ocupa el alto de la ventana y las tarjetas se estiran a lo que queda;
-  // el fondo cubre toda la vista (sin cajas que le resten amplitud)
+  // paleta de la portada, modo claro
+  --vl: 245, 240, 234; --va: .95;
+  --t: #29422F; --t2: #3E4F3B;
+  --glass: rgba(252, 249, 246, .88); --glass-strip: rgba(252, 249, 246, .74); --glass-edge: rgba(255, 255, 255, .85); --ts: none;
+  --gl: #C8D9C0; --pill-on-bg: #29422F; --pill-on-tx: #fff; --accent-ic: #3F7A1E;
   display: block; color: var(--text); font-family: var(--f-b);
 }
-// la portada ocupa una pantalla; las secciones siguen debajo
-.portada { position: relative; isolation: isolate; height: 100dvh; min-height: 460px; }
-.marco { container: marco / inline-size; position: relative; height: 100%; display: flex; flex-direction: column; max-width: 1280px; margin: 0 auto; box-sizing: border-box;
-  padding: clamp(6px, 1.6vh, 20px) clamp(16px, 2.8vw, 40px) clamp(14px, 2.8vh, 32px); }
-
-// ── fondo topográfico: curvas de nivel de Girardota teñidas con la paleta de los módulos ──
-// Una sola capa (dos se cruzaban y parecían líneas sobrepuestas); el color corre despacio por debajo de las líneas,
-// así cada curva cambia de color a lo largo de su recorrido.
-.fondo { position: absolute; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
-.capa { position: absolute; inset: -25% -20%; will-change: transform;
-  -webkit-mask: url('/img/relieve-49.svg') 50% var(--rel-y, 50%) / cover no-repeat; mask: url('/img/relieve-49.svg') 50% var(--rel-y, 50%) / cover no-repeat;
-  background-color: rgba(110, 135, 112, .45); background-size: 160% 160%; background-repeat: no-repeat; }
-.capa--1 { opacity: .32;
-  /* manchas de la paleta repartidas por la pantalla: cada zona de curvas toma un color distinto */
-  background-image: radial-gradient(circle at 12% 18%, #4FA22E, transparent 38%), radial-gradient(circle at 46% 8%, #D99A14, transparent 34%),
-    radial-gradient(circle at 86% 20%, #7B68C8, transparent 38%), radial-gradient(circle at 92% 72%, #2E86C1, transparent 40%),
-    radial-gradient(circle at 58% 92%, #D35C37, transparent 36%), radial-gradient(circle at 18% 80%, #16A085, transparent 38%),
-    radial-gradient(circle at 50% 50%, #B0549A, transparent 30%);
-  animation: deriva 360s ease-in-out infinite, tinte 80s ease-in-out infinite; }
-@keyframes deriva {
-  0%, 100% { transform: translate3d(-6%, -5%, 0) scale(1.02) rotate(-1deg); }
-  25%      { transform: translate3d(5%, -3%, 0) scale(1.12) rotate(.5deg); }
-  50%      { transform: translate3d(7%, 6%, 0) scale(1.24) rotate(1.5deg); }
-  75%      { transform: translate3d(-4%, 7%, 0) scale(1.1) rotate(0deg); }
-}
-@keyframes tinte { 0%, 100% { background-position: 0% 0%; } 33% { background-position: 100% 40%; } 66% { background-position: 40% 100%; } }
-// en oscuro, la misma paleta en sus tonos luminosos (los del claro se apagan y enturbian sobre el fondo oscuro)
-:host-context(html.tema-oscuro) .capa--1 { opacity: .38; background-color: rgba(150, 185, 155, .1);
-  background-image: radial-gradient(circle at 12% 18%, #8FD16A, transparent 50%), radial-gradient(circle at 46% 8%, #F0C048, transparent 44%),
-    radial-gradient(circle at 86% 20%, #B3A6F0, transparent 48%), radial-gradient(circle at 92% 72%, #7CC0EE, transparent 50%),
-    radial-gradient(circle at 58% 92%, #F29A78, transparent 46%), radial-gradient(circle at 18% 80%, #5FD3B8, transparent 48%),
-    radial-gradient(circle at 50% 50%, #E39BD3, transparent 40%); }
 :host-context(html.tema-oscuro) {
   --muted: #8FA08C; --brand: #E8EFE4;
   --v-conocer: #8FD16A; --v-vigilar: #F0C048; --v-entender: #B3A6F0; --v-interactuar: #7CC0EE;
+  --vl: 12, 22, 15; --va: .94;
+  --t: #F2F7EE; --t2: #D3E0CC;
+  --glass: rgba(12, 22, 15, .82); --glass-strip: rgba(14, 28, 18, .30); --glass-edge: rgba(255, 255, 255, .22); --ts: 0 1px 3px rgba(12, 22, 15, .7), 0 0 14px rgba(12, 22, 15, .5);
+  --gl: #3E5A44; --pill-on-bg: #F2F7EE; --pill-on-tx: #29422F; --accent-ic: #99CC33;
 }
 
-.ico { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.ico { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
 
-// insignia de módulo: idéntica a la del panel lateral
-.insig { width: 34px; height: 34px; flex: none; display: grid; place-items: center; border-radius: 50%;
-  background: color-mix(in srgb, var(--c) 13%, transparent); color: var(--c);
-  transition: border-radius .25s, background .3s, color .3s, transform .25s, box-shadow .3s; }
-.insig .ico { width: 18px; height: 18px; }
-:host-context(html.tema-oscuro) .insig { background: color-mix(in srgb, var(--c) 20%, transparent); }
-@mixin insig-activa { background: var(--c); color: #fff; border-radius: 4px 50% 50% 50%; box-shadow: 0 3px 10px color-mix(in srgb, var(--c) 35%, transparent); }
+.portada { position: relative; isolation: isolate; height: 100dvh; min-height: 560px; overflow: hidden; background: #1e3223; color: var(--t); }
 
-// ── llamado a la acción ──
-// arriba deja sitio a la cápsula de población (esquina superior derecha)
-.accion { flex: none; text-align: center; padding: max(clamp(14px, 5vh, 64px), calc(clamp(8px, 2vh, 22px) + 56px)) 12px clamp(10px, 2.2vh, 22px); }
+// ── fondo ──
+.bg { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+// la cámara: todas las escenas comparten encuadre y derivan juntas (ciclo de 18 s, ida y vuelta)
+.cam { position: absolute; inset: -5%; transform-origin: 50% 55%; animation: deriva 18s ease-in-out infinite alternate; will-change: transform; }
+.fuera .cam { animation-play-state: paused; }
+@keyframes deriva {
+  0%   { transform: scale(1.06) translate3d(-2.2%, -.6%, 0) rotate(-.35deg); }
+  100% { transform: scale(1.02) translate3d(2.2%, .8%, 0) rotate(.35deg); }
+}
+// al cambiar de escena la toma saliente se aleja y la entrante llega acercándose
+.cp { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.07);
+  transition: opacity 1.4s ease, transform 2.4s cubic-bezier(.2, .6, .2, 1); user-select: none; }
+.cp.on { opacity: 1; transform: scale(1); }
+// velo de color a todo el alto del lado izquierdo, más un toque arriba y al pie
+.velo { position: absolute; inset: 0; z-index: 2;
+  background:
+    linear-gradient(0deg, rgba(var(--vl), .30) 0, rgba(var(--vl), .14) 14%, rgba(var(--vl), 0) 26%),
+    linear-gradient(180deg, rgba(var(--vl), .55) 0, rgba(var(--vl), 0) 14%),
+    linear-gradient(90deg, rgba(var(--vl), var(--va)) 0, rgba(var(--vl), .88) 30%, rgba(var(--vl), .5) 46%, rgba(var(--vl), 0) 64%); }
 
-// el titular va en una sola línea: su tamaño sale del ancho disponible (cabe aun con «interactuar con»)
-h1 { margin: clamp(4px, 1.4vh, 14px) 0 0; font: 800 clamp(18px, min(2.65cqi, 6vh), 46px)/1.2 var(--f-h); color: var(--brand); letter-spacing: -.012em; white-space: nowrap; }
-// verbo en holograma: una franja de escáner lo recorre de izquierda a derecha y lo deja escrito con líneas finas de luz
-.esc { position: relative; display: inline-block; color: var(--c); }
-.esc__v { display: inline-block; padding: 0 .04em;
-  // tramado de holograma: el color del verbo con líneas horizontales muy finas, apenas perceptibles
-  background: repeating-linear-gradient(180deg, var(--c) 0 2px, color-mix(in srgb, var(--c) 72%, transparent) 2px 3px);
+// ── contenido ──
+.marco { position: relative; z-index: 4; height: 100%; box-sizing: border-box; display: grid; grid-template-rows: 1fr auto auto; grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px 24px; padding: clamp(24px, 6vh, 64px) clamp(20px, 4.4vw, 56px) clamp(22px, 3.4vh, 34px); }
+.titulo { grid-column: 1; grid-row: 1; align-self: start; max-width: 560px; }
+h1 { margin: 0 0 clamp(8px, 1.6vh, 16px); font: 800 clamp(34px, min(4.7vw, 8vh), 60px)/1.04 var(--f-h); color: var(--t); text-wrap: balance; }
+h1 span { color: var(--accent-ic); }
+.sub { margin: 0 0 clamp(14px, 2.4vh, 22px); max-width: 30ch; font-size: clamp(17px, 2.5vh, 21px); line-height: 1.4; color: var(--t2); text-shadow: 0 1px 3px rgba(var(--vl), .7); }
+
+// verbo en holograma: una franja de escáner lo recorre y lo deja escrito con líneas finas de luz
+.esc { position: relative; display: inline-block; color: var(--c); font-weight: 700; text-shadow: none; }
+.esc__v { display: inline-block; padding: 0 .04em; text-shadow: none;
+  background: repeating-linear-gradient(180deg, var(--c) 0 2px, color-mix(in srgb, var(--c) 86%, transparent) 2px 3px);
   -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--c) 22%, transparent)); }
+  filter: drop-shadow(0 0 7px color-mix(in srgb, var(--c) 38%, transparent)); }
 .esc__scan { position: absolute; top: 4%; bottom: 0; left: 100%; width: 2px; border-radius: 2px; pointer-events: none; opacity: 0;
   background: linear-gradient(180deg, transparent, var(--c) 30%, var(--c) 70%, transparent);
   box-shadow: 0 0 12px 3px color-mix(in srgb, var(--c) 45%, transparent); }
@@ -99,153 +80,104 @@ h1 { margin: clamp(4px, 1.4vh, 14px) 0 0; font: 800 clamp(18px, min(2.65cqi, 6vh
 @keyframes holo-entra {
   0%   { -webkit-mask-position: 100% 0; mask-position: 100% 0; opacity: .35; filter: blur(2px) drop-shadow(0 0 14px var(--c)); }
   55%  { opacity: 1; filter: blur(0) drop-shadow(0 0 10px color-mix(in srgb, var(--c) 55%, transparent)); }
-  100% { -webkit-mask-position: 0 0; mask-position: 0 0; filter: drop-shadow(0 0 6px color-mix(in srgb, var(--c) 22%, transparent)); }
+  100% { -webkit-mask-position: 0 0; mask-position: 0 0; filter: drop-shadow(0 0 7px color-mix(in srgb, var(--c) 38%, transparent)); }
 }
 @keyframes holo-barre { 0% { left: 0; opacity: 0; } 12% { opacity: 1; } 80% { opacity: .85; } 100% { left: 100%; opacity: 0; } }
 @keyframes holo-sale { to { opacity: 0; filter: blur(3px); letter-spacing: .05em; } }
-.accion__sub { max-width: 560px; margin: clamp(4px, 1.2vh, 12px) auto 0; color: var(--muted); font-size: clamp(14px, 1.9vh, 15.5px); line-height: 1.5; }
 
-// verbos: píldora con su insignia; el elegido se comporta como el ítem activo del panel
-.verbos { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: clamp(10px, 2.4vh, 24px) 0 0; }
-.verbo { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font: 600 14px var(--f-b); padding: 5px 16px 5px 5px; border-radius: 99px;
-  border: 1px solid transparent; background: color-mix(in srgb, var(--card) 62%, transparent); color: var(--brand);
-  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
-  box-shadow: 0 1px 2px rgba(20, 30, 20, .05); transition: background .4s, border-color .4s; }
-.verbo .insig { width: 28px; height: 28px; }
-.verbo .insig .ico { width: 15px; height: 15px; }
-.verbo:hover { background: color-mix(in srgb, var(--c) 8%, var(--card)); .insig { border-radius: 4px 50% 50% 50%; transform: rotate(-8deg); } }
-.verbo.on { background: color-mix(in srgb, var(--c) 11%, var(--card)); border-color: color-mix(in srgb, var(--c) 30%, transparent); font-weight: 700; .insig { @include insig-activa; } }
-.verbo:focus-visible { outline: 2px solid var(--c); outline-offset: 2px; }
+// escenas del mapa
+.capas { grid-column: 2; grid-row: 1; align-self: start; justify-self: end; display: flex; gap: 6px; padding: 6px; border-radius: 12px;
+  background: var(--glass); border: 1px solid var(--gl); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+.capas button { display: flex; align-items: center; gap: 8px; padding: 8px 14px; border: 0; border-radius: 8px; cursor: pointer; background: transparent; color: var(--t); font: 600 14px var(--f-b); }
+.capas button i { width: 8px; height: 8px; border-radius: 50%; background: currentColor; opacity: .8; }
+.capas button[aria-pressed="true"] { background: var(--pill-on-bg); color: var(--pill-on-tx); }
+.capas button:focus-visible { outline: 2px solid #E0B33A; outline-offset: 2px; }
+.leyenda { grid-column: 1 / -1; grid-row: 2; justify-self: end; margin: 0; max-width: 420px; padding: 9px 14px; border-radius: 10px; font-size: 14px; color: var(--t);
+  background: var(--glass); border: 1px solid var(--gl); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+.leyenda b { font-weight: 700; }
 
-// ── población: aparte, como dato ──
-.pob { --c: var(--s-pob); flex: none; display: flex; align-items: center; gap: 12px; width: max-content; max-width: 100%;
-  // va aparte, en la esquina superior derecha de la portada
-  position: absolute; z-index: 2; top: clamp(8px, 2vh, 22px); right: clamp(16px, 2.8vw, 40px); margin: 0; padding: 6px 16px 6px 8px;
-  border-radius: 99px; text-decoration: none; color: var(--muted); font-size: 13px; background: color-mix(in srgb, var(--card) 62%, transparent);
-  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
-  border: 1px dashed color-mix(in srgb, var(--c) 40%, var(--border)); transition: border-color .3s; }
-.pob:hover { border-style: solid; }
-.pob .insig { width: 30px; height: 30px; }
-.pob small { font: 700 10.5px var(--f-b); letter-spacing: .1em; text-transform: uppercase; color: var(--c); margin-right: 8px; }
-.pob > span:last-child b { color: var(--brand); font-weight: 800; }
-.pir { display: flex; flex-direction: column-reverse; gap: 1px; width: 22px; }
-.pir > span { display: flex; justify-content: center; gap: 1px; height: 1px; }
+// panel de cristal: el mapa se ve a través, desenfocado y más vivo
+.cristal { grid-column: 1 / -1; grid-row: 3; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: stretch; padding: 0; overflow: hidden;
+  background: var(--glass-strip); border: 1px solid var(--glass-edge); border-radius: 16px;
+  -webkit-backdrop-filter: blur(6px) saturate(1.15); backdrop-filter: blur(6px) saturate(1.15);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25), 0 10px 30px rgba(0, 0, 0, .18);
+  text-shadow: var(--ts); }
+.puertas { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.puertas a { position: relative; isolation: isolate; display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; align-items: start; padding: 18px 18px 18px 24px; color: var(--t); text-decoration: none; }
+.puertas a + a { border-left: 1px solid var(--gl); }
+.puertas a:focus-visible { outline: 2px solid #E0B33A; outline-offset: -2px; border-radius: 10px; }
+.puertas a::after { content: ''; position: absolute; z-index: -1; inset: 0; pointer-events: none;
+  border-top: 3px solid var(--accent-ic);
+  background: linear-gradient(0deg, color-mix(in srgb, var(--accent-ic) 30%, transparent) 0, color-mix(in srgb, var(--accent-ic) 8%, transparent) 100%);
+  transform: scaleY(0); transform-origin: bottom; transition: transform .35s cubic-bezier(.2, .7, .2, 1); }
+.puertas a:hover::after, .puertas a:focus-visible::after { transform: scaleY(1); }
+.puertas a .ico { transition: transform .3s cubic-bezier(.3, 1.4, .5, 1), background .25s, color .25s, border-radius .25s; }
+.puertas a:hover .ico, .puertas a:focus-visible .ico { transform: translateY(-2px) rotate(-6deg) scale(1.08); background: var(--pill-on-bg); color: var(--pill-on-tx); border-radius: 4px 50% 50% 50%; }
+.puertas a:hover small, .puertas a:focus-visible small { color: var(--t); }
+.puertas .ico { box-sizing: content-box; width: 22px; height: 22px; padding: 6px; margin: -2px 0 0 -6px; border-radius: 10px; color: var(--accent-ic); }
+.puertas b { font: 800 19px var(--f-h); }
+.puertas small { grid-column: 2; font-size: 14px; line-height: 1.4; color: var(--t2); }
+// el verbo en pantalla marca en una esquina las secciones que le corresponden
+.puertas a::before { content: ''; position: absolute; top: 0; left: 0; width: 68px; height: 68px; pointer-events: none; opacity: 0;
+  border-top: 2px solid var(--vc, var(--accent-ic)); border-left: 2px solid var(--vc, var(--accent-ic)); border-top-left-radius: 6px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--vc, var(--accent-ic)) 55%, transparent) 0, color-mix(in srgb, var(--vc, var(--accent-ic)) 16%, transparent) 38%, transparent 64%);
+  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--vc, var(--accent-ic)) 50%, transparent)); }
+.puertas a:first-child::before { border-top-left-radius: 16px; }
+.puertas a.hot::before { opacity: 1; animation: esquina 1.15s cubic-bezier(.25, .7, .25, 1) both; }
+.puertas a.hot.out::before { animation: esquina-sale .55s ease-in both; }
+@keyframes esquina { 0% { opacity: 0; clip-path: inset(0 100% 100% 0); } 20% { opacity: 1; } 100% { opacity: 1; clip-path: inset(0 0 0 0); } }
+@keyframes esquina-sale { from { opacity: 1; } to { opacity: 0; } }
+
+// población
+.pob { display: flex; align-items: center; gap: 12px; padding: 0 24px; border-left: 1px solid var(--gl); color: var(--t2); font-size: 14px; line-height: 1.3; text-decoration: none; }
+.pob b { color: var(--t); font: 800 20px var(--f-h); }
+.pob { transition: color .2s; }
+.pob:hover { color: var(--t); }
+.pob:hover .pir { transform: scale(1.08); }
+.pir { transition: transform .25s; }
+.pob:focus-visible { outline: 2px solid #E0B33A; outline-offset: 2px; border-radius: 10px; }
+.pir { display: flex; flex-direction: column-reverse; gap: 1px; width: 34px; }
+.pir > span { display: flex; justify-content: center; gap: 1px; height: 2px; }
 .pir b, .pir s { display: block; height: 100%; transition: width 1.6s ease; }
-.pir b { background: var(--c); }
-.pir s { background: color-mix(in srgb, var(--c) 50%, transparent); }
+.pir b { background: var(--accent-ic); }
+.pir s { background: color-mix(in srgb, var(--accent-ic) 55%, transparent); }
 
-// ── secciones: cuatro tarjetas iguales que llenan el alto que queda ──
-.contenido { flex: 1; min-height: 0; display: flex; container: lista / inline-size; }
-.tarjetas { flex: 1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: clamp(10px, 1.4vw, 18px); }
-.tile { --borde: color-mix(in srgb, var(--text) 8%, transparent); container: tarjeta / size;
-  position: relative; min-height: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 8px;
-  text-decoration: none; color: var(--brand); background: color-mix(in srgb, var(--card) 38%, transparent); border: 1px solid var(--borde); border-radius: 22px;
-  padding: clamp(12px, 1.8vh, 18px) 18px clamp(14px, 2vh, 20px);
-  box-shadow: 0 1px 2px rgba(20, 30, 20, .04), 0 8px 28px rgba(20, 30, 20, .05);
-  transition: border-color .6s, box-shadow .6s, translate .5s cubic-bezier(.2, .8, .2, 1), background .6s; }
-.tile::before { // la misma hoja que marca el ítem activo del panel
-  content: ''; position: absolute; left: -1px; top: 26px; width: 7px; height: 14px; border-radius: 0 100% 0 100%; background: var(--c);
-  transform: translateY(-50%) scale(0); transform-origin: left center; transition: transform .35s cubic-bezier(.3, 1.4, .5, 1); }
-.tile:hover { translate: 0 -3px; box-shadow: 0 1px 2px rgba(20, 30, 20, .05), 0 18px 40px rgba(20, 30, 20, .10);
-  .insig { border-radius: 4px 50% 50% 50%; transform: rotate(-8deg); } }
-.tile:focus-visible { outline: 2px solid var(--c); outline-offset: 3px; }
-// resaltada por un verbo: se comporta como el ítem activo del panel, sin apagar las demás
-.tile.si { background: color-mix(in srgb, var(--c) 9%, color-mix(in srgb, var(--card) 44%, transparent)); border-color: color-mix(in srgb, var(--c) 35%, transparent);
-  .insig { @include insig-activa; transform: none; }
-  &::before { transform: translateY(-50%) scale(1); } }
-.tile__top { display: flex; align-items: center; gap: 8px; }
-.para { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; font: 700 10.5px var(--f-b); letter-spacing: .08em; text-transform: uppercase; color: var(--v); white-space: nowrap; opacity: 0; translate: -4px 0; transition: opacity .6s, translate .6s; }
-.tile.si .para { opacity: 1; translate: 0 0; }
-.ir { flex: none; margin-left: auto; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--borde); color: var(--muted); transition: background .4s, color .4s; }
-.ir .ico { width: 15px; height: 15px; rotate: -45deg; }
-.tile:hover .ir { background: var(--c); color: #fff; border-color: transparent; }
-.viz { flex: 1; min-height: 0; display: grid; place-items: center; }
-h2 { margin: 0; font: 800 clamp(16px, 1.45vw, 19px)/1.18 var(--f-h); letter-spacing: -.015em; color: var(--brand); }
-.tile p { margin: 4px 0 0; font-size: 13px; line-height: 1.45; color: var(--muted); }
-
-// dibujos en el color del módulo, con su tinte suave de fondo; movimientos lentos
-.aros { display: flex; gap: 8px; }
-.aros svg { width: 50px; height: 50px; rotate: -90deg; }
-.aros circle { fill: none; stroke-width: 5; }
-.aros .f { stroke: color-mix(in srgb, var(--c) 15%, transparent); }
-.aros .a { stroke: var(--c); stroke-linecap: round; stroke-dasharray: 100; stroke-dashoffset: 100; animation: llena 4.5s ease-out forwards var(--w); }
-.aros svg:nth-child(2) .a { stroke: color-mix(in srgb, var(--c) 55%, transparent); }
-@keyframes llena { to { stroke-dashoffset: var(--v); } }
-
-.dupla { display: flex; align-items: center; gap: 16px; }
-.caras { display: flex; gap: 6px; }
-.caras i { position: relative; width: 24px; height: 24px; border-radius: 50%; background: color-mix(in srgb, var(--c) 30%, transparent); animation: salta 4.8s ease-in-out infinite var(--w); }
-.caras i:nth-child(2) { background: var(--c); }
-.caras i::before, .caras i::after { content: ""; position: absolute; top: 9px; width: 3px; height: 3px; border-radius: 50%; background: var(--card); }
-.caras i::before { left: 7px; }
-.caras i::after { right: 7px; }
-@keyframes salta { 0%, 60%, 100% { translate: 0 0; } 30% { translate: 0 -8px; } }
-.arbol path { fill: none; stroke: color-mix(in srgb, var(--c) 60%, transparent); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 60; stroke-dashoffset: 60; animation: traza 6s ease-in-out infinite alternate; }
-.arbol rect { fill: color-mix(in srgb, var(--c) 40%, transparent); animation: aparece 6s ease-in-out infinite alternate; }
-.arbol rect:first-child { fill: var(--c); }
-@keyframes traza { 40%, 100% { stroke-dashoffset: 0; } }
-@keyframes aparece { 0%, 15% { opacity: .25; } 45%, 100% { opacity: 1; } }
-
-.cubo { width: 50px; height: 50px; position: relative; transform-style: preserve-3d; animation: rueda 22s linear infinite; }
-.cubo i { position: absolute; inset: 0; border: 1.5px solid var(--c); background: color-mix(in srgb, var(--c) 7%, transparent); }
-.cubo i:nth-child(1) { transform: translateZ(25px); }
-.cubo i:nth-child(2) { transform: rotateY(180deg) translateZ(25px); }
-.cubo i:nth-child(3) { transform: rotateY(90deg) translateZ(25px); }
-.cubo i:nth-child(4) { transform: rotateY(-90deg) translateZ(25px); }
-.cubo i:nth-child(5) { transform: rotateX(90deg) translateZ(25px); background: color-mix(in srgb, var(--c) 32%, transparent); }
-.cubo i:nth-child(6) { transform: rotateX(-90deg) translateZ(25px); }
-@keyframes rueda { from { transform: rotateX(-24deg) rotateY(0); } to { transform: rotateX(-24deg) rotateY(360deg); } }
-
-.libros { display: flex; align-items: flex-end; gap: 5px; height: 54px; }
-.libros i { width: 11px; height: var(--h); border-radius: 3px; background: color-mix(in srgb, var(--c) 35%, transparent); transform-origin: bottom; animation: libro 6.5s ease-in-out infinite var(--w); }
-.libros i:nth-child(3) { background: var(--c); }
-@keyframes libro { 0%, 100% { scale: 1 1; } 50% { scale: 1 .6; } }
-
-// vista angosta (panel lateral abierto en una pantalla mediana): dos por dos, sin dejar de caber
-@container lista (max-width: 760px) { .tarjetas { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-
-// cada tarjeta decide según su propio alto: si queda baja, la descripción sobra antes que el aire
-// tarjeta baja: el dibujo pasa a la derecha y el texto se queda a la izquierda (no se pierde nada)
-@container tarjeta (max-height: 215px) {
-  .viz { position: absolute; right: 16px; top: 54px; bottom: 14px; width: 44%; }
-  .tile__txt { max-width: 54%; }
-  .aros { gap: 5px; } .aros svg { width: 34px; height: 34px; }
-  .dupla { gap: 8px; } .caras { gap: 4px; } .caras i { width: 18px; height: 18px; }
-  .caras i::before, .caras i::after { top: 6px; width: 2.5px; height: 2.5px; } .caras i::before { left: 4.5px; } .caras i::after { right: 4.5px; }
-  .arbol { width: 52px; } .cubo { scale: .85; } .libros { scale: .85; }
+// ventanas bajas: sin subtítulo
+@media (max-height: 640px) { .sub { display: none; } }
+// pantallas medianas: las puertas pasan a dos por dos
+@media (max-width: 1100px) {
+  .puertas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .puertas a:nth-child(3) { border-left: 0; }
+  .puertas a:nth-child(n+3) { border-top: 1px solid var(--gl); }
 }
-@container tarjeta (max-height: 140px) { .tile p { display: none; } }
-@container tarjeta (max-height: 110px) { .viz { display: none; } .tile__txt { max-width: none; } }
-
-// solo en ventanas muy bajas se quita el subtítulo
-@media (max-height: 560px) { .accion__sub { display: none; } }
 
 // celular: ya no cabe en una pantalla; se recorre con el dedo
-// sin la cápsula en medio, el aire queda entre los verbos y las tarjetas
-.verbos { margin-bottom: clamp(12px, 3vh, 30px); }
 @media (max-width: 767px) {
-  h1 { white-space: normal; font-size: clamp(24px, 7vw, 34px); }
-  .pob { position: static; margin: 0 auto 18px; }
-  .accion { padding-top: 18px; }
-  .portada { height: auto; min-height: 0; padding-bottom: 56px; }
-  .marco { height: auto; }
-  .contenido { display: block; }
-  .tarjetas { grid-auto-rows: 220px; }
+  .portada { height: auto; min-height: 0; padding-top: var(--alto-barra, 0px); }
+  .velo { background: linear-gradient(180deg, rgba(var(--vl), .92) 0, rgba(var(--vl), .82) 55%, rgba(var(--vl), .35) 100%); }
+  .marco { height: auto; display: flex; flex-direction: column; gap: 14px; padding: 28px 16px 52px; }
+  .titulo { max-width: none; }
+  h1 { font-size: clamp(30px, 9vw, 40px); }
+  .capas { align-self: stretch; justify-self: stretch; overflow-x: auto; scrollbar-width: none; }
+  .capas button { flex: 1; justify-content: center; white-space: nowrap; padding: 8px 10px; }
+  .leyenda { align-self: stretch; max-width: none; }
+  .cristal { grid-template-columns: 1fr; gap: 0; }
+  .puertas a { padding: 14px 16px; }
+  .puertas a + a { border-left: 0; }
+  .puertas a:nth-child(even) { border-left: 1px solid var(--gl); }
+  .puertas b { font-size: 16px; }
+  .puertas small { font-size: 13px; }
+  .pob { padding: 14px 16px; border-left: 0; border-top: 1px solid var(--gl); }
 }
-@media (max-width: 440px) {
-  .marco { padding: 4px 14px 32px; }
-  .tarjetas { gap: 10px; }
-  .tile { min-height: 190px; padding: 14px; border-radius: 18px; }
-  .para { display: none; }
-  .aros { gap: 5px; }
-  .aros svg { width: 38px; height: 38px; }
-  .dupla { gap: 8px; }
-  .caras i { width: 20px; height: 20px; }
-  .caras i::before, .caras i::after { top: 7px; }
-  .caras i::before { left: 5px; }
-  .caras i::after { right: 5px; }
-  .arbol { width: 56px; }
+@media (max-width: 440px) { .capas button i { display: none; } }
+
+// sin movimiento: la toma queda quieta
+@media (prefers-reduced-motion: reduce) {
+  .puertas a::after { transition: none; }
+  .cam { animation: none !important; transform: scale(1.04); }
+  .cp { transition: opacity .6s ease; transform: none; }
 }
+
 // ── invitación a seguir bajando ──
 // discreta: solo una flecha pequeña en un círculo translúcido; rebota tres veces al llegar y luego queda quieta
 .baja { position: absolute; z-index: 2; left: 50%; bottom: 4px; translate: -50% 0; width: 30px; height: 30px; padding: 0; display: grid; place-items: center;
