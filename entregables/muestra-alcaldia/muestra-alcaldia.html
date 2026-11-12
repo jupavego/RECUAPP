@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RECUAPP · Presentación para la Alcaldía de Girardota</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  /* Marca RECUAPP · Earthy Botanical (src/styles.scss) */
+  :root {
+    --bosque: #29422F;
+    --bosque-2: #2F6B3F;
+    --lima: #66AA33;
+    --lima-2: #99CC33;
+    --dorado: #E0B33A;
+    --crema: #F5F0EA;
+    --crema-2: #FBF8F3;
+    --borde: #C8D9C0;
+    --texto: #1E2B21;
+    --tenue: #5B6B5E;
+  }
+  @page { size: A4 landscape; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #d9d6d0; }
+  body { font-family: Inter, system-ui, sans-serif; color: var(--texto); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  .hoja {
+    width: 297mm; height: 210mm; margin: 10mm auto; position: relative; overflow: hidden;
+    background: var(--crema-2); display: grid; grid-template-rows: 17mm 1fr 11mm;
+    box-shadow: 0 4px 24px rgba(0,0,0,.12);
+    page-break-after: always; break-after: page;
+  }
+  @media print { html, body { background: none; } .hoja { margin: 0; box-shadow: none; } }
+
+  /* ---------- membrete ---------- */
+  .membrete {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 14mm; position: relative;
+  }
+  .membrete::after {
+    content: ""; position: absolute; left: 14mm; right: 14mm; bottom: 0; height: 1.2px;
+    background: linear-gradient(90deg, var(--bosque) 0 22%, var(--lima) 22% 70%, var(--dorado) 70% 100%);
+  }
+  .marca { display: flex; align-items: center; gap: 3mm; }
+  .insignia {
+    width: 9.5mm; height: 9.5mm; border-radius: 2.6mm; display: grid; place-items: center;
+    background: linear-gradient(140deg, #3F8A3A, #2F6B3F 70%);
+    box-shadow: 0 1.5px 4px rgba(41,66,47,.35), inset 0 1px 0 rgba(255,255,255,.25);
+  }
+  .insignia svg { width: 5.6mm; height: 5.6mm; fill: none; stroke: #fff; stroke-width: 1.8; stroke-linejoin: round; }
+  .marca b { font-family: Nunito, sans-serif; font-weight: 900; font-size: 13pt; letter-spacing: .02em; color: var(--bosque); display: block; line-height: 1; }
+  .marca small { font-size: 6.6pt; color: var(--tenue); letter-spacing: .14em; text-transform: uppercase; font-weight: 600; }
+  .membrete .ref { text-align: right; font-size: 7pt; color: var(--tenue); line-height: 1.45; }
+  .membrete .ref strong { color: var(--bosque); font-weight: 600; display: block; font-size: 7.6pt; }
+
+  /* ---------- pie ---------- */
+  .pie {
+    display: flex; align-items: center; justify-content: space-between; padding: 0 14mm;
+    font-size: 6.6pt; color: var(--tenue); border-top: 1px solid #E6E1D8; margin: 0 14mm; padding: 0;
+  }
+  .pie .num { font-family: Nunito, sans-serif; font-weight: 800; color: var(--bosque); font-size: 8pt; }
+  .pie .num i { font-style: normal; color: var(--lima); }
+
+  /* ---------- cuerpo de página de contenido ---------- */
+  .cuerpo { display: grid; grid-template-columns: 74mm 1fr; gap: 9mm; padding: 9mm 14mm 7mm; min-height: 0; }
+  .texto { display: flex; flex-direction: column; min-height: 0; }
+  .eyebrow { display: flex; align-items: center; gap: 2.4mm; font-size: 7pt; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--bosque-2); }
+  .eyebrow .n {
+    font-family: Nunito, sans-serif; font-size: 8pt; letter-spacing: 0; color: #fff; background: var(--bosque);
+    width: 7mm; height: 7mm; border-radius: 50%; display: grid; place-items: center;
+  }
+  h2 { font-family: Nunito, sans-serif; font-weight: 900; font-size: 22pt; line-height: 1.08; color: var(--bosque); margin: 4mm 0 4mm; letter-spacing: -.01em; }
+  .bajada { font-size: 10pt; line-height: 1.5; color: #3A4A3D; }
+  .bajada b { color: var(--bosque); }
+  .sirve { margin-top: auto; background: #fff; border: 1px solid var(--borde); border-radius: 3.5mm; padding: 4.2mm 4.5mm; }
+  .sirve h4 { font-size: 6.8pt; letter-spacing: .14em; text-transform: uppercase; color: var(--lima); margin-bottom: 2.4mm; font-weight: 700; }
+  .sirve ul { list-style: none; display: grid; gap: 2.1mm; }
+  .sirve li { font-size: 8.4pt; line-height: 1.38; padding-left: 5mm; position: relative; color: #34443A; }
+  .sirve li::before {
+    content: ""; position: absolute; left: 0; top: 1.35mm; width: 2.4mm; height: 2.4mm; border-radius: 50% 0;
+    background: var(--lima); transform: rotate(-45deg);
+  }
+
+  /* columna izquierda sobre una toma del mapa 3D, como la portada */
+  .panel {
+    position: relative; isolation: isolate; overflow: hidden; border-radius: 4mm;
+    padding: 7mm 6mm 6mm; color: #fff; box-shadow: 0 6px 18px rgba(23,38,27,.22);
+  }
+  .panel::before { content: ""; position: absolute; inset: 0; z-index: -2; background: var(--fondo) var(--pos, center) / cover no-repeat; }
+  .panel::after {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background:
+      linear-gradient(180deg, rgba(23,38,27,.95) 0%, rgba(30,50,35,.86) 42%, rgba(30,50,35,.45) 72%, rgba(23,38,27,.70) 100%);
+  }
+  .panel .eyebrow { color: var(--lima-2); }
+  .panel .eyebrow .n { background: var(--dorado); color: var(--bosque); }
+  .panel h2 { color: #fff; font-size: 20pt; }
+  .panel .bajada { color: #DDE8D5; font-size: 9.6pt; }
+  .panel .bajada b { color: #fff; }
+  .panel .cifra { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.18); backdrop-filter: blur(2px); }
+  .panel .cifra b { color: #fff; }
+  .panel .cifra span { color: #CFE3C2; }
+  .panel .sirve { background: rgba(251,248,243,.95); border: 0; box-shadow: 0 4px 14px rgba(0,0,0,.25); }
+  .panel .credito-toma { position: absolute; right: 3mm; bottom: 1.6mm; font-size: 5pt; color: rgba(255,255,255,.6); }
+
+  .panel .cifras { grid-template-columns: 1fr 1fr; }
+  .panel .cifra:first-child { grid-column: 1 / -1; display: flex; align-items: baseline; gap: 2.4mm; }
+  .panel .cifra:first-child span { font-size: 7.6pt; }
+  .tarjeta { isolation: isolate; }
+  .tarjeta::before {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background:
+      linear-gradient(180deg, rgba(23,38,27,.96) 0%, rgba(30,50,35,.88) 45%, rgba(30,50,35,.55) 75%, rgba(23,38,27,.92) 100%),
+      url(img/fondo-valle.jpg) 60% 60% / cover no-repeat;
+  }
+  .tarjeta .dato { display: flex; align-items: center; gap: 2.4mm; }
+  .tarjeta .dato svg { width: 4mm; height: 4mm; fill: none; stroke: var(--lima-2); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+
+  .vista { display: flex; flex-direction: column; min-height: 0; }
+  .marco {
+    flex: 1; min-height: 0; border-radius: 3.5mm; overflow: hidden; background: #fff;
+    border: 1px solid #DCD6CB; box-shadow: 0 6px 18px rgba(41,66,47,.13), 0 1px 2px rgba(41,66,47,.08);
+    display: flex; flex-direction: column;
+  }
+  .barra { height: 6.2mm; flex: none; display: flex; align-items: center; gap: 1.4mm; padding: 0 3mm; background: #F1ECE4; border-bottom: 1px solid #E3DDD2; }
+  .barra i { width: 2mm; height: 2mm; border-radius: 50%; background: #D6CFC3; }
+  .barra span { margin-left: 3mm; font-size: 6.2pt; color: #8A8A80; background: #fff; border-radius: 1.6mm; padding: .6mm 3mm; flex: 1; max-width: 70mm; }
+  .marco img { display: block; width: 100%; flex: 1; min-height: 0; object-fit: cover; object-position: top left; }
+  .leyenda { font-size: 6.8pt; color: var(--tenue); margin-top: 2.6mm; line-height: 1.4; }
+  .leyenda b { color: var(--bosque); font-weight: 600; }
+
+  .cifras { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2mm; margin-top: 5mm; }
+  .cifra { background: #EEF4E6; border-radius: 2.6mm; padding: 2.4mm 3mm; }
+  .cifra b { font-family: Nunito, sans-serif; font-size: 15pt; font-weight: 900; color: var(--bosque); display: block; line-height: 1.05; }
+  .cifra span { font-size: 6.6pt; color: var(--tenue); }
+
+  /* ---------- portada ---------- */
+  .portada { grid-template-rows: 1fr; background: var(--bosque); }
+  .portada .fondo { position: absolute; inset: 0; background: url(img/portada.jpg) 70% center / cover no-repeat; }
+  .portada .velo {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(90deg, rgba(23,38,27,.94) 0%, rgba(30,50,35,.86) 34%, rgba(30,50,35,.35) 62%, rgba(30,50,35,0) 80%),
+      linear-gradient(0deg, rgba(18,26,20,.55) 0%, rgba(18,26,20,0) 30%);
+  }
+  .portada .contenido { position: relative; padding: 16mm 0 14mm 18mm; width: 150mm; height: 100%; display: flex; flex-direction: column; color: #fff; }
+  .portada .marca b { color: #fff; font-size: 15pt; }
+  .portada .marca small { color: #CFE3C2; }
+  .portada .insignia { width: 11mm; height: 11mm; }
+  .portada .titulo { margin-top: auto; }
+  .portada .sello {
+    display: inline-flex; align-items: center; gap: 2mm; font-size: 7pt; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--bosque); background: var(--dorado); border-radius: 10mm; padding: 1.6mm 4mm;
+  }
+  .portada h1 { font-family: Nunito, sans-serif; font-weight: 900; font-size: 31pt; line-height: 1.04; letter-spacing: -.015em; margin: 6mm 0 5mm; }
+  .portada h1 em { font-style: normal; color: var(--lima-2); }
+  .portada p.sub { font-size: 10.5pt; line-height: 1.5; color: #DDE8D5; max-width: 128mm; }
+  .portada .datos { margin-top: 10mm; display: flex; gap: 8mm; font-size: 7.4pt; color: #BFD3B3; border-top: 1px solid rgba(255,255,255,.18); padding-top: 4mm; }
+  .portada .datos b { display: block; color: #fff; font-size: 8.6pt; font-weight: 600; margin-top: .6mm; }
+  .portada .creditos { position: absolute; right: 8mm; bottom: 5mm; font-size: 5.6pt; color: rgba(255,255,255,.75); }
+
+  /* ---------- cierre ---------- */
+  .cierre .cuerpo { grid-template-columns: 1fr 92mm; }
+  .pilares { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; margin-top: 6mm; }
+  .pilar { background: #fff; border: 1px solid var(--borde); border-radius: 3.5mm; padding: 5mm 4.5mm; position: relative; overflow: hidden; }
+  .pilar::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1.3mm; background: var(--c, var(--lima)); }
+  .pilar .ico { width: 9mm; height: 9mm; border-radius: 2.4mm; display: grid; place-items: center; background: #EEF4E6; margin-bottom: 3mm; }
+  .pilar .ico svg { width: 5mm; height: 5mm; fill: none; stroke: var(--bosque); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .pilar h3 { font-family: Nunito, sans-serif; font-weight: 800; font-size: 11pt; color: var(--bosque); margin-bottom: 2mm; line-height: 1.2; }
+  .pilar p { font-size: 8.2pt; line-height: 1.45; color: #3A4A3D; }
+  .hecho { margin-top: 6mm; background: #EEF4E6; border-radius: 3.5mm; padding: 4.5mm 5mm; }
+  .hecho h4 { font-size: 6.8pt; letter-spacing: .14em; text-transform: uppercase; color: var(--bosque-2); margin-bottom: 2.6mm; font-weight: 700; }
+  .hecho ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 2.4mm 6mm; }
+  .hecho li { font-size: 8.4pt; line-height: 1.38; padding-left: 5.5mm; position: relative; color: #34443A; }
+  .hecho li b { color: var(--bosque); }
+  .hecho li::before {
+    content: "✓"; position: absolute; left: 0; top: 0; width: 3.8mm; height: 3.8mm; border-radius: 50%;
+    background: var(--lima); color: #fff; font-size: 6pt; font-weight: 700; display: grid; place-items: center;
+  }
+  .nota { margin-top: auto; font-size: 6.8pt; line-height: 1.5; color: var(--tenue); border-left: 2px solid var(--dorado); padding-left: 3mm; }
+  .tarjeta {
+    background: var(--bosque); color: #fff; border-radius: 4mm; padding: 9mm 8mm; display: flex; flex-direction: column; position: relative; overflow: hidden;
+  }
+  .tarjeta::after {
+    content: ""; position: absolute; right: -16mm; bottom: -16mm; width: 60mm; height: 60mm; border-radius: 50% 0;
+    background: linear-gradient(140deg, rgba(153,204,51,.22), rgba(102,170,51,0)); transform: rotate(-45deg);
+  }
+  .tarjeta .eyebrow { color: var(--lima-2); }
+  .tarjeta h2 { color: #fff; font-size: 20pt; }
+  .tarjeta p { font-size: 9.6pt; line-height: 1.5; color: #DDE8D5; }
+  .tarjeta .contacto { margin-top: auto; border-top: 1px solid rgba(255,255,255,.2); padding-top: 5mm; display: grid; gap: 2.2mm; font-size: 8.6pt; position: relative; z-index: 1; }
+  .tarjeta .contacto b { font-family: Nunito, sans-serif; font-size: 12pt; font-weight: 800; }
+  .tarjeta .contacto span { color: #CFE3C2; }
+  .pendiente { background: rgba(224,179,58,.22); border-radius: 1mm; padding: 0 1mm; }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="hoja" viewBox="0 0 24 24"><path d="M20 4C9 4 4 9.5 4 15c0 1.7.5 3 1.2 4C6 14 10 10.5 15 9c-4 2.5-7 6-8 11 1 .6 2.2 1 3.5 1C17 21 20 13 20 4z"/></symbol>
+</defs></svg>
+
+<!-- 1 · PORTADA -->
+<section class="hoja portada">
+  <div class="fondo"></div>
+  <div class="velo"></div>
+  <div class="contenido">
+    <div class="marca">
+      <span class="insignia"><svg><use href="#hoja"/></svg></span>
+      <span><b>RECUAPP</b><small>Edición Girardota</small></span>
+    </div>
+    <div class="titulo">
+      <span class="sello">Documento de presentación</span>
+      <h1>El Plan de Desarrollo de Girardota, <em>visto sobre su propio territorio.</em></h1>
+      <p class="sub">Una herramienta para ver, en un solo lugar, qué se prometió, quién responde por cada meta y dónde ocurre en el municipio. Ya funciona con información real de Girardota.</p>
+      <div class="datos">
+        <div>Dirigido a<b>Secretaría de Planeación, Desarrollo Territorial y Participación Ciudadana</b></div>
+        <div>Fecha<b>Noviembre de 2026</b></div>
+      </div>
+    </div>
+  </div>
+  <div class="creditos">Vista 3D de RECUAPP · Datos: OpenStreetMap, IGAC, Catastro Alcaldía de Girardota, Sentinel-2</div>
+</section>
+
+<!-- 2 · EL PLAN EN CLARO -->
+<section class="hoja">
+  <header class="membrete">
+    <div class="marca"><span class="insignia"><svg><use href="#hoja"/></svg></span><span><b>RECUAPP</b><small>Edición Girardota</small></span></div>
+    <div class="ref"><strong>Presentación para la Alcaldía de Girardota</strong>Plan de Desarrollo «Decencia en lo Público» 2024-2027</div>
+  </header>
+  <div class="cuerpo">
+    <div class="texto panel" style="--fondo:url(img/fondo-valle.jpg); --pos:70% 40%">
+      <div class="eyebrow"><span class="n">01</span>El plan en claro</div>
+      <h2>Todo el plan, organizado y fácil de consultar</h2>
+      <p class="bajada">Las líneas estratégicas, los sectores, los programas y cada producto del plan están en una sola vista, con su <b>avance según los informes de seguimiento</b> de la Alcaldía.</p>
+      <div class="cifras">
+        <div class="cifra"><b>244</b><span>productos e indicadores</span></div>
+        <div class="cifra"><b>49</b><span>programas</span></div>
+        <div class="cifra"><b>15</b><span>dependencias</span></div>
+      </div>
+      <div class="sirve">
+        <h4>Para la Alcaldía</h4>
+        <ul>
+          <li>Preparar informes de gestión y la rendición de cuentas con menos esfuerzo.</li>
+          <li>Ver de un vistazo qué líneas avanzan y cuáles necesitan atención.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="vista">
+      <div class="marco"><div class="barra"><i></i><i></i><i></i><span>recuapp · El plan en claro</span></div><img src="img/plan.jpg" alt="Vista El plan en claro de RECUAPP"></div>
+      <p class="leyenda"><b>Fuente:</b> DNP, SisPT (plan indicativo) y PDF oficial del plan, consultados el 30 de octubre de 2026.</p>
+    </div>
+  </div>
+  <footer class="pie"><span>RECUAPP · Documento de presentación · Noviembre de 2026</span><span class="num">02 <i>/</i> 07</span></footer>
+</section>
+
+<!-- 3 · RESPONSABLES -->
+<section class="hoja">
+  <header class="membrete">
+    <div class="marca"><span class="insignia"><svg><use href="#hoja"/></svg></span><span><b>RECUAPP</b><small>Edición Girardota</small></span></div>
+    <div class="ref"><strong>Presentación para la Alcaldía de Girardota</strong>Plan de Desarrollo «Decencia en lo Público» 2024-2027</div>
+  </header>
+  <div class="cuerpo">
+    <div class="texto panel" style="--fondo:url(img/fondo-casco.jpg); --pos:50% 50%">
+      <div class="eyebrow"><span class="n">02</span>Qué le toca a quién</div>
+      <h2>Cada dependencia, un lugar en el pueblo</h2>
+      <p class="bajada">Las secretarías aparecen como pines sobre un modelo 3D del casco urbano. Al tocar un pin se abre la ficha de esa dependencia con <b>quién la dirige, qué productos tiene a cargo y cómo avanzan</b>.</p>
+      <div class="sirve">
+        <h4>Para la Alcaldía</h4>
+        <ul>
+          <li>Una forma cercana y fácil de recordar para que la comunidad conozca la administración.</li>
+          <li>Útil en audiencias públicas, ferias de servicio y redes sociales.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="vista">
+      <div class="marco"><div class="barra"><i></i><i></i><i></i><span>recuapp · Responsables</span></div><img src="img/pueblo.jpg" alt="Pueblo 3D con un pin por dependencia"></div>
+      <p class="leyenda"><b>Pueblo 3D</b> hecho con el catastro de Girardota. La representación es ilustrativa y no tiene valor catastral.</p>
+    </div>
+  </div>
+  <footer class="pie"><span>RECUAPP · Documento de presentación · Noviembre de 2026</span><span class="num">03 <i>/</i> 07</span></footer>
+</section>
+
+<!-- 4 · FICHA PLANEACIÓN -->
+<section class="hoja">
+  <header class="membrete">
+    <div class="marca"><span class="insignia"><svg><use href="#hoja"/></svg></span><span><b>RECUAPP</b><small>Edición Girardota</small></span></div>
+    <div class="ref"><strong>Presentación para la Alcaldía de Girardota</strong>Plan de Desarrollo «Decencia en lo Público» 2024-2027</div>
+  </header>
+  <div class="cuerpo">
+    <div class="texto panel" style="--fondo:url(img/fondo-cenital.jpg); --pos:40% 50%">
+      <div class="eyebrow"><span class="n">03</span>La ficha de su secretaría</div>
+      <h2>Planeación, con sus metas y su avance</h2>
+      <p class="bajada">Esta es la ficha de la Secretaría de Planeación, Desarrollo Territorial y Participación Ciudadana: <b>20 productos a cargo</b>, el avance que reportan los informes de 2024 y 2025, y en qué veredas se menciona cada indicador.</p>
+      <div class="sirve">
+        <h4>Para la secretaría</h4>
+        <ul>
+          <li>Ver en una sola pantalla sus productos, los que ya cumplió y los que van rezagados.</li>
+          <li>Cada cifra dice de qué documento sale, para poder verificarla.</li>
+          <li>Coordinarse con las demás secretarías con la misma información.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="vista">
+      <div class="marco"><div class="barra"><i></i><i></i><i></i><span>recuapp · Responsables · Planeación</span></div><img src="img/ficha.jpg" alt="Ficha de la Secretaría de Planeación en RECUAPP"></div>
+      <p class="leyenda"><b>Fuente:</b> informes de seguimiento publicados por la Alcaldía (cifras reportadas, sin auditar) y directorio de girardota.gov.co.</p>
+    </div>
+  </div>
+  <footer class="pie"><span>RECUAPP · Documento de presentación · Noviembre de 2026</span><span class="num">04 <i>/</i> 07</span></footer>
+</section>
+
+<!-- 5 · ORGANIGRAMA -->
+<section class="hoja">
+  <header class="membrete">
+    <div class="marca"><span class="insignia"><svg><use href="#hoja"/></svg></span><span><b>RECUAPP</b><small>Edición Girardota</small></span></div>
+    <div class="ref"><strong>Presentación para la Alcaldía de Girardota</strong>Plan de Desarrollo «Decencia en lo Público» 2024-2027</div>
+  </header>
+  <div class="cuerpo">
+    <div class="texto panel" style="--fondo:url(img/fondo-ladera.jpg); --pos:50% 40%">
+      <div class="eyebrow"><span class="n">04</span>Coordinación</div>
+      <h2>Toda la alcaldía en una sola vista</h2>
+      <p class="bajada">El organigrama muestra el despacho del alcalde, las oficinas asesoras, las secretarías y sus subsecretarías. <b>El tamaño de cada nodo depende de cuántos productos del plan tiene a cargo</b>.</p>
+      <div class="sirve">
+        <h4>Para la Alcaldía</h4>
+        <ul>
+          <li>Ver dónde se concentra la carga del plan y qué dependencias deben trabajar juntas.</li>
+          <li>Útil para la inducción de funcionarios y contratistas nuevos.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="vista">
+      <div class="marco"><div class="barra"><i></i><i></i><i></i><span>recuapp · Así se organiza la alcaldía</span></div><img src="img/organigrama.jpg" alt="Organigrama de la Alcaldía de Girardota"></div>
+      <p class="leyenda"><b>Estructura</b> según el directorio de dependencias de girardota.gov.co y los responsables que asigna el plan.</p>
+    </div>
+  </div>
+  <footer class="pie"><span>RECUAPP · Documento de presentación · Noviembre de 2026</span><span class="num">05 <i>/</i> 07</span></footer>
+</section>
+
+<!-- 6 · TERRITORIO -->
+<section class="hoja">
+  <header class="membrete">
+    <div class="marca"><span class="insignia"><svg><use href="#hoja"/></svg></span><span><b>RECUAPP</b><small>Edición Girardota</small></span></div>
+    <div class="ref"><strong>Presentación para la Alcaldía de Girardota</strong>Plan de Desarrollo «Decencia en lo Público» 2024-2027</div>
+  </header>
+  <div class="cuerpo">
+    <div class="texto panel" style="--fondo:url(img/fondo-autopista.jpg); --pos:50% 50%">
+      <div class="eyebrow"><span class="n">05</span>Datos del territorio</div>
+      <h2>El municipio completo, con datos para decidir</h2>
+      <p class="bajada">El mapa 3D reúne el relieve, las veredas, las vías, los ríos, las redes de servicios y el catastro. Encima se pueden activar capas como el <b>tráfico estimado por vía</b>, con la Autopista Norte y el peaje El Trapiche, y las <b>proyecciones de población</b>.</p>
+      <div class="sirve">
+        <h4>Para la Alcaldía</h4>
+        <ul>
+          <li>Ver dónde cae cada inversión y a quiénes beneficia.</li>
+          <li>Tener soporte técnico para proyectos de movilidad, servicios públicos y ordenamiento.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="vista">
+      <div class="marco"><div class="barra"><i></i><i></i><i></i><span>recuapp · Girardota en 3D · Tráfico estimado</span></div><img src="img/trafico.jpg" alt="Mapa 3D de Girardota con la capa de tráfico estimado"></div>
+      <p class="leyenda"><b>Datos:</b> OpenStreetMap, Overture Maps, IGAC, Catastro de la Alcaldía de Girardota y Sentinel-2. El tráfico es una estimación del modelo, no un aforo.</p>
+    </div>
+  </div>
+  <footer class="pie"><span>RECUAPP · Documento de presentación · Noviembre de 2026</span><span class="num">06 <i>/</i> 07</span></footer>
+</section>
+
+<!-- 7 · CIERRE -->
+<section class="hoja cierre">
+  <header class="membrete">
+    <div class="marca"><span class="insignia"><svg><use href="#hoja"/></svg></span><span><b>RECUAPP</b><small>Edición Girardota</small></span></div>
+    <div class="ref"><strong>Presentación para la Alcaldía de Girardota</strong>Plan de Desarrollo «Decencia en lo Público» 2024-2027</div>
+  </header>
+  <div class="cuerpo">
+    <div class="texto">
+      <div class="eyebrow"><span class="n">06</span>En resumen</div>
+      <h2>Lo que RECUAPP le aporta a Girardota</h2>
+      <div class="pilares">
+        <div class="pilar" style="--c: var(--bosque)">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M6 2h9l4 4v16H6z"/><path d="M15 2v4h4M9 11h7M9 15h7M9 19h4"/></svg></div>
+          <h3>Menos esfuerzo en los informes</h3>
+          <p>El plan, sus metas y su avance están ya organizados para preparar la gestión y la rendición de cuentas.</p>
+        </div>
+        <div class="pilar" style="--c: var(--lima)">
+          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6M16 5a3.5 3.5 0 010 6.5M18 14c2.2.6 3.5 2.6 3.5 5"/></svg></div>
+          <h3>Mejor coordinación</h3>
+          <p>Cada secretaría ve lo que le toca y lo que les toca a las demás, con la misma información.</p>
+        </div>
+        <div class="pilar" style="--c: var(--dorado)">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0114 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+          <h3>Resultados que la gente entiende</h3>
+          <p>El avance del plan se muestra sobre el territorio, en un formato cercano para la comunidad.</p>
+        </div>
+      </div>
+      <div class="hecho">
+        <h4>Ya está construido</h4>
+        <ul>
+          <li><b>244</b> productos e indicadores del plan 2024-2027, cada uno con su responsable</li>
+          <li><b>15</b> dependencias con su ficha, sus metas y su avance reportado</li>
+          <li>Modelo 3D de Girardota hecho con el catastro, las vías y las veredas</li>
+          <li>Proyecciones de población por edad y tráfico estimado por vía</li>
+        </ul>
+      </div>
+      <p class="nota">Las cifras de avance provienen de los informes de seguimiento publicados por la Alcaldía y se presentan como fueron reportadas. Los modelos 3D son ilustrativos y no tienen valor catastral. Cada dato de la herramienta indica su fuente.</p>
+    </div>
+    <aside class="tarjeta">
+      <div class="eyebrow">Siguiente paso</div>
+      <h2>Una reunión de 30 minutos</h2>
+      <p>Proponemos mostrarle la herramienta funcionando y escuchar qué le sería útil a la Secretaría. La reunión no implica ningún compromiso.</p>
+      <div class="contacto">
+        <b>Juan Pablo Velásquez Gómez</b>
+        <span>Creador de RECUAPP</span>
+        <span class="dato"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"/></svg>311 688 9049</span>
+        <span class="dato"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>jupavego@hotmail.com</span>
+      </div>
+    </aside>
+  </div>
+  <footer class="pie"><span>RECUAPP · Documento de presentación · Noviembre de 2026</span><span class="num">07 <i>/</i> 07</span></footer>
+</section>
+
+</body>
+</html>
