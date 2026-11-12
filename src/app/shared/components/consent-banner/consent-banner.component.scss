@@ -1,50 +1,115 @@
+// Aviso de privacidad con la paleta botánica de RECUAPP: tarjeta crema translúcida, verde bosque y lima;
+// en tema oscuro, verde noche con lima. Mismo botón verde de la app (degradado bosque con brillo interior).
 .consent {
+  --c-fondo: rgba(252, 249, 246, .94);   // crema
+  --c-borde: #C8D9C0;                    // verde salvia
+  --c-texto: #3D5C3D;
+  --c-fuerte: #29422F;                   // verde bosque
+  --c-enlace: #4F9A35;
+  --c-enlace-hover: #29422F;
+  --c-hoja: #66AA33;
+
   position: fixed;
   bottom: 1rem;
   left: 1rem;
   right: 1rem;
   max-width: 600px;
   margin: 0 auto;
-  background: #0f172a;
-  color: #fff;
-  border-radius: 12px;
-  padding: 1rem 1.25rem;
+  box-sizing: border-box;
+  background: var(--c-fondo);
+  color: var(--c-texto);
+  border: 1px solid var(--c-borde);
+  border-radius: 18px;
+  padding: .9rem 1rem .9rem 1.1rem;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: .9rem 1rem;
   flex-wrap: wrap;
   z-index: 9999;
-  box-shadow: 0 4px 24px rgba(0,0,0,.35);
+  box-shadow: 0 1px 2px rgba(41, 66, 47, .06), 0 12px 32px rgba(41, 66, 47, .18);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+
+  // hoja de la marca a la izquierda
+  &::before {
+    content: '';
+    flex: none;
+    width: 10px;
+    height: 20px;
+    border-radius: 0 100% 0 100%;
+    background: var(--c-hoja);
+    transform: rotate(-12deg);
+  }
 
   &__text {
     flex: 1;
+    min-width: 200px;
     font-size: 0.83rem;
     line-height: 1.55;
     margin: 0;
-    color: #e2e8f0;
+    color: var(--c-texto);
+
+    strong { color: var(--c-fuerte); }
   }
 
   &__link {
-    color: #67e8f9;
+    color: var(--c-enlace);
+    font-weight: 600;
     text-decoration: underline;
-    text-underline-offset: 2px;
+    text-decoration-color: color-mix(in srgb, var(--c-enlace) 45%, transparent);
+    text-underline-offset: 3px;
     white-space: nowrap;
 
-    &:hover { color: #fff; }
+    &:hover { color: var(--c-enlace-hover); text-decoration-color: currentColor; }
+    &:focus-visible { outline: 2px solid #E0B33A; outline-offset: 2px; border-radius: 3px; }
   }
 
   &__btn {
     flex-shrink: 0;
-    background: #0f766e;
+    min-height: 40px;
+    background: linear-gradient(180deg, #35553c 0%, #29422F 100%);
     color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 0.5rem 1.1rem;
+    border: 1px solid rgba(255, 255, 255, .06);
+    border-radius: 999px;
+    padding: 0.5rem 1.3rem;
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
-    transition: background 0.2s;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .16), 0 4px 12px rgba(41, 66, 47, .25);
+    transition: filter .2s, transform .1s;
 
-    &:hover { background: #115e59; }
+    &:hover { filter: brightness(1.12); }
+    &:active { transform: scale(.97); }
+    &:focus-visible { outline: 2px solid #E0B33A; outline-offset: 2px; }
   }
+}
+
+// tema oscuro de la app: verde noche y lima
+:host-context(html.tema-oscuro),
+:host-context(body.tema-oscuro) {
+  .consent {
+    --c-fondo: rgba(26, 38, 29, .94);
+    --c-borde: #2F4533;
+    --c-texto: #C3CFBF;
+    --c-fuerte: #E8EFE4;
+    --c-enlace: #99CC33;
+    --c-enlace-hover: #D4E88A;
+    --c-hoja: #99CC33;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, .45);
+  }
+
+  .consent__btn {
+    background: linear-gradient(180deg, #A9D64A 0%, #8CBF2E 100%);
+    color: #16200F;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3), 0 4px 12px rgba(0, 0, 0, .35);
+  }
+}
+
+@media (max-width: 480px) {
+  .consent { padding: .85rem .9rem; }
+  .consent__btn { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .consent__btn { transition: none; }
 }
