@@ -3,11 +3,11 @@ import { CargadorComponent } from '../../../../shared/components/cargador/cargad
 import { PERIODO_CERCA, crearTexturaCercas, filaCerca } from '../../utils/cercas';
 import { NEGOCIOS_ATLAS, PALETAS_ATLAS, celdaBahia, celdaLocal, crearAtlasFachadas, crearTexturaTeja } from '../../utils/fachadas';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, NavigationStart, Router, RouterLink } from '@angular/router';
 import {
   AfterViewInit, Component, DestroyRef, ElementRef, NgZone, ViewChild, effect, inject, signal,
 } from '@angular/core';
-import { Observable, catchError, forkJoin, of } from 'rxjs';
+import { Observable, catchError, forkJoin, of, tap } from 'rxjs';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
@@ -811,7 +811,7 @@ const TIPOS_ZONA: Record<string, string> = {
     <div #tilt class="tilt" aria-hidden="true"></div>
     <div class="vineta" aria-hidden="true"></div>
 
-    @if (cargando()) { <div class="estado"><app-cargador tipo="mapa3d" /></div> }
+    @if (cargando()) { <div class="estado"><app-cargador tipo="mapa3d" [progreso]="progreso()" /></div> }
     @if (error()) { <div class="estado error">{{ error() }}</div> }
 
     <div #rotulos class="rotulos" [hidden]="modoFoto() && !conduciendo()" [class.solo-zonas]="conduciendo()"></div>
@@ -1784,6 +1784,9 @@ export class Mapa3dComponent implements AfterViewInit {
   private readonly destroyRef = inject(DestroyRef);
 
   readonly cargando = signal(true);
+  /** avance de la carga, de 0 a 100: descarga de datos (hasta 30) y construcción de la escena por etapas */
+  readonly progreso = signal(0);
+  private avanzar(p: number) { this.progreso.update(a => Math.max(a, Math.min(100, Math.round(p)))); }
   readonly error = signal('');
   readonly seleccion = signal<Zona | null>(null);
   readonly pinFicha = signal<FichaPin | null>(null);
@@ -2201,7 +2204,16 @@ export class Mapa3dComponent implements AfterViewInit {
     obsLey.observe(this.barraLey.nativeElement);
     this.destroyRef.onDestroy(() => obsLey.disconnect());
 
-    forkJoin({
+    // Si se pide otra sección (menú lateral, enlaces) mientras se vuela, se conduce o se elige el punto de salida, el vehículo se
+    // baja solo: antes el candado de la página devolvía el scroll a donde estaba y no dejaba salir del mapa.
+    const subNav = this.enrutador.events.subscribe(e => {
+      if (!(e instanceof NavigationStart)) return;
+      if (this.conduciendo()) this.salirDeConducir();
+      if (this.eligiendoSalida()) this.cancelarSalida();
+    });
+    this.destroyRef.onDestroy(() => subNav.unsubscribe());
+
+    const fuentes = {
       relieve: this.http.get<Relieve>(`data/mapa3d/relieve-${ID_MUNICIPIO}.json`),
       muni: this.mapa.municipios$,
       terr: this.mapa.territorio(ID_MUNICIPIO),
@@ -2225,55 +2237,74 @@ export class Mapa3dComponent implements AfterViewInit {
       instalaciones: this.http.get<InstalacionAgua[]>(`data/mapa3d/instalaciones-agua-${ID_MUNICIPIO}.json`).pipe(catchError(() => of([] as InstalacionAgua[]))),
       tanques: this.http.get<Tanque[]>(`data/mapa3d/tanques-${ID_MUNICIPIO}.json`).pipe(catchError(() => of([] as Tanque[]))),
       ajustes: this.http.get<Record<string, AjusteCatastro>>(`data/mapa3d/equipamientos-catastro-${ID_MUNICIPIO}.json`).pipe(catchError(() => of({} as Record<string, AjusteCatastro>))),
-    }).subscribe({
+    };
+    // cada fuente que termina de descargarse suma al avance (los datos pesan hasta el 30 %)
+    let descargadas = 0;
+    const total = Object.keys(fuentes).length;
+    const contadas = Object.fromEntries(Object.entries(fuentes).map(([k, o]) =>
+      [k, (o as Observable<unknown>).pipe(tap({ complete: () => this.avanzar(++descargadas / total * 30) }))])) as unknown as typeof fuentes;
+    forkJoin(contadas).subscribe({
       next: async ({ relieve, muni, terr, foto, vias, viasEstado, edificios, rasante, cauces, poblacion, edad, industrias, puntos, zonasPlan, jardines, cercas, ajustes, industriasCat, tanques, infra, instalaciones }) => {
         try {
           this.foto = foto;
           this.zonasPlan = zonasPlan;
+          this.avanzar(32);
           this.construir(relieve, muni.municipios, terr.v);
+          this.avanzar(42);
           if (await this.ceder()) return;
           this.rasante = rasante?.v?.length ? new Rasante(rasante, lon => this.aX(lon), lat => this.aZ(lat), EXAGERACION) : null;
           this.fabricas = this.ubicarIndustrias(industrias, vias, industriasCat);
           this.equipamientos = await this.ubicarEquipamientos(puntos, vias, ajustes);
           if (this.destruido) return;
           this.nivelarPlazas();
+          this.avanzar(48);
           if (await this.ceder()) return;
           if (vias?.v) { await this.construirVias(vias); if (this.destruido) return; this.holguraConduccion = this.medirVias(vias); }
+          this.avanzar(56);
           if (await this.ceder()) return;
           if (USAR_ESTADO_VIAL && viasEstado?.v) { await this.construirViasEstado(viasEstado); if (this.destruido) return; }
           if (cauces?.c) this.construirCauces(cauces);
+          this.avanzar(62);
           if (await this.ceder()) return;
           if (vias?.v && cauces?.c) this.construirPuentes(vias, cauces);
           if (cauces?.c) this.construirPajaros(cauces);
           if (vias?.v) this.construirTrafico(vias);
+          this.avanzar(68);
           if (await this.ceder()) return;
           this.construirIndustrias();
           this.construirEquipamientos();
+          this.avanzar(72);
           if (await this.ceder()) return;
           this.tanques = tanques;
           this.construirTanques();
           this.construirInfraestructura(infra);
           this.construirInstalacionesAgua(instalaciones);
           this.construirPinesServicios();
+          this.avanzar(76);
           if (await this.ceder()) return;
           this.edificiosBase = await this.sinIndustrias(edificios, vias);
           if (this.destruido) return;
+          this.avanzar(80);
           this.poblacion = poblacion;
           this.edad = edad;
           this.hayPoblacion.set(!!(edificios?.e && poblacion));
           const dibujados = this.edificiosParaAnio(this.anio());
           if (dibujados?.e) await this.construirEdificiosEnTandas(dibujados);
+          this.avanzar(90);
           if (await this.ceder()) return;
           await this.construirJardines(jardines);
           if (this.destruido) return;
           this.construirCercas(cercas);
+          this.avanzar(94);
           if (await this.ceder()) return;
           const deJardin = await this.arbolesDeJardin(jardines);
           const deCalle = await this.arbolesDeCalle(vias);
           if (this.destruido) return;
           this.arbolesUrbanos = [...deJardin, ...deCalle];
+          this.avanzar(98);
           if (await this.ceder()) return;
           this.construirVegetacion(vias, dibujados, cauces);
+          this.avanzar(100);
           this.construido = true;
           this.abrirPuntoDeLaRuta();
           // dentro del recorrido la vista ya existe al volver del mapa 2D: el punto llega como un cambio de la dirección
@@ -3832,7 +3863,8 @@ export class Mapa3dComponent implements AfterViewInit {
   /** Lo mismo, pero cediendo el hilo entre tandas: al abrir el mapa son miles de huellas y de corrido congelaban la página. */
   private async construirEdificiosEnTandas(d: Compacto): Promise<void> {
     const g = this.edificiosPorTandas(d);
-    while (!g.next().done) { if (await this.ceder()) return; }
+    // cada tanda sube el avance un punto (80 → 89): el total de tandas no se conoce de antemano
+    while (!g.next().done) { this.avanzar(Math.min(89, this.progreso() + 1)); if (await this.ceder()) return; }
   }
 
   private *edificiosPorTandas(d: Compacto): Generator<void, void, void> {

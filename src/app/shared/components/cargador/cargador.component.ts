@@ -94,6 +94,12 @@ const CARGADORES: Record<TipoCargador, { c: string; texto: string }> = {
         }
       </div>
       <p>{{ cfg().texto }}<span class="puntos"><i>.</i><i>.</i><i>.</i></span></p>
+      @if (progreso() !== null) {
+        <div class="avance" role="progressbar" aria-valuemin="0" aria-valuemax="100" [attr.aria-valuenow]="pct()">
+          <i [style.width.%]="pct()"></i>
+        </div>
+        <b class="pct">{{ pct() }} %</b>
+      }
     </div>
   `,
   styles: [`
@@ -102,6 +108,9 @@ const CARGADORES: Record<TipoCargador, { c: string; texto: string }> = {
     .dibujo svg { width: 150px; height: 112px; overflow: visible; }
     p { margin: 0; font: 600 14px/1.4 var(--font-body, Inter, system-ui, sans-serif); color: color-mix(in srgb, var(--c) 70%, #2a3a2e); letter-spacing: .01em; }
     :host-context(html.tema-oscuro) p { color: color-mix(in srgb, var(--c) 65%, #fff); }
+    .avance { width: 150px; height: 5px; border-radius: 3px; overflow: hidden; background: color-mix(in srgb, var(--c) 18%, transparent); }
+    .avance i { display: block; height: 100%; border-radius: 3px; background: var(--c); transition: width .35s ease-out; }
+    .pct { font: 700 13px/1 var(--font-body, Inter, system-ui, sans-serif); font-variant-numeric: tabular-nums; color: var(--c); }
     .puntos i { font-style: normal; animation: punto 1.4s infinite; opacity: .2; }
     .puntos i:nth-child(2) { animation-delay: .2s; } .puntos i:nth-child(3) { animation-delay: .4s; }
     @keyframes punto { 40% { opacity: 1; } }
@@ -167,5 +176,8 @@ const CARGADORES: Record<TipoCargador, { c: string; texto: string }> = {
 })
 export class CargadorComponent {
   readonly tipo = input.required<TipoCargador>();
+  /** avance de 0 a 100; si no se pasa, el cargador solo anima (sin barra ni porcentaje) */
+  readonly progreso = input<number | null>(null);
+  readonly pct = computed(() => Math.max(0, Math.min(100, Math.round(this.progreso() ?? 0))));
   readonly cfg = computed(() => CARGADORES[this.tipo()]);
 }
