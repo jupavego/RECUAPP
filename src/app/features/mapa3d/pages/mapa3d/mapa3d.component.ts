@@ -15,6 +15,7 @@ import { MapaService, Municipio, Punto, Zona } from '../../../mapa/services/mapa
 import { CATEGORIA, CATEGORIAS } from '../../../mapa/utils/puntos';
 import { Aura, CategoriaServicio, COLOR_INDUSTRIA, GLIFO, Icono, ItemAura, SERVICIOS, SERVICIOS_GRUPO, crearAgrupador, crearAuras, crearIcono } from '../../utils/aura';
 import { Conduccion } from '../../utils/conduccion';
+import { Avioneta } from '../../utils/avioneta';
 import { ESCALA_ACTIVOS } from '../../utils/escala';
 import { DatosRasante, Rasante, TramoRasante } from '../../utils/rasante';
 import { COLORES_RURALES, Modelo, PARTES_COMFAMA, chimeneaParque, colorParque, modelarEquipamiento, unidadParque } from '../../utils/equipamientos';
@@ -1185,10 +1186,19 @@ const TIPOS_ZONA: Record<string, string> = {
       </svg>
     </button>
 
-    <button type="button" class="conducir" [class.activa]="conduciendo() || eligiendoSalida()" (click)="alternarConduccion()"
-            [attr.aria-pressed]="conduciendo() || eligiendoSalida()"
-            [attr.title]="conduciendo() ? 'Salir de la conducción (Esc)' : eligiendoSalida() ? 'Cancelar (Esc)' : 'Conducir: elige en el mapa dónde empezar'"
-            [attr.aria-label]="conduciendo() ? 'Salir de la conducción' : eligiendoSalida() ? 'Cancelar la conducción' : 'Conducir'">
+    <button type="button" class="conducir volar" [class.activa]="(conduciendo() || eligiendoSalida()) && vehiculo() === 'avion'" (click)="alternarConduccion('avion')"
+            [attr.aria-pressed]="(conduciendo() || eligiendoSalida()) && vehiculo() === 'avion'"
+            [attr.title]="conduciendo() && vehiculo() === 'avion' ? 'Salir del vuelo (Esc)' : eligiendoSalida() && vehiculo() === 'avion' ? 'Cancelar (Esc)' : 'Volar: elige en el mapa dónde empezar'"
+            [attr.aria-label]="conduciendo() && vehiculo() === 'avion' ? 'Salir del vuelo' : 'Volar en avioneta'">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+        <path d="M21 15.500v-1.500l-8-5V4.500a1.500 1.500 0 0 0-3 0V9l-8 5v1.500l8-2.200V18l-2 1.500V21l3.500-1 3.500 1v-1.500L13 18v-4.700z" fill="none" stroke="currentColor" stroke-width="1.700" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
+    <button type="button" class="conducir" [class.activa]="(conduciendo() || eligiendoSalida()) && vehiculo() === 'carro'" (click)="alternarConduccion('carro')"
+            [attr.aria-pressed]="(conduciendo() || eligiendoSalida()) && vehiculo() === 'carro'"
+            [attr.title]="conduciendo() && vehiculo() === 'carro' ? 'Salir de la conducción (Esc)' : eligiendoSalida() && vehiculo() === 'carro' ? 'Cancelar (Esc)' : 'Conducir: elige en el mapa dónde empezar'"
+            [attr.aria-label]="conduciendo() && vehiculo() === 'carro' ? 'Salir de la conducción' : eligiendoSalida() && vehiculo() === 'carro' ? 'Cancelar la conducción' : 'Conducir'">
       <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
         <path d="M3 15.500v-3a1.600 1.600 0 0 1 1.200-1.500L7 10.200l1.900-3a1.600 1.600 0 0 1 1.400-.8h3.600a1.600 1.600 0 0 1 1.300.7l2.200 3.100 2.100.6a1.600 1.600 0 0 1 1.100 1.500v2.700h-2M5 15.500H3M16 15.500H9M7 10.200h10.500M12.200 6.200v4" fill="none" stroke="currentColor" stroke-width="1.700" stroke-linecap="round" stroke-linejoin="round"/>
         <circle cx="7" cy="16.500" r="2" fill="none" stroke="currentColor" stroke-width="1.700"/>
@@ -1198,8 +1208,8 @@ const TIPOS_ZONA: Record<string, string> = {
 
     @if (eligiendoSalida()) {
       <div class="aviso-salida" role="status">
-        <b>¿Dónde quieres empezar a conducir?</b>
-        <span>Haz clic en el mapa; el carro aparece en la vía más cercana. Puedes mover el mapa para buscar el sitio.</span>
+        <b>{{ vehiculo() === 'avion' ? '¿Dónde quieres volar?' : '¿Dónde quieres empezar a conducir?' }}</b>
+        <span>Haz clic en el mapa; {{ vehiculo() === 'avion' ? 'la avioneta aparece' : 'el carro aparece' }} en la vía más cercana. Puedes mover el mapa para buscar el sitio.</span>
         <span class="aviso-salida__acciones">
           <button type="button" (click)="cancelarSalida(); empezarEnCentro()">Empezar en el centro <kbd>Enter</kbd></button>
           <button type="button" (click)="cancelarSalida()">Cancelar <kbd>Esc</kbd></button>
@@ -1209,12 +1219,16 @@ const TIPOS_ZONA: Record<string, string> = {
 
     @if (conduciendo()) {
       <div class="hud-conduccion">
-        <div class="velocimetro"><b #hudVelocidad>0</b> km/h</div>
+        <div class="velocimetro"><b #hudVelocidad>0</b> km/h@if (vehiculo() === 'avion') { · <b #hudAltura>0</b> m de altura}</div>
         <div class="zona-hud" #hudZona></div>
-        <p>W A S D o flechas · Shift turbo · Espacio freno · Arrastrar mirar · Rueda distancia · C o 5 recentrar · R reaparecer · Esc salir</p>
+        @if (vehiculo() === 'avion') {
+          <p>W/S empuje · ↑/↓ morro abajo/arriba · A/D o ←/→ inclinar y virar · Shift turbo · Espacio freno · Arrastrar mirar · C o 5 recentrar · R reaparecer · Esc salir</p>
+        } @else {
+          <p>W A S D o flechas · Shift turbo · Espacio freno · Arrastrar mirar · Rueda distancia · C o 5 recentrar · R reaparecer · Esc salir</p>
+        }
       </div>
       @if (cayo()) {
-        <div class="caida"><strong>Caíste al vacío</strong><button type="button" (click)="reaparecerCarro()">Reaparecer</button></div>
+        <div class="caida"><strong>{{ vehiculo() === 'avion' ? 'Te estrellaste' : 'Caíste al vacío' }}</strong><button type="button" (click)="reaparecerCarro()">Reaparecer</button></div>
       }
       <div class="mando" aria-hidden="true">
         <div class="giro">
@@ -1297,6 +1311,7 @@ const TIPOS_ZONA: Record<string, string> = {
     .foto:hover { background: #fff; }
     .conducir { position: absolute; z-index: 10; right: 60px; bottom: 16px; width: 38px; height: 38px; padding: 0; display: grid; place-items: center;
       border-radius: 12px; background: rgba(255,255,255,.85); color: #26425a; box-shadow: 0 2px 8px rgba(30,60,90,.25); backdrop-filter: blur(6px); }
+    .conducir.volar { right: 104px; }
     .conducir:hover { background: #fff; }
     .conducir.activa { background: #26425a; color: #fff; }
     .hud-conduccion { position: absolute; z-index: 10; left: 50%; bottom: 20px; transform: translateX(-50%); text-align: center; color: #fff;
@@ -1684,7 +1699,11 @@ export class Mapa3dComponent implements AfterViewInit {
   /** si el modo foto lo encendió la conducción (para apagarlo al salir) */
   private fotoPorConducir = false;
   readonly cayo = signal(false);
-  private conduccion?: Conduccion;
+  private conduccion?: Conduccion | Avioneta;
+  private carro?: Conduccion;
+  private avioneta?: Avioneta;
+  /** vehículo elegido: el carro por las vías o la avioneta */
+  readonly vehiculo = signal<'carro' | 'avion'>('carro');
   /** distancia al borde de la calzada más cercana (negativa sobre ella), para que el carro suba al asfalto */
   private holguraConduccion?: (x: number, z: number) => [number, number, number, number, number];
   /** Ancho y altura de las calles ajustados a las fachadas y al relieve (scripts/asentar_vias_edificios.py); null = vías de ancho fijo. */
@@ -1692,6 +1711,7 @@ export class Mapa3dComponent implements AfterViewInit {
   private antesDeConducir?: { pos: THREE.Vector3; objetivo: THREE.Vector3; fov: number };
   @ViewChild('hudVelocidad') private hudVelocidad?: ElementRef<HTMLElement>;
   @ViewChild('hudZona') private hudZona?: ElementRef<HTMLElement>;
+  @ViewChild('hudAltura') private hudAltura?: ElementRef<HTMLElement>;
   private hudAcumulado = 0;
   readonly anio = signal(ANIO_INICIAL);
   readonly hayPoblacion = signal(false);
@@ -2082,6 +2102,7 @@ export class Mapa3dComponent implements AfterViewInit {
           this.rasante = rasante?.v?.length ? new Rasante(rasante, lon => this.aX(lon), lat => this.aZ(lat), EXAGERACION) : null;
           this.fabricas = this.ubicarIndustrias(industrias, vias, industriasCat);
           this.equipamientos = this.ubicarEquipamientos(puntos, vias, ajustes);
+          this.nivelarPlazas();
           if (vias?.v) { this.construirVias(vias); this.holguraConduccion = this.medirVias(vias); }
           if (USAR_ESTADO_VIAL && viasEstado?.v) this.construirViasEstado(viasEstado);
           if (cauces?.c) this.construirCauces(cauces);
@@ -2184,7 +2205,6 @@ export class Mapa3dComponent implements AfterViewInit {
   @ViewChild('cartaTuto') private cartaTuto?: ElementRef<HTMLElement>;
 
   abrirTutorial(): void {
-          this.nivelarPlazas();
     this.pasoTutorial.set(0);
     this.tutorialAbierto.set(true);
     setTimeout(() => this.cartaTuto?.nativeElement.focus());
@@ -2748,6 +2768,72 @@ export class Mapa3dComponent implements AfterViewInit {
     }
   }
 
+  /**
+   * Plazas que van sobre la vía (el peaje): se nivelan como en la obra. La plaza queda plana a la cota de la calzada en su centro;
+   * el terreno bajo su pavimento se rebaja a esa cota y, hasta NIVELA m afuera, empalma suave con el de siempre (si no, el
+   * césped de la ladera asoma por encima del pavimento). Las vías que llegan bajan con el mismo empalme para entrar a ras de la
+   * plaza. Se cambian el relieve (que usa alturaEn), la malla del terreno y la rasante, antes de dibujar vías y edificios.
+   */
+  private nivelarPlazas(): void {
+    const NIVELA = 40;
+    const suave = (d: number) => { const t = Math.min(1, d / NIVELA); return t * t * (3 - 2 * t); };
+    let cambio = false;
+    for (const q of this.equipamientos) {
+      const m = q.datos.modelo;
+      if (!m.sobreVia || !m.plaza || !m.losa) continue;
+      const yaw = q.yaw ?? 0, co = Math.cos(yaw), si = Math.sin(yaw), ld = m.losa[1];
+      const cota = Math.max(...[-ld / 4, -ld / 8, ld / 8, ld / 4].map(b => this.calzadaXZ(q.x + b * si, q.z + b * co))) + 0.05;
+      q.cota = cota;
+      const xs = m.plaza.map(p => p[0]), zs = m.plaza.map(p => p[1]);
+      // distancia (m) de un punto del modelo al pavimento de la plaza: 0 adentro
+      const afuera = (x: number, z: number): number => {
+        const dx = x - q.x, dz = z - q.z, lx = dx * co - dz * si, lz = dx * si + dz * co;
+        if (puntoEnPoligono(lx, lz, xs, zs)) return 0;
+        let d = Infinity;
+        for (let i = 0; i < xs.length; i++) {
+          const j = (i + 1) % xs.length, sx = xs[j] - xs[i], sz = zs[j] - zs[i], ll = sx * sx + sz * sz;
+          const t = Math.max(0, Math.min(1, ((lx - xs[i]) * sx + (lz - zs[i]) * sz) / ll));
+          d = Math.min(d, Math.hypot(lx - xs[i] - sx * t, lz - zs[i] - sz * t));
+        }
+        return d;
+      };
+      const bajar = (y: number, d: number, piso: number) => Math.min(y, piso + (y - piso) * suave(d));
+      // relieve y malla del terreno: un vértice de la malla por punto del relieve (k = j·nx + i)
+      const { nx, ny, bbox: [o, s, e, n], min } = this.relieve;
+      const alcance = m.radio + NIVELA + 30, pos = this.capaTerreno.atributo, base = this.capaTerreno.base;
+      const lon0 = this.lon0 + (q.x - alcance) / this.mLon, lon1 = this.lon0 + (q.x + alcance) / this.mLon;
+      const lat0 = this.lat0 - (q.z + alcance) / this.mLat, lat1 = this.lat0 - (q.z - alcance) / this.mLat;
+      const i0 = Math.max(0, Math.floor((lon0 - o) / (e - o) * (nx - 1))), i1 = Math.min(nx - 1, Math.ceil((lon1 - o) / (e - o) * (nx - 1)));
+      const j0 = Math.max(0, Math.floor((n - lat1) / (n - s) * (ny - 1))), j1 = Math.min(ny - 1, Math.ceil((n - lat0) / (n - s) * (ny - 1)));
+      for (let j = j0; j <= j1; j++) {
+        for (let i = i0; i <= i1; i++) {
+          const k = j * nx + i, x = pos.getX(k), z = pos.getZ(k), d = afuera(x, z);
+          if (d >= NIVELA) continue;
+          const y = pos.getY(k), nuevo = bajar(y, d, cota - 0.35);
+          if (nuevo >= y) continue;
+          pos.setY(k, nuevo);
+          base[k] = nuevo;
+          this.alturas[k] = Math.round((nuevo / EXAGERACION + min) * 10);
+          cambio = true;
+        }
+      }
+      // vías de la rasante que llegan: mismo empalme, a ras de la plaza
+      for (const t of this.rasante?.tramos ?? []) {
+        for (let i = 0; i < t.x.length; i++) {
+          if (Math.abs(t.x[i] - q.x) > alcance || Math.abs(t.z[i] - q.z) > alcance) continue;
+          const d = afuera(t.x[i], t.z[i]);
+          if (d >= NIVELA) continue;
+          t.ya[i] = bajar(t.ya[i], d, cota + 0.05); t.yb[i] = bajar(t.yb[i], d, cota + 0.05);
+          t.yaa[i] = bajar(t.yaa[i], d, cota + 0.2); t.yab[i] = bajar(t.yab[i], d, cota + 0.2);
+        }
+      }
+    }
+    if (!cambio) return;
+    this.capaTerreno.atributo.needsUpdate = true;
+    this.terreno.geometry.computeVertexNormals();
+    (this.terreno.geometry.getAttribute('normal') as THREE.BufferAttribute).needsUpdate = true;
+  }
+
   /** Altura de la calzada en (x, z) del modelo: la de la rasante si hay una vía ahí, o 3 m sobre el terreno como antes. */
   private calzadaXZ(x: number, z: number): number {
     const c = this.rasante?.consultar(x, z);
@@ -2843,72 +2929,6 @@ export class Mapa3dComponent implements AfterViewInit {
         let cierre: number | null = null;
         if (extremo) {
           const o = l[i === 0 ? 1 : i - 1];
-  /**
-   * Plazas que van sobre la vía (el peaje): se nivelan como en la obra. La plaza queda plana a la cota de la calzada en su centro;
-   * el terreno bajo su pavimento se rebaja a esa cota y, hasta NIVELA m afuera, empalma suave con el de siempre (si no, el
-   * césped de la ladera asoma por encima del pavimento). Las vías que llegan bajan con el mismo empalme para entrar a ras de la
-   * plaza. Se cambian el relieve (que usa alturaEn), la malla del terreno y la rasante, antes de dibujar vías y edificios.
-   */
-  private nivelarPlazas(): void {
-    const NIVELA = 40;
-    const suave = (d: number) => { const t = Math.min(1, d / NIVELA); return t * t * (3 - 2 * t); };
-    let cambio = false;
-    for (const q of this.equipamientos) {
-      const m = q.datos.modelo;
-      if (!m.sobreVia || !m.plaza || !m.losa) continue;
-      const yaw = q.yaw ?? 0, co = Math.cos(yaw), si = Math.sin(yaw), ld = m.losa[1];
-      const cota = Math.max(...[-ld / 4, -ld / 8, ld / 8, ld / 4].map(b => this.calzadaXZ(q.x + b * si, q.z + b * co))) + 0.05;
-      q.cota = cota;
-      const xs = m.plaza.map(p => p[0]), zs = m.plaza.map(p => p[1]);
-      // distancia (m) de un punto del modelo al pavimento de la plaza: 0 adentro
-      const afuera = (x: number, z: number): number => {
-        const dx = x - q.x, dz = z - q.z, lx = dx * co - dz * si, lz = dx * si + dz * co;
-        if (puntoEnPoligono(lx, lz, xs, zs)) return 0;
-        let d = Infinity;
-        for (let i = 0; i < xs.length; i++) {
-          const j = (i + 1) % xs.length, sx = xs[j] - xs[i], sz = zs[j] - zs[i], ll = sx * sx + sz * sz;
-          const t = Math.max(0, Math.min(1, ((lx - xs[i]) * sx + (lz - zs[i]) * sz) / ll));
-          d = Math.min(d, Math.hypot(lx - xs[i] - sx * t, lz - zs[i] - sz * t));
-        }
-        return d;
-      };
-      const bajar = (y: number, d: number, piso: number) => Math.min(y, piso + (y - piso) * suave(d));
-      // relieve y malla del terreno: un vértice de la malla por punto del relieve (k = j·nx + i)
-      const { nx, ny, bbox: [o, s, e, n], min } = this.relieve;
-      const alcance = m.radio + NIVELA + 30, pos = this.capaTerreno.atributo, base = this.capaTerreno.base;
-      const lon0 = this.lon0 + (q.x - alcance) / this.mLon, lon1 = this.lon0 + (q.x + alcance) / this.mLon;
-      const lat0 = this.lat0 - (q.z + alcance) / this.mLat, lat1 = this.lat0 - (q.z - alcance) / this.mLat;
-      const i0 = Math.max(0, Math.floor((lon0 - o) / (e - o) * (nx - 1))), i1 = Math.min(nx - 1, Math.ceil((lon1 - o) / (e - o) * (nx - 1)));
-      const j0 = Math.max(0, Math.floor((n - lat1) / (n - s) * (ny - 1))), j1 = Math.min(ny - 1, Math.ceil((n - lat0) / (n - s) * (ny - 1)));
-      for (let j = j0; j <= j1; j++) {
-        for (let i = i0; i <= i1; i++) {
-          const k = j * nx + i, x = pos.getX(k), z = pos.getZ(k), d = afuera(x, z);
-          if (d >= NIVELA) continue;
-          const y = pos.getY(k), nuevo = bajar(y, d, cota - 0.35);
-          if (nuevo >= y) continue;
-          pos.setY(k, nuevo);
-          base[k] = nuevo;
-          this.alturas[k] = Math.round((nuevo / EXAGERACION + min) * 10);
-          cambio = true;
-        }
-      }
-      // vías de la rasante que llegan: mismo empalme, a ras de la plaza
-      for (const t of this.rasante?.tramos ?? []) {
-        for (let i = 0; i < t.x.length; i++) {
-          if (Math.abs(t.x[i] - q.x) > alcance || Math.abs(t.z[i] - q.z) > alcance) continue;
-          const d = afuera(t.x[i], t.z[i]);
-          if (d >= NIVELA) continue;
-          t.ya[i] = bajar(t.ya[i], d, cota + 0.05); t.yb[i] = bajar(t.yb[i], d, cota + 0.05);
-          t.yaa[i] = bajar(t.yaa[i], d, cota + 0.2); t.yab[i] = bajar(t.yab[i], d, cota + 0.2);
-        }
-      }
-    }
-    if (!cambio) return;
-    this.capaTerreno.atributo.needsUpdate = true;
-    this.terreno.geometry.computeVertexNormals();
-    (this.terreno.geometry.getAttribute('normal') as THREE.BufferAttribute).needsUpdate = true;
-  }
-
           cierre = Math.atan2(z - this.aZ(o[1]), x - this.aX(o[0]));
         }
         // rumbo de cada brazo que sale del vértice por esta vía
@@ -6397,9 +6417,14 @@ export class Mapa3dComponent implements AfterViewInit {
    * El botón del carro no arranca de una vez: primero se elige dónde empezar con un clic en el mapa (se puede seguir
    * moviendo la cámara para buscar el sitio). Enter arranca en el centro de la pantalla y Esc cancela.
    */
-  alternarConduccion(): void {
+  alternarConduccion(tipo: 'carro' | 'avion' = 'carro'): void {
     if (this.conduciendo()) { this.salirDeConducir(); return; }
-    if (this.eligiendoSalida()) { this.cancelarSalida(); return; }
+    if (this.eligiendoSalida()) {
+      if (this.vehiculo() === tipo) { this.cancelarSalida(); return; }
+      this.vehiculo.set(tipo);                 // cambió de vehículo mientras elegía: sigue eligiendo el punto
+      return;
+    }
+    this.vehiculo.set(tipo);
     this.vuelo = null;
     this.cerrarPin();
     this.eligiendoSalida.set(true);
@@ -6435,7 +6460,7 @@ export class Mapa3dComponent implements AfterViewInit {
    * punto de mira) el carro aparece sobre ella, mirando en el sentido más parecido al de la cámara.
    */
   private empezarAConducir(punto?: { x: number; z: number }): void {
-    this.conduccion ??= new Conduccion((x, z) => {
+    const suelo = (x: number, z: number): number => {
       if (Math.abs(x) > this.ancho / 2 || Math.abs(z) > this.alto / 2) return -Infinity;
       const h = this.alturaEn(this.lon0 + x / this.mLon, this.lat0 - z / this.mLat);
       // con rasante, el carro va sobre la superficie real de la calzada o la acera (con su peralte y su bordillo)
@@ -6446,7 +6471,10 @@ export class Mapa3dComponent implements AfterViewInit {
       if (d >= 4) return h;
       const calzada = this.alturaXZ(qx, qz) + 3;
       return Math.max(h, h + (calzada - h) * Math.min(1, 1 - d / 4));
-    }, (p, r) => this.empujarCarro(p, r));
+    };
+    const obstaculo = (p: THREE.Vector3, r: number): boolean => this.empujarCarro(p, r);
+    if (this.vehiculo() === 'avion') this.conduccion = this.avioneta ??= new Avioneta(suelo, obstaculo);
+    else this.conduccion = this.carro ??= new Conduccion(suelo, obstaculo);
     this.vuelo = null;
     this.cerrarPin();
     const t = this.controles.target, p = this.camara.position;
@@ -6530,6 +6558,8 @@ export class Mapa3dComponent implements AfterViewInit {
       this.hudAcumulado = 0;
       const el = this.hudVelocidad?.nativeElement;
       if (el) el.textContent = String(Math.round(c.kmh));
+      const ea = this.hudAltura?.nativeElement;
+      if (ea && c instanceof Avioneta) ea.textContent = String(Math.round(c.agl));
       const dz = this.hudZona?.nativeElement;
       if (dz) {
         const p = c.posicion, id = this.idEn(this.lon0 + p.x / this.mLon, this.lat0 - p.z / this.mLat);
