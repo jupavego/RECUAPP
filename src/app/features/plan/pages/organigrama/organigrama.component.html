@@ -3,7 +3,7 @@
     <header class="org__cab">
       <div>
         @if (!incrustado()) { <h1>Estructura organizacional · {{ p.municipio }}</h1> }
-        <p>Organigrama de la alcaldía: arriba el despacho del alcalde, luego las oficinas asesoras y las secretarías, y bajo cada una sus subsecretarías y unidades. El tamaño del nodo sigue los productos del plan. Pasa el cursor para ver el detalle y haz clic para fijarlo.</p>
+        <p>Organigrama de la alcaldía: arriba el despacho del alcalde, luego las oficinas asesoras y las secretarías, y bajo cada una sus subsecretarías y unidades. El tamaño del nodo sigue los productos del plan. Pasa el cursor para ver el detalle y haz clic en un nodo para abrir la vista de esa dependencia.</p>
       </div>
       <div class="org__acciones">
         <div class="org__vista" role="group" aria-label="Vista del organigrama">
@@ -29,16 +29,16 @@
           <text class="rotulo rotulo--lado" [attr.x]="e.x + (e.ancla === 'end' ? -8 : 8)" [attr.y]="e.y + 5" [attr.text-anchor]="e.ancla">{{ e.texto }}</text>
         }
         @if (despacho(); as d) {
-          <g class="nodo nodo--centro" [class.nodo--tenue]="atenuado('des')" tabindex="0" (mouseenter)="sobre.set('des')" (mouseleave)="sobre.set(null)"
-            (focus)="sobre.set('des')" (blur)="sobre.set(null)" (click)="$event.stopPropagation(); fijar('des')">
+          <g class="nodo nodo--centro" [class.nodo--tenue]="atenuado('des')" tabindex="0" role="link" [attr.aria-label]="'Abrir la vista de ' + d.nombre" (mouseenter)="sobre.set('des')" (mouseleave)="sobre.set(null)"
+            (focus)="sobre.set('des')" (blur)="sobre.set(null)" (click)="$event.stopPropagation(); abrir('des')" (keydown.enter)="abrir('des')">
             <circle [attr.cx]="lotoAlcalde.x" [attr.cy]="lotoAlcalde.y" [attr.r]="lotoAlcalde.r" />
             @if (icono(d); as u) { <image [attr.href]="u" [attr.x]="lotoAlcalde.x - 36" [attr.y]="lotoAlcalde.y - 38" width="72" height="72" /> }
           </g>
         }
         @for (n of loto().nodos; track n.dep.id) {
-          <g class="nodo nodo--{{ n.dep.tipo }}" [class.nodo--tenue]="atenuado(n.dep.id)" [class.nodo--fijo]="fijo() === n.dep.id" tabindex="0"
+          <g class="nodo nodo--{{ n.dep.tipo }}" [class.nodo--tenue]="atenuado(n.dep.id)" [class.nodo--fijo]="fijo() === n.dep.id" tabindex="0" role="link" [attr.aria-label]="'Abrir la vista de ' + n.dep.nombre"
             (mouseenter)="sobre.set(n.dep.id)" (mouseleave)="sobre.set(null)" (focus)="sobre.set(n.dep.id)" (blur)="sobre.set(null)"
-            (click)="$event.stopPropagation(); fijar(n.dep.id)">
+            (click)="$event.stopPropagation(); abrir(n.dep.id)" (keydown.enter)="abrir(n.dep.id)">
             <circle [attr.cx]="n.x" [attr.cy]="n.y" [attr.r]="n.r" />
             @if (icono(n.dep); as u) { <image [attr.href]="u" [attr.x]="n.x - n.r * 0.68" [attr.y]="n.y - n.r * 0.68" [attr.width]="n.r * 1.36" [attr.height]="n.r * 1.36" /> }
             <text class="rotulo rotulo--nodo" text-anchor="middle">
@@ -59,8 +59,8 @@
         }
 
         @if (despacho(); as d) {
-          <g class="nodo nodo--centro" [class.nodo--tenue]="atenuado('des')" tabindex="0" (mouseenter)="sobre.set('des')" (mouseleave)="sobre.set(null)"
-            (focus)="sobre.set('des')" (blur)="sobre.set(null)" (click)="$event.stopPropagation(); fijar('des')">
+          <g class="nodo nodo--centro" [class.nodo--tenue]="atenuado('des')" tabindex="0" role="link" [attr.aria-label]="'Abrir la vista de ' + d.nombre" (mouseenter)="sobre.set('des')" (mouseleave)="sobre.set(null)"
+            (focus)="sobre.set('des')" (blur)="sobre.set(null)" (click)="$event.stopPropagation(); abrir('des')" (keydown.enter)="abrir('des')">
             <circle [attr.cx]="alcalde.x" [attr.cy]="alcalde.y" [attr.r]="alcalde.r" />
             @if (icono(d); as u) { <image [attr.href]="u" [attr.x]="alcalde.x - 46" [attr.y]="alcalde.y - 50" width="92" height="92" /> }
             <text class="rotulo" [attr.x]="alcalde.x + alcalde.r + 14" [attr.y]="alcalde.y + 6" text-anchor="start">Alcaldía</text>
@@ -68,9 +68,9 @@
         }
 
         @for (n of nodos(); track n.dep.id) {
-          <g class="nodo nodo--{{ n.dep.tipo }}" [class.nodo--tenue]="atenuado(n.dep.id)" [class.nodo--fijo]="fijo() === n.dep.id" tabindex="0"
+          <g class="nodo nodo--{{ n.dep.tipo }}" [class.nodo--tenue]="atenuado(n.dep.id)" [class.nodo--fijo]="fijo() === n.dep.id" tabindex="0" role="link" [attr.aria-label]="'Abrir la vista de ' + n.dep.nombre"
             (mouseenter)="sobre.set(n.dep.id)" (mouseleave)="sobre.set(null)" (focus)="sobre.set(n.dep.id)" (blur)="sobre.set(null)"
-            (click)="$event.stopPropagation(); fijar(n.dep.id)">
+            (click)="$event.stopPropagation(); abrir(n.dep.id)" (keydown.enter)="abrir(n.dep.id)">
             <circle [attr.cx]="n.x" [attr.cy]="n.y" [attr.r]="n.r" />
             @if (icono(n.dep); as u) { <image [attr.href]="u" [attr.x]="n.x - n.r * 0.68" [attr.y]="n.y - n.r * 0.68" [attr.width]="n.r * 1.36" [attr.height]="n.r * 1.36" /> }
             <text class="rotulo" text-anchor="middle">
@@ -97,6 +97,7 @@
             <p class="ficha__dato">Productos del plan: {{ d.productos.alta }} confirmados · {{ d.productos.media + d.productos.baja }} sugeridos</p>
           }
           @if (d.nota) { <p class="ficha__nota">{{ d.nota }}</p> }
+          <p class="ficha__abrir">Clic para abrir su vista →</p>
         </aside>
       }
     </div>

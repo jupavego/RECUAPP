@@ -399,7 +399,7 @@ h3 { margin: 0 0 8px; font-size: .9rem; color: var(--dark-700, #334155); }
     a { position: relative; z-index: 1; color: var(--dark-700, #334155); text-decoration: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
       border-bottom: 1px solid transparent; &:hover { border-bottom-color: currentColor; } } }
   &__ir { margin-top: auto; align-self: flex-start; text-align: left; padding: 10px 0 0; border: 0; background: none; font: inherit; font-size: .8rem; font-weight: 600; color: var(--dark-700, #334155); cursor: pointer;
-    span { display: inline-block; color: hsl(var(--at1, 140) 45% 38%); transition: transform .25s; }
+    span { display: inline-block; margin-left: 5px; color: hsl(var(--at1, 140) 45% 38%); transition: transform .25s; }
     &::after { content: ''; position: absolute; inset: 0; border-radius: inherit; }
     &:focus-visible { outline: none; &::after { outline: 2px solid hsl(var(--at1, 140) 45% 40%); outline-offset: 2px; } } }
   &:hover .sec__ir span { transform: translateX(3px); }

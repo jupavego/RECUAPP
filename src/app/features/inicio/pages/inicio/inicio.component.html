@@ -20,7 +20,7 @@
 <section class="accion" aria-labelledby="inicio-titulo">
 
   <h1 id="inicio-titulo">
-    El lugar para <span class="esc" [style.color]="colorEscrito()">{{ escrito() }}</span> tu administración y tu territorio.
+    El lugar para <span class="esc" [class.esc--sale]="saliendo()" [style.--c]="verbos[mostrado()].c">@for (p of [pasada()]; track p) {<span class="esc__v">{{ verbos[mostrado()].v }}</span><i class="esc__scan" aria-hidden="true"></i>}</span> tu administración y tu territorio.
   </h1>
   <p class="accion__sub">Lo que se prometió, quién responde y cómo es el municipio, en un solo lugar.</p>
 
@@ -134,17 +134,6 @@
   @if (activa() !== 'mapa') {
     <button type="button" class="cerrojo" (click)="activa.set('mapa')">
       <span><svg class="ico" aria-hidden="true"><use href="#in-pin"/></svg>Haz clic para explorar el mapa territorial</span>
-    </button>
-  }
-</section>
-
-<section class="sec" id="sec-catalogo" aria-label="Catálogo 3D" (mouseleave)="activa.set(null)">
-  @defer (on viewport) { <app-catalogo-edificios /> }
-  @placeholder { <app-cargador class="sec__espera sec__espera--pantalla" tipo="catalogo" /> }
-  @loading (minimum 600ms) { <app-cargador class="sec__espera sec__espera--pantalla" tipo="catalogo" /> }
-  @if (activa() !== 'cat') {
-    <button type="button" class="cerrojo" (click)="activa.set('cat')">
-      <span><svg class="ico" aria-hidden="true"><use href="#in-grid"/></svg>Haz clic para girar los edificios</span>
     </button>
   }
 </section>

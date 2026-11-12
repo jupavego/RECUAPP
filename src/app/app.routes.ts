@@ -7,7 +7,7 @@ export const routes: Routes = [
 
   // ── Público ──────────────────────────────────────────────────────────────
   // El recorrido: una sola página con las secciones del menú en su orden (inicio, mapa 3D, plan, responsables,
-  // mapa territorial, catálogo 3D y quiénes somos). Cada sección conserva su ruta; todas abren esta página en
+  // mapa territorial y quiénes somos). Cada sección conserva su ruta; todas abren esta página en
   // su sección y, al desplazarse, la ruta cambia a la de la sección visible (core/recorrido.ts).
   {
     matcher: recorridoMatcher,
@@ -41,6 +41,11 @@ export const routes: Routes = [
   {
     path: 'biblioteca',
     redirectTo: () => inject(Router).createUrlTree(['/quienes-somos'], { fragment: 'biblioteca' }),
+  },
+  // el catálogo 3D es una subsección plegada de la biblioteca; la ruta vieja la abre
+  {
+    path: 'mapa3d/catalogo',
+    redirectTo: () => inject(Router).createUrlTree(['/quienes-somos'], { fragment: 'catalogo' }),
   },
 
   // ── Área de usuario (cualquier rol logueado) ─────────────────────────────

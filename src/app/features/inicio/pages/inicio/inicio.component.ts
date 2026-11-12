@@ -8,7 +8,6 @@ import { PlanComponent } from '../../../plan/pages/plan/plan.component';
 import { PuebloComponent } from '../../../plan/pages/pueblo/pueblo.component';
 import { Mapa3dComponent } from '../../../mapa3d/pages/mapa3d/mapa3d.component';
 import { MapaComponent } from '../../../mapa/pages/mapa/mapa.component';
-import { CatalogoEdificiosComponent } from '../../../mapa3d/pages/catalogo-edificios/catalogo-edificios.component';
 import { QuienesSomosComponent } from '../../../../shared/pages/quienes-somos/quienes-somos.component';
 
 /** Una sección de la portada: a dónde lleva y cómo se dibuja. */
@@ -60,7 +59,7 @@ const ANIOS_POB = [2018, 2025, 2030, 2035, 2042, 2050];
   selector: 'app-inicio',
   standalone: true,
   // las vistas solo se usan dentro de @defer: Angular las separa en trozos que se descargan al llegar a ellas
-  imports: [RouterLink, CargadorComponent, Mapa3dComponent, PlanComponent, PuebloComponent, MapaComponent, CatalogoEdificiosComponent, QuienesSomosComponent],
+  imports: [RouterLink, CargadorComponent, Mapa3dComponent, PlanComponent, PuebloComponent, MapaComponent, QuienesSomosComponent],
   templateUrl: './inicio.component.html',
   styleUrl: './inicio.component.scss',
 })
@@ -73,7 +72,7 @@ export class InicioComponent implements OnInit, AfterViewInit {
   readonly altura = Math.random() * 100;
 
   /** vista con la rueda activa (mapas, pueblo o catálogo): se activa con un clic y se suelta al salir el ratón */
-  readonly activa = signal<'m3d' | 'resp' | 'mapa' | 'cat' | null>(null);
+  readonly activa = signal<'m3d' | 'resp' | 'mapa' | null>(null);
 
   private readonly router = inject(Router);
   /** ruta que puso el propio seguimiento al desplazarse (esa navegación no debe mover la página) */
@@ -156,9 +155,12 @@ export class InicioComponent implements OnInit, AfterViewInit {
   readonly verbos = VERBOS;
   private readonly poco = typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /** texto que se escribe en el titular y su color */
-  readonly escrito = signal(this.poco ? VERBOS[0].v : '');
-  readonly colorEscrito = signal(VERBOS[0].c);
+  /** verbo que muestra el titular; cada vez que cambia (o se vuelve a elegir) la franja de escáner lo revela de nuevo */
+  readonly mostrado = signal(0);
+  /** contador de pasadas: recrea la palabra para que su animación de entrada vuelva a correr */
+  readonly pasada = signal(0);
+  /** la palabra se está disolviendo para dar paso a la siguiente */
+  readonly saliendo = signal(false);
   /** verbo que resalta secciones: el que se está mostrando o el que la persona eligió */
   readonly activo = signal(-1);
   /** verbo elegido a mano (-1: ninguno) */
@@ -176,7 +178,7 @@ export class InicioComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.destroy.onDestroy(() => { this.relojes.forEach(clearTimeout); if (this.intervalo) clearInterval(this.intervalo); });
-    this.escribir(0, 0, false);
+    if (this.auto) this.mostrar(0);
     this.cargarPoblacion();
   }
 
@@ -191,22 +193,25 @@ export class InicioComponent implements OnInit, AfterViewInit {
     const nuevo = this.fijo() === k ? -1 : k; // tocar el mismo verbo otra vez lo suelta
     this.fijo.set(nuevo);
     this.activo.set(nuevo);
-    const v = VERBOS[nuevo < 0 ? 0 : nuevo];
-    this.escrito.set(v.v);
-    this.colorEscrito.set(v.c);
+    this.saliendo.set(false);
+    this.mostrado.set(nuevo < 0 ? 0 : nuevo);
+    this.pasada.update(n => n + 1);
   }
 
-  /** máquina de escribir lenta: escribe el verbo, lo deja unos segundos resaltando sus secciones y pasa al siguiente */
-  private escribir(i: number, j: number, borra: boolean): void {
+  /**
+   * Holograma: una franja de escáner recorre el verbo y lo deja escrito, tenue y con leve brillo; tras unos segundos
+   * resaltando sus secciones, se disuelve y entra el siguiente.
+   */
+  private mostrar(i: number): void {
     if (!this.auto) return;
-    const f = VERBOS[i].v;
-    j += borra ? -1 : 1;
-    this.escrito.set(f.slice(0, j));
-    this.colorEscrito.set(VERBOS[i].c);
-    let espera = borra ? 55 : 120;
-    if (!borra && j === f.length) { this.activo.set(i); borra = true; espera = 4200; }
-    else if (borra && j === 0) { borra = false; this.activo.set(-1); i = (i + 1) % VERBOS.length; espera = 700; }
-    this.relojes.push(setTimeout(() => this.escribir(i, j, borra), espera));
+    this.saliendo.set(false);
+    this.mostrado.set(i);
+    this.pasada.update(n => n + 1);
+    this.relojes.push(
+      setTimeout(() => { if (this.auto) this.activo.set(i); }, 900),
+      setTimeout(() => { if (this.auto) { this.saliendo.set(true); this.activo.set(-1); } }, 5100),
+      setTimeout(() => this.mostrar((i + 1) % VERBOS.length), 5650),
+    );
   }
 
   private cargarPoblacion(): void {
@@ -222,9 +227,9 @@ export class InicioComponent implements OnInit, AfterViewInit {
         });
         if (!this.cortes.length) return;
         let k = Math.max(0, this.cortes.findIndex(c => c.anio === 2025));
-        this.mostrar(k);
+        this.mostrarCorte(k);
         if (!this.poco && this.cortes.length > 1) {
-          this.intervalo = setInterval(() => { k = (k + 1) % this.cortes.length; this.mostrar(k); }, 5200);
+          this.intervalo = setInterval(() => { k = (k + 1) % this.cortes.length; this.mostrarCorte(k); }, 5200);
         }
       },
       error: () => this.pob.set(null),
@@ -239,7 +244,7 @@ export class InicioComponent implements OnInit, AfterViewInit {
     return (v / mx) * 46;
   }
 
-  private mostrar(k: number): void {
+  private mostrarCorte(k: number): void {
     const antes = this.pob()?.total ?? 0;
     const corte = this.cortes[k];
     this.pob.set(corte);

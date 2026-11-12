@@ -1,6 +1,6 @@
 import { Component, computed, inject, input, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { catchError, map, of, switchMap } from 'rxjs';
 import { Dependencia, PersonaResponsable, PlanEntidad, PlanService } from '../../services/plan.service';
 
@@ -87,6 +87,7 @@ const madre = (d: Dependencia): string | null | undefined => d.padre ?? d.vincul
 export class OrganigramaComponent {
   private readonly servicio = inject(PlanService);
   private readonly ruta = inject(ActivatedRoute);
+  private readonly router = inject(Router);
   /** dentro de otra vista (Responsables): el título lo pone la sección que lo contiene */
   readonly incrustado = input(false);
 
@@ -318,6 +319,9 @@ export class OrganigramaComponent {
   }
 
   fijar(id: string): void { this.fijo.set(this.fijo() === id ? null : id); }
+
+  /** clic o Enter sobre un nodo: abre la vista de esa dependencia (secretaría, oficina, subsecretaría, unidad o entidad) */
+  abrir(id: string): void { this.router.navigate(['/responsables', id]); }
 
   /** la ficha va junto al cursor sin salirse del contenedor */
   izq(): number { const c = this.cursor(); return Math.max(8, Math.min(c.x + 16, c.ancho - ANCHO_FICHA - 8)); }

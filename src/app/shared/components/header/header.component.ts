@@ -62,7 +62,6 @@ export class HeaderComponent {
     ] },
     { nombre: 'Territorio', items: [
       { t: 'Mapa territorial', r: '/mapa', c: '#16A085', g: 'pin', activo: u => u === '/mapa' },
-      { t: 'Catálogo 3D', r: '/mapa3d/catalogo', c: '#7B68C8', g: 'grid', activo: u => u.startsWith('/mapa3d/catalogo') },
     ] },
     // la presentacion de RECUAPP, con los documentos y la biblioteca
     { nombre: 'Nosotros', items: [

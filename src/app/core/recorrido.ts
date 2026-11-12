@@ -19,7 +19,6 @@ export const SECCIONES_RECORRIDO: SeccionRecorrido[] = [
   { ruta: 'plan', id: 'sec-plan', nombre: 'El plan en claro' },
   { ruta: 'responsables', id: 'sec-responsables', nombre: 'Responsables' },
   { ruta: 'mapa', id: 'sec-mapa', nombre: 'Mapa territorial' },
-  { ruta: 'mapa3d/catalogo', id: 'sec-catalogo', nombre: 'Catálogo 3D' },
   { ruta: 'quienes-somos', id: 'sec-nosotros', nombre: 'Quiénes somos' },
 ];
 
