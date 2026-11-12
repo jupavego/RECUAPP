@@ -46,20 +46,20 @@
 .cp { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transform: scale(1.07);
   transition: opacity 1.4s ease, transform 2.4s cubic-bezier(.2, .6, .2, 1); user-select: none; }
 .cp.on { opacity: 1; transform: scale(1); }
-// velo de color a todo el alto del lado izquierdo, más un toque arriba y al pie
-.velo { position: absolute; inset: 0; z-index: 2;
-  background:
-    linear-gradient(0deg, rgba(var(--vl), .30) 0, rgba(var(--vl), .14) 14%, rgba(var(--vl), 0) 26%),
-    linear-gradient(180deg, rgba(var(--vl), .55) 0, rgba(var(--vl), 0) 14%),
-    linear-gradient(90deg, rgba(var(--vl), var(--va)) 0, rgba(var(--vl), .88) 15%, rgba(var(--vl), .5) 23%, rgba(var(--vl), 0) 32%); }
+// velo de color en forma de «U» tumbada (abierta a la derecha), simétrica: pegado al borde izquierdo, con brazos largos arriba y abajo
+// y una bahía cóncava a media altura por donde se ve el mapa. El color se desvanece hacia la derecha.
+.velo { position: absolute; top: 0; bottom: 0; left: 0; width: 60%; z-index: 2;
+  background: linear-gradient(90deg, rgba(var(--vl), var(--va)) 0, rgba(var(--vl), .9) 45%, rgba(var(--vl), .5) 78%, rgba(var(--vl), 0) 100%);
+  -webkit-mask: radial-gradient(ellipse 92% 44% at 100% 50%, transparent 0 22%, #000 100%);
+  mask: radial-gradient(ellipse 92% 44% at 100% 50%, transparent 0 22%, #000 100%); }
 
 // ── contenido ──
 .marco { position: relative; z-index: 4; height: 100%; box-sizing: border-box; display: grid; grid-template-rows: 1fr auto auto; grid-template-columns: minmax(0, 1fr) auto;
-  gap: 12px 24px; padding: clamp(24px, 6vh, 64px) clamp(20px, 4.4vw, 56px) clamp(22px, 3.4vh, 34px); }
+  gap: 12px 24px; padding: clamp(18px, 4.5vh, 56px) clamp(20px, 3.8vw, 56px) clamp(16px, 3vh, 30px); }
 .titulo { grid-column: 1; grid-row: 1; align-self: start; max-width: 560px; }
-h1 { margin: 0 0 clamp(8px, 1.6vh, 16px); font: 800 clamp(34px, min(4.7vw, 8vh), 60px)/1.04 var(--f-h); color: var(--t); text-wrap: balance; }
+h1 { margin: 0 0 clamp(8px, 1.6vh, 16px); font: 800 clamp(30px, min(3.8vw, 6.6vh), 56px)/1.04 var(--f-h); color: var(--t); text-wrap: balance; }
 h1 span { color: var(--accent-ic); }
-.sub { margin: 0 0 clamp(14px, 2.4vh, 22px); max-width: 30ch; font-size: clamp(17px, 2.5vh, 21px); line-height: 1.4; color: var(--t2); text-shadow: 0 1px 3px rgba(var(--vl), .7); }
+.sub { margin: 0 0 clamp(14px, 2.4vh, 22px); max-width: 32ch; font-size: clamp(15px, 2.3vh, 20px); line-height: 1.4; color: var(--t2); text-shadow: 0 1px 3px rgba(var(--vl), .7); }
 
 // verbo en holograma: una franja de escáner lo recorre y lo deja escrito con líneas finas de luz
 .esc { position: relative; display: inline-block; color: var(--c); font-weight: 700; text-shadow: none; }
@@ -88,11 +88,11 @@ h1 span { color: var(--accent-ic); }
 // escenas del mapa
 .capas { grid-column: 2; grid-row: 1; align-self: start; justify-self: end; display: flex; gap: 6px; padding: 6px; border-radius: 12px;
   background: var(--glass); border: 1px solid var(--gl); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
-.capas button { display: flex; align-items: center; gap: 8px; padding: 8px 14px; border: 0; border-radius: 8px; cursor: pointer; background: transparent; color: var(--t); font: 600 14px var(--f-b); }
+.capas button { display: flex; align-items: center; gap: 7px; padding: 6px 12px; border: 0; border-radius: 8px; cursor: pointer; background: transparent; color: var(--t); font: 600 clamp(12px, 1.9vh, 14px) var(--f-b); }
 .capas button i { width: 8px; height: 8px; border-radius: 50%; background: currentColor; opacity: .8; }
 .capas button[aria-pressed="true"] { background: var(--pill-on-bg); color: var(--pill-on-tx); }
 .capas button:focus-visible { outline: 2px solid #E0B33A; outline-offset: 2px; }
-.leyenda { grid-column: 1 / -1; grid-row: 2; justify-self: end; margin: 0; max-width: 420px; padding: 9px 14px; border-radius: 10px; font-size: 14px; color: var(--t);
+.leyenda { grid-column: 1 / -1; grid-row: 2; justify-self: end; margin: 0; max-width: 380px; padding: 7px 12px; border-radius: 10px; font-size: clamp(12px, 1.9vh, 13.5px); line-height: 1.4; color: var(--t);
   background: var(--glass); border: 1px solid var(--gl); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
 .leyenda b { font-weight: 700; }
 
@@ -103,7 +103,7 @@ h1 span { color: var(--accent-ic); }
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25), 0 10px 30px rgba(0, 0, 0, .18);
   text-shadow: var(--ts); }
 .puertas { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
-.puertas a { position: relative; isolation: isolate; display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; align-items: start; padding: 18px 18px 18px 24px; color: var(--t); text-decoration: none; }
+.puertas a { position: relative; isolation: isolate; display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; align-items: start; padding: clamp(10px, 2.2vh, 18px) 14px clamp(10px, 2.2vh, 18px) clamp(14px, 1.8vw, 24px); color: var(--t); text-decoration: none; }
 .puertas a + a { border-left: 1px solid var(--gl); }
 .puertas a:focus-visible { outline: 2px solid #E0B33A; outline-offset: -2px; border-radius: 10px; }
 .puertas a::after { content: ''; position: absolute; z-index: -1; inset: 0; pointer-events: none;
@@ -114,9 +114,9 @@ h1 span { color: var(--accent-ic); }
 .puertas a .ico { transition: transform .3s cubic-bezier(.3, 1.4, .5, 1), background .25s, color .25s, border-radius .25s; }
 .puertas a:hover .ico, .puertas a:focus-visible .ico { transform: translateY(-2px) rotate(-6deg) scale(1.08); background: var(--pill-on-bg); color: var(--pill-on-tx); border-radius: 4px 50% 50% 50%; }
 .puertas a:hover small, .puertas a:focus-visible small { color: var(--t); }
-.puertas .ico { box-sizing: content-box; width: 22px; height: 22px; padding: 6px; margin: -2px 0 0 -6px; border-radius: 10px; color: var(--accent-ic); }
-.puertas b { font: 800 19px var(--f-h); }
-.puertas small { grid-column: 2; font-size: 14px; line-height: 1.4; color: var(--t2); }
+.puertas .ico { box-sizing: content-box; width: 20px; height: 20px; padding: 5px; margin: -2px 0 0 -5px; border-radius: 10px; color: var(--accent-ic); }
+.puertas b { font: 800 clamp(14px, 2.2vh, 18px)/1.2 var(--f-h); }
+.puertas small { grid-column: 2; font-size: clamp(12px, 1.9vh, 13.5px); line-height: 1.35; color: var(--t2); }
 // el verbo en pantalla marca en una esquina las secciones que le corresponden
 .puertas a::before { content: ''; position: absolute; top: 0; left: 0; width: 68px; height: 68px; pointer-events: none; opacity: 0;
   border-top: 2px solid var(--vc, var(--accent-ic)); border-left: 2px solid var(--vc, var(--accent-ic)); border-top-left-radius: 6px;
@@ -129,8 +129,8 @@ h1 span { color: var(--accent-ic); }
 @keyframes esquina-sale { from { opacity: 1; } to { opacity: 0; } }
 
 // población
-.pob { display: flex; align-items: center; gap: 12px; padding: 0 24px; border-left: 1px solid var(--gl); color: var(--t2); font-size: 14px; line-height: 1.3; text-decoration: none; }
-.pob b { color: var(--t); font: 800 20px var(--f-h); }
+.pob { display: flex; align-items: center; gap: 12px; padding: 0 24px; border-left: 1px solid var(--gl); color: var(--t2); font-size: clamp(12px, 1.9vh, 13.5px); line-height: 1.3; text-decoration: none; }
+.pob b { color: var(--t); font: 800 clamp(16px, 2.6vh, 19px) var(--f-h); }
 .pob { transition: color .2s; }
 .pob:hover { color: var(--t); }
 .pob:hover .pir { transform: scale(1.08); }
@@ -155,7 +155,7 @@ h1 span { color: var(--accent-ic); }
 @media (max-width: 767px) {
   .portada { height: auto; min-height: 0; padding-top: var(--alto-barra, 0px); }
   // el velo cubre solo la zona del título; debajo, una ventana al mapa antes de los paneles
-  .velo { background: linear-gradient(180deg, rgba(var(--vl), .92) 0, rgba(var(--vl), .78) 22%, rgba(var(--vl), 0) 46%, rgba(var(--vl), 0) 100%); }
+  .velo { inset: 0; width: auto; -webkit-mask: none; mask: none; background: linear-gradient(180deg, rgba(var(--vl), .92) 0, rgba(var(--vl), .78) 22%, rgba(var(--vl), 0) 46%, rgba(var(--vl), 0) 100%); }
   .marco { height: auto; display: flex; flex-direction: column; gap: 14px; padding: 28px 16px 52px; }
   .titulo { max-width: none; padding-bottom: clamp(90px, 26vh, 220px); }
   h1 { font-size: clamp(30px, 9vw, 40px); }

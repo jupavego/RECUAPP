@@ -1,4 +1,5 @@
 import { DecimalPipe } from '@angular/common';
+import { CargadorComponent } from '../../../../shared/components/cargador/cargador.component';
 import { PERIODO_CERCA, crearTexturaCercas, filaCerca } from '../../utils/cercas';
 import { NEGOCIOS_ATLAS, PALETAS_ATLAS, celdaBahia, celdaLocal, crearAtlasFachadas, crearTexturaTeja } from '../../utils/fachadas';
 import { HttpClient } from '@angular/common/http';
@@ -802,7 +803,7 @@ const TIPOS_ZONA: Record<string, string> = {
   standalone: true,
   // en móvil los controles y modos arrancan plegados; al conducir o elegir salida siempre se ven (hay que poder salir)
   host: { '[class.ctl-plegado]': '!controlesAbiertos() && !conduciendo() && !eligiendoSalida()' },
-  imports: [DecimalPipe, RouterLink],
+  imports: [DecimalPipe, RouterLink, CargadorComponent],
   template: `
     <div #lienzo class="lienzo" [class.eligiendo]="eligiendoSalida()"
          (mousedown)="alRatonAbajo($event)" (pointerdown)="capaInfo.set(null); alPulsar($event)" (pointerup)="alSoltar($event)"
@@ -810,7 +811,7 @@ const TIPOS_ZONA: Record<string, string> = {
     <div #tilt class="tilt" aria-hidden="true"></div>
     <div class="vineta" aria-hidden="true"></div>
 
-    @if (cargando()) { <div class="estado">Levantando el territorio…</div> }
+    @if (cargando()) { <div class="estado"><app-cargador tipo="mapa3d" /></div> }
     @if (error()) { <div class="estado error">{{ error() }}</div> }
 
     <div #rotulos class="rotulos" [hidden]="modoFoto() && !conduciendo()" [class.solo-zonas]="conduciendo()"></div>
@@ -1947,7 +1948,7 @@ export class Mapa3dComponent implements AfterViewInit {
     !this.modoFoto() && (this.capasActivas().has(ic.cat) || (this.subterraneo() && ic.cat.startsWith('srv-'))) && (this.aisladas.size ? ic.zona !== undefined && this.aisladas.has(ic.zona) : (this.elegida < 0 || ic.zona === this.elegida));
 
   /** Redes de servicios (alta tensión, subestaciones, plantas): un grupo que la barra de controles enciende y apaga. */
-  readonly redesVisibles = signal(true);
+  readonly redesVisibles = signal(false);   // el mapa abre sin capas encendidas
   private grupoRedes: THREE.Group | null = null;
   alternarRedes(): void {
     this.soltarRed();
@@ -6074,6 +6075,7 @@ export class Mapa3dComponent implements AfterViewInit {
     }
     this.grupoRedes = grupo;
     this.hayRedes = true;
+    grupo.visible = this.redesVisibles();
     this.escena.add(grupo);
   }
 
@@ -6383,7 +6385,7 @@ export class Mapa3dComponent implements AfterViewInit {
    */
   private construirInstalacionesAgua(items: InstalacionAgua[]): void {
     if (!items.length) return;
-    if (!this.grupoRedes) { this.grupoRedes = new THREE.Group(); this.escena.add(this.grupoRedes); this.hayRedes = true; }
+    if (!this.grupoRedes) { this.grupoRedes = new THREE.Group(); this.grupoRedes.visible = this.redesVisibles(); this.escena.add(this.grupoRedes); this.hayRedes = true; }
     const grupo = this.grupoRedes;
     const mat = (c: number, extra: Partial<THREE.MeshStandardMaterialParameters> = {}) => new THREE.MeshStandardMaterial({ color: c, roughness: 0.65, ...extra });
     const concreto = mat(0xb9bdc0), azul = mat(0x2f8fff, { emissive: 0x1d5fb0, emissiveIntensity: 0.5 }), teal = mat(0x4aa3a8), caseta = mat(0xd9d4c7), techo = mat(0x7d6f63);
