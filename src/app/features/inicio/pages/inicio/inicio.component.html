@@ -104,7 +104,7 @@
   @placeholder { <app-cargador class="sec__espera sec__espera--pantalla" tipo="mapa3d" /> }
   @loading (minimum 600ms) { <app-cargador class="sec__espera sec__espera--pantalla" tipo="mapa3d" /> }
   @if (activa() !== 'm3d') {
-    <button type="button" class="cerrojo" (click)="activa.set('m3d')">
+    <button type="button" class="cerrojo" (click)="activar('m3d', 'sec-mapa3d')">
       <span><svg class="ico" aria-hidden="true"><use href="#in-cube"/></svg>Haz clic para explorar el mapa 3D</span>
     </button>
   }
@@ -121,7 +121,7 @@
   @placeholder { <app-cargador class="sec__espera sec__espera--pantalla" tipo="resp" /> }
   @loading (minimum 600ms) { <app-cargador class="sec__espera sec__espera--pantalla" tipo="resp" /> }
   @if (activa() !== 'resp') {
-    <button type="button" class="cerrojo" (click)="activa.set('resp')">
+    <button type="button" class="cerrojo" (click)="activar('resp', 'sec-responsables')">
       <span><svg class="ico" aria-hidden="true"><use href="#in-users"/></svg>Haz clic para recorrer el pueblo</span>
     </button>
   }
@@ -132,7 +132,7 @@
   @placeholder { <app-cargador class="sec__espera sec__espera--pantalla" tipo="mapa" /> }
   @loading (minimum 600ms) { <app-cargador class="sec__espera sec__espera--pantalla" tipo="mapa" /> }
   @if (activa() !== 'mapa') {
-    <button type="button" class="cerrojo" (click)="activa.set('mapa')">
+    <button type="button" class="cerrojo" (click)="activar('mapa', 'sec-mapa')">
       <span><svg class="ico" aria-hidden="true"><use href="#in-pin"/></svg>Haz clic para explorar el mapa territorial</span>
     </button>
   }

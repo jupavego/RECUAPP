@@ -84,6 +84,20 @@ export class InicioComponent implements OnInit, AfterViewInit {
     document.getElementById('sec-mapa3d')?.scrollIntoView({ behavior: this.poco ? 'auto' : 'smooth', block: 'start' });
   }
 
+  /**
+   * Activa la rueda de una vista y, si la sección no está completa en pantalla, la centra: la deja justo debajo de la barra
+   * para que el mapa quede entero en el viewport. Si ya está alineada no se mueve.
+   */
+  activar(clave: 'm3d' | 'resp' | 'mapa', id: string): void {
+    this.activa.set(clave);
+    const el = document.getElementById(id);
+    if (!el) return;
+    const barra = parseFloat(getComputedStyle(el).scrollMarginTop) || 0;
+    if (Math.abs(el.getBoundingClientRect().top - barra) < 2) return;
+    this.saltandoHasta = Date.now() + 1200;   // mientras baja, el seguimiento no cambia la ruta
+    el.scrollIntoView({ block: 'start', behavior: this.poco ? 'auto' : 'smooth' });
+  }
+
   ngAfterViewInit(): void {
     // al llegar por una ruta (/plan, /mapa3d…), la página abre en esa sección
     this.irA(this.router.url);

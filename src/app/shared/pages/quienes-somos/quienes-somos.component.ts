@@ -62,14 +62,15 @@ import { CargadorComponent } from '../../components/cargador/cargador.component'
       <!-- Catálogo 3D: subsección de la biblioteca, cerrada; el visor 3D solo se crea (y se carga) al abrirla y se libera al cerrarla -->
       <details class="cat3d" id="catalogo" [open]="catAbierto()" (toggle)="catAbierto.set($any($event.target).open)">
         <summary>
-          <span class="cat3d__insig" aria-hidden="true">
+          <span class="sec__insignia cat3d__insig" aria-hidden="true">
             <svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg>
           </span>
-          <span class="cat3d__txt">
-            <b>Catálogo 3D</b>
-            <small>Los modelos con los que se arma el mapa 3D, uno a la vez y a escala real</small>
+          <span class="sec__tit">
+            <span class="sec__ojo">Los modelos del mapa 3D, uno a la vez y a escala real</span>
+            <h3 class="cat3d__h">Catálogo 3D</h3>
           </span>
-          <span class="cat3d__accion">{{ catAbierto() ? 'Cerrar' : 'Abrir' }}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+          <span class="sec__rama" aria-hidden="true"></span>
+          <span class="sec__accion">{{ catAbierto() ? 'Cerrar' : 'Abrir' }}<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
         </summary>
         @if (catAbierto()) {
           @defer (on immediate) { <app-catalogo-edificios class="cat3d__visor" /> }
@@ -114,33 +115,22 @@ import { CargadorComponent } from '../../components/cargador/cargador.component'
     .sec__rama::after { content: ''; position: absolute; left: 34%; top: -9px; width: 10px; height: 16px; border-radius: 0 100% 0 100%;
       background: var(--c2); opacity: .7; transform: rotate(-20deg); }
     .sec__doc { display: block; border-radius: 16px; overflow: hidden; margin: 0 8px; box-shadow: 0 6px 24px rgba(30,50,40,.12); }
-    /* catálogo 3D plegado al pie de la biblioteca: una fila con insignia, título y la acción */
-    .cat3d { --c: #7B68C8; max-width: 900px; margin: 24px auto 0; border-radius: 22px; overflow: hidden;
-      background: color-mix(in srgb, var(--c) 6%, rgba(255,255,255,.6)); border: 1px solid color-mix(in srgb, var(--c) 22%, transparent);
-      transition: box-shadow .3s; }
-    .cat3d[open] { box-shadow: 0 10px 30px rgba(30,40,60,.12); }
-    .cat3d summary { list-style: none; display: flex; align-items: center; gap: 14px; padding: 14px 18px; cursor: pointer; }
+    /* catálogo 3D: subsección de la biblioteca con el mismo lenguaje del título de sección (insignia en hoja, ojo, título y rama) */
+    .cat3d { --c: #7B68C8; --c2: #AB9DE6; max-width: 1180px; margin: 28px auto 0; padding: 0 8px; }
+    .cat3d summary { list-style: none; display: flex; align-items: center; gap: 16px; padding: 0 8px 12px; cursor: pointer; }
     .cat3d summary::-webkit-details-marker { display: none; }
-    .cat3d summary:focus-visible { outline: 2px solid var(--c); outline-offset: -2px; border-radius: 22px; }
-    .cat3d__insig { flex: none; width: 40px; height: 40px; display: grid; place-items: center; color: var(--c); border-radius: 50%;
-      background: color-mix(in srgb, var(--c) 14%, transparent); transition: border-radius .25s, transform .25s, background .2s, color .2s; }
-    .cat3d__insig svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linejoin: round; }
-    .cat3d summary:hover .cat3d__insig, .cat3d[open] .cat3d__insig { border-radius: 4px 50% 50% 50%; transform: rotate(-8deg); }
-    .cat3d[open] .cat3d__insig { background: var(--c); color: #fff; }
-    .cat3d__txt { flex: 1; min-width: 0; display: grid; gap: 1px; }
-    .cat3d__txt b { font-size: 1.02rem; color: #243746; }
-    .cat3d__txt small { font-size: .82rem; color: #5b7284; }
-    .cat3d__accion { flex: none; display: inline-flex; align-items: center; gap: 4px; padding: 6px 12px; border-radius: 999px;
-      font-size: .82rem; font-weight: 700; color: var(--c); background: color-mix(in srgb, var(--c) 10%, transparent); }
-    .cat3d__accion svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; transition: transform .25s; }
-    .cat3d[open] .cat3d__accion svg { transform: rotate(180deg); }
-    .cat3d__visor { display: block; height: min(78dvh, 720px) !important; min-height: 480px; border-top: 1px solid color-mix(in srgb, var(--c) 18%, transparent); }
+    .cat3d summary:focus-visible { outline: 2px solid var(--c); outline-offset: 2px; border-radius: 16px; }
+    .cat3d__insig { width: 46px; height: 46px; }
+    .cat3d__insig svg { width: 22px; height: 22px; }
+    .cat3d summary:hover .cat3d__insig { transform: rotate(-8deg) scale(1.05); }
+    .cat3d__h { margin: 2px 0 0; font-size: clamp(1.15rem, 2.2vw, 1.5rem); line-height: 1.15; color: #243746; }
+    .cat3d[open] .sec__accion svg { transform: rotate(180deg); }
+    .cat3d__visor { display: block; height: min(78dvh, 720px) !important; min-height: 480px; border-radius: 16px; overflow: hidden;
+      box-shadow: 0 6px 24px rgba(30,50,40,.12); }
     .cat3d__espera { display: block; height: min(78dvh, 720px); }
-    :host-context(body.tema-oscuro) .cat3d { background: color-mix(in srgb, var(--c) 10%, rgba(20,30,24,.7)); }
-    :host-context(body.tema-oscuro) .cat3d__txt b { color: #eaf3e4; }
-    :host-context(body.tema-oscuro) .cat3d__txt small { color: #a9b8a5; }
-    @media (prefers-reduced-motion: reduce) { .cat3d__insig, .cat3d__accion svg { transition: none; } }
-    @media (max-width: 640px) { .cat3d { margin: 20px 8px 0; } .cat3d__txt small { display: none; } }
+    :host-context(body.tema-oscuro) .cat3d__h { color: #eaf3e4; }
+    @media (prefers-reduced-motion: reduce) { .sec__insignia, .sec__accion svg { transition: none; } }
+    @media (max-width: 640px) { .cat3d { margin: 20px 0 0; padding: 0; } .cat3d .sec__ojo { display: none; } }
     :host-context(body.tema-oscuro) .sec h2 { color: #eaf3e4; }
     :host-context(body.tema-oscuro) .saltos a { background: color-mix(in srgb, var(--c) 18%, rgba(20,30,24,.7)); }
     @media (max-width: 640px) { .sec__rama { display: none; } }
