@@ -16,8 +16,8 @@
   // paleta de la portada, modo claro
   --vl: 245, 240, 234; --va: .95;
   --t: #29422F; --t2: #3E4F3B;
-  --glass: rgba(252, 249, 246, .88); --glass-strip: rgba(252, 249, 246, .74); --glass-edge: rgba(255, 255, 255, .85); --ts: none;
-  --panel-titulo: rgba(252, 249, 246, .58); --gl: #C8D9C0; --pill-on-bg: #29422F; --pill-on-tx: #fff; --accent-ic: #3F7A1E;
+  --glass: rgba(252, 249, 246, .88); --glass-strip: rgba(252, 249, 246, .74); --glass-panel: rgba(252, 249, 246, .18); --glass-edge: rgba(255, 255, 255, .85); --ts: none;
+  --panel-titulo: linear-gradient(100deg, rgba(250, 247, 240, .80) 0, rgba(250, 247, 240, .66) 70%, rgba(250, 247, 240, .5) 100%); --gl: #C8D9C0; --pill-on-bg: #29422F; --pill-on-tx: #fff; --accent-ic: #3F7A1E;
   display: block; color: var(--text); font-family: var(--f-b);
 }
 :host-context(html.tema-oscuro) {
@@ -25,7 +25,7 @@
   --v-conocer: #8FD16A; --v-vigilar: #F0C048; --v-entender: #B3A6F0; --v-interactuar: #7CC0EE;
   --vl: 12, 22, 15; --va: .94;
   --t: #F2F7EE; --t2: #D3E0CC;
-  --glass: rgba(12, 22, 15, .82); --glass-strip: rgba(14, 28, 18, .30); --glass-edge: rgba(255, 255, 255, .22); --ts: 0 1px 3px rgba(12, 22, 15, .7), 0 0 14px rgba(12, 22, 15, .5);
+  --glass: rgba(12, 22, 15, .82); --glass-strip: rgba(14, 28, 18, .30); --glass-panel: rgba(14, 28, 18, .30); --glass-edge: rgba(255, 255, 255, .22); --ts: 0 1px 3px rgba(12, 22, 15, .7), 0 0 14px rgba(12, 22, 15, .5);
   --panel-titulo: rgba(12, 22, 15, .48); --gl: #3E5A44; --pill-on-bg: #F2F7EE; --pill-on-tx: #29422F; --accent-ic: #99CC33;
 }
 
@@ -58,15 +58,15 @@
   transform: translate(calc(-0.2 * (clamp(20px, 3.8vw, 56px) + clamp(20px, 2.4vw, 34px))), calc(-0.1 * (clamp(18px, 4.5vh, 56px) + clamp(14px, 2.6vh, 26px)))); }
 // el panel de cristal va detrás del texto, inclinado y metido bajo el margen: parece salir de la esquina superior izquierda de la portada
 // (la portada recorta lo que sobra). El texto queda derecho encima.
-.titulo::before { content: ''; position: absolute; z-index: -1; top: calc(-1 * clamp(18px, 4.5vh, 56px) - 60px); left: calc(-1 * clamp(20px, 3.8vw, 56px) - 110px); right: 23%; bottom: calc(5vh - 9px);
-  transform: rotate(3.5deg); transform-origin: 0 0; border: 1px solid var(--glass-edge); border-radius: 0 12px 34px 0;
+.titulo::before { content: ''; position: absolute; z-index: -1; top: calc(-1 * clamp(18px, 4.5vh, 56px) - 60px); left: calc(-1 * clamp(20px, 3.8vw, 56px) - 110px); right: -3%; bottom: calc(5vh - 9px);
+  transform: rotate(2.5deg); transform-origin: 0 0; border: 1px solid var(--glass-edge); border-radius: 0 12px 34px 0;
   background: var(--panel-titulo); -webkit-backdrop-filter: blur(5.6px) saturate(1.1); backdrop-filter: blur(5.6px) saturate(1.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, .22), 0 14px 36px rgba(0, 0, 0, .2); }
 h1 { margin: 0 0 clamp(6px, 1.2vh, 12px); font: 800 clamp(30px, min(3.8vw, 6.6vh), 56px)/1.04 var(--f-h); color: var(--t); text-wrap: balance; }
 h1 span { color: var(--accent-ic); }
 // solo el texto: 10 % a la derecha y 5 % arriba (mismo criterio que el bloque), el panel inclinado no se mueve
-h1, .sub { position: relative; left: calc(-0.25 * (clamp(20px, 3.8vw, 56px) + clamp(20px, 2.4vw, 34px))); top: calc(-0.1 * (clamp(18px, 4.5vh, 56px) + clamp(14px, 2.6vh, 26px))); }
-.sub { margin: 0; width: 40ch; max-width: 100%; min-height: 2.8em; /* ancho y alto fijos: al rotar el verbo el panel no cambia de tamaño */ font-size: clamp(15px, 2.3vh, 20px); line-height: 1.4; color: var(--t2); text-shadow: 0 1px 3px rgba(var(--vl), .7); }
+h1, .sub { position: relative; left: calc(-0.05 * (clamp(20px, 3.8vw, 56px) + clamp(20px, 2.4vw, 34px))); top: calc(-0.1 * (clamp(18px, 4.5vh, 56px) + clamp(14px, 2.6vh, 26px))); }
+.sub { margin: 0; width: 44ch; max-width: 100%; min-height: 2.8em; /* ancho y alto fijos: al rotar el verbo el panel no cambia de tamaño */ font-size: clamp(15px, 2.3vh, 20px); line-height: 1.45; font-weight: 500; color: var(--t); text-shadow: 0 1px 3px rgba(var(--vl), .7); }
 
 // verbo en holograma: una franja de escáner lo recorre y lo deja escrito con líneas finas de luz
 .esc { position: relative; display: inline-block; color: var(--c); font-weight: 700; text-shadow: none; }
@@ -115,10 +115,11 @@ h1, .sub { position: relative; left: calc(-0.25 * (clamp(20px, 3.8vw, 56px) + cl
 
 // panel de cristal: el mapa se ve a través, desenfocado y más vivo
 .cristal { grid-column: 1 / -1; grid-row: 3; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: stretch; padding: 0; overflow: hidden;
-  background: var(--glass-strip); border: 1px solid var(--glass-edge); border-radius: 16px;
-  -webkit-backdrop-filter: blur(6px) saturate(1.15); backdrop-filter: blur(6px) saturate(1.15);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25), 0 10px 30px rgba(0, 0, 0, .18);
-  text-shadow: var(--ts); }
+  background: var(--glass-panel);
+  border: 1px solid color-mix(in srgb, var(--glass-edge) 55%, transparent); border-radius: 16px;
+  -webkit-backdrop-filter: blur(6px) saturate(1.3); backdrop-filter: blur(6px) saturate(1.3);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .3), 0 10px 30px rgba(0, 0, 0, .14);
+  text-shadow: var(--ts, 0 1px 2px rgba(255, 255, 255, .5)); }
 .puertas { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .puertas a { position: relative; isolation: isolate; display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; align-items: start; padding: clamp(10px, 2.2vh, 18px) 14px clamp(10px, 2.2vh, 18px) clamp(14px, 1.8vw, 24px); color: var(--t); text-decoration: none; }
 .puertas a + a { border-left: 1px solid var(--gl); }
@@ -134,6 +135,13 @@ h1, .sub { position: relative; left: calc(-0.25 * (clamp(20px, 3.8vw, 56px) + cl
 .puertas .ico { box-sizing: content-box; width: 20px; height: 20px; padding: 5px; margin: -2px 0 0 -5px; border-radius: 10px; color: var(--accent-ic); }
 .puertas b { font: 800 clamp(14px, 2.2vh, 18px)/1.2 var(--f-h); }
 .puertas small { grid-column: 2; font-size: clamp(12px, 1.9vh, 13.5px); line-height: 1.35; color: var(--t2); }
+// panel inferior: letra blanca sin halo sobre cristal con un tinte oscuro suave; iconos y resaltes en lima
+.cristal { --t: #FFFFFF; --t2: rgba(255, 255, 255, .92); --accent-ic: #B6E05A; --pill-on-bg: #FFFFFF; --pill-on-tx: #29422F; --gl: rgba(255, 255, 255, .35); --glass-panel: rgba(14, 28, 18, .22); text-shadow: none; }
+.puertas small { font-weight: 500; }
+.puertas a::after { background: linear-gradient(0deg, color-mix(in srgb, var(--accent-ic) 42%, transparent) 0, color-mix(in srgb, var(--accent-ic) 12%, transparent) 100%); }
+.puertas a::before { background: linear-gradient(135deg, color-mix(in srgb, var(--vc, var(--accent-ic)) 85%, transparent) 0, color-mix(in srgb, var(--vc, var(--accent-ic)) 30%, transparent) 40%, transparent 68%);
+  filter: drop-shadow(0 0 10px color-mix(in srgb, var(--vc, var(--accent-ic)) 75%, transparent)) saturate(1.3); }
+:host-context(html.tema-oscuro) .cristal { --t: #FFFFFF; --t2: rgba(255, 255, 255, .92); --accent-ic: #B6E05A; --gl: rgba(255, 255, 255, .25); text-shadow: none; }
 // el verbo en pantalla marca en una esquina las secciones que le corresponden
 .puertas a::before { content: ''; position: absolute; top: 0; left: 0; width: 68px; height: 68px; pointer-events: none; opacity: 0;
   border-top: 2px solid var(--vc, var(--accent-ic)); border-left: 2px solid var(--vc, var(--accent-ic)); border-top-left-radius: 6px;
