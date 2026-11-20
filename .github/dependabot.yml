@@ -25,3 +25,8 @@ updates:
         update-types: ["version-update:semver-major"]
       - dependency-name: "zone.js"
         update-types: ["version-update:semver-major", "version-update:semver-minor"]
+      # herramientas de pruebas: karma-jasmine 5 no admite jasmine 7 y el proyecto no tiene specs
+      - dependency-name: "jasmine-core"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@types/jasmine"
+        update-types: ["version-update:semver-major"]
