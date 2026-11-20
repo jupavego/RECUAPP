@@ -19,7 +19,7 @@
     "@angular/platform-browser": "^20.3.35",
     "@angular/platform-browser-dynamic": "^20.3.35",
     "@angular/router": "^20.3.35",
-    "@sentry/angular": "^10.50.0",
+    "@sentry/angular": "^11.14.0",
     "@supabase/supabase-js": "^2.101.1",
     "@types/three": "^0.186.0",
     "rxjs": "~7.8.0",
