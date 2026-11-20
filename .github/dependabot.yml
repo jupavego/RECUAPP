@@ -14,3 +14,14 @@ updates:
       supabase:
         patterns:
           - "@supabase/*"
+    # Angular 20 fija sus propias versiones: no admite TypeScript 7 ni zone.js 0.16,
+    # y los saltos mayores de Angular se migran a mano (ng update), no con un PR automatico.
+    ignore:
+      - dependency-name: "@angular/*"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@angular-devkit/*"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "zone.js"
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
