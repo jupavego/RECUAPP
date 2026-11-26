@@ -209,10 +209,6 @@
   &__texto { transform: rotate(90deg); transform-origin: 22px 22px; fill: var(--dark-800, #1e293b); font-size: 11px; font-weight: 600; }
   &__pct { font-size: 7px; font-weight: 500; }
 }
-.leyenda.leyenda--cat { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; margin: 10px 0 24px; padding-bottom: 2px; font-size: .8rem; color: var(--dark-700, #334155);
-  b { font-weight: 500; margin-right: 4px; }
-  i { width: 14px; height: 14px; margin: 0 2px 0 10px; border-radius: 3px; }
-}
 .subcapsula {
   padding: 8px 14px; border: 1px solid var(--color-border-tertiary, #e4e4e7); border-radius: var(--plan-radio-s, 12px);
   background: var(--color-background-primary, #fff);
@@ -672,7 +668,6 @@ html { scroll-behavior: smooth; }
 .como { margin: 0 0 14px; font-size: .8rem;
   summary { display: inline-flex; align-items: center; min-height: 44px; cursor: pointer; color: var(--color-brand-primary); }
   summary:focus-visible { outline: 2px solid var(--color-brand-primary); outline-offset: 2px; border-radius: 6px; } }
-.leyenda.leyenda--cat { margin: 0 0 18px; }
 
 #responsables .barras--dos { align-items: stretch; gap: 16px; }
 #responsables .subcapsula {
