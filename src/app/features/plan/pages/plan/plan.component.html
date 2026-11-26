@@ -62,7 +62,7 @@
     <section class="rejilla" aria-label="Categorías del plan">
 
       <!-- Líneas -->
-      <article id="lineas" class="tarjeta tarjeta--ancha tarjeta--lineas" [class.tarjeta--abierta]="abierta() === 'lineas'">
+      <article data-ico="lineas" id="lineas" class="tarjeta tarjeta--ancha tarjeta--lineas" [class.tarjeta--abierta]="abierta() === 'lineas'">
         <h2>Líneas estratégicas <span class="cuenta">{{ p.lineas.length }}</span></h2>
         <ul class="ejes">
           @for (l of p.lineas; track l.id; let i = $index) {
@@ -84,7 +84,7 @@
       </article>
 
       <!-- Sectores: mosaico, el tamaño de cada bloque es su número de productos -->
-      <article id="sectores" class="tarjeta tarjeta--ancha">
+      <article data-ico="sectores" id="sectores" class="tarjeta tarjeta--ancha">
         <h2>Sectores <span class="cuenta">{{ p.sectores.length }}</span></h2>
         <ul class="mosaico">
           @for (s of sectoresOrden(); track s.cod; let i = $index) {
@@ -100,7 +100,7 @@
       </article>
 
       <!-- Programas por eje: una franja proporcional y pestañas para elegir el eje; debajo, los programas del eje elegido en una sola lista -->
-      <article id="programas" class="tarjeta tarjeta--ancha tarjeta--programas">
+      <article data-ico="programas" id="programas" class="tarjeta tarjeta--ancha tarjeta--programas">
         <div class="prog-cab">
           <h2>Programas por eje <span class="cuenta">{{ p.programas.length }}</span></h2>
           <input class="buscar" type="search" placeholder="Buscar un programa" aria-label="Buscar un programa" [value]="buscaProg()" (input)="buscaProg.set($any($event.target).value)" />
@@ -145,7 +145,7 @@
 
       <!-- Resultado -->
       <!-- a todo el ancho, en dos columnas y con su propio desplazamiento: todos a la vista, sin «Ver los …» -->
-      <article id="resultado" class="tarjeta tarjeta--ancha tarjeta--resultado">
+      <article data-ico="resultado" id="resultado" class="tarjeta tarjeta--ancha tarjeta--resultado">
         <h2>Indicadores de resultado <span class="cuenta">{{ p.resultado.length }}</span></h2>
         <input class="buscar" type="search" placeholder="Buscar un indicador" aria-label="Buscar un indicador de resultado" [value]="buscaRes()" (input)="buscaRes.set($any($event.target).value)" />
         <ul class="metas metas--todas" tabindex="0" aria-label="Indicadores de resultado">
@@ -159,7 +159,7 @@
       </article>
 
       <!-- Responsables -->
-      <article id="responsables" class="tarjeta tarjeta--ancha" [class.tarjeta--abierta]="abierta() === 'responsables'">
+      <article data-ico="responsables" id="responsables" class="tarjeta tarjeta--ancha" [class.tarjeta--abierta]="abierta() === 'responsables'">
         <h2>Responsables <span class="cuenta">{{ raices().length }} dependencias</span></h2>
         <details class="como">
           <summary>Cómo se lee esta sección</summary>
@@ -250,7 +250,7 @@
       </article>
 
       <!-- ODS -->
-      <article id="ods" class="tarjeta tarjeta--doble" [class.tarjeta--abierta]="abierta() === 'ods'">
+      <article data-ico="ods" id="ods" class="tarjeta tarjeta--doble" [class.tarjeta--abierta]="abierta() === 'ods'">
         <h2>Objetivos de Desarrollo Sostenible <span class="cuenta">{{ p.ods.length }}</span></h2>
         <p class="nota">Productos del plan según su ODS.</p>
         <ul class="lista lista--ods">
@@ -272,7 +272,7 @@
       </article>
 
       <!-- Inversión -->
-      <article id="inversion" class="tarjeta tarjeta--ancha" [class.tarjeta--abierta]="abierta() === 'financiacion'">
+      <article data-ico="inversion" id="inversion" class="tarjeta tarjeta--ancha" [class.tarjeta--abierta]="abierta() === 'financiacion'">
         <h2>Inversión programada</h2>
         @if (p.financiacion; as f) {
           <p class="nota">{{ f.fuente }}. Total del cuatrienio: <b>{{ mm(sumaAnios(f.total)) }}</b>.</p>
@@ -305,7 +305,7 @@
       </article>
 
       <!-- Calidad -->
-      <article class="tarjeta">
+      <article data-ico="calidad" class="tarjeta">
         <h2>Calidad de los datos</h2>
         <ul class="lista">
           <li><span>Productos con dato del PDF</span><b>{{ pct(p.calidad.con_pdf, p.calidad.productos) }} %</b></li>
@@ -318,7 +318,7 @@
       </article>
 
       <!-- Solo en el PDF -->
-      <article class="tarjeta" [class.tarjeta--abierta]="abierta() === 'solopdf'">
+      <article data-ico="solopdf" class="tarjeta" [class.tarjeta--abierta]="abierta() === 'solopdf'">
         <h2>Solo en el PDF <span class="cuenta">{{ p.solo_pdf.length }}</span></h2>
         <p class="nota">Indicadores que trae el PDF y no se encontraron en SisPT.</p>
         <ul class="lista">

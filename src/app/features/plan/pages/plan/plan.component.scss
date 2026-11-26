@@ -65,12 +65,45 @@
     content: ''; display: inline-block; width: 22px; height: 3px; margin-right: 8px; vertical-align: middle;
     border-radius: 2px; background: var(--plan-amarillo);
   }
-  .tarjeta h2::before {
-    content: ''; flex: none; width: 8px; height: 8px; margin: 0 8px 0 0; align-self: center;
-    border-radius: 50%; background: var(--plan-amarillo);
+  // Título de cada tarjeta: ficha con ícono inclinado, línea de luz que se desvanece y contador en pastilla dorada.
+  // Cada tarjeta tiene su matiz (--acento), y un velo de ese matiz baja desde el borde superior: el título queda dentro del contenedor.
+  .tarjeta {
+    --acento: #66AA33; --acento-os: #29422F;
+    background-image: linear-gradient(180deg, color-mix(in srgb, var(--acento) 11%, transparent), transparent 96px);
+    background-repeat: no-repeat;
+    &[data-ico='lineas'] { --acento: #2F9E6B; --acento-os: #1F6B4A; --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M4 20V10m6 10V4m6 16v-7m4 7H2' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' fill='none'/%3E%3C/svg%3E"); }
+    &[data-ico='sectores'] { --acento: #66AA33; --acento-os: #3F7A1E; --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M3 3h8v8H3zm10 0h8v5h-8zM3 13h8v8H3zm10-3h8v11h-8z' fill='%23fff'/%3E%3C/svg%3E"); }
+    &[data-ico='programas'] { --acento: #8FA82A; --acento-os: #5C7016; --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M5 4h14M5 12h14M5 20h14' stroke='%23fff' stroke-width='2.6' stroke-linecap='round'/%3E%3Ccircle cx='3' cy='4' r='1.4'/%3E%3C/svg%3E"); }
+    &[data-ico='resultado'] { --acento: #E0B33A; --acento-os: #A77C12; --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Ccircle cx='12' cy='12' r='9' stroke='%23fff' stroke-width='2.2' fill='none'/%3E%3Ccircle cx='12' cy='12' r='4.6' stroke='%23fff' stroke-width='2.2' fill='none'/%3E%3Ccircle cx='12' cy='12' r='1.4'/%3E%3C/svg%3E"); }
+    &[data-ico='responsables'] { --acento: #3A8F8A; --acento-os: #226662; --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Ccircle cx='9' cy='8' r='3.6'/%3E%3Cpath d='M2 21c0-4 3-6.5 7-6.5s7 2.5 7 6.5z'/%3E%3Ccircle cx='17.5' cy='9' r='2.6'/%3E%3Cpath d='M18 14.5c2.6.3 4.4 2.2 4.4 5.5H18z'/%3E%3C/svg%3E"); }
+    &[data-ico='ods'] { --acento: #E07A4B; --acento-os: #A8492A; --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Ccircle cx='12' cy='12' r='9' stroke='%23fff' stroke-width='2.2' fill='none'/%3E%3Cpath d='M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18' stroke='%23fff' stroke-width='1.8' fill='none'/%3E%3C/svg%3E"); }
+    &[data-ico='inversion'] { --acento: #C99A1E; --acento-os: #8A6A0C; --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M12 2v20M17 6.5c-1-1.6-3-2.4-5-2.4-2.6 0-4.6 1.3-4.6 3.5 0 5 10 2.6 10 7.6 0 2.2-2.2 3.7-5.2 3.7-2.3 0-4.4-.9-5.4-2.6' stroke='%23fff' stroke-width='2.2' stroke-linecap='round' fill='none'/%3E%3C/svg%3E"); }
+    &[data-ico='calidad'] { --acento: #5C8F4A; --acento-os: #386028; --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M12 2l8 3v6c0 5-3.4 9-8 11-4.6-2-8-6-8-11V5z' stroke='%23fff' stroke-width='2' fill='none'/%3E%3Cpath d='M8 12l3 3 5-6' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' fill='none'/%3E%3C/svg%3E"); }
+    &[data-ico='solopdf'] { --acento: #8A7A55; --acento-os: #5E5133; --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cpath d='M6 2h8l5 5v15H6z' stroke='%23fff' stroke-width='2' fill='none' stroke-linejoin='round'/%3E%3Cpath d='M9 13h7M9 17h7' stroke='%23fff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E"); }
   }
-  .tarjeta h2 { justify-content: flex-start; .cuenta { margin-left: auto; } }
-  .cuenta { padding: 1px 9px; border-radius: 999px; background: var(--plan-amarillo-claro); color: #5C4A12; }
+  .tarjeta h2 {
+    justify-content: flex-start; align-items: center; gap: 12px; margin: -2px 0 14px;
+    font-family: var(--f-h, inherit); font-size: 1.28rem; font-weight: 800; letter-spacing: -.012em; line-height: 1.1;
+    // ficha del ícono: baldosa inclinada con brillo, apoyada sobre el velo del contenedor
+    &::before {
+      content: ''; flex: none; width: 38px; height: 38px; margin: 0; border-radius: 12px 12px 12px 4px; transform: rotate(-5deg);
+      background: var(--ico, none) center / 21px no-repeat, linear-gradient(145deg, var(--acento), var(--acento-os));
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35), 0 6px 14px color-mix(in srgb, var(--acento) 38%, transparent);
+      transition: transform .25s cubic-bezier(.3, .7, .3, 1);
+    }
+    // línea de luz que se desvanece hacia el contador
+    &::after {
+      content: ''; order: 2; flex: 1 1 24px; min-width: 18px; height: 2px; border-radius: 2px;
+      background: linear-gradient(90deg, var(--acento), color-mix(in srgb, var(--acento) 0%, transparent));
+    }
+    .cuenta { order: 3; margin-left: 0; }
+  }
+  .tarjeta:hover h2::before { transform: rotate(0deg) scale(1.06); }
+  .cuenta {
+    padding: 2px 11px; border-radius: 999px; font-weight: 800; font-size: .82rem; line-height: 1.5;
+    background: linear-gradient(180deg, #FBE9A8, var(--plan-amarillo-claro)); color: #5C4A12;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .7), 0 0 0 1px rgba(224, 179, 58, .55);
+  }
   .barras button:hover .barras__nombre,
   .mas:hover { text-decoration: underline; text-decoration-color: var(--plan-amarillo); text-decoration-thickness: 2px; text-underline-offset: 3px; }
   .fila:hover { border-color: var(--plan-amarillo); }
