@@ -9,6 +9,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { mergeGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 import { Aura, crearAuras } from '../../../mapa3d/utils/aura';
 import { CategoriaCatalogo, Modelo, modelarEquipamiento } from '../../../mapa3d/utils/equipamientos';
+import { icono3d } from '../../services/iconos-3d';
 import { PlanEntidad, PlanService, Seguimiento } from '../../services/plan.service';
 import { OrganigramaComponent } from '../organigrama/organigrama.component';
 import { Resumen, construirResumenes, matizDe } from '../responsables/responsables.component';
@@ -529,7 +530,7 @@ export class PuebloComponent implements AfterViewInit {
   corto(n: string): string { return n.split(',')[0].replace(/^(Secretar[ií]a|Oficina|Despacho)( Asesora)?( de(l)?)? ?/i, m => (/^Despacho/i.test(m) ? 'Despacho ' : '')).replace(/^./, c => c.toUpperCase()); }
   entero(v: number): string { return Math.round(v).toLocaleString('es-CO'); }
   clase(v: number | null): string { return v === null ? '' : v >= 100 ? 'ok' : v < 50 ? 'bajo' : ''; }
-  icono(r: Resumen): string | null { return r.dep.icono ? `/img/iconos/${r.dep.icono}.png` : null; }
+  icono(r: Resumen): string | null { return icono3d(r.dep.id) ?? (r.dep.icono ? `/img/iconos/${r.dep.icono}.png` : null); }
 
   private flotas: Flota[] = [];
   private hemi!: THREE.HemisphereLight;
@@ -2118,10 +2119,11 @@ export class PuebloComponent implements AfterViewInit {
       tex.needsUpdate = true;
     };
     dibujar(null);
-    if (r.dep.icono) {
+    const src = icono3d(r.dep.id) ?? (r.dep.icono ? `/img/iconos/${r.dep.icono}.png` : null);
+    if (src) {
       const img = new Image();
       img.onload = () => dibujar(img);
-      img.src = `/img/iconos/${r.dep.icono}.png`;
+      img.src = src;
     }
     const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthWrite: false, depthTest: false }));
     sprite.center.set(0.5, 0);

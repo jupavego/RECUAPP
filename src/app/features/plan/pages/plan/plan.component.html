@@ -10,25 +10,52 @@
         </g>
       </svg>
       <div class="hero__texto">
-        <p class="plan__etiqueta">Plan de desarrollo 2024-2027</p>
         <h1>{{ p.municipio }}</h1>
-        <p class="plan__sub">{{ p.plan }}</p>
+        <p class="hero__plan">{{ p.plan }}, {{ cuatrienio.anios[0] }} a {{ cuatrienio.anios[3] }}</p>
         <nav class="hero__atajos" aria-label="Ir a una sección">
           <a href="#lineas">Líneas</a>
           <a href="#sectores">Sectores</a>
+          <a href="#programas">Programas</a>
           <a href="#responsables">Responsables</a>
           <a href="#ods">ODS</a>
           <a href="#inversion">Inversión</a>
         </nav>
       </div>
-      <dl class="hero__cifras">
-        <div class="hero__principal"><dt>Productos e indicadores</dt><dd>{{ p.productos.length }}</dd></div>
-        <div><dt>Líneas estratégicas</dt><dd>{{ p.lineas.length }}</dd></div>
-        <div><dt>Sectores</dt><dd>{{ p.sectores.length }}</dd></div>
-        <div><dt>Programas</dt><dd>{{ p.programas.length }}</dd></div>
-        <div><dt>Indicadores de resultado</dt><dd>{{ p.resultado.length }}</dd></div>
-        <div><dt>Dependencias</dt><dd>{{ raices().length }}</dd></div>
-      </dl>
+
+      <!-- Globo con la cifra total, apuntando a la franja -->
+      <p class="hero__gran" role="note"><strong>{{ p.productos.length }}</strong> <span>productos e indicadores, repartidos en {{ p.lineas.length }} líneas estratégicas</span></p>
+
+      <!-- El plan en una franja: el peso de cada línea estratégica, y qué parte del cuatrienio va -->
+      <section class="hero__franja" aria-label="El plan en una franja">
+        <div class="hero__tira" aria-hidden="true">
+          @for (l of p.lineas; track l.id; let i = $index) {
+            <button type="button" tabindex="-1" class="hero__seg" [style.--eje]="matiz(i)" [style.--n]="l.productos" [style.--i]="i" [title]="l.nombre + ': ' + l.productos + ' productos'" (click)="irEje(l.id)"></button>
+          }
+        </div>
+        <ul class="hero__leyenda">
+          @for (l of p.lineas; track l.id; let i = $index) {
+            <li [style.--eje]="matiz(i)">
+              <button type="button" (click)="irEje(l.id)" [attr.aria-label]="l.nombre + ': ' + l.productos + ' productos. Ver sus programas'">
+                <i aria-hidden="true"></i>
+                <b>{{ l.productos }}</b>
+                <span>{{ l.nombre }}</span>
+              </button>
+            </li>
+          }
+        </ul>
+        <p class="hero__resumen">Con {{ p.sectores.length }} sectores, {{ p.programas.length }} programas, {{ p.resultado.length }} indicadores de resultado y {{ raices().length }} dependencias responsables.</p>
+
+        <div class="hero__tiempo">
+          <div class="hero__pista" role="img" [attr.aria-label]="cuatrienio.texto">
+            <i [style.width.%]="cuatrienio.avance"></i>
+            <b [style.left.%]="cuatrienio.avance"></b>
+          </div>
+          <ol class="hero__anios" aria-hidden="true">
+            @for (a of cuatrienio.anios; track a) { <li [class.hero__anio--hoy]="a === cuatrienio.anio">{{ a }}</li> }
+          </ol>
+          <p class="hero__avance">{{ cuatrienio.texto }}</p>
+        </div>
+      </section>
       <p class="hero__fuente">Fuente: {{ p.fuente.nombre }}, consultados el {{ p.fuente.fecha }}.</p>
     </header>
 
@@ -72,37 +99,48 @@
         <p class="nota">El tamaño de cada bloque es proporcional a sus productos e indicadores.</p>
       </article>
 
-      <!-- Programas por eje: a todo el ancho, un eje por columna y todos abiertos (vista panorámica);
-           en pantallas angostas los ejes se apilan y vuelven a ser acordeón -->
+      <!-- Programas por eje: una franja proporcional y pestañas para elegir el eje; debajo, los programas del eje elegido en una sola lista -->
       <article id="programas" class="tarjeta tarjeta--ancha tarjeta--programas">
         <div class="prog-cab">
           <h2>Programas por eje <span class="cuenta">{{ p.programas.length }}</span></h2>
           <input class="buscar" type="search" placeholder="Buscar un programa" aria-label="Buscar un programa" [value]="buscaProg()" (input)="buscaProg.set($any($event.target).value)" />
         </div>
-        <div class="ejes-prog">
-        @for (g of programasPorLinea(); track g.id) {
-          <section class="grupo" [style.--eje]="g.matiz">
-            <button type="button" class="grupo__cab" [attr.aria-expanded]="grupoAbierto(g.id)" [disabled]="panoramica()" (click)="alternarGrupo(g.id)">
-              <span class="grupo__eje">Eje {{ g.n }}</span>
-              <span class="grupo__nombre">{{ g.nombre }}</span>
-              <span class="grupo__cuenta">{{ g.items.length }} {{ g.items.length === 1 ? 'programa' : 'programas' }} · {{ g.total }} prod.</span>
-            </button>
-            @if (grupoAbierto(g.id)) {
-              <ul class="barras grupo__lista">
-                @for (x of g.items; track x.cod) {
-                  <li>
-                    <div role="button" tabindex="0" class="barras__fila clicable" (click)="verGrupo('programa', x.cod, x.nombre)" (keydown.enter)="verGrupo('programa', x.cod, x.nombre)">
-                      <span class="barras__nombre">{{ x.nombre }}</span>
-                      <span class="barras__valor">{{ x.productos }}</span>
-                      <span class="barras__pista"><i [style.width.%]="pct(x.productos, maxPrograma())"></i></span>
-                    </div>
-                  </li>
-                }
-              </ul>
+        @if (ejeActivo(); as e) {
+          <div class="prog__franja" aria-hidden="true">
+            @for (g of programasPorLinea(); track g.id) {
+              <i class="prog__seg" [class.prog__seg--on]="g.id === e.id" [style.--eje]="g.matiz" [style.--n]="g.total" [title]="'Eje ' + g.n + ': ' + g.total + ' productos'" (click)="elegirEje(g.id)"></i>
             }
-          </section>
-        } @empty { <p class="nota">Ningún programa coincide con la búsqueda.</p> }
-        </div>
+          </div>
+          <div class="prog__tabs" role="tablist" aria-label="Ejes estratégicos">
+            @for (g of programasPorLinea(); track g.id) {
+              <button type="button" role="tab" class="prog__tab" [id]="'eje-tab-' + g.id" aria-controls="eje-panel"
+                      [attr.aria-selected]="g.id === e.id" [attr.tabindex]="g.id === e.id ? 0 : -1" [style.--eje]="g.matiz"
+                      (click)="elegirEje(g.id)" (keydown.arrowright)="moverEje(1, $event)" (keydown.arrowleft)="moverEje(-1, $event)">
+                <span class="prog__eje">Eje {{ g.n }}</span>
+                <span class="prog__enombre">{{ g.nombre }}</span>
+                <span class="prog__meta"><b>{{ g.items.length }}</b> {{ g.items.length === 1 ? 'programa' : 'programas' }} · <b>{{ g.total }}</b> {{ g.total === 1 ? 'producto' : 'productos' }}</span>
+              </button>
+            }
+          </div>
+          <div class="prog__panel" id="eje-panel" role="tabpanel" [attr.aria-labelledby]="'eje-tab-' + e.id" [style.--eje]="e.matiz">
+            <ul class="prog__lista">
+              @for (x of e.items; track x.cod; let i = $index) {
+                <li>
+                  <button type="button" class="prog__fila" [style.--i]="i" (click)="verGrupo('programa', x.cod, x.nombre)">
+                    <span class="prog__nombre">{{ x.nombre }}</span>
+                    @if (sectorNombre(x.sector); as s) { <span class="prog__sector">{{ s }}</span> }
+                    <span class="prog__pista" aria-hidden="true"><i [style.width.%]="pct(x.productos, ejeMax())"></i></span>
+                    <b class="prog__n">{{ x.productos }}</b>
+                    <span class="sr">{{ x.productos === 1 ? 'producto' : 'productos' }}. Ver el detalle.</span>
+                    <span class="prog__ir" aria-hidden="true">›</span>
+                  </button>
+                </li>
+              }
+            </ul>
+          </div>
+        } @else {
+          <p class="nota">Ningún programa coincide con la búsqueda.</p>
+        }
       </article>
 
       <!-- Resultado -->
@@ -125,38 +163,48 @@
         <h2>Responsables <span class="cuenta">{{ raices().length }} dependencias</span></h2>
         <details class="como">
           <summary>Cómo se lee esta sección</summary>
-          <p class="nota">Las dependencias de la alcaldía, tomadas de su sitio web. Cada producto se asigna con lo que dice el PDF; si no lo dice, se sugiere por sector. El anillo de cada responsable muestra su porcentaje de los {{ p.productos.length }} productos del plan; un producto con varios responsables cuenta en cada uno.</p>
+          <p class="nota">Las dependencias de la alcaldía, tomadas de su sitio web. El anillo de cada responsable muestra su porcentaje de los {{ p.productos.length }} productos del plan; un producto con varios responsables cuenta en cada uno.</p>
         </details>
-        <p class="leyenda leyenda--cat"><b>Categoría de la asignación:</b>
-          <span class="tip" tabindex="0"><i class="p1"></i> Según el PDF, lo dice el plan
-            <span class="tip__caja" role="tooltip">
-              <b class="tip__tit">Asignada según el PDF</b>
-              <span class="tip__cifra">{{ conteo().alta }} productos · {{ pct(conteo().alta, plan()!.productos.length) }} %</span>
-              <span class="tip__txt">de los {{ plan()!.productos.length }} del plan. La dona de cada responsable es su porcentaje sobre ese total.</span>
-            </span></span>
-          <span class="tip" tabindex="0"><i class="p2"></i> Sugerida por sector, el PDF no lo dice
-            <span class="tip__caja" role="tooltip">
-              <b class="tip__tit">Sugerida por el sector</b>
-              <span class="tip__cifra">{{ conteo().sugerida }} productos · {{ pct(conteo().sugerida, plan()!.productos.length) }} %</span>
-              <span class="tip__txt">de los {{ plan()!.productos.length }} del plan. El PDF no nombra responsable; se propone por el sector del producto.</span>
-            </span></span></p>
-        <ul class="barras barras--dos">
-          @for (d of raicesPorPeso(); track d.id; let i = $index) {
-            <li class="subcapsula" [style.--eje]="matizDep(d.id)" [style.--i]="i">
+        <div class="cf" [style.--eje]="matizDep(ordenCarrusel()[activo()]?.id ?? '')">
+        <!-- Selector: un icono por dependencia; lleva el carrusel a su tarjeta -->
+        <div class="cf__selector" role="tablist" aria-label="Elegir una dependencia">
+          @for (d of ordenCarrusel(); track d.id; let i = $index) {
+            <button type="button" role="tab" class="cf__ico" [id]="'cf-ico-' + i" [class.cf__ico--on]="i === activo()"
+                    [attr.aria-selected]="i === activo()" [attr.aria-label]="d.nombre" [title]="d.nombre"
+                    [style.--eje]="matizDep(d.id)" (click)="ir(i)">
+              @if (icono3d(d.id); as u) { <img [src]="u" alt="" width="44" height="44" /> } @else { <i class="ico__vacio">{{ d.nombre.charAt(0) }}</i> }
+            </button>
+          }
+        </div>
+        <p class="cf__pos" aria-live="polite"><b>{{ activo() + 1 }}</b> de {{ ordenCarrusel().length }} · {{ ordenCarrusel()[activo()]?.nombre }}</p>
+
+        <div class="cf__escena" tabindex="0" role="group" aria-roledescription="carrusel" aria-label="Responsables del plan; use las flechas del teclado para cambiar de dependencia"
+             (keydown.arrowright)="paso(1, $event)" (keydown.arrowleft)="paso(-1, $event)" (keydown.home)="ir(0); $event.preventDefault()" (keydown.end)="ir(ordenCarrusel().length - 1); $event.preventDefault()"
+             (touchstart)="tocar($event, true)" (touchend)="tocar($event, false)">
+          <button type="button" class="cf__flecha cf__flecha--prev" aria-label="Dependencia anterior" [disabled]="activo() === 0" (click)="paso(-1)">‹</button>
+          <button type="button" class="cf__flecha cf__flecha--next" aria-label="Dependencia siguiente" [disabled]="activo() === ordenCarrusel().length - 1" (click)="paso(1)">›</button>
+        <ul class="barras cf__pila">
+          @for (d of ordenCarrusel(); track d.id; let i = $index) {
+            <li class="subcapsula cf__carta" [class.cf__carta--centro]="i === activo()" [class.cf__carta--lejos]="lejos(i)" [class.cf__carta--cerca]="absoluto(i) <= 1"
+                [style.--eje]="matizDep(d.id)" [style.--i]="i" [style.--o]="i - activo()" [style.--a]="absoluto(i)" [style.--s]="signo(i)">
+              @if (i !== activo()) {
+                <button type="button" class="cf__tomar" [attr.aria-label]="'Ver ' + d.nombre" [tabindex]="lejos(i) ? -1 : 0" (click)="ir(i)"></button>
+              }
+              <span class="cf__n" aria-hidden="true">{{ i + 1 < 10 ? '0' : '' }}{{ i + 1 }}</span>
+              <div class="cf__cont" [attr.inert]="i === activo() ? null : ''">
               <button type="button" class="con-icono" [title]="'Ver la ficha de ' + d.nombre" (click)="irFicha(d.id)">
                 <span class="ico">
-                  @if (urlIcono(d.id); as u) { <img [src]="u" alt="" width="60" height="60" /> } @else { <i class="ico__vacio" title="Sin icono asignado">{{ d.nombre.charAt(0) }}</i> }
+                  @if (icono3d(d.id); as u) { <img [src]="u" alt="" width="64" height="64" /> } @else { <i class="ico__vacio" title="Sin icono asignado">{{ d.nombre.charAt(0) }}</i> }
                 </span>
                 <span class="barras__nombre">{{ d.nombre }}</span>
                 <span class="barras__valor dep__cuenta"><b>{{ totalDep(d.id) }}</b> {{ totalDep(d.id) === 1 ? 'producto' : 'productos' }}</span>
                 <svg class="dona" [style.--dona]="colorDona(d.id)" viewBox="0 0 44 44" width="56" height="56" role="img" [attr.aria-label]="pct(totalDep(d.id), p.productos.length) + ' % de los productos del plan'">
-                  <title>{{ pct(totalDep(d.id), p.productos.length) }} % de los {{ p.productos.length }} productos del plan · {{ conf(d.id, 'alta') }} según el PDF · {{ conf(d.id, 'sugerida') }} sugeridos por sector</title>
+                  <title>{{ pct(totalDep(d.id), p.productos.length) }} % de los {{ p.productos.length }} productos del plan</title>
                   <circle class="dona__pista" cx="22" cy="22" r="17" pathLength="100" />
-                  <circle class="dona__alta" cx="22" cy="22" r="17" pathLength="100" [attr.stroke-dasharray]="pct(conf(d.id, 'alta'), p.productos.length) + ' 100'" />
-                  <circle class="dona__sug" cx="22" cy="22" r="17" pathLength="100" [attr.stroke-dasharray]="pct(conf(d.id, 'sugerida'), p.productos.length) + ' 100'" [attr.stroke-dashoffset]="-pct(conf(d.id, 'alta'), p.productos.length)" />
+                  <circle class="dona__alta" cx="22" cy="22" r="17" pathLength="100" [attr.stroke-dasharray]="pct(totalDep(d.id), p.productos.length) + ' 100'" />
                   <text x="22" y="22" text-anchor="middle" dominant-baseline="central" class="dona__texto">{{ pct(totalDep(d.id), p.productos.length) }}<tspan class="dona__pct" dx="1">%</tspan></text>
                 </svg>
-                <span class="dep__barra" aria-hidden="true"><i [style.width.%]="pct(conf(d.id, 'alta'), totalDep(d.id))"></i><b [style.width.%]="pct(conf(d.id, 'sugerida'), totalDep(d.id))"></b></span>
+                <span class="dep__barra" aria-hidden="true"><i [style.width.%]="intensidad(d.id) * 100"></i></span>
               </button>
               @for (h of hijos(d.id); track h.id) {
                 <button type="button" class="sub" (click)="irFicha(h.id)" [title]="'Ver la ficha · ' + h.nombre + (h.padre_confirmado ? '' : ' · Adscripción a esta secretaría por confirmar') + (h.nota ? ' · ' + h.nota : '')">
@@ -189,9 +237,13 @@
                 </span>
               }
               @if (d.tipo === 'secretaria' && !hijos(d.id).length) { <span class="sub--vacia" aria-hidden="true"></span> }
+              <button type="button" class="cf__ver" (click)="irFicha(d.id)">Ver la ficha completa <span aria-hidden="true">→</span></button>
+              </div>
             </li>
           }
         </ul>
+        </div>
+        </div>
         @if (p.otras_entidades.length) {
           <p class="nota">También aparecen fuera de la lista de dependencias: {{ nombresOtras() }}.</p>
         }

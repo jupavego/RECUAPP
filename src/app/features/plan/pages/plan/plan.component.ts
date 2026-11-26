@@ -1,9 +1,10 @@
-import { Component, DestroyRef, HostBinding, computed, inject, signal } from '@angular/core';
+import { Component, HostBinding, computed, effect, inject, signal } from '@angular/core';
 import { TemaService } from '../../../../core/services/tema.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Router } from '@angular/router';
 import { catchError, map, of, switchMap } from 'rxjs';
 import { matizDe } from '../responsables/responsables.component';
+import { icono3d as rutaIcono3d } from '../../services/iconos-3d';
 import { CargadorComponent } from '../../../../shared/components/cargador/cargador.component';
 import { Confianza, Dependencia, PlanEntidad, PlanService, ProductoPlan } from '../../services/plan.service';
 
@@ -20,6 +21,7 @@ const ICONO_ODS: Record<string, string> = {
 };
 
 const POR_PAGINA = 25;
+
 
 /** categoría del plan cuyos productos se están viendo en el visor de abajo */
 export interface Grupo { tipo: 'linea' | 'sector' | 'programa' | 'ods'; valor: string; titulo: string; etiqueta: string }
@@ -70,6 +72,8 @@ export class PlanComponent {
   constructor() {
     const q = this.ruta.snapshot.queryParamMap.get('tema');
     if (q === 'botanico' || q === 'oscuro') this.tema.fijar(q);
+    // al cargar el plan, deja el icono de la tarjeta inicial en el centro de la tira
+    effect(() => { if (this.ordenCarrusel().length) setTimeout(() => this.centrarIcono(), 120); });
   }
 
   readonly abierta = signal<Tarjeta | null>(null);
@@ -100,22 +104,33 @@ export class PlanComponent {
       return { id: l.id, n: i + 1, nombre: l.nombre, matiz: this.matiz(i), items, total: items.reduce((a, g) => a + g.productos, 0) };
     }).filter(g => g.items.length);
   });
-  /** pantalla ancha: los ejes van en columnas, todos abiertos (en angosta, acordeón) */
-  readonly panoramica = signal(typeof matchMedia === 'function' && matchMedia('(min-width: 760px)').matches);
-  private readonly _vigilaAncho = (() => {
-    if (typeof matchMedia !== 'function') return;
-    const mq = matchMedia('(min-width: 760px)');
-    const cambio = (e: MediaQueryListEvent) => this.panoramica.set(e.matches);
-    mq.addEventListener('change', cambio);
-    inject(DestroyRef).onDestroy(() => mq.removeEventListener('change', cambio));
-  })();
-  grupoAbierto(id: string): boolean {
-    if (this.panoramica() || this.buscaProg().trim()) return true;
-    return (this.gruposProg() ?? [this.plan()?.lineas[0]?.id ?? '']).includes(id);
+  // Programas por eje: pestañas para elegir el eje y lista de sus programas
+  private readonly ejeElegido = signal<string | null>(null);
+  /** eje que se está viendo: el elegido, o el primero que tenga programas (con una búsqueda, el primero que coincida) */
+  readonly ejeActivo = computed(() => {
+    const gs = this.programasPorLinea();
+    return gs.find(g => g.id === this.ejeElegido()) ?? gs[0] ?? null;
+  });
+  /** programas del eje activo con más productos: sirve de escala a las barras de esa lista */
+  readonly ejeMax = computed(() => Math.max(1, ...(this.ejeActivo()?.items ?? []).map(x => x.productos)));
+
+  elegirEje(id: string): void {
+    this.ejeElegido.set(id);
   }
-  alternarGrupo(id: string): void {
-    const act = this.gruposProg() ?? [this.plan()?.lineas[0]?.id ?? ''];
-    this.gruposProg.set(act.includes(id) ? act.filter(x => x !== id) : [...act, id]);
+
+  /** flechas del teclado entre pestañas: elige el eje vecino y le pasa el foco */
+  moverEje(d: number, ev: Event): void {
+    ev.preventDefault();
+    const gs = this.programasPorLinea();
+    const i = gs.findIndex(g => g.id === this.ejeActivo()?.id);
+    const sig = gs[(i + d + gs.length) % gs.length];
+    if (!sig) return;
+    this.ejeElegido.set(sig.id);
+    setTimeout(() => document.getElementById('eje-tab-' + sig.id)?.focus());
+  }
+
+  sectorNombre(cod: string): string {
+    return this.sectorDe().get(cod) ?? '';
   }
 
   // Indicadores de resultado: todos a la vista (dos columnas con desplazamiento propio) y un buscador
@@ -149,12 +164,87 @@ export class PlanComponent {
   /** las dependencias de primer nivel, de la que más productos tiene a la que menos (el orden de la alcaldía desempata) */
   readonly raicesPorPeso = computed(() => [...this.raices()].sort((a, b) => this.totalDep(b.id) - this.totalDep(a.id)));
 
-  /** productos con responsable según el PDF y productos que solo tienen uno sugerido por sector */
-  readonly conteo = computed(() => {
-    const ps = this.plan()?.productos ?? [];
-    const alta = ps.filter(p => p.resp.some(r => r.conf === 'alta')).length;
-    return { alta, sugerida: ps.filter(p => p.resp.length && !p.resp.some(r => r.conf === 'alta')).length };
+  // ── Carrusel de responsables: la tarjeta del centro es la activa; el selector de iconos y las flechas la cambian ──
+  /** cuatrienio del plan: del 1 de enero de 2024 al 31 de diciembre de 2027, y cuánto va a la fecha de hoy */
+  readonly cuatrienio = (() => {
+    const anios = [2024, 2025, 2026, 2027];
+    const ini = new Date(anios[0], 0, 1).getTime();
+    const fin = new Date(anios[3] + 1, 0, 1).getTime();
+    const hoy = new Date();
+    const avance = Math.round(100 * Math.min(1, Math.max(0, (hoy.getTime() - ini) / (fin - ini))));
+    const fecha = hoy.toLocaleDateString('es-CO', { month: 'long', year: 'numeric' });
+    const texto = hoy.getTime() >= fin ? 'El cuatrienio ya terminó.'
+      : hoy.getTime() < ini ? 'El cuatrienio aún no empieza.'
+      : `Va el ${avance} % del cuatrienio, a ${fecha}.`;
+    return { anios, anio: hoy.getFullYear(), avance, texto };
+  })();
+
+  /** desde el encabezado: baja a Programas con la línea elegida */
+  irEje(id: string): void {
+    this.elegirEje(id);
+    document.getElementById('programas')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  /** orden del carrusel: por peso, con el Despacho del Alcalde en el centro, que es la tarjeta con la que abre */
+  readonly ordenCarrusel = computed(() => {
+    const todas = this.raicesPorPeso();
+    const des = todas.find(d => d.id === 'des');
+    if (!des) return todas;
+    const otras = todas.filter(d => d !== des);
+    otras.splice(Math.floor(todas.length / 2), 0, des);
+    return otras;
   });
+  private readonly elegida = signal<number | null>(null);
+  /** tarjeta del centro: la que se eligió, o la de la mitad de la lista mientras no se elija otra */
+  readonly activo = computed(() => this.elegida() ?? Math.floor(this.ordenCarrusel().length / 2));
+  private xToque = 0;
+
+  /** iconos 3D de las dependencias de primer nivel (public/img/responsables-3d/<id>.svg); el resto usa el icono de siempre */
+  icono3d(id: string): string | null {
+    return rutaIcono3d(id) ?? this.urlIcono(id);
+  }
+
+  ir(i: number): void {
+    const n = this.ordenCarrusel().length;
+    this.elegida.set(Math.min(n - 1, Math.max(0, i)));
+    this.centrarIcono();
+  }
+
+  paso(d: number, ev?: Event): void {
+    ev?.preventDefault();
+    this.ir(this.activo() + d);
+  }
+
+  absoluto(i: number): number {
+    return Math.abs(i - this.activo());
+  }
+
+  signo(i: number): number {
+    return Math.sign(i - this.activo());
+  }
+
+  /** más allá de tres tarjetas del centro ya no se dibujan */
+  lejos(i: number): boolean {
+    return this.absoluto(i) > 3;
+  }
+
+  tocar(ev: TouchEvent, inicio: boolean): void {
+    const x = ev.changedTouches[0].clientX;
+    if (inicio) { this.xToque = x; return; }
+    const dif = this.xToque - x;
+    if (Math.abs(dif) > 40) this.paso(dif > 0 ? 1 : -1);
+  }
+
+  /** deja el icono activo en el centro de la tira, sin mover la página */
+  private centrarIcono(): void {
+    setTimeout(() => {
+      const el = document.getElementById('cf-ico-' + this.activo());
+      const tira = el?.parentElement;
+      if (!el || !tira) return;
+      const suave = typeof matchMedia === 'function' && !matchMedia('(prefers-reduced-motion: reduce)').matches;
+      tira.scrollTo({ left: el.offsetLeft - tira.clientWidth / 2 + el.clientWidth / 2, behavior: suave ? 'smooth' : 'auto' });
+    });
+  }
 
   // Visor de productos e indicadores de la categoría elegida (línea, sector, programa u ODS).
   readonly grupo = signal<Grupo | null>(null);
@@ -268,12 +358,6 @@ export class PlanComponent {
   totalDep(id: string): number {
     const d = this.dependencias().get(id);
     return d ? this.total(d.productos) + this.hijos(id).reduce((a, h) => a + this.total(h.productos), 0) : 0;
-  }
-
-  /** productos de una dependencia por confianza, contando los de sus subsecretarías */
-  conf(id: string, c: 'alta' | 'sugerida'): number {
-    const suma = (d?: Dependencia) => (!d ? 0 : c === 'alta' ? d.productos.alta : d.productos.media + d.productos.baja);
-    return suma(this.dependencias().get(id)) + this.hijos(id).reduce((a, h) => a + suma(h), 0);
   }
 
   /** 0 a 1: peso de la dependencia frente a la que más productos tiene (los porcentajes son chicos, así que se escala al máximo) */
